@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador Excel — Actividad con la función SI</title>
+<style>
+  :root{
+    --grid-line: #d4d4d4;
+    --header-bg: #f3f3f3;
+    --header-fg: #444;
+    --selected: #1a73e8;
+    --selected-bg: #e8f0fe;
+    --ok: #1e7e34;
+    --ok-bg: #e6f4ea;
+    --bad: #b3261e;
+    --bad-bg: #fce8e6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:#fafafa;
+    color:#222;
+    padding:24px;
+  }
+  h1{
+    font-size:20px;
+    margin:0 0 4px;
+  }
+  .subtitle{
+    color:#666;
+    margin:0 0 18px;
+    font-size:14px;
+  }
+  .panel{
+    background:#fff;
+    border:1px solid var(--grid-line);
+    border-radius:8px;
+    padding:16px 18px;
+    margin-bottom:16px;
+    max-width:900px;
+  }
+  .panel h2{
+    font-size:15px;
+    margin:0 0 8px;
+  }
+  .panel p, .panel li{
+    font-size:14px;
+    line-height:1.5;
+    margin:4px 0;
+  }
+  .panel code{
+    background:#f1f3f4;
+    padding:2px 6px;
+    border-radius:4px;
+    font-size:13px;
+  }
+  .sheet-wrap{
+    max-width:900px;
+    border:1px solid var(--grid-line);
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .formula-bar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 8px;
+    border-bottom:1px solid var(--grid-line);
+    background:#fbfbfb;
+  }
+  .cell-ref{
+    width:56px;
+    text-align:center;
+    font-weight:600;
+    font-size:13px;
+    color:#333;
+    border:1px solid var(--grid-line);
+    border-radius:4px;
+    padding:4px 0;
+    background:#fff;
+    flex:none;
+  }
+  .fx{
+    font-style:italic;
+    color:#1a73e8;
+    font-weight:600;
+    font-size:13px;
+    flex:none;
+  }
+  #formulaInput{
+    flex:1;
+    padding:5px 8px;
+    border:1px solid var(--grid-line);
+    border-radius:4px;
+    font-size:13px;
+    font-family: "Consolas", monospace;
+  }
+  .grid-scroll{
+    overflow-x:auto;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+  }
+  th, td{
+    border:1px solid var(--grid-line);
+    padding:0;
+    height:28px;
+  }
+  th{
+    background:var(--header-bg);
+    color:var(--header-fg);
+    font-size:12px;
+    font-weight:600;
+    min-width:90px;
+    width:90px;
+  }
+  th.corner{
+    width:36px;
+    min-width:36px;
+  }
+  td.row-head{
+    background:var(--header-bg);
+    color:var(--header-fg);
+    text-align:center;
+    font-size:12px;
+    font-weight:600;
+    width:36px;
+  }
+  td.data-cell{
+    position:relative;
+  }
+  td.data-cell.selected{
+    outline:2px solid var(--selected);
+    outline-offset:-2px;
+  }
+  td.data-cell.correct{
+    background:var(--ok-bg);
+  }
+  td.data-cell.incorrect{
+    background:var(--bad-bg);
+  }
+  td.data-cell input{
+    width:100%;
+    height:28px;
+    border:none;
+    outline:none;
+    padding:0 6px;
+    font-size:13px;
+    font-family:inherit;
+    background:transparent;
+  }
+  .actions{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  button{
+    background:#1a73e8;
+    color:#fff;
+    border:none;
+    padding:9px 16px;
+    border-radius:6px;
+    font-size:13px;
+    cursor:pointer;
+  }
+  button.secondary{
+    background:#fff;
+    color:#444;
+    border:1px solid var(--grid-line);
+  }
+  button:hover{
+    filter:brightness(0.95);
+  }
+  #feedback{
+    font-size:14px;
+    font-weight:600;
+  }
+  #feedback.ok{ color:var(--ok); }
+  #feedback.bad{ color:var(--bad); }
+</style>
+</head>
+<body>
+
+<h1>Simulador de Excel — Función SI</h1>
+<p class="subtitle">Practica la fórmula lógica <code>SI</code> completando la actividad en la columna C.</p>
+
+<div class="panel">
+  <h2>Instrucciones</h2>
+  <p>La función <code>SI</code> evalúa una condición y devuelve un valor si es verdadera y otro si es falsa:</p>
+  <p><code>=SI(condición, valor_si_verdadero, valor_si_falso)</code></p>
+  <p>Completa las celdas <strong>C2 a C6</strong> para mostrar <strong>"Aprobado"</strong> si la nota (columna B) es mayor o igual a 6, o <strong>"Reprobado"</strong> en caso contrario.</p>
+  <p>Ejemplo para la celda C2: <code>=SI(B2&gt;=6,"Aprobado","Reprobado")</code>. Ajusta el número de fila en las celdas siguientes (C3, C4...).</p>
+  <ul>
+    <li>Cualquier celda puede usarse como fórmula libre para practicar (columnas D en adelante quedan vacías).</li>
+    <li>Operadores admitidos: <code>+ - * /</code>, comparaciones <code>&gt; &lt; &gt;= &lt;= = &lt;&gt;</code>.</li>
+    <li>El separador de argumentos puede ser coma <code>,</code> o punto y coma <code>;</code>.</li>
+  </ul>
+</div>
+
+<div class="sheet-wrap">
+  <div class="formula-bar">
+    <div class="cell-ref" id="cellRefBox">A1</div>
+    <span class="fx">fx</span>
+    <input id="formulaInput" type="text" placeholder="Escribe un valor o una fórmula, por ejemplo =SI(B2>=6,&quot;Aprobado&quot;,&quot;Reprobado&quot;)" autocomplete="off">
+  </div>
+  <div class="grid-scroll">
+    <table id="sheet"></table>
+  </div>
+</div>
+
+<div class="actions">
+  <button id="checkBtn">Verificar respuestas</button>
+  <button class="secondary" id="resetBtn">Reiniciar actividad</button>
+  <span id="feedback"></span>
+</div>
+
+<script>
+(function(){
+  const COLS = ['A','B','C','D','E','F','G'];
+  const ROWS = 15;
+
+  const initialData = {
+    A1: "Estudiante", B1: "Nota", C1: "Resultado",
+    A2: "Ana",   B2: "8",
+    A3: "Luis",  B3: "5",
+    A4: "Carla", B4: "6",
+    A5: "Pedro", B5: "3",
+    A6: "Marta", B6: "9"
+  };
+
+  let cellRaw = {};
+  let computed = {};
+  let evaluating = new Set();
+  let selectedId = 'A1';
+
+  const table = document.getElementById('sheet');
+  const formulaInput = document.getElementById('formulaInput');
+  const cellRefBox = document.getElementById('cellRefBox');
+  const feedback = document.getElementById('feedback');
+
+  function resetData(){
+    cellRaw = {};
+    Object.keys(initialData).forEach(id => cellRaw[id] = initialData[id]);
+  }
+
+  function buildTable(){
+    table.innerHTML = '';
+    const headRow = document.createElement('tr');
+    const corner = document.createElement('th');
+    corner.className = 'corner';
+    headRow.appendChild(corner);
+    COLS.forEach(col => {
+      const th = document.createElement('th');
+      th.textContent = col;
+      headRow.appendChild(th);
+    });
+    table.appendChild(headRow);
+
+    for(let r = 1; r <= ROWS; r++){
+      const tr = document.createElement('tr');
+      const rowHead = document.createElement('td');
+      rowHead.className = 'row-head';
+      rowHead.textContent = r;
+      tr.appendChild(rowHead);
+
+      COLS.forEach(col => {
+        const id = col + r;
+        const td = document.createElement('td');
+        td.className = 'data-cell';
+        td.id = 'td-' + id;
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.id = 'cell-' + id;
+        input.dataset.id = id;
+
+        input.addEventListener('focus', () => onCellFocus(id));
+        input.addEventListener('blur', () => onCellBlur(id));
+        input.addEventListener('input', () => onCellInput(id, input.value));
+        input.addEventListener('keydown', (e) => onCellKeydown(e, col, r));
+
+        td.appendChild(input);
+        tr.appendChild(td);
+      });
+      table.appendChild(tr);
+    }
+  }
+
+  function onCellFocus(id){
+    selectedId = id;
+    cellRefBox.textContent = id;
+    formulaInput.value = cellRaw[id] || '';
+    document.getElementById('cell-' + id).value = cellRaw[id] || '';
+    highlightSelected(id);
+  }
+
+  function onCellBlur(id){
+    const input = document.getElementById('cell-' + id);
+    input.value = formatValue(getComputed(id));
+  }
+
+  function onCellInput(id, value){
+    cellRaw[id] = value;
+    recompute();
+    refreshDisplay();
+  }
+
+  function onCellKeydown(e, col, row){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      const nextRow = row + 1;
+      if(nextRow <= ROWS){
+        document.getElementById('cell-' + col + nextRow).focus();
+      } else {
+        e.target.blur();
+      }
+    }
+  }
+
+  function highlightSelected(id){
+    document.querySelectorAll('td.data-cell.selected').forEach(td => td.classList.remove('selected'));
+    const td = document.getElementById('td-' + id);
+    if(td) td.classList.add('selected');
+  }
+
+  formulaInput.addEventListener('input', () => {
+    cellRaw[selectedId] = formulaInput.value;
+    document.getElementById('cell-' + selectedId).value = formulaInput.value;
+    recompute();
+    refreshDisplay(selectedId);
+  });
+
+  formulaInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      document.getElementById('cell-' + selectedId).blur();
+    }
+  });
+
+  function transformFormula(expr){
+    const parts = expr.split(/("(?:[^"\\]|\\.)*")/);
+    for(let i = 0; i < parts.length; i++){
+      if(i % 2 === 1) continue; // quoted string literal, leave untouched
+      let seg = parts[i].toUpperCase();
+      seg = seg.replace(/;/g, ',');
+      seg = seg.replace(/<>/g, '!==');
+      seg = seg.replace(/>=/g, 'GE');
+      seg = seg.replace(/<=/g, 'LE');
+      seg = seg.replace(/(?<![<>=!])=(?!=)/g, '===');
+      seg = seg.replace(/GE/g, '>=');
+      seg = seg.replace(/LE/g, '<=');
+      seg = seg.replace(/\b([A-Z]{1,3})(\d{1,3})\b/g, 'getCell("$1$2")');
+      parts[i] = seg;
+    }
+    return parts.join('');
+  }
+
+  function evalFormula(expr, getCellFn){
+    const code = transformFormula(expr);
+    const SI = (cond, v1, v2) => cond ? v1 : v2;
+    const fn = new Function('getCell', 'SI', 'IF', '"use strict"; return (' + code + ');');
+    return fn(getCellFn, SI, SI);
+  }
+
+  function getComputed(id){
+    if(id in computed) return computed[id];
+    if(evaluating.has(id)) { computed[id] = '#CIRC'; return computed[id]; }
+    evaluating.add(id);
+    const raw = (cellRaw[id] || '').trim();
+    let result;
+    if(raw === ''){
+      result = 0;
+    } else if(raw.startsWith('=')){
+      try{
+        result = evalFormula(raw.slice(1), getComputed);
+        if(typeof result === 'boolean') result = result ? 'VERDADERO' : 'FALSO';
+      } catch(e){
+        result = '#ERROR';
+      }
+    } else if(/^-?\d+(\.\d+)?$/.test(raw)){
+      result = parseFloat(raw);
+    } else {
+      result = raw;
+    }
+    evaluating.delete(id);
+    computed[id] = result;
+    return result;
+  }
+
+  function recompute(){
+    computed = {};
+    evaluating = new Set();
+    COLS.forEach(col => {
+      for(let r = 1; r <= ROWS; r++){
+        getComputed(col + r);
+      }
+    });
+  }
+
+  function formatValue(v){
+    if(typeof v === 'number'){
+      if(Number.isInteger(v)) return String(v);
+      return String(Math.round(v * 1e6) / 1e6);
+    }
+    return v === undefined ? '' : String(v);
+  }
+
+  function refreshDisplay(skipId){
+    COLS.forEach(col => {
+      for(let r = 1; r <= ROWS; r++){
+        const id = col + r;
+        if(id === skipId) continue;
+        const input = document.getElementById('cell-' + id);
+        if(document.activeElement === input) continue;
+        input.value = (cellRaw[id] || '') === '' ? '' : formatValue(getComputed(id));
+      }
+    });
+  }
+
+  function checkAnswers(){
+    let correct = 0;
+    const expectedRows = [2, 3, 4, 5, 6];
+    expectedRows.forEach(r => {
+      const nota = parseFloat(cellRaw['B' + r]);
+      const expected = nota >= 6 ? 'Aprobado' : 'Reprobado';
+      const actual = getComputed('C' + r);
+      const td = document.getElementById('td-C' + r);
+      td.classList.remove('correct', 'incorrect');
+      if(String(actual).trim().toLowerCase() === expected.toLowerCase()){
+        td.classList.add('correct');
+        correct++;
+      } else {
+        td.classList.add('incorrect');
+      }
+    });
+    feedback.classList.remove('ok', 'bad');
+    if(correct === expectedRows.length){
+      feedback.textContent = '¡Correcto! ' + correct + '/' + expectedRows.length + ' respuestas bien.';
+      feedback.classList.add('ok');
+    } else {
+      feedback.textContent = correct + '/' + expectedRows.length + ' respuestas correctas. Revisa las celdas en rojo.';
+      feedback.classList.add('bad');
+    }
+  }
+
+  document.getElementById('checkBtn').addEventListener('click', checkAnswers);
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    resetData();
+    recompute();
+    refreshDisplay();
+    document.querySelectorAll('td.data-cell').forEach(td => td.classList.remove('correct', 'incorrect'));
+    feedback.textContent = '';
+    feedback.classList.remove('ok', 'bad');
+    formulaInput.value = cellRaw[selectedId] || '';
+  });
+
+  resetData();
+  buildTable();
+  recompute();
+  refreshDisplay();
+  highlightSelected(selectedId);
+  formulaInput.value = cellRaw[selectedId] || '';
+})();
+</script>
+
+</body>
+</html>
