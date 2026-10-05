@@ -151,6 +151,7 @@ function refresh() {
     if (satisfied(i) && (gates[i].length || i < state.cur || state.fin)) li.classList.add('done');
     if (!reachable(i)) li.classList.add('locked');
     $('button', li).disabled = !reachable(i);
+    if (s._next.disabled && satisfied(i) && i === state.cur) { s._next.classList.remove('ready'); void s._next.offsetWidth; s._next.classList.add('ready'); }
     s._next.disabled = !satisfied(i);
     s._msg.className = 'gate-msg' + (satisfied(i) ? ' ok' : '');
     s._msg.textContent = satisfied(i)
@@ -265,8 +266,12 @@ C.video = (root, key) => {
   player.append(stage, ctrl);
   const chaps = el('div', 'chapters');
   scenes.forEach((sc, i) => { const b = el('button', 'chap', `<span class="cn">${i + 1}</span><span>${sc.t}</span>`); b.type = 'button'; b.addEventListener('click', () => { seek(i); play(); }); chaps.append(b); });
-  const note = el('p', 'how', 'Mira el video completo. Puedes saltar entre capítulos; cada capítulo queda marcado cuando lo terminas de ver.');
-  root.append(note, player, chaps);
+  const note = el('p', 'how', 'Mira los capítulos del video. Cada capítulo queda marcado ✓ cuando lo ves casi completo; puedes saltar entre ellos.');
+  const count = el('p', 'vcount'); count.setAttribute('aria-live', 'polite');
+  const unmute = el('button', 'vunmute', '🔊 Activar sonido'); unmute.type = 'button'; unmute.hidden = true;
+  stage.append(unmute);
+  const wrap = el('div', 'vwrap'); const side = el('div', 'vside'); side.append(count, chaps); wrap.append(player, side);
+  root.append(wrap); void note;
 
   const durs = scenes.map((sc, i) => ADUR['v' + (i + 1)] || Math.max(8, (sc.txt || '').length / 14));
   const total = durs.reduce((a, b) => a + b, 0);
@@ -275,11 +280,19 @@ C.video = (root, key) => {
     const len = parts.reduce((a, p) => a + p.length, 0) || 1; let acc = 0;
     return parts.map(p => { const c = { t0: acc / len * durs[i], text: p }; acc += p.length; return c; });
   });
-  const seen = new Set((state.done[key] ? scenes.map((_, i) => i) : []));
-  const audio = new Audio();
-  let cur = 0, t = 0, playing = false, timer = null, last = 0, cc = true;
+  // Capítulos vistos: se guardan en el avance para que no se pierdan al salir y volver.
+  const seen = new Set(scenes.map((_, i) => i).filter(i => state.done[key] || state.done[key + '_c' + i]));
+  const audio = new Audio(); audio.preload = 'auto';
+  let cur = 0, t = 0, playing = false, timer = null, last = 0, cc = true, silent = false, loaded = '', ign = false;
+  const stopAudio = () => { if (!audio.paused) { ign = true; audio.pause(); } };
+  const hasAudio = i => !!AUDIO['v' + (i + 1)];
 
   function fmt(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function markSeen(i) {
+    if (seen.has(i)) return;
+    seen.add(i); state.done[key + '_c' + i] = 1; save();
+    if (seen.size === scenes.length) done(key);
+  }
   function render() {
     nodes.forEach((n, i) => n.classList.toggle('on', i === cur));
     const pts = $$('li', nodes[cur]);
@@ -287,41 +300,52 @@ C.video = (root, key) => {
     const cue = cues[cur].filter(c => c.t0 <= t + 0.05).pop();
     sub.textContent = cc && cue ? cue.text : '';
     const before = durs.slice(0, cur).reduce((a, b) => a + b, 0);
-    $('.vprog i', ctrl).style.width = ((before + t) / total * 100) + '%';
+    $('.vprog i', ctrl).style.width = Math.min(100, (before + t) / total * 100) + '%';
     $('.vtime', ctrl).textContent = fmt(before + t) + ' / ' + fmt(total);
     $$('.chap', chaps).forEach((c, i) => { c.classList.toggle('seen', seen.has(i)); c.classList.toggle('cur', i === cur); });
     $('[data-a=play]', ctrl).textContent = playing ? '❚❚' : '▶';
     big.hidden = playing;
+    unmute.hidden = !(playing && silent && hasAudio(cur));
+    const left = scenes.length - seen.size;
+    count.className = 'vcount' + (left ? '' : ' ok');
+    count.textContent = left ? `Capítulos vistos: ${seen.size} de ${scenes.length}. Te faltan: ${scenes.map((_, i) => i).filter(i => !seen.has(i)).map(i => i + 1).join(', ')}.` : `✓ Viste los ${scenes.length} capítulos. Ya puedes continuar.`;
+  }
+  function loadScene() {
+    const k = 'v' + (cur + 1);
+    if (hasAudio(cur) && loaded !== k) { audio.src = AUDIO[k]; loaded = k; }
+    if (hasAudio(cur)) { try { audio.currentTime = t; } catch (e) {} }
+  }
+  function tryAudio() {
+    if (!hasAudio(cur)) return;
+    audio.play().then(() => { silent = false; render(); }).catch(() => { silent = true; last = performance.now(); render(); });
   }
   function sceneEnd() {
-    seen.add(cur);
-    if (seen.size === scenes.length) done(key);
-    if (cur < scenes.length - 1) { cur++; t = 0; startScene(); }
+    markSeen(cur);
+    if (cur < scenes.length - 1) { cur++; t = 0; restartImg(); loadScene(); if (playing) tryAudio(); render(); }
     else { pause(); t = durs[cur]; render(); }
   }
   function tick(ts) {
     if (!playing) return;
-    if (AUDIO['v' + (cur + 1)]) { t = audio.currentTime; }
-    else { t += (ts - last) / 1000; last = ts; if (t >= durs[cur]) { sceneEnd(); } }
+    const useAudio = hasAudio(cur) && !silent && !audio.paused;
+    if (useAudio) { t = audio.currentTime; last = ts; }
+    else { t += Math.min(0.25, (ts - last) / 1000); last = ts; if (t >= durs[cur]) { sceneEnd(); } }
+    if (t >= durs[cur] * 0.9) markSeen(cur);
     render();
     timer = requestAnimationFrame(tick);
   }
-  function startScene() {
-    const k = 'v' + (cur + 1);
-    nodes[cur].querySelector('img').style.animation = 'none'; void nodes[cur].offsetWidth; nodes[cur].querySelector('img').style.animation = '';
-    if (AUDIO[k]) { audio.src = AUDIO[k]; audio.currentTime = t; if (playing) audio.play().catch(() => { playing = false; render(); }); }
-    render();
-  }
+  function restartImg() { const im = nodes[cur].querySelector('img'); im.style.animation = 'none'; void im.offsetWidth; im.style.animation = ''; }
   function play() {
     narr.stop(); playing = true; last = performance.now();
-    const k = 'v' + (cur + 1);
-    if (AUDIO[k]) { if (!audio.src || !audio.src.startsWith('data') || audio.dataset.k !== k) { audio.src = AUDIO[k]; audio.dataset.k = k; audio.currentTime = t; } audio.play().catch(() => { playing = false; render(); }); }
+    if (cur === scenes.length - 1 && t >= durs[cur] - 0.3) { cur = 0; t = 0; restartImg(); }
+    loadScene(); tryAudio();
     cancelAnimationFrame(timer); timer = requestAnimationFrame(tick); render();
   }
-  function pause() { playing = false; audio.pause(); cancelAnimationFrame(timer); render(); }
-  function seek(i) { cur = i; t = 0; audio.pause(); audio.dataset.k = ''; startScene(); }
-  audio.addEventListener('ended', () => { if (playing) sceneEnd(); });
-  audio.addEventListener('play', () => { audio.dataset.k = audio.dataset.k || 'v' + (cur + 1); });
+  function pause() { playing = false; stopAudio(); cancelAnimationFrame(timer); render(); }
+  function seek(i) { stopAudio(); cur = i; t = 0; restartImg(); loadScene(); render(); }
+  audio.addEventListener('ended', () => { if (playing && !silent) sceneEnd(); });
+  // Si el navegador detiene el audio por su cuenta, el video sigue en silencio con subtítulos.
+  audio.addEventListener('pause', () => { if (ign) { ign = false; return; } if (playing && !audio.ended && !silent) { silent = true; last = performance.now(); render(); } });
+  unmute.addEventListener('click', () => { loadScene(); audio.play().then(() => { silent = false; render(); }).catch(() => {}); });
   big.addEventListener('click', play);
   ctrl.addEventListener('click', e => {
     const a = e.target.closest('button')?.dataset.a; if (!a) return;
@@ -333,7 +357,7 @@ C.video = (root, key) => {
   $('.vprog', ctrl).addEventListener('click', e => {
     const r = e.currentTarget.getBoundingClientRect(); let x = (e.clientX - r.left) / r.width * total;
     let i = 0; while (i < durs.length - 1 && x > durs[i]) { x -= durs[i]; i++; }
-    const p = playing; cur = i; t = Math.min(x, durs[i] - .2); audio.dataset.k = ''; startScene(); if (p) play(); else render();
+    const p = playing; stopAudio(); cur = i; t = Math.max(0, Math.min(x, durs[i] - .2)); restartImg(); loadScene(); if (p) play(); else render();
   });
   root.closest('.screen').addEventListener('leave', pause);
   root.closest('.screen').addEventListener('enter', () => { if (narr.auto && !seen.size) play(); });

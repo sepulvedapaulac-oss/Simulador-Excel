@@ -136,7 +136,9 @@ p{margin:.45rem 0 .9rem}
 .narr small{color:var(--muted);font-size:.78rem}
 
 /* Navegación inferior de cada pantalla */
-.scr-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px;padding:16px 0 4px;border-top:1px solid var(--line)}
+.scr-nav{position:sticky;bottom:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px -12px 0;padding:12px 12px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px 16px 0 0;box-shadow:0 -8px 20px rgba(17,23,75,.08)}
+.scr-nav .btn.ready{animation:ready 1.2s ease 2}
+@keyframes ready{0%,100%{box-shadow:0 8px 18px rgba(23,22,151,.22)}50%{box-shadow:0 0 0 8px rgba(0,165,171,.35)}}
 .gate-msg{font-size:.88rem;color:var(--muted);text-align:center;flex:1}
 .gate-msg.ok{color:var(--good-ink);font-weight:800}
 
@@ -187,6 +189,14 @@ p{margin:.45rem 0 .9rem}
 .vprog{flex:1;height:6px;border-radius:99px;background:rgba(255,255,255,.2);overflow:hidden;cursor:pointer}
 .vprog i{display:block;height:100%;width:0;background:var(--yellow)}
 .vtime{font-variant-numeric:tabular-nums;font-size:.8rem;opacity:.85;white-space:nowrap}
+.vwrap{display:grid;grid-template-columns:minmax(0,auto) 230px;gap:16px;justify-content:center;align-items:start}
+.vwrap .vplayer{width:min(620px,max(360px,calc((100vh - 400px) * 1.78)));max-width:100%}
+.vside{display:grid;gap:8px;align-content:start}
+.vside .chapters{grid-template-columns:1fr;margin-top:0;gap:6px}
+.vside .chap{padding:7px 9px}
+.vcount{margin:0 0 2px;font-size:.88rem;font-weight:700;color:var(--muted)}
+.vcount.ok{color:var(--good-ink)}
+.vunmute{position:absolute;top:10px;right:10px;border:0;border-radius:99px;padding:7px 12px;background:var(--yellow);color:#10154e;font-weight:800;font-size:.82rem;z-index:3}
 .chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
 .chap{display:flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 10px;text-align:left;font-size:.84rem;font-weight:700}
 .chap .cn{flex:0 0 24px;height:24px;border-radius:7px;background:var(--soft);display:grid;place-items:center;font-size:.75rem;font-weight:900;color:var(--muted)}
@@ -406,7 +416,8 @@ p{margin:.45rem 0 .9rem}
   body.route-open .route{transform:none}
   body.route-open .scrim{display:block;position:fixed;inset:var(--top-h) 0 0 0;background:rgba(5,8,30,.5);z-index:25}
   main{margin-left:0;padding:calc(var(--top-h) + 20px) 18px 32px}
-  .hero,.grid2,.hs{grid-template-columns:1fr}
+  .hero,.grid2,.hs,.vwrap{grid-template-columns:1fr}
+  .vwrap .vplayer{width:100%}
   .hero .photo{order:-1}
 }
 @media (max-width:640px){
@@ -428,7 +439,7 @@ p{margin:.45rem 0 .9rem}
   .scr-nav .btn{padding:11px 14px}
   .gate-msg{font-size:.78rem}
   .flip,.flip .in{min-height:210px}
-  .chapters{grid-template-columns:1fr 1fr}
+  .chapters,.vside .chapters{grid-template-columns:1fr 1fr}
   .bin{min-height:90px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -476,7 +487,7 @@ p{margin:.45rem 0 .9rem}
   <div class="scr-head">
     <div class="eyebrow">Explicación</div>
     <h2>Una PEMP es un sistema</h2>
-    <p class="lead">Seis capítulos breves, de abajo hacia arriba, con la voz de Ninoska.</p>
+    <p class="lead">Seis capítulos breves con la voz de Ninoska. Cada capítulo se marca ✓ al verlo casi completo; puedes saltar entre ellos.</p>
   </div>
   <div data-c="video" data-key="video"></div>
   <footer class="sources"><strong>Fuentes:</strong> ISO 16368 y EN 280-1 (requisitos de diseño: controles, parada y descenso de emergencia); ISO 18878 (familiarización); manual del fabricante.</footer>
@@ -859,6 +870,7 @@ function refresh() {
     if (satisfied(i) && (gates[i].length || i < state.cur || state.fin)) li.classList.add('done');
     if (!reachable(i)) li.classList.add('locked');
     $('button', li).disabled = !reachable(i);
+    if (s._next.disabled && satisfied(i) && i === state.cur) { s._next.classList.remove('ready'); void s._next.offsetWidth; s._next.classList.add('ready'); }
     s._next.disabled = !satisfied(i);
     s._msg.className = 'gate-msg' + (satisfied(i) ? ' ok' : '');
     s._msg.textContent = satisfied(i)
@@ -973,8 +985,12 @@ C.video = (root, key) => {
   player.append(stage, ctrl);
   const chaps = el('div', 'chapters');
   scenes.forEach((sc, i) => { const b = el('button', 'chap', `<span class="cn">${i + 1}</span><span>${sc.t}</span>`); b.type = 'button'; b.addEventListener('click', () => { seek(i); play(); }); chaps.append(b); });
-  const note = el('p', 'how', 'Mira el video completo. Puedes saltar entre capítulos; cada capítulo queda marcado cuando lo terminas de ver.');
-  root.append(note, player, chaps);
+  const note = el('p', 'how', 'Mira los capítulos del video. Cada capítulo queda marcado ✓ cuando lo ves casi completo; puedes saltar entre ellos.');
+  const count = el('p', 'vcount'); count.setAttribute('aria-live', 'polite');
+  const unmute = el('button', 'vunmute', '🔊 Activar sonido'); unmute.type = 'button'; unmute.hidden = true;
+  stage.append(unmute);
+  const wrap = el('div', 'vwrap'); const side = el('div', 'vside'); side.append(count, chaps); wrap.append(player, side);
+  root.append(wrap); void note;
 
   const durs = scenes.map((sc, i) => ADUR['v' + (i + 1)] || Math.max(8, (sc.txt || '').length / 14));
   const total = durs.reduce((a, b) => a + b, 0);
@@ -983,11 +999,19 @@ C.video = (root, key) => {
     const len = parts.reduce((a, p) => a + p.length, 0) || 1; let acc = 0;
     return parts.map(p => { const c = { t0: acc / len * durs[i], text: p }; acc += p.length; return c; });
   });
-  const seen = new Set((state.done[key] ? scenes.map((_, i) => i) : []));
-  const audio = new Audio();
-  let cur = 0, t = 0, playing = false, timer = null, last = 0, cc = true;
+  // Capítulos vistos: se guardan en el avance para que no se pierdan al salir y volver.
+  const seen = new Set(scenes.map((_, i) => i).filter(i => state.done[key] || state.done[key + '_c' + i]));
+  const audio = new Audio(); audio.preload = 'auto';
+  let cur = 0, t = 0, playing = false, timer = null, last = 0, cc = true, silent = false, loaded = '', ign = false;
+  const stopAudio = () => { if (!audio.paused) { ign = true; audio.pause(); } };
+  const hasAudio = i => !!AUDIO['v' + (i + 1)];
 
   function fmt(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function markSeen(i) {
+    if (seen.has(i)) return;
+    seen.add(i); state.done[key + '_c' + i] = 1; save();
+    if (seen.size === scenes.length) done(key);
+  }
   function render() {
     nodes.forEach((n, i) => n.classList.toggle('on', i === cur));
     const pts = $$('li', nodes[cur]);
@@ -995,41 +1019,52 @@ C.video = (root, key) => {
     const cue = cues[cur].filter(c => c.t0 <= t + 0.05).pop();
     sub.textContent = cc && cue ? cue.text : '';
     const before = durs.slice(0, cur).reduce((a, b) => a + b, 0);
-    $('.vprog i', ctrl).style.width = ((before + t) / total * 100) + '%';
+    $('.vprog i', ctrl).style.width = Math.min(100, (before + t) / total * 100) + '%';
     $('.vtime', ctrl).textContent = fmt(before + t) + ' / ' + fmt(total);
     $$('.chap', chaps).forEach((c, i) => { c.classList.toggle('seen', seen.has(i)); c.classList.toggle('cur', i === cur); });
     $('[data-a=play]', ctrl).textContent = playing ? '❚❚' : '▶';
     big.hidden = playing;
+    unmute.hidden = !(playing && silent && hasAudio(cur));
+    const left = scenes.length - seen.size;
+    count.className = 'vcount' + (left ? '' : ' ok');
+    count.textContent = left ? `Capítulos vistos: ${seen.size} de ${scenes.length}. Te faltan: ${scenes.map((_, i) => i).filter(i => !seen.has(i)).map(i => i + 1).join(', ')}.` : `✓ Viste los ${scenes.length} capítulos. Ya puedes continuar.`;
+  }
+  function loadScene() {
+    const k = 'v' + (cur + 1);
+    if (hasAudio(cur) && loaded !== k) { audio.src = AUDIO[k]; loaded = k; }
+    if (hasAudio(cur)) { try { audio.currentTime = t; } catch (e) {} }
+  }
+  function tryAudio() {
+    if (!hasAudio(cur)) return;
+    audio.play().then(() => { silent = false; render(); }).catch(() => { silent = true; last = performance.now(); render(); });
   }
   function sceneEnd() {
-    seen.add(cur);
-    if (seen.size === scenes.length) done(key);
-    if (cur < scenes.length - 1) { cur++; t = 0; startScene(); }
+    markSeen(cur);
+    if (cur < scenes.length - 1) { cur++; t = 0; restartImg(); loadScene(); if (playing) tryAudio(); render(); }
     else { pause(); t = durs[cur]; render(); }
   }
   function tick(ts) {
     if (!playing) return;
-    if (AUDIO['v' + (cur + 1)]) { t = audio.currentTime; }
-    else { t += (ts - last) / 1000; last = ts; if (t >= durs[cur]) { sceneEnd(); } }
+    const useAudio = hasAudio(cur) && !silent && !audio.paused;
+    if (useAudio) { t = audio.currentTime; last = ts; }
+    else { t += Math.min(0.25, (ts - last) / 1000); last = ts; if (t >= durs[cur]) { sceneEnd(); } }
+    if (t >= durs[cur] * 0.9) markSeen(cur);
     render();
     timer = requestAnimationFrame(tick);
   }
-  function startScene() {
-    const k = 'v' + (cur + 1);
-    nodes[cur].querySelector('img').style.animation = 'none'; void nodes[cur].offsetWidth; nodes[cur].querySelector('img').style.animation = '';
-    if (AUDIO[k]) { audio.src = AUDIO[k]; audio.currentTime = t; if (playing) audio.play().catch(() => { playing = false; render(); }); }
-    render();
-  }
+  function restartImg() { const im = nodes[cur].querySelector('img'); im.style.animation = 'none'; void im.offsetWidth; im.style.animation = ''; }
   function play() {
     narr.stop(); playing = true; last = performance.now();
-    const k = 'v' + (cur + 1);
-    if (AUDIO[k]) { if (!audio.src || !audio.src.startsWith('data') || audio.dataset.k !== k) { audio.src = AUDIO[k]; audio.dataset.k = k; audio.currentTime = t; } audio.play().catch(() => { playing = false; render(); }); }
+    if (cur === scenes.length - 1 && t >= durs[cur] - 0.3) { cur = 0; t = 0; restartImg(); }
+    loadScene(); tryAudio();
     cancelAnimationFrame(timer); timer = requestAnimationFrame(tick); render();
   }
-  function pause() { playing = false; audio.pause(); cancelAnimationFrame(timer); render(); }
-  function seek(i) { cur = i; t = 0; audio.pause(); audio.dataset.k = ''; startScene(); }
-  audio.addEventListener('ended', () => { if (playing) sceneEnd(); });
-  audio.addEventListener('play', () => { audio.dataset.k = audio.dataset.k || 'v' + (cur + 1); });
+  function pause() { playing = false; stopAudio(); cancelAnimationFrame(timer); render(); }
+  function seek(i) { stopAudio(); cur = i; t = 0; restartImg(); loadScene(); render(); }
+  audio.addEventListener('ended', () => { if (playing && !silent) sceneEnd(); });
+  // Si el navegador detiene el audio por su cuenta, el video sigue en silencio con subtítulos.
+  audio.addEventListener('pause', () => { if (ign) { ign = false; return; } if (playing && !audio.ended && !silent) { silent = true; last = performance.now(); render(); } });
+  unmute.addEventListener('click', () => { loadScene(); audio.play().then(() => { silent = false; render(); }).catch(() => {}); });
   big.addEventListener('click', play);
   ctrl.addEventListener('click', e => {
     const a = e.target.closest('button')?.dataset.a; if (!a) return;
@@ -1041,7 +1076,7 @@ C.video = (root, key) => {
   $('.vprog', ctrl).addEventListener('click', e => {
     const r = e.currentTarget.getBoundingClientRect(); let x = (e.clientX - r.left) / r.width * total;
     let i = 0; while (i < durs.length - 1 && x > durs[i]) { x -= durs[i]; i++; }
-    const p = playing; cur = i; t = Math.min(x, durs[i] - .2); audio.dataset.k = ''; startScene(); if (p) play(); else render();
+    const p = playing; stopAudio(); cur = i; t = Math.max(0, Math.min(x, durs[i] - .2)); restartImg(); loadScene(); if (p) play(); else render();
   });
   root.closest('.screen').addEventListener('leave', pause);
   root.closest('.screen').addEventListener('enter', () => { if (narr.auto && !seen.size) play(); });
