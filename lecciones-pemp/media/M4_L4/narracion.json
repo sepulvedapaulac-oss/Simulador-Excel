@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Camila está elevada en un brazo, una rueda se hunde y suena la alarma de inclinación. ¿Qué debe hacer? Elige una alternativa.",
+ "factores": "Los factores combinados reducen el margen de estabilidad. Abre cada uno para recordarlos.",
+ "senales": "El equipo puede avisarte antes. Decide si cada situación es una maniobra normal o una señal de que se pierde el margen.",
+ "respuesta": "Si el equilibrio se pierde, protege tu espacio. Abre la secuencia paso a paso.",
+ "arnes": "El arnés se conecta antes de elevar, no durante el evento. Completa cada frase.",
+ "despues": "La plataforma volvió a apoyarse. Responde como Camila en la conversación con Luis y Andrés.",
+ "caso": "Camila trabaja en un patio después de la lluvia. Acompáñala en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Piensa en tu equipo y en tu lugar de trabajo, y define tu respuesta ante una pérdida de estabilidad.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Durante toda la operación trabajaste para conservar el equilibrio. Si comienza a perderse, tus decisiones deben cambiar de inmediato: primero protegerte dentro de la plataforma.",
+ "v2": "El vuelco casi nunca comienza en el último segundo. Una superficie que cede, la pendiente, la carga, el alcance y las fuerzas laterales se combinan y reducen el margen.",
+ "v3": "La alarma de inclinación, una rueda que se hunde, una oscilación sin mando o un crujido en la base indican que la maniobra normal terminó.",
+ "v4": "El instinto de salir puede aumentar la exposición. Desde la altura, saltar o trepar la baranda expone a una caída y a golpes del equipo. Se permanece dentro, sujeto y con el cuerpo dentro.",
+ "v5": "En los brazos, el arnés se conecta al punto de anclaje de la plataforma antes de elevar. Es parte de la respuesta, no algo que se hace cuando el evento ya ocurrió.",
+ "v6": "Recuperar el equilibrio no es recuperar la condición de servicio. Después del evento no se reinicia: se asegura, se alerta, se reporta y se espera la evaluación."
+}

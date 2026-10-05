@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Luis y Camila perciben un olor inusual y ven una luz de advertencia en la tijera. ¿Debe Luis acercarse para comprobar qué ocurre? Elige una alternativa.",
+ "senales": "Normal no significa que todavía funciona. Clasifica cada condición como normal o anormal.",
+ "principio": "Cuando aumenta el riesgo, disminuye lo que debes tocar. Recorre las cuatro pestañas.",
+ "errores": "La intención de ayudar también puede exponer. Gira las cuatro tarjetas.",
+ "secuencia": "Ordena las acciones de la respuesta: detén, asegura, alerta y reporta.",
+ "barrera": "Decide si cada conducta es segura o si rompe la barrera de distancia.",
+ "caso": "Aparece humo al final del turno. Acompaña a Camila y Luis en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Piensa en tu equipo y en el plan de emergencia de tu lugar de trabajo, y define tu respuesta sin tocar.",
+ "cierre": "Felicitaciones, completaste la lección y el Módulo cuatro. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Un olor inusual o una luz de advertencia pueden aparecer aunque el equipo todavía responda. Una señal temprana no es una invitación a experimentar: es información para detener la exposición.",
+ "v2": "Olor persistente, humo o vapor no habitual, calor, decoloración de conectores o cables deteriorados son señales para detener el uso y reportar.",
+ "v3": "Cuando aumenta el riesgo, disminuye lo que debes tocar. Se observa desde una posición segura y no se toca, reinicia, desconecta ni traslada el equipo por iniciativa propia.",
+ "v4": "Las baterías de plomo-ácido y de ion-litio almacenan energía y tienen procedimientos específicos. Reconocer el tipo ayuda a informar, pero no autoriza a intervenir.",
+ "v5": "Se interrumpe la operación sin improvisar, se mantiene la distancia, se controla el acceso, se activa el procedimiento y se reportan las señales y la ubicación con objetividad.",
+ "v6": "Una señal que desaparece no demuestra que la causa se eliminó. Observar, aislar y reportar también es actuar: el equipo queda fuera de servicio hasta su revisión."
+}

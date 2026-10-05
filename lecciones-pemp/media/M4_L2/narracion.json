@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Camila detuvo la tijera por una respuesta extraña, pero el equipo sigue encendido y la zona abierta. ¿Ya terminó el problema? Elige una alternativa.",
+ "asegurar": "Después de detener, quita oportunidades para que algo vuelva a moverse. Abre las seis decisiones.",
+ "zona": "Equipo detenido no es área segura. Decide si cada situación deja la zona controlada o si la exposición continúa.",
+ "alertar": "Camila llama a Andrés por radio. Responde como ella, comunicando hechos y no suposiciones.",
+ "reportar": "Lo que ocurrió debe quedar visible cuando te vayas. Completa cada frase del reporte.",
+ "secuencia": "Una respuesta segura es una secuencia. Ordena los seis pasos y luego verifica.",
+ "caso": "Camila detuvo un brazo por una respuesta irregular. Acompáñala en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Aplica la secuencia detén, asegura, alerta y reporta a una anomalía que podría aparecer en tu equipo.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Detener la operación evita que sigas avanzando, pero todavía debes controlar lo que queda alrededor. Detener el movimiento no siempre detiene el riesgo.",
+ "v2": "Ante una señal anormal, se detiene de forma controlada antes de agregar movimiento. Detener no es fallar en la operación: es evitar que la operación falle más.",
+ "v3": "Después de detener, se quitan las oportunidades para que algo vuelva a moverse: freno, energía, acceso e identificación del equipo, siempre dentro de tus competencias.",
+ "v4": "Alertar es comunicar a quien debe actuar o decidir. Se informa qué pasó, dónde, qué equipo, cómo quedó y qué control se aplicó, sin suponer la causa.",
+ "v5": "El reporte deja trazabilidad: fecha, área, equipo, situación, acciones, personas informadas, condición final y evidencias. Informa al siguiente turno y apoya la decisión de retorno.",
+ "v6": "El reinicio ocurre solo cuando corresponde según el procedimiento y la condición fue resuelta o autorizada. Detén, asegura, alerta y reporta."
+}

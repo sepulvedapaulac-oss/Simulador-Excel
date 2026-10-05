@@ -1,6 +1,6 @@
-# Lecciones PEMP · Módulos 1 a 3 (estándar SCORM 1.2)
+# Lecciones PEMP · Módulos 1 a 4 (estándar SCORM 1.2)
 
-Lecciones 1.1 a 1.5, 2.1 a 2.5 y 3.1 a 3.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
+Lecciones 1.1 a 1.5, 2.1 a 2.5, 3.1 a 3.5 y 4.1 a 4.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
 
 ## Entregables (`dist/`)
 
@@ -21,6 +21,11 @@ Lecciones 1.1 a 1.5, 2.1 a 2.5 y 3.1 a 3.5 del curso **Operación Segura de Plat
 | 3.3 Desplazar, elevar y bajar en secuencia | `Leccion_3_3_Desplazar_elevar_y_bajar_en_secuencia.html` | `…_SCORM12.zip` |
 | 3.4 Trabajar dentro de la plataforma | `Leccion_3_4_Trabajar_dentro_de_la_plataforma.html` | `…_SCORM12.zip` |
 | 3.5 Cerrar la operación sin dejar riesgos | `Leccion_3_5_Cerrar_la_operacion_sin_dejar_riesgos.html` | `…_SCORM12.zip` |
+| 4.1 Articular o extender cambia la maniobra | `Leccion_4_1_Articular_o_extender_cambia_la_maniobra.html` | `…_SCORM12.zip` |
+| 4.2 Detener, asegurar, alertar y reportar | `Leccion_4_2_Detener_asegurar_alertar_y_reportar.html` | `…_SCORM12.zip` |
+| 4.3 Incidentes, accidentes y casi accidentes | `Leccion_4_3_Incidentes_accidentes_y_casi_accidentes.html` | `…_SCORM12.zip` |
+| 4.4 Cuando el equilibrio se rompe | `Leccion_4_4_Cuando_el_equilibrio_se_rompe.html` | `…_SCORM12.zip` |
+| 4.5 La emergencia que no debes tocar | `Leccion_4_5_La_emergencia_que_no_debes_tocar.html` | `…_SCORM12.zip` |
 
 ## Estructura común (11 pantallas)
 
@@ -63,6 +68,16 @@ Panel de ruta lateral con navegación bloqueada hasta completar cada pantalla; a
 | 5 | Mazo principio o dato | Puntos sobre escena | Ordenar la secuencia | Completar frases | Ordenar el cierre |
 | 6 | Mito o realidad | Pestañas | Mito o realidad | Clasificar conductas | Mito o realidad |
 | 7 | Conversación | Clasificar (arrastrar) | Conversación por radio | Unir (D·E·N·T·R·O) | Conversación de reporte |
+
+### Módulo 4
+
+| Pantalla | 4.1 Brazos | 4.2 Respuesta | 4.3 Eventos | 4.4 Estabilidad | 4.5 Emergencia |
+|---|---|---|---|---|---|
+| 3 | Pestañas | Acordeón | Pestañas | Acordeón | Clasificar (normal/anormal) |
+| 4 | Proceso paso a paso | Mazo de exposición | Tarjetas que giran | Mazo de señales | Pestañas |
+| 5 | Clasificar (arrastrar) | Conversación por radio | Clasificar en 3 | Proceso paso a paso | Tarjetas que giran |
+| 6 | Tarjetas que giran | Completar frases | Mito o realidad | Completar frases | Ordenar la respuesta |
+| 7 | Unir conceptos | Ordenar la respuesta | Unir conceptos | Conversación por radio | Conducta segura o no |
 
 Ninguna interacción se repite dentro de una lección y cada lección cambia respecto de la anterior.
 

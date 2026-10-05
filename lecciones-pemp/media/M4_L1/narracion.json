@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Comenzamos el Módulo cuatro. Camila tiene dos brazos que llegan a una altura parecida: uno articulado y uno telescópico. ¿Qué debe comparar antes de elegir? Elige una alternativa.",
+ "configuraciones": "Articulado y telescópico resuelven accesos distintos. Recorre las pestañas y compara cómo se mueve cada configuración.",
+ "envolvente": "La envolvente es el espacio que ocupa el equipo durante el movimiento. Ábrela en tres pasos: alcance, trayectoria e interferencias.",
+ "cual": "Clasifica cada comportamiento según si describe mejor a un brazo articulado o a uno telescópico.",
+ "errores": "No confundas altura con alcance seguro. Gira las cuatro tarjetas para revisar los errores frecuentes.",
+ "preguntas": "La configuración orienta el control. Une cada necesidad con la pregunta que debe guiar tu revisión.",
+ "caso": "Camila eligió el brazo articulado. Acompáñala en tres decisiones durante la maniobra.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Aplica la herramienta alcance a una tarea real que requiera una plataforma de brazo.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Dos brazos pueden llegar a una altura parecida, pero su recorrido, su alcance horizontal y su zona de interferencia cambian según la configuración.",
+ "v2": "El brazo articulado usa segmentos y uniones para subir, pasar por encima y cambiar la dirección del alcance. Cada unión es un punto que puede acercarse a una estructura.",
+ "v3": "El brazo telescópico proyecta la plataforma siguiendo su eje, con más alcance horizontal y una trayectoria directa. Si algo cruza esa línea, la maniobra se planifica de nuevo.",
+ "v4": "La envolvente es el espacio que ocupan la plataforma, el brazo y el contrapeso durante el movimiento. No se controla solo el destino: también se controla el recorrido y el giro de la torreta.",
+ "v5": "La maniobra se planifica antes de mover el equipo, con el diagrama de alcance del fabricante y el área controlada. Si el brazo se acerca más de lo previsto, se detiene y se reposiciona.",
+ "v6": "Articular o extender cambia la maniobra. No muevas el equipo hasta comprender el espacio que ocupará durante todo el recorrido."
+}

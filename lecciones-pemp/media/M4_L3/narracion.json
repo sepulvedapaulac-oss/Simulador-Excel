@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Un peatón apareció cerca de la trayectoria de Camila y ella se detuvo antes del contacto. No hubo golpe. ¿Entonces no pasó nada? Elige una alternativa.",
+ "tipos": "Primero ocurre algo y después vemos sus consecuencias. Recorre las pestañas: anomalía, incidente, casi accidente y accidente.",
+ "anomalias": "A veces el evento todavía no ocurrió. Gira las cuatro tarjetas para reconocer las señales de una anomalía.",
+ "clasificar": "Lee cada caso y ubícalo como anomalía, casi accidente o evento con daño.",
+ "preservar": "Primero controla y después explica. Decide si cada frase es un mito o una realidad.",
+ "preguntas": "Después de un evento hay seis preguntas. Une cada una con lo que debe guiar tu respuesta.",
+ "caso": "Camila trabaja con un brazo bajo un rack de cañerías. Acompáñala en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Piensa en un casi accidente que hayas visto o que podría ocurrir en tu trabajo, y prepara su reporte.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "No todos los eventos terminan en daño, pero todos pueden entregar información sobre lo que estuvo a punto de ocurrir. Sin daño no significa sin riesgo.",
+ "v2": "Una anomalía es una condición distinta de la esperada: una fuga, un ruido, una advertencia o una respuesta irregular. Reconocerla permite actuar antes de que ocurra el evento.",
+ "v3": "Un incidente cambia la operación, como un contacto leve con una estructura. Se detiene, se controla y se evalúa el equipo, la carga y la estructura antes de continuar.",
+ "v4": "En un casi accidente hubo potencial de daño, pero no consecuencias. Es información sin daño, pero con potencial, y por eso se reporta.",
+ "v5": "En un accidente el evento genera consecuencias. Primero se controla la situación y se protege a las personas; la investigación viene después.",
+ "v6": "Cuando es seguro, se evita modificar la escena antes de reportar, sin mantener un peligro activo. El reporte describe hechos objetivos y evidencias."
+}
