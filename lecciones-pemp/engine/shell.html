@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>{{TITLE}}</title>
+<style>/*{{CSS}}*/</style>
+</head>
+<body>
+<header class="topbar">
+  <button id="menu-btn" class="menu-btn" type="button" aria-label="Abrir la ruta de la lección">☰</button>
+  <div class="titles"><div class="course">{{COURSE}}</div><div class="meta">{{META}}</div></div>
+  <label class="auto-narr" title="Reproducir la narración al entrar a cada pantalla"><input type="checkbox" id="auto-narr"><span class="lbl">Narración automática</span></label>
+  <span class="pct" id="pct" aria-label="Avance de la lección">0%</span>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+<aside class="route" aria-label="Ruta de la lección">
+  <h2>Ruta de la lección</h2>
+  <ol id="route-list"></ol>
+  <div class="route-foot" id="route-foot"></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main id="main">
+{{SCREENS}}
+</main>
+<script>/*{{DATA}}*/</script>
+<script>/*{{JS}}*/</script>
+</body>
+</html>

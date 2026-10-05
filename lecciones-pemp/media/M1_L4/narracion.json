@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Son las ocho de la mañana: Camila, Andrés, Pedro y Luis están listos junto a la plataforma. Todos conocen la tarea, pero nadie ha definido quién opera, quién decide ni cómo se comunicarán. ¿Qué corresponde hacer? Elige una alternativa.",
+ "roles": "En una tarea con plataforma participan cuatro roles: operador autorizado, ocupante, responsable del trabajo y personal de apoyo. Gira cada tarjeta para conocer qué le corresponde a cada uno.",
+ "operador": "El operador decide dentro de límites conocidos. Revisa las tres pestañas: qué confirmar antes de usar los mandos, cómo actuar durante la operación y qué hacer cuando algo no está claro.",
+ "responsabilidades": "Ahora lleva cada situación al rol que tiene la responsabilidad principal. Arrastra cada tarjeta, o en el celular, tócala y luego toca el rol.",
+ "comunicacion": "Camila está en la plataforma y Luis en el suelo. Responde como Camila en esta conversación por radio. Fíjate en cómo se acuerda y se confirma cada mensaje.",
+ "mitos": "Sobre roles y experiencia circulan varias ideas. Decide si cada frase es un mito o una realidad y lee la explicación.",
+ "caso": "Bajo presión aparecen propuestas para resolver rápido. Acompaña a Camila y a Andrés en tres momentos y decide qué hacer en cada uno.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento. Después de cada respuesta verás una explicación. Si no alcanzas el puntaje, repasa y vuelve a intentarlo.",
+ "transferencia": "Prepara la coordinación de una tarea real con la herramienta rol, mensaje, límite y escala. Al final se generará tu acuerdo para conversarlo con tu equipo.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Una operación con plataforma elevadora casi nunca depende de una sola persona. Operador, ocupantes, responsable del trabajo y apoyo en suelo cumplen funciones distintas. Cuando los roles no están claros, aparecen decisiones improvisadas.",
+ "v2": "El operador acciona los controles. Para hacerlo debe estar autorizado, formado y familiarizado con el modelo específico. Su experiencia con otro equipo no reemplaza conocer este.",
+ "v3": "Los ocupantes no son pasajeros. Siguen la coordinación acordada, usan la protección requerida y comunican cualquier condición que observen. Si no están autorizados, no tocan los mandos.",
+ "v4": "El responsable del trabajo verifica que las personas sean competentes, que cada rol esté asignado y que exista un plan de rescate. Si falta una condición, no autoriza el inicio.",
+ "v5": "El personal de apoyo controla el área y mantiene la comunicación desde el suelo. Un buen mensaje tiene emisor, receptor, contenido claro y confirmación. Si el apoyo está designado para emergencias, conoce los controles de suelo.",
+ "v6": "Antes de actuar, hazte cuatro preguntas: a quién le corresponde la decisión, cómo se comunicará y confirmará, hasta dónde llega tu competencia y a quién debes escalar una duda. Así las responsabilidades se vuelven visibles antes de elevar."
+}

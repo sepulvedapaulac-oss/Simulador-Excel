@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La tijera de Camila está lista, pero junto a la ruta hay materiales sueltos, el piso está húmedo y pasan personas. Andrés pregunta si parten. ¿Cuál es la primera decisión? Elige y observa la consecuencia.",
+ "ambitos": "El riesgo puede estar en las personas, en el equipo, en la superficie y el entorno, o en las trayectorias. Une cada foco con un ejemplo real tocando primero el foco y luego su ejemplo.",
+ "principales": "Caída, vuelco, atrapamiento y golpes son resultados distintos, pero suelen empezar con una falla de observación previa. Abre cada uno para ver cómo empieza y qué observar antes.",
+ "escena": "Recorre esta escena como si fueras a autorizar el inicio. Activa los ocho puntos: cada uno muestra un riesgo y la pregunta que debes responder antes de comenzar.",
+ "senales": "Andrés te mostrará seis señales, una por una. Para cada una, decide si la condición ya está controlada o si sigue pendiente e impide iniciar.",
+ "detener": "Detener es una secuencia, no una reacción. Ordena los cinco pasos que siguen a una señal de riesgo y presiona comprobar orden.",
+ "caso": "Tres señales aparecen a la vez y Andrés propone comenzar con cuidado. Acompaña a Camila en tres decisiones. Si te equivocas, verás la consecuencia y podrás decidir de nuevo.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento. Después de cada respuesta verás una explicación. Si no alcanzas el puntaje, repasa y vuelve a intentarlo.",
+ "transferencia": "Aplica lo aprendido a un lugar real. Describe la tarea, marca las señales que revisarás y escribe en qué situación detendrías el inicio. Se generará tu recorrido previo.",
+ "cierre": "Felicitaciones, completaste la lección y el Módulo uno. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes recorrer libremente cualquier pantalla.",
+ "v1": "La elevación no crea todos los riesgos. Muchos ya están presentes antes de tocar los controles: en el equipo, en la superficie, en las personas y en las trayectorias. Ese es el momento para reconocerlos.",
+ "v2": "La caída suele empezar con detalles: un acceso abierto, una baranda usada como escalón o el cuerpo fuera del perímetro. En plataformas de brazo, además, se usa el anclaje que exige el fabricante.",
+ "v3": "El vuelco se relaciona con la superficie, la pendiente, el viento y la carga. La placa y el manual indican los límites del equipo. Si el piso no se verificó, la estabilidad no está garantizada.",
+ "v4": "El atrapamiento ocurre cuando una persona queda entre la plataforma y un elemento fijo, como una viga o una cañería. Se previene verificando el espacio libre en toda la trayectoria antes de moverse.",
+ "v5": "Las líneas eléctricas exigen respetar la distancia mínima que fija la normativa y el procedimiento del sitio. Y una falla o un comportamiento que no comprendes es motivo para detener. La incertidumbre nunca se resuelve probando.",
+ "v6": "Cuando aparece una señal, se detecta, se detiene, se comunica, se controla y solo entonces se reevalúa el inicio. Detener a tiempo no es un retraso: es la decisión que hace posible el trabajo."
+}

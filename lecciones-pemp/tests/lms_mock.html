@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS de prueba SCORM 1.2</title>
+<style>
+  body{margin:0;font-family:Arial,sans-serif;background:#222}
+  #log{position:fixed;right:0;bottom:0;max-width:420px;max-height:40vh;overflow:auto;background:rgba(0,0,0,.85);color:#9f9;font:11px monospace;padding:6px;z-index:9;display:none}
+  iframe{border:0;width:100vw;height:100vh;display:block}
+</style>
+</head>
+<body>
+<div id="log"></div>
+<iframe id="sco" title="Lección"></iframe>
+<script>
+// API SCORM 1.2 mínima que guarda los datos en localStorage, para probar estado, nota y reanudación.
+const KEY = 'lms_mock_' + new URLSearchParams(location.search).get('src');
+const db = JSON.parse(localStorage.getItem(KEY) || '{}');
+const log = m => { const l = document.getElementById('log'); l.textContent += m + '\n'; };
+window.API = {
+  LMSInitialize: () => { log('LMSInitialize'); db['cmi.core.lesson_status'] ||= 'not attempted'; return 'true'; },
+  LMSFinish: () => { log('LMSFinish'); localStorage.setItem(KEY, JSON.stringify(db)); return 'true'; },
+  LMSGetValue: k => db[k] ?? '',
+  LMSSetValue: (k, v) => { db[k] = String(v); log(k + ' = ' + String(v).slice(0, 80)); return 'true'; },
+  LMSCommit: () => { localStorage.setItem(KEY, JSON.stringify(db)); return 'true'; },
+  LMSGetLastError: () => '0', LMSGetErrorString: () => '', LMSGetDiagnostic: () => ''
+};
+window.__db = db;
+if (/[?&]log=1/.test(location.search)) document.getElementById('log').style.display = 'block';
+if (/[?&]clear=1/.test(location.search)) { localStorage.removeItem(KEY); for (const k in db) delete db[k]; }
+document.getElementById('sco').src = new URLSearchParams(location.search).get('src');
+</script>
+</body>
+</html>

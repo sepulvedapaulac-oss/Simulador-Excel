@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. En esta lección acompañarás a Camila, que llega a una obra nueva y recibe una tijera de otra marca. Su compañero le asegura que es igual a la que usa siempre. ¿Qué debería hacer antes de usarla? Elige una alternativa y observa la consecuencia.",
+ "sistema": "Para no mirar solo la canastilla, lee la máquina de abajo hacia arriba con cinco grupos: base, estructura, plataforma, controles y dispositivos. Abre cada paso en orden; el siguiente se desbloquea al abrir el anterior.",
+ "explora": "Ahora explora una tijera real, punto por punto. Cada punto te explica qué es el componente, para qué sirve y qué pregunta debes hacerte antes de operar. Revisa los siete puntos para continuar.",
+ "plataforma": "La plataforma también es un sistema: piso, barandas, rodapié, acceso y, en algunos equipos, puntos de anclaje. Abre cada elemento y fíjate en el error frecuente que debes evitar.",
+ "controles": "Toda plataforma tiene dos estaciones de control: una arriba y otra en el suelo. Completa cada frase eligiendo la estación correcta y luego presiona comprobar respuestas.",
+ "familiarizacion": "Dos equipos de la misma familia pueden tener los mandos en lugares distintos. Ordena los pasos que sigue Camila para familiarizarse con un modelo nuevo y presiona comprobar orden.",
+ "caso": "Acompaña a Camila en tres momentos de su mañana con el modelo nuevo. En cada uno, decide qué hacer. Si te equivocas, verás la consecuencia y podrás decidir otra vez.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación. Si no alcanzas el puntaje, repasa y vuelve a intentarlo.",
+ "transferencia": "Ahora piensa en una plataforma que uses en tu trabajo. Marca los componentes que ya sabes ubicar y anota lo que debes confirmar en su manual. Se generará tu ficha de reconocimiento.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes recorrer libremente cualquier pantalla para repasar.",
+ "v1": "Una plataforma elevadora no es solo una canastilla que sube. Es un sistema: la base sostiene, la estructura eleva, la plataforma contiene a las personas y los controles permiten gobernar el equipo dentro de sus límites. Si conoces el sistema, puedes comunicarte con precisión y detectar lo que falta.",
+ "v2": "La base o chasis soporta el conjunto. Allí están las ruedas, la tracción y la fuente de energía. En muchos modelos también se ubican los controles de suelo y el sistema de descenso de emergencia. Reconocer un compartimento no significa que debas abrirlo o intervenirlo.",
+ "v3": "La estructura de elevación une la base con la plataforma. En la tijera son brazos cruzados que se abren; en los brazos, secciones articuladas o telescópicas. Mientras se mueve, crea zonas donde una persona podría quedar atrapada.",
+ "v4": "La plataforma es el espacio de trabajo. Su piso tiene una carga máxima indicada en la placa. Las barandas y el rodapié evitan caídas de personas y objetos, y el acceso es el único lugar previsto para entrar y salir.",
+ "v5": "Toda plataforma tiene una estación de control arriba, para el operador, y otra accesible desde el suelo. Cada una tiene su parada de emergencia. La estación de suelo permite que una persona capacitada baje la plataforma si el operador no puede hacerlo.",
+ "v6": "Alarmas, indicadores, placas y dispositivos cambian de lugar entre modelos. Por eso, aunque conozcas la familia, debes familiarizarte con cada equipo usando su manual. Lo que no comprendes no se adivina ni se prueba."
+}
