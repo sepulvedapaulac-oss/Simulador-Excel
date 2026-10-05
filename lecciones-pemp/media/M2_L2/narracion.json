@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La tijera de Camila se ve limpia y ordenada, pero en su recorrido aparece una mancha bajo la base y el acceso no cierra como debería. ¿Qué corresponde hacer? Elige una alternativa.",
+ "recorrido": "El orden evita que una zona llamativa haga olvidar las demás. Ordena los pasos del recorrido visual y presiona comprobar orden.",
+ "estructura": "En la estructura se buscan cuatro tipos de hallazgos. Abre cada uno para saber qué observar sin desmontar nada.",
+ "zonas": "Recorre esta tijera de abajo hacia arriba. Activa los siete puntos y revisa qué observar en cada zona.",
+ "mitos": "Algunas frases normalizan hallazgos que no deberían aceptarse. Decide si cada una es un mito o una realidad.",
+ "hallazgos": "Te mostraré seis hallazgos, uno por uno. Decide si la revisión continúa o si el equipo se retira de servicio y se comunica.",
+ "caso": "Camila encuentra dos hallazgos en una tijera. Acompáñala en tres decisiones, desde el hallazgo hasta la liberación del equipo.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Prepara tu propio recorrido visual para una plataforma de tu trabajo, y define qué harás si encuentras un hallazgo.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Una inspección visual no consiste en mirar rápidamente la plataforma. Consiste en recorrerla con un orden, reconocer su condición y transformar cada hallazgo en una decisión.",
+ "v2": "Primero una vista general del equipo completo. Luego, de abajo hacia arriba: el suelo bajo el equipo, la base y las ruedas, la estructura de elevación y, al final, la plataforma, las barandas y el acceso. Siempre por todo el perímetro.",
+ "v3": "En la estructura se buscan deformaciones, grietas, impactos y corrosión; piezas sueltas o ausentes; y alteraciones como soldaduras o añadidos que no correspondan al fabricante.",
+ "v4": "Piso, barandas, rodapié y acceso forman una sola protección. Un acceso que casi cierra sigue siendo un hallazgo, y no se resuelve amarrándolo.",
+ "v5": "Una mancha fresca, un goteo o un corte en un neumático pueden revelar un problema mayor. No necesitas saber su origen técnico para reconocer que la condición no es normal.",
+ "v6": "Ante un daño, una fuga, una alteración o una duda, la plataforma se retira de servicio. Se comunica, se registra y no se prueba ni se repara fuera de competencia. Vuelve a usarse solo cuando la instancia definida la libera."
+}

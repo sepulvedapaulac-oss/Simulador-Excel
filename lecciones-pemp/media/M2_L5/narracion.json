@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La tijera de Camila superó todas las revisiones, pero nadie ha confirmado quién controlará el acceso ni cómo se comunicará una emergencia. ¿Cuál es el veredicto por ahora? Elige una alternativa.",
+ "dimensiones": "Cuatro preguntas sostienen la decisión: equipo, tarea, entorno y personas. Gira las cuatro tarjetas.",
+ "veredictos": "Hay tres veredictos posibles, y cada uno lleva a una acción distinta. Revisa las tres pestañas.",
+ "casos": "Ahora emite el veredicto. Lleva cada situación al veredicto que corresponde.",
+ "coordinacion": "Cada verificación pertenece a una dimensión de la decisión. Completa las frases y presiona comprobar respuestas.",
+ "rescate": "La respuesta ante emergencias debe existir antes de elevar. Abre los cuatro pasos en orden.",
+ "caso": "Durante el día, Camila prepara tres tareas distintas. Emite el veredicto en cada momento.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Cruza la evidencia de una tarea real de tu trabajo y emite tu propio veredicto.",
+ "cierre": "Felicitaciones, completaste la lección y el Módulo dos. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "La inspección no termina cuando completas una lista. Termina cuando cruzas toda la evidencia y decides si el trabajo puede iniciar, debe corregirse antes, o debe detenerse y reportarse.",
+ "v2": "Equipo, tarea, entorno y personas deben ser compatibles con el trabajo de hoy. Un solo sí no compensa un no.",
+ "v3": "El veredicto es apto cuando todas las dimensiones están verificadas y los controles necesarios ya están implementados. Habilita solo la tarea prevista, y las condiciones deben seguir bajo control.",
+ "v4": "Corregir antes significa que hay una condición controlable pendiente, como una delimitación abierta. Se resuelve antes de operar y luego se vuelve a verificar. No autoriza a comenzar mientras siga pendiente.",
+ "v5": "Detener y reportar corresponde cuando hay un daño, una falla, un límite excedido o una incertidumbre que no puede resolverse de forma segura. La plataforma queda fuera de servicio y se reporta.",
+ "v6": "Antes de elevar se confirma quién controla los accesos, cómo se comunica una emergencia, y cómo se bajará y rescatará a una persona. La respuesta debe existir antes de necesitarla."
+}

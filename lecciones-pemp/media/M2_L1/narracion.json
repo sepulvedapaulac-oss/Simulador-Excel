@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Comenzamos el Módulo dos. En el patio hay dos tijeras parecidas y Andrés le dice a Camila que la otra admite la misma carga. ¿Qué corresponde antes de continuar? Elige una alternativa y observa la consecuencia.",
+ "identificar": "Antes de consultar cualquier documento, confirma qué equipo tienes delante. Abre los tres pasos en orden: identidad, correspondencia y legibilidad.",
+ "manual": "El manual correcto convierte una duda en una consulta verificable. Gira las cuatro tarjetas para saber cómo usarlo bien.",
+ "cadena": "Cada fuente de información responde una pregunta distinta. Une cada fuente con lo que te permite decidir.",
+ "placa": "Revisa las tres pestañas: qué dice la placa, cómo se respetan los límites del fabricante y qué registros debes tener disponibles.",
+ "supuestos": "No toda la información sirve para decidir. Clasifica cada afirmación como información verificada o como supuesto.",
+ "caso": "Camila debe preparar una tijera para la tarde, pero la cadena de información tiene problemas. Acompáñala en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Ahora aplica identifica, consulta, contrasta y decide a una plataforma de tu lugar de trabajo. Se generará tu ficha de identificación.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Dos plataformas pueden verse casi iguales y tener capacidades, límites y funciones distintas. Antes de operar, la información debe corresponder al equipo real, no a la memoria ni a la experiencia con otro modelo.",
+ "v2": "El primer paso es identificar el equipo exacto. La placa del fabricante indica la marca, el modelo y el número de serie. Si falta o no se lee, no se completa con suposiciones.",
+ "v3": "El manual del operador debe corresponder al modelo identificado y estar disponible junto al equipo. Se consulta antes de operar, para conocer funciones, advertencias y límites.",
+ "v4": "La placa indica la carga nominal, el número máximo de personas, el viento máximo y la inclinación admisible, entre otros datos. La carga incluye personas, herramientas y materiales. La capacidad se lee; no se recuerda ni se estima.",
+ "v5": "Los límites del fabricante se respetan: ninguno se compensa con otro. Además, los registros de inspección periódica y mantenimiento deben estar al día y relacionarse con el mismo equipo.",
+ "v6": "Identifica, consulta, contrasta y decide. Cuando la cadena de información se rompe, la operación no se completa con supuestos: la plataforma queda detenida hasta aclarar la diferencia."
+}

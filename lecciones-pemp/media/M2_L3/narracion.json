@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Camila debe hacer la prueba de funciones de una tijera, pero no sabe si el hallazgo de ayer fue resuelto. ¿Qué corresponde hacer? Elige una alternativa.",
+ "condiciones": "Antes de tocar el primer mando deben cumplirse tres condiciones. Gira cada tarjeta para conocerlas.",
+ "estaciones": "La prueba recorre dos estaciones de control y varios dispositivos. Revisa las cuatro pestañas para saber qué comprobar en cada uno.",
+ "secuencia": "La prueba de funciones sigue una secuencia de seis pasos. Ábrelos en orden y recuerda: una sola anomalía basta para detener.",
+ "respuesta": "Detener es tan importante como mover. Completa cada frase con la opción correcta y presiona comprobar respuestas.",
+ "errores": "Probar no significa forzar. Clasifica cada conducta como prueba controlada o prueba riesgosa.",
+ "caso": "Durante la prueba aparecen dos anomalías. Acompaña a Camila en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Prepara la prueba de funciones de una plataforma de tu trabajo y define qué harás si aparece una anomalía.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Una plataforma puede verse en buen estado y aun así responder de forma inesperada. Antes del trabajo, cada control y cada función deben demostrar que operan como el fabricante lo previó.",
+ "v2": "La prueba de funciones comienza solo si la inspección visual no dejó hallazgos pendientes, la zona está controlada y conoces el modelo según su manual.",
+ "v3": "Primero se prueba desde la estación de suelo, sin ocupar la plataforma. Después, desde la plataforma, con movimientos mínimos y a baja altura cuando corresponda. Siempre una función a la vez.",
+ "v4": "La función de detener es tan importante como la de mover. La parada de emergencia debe interrumpir el movimiento de inmediato, y las alarmas e indicadores deben coincidir con lo esperado.",
+ "v5": "El descenso de emergencia cambia de lugar y de forma según el modelo. Se reconoce antes de necesitarlo, y se usa solo como indica el fabricante.",
+ "v6": "Demoras, tirones, ruidos, alarmas ausentes o movimientos inesperados son anomalías. No se repite la prueba para ver si funciona a la segunda: se detiene, se retira de servicio y se comunica."
+}

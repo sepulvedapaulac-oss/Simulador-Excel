@@ -1,6 +1,6 @@
-# Lecciones PEMP · Módulo 1 (estándar SCORM 1.2)
+# Lecciones PEMP · Módulos 1 y 2 (estándar SCORM 1.2)
 
-Lecciones 1.1 a 1.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
+Lecciones 1.1 a 1.5 y 2.1 a 2.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
 
 ## Entregables (`dist/`)
 
@@ -11,6 +11,11 @@ Lecciones 1.1 a 1.5 del curso **Operación Segura de Plataformas Elevadoras Móv
 | 1.3 Componentes que sostienen la operación | `Leccion_1_3_Componentes_que_sostienen_la_operacion.html` | `…_SCORM12.zip` |
 | 1.4 Personas, responsabilidades y límites | `Leccion_1_4_Personas_responsabilidades_y_limites.html` | `…_SCORM12.zip` |
 | 1.5 Los riesgos aparecen antes de subir | `Leccion_1_5_Los_riesgos_aparecen_antes_de_subir.html` | `…_SCORM12.zip` |
+| 2.1 El manual y la placa mandan | `Leccion_2_1_El_manual_y_la_placa_mandan.html` | `…_SCORM12.zip` |
+| 2.2 Inspección visual: mirar con intención | `Leccion_2_2_Inspeccion_visual_mirar_con_intencion.html` | `…_SCORM12.zip` |
+| 2.3 Controles y funciones antes del trabajo | `Leccion_2_3_Controles_y_funciones_antes_del_trabajo.html` | `…_SCORM12.zip` |
+| 2.4 El entorno también se inspecciona | `Leccion_2_4_El_entorno_tambien_se_inspecciona.html` | `…_SCORM12.zip` |
+| 2.5 Apto, condicionado o detenido | `Leccion_2_5_Apto_condicionado_o_detenido.html` | `…_SCORM12.zip` |
 
 ## Estructura común (11 pantallas)
 
@@ -33,6 +38,16 @@ Panel de ruta lateral con navegación bloqueada hasta completar cada pantalla; a
 | 5 | Conversación | Clasificar (arrastrar) | Acordeón | Clasificar (arrastrar) | Puntos sobre escena |
 | 6 | Puntos sobre imagen | Mito o realidad | Completar frases | Conversación por radio | Mazo de señales |
 | 7 | Mazo (alcance del curso) | Unir conceptos | Ordenar pasos | Mito o realidad | Ordenar pasos |
+
+### Módulo 2
+
+| Pantalla | 2.1 Manual y placa | 2.2 Inspección visual | 2.3 Controles y funciones | 2.4 Entorno | 2.5 Veredicto |
+|---|---|---|---|---|---|
+| 3 | Proceso paso a paso | Ordenar el recorrido | Tarjetas que giran | Acordeón | Tarjetas que giran |
+| 4 | Tarjetas que giran | Acordeón | Pestañas | Puntos sobre escena | Pestañas |
+| 5 | Unir fuentes | Puntos sobre la tijera | Proceso paso a paso | Conversación por radio | Clasificar en 3 veredictos |
+| 6 | Pestañas | Mito o realidad | Completar frases | Mito o realidad | Completar frases |
+| 7 | Clasificar (arrastrar) | Mazo de hallazgos | Clasificar (arrastrar) | Unir (S·R·A·A·L) | Proceso paso a paso |
 
 Ninguna interacción se repite dentro de una lección y cada lección cambia respecto de la anterior.
 

@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La prueba de funciones salió bien, pero cerca del punto de trabajo hay una depresión en el pavimento y una ruta peatonal. ¿Qué corresponde hacer antes de operar? Elige una alternativa.",
+ "suelo": "El suelo debe sostener todo el trabajo previsto. Abre cada elemento para saber qué revisar en la superficie.",
+ "barrido": "Recorre esta escena desde el suelo hasta el espacio superior. Activa los nueve puntos y la pregunta de cada uno.",
+ "rutas": "Camila coordina por radio con Pamela, la encargada de bodega. Responde como Camila y fíjate en cómo se controlan las rutas.",
+ "ambiente": "El espacio superior y el clima también cambian la decisión. Decide si cada frase es un mito o una realidad.",
+ "sraal": "Usa la herramienta suelo, ruta, arriba, ambiente y límites. Une cada foco con el hallazgo que le corresponde.",
+ "caso": "El suelo está firme, pero el espacio no está controlado. Acompaña a Camila en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Aplica el barrido a un lugar real de tu trabajo. Marca las condiciones que existen y define cómo delimitarás y con quién coordinarás.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Una plataforma puede estar en perfectas condiciones y aun así no tener un lugar seguro para trabajar. Antes de elevar, se lee el suelo, las rutas, el espacio superior y el ambiente.",
+ "v2": "El suelo debe sostener todo el trabajo previsto: el acceso, el traslado y cada posición de la base. Se revisan baches, tapas, bordes, humedad y la pendiente máxima que admite el fabricante.",
+ "v3": "Al elevarse, la plataforma y el brazo ocupan un espacio distinto al que ves con el equipo abajo. Revisa la trayectoria completa, las estructuras elevadas y respeta la distancia mínima a las líneas eléctricas.",
+ "v4": "No basta con que el lugar esté vacío ahora. Hay que anticipar quién puede entrar, cruzar o acercarse durante la tarea, y coordinar con las otras actividades antes de ocupar el espacio.",
+ "v5": "Viento, lluvia y visibilidad se comparan con los límites del fabricante. La inspección no se cierra para siempre: si el ambiente cambia, se detiene y se vuelve a evaluar.",
+ "v6": "La delimitación cubre la base, el movimiento del equipo y la zona donde podrían caer objetos. Los conos son un medio: el objetivo es que nadie entre al área de riesgo."
+}
