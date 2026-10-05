@@ -1,0 +1,330 @@
+<title>Lección 2.8 — Leer una remuneración</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · LECCIÓN 2.8</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:23" data-gate="hook" data-gate-msg="Despega la etiqueta y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.8 · Leer una remuneración</span>
+      <h1 class="reveal">La etiqueta de una línea no siempre revela su naturaleza</h1>
+      <p class="lead reveal">Camila revisa la liquidación de Diego: sueldo, comisión, colación, movilización y un <strong>“bono especial no imponible”</strong>. Haz clic en la etiqueta del bono para despegarla y ver qué hay detrás.</p>
+      <div class="label-line reveal">
+        <div><strong>Bono especial</strong> · $150.000<br/><span class="hint">Se calcula como el 5% de las ventas del mes. Finalidad: premiar los resultados de Diego.</span></div>
+        <button class="sticker" type="button" id="sticker">NO IMPONIBLE · toca para despegar</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa una liquidación de sueldo con un destacador" src="{{IMG:i28_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">Si un pago aparece con la etiqueta “no imponible”, ¿eso basta para definir su naturaleza?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sí. La empresa decide cómo clasificar cada pago.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No. Hay que revisar por qué se paga: si retribuye el trabajo o si compensa un gasto.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Sí, siempre que la persona trabajadora esté de acuerdo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>No basta.</strong> <span class="fb-body">La clasificación depende de la naturaleza real del pago, no de lo que decida la empresa al nombrarlo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>No basta.</strong> <span class="fb-body">Un acuerdo no cambia la naturaleza de un pago. Si retribuye el trabajo, es remuneración.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Lo que define un pago es su causa y finalidad. Este bono premia resultados: retribuye el trabajo. En esta lección aprenderás a leer cada línea con ese criterio.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Cómo se lee una liquidación de sueldo?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · QUÉ ES REMUNERACIÓN -->
+<section class="slide" data-title="¿Qué es remuneración?" data-audio="p03" data-dur="0:21" data-gate="cloze ex" data-gate-msg="Completa la definición y revisa los tres ejemplos.">
+  <span class="eyebrow">Marco legal</span>
+  <h2>¿Qué es remuneración?</h2>
+  <p>Completa la definición del artículo 41 del Código del Trabajo eligiendo la palabra correcta en cada espacio.</p>
+  <div class="cloze">Remuneración son las contraprestaciones en
+    <select id="z1" aria-label="Espacio 1"><option value="">elige…</option><option>especie</option><option>dinero</option><option>bonos</option></select>
+    y las adicionales en <select id="z2" aria-label="Espacio 2"><option value="">elige…</option><option>dinero</option><option>servicios</option><option>especie</option></select>
+    avaluables en dinero que debe percibir el trabajador del empleador por causa del
+    <select id="z3" aria-label="Espacio 3"><option value="">elige…</option><option>convenio colectivo</option><option>contrato de trabajo</option><option>reglamento interno</option></select>.
+  </div>
+  <button class="small-btn primary" type="button" id="zCheck" style="margin-top:12px">Comprobar definición</button>
+  <div class="fb" id="zFb"></div>
+  <div id="zEx" hidden>
+    <h3 style="margin-top:18px">¿Por qué estos pagos son remuneración? Toca cada uno.</h3>
+    <div class="chips2" id="exChips"><button class="chip2" type="button" data-k="0">Sueldo base</button><button class="chip2" type="button" data-k="1">Comisión por ventas</button><button class="chip2" type="button" data-k="2">Bono por desempeño</button></div>
+    <div class="dpanel" id="exPanel"><p class="hint">Selecciona un pago.</p></div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículo 41.</div>
+</section>
+
+<!-- 4 · EXCLUSIONES -->
+<section class="slide" data-title="Exclusiones" data-audio="p04" data-dur="0:17" data-gate="pairs" data-gate-msg="Une los cinco conceptos con su finalidad.">
+  <span class="eyebrow amber">Lo que no es remuneración</span>
+  <h2>Pagos que compensan un gasto o un riesgo</h2>
+  <div class="grid-2">
+    <div><p>El artículo 41 excluye estos conceptos porque no retribuyen el trabajo. Selecciona un concepto a la izquierda y luego su finalidad a la derecha.</p>
+      <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 5</span></div></div>
+    <div class="photo-frame wide"><img alt="Vendedor en un terminal revisa un recibo de viaje y su colación" src="{{IMG:i28_exclus}}"/></div>
+  </div>
+  <div class="pairs"><div id="pl"></div><div id="pr"></div></div>
+  <div class="fb" id="prFb"></div>
+  <div class="story"><strong>Ojo:</strong> la exclusión exige que el pago cumpla realmente su finalidad y que el monto sea razonable para ese objeto. Una “colación” muy superior a lo que cuesta almorzar puede encubrir remuneración. También se excluyen las prestaciones familiares legales, las indemnizaciones por término de contrato y las devoluciones de gastos en que se incurra por causa del trabajo.</div>
+</section>
+
+<!-- 5 · LA LIQUIDACIÓN -->
+<section class="slide" data-title="La liquidación" data-audio="p05" data-dur="0:12" data-gate="tog" data-gate-msg="Activa “ver naturaleza real” en las cinco líneas.">
+  <span class="eyebrow">La liquidación de Diego</span>
+  <h2>Etiqueta versus naturaleza real</h2>
+  <p>Cada línea muestra su etiqueta. Activa el interruptor de cada una para ver su <strong>naturaleza real</strong>.</p>
+  <div class="task" id="tgTask">Líneas analizadas <span class="tick" id="tgTick">0 / 5</span></div>
+  <div class="slip" id="slip1">
+    <div class="slip-h"><span>Liquidación de remuneraciones · Septiembre 2026</span><span>Diego Fuentes · Contrato indefinido</span></div>
+    <div class="slip-sec">Haberes</div>
+  </div>
+</section>
+
+<!-- 6 · DE IMPONIBLE A LÍQUIDO -->
+<section class="slide" data-title="De imponible a líquido" data-audio="p06" data-dur="0:21" data-gate="calc28 apq" data-gate-msg="Cambia el tipo de contrato y responde la pregunta.">
+  <span class="eyebrow violet">Descuentos y aportes</span>
+  <h2>¿Qué se descuenta y qué paga el empleador?</h2>
+  <p>Cambia el tipo de contrato, la clasificación del bono y la comisión de la AFP. Observa qué cambia en el sueldo líquido y qué cambia solo en el costo del empleador.</p>
+  <div class="sim-box">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <div class="seg" id="ctype" role="group" aria-label="Tipo de contrato"><button type="button" class="on" data-v="ind">Indefinido</button><button type="button" data-v="fij">Plazo fijo / obra</button></div>
+      <div class="seg" id="btype" role="group" aria-label="Bono especial"><button type="button" class="on" data-v="1">Bono = remuneración</button><button type="button" data-v="0">Bono como “no imponible”</button></div>
+      <label class="field" style="min-width:200px">Comisión AFP (ejemplo): <output id="afpO">1,20%</output><input id="afp" type="range" min="0.4" max="1.5" step="0.01" value="1.2" style="accent-color:var(--teal)"/></label>
+    </div>
+    <div class="flow3"><div class="fbox">Haberes imponibles<b id="fImp">—</b></div><div class="arr">−</div><div class="fbox">Descuentos legales<b id="fDes">—</b></div><div class="arr">→</div><div class="fbox">Líquido (+ no imponibles)<b id="fLiq">—</b></div></div>
+    <div class="cols2">
+      <div><h3 style="margin:6px 0">Descuentos de cargo de Diego</h3><table class="mini-t" id="tDesc"></table></div>
+      <div class="box-e"><h3 style="margin:6px 0">Aportes de cargo del empleador</h3><table class="mini-t" id="tEmp"></table><p class="hint" style="margin:.5rem 0 0">No se descuentan del sueldo: son costo de la empresa.</p></div>
+    </div>
+    <p class="hint" id="calcNote"></p>
+  </div>
+  <h3 style="margin-top:16px">¿Cuál de estos conceptos NO debe descontarse del sueldo de la persona trabajadora?</h3>
+  <div class="options" data-choice="apq" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>El aporte previsional de 3,5% de cargo del empleador, vigente desde agosto de 2026.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La cotización legal de salud del 7%.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>El 0,6% del Seguro de Cesantía de una persona con contrato indefinido.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="apq-B"><div class="feedback bad"><strong>Revisa.</strong> <span class="fb-body">La cotización de salud del 7% es de cargo de la persona trabajadora y sí se descuenta.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="apq-C"><div class="feedback bad"><strong>Revisa.</strong> <span class="fb-body">En contrato indefinido, la persona trabajadora aporta 0,6% al Seguro de Cesantía y ese monto sí se descuenta.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="apq-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El 3,5% (0,1% cuenta individual + 0,9% Compensación por Rentabilidad Protegida + 2,5% SIS y compensación por expectativa de vida) lo financia el empleador y no puede rebajar el sueldo líquido.</span></div></template>
+  <div class="sources">Referencias: Superintendencia de Pensiones; Superintendencia de Salud; AFC Chile; Ley N°21.735 (reforma de pensiones). El ejemplo no incluye impuesto único ni otros descuentos, ni aplica el tope imponible.</div>
+</section>
+
+<!-- 7 · CLASIFICAR -->
+<section class="slide" data-title="Clasificar" data-audio="p07" data-dur="0:11" data-gate="qf" data-gate-msg="Clasifica los ocho conceptos.">
+  <span class="eyebrow">Práctica</span>
+  <h2>¿Remuneración o pago compensatorio?</h2>
+  <p>Decide para cada concepto. Intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-dur="0:17" data-gate="cmp caso" data-gate-msg="Desliza el comparador hasta el final y toma la decisión.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>El bono que cambió de nombre</h2>
+  <div class="grid-2">
+    <div><p>Durante años la empresa pagó un <strong>bono de productividad</strong> mensual. Ahora Finanzas propone llamarlo <strong>“asignación especial no imponible”</strong>. Desliza el comparador hacia la izquierda para ver qué cambia.</p></div>
+    <div class="photo-frame wide"><img alt="Gerente de finanzas presenta una propuesta a Camila" src="{{IMG:i28_caso}}"/></div>
+  </div>
+  <div class="cmp" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in"><span class="eyebrow">Antes · 2025</span><h3>Bono de productividad</h3><p><b>Cálculo:</b> 5% de las ventas del mes.<br/><b>Finalidad:</b> premiar resultados.<br/><b>Se paga:</b> todos los meses.<br/><b>Tratamiento:</b> imponible.</p></div></div>
+    <div class="side after"><div class="in"><span class="eyebrow amber">Propuesta · 2026</span><h3>“Asignación especial no imponible”</h3><p><b>Cálculo:</b> 5% de las ventas del mes. <i>(igual)</i><br/><b>Finalidad:</b> premiar resultados. <i>(igual)</i><br/><b>Se paga:</b> todos los meses. <i>(igual)</i><br/><b>Tratamiento:</b> no imponible. <i>(solo cambia esto)</i></p></div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador antes y después"/>
+  <div class="phase" id="casoQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debería hacer Camila?</h3>
+    <div class="options" data-choice="caso" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Aceptar la nueva etiqueta, porque la empresa puede definir cómo se llama cada concepto.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Eliminar el bono para evitar problemas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Revisar la causa y naturaleza real del pago: si sigue retribuyendo el trabajo, es remuneración imponible.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: cotizaciones impagas</div><div class="branch-body"><div><p>Si el pago sigue retribuyendo el trabajo, dejar de cotizar por él genera <strong>deudas previsionales</strong> y perjudica la pensión y coberturas de las personas. La etiqueta no cambia la naturaleza.</p></div><div><p class="hint">Solo cambió el nombre.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: rebaja unilateral</div><div class="branch-body"><div><p>Un bono pagado de forma permanente puede formar parte de lo pactado. Eliminarlo unilateralmente puede ser una modificación ilegítima de las condiciones de trabajo.</p></div><div><p class="hint">El problema es la clasificación, no el bono.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Cálculo, finalidad y periodicidad son idénticos: el pago sigue retribuyendo el trabajo. Camila debe mantenerlo como <strong>remuneración imponible</strong>, cualquiera sea su nombre.</p></div><div><p class="hint">La naturaleza real manda.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:10" data-gate="err pass" data-gate-msg="Encuentra los tres errores de la liquidación.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Detecta los tres errores de esta liquidación</h2>
+  <p>Revisa cada línea con las preguntas de la lección: ¿por qué se paga?, ¿qué se descuenta a la persona?, ¿qué paga el empleador? Haz clic en las líneas que estén mal.</p>
+  <div class="task" id="erTask">Errores encontrados <span class="tick" id="erTick">0 / 3</span></div>
+  <div class="slip" id="slip2"></div>
+  <div class="fb" id="erFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:20" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.8</h2>
+    <p>Ya puedes leer una liquidación distinguiendo haberes imponibles y no imponibles, descuentos legales de cargo de la persona trabajadora y aportes financiados por el empleador.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="5">Repasar descuentos y aportes</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, art. 41; Ley N°21.735; Superintendencia de Pensiones; Superintendencia de Salud; AFC Chile. Tasas vigentes en 2026. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l28';
+const FIRST_KEYS=['hook','apq','caso','qf'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Etiqueta y naturaleza',lines:['En una liquidación de sueldo, cada línea tiene un nombre.','Pero la etiqueta de una línea no siempre revela su naturaleza.'],
+  html:`<div style="text-align:center"><span class="v-tag">NO IMPONIBLE</span><div class="note" data-at="1" style="font-size:1.3rem">¿Por qué se paga realmente?</div></div>`},
+ {t:'Artículo 41',lines:['El artículo 41 define la remuneración como las contraprestaciones en dinero, y las adicionales en especie avaluables en dinero, que la persona recibe por causa del contrato de trabajo.','Sueldo, comisiones y bonos que retribuyen el trabajo son remuneración.'],
+  html:`<div class="v-big">Art. 41</div><div class="v-chk"><span data-at="1">Sueldo</span><span data-at="1">Comisiones</span><span data-at="1">Bonos por el trabajo</span></div>`},
+ {t:'Exclusiones',lines:['La ley excluye los pagos que compensan gastos o riesgos, como la colación, la movilización, los viáticos, la pérdida de caja o el desgaste de herramientas, siempre que su monto sea razonable para ese fin.'],
+  html:`<div class="v-icons"><div><span class="i">🍽️</span>Colación</div><div><span class="i">🚌</span>Movilización</div><div><span class="i">🧳</span>Viáticos</div><div><span class="i">💵</span>Pérdida de caja</div><div><span class="i">🔧</span>Desgaste de herramientas</div></div><div class="v-sub">Compensan, no retribuyen (con monto razonable)</div>`},
+ {t:'Descuentos legales',lines:['Los haberes imponibles son la base para los descuentos legales de la persona trabajadora: 10% más la comisión de la AFP, 7% de salud y, si el contrato es indefinido, 0,6% de seguro de cesantía.'],
+  html:`<div class="v-log"><div><span>AFP</span><span>10% + comisión</span></div><div><span>Salud (Fonasa o Isapre)</span><span>7%</span></div><div><span>Seguro de Cesantía (indefinido)</span><span>0,6%</span></div></div>`},
+ {t:'Aportes del empleador',lines:['Además, el empleador paga aportes de su propio cargo.','Desde agosto de 2026, el aporte previsional del empleador es de 3,5%, y se suma a su aporte al seguro de cesantía.','Estos montos nunca se descuentan del sueldo.'],
+  html:`<div class="v-big">3,5%</div><div class="v-sub">Aporte previsional del empleador · desde agosto 2026</div><div class="note" data-at="2">No se descuenta del sueldo</div>`},
+ {t:'Cambiar el nombre',lines:['Por eso, cambiar el nombre de un bono no cambia su naturaleza.','Si retribuye el trabajo, sigue siendo remuneración, aunque diga no imponible.'],
+  html:`<div class="v-icons"><div><span class="i">🏷️</span>Bono de productividad</div><div><span class="i">→</span></div><div><span class="i">🏷️</span>“Asignación no imponible”</div></div><div class="note" data-at="1">Misma causa = misma naturaleza</div>`},
+ {t:'Tres preguntas',lines:['Para leer una liquidación, pregúntate siempre:','¿por qué se paga este concepto?,','¿qué se descuenta a la persona?,','y ¿qué paga directamente el empleador?'],
+  html:`<div class="v-steps"><div data-at="1">¿Por qué se paga este concepto?</div><div data-at="2">¿Qué se descuenta a la persona?</div><div data-at="3">¿Qué paga directamente el empleador?</div></div>`}
+]};
+const Q=[
+ {q:'¿Qué artículo del Código del Trabajo define la remuneración?',o:['Artículo 41','Artículo 33','Artículo 58'],c:0,f:'El artículo 41 define la remuneración y sus exclusiones.'},
+ {q:'Un pago figura como “no imponible” en la liquidación. ¿Eso basta para definir su naturaleza?',o:['Sí, la etiqueta define el tratamiento.','No: importa por qué se paga y si retribuye el trabajo.','Sí, si la persona firmó la liquidación.'],c:1,f:'La naturaleza real del pago importa más que la etiqueta.'},
+ {q:'¿Cuál de estos pagos NO constituye remuneración según el artículo 41?',o:['Comisión por ventas','Gratificación','Asignación de movilización por un monto razonable','Sueldo base'],c:2,f:'La movilización compensa un gasto de traslado; si el monto es razonable, no es remuneración.'},
+ {q:'¿Cuánto aporta al Seguro de Cesantía una persona con contrato a plazo fijo?',o:['0,6%','2,4%','3%','0%'],c:3,f:'En contratos a plazo fijo, por obra o faena, la persona trabajadora no aporta: el empleador paga el 3%.'},
+ {q:'El aporte previsional de 3,5% vigente desde agosto de 2026…',o:['se descuenta del sueldo de la persona trabajadora.','lo paga el empleador y no rebaja el sueldo líquido.','es voluntario para las empresas.'],c:1,f:'Es un aporte de cargo del empleador: no puede descontarse de la remuneración.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: etiqueta ---------- */
+$('#sticker').addEventListener('click',e=>{e.currentTarget.classList.add('peeled');setTimeout(()=>{const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},500)});
+
+/* ---------- Definición ---------- */
+$('#zCheck').addEventListener('click',()=>{const ans={z1:'dinero',z2:'especie',z3:'contrato de trabajo'};let ok=0;
+  Object.entries(ans).forEach(([id,v])=>{const s=$('#'+id);const g=s.value===v;s.classList.toggle('good',g);s.classList.toggle('bad',!g);if(g)ok++});
+  if(ok===3){feedback($('#zFb'),true,'Definición completa.','Remuneración es lo que la persona recibe por causa del contrato de trabajo, en dinero o en especie avaluable en dinero.');done('cloze');$('#zEx').hidden=false}
+  else feedback($('#zFb'),false,`${ok} de 3 correctas.`,'Corrige los espacios marcados en rojo y vuelve a comprobar.')});
+const EX=[['Sueldo base','Es el estipendio fijo que se paga por períodos iguales por la prestación de servicios. Es la forma más directa de retribuir el trabajo.'],['Comisión por ventas','Es un porcentaje sobre ventas u operaciones que la persona realiza. Retribuye su trabajo, por lo que constituye remuneración.'],['Bono por desempeño','Premia resultados o metas del trabajo. Su nombre puede variar, pero si retribuye el trabajo, es remuneración.']];
+const tEx=tracker('ex',3,'#exPanel','#exPanel');
+$$('#exChips .chip2').forEach(c=>c.addEventListener('click',()=>{const k=+c.dataset.k;c.classList.add('on');tEx(k);$('#exPanel').innerHTML=`<h3 style="margin-top:0">${EX[k][0]}</h3><p>${EX[k][1]}</p>`}));
+$('#exPanel').innerHTML='<p class="hint">Selecciona un pago.</p>';
+
+/* ---------- Parejas ---------- */
+const PAIRS=[['Colación','Alimentación durante la jornada'],['Movilización','Traslado hacia y desde el trabajo, o durante él'],['Viáticos','Gastos de alojamiento y alimentación al viajar por trabajo'],['Pérdida de caja','Riesgo de faltantes al manejar dinero'],['Desgaste de herramientas','Uso de herramientas propias de la persona']];
+const rOrder=[2,4,0,3,1];let selL=null,pDone=0;
+$('#pl').innerHTML=PAIRS.map((p,i)=>`<button class="pl" type="button" data-i="${i}">${p[0]}</button>`).join('');
+$('#pr').innerHTML=rOrder.map(i=>`<button class="pr" type="button" data-i="${i}">${PAIRS[i][1]}</button>`).join('');
+$$('.pl').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;selL=b.dataset.i;$$('.pl').forEach(x=>x.classList.toggle('sel',x===b))}));
+$$('.pr').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;if(selL==null){feedback($('#prFb'),false,'Primero elige un concepto.','Selecciona un concepto de la columna izquierda.');return}
+  if(b.dataset.i===selL){b.classList.add('done');const l=$(`.pl[data-i="${selL}"]`);l.classList.add('done');l.classList.remove('sel');l.textContent='✓ '+l.textContent;pDone++;selL=null;
+    $('#prTick').textContent=`${pDone} / 5`;feedback($('#prFb'),true,'Pareja correcta.','Este pago compensa un gasto o riesgo; no retribuye el trabajo.');if(pDone===5){$('#prTask').classList.add('ok');done('pairs')}}
+  else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');feedback($('#prFb'),false,'No es su finalidad.','Piensa en qué gasto o riesgo cubre cada concepto.')}}));
+
+/* ---------- Liquidación: etiqueta vs naturaleza ---------- */
+const LINES=[['Sueldo base','$850.000','Imponible','Remunera directamente la prestación de servicios. Es remuneración e integra la base imponible.'],
+ ['Comisión por ventas','$120.000','Imponible','Retribuye operaciones o resultados del trabajo. Es remuneración imponible.'],
+ ['Colación','$90.000','No imponible','Puede excluirse si corresponde efectivamente a alimentación y el monto es razonable para ese fin.'],
+ ['Movilización','$70.000','No imponible','Compensa gastos de traslado. Se excluye si cumple esa finalidad y el monto es razonable.'],
+ ['Bono especial','$150.000','No imponible','⚠️ Se calcula sobre las ventas y premia resultados: <b>retribuye el trabajo</b>. Aunque diga “no imponible”, su naturaleza es de remuneración y debe revisarse su clasificación.']];
+$('#slip1').insertAdjacentHTML('beforeend',LINES.map((l,i)=>`<div class="toggle-row" data-i="${i}"><span><b>${l[0]}</b> · ${l[1]}<br/><span class="hint">Etiqueta: ${l[2]}</span></span><span style="display:flex;gap:8px;align-items:center"><small>Ver naturaleza real</small><button class="sw" type="button" aria-label="Ver naturaleza real de ${l[0]}"></button></span><div class="nat">${l[3]}</div></div>`).join(''));
+const tTg=tracker('tog',5,'#tgTick','#tgTask');
+$$('#slip1 .toggle-row').forEach(r=>$('.sw',r).addEventListener('click',()=>{r.classList.toggle('on');tTg(r.dataset.i)}));
+
+/* ---------- Calculadora de liquidación ---------- */
+let ctype='ind',bono=1,changed=false;
+function calc(){const afp=+$('#afp').value;$('#afpO').textContent=afp.toFixed(2).replace('.',',')+'%';
+  const imp=850000+120000+(bono?150000:0),noimp=90000+70000+(bono?0:150000);
+  const dA=imp*(10+afp)/100,dS=imp*0.07,dC=ctype==='ind'?imp*0.006:0,des=dA+dS+dC;
+  $('#fImp').textContent=clp(imp);$('#fDes').textContent=clp(des);$('#fLiq').textContent=clp(imp-des+noimp);
+  $('#tDesc').innerHTML=`<tr><td>AFP (10% + ${afp.toFixed(2).replace('.',',')}% comisión)</td><td>${clp(dA)}</td></tr><tr><td>Salud 7%</td><td>${clp(dS)}</td></tr><tr><td>Seguro de Cesantía ${ctype==='ind'?'0,6%':'0% (plazo fijo)'}</td><td>${clp(dC)}</td></tr>`;
+  const eA=imp*0.035,eC=imp*(ctype==='ind'?0.024:0.03);
+  $('#tEmp').innerHTML=`<tr><td>Aporte previsional 3,5%</td><td>${clp(eA)}</td></tr><tr><td>Seguro de Cesantía ${ctype==='ind'?'2,4%':'3,0%'}</td><td>${clp(eC)}</td></tr><tr><td><b>Costo adicional empresa</b></td><td>${clp(eA+eC)}</td></tr>`;
+  $('#calcNote').innerHTML=bono?'':'⚠️ Al tratar el bono como no imponible, bajan los descuentos y los aportes: <b>se deja de cotizar por un pago que retribuye el trabajo</b>. Eso perjudica la pensión y las coberturas de Diego.'}
+$$('#ctype button').forEach(b=>b.addEventListener('click',()=>{ctype=b.dataset.v;$$('#ctype button').forEach(x=>x.classList.toggle('on',x===b));if(!changed){changed=true;done('calc28')}calc()}));
+$$('#btype button').forEach(b=>b.addEventListener('click',()=>{bono=+b.dataset.v;$$('#btype button').forEach(x=>x.classList.toggle('on',x===b));calc()}));
+$('#afp').addEventListener('input',calc);calc();
+
+/* ---------- Ronda rápida ---------- */
+const QF=[['Sueldo base',1,'Retribuye directamente el trabajo.'],['Asignación de colación por un monto razonable',0,'Compensa el gasto de alimentación.'],['Comisión por ventas',1,'Retribuye operaciones del trabajo.'],['Reembolso documentado de un gasto hecho por trabajo',0,'Es una devolución de gastos: no es remuneración.'],['Bono por cumplimiento de metas',1,'Premia resultados del trabajo.'],['Viático por viaje de trabajo',0,'Compensa gastos de alojamiento y alimentación al viajar.'],['Gratificación legal',1,'Es remuneración según el Código del Trabajo.'],['Asignación por pérdida de caja',0,'Compensa el riesgo de faltantes al manejar dinero.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente criterio!':'Recuerda: si el pago retribuye el trabajo, es remuneración; si compensa un gasto o riesgo, no lo es.'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Concepto ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns"><button type="button" data-v="1">💼 Remuneración</button><button type="button" data-v="0">🧾 Compensatorio</button></div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} Es ${c[1]?'remuneración':'compensatorio'}.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},1400)}))}
+qfRender();
+
+/* ---------- Comparador ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');$('#casoQ').hidden=false}}});
+
+/* ---------- Detecta errores ---------- */
+const ERR=[['h','Haberes · Contrato: plazo fijo'],['r','Sueldo base','$850.000',0,'Correcto: es remuneración imponible.'],['r','Comisión por ventas','$120.000',0,'Correcto: es remuneración imponible.'],
+ ['r','Bono de productividad (no imponible)','$150.000',1,'Error: el bono premia resultados, retribuye el trabajo y debe ser imponible.'],['r','Colación (no imponible)','$90.000',0,'Correcto: compensa alimentación con un monto razonable.'],
+ ['h','Descuentos'],['r','AFP 11,2%','$108.640',0,'Correcto: 10% + comisión de la AFP sobre lo imponible.'],['r','Salud 7%','$67.900',0,'Correcto: cotización legal de salud.'],
+ ['r','Seguro de Cesantía 0,6%','$5.820',1,'Error: con contrato a plazo fijo la persona no aporta al Seguro de Cesantía; el empleador paga el 3%.'],
+ ['r','Aporte previsional empleador 3,5%','$33.950',1,'Error: es un aporte de cargo del empleador; no puede descontarse del sueldo.']];
+$('#slip2').innerHTML=`<div class="slip-h"><span>Liquidación · Septiembre 2026</span><span>Valentina Rojas</span></div>`+ERR.map((r,i)=>r[0]==='h'?`<div class="slip-sec">${r[1]}</div>`:`<button class="slip-row" type="button" data-i="${i}"><span>${r[1]}</span><span class="amt">${r[2]}</span></button>`).join('');
+let found=0;
+$$('#slip2 .slip-row').forEach(b=>b.addEventListener('click',()=>{const r=ERR[+b.dataset.i];if(b.classList.contains('err')||b.classList.contains('okx'))return;
+  if(r[3]){b.classList.add('err');found++;$('#erTick').textContent=`${found} / 3`;feedback($('#erFb'),true,'¡Encontraste un error!',r[4]);if(found===3){$('#erTask').classList.add('ok');done('err')}}
+  else{b.classList.add('okx');feedback($('#erFb'),false,'Esta línea está bien.',r[4])}}));
+/*{{TAIL}}*/
+})();
+</script>

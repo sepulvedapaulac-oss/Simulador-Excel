@@ -1,0 +1,7 @@
+<!doctype html><html><body style="margin:0"><script>
+const store=JSON.parse(localStorage.getItem('cmi')||'{}');window.LOG=[];
+window.API={LMSInitialize(){LOG.push('init');return 'true'},LMSFinish(){LOG.push('finish');localStorage.setItem('cmi',JSON.stringify(store));return 'true'},
+LMSGetValue(k){return store[k]||(k==='cmi.core.lesson_status'?'not attempted':'')},LMSSetValue(k,v){store[k]=v;return 'true'},
+LMSCommit(){localStorage.setItem('cmi',JSON.stringify(store));return 'true'},LMSGetLastError(){return '0'},LMSGetErrorString(){return ''},LMSGetDiagnostic(){return ''}};
+window.CMI=store;
+</script><iframe id="f" src="scorm_pkg/index.html" style="width:100%;height:900px;border:0"></iframe></body></html>
