@@ -1,11 +1,12 @@
 # Lecciones PEMP · Módulo 1 (estándar SCORM 1.2)
 
-Lecciones 1.2 a 1.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
+Lecciones 1.1 a 1.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
 
 ## Entregables (`dist/`)
 
 | Lección | HTML autocontenido | Paquete para Moodle |
 |---|---|---|
+| 1.1 Cuando elevar también es una decisión | `Leccion_1_1_Cuando_elevar_es_una_decision.html` | `…_SCORM12.zip` |
 | 1.2 Familias de PEMP | `Leccion_1_2_Familias_de_PEMP.html` | `…_SCORM12.zip` |
 | 1.3 Componentes que sostienen la operación | `Leccion_1_3_Componentes_que_sostienen_la_operacion.html` | `…_SCORM12.zip` |
 | 1.4 Personas, responsabilidades y límites | `Leccion_1_4_Personas_responsabilidades_y_limites.html` | `…_SCORM12.zip` |
@@ -25,13 +26,13 @@ Panel de ruta lateral con navegación bloqueada hasta completar cada pantalla; a
 
 ## Interacciones por lección
 
-| Pantalla | 1.2 Familias | 1.3 Componentes | 1.4 Personas | 1.5 Riesgos |
-|---|---|---|---|---|
-| 3 | Tarjetas que giran | Proceso paso a paso | Tarjetas que giran | Unir conceptos |
-| 4 | Pestañas | Puntos sobre imagen | Pestañas | Acordeón |
-| 5 | Clasificar (arrastrar) | Acordeón | Clasificar (arrastrar) | Puntos sobre escena |
-| 6 | Mito o realidad | Completar frases | Conversación por radio | Mazo de señales |
-| 7 | Unir conceptos | Ordenar pasos | Mito o realidad | Ordenar pasos |
+| Pantalla | 1.1 Decisión | 1.2 Familias | 1.3 Componentes | 1.4 Personas | 1.5 Riesgos |
+|---|---|---|---|---|---|
+| 3 | Acordeón | Tarjetas que giran | Proceso paso a paso | Tarjetas que giran | Unir conceptos |
+| 4 | Proceso paso a paso | Pestañas | Puntos sobre imagen | Pestañas | Acordeón |
+| 5 | Conversación | Clasificar (arrastrar) | Acordeón | Clasificar (arrastrar) | Puntos sobre escena |
+| 6 | Puntos sobre imagen | Mito o realidad | Completar frases | Conversación por radio | Mazo de señales |
+| 7 | Mazo (alcance del curso) | Unir conceptos | Ordenar pasos | Mito o realidad | Ordenar pasos |
 
 Ninguna interacción se repite dentro de una lección y cada lección cambia respecto de la anterior.
 
