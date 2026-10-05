@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Comenzamos el Módulo cinco. Andrés le pide a Camila un trabajo de diez minutos con el brazo que está disponible. ¿Qué debe definir primero? Elige una alternativa.",
+ "objetivo": "La tarea orienta la selección del equipo. Abre los tres pasos: objetivo, equipo y límites.",
+ "personas": "La coordinación también se planifica. Abre cada rol y revisa qué le corresponde.",
+ "listo": "La planificación se confirma en el equipo y el área reales. Decide si la tarea está lista para iniciar.",
+ "contingencias": "Camila acuerda con Luis qué hacer si cambia la condición. Responde como ella.",
+ "errores": "Planificar no es llenar casillas. Une cada error con la razón por la que debilita el plan.",
+ "caso": "Camila prepara el cambio de un sensor en el andén. Acompáñala en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Elige una tarea real con plataforma en tu trabajo y arma tu plan con la herramienta planifica.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Una operación segura empieza antes de encender la plataforma. Planificar conecta la tarea, el equipo, el entorno, las personas y las contingencias.",
+ "v2": "Primero se define qué trabajo se hará, a qué altura y con qué alcance. Luego se elige la configuración que responde a la tarea. La disponibilidad no reemplaza la adecuación.",
+ "v3": "Se revisan la superficie, las pendientes, los obstáculos, el tránsito, los peatones, las estructuras elevadas y la proximidad eléctrica. Si el tránsito cruza la zona, se delimita y coordina antes de iniciar.",
+ "v4": "La revisión preoperacional confirma si el equipo y el área están en condiciones. Un hallazgo crítico cambia la decisión, y no se confía en que otro turno ya revisó.",
+ "v5": "Antes de iniciar se confirma cómo detener la tarea, cómo comunicar una anomalía y quién recibe la alerta. La contingencia no se improvisa cuando el riesgo ya aumentó.",
+ "v6": "Una tarea no está lista porque el equipo esté disponible. Está lista cuando tarea, equipo, entorno y personas están controlados, con criterios claros para detener."
+}

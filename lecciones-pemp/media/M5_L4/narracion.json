@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Ocurrió un evento con el brazo. No hay daño visible y el equipo parece responder. ¿Qué corresponde hacer? Elige una alternativa.",
+ "acciones": "Después del evento hay cinco acciones que protegen y dejan trazabilidad. Ábrelas en orden.",
+ "clasificar": "El reporte empieza por describir qué ocurrió. Clasifica cada hecho sin minimizarlo.",
+ "reporte": "Comunicar hechos permite decidir. Completa el reporte de Camila.",
+ "roles": "El retorno al servicio necesita una decisión responsable. Gira las cuatro tarjetas.",
+ "errores": "El equipo no vuelve por intuición. Decide si cada frase es un mito o una realidad.",
+ "caso": "La alarma desapareció y el siguiente turno necesita el brazo. Acompaña a Camila en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Piensa en cómo funcionan el reporte y la autorización de retorno en tu lugar de trabajo.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Que la plataforma vuelva a quedar quieta no significa que esté lista para usarse. Después de un evento, la condición se controla, se informa y se evalúa.",
+ "v2": "La primera barrera es impedir una nueva exposición: equipo detenido sin reinicio, zona sin personas expuestas y uso impedido cuando corresponda. Aislar no es reparar.",
+ "v3": "El reporte comienza describiendo qué ocurrió: una anomalía, un casi accidente, un incidente o un accidente, sin minimizarlo porque no haya daño.",
+ "v4": "Un reporte útil indica qué ocurrió, dónde, qué equipo estuvo involucrado, qué condición presenta y qué control se aplicó.",
+ "v5": "Cuando es seguro, se evita mover u ordenar el equipo y las señales antes del reporte. Conservar información no significa conservar un peligro.",
+ "v6": "El operador informa y deja la condición controlada. La evaluación y la autorización de retorno corresponden a quien define el procedimiento. El equipo no vuelve solo."
+}

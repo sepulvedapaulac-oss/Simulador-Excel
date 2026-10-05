@@ -1,6 +1,6 @@
-# Lecciones PEMP · Módulos 1 a 4 (estándar SCORM 1.2)
+# Lecciones PEMP · Módulos 1 a 5 (estándar SCORM 1.2)
 
-Lecciones 1.1 a 1.5, 2.1 a 2.5, 3.1 a 3.5 y 4.1 a 4.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
+Lecciones 1.1 a 1.5, 2.1 a 2.5, 3.1 a 3.5, 4.1 a 4.5 y 5.1 a 5.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
 
 ## Entregables (`dist/`)
 
@@ -26,6 +26,11 @@ Lecciones 1.1 a 1.5, 2.1 a 2.5, 3.1 a 3.5 y 4.1 a 4.5 del curso **Operación Seg
 | 4.3 Incidentes, accidentes y casi accidentes | `Leccion_4_3_Incidentes_accidentes_y_casi_accidentes.html` | `…_SCORM12.zip` |
 | 4.4 Cuando el equilibrio se rompe | `Leccion_4_4_Cuando_el_equilibrio_se_rompe.html` | `…_SCORM12.zip` |
 | 4.5 La emergencia que no debes tocar | `Leccion_4_5_La_emergencia_que_no_debes_tocar.html` | `…_SCORM12.zip` |
+| 5.1 Planificar la tarea completa | `Leccion_5_1_Planificar_la_tarea_completa.html` | `…_SCORM12.zip` |
+| 5.2 Cuando la condición cambia | `Leccion_5_2_Cuando_la_condicion_cambia.html` | `…_SCORM12.zip` |
+| 5.3 Emergencia: actuar sin improvisar | `Leccion_5_3_Emergencia_actuar_sin_improvisar.html` | `…_SCORM12.zip` |
+| 5.4 Después del evento, el equipo no vuelve solo | `Leccion_5_4_Despues_del_evento_el_equipo_no_vuelve_solo.html` | `…_SCORM12.zip` |
+| 5.5 Una operación segura se demuestra con decisiones | `Leccion_5_5_Una_operacion_segura_se_demuestra_con_decisiones.html` | `…_SCORM12.zip` |
 
 ## Estructura común (11 pantallas)
 
@@ -78,6 +83,16 @@ Panel de ruta lateral con navegación bloqueada hasta completar cada pantalla; a
 | 5 | Clasificar (arrastrar) | Conversación por radio | Clasificar en 3 | Proceso paso a paso | Tarjetas que giran |
 | 6 | Tarjetas que giran | Completar frases | Mito o realidad | Completar frases | Ordenar la respuesta |
 | 7 | Unir conceptos | Ordenar la respuesta | Unir conceptos | Conversación por radio | Conducta segura o no |
+
+### Módulo 5
+
+| Pantalla | 5.1 Planificar | 5.2 Cambios | 5.3 Emergencia | 5.4 Después | 5.5 Integración |
+|---|---|---|---|---|---|
+| 3 | Proceso paso a paso | Pestañas | Acordeón | Proceso paso a paso | Pestañas |
+| 4 | Acordeón | Clasificar en 3 | Mazo de mensajes | Clasificar en 3 | Mazo ¿seguir o replantear? |
+| 5 | Mazo ¿lista para iniciar? | Tarjetas que giran | Unir roles | Completar el reporte | Ordenar la ruta |
+| 6 | Conversación por radio | Completar frases | Conversación por radio | Tarjetas que giran | Conversación bajo presión |
+| 7 | Unir errores del plan | Mito o realidad | Ordenar la respuesta | Mito o realidad | Unir seis elementos |
 
 Ninguna interacción se repite dentro de una lección y cada lección cambia respecto de la anterior.
 

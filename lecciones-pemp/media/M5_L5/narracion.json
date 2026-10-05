@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. Llegamos al caso integrador. Camila debe reparar una canaleta en un patio con tránsito, una estructura elevada y posible lluvia. ¿Por dónde comienza? Elige una alternativa.",
+ "decisiones": "Recorre las cuatro decisiones del caso de Camila, desde el plan hasta el cambio crítico.",
+ "replantear": "Decide si cada condición permite seguir o si obliga a replantear la tarea.",
+ "ruta": "Construye la ruta de decisión. Ordena cada control según el momento en que aporta seguridad.",
+ "presion": "Faltan pocos minutos y aparece una alerta. Responde como Camila ante la presión por terminar.",
+ "elementos": "Una decisión completa conecta seis elementos. Une cada uno con el error que evita.",
+ "caso": "Acompaña a Camila en tres decisiones de su jornada, de principio a fin.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Prepara el borrador de tu plan de operación segura para la Misión T, L, S.",
+ "cierre": "Felicitaciones, completaste la lección y el Módulo cinco. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "La seguridad no depende de una sola respuesta. Se demuestra al conectar la tarea, el equipo, el entorno, las personas, la ejecución y la respuesta ante una emergencia.",
+ "v2": "La altura, el alcance y la trayectoria orientan la selección entre tijera, brazo articulado o telescópico. La disponibilidad no reemplaza la adecuación.",
+ "v3": "El área debe quedar controlada antes de elevar. Si no es posible controlar el tránsito o confirmar la estabilidad, la tarea se replantea.",
+ "v4": "Durante la operación se observa la respuesta del equipo, la trayectoria, las personas y el entorno. Una tarea breve también puede cambiar.",
+ "v5": "Cuando aparece una condición anormal, la prioridad cambia: detener, asegurar, alertar y reportar según el procedimiento, aunque falten pocos minutos.",
+ "v6": "Una operación segura se demuestra con decisiones coherentes antes, durante y después del trabajo. Ahora llevarás esa integración a la misión final del curso."
+}

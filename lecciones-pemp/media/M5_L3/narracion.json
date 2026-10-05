@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La tijera de Camila se detiene a media altura, suena una alarma y hay personas cerca. ¿Qué hace primero? Elige una alternativa.",
+ "control": "Primero, proteger. Abre cada acción del control inicial.",
+ "mensaje": "Un mensaje útil reduce la confusión. Decide si cada mensaje ayuda o genera confusión.",
+ "roles": "Cada persona actúa dentro de su formación. Une cada rol con lo que le corresponde.",
+ "radio": "Camila sigue elevada y habla con Luis por radio. Responde como ella.",
+ "secuencia": "Ordena los pasos de la respuesta ante una emergencia y luego verifica.",
+ "caso": "Pedro quedó en una plataforma detenida. Acompaña a Camila en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Piensa en el plan de emergencia de tu lugar de trabajo y prepara tu respuesta.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Cuando la operación deja de ser normal, la primera decisión no es resolver rápido: es proteger a las personas, controlar el equipo y activar ayuda.",
+ "v2": "La respuesta comienza deteniendo los movimientos con una postura estable, asegurando el área desde el suelo y comunicando la emergencia.",
+ "v3": "Un mensaje útil dice qué ocurrió, dónde está el equipo, quiénes están expuestos y qué ayuda se necesita, sin especular sobre la causa.",
+ "v4": "El operador conserva el control e informa. El personal en tierra delimita y comunica. El rescate se ejecuta con medios, roles y autorización definidos.",
+ "v5": "Si una persona queda elevada, la prioridad es activar el plan previsto y mantener la escena controlada. No se trepa por la estructura ni se fuerzan los mandos.",
+ "v6": "Una emergencia se controla con coordinación, límites claros y ayuda planificada. Detener a tiempo y pedir ayuda competente también es operar con seguridad."
+}
