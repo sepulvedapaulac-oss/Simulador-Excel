@@ -77,6 +77,11 @@ small{color:var(--muted)}
 .topic-link.done:not(.active) .dotnum{background:var(--good-soft);color:var(--good)}
 .topic-link:disabled{opacity:.5;cursor:not-allowed}
 @media(max-width:979px){.topic-panel{display:none}}
+.route-btn{display:none}
+@media(max-width:979px){
+  .route-btn{display:flex;align-items:center;gap:8px;width:100%;margin:0 0 10px;border:1px solid var(--mint-line);background:var(--mint);color:var(--teal-ink);border-radius:14px;padding:10px 14px;font-weight:850;font-size:.88rem;cursor:pointer;text-align:left}
+  .topic-panel.open{display:block;position:fixed;left:16px;right:16px;top:auto;bottom:calc(80px + env(safe-area-inset-bottom,0px));width:auto;max-height:65vh;z-index:40}
+}
 
 .slide{display:none;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:28px;padding:26px;overflow:hidden}
 .slide.active{display:block}
@@ -360,7 +365,8 @@ textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:
   <div class="progress"><span id="progressBar"></span></div>
 </div>
 
-<aside aria-label="Ruta de la lección" class="topic-panel">
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
   <h3>Ruta de la lección</h3>
   <p class="mode" id="navMode">Avanza completando cada actividad</p>
   <div class="topic-list" id="topicList"></div>
@@ -687,7 +693,7 @@ const S={cur:0,max:0,completed:false,done:new Set(),first:{},quiz:{answers:[],sc
 const list=$('#topicList');
 slides.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.className='topic-link';b.dataset.go=i;
   b.innerHTML=`<span class="dotnum">${i===slides.length-1?'✓':i+1}</span><span>${s.dataset.title}</span><span class="lock"></span>`;
-  b.addEventListener('click',()=>go(i));list.appendChild(b)});
+  b.addEventListener('click',()=>{go(i);closeRoute()});list.appendChild(b)});
 const links=$$('.topic-link');
 const slideDone=i=>!slides[i].dataset.gate||S.done.has(slides[i].dataset.gate);
 function refreshNav(){
@@ -702,7 +708,11 @@ function refreshNav(){
     b.querySelector('.lock').textContent=reachable?'':'🔒';
   });
   $('#navMode').textContent=S.completed?'Navegación libre: vuelve a cualquier tema':'Avanza completando cada actividad';
+  $('#routeNow').textContent=`${S.cur+1}/${slides.length} · ${slides[S.cur].dataset.title}`;
 }
+const panel=$('#topicPanel'),rb=$('#routeBtn');
+function closeRoute(){panel.classList.remove('open');rb.setAttribute('aria-expanded','false')}
+rb.addEventListener('click',()=>{const o=panel.classList.toggle('open');rb.setAttribute('aria-expanded',o?'true':'false')});
 function go(i){
   i=Math.max(0,Math.min(slides.length-1,i));
   if(!S.completed&&i>S.max)return;
