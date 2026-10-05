@@ -1,6 +1,6 @@
-# Lecciones PEMP · Módulos 1 y 2 (estándar SCORM 1.2)
+# Lecciones PEMP · Módulos 1 a 3 (estándar SCORM 1.2)
 
-Lecciones 1.1 a 1.5 y 2.1 a 2.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
+Lecciones 1.1 a 1.5, 2.1 a 2.5 y 3.1 a 3.5 del curso **Operación Segura de Plataformas Elevadoras Móviles de Personal**, rehechas con un diseño común y con interacciones distintas en cada pantalla. Se mantiene la paleta original del curso: azul `#171697`, marino `#10154e`, turquesa `#00a5ab` y amarillo `#f4c542`.
 
 ## Entregables (`dist/`)
 
@@ -16,6 +16,11 @@ Lecciones 1.1 a 1.5 y 2.1 a 2.5 del curso **Operación Segura de Plataformas Ele
 | 2.3 Controles y funciones antes del trabajo | `Leccion_2_3_Controles_y_funciones_antes_del_trabajo.html` | `…_SCORM12.zip` |
 | 2.4 El entorno también se inspecciona | `Leccion_2_4_El_entorno_tambien_se_inspecciona.html` | `…_SCORM12.zip` |
 | 2.5 Apto, condicionado o detenido | `Leccion_2_5_Apto_condicionado_o_detenido.html` | `…_SCORM12.zip` |
+| 3.1 La tijera eleva verticalmente | `Leccion_3_1_La_tijera_eleva_verticalmente.html` | `…_SCORM12.zip` |
+| 3.2 Posicionar antes de elevar | `Leccion_3_2_Posicionar_antes_de_elevar.html` | `…_SCORM12.zip` |
+| 3.3 Desplazar, elevar y bajar en secuencia | `Leccion_3_3_Desplazar_elevar_y_bajar_en_secuencia.html` | `…_SCORM12.zip` |
+| 3.4 Trabajar dentro de la plataforma | `Leccion_3_4_Trabajar_dentro_de_la_plataforma.html` | `…_SCORM12.zip` |
+| 3.5 Cerrar la operación sin dejar riesgos | `Leccion_3_5_Cerrar_la_operacion_sin_dejar_riesgos.html` | `…_SCORM12.zip` |
 
 ## Estructura común (11 pantallas)
 
@@ -48,6 +53,16 @@ Panel de ruta lateral con navegación bloqueada hasta completar cada pantalla; a
 | 5 | Unir fuentes | Puntos sobre la tijera | Proceso paso a paso | Conversación por radio | Clasificar en 3 veredictos |
 | 6 | Pestañas | Mito o realidad | Completar frases | Mito o realidad | Completar frases |
 | 7 | Clasificar (arrastrar) | Mazo de hallazgos | Clasificar (arrastrar) | Unir (S·R·A·A·L) | Proceso paso a paso |
+
+### Módulo 3
+
+| Pantalla | 3.1 Tijera | 3.2 Posicionar | 3.3 Secuencia | 3.4 Dentro | 3.5 Cierre |
+|---|---|---|---|---|---|
+| 3 | Acordeón | Proceso paso a paso | Acordeón | Tarjetas que giran | Acordeón |
+| 4 | Unir componentes | Tarjetas que giran | Mazo ¿puedes iniciar? | Proceso paso a paso | Mazo de cierre |
+| 5 | Mazo principio o dato | Puntos sobre escena | Ordenar la secuencia | Completar frases | Ordenar el cierre |
+| 6 | Mito o realidad | Pestañas | Mito o realidad | Clasificar conductas | Mito o realidad |
+| 7 | Conversación | Clasificar (arrastrar) | Conversación por radio | Unir (D·E·N·T·R·O) | Conversación de reporte |
 
 Ninguna interacción se repite dentro de una lección y cada lección cambia respecto de la anterior.
 

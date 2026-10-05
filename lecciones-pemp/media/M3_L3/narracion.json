@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La tijera de Camila está lista, pero una caja alta y herramientas sueltas le tapan la vista del recorrido. ¿Qué corresponde antes de iniciar? Elige una alternativa.",
+ "preparar": "La secuencia comienza antes de tocar un control. Abre las cuatro comprobaciones: acceso, ocupantes y materiales, controles y visibilidad.",
+ "iniciar": "¿Puedes iniciar el movimiento? Revisa cada situación y decide si inicias o si todavía no corresponde.",
+ "secuencia": "Una fase habilita la siguiente. Ordena los siete pasos de este escenario y luego verifica tu secuencia.",
+ "errores": "Romper la secuencia para ahorrar segundos parece eficiente. Decide si cada frase es un mito o una realidad.",
+ "descenso": "Camila terminó su tarea en altura y Luis la apoya por radio. Responde como ella antes de descender.",
+ "caso": "Camila y Pedro preparan la tijera para trabajar juntos. Acompáñalos en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Aplica la herramienta paso a una tarea real: prepara, asegura, secuencia y observa.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "Mover la plataforma no es una suma de órdenes aisladas. Cada acción prepara la siguiente y debe conservar el control del equipo, de las personas y del entorno.",
+ "v2": "La secuencia comienza antes de tocar un control. El acceso queda asegurado, los materiales ordenados y el operador reconoce la respuesta del mando que va a usar.",
+ "v3": "No existe una velocidad segura por intuición. El movimiento se ajusta al equipo, al piso, a la visibilidad y al espacio. Si una condición obliga a improvisar, la secuencia no está lista.",
+ "v4": "Si la carga bloquea la vista hacia el recorrido, no se compensa con movimiento ni asomándose. Primero se reorganiza la carga hasta recuperar una visibilidad compatible.",
+ "v5": "Se eleva observando el entorno y sin superar los límites del equipo. Antes de descender se comprueba el área inferior, porque pudo cambiar mientras la plataforma estaba arriba.",
+ "v6": "Una operación controlada conserva el orden y la capacidad de detenerse entre fases. Desplazarse con la plataforma elevada no se supone: solo cuando el fabricante y el procedimiento lo permiten."
+}

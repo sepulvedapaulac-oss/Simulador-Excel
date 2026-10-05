@@ -1,0 +1,18 @@
+{
+ "inicio": "Hola, soy Ninoska. La tarea de Camila está al otro lado de la bodega, y el camino más directo deja la tijera cerca del borde de un muelle. ¿Cuál es la primera decisión segura? Elige una alternativa.",
+ "superficie": "Las ruedas transmiten todo al terreno. Revisa en orden las tres comprobaciones de la superficie: apoyo, nivel y condición.",
+ "condiciones": "Una posición solo es adecuada cuando seis condiciones son compatibles al mismo tiempo. Gira cada tarjeta para revisarlas.",
+ "escena": "Explora la escena completa. Cada punto es una condición que debe resolverse antes de elevar. Revisa los seis.",
+ "delimitacion": "Controlar el área es más que rodear la máquina. Recorre las cuatro pestañas: define, separa, mantén y verifica.",
+ "cambios": "Una posición segura puede dejar de serlo. Clasifica cada situación: ¿la posición sigue válida o hay que volver a evaluar?",
+ "caso": "El piso es firme, pero hay una tubería arriba y una ruta peatonal cerca. Acompaña a Camila en tres decisiones.",
+ "comprobacion": "Llegó la comprobación. Son cinco preguntas y necesitas al menos un ochenta por ciento para aprobar. Después de cada respuesta verás una explicación.",
+ "transferencia": "Aplica la herramienta ubica a un lugar real de tu trabajo: ubicación, base, interferencias, control y autorización.",
+ "cierre": "Felicitaciones, completaste la lección. Aquí ves tu puntaje y tus decisiones al primer intento. Ahora puedes navegar libremente para repasar.",
+ "v1": "La estabilidad no comienza cuando la plataforma sube. Comienza mucho antes, al elegir y controlar el lugar desde donde se realizará el trabajo.",
+ "v2": "La superficie debe ser compatible con el equipo y con lo que indica el fabricante. Una zona que parece firme puede esconder transiciones, depresiones o materiales que no sostienen la operación.",
+ "v3": "La ubicación más directa no siempre es la correcta. Un borde, una zanja o una abertura exigen distancia; una barrera controla el acceso, pero no corrige una posición incompatible.",
+ "v4": "Las interferencias superiores se evalúan para toda la elevación prevista, no solo desde la base. Lo mismo ocurre con accesos, puertas y circulación alrededor del equipo.",
+ "v5": "La delimitación responde al espacio que ocupará la operación y a la circulación real del lugar. Separa a las personas sin empujarlas hacia otro peligro, y se verifica durante toda la tarea.",
+ "v6": "Una posición segura puede dejar de serlo. Si cambia la superficie, el entorno o el control del área, se vuelve a la decisión de posicionamiento. Primero posiciona y controla; después piensa en elevar."
+}
