@@ -1,0 +1,203 @@
+1
+00:00:00,500 --> 00:00:06,105
+En una PYME es común guardar documentos en distintos computadores, teléfonos,
+
+2
+00:00:06,105 --> 00:00:07,779
+correos o aplicaciones.
+
+3
+00:00:07,779 --> 00:00:12,147
+El problema aparece cuando necesitamos encontrar un archivo,
+
+4
+00:00:12,147 --> 00:00:16,733
+saber cuál es la última versión o compartirlo con otra persona.
+
+5
+00:00:16,733 --> 00:00:25,395
+En este video veremos cómo organizar y proteger nuestros archivos utilizando herramientas de almacenamiento en la nube.
+
+6
+00:00:26,895 --> 00:00:34,801
+Google Drive y OneDrive permiten guardar archivos en internet para acceder a ellos desde distintos dispositivos.
+
+7
+00:00:34,801 --> 00:00:37,766
+También facilitan el trabajo colaborativo,
+
+8
+00:00:37,766 --> 00:00:44,684
+porque podemos compartir documentos sin tener que enviar distintas copias por correo o mensajería.
+
+9
+00:00:46,184 --> 00:00:49,587
+El primer paso es crear una estructura simple.
+
+10
+00:00:49,587 --> 00:00:55,282
+Podemos comenzar con una carpeta principal para la empresa y, dentro de ella,
+
+11
+00:00:55,282 --> 00:00:57,945
+separar la información según su uso.
+
+12
+00:00:57,945 --> 00:00:58,832
+Por ejemplo:
+
+13
+00:00:58,832 --> 00:01:03,123
+Administración, Clientes, Ventas, Marketing y Proveedores.
+
+14
+00:01:03,123 --> 00:01:06,081
+No existe una única estructura correcta.
+
+15
+00:01:06,081 --> 00:01:13,848
+Lo importante es que todas las personas que trabajan con la información puedan comprenderla y utilizarla.
+
+16
+00:01:15,348 --> 00:01:21,941
+El segundo paso es utilizar nombres que permitan reconocer rápidamente un archivo.
+
+17
+00:01:21,941 --> 00:01:26,444
+Evita nombres como documento uno, final o versión nueva.
+
+18
+00:01:26,444 --> 00:01:33,278
+Un nombre útil puede indicar el tipo de documento, el cliente, el período o la fecha.
+
+19
+00:01:33,278 --> 00:01:39,067
+Esto facilita las búsquedas y evita trabajar sobre archivos equivocados.
+
+20
+00:01:40,567 --> 00:01:46,862
+Cuando la cantidad de documentos aumenta, no es necesario revisar carpeta por carpeta.
+
+21
+00:01:46,862 --> 00:01:55,646
+Tanto Drive como OneDrive cuentan con buscadores que permiten localizar archivos utilizando su nombre y otros criterios.
+
+22
+00:01:55,646 --> 00:02:01,282
+Por eso una buena forma de nombrar los documentos también mejora la búsqueda.
+
+23
+00:02:02,782 --> 00:02:06,639
+Ahora revisemos una acción especialmente importante:
+
+24
+00:02:06,639 --> 00:02:08,270
+compartir información.
+
+25
+00:02:08,270 --> 00:02:14,426
+Antes de enviar un enlace, debemos preguntarnos qué necesita hacer la otra persona.
+
+26
+00:02:14,426 --> 00:02:19,618
+Si solamente debe consultar el archivo, entregamos permiso de lectura.
+
+27
+00:02:19,618 --> 00:02:23,549
+Si necesita modificarlo, podemos permitir la edición.
+
+28
+00:02:23,549 --> 00:02:32,300
+Dar acceso de edición a todas las personas aumenta innecesariamente el riesgo de cambios o eliminaciones accidentales.
+
+29
+00:02:33,800 --> 00:02:38,039
+También debemos revisar quién puede acceder mediante el enlace.
+
+30
+00:02:38,039 --> 00:02:42,613
+Para documentos internos, datos de clientes o información comercial,
+
+31
+00:02:42,613 --> 00:02:46,313
+es preferible limitar el acceso a personas específicas.
+
+32
+00:02:46,313 --> 00:02:53,444
+Un enlace abierto puede terminar siendo compartido con personas que no deberían acceder a esa información.
+
+33
+00:02:54,944 --> 00:03:01,908
+Otra ventaja de trabajar en la nube es que varias personas pueden colaborar sobre un mismo documento.
+
+34
+00:03:01,908 --> 00:03:08,319
+Esto reduce la circulación de múltiples versiones y permite mantener un archivo centralizado.
+
+35
+00:03:08,319 --> 00:03:10,387
+Dependiendo de la herramienta,
+
+36
+00:03:10,387 --> 00:03:15,007
+también podemos consultar cambios o recuperar versiones anteriores.
+
+37
+00:03:16,507 --> 00:03:21,889
+Guardar información en la nube también requiere buenas prácticas de seguridad.
+
+38
+00:03:21,889 --> 00:03:26,788
+Utiliza contraseñas robustas y diferentes para tus cuentas importantes,
+
+39
+00:03:26,788 --> 00:03:35,759
+activa la verificación en dos pasos cuando esté disponible y revisa periódicamente quién tiene acceso a tus carpetas y documentos.
+
+40
+00:03:37,259 --> 00:03:43,971
+Evita almacenar información empresarial importante únicamente en un computador o teléfono.
+
+41
+00:03:43,971 --> 00:03:47,700
+Evita compartir contraseñas entre varias personas.
+
+42
+00:03:47,700 --> 00:03:52,323
+Y evita entregar permisos de edición cuando no son necesarios.
+
+43
+00:03:52,323 --> 00:03:54,710
+Prefiere archivos centralizados,
+
+44
+00:03:54,710 --> 00:04:00,900
+carpetas ordenadas y accesos definidos según las responsabilidades de cada persona.
+
+45
+00:04:02,400 --> 00:04:04,281
+Recuerda cuatro acciones:
+
+46
+00:04:04,281 --> 00:04:07,743
+organiza tus carpetas, utiliza nombres claros,
+
+47
+00:04:07,743 --> 00:04:13,463
+entrega solamente los permisos necesarios y protege el acceso a tus cuentas.
+
+48
+00:04:13,463 --> 00:04:15,043
+Son acciones simples,
+
+49
+00:04:15,043 --> 00:04:22,644
+pero pueden reducir considerablemente el desorden y el riesgo de pérdida o exposición de información.
+
+50
+00:04:24,144 --> 00:04:28,551
+Ahora revisa cómo estás almacenando los archivos de tu propia PYME.
+
+51
+00:04:28,551 --> 00:04:35,325
+Identifica una mejora que puedas realizar hoy y aplícala antes de continuar con la siguiente actividad.
