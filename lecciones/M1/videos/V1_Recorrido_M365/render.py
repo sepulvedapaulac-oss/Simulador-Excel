@@ -138,7 +138,7 @@ def render_at(t):
     if k == 0:
         al = 1 if lt < .3 else max(0, 1 - (lt - .3) * total / 0.8)
         title = (['Recorrido por', 'Microsoft 365'], al) if al > 0 else None
-        note = 'Capturas oficiales de Microsoft · la interfaz puede variar según idioma y plan' if al > 0 else None
+        note = None
     if k == len(plan) - 1:
         al = min(1, max(0, (lt - .45) * total / 0.8))
         title = (['Primero la necesidad,', 'después la herramienta'], al) if al > 0 else None
@@ -174,7 +174,7 @@ for fi in range(N):
     if k == 0:
         al = 1 if lt < .3 else max(0, 1 - (lt - .3) * total / 0.8)
         title = (['Recorrido por', 'Microsoft 365'], al) if al > 0 else None
-        note = 'Capturas oficiales de Microsoft · la interfaz puede variar según idioma y plan' if al > 0 else None
+        note = None
     if k == len(plan) - 1:
         al = min(1, max(0, (lt - .45) * total / 0.8))
         title = (['Primero la necesidad,', 'después la herramienta'], al) if al > 0 else None

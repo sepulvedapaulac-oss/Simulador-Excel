@@ -1,7 +1,7 @@
 # Video 1 · Recorrido por Microsoft 365
 
 MP4 1920×1080 · voz Ninoska (ElevenLabs) · subtítulos incrustados + `Video1_Recorrido_Microsoft365.srt`.
-Capturas: imágenes oficiales de producto publicadas por Microsoft en microsoft.com/es-cl/microsoft-365 (Outlook, OneDrive, Excel, Word, PowerPoint y Teams). La interfaz aparece en inglés y puede variar según idioma y plan.
+Capturas: imágenes oficiales de producto publicadas por Microsoft en microsoft.com/es-cl/microsoft-365 (Outlook, OneDrive, Excel, Word, PowerPoint y Teams). La interfaz aparece en inglés.
 
 | # | Captura (`capturas/`) | Destacado en pantalla | Narración |
 |---|---|---|---|
