@@ -843,7 +843,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
   <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
   <div class="fb" id="tblFb"></div>
-  <div class="sources">Referencias: Código del Trabajo, art. 152 quáter O bis; acreditación según la normativa (certificado de nacimiento, Registro Nacional de la Discapacidad o Registro Social de Hogares).</div>
+  <div class="sources">Referencias: Código del Trabajo, art. 152 quáter O bis; acreditación según la normativa (certificado de nacimiento, Registro Nacional de la Discapacidad o credencial de persona cuidadora del Ministerio de Desarrollo Social).</div>
 </section>
 
 <!-- 8 · COMPROBACIÓN -->
@@ -1170,7 +1170,7 @@ const CAT=['Procede','Fórmula alternativa','Rechazo fundado'];
 const ROWS=[
  ['Valeria · Analista de facturación','Hijo de 9 años. Sus tareas son digitales, salvo la reunión de cierre de los lunes. Pide lunes y jueves presencial y el resto a distancia.',0,'Procede: la propuesta ya considera el día que exige presencia. Sus funciones lo permiten.'],
  ['Marcos · Recepcionista de la sede','Hija de 6 años. Atiende presencialmente al público y recibe correspondencia toda la jornada. Pide teletrabajo total.',2,'Rechazo fundado: la atención presencial de público no puede hacerse a distancia. Debe explicarse por escrito; puede evaluar otras herramientas, como la banda horaria (su hija es menor de 12).'],
- ['Paula · Analista de remuneraciones','Cuida sin remuneración a su madre con dependencia severa, registrada en el Registro Social de Hogares. Todas sus tareas se hacen en sistemas en línea. Pide 4 días a distancia.',0,'Procede: acredita la dependencia severa y sus funciones son compatibles con el trabajo a distancia.'],
+ ['Paula · Analista de remuneraciones','Cuida sin remuneración a su madre con dependencia severa y presentó su credencial de persona cuidadora del Ministerio de Desarrollo Social. Todas sus tareas se hacen en sistemas en línea. Pide 4 días a distancia.',0,'Procede: acredita la dependencia severa y sus funciones son compatibles con el trabajo a distancia.'],
  ['Javiera · Coordinadora de capacitación','Hijo de 11 años. Dicta talleres presenciales martes y jueves; el resto de la semana planifica y coordina en línea. Pide teletrabajo total.',1,'Fórmula alternativa: los talleres exigen presencia. Se puede ofrecer lunes, miércoles y viernes a distancia.'],
  ['Andrés · Analista de compras','Hijo de 13 años. Trabaja con proveedores por correo y sistemas, pero cada miércoles hay una revisión presencial de muestras. Pide teletrabajo total.',1,'Fórmula alternativa: puede trabajar a distancia cuatro días y asistir el miércoles a la revisión presencial.']];
 $('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td><b>${r[0]}</b><span class="who">${r[1]}</span><span class="why" hidden></span></td><td style="width:240px"><select aria-label="Respuesta para ${r[0]}"><option value="">Elige…</option>${CAT.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
