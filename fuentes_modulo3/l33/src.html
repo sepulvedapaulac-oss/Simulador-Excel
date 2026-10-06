@@ -1,0 +1,373 @@
+<title>Lección 3.3 — Maternidad, paternidad y protección familiar</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* Lección 3.3: recorrido de descansos y calculadora de fuero */
+.dseg.vio{background:linear-gradient(180deg,var(--violet),color-mix(in srgb,var(--violet) 78%,#000))}
+.dseg.par{background:var(--navy)}
+.fband{width:100%;min-height:58px;margin-top:8px}
+.thread .persona{margin-top:4px}
+.calc2{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.calc2>*{min-width:0}
+.calc2 .calc{margin-top:8px}
+.calc input[type=date],.calc input[type=range]{font:inherit;font-weight:800;padding:9px 10px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;max-width:240px}
+.calc input[type=range]{padding:0;border:0;background:none;max-width:none;accent-color:var(--teal)}
+.calc-out{margin-top:10px;padding:12px 14px;border-radius:14px;background:var(--mint);border:1px solid var(--mint-line);font-weight:750}
+.calc-out b{color:var(--teal-ink)}
+.calc .ex{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+@media(max-width:860px){.calc2{grid-template-columns:1fr}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.3</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:32" data-gate="hook" data-gate-msg="Lee los dos mensajes y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.3 · Maternidad, paternidad y protección familiar</span>
+      <h1 class="reveal">Derechos que acompañan distintas etapas del cuidado</h1>
+      <p class="lead reveal">Es lunes en <strong>Horizonte Servicios</strong>. En una misma mañana, Camila, del Equipo de Personas, recibe dos mensajes. Presiona <strong>“Ver mensajes”</strong> para leerlos.</p>
+      <div class="thread reveal" id="thread">
+        <div id="threadBody"></div>
+        <button class="small-btn primary" type="button" id="showMsg">Ver mensajes</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila conversa en una sala de reuniones con una trabajadora embarazada que le muestra un documento" src="{{IMG:i33_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <div class="callout"><strong>Meta de aprendizaje:</strong> reconocer los principales derechos de protección a la maternidad y la paternidad, y actuar correctamente frente a situaciones frecuentes de embarazo, nacimiento y cuidado.</div>
+    <h3 style="margin-top:18px">¿Qué respuesta debería dar Camila a Valentina y a Diego?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>A Valentina: que avise cuando quiera tomar sus descansos y los ajustan a la temporada. A Diego: que puede usar 5 días cuando le acomode durante el año.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>A Valentina: 6 semanas de prenatal, 12 de postnatal y luego el postnatal parental, con fuero desde ya. A Diego: 5 días pagados, desde el parto o repartidos dentro del primer mes.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>A Valentina: que presente un test de embarazo y, si puede, acorte su prenatal. A Diego: que use días de vacaciones para acompañar el nacimiento.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Los descansos no se acomodan a la temporada.</strong> <span class="fb-body">El prenatal y el postnatal tienen una duración fijada por ley y son irrenunciables. Y el permiso de Diego no es para “cuando le acomode”: se usa desde el parto o dentro del primer mes desde el nacimiento.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Valentina tiene descansos fijados por ley y está protegida por fuero desde el embarazo. Diego tiene un permiso pagado de 5 días por nacimiento. En esta lección verás cada derecho y cómo aplicarlo.</span></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Esta respuesta vulnera dos derechos.</strong> <span class="fb-body">Ningún empleador puede exigir un test de embarazo, y los descansos maternales no se pueden acortar. Además, Diego no necesita usar vacaciones: la ley le da un permiso pagado de 5 días por el nacimiento.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 2 min</span>
+  <h2>¿Qué protege la ley cuando llega un hijo o hija?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · RECORRIDO DE LOS DESCANSOS -->
+<section class="slide" data-title="El recorrido de los descansos" data-audio="p03" data-dur="0:34" data-gate="day" data-gate-msg="Abre los seis hitos del recorrido de Valentina.">
+  <span class="eyebrow">Lección 3.3 · Descansos y fuero maternal</span>
+  <h2>El recorrido de Valentina, del embarazo al regreso</h2>
+  <p>Esta línea muestra, en orden, los derechos que acompañan a Valentina. <strong>Haz clic en cada hito</strong>, incluida la franja de fuero de abajo, para ver qué dice la ley y qué debe hacer Camila.</p>
+  <div class="task" id="dayTask">Hitos revisados <span class="tick" id="dayTick">0 / 6</span></div>
+  <div class="dayline" id="dayline">
+    <button class="dseg vio" type="button" style="flex:3" data-k="0">Embarazo<small>desde que se informa</small></button>
+    <button class="dseg ord" type="button" style="flex:1.6" data-k="1">Prenatal<small>6 semanas</small></button>
+    <button class="dseg col" type="button" style="flex:.9" data-k="2">Parto<small>nacimiento</small></button>
+    <button class="dseg ord" type="button" style="flex:3" data-k="3">Postnatal<small>12 semanas</small></button>
+    <button class="dseg par" type="button" style="flex:3" data-k="4">Postnatal parental<small>12 sem. (o 18 a media jornada)</small></button>
+  </div>
+  <button class="dseg ext fband" type="button" data-k="5">Fuero maternal<small>desde el embarazo hasta 1 año después de terminado el postnatal</small></button>
+  <div class="dayaxis"><span>Embarazo</span><span>Parto</span><span>Fin del postnatal</span><span>+ 1 año</span></div>
+  <div class="dpanel" id="dpanel"><p class="hint">Selecciona un hito para ver la explicación.</p></div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 195, 197 bis y 201.</div>
+</section>
+
+<!-- 4 · FUERO -->
+<section class="slide" data-title="¿Hasta cuándo dura el fuero?" data-audio="p04" data-dur="0:27" data-gate="calcA calcB" data-gate-msg="Resuelve los dos cálculos: el fuero de Daniela y el de Tomás.">
+  <span class="eyebrow amber">Lección 3.3 · Duración del fuero</span>
+  <h2>¿Hasta cuándo dura el fuero?</h2>
+  <p>Primero prueba cada calculadora cambiando los valores. Luego <strong>resuelve el caso de abajo</strong> en cada una y presiona <strong>Comprobar</strong>.</p>
+  <div class="calc2">
+    <div class="calc">
+      <h3 style="margin-top:0">Fuero maternal</h3>
+      <label class="field" for="fmEnd">Fecha de término del postnatal</label>
+      <input type="date" id="fmEnd" value="2026-12-01"/>
+      <div class="calc-out" id="fmOut"></div>
+      <div class="ex">
+        <p><strong>Caso de Daniela:</strong> su postnatal termina el <strong>14 de abril de 2027</strong>. Después tomará las 12 semanas de postnatal parental. ¿Hasta qué fecha tiene fuero?</p>
+        <div class="answer"><input type="date" id="fmAns" aria-label="Fecha de término del fuero de Daniela"/><button class="small-btn primary" type="button" id="fmCheck">Comprobar</button></div>
+        <div class="fb" id="fmFb"></div>
+      </div>
+    </div>
+    <div class="calc">
+      <h3 style="margin-top:0">Fuero del padre</h3>
+      <label class="field" for="fpW">Semanas de postnatal parental que usa el padre: <output id="fpWo">4</output></label>
+      <input type="range" id="fpW" min="1" max="12" step="1" value="4"/>
+      <div class="calc-out" id="fpOut"></div>
+      <div class="ex">
+        <p><strong>Caso de Tomás:</strong> su pareja le traspasa <strong>6 semanas</strong> de postnatal parental a jornada completa. ¿Cuántas semanas de fuero tiene Tomás?</p>
+        <div class="answer"><input id="fpAns" inputmode="numeric" placeholder="Semanas" aria-label="Semanas de fuero de Tomás"/><button class="small-btn primary" type="button" id="fpCheck">Comprobar</button></div>
+        <div class="fb" id="fpFb"></div>
+      </div>
+    </div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 197 bis y 201. Las fechas se calculan de forma referencial; ante dudas, confirma con los certificados y la Dirección del Trabajo.</div>
+</section>
+
+<!-- 5 · DERECHOS Y REGLAS -->
+<section class="slide" data-title="Derechos y reglas" data-audio="p05" data-dur="0:30" data-gate="pairs" data-gate-msg="Une los cinco derechos con su regla.">
+  <span class="eyebrow violet">Lección 3.3 · Derechos de cuidado</span>
+  <h2>Cada derecho tiene su regla</h2>
+  <div class="grid-2">
+    <div><p>Además de los descansos, la ley protege el cuidado diario del hijo o hija. <strong>Selecciona un derecho a la izquierda y luego la regla que le corresponde a la derecha.</strong> Si te equivocas, puedes volver a intentarlo.</p>
+      <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 5</span></div></div>
+    <div class="photo-frame wide"><img alt="Un trabajador muestra a Camila la foto de su hijo recién nacido en su celular" src="{{IMG:i33_padre}}"/></div>
+  </div>
+  <div class="pairs"><div id="pl"></div><div id="pr"></div></div>
+  <div class="fb" id="prFb"></div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 195, 199, 202, 203 y 206; Ley N°21.063 (SANNA).</div>
+</section>
+
+<!-- 6 · MITOS -->
+<section class="slide" data-title="Mitos frecuentes" data-audio="p06" data-dur="0:29" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow amber">Lección 3.3 · Mitos sobre maternidad y paternidad</span>
+  <h2>“Siempre se ha hecho así”</h2>
+  <div class="grid-2">
+    <div>
+      <p>En los pasillos circulan ideas que parecen razonables, pero no lo son. Lee cada afirmación y decide si es <strong>verdadera o falsa</strong>. Después de responder verás por qué.</p>
+      <div class="tf" id="tf"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Una trabajadora usa la sala de lactancia de su empresa durante la jornada" src="{{IMG:i33_lactancia}}"/></div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 174, 194, 195, 201 y 206.</div>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:29" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>“Es temporada alta, no podemos esperar”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">JO</span> Jefatura de Operaciones</div>
+      <div class="bubble"><span class="who">Jefatura</span>Camila, el contrato a plazo fijo de Valentina vence a fin de mes. Con el embarazo va a faltar justo en temporada alta. No se lo renovemos, o la despedimos y le pagamos todo. ¿Cómo lo hacemos?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Una jefatura muestra a Camila una planilla de turnos de temporada alta en su computador" src="{{IMG:i33_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué responde Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Que la despidan por necesidades de la empresa y le paguen todas las indemnizaciones.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Que simplemente no le renueven el contrato: como es a plazo fijo, termina solo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Que Valentina tiene fuero: no se puede terminar su contrato sin autorización judicial previa (desafuero). La temporada alta se debe cubrir de otra forma.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: despido nulo</div><div class="branch-body"><div><p>Pagar indemnizaciones no reemplaza la autorización judicial. Para despedir a una persona con fuero se necesita <strong>desafuero</strong> previo por causales específicas; sin él, el despido es nulo y procede la <strong>reincorporación</strong> de Valentina.</p></div><div><p class="hint">El fuero protege el empleo, no solo el pago.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: término sin autorización</div><div class="branch-body"><div><p>El fuero también protege a quien tiene contrato a plazo fijo. Mientras dure el fuero, ponerle término requiere <strong>autorización judicial previa</strong>. Además, decidir no renovar por el embarazo es una discriminación prohibida.</p></div><div><p class="hint">Revisa el artículo 174 y el artículo 194.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Valentina tiene fuero desde el embarazo. Solo un tribunal puede autorizar el término, y únicamente por causales específicas. La necesidad de la temporada alta se resuelve con planificación y refuerzos, no con el contrato de Valentina.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Dos semanas después:</strong> Valentina trabaja en bodega levantando cajas y en temporada alta le asignaron turnos de noche. La jefatura propone: “Que siga igual y haga horas extra; así compensa lo que va a faltar”.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué hace Camila?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La traslada a funciones que no perjudiquen su salud, sin reducir su remuneración.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Acepta la propuesta, siempre que Valentina firme que está de acuerdo.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La traslada a funciones administrativas con un sueldo menor, proporcional al nuevo cargo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: riesgo para la salud</div><div class="branch-body"><div><p>Levantar pesos, el trabajo nocturno y las horas extraordinarias son ejemplos de trabajos perjudiciales para una trabajadora embarazada. La ley obliga a <strong>trasladarla</strong>; su firma no libera a la empresa de esa obligación.</p></div><div><p class="hint">Revisa el artículo 202.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: rebaja ilegal</div><div class="branch-body"><div><p>El traslado es correcto, pero debe hacerse <strong>sin reducción de remuneraciones</strong>. Bajar el sueldo castigaría a Valentina por estar embarazada.</p></div><div><p class="hint">El traslado protege; no puede costarle dinero.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Si el trabajo es perjudicial para su salud (pesos, esfuerzo excesivo, noche, horas extra), Valentina debe pasar a otro trabajo que no lo sea, manteniendo su remuneración.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 174, 194, 201 y 202.</div>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:29" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:29" data-gate="bins pass" data-gate-msg="Clasifica las ocho solicitudes en su columna.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Qué derecho está detrás de cada solicitud?</h2>
+  <p>Estas son solicitudes que podrían llegar a tu Equipo de Personas. <strong>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna</strong> del derecho que corresponde.</p>
+  <div class="task" id="binTask">Solicitudes clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins">
+    <div class="bin" data-b="0" role="button" tabindex="0"><h3>👶 Descansos y permisos por nacimiento</h3></div>
+    <div class="bin" data-b="1" role="button" tabindex="0"><h3>🛡️ Protección del empleo (fuero)</h3></div>
+    <div class="bin" data-b="2" role="button" tabindex="0"><h3>🩺 Salud y no discriminación</h3></div>
+    <div class="bin" data-b="3" role="button" tabindex="0"><h3>🍼 Cuidado del hijo o hija</h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 174, 194, 195, 197 bis, 199, 201, 202, 203 y 206.</div>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:27" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.3</h2>
+    <p>Ya puedes orientar a una trabajadora embarazada y a un padre sobre sus descansos y permisos, calcular hasta cuándo dura el fuero y reconocer cuándo una decisión de la empresa vulnera la protección a la maternidad y la paternidad.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar el recorrido de los descansos</button><button class="small-btn primary" type="button" data-goto="3">Repasar el cálculo del fuero</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 174, 194, 195, 197 bis, 199, 201, 202, 203 y 206; Ley N°21.063; Dirección del Trabajo. Contenido revisado con la normativa vigente a octubre de 2026.</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l33';
+const FIRST_KEYS=['hook','tf','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Dos noticias',lines:['Una trabajadora informa que está embarazada. El mismo día, otro trabajador avisa que nació su hijo.','Para responder bien a ambos, necesitas conocer los derechos que la ley entrega a la maternidad y a la paternidad.'],
+  html:`<div class="v-icons"><div><span class="i">🤰</span>Valentina informa su embarazo</div><div data-at="0"><span class="i">＋</span></div><div><span class="i">👶</span>Diego avisa el nacimiento</div></div><div class="v-sub" data-at="1" style="margin-top:16px">Dos solicitudes, varios derechos protegidos</div>`},
+ {t:'Prenatal y postnatal',lines:['La trabajadora tiene un descanso prenatal de seis semanas antes del parto y un postnatal de doce semanas después.','Estos descansos son irrenunciables: durante ellos está prohibido que trabaje, aunque ella quiera o la empresa lo necesite.'],
+  html:`<div class="v-day"><div class="s o" style="flex:6">Prenatal · 6 sem</div><div class="s x on" style="flex:1.2">Parto</div><div class="s o" style="flex:12">Postnatal · 12 sem</div></div><div class="v-sub" data-at="1" style="margin-top:14px">Irrenunciables · se prohíbe trabajar</div>`},
+ {t:'Postnatal parental',lines:['Al terminar el postnatal comienza el permiso postnatal parental: doce semanas completas, o dieciocho a media jornada, con subsidio.','Si ambos trabajan, la madre puede traspasar al padre hasta seis semanas, a partir de la séptima semana del permiso.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">12 semanas a jornada completa</span><span class="on">o 18 semanas a media jornada</span><span data-at="1">Traspaso al padre: hasta 6 semanas</span><span data-at="1">Desde la 7.ª semana</span></div>`},
+ {t:'Permiso del padre',lines:['El padre tiene un permiso pagado de cinco días por el nacimiento de su hijo, que paga el empleador.','Puede usarlo desde el parto, en días continuos sin contar el descanso semanal, o repartirlo dentro del primer mes. Es irrenunciable y también aplica en la adopción.'],
+  html:`<div class="v-big">5 días</div><div class="v-sub">pagados por el empleador</div><div class="v-chk"><span data-at="1">Desde el parto, continuos</span><span data-at="1">o repartidos en el primer mes</span><span data-at="1">Irrenunciable</span></div>`},
+ {t:'Fuero',lines:['La trabajadora tiene fuero desde el embarazo y hasta un año después de terminado el postnatal. El postnatal parental no se suma a ese año.','Si el padre usa postnatal parental, tiene fuero por el doble del período que use, desde diez días antes del permiso, con un máximo de tres meses.'],
+  html:`<div class="v-steps"><div data-at="0">Madre: embarazo → 1 año después del postnatal</div><div data-at="0">El postnatal parental no se suma</div><div data-at="1">Padre: el doble del permiso que use</div><div data-at="1">Desde 10 días antes · máximo 3 meses</div></div>`},
+ {t:'Desafuero',lines:['Para despedir a una persona con fuero, el empleador necesita autorización judicial previa, llamada desafuero, y solo por causales específicas.','Sin esa autorización el despido es nulo y procede la reincorporación. Pagar indemnizaciones no lo reemplaza.'],
+  html:`<div class="v-icons"><div><span class="i">⚖️</span>Autorización judicial previa</div><div data-at="1" class="dim"><span class="i">🚫</span>Sin ella: despido nulo</div><div data-at="1" class="dim"><span class="i">↩️</span>Reincorporación</div></div>`},
+ {t:'Cuidado diario',lines:['La protección sigue en el día a día.','La madre tiene al menos una hora diaria para alimentar a su hijo menor de dos años.','Las empresas con veinte o más trabajadoras deben tener o financiar sala cuna.','La embarazada en un trabajo perjudicial debe ser trasladada sin rebaja de sueldo.','Y nadie puede exigir un test de embarazo.'],
+  html:`<div class="v-steps"><div data-at="1">1 hora diaria de alimentación · hijo menor de 2 años</div><div data-at="2">Sala cuna · 20 o más trabajadoras</div><div data-at="3">Traslado sin rebaja de sueldo</div><div data-at="4">Prohibido exigir test de embarazo</div></div>`}
+]};
+const Q=[
+ {q:'Valentina pregunta cuánto dura su descanso postnatal. ¿Qué le responde Camila?',o:['6 semanas después del parto.','12 semanas después del parto.','18 semanas después del parto.'],c:1,f:'El postnatal dura 12 semanas después del parto. Las 6 semanas corresponden al prenatal, y las 18 semanas son la opción de postnatal parental a media jornada.'},
+ {q:'¿Desde cuándo y hasta cuándo se extiende el fuero maternal?',o:['Desde el parto hasta que termina el postnatal parental.','Desde el embarazo hasta 6 meses después del parto.','Desde el embarazo hasta 1 año después de expirado el postnatal, sin sumar el postnatal parental.','Solo mientras dura el prenatal y el postnatal.'],c:2,f:'El fuero comienza con el embarazo y dura hasta un año después de expirado el descanso postnatal; el permiso postnatal parental no se suma a ese año.'},
+ {q:'Una jefatura quiere despedir a una trabajadora con fuero. ¿Qué se necesita?',o:['Autorización judicial previa (desafuero), por causales específicas.','Pagar todas las indemnizaciones legales.','Avisar con 30 días de anticipación.'],c:0,f:'Sin autorización judicial previa el despido es nulo y procede la reincorporación. Pagar indemnizaciones o dar aviso no reemplaza el desafuero.'},
+ {q:'Diego avisa que nació su hijo. ¿Qué permiso le corresponde?',o:['3 días hábiles, en la fecha que él elija.','5 días, pero descontados de sus vacaciones.','10 días sin goce de sueldo.','5 días pagados, desde el parto (continuos) o repartidos dentro del primer mes.'],c:3,f:'El padre tiene 5 días de permiso pagado por el empleador, que puede usar desde el parto en forma continua (sin contar el descanso semanal) o distribuir dentro del primer mes.'},
+ {q:'Una empresa acaba de llegar a 25 trabajadoras. ¿Qué obligación tiene respecto de la sala cuna?',o:['Ninguna: la obligación comienza con 50 trabajadoras.','Tener o financiar sala cuna para los hijos menores de 2 años.','Pagar un bono a las madres en lugar de la sala cuna, a su elección.'],c:1,f:'Las empresas que ocupan 20 o más trabajadoras deben tener o financiar sala cuna para los hijos menores de 2 años.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: mensajes ---------- */
+$('#showMsg').addEventListener('click',e=>{e.currentTarget.remove();const tb=$('#threadBody');
+  tb.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
+  setTimeout(()=>{tb.innerHTML='<div class="persona"><span class="avatar">VR</span> Valentina · Bodega · 9:12</div><div class="bubble"><span class="who">Valentina</span>Hola Camila, quería contarte que estoy embarazada 😊. ¿Cuándo empiezan mis descansos y cuánto duran?</div><div class="typing"><span></span><span></span><span></span></div>';
+    setTimeout(()=>{$('.typing',tb).remove();tb.insertAdjacentHTML('beforeend','<div class="persona"><span class="avatar mgr">DM</span> Diego · Ventas · 9:40</div><div class="bubble"><span class="who">Diego</span>¡Camila, anoche nació mi hijo! ¿Tengo algún permiso o debo pedir vacaciones?</div>');
+      setTimeout(()=>{tb.insertAdjacentHTML('beforeend','<div class="bubble camila"><span class="who">Camila</span>¡Felicitaciones a los dos! Déjenme revisar bien sus derechos y les respondo.</div>');$('#hookQ').hidden=false},700)},1000)},900)});
+
+/* ---------- Recorrido de los descansos ---------- */
+const DAY=[
+ ['Embarazo: comienza la protección','Desde que existe el embarazo, Valentina tiene <b>fuero</b>. Además, nadie puede exigirle un test o certificado de embarazo, ni condicionar su permanencia, renovación o promoción al embarazo. <b>Qué hace Camila:</b> registra la información con reserva y revisa si su trabajo actual es perjudicial para su salud.'],
+ ['Descanso prenatal: 6 semanas','Comienza <b>6 semanas antes del parto</b>. Es <b>irrenunciable</b> y durante él está prohibido que trabaje. <b>Qué hace Camila:</b> planifica con anticipación cómo cubrir sus funciones, sin pedirle que trabaje durante el descanso.'],
+ ['Parto','El nacimiento marca el término del prenatal y el inicio del postnatal. Para el padre, aquí comienza su <b>permiso pagado de 5 días</b>, que puede usar desde el parto o repartir dentro del primer mes.'],
+ ['Descanso postnatal: 12 semanas','Dura <b>12 semanas después del parto</b>. También es <b>irrenunciable</b>: ni un acuerdo escrito ni la temporada alta permiten acortarlo. Su fecha de término es la que sirve para calcular el fin del fuero.'],
+ ['Postnatal parental: 12 o 18 semanas','A continuación del postnatal: <b>12 semanas a jornada completa</b> con subsidio, o <b>18 semanas a media jornada</b> con el 50% del subsidio. Para elegir media jornada debe avisar al empleador al menos <b>30 días antes</b> del término del postnatal. Si ambos padres trabajan, la madre puede traspasar al padre hasta 6 semanas (o 12 a media jornada), desde la séptima semana.'],
+ ['Fuero maternal: hasta 1 año después del postnatal','Cubre desde el embarazo hasta <b>1 año después de expirado el postnatal</b>. Ojo: el postnatal parental <b>no se suma</b> a ese año. Mientras dure el fuero, solo un tribunal puede autorizar su despido (desafuero).']];
+const tDay=tracker('day',6,'#dayTick','#dayTask');
+$$('#dayline .dseg, .fband').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('.slide .dseg').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#dpanel').innerHTML=`<h3 style="margin-top:0">${DAY[k][0]}</h3><p>${DAY[k][1]}</p>`;tDay(k)}));
+
+/* ---------- Calculadora de fuero ---------- */
+const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const pd=s=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');return m?new Date(+m[1],+m[2]-1,+m[3]):null};
+const fd=d=>`${d.getDate()} de ${MES[d.getMonth()]} de ${d.getFullYear()}`;
+const addD=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);
+const addY=d=>new Date(d.getFullYear()+1,d.getMonth(),d.getDate());
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+function fm(){const d=pd($('#fmEnd').value);if(!d){$('#fmOut').textContent='Elige una fecha.';return}
+  const pp=addD(d,84);
+  $('#fmOut').innerHTML=`Fuero hasta el <b>${fd(addY(d))}</b>.<br/><small>El postnatal parental (12 semanas, hasta el ${fd(pp)} aprox.) no se suma: el año se cuenta desde el término del postnatal.</small>`}
+$('#fmEnd').addEventListener('input',fm);fm();
+$('#fmCheck').addEventListener('click',()=>{const v=$('#fmAns').value,fb=$('#fmFb');
+  if(v==='2028-04-14'){feedback(fb,true,'Correcto: 14 de abril de 2028.','El fuero dura hasta un año después de expirado el postnatal (14 de abril de 2027). Las 12 semanas de postnatal parental no se suman.');done('calcA')}
+  else if(!v)feedback(fb,false,'Falta la fecha.','Ingresa una fecha y vuelve a comprobar.');
+  else if(v===iso(addY(addD(pd('2027-04-14'),84))))feedback(fb,false,'Sumaste el postnatal parental.','El año de fuero se cuenta desde el término del postnatal, sin agregar las 12 semanas de postnatal parental. Inténtalo de nuevo.');
+  else if(v==='2027-04-14')feedback(fb,false,'Esa es la fecha en que termina el postnatal.','El fuero sigue durante un año más. Suma un año a esa fecha.');
+  else feedback(fb,false,'Revisa el cálculo.','Toma la fecha de término del postnatal y súmale exactamente un año. Puedes usar la calculadora de arriba para comprobarlo.')});
+function fp(){const w=+$('#fpW').value,dbl=w*2;$('#fpWo').textContent=w;
+  const cap=dbl>13;
+  $('#fpOut').innerHTML=cap?`El doble serían ${dbl} semanas, pero el fuero del padre <b>no puede exceder 3 meses</b>. Fuero: <b>3 meses</b>, contados desde 10 días antes del inicio del permiso.`
+    :`Fuero: el doble de ${w} ${w===1?'semana':'semanas'} = <b>${dbl} semanas</b>, contadas desde 10 días antes del inicio del permiso (dentro del tope de 3 meses).`}
+$('#fpW').addEventListener('input',fp);fp();
+$('#fpCheck').addEventListener('click',()=>{const v=+($('#fpAns').value||'').replace(/[^\d]/g,''),fb=$('#fpFb');
+  if(v===12){feedback(fb,true,'Correcto: 12 semanas.','Tomás tiene fuero por el doble del período que usa (6 × 2 = 12 semanas), desde 10 días antes de iniciar el permiso. Está dentro del tope de 3 meses.');done('calcB')}
+  else if(v===6)feedback(fb,false,'Falta duplicar.','El fuero del padre es el doble del período de postnatal parental que usa.');
+  else if(v===52||v===1)feedback(fb,false,'Ese es el fuero de la madre.','El padre no tiene un año: tiene el doble del período que usa, con un máximo de 3 meses.');
+  else feedback(fb,false,'Revisa el cálculo.','Multiplica por dos las semanas que usa Tomás y verifica que no superen 3 meses. Puedes probar con la calculadora de arriba.')});
+
+/* ---------- Parejas ---------- */
+const PAIRS=[['Permiso del padre por nacimiento','5 días pagados, desde el parto o repartidos dentro del primer mes'],['Derecho de alimentación','Al menos 1 hora diaria para alimentar a hijos menores de 2 años; se considera tiempo trabajado'],['Sala cuna','Obligatoria en empresas con 20 o más trabajadoras, para hijos menores de 2 años'],['Traslado de la trabajadora embarazada','Pasar de un trabajo perjudicial para su salud a otro que no lo sea, sin reducir su remuneración'],['Permiso por enfermedad grave del hijo','Para el hijo menor de 1 año, con licencia médica y subsidio']];
+const PWHY=['Lo paga el empleador y es irrenunciable; también aplica en la adopción.','Puede ejercerse en cualquier momento de la jornada, dividirse o usarse para entrar más tarde o salir antes.','Hoy rige la regla de 20 o más trabajadoras; la sala cuna universal sigue en tramitación.','Ejemplos de trabajo perjudicial: levantar pesos, esfuerzo excesivo, trabajo nocturno u horas extra.','Para hijos de 1 a 18 años con condiciones graves de salud existe además el seguro SANNA.'];
+const rOrder=[3,0,4,1,2];let selL=null,pDone=0;
+$('#pl').innerHTML=PAIRS.map((p,i)=>`<button class="pl" type="button" data-i="${i}">${p[0]}</button>`).join('');
+$('#pr').innerHTML=rOrder.map(i=>`<button class="pr" type="button" data-i="${i}">${PAIRS[i][1]}</button>`).join('');
+$$('.pl').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;selL=b.dataset.i;$$('.pl').forEach(x=>x.classList.toggle('sel',x===b))}));
+$$('.pr').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;if(selL==null){feedback($('#prFb'),false,'Primero elige un derecho.','Selecciona un derecho de la columna izquierda y luego su regla.');return}
+  if(b.dataset.i===selL){const k=+selL;b.classList.add('done');const l=$(`.pl[data-i="${selL}"]`);l.classList.add('done');l.classList.remove('sel');l.textContent='✓ '+l.textContent;pDone++;selL=null;
+    $('#prTick').textContent=`${pDone} / 5`;feedback($('#prFb'),true,'Pareja correcta.',PWHY[k]);if(pDone===5){$('#prTask').classList.add('ok');done('pairs')}}
+  else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');feedback($('#prFb'),false,'Esa no es su regla.','Fíjate en a quién protege el derecho (madre, padre o hijo) y en la edad o cifra que menciona la regla.')}}));
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['La empresa puede pedir un test de embarazo antes de contratar si el cargo es físicamente exigente.',false,'Ningún empleador puede exigir un test o certificado de embarazo, ni condicionar la contratación, permanencia, renovación o promoción al embarazo (art. 194).'],
+ ['Si la trabajadora lo pide por escrito, puede renunciar a parte de su postnatal para volver antes.',false,'El prenatal y el postnatal son irrenunciables y durante ellos se prohíbe el trabajo (art. 195). Ni su voluntad ni un acuerdo escrito los acortan.'],
+ ['Si la empresa paga todas las indemnizaciones, puede despedir a una trabajadora con fuero.',false,'Se necesita autorización judicial previa (desafuero) por causales específicas. Sin ella el despido es nulo y procede la reincorporación (art. 174).'],
+ ['El padre que usa parte del postnatal parental también tiene fuero.',true,'Tiene fuero por el doble del período que use, desde 10 días antes del inicio del permiso, con un máximo de 3 meses (art. 201).'],
+ ['La hora diaria para alimentar al hijo menor de 2 años se considera tiempo trabajado.',true,'El tiempo usado para alimentar al hijo se considera trabajado para todos los efectos, por lo que no se descuenta del sueldo (art. 206).']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">La regla de fondo: los derechos de maternidad y paternidad no se negocian, no se compran con indemnizaciones y no dependen de la voluntad de la jefatura.</span>${n===TF.length?'':'<div style="margin-top:10px"><button class="small-btn retry" type="button" id="tfAgain">Repasar las afirmaciones</button></div>'}</div>`;
+    S.first.tf=('tf' in S.first)?S.first.tf:n===TF.length;done('tf');const a=$('#tfAgain');if(a)a.addEventListener('click',()=>{tfi=0;tfAns.length=0;tfRender()});return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Clasificar solicitudes ---------- */
+const BWHY=['Es un descanso o permiso ligado al nacimiento (arts. 195 y 197 bis).','Es una pregunta sobre fuero: el término requiere desafuero judicial (arts. 174 y 201).','Protege la salud de la embarazada o prohíbe discriminar por embarazo (arts. 194 y 202).','Es un derecho para el cuidado diario del hijo o hija (arts. 199, 203 y 206).'];
+const CARDS=[['Un trabajador pide sus 5 días porque nació su hija.',0],['Una trabajadora pregunta si puede traspasar semanas del postnatal parental al padre.',0],['Una jefatura quiere terminar el contrato de una trabajadora que volvió del postnatal hace 4 meses.',1],['Un trabajador que usa 6 semanas de postnatal parental pregunta si lo pueden despedir.',1],['Una trabajadora embarazada de bodega pide dejar de levantar cajas pesadas.',2],['Una postulante cuenta que le pidieron un test de embarazo en la entrevista.',2],['Una madre con un hijo de 10 meses pide salir una hora antes para alimentarlo.',3],['La empresa contrató a su trabajadora número 20 y pregunta por la sala cuna.',3]];
+const order=[4,0,6,2,5,7,1,3];let selC=null,placedN=0;
+$('#pool').innerHTML=order.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',BWHY[+b]);
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,'No corresponde a esa columna.','Pregúntate qué protege la solicitud: ¿un descanso por nacimiento, el empleo, la salud o el cuidado diario del hijo?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+/*{{TAIL}}*/
+})();
+</script>

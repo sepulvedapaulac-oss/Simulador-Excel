@@ -1,0 +1,325 @@
+<title>Lección 3.1 — Derechos fundamentales dentro de la empresa</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.flipdeck.six .flip .face{min-height:200px}
+.flipdeck.six .face .big{font-size:2rem}
+.dayline.route .dseg{position:relative;line-height:1.2;min-width:0;overflow-wrap:anywhere}
+.dayline.route .dseg small{display:block;margin-top:4px;font-size:.72rem}
+.v-tl.three{grid-template-columns:repeat(3,1fr)}
+.v-tl .fadein .n{font-size:clamp(.95rem,2.6vw,1.4rem)}
+@media (max-width:640px){.dayline.route .dseg{flex:1 1 100%!important}.dayaxis.route{display:none}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.1</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:35" data-gate="hook" data-gate-msg="Revisa los cuatro campos de la solicitud y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.1 · Derechos fundamentales dentro de la empresa</span>
+      <h1 class="reveal">El poder de dirección tiene límites</h1>
+      <p class="lead reveal">Camila, del Equipo de Personas de <strong>Horizonte Servicios</strong>, recibe esta solicitud de la Jefatura de Operaciones. <strong>Haz clic en cada campo</strong> para revisarlo.</p>
+      <div class="form reveal" id="form">
+        <button class="ffield" type="button"><span class="lbl">Motivo</span><span>“Hay sospechas de bajo rendimiento”</span><span class="flag">⚠️ ¿Leer conversaciones privadas sirve para medir el rendimiento? El rendimiento se evalúa con metas, entregables y resultados.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Qué se revisará</span><span>WhatsApp y correo personal de Martín Rojas</span><span class="flag">⚠️ Son comunicaciones privadas: su inviolabilidad está protegida y el empleador no puede revisarlas.</span></button>
+        <button class="ffield" type="button"><span class="lbl">A quién se aplica</span><span>Solo a Martín, sin avisarle</span><span class="flag">⚠️ Las medidas de control deben ser generales e impersonales y estar en el reglamento interno, no dirigidas en secreto a una persona.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Uso de la información</span><span>“Compartirla con el equipo de jefaturas”</span><span class="flag">⚠️ La empresa debe guardar reserva de los datos privados que conozca con ocasión de la relación laboral.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila lee en su escritorio una solicitud impresa mientras una jefatura le explica el pedido" src="{{IMG:i31_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debería hacer Camila con esta solicitud?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Autorizarla: el empleador puede controlar libremente a su personal.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Autorizarla, pero revisando las conversaciones sin que Martín se entere, para no generar conflicto.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No autorizar la revisión y proponer evaluar el rendimiento con medidas objetivas, porque la vida privada y las comunicaciones privadas son un límite del poder de dirección.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: se vulnera un derecho.</strong> <span class="fb-body">El poder de dirección no es libre: el artículo 5 del Código del Trabajo lo limita con las garantías constitucionales, en especial la intimidad, la vida privada y la honra. Martín podría recurrir a la tutela laboral.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: la falta es aún mayor.</strong> <span class="fb-body">Hacerlo en secreto no lo vuelve legítimo: sigue siendo una revisión de comunicaciones privadas, dirigida a una sola persona y fuera de cualquier reglamento interno.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La sospecha de bajo rendimiento es una preocupación legítima, pero se aborda con medidas objetivas y respetuosas. En esta lección verás qué derechos siguen vigentes en el trabajo, cómo evaluar una medida de control y qué ocurre si se vulneran.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 2 min</span>
+  <h2>¿Hasta dónde llega el poder del empleador?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · DERECHOS VIGENTES -->
+<section class="slide" data-title="Derechos vigentes" data-audio="p03" data-dur="0:22" data-gate="cards" data-gate-msg="Voltea las seis tarjetas para conocer cada derecho.">
+  <span class="eyebrow">Garantías que siguen vigentes</span>
+  <div class="grid-2">
+    <div>
+      <h2>Al firmar un contrato, nadie deja sus derechos en la puerta</h2>
+      <p>Estos derechos siguen protegiendo a cada persona dentro de la empresa. <strong>Toca cada tarjeta para voltearla</strong> y descubre qué protege.</p>
+      <div class="task" id="fcTask">Derechos revisados <span class="tick" id="fcTick">0 / 6</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Equipo diverso conversa en una sala de reuniones con luz natural" src="{{IMG:i31_equipo}}"/></div>
+  </div>
+  <div class="flipdeck six">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🤝</div><strong>Dignidad</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>La base de todo</strong><span>Las relaciones laborales deben fundarse en un trato compatible con la <b>dignidad de la persona</b> (art. 2). Toda medida de control debe respetarla.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🏠</div><strong>Vida privada y honra</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Límite expreso del poder de dirección</strong><span>Las facultades del empleador tienen como límite las garantías constitucionales, en especial la <b>intimidad, la vida privada y la honra</b> (art. 5). Además, debe guardar reserva de los datos privados (art. 154 bis).</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💬</div><strong>Comunicaciones privadas</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Son inviolables</strong><span>Según la Dirección del Trabajo, el empleador <b>no puede revisar</b> el correo personal, el WhatsApp ni las redes sociales de la persona trabajadora.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🛡️</div><strong>Integridad física y psíquica</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Cuerpo y salud mental</strong><span>La vida y la integridad física y psíquica están protegidas por la tutela laboral. La Ley Karin refuerza esta protección frente al acoso y la violencia en el trabajo.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🗣️</div><strong>Libertad de expresión</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Opinar sin represalias</strong><span>La libertad de expresión, y también la de conciencia y de culto, se protegen mediante la tutela laboral. Las represalias por ejercer acciones o por una fiscalización también están cubiertas (garantía de indemnidad).</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⚖️</div><strong>No discriminación</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Igualdad de trato</strong><span>El artículo 2 prohíbe distinciones, exclusiones o preferencias arbitrarias en el empleo. Su vulneración también puede reclamarse por tutela laboral.</span></div></div></button>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 2, 5, 154 bis y 485 y siguientes; criterio de la Dirección del Trabajo; Ley N°21.643.</div>
+</section>
+
+<!-- 4 · LÍMITES DEL CONTROL -->
+<section class="slide" data-title="Límites del control" data-audio="p04" data-dur="0:28" data-gate="hs" data-gate-msg="Explora los cinco puntos de la oficina.">
+  <span class="eyebrow amber">Límites del control</span>
+  <h2>¿Qué puede controlar la empresa y qué no?</h2>
+  <p>Una medida de control solo es válida si está en el <strong>reglamento interno</strong>, es <strong>general e impersonal</strong>, es <strong>idónea</strong> a la naturaleza del trabajo y <strong>respeta la dignidad</strong>. Haz clic en cada número de la oficina.</p>
+  <div class="task" id="hsTask">Puntos explorados <span class="tick" id="hsTick">0 / 5</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Oficina abierta con una cámara en el cielo, puerta de baño, escritorio con computador y celular, casilleros y una carpeta sobre la mesa" src="{{IMG:i31_oficina}}"/>
+      <button class="hs" type="button" style="left:22%;top:16%" data-hs="0" aria-label="Punto 1">1</button>
+      <button class="hs" type="button" style="left:10%;top:50%" data-hs="1" aria-label="Punto 2">2</button>
+      <button class="hs" type="button" style="left:46%;top:56%" data-hs="2" aria-label="Punto 3">3</button>
+      <button class="hs" type="button" style="left:86%;top:44%" data-hs="3" aria-label="Punto 4">4</button>
+      <button class="hs" type="button" style="left:64%;top:80%" data-hs="4" aria-label="Punto 5">5</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 5, 154 N°5, 154 inciso final y 154 bis; criterio de la Dirección del Trabajo sobre comunicaciones privadas.</div>
+</section>
+
+<!-- 5 · ¿ES PROPORCIONAL? -->
+<section class="slide" data-title="¿Es proporcional?" data-audio="p05" data-dur="0:25" data-gate="tree" data-gate-msg="Evalúa los tres ejemplos con las tres preguntas.">
+  <span class="eyebrow">¿Es proporcional?</span>
+  <h2>Idónea, necesaria y proporcional</h2>
+  <p>Elige un ejemplo y responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta, en orden. Si una medida falla en una pregunta, ya no es legítima. Si te equivocas, verás una pista.</p>
+  <div class="task" id="trTask">Ejemplos evaluados <span class="tick" id="trTick">0 / 3</span></div>
+  <div class="ex-tabs" id="exTabs"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <div class="sources">Referencia: test de proporcionalidad aplicado por la Dirección del Trabajo y los tribunales; Código del Trabajo, artículos 5 y 154 N°5.</div>
+</section>
+
+<!-- 6 · SI SE VULNERAN -->
+<section class="slide" data-title="Si se vulneran" data-audio="p06" data-dur="0:30" data-gate="day" data-gate-msg="Revisa los cinco tramos de la ruta de protección.">
+  <span class="eyebrow violet">Plazos de protección</span>
+  <h2>Si un derecho se vulnera, el tiempo cuenta</h2>
+  <p>Esta es la ruta que podría seguir una persona cuyos derechos fueron vulnerados. <strong>Haz clic en cada tramo</strong> para conocer su plazo y su efecto.</p>
+  <div class="task" id="dayTask">Tramos revisados <span class="tick" id="dayTick">0 / 5</span></div>
+  <div class="dayline route" id="dayline">
+    <button class="dseg col" type="button" style="flex:1.2" data-k="0">Hecho<small>Día 0</small></button>
+    <button class="dseg ext" type="button" style="flex:1.6" data-k="1">Denuncia Ley Karin<small>Investigación: 30 días</small></button>
+    <button class="dseg col" type="button" style="flex:1.6" data-k="2">Reclamo ante la IT<small>Suspende el plazo</small></button>
+    <button class="dseg ord" type="button" style="flex:2.6" data-k="3">Demanda de tutela<small>60 días hábiles · máx. 90</small></button>
+    <button class="dseg ord" type="button" style="flex:1.8" data-k="4">Sentencia<small>+6 a 11 remuneraciones</small></button>
+  </div>
+  <div class="dayaxis route"><span>Vulneración o despido</span><span>Plazo máximo: 90 días hábiles</span></div>
+  <div class="dpanel" id="dpanel"><p class="hint">Selecciona un tramo para ver la explicación.</p></div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 485 y siguientes y 489; Ley N°21.643 (Ley Karin), vigente desde el 1 de agosto de 2024.</div>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:29" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>“Que desbloquee su celular frente a mí”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">JO</span> Jefatura de Operaciones</div>
+      <div class="bubble"><span class="who">Jefatura</span>Ya entendí que no puedo leer sus chats a escondidas. Entonces lo llamo a mi oficina y le pido que desbloquee su celular delante de mí. Si se niega, es porque esconde algo.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Jefatura sostiene un celular frente a Camila en una sala de reuniones" src="{{IMG:i31_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué responde Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Que está bien, siempre que Martín acepte mostrarlo.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Que no corresponde revisar el celular personal y que el rendimiento se gestione con metas, entregables y retroalimentación documentada.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Que revise solo las horas de conexión de su WhatsApp, sin leer los mensajes.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un consentimiento bajo presión</div><div class="branch-body"><div><p>Pedirlo frente a la jefatura, y anunciando que negarse es sospechoso, no deja una decisión realmente libre. Sigue siendo una intromisión en las <strong>comunicaciones privadas</strong> y la empresa se expone a una <strong>tutela laboral</strong>.</p></div><div><p class="hint">El celular personal no es una herramienta de trabajo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: igual se invade la vida privada</div><div class="branch-body"><div><p>Las horas de conexión de una aplicación personal también son información privada. Además, la medida <strong>no es idónea</strong>: estar conectado o no a WhatsApp no dice nada sobre el rendimiento.</p></div><div><p class="hint">Aplica la primera pregunta del test: ¿sirve al fin?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila protege la vida privada de Martín y, al mismo tiempo, le da a la jefatura una vía legítima: medir el rendimiento con criterios objetivos y conocidos.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Una semana después:</strong> Martín le cuenta a Camila que ayer, por no haber mostrado su celular, la jefatura lo increpó a gritos frente al equipo y a clientes, y lo llamó “flojo”. Es la primera vez que ocurre.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué hace Camila?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Recibe la denuncia y activa el procedimiento de investigación del protocolo de la Ley Karin, que debe concluir en 30 días.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le sugiere a Martín que lo converse directamente con su jefatura.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Espera, porque el acoso laboral solo existe si la conducta se repite durante meses.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se deja sola a la persona afectada</div><div class="branch-body"><div><p>Enviar a Martín a resolverlo con quien lo hostiga lo expone aún más. La empresa está obligada a tener un <strong>protocolo de prevención</strong> y un <strong>procedimiento de investigación</strong> para estos casos.</p></div><div><p class="hint">Existe un canal formal: úsalo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un error sobre la ley</div><div class="branch-body"><div><p>Con la Ley Karin, el acoso laboral puede configurarse <strong>por una sola vez o de manera reiterada</strong>. Esperar no corresponde.</p></div><div><p class="hint">Una sola conducta grave puede bastar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Camila usa el canal que exige la Ley Karin: recibe la denuncia y activa la investigación interna, que debe concluir en <strong>30 días</strong>. Martín conserva además su derecho a la tutela laboral dentro de los plazos legales.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 5, 211-A y 485 y siguientes; Ley N°21.643; criterio de la Dirección del Trabajo.</div>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:31" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:25" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Una propuesta de control para revisar</h2>
+  <div class="story">Una gerencia de tu empresa propone dos medidas: <b>(1)</b> revisar los correos personales de quienes tengan bajas ventas y <b>(2)</b> incorporar al reglamento interno un control de acceso con tarjeta, para todo el personal, en la sala donde se guardan los servidores.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la medida 1 <b>no procede</b>: los correos personales son comunicaciones privadas e inviolables, y aplicarla solo a quienes venden menos no es general ni impersonal; además, no es idónea para medir ventas. La medida 2 <b>puede ser válida</b>: está en el reglamento interno, se aplica a todo el personal, sirve a un fin legítimo (proteger los equipos) y es poco invasiva. En cualquier caso, la empresa debe guardar reserva de los datos que obtenga, y si alguien ve vulnerados sus derechos puede usar la tutela laboral dentro de 60 días hábiles (máximo 90 si reclama ante la Inspección del Trabajo).</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 5, 154 N°5, 154 bis y 485 y siguientes.</div>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:27" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.1</h2>
+    <p>Ya puedes reconocer los derechos fundamentales que siguen vigentes en el trabajo, evaluar una medida de control con el test de proporcionalidad y orientar a una persona cuando sus derechos se vulneran.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="4">Repasar la proporcionalidad</button><button class="small-btn primary" type="button" data-goto="5">Repasar los plazos</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, artículos 2, 5, 154, 154 bis, 211-A, 485 y siguientes y 489; Ley N°21.643; criterios de la Dirección del Trabajo. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l31';
+const FIRST_KEYS=['hook','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Derechos en el trabajo',lines:['Cuando una persona firma un contrato de trabajo, no deja sus derechos en la puerta.','El artículo 2 del Código del Trabajo exige que las relaciones laborales se funden en un trato compatible con la dignidad de la persona.'],
+  html:`<div class="v-icons"><div><span class="i">📝</span>Contrato de trabajo</div><div><span class="i">＋</span></div><div><span class="i">🧑‍💼</span>Persona con derechos</div></div><div class="v-big fadein" data-at="1" style="margin-top:14px;font-size:clamp(2rem,6vw,3.4rem)">Dignidad</div><div class="v-sub fadein" data-at="1">Código del Trabajo, art. 2</div>`},
+ {t:'Poder de dirección',lines:['El empleador puede organizar y controlar el trabajo.','Pero el artículo 5 fija un límite: el respeto a las garantías constitucionales de los trabajadores, en especial la intimidad, la vida privada y la honra.'],
+  html:`<div class="v-icons"><div><span class="i">🏢</span>Organizar y controlar</div><div class="dim" data-at="1"><span class="i">🚧</span>Límite: art. 5</div></div><div class="v-chk"><span data-at="1">Intimidad</span><span data-at="1">Vida privada</span><span data-at="1">Honra</span></div>`},
+ {t:'Medidas de control',lines:['Las medidas de control son posibles, pero con condiciones.','Deben estar en el reglamento interno, ser generales e impersonales, idóneas a la naturaleza del trabajo y respetar la dignidad.'],
+  html:`<div class="v-big" style="font-size:clamp(2rem,6vw,3.4rem)">📋 Control</div><div class="v-chk"><span data-at="1">En el reglamento interno</span><span data-at="1">Generales e impersonales</span><span data-at="1">Idóneas al trabajo</span><span data-at="1">Respetan la dignidad</span></div>`},
+ {t:'Comunicaciones privadas',lines:['Las comunicaciones privadas son inviolables.','Según la Dirección del Trabajo, el empleador no puede revisar el correo personal, el WhatsApp ni las redes sociales de la persona trabajadora.','Además, debe guardar reserva de los datos privados que conozca con ocasión de la relación laboral.'],
+  html:`<div class="v-big">🔒</div><div class="v-icons fadein" data-at="1" style="margin-top:10px"><div><span class="i">📧</span>Correo personal</div><div><span class="i">💬</span>WhatsApp</div><div><span class="i">🌐</span>Redes sociales</div></div><div class="v-sub fadein" data-at="2">Reserva de datos privados · art. 154 bis</div>`},
+ {t:'Tres preguntas',lines:['Para evaluar una medida de control, aplica tres preguntas.','¿Es idónea, es decir, sirve al fin que busca?','¿Es necesaria, o existe una alternativa menos invasiva?','¿Y es proporcional: el beneficio justifica la afectación del derecho?'],
+  html:`<div class="v-steps"><div data-at="1">¿Idónea? Sirve al fin</div><div data-at="2">¿Necesaria? No hay alternativa menos invasiva</div><div data-at="3">¿Proporcional? El beneficio justifica la afectación</div></div>`},
+ {t:'Tutela laboral',lines:['Si un derecho fundamental se vulnera, existe la tutela laboral.','El plazo para demandar es de sesenta días hábiles; se suspende si se presenta un reclamo ante la Inspección del Trabajo, pero no puede exceder noventa días hábiles.','Si hubo despido vulneratorio, se suma una indemnización adicional de seis a once remuneraciones mensuales.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem;margin:0 0 14px">⚖️ Tutela laboral</div><div class="v-tl three"><div class="fadein" data-at="1"><div class="n">60</div><small>días hábiles para demandar</small></div><div class="fadein" data-at="1"><div class="n">90</div><small>máximo con reclamo ante la IT</small></div><div class="fadein" data-at="2"><div class="n">6–11</div><small>remuneraciones adicionales si hay despido vulneratorio</small></div></div>`},
+ {t:'Ley Karin',lines:['La Ley Karin, vigente desde el 1 de agosto de 2024, protege frente al acoso sexual, el acoso laboral y la violencia ejercida por terceros.','El acoso laboral puede configurarse por una sola vez o de manera reiterada.','Toda empresa debe contar con un protocolo de prevención y un procedimiento de investigación que concluya en un plazo de treinta días.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Acoso sexual</span><span class="on">Acoso laboral</span><span class="on">Violencia de terceros</span></div><div class="v-sub fadein" data-at="1">Una sola vez o de manera reiterada</div><div class="v-chk"><span data-at="2">Protocolo de prevención</span><span data-at="2">Investigación: 30 días</span></div>`}
+]};
+const Q=[
+ {q:'¿Qué artículo del Código del Trabajo establece que las facultades del empleador tienen como límite las garantías constitucionales de los trabajadores?',o:['Artículo 154 bis.','Artículo 5.','Artículo 489.'],c:1,f:'El artículo 5 fija ese límite, en especial respecto de la intimidad, la vida privada y la honra.'},
+ {q:'¿Cuáles son las tres preguntas del test de proporcionalidad?',o:['¿Es legal, escrita y firmada?','¿Es rápida, económica y eficaz?','¿Es idónea, necesaria y proporcional en sentido estricto?'],c:2,f:'La medida debe servir al fin (idónea), no tener una alternativa menos invasiva (necesaria) y su beneficio debe justificar la afectación (proporcional).'},
+ {q:'¿Cuál es el plazo para presentar una demanda de tutela laboral?',o:['60 días hábiles desde la vulneración; se suspende con un reclamo ante la Inspección del Trabajo, sin exceder 90 días hábiles.','30 días corridos desde la vulneración.','6 meses desde el término del contrato.','No existe plazo.'],c:0,f:'Son 60 días hábiles desde la vulneración (o el despido); el reclamo ante la Inspección suspende el plazo, pero en total no puede exceder 90 días hábiles.'},
+ {q:'¿Qué condiciones debe cumplir una medida de control del empleador?',o:['Que la decida cada jefatura según el caso.','Que se aplique solo a quien genera sospechas.','Que se mantenga en secreto para que sea efectiva.','Que esté en el reglamento interno, sea general e impersonal, idónea a la naturaleza del trabajo y respete la dignidad.'],c:3,f:'El artículo 154 exige que las medidas de control consten en el reglamento interno, sean generales, impersonales, idóneas y respeten la dignidad.'},
+ {q:'Si un despido se declara vulneratorio de derechos fundamentales, ¿qué indemnización adicional corresponde?',o:['Entre 3 y 6 remuneraciones mensuales.','Entre 6 y 11 remuneraciones mensuales.','Entre 11 y 15 remuneraciones mensuales.'],c:1,f:'Además de las indemnizaciones por despido, el artículo 489 agrega una indemnización de 6 a 11 remuneraciones mensuales.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: solicitud ---------- */
+const ff=$$('#form .ffield');
+ff.forEach(f=>f.addEventListener('click',()=>{f.classList.add('open');if(ff.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Derechos vigentes ---------- */
+const tFc=tracker('cards',6,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+
+/* ---------- Límites del control ---------- */
+const HS=[
+ ['📹 Cámara en la zona de trabajo','<b>Puede ser válida</b> si está en el reglamento interno, se aplica a todo el personal de la zona (general e impersonal), sirve a un fin propio del trabajo, como la seguridad, y respeta la dignidad. No puede usarse para vigilar en secreto a una sola persona.'],
+ ['🚻 Baño o vestidor','<b>Fuera de límites.</b> Son espacios de intimidad. Una cámara allí afecta directamente la vida privada y la dignidad, y ninguna finalidad del trabajo justifica esa afectación: no supera el test de proporcionalidad.'],
+ ['💻 Correo corporativo y 📱 WhatsApp personal','El <b>correo corporativo</b> es una herramienta de trabajo: cualquier control sobre su uso debe estar regulado en el reglamento interno y cumplir las mismas condiciones. El <b>WhatsApp, el correo personal y las redes sociales</b> son comunicaciones privadas e inviolables: el empleador no puede revisarlos.'],
+ ['🗄️ Casillero','Revisar pertenencias es una medida de control: solo procede si está prevista en el reglamento interno, se aplica de forma <b>general e impersonal</b> (no dirigida a quien “genera sospechas”) y con un procedimiento que respete la dignidad de la persona.'],
+ ['📁 Datos de salud','La empresa conoce datos privados por la relación laboral (licencias, diagnósticos, certificados). Debe <b>mantener reserva</b> de esa información (art. 154 bis): no puede compartirla con jefaturas o equipos que no la necesitan.']];
+const tHs=tracker('hs',5,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][1]}</p>`;tHs(k)}));
+
+/* ---------- ¿Es proporcional? ---------- */
+const NODES=['¿Es idónea? (sirve al fin que busca)','¿Es necesaria? (no hay una alternativa menos invasiva)','¿Es proporcional? (el beneficio justifica la afectación)'];
+const EXS=[{n:'Revisar el WhatsApp personal de un trabajador para evaluar su rendimiento.',path:[0],res:'no1'},
+ {n:'Instalar una cámara que graba todo el día el puesto de una sola persona porque “hay sospechas de bajo rendimiento”.',path:[1,0],res:'no2'},
+ {n:'Control de acceso con tarjeta a la bodega de valores, previsto en el reglamento interno y aplicado a todo el personal que ingresa.',path:[1,1,1],res:'ok'}];
+const RES={no1:['bad','No supera el test','Leer conversaciones privadas no mide el rendimiento: la medida no es idónea. Además, afecta la inviolabilidad de las comunicaciones privadas.'],
+ no2:['bad','No supera el test','Podría mostrar actividad, pero existen alternativas menos invasivas: metas claras, revisión de entregables y retroalimentación documentada. Además, no es general ni impersonal.'],
+ ok:['good','Medida legítima','Sirve para proteger bienes de la empresa, no hay una alternativa claramente menos invasiva y la afectación es mínima. Además, cumple las condiciones del reglamento interno.']};
+const HINT=[['Piensa: ¿esta medida realmente ayuda a lograr el fin que busca?','Piensa: ¿qué información entrega realmente esta medida?'],['¿Existe otra forma de lograr el fin que afecte menos a la persona?','¿Existe otra forma de lograr el fin que afecte menos a la persona?'],['Compara el beneficio con la afectación: es mínima y para todo el personal.','Compara el beneficio con la afectación.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Ejemplo ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Medida:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 3`;if(solved.size===3){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Ruta de protección ---------- */
+const DAY=[
+ ['Hecho vulneratorio · día 0','El plazo de tutela se cuenta desde que ocurre la vulneración o, si se trata de un despido, desde la fecha del despido. Conviene registrar fechas, mensajes y testigos desde el primer momento.'],
+ ['Denuncia por Ley Karin · investigación de 30 días','Si los hechos constituyen acoso sexual, acoso laboral o violencia de terceros, la persona puede denunciar según el <b>protocolo</b> de la empresa (art. 211-A). La investigación interna debe concluir en un plazo de <b>30 días</b>.'],
+ ['Reclamo ante la Inspección del Trabajo','Si la persona presenta un reclamo ante la Inspección del Trabajo, el plazo para demandar <b>se suspende</b>. Aun así, el plazo total <b>no puede exceder 90 días hábiles</b>.'],
+ ['Demanda de tutela laboral · 60 días hábiles','La demanda debe presentarse dentro de <b>60 días hábiles</b> desde la vulneración o el despido (hasta 90 en total si hubo suspensión). Protege, entre otros, la vida privada y la honra, la inviolabilidad de las comunicaciones privadas, la integridad física y psíquica, la libertad de expresión, la no discriminación y la garantía de indemnidad.'],
+ ['Sentencia · despido vulneratorio','Si el tribunal declara que el despido vulneró derechos fundamentales, además de las indemnizaciones por despido corresponde una <b>indemnización adicional de 6 a 11 remuneraciones mensuales</b> (art. 489).']];
+const tDay=tracker('day',5,'#dayTick','#dayTask');
+$$('#dayline .dseg').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#dayline .dseg').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#dpanel').innerHTML=`<h3 style="margin-top:0">${DAY[k][0]}</h3><p>${DAY[k][1]}</p>`;tDay(k)}));
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[['¿Revisar los correos personales respeta la inviolabilidad de las comunicaciones privadas?',0,'No. El correo personal es una comunicación privada: el empleador no puede revisarlo.'],
+ ['¿Aplicar la medida 1 solo a quienes venden menos cumple el requisito de ser general e impersonal?',0,'No. Una medida dirigida a un grupo “sospechoso” no es general ni impersonal.'],
+ ['¿El control de acceso con tarjeta, para todo el personal y en el reglamento interno, puede ser una medida válida?',1,'Sí. Es idóneo para proteger los equipos, poco invasivo y cumple las condiciones del artículo 154.'],
+ ['¿La empresa debe mantener reserva de los datos privados que obtenga con estas medidas?',1,'Sí. El artículo 154 bis obliga a guardar reserva de toda la información privada del trabajador.'],
+ ['¿Una persona afectada tiene un plazo indefinido para demandar tutela laboral?',0,'No. Tiene 60 días hábiles, que se suspenden con un reclamo ante la Inspección del Trabajo sin exceder 90 días hábiles.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===5){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>
