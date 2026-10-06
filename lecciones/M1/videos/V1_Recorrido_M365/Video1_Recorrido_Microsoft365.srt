@@ -1,0 +1,116 @@
+1
+00:00:00,500 --> 00:00:04,709
+Bienvenida a este recorrido por Microsoft 365.
+
+2
+00:00:04,709 --> 00:00:13,218
+Con una sola cuenta del negocio accedes a Outlook, OneDrive, Word, Excel, PowerPoint y Teams.
+
+3
+00:00:13,218 --> 00:00:18,707
+Veamos para qué sirve cada una en una pyme como la de María.
+
+4
+00:00:19,907 --> 00:00:22,326
+Outlook es el correo del negocio.
+
+5
+00:00:22,326 --> 00:00:29,729
+A la izquierda están las carpetas, al centro la bandeja de entrada y a la derecha el mensaje abierto.
+
+6
+00:00:29,729 --> 00:00:37,279
+Úsalo para las comunicaciones formales con clientes y proveedores, porque deja registro de lo acordado.
+
+7
+00:00:38,479 --> 00:00:42,957
+El mismo correo está disponible en el computador y en el celular.
+
+8
+00:00:42,957 --> 00:00:50,260
+Si alguien del equipo no está, la información sigue en la cuenta del negocio y no en un teléfono personal.
+
+9
+00:00:51,460 --> 00:00:56,235
+En el calendario de Outlook agendas entregas y reuniones.
+
+10
+00:00:56,235 --> 00:01:03,189
+Con el botón Nuevo evento invitas a tu equipo, y todos ven quién hace qué y cuándo.
+
+11
+00:01:04,389 --> 00:01:07,619
+OneDrive guarda los archivos del negocio en la nube.
+
+12
+00:01:07,619 --> 00:01:15,569
+Organízalos en pocas carpetas principales, con nombres claros, para encontrar siempre la versión vigente desde cualquier equipo.
+
+13
+00:01:16,769 --> 00:01:25,183
+Además, OneDrive puede respaldar automáticamente carpetas importantes del computador, como el Escritorio y Documentos.
+
+14
+00:01:25,183 --> 00:01:28,890
+Si un equipo falla, los archivos siguen disponibles.
+
+15
+00:01:30,090 --> 00:01:38,357
+En Excel para la web, varias personas pueden trabajar al mismo tiempo sobre la misma planilla, por ejemplo, la de pedidos.
+
+16
+00:01:38,357 --> 00:01:41,271
+Se acaban las copias que viajan por correo.
+
+17
+00:01:42,471 --> 00:01:48,485
+Word sirve para redactar procedimientos, cotizaciones y otros documentos del negocio.
+
+18
+00:01:48,485 --> 00:01:53,651
+Al guardarlos en OneDrive, quedan disponibles para quienes los necesitan.
+
+19
+00:01:54,851 --> 00:02:04,177
+Con los comentarios y las menciones, el equipo puede sugerir cambios y avisar a una persona específica, sin modificar el texto original.
+
+20
+00:02:05,377 --> 00:02:09,426
+Para compartir un archivo, usa el botón Compartir.
+
+21
+00:02:09,426 --> 00:02:14,770
+Escribe el correo de la persona y elige el permiso según la tarea:
+
+22
+00:02:14,770 --> 00:02:15,823
+ver o editar.
+
+23
+00:02:15,823 --> 00:02:21,573
+Antes de enviar, revisa si el enlace es solo para personas específicas.
+
+24
+00:02:22,773 --> 00:02:28,149
+Teams reúne el chat del equipo, organizado por conversaciones y canales.
+
+25
+00:02:28,149 --> 00:02:31,733
+Úsalo para la coordinación rápida del día a día.
+
+26
+00:02:32,933 --> 00:02:41,318
+Y cuando hay que conversar y decidir, Teams permite hacer videollamadas, compartir la pantalla y chatear durante la reunión.
+
+27
+00:02:42,518 --> 00:02:43,256
+Recuerda:
+
+28
+00:02:43,256 --> 00:02:50,141
+no se trata de usar todas las aplicaciones, sino de acordar para qué sirve cada una.
+
+29
+00:02:50,141 --> 00:02:53,829
+Primero la necesidad, después la herramienta.
+
