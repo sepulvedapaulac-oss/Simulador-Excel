@@ -1,0 +1,216 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las cuatro herramientas y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.2 · Tu ecosistema de trabajo digital</span>
+      <h1 class="reveal">Muchas herramientas, ningún acuerdo</h1>
+      <p class="lead reveal">El equipo de María usa varias herramientas, pero igual se preguntan dónde quedó cada cosa. <strong>Haz clic en cada herramienta</strong> para ver cómo se usa hoy.</p>
+      <div class="form reveal" data-reveal="hookQ" data-cls="open">
+        <button class="ffield" type="button" data-ri><span class="lbl">Correo</span><span>Cada persona usa su correo personal</span><span class="flag">⚠️ Los acuerdos con clientes y proveedores quedan en bandejas personales. Si alguien falta, nadie puede revisarlos.</span></button>
+        <button class="ffield" type="button" data-ri><span class="lbl">WhatsApp</span><span>Pedidos, cambios y decisiones en chats sueltos</span><span class="flag">⚠️ Las decisiones se pierden entre mensajes y no queda registro para quien no estaba en la conversación.</span></button>
+        <button class="ffield" type="button" data-ri><span class="lbl">Archivos</span><span>Guardados en el computador de cada persona</span><span class="flag">⚠️ Hay copias distintas de la misma planilla y nadie sabe cuál es la vigente.</span></button>
+        <button class="ffield" type="button" data-ri><span class="lbl">Fechas</span><span>Anotadas en un cuaderno y en la memoria</span><span class="flag">⚠️ Las entregas se cruzan o se olvidan porque no hay un calendario común.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Equipo de una pequeña empresa trabaja con portátiles y documentos en una mesa compartida" src="img/l2_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debería resolver María primero?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Instalar todas las aplicaciones disponibles en su plan.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Dejar que cada persona elija dónde guardar y comunicar.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Definir un conjunto de herramientas y acuerdos simples sobre para qué se usa cada una.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: más lugares donde buscar.</strong> <span class="fb-body">Sumar aplicaciones sin acuerdos aumenta la dispersión. El problema no es la falta de herramientas, sino la falta de reglas de uso.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: el caos continúa.</strong> <span class="fb-body">Si cada persona guarda y comunica a su manera, nadie sabe dónde está la información vigente. Es justamente lo que ocurre hoy.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El valor de un ecosistema está en acordar para qué se usa cada herramienta y cómo se conectan tareas, documentos y comunicaciones. Eso es lo que verás en esta lección.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Un ecosistema, no una colección de aplicaciones</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · CUATRO FUNCIONES -->
+<section class="slide" data-title="Cuatro funciones" data-audio="p03" data-gate="acc" data-gate-msg="Abre las cuatro funciones.">
+  <span class="eyebrow">Qué aporta un ecosistema</span>
+  <h2>Comunicar, crear, compartir y coordinar</h2>
+  <p>Un ecosistema de productividad cumple cuatro funciones. <strong>Abre cada una</strong> para ver qué aporta y un ejemplo en el negocio de María.</p>
+  <div class="task" id="accTask">Funciones revisadas <span class="tick" id="accTick">0 / 4</span></div>
+  <div class="acc" data-gate="acc" data-tick="accTick" data-task="accTask">
+    <div class="acc-item"><button class="acc-head" type="button" aria-expanded="false"><span class="ico">💬</span><span>Comunicar<span class="sub">Correo, chat y reuniones</span></span><span class="tg">＋</span></button>
+      <div class="acc-body"><div class="grid-2"><div><p>Cada canal tiene una función: <b>correo</b> para lo formal, <b>chat</b> para la coordinación rápida y <b>reuniones en línea</b> para conversar y decidir.</p><p><b>En el negocio de María:</b> los cambios de pedido se comentan en el canal del equipo, no en chats personales.</p></div><div class="photo-frame wide"><img alt="María en una videollamada con su equipo" src="img/l2_reunion.jpg"/></div></div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button" aria-expanded="false"><span class="ico">✍️</span><span>Crear<span class="sub">Documentos, planillas y presentaciones</span></span><span class="tg">＋</span></button>
+      <div class="acc-body"><div class="grid-2"><div><p>Los documentos se <b>crean en línea</b> y varias personas pueden revisarlos y actualizarlos sin enviarse copias.</p><p><b>En el negocio de María:</b> una sola planilla de pedidos que dos personas actualizan a la vez.</p></div><div class="photo-frame wide"><img alt="Dos colegas trabajan en la misma planilla" src="img/l2_planilla.jpg"/></div></div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button" aria-expanded="false"><span class="ico">📂</span><span>Compartir<span class="sub">Archivos en un espacio común</span></span><span class="tg">＋</span></button>
+      <div class="acc-body"><div class="grid-2"><div><p>Los archivos se guardan en un <b>espacio común</b> con acceso controlado según lo que cada persona necesita.</p><p><b>En el negocio de María:</b> la encargada administrativa consulta las facturas sin pedirlas por mensaje.</p></div><div class="photo-frame wide"><img alt="Encargada administrativa revisa un documento compartido en su monitor" src="img/l2_admin.jpg"/></div></div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button" aria-expanded="false"><span class="ico">📅</span><span>Coordinar<span class="sub">Calendarios y tareas</span></span><span class="tg">＋</span></button>
+      <div class="acc-body"><div class="grid-2"><div><p>Calendarios y tareas compartidas hacen <b>visible quién hace qué y cuándo</b>.</p><p><b>En el negocio de María:</b> las entregas a cafeterías quedan en un calendario compartido con responsable.</p></div><div class="photo-frame wide"><img alt="Asistente agenda una reunión en un calendario en su portátil" src="img/l2_agenda.jpg"/></div></div></div></div>
+  </div>
+</section>
+
+<!-- 4 · HERRAMIENTA Y NECESIDAD -->
+<section class="slide" data-title="Herramienta y necesidad" data-audio="p04" data-gate="pairs" data-gate-msg="Une las cinco aplicaciones con su necesidad.">
+  <span class="eyebrow violet">Microsoft 365 como ejemplo</span>
+  <h2>¿Qué necesidad resuelve cada aplicación?</h2>
+  <p>Las aplicaciones incluidas varían según el plan contratado; en Google Workspace hay equivalentes (Gmail, Drive, Hojas de cálculo, Calendar, Meet y Chat). <strong>Selecciona una aplicación</strong> a la izquierda y luego la <strong>necesidad</strong> que resuelve.</p>
+  <div class="task" id="prTask">Parejas unidas <span class="tick" id="prTick">0 / 5</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa qué hace cada persona del equipo con esa aplicación en un día normal.">
+    <div>
+      <button class="pl" type="button" data-k="out">📧 Outlook</button>
+      <button class="pl" type="button" data-k="one">☁️ OneDrive</button>
+      <button class="pl" type="button" data-k="exc">📊 Excel</button>
+      <button class="pl" type="button" data-k="tea">👥 Teams</button>
+      <button class="pl" type="button" data-k="wor">📝 Word</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="exc" data-fb="Excel sirve para registrar y calcular, como la planilla de pedidos.">Registrar y calcular datos, como los pedidos</button>
+      <button class="pr" type="button" data-k="tea" data-fb="Teams reúne el chat del equipo y las videollamadas.">Chat del equipo y videollamadas</button>
+      <button class="pr" type="button" data-k="out" data-fb="Outlook reúne el correo formal y la agenda de reuniones.">Correo formal y agenda de reuniones</button>
+      <button class="pr" type="button" data-k="wor" data-fb="Word se usa para redactar procedimientos y documentos.">Redactar procedimientos y documentos</button>
+      <button class="pr" type="button" data-k="one" data-fb="OneDrive guarda y comparte archivos con permisos.">Guardar y compartir archivos con permisos</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+  <div class="sources">Referencia: Microsoft Soporte, descripción de las aplicaciones de Microsoft 365 Empresa (varían según el plan); Centro de Ayuda de Google Workspace.</div>
+</section>
+
+<!-- 5 · NECESIDAD → SOLUCIÓN -->
+<section class="slide" data-title="Empieza por la necesidad" data-audio="p05" data-gate="tabs" data-gate-msg="Revisa las cuatro necesidades.">
+  <span class="eyebrow amber">Necesidad → solución</span>
+  <h2>No empieces por la herramienta: empieza por la necesidad</h2>
+  <p>Cada necesidad tiene un síntoma que la delata. <strong>Revisa las cuatro pestañas.</strong></p>
+  <div class="task" id="tbTask">Necesidades revisadas <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">Encontrar archivos</button><button class="tab" type="button" role="tab">Coordinar fechas</button><button class="tab" type="button" role="tab">Trabajar con datos</button><button class="tab" type="button" role="tab">Conversar con el equipo</button></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Encargada revisa un documento compartido" src="img/l2_admin.jpg"/></div><div><h3 style="margin-top:0">Repositorio compartido</h3><p><b>Síntoma:</b> “¿Me reenvías la factura?”.</p><p><b>Solución:</b> almacenamiento en la nube con estructura de carpetas, acceso desde distintos dispositivos y permisos controlados.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Asistente agenda reuniones" src="img/l2_agenda.jpg"/></div><div><h3 style="margin-top:0">Calendario común</h3><p><b>Síntoma:</b> entregas que se cruzan o se olvidan.</p><p><b>Solución:</b> un calendario compartido que haga visibles hitos, reuniones y vencimientos, con una persona responsable.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Colegas trabajan en una planilla" src="img/l2_planilla.jpg"/></div><div><h3 style="margin-top:0">Hoja de cálculo colaborativa</h3><p><b>Síntoma:</b> tres versiones de la planilla de pedidos.</p><p><b>Solución:</b> una hoja compartida en la nube para registros, presupuestos o seguimiento, sin enviar copias por correo.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Videollamada de equipo" src="img/l2_reunion.jpg"/></div><div><h3 style="margin-top:0">Canal de comunicación definido</h3><p><b>Síntoma:</b> decisiones perdidas en chats personales.</p><p><b>Solución:</b> distinguir conversación rápida (chat), comunicación formal (correo) y lo que debe quedar registrado (documento).</p></div></div>
+  </div>
+</section>
+
+<!-- 6 · CUATRO ACUERDOS -->
+<section class="slide" data-title="Cuatro acuerdos" data-audio="p06" data-gate="cloze" data-gate-msg="Completa los cuatro acuerdos y presiona Comprobar.">
+  <span class="eyebrow">Acuerdos del equipo</span>
+  <h2>Cuatro acuerdos evitan el caos digital</h2>
+  <p><strong>Completa cada acuerdo</strong> eligiendo la opción correcta en los espacios y luego presiona <strong>Comprobar</strong>.</p>
+  <div class="cloze-box" data-gate="cloze" data-ok="Con estos cuatro acuerdos el equipo sabe dónde va cada cosa, cómo se llama, quién accede y qué pasa si alguien falta." data-no="Revisa los espacios marcados en rojo: piensa qué protege cada acuerdo.">
+    <div class="cloze"><b>📍 Lugar:</b> los documentos de trabajo se guardan en <select data-ans="b" aria-label="Lugar"><option value="">…</option><option value="a">el celular de quien los crea</option><option value="b">el espacio compartido del negocio</option><option value="c">el chat del equipo</option></select> y las decisiones formales se comunican por <select data-ans="a" aria-label="Canal formal"><option value="">…</option><option value="a">correo</option><option value="b">mensajes de voz</option><option value="c">notas en papel</option></select>.</div>
+    <div class="cloze"><b>🏷️ Nombre:</b> los archivos se nombran con <select data-ans="c" aria-label="Nombre"><option value="">…</option><option value="a">la palabra “final”</option><option value="b">el nombre de quien lo creó</option><option value="c">fecha, contenido y área</option></select> para reconocerlos sin abrirlos.</div>
+    <div class="cloze"><b>🔐 Acceso:</b> los permisos se entregan según <select data-ans="a" aria-label="Acceso"><option value="">…</option><option value="a">la necesidad real de cada persona</option><option value="b">la antigüedad en la empresa</option><option value="c">quién lo pida primero</option></select>.</div>
+    <div class="cloze"><b>🔁 Continuidad:</b> la información esencial queda en <select data-ans="b" aria-label="Continuidad"><option value="">…</option><option value="a">cuentas personales</option><option value="b">cuentas y espacios del negocio</option><option value="c">un pendrive</option></select>, para que el trabajo siga si alguien falta.</div>
+    <button class="small-btn primary ccheck" type="button" style="margin-top:12px">Comprobar</button>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 7 · PLAN DE ADOPCIÓN -->
+<section class="slide" data-title="Plan de adopción" data-audio="p07" data-gate="ev" data-gate-msg="Revisa las cuatro semanas del plan.">
+  <span class="eyebrow violet">Paso a paso</span>
+  <h2>Un plan de adopción en cuatro semanas</h2>
+  <p>Un ecosistema no se instala en un día. <strong>Haz clic en cada semana</strong> para ver qué hace el equipo de María.</p>
+  <div class="task" id="evTask">Semanas revisadas <span class="tick" id="evTick">0 / 4</span></div>
+  <div class="evline four" data-gate="ev" data-panel="evPanel" data-tick="evTick" data-task="evTask">
+    <button class="evnode" type="button" data-t="Semana 1 · Acordar" data-d="Reunión corta con el equipo: qué canal se usa para qué (chat, correo, reunión) y dónde se guardará cada tipo de documento. Los acuerdos se escriben en una página compartida."><span class="t">S1</span><small>Acordar</small></button>
+    <button class="evnode" type="button" data-t="Semana 2 · Ordenar" data-d="Se crea el espacio compartido con 3 a 5 carpetas principales y se mueven primero los archivos vigentes, como la planilla de pedidos y la lista de precios."><span class="t">S2</span><small>Ordenar</small></button>
+    <button class="evnode" type="button" data-t="Semana 3 · Coordinar" data-d="Se activa el calendario compartido con entregas y reuniones. Cada tarea importante tiene responsable y fecha visible para todos."><span class="t">S3</span><small>Coordinar</small></button>
+    <button class="evnode" type="button" data-t="Semana 4 · Revisar" data-d="Se revisa qué funcionó: ¿se perdieron menos pedidos?, ¿alguien siguió enviando copias? Se ajustan los acuerdos y se dejan de usar las herramientas que no aportan."><span class="t">S4</span><small>Revisar</small></button>
+  </div>
+  <div class="dpanel" id="evPanel"><p class="hint">Selecciona una semana para ver la explicación.</p></div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de María</span>
+  <h2>“Necesito que todos vean la misma planilla”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/maria_avatar.jpg" alt=""/> María · Empanadas Doña María</div>
+      <div class="bubble"><span class="who">María</span>Dos personas registran los pedidos y la encargada administrativa debe revisarlos cada día. Hoy me piden una copia nueva todas las mañanas.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Dos colegas actualizan la misma planilla de pedidos en un portátil" src="img/l2_planilla.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace María con la planilla?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviarla por correo cada vez que cambie.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Guardarla en el espacio compartido y dar edición a quienes registran y solo lectura a quien revisa.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Mantener una copia distinta en cada computador.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: cuatro versiones en tres días</div><div class="branch-body"><div><p>Cada envío crea una copia nueva. Al tercer día hay varias versiones en distintas bandejas de entrada y nadie sabe cuál es la vigente.</p></div><div><p class="hint">Busca una versión común.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos distintos en cada equipo</div><div class="branch-body"><div><p>Cada computador tiene información diferente y la encargada administrativa revisa datos desactualizados.</p></div><div><p class="hint">El problema son las copias.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Una única planilla en el espacio compartido mantiene una versión común: edición para quienes registran pedidos y lectura para quien revisa.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Una semana después:</strong> un vendedor cambió un precio en la planilla y lo avisó solo por un chat personal. La encargada administrativa no se enteró y facturó con el precio antiguo.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué acuerdo evita que se repita?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Prohibir que se editen los precios.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Llamar por teléfono a cada persona cuando haya un cambio.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Avisar los cambios en el canal del equipo o como comentario en el mismo archivo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el trabajo se frena</div><div class="branch-body"><div><p>El problema no es editar, sino que el aviso no llegó al canal acordado. Prohibir los cambios deja la lista desactualizada.</p></div><div><p class="hint">¿Dónde debería quedar el aviso?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: no queda registro</div><div class="branch-body"><div><p>Las llamadas dependen de que todos contesten y no dejan constancia del cambio para quien llegue después.</p></div><div><p class="hint">Busca un canal con registro.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Comentar en el archivo o avisar en el canal del equipo deja un registro visible para todas las personas involucradas. Es el acuerdo de “lugar” aplicado a la comunicación.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu equipo</span>
+  <h2>Una propuesta de herramientas para revisar</h2>
+  <div class="story">En una PYME, alguien propone: <b>(1)</b> agregar tres aplicaciones nuevas “para estar al día”, sin definir quién las usará ni para qué, y <b>(2)</b> acordar que los pedidos se registran en una planilla compartida, que las decisiones formales van por correo y que las entregas se agendan en un calendario común con responsable.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la propuesta 1 <b>no conviene</b>: suma herramientas sin necesidad, responsable ni criterio de uso, por lo que agrega complejidad. La propuesta 2 <b>sí conviene</b>: define un mapa mínimo con un lugar para cada cosa (crear y guardar en la planilla compartida, comunicar lo formal por correo y coordinar en un calendario con responsable). Después de unas semanas conviene revisar si los acuerdos se cumplen y ajustar.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.2</h2>
+    <p>Ya puedes reconocer las funciones de un ecosistema de productividad, relacionar cada herramienta con una necesidad concreta y acordar reglas simples de uso con tu equipo.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 1.3</b> aplicarás esta lógica a la organización de archivos, los permisos y la seguridad en la nube.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar herramienta y necesidad</button><button class="small-btn primary" type="button" data-goto="5">Repasar los cuatro acuerdos</button></div>
+    <div class="sources">Fuentes: Microsoft Soporte, aplicaciones de Microsoft 365 Empresa (varían según el plan); Centro de Ayuda de Google Workspace. Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
