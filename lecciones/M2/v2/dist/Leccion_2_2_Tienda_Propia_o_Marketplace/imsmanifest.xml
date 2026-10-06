@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="PYMES_M2_L22" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+  <organizations default="ORG-PYMES_M2_L22"><organization identifier="ORG-PYMES_M2_L22"><title>Lección 2.2 — ¿Tienda propia o marketplace?</title>
+    <item identifier="ITEM-PYMES_M2_L22" identifierref="RES-PYMES_M2_L22" isvisible="true"><title>Lección 2.2 — ¿Tienda propia o marketplace?</title><adlcp:masteryscore>80</adlcp:masteryscore></item></organization></organizations>
+  <resources><resource identifier="RES-PYMES_M2_L22" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="audio/p01.mp3"/>
+      <file href="audio/p03.mp3"/>
+      <file href="audio/p04.mp3"/>
+      <file href="audio/p05.mp3"/>
+      <file href="audio/p06.mp3"/>
+      <file href="audio/p07.mp3"/>
+      <file href="audio/video_1.mp3"/>
+      <file href="audio/video_2.mp3"/>
+      <file href="audio/video_3.mp3"/>
+      <file href="audio/video_4.mp3"/>
+      <file href="audio/video_5.mp3"/>
+      <file href="img/m5_crecer.jpg"/>
+      <file href="img/m5_hero.jpg"/>
+      <file href="img/m5_marca.jpg"/>
+      <file href="img/m5_marketplace.jpg"/>
+      <file href="img/m5_tienda.jpg"/>
+      <file href="img/marcela_avatar.jpg"/>
+      <file href="index.html"/>
+  </resource></resources>
+</manifest>

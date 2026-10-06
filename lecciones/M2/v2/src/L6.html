@@ -1,0 +1,236 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa los tres mensajes y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.3 · Pasarelas, logística y experiencia</span>
+      <h1 class="reveal">Del pago a la entrega</h1>
+      <p class="lead reveal">Casa Nativa consiguió más pedidos… y aparecieron nuevos problemas. Marcela recibe pagos por distintos medios, confirma algunos pedidos a mano y coordina envíos por mensajes. <strong>Haz clic en cada mensaje</strong> para leerlo.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">VS</span><span><span class="from">Valentina · WhatsApp</span><span class="preview">Pagué hace 4 horas y…</span><span class="full">“Pagué hace cuatro horas y no me llegó ninguna confirmación. ¿Se registró mi compra?” El pago estaba recibido, pero nadie lo había revisado.</span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">JT</span><span><span class="from">Javier · Instagram</span><span class="preview">¿Dónde está mi pedido?…</span><span class="full">“Me dijeron que llegaba el martes y hoy es jueves. ¿Dónde está mi pedido?” Nadie le avisó del retraso ni tiene número de seguimiento.</span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">AP</span><span><span class="from">Ayudante · Taller</span><span class="preview">¿Este pedido ya se pagó?…</span><span class="full">“¿Este pedido de dos jarrones ya se pagó por transferencia? No lo encuentro en la cuenta.” La ayudante no puede preparar el pedido sin esa confirmación.</span></span><span class="badge">Nuevo</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela embala un jarrón de cerámica en una caja de despacho" src="img/m6_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué está fallando principalmente?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La integración entre pago, operación y entrega.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La calidad de los productos.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La frecuencia de publicaciones en redes sociales.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: se busca el problema donde no está.</strong> <span class="fb-body">Ningún mensaje reclama por el producto. El caso apunta a fallas de proceso y de comunicación.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: más pedidos, más reclamos.</strong> <span class="fb-body">Más publicaciones traerían más ventas, pero no resolverían los retrasos ni la falta de trazabilidad.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El problema está en el flujo completo de la venta: pago, confirmación, preparación, despacho y comunicación. Una venta digital no termina cuando el cliente paga.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>La venta digital continúa después del pago</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · PASARELAS -->
+<section class="slide" data-title="Pasarelas de pago" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las seis tarjetas.">
+  <span class="eyebrow">Pasarelas de pago</span>
+  <div class="grid-2">
+    <div>
+      <h2>No elijas solo por “aceptar tarjetas”</h2>
+      <p>Seis preguntas antes de elegir una pasarela. <strong>Toca cada tarjeta para voltearla.</strong></p>
+      <div class="task" id="fcTask">Criterios revisados <span class="tick" id="fcTick">0 / 6</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Persona paga en línea con tarjeta desde su celular" src="img/m6_pago.jpg"/></div>
+  </div>
+  <div class="flipdeck" style="grid-template-columns:repeat(3,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💲</div><strong>Costo</strong><span>¿Cuánto cuesta realmente?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Costo total</strong><span>Comisiones, cargos fijos y costos por transacción, más el tiempo de conciliar pagos a mano.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔒</div><strong>Confianza</strong><span>¿El cliente se siente seguro?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Seguridad y reconocimiento</strong><span>Una pasarela conocida y un pago sin pasos extraños reducen el abandono de compra.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔗</div><strong>Integración</strong><span>¿Se conecta con mi canal?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Menos trabajo manual</strong><span>Compatibilidad con tu tienda, confirmación automática del pedido y conciliación simple.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💳</div><strong>Medios</strong><span>¿Cómo prefieren pagar mis clientes?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Opciones relevantes</strong><span>Tarjetas de crédito y débito, transferencias, billeteras digitales u otras alternativas que usa tu público.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📅</div><strong>Plazos</strong><span>¿Cuándo recibo el dinero?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Flujo de caja</strong><span>Plazos de abono a tu cuenta y cómo se gestionan las devoluciones.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🛟</div><strong>Soporte</strong><span>¿Qué pasa si algo falla?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Errores y reclamos</strong><span>Ayuda ante pagos rechazados, errores técnicos o contracargos (cuando el cliente desconoce un cobro).</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · SEIS MOMENTOS -->
+<section class="slide" data-title="Seis momentos" data-audio="p04" data-gate="ord" data-gate-msg="Ordena los seis momentos y presiona Comprobar.">
+  <span class="eyebrow violet">Flujo</span>
+  <div class="grid-2">
+    <div>
+      <h2>Del pago a la entrega: 6 momentos críticos</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar de primero a último y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Pago, validación, preparación, despacho, seguimiento y postventa: cada momento tiene un responsable y una forma de verificar que se cumplió." data-no="Pista: no se puede preparar un pedido sin validar sus datos, ni hacer seguimiento antes de despacharlo.">
+        <ul class="order">
+          <li data-p="3"><b>Preparación:</b> el pedido se arma con un estándar claro.</li>
+          <li data-p="1"><b>Pago confirmado:</b> el sistema registra la transacción y evita dudas.</li>
+          <li data-p="5"><b>Seguimiento:</b> el cliente sabe qué ocurre y cuándo esperar su pedido.</li>
+          <li data-p="2"><b>Pedido validado:</b> stock, dirección y datos esenciales están correctos.</li>
+          <li data-p="6"><b>Entrega y postventa:</b> se confirma la recepción y hay una ruta para resolver problemas.</li>
+          <li data-p="4"><b>Despacho:</b> se asigna transportista, fecha o ruta.</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Mesa de preparación de pedidos con cajas, lista de verificación e impresora de etiquetas" src="img/m6_preparacion.jpg"/></div>
+  </div>
+</section>
+
+<!-- 5 · PROBLEMA Y MOMENTO -->
+<section class="slide" data-title="Dónde se origina" data-audio="p05" data-gate="pairs" data-gate-msg="Une los seis problemas con su momento crítico.">
+  <span class="eyebrow amber">Diagnóstico</span>
+  <h2>¿En qué momento se debe prevenir cada problema?</h2>
+  <p><strong>Selecciona un problema</strong> a la izquierda y luego el <strong>momento crítico</strong> donde se previene.</p>
+  <div class="task" id="prTask">Parejas unidas <span class="tick" id="prTick">0 / 6</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa en qué momento del flujo se podría haber evitado ese problema.">
+    <div>
+      <button class="pl" type="button" data-k="pag">El cliente pagó y no sabe si su compra se registró.</button>
+      <button class="pl" type="button" data-k="val">El pedido se envió a una dirección incompleta.</button>
+      <button class="pl" type="button" data-k="pre">Faltó un cojín en la caja.</button>
+      <button class="pl" type="button" data-k="des">El pedido salió dos días después de lo prometido.</button>
+      <button class="pl" type="button" data-k="seg">El cliente no sabe dónde está su pedido.</button>
+      <button class="pl" type="button" data-k="pos">Un jarrón llegó quebrado y el cliente no sabe a quién reclamar.</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="seg" data-fb="El seguimiento informa en qué etapa está el pedido y cuándo esperarlo.">🗺️ Seguimiento</button>
+      <button class="pr" type="button" data-k="pre" data-fb="Una lista de verificación en la preparación evita piezas faltantes.">📋 Preparación</button>
+      <button class="pr" type="button" data-k="pag" data-fb="La confirmación automática del pago elimina la duda desde el primer minuto.">✅ Pago confirmado</button>
+      <button class="pr" type="button" data-k="pos" data-fb="La postventa define una ruta clara para resolver problemas.">🤝 Entrega y postventa</button>
+      <button class="pr" type="button" data-k="val" data-fb="Validar dirección, stock y datos antes de preparar evita errores de entrega.">🔎 Pedido validado</button>
+      <button class="pr" type="button" data-k="des" data-fb="En el despacho se asignan transportista y fecha con compromisos realistas.">🚚 Despacho</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+</section>
+
+<!-- 6 · COMUNICACIÓN -->
+<section class="slide" data-title="Comunicar cada etapa" data-audio="p06" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow">Experiencia del cliente</span>
+  <h2>La comunicación reduce la ansiedad</h2>
+  <p>Cada etapa necesita un mensaje. <strong>Revisa las cuatro pestañas.</strong></p>
+  <div class="task" id="tbTask">Etapas revisadas <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">Después del pago</button><button class="tab" type="button" role="tab">Antes del despacho</button><button class="tab" type="button" role="tab">Durante el envío</button><button class="tab" type="button" role="tab">Ante un problema</button></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Pago en línea confirmado en un celular" src="img/m6_pago.jpg"/></div><div><h3 style="margin-top:0">Confirma que la compra fue recibida</h3><p><b>Ejemplo:</b> “¡Gracias, Valentina! Recibimos tu pago por $34.990. Tu pedido #128 ya está en preparación.”</p><p>Evita que el cliente se pregunte si su dinero llegó.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Pedidos en preparación en el taller" src="img/m6_preparacion.jpg"/></div><div><h3 style="margin-top:0">Indica preparación o fecha estimada</h3><p><b>Ejemplo:</b> “Tu pedido sale el miércoles y debería llegar entre jueves y viernes.”</p><p>Una fecha concreta ordena la expectativa.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Seguimiento del envío en un celular" src="img/m6_seguimiento.jpg"/></div><div><h3 style="margin-top:0">Entrega seguimiento cuando sea posible</h3><p><b>Ejemplo:</b> “Tu pedido ya está en camino. Puedes seguirlo aquí con el código CN-128.”</p><p>El cliente consulta por su cuenta y no necesita escribir.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Courier recibe paquetes en la puerta del taller" src="img/m6_despacho.jpg"/></div><div><h3 style="margin-top:0">Informa, ofrece opciones y no dejes sin respuesta</h3><p><b>Ejemplo:</b> “Tu pedido se retrasará 24 horas por un problema en la ruta. La nueva fecha es el viernes. Si prefieres, puedes retirarlo en el taller.”</p><p>Un atraso comunicado a tiempo se tolera; uno incierto genera desconfianza.</p></div></div>
+  </div>
+</section>
+
+<!-- 7 · AVISOS AUTOMÁTICOS -->
+<section class="slide" data-title="Avisos automáticos" data-audio="p07" data-gate="sim" data-gate-msg="Configura los cuatro avisos y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Configura los avisos automáticos de Casa Nativa</h2>
+  <p>Elige el mensaje más adecuado para cada momento y luego presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="aviso(s)" data-miss-t="Faltan avisos." data-miss-b="Elige un mensaje para cada momento antes de guardar." data-ok="Cada etapa tiene un mensaje claro: el cliente sabe qué pasó, qué viene y cuándo, sin tener que preguntar.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Notificaciones de pedidos · Casa Nativa</div>
+        <table class="seltable stack">
+          <tr data-ans="b" data-ok="Confirma el pago, el monto y el número de pedido." data-no="Tras el pago, el cliente necesita saber que su compra se registró."><td><b>Pago confirmado</b><small>Se envía al aprobarse el pago</small><span class="why"></span></td><td><select aria-label="Aviso de pago confirmado"><option value="">Elegir…</option><option value="a">(sin aviso)</option><option value="b">¡Gracias! Recibimos tu pago. Tu pedido #N° ya está en preparación.</option><option value="c">Te escribiremos cuando podamos.</option></select></td></tr>
+          <tr data-ans="c" data-ok="Entrega código de seguimiento y fecha estimada." data-no="Al despachar conviene dar seguimiento y una fecha estimada, no solo “ya salió”."><td><b>Pedido despachado</b><small>Se envía al entregar al transportista</small><span class="why"></span></td><td><select aria-label="Aviso de despacho"><option value="">Elegir…</option><option value="a">Ya salió.</option><option value="b">Despachamos tu pedido, llegará cuando llegue.</option><option value="c">Tu pedido va en camino. Síguelo con el código CN-N°. Llegada estimada: jueves.</option></select></td></tr>
+          <tr data-ans="a" data-ok="Informa a tiempo, explica y da una nueva fecha." data-no="Ante un atraso, informa antes de que el cliente reclame y entrega una nueva expectativa concreta."><td><b>Atraso</b><small>Se envía si cambia la fecha</small><span class="why"></span></td><td><select aria-label="Aviso de atraso"><option value="">Elegir…</option><option value="a">Tu pedido se retrasará 24 h por un problema en la ruta. Nueva fecha: viernes. Si prefieres, puedes retirarlo en el taller.</option><option value="b">(esperar a que el cliente pregunte)</option><option value="c">El transportista se atrasó, llámalos a este número.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Confirma la recepción y abre una ruta de postventa." data-no="Después de la entrega conviene confirmar la recepción y ofrecer ayuda si algo falló."><td><b>Entregado</b><small>Se envía al confirmarse la entrega</small><span class="why"></span></td><td><select aria-label="Aviso de entrega"><option value="">Elegir…</option><option value="a">(sin aviso)</option><option value="b">¡Tu pedido llegó! Si algo no está bien, respóndenos aquí y lo resolvemos.</option><option value="c">Compra de nuevo con 50% de descuento hoy.</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Clienta recibe un paquete en la puerta de su departamento" src="img/m6_entrega.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Ordenar el pago y cumplir la promesa</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Me ofrecen dos pasarelas. Una cobra menos comisión, pero tengo que revisar cada pago a mano. La otra cuesta un poco más, pero se integra con mi tienda, confirma los pedidos sola y simplifica las devoluciones.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela entrega paquetes a un courier en la puerta de su taller" src="img/m6_despacho.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué alternativa debería priorizar Marcela?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Elegir siempre la comisión más baja.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Evaluar el costo total y la integración, no solo la comisión.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Aceptar todos los medios posibles aunque no estén integrados.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: lo barato sale caro</div><div class="branch-body"><div><p>Marcela ahorra en comisión, pero pierde horas cada semana conciliando pagos y siguen llegando mensajes de “¿se registró mi compra?”. El costo operativo y los errores manuales también son costo.</p></div><div><p class="hint">Mira el costo total.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más complejidad, más errores</div><div class="branch-body"><div><p>Cada medio sin integrar es una cuenta más que revisar a mano. Aumentan los pedidos sin confirmar y los errores de despacho.</p></div><div><p class="hint">Más medios no siempre es mejor.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La mejor alternativa se evalúa por costo total, facilidad operativa, experiencia del cliente y compatibilidad con el negocio. La confirmación automática elimina la duda después del pago.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Caso final:</strong> el transportista avisa que un pedido de Javier se atrasará 24 horas. Javier todavía no lo sabe.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Cuál es la mejor respuesta?</h3>
+    <div class="options" data-choice="caso2c" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>No informar nada hasta que el cliente pregunte.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Informar el atraso, explicar brevemente y entregar una nueva fecha estimada.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Culpar al transportista y enviar su número de teléfono.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la incertidumbre se convierte en reclamo</div><div class="branch-body"><div><p>Javier espera, pregunta y recibe una explicación tardía. Esperar a que el cliente reclame aumenta la incertidumbre y deteriora la confianza.</p></div><div><p class="hint">Adelántate.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el cliente queda solo</div><div class="branch-body"><div><p>Culpar al transportista no resuelve la necesidad del cliente ni demuestra control del servicio. Para Javier, el responsable sigue siendo Casa Nativa.</p></div><div><p class="hint">Haz tuyo el problema.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La comunicación proactiva, clara y con una nueva expectativa concreta protege la experiencia del cliente. Una entrega tardía puede ser tolerable; una entrega incierta genera desconfianza.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Mapea un proceso de venta</h2>
+  <div class="story">Una PYME de tu rubro recibe transferencias que <b>confirma revisando la cuenta bancaria al final del día</b>, arma los pedidos de memoria y entrega los paquetes a un transportista <b>sin informar al cliente</b>. Su dueña propone: <b>(1)</b> agregar más medios de pago para vender más, y <b>(2)</b> usar una pasarela integrada que confirme pagos automáticamente, una lista de verificación para preparar pedidos y avisos en el despacho y ante atrasos.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la propuesta 1 <b>no conviene como primer paso</b>: suma medios sin integrar y multiplica la revisión manual. La propuesta 2 <b>sí conviene</b>: cubre los momentos con más riesgo (pago confirmado, preparación, despacho y seguimiento) y mejora la comunicación con el cliente. Para mapear tu propio proceso revisa una venta reciente: <b>pago</b>, ¿cómo se confirma?; <b>pedido</b>, ¿quién lo valida?; <b>preparación</b>, ¿cómo se controla?; <b>despacho</b>, ¿quién lo coordina?; <b>seguimiento</b>, ¿qué información recibe el cliente?; <b>postventa</b>, ¿qué ocurre si algo falla? Identifica el punto con mayor riesgo de error y define una mejora concreta.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.3</h2>
+    <p>Ya puedes evaluar una pasarela de pago por su costo total, mapear los seis momentos críticos de una venta y comunicar cada etapa hasta la entrega.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. La promesa digital se cumple en la entrega.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar los seis momentos</button><button class="small-btn primary" type="button" data-goto="5">Repasar la comunicación</button></div>
+    <div class="sources">Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

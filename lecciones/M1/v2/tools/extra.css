@@ -49,3 +49,9 @@
 .tiles.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:860px){.tiles.three{grid-template-columns:1fr}}
 .seltable select{min-width:10.5rem}
+/* Simulador con opciones largas: fila apilada y texto completo de la opción elegida */
+.seltable.stack td{display:block;border-bottom:0;padding:8px 12px}
+.seltable.stack tr{display:block;border-bottom:1px solid var(--line2)}
+.seltable.stack select{min-width:0;font-weight:700}
+.seltable .selfull{font-size:.86rem;color:var(--ink2);margin-top:6px;line-height:1.4;padding:6px 10px;border-left:3px solid var(--teal);background:var(--surface2,transparent);border-radius:6px}
+.seltable .selfull:empty{display:none}

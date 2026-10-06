@@ -704,6 +704,12 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
 .tiles.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:860px){.tiles.three{grid-template-columns:1fr}}
 .seltable select{min-width:10.5rem}
+/* Simulador con opciones largas: fila apilada y texto completo de la opción elegida */
+.seltable.stack td{display:block;border-bottom:0;padding:8px 12px}
+.seltable.stack tr{display:block;border-bottom:1px solid var(--line2)}
+.seltable.stack select{min-width:0;font-weight:700}
+.seltable .selfull{font-size:.86rem;color:var(--ink2);margin-top:6px;line-height:1.4;padding:6px 10px;border-left:3px solid var(--teal);background:var(--surface2,transparent);border-radius:6px}
+.seltable .selfull:empty{display:none}
 
 </style>
 
@@ -1185,18 +1191,20 @@ $$('.toggles[data-gate]').forEach(tg=>{const rows=$$('.toggle-row',tg),bar=$('#'
     res.innerHTML=`<div class="feedback good"><strong>${lvl[0]} · ${n} de ${rows.length}.</strong> <span class="fb-body">${lvl[1]}${miss?' Áreas para priorizar:<ul style="margin:6px 0 0">'+miss+'</ul>':''}</span></div>`;done(tg.dataset.gate)})});
 /* Verdadero o falso */
 if(L.TF){const tf=$('#tf'),TF=L.TF;let ti=0,errs=0;const prog=$('.tf-prog',tf);prog.innerHTML=TF.map(()=>'<span></span>').join('');
-  function tfDraw(){$$('span',prog).forEach((s,k)=>{if(k===ti)s.classList.add('cur')});if(ti>=TF.length){$('.tf-claim',tf).textContent='¡Completaste las afirmaciones!';$('.tf-btns',tf).hidden=true;$('.tf-exp',tf).innerHTML=`<div class="feedback good"><strong>${TF.length-errs} de ${TF.length} al primer intento.</strong> <span class="fb-body">Drive y OneDrive comparten la misma lógica: guardar, organizar, compartir y colaborar sobre una versión común.</span></div>`;firstTry('tf',errs===0);done('tf');return}
+  function tfDraw(){$$('span',prog).forEach((s,k)=>{if(k===ti)s.classList.add('cur')});if(ti>=TF.length){$('.tf-claim',tf).textContent='¡Completaste las afirmaciones!';$('.tf-btns',tf).hidden=true;$('.tf-exp',tf).innerHTML=`<div class="feedback good"><strong>${TF.length-errs} de ${TF.length} al primer intento.</strong> <span class="fb-body">${L.TFsum||'Drive y OneDrive comparten la misma lógica: guardar, organizar, compartir y colaborar sobre una versión común.'}</span></div>`;firstTry('tf',errs===0);done('tf');return}
     $('.tf-claim',tf).textContent=`${ti+1}. ${TF[ti][0]}`;$('.tf-exp',tf).innerHTML='';$$('.tf-btns button',tf).forEach(b=>{b.disabled=false;b.classList.remove('good','bad')})}
   $$('.tf-btns button',tf).forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a,ok=a===TF[ti][1];if(!ok)errs++;
     $$('.tf-btns button',tf).forEach(x=>{x.disabled=true;if(+x.dataset.a===TF[ti][1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
     prog.children[ti].className=ok?'g':'b';
     $('.tf-exp',tf).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'}</strong> <span class="fb-body">${TF[ti][2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${ti<TF.length-1?'Siguiente afirmación →':'Terminar'}</button></div></div>`;
     $('#tfNext').addEventListener('click',()=>{ti++;tfDraw()})}));tfDraw()}
+/* Opciones largas: muestra el texto completo de la opción elegida bajo el selector */
+$$('.seltable.stack select').forEach(sel=>sel.addEventListener('change',()=>{let f=sel.nextElementSibling;if(!f||!f.classList.contains('selfull')){f=document.createElement('div');f.className='selfull';sel.after(f)}f.textContent=sel.value?sel.options[sel.selectedIndex].text:''}));
 /* Simulador de permisos (tabla con selectores) */
 $$('.simbox[data-gate]').forEach(sm=>{const key=sm.dataset.gate,rows=$$('tr[data-ans]',sm),fb=$('.fb',sm);let tries=0;
-  $('.scheck',sm).addEventListener('click',()=>{tries++;if(rows.some(r=>!$('select',r).value))return feedback(fb,false,'Faltan accesos.','Configura el acceso de todas las filas antes de guardar.');let bad=0;
+  $('.scheck',sm).addEventListener('click',()=>{tries++;if(rows.some(r=>!$('select',r).value))return feedback(fb,false,sm.dataset.missT||'Faltan accesos.',sm.dataset.missB||'Configura el acceso de todas las filas antes de guardar.');let bad=0;
     rows.forEach(r=>{const ok=$('select',r).value===r.dataset.ans;r.classList.toggle('good',ok);r.classList.toggle('bad',!ok);$('.why',r).innerHTML=(ok?'✓ ':'✕ ')+(ok?r.dataset.ok:r.dataset.no);if(!ok)bad++});
-    if(!bad){feedback(fb,true,'Configuración correcta.',sm.dataset.ok);firstTry(key,tries===1);done(key)}else feedback(fb,false,`Revisa ${bad} acceso(s) marcados en rojo.`,'Ajusta y vuelve a guardar.')})});
+    if(!bad){feedback(fb,true,'Configuración correcta.',sm.dataset.ok);firstTry(key,tries===1);done(key)}else feedback(fb,false,`Revisa ${bad} ${sm.dataset.unit||'acceso(s)'} marcados en rojo.`,'Ajusta y vuelve a guardar.')})});
 
 /* ---------- Checklist con respuesta modelo ---------- */
 const YN=L.YN;

@@ -1,0 +1,18 @@
+{"audio":{
+"p01":"Bienvenida a la lección dos punto tres: Del pago a la entrega. Casa Nativa consiguió más pedidos, pero aparecieron nuevos problemas. Revisa los tres mensajes que recibió Marcela y luego responde qué está fallando principalmente.",
+"p03":"Una pasarela de pago no se elige solo porque acepta tarjetas. Toca las seis tarjetas para descubrir qué preguntas hacer sobre costo, confianza, integración, medios, plazos y soporte.",
+"p04":"Una venta digital pasa por seis momentos críticos. Ordénalos con las flechas, desde el pago hasta la postventa, y luego presiona comprobar.",
+"p05":"Cada problema del cliente se origina en un momento del proceso. Une cada problema con el momento crítico donde se debe prevenir.",
+"p06":"La comunicación reduce la ansiedad del cliente. Revisa las cuatro pestañas para ver qué decir después del pago, antes del despacho, durante el envío y ante un problema.",
+"p07":"Ahora configura los avisos automáticos de Casa Nativa. Para cada momento elige el mensaje más adecuado y luego presiona guardar.",
+"p08":"Volvamos con Marcela. Debe elegir una pasarela de pago y resolver un pedido que se atrasará. Ayúdala a tomar dos decisiones.",
+"quiz":"Llegó el momento de comprobar lo aprendido. Responde cinco preguntas. Necesitas al menos ochenta por ciento, es decir, cuatro de cinco, para finalizar la lección. Si no lo logras, puedes reintentar.",
+"p10":"Lleva lo aprendido a tu negocio. Lee la situación, responde cada pregunta del checklist con sí o no, y luego revisa la respuesta modelo.",
+"p11":"¡Felicitaciones! Completaste la lección dos punto tres. Ya puedes evaluar una pasarela de pago, mapear los seis momentos críticos de una venta y comunicar con claridad cada etapa hasta la entrega."},
+"video":[
+{"t":"La venta no termina al pagar","img":"m6_hero","lines":["Una venta digital no termina cuando el cliente paga.","La experiencia continúa con la confirmación, la preparación, el despacho, el seguimiento y la resolución de cualquier problema."],"keys":[["El pago es el inicio, no el final",0],["Confirmar, preparar y despachar",1],["Seguir y resolver",1]]},
+{"t":"Pasarelas de pago","img":"m6_pago","lines":["Al elegir una pasarela de pago, no basta con que acepte tarjetas.","Evalúa el costo total, la confianza que genera, la integración con tu canal, los medios disponibles, los plazos de abono y el soporte ante errores."],"keys":[["Costo total, no solo comisión",1],["Integración con tu canal",1],["Plazos y soporte",1]]},
+{"t":"Seis momentos críticos","img":"m6_preparacion","lines":["Del pago a la entrega hay seis momentos críticos.","Pago confirmado, pedido validado, preparación, despacho, seguimiento, y entrega con postventa."],"keys":[["Pago confirmado y pedido validado",1],["Preparación y despacho",1],["Seguimiento, entrega y postventa",1]]},
+{"t":"Despacho y seguimiento","img":"m6_seguimiento","lines":["En el despacho se asigna transportista, fecha o ruta.","Con el seguimiento, el cliente sabe qué está ocurriendo y cuándo esperar su pedido."],"keys":[["Transportista, fecha o ruta",0],["El cliente sabe dónde está su pedido",1]]},
+{"t":"Comunicar reduce la ansiedad","img":"m6_entrega","lines":["Una entrega tardía puede ser tolerable si existe comunicación clara.","Una entrega incierta genera desconfianza. Informa de forma proactiva, ofrece opciones y confirma la recepción."],"keys":[["Comunicación clara y proactiva",0],["La incertidumbre genera desconfianza",1],["Confirmar la recepción",1]]}
+]}
