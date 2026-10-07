@@ -4,6 +4,16 @@
   <organizations default="ORG-PYMES_M2_L23"><organization identifier="ORG-PYMES_M2_L23"><title>Lección 2.3 — Del pago a la entrega</title>
     <item identifier="ITEM-PYMES_M2_L23" identifierref="RES-PYMES_M2_L23" isvisible="true"><title>Lección 2.3 — Del pago a la entrega</title><adlcp:masteryscore>80</adlcp:masteryscore></item></organization></organizations>
   <resources><resource identifier="RES-PYMES_M2_L23" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="audio/p01.mp3"/>
+      <file href="audio/p03.mp3"/>
+      <file href="audio/p04.mp3"/>
+      <file href="audio/p05.mp3"/>
+      <file href="audio/p06.mp3"/>
+      <file href="audio/p07.mp3"/>
+      <file href="audio/p08.mp3"/>
+      <file href="audio/p10.mp3"/>
+      <file href="audio/p11.mp3"/>
+      <file href="audio/quiz.mp3"/>
       <file href="audio/video_1.mp3"/>
       <file href="audio/video_2.mp3"/>
       <file href="audio/video_3.mp3"/>
