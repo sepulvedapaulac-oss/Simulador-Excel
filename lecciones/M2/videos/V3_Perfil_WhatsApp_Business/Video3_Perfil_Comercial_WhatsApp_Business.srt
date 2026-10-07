@@ -1,0 +1,211 @@
+1
+00:00:00,500 --> 00:00:07,086
+Tener WhatsApp Business no significa necesariamente tener un canal comercial bien configurado.
+
+2
+00:00:07,086 --> 00:00:14,793
+Un perfil incompleto obliga al cliente a preguntar datos básicos y puede hacer más lento el proceso de compra.
+
+3
+00:00:14,793 --> 00:00:19,978
+En este video veremos cómo organizar un perfil comercial para que informe,
+
+4
+00:00:19,978 --> 00:00:23,200
+genere confianza y facilite el siguiente paso.
+
+5
+00:00:25,700 --> 00:00:28,416
+Antes de comenzar, un dato importante.
+
+6
+00:00:28,416 --> 00:00:35,561
+La aplicación WhatsApp Business sigue siendo gratuita para atender a tus clientes desde el teléfono.
+
+7
+00:00:35,561 --> 00:00:43,422
+Lo que cambió desde el uno de octubre de dos mil veintiséis es el cobro en la Plataforma de WhatsApp Business,
+
+8
+00:00:43,422 --> 00:00:47,923
+es decir, cuando una empresa usa la API o un proveedor externo:
+
+9
+00:00:47,923 --> 00:00:52,711
+allí se cobran los mensajes de servicio que superan los mil al mes.
+
+10
+00:00:56,211 --> 00:00:58,844
+Comencemos por el perfil de empresa.
+
+11
+00:00:58,844 --> 00:01:05,281
+Aquí se concentra la información básica que permitirá a una persona entender quién eres,
+
+12
+00:01:05,281 --> 00:01:07,914
+qué vendes y cómo puede contactarte.
+
+13
+00:01:12,414 --> 00:01:17,890
+Primero revisa el nombre comercial, la imagen de perfil y la descripción.
+
+14
+00:01:17,890 --> 00:01:23,217
+La descripción debe explicar, en pocas palabras, qué ofrece tu negocio.
+
+15
+00:01:23,217 --> 00:01:25,693
+Evita frases demasiado generales.
+
+16
+00:01:25,693 --> 00:01:33,495
+Es mejor escribir algo concreto que ayude al cliente a saber inmediatamente si encontró lo que necesita.
+
+17
+00:01:40,995 --> 00:01:44,034
+Luego completa la información operativa:
+
+18
+00:01:44,034 --> 00:01:49,506
+ubicación o zona de cobertura, horario de atención y medios de contacto.
+
+19
+00:01:49,506 --> 00:01:55,965
+Mantener estos datos actualizados reduce preguntas repetitivas y evita frustraciones.
+
+20
+00:01:55,965 --> 00:02:02,729
+Si cambias tus horarios o condiciones de atención, recuerda actualizar también el perfil.
+
+21
+00:02:10,229 --> 00:02:15,802
+El catálogo permite mostrar productos o servicios dentro del mismo canal.
+
+22
+00:02:15,802 --> 00:02:21,145
+Utiliza imágenes claras, nombres comprensibles y descripciones breves.
+
+23
+00:02:21,145 --> 00:02:22,291
+Si corresponde,
+
+24
+00:02:22,291 --> 00:02:28,932
+agrega el precio y una explicación sencilla de lo que incluye cada producto o servicio.
+
+25
+00:02:37,432 --> 00:02:41,614
+Piensa en el catálogo desde el punto de vista del cliente.
+
+26
+00:02:41,614 --> 00:02:47,383
+¿Puede entender qué vendes sin tener que escribirte para preguntar cada detalle?
+
+27
+00:02:47,383 --> 00:02:53,080
+Mientras más clara sea la información, más fácil será avanzar hacia una compra.
+
+28
+00:02:57,580 --> 00:03:01,083
+Otro recurso útil es el mensaje de bienvenida.
+
+29
+00:03:01,083 --> 00:03:07,252
+Se envía automáticamente cuando una persona escribe a tu negocio por primera vez,
+
+30
+00:03:07,252 --> 00:03:10,299
+o después de catorce días sin conversar.
+
+31
+00:03:10,299 --> 00:03:15,630
+El mensaje debe ser breve, cordial y orientar sobre el siguiente paso.
+
+32
+00:03:22,130 --> 00:03:27,838
+También puedes utilizar un mensaje de ausencia para informar cuándo responderás.
+
+33
+00:03:27,838 --> 00:03:32,619
+Puedes programarlo para que se envíe fuera del horario de atención.
+
+34
+00:03:32,619 --> 00:03:39,397
+Así, el cliente entiende que su mensaje fue recibido y sabe cuándo puede esperar una respuesta.
+
+35
+00:03:45,897 --> 00:03:52,696
+Si recibes las mismas preguntas varias veces al día, las respuestas rápidas pueden ayudarte.
+
+36
+00:03:52,696 --> 00:03:57,869
+Por ejemplo, puedes preparar respuestas para horarios, medios de pago,
+
+37
+00:03:57,869 --> 00:03:59,791
+despacho o disponibilidad.
+
+38
+00:03:59,791 --> 00:04:04,816
+En el chat, basta con escribir una barra diagonal y elegir el atajo.
+
+39
+00:04:04,816 --> 00:04:09,251
+Así ahorras tiempo y mantienes una comunicación consistente.
+
+40
+00:04:17,751 --> 00:04:22,749
+Las etiquetas permiten ordenar conversaciones según su estado.
+
+41
+00:04:22,749 --> 00:04:30,328
+Puedes crear categorías como nuevo cliente, cotización enviada, pago pendiente o pedido listo.
+
+42
+00:04:30,328 --> 00:04:37,342
+Esto facilita el seguimiento y reduce el riesgo de olvidar una conversación importante.
+
+43
+00:04:43,842 --> 00:04:49,189
+Una vez configurado, revisa tu perfil como si fueras un cliente nuevo.
+
+44
+00:04:49,189 --> 00:04:50,029
+Pregúntate:
+
+45
+00:04:50,029 --> 00:04:52,550
+¿entiendo qué vende este negocio?
+
+46
+00:04:52,550 --> 00:04:54,001
+¿Sé cuándo atiende?
+
+47
+00:04:54,001 --> 00:04:55,910
+¿Puedo revisar productos?
+
+48
+00:04:55,910 --> 00:04:58,889
+¿Sé qué hacer para consultar o comprar?
+
+49
+00:05:03,389 --> 00:05:10,626
+La diferencia entre un perfil básico y un perfil comercial bien configurado no está solo en cómo se ve.
+
+50
+00:05:10,626 --> 00:05:14,491
+Está en cuánto ayuda al cliente a avanzar sin fricción.
+
+51
+00:05:17,991 --> 00:05:24,535
+Antes de continuar, revisa tu propio perfil comercial y mejora al menos un elemento:
+
+52
+00:05:24,535 --> 00:05:30,144
+información básica, catálogo, mensajes automáticos o respuestas rápidas.
+
+53
+00:05:30,144 --> 00:05:35,441
+Una pequeña mejora puede ahorrar muchas conversaciones innecesarias.
