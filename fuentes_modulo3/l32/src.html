@@ -1,0 +1,327 @@
+<title>Lección 3.2 — Igualdad de trato y no discriminación</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Ajustes propios de la Lección 3.2 ---- */
+.folder{position:relative;margin:14px 0;border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;background:var(--surface3);min-height:178px}
+.folder .tabhead{display:inline-block;margin:-6px 0 8px;padding:4px 12px;border-radius:10px 10px 0 0;background:var(--chip);font-size:.78rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.folder .cands{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.folder .cand{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface);font-size:.92rem;min-width:0}
+.folder .cand b{display:block;color:var(--navy)}
+#sticker.note32{inset:auto 10px 10px auto;top:10px;width:min(78%,330px);background:#f7d64a;color:#3b2f00;text-shadow:none;font-size:.95rem;line-height:1.35;padding:12px 14px;text-align:left;letter-spacing:0;box-shadow:0 10px 20px rgba(0,0,0,.18);transform:rotate(2deg);border-radius:6px;display:block;font-family:inherit}
+#sticker.note32 small{display:block;margin-top:8px;font-weight:800;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:#5a4700}
+#sticker.note32.peeled{transform:rotate(-14deg) translate(40%,-60%);opacity:0}
+.cmp.ad{display:grid;min-height:0}
+.cmp.ad .side{position:relative;inset:auto;grid-area:1/1;align-content:start}
+.cmp.ad ul{margin:.3rem 0 0;padding-left:1.1rem;display:grid;gap:5px}
+.cmp.ad .flag{font-weight:900;color:var(--bad)}
+.cmp.ad .fix{font-weight:900;color:var(--good)}
+.pay-vis{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:16px;display:grid;gap:12px;align-content:start}
+.pay-vis .row{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:center;font-weight:800;font-size:.9rem}
+.pay-vis .bar{height:22px;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.pay-vis .why{display:flex;flex-wrap:wrap;gap:6px}
+.pay-vis .why span{padding:5px 10px;border-radius:999px;background:var(--mint);border:1px solid var(--mint-line);font-size:.8rem;font-weight:800}
+.scene .lit{opacity:.15;transition:opacity .5s}
+.scene .lit.on{opacity:1}
+.motive-cloud{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:620px;margin:0 auto}
+.motive-cloud span{padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);font-size:.8rem;font-weight:800}
+@media(max-width:560px){#vlines .vline{grid-template-columns:1fr}.folder .cands{grid-template-columns:1fr}.folder{min-height:240px}#sticker.note32{width:auto;left:10px;right:10px}.pay-vis .row{grid-template-columns:86px 1fr}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.2</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:38" data-gate="hook" data-gate-msg="Despega la nota adhesiva y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.2 · Igualdad de trato y no discriminación</span>
+      <h1 class="reveal">Decidir con criterios laborales, no con prejuicios</h1>
+      <p class="lead reveal">Camila, del Equipo de Personas de Horizonte Servicios, recibe la carpeta de la promoción a <strong>Supervisión de Operaciones</strong>. Sobre ella, la jefatura dejó una nota adhesiva. Haz clic en la nota para despegarla y ver qué dicen los antecedentes.</p>
+      <div class="folder reveal">
+        <span class="tabhead">Carpeta · Promoción Supervisión de Operaciones</span>
+        <div class="cands">
+          <div class="cand"><b>Valeria Soto</b>7 años en Operaciones · Evaluación de desempeño: destacada · Lideró la apertura del turno noche.</div>
+          <div class="cand"><b>Tomás Herrera</b>7 años en Operaciones · Evaluación de desempeño: destacada · Coordinó el cambio de proveedor de transporte.</div>
+        </div>
+        <button class="sticker note32" type="button" id="sticker">“Camila: descartemos a Valeria. Probablemente tendrá más responsabilidades familiares en los próximos años.”<small>Nota de la jefatura · toca para despegar</small></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa en su escritorio una carpeta de promoción con una nota adhesiva amarilla" src="{{IMG:i32_portada}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">Las dos personas tienen experiencia y evaluaciones equivalentes. ¿Qué debería hacer Camila con la sugerencia de la nota?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Seguirla: la continuidad operacional es importante y la jefatura conoce a su equipo.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Conversar con Valeria y preguntarle si piensa tener hijos, para decidir con más información.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Rechazar ese criterio y evaluar a ambas personas con requisitos objetivos del cargo, definidos de antemano.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: una exclusión discriminatoria.</strong> <span class="fb-body">Descartar a alguien por una suposición sobre su vida familiar no mide su capacidad para el cargo. Es una exclusión basada en motivos como sexo, maternidad o estado civil, que el artículo 2 prohíbe, y la empresa queda expuesta a una denuncia de tutela laboral.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: una intromisión que agrava el problema.</strong> <span class="fb-body">Preguntar por planes de maternidad no es pertinente para el cargo, y el artículo 194 prohíbe condicionar una promoción a la existencia o ausencia de embarazo. La pregunta misma deja evidencia de un criterio discriminatorio.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La decisión debe apoyarse en criterios <b>objetivos</b> (medibles), <b>pertinentes</b> (vinculados a las funciones) y <b>trazables</b> (que dejen registro). En esta lección aprenderás a reconocer cuándo una distinción es legítima y cuándo es discriminación.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 7 capítulos</span>
+  <h2>¿Cuándo una diferencia de trato es discriminación?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ¿QUÉ ES DISCRIMINAR? -->
+<section class="slide" data-title="¿Qué es discriminar?" data-audio="p03" data-dur="0:28" data-gate="cloze ex" data-gate-msg="Completa la definición y revisa los seis motivos protegidos.">
+  <span class="eyebrow">Lección 3.2 · Concepto legal</span>
+  <h2>¿Qué es discriminar según el Código del Trabajo?</h2>
+  <p>Completa la definición del artículo 2 eligiendo la palabra correcta en cada espacio. Luego presiona <strong>Comprobar definición</strong>.</p>
+  <div class="cloze">Son actos de discriminación las distinciones, exclusiones o
+    <select id="z1" aria-label="Espacio 1"><option value="">elige…</option><option>sanciones</option><option>preferencias</option><option>evaluaciones</option></select>
+    basadas en motivos como el sexo, la edad, el estado civil o la apariencia personal, que
+    <select id="z2" aria-label="Espacio 2"><option value="">elige…</option><option>mejoren</option><option>documenten</option><option>anulen o alteren</option></select>
+    la igualdad de
+    <select id="z3" aria-label="Espacio 3"><option value="">elige…</option><option>oportunidades o de trato</option><option>remuneraciones</option><option>horarios</option></select>
+    en el empleo y la ocupación.
+  </div>
+  <button class="small-btn primary" type="button" id="zCheck" style="margin-top:12px">Comprobar definición</button>
+  <div class="fb" id="zFb"></div>
+  <div id="zEx" hidden>
+    <h3 style="margin-top:18px">La ley enumera más de veinte motivos protegidos. Toca cada uno de estos seis para ver cómo aparece en el trabajo.</h3>
+    <div class="task" id="exTask">Motivos revisados <span class="tick" id="exTick">0 / 6</span></div>
+    <div class="chips2" id="exChips"></div>
+    <div class="dpanel" id="exPanel"><p class="hint">Selecciona un motivo.</p></div>
+    <div class="story"><strong>Lista completa del artículo 2:</strong> raza, color, sexo, maternidad, lactancia materna, amamantamiento, edad, estado civil, sindicación, religión, opinión política, nacionalidad, ascendencia nacional, situación socioeconómica, idioma, creencias, participación en organizaciones gremiales, orientación sexual, identidad de género, filiación, apariencia personal, enfermedad o discapacidad y origen social.</div>
+  </div>
+  <p class="sources">Referencia: Código del Trabajo, artículo 2.</p>
+</section>
+
+<!-- 4 · MOTIVO O REQUISITO -->
+<section class="slide" data-title="¿Motivo o requisito?" data-audio="p04" data-dur="0:31" data-gate="qf" data-gate-msg="Clasifica los ocho criterios de la ronda.">
+  <span class="eyebrow amber">Lección 3.2 · Calificaciones del cargo</span>
+  <h2>¿Motivo protegido o requisito del cargo?</h2>
+  <p>El artículo 2 aclara que <strong>no son discriminación</strong> las distinciones basadas en las calificaciones exigidas para un empleo determinado. Para cada criterio, haz clic en <strong>Criterio discriminatorio</strong> o en <strong>Requisito del cargo</strong>. Intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+  <p class="sources">Referencia: Código del Trabajo, artículo 2 (motivos protegidos, calificaciones exigidas y antecedentes económicos).</p>
+</section>
+
+<!-- 5 · UN AVISO DE EMPLEO -->
+<section class="slide" data-title="Un aviso de empleo" data-audio="p05" data-dur="0:32" data-gate="cmp" data-gate-msg="Desliza el comparador hasta el final para ver el aviso corregido.">
+  <span class="eyebrow violet">Lección 3.2 · Ofertas de trabajo</span>
+  <h2>El aviso que publicó una sucursal</h2>
+  <p>Una sucursal publicó este aviso para un cargo de ventas. Las líneas marcadas con ⚠ condicionan la contratación a motivos que la ley prohíbe. <strong>Desliza el control hacia la izquierda</strong> para ver la versión corregida por Camila.</p>
+  <div class="cmp ad" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in"><span class="eyebrow">Aviso original</span><h3>Se busca vendedora</h3>
+      <ul>
+        <li><span class="flag">⚠</span> Mujer, entre 25 y 35 años.</li>
+        <li><span class="flag">⚠</span> Excelente presencia.</li>
+        <li><span class="flag">⚠</span> Sin deudas ni registro en DICOM.</li>
+        <li><span class="flag">⚠</span> Presentar test de embarazo negativo.</li>
+        <li>Experiencia en ventas al detalle.</li>
+      </ul></div></div>
+    <div class="side after"><div class="in"><span class="eyebrow amber">Aviso corregido</span><h3>Se busca ejecutivo/a de ventas</h3>
+      <ul>
+        <li><span class="fix">✓</span> Cargo abierto a todas las personas, sin límite de edad.</li>
+        <li><span class="fix">✓</span> Atención cordial y orientada al cliente (se evalúa en simulación de venta).</li>
+        <li><span class="fix">✓</span> Sin exigencias sobre deudas: el cargo no custodia fondos ni valores.</li>
+        <li><span class="fix">✓</span> Sin preguntas ni exámenes sobre embarazo.</li>
+        <li>Experiencia de 1 año en ventas al detalle.</li>
+      </ul></div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador entre el aviso original y el corregido"/>
+  <div class="fb" id="cmpFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, artículo 2 (ofertas de trabajo y antecedentes económicos) y artículo 194, inciso final.</p>
+</section>
+
+<!-- 6 · EN CADA ETAPA -->
+<section class="slide" data-title="En cada etapa" data-audio="p06" data-dur="0:28" data-gate="tabs" data-gate-msg="Revisa las cuatro etapas: selección, promoción, remuneraciones e inclusión.">
+  <span class="eyebrow">Lección 3.2 · Ciclo laboral</span>
+  <h2>La igualdad de trato se juega en cada etapa</h2>
+  <p>Haz clic en cada etapa para ver qué exige la ley y qué evidencia conviene dejar.</p>
+  <div class="task" id="tabTask">Etapas revisadas <span class="tick" id="tabTick">1 / 4</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">🧾 Selección</button><button class="tab" type="button" data-t="1">📈 Promoción</button><button class="tab" type="button" data-t="2">💰 Remuneraciones</button><button class="tab" type="button" data-t="3">♿ Inclusión</button></div>
+  <div class="tabpane active"><div class="photo-frame wide"><img alt="Comité de selección entrevista a un postulante con una pauta impresa sobre la mesa" src="{{IMG:i32_seleccion}}"/></div><div><h3 style="margin-top:0">Selección</h3><p>Las ofertas de trabajo no pueden condicionar la contratación a ninguno de los motivos del artículo 2.</p><ul><li>Define requisitos ligados a las funciones del cargo.</li><li>No exijas ausencia de deudas, salvo para gerentes, subgerentes, agentes o apoderados con facultades generales de administración, o para quienes recauden, administren o custodien fondos o valores.</li><li>Usa las mismas preguntas y la misma pauta con todas las personas postulantes.</li></ul></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="Dos jefaturas revisan juntas una matriz de evaluación de desempeño en una pantalla" src="{{IMG:i32_promocion}}"/></div><div><h3 style="margin-top:0">Promoción</h3><p>Ascender a alguien es una decisión de empleo: también está cubierta por la prohibición de discriminar.</p><ul><li>Nadie puede condicionar una promoción a la existencia o ausencia de embarazo, ni exigir certificados o exámenes para verificarlo (art. 194).</li><li>Las suposiciones sobre la vida familiar no son un criterio laboral.</li><li>Deja por escrito la pauta, los puntajes y el fundamento de la decisión.</li></ul></div></div>
+  <div class="tabpane"><div class="pay-vis" aria-label="Esquema: mismo trabajo, misma remuneración"><b>Mismo trabajo</b><div class="row"><span>Trabajadora</span><span class="bar" style="width:100%"></span></div><div class="row"><span>Trabajador</span><span class="bar" style="width:100%"></span></div><span class="hint" style="margin:0">Diferencias permitidas solo si son objetivas:</span><div class="why"><span>Capacidades</span><span>Calificaciones</span><span>Idoneidad</span><span>Responsabilidad</span><span>Productividad</span></div></div><div><h3 style="margin-top:0">Remuneraciones · art. 62 bis</h3><p>El empleador debe dar cumplimiento al principio de igualdad de remuneraciones entre hombres y mujeres que prestan un mismo trabajo.</p><ul><li>No son arbitrarias las diferencias objetivas fundadas en capacidades, calificaciones, idoneidad, responsabilidad o productividad.</li><li>Empresas con 200 o más trabajadores: registro de cargos o funciones y sus características técnicas esenciales en el reglamento interno.</li><li>Deben contar con un procedimiento de reclamo, con respuesta fundada y por escrito dentro de 30 días.</li></ul></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="Trabajador en silla de ruedas trabaja en un puesto adaptado junto a sus compañeros" src="{{IMG:i32_inclusion}}"/></div><div><h3 style="margin-top:0">Inclusión · Ley 21.015</h3><p>La igualdad también se promueve con medidas de inclusión.</p><ul><li>Empresas con 100 o más trabajadores deben contratar o mantener contratadas al menos al 1% de personas con discapacidad o asignatarias de pensión de invalidez.</li><li>Si no es posible, deben cumplir mediante las medidas alternativas que contempla la ley.</li><li>La discapacidad es, además, uno de los motivos protegidos del artículo 2.</li></ul></div></div>
+  <p class="sources">Referencias: Código del Trabajo, artículos 2, 62 bis y 194; Ley N°21.015 de inclusión laboral.</p>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:31" data-gate="vl" data-gate-msg="Da tu veredicto sobre los seis criterios de la pauta.">
+  <span class="eyebrow amber">Lección 3.2 · La pauta de la promoción</span>
+  <h2>¿Qué criterios puede mantener la pauta?</h2>
+  <p>Camila redacta la pauta para decidir entre Valeria y Tomás, y la jefatura propone seis criterios. Para cada línea, haz clic en <strong>Válido</strong> si mide algo pertinente para el cargo, o en <strong>No válido</strong> si se basa en un motivo protegido o en una suposición.</p>
+  <div class="task" id="vlTask">Criterios evaluados <span class="tick" id="vlTick">0 / 6</span></div>
+  <div class="slip" id="vlines"><div class="slip-h"><span>Pauta de evaluación · Supervisión de Operaciones</span><span>Horizonte Servicios</span></div></div>
+  <div class="fb" id="vlFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, artículos 2 y 194; tutela laboral (art. 485 y siguientes).</p>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:28" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:23" data-gate="order pass" data-gate-msg="Ordena los cinco pasos de la selección objetiva.">
+  <span class="eyebrow violet">Lección 3.2 · Aplicación en tu organización</span>
+  <h2>¿En qué orden se construye una selección objetiva?</h2>
+  <p>Piensa en el próximo proceso de selección o promoción de tu área. Usa las flechas para mover cada paso hasta formar la secuencia correcta, de arriba hacia abajo. Luego presiona <strong>Comprobar orden</strong>.</p>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:27" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.2</h2>
+    <p>Ya puedes distinguir una decisión laboral legítima de una práctica discriminatoria y aplicar criterios objetivos, pertinentes y trazables en selección, promoción, remuneraciones y trato cotidiano.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar motivos y requisitos</button><button class="small-btn primary" type="button" data-goto="6">Repasar la pauta de promoción</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, artículos 2, 62 bis, 194 y 485 y siguientes; Ley N°21.015. Vigentes a octubre de 2026.</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l32';
+const FIRST_KEYS=['hook','qf','vl'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Una nota sobre la carpeta',lines:['Dos personas con la misma experiencia postulan a una promoción.','La jefatura sugiere descartar a una de ellas por sus posibles responsabilidades familiares.','¿Es una decisión laboral, o un prejuicio?'],
+  html:`<div style="text-align:center"><div class="v-icons"><div><span class="i">👩‍💼</span>7 años · destacada</div><div><span class="i">👨‍💼</span>7 años · destacado</div></div><div style="margin-top:16px"><span class="v-tag lit" data-at="1">“Tendrá más responsabilidades familiares”</span></div><div class="v-sub lit" data-at="2">¿Criterio laboral o prejuicio?</div></div>`},
+ {t:'Qué dice el artículo 2',lines:['El artículo 2 del Código del Trabajo define los actos de discriminación.','Son distinciones, exclusiones o preferencias basadas en motivos protegidos,','que anulan o alteran la igualdad de oportunidades o de trato en el empleo y la ocupación.'],
+  html:`<div class="v-big">Art. 2</div><div class="v-chk"><span data-at="1">Distinciones</span><span data-at="1">Exclusiones</span><span data-at="1">Preferencias</span></div><div class="v-sub lit" data-at="2">… que anulan o alteran la igualdad de oportunidades o de trato</div>`},
+ {t:'Los motivos protegidos',lines:['La ley enumera los motivos protegidos.','Entre ellos están el sexo, la maternidad, la edad, el estado civil, la sindicación, la nacionalidad, la orientación sexual, la identidad de género, la apariencia personal, la discapacidad y el origen social.','Ninguno de ellos dice algo sobre cómo una persona hace su trabajo.'],
+  html:`<div class="motive-cloud"><span>Sexo</span><span>Maternidad</span><span>Lactancia</span><span>Edad</span><span>Estado civil</span><span>Sindicación</span><span>Religión</span><span>Opinión política</span><span>Nacionalidad</span><span>Orientación sexual</span><span>Identidad de género</span><span>Filiación</span><span>Apariencia personal</span><span>Discapacidad</span><span>Origen social</span></div><div class="v-sub lit" data-at="2">Nada de esto mide el desempeño</div>`},
+ {t:'Requisitos del cargo',lines:['Ahora bien, no toda diferencia es discriminación.','Las distinciones basadas en las calificaciones exigidas para un empleo determinado son legítimas,','por ejemplo, un título profesional o una licencia de conducir que el cargo realmente requiere.'],
+  html:`<div class="v-icons"><div class="lit" data-at="1"><span class="i">🎓</span>Título exigido</div><div class="lit" data-at="2"><span class="i">🪪</span>Licencia necesaria</div><div class="lit" data-at="2"><span class="i">🛠️</span>Experiencia pertinente</div></div><div class="v-sub">Calificaciones exigidas = distinción legítima</div>`},
+ {t:'Avisos, deudas y embarazo',lines:['Las ofertas de trabajo no pueden condicionar la contratación a estos motivos.','Tampoco se puede exigir la ausencia de deudas, salvo en cargos de administración general o de custodia de fondos.','Y ningún empleador puede condicionar la contratación, renovación o promoción al embarazo, ni exigir exámenes para verificarlo.'],
+  html:`<div class="v-log"><div class="lit on" data-at="0"><span>Aviso con edad o sexo</span><span>✕</span></div><div class="lit" data-at="1"><span>Exigir “sin DICOM” (cargo común)</span><span>✕</span></div><div class="lit" data-at="2"><span>Test de embarazo</span><span>✕</span></div></div>`},
+ {t:'Remuneraciones e inclusión',lines:['El artículo 62 bis exige igualdad de remuneraciones entre hombres y mujeres que prestan un mismo trabajo, salvo diferencias objetivas como capacidades, calificaciones, idoneidad, responsabilidad o productividad.','Y la Ley 21.015 obliga a las empresas con 100 o más trabajadores a contar con al menos un 1% de personas con discapacidad o asignatarias de pensión de invalidez.'],
+  html:`<div class="v-icons"><div><span class="i">⚖️</span>Art. 62 bis<br/>Mismo trabajo, misma remuneración</div><div class="lit" data-at="1"><span class="i">♿</span>Ley 21.015<br/>1% en empresas de 100+</div></div>`},
+ {t:'Decidir con criterios',lines:['Para decidir sin prejuicios, usa criterios objetivos, que se puedan medir;','pertinentes, ligados a las funciones del cargo;','y trazables, que dejen registro de cómo se decidió.','Si hay discriminación, la persona afectada puede reclamar por tutela laboral.'],
+  html:`<div class="v-steps"><div data-at="0">Objetivos: se pueden medir</div><div data-at="1">Pertinentes: ligados a las funciones</div><div data-at="2">Trazables: dejan registro</div><div data-at="3">Si no, procede la tutela laboral</div></div>`}
+]};
+const Q=[
+ {q:'Según el artículo 2 del Código del Trabajo, ¿cuál de estas distinciones NO constituye discriminación?',o:['Excluir a postulantes mayores de 45 años.','Preferir a quien cumple las calificaciones exigidas para el cargo.','Descartar a quien participa en el sindicato.','Preferir a postulantes con “buena presencia”.'],c:1,f:'Las distinciones basadas en las calificaciones exigidas para un empleo determinado no son discriminación. Edad, sindicación y apariencia personal son motivos protegidos.'},
+ {q:'Para decidir una promoción, una jefatura pide a la candidata un examen que acredite que no está embarazada. ¿Qué corresponde?',o:['Es válido si la candidata lo acepta por escrito.','Es válido solo para cargos de jefatura.','Está prohibido: no se puede condicionar una promoción al embarazo ni exigir exámenes para verificarlo.'],c:2,f:'El artículo 194 prohíbe condicionar la contratación, permanencia, renovación o promoción a la existencia o ausencia de embarazo, y exigir certificados o exámenes para verificarlo.'},
+ {q:'¿En qué caso la ley permite exigir que una persona no tenga deudas u obligaciones comerciales impagas?',o:['Para quien tendrá a su cargo la recaudación, administración o custodia de fondos o valores.','Para cualquier cargo con atención de público.','Para todo contrato indefinido.','En ningún caso.'],c:0,f:'La excepción alcanza a gerentes, subgerentes, agentes o apoderados con facultades generales de administración, y a quienes recaudan, administran o custodian fondos o valores.'},
+ {q:'Una trabajadora y un trabajador hacen el mismo trabajo, pero él gana más. ¿Cuándo esa diferencia no es arbitraria según el artículo 62 bis?',o:['Cuando la trabajadora la acepta.','Cuando la empresa tiene menos de 200 trabajadores.','Nunca: deben ganar exactamente lo mismo siempre.','Cuando se funda en criterios objetivos como capacidades, calificaciones, idoneidad, responsabilidad o productividad.'],c:3,f:'El artículo 62 bis admite diferencias objetivas fundadas en capacidades, calificaciones, idoneidad, responsabilidad o productividad. La aceptación de la persona no las justifica.'},
+ {q:'¿Qué exige la Ley 21.015 de inclusión laboral?',o:['Que toda empresa contrate al menos a una persona con discapacidad.','Que las empresas con 100 o más trabajadores tengan al menos un 1% de personas con discapacidad o asignatarias de pensión de invalidez, o cumplan por medidas alternativas.','Que las empresas con 200 o más trabajadores publiquen sus sueldos.'],c:1,f:'La Ley 21.015 fija la reserva del 1% para empresas con 100 o más trabajadores, con la posibilidad de cumplir mediante medidas alternativas.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: nota adhesiva ---------- */
+$('#sticker').addEventListener('click',e=>{e.currentTarget.classList.add('peeled');setTimeout(()=>{const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},500)});
+
+/* ---------- Definición del artículo 2 ---------- */
+$('#zCheck').addEventListener('click',()=>{const ans={z1:'preferencias',z2:'anulen o alteren',z3:'oportunidades o de trato'};let ok=0;
+  Object.entries(ans).forEach(([id,v])=>{const s=$('#'+id);const g=s.value===v;s.classList.toggle('good',g);s.classList.toggle('bad',!g);if(g)ok++});
+  if(ok===3){feedback($('#zFb'),true,'Definición completa.','Hay discriminación cuando una distinción, exclusión o preferencia se basa en un motivo protegido y afecta la igualdad de oportunidades o de trato. No importa cómo se llame la decisión: importa su efecto.');done('cloze');$('#zEx').hidden=false}
+  else feedback($('#zFb'),false,`${ok} de 3 correctas.`,'Corrige los espacios marcados en rojo. Pista: la ley habla de lo que se “prefiere”, y de un efecto negativo sobre la igualdad en el empleo.')});
+const EX=[['Sexo y maternidad','Ocurre cuando se supone que una mujer rendirá menos por un posible embarazo o por cuidar a sus hijos. Es justamente el caso de Valeria: la nota no mide su trabajo, proyecta un estereotipo.'],
+ ['Edad','Aparece en avisos con rangos de edad (“entre 25 y 35 años”) o al descartar a alguien por “poca proyección”. La edad no es una calificación del cargo.'],
+ ['Estado civil y filiación','Preguntar si alguien está casado, si tiene hijos o quiénes son sus padres no informa sobre su capacidad para el cargo.'],
+ ['Apariencia personal','Exigir “buena presencia” o descartar por tatuajes, peso o estilo excluye por apariencia. Si el cargo exige un uniforme o normas de seguridad, eso se define de forma general para todas las personas.'],
+ ['Sindicación','Excluir de una promoción a quien está afiliado a un sindicato o participa en una organización gremial es discriminación.'],
+ ['Situación socioeconómica','Descartar por la comuna donde vive la persona, su colegio de origen o sus deudas (fuera de las excepciones legales) es una exclusión por situación socioeconómica u origen social.']];
+$('#exChips').innerHTML=EX.map((e,i)=>`<button class="chip2" type="button" data-k="${i}">${e[0]}</button>`).join('');
+const tEx=tracker('ex',6,'#exTick','#exTask');
+$$('#exChips .chip2').forEach(c=>c.addEventListener('click',()=>{const k=+c.dataset.k;c.classList.add('on');tEx(k);$('#exPanel').innerHTML=`<h3 style="margin-top:0">${EX[k][0]}</h3><p>${EX[k][1]}</p>`}));
+
+/* ---------- Ronda rápida: motivo o requisito ---------- */
+const QF=[['“Preferimos postulantes menores de 35 años”',0,'La edad es un motivo protegido y no mide la capacidad para el cargo.'],
+ ['Licencia de conducir profesional para el cargo de conductor de bus',1,'Es una calificación que el cargo realmente exige.'],
+ ['“Idealmente sin hijos pequeños, para que no pida permisos”',0,'Se basa en la filiación, la maternidad o el estado civil, y en una suposición sobre la vida familiar.'],
+ ['Título de contador auditor para el cargo de contador de la empresa',1,'Es una calificación vinculada a las funciones del cargo.'],
+ ['“No incluir en la promoción a dirigentes del sindicato”',0,'La sindicación es un motivo protegido.'],
+ ['Inglés avanzado para atender a clientes extranjeros',1,'El idioma es un motivo protegido, pero aquí se exige porque las funciones lo requieren: es una calificación del cargo.'],
+ ['“Buena presencia” para un cargo administrativo',0,'Es una exigencia basada en la apariencia personal, que la ley protege.'],
+ ['No tener deudas comerciales para un asistente sin manejo de dinero',0,'Solo puede exigirse a cargos con facultades generales de administración o que recauden, administren o custodien fondos o valores.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente criterio! Distinguiste cada calificación del cargo de cada motivo protegido.':'Pregúntate siempre: ¿este criterio mide algo que las funciones del cargo realmente exigen, o describe a la persona?'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Criterio ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns"><button type="button" data-v="0">🚫 Criterio discriminatorio</button><button type="button" data-v="1">✅ Requisito del cargo</button></div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} Es ${c[1]?'un requisito del cargo':'un criterio discriminatorio'}.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},2200)}))}
+qfRender();
+
+/* ---------- Comparador del aviso ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');feedback($('#cmpFb'),true,'Así se corrige un aviso.','Se eliminaron el sexo y la edad, la “presencia”, la exigencia de no tener deudas (el cargo no custodia fondos) y el test de embarazo. Lo que queda describe las funciones y cómo se evaluarán, igual para todas las personas.')}}});
+
+/* ---------- Pestañas por etapa ---------- */
+const tTab=tracker('tabs',4,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tabpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Veredicto por línea: pauta de promoción ---------- */
+const VL=[['Experiencia supervisando turnos o equipos','30%',1,'Válido: mide una competencia que la Supervisión de Operaciones exige.'],
+ ['Disponibilidad futura estimada según su situación familiar','15%',0,'No válido: es una suposición basada en maternidad, sexo o estado civil. Es exactamente la nota de la jefatura.'],
+ ['Resultado de las evaluaciones de desempeño de los dos últimos años','25%',1,'Válido: es un antecedente objetivo y registrado del trabajo de ambas personas.'],
+ ['Prueba técnica de planificación de turnos, igual para ambas personas','20%',1,'Válido: es objetiva, pertinente para el cargo y deja evidencia.'],
+ ['“Proyección”: preferir a quien tenga menos de 40 años','5%',0,'No válido: la edad es un motivo protegido; “proyección” solo lo disfraza.'],
+ ['“Imagen de liderazgo” según la apariencia en la entrevista','5%',0,'No válido: evalúa la apariencia personal. El liderazgo se mide con conductas observables, por ejemplo, en la experiencia o en una prueba.']];
+$('#vlines').insertAdjacentHTML('beforeend',VL.map((v,i)=>`<div class="vline" data-i="${i}"><span><b>${v[0]}</b> · Ponderación ${v[1]}</span><span class="vb"><button type="button" data-a="1">Válido</button><button type="button" data-a="0">No válido</button></span><div class="vexp"></div></div>`).join(''));
+let vlN=0,vlFirst=true;
+$$('#vlines .vline').forEach(l=>$$('.vb button',l).forEach(b=>b.addEventListener('click',()=>{if(l.classList.contains('answered'))return;const v=VL[+l.dataset.i],ok=+b.dataset.a===v[2];
+  if(ok){l.classList.add('answered');b.classList.add('good');$$('.vb button',l).forEach(x=>x.disabled=true);$('.vexp',l).innerHTML=`<div class="feedback good" style="margin:0">${v[3]}</div>`;vlN++;$('#vlTick').textContent=`${vlN} / 6`;
+    if(vlN===6){S.first.vl=vlFirst;$('#vlTask').classList.add('ok');feedback($('#vlFb'),true,'Pauta depurada.','Quedan tres criterios objetivos, pertinentes y trazables (experiencia, desempeño y prueba técnica). Con ellos, Camila puede decidir y fundamentar por escrito la promoción, sin importar quién resulte elegido.');done('vl')}}
+  else{vlFirst=false;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);l.classList.add('answered');$('.vexp',l).innerHTML=`<div class="feedback bad" style="margin:0">Revisa: ${v[2]?'este criterio sí mide algo que el cargo exige y se aplica igual a ambas personas.':'pregúntate si mide el trabajo o si describe a la persona por un motivo protegido.'}</div>`;setTimeout(()=>l.classList.remove('answered'),2000)}})));
+
+/* ---------- Ordenar pasos ---------- */
+const ORDER=['Definir el perfil del cargo con requisitos ligados a sus funciones.','Publicar la oferta sin requisitos basados en motivos protegidos.','Fijar la pauta de evaluación y sus ponderaciones antes de revisar las postulaciones.','Evaluar a todas las personas con los mismos instrumentos: pauta, entrevista estructurada y prueba.','Registrar los puntajes y fundamentar la decisión por escrito.'];
+let cur=[2,4,0,3,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se define qué exige el cargo; luego se publica sin sesgos; la pauta se fija antes de conocer a las personas; se evalúa a todas por igual y, al final, se deja registro. Así la decisión es objetiva, pertinente y trazable.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Recuerda: la pauta se fija antes de revisar postulaciones, y el registro va al final.`)});
+/*{{TAIL}}*/
+})();
+</script>

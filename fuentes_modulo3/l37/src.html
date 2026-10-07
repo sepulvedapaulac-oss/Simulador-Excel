@@ -1,0 +1,390 @@
+<title>Lección 3.7 — Feriado, permisos y licencias</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.flipdeck.six .face{min-height:210px}
+.absence{width:100%;border-collapse:collapse;font-size:.9rem}
+.absence th,.absence td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line2);vertical-align:top}
+.absence th{font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.label-line.tall{min-height:170px;padding:12px}
+.label-line.tall .sticker{font-size:1rem;padding:12px;text-align:center;line-height:1.35}
+.cbox{border:1px solid var(--line);border-radius:20px;padding:16px;background:var(--surface3);min-width:0}
+.cbox h3{margin-top:0}
+.crow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.crow .field input,.crow .field select{min-width:0}
+.calstrip{display:flex;flex-wrap:wrap;gap:4px;margin:10px 0}
+.cday{width:42px;padding:4px 0;border-radius:9px;text-align:center;font-size:.72rem;font-weight:800;line-height:1.2;border:1px solid var(--line);background:var(--surface)}
+.cday b{display:block;font-size:.95rem}
+.cday.h{background:var(--mint);border-color:var(--mint-line);color:var(--teal-ink)}
+.cday.i{background:var(--surface2);color:var(--muted);text-decoration:line-through}
+.cday.r{background:var(--amber-soft);border-color:var(--amber);color:var(--amber-ink)}
+.cout{display:grid;gap:6px;margin-top:8px}
+.cout div{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line2);font-size:.9rem}
+.cout b{font-variant-numeric:tabular-nums}
+.chal{margin-top:16px;border:2px dashed var(--violet);border-radius:18px;padding:14px 16px;background:var(--violet-soft)}
+.chal h3{margin:0 0 6px;color:var(--violet)}
+.chal .copts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chal .copts button{border:2px solid var(--line2);background:var(--surface);color:var(--ink);border-radius:12px;padding:9px 12px;font-weight:800;cursor:pointer;font:inherit;font-size:.9rem}
+.chal .copts button.good{border-color:var(--good-line);background:var(--good-soft);color:var(--good)}
+.chal .copts button.bad{border-color:var(--bad-line);background:var(--bad-soft);color:var(--bad)}
+.tiles.perm{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tiles.perm .tile{font-size:.92rem;line-height:1.3;min-height:130px}
+.tiles.perm .tile .ti{display:block;font-size:1.7rem;margin-bottom:4px}
+.tiles.perm .tile.open{background:var(--mint);color:var(--teal-ink);border:2px solid var(--mint-line)}
+.tiles.perm .tile .dd{display:block;font-size:1.25rem;font-weight:900;margin-top:4px}
+.bins.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bins.three .bin{min-width:0}
+.bin.warn-bin h3{color:var(--amber-ink)}
+.bin .cardx{width:100%}
+.vline .who small{display:block;margin-top:2px}
+@media(max-width:760px){.bins.three{grid-template-columns:1fr}.crow{grid-template-columns:1fr}.tiles.perm{grid-template-columns:repeat(2,minmax(0,1fr))}.vline{grid-template-columns:1fr}.vline .vb{flex-wrap:wrap}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.7</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:22" data-gate="hook" data-gate-msg="Despega la nota de la jefatura y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.7 · Feriado, permisos y licencias</span>
+      <h1 class="reveal">No todos los tiempos de ausencia tienen la misma regla</h1>
+      <p class="lead reveal">En <strong>Horizonte Servicios</strong>, Camila recibe la planilla de ausencias de noviembre con una nota de la jefatura pegada encima. <strong>Haz clic en la nota para despegarla</strong> y revisa qué ausencias hay debajo.</p>
+      <div class="label-line tall reveal">
+        <table class="absence">
+          <thead><tr><th>Persona</th><th>Ausencia</th><th>Días</th></tr></thead>
+          <tbody>
+            <tr><td>Rodrigo Paz</td><td>🏖️ Feriado anual solicitado</td><td>10 hábiles</td></tr>
+            <tr><td>Matías Rojas</td><td>👶 Nacimiento de su hija</td><td>5</td></tr>
+            <tr><td>Daniela Fuentes</td><td>🩺 Licencia médica</td><td>7</td></tr>
+          </tbody>
+        </table>
+        <button class="sticker" type="button" id="sticker">📝 “Descontar todo como vacaciones” — Jefatura<br/>Toca para despegar</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa una planilla de ausencias con una nota adhesiva pegada encima, en una oficina con luz natural" src="{{IMG:i37_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">¿Qué debería hacer Camila con estas tres ausencias?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Descontar las tres como vacaciones: en todas la persona no vino a trabajar.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Descontar del feriado solo los días de Rodrigo; el permiso por nacimiento y la licencia médica siguen sus propias reglas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Descontar el feriado de Rodrigo y la licencia de Daniela, pero no el permiso de Matías.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: derechos descontados sin fundamento</div><div class="branch-body"><div><p>Matías pierde 5 días de feriado por usar un permiso que la ley le da pagado, y Daniela pierde 7 días mientras estaba con licencia y recibía subsidio. Ambos reclaman y la empresa debe restituir los días.</p></div><div><p class="hint">“No vino a trabajar” no basta: cada ausencia tiene su origen y su regla.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Solo el feriado de Rodrigo se descuenta de sus días de vacaciones. El permiso por nacimiento es un permiso legal pagado y la licencia médica suspende la prestación de servicios, con subsidio. Ninguno de los dos es feriado.</p></div><div><p class="hint">En esta lección aprenderás a distinguir y calcular cada tipo de ausencia.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una licencia tratada como vacaciones</div><div class="branch-body"><div><p>Daniela pierde 7 días de feriado por estar enferma. La licencia médica no es feriado: durante ella la remuneración se reemplaza por un subsidio, y si coincide con las vacaciones, el feriado se suspende y se retoma después.</p></div><div><p class="hint">Acertaste con Matías, pero la licencia también tiene su propia regla.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 15 s</span>
+  <h2>Feriado, permiso y licencia: tres reglas distintas</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CONCEPTOS -->
+<section class="slide" data-title="Conceptos" data-audio="p03" data-dur="0:17" data-gate="cards" data-gate-msg="Voltea las seis tarjetas.">
+  <span class="eyebrow">Lección 3.7 · Seis conceptos que no se mezclan</span>
+  <h2>¿Qué regla hay detrás de cada ausencia?</h2>
+  <p>Haz clic en cada tarjeta para voltearla y leer la regla. Fíjate en cuáles se descuentan del feriado y cuáles no.</p>
+  <div class="task" id="fcTask">Tarjetas volteadas <span class="tick" id="fcTick">0 / 6</span></div>
+  <div class="flipdeck six">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">15</div><strong>Feriado anual</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Descanso pagado cada año</strong><span>Con más de un año de servicio: <b>15 días hábiles</b> con remuneración íntegra (<b>20</b> en Magallanes, Aysén y Palena). Para contarlo, el <b>sábado es siempre inhábil</b>.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">+1</div><strong>Feriado progresivo</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Más años, más días</strong><span>Con <b>10 años de trabajo</b> (con empleadores anteriores se cuentan hasta 10), se suma <b>un día por cada 3 nuevos años</b> trabajados con el empleador actual.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">✂️</div><strong>Fraccionamiento y acumulación</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Continuo, con excepciones pactadas</strong><span>El feriado es continuo, pero el <b>exceso sobre 10 días hábiles</b> puede fraccionarse de común acuerdo. Puede acumularse por acuerdo hasta <b>dos períodos</b> consecutivos.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🛡️</div><strong>Permiso legal</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Un hecho concreto, una regla propia</strong><span>Nacimiento, fallecimiento, matrimonio o unión civil: son permisos <b>pagados</b> con días definidos por ley y <b>no se descuentan del feriado</b>.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🩺</div><strong>Licencia médica</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Suspende la prestación de servicios</strong><span>La remuneración se reemplaza por un <b>subsidio</b> de incapacidad laboral. Si llega durante el feriado, <b>el feriado se suspende</b> y se retoma después.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⏱️</div><strong>Horas extra compensadas con feriado</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Días adicionales, por escrito</strong><span>Desde la Ley 21.561, las horas extraordinarias pueden compensarse con hasta <b>5 días hábiles adicionales</b> de feriado al año, por <b>acuerdo escrito</b>.</span></div></div></button>
+  </div>
+  <div class="callout" style="margin-top:14px"><strong>Ojo:</strong> el feriado no se compensa en dinero mientras dure la relación laboral; solo al terminar se paga el feriado proporcional o pendiente (art. 73).</div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 67, 68, 69, 70 y 73; Ley N°21.561; Dirección del Trabajo, Dictamen 6256/279 de 1995.</p>
+</section>
+
+<!-- 4 · CALCULADORA -->
+<section class="slide" data-title="¿Cuántos días?" data-audio="p04" data-dur="0:17" data-gate="cala calb" data-gate-msg="Resuelve los dos desafíos: la fecha de regreso de Rodrigo y los días de Patricia.">
+  <span class="eyebrow amber">Lección 3.7 · Cálculo del feriado</span>
+  <h2>¿Cuántos días corresponden y cuándo se vuelve?</h2>
+  <div class="grid-2">
+    <div><p>Usa las dos calculadoras. En la primera elige la <strong>fecha de inicio</strong> y los <strong>días hábiles</strong>: verás cómo los sábados y domingos no se cuentan. En la segunda ingresa los <strong>años trabajados</strong> para ver el feriado progresivo. Luego resuelve los dos desafíos.</p>
+      <div class="callout" style="margin-top:8px"><strong>Simplificación:</strong> esta calculadora no considera los feriados legales (festivos). Si hay uno en el período, tampoco se cuenta y la fecha de regreso se corre.</div></div>
+    <div class="photo-frame wide"><img alt="Profesional de recursos humanos marca días en un calendario de escritorio junto a su computador" src="{{IMG:i37_calendario}}"/></div>
+  </div>
+  <div class="grid-2" style="margin-top:14px">
+    <div class="cbox">
+      <h3>📅 Fecha de regreso</h3>
+      <div class="crow"><label class="field">Fecha de inicio<input id="cStart" type="date" value="2026-11-16"/></label><label class="field">Días hábiles solicitados<input id="cDays" type="number" min="1" max="30" value="10" inputmode="numeric"/></label></div>
+      <div class="calstrip" id="calStrip" aria-label="Calendario del feriado"></div>
+      <p class="hint" style="margin:0">Verde: día hábil descontado · Gris: sábado o domingo (no se cuenta) · Amarillo: día de regreso</p>
+      <div class="cout" id="calOut"></div>
+      <div class="chal">
+        <h3>Desafío 1 · Rodrigo</h3>
+        <p style="margin:0">Rodrigo inicia su feriado el <b>lunes 16 de noviembre de 2026</b> y pide <b>10 días hábiles</b>. ¿Qué día vuelve al trabajo?</p>
+        <div class="copts" id="chA"><button type="button" data-v="a">Jueves 26 de noviembre</button><button type="button" data-v="b">Viernes 27 de noviembre</button><button type="button" data-v="c">Lunes 30 de noviembre</button></div>
+        <div class="fb" id="chAFb"></div>
+      </div>
+    </div>
+    <div class="cbox">
+      <h3>➕ Feriado progresivo</h3>
+      <div class="crow"><label class="field">Años con empleadores anteriores<input id="pPrev" type="number" min="0" max="40" value="0" inputmode="numeric"/></label><label class="field">Años con el empleador actual<input id="pCur" type="number" min="0" max="50" value="1" inputmode="numeric"/></label></div>
+      <label class="switch">Trabaja en Magallanes, Aysén o Palena <input type="checkbox" id="pZona"/></label>
+      <div class="cout" id="pOut"></div>
+      <div class="chal">
+        <h3>Desafío 2 · Patricia</h3>
+        <p style="margin:0">Patricia trabajó <b>8 años</b> con empleadores anteriores y lleva <b>9 años</b> en Horizonte Servicios (en Santiago). ¿Cuántos días hábiles de feriado le corresponden este año?</p>
+        <div class="answer"><input id="chB" inputmode="numeric" placeholder="Ej: 15" aria-label="Días hábiles de feriado de Patricia"/><button class="small-btn primary" type="button" id="chBCheck">Comprobar</button></div>
+        <div class="fb" id="chBFb"></div>
+      </div>
+    </div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 67 (feriado anual), 68 (feriado progresivo) y 69 (sábado inhábil).</p>
+</section>
+
+<!-- 5 · PERMISOS -->
+<section class="slide" data-title="Permisos legales" data-audio="p05" data-dur="0:18" data-gate="tiles" data-gate-msg="Descubre las seis fichas de permisos.">
+  <span class="eyebrow violet">Lección 3.7 · Permisos que no son vacaciones</span>
+  <h2>Seis permisos pagados que no se descuentan del feriado</h2>
+  <div class="grid-2">
+    <div><p>Haz clic en cada ficha para descubrir cuántos días corresponden. Abajo verás desde cuándo se cuentan y qué protección agregan. Pon atención: algunos son <strong>días corridos</strong> y otros <strong>días hábiles</strong>.</p>
+      <div class="task" id="tlTask">Fichas descubiertas <span class="tick" id="tlTick">0 / 6</span></div></div>
+    <div class="photo-frame wide"><img alt="Un padre joven sostiene a su bebé recién nacido junto a una ventana luminosa" src="{{IMG:i37_familia}}"/></div>
+  </div>
+  <div class="tiles perm" id="tiles"></div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Toca una ficha para ver el detalle.</p></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 66 (fallecimiento), 195 (nacimiento) y 207 bis (matrimonio o acuerdo de unión civil).</p>
+</section>
+
+<!-- 6 · CLASIFICAR -->
+<section class="slide" data-title="¿Feriado, permiso o licencia?" data-audio="p06" data-dur="0:20" data-gate="bins" data-gate-msg="Clasifica las ocho situaciones en su columna.">
+  <span class="eyebrow">Lección 3.7 · El origen de cada ausencia</span>
+  <h2>Ocho ausencias, tres reglas</h2>
+  <p>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna que corresponde. Pregúntate: <strong>¿qué hecho origina esta ausencia?</strong></p>
+  <div class="task" id="binTask">Situaciones clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins three">
+    <div class="bin good-bin" data-b="f" role="button" tabindex="0"><h3>🏖️ Feriado anual</h3></div>
+    <div class="bin warn-bin" data-b="p" role="button" tabindex="0"><h3>🛡️ Permiso legal</h3></div>
+    <div class="bin bad-bin" data-b="l" role="button" tabindex="0"><h3>🩺 Licencia médica</h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 66, 67, 70, 195 y 207 bis; Ley N°21.561; Dirección del Trabajo, Dictamen 6256/279 de 1995.</p>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:17" data-gate="vl" data-gate-msg="Evalúa las seis líneas de la planilla.">
+  <span class="eyebrow amber">Lección 3.7 · La planilla de la jefatura</span>
+  <h2>¿Procede cada descuento del feriado?</h2>
+  <div class="grid-2">
+    <div><p>La jefatura del área de Operaciones envió su propuesta. Decide para cada línea si el descuento <strong>procede</strong> o <strong>no procede</strong>. No basta con el nombre de la ausencia: revisa la regla y cómo se cuentan los días.</p><div class="task" id="vlTask">Líneas evaluadas <span class="tick" id="vlTick">0 / 6</span></div></div>
+    <div class="photo-frame wide"><img alt="Camila conversa con una jefatura frente a una planilla impresa en una sala de reuniones" src="{{IMG:i37_reunion}}"/></div>
+  </div>
+  <div class="slip" id="vlines"><div class="slip-h"><span>Descuentos de feriado propuestos · Noviembre 2026</span><span>Área de Operaciones</span></div></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 67, 69, 70 y 195; Dirección del Trabajo, Dictamen 6256/279 de 1995.</p>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:17" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:18" data-gate="qf pass" data-gate-msg="Termina la ronda rápida de ocho situaciones.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Se descuenta del feriado?</h2>
+  <p>Estas situaciones ocurren en cualquier empresa, también en la tuya. Decide en cada una si corresponde <strong>descontarla del feriado</strong> o no. Intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 66, 67, 70, 195 y 207 bis; Ley N°21.645; Dirección del Trabajo, Dictamen 6256/279 de 1995.</p>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:20" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.7</h2>
+    <p>Ya puedes distinguir el feriado anual, los permisos legales y las licencias médicas, calcular días hábiles y feriado progresivo, y explicar por qué no se descuentan como si fueran lo mismo.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los conceptos</button><button class="small-btn" type="button" data-goto="3">Repasar el cálculo</button><button class="small-btn primary" type="button" data-goto="4">Repasar los permisos</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 66, 67, 68, 69, 70, 73, 195 y 207 bis; Ley N°21.561; Ley N°21.645; Dirección del Trabajo, Dictamen 6256/279 de 1995. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l37';
+const FIRST_KEYS=['hook','bins','vl','qf'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Tres ausencias',lines:['Una jefatura pide a Camila descontar como vacaciones tres ausencias distintas.','Pero el feriado anual, un permiso legal y una licencia médica tienen reglas propias.'],
+  html:`<div class="v-icons"><div><span class="i">🏖️</span>Feriado</div><div><span class="i">👶</span>Permiso</div><div><span class="i">🩺</span>Licencia</div></div><div class="note" data-at="1">Tres ausencias, tres reglas</div>`},
+ {t:'Feriado anual',lines:['Con más de un año de servicio, el feriado anual es de 15 días hábiles con remuneración íntegra.','En Magallanes, Aysén y Palena son 20 días hábiles.'],
+  html:`<div class="v-big">15</div><div class="v-sub">días hábiles · remuneración íntegra</div><div class="v-chk"><span class="on">Más de un año de servicio</span><span data-at="1">Magallanes, Aysén y Palena: 20</span></div>`},
+ {t:'Sábado inhábil',lines:['Para contar el feriado, el sábado se considera siempre inhábil.','Así, 15 días hábiles que parten un lunes, sin festivos, terminan el viernes de la tercera semana.'],
+  html:`<div class="v-log"><div><span>Lunes a viernes</span><span>hábil ✓</span></div><div><span>Sábado y domingo</span><span>no se cuentan</span></div><div class="later" data-at="1"><span>15 hábiles desde un lunes</span><span>3 semanas</span></div></div>`},
+ {t:'Progresivo y fraccionamiento',lines:['Con 10 años de trabajo, se suma un día por cada 3 nuevos años con el empleador actual.','El feriado es continuo, pero el exceso sobre 10 días hábiles puede fraccionarse de común acuerdo.'],
+  html:`<div class="v-icons"><div><span class="i">➕</span>10 años + cada 3 nuevos = 1 día</div><div class="dim" data-at="1"><span class="i">✂️</span>Exceso sobre 10 días: fraccionable de común acuerdo</div></div>`},
+ {t:'Permisos legales',lines:['Los permisos legales responden a hechos concretos: un nacimiento, un fallecimiento o un matrimonio.','Son pagados y nunca se descuentan del feriado.'],
+  html:`<div class="v-icons"><div><span class="i">👶</span>Nacimiento</div><div><span class="i">🕯️</span>Fallecimiento</div><div><span class="i">💍</span>Matrimonio o AUC</div></div><div class="note" data-at="1">Pagados · no se descuentan del feriado</div>`},
+ {t:'Licencia médica',lines:['La licencia médica suspende la prestación de servicios, y la remuneración se reemplaza por un subsidio.','Si ocurre durante el feriado, este se suspende y se retoma después.'],
+  html:`<div class="v-big">🩺</div><div class="v-chk"><span class="on">Suspende la prestación de servicios</span><span class="on">Subsidio en lugar de remuneración</span><span data-at="1">Feriado suspendido y retomado después</span></div>`},
+ {t:'Tres preguntas',lines:['Ante cada ausencia que llegue a tu escritorio, pregúntate:','¿qué hecho la origina?,','¿qué regla la regula?,','y ¿se descuenta o no del feriado?'],
+  html:`<div class="v-steps"><div data-at="1">¿Qué hecho la origina?</div><div data-at="2">¿Qué regla la regula?</div><div data-at="3">¿Se descuenta o no del feriado?</div></div>`}
+]};
+const Q=[
+ {q:'Una persona con más de un año de servicio que trabaja en Santiago, ¿cuántos días de feriado anual tiene como regla general?',o:['15 días corridos.','15 días hábiles con remuneración íntegra.','10 días hábiles, más 5 si la empresa lo autoriza.'],c:1,f:'La regla general es de 15 días hábiles con remuneración íntegra (20 en Magallanes, Aysén y Palena).'},
+ {q:'Para el cómputo del feriado, el sábado…',o:['es hábil si la persona trabaja los sábados.','es hábil siempre.','se considera siempre inhábil.'],c:2,f:'El artículo 69 establece que, para el cómputo del feriado, el sábado se considera siempre inhábil.'},
+ {q:'Fallece el hijo de un trabajador. ¿Qué permiso le corresponde?',o:['10 días corridos de permiso pagado.','4 días hábiles, descontados del feriado.','7 días hábiles sin goce de remuneración.','5 días de vacaciones adelantadas.'],c:0,f:'Por fallecimiento de un hijo corresponden 10 días corridos de permiso pagado; no son compensables en dinero y dan fuero de un mes.'},
+ {q:'Durante sus vacaciones, una analista recibe una licencia médica de 4 días. ¿Qué ocurre con su feriado?',o:['Pierde esos 4 días de feriado.','Se le pagan en dinero los 4 días.','Se descuentan igual, porque ya estaba de vacaciones.','El feriado se suspende y esos días se retoman después.'],c:3,f:'Según la Dirección del Trabajo, si la licencia sobreviene durante el feriado, este se suspende y se retoma una vez terminada la licencia.'},
+ {q:'Una trabajadora pide 15 días hábiles continuos. ¿Puede la empresa entregarle solo 10 y dejar 5 para otra fecha?',o:['Sí, la empresa decide cómo distribuir el feriado.','Solo de común acuerdo: el exceso sobre 10 días hábiles puede fraccionarse si ambas partes lo acuerdan.','No, el feriado nunca puede fraccionarse.'],c:1,f:'El feriado debe ser continuo; el exceso sobre 10 días hábiles puede fraccionarse, pero de común acuerdo.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: nota de la jefatura ---------- */
+$('#sticker').addEventListener('click',e=>{e.currentTarget.classList.add('peeled');setTimeout(()=>{const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},500)});
+
+/* ---------- Tarjetas ---------- */
+const tFc=tracker('cards',6,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+
+/* ---------- Calculadora de feriado ---------- */
+const DN=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'],DS=['dom','lun','mar','mié','jue','vie','sáb'],MN=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const fdate=d=>`${DN[d.getDay()]} ${d.getDate()} de ${MN[d.getMonth()]} de ${d.getFullYear()}`;
+const wk=d=>d.getDay()!==0&&d.getDay()!==6;
+function calFer(){const v=$('#cStart').value,n=Math.max(1,Math.min(30,Math.round(+$('#cDays').value||0)));
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(v)){$('#calOut').innerHTML='<div>Elige una fecha de inicio.</div>';$('#calStrip').innerHTML='';return}
+  const [y,m,dd]=v.split('-').map(Number);let d=new Date(y,m-1,dd);let moved=false;
+  while(!wk(d)){d.setDate(d.getDate()+1);moved=true}
+  const start=new Date(d);const days=[];let c=0,last=null;
+  while(c<n){const h=wk(d);if(h){c++;last=new Date(d)}days.push([new Date(d),h]);d.setDate(d.getDate()+1)}
+  const ret=new Date(last);ret.setDate(ret.getDate()+1);while(!wk(ret)){days.push([new Date(ret),false]);ret.setDate(ret.getDate()+1)}
+  const corr=Math.round((ret-start)/864e5),inh=corr-n;
+  $('#calStrip').innerHTML=days.map(([x,h])=>`<span class="cday ${h?'h':'i'}">${DS[x.getDay()]}<b>${x.getDate()}</b></span>`).join('')+`<span class="cday r">${DS[ret.getDay()]}<b>${ret.getDate()}</b></span>`;
+  $('#calOut').innerHTML=(moved?`<div><span>El feriado se cuenta desde el primer día hábil:</span><b>${fdate(start)}</b></div>`:'')+
+    `<div><span>Último día de feriado</span><b>${fdate(last)}</b></div><div><span>Vuelve al trabajo</span><b>${fdate(ret)}</b></div><div><span>Días corridos fuera del trabajo</span><b>${corr} (${n} hábiles + ${inh} sábados y domingos)</b></div>`}
+['#cStart','#cDays'].forEach(s=>$(s).addEventListener('input',calFer));calFer();
+function calProg(){const prev=Math.max(0,Math.round(+$('#pPrev').value||0)),cur=Math.max(0,Math.round(+$('#pCur').value||0)),zona=$('#pZona').checked,base=zona?20:15;
+  if(cur<1){$('#pOut').innerHTML=`<div><span>Menos de un año con el empleador actual: aún no nace el feriado anual de ${base} días hábiles.</span></div>`;return}
+  const pc=Math.min(prev,10),tot=pc+cur,nuevos=Math.max(0,tot-10),extra=tot>=10?Math.floor(nuevos/3):0;
+  $('#pOut').innerHTML=`<div><span>Feriado básico</span><b>${base} días hábiles</b></div>`+
+    `<div><span>Años que se cuentan (anteriores, máx. 10: ${pc}) + actuales (${cur})</span><b>${tot} años</b></div>`+
+    (tot>=10?`<div><span>Años nuevos después de los 10 (con el empleador actual)</span><b>${nuevos} → ${extra} día${extra===1?'':'s'} adicional${extra===1?'':'es'}</b></div>`:`<div><span>Aún no cumple 10 años de trabajo</span><b>sin feriado progresivo</b></div>`)+
+    `<div style="background:var(--mint);border-color:var(--mint-line)"><span><b>Total de feriado</b></span><b>${base+extra} días hábiles</b></div>`}
+['#pPrev','#pCur','#pZona'].forEach(s=>$(s).addEventListener('input',calProg));calProg();
+const CHA={a:'Contaste días corridos: desde el lunes 16, diez días corridos llegan al miércoles 25. Pero el feriado se cuenta en días hábiles.',b:'Contaste el sábado como hábil. Para el feriado, el sábado es siempre inhábil, igual que el domingo.'};
+$$('#chA button').forEach(b=>b.addEventListener('click',()=>{if(S.done.has('cala'))return;const v=b.dataset.v;
+  if(v==='c'){b.classList.add('good');$$('#chA button').forEach(x=>x.disabled=true);feedback($('#chAFb'),true,'Correcto: lunes 30 de noviembre.','Del 16 al 20 y del 23 al 27 de noviembre suman 10 días hábiles. El sábado 28 y el domingo 29 no se cuentan, así que vuelve el lunes 30.');done('cala')}
+  else{b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);feedback($('#chAFb'),false,'Revisa con la calculadora.',CHA[v])}}));
+$('#chBCheck').addEventListener('click',()=>{const v=+($('#chB').value||'').replace(/[^\d]/g,'');const fb=$('#chBFb');
+  if(v===17){feedback(fb,true,'Correcto: 17 días hábiles.','Sus 8 años anteriores más 9 en Horizonte suman 17. Después de los primeros 10 años hay 7 años nuevos con el empleador actual: dos bloques de 3 años = 2 días adicionales. 15 + 2 = 17.');done('calb')}
+  else feedback(fb,false,'Aún no.',v===15?'Te faltó el feriado progresivo: Patricia ya suma más de 10 años de trabajo.':v===16?'Cuenta cuántos bloques completos de 3 años nuevos hay después de cumplir los 10 años.':'Ingresa 8 y 9 años en la calculadora de la derecha y observa el total.')});
+
+/* ---------- Fichas de permisos ---------- */
+const TILES=[['👶','Nacimiento de un hijo o hija','5 días','Permiso pagado para el padre (art. 195). Puede usarlo desde el parto o distribuirlo dentro del primer mes desde el nacimiento. También aplica en caso de adopción y es irrenunciable.'],
+ ['🕯️','Fallecimiento de un hijo o hija','10 días corridos','Permiso pagado (art. 66) que se usa desde el día del fallecimiento. No es compensable en dinero y da fuero de un mes.'],
+ ['💔','Fallecimiento del cónyuge o conviviente civil','7 días corridos','Permiso pagado (art. 66) desde el día del fallecimiento. No es compensable en dinero y da fuero de un mes.'],
+ ['🤍','Fallecimiento de un hijo en gestación','7 días hábiles','Permiso pagado (art. 66) que se cuenta desde el momento en que se acredita la muerte. No es compensable en dinero.'],
+ ['🌿','Fallecimiento del padre, la madre o un hermano o hermana','4 días hábiles','Permiso pagado (art. 66) desde el día del fallecimiento. No es compensable en dinero.'],
+ ['💍','Matrimonio o acuerdo de unión civil','5 días hábiles','Permiso pagado de días hábiles continuos (art. 207 bis), adicional al feriado anual.']];
+$('#tiles').innerHTML=TILES.map((t,i)=>`<button class="tile" type="button" data-i="${i}"><span><span class="ti">${t[0]}</span>${t[1]}</span></button>`).join('');
+const tTl=tracker('tiles',6,'#tlTick','#tlTask');
+$$('#tiles .tile').forEach(b=>b.addEventListener('click',()=>{const t=TILES[+b.dataset.i];b.classList.add('open');b.innerHTML=`<span><span class="ti">${t[0]}</span>${t[1]}<span class="dd">${t[2]}</span></span>`;$('#tlPanel').innerHTML=`<h3 style="margin-top:0">${t[0]} ${t[1]} · ${t[2]}</h3><p style="margin-bottom:0">${t[3]}</p>`;tTl(b.dataset.i)}));
+
+/* ---------- Clasificar ausencias ---------- */
+const CARDS=[
+ ['Rodrigo pide 15 días hábiles en febrero para viajar con su familia.','f','Es su descanso anual pagado: feriado.'],
+ ['Matías es padre: su hija nació ayer y pide sus días.','p','Permiso por nacimiento: 5 días pagados (art. 195).'],
+ ['Daniela presenta reposo de 7 días emitido por su médica tratante.','l','Es una licencia médica: suspende la prestación de servicios y se paga subsidio.'],
+ ['Sergio acordó por escrito compensar sus horas extra con 3 días hábiles adicionales de descanso.','f','Son días adicionales de feriado por compensación de horas extraordinarias (Ley 21.561).'],
+ ['Lorena se casa el sábado y pide sus días.','p','Permiso por matrimonio o AUC: 5 días hábiles continuos, adicionales al feriado.'],
+ ['Hugo se fractura un tobillo en medio de sus vacaciones y recibe reposo médico por 10 días.','l','Es licencia médica: el feriado se suspende y se retoma después.'],
+ ['Ana pide días porque falleció su padre.','p','Permiso por fallecimiento del padre: 4 días hábiles pagados.'],
+ ['Pablo, con 13 años en la empresa, pide sus días anuales más su día progresivo.','f','Es feriado anual, incluido el feriado progresivo.']];
+const BN={f:'Feriado anual',p:'Permiso legal',l:'Licencia médica'};
+const border=[2,0,6,1,4,3,7,5];let selC=null,placedN=0,binErr=0;
+$('#pool').innerHTML=border.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,`Correcto: ${BN[b]}.`,CARDS[c][2]);
+    if(placedN===8){$('#binTask').classList.add('ok');S.first.bins=binErr===0;done('bins')}}
+  else{binErr++;bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');
+    feedback($('#binFb'),false,`No corresponde a “${BN[b]}”.`,b==='f'?'Revisa: ¿es un descanso anual o hay un hecho concreto (nacimiento, fallecimiento, matrimonio, enfermedad) detrás?':b==='p'?'Revisa: los permisos legales responden a nacimientos, fallecimientos o matrimonios. ¿Hay uno de esos hechos?':'Revisa: la licencia médica nace de un reposo médico por enfermedad o accidente. ¿Es eso lo que ocurre?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+
+/* ---------- Veredicto por línea ---------- */
+const VL=[['Rodrigo Paz','Feriado anual · lunes 16 a viernes 27 de noviembre','Descontar 10 días hábiles',1,'Procede: de lunes a viernes de esas dos semanas hay 10 días hábiles; los sábados y domingos no se cuentan.'],
+ ['Matías Rojas','Permiso por nacimiento de su hija','Descontar 5 días de vacaciones',0,'No procede: el permiso por nacimiento (art. 195) es pagado por el empleador y no se descuenta del feriado.'],
+ ['Daniela Fuentes','Licencia médica de 7 días','Descontar 7 días de vacaciones',0,'No procede: la licencia suspende la prestación de servicios y la remuneración se reemplaza por subsidio. No es feriado.'],
+ ['Javiera Soto','Feriado de lunes a viernes de una semana','Descontar 7 días (incluye sábado y domingo)',0,'No procede así: para el feriado el sábado es inhábil, y el domingo también. Corresponde descontar 5 días hábiles.'],
+ ['Hugo Leiva','Licencia de 4 días en medio de su feriado','Dar por usados esos 4 días de feriado',0,'No procede: si la licencia sobreviene durante el feriado, este se suspende y esos días se retoman después (criterio de la DT).'],
+ ['Pablo Núñez','Feriado fraccionado de común acuerdo: 10 días en enero y 5 en julio','Descontar 15 días hábiles en total',1,'Procede: el feriado es continuo, pero el exceso sobre 10 días hábiles puede fraccionarse de común acuerdo.']];
+$('#vlines').insertAdjacentHTML('beforeend',VL.map((v,i)=>`<div class="vline" data-i="${i}"><span class="who"><b>${v[0]}</b> · ${v[1]}<small class="hint">Propuesta: ${v[2]}</small></span><span class="vb"><button type="button" data-a="1">Procede</button><button type="button" data-a="0">No procede</button></span><div class="vexp"></div></div>`).join(''));
+let vlN=0,vlFirst=true;
+$$('#vlines .vline').forEach(l=>$$('.vb button',l).forEach(b=>b.addEventListener('click',()=>{if(l.classList.contains('answered'))return;const v=VL[+l.dataset.i],ok=+b.dataset.a===v[3];
+  if(ok){l.classList.add('answered');b.classList.add('good');$$('.vb button',l).forEach(x=>x.disabled=true);$('.vexp',l).innerHTML=`<div class="feedback good" style="margin:0">${v[4]}</div>`;vlN++;$('#vlTick').textContent=`${vlN} / 6`;if(vlN===6){S.first.vl=vlFirst;$('#vlTask').classList.add('ok');done('vl')}}
+  else{vlFirst=false;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);l.classList.add('answered');$('.vexp',l).innerHTML=`<div class="feedback bad" style="margin:0">Revisa: ${v[3]?'este descuento sí corresponde a feriado y está bien contado.':'piensa en qué tipo de ausencia es y cómo se cuentan sus días.'}</div>`;setTimeout(()=>l.classList.remove('answered'),1800)}})));
+
+/* ---------- Ronda rápida ---------- */
+const QF=[['Una persona pide 15 días hábiles de feriado en febrero para viajar.',1,'Es feriado anual: se descuenta de los días que le corresponden.'],
+ ['Un trabajador usa los 5 días de permiso por el nacimiento de su hijo.',0,'Es un permiso legal pagado (art. 195), no vacaciones.'],
+ ['Una analista presenta licencia médica por 3 días.',0,'La licencia suspende la prestación de servicios y se paga subsidio. No se descuenta del feriado.'],
+ ['Una persona cuidadora pide su feriado en vacaciones escolares, con 30 días de anticipación.',1,'Es su feriado anual, usado en forma preferente en vacaciones escolares (Ley 21.645): sí se descuenta.'],
+ ['Un vendedor se casa y pide 5 días hábiles.',0,'El permiso por matrimonio o AUC (art. 207 bis) es adicional al feriado.'],
+ ['Fallece la madre de una supervisora y pide 4 días hábiles.',0,'Es permiso por fallecimiento (art. 66): pagado y no descontable.'],
+ ['Tras usar 10 días continuos, una persona acuerda tomar los 5 restantes en julio.',1,'Es el fraccionamiento del exceso sobre 10 días hábiles, de común acuerdo: corresponde al feriado.'],
+ ['Durante sus vacaciones, un técnico recibe licencia médica por 5 días.',0,'El feriado se suspende durante la licencia y esos días se retoman después.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente criterio! Ya puedes revisar las ausencias de tu empresa con estas reglas.':'Recuerda: solo el feriado anual (incluido el progresivo y el preferente) se descuenta. Los permisos legales y las licencias médicas tienen su propia regla.'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Situación ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns"><button type="button" data-v="1">🏖️ Se descuenta del feriado</button><button type="button" data-v="0">🛡️ No se descuenta</button></div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} ${c[1]?'Se descuenta del feriado':'No se descuenta del feriado'}.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},2200)}))}
+qfRender();
+/*{{TAIL}}*/
+})();
+</script>

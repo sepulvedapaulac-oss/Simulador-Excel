@@ -1,0 +1,374 @@
+<title>Lección 3.8 — Inclusión laboral</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.phone.chat{min-height:440px;max-width:320px}
+.phone .chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #d7e2e6;font-weight:900;color:#173f4e;font-size:.9rem}
+.phone .chat-h .av{width:30px;height:30px;border-radius:50%;background:#173f4e;color:#fff;display:grid;place-items:center;font-size:.72rem}
+.phone .chat-h small{display:block;font-weight:700;color:#5f7180;font-size:.7rem}
+.phone .cmsg{background:#fff;border:1px solid #c9d6dc;border-radius:14px 14px 14px 4px;padding:9px 12px;font-size:.86rem;max-width:88%;align-self:flex-start;animation:rise .35s ease both;color:#172431}
+.phone .cmsg.me{background:#d8f3ef;border-color:#a9dbd7;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.phone .cmsg time{display:block;font-size:.66rem;color:#5f7180;text-align:right;margin-top:2px}
+.phone .dots{display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid #c9d6dc;width:max-content}
+.phone .dots.me{align-self:flex-end;background:#d8f3ef}
+.phone .dots span{width:7px;height:7px;border-radius:50%;background:#5f7180;animation:blink 1s infinite}
+.phone .dots span:nth-child(2){animation-delay:.2s}.phone .dots span:nth-child(3){animation-delay:.4s}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-radius:16px;padding:12px;font-size:.86rem;color:#172431}
+.phone .grow{flex:1}
+.sim-lbl{display:block;font-size:.85rem;font-weight:800;margin:12px 0 6px}
+.retos{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.retos li{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:start;padding:8px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:.88rem;font-weight:700}
+.retos li::before{content:"○";font-weight:900;color:var(--muted)}
+.retos li.ok{background:var(--good-soft);border-color:var(--good-line);color:var(--good)}
+.retos li.ok::before{content:"✓";color:var(--good)}
+.quota{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 12px}
+.quota>div{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--surface);min-width:0}
+.quota .n{font-size:1.7rem;font-weight:900;color:var(--teal-ink);line-height:1.1}
+.quota .cond .n{color:var(--muted)}
+.quota small{display:block;font-size:.78rem;font-weight:750;color:var(--muted)}
+.gauge{margin-top:10px;border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:var(--surface)}
+.gauge .bar{position:relative;height:16px;border-radius:999px;background:var(--track);margin:8px 0 4px;overflow:visible}
+.gauge .bar i{display:block;height:100%;width:44%;border-radius:999px;background:var(--amber)}
+.gauge .bar b{position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;background:var(--teal);border-radius:2px}
+.gauge .lg{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.76rem;font-weight:800;color:var(--muted)}
+.tabs-photo{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:start}
+.tabs-photo>*{min-width:0}
+.tabs-photo .photo-frame{aspect-ratio:3/2}
+.tpane{display:none;border:1px solid var(--line);border-radius:20px;padding:16px;background:var(--surface3)}
+.tpane.active{display:block;animation:rise .35s ease both}
+.tpane h3{margin-top:0}
+.tpane ul{margin:.4rem 0;padding-left:1.2rem}
+.doc-tip{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--amber-soft);color:var(--amber-ink);font-size:.88rem;font-weight:700}
+.hs-panel .bar2{margin-top:8px;padding:9px 12px;border-radius:12px;background:var(--good-soft);color:var(--good);font-weight:700;font-size:.9rem}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.seltable td{min-width:0}
+.seltable .emp{font-size:.88rem;color:var(--ink2);font-weight:600;display:block;margin-top:3px}
+@media(max-width:860px){.hook-grid,.tabs-photo,.case-head{grid-template-columns:1fr}.quota{grid-template-columns:1fr}}
+@media(max-width:600px){.seltable,.seltable tbody,.seltable tr,.seltable td{display:block;width:100%!important}.seltable tr{border-bottom:1px solid var(--line2);padding:6px 0}.seltable td{border-bottom:0;padding:6px 4px}.seltable select{font-size:.82rem;padding:8px 6px}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.8</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:25" data-gate="hook" data-gate-msg="Abre el mensaje de la gerencia y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.8 · Inclusión laboral</span>
+      <h1 class="reveal">Cumplir la cuota es solo una parte de la inclusión</h1>
+      <p class="lead reveal"><strong>Horizonte Servicios</strong> acaba de superar las 100 personas trabajadoras. Camila, del Equipo de Personas, recibe un mensaje de la gerencia en su celular. <strong>Presiona “Abrir mensaje” para leerlo.</strong></p>
+      <div class="photo-frame reveal"><img alt="Camila lee un mensaje en su celular en su escritorio de una oficina con luz natural" src="{{IMG:i38_hero}}"/></div>
+    </div>
+    <div class="phone chat reveal" id="phone"></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería responder Camila a la gerencia?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí. Con contratar al 1% ya cumplimos todo lo que exige la inclusión laboral.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“El 1% es lo mínimo exigible hoy, pero además debemos registrar y comunicar a la Dirección del Trabajo, y quitar las barreras para que la inclusión sea real.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Aún no tenemos ninguna obligación: la cuota solo se exige desde las 200 personas.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una cuota que no incluye</div><div class="branch-body"><div><p>La empresa contrata a una persona con discapacidad y da el tema por cerrado. Tres meses después, ella no puede hacer los cursos obligatorios: los videos no tienen subtítulos y la intranet no funciona con su lector de pantalla. Además, nadie registró su contrato en la Dirección del Trabajo.</p></div><div><p class="hint">La cuota es una obligación mínima, no el final de la gestión.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>La cuota exigible hoy es el <strong>1%</strong> y se cumple con personas que acrediten su condición. También hay que <strong>registrar los contratos</strong> y <strong>comunicar cada año</strong> el cumplimiento a la Dirección del Trabajo. Y la inclusión sigue después de contratar: selección, accesibilidad, capacitación, desarrollo y permanencia.</p></div><div><p class="hint">En esta lección verás cada pieza, desde el cálculo hasta las barreras del día a día.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: incumplimiento desde el primer día</div><div class="branch-body"><div><p>La obligación nace desde las <strong>100 personas trabajadoras</strong>, no desde 200. Si Camila espera, la empresa queda sin cumplir la cuota ni comunicar su cumplimiento a la Dirección del Trabajo.</p></div><div><p class="hint">Revisa el umbral: 100 o más personas trabajadoras.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 2 min</span>
+  <h2>¿Qué exige la ley y qué significa incluir de verdad?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ¿CUÁNTAS PERSONAS? -->
+<section class="slide" data-title="¿Cuántas personas?" data-audio="p03" data-dur="0:22" data-gate="sim" data-gate-msg="Cumple los tres desafíos del simulador.">
+  <span class="eyebrow">Lección 3.8 · La cuota de inclusión</span>
+  <h2>¿Cuántas personas exige la cuota?</h2>
+  <p>Mueve los controles de la izquierda: el número de personas trabajadoras de la empresa y cuántas personas con discapacidad o con pensión de invalidez tiene contratadas. A la derecha verás qué se exige hoy y qué pasaría si se activara el 2%. <strong>Cumple los tres desafíos.</strong></p>
+  <div class="task" id="simTask">Desafíos cumplidos <span class="tick" id="simTick">0 / 3</span></div>
+  <div class="sim">
+    <div class="sim-box">
+      <div class="srow" style="grid-template-columns:1fr 110px"><label for="sN">Promedio de personas trabajadoras</label><output id="sNO">80</output></div>
+      <input id="sN" type="range" min="50" max="600" step="10" value="80" style="width:100%;accent-color:var(--teal)"/>
+      <div class="srow" style="grid-template-columns:1fr 110px;margin-top:10px"><label for="sH">Personas con discapacidad o pensión de invalidez contratadas</label><output id="sHO">0</output></div>
+      <input id="sH" type="range" min="0" max="10" step="1" value="0" style="width:100%;accent-color:var(--teal)"/>
+      <ul class="retos" id="retos">
+        <li data-r="0">Encuentra el número de personas trabajadoras desde el cual nace la obligación.</li>
+        <li data-r="1">Configura una empresa de 420 personas que cumpla la cuota exigible hoy.</li>
+        <li data-r="2">Muestra una empresa que cumple el 1% de hoy, pero que no alcanzaría el 2% si se activara.</li>
+      </ul>
+    </div>
+    <div class="sim-box">
+      <div class="verdict ko" id="simV">—</div>
+      <p class="hint" id="simWhy" style="margin:0 0 10px"></p>
+      <div class="quota">
+        <div><small>Cuota exigible hoy (1%)</small><div class="n" id="q1">—</div><small id="q1s"></small></div>
+        <div class="cond"><small>Si se activa el 2%</small><div class="n" id="q2">—</div><small id="q2s"></small></div>
+      </div>
+      <div class="gauge" aria-label="Cumplimiento informado de la cuota del 1% frente al umbral del 80%">
+        <b style="font-size:.86rem">¿Cuándo se activa el 2%?</b>
+        <div class="bar"><i></i><b></b></div>
+        <div class="lg"><span style="color:var(--amber-ink)">● Cumplimiento informado a 2025: cerca de 44%</span><span style="color:var(--teal-ink)">| Umbral para activar el 2%: 80%</span></div>
+      </div>
+      <p class="hint" style="margin:10px 0 0;font-size:.8rem">Cálculo simplificado: 1% del promedio de personas trabajadoras. Las fracciones se consideran según la norma; aquí se usan ejemplos simples (150 → 1; 250 → 2; 420 → 4).</p>
+    </div>
+  </div>
+  <p class="sources">Referencias: Ley N°21.015; Ley N°21.690; Código del Trabajo, arts. 157 bis y 157 ter.</p>
+</section>
+
+<!-- 4 · CÓMO SE CUMPLE -->
+<section class="slide" data-title="Cómo se cumple" data-audio="p04" data-dur="0:25" data-gate="tabs" data-gate-msg="Revisa las cuatro formas de cumplir y comunicar la obligación.">
+  <span class="eyebrow amber">Lección 3.8 · Formas de cumplir</span>
+  <h2>Contratar, justificar, registrar y mirar lo que viene</h2>
+  <p>Selecciona cada pestaña para conocer una pieza de la obligación y el error que conviene evitar.</p>
+  <div class="task" id="tabTask">Pestañas revisadas <span class="tick" id="tabTick">1 / 4</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">🤝 Contratación directa</button><button class="tab" type="button" data-t="1">🧾 Medidas alternativas</button><button class="tab" type="button" data-t="2">🖥️ Registro y comunicación</button><button class="tab" type="button" data-t="3">📈 Ley 21.690</button></div>
+  <div class="tabs-photo">
+    <div class="photo-frame"><img alt="Camila revisa un contrato junto a un nuevo trabajador en silla de ruedas en una sala de reuniones luminosa" src="{{IMG:i38_contrato}}"/></div>
+    <div>
+      <div class="tpane active"><h3>Contratación directa: la regla general</h3><p>Las empresas con <b>100 o más personas trabajadoras</b> deben contratar o mantener contratadas, según la naturaleza de sus funciones, al menos al <b>1%</b> de:</p><ul><li>personas con discapacidad que cuenten con la <b>calificación y certificación</b> de la COMPIN y estén <b>inscritas en el Registro Nacional de la Discapacidad</b>, o</li><li>personas <b>asignatarias de pensión de invalidez</b> de cualquier régimen previsional.</li></ul><div class="doc-tip">Error frecuente: contar en la cuota a alguien que no tiene su discapacidad certificada e inscrita ni recibe pensión de invalidez.</div></div>
+      <div class="tpane"><h3>Medidas alternativas: solo con razones fundadas</h3><p>Si la empresa no puede cumplir total o parcialmente por <b>razones fundadas</b> (la naturaleza de las funciones o la falta de personas interesadas), puede cumplir de forma alternativa:</p><ul><li>con <b>contratos de prestación de servicios</b> con empresas que tengan contratadas personas con discapacidad, o</li><li>con <b>donaciones</b> a proyectos o programas de asociaciones, corporaciones o fundaciones.</li></ul><p>La Ley 21.690 ajustó y endureció estas medidas. Si las razones no son fundadas, la Dirección del Trabajo puede sancionar.</p><div class="doc-tip">Error frecuente: elegir la donación porque “es más fácil” que adaptar la selección.</div></div>
+      <div class="tpane"><h3>Registro y comunicación a la Dirección del Trabajo</h3><ul><li>Cada contrato de una persona con discapacidad o con pensión de invalidez se <b>registra en el sitio de la Dirección del Trabajo dentro de 15 días</b> desde su celebración.</li><li>Cada año, <b>en enero</b>, la empresa comunica cómo cumplió la obligación y, si corresponde, las medidas alternativas que usó.</li></ul><div class="doc-tip">Error frecuente: contratar y olvidar el registro o la comunicación anual. Sin ellos, no queda constancia del cumplimiento.</div></div>
+      <div class="tpane"><h3>Ley 21.690: el 2% condicionado</h3><p>Publicada en agosto de 2024, eleva la cuota al <b>2%</b>, pero solo se aplicará cuando un informe técnico de los ministerios constate que <b>al menos el 80%</b> de las entidades obligadas cumple el 1%.</p><ul><li>A 2025, el cumplimiento informado era bastante menor: cerca del 44%.</li><li>Por eso, en octubre de 2026 la cuota exigible sigue siendo el <b>1%</b>.</li><li>La ley también refuerza la gestión de la inclusión dentro de las empresas.</li></ul><div class="doc-tip">Error frecuente: anunciar que la empresa “ya debe tener 2%”, o ignorar que el aumento puede activarse.</div></div>
+    </div>
+  </div>
+  <p class="sources">Referencias: Ley N°21.015; Ley N°21.690; Código del Trabajo, arts. 157 bis y 157 ter.</p>
+</section>
+
+<!-- 5 · BARRERAS EN EL DÍA A DÍA -->
+<section class="slide" data-title="Barreras en el día a día" data-audio="p05" data-dur="0:22" data-gate="hs" data-gate-msg="Explora los cinco puntos de la oficina.">
+  <span class="eyebrow violet">Lección 3.8 · Accesibilidad y ajustes razonables</span>
+  <h2>La inclusión se juega en el día a día</h2>
+  <p>Haz clic en cada número de la imagen. Verás qué barrera hay (o qué buena práctica) y qué ajuste la resuelve.</p>
+  <div class="task" id="hsTask">Puntos explorados <span class="tick" id="hsTick">0 / 5</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Oficina con una entrada con escalón, una sala de capacitación con pantalla, la puerta de un baño, un computador con la intranet y un puesto de trabajo adaptado con una persona en silla de ruedas" src="{{IMG:i38_oficina}}"/>
+      <button class="hs" type="button" style="left:10%;top:74%" data-hs="0" aria-label="Punto 1">1</button>
+      <button class="hs" type="button" style="left:35%;top:31%" data-hs="1" aria-label="Punto 2">2</button>
+      <button class="hs" type="button" style="left:59.5%;top:40%" data-hs="2" aria-label="Punto 3">3</button>
+      <button class="hs" type="button" style="left:51%;top:60%" data-hs="3" aria-label="Punto 4">4</button>
+      <button class="hs" type="button" style="left:86%;top:55%" data-hs="4" aria-label="Punto 5">5</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: Ley N°20.422 (accesibilidad y ajustes razonables); Código del Trabajo, art. 2 (no discriminación por discapacidad).</p>
+</section>
+
+<!-- 6 · MITOS SOBRE INCLUSIÓN -->
+<section class="slide" data-title="Mitos sobre inclusión" data-audio="p06" data-dur="0:22" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow amber">Lección 3.8 · Ideas equivocadas sobre la cuota</span>
+  <h2>“Con el 1% ya estamos listos”</h2>
+  <p>En la reunión de jefaturas aparecen varias frases. Decide si cada afirmación es <strong>verdadera o falsa</strong> y lee la explicación.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Referencias: Ley N°21.015; Ley N°21.690; Ley N°20.422; Código del Trabajo, arts. 2, 157 bis y 157 ter.</p>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:25" data-gate="tbl" data-gate-msg="Clasifica correctamente las cuatro empresas.">
+  <span class="eyebrow">Lección 3.8 · Cuatro empresas, cuatro situaciones</span>
+  <h2>¿Quién cumple la obligación de inclusión?</h2>
+  <div class="case-head">
+    <div class="story" style="margin:0">Para preparar el comité, Camila compara a Horizonte Servicios con otras cuatro empresas. <strong>Elige en cada fila si la empresa cumple, cumple con una medida alternativa válida o no cumple</strong>, y presiona <strong>Comprobar</strong>. Las filas incorrectas se marcan en rojo para que las corrijas.</div>
+    <div class="photo-frame"><img alt="Camila presenta un análisis a la gerencia en una sala de reuniones" src="{{IMG:i38_comite}}"/></div>
+  </div>
+  <div><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+  <p class="sources">Referencias: Ley N°21.015; Ley N°21.690; Código del Trabajo, arts. 157 bis y 157 ter.</p>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:24" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:21" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Tu organización incluye o solo cumple?</h2>
+  <div class="story">La gerencia propone un plan: “Contratamos a la persona que falta para el 1%, registramos el contrato y cerramos el tema”. Antes de aprobarlo, Camila usa un checklist de inclusión real, el mismo que podrías usar en tu organización.</div>
+  <p style="margin-top:12px">Responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta: ¿forma parte de una gestión realmente inclusiva?</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el plan cubre el mínimo legal (cuota del 1% y registro del contrato en 15 días), pero le falta la gestión inclusiva. Camila propone: <b>1)</b> revisar que los avisos y la selección sean accesibles; <b>2)</b> conversar con la persona qué <b>ajustes razonables</b> necesita en su puesto, en la intranet y en las capacitaciones; <b>3)</b> asegurar el acceso a cursos y oportunidades de desarrollo sin discriminación; <b>4)</b> hacer seguimiento de su permanencia; y <b>5)</b> preparar la comunicación anual de enero a la Dirección del Trabajo.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Ley N°21.015; Ley N°20.422; Código del Trabajo, arts. 2, 157 bis y 157 ter.</p>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:23" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.8</h2>
+    <p>Ya puedes explicar qué exige la cuota de inclusión, cómo se cumple y comunica, por qué hoy sigue siendo el 1%, y qué diferencia a una empresa que solo cumple de una que incluye de verdad.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar el cálculo de la cuota</button><button class="small-btn primary" type="button" data-goto="4">Repasar las barreras</button></div>
+    <p class="sources">Fuentes: Ley N°21.015 de inclusión laboral; Ley N°21.690 (publicada en agosto de 2024); Ley N°20.422; Código del Trabajo, arts. 2, 157 bis y 157 ter. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l38';
+const FIRST_KEYS=['hook','tf','tbl'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'La pregunta',lines:['Horizonte Servicios ya supera las 100 personas trabajadoras.','La gerencia pregunta si basta con contratar al 1%. Camila sabe que la respuesta tiene dos partes: la obligación legal y la gestión inclusiva.'],
+  html:`<div class="v-icons"><div><span class="i">🏢</span>100+ personas</div><div class="dim" data-at="1"><span class="i">⚖️</span>Obligación legal</div><div class="dim" data-at="1"><span class="i">🤝</span>Gestión inclusiva</div></div>`},
+ {t:'Ley 21.015',lines:['Desde la Ley 21.015, las empresas con 100 o más personas trabajadoras deben contratar o mantener contratado al menos un 1% de personas con discapacidad o asignatarias de pensión de invalidez.'],
+  html:`<div class="v-big">1%</div><div class="v-chk"><span class="on">Ley 21.015</span><span class="on">100 o más personas</span><span class="on">Discapacidad o pensión de invalidez</span></div>`},
+ {t:'Quiénes cuentan',lines:['Para contar en la cuota, la persona debe tener su discapacidad certificada por la COMPIN e inscrita en el Registro Nacional de la Discapacidad.','O bien, recibir una pensión de invalidez.'],
+  html:`<div class="v-log"><div><span>Certificación</span><span>COMPIN</span></div><div><span>Inscripción</span><span>Registro Nacional de la Discapacidad</span></div><div class="bad" data-at="1" style="color:var(--teal2)"><span>o bien</span><span>Pensión de invalidez</span></div></div>`},
+ {t:'Medidas alternativas',lines:['Solo con razones fundadas, como la naturaleza de las funciones o la falta de interesados, hay alternativas:','contratar servicios a empresas que empleen a personas con discapacidad, o donar a fundaciones o corporaciones.'],
+  html:`<div class="v-icons"><div><span class="i">📋</span>Razones fundadas</div><div class="dim" data-at="1"><span class="i">🧾</span>Contrato de servicios</div><div class="dim" data-at="1"><span class="i">🎁</span>Donación</div></div>`},
+ {t:'Registro y comunicación',lines:['Cada contrato se registra en el sitio de la Dirección del Trabajo dentro de 15 días desde su celebración.','Y cada enero, la empresa comunica cómo cumplió la obligación.'],
+  html:`<div class="v-log"><div><span>Registro del contrato</span><span>15 días</span></div><div class="bad" data-at="1" style="color:var(--teal2)"><span>Comunicación anual</span><span>enero</span></div></div>`},
+ {t:'¿Y el 2%?',lines:['La Ley 21.690 elevó la cuota al 2%, pero solo se aplicará cuando al menos el 80% de las entidades obligadas cumpla el 1%.','Hoy se exige el 1%.'],
+  html:`<div class="v-bars"><div><span style="min-width:120px">Cumplimiento</span><i style="width:44%;background:var(--stage-amber)"></i><span>≈44%</span></div><div><span style="min-width:120px">Umbral</span><i style="width:80%"></i><span>80%</span></div></div><div class="note" data-at="1">Exigible hoy: 1%</div>`},
+ {t:'Más allá de la cuota',lines:['La inclusión no termina en la cuota.','Abarca la selección, la accesibilidad, los ajustes razonables, la capacitación, el desarrollo y la permanencia, sin discriminación por discapacidad.'],
+  html:`<div class="v-final">Cumplir la cuota<br/><em data-at="1">+ incluir de verdad</em></div><div class="v-chk"><span data-at="1">Selección</span><span data-at="1">Accesibilidad</span><span data-at="1">Ajustes razonables</span><span data-at="1">Capacitación</span><span data-at="1">Desarrollo</span><span data-at="1">Permanencia</span></div>`}
+]};
+const Q=[
+ {q:'¿Desde cuántas personas trabajadoras una empresa queda obligada a la cuota de inclusión?',o:['Desde 50.','Desde 100.','Desde 200.'],c:1,f:'La obligación rige para empresas con 100 o más personas trabajadoras.'},
+ {q:'¿Cuál es la cuota exigible en octubre de 2026?',o:['2%, desde que se publicó la Ley 21.690.','Ninguna: la cuota es solo una recomendación.','1%, porque el aumento al 2% depende de que al menos el 80% de las entidades obligadas cumpla el 1%.'],c:2,f:'La Ley 21.690 elevó la cuota al 2%, pero su aplicación está condicionada al informe que constate un 80% de cumplimiento del 1%. A 2025 el cumplimiento informado era cercano al 44%.'},
+ {q:'¿Cuándo puede una empresa usar medidas alternativas, como una donación?',o:['Solo con razones fundadas, como la naturaleza de las funciones o la falta de personas interesadas.','Cuando la empresa lo prefiera.','Cuando contratar le resulte más caro.','Nunca: no existen medidas alternativas.'],c:0,f:'Las medidas alternativas son subsidiarias y requieren razones fundadas. Si no lo son, la Dirección del Trabajo puede sancionar.'},
+ {q:'¿En qué plazo se registra en el sitio de la Dirección del Trabajo el contrato de una persona con discapacidad?',o:['30 días.','Al final de cada año.','60 días.','Dentro de 15 días desde su celebración.'],c:3,f:'El contrato se registra dentro de 15 días desde su celebración. Además, cada enero se comunica el cumplimiento anual.'},
+ {q:'Una empresa cumple la cuota, pero una trabajadora ciega no puede hacer los cursos porque la plataforma no funciona con lector de pantalla. ¿Qué debería concluir Camila?',o:['No hay problema: la cuota ya está cumplida.','Debe hacer ajustes de accesibilidad: la inclusión abarca la capacitación y el desarrollo, sin discriminación.','Debe excluirla de los cursos para no retrasar al grupo.'],c:1,f:'Cumplir la cuota no reemplaza el deber de accesibilidad y ajustes razonables, ni la prohibición de discriminar por discapacidad.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: chat en el celular ---------- */
+const phone=$('#phone');
+const phHead=`<div class="bar"><span>09:12</span><span>📶 🔋</span></div><div class="chat-h"><span class="av">GG</span><span>Rodrigo · Gerencia General<small>en línea</small></span></div>`;
+phone.innerHTML=phHead+`<div class="grow"></div><div class="notif">💬 <b>1 mensaje nuevo</b> de Gerencia General</div><button class="pbtn" type="button" id="showMsg">Abrir mensaje</button>`;
+function addMsg(html,me){const g=$('.grow',phone);g.insertAdjacentHTML('beforebegin',html)}
+$('#showMsg').addEventListener('click',()=>{$('#showMsg').remove();$('.notif',phone).remove();
+  addMsg('<div class="dots" id="dts"><span></span><span></span><span></span></div>');
+  setTimeout(()=>{$('#dts').remove();addMsg('<div class="cmsg">Camila, con los ingresos de este mes ya pasamos las 100 personas 🎉<time>09:12</time></div>');
+    setTimeout(()=>{addMsg('<div class="cmsg">¿Con contratar al 1% ya cumplimos con inclusión? Necesito un sí o un no para el comité del jueves.<time>09:13</time></div>');
+      setTimeout(()=>{addMsg('<div class="cmsg me">Déjame revisarlo bien antes de responder 👀<time>09:14</time></div>');$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)},700)},700)},900)});
+$('[data-choice=hook] [data-opt=B]').addEventListener('click',()=>{if(!$('#reply',phone))addMsg('<div class="cmsg me" id="reply">No es solo un sí: el 1% es lo mínimo exigible hoy. También hay que registrar y comunicar a la DT, y quitar barreras. Te preparo el detalle 📋<time>09:20</time></div>')});
+
+/* ---------- Simulador: cuota ---------- */
+const tSim=tracker('sim',3,'#simTick','#simTask');
+function simEval(){const n=+$('#sN').value,h=+$('#sH').value,ob=n>=100,q1=ob?Math.floor(n/100):0,q2=ob?Math.floor(n*2/100):0;
+  $('#sNO').textContent=n+' personas';$('#sHO').textContent=h+(h===1?' persona':' personas');
+  $('#q1').textContent=ob?q1:'—';$('#q1s').textContent=ob?(q1===1?'persona como mínimo':'personas como mínimo'):'no está obligada';
+  $('#q2').textContent=ob?q2:'—';$('#q2s').textContent=ob?'condicionado: solo si se activa por ley':'no está obligada';
+  const v=$('#simV');let why;
+  if(!ob){v.className='verdict ko';v.textContent='Sin obligación de cuota';why=`Con ${n} personas trabajadoras la empresa no llega a 100. Igual rige la prohibición de discriminar por discapacidad.`}
+  else if(h>=q1){v.className='verdict ok';v.textContent='✓ Cumple la cuota exigible hoy';why=h>=q2?`Tiene ${h} y se exigen ${q1}. Incluso alcanzaría el 2% si llegara a activarse.`:`Tiene ${h} y se exigen ${q1}. Si se activara el 2%, necesitaría ${q2}.`}
+  else{v.className='verdict ko';v.textContent='✕ No cumple la cuota exigible hoy';why=`Con ${n} personas trabajadoras se exige al menos ${q1} y tiene ${h}. Debe contratar o, solo con razones fundadas, usar medidas alternativas.`}
+  $('#simWhy').textContent=why;
+  const hit=[n===100,n===420&&h>=4,ob&&h>=q1&&h<q2];
+  hit.forEach((x,i)=>{if(x){$(`#retos li[data-r="${i}"]`).classList.add('ok');tSim(i)}})}
+['#sN','#sH'].forEach(s=>$(s).addEventListener('input',simEval));simEval();
+
+/* ---------- Pestañas: cómo se cumple ---------- */
+const tTab=tracker('tabs',4,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Hotspots: barreras ---------- */
+const HS=[
+ ['🚪 Entrada con escalón','<b>Barrera de acceso.</b> Una persona en silla de ruedas o con movilidad reducida no puede entrar sola a la oficina.','Ajuste: rampa o acceso alternativo sin escalones.'],
+ ['🎓 Capacitación sin subtítulos','<b>Barrera de comunicación.</b> Si los videos de inducción no tienen subtítulos, una persona sorda o con hipoacusia queda fuera de la capacitación que reciben sus colegas.','Ajuste: subtítulos, materiales accesibles y, si se requiere, intérprete de lengua de señas.'],
+ ['🚻 Baño no accesible','<b>Barrera física.</b> Una puerta angosta y sin espacio de giro impide su uso a una persona en silla de ruedas. Es parte de las condiciones básicas para trabajar con dignidad.','Ajuste: al menos un baño accesible en el lugar de trabajo.'],
+ ['💻 Intranet sin lector de pantalla','<b>Barrera digital.</b> Si la intranet no funciona con lectores de pantalla, una persona ciega o con baja visión no puede revisar su liquidación, postular a cursos ni enterarse de oportunidades internas.','Ajuste: plataformas compatibles con lectores de pantalla y documentos accesibles.'],
+ ['✅ Puesto adaptado','<b>Buena práctica.</b> El escritorio tiene la altura adecuada y el equipo se ubicó según lo que la persona pidió. Los ajustes razonables se conversan con ella, no se suponen.','Así se ve una inclusión que va más allá de la cuota.']];
+const tHs=tracker('hs',5,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][1]}</p><div class="bar2">${HS[k][2]}</div>`;tHs(k)}));
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Si la empresa cumple el 1%, ya no tiene ninguna otra obligación en materia de inclusión.',false,'Además debe registrar los contratos, comunicar cada enero el cumplimiento, no discriminar por discapacidad y cumplir el deber de accesibilidad y ajustes razonables.'],
+ ['Desde que se publicó la Ley 21.690, todas las empresas obligadas deben tener un 2%.',false,'El 2% solo se aplicará cuando un informe técnico constate que al menos el 80% de las entidades obligadas cumple el 1%. Hoy la cuota exigible es 1%.'],
+ ['Una empresa puede reemplazar la contratación por una donación solo porque le resulta más cómodo.',false,'Las medidas alternativas exigen razones fundadas: la naturaleza de las funciones o la falta de personas interesadas. Si no lo son, la Dirección del Trabajo puede sancionar.'],
+ ['Para contar en la cuota, la persona debe tener su discapacidad certificada e inscrita en el Registro Nacional de la Discapacidad, o recibir pensión de invalidez.',true,'Esos son los requisitos para que la contratación se considere en el cumplimiento de la cuota.'],
+ ['Una persona con discapacidad contratada debe poder acceder a la misma capacitación que sus colegas, con los ajustes que necesite.',true,'La inclusión abarca la selección, la capacitación, el desarrollo y la permanencia, sin discriminación por discapacidad.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">La cuota del 1% es el mínimo exigible hoy y tiene requisitos, registro y comunicación. La inclusión real continúa con accesibilidad, ajustes razonables y oportunidades de desarrollo.</span></div>`;
+    S.first.tf=n===TF.length;done('tf');return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Tabla: cuatro empresas ---------- */
+const CAT=['Cumple','Cumple con medida alternativa válida','No cumple'];
+const ROWS=[
+ ['Comercial Andes · 250 personas','Tiene 2 personas con discapacidad certificadas e inscritas en el Registro Nacional de la Discapacidad. Registró ambos contratos en la Dirección del Trabajo.',0,'Con 250 personas se exigen 2: cumple la cuota. El desafío siguiente es la gestión inclusiva.'],
+ ['Logística Sur · 420 personas','Contrató a 4 personas que dicen tener una discapacidad, pero ninguna tiene certificación ni inscripción, ni recibe pensión de invalidez.',2,'Para contar en la cuota se requiere certificación e inscripción, o pensión de invalidez. Sin eso, no se cumplen las 4 exigidas.'],
+ ['Minera Altiplano · 150 personas','Sus faenas tienen alta exigencia física y publicó ofertas sin recibir postulaciones. Contrató servicios con una empresa que emplea a personas con discapacidad y lo comunicó en enero.',1,'Hay razones fundadas (naturaleza de las funciones y falta de personas interesadas) y una medida alternativa permitida, comunicada a la Dirección del Trabajo.'],
+ ['Servicios Costa · 300 personas','Tiene 1 persona contratada. Para el resto hizo una donación a una fundación “porque es más fácil que adaptar la selección”.',2,'Se exigen 3. La comodidad no es una razón fundada: la medida alternativa no es válida y puede ser sancionada.']];
+let tblTries=0;
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td><b>${r[0]}</b><span class="emp">${r[1]}</span><span class="why" hidden></span></td><td style="width:240px"><select aria-label="Situación de ${r[0]}"><option value="">Elige…</option>${CAT.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
+$('#tblCheck').addEventListener('click',()=>{let ok=0;tblTries++;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[2];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent='✓ '+r[3];if(g)ok++});
+  if(ok===4){if(!('tbl' in S.first))S.first.tbl=tblTries===1;feedback($('#tblFb'),true,'¡Todo correcto!','Cumplir exige personas que acrediten su condición o medidas alternativas con razones fundadas, además del registro y la comunicación a la Dirección del Trabajo.');done('tbl')}
+  else feedback($('#tblFb'),false,`${ok} de 4 correctas.`,'Corrige las filas en rojo (o sin respuesta). Pregúntate: ¿las personas acreditan su condición? ¿Las razones para la medida alternativa son fundadas?')});
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[
+ ['¿Revisar que los avisos de empleo y el proceso de selección sean accesibles?',1,'Sí. La inclusión empieza en la selección: un aviso o una prueba inaccesible deja fuera a postulantes antes de contratar.'],
+ ['¿Basta con verificar que la cuota aparezca cumplida en la comunicación de enero?',0,'No. La comunicación acredita el cumplimiento formal, pero no dice nada sobre barreras, desarrollo o permanencia.'],
+ ['¿Conversar con la persona qué ajustes razonables necesita en su puesto y herramientas?',1,'Sí. Los ajustes se acuerdan con la persona: ella sabe qué barreras enfrenta.'],
+ ['¿Dejar fuera de una capacitación a quien necesita subtítulos para no retrasar al grupo?',0,'No. Sería discriminación por discapacidad. Lo correcto es hacer el curso accesible.'],
+ ['¿Hacer seguimiento de la permanencia y del desarrollo, no solo de la contratación?',1,'Sí. Una inclusión real se mide también en quién se queda, se capacita y crece en la empresa.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===5){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>

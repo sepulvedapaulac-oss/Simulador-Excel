@@ -1,0 +1,287 @@
+<title>Lección 2.9 — ¿Qué puede descontarse?</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · LECCIÓN 2.9</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:21" data-gate="hook" data-gate-msg="Revisa los tres campos de la solicitud y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.9 · ¿Qué puede descontarse?</span>
+      <h1 class="reveal">“Descuéntaselo del sueldo” no es una regla legal</h1>
+      <p class="lead reveal">Camila recibe esta solicitud de la jefatura de Mantención. <strong>Haz clic en cada campo</strong> para revisarlo.</p>
+      <div class="form reveal" id="form">
+        <button class="ffield" type="button"><span class="lbl">Monto</span><span>$180.000 (valor total del taladro)</span><span class="flag">⚠️ Equivale al 18% del sueldo de Jorge. ¿Qué tope aplicaría?</span></button>
+        <button class="ffield" type="button"><span class="lbl">Motivo</span><span>“Daño de equipo por mal uso”</span><span class="flag">⚠️ ¿Existe una norma o un acuerdo que permita descontar por este motivo?</span></button>
+        <button class="ffield" type="button"><span class="lbl">Firma del trabajador</span><span>— sin firma —</span><span class="flag">⚠️ No hay acuerdo escrito de la persona trabajadora.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Supervisor muestra un taladro dañado a Camila en el taller" src="{{IMG:i29_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debe identificar Camila antes de aplicar cualquier descuento?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>El precio exacto de la herramienta.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Qué tipo de descuento es y si existe una base legal o un acuerdo válido que lo permita.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Quién tuvo la culpa del daño.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Todavía no.</strong> <span class="fb-body">El precio importa después. Primero hay que saber si el descuento está permitido.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>No es lo primero.</strong> <span class="fb-body">Aunque exista responsabilidad, eso no autoriza por sí solo a descontar de la remuneración.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Antes de descontar hay que identificar la categoría del descuento, su fundamento y sus límites. Eso es lo que verás en esta lección.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Qué dice el artículo 58 sobre los descuentos?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CATEGORÍAS -->
+<section class="slide" data-title="Categorías" data-audio="p03" data-dur="0:13" data-gate="tree" data-gate-msg="Clasifica los tres ejemplos con el árbol de decisión.">
+  <span class="eyebrow">Tres categorías</span>
+  <h2>Obligatorio, convencional o no permitido</h2>
+  <p>Elige un ejemplo y respóndele al árbol una pregunta a la vez. Si te equivocas, verás por qué.</p>
+  <div class="task" id="trTask">Ejemplos clasificados <span class="tick" id="trTick">0 / 3</span></div>
+  <div class="ex-tabs" id="exTabs"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <div class="sources">Referencia: Código del Trabajo, artículo 58.</div>
+</section>
+
+<!-- 4 · TOPES -->
+<section class="slide" data-title="Topes" data-audio="p04" data-dur="0:17" data-gate="caps" data-gate-msg="Ajusta los descuentos hasta que respeten todos los topes.">
+  <span class="eyebrow amber">Topes legales</span>
+  <h2>No todos los descuentos convencionales tienen el mismo límite</h2>
+  <div class="grid-2">
+    <div><p>Remuneración total de Jorge: <strong>$1.000.000</strong>. Sus descuentos obligatorios (cotizaciones) son $188.000 y <strong>no cuentan</strong> para los topes. Ajusta los descuentos convencionales hasta que todo quede en verde.</p></div>
+    <div class="photo-frame wide"><img alt="Trabajador firma un acuerdo escrito de descuento por crédito de vivienda" src="{{IMG:i29_topes}}"/></div>
+  </div>
+  <div class="sim-box" style="margin-top:12px">
+    <div class="srow" style="grid-template-columns:1fr 110px"><label for="cV">Cuota de crédito sin interés de la empresa para vivienda o educación</label><output id="cVo"></output></div>
+    <input id="cV" type="range" min="0" max="400000" step="10000" value="350000" style="width:100%;accent-color:var(--teal)"/>
+    <div class="srow" style="grid-template-columns:1fr 110px;margin-top:10px"><label for="cP">Pagos de cualquier naturaleza autorizados por escrito (convenios, compras)</label><output id="cPo"></output></div>
+    <input id="cP" type="range" min="0" max="250000" step="10000" value="180000" style="width:100%;accent-color:var(--teal)"/>
+    <div class="capbar" id="capbar"></div>
+    <div class="checks" id="capChecks"></div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículo 58. Los descuentos obligatorios (impuestos, cotizaciones, cuotas sindicales, obligaciones con instituciones de previsión) no forman parte del tope de 45%, según la Dirección del Trabajo.</div>
+</section>
+
+<!-- 5 · HERRAMIENTA DAÑADA -->
+<section class="slide" data-title="Herramienta dañada" data-audio="p05" data-dur="0:14" data-gate="herr" data-gate-msg="Toma la decisión correcta para continuar.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>Herramienta dañada: ¿se descuenta automáticamente?</h2>
+  <div class="chat">
+    <div class="persona"><span class="avatar mgr">MT</span> Jefatura de Mantención</div>
+    <div class="bubble"><span class="who">Jefatura</span>Jorge dañó el taladro. Descuéntale los $180.000 completos en la próxima liquidación, la empresa es dueña de la herramienta.</div>
+  </div>
+  <h3 style="margin-top:12px">¿Qué responde Camila?</h3>
+  <div class="options" data-choice="herr" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Descontar de inmediato los $180.000, porque la empresa es dueña de la herramienta.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Registrarlo como “ajuste administrativo” para evitar reclamos.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Revisar si existe un acuerdo escrito válido con Jorge y si respeta el tope de 15%. Sin acuerdo, no se descuenta unilateralmente.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="herr-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: descuento ilegal</div><div class="branch-body"><div><p>Ser dueña de la herramienta no da derecho a descontar. Sin acuerdo escrito no hay base legal, y además $180.000 supera el <strong>15%</strong> de la remuneración. La empresa se expone a una multa y a devolver lo descontado.</p></div><div><p class="hint">Falta fundamento y se excede el tope.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="herr-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se oculta un descuento</div><div class="branch-body"><div><p>Cambiar el nombre no cambia la naturaleza: sigue siendo un descuento sin fundamento. Además, la liquidación deja de reflejar la realidad.</p></div><div><p class="hint">El nombre no crea una base legal.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="herr-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Un daño no se descuenta en forma automática. Solo podría descontarse con <strong>acuerdo escrito</strong> de Jorge y dentro del <strong>15%</strong> de su remuneración (hasta $150.000 al mes). Si no hay acuerdo, la empresa debe usar otras vías, como el procedimiento de su reglamento interno o una acción judicial.</p></div><div><p class="hint">Fundamento, acuerdo y tope.</p></div></div></div></template>
+</section>
+
+<!-- 6 · PROHIBICIONES -->
+<section class="slide" data-title="Prohibiciones" data-audio="p06" data-dur="0:08" data-gate="tiles" data-gate-msg="Descubre las ocho fichas.">
+  <span class="eyebrow">Prohibiciones expresas</span>
+  <h2>Lo que nunca puede descontarse</h2>
+  <p>El artículo 58 prohíbe deducir, retener o compensar sumas por estos conceptos. Toca cada ficha para descubrirla.</p>
+  <div class="task" id="tlTask">Fichas descubiertas <span class="tick" id="tlTick">0 / 8</span></div>
+  <div class="tiles" id="tiles"></div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Toca una ficha para ver el detalle.</p></div>
+</section>
+
+<!-- 7 · CLASIFICAR -->
+<section class="slide" data-title="Clasificar" data-audio="p07" data-dur="0:11" data-gate="tbl" data-gate-msg="Clasifica correctamente los ocho descuentos.">
+  <span class="eyebrow">Práctica</span>
+  <h2>¿Se puede descontar?</h2>
+  <p>Elige la categoría de cada descuento y presiona <strong>Comprobar</strong>. Las filas incorrectas se marcan en rojo para que las corrijas.</p>
+  <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+</section>
+
+<!-- 8 · CASO INTEGRADOR -->
+<section class="slide" data-title="Caso integrador" data-audio="p08" data-dur="0:11" data-gate="vl" data-gate-msg="Evalúa las cinco líneas de descuento.">
+  <span class="eyebrow amber">Caso integrador</span>
+  <h2>Una liquidación con cinco descuentos</h2>
+  <div class="grid-2">
+    <div><p>Remuneración total de Jorge: <strong>$1.000.000</strong>. Decide para cada línea si el descuento <strong>procede</strong> o <strong>no procede</strong>. No basta mirar el total: cada línea se analiza según su fundamento, autorización y tope.</p><div class="task" id="vlTask">Líneas evaluadas <span class="tick" id="vlTick">0 / 5</span></div></div>
+    <div class="photo-frame wide"><img alt="Equipo de remuneraciones revisa una tabla de descuentos en pantalla" src="{{IMG:i29_caso}}"/></div>
+  </div>
+  <div class="slip" id="vlines"><div class="slip-h"><span>Descuentos · Octubre 2026</span><span>Jorge Muñoz · Remuneración total $1.000.000</span></div></div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:13" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>“¿Me pueden descontar la cuota del gimnasio?”</h2>
+  <div class="story">Un trabajador pide que le descuenten del sueldo la cuota mensual de $35.000 de un gimnasio en convenio con la empresa. Su remuneración total es de $800.000.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist para este caso.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el descuento procede como <b>descuento convencional</b>: no lo ordena la ley, pero puede aplicarse con <b>autorización escrita</b> del trabajador. Como “pago de cualquier naturaleza”, su tope es el <b>15%</b> de la remuneración total ($120.000); $35.000 equivale al 4,4%. No está prohibido. Camila debe guardar la autorización firmada y verificar que, sumado a otros descuentos convencionales, no supere el 45%.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:20" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.9</h2>
+    <p>Ya puedes diferenciar descuentos obligatorios, convencionales y no permitidos, y revisar acuerdos y topes antes de afectar una remuneración.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="3">Repasar los topes</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, artículos 58 y 157; doctrina de la Dirección del Trabajo. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l29';
+const FIRST_KEYS=['hook','herr','vl'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Artículo 58',lines:['“Descuéntaselo del sueldo” no es una regla legal.','El artículo 58 del Código del Trabajo define qué puede descontarse y con qué límites.'],
+  html:`<div class="v-big">Art. 58</div><div class="v-sub" data-at="1">Qué puede descontarse y con qué límites</div>`},
+ {t:'Obligatorios',lines:['Los descuentos obligatorios son los que ordena la ley: impuestos, cotizaciones de seguridad social, cuotas sindicales y obligaciones con instituciones de previsión u organismos públicos. El empleador debe practicarlos.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Impuestos</span><span class="on">Cotizaciones de seguridad social</span><span class="on">Cuotas sindicales</span><span class="on">Instituciones de previsión u organismos públicos</span></div>`},
+ {t:'Convencionales',lines:['Los descuentos convencionales requieren un acuerdo escrito entre empleador y trabajador.','Para pagos de cualquier naturaleza, el tope es de 15% de la remuneración total.'],
+  html:`<div class="v-icons"><div><span class="i">✍️</span>Acuerdo escrito</div></div><div class="v-big fadein" data-at="1">15%</div>`},
+ {t:'30% y 45%',lines:['Si el empleador otorga créditos sin interés para vivienda o educación, puede descontar hasta el 30%.','Y en conjunto, los descuentos convencionales no pueden superar el 45%.'],
+  html:`<div class="v-bars"><div><span style="width:150px">Pagos de cualquier naturaleza</span><i style="width:15%"></i>15%</div><div><span style="width:150px">Créditos vivienda / educación</span><i style="width:30%"></i>30%</div><div data-at="1" class="fadein"><span style="width:150px">Tope conjunto</span><i style="width:45%;background:var(--stage-amber)"></i>45%</div></div>`},
+ {t:'Prohibiciones',lines:['Además, la ley prohíbe descontar por arriendo de habitación, luz, agua, uso de herramientas, medicinas, atención médica u otras prestaciones en especie, o por multas que no estén en el reglamento interno.'],
+  html:`<div class="v-grid8"><span>🏠</span><span>💡</span><span>💧</span><span>🔧</span><span>💊</span><span>🩺</span><span>📦</span><span>⚖️</span></div><div class="v-sub">Prohibido descontar</div>`},
+ {t:'El daño a un equipo',lines:['Por eso, un daño a un equipo no se descuenta de forma automática.','Debe existir un fundamento legal o un acuerdo válido, que respete los topes.'],
+  html:`<div class="v-icons"><div><span class="i">🔧</span>Daño</div><div><span class="i">≠</span></div><div><span class="i">✂️</span>Descuento automático</div></div><div class="note" data-at="1">Fundamento legal o acuerdo válido + topes</div>`},
+ {t:'Cinco preguntas',lines:['Antes de aplicar un descuento, pregúntate:','¿lo ordena la ley?,','¿hay acuerdo escrito?,','¿qué tope aplica?,','¿está prohibido?,','y ¿puedo demostrar su base?'],
+  html:`<div class="v-steps"><div data-at="1">¿Lo ordena la ley?</div><div data-at="2">¿Hay acuerdo escrito?</div><div data-at="3">¿Qué tope aplica?</div><div data-at="4">¿Está prohibido?</div><div data-at="5">¿Puedo demostrar su base?</div></div>`}
+]};
+const Q=[
+ {q:'¿Cuál de estos descuentos es obligatorio para el empleador?',o:['La cuota de un gimnasio en convenio.','Las cotizaciones de seguridad social.','Una compra en la tienda de la empresa.'],c:1,f:'Las cotizaciones de seguridad social son descuentos que ordena la ley.'},
+ {q:'¿Cuál es el tope de los descuentos para pagos de cualquier naturaleza acordados por escrito?',o:['30% de la remuneración total.','45% de la remuneración total.','15% de la remuneración total.'],c:2,f:'Las deducciones para pagos de cualquier naturaleza no pueden exceder el 15% de la remuneración total.'},
+ {q:'¿Cuánto puede descontar el empleador por créditos sin interés otorgados para vivienda o educación?',o:['Hasta el 30% de la remuneración mensual.','Hasta el 15%.','Sin límite si hay acuerdo.','Hasta el 10%.'],c:0,f:'Para esos créditos, el empleador puede hacerse pago descontando hasta el 30%.'},
+ {q:'¿Cuál de estos descuentos está prohibido por el artículo 58?',o:['La cuota sindical.','El impuesto único.','Un crédito para vivienda con acuerdo escrito.','El cobro por uso de herramientas de trabajo.'],c:3,f:'La ley prohíbe descontar por uso de herramientas, arriendo, luz, agua, medicinas, atención médica, otras prestaciones en especie y multas no autorizadas en el reglamento interno.'},
+ {q:'Un trabajador dañó un equipo y no firmó ningún acuerdo. ¿Qué corresponde?',o:['Descontar el valor completo en la próxima liquidación.','No descontar unilateralmente; revisar si existe fundamento o un acuerdo válido dentro de los topes.','Registrarlo como ajuste administrativo.'],c:1,f:'Sin fundamento legal o acuerdo válido, el daño no se descuenta en forma automática.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: solicitud ---------- */
+const ff=$$('#form .ffield');
+ff.forEach(f=>f.addEventListener('click',()=>{f.classList.add('open');if(ff.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Árbol de decisión ---------- */
+const NODES=['¿Lo ordena la ley?','¿Existe acuerdo escrito con la persona trabajadora?','¿Respeta los topes y no está prohibido por la ley?'];
+const EXS=[{n:'Cotización de salud (7%)',path:[1],res:'ob'},{n:'Compra en una tienda en convenio, autorizada por escrito, por el 5% del sueldo',path:[0,1,1],res:'conv'},{n:'Multa por atraso que no está en el reglamento interno',path:[0,0],res:'no'}];
+const RES={ob:['good','Descuento obligatorio','La ley lo ordena: el empleador debe practicarlo. No requiere acuerdo y no cuenta para los topes.'],conv:['good','Descuento convencional permitido','No lo ordena la ley, pero hay acuerdo escrito y respeta los topes (15% para pagos de cualquier naturaleza).'],no:['bad','Descuento no permitido','No hay base legal ni acuerdo escrito (y las multas solo proceden si están en el reglamento interno). No puede aplicarse.']};
+const HINT=[['Este descuento sí lo ordena la ley.','La ley no ordena este descuento.'],['Revisa: ¿hay un acuerdo firmado?','Revisa: ¿hay un acuerdo firmado?'],['Revisa el tope y las prohibiciones.','Revisa el tope y las prohibiciones.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Ejemplo ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Descuento:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 3`;if(solved.size===3){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Topes ---------- */
+function caps(){const v=+$('#cV').value,p=+$('#cP').value,T=1000000;$('#cVo').textContent=clp(v);$('#cPo').textContent=clp(p);
+  const pv=v/T*100,pp=p/T*100,tot=pv+pp;
+  $('#capbar').innerHTML=`<div class="seg" style="left:0;width:${Math.min(pv,100)}%;background:var(--teal2)">Vivienda/educ. ${pv.toFixed(0)}%</div><div class="seg" style="left:${pv}%;width:${Math.min(pp,100-pv)}%;background:var(--violet)">Otros ${pp.toFixed(0)}%</div>`+[15,30,45].map(m=>`<div class="mark" style="left:${m}%"><span>${m}%</span></div>`).join('');
+  const rows=[[pv<=30,`Créditos vivienda/educación: ${pv.toFixed(0)}%`,'Tope: 30% de la remuneración mensual.'],[pp<=15,`Pagos de cualquier naturaleza: ${pp.toFixed(0)}%`,'Tope: 15% de la remuneración total.'],[tot<=45,`Total convencional: ${tot.toFixed(0)}%`,'Tope conjunto: 45%. Las cotizaciones obligatorias ($188.000) no cuentan.']];
+  $('#capChecks').innerHTML=rows.map(r=>`<div class="checkrow ${r[0]?'ok':'ko'}"><span>${r[0]?'✓':'✕'}</span><span><b>${r[1]}</b><span class="d">${r[2]}</span></span></div>`).join('');
+  if(rows.every(r=>r[0]))done('caps')}
+['#cV','#cP'].forEach(s=>$(s).addEventListener('input',caps));caps();
+
+/* ---------- Prohibiciones ---------- */
+const TILES=[['🏠','Arriendo de habitación','No se puede descontar por la habitación que la empresa proporciona.'],['💡','Luz','El consumo eléctrico entregado por la empresa no se descuenta.'],['💧','Entrega de agua','Tampoco puede descontarse el agua proporcionada.'],['🔧','Uso de herramientas','Las herramientas de trabajo son costo de la empresa; no se cobra su uso.'],['💊','Entrega de medicinas','Los medicamentos entregados no pueden descontarse.'],['🩺','Atención médica','La atención médica proporcionada no se descuenta.'],['📦','Otras prestaciones en especie','Ninguna otra prestación en especie puede rebajar la remuneración.'],['⚖️','Multas no autorizadas','Solo proceden las multas previstas en el reglamento interno (hasta 25% de la remuneración diaria, art. 157).']];
+$('#tiles').innerHTML=TILES.map((t,i)=>`<button class="tile" type="button" data-i="${i}" aria-label="Descubrir ficha ${i+1}">?</button>`).join('');
+const tTl=tracker('tiles',8,'#tlTick','#tlTask');
+$$('.tile').forEach(b=>b.addEventListener('click',()=>{const t=TILES[+b.dataset.i];b.classList.add('open');b.innerHTML=`<span style="font-size:1.6rem">${t[0]}</span><br/>${t[1]}`;$('#tlPanel').innerHTML=`<h3 style="margin-top:0">${t[0]} ${t[1]}</h3><p>${t[2]}</p>`;tTl(b.dataset.i)}));
+
+/* ---------- Tabla de clasificación ---------- */
+const CAT=['Obligatorio','Requiere acuerdo','No corresponde'];
+const ROWS=[['Cotización previsional (AFP)',0,'La ley ordena descontar las cotizaciones de seguridad social.'],['Compra en convenio autorizada por escrito',1,'Es un pago de cualquier naturaleza: requiere acuerdo escrito y tope de 15%.'],['Cobro por uso de herramientas de trabajo',2,'Está expresamente prohibido por el artículo 58.'],['Impuesto único a las remuneraciones',0,'Es un impuesto que grava la remuneración: obligatorio.'],['Cuota de crédito sin interés para vivienda otorgado por la empresa',1,'Requiere acuerdo escrito; tope de 30%.'],['Cuota sindical de una persona afiliada',0,'Las cuotas sindicales se descuentan conforme a la ley.'],['Multa por atraso que no está en el reglamento interno',2,'Solo proceden las multas autorizadas en el reglamento interno.'],['Crédito social con la Caja de Compensación',0,'La DT lo considera un descuento obligatorio (obligación con institución de previsión).']];
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td><b>${r[0]}</b><span class="why" hidden></span></td><td style="width:210px"><select aria-label="Categoría de ${r[0]}"><option value="">Elige…</option>${CAT.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
+$('#tblCheck').addEventListener('click',()=>{let ok=0;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[1];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent=r[2];if(g)ok++});
+  if(ok===8){feedback($('#tblFb'),true,'¡Todo correcto!','Ocho de ocho descuentos bien clasificados.');done('tbl')}else feedback($('#tblFb'),false,`${ok} de 8 correctas.`,'Corrige las filas en rojo (o sin respuesta) y vuelve a comprobar.')});
+
+/* ---------- Caso integrador ---------- */
+const VL=[['Cotizaciones de seguridad social','$188.000',1,'Procede: es un descuento obligatorio y no cuenta para los topes.'],['Cuota sindical (persona afiliada)','$10.000',1,'Procede: las cuotas sindicales se descuentan conforme a la ley.'],['Crédito sin interés para vivienda (acuerdo escrito)','$200.000',1,'Procede: hay acuerdo escrito y equivale al 20%, bajo el tope de 30%.'],['Compra personal en convenio (acuerdo escrito)','$180.000',0,'No procede así: equivale al 18% y supera el tope de 15%. Como máximo podrían descontarse $150.000 este mes.'],['“Daño de equipo”','$60.000',0,'No procede: no hay fundamento legal ni acuerdo escrito.']];
+$('#vlines').insertAdjacentHTML('beforeend',VL.map((v,i)=>`<div class="vline" data-i="${i}"><span><b>${v[0]}</b> · ${v[1]}</span><span class="vb"><button type="button" data-a="1">Procede</button><button type="button" data-a="0">No procede</button></span><div class="vexp"></div></div>`).join(''));
+let vlN=0,vlFirst=true;
+$$('#vlines .vline').forEach(l=>$$('.vb button',l).forEach(b=>b.addEventListener('click',()=>{if(l.classList.contains('answered'))return;const v=VL[+l.dataset.i],ok=+b.dataset.a===v[2];
+  if(ok){l.classList.add('answered');b.classList.add('good');$$('.vb button',l).forEach(x=>x.disabled=true);$('.vexp',l).innerHTML=`<div class="feedback good" style="margin:0">${v[3]}</div>`;vlN++;$('#vlTick').textContent=`${vlN} / 5`;if(vlN===5){S.first.vl=vlFirst;$('#vlTask').classList.add('ok');done('vl')}}
+  else{vlFirst=false;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);$('.vexp',l).innerHTML='';l.classList.add('answered');$('.vexp',l).innerHTML=`<div class="feedback bad" style="margin:0">Revisa: ${v[2]?'este descuento sí tiene fundamento y respeta su tope.':'piensa en el acuerdo, el tope o la base legal.'}</div>`;setTimeout(()=>l.classList.remove('answered'),1800)}})));
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[['¿Es un descuento obligatorio por ley?',0,'No. Ninguna ley ordena descontar la cuota de un gimnasio.'],['¿Puede aplicarse con acuerdo escrito del trabajador?',1,'Sí. Es un pago de cualquier naturaleza que puede descontarse con autorización escrita.'],['¿Supera el tope de 15% ($120.000)?',0,'No. $35.000 equivale al 4,4% de la remuneración total.'],['¿Está en la lista de descuentos prohibidos?',0,'No. Las prohibiciones se refieren a arriendo, servicios básicos, herramientas, salud, prestaciones en especie y multas no autorizadas.'],['¿Debe guardarse un respaldo del acuerdo?',1,'Sí. La autorización firmada permite demostrar la base del descuento.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===5){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>
