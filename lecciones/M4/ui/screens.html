@@ -1,0 +1,173 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Arial,sans-serif;background:#ccc;color:#1f2a30}
+.sh{width:1280px;height:720px;position:relative;overflow:hidden;background:#fff;margin-bottom:20px}
+.br{height:40px;background:#eef1f4;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid #d9dee2}
+.br i{width:11px;height:11px;border-radius:50%;background:#c9d1d6}.br .u{margin-left:10px;flex:1;height:26px;border-radius:13px;background:#fff;border:1px solid #d5dbe0;display:flex;align-items:center;padding:0 12px;font-size:13px;color:#5a6a73}
+.rib{position:absolute;right:12px;bottom:10px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:4px 10px;border-radius:10px;z-index:9}
+.tag{display:inline-block;border-radius:12px;padding:3px 10px;font-size:12px;font-weight:700}
+.t-rec{background:#e3f4ea;color:#17703f}.t-new{background:#e6f0ff;color:#1d4ed8}.t-ina{background:#fff1d6;color:#9a5b00}.t-int{background:#f1e8ff;color:#6b21a8}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-size:12px;color:#5f6b72;font-weight:600;padding:9px 10px;border-bottom:1px solid #e3e7ea;background:#f7f9fa}td{font-size:13.5px;padding:10px;border-bottom:1px solid #eef1f3}
+/* CRM */
+.crm-top{height:50px;background:#24324a;color:#fff;display:flex;align-items:center;gap:22px;padding:0 20px;font-size:14px}
+.crm-top b{font-size:16px}.crm-top span{opacity:.8}.crm-top .on{opacity:1;border-bottom:2px solid #ff8a5b;padding-bottom:4px}
+.crm-l{position:absolute;left:0;top:90px;bottom:0;width:330px;border-right:1px solid #e3e7ea;padding:20px;background:#fbfcfd}
+.crm-c{position:absolute;left:330px;top:90px;bottom:0;right:300px;padding:18px 24px;background:#f5f7f9}
+.crm-r{position:absolute;right:0;top:90px;bottom:0;width:300px;border-left:1px solid #e3e7ea;padding:18px;background:#fbfcfd}
+.av{width:64px;height:64px;border-radius:50%;background:#ffd9c7;color:#b5573b;display:grid;place-items:center;font-weight:800;font-size:22px}
+.fld{font-size:12px;color:#7a868d;margin-top:12px}.val{font-size:14px;font-weight:600;margin-top:2px}
+.act{background:#fff;border:1px solid #e3e7ea;border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:13.5px}
+.act small{color:#7a868d;display:block;margin-bottom:3px}
+.box{background:#fff;border:1px solid #e3e7ea;border-radius:10px;padding:12px;margin-bottom:12px;font-size:13.5px}
+.box h4{font-size:13px;margin-bottom:8px}
+/* Sheets */
+.gs-top{height:56px;display:flex;align-items:center;gap:12px;padding:0 16px}.gs-ic{width:30px;height:38px;background:#0f9d58;border-radius:4px}
+.gs-menu{font-size:13px;color:#444;display:flex;gap:14px;padding:0 16px 6px 58px;margin-top:-8px}
+.gs-tb{height:36px;background:#edf2fa;margin:0 10px;border-radius:18px;display:flex;align-items:center;gap:18px;padding:0 18px;font-size:13px;color:#444}
+.grid td,.grid th{border:1px solid #e2e3e3;font-size:13px;padding:6px 8px;white-space:nowrap}.grid th{background:#f8f9fa;color:#5f6368;text-align:center;font-weight:500}.grid tr.h td{font-weight:700;background:#e8f0fe}
+/* GA4 */
+.ga-top{height:56px;border-bottom:1px solid #dadce0;display:flex;align-items:center;gap:12px;padding:0 18px;font-family:Arial;font-size:18px;color:#5f6368}
+.ga-logo{width:26px;height:26px;display:flex;align-items:flex-end;gap:3px}.ga-logo i{display:block;width:6px;border-radius:3px;background:#f9ab00}.ga-logo i:nth-child(3){background:#e37400}
+.ga-nav{position:absolute;left:0;top:96px;bottom:0;width:64px;border-right:1px solid #dadce0;display:flex;flex-direction:column;align-items:center;gap:22px;padding-top:18px;font-size:20px;color:#5f6368}
+.ga-nav .on{background:#e8f0fe;border-radius:12px;padding:6px 10px}
+.ga-side{position:absolute;left:64px;top:96px;bottom:0;width:230px;border-right:1px solid #dadce0;padding:14px 0;font:13px Arial;color:#3c4043}
+.ga-side div{padding:8px 20px}.ga-side .h{font-weight:700;color:#202124;margin-top:6px}.ga-side .on{background:#e8f0fe;color:#1967d2;font-weight:700;border-radius:0 16px 16px 0}
+.ga-main{position:absolute;left:294px;top:96px;right:0;bottom:0;padding:16px 22px;background:#f8f9fa;font-family:Arial}
+.ga-card{background:#fff;border:1px solid #dadce0;border-radius:8px;padding:14px 16px;margin-bottom:12px}
+.ga-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.ga-h b{font-size:20px;color:#202124;font-weight:400}.ga-date{font-size:13px;color:#3c4043;border:1px solid #dadce0;border-radius:4px;padding:6px 10px;background:#fff}
+td.n,th.n{text-align:right}
+/* Looker */
+.lk-top{height:50px;border-bottom:1px solid #dadce0;display:flex;align-items:center;gap:12px;padding:0 18px;font:16px Arial;color:#3c4043}
+.lk-main{position:absolute;left:0;right:0;top:90px;bottom:0;background:#eef0f3;padding:22px 40px}
+.lk-pg{background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.15);height:100%;padding:22px 26px;font-family:Arial}
+.sc{border:1px solid #e3e7ea;border-radius:8px;padding:14px 16px}.sc small{font-size:13px;color:#5f6368}.sc b{display:block;font-size:34px;color:#202124;margin-top:4px}.sc span{font-size:13px;font-weight:700}
+/* Tablero */
+.pl-top{height:52px;background:#5a3a22;color:#fff;display:flex;align-items:center;gap:16px;padding:0 20px;font-size:16px;font-weight:700}
+.pl-main{position:absolute;left:0;right:0;top:92px;bottom:0;background:#efe9e1;padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.col{background:#e3dbd0;border-radius:12px;padding:12px}.col h4{font-size:14px;margin-bottom:10px;color:#5a3a22}
+.kc{background:#fff;border-radius:10px;padding:12px;margin-bottom:10px;font-size:13.5px;box-shadow:0 1px 2px rgba(0,0,0,.12)}.kc b{display:block;margin-bottom:6px;font-size:14px}.kc div{color:#5f6b72;font-size:12.5px;line-height:1.5}
+.bar{height:6px;border-radius:3px;background:#e6e1d8;margin-top:8px}.bar i{display:block;height:100%;border-radius:3px;background:#1f7a6d}
+</style></head><body>
+
+<!-- 1 CRM ficha -->
+<div class="sh" id="crm_ficha"><div class="br"><i></i><i></i><i></i><div class="u">🔒 crm.ejemplo.com/contactos/valentina-diaz</div></div>
+<div class="crm-top"><b>◆ CRM</b><span class="on">Contactos</span><span>Empresas</span><span>Negocios</span><span>Tareas</span><span>Listas</span><span style="margin-left:auto">Casa Nativa</span></div>
+<div class="crm-l"><div class="av">VD</div><div style="font-size:20px;font-weight:800;margin-top:10px">Valentina Díaz</div><div style="margin-top:6px"><span class="tag t-rec">Cliente recurrente</span> <span class="tag t-int">Decoración infantil</span></div>
+<div class="fld">Teléfono (WhatsApp)</div><div class="val">+56 9 5412 3387</div><div class="fld">Correo</div><div class="val">valentina.diaz@correo.cl</div><div class="fld">Canal preferido</div><div class="val">WhatsApp</div><div class="fld">Comuna</div><div class="val">Ñuñoa, Santiago</div><div class="fld">Compras</div><div class="val">3 · Total $71.970</div><div class="fld">Última compra</div><div class="val">8 ago 2026 (hace 2 meses)</div><div class="fld">Consentimiento</div><div class="val" style="color:#17703f">✓ Acepta recibir novedades</div></div>
+<div class="crm-c"><div style="display:flex;gap:16px;font-size:14px;font-weight:700;margin-bottom:14px"><span style="border-bottom:2px solid #24324a;padding-bottom:6px">Actividad</span><span style="color:#7a868d">Notas</span><span style="color:#7a868d">Correos</span><span style="color:#7a868d">Compras</span></div>
+<div class="act"><small>💬 WhatsApp · 2 ago 2026</small>Consultó por cojines de lino para la pieza de su hija. Prefiere tonos pastel.</div>
+<div class="act"><small>🛍️ Compra #CN-1009 · 8 ago 2026</small>Lámpara infantil de cerámica + 2 cojines de lino · <b>$31.980</b></div>
+<div class="act"><small>🛍️ Compra #CN-0951 · 14 may 2026</small>Cesto tejido para juguetes · <b>$17.990</b></div>
+<div class="act"><small>🛍️ Compra #CN-0887 · 3 mar 2026</small>Móvil de fieltro para cuna · <b>$22.000</b></div>
+<div class="act"><small>📝 Nota · 10 ago 2026</small>Quedó muy contenta. Preguntó cuándo llega la colección infantil de primavera.</div></div>
+<div class="crm-r"><div class="box"><h4>✅ Próxima acción</h4>Enviar novedad de la colección infantil de primavera con mensaje personalizado<div style="color:#b5573b;font-weight:700;margin-top:6px">Vence: 15 oct 2026</div></div><div class="box"><h4>🏷️ Listas</h4>Recurrentes · Decoración infantil · Santiago</div><div class="box"><h4>💡 Intereses</h4>Pieza infantil · tonos pastel · lino</div></div>
+<div class="rib">Recreación ilustrativa de un CRM</div></div>
+
+<!-- 2 CRM lista -->
+<div class="sh" id="crm_lista"><div class="br"><i></i><i></i><i></i><div class="u">🔒 crm.ejemplo.com/contactos</div></div>
+<div class="crm-top"><b>◆ CRM</b><span class="on">Contactos</span><span>Empresas</span><span>Negocios</span><span>Tareas</span><span>Listas</span><span style="margin-left:auto">Casa Nativa</span></div>
+<div style="padding:16px 22px"><div style="display:flex;gap:10px;margin-bottom:14px;font-size:13px;font-weight:700"><span style="padding:7px 14px;border-radius:16px;background:#24324a;color:#fff">Todos (186)</span><span style="padding:7px 14px;border-radius:16px;background:#e6f0ff;color:#1d4ed8">Nuevos (24)</span><span style="padding:7px 14px;border-radius:16px;background:#e3f4ea;color:#17703f">Recurrentes (41)</span><span style="padding:7px 14px;border-radius:16px;background:#fff1d6;color:#9a5b00">Inactivos +90 días (58)</span><span style="padding:7px 14px;border-radius:16px;background:#f1e8ff;color:#6b21a8">Interesados sin compra (63)</span><span style="margin-left:auto;border:1px solid #d5dbe0;border-radius:8px;padding:7px 12px;color:#5f6b72;font-weight:500">🔍 Buscar contacto</span></div>
+<table><tr><th>Nombre</th><th>Segmento</th><th>Canal</th><th>Última interacción</th><th class="n">Compras</th><th>Próxima acción</th></tr>
+<tr><td><b>Valentina Díaz</b></td><td><span class="tag t-rec">Recurrente</span></td><td>WhatsApp</td><td>8 ago · compra</td><td class="n">3</td><td>Enviar novedad infantil · 15 oct</td></tr>
+<tr><td><b>Camila Rojas</b></td><td><span class="tag t-new">Nuevo</span></td><td>Tienda en línea</td><td>3 oct · entrega</td><td class="n">1</td><td>Pedir opinión · 10 oct</td></tr>
+<tr><td><b>Pedro Soto</b></td><td><span class="tag t-int">Interesado</span></td><td>WhatsApp</td><td>29 sep · cotización</td><td class="n">0</td><td>Seguimiento cotización · 9 oct</td></tr>
+<tr><td><b>Ana Fuentes</b></td><td><span class="tag t-ina">Inactivo</span></td><td>Instagram</td><td>2 jun · compra</td><td class="n">2</td><td>Reactivar con nueva colección</td></tr>
+<tr><td><b>Javier Torres</b></td><td><span class="tag t-new">Nuevo</span></td><td>Tienda en línea</td><td>1 oct · compra</td><td class="n">1</td><td>Confirmar experiencia · 8 oct</td></tr>
+<tr><td><b>Francisca Muñoz</b></td><td><span class="tag t-rec">Recurrente</span></td><td>WhatsApp</td><td>22 sep · compra</td><td class="n">5</td><td>Avisar reposición de velas</td></tr>
+<tr><td><b>Ignacio Vera</b></td><td><span class="tag t-int">Interesado</span></td><td>Instagram</td><td>25 sep · consulta</td><td class="n">0</td><td>Enviar medidas del jarrón</td></tr>
+<tr><td><b>Daniela Pérez</b></td><td><span class="tag t-ina">Inactivo</span></td><td>WhatsApp</td><td>11 abr · compra</td><td class="n">1</td><td>Contenido de temporada</td></tr></table></div>
+<div class="rib">Recreación ilustrativa de un CRM</div></div>
+
+<!-- 3 CRM tareas -->
+<div class="sh" id="crm_tareas"><div class="br"><i></i><i></i><i></i><div class="u">🔒 crm.ejemplo.com/tareas</div></div>
+<div class="crm-top"><b>◆ CRM</b><span>Contactos</span><span>Empresas</span><span>Negocios</span><span class="on">Tareas</span><span>Listas</span><span style="margin-left:auto">Casa Nativa</span></div>
+<div style="padding:18px 24px"><div style="display:flex;gap:14px;font-size:14px;font-weight:700;margin-bottom:14px"><span style="border-bottom:2px solid #24324a;padding-bottom:6px">Vencen esta semana (6)</span><span style="color:#7a868d">Atrasadas (1)</span><span style="color:#7a868d">Completadas</span></div>
+<table><tr><th style="width:36px"></th><th>Tarea</th><th>Contacto</th><th>Tipo</th><th>Vence</th><th>Resultado</th></tr>
+<tr><td>☑</td><td style="text-decoration:line-through;color:#7a868d">Confirmar experiencia de compra</td><td>Javier Torres</td><td>WhatsApp</td><td>8 oct</td><td style="color:#17703f">Satisfecho · pidió catálogo</td></tr>
+<tr style="background:#fff7ed"><td>☐</td><td><b>Seguimiento cotización centros de mesa</b></td><td>Pedro Soto</td><td>Llamada</td><td style="color:#b42318;font-weight:700">Atrasada · 6 oct</td><td></td></tr>
+<tr><td>☐</td><td><b>Seguimiento cotización 30 unidades</b></td><td>Pedro Soto</td><td>WhatsApp</td><td>9 oct</td><td></td></tr>
+<tr><td>☐</td><td><b>Pedir opinión del pedido</b></td><td>Camila Rojas</td><td>WhatsApp</td><td>10 oct</td><td></td></tr>
+<tr><td>☐</td><td><b>Avisar reposición de velas</b></td><td>Francisca Muñoz</td><td>WhatsApp</td><td>11 oct</td><td></td></tr>
+<tr><td>☐</td><td><b>Enviar medidas del jarrón grande</b></td><td>Ignacio Vera</td><td>Instagram</td><td>11 oct</td><td></td></tr>
+<tr><td>☐</td><td><b>Enviar novedad colección infantil</b></td><td>Valentina Díaz</td><td>WhatsApp</td><td>15 oct</td><td></td></tr></table></div>
+<div class="rib">Recreación ilustrativa de un CRM</div></div>
+
+<!-- 4 Planilla -->
+<div class="sh" id="crm_planilla"><div class="br"><i></i><i></i><i></i><div class="u">🔒 docs.google.com/spreadsheets/…</div></div>
+<div class="gs-top"><span class="gs-ic"></span><div><div style="font-size:18px">Clientes Casa Nativa</div></div><span style="margin-left:auto;background:#c2e7ff;border-radius:18px;padding:8px 18px;font-size:14px;font-weight:600">Compartir</span></div>
+<div class="gs-menu"><span>Archivo</span><span>Editar</span><span>Ver</span><span>Insertar</span><span>Formato</span><span>Datos</span><span>Herramientas</span></div>
+<div class="gs-tb"><span>↶ ↷</span><span>100%</span><span>Filtro ⏷</span><span>B I</span><span>Validación de datos</span></div>
+<div style="padding:8px 10px"><table class="grid"><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+<tr class="h"><th>1</th><td>Nombre</td><td>WhatsApp</td><td>Canal</td><td>Última compra</td><td>Productos</td><td>Segmento ⏷</td><td>Próxima acción</td><td>Fecha</td></tr>
+<tr><th>2</th><td>Valentina Díaz</td><td>+56 9 5412 3387</td><td>WhatsApp</td><td>08-08-2026</td><td>Lámpara infantil, cojines</td><td><span class="tag t-rec">Recurrente</span></td><td>Enviar novedad infantil</td><td>15-10-2026</td></tr>
+<tr><th>3</th><td>Camila Rojas</td><td>+56 9 6123 4567</td><td>Tienda en línea</td><td>01-10-2026</td><td>Lámpara de ratán</td><td><span class="tag t-new">Nuevo</span></td><td>Pedir opinión</td><td>10-10-2026</td></tr>
+<tr><th>4</th><td>Pedro Soto</td><td>+56 9 7788 1020</td><td>WhatsApp</td><td>—</td><td>Cotizó centros de mesa</td><td><span class="tag t-int">Interesado</span></td><td>Seguimiento cotización</td><td>09-10-2026</td></tr>
+<tr><th>5</th><td>Ana Fuentes</td><td>+56 9 4433 2211</td><td>Instagram</td><td>02-06-2026</td><td>Velas, cesto</td><td><span class="tag t-ina">Inactivo</span></td><td>Reactivar con colección</td><td>20-10-2026</td></tr>
+<tr><th>6</th><td>Francisca Muñoz</td><td>+56 9 3021 7788</td><td>WhatsApp</td><td>22-09-2026</td><td>Velas (5 compras)</td><td><span class="tag t-rec">Recurrente</span></td><td>Avisar reposición</td><td>11-10-2026</td></tr>
+<tr><th>7</th><td>Javier Torres</td><td>+56 9 2211 0099</td><td>Tienda en línea</td><td>01-10-2026</td><td>Lámpara de ratán</td><td><span class="tag t-new">Nuevo</span></td><td>Confirmar experiencia</td><td>08-10-2026</td></tr>
+<tr><th>8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:36px;background:#f8f9fa;border-top:1px solid #e2e3e3;display:flex;align-items:center;gap:14px;padding:0 14px;font-size:13px"><span style="background:#e1e9f7;border-radius:6px;padding:5px 12px;font-weight:600;color:#0b57d0">Clientes</span><span>Compras</span><span>Seguimiento</span></div>
+<div class="rib" style="bottom:46px">Recreación ilustrativa de una planilla</div></div>
+
+<!-- 5 GA4 adquisición -->
+<div class="sh" id="ga4_adq"><div class="br"><i></i><i></i><i></i><div class="u">🔒 analytics.google.com/analytics/web/#/p…/reports/acquisition-traffic</div></div>
+<div class="ga-top"><span class="ga-logo"><i style="height:10px"></i><i style="height:17px"></i><i style="height:24px"></i></span>Analytics<span style="font-size:14px;margin-left:10px">Casa Nativa · casanativa.cl</span><span style="margin-left:auto;font-size:14px;border:1px solid #dadce0;border-radius:20px;padding:6px 14px">🔍 Buscar</span></div>
+<div class="ga-nav"><span>🏠</span><span class="on">📊</span><span>🧭</span><span>📣</span></div>
+<div class="ga-side"><div class="h">Informes</div><div>Resumen de informes</div><div class="h">Ciclo de vida</div><div>▾ Adquisición</div><div style="padding-left:34px">Resumen</div><div style="padding-left:34px">Adquisición de usuarios</div><div class="on" style="padding-left:34px">Adquisición de tráfico</div><div>▸ Interacción</div><div>▸ Monetización</div><div>▸ Retención</div></div>
+<div class="ga-main"><div class="ga-h"><b>Adquisición de tráfico: Grupo de canales predeterminado de la sesión</b><span class="ga-date">Últimos 28 días · 9 sept – 6 oct 2026</span></div>
+<div class="ga-card" style="height:170px;position:relative"><svg width="100%" height="140" viewBox="0 0 900 140" preserveAspectRatio="none"><polyline fill="none" stroke="#1a73e8" stroke-width="2.5" points="0,90 60,80 120,95 180,70 240,75 300,60 360,72 420,55 480,58 540,48 600,62 660,45 720,50 780,38 840,44 900,36"/><polyline fill="none" stroke="#e8710a" stroke-width="2" points="0,110 60,105 120,112 180,100 240,104 300,98 360,102 420,95 480,99 540,92 600,96 660,90 720,94 780,88 840,90 900,86"/><polyline fill="none" stroke="#12b5cb" stroke-width="2" points="0,120 60,118 120,121 180,116 240,119 300,112 360,115 420,110 480,113 540,108 600,110 660,105 720,108 780,100 840,104 900,98"/></svg><div style="position:absolute;left:16px;bottom:8px;font-size:12px;color:#5f6368">— Organic Social &nbsp; — Direct &nbsp; — Paid Social</div></div>
+<div class="ga-card" style="padding:0"><table><tr><th>Grupo de canales predeterminado de la sesión</th><th class="n">Sesiones</th><th class="n">Sesiones con interacción</th><th class="n">Tasa de interacción</th><th class="n">Eventos clave</th><th class="n">Ingresos totales</th></tr>
+<tr style="background:#f1f3f4"><td><b>Total</b></td><td class="n"><b>3.412</b></td><td class="n"><b>2.106</b></td><td class="n"><b>61,7%</b></td><td class="n"><b>142</b></td><td class="n"><b>$1.284.600</b></td></tr>
+<tr><td>1 Organic Social</td><td class="n">1.250</td><td class="n">702</td><td class="n">56,2%</td><td class="n">38</td><td class="n">$312.400</td></tr>
+<tr><td>2 Direct</td><td class="n">842</td><td class="n">566</td><td class="n">67,2%</td><td class="n">41</td><td class="n">$418.900</td></tr>
+<tr><td>3 Paid Social</td><td class="n">610</td><td class="n">311</td><td class="n">51,0%</td><td class="n">29</td><td class="n">$240.100</td></tr>
+<tr><td>4 Organic Search</td><td class="n">468</td><td class="n">350</td><td class="n">74,8%</td><td class="n">27</td><td class="n">$254.300</td></tr>
+<tr><td>5 Referral</td><td class="n">142</td><td class="n">99</td><td class="n">69,7%</td><td class="n">5</td><td class="n">$58.900</td></tr>
+<tr><td>6 Email</td><td class="n">100</td><td class="n">78</td><td class="n">78,0%</td><td class="n">2</td><td class="n">$0</td></tr></table></div></div>
+<div class="rib">Recreación ilustrativa de Google Analytics 4 · datos ficticios</div></div>
+
+<!-- 6 GA4 páginas -->
+<div class="sh" id="ga4_paginas"><div class="br"><i></i><i></i><i></i><div class="u">🔒 analytics.google.com/analytics/web/#/p…/reports/pages-and-screens</div></div>
+<div class="ga-top"><span class="ga-logo"><i style="height:10px"></i><i style="height:17px"></i><i style="height:24px"></i></span>Analytics<span style="font-size:14px;margin-left:10px">Casa Nativa · casanativa.cl</span></div>
+<div class="ga-nav"><span>🏠</span><span class="on">📊</span><span>🧭</span><span>📣</span></div>
+<div class="ga-side"><div class="h">Informes</div><div>Resumen de informes</div><div class="h">Ciclo de vida</div><div>▸ Adquisición</div><div>▾ Interacción</div><div style="padding-left:34px">Resumen</div><div style="padding-left:34px">Eventos</div><div style="padding-left:34px">Eventos clave</div><div class="on" style="padding-left:34px">Páginas y pantallas</div><div>▸ Monetización</div></div>
+<div class="ga-main"><div class="ga-h"><b>Páginas y pantallas: Ruta de la página y clase de pantalla</b><span class="ga-date">Últimos 28 días</span></div>
+<div class="ga-card" style="padding:0"><table><tr><th>Ruta de la página</th><th class="n">Vistas</th><th class="n">Usuarios activos</th><th class="n">Tiempo medio de interacción</th><th class="n">Eventos clave</th></tr>
+<tr><td>/colecciones/living-pequeno</td><td class="n">2.840</td><td class="n">1.402</td><td class="n">1 min 12 s</td><td class="n">46</td></tr>
+<tr><td>/producto/jarron-terracota</td><td class="n">1.910</td><td class="n">1.088</td><td class="n">58 s</td><td class="n">31</td></tr>
+<tr><td>/</td><td class="n">1.760</td><td class="n">1.320</td><td class="n">34 s</td><td class="n">12</td></tr>
+<tr><td>/producto/lampara-ratan</td><td class="n">1.205</td><td class="n">760</td><td class="n">1 min 05 s</td><td class="n">22</td></tr>
+<tr><td>/envios</td><td class="n">890</td><td class="n">702</td><td class="n">41 s</td><td class="n">4</td></tr>
+<tr><td>/carrito</td><td class="n">640</td><td class="n">410</td><td class="n">1 min 31 s</td><td class="n">27</td></tr></table></div>
+<div class="ga-card" style="font-size:14px;color:#3c4043">💡 La colección <b>Living pequeño</b> concentra visitas y eventos clave: vale la pena destacarla en redes y anuncios.</div></div>
+<div class="rib">Recreación ilustrativa de Google Analytics 4 · datos ficticios</div></div>
+
+<!-- 7 GA4 eventos clave -->
+<div class="sh" id="ga4_eventos"><div class="br"><i></i><i></i><i></i><div class="u">🔒 analytics.google.com/analytics/web/#/p…/reports/key-events</div></div>
+<div class="ga-top"><span class="ga-logo"><i style="height:10px"></i><i style="height:17px"></i><i style="height:24px"></i></span>Analytics<span style="font-size:14px;margin-left:10px">Casa Nativa · casanativa.cl</span></div>
+<div class="ga-nav"><span>🏠</span><span class="on">📊</span><span>🧭</span><span>📣</span></div>
+<div class="ga-side"><div class="h">Informes</div><div>Resumen de informes</div><div class="h">Ciclo de vida</div><div>▸ Adquisición</div><div>▾ Interacción</div><div style="padding-left:34px">Resumen</div><div style="padding-left:34px">Eventos</div><div class="on" style="padding-left:34px">Eventos clave</div><div style="padding-left:34px">Páginas y pantallas</div></div>
+<div class="ga-main"><div class="ga-h"><b>Eventos clave: Nombre del evento</b><span class="ga-date">Últimos 28 días</span></div>
+<div class="ga-card" style="padding:0"><table><tr><th>Nombre del evento</th><th>Qué significa para Casa Nativa</th><th class="n">Eventos clave</th><th class="n">Usuarios</th><th class="n">Variación</th></tr>
+<tr><td><b>purchase</b></td><td>Compra completada en la tienda</td><td class="n">64</td><td class="n">61</td><td class="n" style="color:#188038">↑ 12%</td></tr>
+<tr><td><b>click_whatsapp</b></td><td>Clic en “Escríbenos por WhatsApp”</td><td class="n">71</td><td class="n">66</td><td class="n" style="color:#188038">↑ 25%</td></tr>
+<tr><td><b>generate_lead</b></td><td>Formulario de cotización enviado</td><td class="n">7</td><td class="n">7</td><td class="n" style="color:#c5221f">↓ 13%</td></tr></table></div>
+<div class="ga-card" style="font-size:14px;color:#3c4043;line-height:1.5">Desde 2024, Google Analytics llama <b>eventos clave</b> a las acciones importantes que antes se llamaban “conversiones”. Tú decides qué eventos marcar como clave.</div></div>
+<div class="rib">Recreación ilustrativa de Google Analytics 4 · datos ficticios</div></div>
+
+<!-- 8 Looker panel -->
+<div class="sh" id="looker_panel"><div class="br"><i></i><i></i><i></i><div class="u">🔒 lookerstudio.google.com/reporting/…</div></div>
+<div class="lk-top"><span style="width:26px;height:26px;border-radius:50%;background:conic-gradient(#4285f4 0 33%,#669df6 0 66%,#1a73e8 0)"></span>Looker Studio · <b style="color:#202124">Panel semanal · Casa Nativa</b><span style="margin-left:auto;font-size:13px;border:1px solid #dadce0;border-radius:4px;padding:6px 10px">📅 30 sept – 6 oct 2026</span></div>
+<div class="lk-main"><div class="lk-pg"><div style="font-size:20px;font-weight:700;color:#202124;margin-bottom:14px">Objetivo: aumentar ventas de la colección Living</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><div class="sc"><small>Ventas de la semana</small><b>27</b><span style="color:#188038">↑ 17% vs. semana anterior</span></div><div class="sc"><small>Tasa de conversión</small><b>3,0%</b><span style="color:#188038">↑ 0,4 pts</span></div><div class="sc"><small>Costo por venta (anuncios)</small><b>$3.300</b><span style="color:#c5221f">↑ $200</span></div></div>
+<div style="display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:16px"><div class="sc" style="height:230px"><small>Ventas por día</small><svg width="100%" height="180" viewBox="0 0 500 180"><g fill="#1a73e8"><rect x="20" y="100" width="44" height="70"/><rect x="90" y="80" width="44" height="90"/><rect x="160" y="110" width="44" height="60"/><rect x="230" y="60" width="44" height="110"/><rect x="300" y="70" width="44" height="100"/><rect x="370" y="40" width="44" height="130"/><rect x="440" y="90" width="44" height="80"/></g></svg></div>
+<div class="sc" style="height:230px;background:#fffbe6;border-color:#f2d27a"><small>¿Qué haremos?</small><div style="font-size:15px;line-height:1.55;margin-top:8px;color:#3c4043">✔ Mantener la campaña Living (convierte bien).<br>⚠ Revisar el costo por venta: subió $200.<br>→ Probar un nuevo anuncio la próxima semana.</div></div></div></div></div>
+<div class="rib">Recreación ilustrativa de Looker Studio · datos ficticios</div></div>
+
+<!-- 9 Tablero plan -->
+<div class="sh" id="plan_tablero"><div class="br"><i></i><i></i><i></i><div class="u">🔒 tablero.ejemplo.com/casa-nativa/plan-90-dias</div></div>
+<div class="pl-top">🧭 Plan de Acción Digital · Casa Nativa<span style="margin-left:auto;font-size:14px;font-weight:500">Octubre – diciembre 2026 · 90 días</span></div>
+<div class="pl-main"><div class="col"><h4>Por hacer</h4><div class="kc"><b>Prioridad 3 · Panel semanal de indicadores</b><div>👤 Marcela · 📅 noviembre–diciembre<br>📊 Revisión cada lunes de 3 indicadores</div></div><div class="kc"><b>Después · Abrir TikTok</b><div>Puede esperar: bajo impacto hoy</div></div></div>
+<div class="col"><h4>En curso</h4><div class="kc"><b>Prioridad 1 · Registrar clientes y próximas acciones</b><div>👤 Marcela · 📅 2 semanas<br>📊 100% de las ventas con próxima acción registrada</div><div class="bar"><i style="width:60%"></i></div></div><div class="kc"><b>Prioridad 2 · Automatizar preguntas frecuentes</b><div>👤 Ayudante · 📅 octubre<br>📊 −50% de preguntas repetidas</div><div class="bar"><i style="width:30%"></i></div></div></div>
+<div class="col"><h4>Listo</h4><div class="kc"><b>✓ Ordenar carpetas compartidas en Drive</b><div>👤 Marcela · completado 4 oct<br>📊 Documentos clave sin pedirlos por mensaje</div></div></div></div>
+<div class="rib">Recreación ilustrativa de un tablero de tareas</div></div>
+</body></html>

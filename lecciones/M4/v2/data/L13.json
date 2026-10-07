@@ -1,0 +1,124 @@
+{
+"audio": {
+"p01": "Bienvenida a la lección cuatro punto tres: Construye tu plan de acción digital. Marcela aprendió mucho durante el curso y ahora debe decidir qué hacer primero. Revisa las tres notas y luego responde qué hace que un plan sea útil.",
+"p03": "Todo plan parte de un diagnóstico. Toca cada tarjeta para voltearla y descubre las cuatro preguntas: qué funciona, qué duele, qué falta y qué puede esperar.",
+"p04": "Ahora prioriza. Clasifica cada acción de Casa Nativa según su impacto y su esfuerzo. Selecciona una tarjeta y luego el cuadrante que corresponde.",
+"p05": "Una necesidad se convierte en acción cuando tiene responsable, plazo e indicador. Usa las flechas para ordenar los cinco elementos y luego presiona comprobar.",
+"p06": "Un buen plan integra los cuatro módulos del curso. Revisa las cuatro pestañas y la pregunta que debes hacerte en cada una.",
+"p07": "Arma la primera prioridad del plan de Casa Nativa. Elige la mejor opción para cada fila y luego presiona guardar.",
+"p08": "Volvamos con Marcela. Debe elegir su primera prioridad y luego revisar si su plan de noventa días es realista.",
+"p11": "¡Felicitaciones! Completaste la lección cuatro punto tres y el curso. Ya tienes las herramientas para construir un plan de acción digital priorizado, realista y medible. Recuerda: digitalizar no es hacer todo al mismo tiempo, sino avanzar paso a paso."
+},
+"video": [
+{
+"t": "De las ideas a las decisiones",
+"img": "m13_hero",
+"lines": [
+"Durante el curso, Casa Nativa aprendió a ordenar archivos, vender en línea, comunicar, invertir en publicidad, automatizar, gestionar clientes y leer datos.",
+"Ahora el desafío es decidir qué hacer primero y qué puede sostener realmente."
+],
+"keys": [
+[
+"Mucho aprendido",
+0
+],
+[
+"Elegir qué hacer primero",
+1
+],
+[
+"Lo que se puede sostener",
+1
+]
+]
+},
+{
+"t": "Diagnóstico",
+"img": "m12_hero",
+"lines": [
+"Todo plan parte de un diagnóstico honesto: qué funciona, qué duele, qué falta y qué puede esperar.",
+"Los problemas que hoy cuestan tiempo, ventas o clientes son buenos candidatos para empezar."
+],
+"keys": [
+[
+"Qué funciona y qué duele",
+0
+],
+[
+"Qué falta",
+1
+],
+[
+"Qué puede esperar",
+1
+]
+]
+},
+{
+"t": "Impacto y esfuerzo",
+"img": "plan_tablero",
+"lines": [
+"Prioriza con dos preguntas: ¿cuánto impacto tendrá? y ¿cuánto esfuerzo exige?",
+"Lo de alto impacto y bajo esfuerzo va primero; lo de alto impacto y alto esfuerzo se planifica por etapas; y lo de bajo impacto y alto esfuerzo se posterga."
+],
+"keys": [
+[
+"Alto impacto, bajo esfuerzo: primero",
+0
+],
+[
+"Alto esfuerzo: por etapas",
+1
+],
+[
+"Bajo impacto: postergar",
+1
+]
+]
+},
+{
+"t": "Acciones concretas",
+"img": "m13_equipo",
+"lines": [
+"Una buena acción tiene problema, acción, responsable, plazo e indicador.",
+"Por ejemplo: perdemos ventas por olvidar el seguimiento; registraremos cada cliente y su próxima acción; Marcela; en dos semanas; todas las ventas con próxima acción registrada."
+],
+"keys": [
+[
+"Responsable",
+0
+],
+[
+"Plazo",
+1
+],
+[
+"Indicador",
+1
+]
+]
+},
+{
+"t": "Un plan de 90 días",
+"img": "m13_logro",
+"lines": [
+"Un plan de noventa días con tres prioridades es más fácil de cumplir que una lista de diez ideas.",
+"Revisa el avance cada mes, aprende de los indicadores y ajusta. Digitalizar no es hacer todo al mismo tiempo."
+],
+"keys": [
+[
+"Tres prioridades",
+0
+],
+[
+"Revisión mensual",
+1
+],
+[
+"Ajustar con datos",
+1
+]
+]
+}
+]
+}

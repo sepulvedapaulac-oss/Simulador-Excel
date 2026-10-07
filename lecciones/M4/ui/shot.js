@@ -1,0 +1,2 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome'});const p=await b.newPage({viewport:{width:1300,height:800},deviceScaleFactor:1});
+await p.goto('file://'+__dirname+'/screens.html');await p.waitForTimeout(400);for(const id of await p.$$eval('.sh',e=>e.map(x=>x.id))){await (await p.$('#'+id)).screenshot({path:'../img/'+id+'.jpg',type:'jpeg',quality:88})}await b.close()})();
