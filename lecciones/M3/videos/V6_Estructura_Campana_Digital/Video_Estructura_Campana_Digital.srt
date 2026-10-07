@@ -1,0 +1,291 @@
+1
+00:00:00,500 --> 00:00:08,421
+Invertir en publicidad digital no consiste simplemente en poner dinero en una plataforma.
+
+2
+00:00:08,421 --> 00:00:11,624
+Una campaña necesita una estructura:
+
+3
+00:00:11,624 --> 00:00:19,367
+un objetivo, una audiencia, un presupuesto, un mensaje y una forma de medir resultados.
+
+4
+00:00:19,367 --> 00:00:23,906
+En este video veremos cómo se organiza ese proceso.
+
+5
+00:00:25,006 --> 00:00:29,130
+Podemos pensar una campaña como una cadena de decisiones.
+
+6
+00:00:29,130 --> 00:00:32,096
+Primero definimos qué queremos conseguir.
+
+7
+00:00:32,096 --> 00:00:36,871
+Después elegimos a quién queremos llegar, cuánto podemos invertir,
+
+8
+00:00:36,871 --> 00:00:42,586
+qué mensaje mostraremos y qué indicador utilizaremos para evaluar el resultado.
+
+9
+00:00:43,686 --> 00:00:47,770
+En Meta Ads, una campaña se organiza en tres niveles.
+
+10
+00:00:47,770 --> 00:00:50,313
+En la campaña eliges el objetivo:
+
+11
+00:00:50,313 --> 00:00:57,170
+reconocimiento, tráfico, interacción, clientes potenciales, promoción de la app o ventas.
+
+12
+00:00:57,170 --> 00:01:02,179
+En el conjunto de anuncios defines la audiencia, las ubicaciones,
+
+13
+00:01:02,179 --> 00:01:04,567
+el presupuesto y el calendario.
+
+14
+00:01:04,567 --> 00:01:07,495
+Y en el anuncio, la imagen y el texto.
+
+15
+00:01:07,495 --> 00:01:08,420
+Por ejemplo,
+
+16
+00:01:08,420 --> 00:01:17,358
+para conseguir conversaciones por WhatsApp puedes elegir el objetivo de interacción y definir WhatsApp como destino.
+
+17
+00:01:18,458 --> 00:01:22,970
+La audiencia debe tener relación con el objetivo del negocio.
+
+18
+00:01:22,970 --> 00:01:28,000
+No siempre conviene intentar llegar a la mayor cantidad de personas.
+
+19
+00:01:28,000 --> 00:01:31,625
+Hoy Meta usa por defecto la audiencia Advantage+,
+
+20
+00:01:31,625 --> 00:01:39,022
+que toma tus indicaciones como sugerencias; la ubicación y la edad mínima sí funcionan como límites.
+
+21
+00:01:39,022 --> 00:01:39,614
+Por eso,
+
+22
+00:01:39,614 --> 00:01:49,230
+un anuncio que le habla claramente a una audiencia pertinente puede generar mejores resultados que uno pensado para todo el mundo.
+
+23
+00:01:50,330 --> 00:01:52,748
+Después definimos el presupuesto.
+
+24
+00:01:52,748 --> 00:01:59,489
+Para un negocio que está empezando, lo importante es establecer un máximo antes de comenzar.
+
+25
+00:01:59,489 --> 00:02:04,544
+Puedes trabajar con un presupuesto diario o con un presupuesto total,
+
+26
+00:02:04,544 --> 00:02:10,626
+pero siempre debes saber cuánto estás dispuesto a invertir y durante cuánto tiempo.
+
+27
+00:02:10,626 --> 00:02:11,505
+Por ejemplo,
+
+28
+00:02:11,505 --> 00:02:17,733
+diez mil pesos diarios durante siete días equivalen a un máximo de setenta mil pesos.
+
+29
+00:02:18,833 --> 00:02:22,394
+El anuncio combina elementos visuales y texto.
+
+30
+00:02:22,394 --> 00:02:30,831
+El mensaje debe conectar con una necesidad concreta de la audiencia y contener una llamada a la acción clara,
+
+31
+00:02:30,831 --> 00:02:34,237
+como consultar, visitar, reservar o comprar.
+
+32
+00:02:34,237 --> 00:02:37,489
+Antes de publicar, revisa la vista previa:
+
+33
+00:02:37,489 --> 00:02:43,140
+el mismo anuncio puede verse en el feed, en las historias o en los reels,
+
+34
+00:02:43,140 --> 00:02:46,313
+y debe entenderse en todos esos formatos.
+
+35
+00:02:47,413 --> 00:02:50,670
+En Google Ads, la lógica puede ser distinta.
+
+36
+00:02:50,670 --> 00:02:57,035
+En una campaña de búsqueda trabajamos con personas que ya están buscando una solución.
+
+37
+00:02:57,035 --> 00:03:00,366
+La campaña se organiza en grupos de anuncios,
+
+38
+00:03:00,366 --> 00:03:06,953
+y cada grupo reúne palabras clave relacionadas y anuncios que responden a esas búsquedas.
+
+39
+00:03:08,053 --> 00:03:12,679
+Por ejemplo, si una persona busca decoración para living pequeño,
+
+40
+00:03:12,679 --> 00:03:14,814
+existe una intención concreta.
+
+41
+00:03:14,814 --> 00:03:22,073
+Una campaña de búsqueda puede permitir que Casa Nativa aparezca cuando esa necesidad ya está presente.
+
+42
+00:03:22,073 --> 00:03:25,631
+El anuncio combina varios títulos y descripciones,
+
+43
+00:03:25,631 --> 00:03:28,834
+y Google muestra la combinación más adecuada.
+
+44
+00:03:28,834 --> 00:03:35,595
+Como la plataforma también usa inteligencia artificial para ampliar las búsquedas relacionadas,
+
+45
+00:03:35,595 --> 00:03:39,296
+conviene revisar en qué términos aparece tu anuncio.
+
+46
+00:03:40,396 --> 00:03:47,306
+En términos simples, Meta puede ser especialmente útil para generar descubrimiento e interés,
+
+47
+00:03:47,306 --> 00:03:53,993
+mientras que Google puede ser útil cuando la persona ya expresa una intención de búsqueda.
+
+48
+00:03:53,993 --> 00:03:55,405
+No son excluyentes:
+
+49
+00:03:55,405 --> 00:03:59,417
+cumplen funciones diferentes dentro de una estrategia.
+
+50
+00:03:59,417 --> 00:04:05,733
+De hecho, una misma persona puede descubrir Casa Nativa en Instagram y, días después,
+
+51
+00:04:05,733 --> 00:04:07,145
+buscarla en Google.
+
+52
+00:04:08,245 --> 00:04:11,775
+Una campaña no termina cuando se publica.
+
+53
+00:04:11,775 --> 00:04:14,444
+Debemos revisar los resultados.
+
+54
+00:04:14,444 --> 00:04:18,233
+El indicador principal depende del objetivo:
+
+55
+00:04:18,233 --> 00:04:25,293
+puede ser alcance, clics, conversaciones, registros, ventas o costo por resultado.
+
+56
+00:04:25,293 --> 00:04:31,062
+En Meta encontrarás columnas como resultados, alcance, impresiones,
+
+57
+00:04:31,062 --> 00:04:34,334
+costo por resultado e importe gastado.
+
+58
+00:04:34,334 --> 00:04:38,811
+En Google, clics, impresiones, conversiones y costo.
+
+59
+00:04:38,811 --> 00:04:43,719
+Elige uno como principal y no te distraigas con el resto.
+
+60
+00:04:44,819 --> 00:04:52,915
+Supongamos que Casa Nativa invierte setenta mil pesos durante una semana para generar conversaciones por WhatsApp.
+
+61
+00:04:52,915 --> 00:04:56,821
+Si el objetivo es obtener veinte consultas calificadas,
+
+62
+00:04:56,821 --> 00:05:03,496
+el indicador principal será cuántas conversaciones genera la campaña y cuánto cuesta cada una.
+
+63
+00:05:03,496 --> 00:05:08,538
+Con veinte conversaciones, cada una costaría tres mil quinientos pesos.
+
+64
+00:05:09,638 --> 00:05:11,857
+Con esos datos podemos decidir.
+
+65
+00:05:11,857 --> 00:05:15,864
+Si el costo es razonable y las consultas son relevantes,
+
+66
+00:05:15,864 --> 00:05:18,799
+podemos mantener o aumentar la inversión.
+
+67
+00:05:18,799 --> 00:05:22,735
+Si los resultados son bajos, debemos revisar audiencia,
+
+68
+00:05:22,735 --> 00:05:25,740
+mensaje o creatividad antes de gastar más.
+
+69
+00:05:25,740 --> 00:05:30,249
+Y si después de ajustar no mejora, conviene detener la campaña.
+
+70
+00:05:31,349 --> 00:05:35,949
+Antes de lanzar una campaña, confirma cinco elementos:
+
+71
+00:05:35,949 --> 00:05:40,635
+objetivo claro, audiencia definida, presupuesto máximo,
+
+72
+00:05:40,635 --> 00:05:44,043
+mensaje coherente e indicador principal.
+
+73
+00:05:44,043 --> 00:05:48,302
+Esa estructura permite invertir con mayor control.
