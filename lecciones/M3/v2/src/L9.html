@@ -1,0 +1,237 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las tres notas del plan y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.3 · Caso de decisión</span>
+      <h1 class="reveal">Invertir en publicidad sin perder el control</h1>
+      <p class="lead reveal">La publicidad digital puede ayudar a una PYME a llegar a más personas, pero necesita objetivo, audiencia, presupuesto y medición. <strong>Haz clic en cada nota</strong> del plan de Marcela.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">💰</span><span><span class="from">Nota 1 · Presupuesto</span><span class="preview">“Pongamos $100.000”…</span><span class="full">Marcela quiere “poner $100.000 en publicidad” este mes porque una amiga le dijo que así vende más.</span></span><span class="badge">Plan</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">❓</span><span><span class="from">Nota 2 · Producto y audiencia</span><span class="preview">Aún sin definir…</span><span class="full">Todavía no decide qué producto promocionar ni a quién quiere llegar.</span></span><span class="badge">Plan</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">📈</span><span><span class="from">Nota 3 · Resultado esperado</span><span class="preview">“Vender más”…</span><span class="full">Cuando le preguntan qué espera que hagan las personas al ver el anuncio, responde: “que compren más”.</span></span><span class="badge">Plan</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela revisa un panel de anuncios en su portátil y anota un presupuesto" src="img/m9_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Cuál debería ser el primer paso?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Repartir el dinero entre varias campañas.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Definir primero el objetivo de la campaña.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Abrir cuentas en todas las plataformas.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: dinero repartido, resultados confusos.</strong> <span class="fb-body">El monto importa, pero todavía falta definir el resultado esperado. Sin objetivo, no sabrá qué campaña funcionó.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: más canales, más trabajo.</strong> <span class="fb-body">Más plataformas no garantizan mejores resultados sin estrategia; solo multiplican lo que hay que gestionar y medir.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El presupuesto debe responder a un objetivo comercial concreto y medible. En esta lección recorrerás el orden: objetivo → audiencia → presupuesto → medición.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Objetivo → audiencia → presupuesto → medición</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+
+<!-- 3 · OBJETIVOS -->
+<section class="slide" data-title="Objetivo del anuncio" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las tres tarjetas.">
+  <span class="eyebrow">Objetivo</span>
+  <h2>¿Qué quieres que ocurra gracias al anuncio?</h2>
+  <p>Cada objetivo pide un mensaje y un indicador distinto. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Objetivos revisados <span class="tick" id="fcTick">0 / 3</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(3,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">👀</div><strong>Descubrimiento</strong><span>Que me conozcan</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Más personas conocen la marca</strong><span>Ejemplo: presentar Casa Nativa a quienes decoran su primera casa. Se mide con alcance e impresiones.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🤔</div><strong>Consideración</strong><span>Que se interesen</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Visitan, consultan o revisan una oferta</strong><span>Ejemplo: que escriban por WhatsApp para conocer la nueva colección. Se mide con clics y conversaciones.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🛒</div><strong>Conversión</strong><span>Que actúen</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Compran, reservan o realizan una acción</strong><span>Ejemplo: comprar en la tienda en línea. Se mide con ventas y costo por venta.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · META O GOOGLE -->
+<section class="slide" data-title="Meta o Google" data-audio="p04" data-gate="cls" data-gate-msg="Clasifica las ocho situaciones.">
+  <span class="eyebrow amber">Meta o Google</span>
+  <h2>El canal depende de cómo aparece la intención</h2>
+  <p><strong>Selecciona una situación</strong> y luego la columna que corresponde. También puedes arrastrarla.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Situaciones clasificadas <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="m" data-fb="No buscaba nada: el anuncio en redes genera descubrimiento." data-no="¿Estaba buscando un jarrón cuando lo vio?">Revisa Instagram en el bus y ve un jarrón que le gusta</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Escribe lo que necesita: hay intención de búsqueda." data-no="¿Quién escribe “cojines de lino” en un buscador?">Escribe “cojines de lino hechos a mano” en un buscador</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="Mostrar inspiración a quien aún no lo pensaba es descubrimiento." data-no="¿Esa persona ya estaba buscando decoración?">Se acaba de mudar y aún no piensa en decorar</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Busca una solución concreta: el anuncio de búsqueda captura esa intención." data-no="¿Está buscando activamente?">Busca “regalo para casa nueva” la víspera de una visita</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="Un formato visual en el feed despierta interés en quien no lo buscaba." data-no="¿La persona estaba buscando o solo navegando?">Ve un video del taller mientras navega por el feed</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Comparar opciones en un buscador es intención activa." data-no="¿Quién compara precios en un buscador?">Compara precios de “jarrones de cerámica” en un buscador</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="Una audiencia con intereses afines en redes es terreno de descubrimiento." data-no="¿Esta persona buscó el producto?">Sigue cuentas de decoración, pero no conoce Casa Nativa</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Buscar la tienda por nombre muestra intención muy alta." data-no="¿Esta persona ya está buscando?">Busca “Casa Nativa decoración” después de ver una vitrina</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="m" role="button" tabindex="0"><h3>📱 Aún no busca · generar interés (p. ej., Meta Ads)</h3></div>
+      <div class="bin" data-cat="g" role="button" tabindex="0"><h3>🔎 Ya busca · capturar la búsqueda (p. ej., Google Ads)</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Y si quieres volver a impactar</strong> a quienes ya visitaron tu perfil o tu tienda, ambos canales lo permiten, según cómo configures tus audiencias.</div>
+</section>
+
+<!-- 5 · REGLAS DEL PRESUPUESTO -->
+<section class="slide" data-title="Reglas del presupuesto" data-audio="p05" data-gate="ord" data-gate-msg="Ordena los cuatro pasos y presiona Comprobar.">
+  <span class="eyebrow">Presupuesto</span>
+  <div class="grid-2">
+    <div>
+      <h2>Un presupuesto pequeño también necesita reglas</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar los pasos de primero a último y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Máximo, inicio acotado, medición y ajuste: así el presupuesto se controla con evidencia y no con impulsos." data-no="Pista: antes de gastar, define cuánto puedes arriesgar; y solo puedes ajustar después de medir.">
+        <ul class="order">
+          <li data-p="3"><b>Mide:</b> evalúa el resultado que realmente buscabas.</li>
+          <li data-p="1"><b>Define un máximo:</b> cuánto puedes invertir sin afectar la operación.</li>
+          <li data-p="4"><b>Ajusta:</b> detén, corrige o aumenta según la evidencia.</li>
+          <li data-p="2"><b>Empieza acotado:</b> una oferta, una audiencia y una acción principal.</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Cuaderno con números, calculadora y portátil con un gráfico" src="img/m9_metricas.jpg"/></div>
+  </div>
+</section>
+
+<!-- 6 · CAMPAÑA -->
+<section class="slide" data-title="Configura la campaña" data-audio="p06" data-gate="sim" data-gate-msg="Configura las cuatro filas y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Campaña de la nueva colección de Casa Nativa</h2>
+  <p><b>Objetivo:</b> 20 conversaciones calificadas por WhatsApp en una semana. <b>Presupuesto total:</b> $70.000. Elige la mejor opción para cada fila y presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="fila(s)" data-miss-t="Faltan definiciones." data-miss-b="Completa las cuatro filas antes de guardar." data-ok="Presupuesto, duración, indicador y regla definidos: Marcela puede controlar la campaña y evaluar si funcionó.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Plan de campaña · Nueva colección</div>
+        <table class="seltable stack">
+          <tr data-ans="b" data-ok="$70.000 ÷ 7 días = $10.000 diarios, sin superar el máximo." data-no="El plan debe respetar el máximo de $70.000 y la duración de una semana."><td><b>Presupuesto</b><small>Diario y total</small><span class="why"></span></td><td><select aria-label="Presupuesto"><option value="">Elegir…</option><option value="a">$70.000 el primer día para llegar rápido.</option><option value="b">$10.000 diarios durante 7 días, con un total máximo de $70.000.</option><option value="c">Sin límite: se ajusta según cómo vaya.</option></select></td></tr>
+          <tr data-ans="c" data-ok="Una audiencia y una acción: así sabrás qué produjo el resultado." data-no="Empezar acotado permite aprender qué funciona."><td><b>Alcance</b><small>Oferta, audiencia y acción</small><span class="why"></span></td><td><select aria-label="Alcance"><option value="">Elegir…</option><option value="a">Todos los productos, para todo el país, con varias acciones.</option><option value="b">Tres audiencias distintas y tres anuncios diferentes al mismo tiempo.</option><option value="c">La nueva colección, para personas que decoran espacios pequeños, con un botón para escribir por WhatsApp.</option></select></td></tr>
+          <tr data-ans="a" data-ok="$70.000 ÷ 20 conversaciones = $3.500 por conversación como referencia." data-no="El indicador debe medir el resultado buscado: conversaciones, no solo “me gusta”."><td><b>Indicador</b><small>Cómo sabrás si funciona</small><span class="why"></span></td><td><select aria-label="Indicador"><option value="">Elegir…</option><option value="a">Costo por conversación, con una meta de $3.500 o menos.</option><option value="b">Cantidad de “me gusta” del anuncio.</option><option value="c">Número de seguidores nuevos.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Una regla definida antes evita decisiones impulsivas." data-no="Cambiar todo a diario o duplicar sin revisar impide saber qué funcionó."><td><b>Regla de ajuste</b><small>Cuándo detener o corregir</small><span class="why"></span></td><td><select aria-label="Regla de ajuste"><option value="">Elegir…</option><option value="a">Cambiar anuncio, audiencia y objetivo cada día.</option><option value="b">Revisar al tercer día: si el costo por conversación supera $7.000, cambiar una sola variable.</option><option value="c">Duplicar el presupuesto si en dos días no hay ventas.</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela responde conversaciones por WhatsApp junto a la nueva colección" src="img/m9_whatsapp.jpg"/></div>
+  </div>
+</section>
+
+<!-- 7 · INDICADORES -->
+<section class="slide" data-title="Indicadores" data-audio="p07" data-gate="pairs" data-gate-msg="Une los cinco indicadores con su significado.">
+  <span class="eyebrow">Medición</span>
+  <h2>Mide según el objetivo</h2>
+  <p><strong>Selecciona un indicador</strong> a la izquierda y luego lo que realmente te dice.</p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 5</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa en qué etapa está la persona: ver, interesarse, conversar, comprar… o cuánto te costó y qué te devolvió.">
+    <div>
+      <button class="pl" type="button" data-k="alc">Alcance / impresiones</button>
+      <button class="pl" type="button" data-k="cli">Clics / visitas</button>
+      <button class="pl" type="button" data-k="con">Conversaciones / leads</button>
+      <button class="pl" type="button" data-k="cpr">Costo por resultado</button>
+      <button class="pl" type="button" data-k="ret">Retorno</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="cpr" data-fb="Cuánto pagaste por cada resultado: mide eficiencia.">Eficiencia: cuánto cuesta cada resultado</button>
+      <button class="pr" type="button" data-k="alc" data-fb="Cuántas personas vieron el anuncio: mide exposición.">Exposición: cuántas personas lo vieron</button>
+      <button class="pr" type="button" data-k="ret" data-fb="Compara lo que generó la campaña con lo invertido.">Valor generado frente a la inversión</button>
+      <button class="pr" type="button" data-k="con" data-fb="Personas que escribieron: oportunidades comerciales reales.">Oportunidades comerciales</button>
+      <button class="pr" type="button" data-k="cli" data-fb="Quien hace clic muestra interés en avanzar.">Interés en avanzar</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Una campaña con reglas claras</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Voy a promocionar la nueva colección. Quiero 20 conversaciones calificadas por WhatsApp en una semana y tengo $70.000. ¿Cómo la controlo?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela revisa el panel de anuncios con un cuaderno de presupuesto" src="img/m9_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué decisión permite controlar mejor la campaña?</h3>
+  <div class="options" data-choice="caso1" data-correct="A" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Definir presupuesto total, duración y costo por conversación como indicador.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Duplicar el presupuesto si en dos días no hay ventas.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Cambiar anuncio, audiencia y objetivo cada día.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se amplifica lo que no funciona</div><div class="branch-body"><div><p>Aumentar la inversión sin revisar resultados puede amplificar una campaña ineficiente. Además, el objetivo eran conversaciones, no ventas en dos días.</p></div><div><p class="hint">Primero define cómo medirás.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: nadie sabe qué funcionó</div><div class="branch-body"><div><p>Cambiar todo a la vez impide saber qué produjo el resultado. Además, la plataforma no alcanza a aprender con cambios diarios.</p></div><div><p class="hint">Mide antes de cambiar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Con $70.000 en 7 días y una meta de $3.500 por conversación, Marcela sabe cuánto gastará, por cuánto tiempo y cómo evaluar el resultado.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Tercer día:</strong> Marcela gastó $30.000 y obtuvo 4 conversaciones. El costo por conversación es <b>$7.500</b>, más del doble de la meta. El anuncio tiene buen alcance, pero pocas personas escriben.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debería hacer ahora?</h3>
+    <div class="options" data-choice="caso2c" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Duplicar el presupuesto diario para compensar.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Aplicar la regla: cambiar una sola variable (por ejemplo, el mensaje del anuncio) y revisar en dos días.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Cambiar audiencia, imagen, mensaje y objetivo al mismo tiempo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el presupuesto se agota antes</div><div class="branch-body"><div><p>Con el mismo anuncio, más dinero solo trae más conversaciones caras. El presupuesto máximo se termina en dos días.</p></div><div><p class="hint">El problema no es el monto: es la eficiencia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: resultados imposibles de leer</div><div class="branch-body"><div><p>Si mejora o empeora, Marcela no sabrá por qué. Pierde lo que había aprendido en tres días.</p></div><div><p class="hint">Una variable a la vez.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Buen alcance y pocas conversaciones indican que el mensaje no invita a escribir. Marcela agrega una invitación clara —“Escríbenos y te ayudamos a elegir el tamaño”— y mantiene todo lo demás. Dos días después, el costo baja a $3.200.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Planifica una campaña mínima viable</h2>
+  <div class="story">Una PYME de tu rubro planificó su primera campaña así: <b>objetivo:</b> “vender más”; <b>audiencia:</b> “todo Chile”; <b>oferta:</b> todo el catálogo; <b>canal:</b> redes y buscador a la vez; <b>presupuesto:</b> $150.000 sin fecha de término; <b>indicador:</b> cantidad de “me gusta”.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el plan no permite controlar ni evaluar. Una campaña mínima viable sería: <b>objetivo</b> 15 conversaciones por WhatsApp; <b>audiencia</b> personas de su ciudad interesadas en decoración; <b>oferta</b> un producto o colección; <b>canal</b> uno, según si la audiencia ya busca o no; <b>presupuesto máximo</b> $50.000; <b>duración</b> 7 días; <b>indicador</b> costo por conversación; <b>regla</b> revisar al tercer día y cambiar una sola variable si el costo duplica la meta. Para tu PYME completa esos mismos ocho campos antes de invertir.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.3</h2>
+    <p>Ya puedes definir el objetivo de una campaña, elegir el canal según la intención, poner reglas a tu presupuesto y medir lo que importa.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 3.4</b> verás cómo automatizar sin perder el trato humano.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar Meta o Google</button><button class="small-btn primary" type="button" data-goto="5">Repasar la campaña</button></div>
+    <div class="sources">Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
