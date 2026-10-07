@@ -1,0 +1,275 @@
+1
+00:00:00,500 --> 00:00:05,731
+En el módulo anterior aprendimos a configurar un canal comercial.
+
+2
+00:00:05,731 --> 00:00:07,824
+Ahora daremos un paso más:
+
+3
+00:00:07,824 --> 00:00:14,102
+organizaremos algunas consultas frecuentes en un flujo automático de atención.
+
+4
+00:00:14,102 --> 00:00:16,918
+Horarios, pagos, despachos y stock:
+
+5
+00:00:16,918 --> 00:00:20,379
+las mismas preguntas llegan una y otra vez.
+
+6
+00:00:21,479 --> 00:00:26,466
+Un flujo automático funciona como un pequeño mapa de decisiones.
+
+7
+00:00:26,466 --> 00:00:31,999
+El cliente inicia una conversación, el sistema identifica qué necesita,
+
+8
+00:00:31,999 --> 00:00:39,168
+entrega una respuesta y decide si puede resolver la consulta o debe derivarla a una persona.
+
+9
+00:00:39,168 --> 00:00:41,272
+Piensa en él como un árbol:
+
+10
+00:00:41,272 --> 00:00:44,701
+cada rama responde a una necesidad distinta,
+
+11
+00:00:44,701 --> 00:00:49,064
+y siempre debe existir una rama que lleve a una persona.
+
+12
+00:00:50,164 --> 00:00:54,566
+El primer paso es ofrecer pocas opciones y muy claras.
+
+13
+00:00:54,566 --> 00:00:55,545
+Por ejemplo:
+
+14
+00:00:55,545 --> 00:01:00,599
+productos, medios de pago, despachos o hablar con una persona.
+
+15
+00:01:00,599 --> 00:01:04,919
+Evita menús demasiado largos o difíciles de entender.
+
+16
+00:01:04,919 --> 00:01:08,098
+Cuatro opciones suelen ser suficientes.
+
+17
+00:01:08,098 --> 00:01:15,924
+Escribe el saludo con el tono de tu marca y deja claro que se trata de una respuesta automática.
+
+18
+00:01:15,924 --> 00:01:16,902
+Por ejemplo:
+
+19
+00:01:16,902 --> 00:01:22,609
+hola, soy el asistente de Casa Nativa; elige una opción para ayudarte.
+
+20
+00:01:23,709 --> 00:01:30,096
+Si el cliente selecciona despachos, el flujo puede entregar información básica:
+
+21
+00:01:30,096 --> 00:01:34,219
+zonas de cobertura, plazos y condiciones generales.
+
+22
+00:01:34,219 --> 00:01:35,189
+Por ejemplo:
+
+23
+00:01:35,189 --> 00:01:43,921
+despachamos a todo Chile; en Santiago llega en dos a tres días hábiles y es gratis sobre cuarenta mil pesos.
+
+24
+00:01:43,921 --> 00:01:50,066
+Esa es una consulta repetitiva y predecible, por lo que puede automatizarse.
+
+25
+00:01:51,166 --> 00:01:54,002
+Lo mismo ocurre con los medios de pago.
+
+26
+00:01:54,002 --> 00:02:00,692
+El sistema puede informar las alternativas disponibles sin necesidad de intervención humana:
+
+27
+00:02:00,692 --> 00:02:05,054
+tarjeta de débito o crédito, transferencia o pago en tienda.
+
+28
+00:02:05,054 --> 00:02:10,653
+Eso sí, si cambian los medios de pago, actualiza esta respuesta de inmediato.
+
+29
+00:02:11,753 --> 00:02:15,707
+Una buena automatización no entrega solo información:
+
+30
+00:02:15,707 --> 00:02:17,497
+también ayuda a avanzar.
+
+31
+00:02:17,497 --> 00:02:19,064
+Después de responder,
+
+32
+00:02:19,064 --> 00:02:25,702
+puede preguntar si la persona necesita algo más o si desea hablar con alguien del equipo.
+
+33
+00:02:25,702 --> 00:02:29,507
+Así nadie queda atrapado en un callejón sin salida.
+
+34
+00:02:29,507 --> 00:02:35,027
+Por ejemplo, si eligió productos, el flujo muestra el catálogo y pregunta:
+
+35
+00:02:35,027 --> 00:02:37,936
+¿quieres que alguien te ayude a elegir?
+
+36
+00:02:37,936 --> 00:02:44,798
+Si responde que sí, la conversación pasa al equipo; si no, puede volver al menú o finalizar.
+
+37
+00:02:45,898 --> 00:02:48,362
+Pero no todo debe automatizarse.
+
+38
+00:02:48,362 --> 00:02:52,518
+Si una persona escribe que recibió un producto dañado,
+
+39
+00:02:52,518 --> 00:02:58,753
+que está molesta o que necesita una excepción, el flujo debe reconocer su límite.
+
+40
+00:02:58,753 --> 00:02:59,677
+Por ejemplo:
+
+41
+00:02:59,677 --> 00:03:03,218
+mi pedido llegó quebrado y lo necesito mañana.
+
+42
+00:03:04,318 --> 00:03:09,915
+En ese momento, la mejor decisión es derivar la conversación a una persona.
+
+43
+00:03:09,915 --> 00:03:10,736
+Idealmente,
+
+44
+00:03:10,736 --> 00:03:18,498
+el equipo debería recibir también el contexto para que el cliente no tenga que explicar todo nuevamente:
+
+45
+00:03:18,498 --> 00:03:22,603
+el número de pedido, qué ocurrió y cuál es la urgencia.
+
+46
+00:03:23,703 --> 00:03:25,596
+Un mensaje podría decir:
+
+47
+00:03:25,596 --> 00:03:26,463
+entendemos.
+
+48
+00:03:26,463 --> 00:03:32,770
+Vamos a derivar tu consulta a una persona de nuestro equipo para ayudarte mejor.
+
+49
+00:03:32,770 --> 00:03:36,949
+La automatización sirve como puente, no como barrera.
+
+50
+00:03:36,949 --> 00:03:43,493
+Evita respuestas como opción no válida o escriba nuevamente en horario de atención.
+
+51
+00:03:43,493 --> 00:03:49,564
+Y si la derivación ocurre fuera de horario, indica cuándo responderá alguien.
+
+52
+00:03:50,664 --> 00:03:52,923
+Observa el flujo completo:
+
+53
+00:03:52,923 --> 00:03:59,440
+saludo, opciones, respuesta, nueva decisión y salida hacia atención humana.
+
+54
+00:03:59,440 --> 00:04:05,695
+Mientras más simple sea, más fácil será usarlo y mantenerlo actualizado.
+
+55
+00:04:05,695 --> 00:04:07,085
+Cuatro opciones,
+
+56
+00:04:07,085 --> 00:04:14,384
+una respuesta breve en cada una y una salida hacia una persona en cualquier momento.
+
+57
+00:04:15,484 --> 00:04:19,234
+Antes de implementar un flujo, revisa cuatro puntos:
+
+58
+00:04:19,234 --> 00:04:25,076
+que las respuestas estén actualizadas, que las opciones sean fáciles de entender,
+
+59
+00:04:25,076 --> 00:04:30,917
+que exista una salida hacia una persona y que el tono sea coherente con la marca.
+
+60
+00:04:30,917 --> 00:04:36,254
+Revisa el flujo cada vez que cambien tus precios, plazos o medios de pago,
+
+61
+00:04:36,254 --> 00:04:38,707
+y pruébalo como si fueras cliente.
+
+62
+00:04:39,807 --> 00:04:43,227
+Automatizar bien no significa automatizar todo.
+
+63
+00:04:43,227 --> 00:04:52,543
+Significa resolver lo repetitivo de forma eficiente y reservar la atención humana para situaciones donde realmente agrega valor.
+
+64
+00:04:52,543 --> 00:04:59,166
+Si automatizas todo, los reclamos chocan con respuestas rígidas y los clientes se frustran.
+
+65
+00:04:59,166 --> 00:05:00,621
+Si automatizas bien,
+
+66
+00:05:00,621 --> 00:05:08,045
+las preguntas frecuentes se resuelven al instante y tu equipo llega a tiempo a los casos que importan.
+
+67
+00:05:09,145 --> 00:05:10,435
+La meta es simple:
+
+68
+00:05:10,435 --> 00:05:16,171
+menos tiempo en respuestas repetidas y más tiempo en conversaciones importantes.
+
+69
+00:05:16,171 --> 00:05:22,337
+Empieza con una sola consulta frecuente, revisa si funciona y luego suma la siguiente.
