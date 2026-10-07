@@ -177,6 +177,7 @@ mic:'M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3
 person:'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
 away:'M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z',
 ads:'M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4z'};
+IC.spark='M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z';
 const I=(n,c='')=>`<svg class="ico ${c}" viewBox="0 0 24 24"><path d="${IC[n]}"/></svg>`;
 const SB=`<div class="sb"><span>10:24</span><i>▂▄▆ ◔ ▮</i></div>`;
 const KB=`<div class="kb"><div>${'qwertyuiop'.split('').map(c=>`<span>${c}</span>`).join('')}</div><div>${'asdfghjklñ'.split('').map(c=>`<span>${c}</span>`).join('')}</div><div><span class="g">⇧</span>${'zxcvbnm'.split('').map(c=>`<span>${c}</span>`).join('')}<span class="g">⌫</span></div><div><span class="g">123</span><span>,</span><span class="w">espacio</span><span>.</span><span class="g">↵</span></div></div>`;
@@ -199,7 +200,7 @@ function chats({labels=false,filter=null,sel=-1,chip=null,shift=0}={}){
 function tools(hov=''){const it=(id,i,t,s='')=>`<div class="li ${hov===id?'hov':''}" id="t_${id}">${I(i)}<div>${t}${s?`<small>${s}</small>`:''}</div></div>`;
   return wrap(`<div class="top"><span class="t">Herramientas</span>${I('search')}${I('more')}</div>
   <div class="sec">Crece tu negocio</div>${it('ads','ads','Anunciar en Facebook e Instagram')}
-  <div class="sec">Gestiona tu empresa</div>${it('perfil','store','Perfil de empresa','Información de tu negocio')}${it('cat','bag','Catálogo','Muestra tus productos y servicios')}
+  <div class="sec">Gestiona tu empresa</div>${it('ia','spark','Agente de IA','Responde a clientes con IA de Meta')}${it('perfil','store','Perfil de empresa','Información de tu negocio')}${it('cat','bag','Catálogo','Muestra tus productos y servicios')}
   <div class="sec">Mensajería</div>${it('bienv','chat','Mensaje de bienvenida')}${it('aus','away','Mensaje de ausencia')}${it('resp','bolt','Respuestas rápidas')}${it('etiq','tag','Listas','Antes llamadas «etiquetas»')}${it('link','link','Enlace corto')}
   ${navbar('Herramientas')}`)}
 function profile({photo=false,cat='',desc='',addr='',hours='',mail='',web='',scroll=0}={}){const fld=(id,i,k,v,ph)=>`<div class="fld" id="f_${id}">${I(i)}<div><div class="k">${k}</div><div class="v ${v?'':'ph'}">${v||ph}</div></div>${I('edit','pen')}</div>`;
@@ -240,6 +241,16 @@ function hoursScr(on){const D=['Domingo','Lunes','Martes','Miércoles','Jueves',
   <div style="position:absolute;left:20px;right:20px;bottom:30px;background:#1daa61;color:#fff;text-align:center;border-radius:24px;padding:13px;font-weight:600" id="h_save">Guardar</div>`)}
 function catPicker(q,hov){const L=['Artículos para el hogar','Arte y artesanía','Tienda de muebles','Ropa y accesorios','Belleza, cosmética y cuidado personal'];const ls=q?L.filter(x=>x.toLowerCase().includes(q)||x.includes('Arte')):L;
   return wrap(`${tbar('Categoría')}<div class="srch">${I('search')}<span style="color:#111">${q}</span><span class="caret"></span></div>${ls.map((x,i)=>`<div class="opt" style="padding:13px 20px" id="cp${i}"><span class="rad ${hov===i?'on':''}"></span>${x}</div>`).join('')}`)}
+function aiScr(hv=''){const r=(id,t,ok)=>`<div class="li ${hv===id?'hov':''}" id="ai_${id}">${I(ok?'spark':'info')}<div>${t}</div>${ok?'<span style="margin-left:auto;color:#1daa61;font-weight:700">✓</span>':''}</div>`;
+  return wrap(`${tbar('Tu agente de IA',I('more'))}<div style="text-align:center;padding:10px 0 14px"><div style="width:84px;height:84px;border-radius:50%;margin:0 auto;background:linear-gradient(135deg,#1daa61,#5b8def,#b65cf0);display:grid;place-items:center">${I('spark').replace('class="ico ','class="ico " style="fill:#fff;width:40px;height:40px" data-x="')}</div><div style="font-weight:600;font-size:17px;margin-top:8px">Agente de IA de Casa Nativa</div><div style="color:#008069;font-size:14px;margin-top:2px;font-weight:600">● Respondiendo a clientes</div></div>
+  <div class="sec">Enseña a tu agente</div>${r('info','Compartir información de la empresa',1)}${r('top','Recomendar lo más vendido',1)}${r('compra','Compartir información de compra',1)}${r('preg','Responder a las preguntas de los clientes',0)}
+  <div class="sec">Ajustes</div><div class="fld ${hv==='resp'?'':''}" id="ai_resp" style="${hv==='resp'?'background:#f0f2f5':''}">${I('chat')}<div><div class="k">Respuestas de la IA</div><div class="v">Todos los chats con clientes nuevos</div></div></div>`)}
+function aiChat(f){const msgs=[];if(f>=.06)msgs.push('<div class="bubble in">Hola, ¿tienen el jarrón de cerámica? ¿Cuánto cuesta el despacho a Providencia?<small>11:02</small></div>');
+  if(f>=.14&&f<.3)msgs.push('<div class="bubble out" style="color:#667781">● ● ●</div>');
+  if(f>=.3)msgs.push('<div class="bubble out" id="ai_bub"><div style="font-size:12px;font-weight:700;color:#5b6ef0;margin-bottom:3px">✦ Respuesta de IA</div>¡Hola! Sí, el Jarrón de cerámica artesanal está disponible a $24.990. Despachamos en Santiago en 2 a 4 días hábiles. ¿Te envío el enlace del catálogo?<small>11:02 ✓✓</small></div>');
+  return wrap(`<div class="top" style="gap:12px">${I('back')}<div class="av" style="background:#6a8fd4;width:40px;height:40px;font-size:14px">TV</div><span class="t" style="font-size:17px">Tomás Vera</span>${I('call')}${I('more')}</div>
+  <div class="chat" style="justify-content:flex-start;padding-top:12px"><div style="align-self:center;background:#fff6c7;color:#54656f;font-size:12.5px;border-radius:8px;padding:7px 12px;margin:4px 30px 10px;text-align:center;line-height:1.35">Esta empresa usa la IA de Meta para responder algunos mensajes.</div>${msgs.join('')}</div>
+  <div class="ibar"><div class="f">Mensaje</div><div class="mic" style="background:linear-gradient(135deg,#1daa61,#5b8def)">${I('spark')}</div></div>`)}
 /* ---------- utilidades: toque, destacado, acercamiento, panel ---------- */
 let CUR={x:900,y:600};const PC={};
 function pos(sel,dx=.5,dy=.5){const e=typeof sel==='string'?$(sel):sel;const key=sel+'|'+dx+'|'+dy;if(!e)return PC[key]||CUR;const r=e.getBoundingClientRect();return PC[key]={x:r.left+r.width*dx,y:r.top+r.height*dy}}
@@ -337,5 +348,13 @@ SC[13]=(f,T)=>{$('#sc').innerHTML=`<div class="phone" style="left:420px;top:112p
   <div class="lbl" style="left:520px;top:34px;background:#e05a47">✕ Antes</div><div class="lbl" style="left:1220px;top:34px;background:#1daa61;opacity:${seg(f,.12,.2)}">✓ Después</div>`;hl(null);touch(CUR,false)};
 SC[14]=(f,T)=>{const it=['Información básica','Catálogo','Mensajes automáticos','Respuestas rápidas'];
   $('#sc').innerHTML=`<div class="chkl"><h2>Revisa tu perfil comercial<br>y mejora al menos un elemento</h2>${it.map((x,i)=>{const a=.18+i*.13;return `<div class="ci2" style="opacity:${seg(f,a-.06,a)}"><span class="box ${f>a+.05?'on':''}">${f>a+.05?'✓':''}</span>${x}</div>`}).join('')}<div style="text-align:center;font-size:34px;font-weight:700;margin-top:34px;opacity:${seg(f,.78,.84)}">Una pequeña mejora puede ahorrar muchas conversaciones.</div></div>`;hl(null);touch(CUR,false)};
-window.R=function(k,f,T,subtitle){$('#note').style.display=(k===2||k===13||k===14)?'none':'block';SC[k](f,T);sub(subtitle)};
+SC[15]=(f,T)=>{let inner;if(f<.12)inner=tools(f>.06?'ia':'');else if(f<.58){const hv=tri(f,.3,.46)?['info','top','compra','preg'][Math.min(3,Math.floor(seg(f,.3,.46)*4))]:(tri(f,.47,.57)?'resp':'');inner=aiScr(hv)}else inner=aiChat(seg(f,.58,1));
+  $('#sc').innerHTML=phoneHTML(inner)+panel('Novedad 2026','Agente de IA: Meta Business Agent',[['🤖 Responde horarios, productos, precios, pagos y envíos'],['📚 Aprende de tu perfil, catálogo y ejemplos'],['⚙️ Tú eliges en qué chats responde']],f,[.2,.3,.47]);
+  const k=[[0,{x:1100,y:700}],[.04,'#t_ia',.3],[.11,'#t_ia',.3],[.16,{x:1100,y:720}]];touch(path(f,k),f<.15,[.1],f,T);
+  hl(tri(f,.47,.57)?'#ai_resp':(f>=.82&&f<.98?'#ai_bub':null),f>=.82?'Respondió la IA':'Tú eliges dónde responde')};
+SC[16]=(f,T)=>{const c=[['🌎','Disponibilidad gradual','Solo en algunos países y para empresas seleccionadas.',.08],['💳','Tiene costo','Desde agosto de 2026, Meta cobra sus respuestas según el uso.',.24],['🔕','Desactiva mensajes automáticos','Con el agente activo se apagan los mensajes de bienvenida y de ausencia.',.42],['🔒','Privacidad','Meta puede usar esos chats para mejorar su IA.',.58]];
+  $('#sc').innerHTML=`<div class="info"><h2>Antes de activar el agente de IA</h2><div class="cols">${c.map(x=>`<div class="col pay" style="min-height:0;opacity:${seg(f,x[3],x[3]+.04)}"><h3>${x[0]} ${x[1]}</h3><p style="margin:12px 0 0">${x[2]}</p></div>`).join('')}</div>
+  <div class="pt" style="margin-top:30px;opacity:${seg(f,.76,.8)}">🙋 Revisa sus respuestas: cuando un cliente necesita atención personal, el agente te avisa (lista «Transferencia de la IA»).</div>
+  <div class="srcn" style="opacity:${seg(f,.8,.84)}">Fuentes: Centro de ayuda de WhatsApp (artículos sobre Meta Business Agent) y anuncio de precios de Meta para Meta Business Agent (1 de agosto de 2026).</div></div>`;hl(null);touch(CUR,false)};
+window.R=function(k,f,T,subtitle){$('#note').style.display=(k===2||k===13||k===14||k===16)?'none':'block';SC[k](f,T);sub(subtitle)};
 </script></body></html>

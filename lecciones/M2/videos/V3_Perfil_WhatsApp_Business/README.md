@@ -1,6 +1,6 @@
 # Video · Configuración de un perfil comercial en WhatsApp Business
 
-MP4 1920×1080 · voz Ninoska (ElevenLabs) · subtítulos incrustados + `.srt` · ~5:40.
+MP4 1920×1080 · voz Ninoska (ElevenLabs) · subtítulos incrustados + `.srt` · ~5:20.
 
 - Interfaz **recreada** de WhatsApp Business para Android (Casa Nativa, empresa ficticia), con toque destacado, acercamientos a las opciones clave y aviso en pantalla de que es una recreación. Las fotos de productos son imágenes del curso generadas con IA.
 - Etiquetas: en versiones recientes se llaman «Listas» (Centro de ayuda de WhatsApp); catálogo con «País de origen» y «Añadir al catálogo». Para usar tomas de los videos oficiales del Centro de ayuda se requiere permitir `*.fbcdn.net` (y `whatsappbusiness.com`).
@@ -9,3 +9,6 @@ MP4 1920×1080 · voz Ninoska (ElevenLabs) · subtítulos incrustados + `.srt` �
 Archivos: `locucion.json` (guion por tramo y segundos extra de acción), `audio/t01–t14.mp3`, `stage.html` (escenas), `render.js`, `img/` (productos y logo).
 
 Regenerar: `NODE_PATH=$(npm root -g) node render.js Video3_Perfil_Comercial_WhatsApp_Business.mp4` (requiere Playwright/Chromium y ffmpeg).
+
+- Tramos `ia1` e `ia2`: agente de IA (Meta Business Agent) y condiciones antes de activarlo (disponibilidad gradual, costo por uso desde agosto de 2026, desactiva mensajes de bienvenida/ausencia, uso de chats para mejorar la IA de Meta), según el Centro de ayuda de WhatsApp.
+- Sin silencios largos: cada tramo dura la narración + 1,1 s (`PAD_IN` 0,5 s + `PAD_OUT` 0,6 s); las acciones en pantalla ocurren mientras habla la narradora.
