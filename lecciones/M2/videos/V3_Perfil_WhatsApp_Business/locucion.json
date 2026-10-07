@@ -1,16 +1,100 @@
 [
-{"id":"t01","t":"0:00","escena":"Perfil incompleto","txt":"Tener WhatsApp Business no significa necesariamente tener un canal comercial bien configurado. Un perfil incompleto obliga al cliente a preguntar datos básicos y puede hacer más lento el proceso de compra. En este video veremos cómo organizar un perfil comercial para que informe, genere confianza y facilite el siguiente paso."},
-{"id":"t02","t":"0:20","escena":"Dato importante: qué es gratis y qué se cobra","txt":"Antes de comenzar, un dato importante. La aplicación WhatsApp Business sigue siendo gratuita para atender a tus clientes desde el teléfono. Lo que cambió desde el uno de octubre de dos mil veintiséis es el cobro en la Plataforma de WhatsApp Business, es decir, cuando una empresa usa la API o un proveedor externo: allí se cobran los mensajes de servicio que superan los mil al mes."},
-{"id":"t03","t":"0:45","escena":"Herramientas para la empresa → Perfil de empresa","txt":"Comencemos por el perfil de empresa. Aquí se concentra la información básica que permitirá a una persona entender quién eres, qué vendes y cómo puede contactarte."},
-{"id":"t04","t":"1:00","escena":"Nombre, categoría, descripción y foto","txt":"Primero revisa el nombre comercial, la imagen de perfil y la descripción. La descripción debe explicar, en pocas palabras, qué ofrece tu negocio. Evita frases demasiado generales. Es mejor escribir algo concreto que ayude al cliente a saber inmediatamente si encontró lo que necesita."},
-{"id":"t05","t":"1:30","escena":"Dirección, horario y contacto","txt":"Luego completa la información operativa: ubicación o zona de cobertura, horario de atención y medios de contacto. Mantener estos datos actualizados reduce preguntas repetitivas y evita frustraciones. Si cambias tus horarios o condiciones de atención, recuerda actualizar también el perfil."},
-{"id":"t06","t":"2:00","escena":"Catálogo: crear un producto","txt":"El catálogo permite mostrar productos o servicios dentro del mismo canal. Utiliza imágenes claras, nombres comprensibles y descripciones breves. Si corresponde, agrega el precio y una explicación sencilla de lo que incluye cada producto o servicio."},
-{"id":"t07","t":"2:30","escena":"Catálogo desde la vista del cliente","txt":"Piensa en el catálogo desde el punto de vista del cliente. ¿Puede entender qué vendes sin tener que escribirte para preguntar cada detalle? Mientras más clara sea la información, más fácil será avanzar hacia una compra."},
-{"id":"t08","t":"2:55","escena":"Mensaje de bienvenida","txt":"Otro recurso útil es el mensaje de bienvenida. Se envía automáticamente cuando una persona escribe a tu negocio por primera vez, o después de catorce días sin conversar. El mensaje debe ser breve, cordial y orientar sobre el siguiente paso."},
-{"id":"t09","t":"3:25","escena":"Mensaje de ausencia","txt":"También puedes utilizar un mensaje de ausencia para informar cuándo responderás. Puedes programarlo para que se envíe fuera del horario de atención. Así, el cliente entiende que su mensaje fue recibido y sabe cuándo puede esperar una respuesta."},
-{"id":"t10","t":"3:55","escena":"Respuestas rápidas /horario /pago /despacho","txt":"Si recibes las mismas preguntas varias veces al día, las respuestas rápidas pueden ayudarte. Por ejemplo, puedes preparar respuestas para horarios, medios de pago, despacho o disponibilidad. En el chat, basta con escribir una barra diagonal y elegir el atajo. Así ahorras tiempo y mantienes una comunicación consistente."},
-{"id":"t11","t":"4:35","escena":"Etiquetas","txt":"Las etiquetas permiten ordenar conversaciones según su estado. Puedes crear categorías como nuevo cliente, cotización enviada, pago pendiente o pedido listo. Esto facilita el seguimiento y reduce el riesgo de olvidar una conversación importante."},
-{"id":"t12","t":"5:05","escena":"Vista del cliente","txt":"Una vez configurado, revisa tu perfil como si fueras un cliente nuevo. Pregúntate: ¿entiendo qué vende este negocio? ¿Sé cuándo atiende? ¿Puedo revisar productos? ¿Sé qué hacer para consultar o comprar?"},
-{"id":"t13","t":"5:30","escena":"Antes / después","txt":"La diferencia entre un perfil básico y un perfil comercial bien configurado no está solo en cómo se ve. Está en cuánto ayuda al cliente a avanzar sin fricción."},
-{"id":"t14","t":"5:45","escena":"Checklist final","txt":"Antes de continuar, revisa tu propio perfil comercial y mejora al menos un elemento: información básica, catálogo, mensajes automáticos o respuestas rápidas. Una pequeña mejora puede ahorrar muchas conversaciones innecesarias."}
+ {
+  "id": "t01",
+  "t": "0:00",
+  "escena": "Perfil incompleto",
+  "txt": "Tener WhatsApp Business no significa necesariamente tener un canal comercial bien configurado. Un perfil incompleto obliga al cliente a preguntar datos básicos y puede hacer más lento el proceso de compra. En este video veremos cómo organizar un perfil comercial para que informe, genere confianza y facilite el siguiente paso.",
+  "extra": 1
+ },
+ {
+  "id": "t02",
+  "t": "0:20",
+  "escena": "Dato importante: qué es gratis y qué se cobra",
+  "txt": "Antes de comenzar, un dato importante. La aplicación WhatsApp Business sigue siendo gratuita para atender a tus clientes desde el teléfono. Lo que cambió desde el uno de octubre de dos mil veintiséis es el cobro en la Plataforma de WhatsApp Business, es decir, cuando una empresa usa la API o un proveedor externo: allí se cobran los mensajes de servicio que superan los mil al mes.",
+  "extra": 2
+ },
+ {
+  "id": "t03",
+  "t": "0:45",
+  "escena": "Herramientas para la empresa → Perfil de empresa",
+  "txt": "Comencemos por el perfil de empresa. Aquí se concentra la información básica que permitirá a una persona entender quién eres, qué vendes y cómo puede contactarte.",
+  "extra": 3
+ },
+ {
+  "id": "t04",
+  "t": "1:00",
+  "escena": "Nombre, categoría, descripción y foto",
+  "txt": "Primero revisa el nombre comercial, la imagen de perfil y la descripción. La descripción debe explicar, en pocas palabras, qué ofrece tu negocio. Evita frases demasiado generales. Es mejor escribir algo concreto que ayude al cliente a saber inmediatamente si encontró lo que necesita.",
+  "extra": 6
+ },
+ {
+  "id": "t05",
+  "t": "1:30",
+  "escena": "Dirección, horario y contacto",
+  "txt": "Luego completa la información operativa: ubicación o zona de cobertura, horario de atención y medios de contacto. Mantener estos datos actualizados reduce preguntas repetitivas y evita frustraciones. Si cambias tus horarios o condiciones de atención, recuerda actualizar también el perfil.",
+  "extra": 6
+ },
+ {
+  "id": "t06",
+  "t": "2:00",
+  "escena": "Catálogo: crear un producto",
+  "txt": "El catálogo permite mostrar productos o servicios dentro del mismo canal. Utiliza imágenes claras, nombres comprensibles y descripciones breves. Si corresponde, agrega el precio y una explicación sencilla de lo que incluye cada producto o servicio.",
+  "extra": 7
+ },
+ {
+  "id": "t07",
+  "t": "2:30",
+  "escena": "Catálogo desde la vista del cliente",
+  "txt": "Piensa en el catálogo desde el punto de vista del cliente. ¿Puede entender qué vendes sin tener que escribirte para preguntar cada detalle? Mientras más clara sea la información, más fácil será avanzar hacia una compra.",
+  "extra": 3
+ },
+ {
+  "id": "t08",
+  "t": "2:55",
+  "escena": "Mensaje de bienvenida",
+  "txt": "Otro recurso útil es el mensaje de bienvenida. Se envía automáticamente cuando una persona escribe a tu negocio por primera vez, o después de catorce días sin conversar. El mensaje debe ser breve, cordial y orientar sobre el siguiente paso.",
+  "extra": 5
+ },
+ {
+  "id": "t09",
+  "t": "3:25",
+  "escena": "Mensaje de ausencia",
+  "txt": "También puedes utilizar un mensaje de ausencia para informar cuándo responderás. Puedes programarlo para que se envíe fuera del horario de atención. Así, el cliente entiende que su mensaje fue recibido y sabe cuándo puede esperar una respuesta.",
+  "extra": 5
+ },
+ {
+  "id": "t10",
+  "t": "3:55",
+  "escena": "Respuestas rápidas /horario /pago /despacho",
+  "txt": "Si recibes las mismas preguntas varias veces al día, las respuestas rápidas pueden ayudarte. Por ejemplo, puedes preparar respuestas para horarios, medios de pago, despacho o disponibilidad. En el chat, basta con escribir una barra diagonal y elegir el atajo. Así ahorras tiempo y mantienes una comunicación consistente.",
+  "extra": 7
+ },
+ {
+  "id": "t11",
+  "t": "4:35",
+  "escena": "Etiquetas",
+  "txt": "Las etiquetas permiten ordenar conversaciones según su estado. Puedes crear categorías como nuevo cliente, cotización enviada, pago pendiente o pedido listo. Esto facilita el seguimiento y reduce el riesgo de olvidar una conversación importante.",
+  "extra": 5
+ },
+ {
+  "id": "t12",
+  "t": "5:05",
+  "escena": "Vista del cliente",
+  "txt": "Una vez configurado, revisa tu perfil como si fueras un cliente nuevo. Pregúntate: ¿entiendo qué vende este negocio? ¿Sé cuándo atiende? ¿Puedo revisar productos? ¿Sé qué hacer para consultar o comprar?",
+  "extra": 3
+ },
+ {
+  "id": "t13",
+  "t": "5:30",
+  "escena": "Antes / después",
+  "txt": "La diferencia entre un perfil básico y un perfil comercial bien configurado no está solo en cómo se ve. Está en cuánto ayuda al cliente a avanzar sin fricción.",
+  "extra": 2
+ },
+ {
+  "id": "t14",
+  "t": "5:45",
+  "escena": "Checklist final",
+  "txt": "Antes de continuar, revisa tu propio perfil comercial y mejora al menos un elemento: información básica, catálogo, mensajes automáticos o respuestas rápidas. Una pequeña mejora puede ahorrar muchas conversaciones innecesarias.",
+  "extra": 3
+ }
 ]
