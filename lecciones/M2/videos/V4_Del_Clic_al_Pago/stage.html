@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Video 4 · Del clic al pago</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Inter,Arial,sans-serif;color:#1f2a30}
+#bg{position:absolute;inset:0;background:linear-gradient(135deg,#123b4a 0%,#0f6e72 60%,#128c7e 100%)}
+#note{position:absolute;left:40px;top:22px;font-size:19px;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);padding:7px 16px;border-radius:18px;z-index:5}
+#sc{position:absolute;inset:0}
+/* navegador */
+.win{position:absolute;left:60px;top:70px;width:1150px;height:820px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);z-index:2}
+.chrome{height:46px;background:#eef1f3;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid #d9dee2}
+.chrome i{width:13px;height:13px;border-radius:50%;background:#c9d1d6;display:inline-block}
+.chrome .url{margin-left:14px;flex:1;height:30px;border-radius:15px;background:#fff;border:1px solid #d5dbe0;display:flex;align-items:center;gap:8px;padding:0 14px;font-size:15px;color:#5a6a73}
+.page{position:absolute;top:46px;left:0;right:0;bottom:0;overflow:hidden;font-size:17px}
+.shop{height:64px;display:flex;align-items:center;gap:16px;padding:0 34px;border-bottom:1px solid #eee;background:#fbf7f1}
+.shop img{width:42px;height:42px;border-radius:50%}
+.shop b{font-size:21px;letter-spacing:.02em;color:#5a3a22}
+.shop .nav{margin-left:auto;display:flex;gap:26px;color:#6b5a4c;font-size:15px}
+.shop .cart{background:#5a3a22;color:#fff;border-radius:18px;padding:6px 14px;font-weight:600}
+.steps{display:flex;gap:10px;justify-content:center;padding:16px 0 4px;font-size:14px;color:#9aa3a8}
+.steps span{padding:5px 12px;border-radius:14px;background:#f1f3f4}.steps span.on{background:#123b4a;color:#fff;font-weight:600}.steps span.ok{background:#d9f2e4;color:#16794a}
+.prodp{display:grid;grid-template-columns:470px 1fr;gap:44px;padding:34px 44px}
+.prodp img{width:470px;height:470px;object-fit:cover;border-radius:14px}
+.prodp h1{font-size:34px;line-height:1.2;color:#2b211a;margin-bottom:10px}
+.price{font-size:32px;font-weight:800;color:#5a3a22;margin:10px 0 18px}
+.desc{color:#5f6b72;line-height:1.55;font-size:17px;margin-bottom:22px}
+.qty{display:inline-flex;align-items:center;border:1px solid #d5dbe0;border-radius:10px;overflow:hidden;margin-bottom:22px}
+.qty span{width:44px;height:44px;display:grid;place-items:center;font-size:20px}.qty b{width:54px;text-align:center;font-size:19px}
+.btn{display:inline-block;background:#1f7a4d;color:#fff;font-weight:700;font-size:19px;padding:15px 34px;border-radius:12px}
+.btn.alt{background:#5a3a22}
+.btn.big{display:block;text-align:center}
+.tbl{width:100%;border-collapse:collapse;font-size:17px}
+.tbl th{text-align:left;font-size:14px;color:#7a868d;padding:10px 12px;border-bottom:1px solid #e3e7ea;font-weight:600}
+.tbl td{padding:14px 12px;border-bottom:1px solid #eef1f3;vertical-align:middle}
+.tbl img{width:72px;height:72px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:14px}
+.sum{margin:18px 0 0 auto;width:420px;font-size:18px}
+.sum div{display:flex;justify-content:space-between;padding:8px 4px}
+.sum .tot{border-top:2px solid #2b211a;margin-top:6px;padding-top:12px;font-weight:800;font-size:22px}
+.form{padding:20px 60px;display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+.f label{display:block;font-size:14px;color:#5f6b72;font-weight:600;margin-bottom:6px}
+.f div{border:1.5px solid #cfd6da;border-radius:10px;padding:12px 14px;font-size:17px;min-height:48px}
+.f div.act{border-color:#1f7a4d;box-shadow:0 0 0 3px rgba(31,122,77,.15)}
+.f.full{grid-column:1/-1}
+.caret{display:inline-block;width:2px;height:19px;background:#1f2a30;vertical-align:-3px;margin-left:1px}
+.pm{display:flex;align-items:center;gap:18px;border:2px solid #dfe4e7;border-radius:14px;padding:18px 22px;margin:12px 60px;font-size:18px}
+.pm .rd{width:24px;height:24px;border-radius:50%;border:2px solid #9aa3a8;flex:none;position:relative}
+.pm.on{border-color:#1f7a4d;background:#f2faf5}.pm.on .rd{border-color:#1f7a4d}.pm.on .rd:after{content:"";position:absolute;inset:4px;border-radius:50%;background:#1f7a4d}
+.pm .ic{font-size:30px}.pm small{display:block;color:#7a868d;font-size:14px;margin-top:3px}
+.gw{position:absolute;inset:0;background:#f4f6fa;display:grid;place-items:center}
+.gwc{width:560px;background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(20,40,80,.15);padding:30px 34px}
+.gwc .hd{display:flex;align-items:center;gap:10px;color:#2d3b6e;font-weight:800;font-size:20px;margin-bottom:6px}
+.gwc .mer{display:flex;justify-content:space-between;background:#f4f6fa;border-radius:12px;padding:14px 16px;margin:14px 0 18px;font-size:16px}
+.gwc .mer b{font-size:22px}
+.gwc .f{margin-bottom:14px}
+.gwc .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gwc .pay{background:#2d5bd7;color:#fff;text-align:center;border-radius:12px;padding:15px;font-weight:800;font-size:19px;margin-top:8px}
+.lock{font-size:13px;color:#5f6b72;text-align:center;margin-top:12px}
+.spin{width:54px;height:54px;border-radius:50%;border:6px solid #dbe3f7;border-top-color:#2d5bd7;margin:16px auto}
+/* panel interno */
+.adm{position:absolute;inset:0;background:#f6f7f9}
+.adm .bar{height:58px;background:#123b4a;color:#fff;display:flex;align-items:center;padding:0 26px;gap:14px;font-weight:700;font-size:19px}
+.adm .bar span{margin-left:auto;font-weight:500;font-size:15px;opacity:.8}
+.adm .ct{padding:22px 28px}
+.adm h3{font-size:22px;margin-bottom:14px}
+.chip{display:inline-block;border-radius:14px;padding:5px 12px;font-size:14px;font-weight:700}
+.st-pend{background:#fff1cc;color:#8a5a00}.st-pag{background:#d9f2e4;color:#16794a}.st-prep{background:#dce8ff;color:#1f4fbf}.st-ent{background:#eceff1;color:#56636a}.st-rech{background:#fde0dc;color:#a8291b}
+.tl{margin-top:22px;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.tl div{display:flex;gap:14px;align-items:center;padding:7px 0;font-size:16px}
+/* teléfono */
+.phone{position:absolute;width:360px;height:740px;border-radius:46px;background:#0b0b0b;padding:11px;box-shadow:0 30px 60px rgba(0,0,0,.45);z-index:4}
+.scr{width:338px;height:718px;border-radius:36px;overflow:hidden;background:#efeae2;position:relative;font-size:15px}
+.scr .hd{background:#fff;height:84px;padding:38px 16px 0;display:flex;gap:10px;align-items:center;font-weight:600}
+.scr .av{width:34px;height:34px;border-radius:50%;overflow:hidden}.scr .av img{width:100%;height:100%}
+.bub{max-width:270px;background:#fff;border-radius:10px;border-top-left-radius:2px;padding:9px 11px;margin:10px 12px;line-height:1.4;box-shadow:0 1px .5px rgba(0,0,0,.13)}
+.bub.out{background:#d9fdd3;margin-left:auto;border-top-left-radius:10px;border-top-right-radius:2px}
+.bub small{display:block;text-align:right;color:#667781;font-size:11px;margin-top:3px}
+/* panel derecho y gráficos */
+.panel{position:absolute;left:1260px;top:110px;width:600px;color:#fff;z-index:2}
+.panel .step{display:inline-block;background:#8fe4df;color:#0b3a40;font-weight:800;font-size:20px;padding:6px 16px;border-radius:18px;margin-bottom:16px}
+.panel h2{font-size:44px;line-height:1.12;font-weight:800;margin-bottom:24px}
+.pt{font-size:27px;font-weight:600;padding:14px 20px;border-radius:14px;background:rgba(255,255,255,.12);margin-bottom:12px;display:flex;gap:14px;align-items:center;line-height:1.3}
+.pt.ok{background:rgba(143,228,223,.25)}.pt.bad{background:rgba(255,120,100,.22)}
+.full{position:absolute;inset:0;color:#fff;padding:80px 90px}
+.full h2{font-size:54px;font-weight:800;margin-bottom:40px}
+.flow{display:flex;align-items:center;justify-content:center;gap:0;margin-top:30px}
+.node{width:220px;min-height:190px;border-radius:24px;background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:26px;font-weight:700;text-align:center;padding:16px;transition:none}
+.node big{font-size:62px}
+.node.on{background:#fff;color:#123b4a;border-color:#8fe4df;box-shadow:0 0 0 6px rgba(143,228,223,.35)}
+.node.int.on{background:#ffe9a8;color:#5a3a00;border-color:#ffd666}
+.arr{width:44px;height:6px;background:rgba(255,255,255,.35);position:relative}
+.arr:after{content:"";position:absolute;right:-4px;top:-9px;border-left:16px solid rgba(255,255,255,.35);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.arr.on{background:#8fe4df}.arr.on:after{border-left-color:#8fe4df}
+.brace{display:flex;justify-content:center;gap:0;margin-top:26px;font-size:24px;font-weight:700}
+.brace div{border-top:4px solid;padding-top:12px;text-align:center}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:20px}
+.card{border-radius:26px;padding:34px 32px;min-height:500px;background:rgba(255,255,255,.1);border:4px solid}
+.card h3{font-size:42px;margin:14px 0 18px}.card big{font-size:76px}
+.card p{font-size:29px;line-height:1.4}
+.card.a{border-color:#7ee2a8}.card.r{border-color:#ff8a7a}.card.p{border-color:#ffd666}
+.chk{display:grid;gap:20px;max-width:1300px;margin:10px auto 0}
+.ci{font-size:40px;font-weight:700;padding:24px 32px;border-radius:20px;background:rgba(255,255,255,.12);display:flex;gap:24px;align-items:center}
+.box{width:56px;height:56px;border-radius:14px;border:4px solid #8fe4df;display:grid;place-items:center;font-size:38px;color:#0b3a40;flex:none}.box.on{background:#8fe4df}
+.ci small{margin-left:auto;font-size:26px;font-weight:600;opacity:.8}
+.qb{position:absolute;background:#fff;color:#1f2a30;border-radius:20px;padding:16px 26px;font-size:30px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.qb s{text-decoration-color:#e05a47;text-decoration-thickness:4px}
+.photo{position:absolute;inset:0;background:url(img/m6_preparacion.jpg) center/cover}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,59,74,.95) 0%,rgba(18,59,74,.82) 52%,rgba(18,59,74,.2) 100%)}
+.cta{position:absolute;left:110px;top:150px;width:1000px;color:#fff;z-index:2}
+.cta h2{font-size:62px;font-weight:800;line-height:1.1;margin-bottom:34px}
+/* destacado, cursor y subtítulos */
+#hl{position:absolute;border:5px solid #ffd60a;border-radius:14px;box-shadow:0 0 0 4000px rgba(5,20,25,.38);z-index:80;display:none}
+#hlLabel{position:absolute;background:#ffd60a;color:#1a1a1a;font-weight:800;font-size:23px;padding:8px 18px;border-radius:22px;z-index:81;display:none;white-space:nowrap}
+#cursor{position:absolute;z-index:100;width:0;height:0}
+#cursor .halo{position:absolute;left:-28px;top:-28px;width:56px;height:56px;border-radius:50%;background:rgba(255,214,10,.45);border:3px solid rgba(255,190,0,.9)}
+#cursor svg{position:absolute;left:-3px;top:-2px;width:30px;height:40px}
+#ripple{position:absolute;z-index:99;border:5px solid #ffbe00;border-radius:50%;display:none}
+#sub{position:absolute;left:150px;right:150px;bottom:24px;text-align:center;z-index:120}
+#sub span{display:inline-block;background:rgba(8,22,28,.9);color:#fff;font-size:34px;font-weight:600;line-height:1.35;padding:13px 28px;border-radius:16px}
+#sub span:empty{display:none}
+</style></head>
+<body>
+<div id="bg"></div>
+<div id="note">Recreación neutra de una tienda en línea y una pasarela de pago · Casa Nativa es una empresa ficticia</div>
+<section id="sc"></section>
+<div id="hl"></div><div id="hlLabel"></div><div id="ripple"></div>
+<div id="cursor"><div class="halo"></div><svg viewBox="0 0 30 40"><path d="M2 2 L2 32 L10 25 L15 37 L20 35 L15 23 L26 23 Z" fill="#fff" stroke="#111" stroke-width="2.4" stroke-linejoin="round"/></svg></div>
+<div id="sub"><span></span></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),ease=t=>t*t*(3-2*t),seg=(f,a,b)=>clamp((f-a)/(b-a),0,1),tri=(f,a,b)=>f>=a&&f<b;
+const typed=(s,f,a,b)=>s.slice(0,Math.round(s.length*seg(f,a,b)));
+const P={n:'Lámpara decorativa de ratán',p:'$39.990',d:'$3.990',t:'$43.980',id:'CN-1045'};
+const win=(url,inner)=>`<div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">🔒 ${url}</div></div><div class="page">${inner}</div></div>`;
+const shop=(c=0)=>`<div class="shop"><img src="img/logo_cn.png"><b>CASA NATIVA</b><div class="nav"><span>Inicio</span><span>Iluminación</span><span>Textiles</span><span class="cart" id="cartb">🛒 ${c}</span></div></div>`;
+const steps=(k)=>`<div class="steps">${['Carrito','Datos','Pago','Confirmación'].map((s,i)=>`<span class="${i<k?'ok':i===k?'on':''}">${i<k?'✓ ':''}${i+1}. ${s}</span>`).join('')}</div>`;
+function prodPage(c=0){return win('casanativa.cl/iluminacion/lampara-ratan',shop(c)+`<div class="prodp"><img id="pimg" src="img/p_lampara.jpg"><div><div style="color:#9a7b5c;font-size:15px;font-weight:600;margin-bottom:8px">ILUMINACIÓN · HECHO A MANO</div><h1>${P.n}</h1><div class="price" id="pprice">${P.p}</div><div class="desc">Pantalla de ratán tejida a mano y base de cerámica. 38 cm de alto. Ampolleta LED incluida.</div><div class="qty" id="pqty"><span>−</span><b>1</b><span>+</span></div><br><span class="btn" id="bcomprar">Agregar al carrito</span></div></div>`)}
+function cartPage(){return win('casanativa.cl/carrito',shop(1)+steps(0)+`<div style="padding:10px 50px"><table class="tbl"><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th style="text-align:right">Subtotal</th></tr><tr id="crow"><td><img src="img/p_lampara.jpg">${P.n}</td><td><div class="qty" id="cqty" style="margin:0"><span>−</span><b>1</b><span>+</span></div></td><td id="cprice">${P.p}</td><td style="text-align:right">${P.p}</td></tr></table>
+  <div class="sum" id="csum"><div><span>Subtotal</span><span>${P.p}</span></div><div id="cdesp"><span>Despacho (Santiago)</span><span>${P.d}</span></div><div class="tot" id="ctot"><span>Total</span><span>${P.t}</span></div><span class="btn big" id="ccont" style="margin-top:14px">Continuar</span></div></div>`)}
+function formPage(f){const F=[['Nombre','Camila Rojas',.08,.18],['Correo electrónico','camila.rojas@correo.cl',.2,.32],['Teléfono','+56 9 6123 4567',.34,.42],['Dirección de entrega','Av. Irarrázaval 1234, depto. 52, Ñuñoa',.44,.58]];
+  return win('casanativa.cl/checkout/datos',shop(1)+steps(1)+`<div style="padding:12px 60px 0;font-size:24px;font-weight:700">¿A quién enviamos el pedido?</div><div class="form">${F.map((x,i)=>{const v=typed(x[1],f,x[2],x[3]),a=f>=x[2]&&f<x[3]+.02;return `<div class="f ${i===3?'full':''}" id="ff${i}"><label>${x[0]}</label><div class="${a?'act':''}">${v}${a?'<span class="caret"></span>':''}</div></div>`}).join('')}</div><div style="padding:6px 60px"><span class="btn" id="fcont">Continuar al pago</span></div>`)}
+function payPage(sel){const M=[['💳','Tarjeta de crédito o débito','Se confirma de inmediato a través de la pasarela'],['🏦','Transferencia bancaria','Requiere verificar el depósito y asociarlo al pedido'],['📱','Billetera digital','Pago desde el celular']];
+  return win('casanativa.cl/checkout/pago',shop(1)+steps(2)+`<div style="padding:12px 60px 4px;font-size:24px;font-weight:700">Elige cómo pagar · Total ${P.t}</div>${M.map((m,i)=>`<div class="pm ${sel===i?'on':''}" id="pm${i}"><span class="rd"></span><span class="ic">${m[0]}</span><div>${m[1]}<small>${m[2]}</small></div></div>`).join('')}<div style="padding:10px 60px"><span class="btn" id="pcont">Ir a pagar</span></div>`)}
+function gwPage(f){const st=f<.55?'form':f<.72?'proc':'ok';
+  return win('pago.pasarela-ejemplo.com/checkout',`<div class="gw"><div class="gwc"><div class="hd">🔒 Pago seguro</div><div style="font-size:14px;color:#7a868d">Pasarela de pago (ejemplo genérico)</div>
+  <div class="mer"><div>Comercio<br><b style="font-size:18px">Casa Nativa</b><br><span style="font-size:14px;color:#7a868d">Orden ${P.id}</span></div><div style="text-align:right">Monto<br><b>${P.t}</b></div></div>
+  ${st==='form'?`<div class="f" id="gcard"><label>Número de tarjeta</label><div>${typed('•••• •••• •••• 4242',f,.12,.3)}</div></div><div class="row2"><div class="f"><label>Vencimiento</label><div>${typed('08/29',f,.32,.37)}</div></div><div class="f"><label>Código de seguridad</label><div>${typed('•••',f,.38,.42)}</div></div></div><div class="pay" id="gpay">Pagar ${P.t}</div><div class="lock">🔒 Tus datos viajan cifrados. Casa Nativa no ve el número completo de tu tarjeta.</div>`:
+   st==='proc'?`<div class="spin" style="transform:rotate(${f*2000}deg)"></div><div style="text-align:center;font-size:18px;color:#5f6b72">Procesando el pago…</div>`:
+   `<div style="text-align:center;font-size:64px">✅</div><div style="text-align:center;font-size:24px;font-weight:800;color:#16794a">Pago aprobado</div><div style="text-align:center;color:#5f6b72;margin-top:8px">Código de autorización 584201 · Orden ${P.id}</div>`}</div></div>`)}
+function confPage(){return win('casanativa.cl/checkout/confirmacion',shop(0)+steps(4)+`<div style="text-align:center;padding:30px 60px"><div style="font-size:70px">🎉</div><div style="font-size:34px;font-weight:800;margin:8px 0">¡Gracias por tu compra, Camila!</div><div style="font-size:20px;color:#5f6b72">Recibimos tu pago. Te enviamos el detalle a camila.rojas@correo.cl</div>
+  <div id="cbox" style="margin:26px auto 0;width:620px;text-align:left;border:2px solid #e3e7ea;border-radius:16px;padding:20px 26px;font-size:18px;line-height:1.8"><b>Pedido #${P.id}</b><br>${P.n} × 1<br>Total pagado: <b>${P.t}</b><br><span style="color:#1f7a4d;font-weight:700">Próximo paso:</span> preparamos tu pedido y te avisaremos cuando salga.</div></div>`)}
+function phone(x,y,inner){return `<div class="phone" style="left:${x}px;top:${y}px"><div class="scr">${inner}</div></div>`}
+const chatHd=`<div class="hd"><div class="av"><img src="img/logo_cn.png"></div>Casa Nativa</div>`;
+function admin(state,{search='',rows=null}={}){const R=rows||[['CN-1043','Valentina Díaz','$18.990','st-ent','Entregado'],['CN-1044','Pedro Soto','$24.990','st-prep','En preparación'],[P.id,'Camila Rojas',P.t,...state]];
+  return win('admin.casanativa.cl/pedidos',`<div class="adm"><div class="bar">🧾 Panel de pedidos · Casa Nativa<span>Hoy, 11:05</span></div><div class="ct"><h3>Pedidos</h3>${search?`<div style="border:1.5px solid #cfd6da;border-radius:10px;padding:10px 14px;margin-bottom:14px;background:#fff">🔍 ${search}</div>`:''}
+  <table class="tbl" style="background:#fff;border-radius:12px"><tr><th>Pedido</th><th>Cliente</th><th>Total</th><th>Estado</th></tr>${R.map(r=>`<tr id="r_${r[0]}"><td><b>#${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="chip ${r[3]}">${r[4]}</span></td></tr>`).join('')}</table>
+  <div class="tl" id="tl"></div></div></div>`)}
+/* utilidades */
+let CUR={x:900,y:600};const PC={};
+function pos(sel,dx=.5,dy=.5){const e=typeof sel==='string'?$(sel):sel;const key=sel+'|'+dx+'|'+dy;if(!e)return PC[key]||CUR;const r=e.getBoundingClientRect();return PC[key]={x:r.left+r.width*dx,y:r.top+r.height*dy}}
+function path(f,keys){let p=null;for(let i=0;i<keys.length;i++){if(f>=keys[i][0])p=i}
+  const Pk=k=>{const s=keys[k][1];return typeof s==='object'&&s&&'x' in s?s:pos(s,keys[k][2]??.5,keys[k][3]??.5)};
+  if(p===null)return Pk(0);if(p===keys.length-1)return Pk(p);
+  const a=Pk(p),b=Pk(p+1),t0=keys[p][0],t1=keys[p+1][0],m=t0+(t1-t0)*.35;if(f<m)return a;const e=ease(seg(f,m,t1));return {x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e}}
+function cursor(p,vis=true,clicks=[],f=0,T=1){CUR=p;const c=$('#cursor');c.style.display=vis?'block':'none';c.style.left=p.x+'px';c.style.top=p.y+'px';
+  const r=$('#ripple');r.style.display='none';for(const k of clicks){const dt=(f-k)*T;if(dt>=0&&dt<.45){const s=20+dt*160;r.style.display='block';r.style.width=r.style.height=s+'px';r.style.left=(p.x-s/2)+'px';r.style.top=(p.y-s/2)+'px';r.style.opacity=1-dt/.45}}}
+function hl(sel,label,pad=8){const h=$('#hl'),l=$('#hlLabel');const e=sel&&(typeof sel==='string'?$(sel):sel);if(!e){h.style.display=l.style.display='none';return}
+  const r=e.getBoundingClientRect();h.style.display='block';h.style.left=(r.left-pad)+'px';h.style.top=(r.top-pad)+'px';h.style.width=(r.width+2*pad)+'px';h.style.height=(r.height+2*pad)+'px';
+  if(label){l.style.display='block';l.textContent=label;const lw=l.offsetWidth;let x=r.left-pad,y=r.top-pad-52;if(y<70)y=r.bottom+pad+10;if(x+lw>1890)x=1890-lw;l.style.left=x+'px';l.style.top=y+'px'}else l.style.display='none'}
+function panel(step,title,items,f,starts,extra=''){return `<div class="panel"><span class="step">${step}</span><h2>${title}</h2>${items.map((x,i)=>`<div class="pt ${x[1]||''}" style="opacity:${seg(f,starts[i],starts[i]+.04)}">${x[0]}</div>`).join('')}${extra}</div>`}
+function sub(t){$('#sub span').textContent=t||''}
+const SC={};
+SC[1]=(f,T)=>{if(f<.42){$('#sc').innerHTML=`<div style="position:absolute;inset:0;background:url(img/m4_cliente.jpg) center/cover"></div><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,59,74,.9),rgba(18,59,74,.2))"></div><div style="position:absolute;left:110px;top:300px;width:900px;color:#fff;opacity:${seg(f,.04,.1)}"><div style="font-size:26px;font-weight:700;color:#8fe4df;margin-bottom:14px">VIDEO 4</div><div style="font-size:76px;font-weight:800;line-height:1.05">Del clic al pago</div><div style="font-size:34px;margin-top:18px;line-height:1.35">Cómo funciona una compra digital</div></div>`;hl(null);cursor(CUR,false);return}
+  $('#sc').innerHTML=prodPage(f>=.88?1:0)+panel('Caso Casa Nativa','Marcela vende una lámpara decorativa',[['🛍️ El cliente revisa el producto'],['📝 El pedido debe quedar registrado'],['📣 El cliente sabe qué ocurre después']],f,[.45,.6,.78]);
+  const k=[[.42,{x:900,y:900}],[.7,'#bcomprar'],[.95,'#bcomprar']];cursor(path(f,k),true,[.84],f,T);hl(tri(f,.5,.66)?'#pprice':null)};
+SC[2]=(f,T)=>{const N=[['🛍️','Producto',.2],['🛒','Carrito',.3],['📝','Datos',.42],['💳','Pago',.53],['✅','Confirmación',.64],['📦','Preparación',.8]];
+  $('#sc').innerHTML=`<div class="full"><h2>Una compra digital es una secuencia de pasos</h2><div class="flow">${N.map((n,i)=>`${i?`<div class="arr ${f>=n[2]?'on':''}"></div>`:''}<div class="node ${i===5?'int':''} ${f>=n[2]?'on':''}"><big>${n[0]}</big>${n[1]}</div>`).join('')}</div>
+  <div class="brace"><div style="width:1290px;border-color:#8fe4df;opacity:${seg(f,.66,.7)}">Lo que vive el cliente</div><div style="width:44px"></div><div style="width:220px;border-color:#ffd666;opacity:${seg(f,.8,.84)}">Proceso interno<br>de la PYME</div></div>
+  <div style="text-align:center;margin-top:46px;font-size:30px;opacity:${seg(f,.9,.94)}">Ejemplo: Lámpara → Carrito → Datos de entrega → Pago → Pago aprobado → Pedido #CN-1045 → En preparación</div></div>`;hl(null);cursor(CUR,false)};
+SC[3]=(f,T)=>{$('#sc').innerHTML=cartPage()+panel('Punto crítico 1','El carrito',[['📦 ¿Qué compra?'],['🔢 ¿Cuántas unidades?'],['💲 Precio y total'],['🚚 Cargos extra visibles antes de pagar','ok']],f,[.14,.3,.42,.68]);
+  const z=tri(f,.14,.3)?['#crow','Producto']:tri(f,.3,.42)?['#cqty','Cantidad']:tri(f,.42,.6)?['#ctot','Total']:tri(f,.64,.95)?['#cdesp','Despacho a la vista']:[null];hl(z[0],z[1]);
+  const k=[[0,{x:900,y:900}],[.92,'#ccont'],[1,'#ccont']];cursor(path(f,k),f>.85,[.97],f,T)};
+SC[4]=(f,T)=>{$('#sc').innerHTML=formPage(f)+panel('Paso 2','Pide solo lo necesario',[['👤 Nombre'],['✉️ Correo electrónico'],['📞 Teléfono'],['📍 Dirección de entrega']],f,[.08,.2,.34,.44],`<div class="pt bad" style="opacity:${seg(f,.68,.72)}">✕ Datos innecesarios → desconfianza y abandono</div>`);
+  hl(tri(f,.72,.92)?'.form':null,'Lo justo para procesar el pedido');const k=[[0,{x:900,y:900}],[.92,'#fcont'],[1,'#fcont']];cursor(path(f,k),f>.88,[.97],f,T)};
+SC[5]=(f,T)=>{const sel=f>=.42?0:-1;$('#sc').innerHTML=payPage(sel)+panel('Paso 3','Medio de pago',[['💳 Tarjeta · 🏦 Transferencia · 📱 Billetera'],['⚙️ ¿Es fácil de administrar?'],['🔗 ¿Se concilia con el pedido?','ok']],f,[.18,.62,.78]);
+  const k=[[0,{x:900,y:900}],[.36,'#pm0',.06],[.86,'#pcont'],[1,'#pcont']];cursor(path(f,k),f>.3,[.41,.95],f,T);hl(tri(f,.62,.86)?'#pm1':null,'Transferencia: hay que verificarla y asociarla')};
+SC[6]=(f,T)=>{$('#sc').innerHTML=gwPage(f)+panel('Paso 4','La pasarela de pago',[['🔒 Procesa la transacción'],['📣 Informa: aprobado, rechazado o pendiente'],['🔗 El resultado se asocia al pedido #CN-1045','ok']],f,[.1,.4,.72]);
+  const k=[[0,{x:700,y:900}],[.12,'#gcard',.2],[.46,'#gpay'],[.6,{x:700,y:900}]];cursor(path(f,k),f<.56,[.5],f,T);hl(f>=.75&&f<.97?'.gwc':null,'Pago aprobado · Orden CN-1045')};
+SC[7]=(f,T)=>{const C=[['a','✅','Aprobado','El pedido puede avanzar.',.1,.42],['r','❌','Rechazado','Avisar al cliente para que intente nuevamente.',.16,.58],['p','⏳','Pendiente','No preparar ni despachar hasta tener una confirmación válida.',.22,.76]];
+  $('#sc').innerHTML=`<div class="full"><h2>No todos los pagos terminan igual</h2><div class="cards3">${C.map(c=>`<div class="card ${c[0]}" style="opacity:${seg(f,c[4],c[4]+.04)};${f>=c[5]&&f<c[5]+.17?'box-shadow:0 0 0 10px rgba(255,255,255,.25)':''}"><big>${c[1]}</big><h3>${c[2]}</h3><p style="opacity:${seg(f,c[5],c[5]+.04)}">${c[3]}</p></div>`).join('')}</div></div>`;hl(null);cursor(CUR,false)};
+SC[8]=(f,T)=>{const msg=`<div class="bub" style="margin-top:20px">✅ <b>¡Recibimos tu pago!</b><br>Pedido <b>#${P.id}</b><br>${P.n} × 1<br>Total: ${P.t}<br><br>Próximo paso: preparamos tu pedido y te avisaremos cuando salga. 📦<small>11:04</small></div>`;
+  $('#sc').innerHTML=confPage()+phone(1350,150,chatHd+(f>=.3?msg:''));$('.phone').style.opacity=seg(f,.22,.28);
+  hl(tri(f,.42,.62)?'#cbox':tri(f,.62,.8)?'.bub':null,f<.62?'Número de pedido, resumen y próximos pasos':'Confirmación automática al cliente');cursor(CUR,false)};
+SC[9]=(f,T)=>{const st=f<.32?['st-pend','Pendiente de pago']:f<.55?['st-pag','Pagado']:['st-prep','En preparación'];
+  $('#sc').innerHTML=admin(st)+panel('Registro interno','Cada pedido con su estado',[['🟡 Pendiente'],['🟢 Pagado'],['🔵 En preparación'],['🧭 Trazabilidad: nada se pierde','ok']],f,[.12,.32,.55,.72]);
+  $('#tl').innerHTML=[['11:02','Pedido creado','st-pend',.0],['11:04','Pago aprobado (pasarela, autorización 584201)','st-pag',.32],['11:20','Pasa a preparación','st-prep',.55]].filter(x=>f>=x[3]).map(x=>`<div><span class="chip ${x[2]}">${x[0]}</span>${x[1]}</div>`).join('');
+  hl(tri(f,.3,.7)?'#r_CN-1045':null);cursor(CUR,false)};
+SC[10]=(f,T)=>{const chat=chatHd.replace('Casa Nativa','Javier Torres')+`<div class="bub">Hola, ya pagué el pedido por transferencia. Te mando el comprobante 📎<small>15:40</small></div><div class="bub" style="padding:6px"><div style="background:#eef3f6;border-radius:8px;padding:14px;font-size:13px;line-height:1.5">🧾 <b>Comprobante</b><br>Monto: $43.980<br>Destino: Casa Nativa<br>Fecha: hoy 15:38</div><small>15:40</small></div>`;
+  const rows=[['CN-1046','Javier Torres','$43.980',...(f<.82?['st-pend','Pendiente · sin pago registrado']:['st-pag','Pagado · verificado en el banco'])]];
+  $('#sc').innerHTML=admin(null,{search:'CN-1046',rows})+phone(1340,150,chat);
+  $('#tl').innerHTML=[['1','Revisa el registro de la transacción (banco o pasarela)',.5],['2','Verifica monto, fecha y referencia',.62],['3','Asócialo al pedido correcto antes de continuar',.74]].filter(x=>f>=x[2]).map(x=>`<div><span class="chip st-prep">${x[0]}</span>${x[1]}</div>`).join('');
+  hl(tri(f,.2,.42)?'.phone .bub:nth-child(3)':tri(f,.5,.82)?'#tl':null,f<.42?'Una captura no basta':'Verificación');cursor(CUR,false)};
+SC[11]=(f,T)=>{const it=[['Producto correcto','Lámpara × 1',.14],['Monto coincide','$43.980',.3],['Pago confirmado','Autorización 584201',.45],['Datos completos','Dirección y contacto',.6],['Identificador del pedido','#CN-1045',.76]];
+  $('#sc').innerHTML=`<div class="full" style="padding-top:70px"><h2 style="text-align:center">Antes de preparar, comprueba cinco elementos</h2><div class="chk">${it.map(x=>`<div class="ci" style="opacity:${seg(f,x[2]-.05,x[2])}"><span class="box ${f>x[2]+.05?'on':''}">${f>x[2]+.05?'✓':''}</span>${x[0]}<small>${x[1]}</small></div>`).join('')}</div></div>`;hl(null);cursor(CUR,false)};
+SC[12]=(f,T)=>{const N=[['🛒','Compra'],['💳','Pago'],['✅','Confirmación'],['📦','Preparación'],['🚚','Despacho']];const on=seg(f,.05,.35)*5;
+  $('#sc').innerHTML=`<div class="full"><h2>Un flujo conectado</h2><div class="flow">${N.map((n,i)=>`${i?`<div class="arr ${on>i?'on':''}" style="width:70px"></div>`:''}<div class="node ${on>i?'on':''}" style="width:240px"><big>${n[0]}</big>${n[1]}</div>`).join('')}</div>
+  <div class="qb" style="left:240px;top:640px;opacity:${seg(f,.38,.42)}">👤 Cliente: <s style="text-decoration:${f>.5?'line-through':'none'}">«¿Llegó mi pago?»</s></div>
+  <div class="qb" style="left:900px;top:760px;opacity:${seg(f,.52,.56)}">🏪 Empresa: <s style="text-decoration:${f>.66?'line-through':'none'}">«¿De qué pedido es esta transferencia?»</s></div>
+  <div style="position:absolute;left:0;right:0;top:560px;text-align:center;font-size:34px;font-weight:800;color:#8fe4df;opacity:${seg(f,.78,.82)}">Menos errores para ambas partes</div></div>`;hl(null);cursor(CUR,false)};
+SC[13]=(f,T)=>{const q=['¿Dónde registras la compra?','¿Cómo confirmas el pago?','¿Qué señal indica que un pedido está listo para prepararse?'];
+  $('#sc').innerHTML=`<div class="photo"></div><div class="cta"><h2>Ahora revisa este proceso en tu PYME</h2>${q.map((x,i)=>`<div class="pt" style="font-size:34px;padding:20px 26px;opacity:${seg(f,.25+i*.15,.29+i*.15)}">${['📝','💳','📦'][i]} ${x}</div>`).join('')}</div>`;hl(null);cursor(CUR,false)};
+window.R=function(k,f,T,subtitle){$('#note').style.display=[2,7,11,12,13].includes(k)||(k===1&&f<.42)?'none':'block';SC[k](f,T);sub(subtitle)};
+</script></body></html>
