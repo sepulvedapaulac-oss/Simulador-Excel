@@ -49,3 +49,38 @@
 - El feriado preferente aplica a cuidado personal de menor de 14 o adolescente menor de 18 con discapacidad o dependencia severa o moderada; la solicitud debe hacerse con 30 días de anticipación.
 - Teletrabajo: aplica a ambos grupos (a) y (b) cuando la naturaleza de las funciones lo permita; respuesta en 15 días; fórmula alternativa o rechazo fundado.
 - Separar siempre dos preguntas: ¿acredita la situación protegida? y ¿la medida es compatible con las funciones?
+
+## 3.6 Gestionar solicitudes vinculadas a responsabilidades familiares (art. 152 quáter O bis y O ter, Ley 21.645)
+- La persona trabajadora presenta una solicitud ESCRITA, acompañando el antecedente que acredita la situación de cuidado: certificado de nacimiento (filiación de niño/a menor de 14), resolución judicial que otorga el cuidado personal, certificado de inscripción en el Registro Nacional de la Discapacidad, o el documento/credencial emitido por el Ministerio de Desarrollo Social y Familia que acredita la calidad de persona cuidadora (para dependencia severa o moderada; se tramita a través del Registro Social de Hogares). Según la DT (2025), para cuidado de persona con discapacidad o dependencia no basta un certificado médico.
+- En la solicitud debe proponer una fórmula concreta de combinación de tiempos presenciales y a distancia, que no exceda los límites de la jornada diaria y semanal.
+- El empleador responde dentro de 15 días desde la presentación: aceptar, ofrecer una fórmula alternativa, o rechazar; si rechaza, debe fundamentar y acreditar que la naturaleza de las funciones no permite el trabajo a distancia.
+- Si se acuerda la modalidad, se deja constancia en un anexo al contrato con las menciones legales del trabajo a distancia/teletrabajo (art. 152 quáter K): modalidad, lugar, período, mecanismo de supervisión, equipos y herramientas que provee el empleador, desconexión de al menos 12 horas continuas si hay teletrabajo con distribución libre, etc.
+- Los equipos, herramientas y materiales para el trabajo a distancia son de cargo del empleador; costos de operación, funcionamiento y mantención también (art. 152 quáter L).
+- Si no hay respuesta en plazo o el rechazo no está fundado, la persona puede recurrir a la Inspección del Trabajo.
+- Buenas prácticas: registrar fecha de recepción, plazo, análisis de funciones (tareas presenciales vs remotas), respuesta escrita y fundada, revisión periódica.
+
+## 3.7 Feriado, permisos y licencias
+- Feriado anual (art. 67): con más de un año de servicio, 15 días hábiles con remuneración íntegra. En regiones de Magallanes, Aysén y Palena: 20 días hábiles.
+- Para el cómputo del feriado el sábado se considera siempre inhábil (art. 69).
+- Feriado progresivo (art. 68): con 10 años de trabajo (para uno o más empleadores; los años con empleadores anteriores se consideran hasta 10), un día adicional por cada 3 nuevos años trabajados con el empleador actual.
+- Continuidad y fraccionamiento (art. 70): el feriado debe ser continuo; el exceso sobre 10 días hábiles puede fraccionarse de común acuerdo. Puede acumularse por acuerdo hasta dos períodos consecutivos; si hay dos acumulados, el empleador debe otorgar al menos el primero antes de completar el año que da derecho al siguiente.
+- El feriado no es compensable en dinero salvo término de la relación (art. 73: feriado proporcional / indemnización).
+- Ley 21.561: las horas extraordinarias pueden compensarse con hasta 5 días hábiles adicionales de feriado al año, por acuerdo escrito.
+- Feriado preferente en vacaciones escolares para personas cuidadoras (Ley 21.645): pedir con 30 días de anticipación.
+- Permisos legales pagados (no se descuentan del feriado):
+  - Nacimiento: padre 5 días (art. 195).
+  - Fallecimiento (art. 66): hijo 10 días corridos; cónyuge o conviviente civil 7 días corridos; hijo en período de gestación 7 días hábiles; padre, madre o hermano/a 4 días hábiles. Se usan desde el día del fallecimiento (salvo hijo en gestación, desde el momento de acreditar la muerte), no son compensables en dinero, y dan fuero de un mes (en caso de hijo o cónyuge/conviviente). Existe un proyecto de ley (2026) para ampliarlos, aún no vigente.
+  - Matrimonio o acuerdo de unión civil: 5 días hábiles continuos de permiso pagado (art. 207 bis), adicionales al feriado.
+  - Exámenes preventivos: mujeres mayores de 40 y hombres mayores de 50: medio día al año para mamografía/próstata (art. 66 bis); permiso para exámenes según art. 66 bis.
+- Licencia médica: suspende la relación de trabajo en lo que respecta a prestación de servicios; la remuneración se reemplaza por subsidio de incapacidad laboral. Si la licencia sobreviene durante el feriado, el feriado se suspende y se retoma después (DT, Dictamen 6256/279 de 1995), con excepciones (p. ej., docentes de establecimientos particulares).
+- Nunca se descuenta como "vacaciones" un permiso legal o una licencia médica.
+
+## 3.8 Inclusión laboral (Ley 21.015, Ley 21.690; arts. 157 bis y 157 ter CT)
+- Empresas con 100 o más trabajadores deben contratar o mantener contratados, según la naturaleza de sus funciones, al menos 1% de personas con discapacidad o asignatarias de pensión de invalidez de cualquier régimen previsional.
+- Las personas deben contar con la calificación y certificación de discapacidad (COMPIN) e inscripción en el Registro Nacional de la Discapacidad, o ser asignatarias de pensión de invalidez.
+- Cumplimiento alternativo solo por razones fundadas (naturaleza de funciones o falta de personas interesadas): contratos de prestación de servicios con empresas que tengan contratadas personas con discapacidad, o donaciones a proyectos/programas de asociaciones, corporaciones o fundaciones (Ley 21.690 ajustó y endureció estas medidas subsidiarias; la DT puede sancionar si las razones no son fundadas).
+- Comunicación electrónica: las empresas obligadas deben registrar en el sitio de la Dirección del Trabajo los contratos de personas con discapacidad (dentro de 15 días desde su celebración) y comunicar anualmente (en enero) el cumplimiento de la obligación y, si corresponde, las medidas alternativas.
+- Ley 21.690 (publicada en agosto de 2024): eleva la cuota a 2%, pero solo se aplicará cuando un informe técnico de los ministerios constate que al menos el 80% de las entidades obligadas cumple el 1%; a 2025 el cumplimiento informado era bastante menor (cerca de 44%), por lo que en octubre de 2026 la cuota exigible sigue siendo 1%.
+- La ley también exige que empresas obligadas cuenten con al menos un gestor/a de inclusión laboral certificado (Ley 21.690) — si no estás seguro, preséntalo como "la Ley 21.690 refuerza la gestión de la inclusión" sin cifras.
+- No discriminación por discapacidad (art. 2 CT) y deber de ajustes razonables / accesibilidad (Ley 20.422): la inclusión no termina en la cuota; abarca selección, accesibilidad, capacitación, desarrollo y permanencia.
+- Cálculo: 1% del promedio de trabajadores; en empresas de 100 a 199 trabajadores corresponde al menos 1 persona; las fracciones se consideran según la norma (para cálculos usa ejemplos simples: 150 trabajadores → 1 persona; 250 → 2; 420 → 4).
