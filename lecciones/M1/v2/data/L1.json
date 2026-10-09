@@ -1,0 +1,18 @@
+{"audio":{
+"p01":"Bienvenida a la lección uno punto uno: ¿Qué tan digital es tu pyme? María es dueña de Empanadas Doña María. Vende por Instagram, recibe pedidos por WhatsApp y siente que lo digital ya está resuelto. Revisa los tres mensajes que recibió esta mañana y luego responde qué describe mejor su situación.",
+"p03":"La madurez digital se nota en cuatro dimensiones. Haz clic en cada número sobre la imagen del equipo de María para descubrir qué significa avanzar en gestión, clientes, operación y decisiones.",
+"p04":"Cuatro preguntas ayudan a mirar el negocio con ojos de diagnóstico. Toca cada tarjeta para voltearla y descubre qué señal indica que la pyme está avanzando.",
+"p05":"Ahora clasifica. Lee cada situación del negocio de María y ubícala como señal de alerta o como señal de avance. Selecciona una tarjeta y luego la columna que corresponde.",
+"p06":"Es momento de mirar tu propio negocio. Activa cada afirmación que hoy se cumple en tu pyme, o en una que conozcas. No buscamos una nota perfecta, sino una fotografía útil para priorizar.",
+"p07":"Para convertir el diagnóstico en acción hay una secuencia lógica. Ordena los cuatro pasos con las flechas y luego presiona comprobar.",
+"p08":"Volvamos con María. Esta semana se perdieron dos pedidos y se cobró un precio antiguo a un cliente. Ayúdala a tomar dos decisiones: por dónde empezar y cómo saber si la mejora funcionó.",
+"quiz":"Llegó el momento de comprobar lo aprendido. Responde cinco preguntas. Necesitas al menos ochenta por ciento, es decir, cuatro de cinco, para finalizar la lección. Si no lo logras, puedes reintentar.",
+"p10":"Lleva lo aprendido a tu negocio. Lee la situación, responde cada pregunta del checklist con sí o no, y luego revisa la respuesta modelo.",
+"p11":"¡Felicitaciones! Completaste la lección uno punto uno. Ya puedes reconocer las señales de madurez digital de una pyme, diagnosticar su punto de partida y definir una prioridad concreta. En la siguiente lección verás cómo un ecosistema de productividad conecta la comunicación, los documentos y la coordinación."},
+"video":[
+{"t":"Qué es","img":"l1_hero","lines":["La madurez digital es el grado en que la tecnología apoya los procesos y las decisiones del negocio.","No se mide por la cantidad de aplicaciones instaladas, sino por cómo se trabaja cada día."],"keys":[["Tecnología al servicio de procesos reales",0],["No es acumular aplicaciones",1],["Se observa en el trabajo diario",1]]},
+{"t":"Señales de alerta","img":"l1_caos","lines":["Las señales de baja madurez son fáciles de reconocer.","Archivos duplicados, pedidos anotados en varios lugares y tareas que dependen de la memoria de una sola persona."],"keys":[["Información repartida en celulares y papeles",1],["Versiones sin una vigente clara",1],["Tareas que dependen de una persona",1]]},
+{"t":"Cuatro dimensiones","img":"l1_equipo","lines":["Para diagnosticar, mira cuatro dimensiones.","La gestión de la información, la relación con los clientes, la operación del día a día y el uso de datos para decidir."],"keys":[["Gestión de la información",1],["Clientes",1],["Operación",1],["Decisiones con datos",1]]},
+{"t":"Datos para decidir","img":"l1_datos","lines":["Una pyme más madura registra datos básicos, como ventas, mermas o consultas.","Y los revisa con regularidad para decidir qué producir, corregir o priorizar."],"keys":[["Registrar ventas, mermas y consultas",0],["Revisarlos con regularidad",1],["Decidir con evidencia",1]]},
+{"t":"Primer paso","img":"l1_orden","lines":["El primer paso no es comprar tecnología.","Es elegir una brecha concreta y convertirla en una mejora pequeña, realizable y sostenible."],"keys":[["No partir comprando tecnología",0],["Elegir una brecha concreta",1],["Mejora pequeña y sostenible",1]]}
+]}

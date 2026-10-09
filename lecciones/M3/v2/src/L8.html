@@ -1,0 +1,225 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las tres publicaciones y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.2 · Caso de decisión</span>
+      <h1 class="reveal">Una marca reconocible y accesible</h1>
+      <p class="lead reveal">Una identidad consistente ayuda a que una PYME sea reconocida, y además debe poder leerse en cualquier pantalla. <strong>Haz clic en cada publicación</strong> reciente de Casa Nativa.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">🌸</span><span><span class="from">Publicación del lunes</span><span class="preview">Tonos pastel…</span><span class="full">Tonos pastel y una tipografía manuscrita muy decorada para anunciar cojines nuevos.</span></span><span class="badge">Post</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🔥</span><span><span class="from">Publicación del miércoles</span><span class="preview">Colores intensos…</span><span class="full">Fondo naranja intenso, letras amarillas pequeñas y cuatro tipografías distintas para una oferta.</span></span><span class="badge">Post</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🖼️</span><span><span class="from">Publicación del viernes</span><span class="preview">Fondo recargado…</span><span class="full">Una foto con muchos objetos de fondo y el texto encima: el precio y el horario casi no se leen.</span></span><span class="badge">Post</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela ordena muestras de colores y telas para definir la identidad visual de Casa Nativa" src="img/m8_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué efecto puede generar este cambio constante de estilo?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Menor reconocimiento y mayor dificultad para leer.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Una marca automáticamente más creativa.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Más ventas por usar más colores.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: creatividad que confunde.</strong> <span class="fb-body">Cambiar mucho no garantiza creatividad. Si cada publicación parece de una marca distinta, las personas no la asocian con Casa Nativa.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: más color, menos claridad.</strong> <span class="fb-body">El número de colores no determina por sí solo la efectividad. Con poco contraste, el mensaje se pierde.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La inconsistencia dificulta el reconocimiento y la baja legibilidad reduce la comprensión. En esta lección aprenderás a construir un sistema visual simple y accesible.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Reconocimiento, claridad y accesibilidad</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+
+<!-- 3 · SISTEMA VISUAL -->
+<section class="slide" data-title="Sistema visual" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Sistema visual</span>
+  <h2>Pocas decisiones, bien repetidas</h2>
+  <p>El objetivo: que una persona reconozca la marca <b>incluso antes de leer su nombre</b>. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Decisiones revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🎨</div><strong>Color</strong><span>¿Cuántos colores?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Una paleta acotada</strong><span>Dos o tres colores principales. En Casa Nativa: terracota, lino y verde oliva.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔤</div><strong>Tipografía</strong><span>¿Cuántas fuentes?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Pocas familias, jerarquía clara</strong><span>Una para títulos y otra para textos, siempre las mismas.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📷</div><strong>Imagen</strong><span>¿Qué estilo de foto?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Un estilo coherente</strong><span>Luz natural, fondos simples y productos en contexto, coherentes con la propuesta artesanal.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💬</div><strong>Tono</strong><span>¿Cómo habla la marca?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Una voz reconocible</strong><span>Cercana, cálida y clara: frases cortas que se entienden a la primera.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · JERARQUÍA -->
+<section class="slide" data-title="Jerarquía visual" data-audio="p04" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Jerarquía</span>
+  <h2>Haz que la mirada sepa por dónde empezar</h2>
+  <p>Una pieza bien ordenada se lee en segundos. <strong>Revisa los cuatro niveles.</strong></p>
+  <div class="task" id="tbTask">Niveles revisados <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">1 · Mensaje principal</button><button class="tab" type="button" role="tab">2 · Apoyo</button><button class="tab" type="button" role="tab">3 · Acción</button><button class="tab" type="button" role="tab">4 · Espacio</button></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Celular muestra una publicación limpia de un jarrón de terracota" src="img/m8_celular.jpg"/></div><div><h3 style="margin-top:0">La idea más importante destaca primero</h3><p><b>Ejemplo:</b> “Nueva colección de jarrones de terracota”, en el tamaño más grande de la pieza.</p><p>Si todo es grande, nada destaca.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Sesión de fotos de un jarrón y un cesto con luz natural" src="img/m8_foto.jpg"/></div><div><h3 style="margin-top:0">Detalles que ayudan a comprender</h3><p><b>Ejemplo:</b> “Hechos a mano · 3 tamaños · desde $14.990”.</p><p>Texto más pequeño, pero legible en el celular.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Marcela responde mensajes en su celular en el taller" src="img/m9_whatsapp.jpg"/></div><div><h3 style="margin-top:0">Qué debe hacer la persona después</h3><p><b>Ejemplo:</b> “Escríbenos por WhatsApp para reservar”.</p><p>Una sola acción, clara y visible.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Paleta de colores de la marca sobre un fondo de lino con mucho espacio libre" src="img/m8_paleta.jpg"/></div><div><h3 style="margin-top:0">El espacio vacío también organiza</h3><p><b>Ejemplo:</b> márgenes amplios alrededor del producto y del texto.</p><p>Separar elementos ayuda a leer; amontonarlos obliga a buscar.</p></div></div>
+  </div>
+</section>
+
+<!-- 5 · ACCESIBILIDAD -->
+<section class="slide" data-title="¿Se puede leer?" data-audio="p05" data-gate="cls" data-gate-msg="Clasifica las ocho prácticas.">
+  <span class="eyebrow amber">Accesibilidad</span>
+  <h2>Un diseño atractivo también debe poder leerse</h2>
+  <p><strong>Selecciona una práctica</strong> y luego la columna a la que corresponde. También puedes arrastrarla.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Prácticas clasificadas <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="f" data-fb="El texto oscuro sobre fondo claro tiene buen contraste." data-no="¿Hay suficiente diferencia entre el texto y el fondo?">Texto oscuro sobre fondo lino claro</button>
+      <button class="cardx" type="button" data-cat="d" data-fb="Texto claro sobre fondo claro: el contraste es insuficiente." data-no="¿Se distingue el texto del fondo?">Letras beige sobre fondo blanco</button>
+      <button class="cardx" type="button" data-cat="f" data-fb="Un tamaño legible en celular evita que la información esencial se pierda." data-no="¿Se puede leer sin hacer zoom?">Precio en un tamaño legible desde el celular</button>
+      <button class="cardx" type="button" data-cat="d" data-fb="La información esencial en letra diminuta obliga a acercar la pantalla." data-no="¿Es fácil leer información importante en letra muy pequeña?">Horario y condiciones en letra diminuta</button>
+      <button class="cardx" type="button" data-cat="f" data-fb="Las frases cortas y directas se escanean con facilidad." data-no="¿Se entiende a la primera?">“Despacho gratis en Santiago sobre $40.000”</button>
+      <button class="cardx" type="button" data-cat="d" data-fb="Un estado indicado solo con color no llega a quien no distingue ese color." data-no="¿Qué pasa si alguien no distingue el rojo del verde?">Agotado indicado solo con un punto rojo</button>
+      <button class="cardx" type="button" data-cat="f" data-fb="Texto más ícono: el estado se entiende aunque no se distinga el color." data-no="¿Se entiende el estado sin depender del color?">“Agotado” escrito junto a un ícono</button>
+      <button class="cardx" type="button" data-cat="d" data-fb="El texto sobre un fondo con muchos objetos compite con la imagen y se lee mal." data-no="¿El fondo deja leer el texto?">Texto encima de una foto con muchos objetos</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="f" role="button" tabindex="0"><h3>👁️ Facilita la lectura</h3></div>
+      <div class="bin" data-cat="d" role="button" tabindex="0"><h3>🚫 Dificulta la lectura</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · PRINCIPIOS -->
+<section class="slide" data-title="Principios de accesibilidad" data-audio="p06" data-gate="cloze" data-gate-msg="Completa los cuatro principios y presiona Comprobar.">
+  <span class="eyebrow">Accesibilidad</span>
+  <div class="grid-2">
+    <div>
+      <h2>Cuatro principios para que todos puedan leer</h2>
+      <p><strong>Completa cada principio</strong> eligiendo la opción correcta y luego presiona <strong>Comprobar</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="Mujer mayor intenta leer una publicación en su celular a pleno sol" src="img/m8_lectura.jpg"/></div>
+  </div>
+  <div class="cloze-box" data-gate="cloze" data-ok="Contraste, tamaño, lenguaje claro y no depender solo del color: así una publicación funciona para más personas y en más situaciones, como al sol o en una pantalla pequeña." data-no="Revisa los espacios marcados en rojo: piensa en alguien que lee al sol, con una pantalla pequeña o que no distingue algunos colores.">
+    <div class="cloze"><b>◐ Contraste:</b> el texto debe <select data-ans="b" aria-label="Contraste"><option value="">…</option><option value="a">tener el mismo tono que el fondo</option><option value="b">diferenciarse claramente del fondo</option><option value="c">ir siempre sobre una foto</option></select>.</div>
+    <div class="cloze"><b>🔍 Tamaño:</b> la información esencial <select data-ans="a" aria-label="Tamaño"><option value="">…</option><option value="a">debe leerse en el celular sin hacer zoom</option><option value="b">puede ir en letra diminuta si cabe</option><option value="c">va solo en la descripción</option></select>.</div>
+    <div class="cloze"><b>✍️ Lenguaje:</b> usa <select data-ans="c" aria-label="Lenguaje"><option value="">…</option><option value="a">párrafos largos y detallados</option><option value="b">abreviaturas internas</option><option value="c">frases claras, directas y fáciles de escanear</option></select>.</div>
+    <div class="cloze"><b>🚦 Color:</b> un estado importante se expresa <select data-ans="b" aria-label="Color"><option value="">…</option><option value="a">solo con un color llamativo</option><option value="b">también con texto, íconos o forma</option><option value="c">con el color que esté de moda</option></select>.</div>
+    <button class="small-btn primary ccheck" type="button" style="margin-top:12px">Comprobar</button>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 7 · MINI GUÍA VISUAL -->
+<section class="slide" data-title="Mini guía visual" data-audio="p07" data-gate="sim" data-gate-msg="Completa las cuatro definiciones y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Arma la mini guía visual de Casa Nativa</h2>
+  <p>Elige la mejor opción para cada elemento y luego presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="elemento(s)" data-miss-t="Faltan definiciones." data-miss-b="Elige una opción para cada elemento antes de guardar." data-ok="La guía es simple de aplicar: pocas decisiones, siempre repetidas, y una regla que protege la claridad de cada publicación.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Mini guía visual · Casa Nativa</div>
+        <table class="seltable stack">
+          <tr data-ans="b" data-ok="Una paleta acotada que conversa con los productos." data-no="Demasiados colores, o colores que cambian, dificultan el reconocimiento."><td><b>Colores</b><small>Paleta principal</small><span class="why"></span></td><td><select aria-label="Colores"><option value="">Elegir…</option><option value="a">Un color distinto para cada publicación.</option><option value="b">Terracota, lino y verde oliva en todas las piezas.</option><option value="c">Los colores de moda de cada temporada.</option></select></td></tr>
+          <tr data-ans="c" data-ok="Una para títulos y otra para textos: jerarquía clara y lectura fácil." data-no="Muchas tipografías o una manuscrita para textos largos dificultan la lectura."><td><b>Tipografías</b><small>Títulos y textos</small><span class="why"></span></td><td><select aria-label="Tipografías"><option value="">Elegir…</option><option value="a">Cinco tipografías para que se vea variado.</option><option value="b">Una manuscrita decorada para todo.</option><option value="c">Una tipografía para títulos y otra simple y legible para textos.</option></select></td></tr>
+          <tr data-ans="a" data-ok="Un estilo de foto coherente se reconoce aunque no se lea el nombre." data-no="Mezclar estilos de imagen hace que cada publicación parezca de otra marca."><td><b>Imágenes</b><small>Estilo fotográfico</small><span class="why"></span></td><td><select aria-label="Imágenes"><option value="">Elegir…</option><option value="a">Luz natural, fondos simples y productos en contexto.</option><option value="b">Cualquier foto disponible, con filtros distintos.</option><option value="c">Imágenes de bancos genéricos sin los productos.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Una regla concreta y verificable antes de cada publicación." data-no="Una regla útil debe poder revisarse siempre, no depender del gusto del día."><td><b>Regla de claridad</b><small>Se cumple siempre</small><span class="why"></span></td><td><select aria-label="Regla de claridad"><option value="">Elegir…</option><option value="a">Que se vea bonito.</option><option value="b">Un solo mensaje principal, buen contraste y una acción visible.</option><option value="c">Incluir toda la información posible.</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Paleta de colores terracota, lino y oliva con muestras de tipografía" src="img/m8_paleta.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Casa Nativa anunciará una promoción</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Quiero anunciar un 20% en jarrones este fin de semana. Tengo tres propuestas de diseño. ¿Cuál publico?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Publicación limpia de un jarrón de terracota en un celular" src="img/m8_celular.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué diseño debería elegir?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Cinco tipografías, fondo intenso y texto pequeño.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Titular claro, una imagen protagonista, colores consistentes y acción visible.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Solo una foto, sin texto ni indicación de cómo comprar.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: llama la atención, pero no se entiende</div><div class="branch-body"><div><p>Demasiados estilos y poco contraste dificultan la lectura. Varias personas preguntan “¿de cuánto es el descuento?” porque no lo encontraron.</p></div><div><p class="hint">Un solo mensaje principal.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: bonita, pero muda</div><div class="branch-body"><div><p>La foto recibe “me gusta”, pero nadie sabe que hay una promoción ni cómo comprar. Una publicación sin información suficiente no permite actuar.</p></div><div><p class="hint">Falta el mensaje y la acción.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Una jerarquía simple, buen contraste y una llamada a la acción visible facilitan la comprensión. Además, la pieza se reconoce como de Casa Nativa.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Antes de publicar:</strong> en la pieza, los productos con descuento están marcados solo con un círculo rojo y los agotados con un círculo gris. Una clienta le comenta a Marcela que no distingue bien esos colores.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué ajuste debería hacer?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Usar un rojo más intenso para que destaque más.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Dejarlo así, porque la mayoría sí distingue los colores.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Agregar etiquetas de texto: “-20%” y “Agotado”, además del color.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: sigue dependiendo del color</div><div class="branch-body"><div><p>Un rojo más intenso no ayuda a quien no distingue ese color. El estado sigue comunicándose solo con color.</p></div><div><p class="hint">Suma otra forma de decirlo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: clientas que se quedan fuera</div><div class="branch-body"><div><p>Algunas personas no sabrán qué productos tienen descuento ni cuáles están agotados, y pueden escribir para comprar algo que no existe.</p></div><div><p class="hint">Accesible es para más personas, no solo para la mayoría.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Un estado importante debe expresarse también con texto, íconos o forma. La pieza mantiene sus colores de marca y ahora todos entienden la información.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Revisa una pieza antes de publicarla</h2>
+  <div class="story">Una PYME de tu rubro preparó esta publicación: <b>foto del producto con un fondo lleno de objetos</b>, el titular “¡GRAN LIQUIDACIÓN DE TEMPORADA!” en tres tipografías, el descuento en <b>letras amarillas sobre fondo blanco</b>, los productos agotados marcados <b>solo con color gris</b> y, al final, “Escríbenos por WhatsApp”. Sus colores no son los que usa habitualmente.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la pieza tiene una acción clara, pero falla en lo demás: el fondo recargado compite con el mensaje, tres tipografías y colores ajenos a la marca reducen el reconocimiento, el amarillo sobre blanco no tiene contraste y el estado “agotado” depende solo del color. Una versión mejorada: <b>fondo simple</b>, <b>un titular en la tipografía de la marca</b>, <b>el descuento en texto oscuro y tamaño legible</b>, <b>la etiqueta “Agotado” escrita</b> y la acción visible. Para tu PYME, crea tu mini guía: <b>2 o 3 colores</b>, <b>1 tipografía para títulos y 1 para textos</b>, <b>el estilo de tus imágenes</b> y <b>una regla de claridad</b> que siempre cumplirás.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.2</h2>
+    <p>Ya puedes definir un sistema visual simple, ordenar la jerarquía de una pieza y revisar su accesibilidad antes de publicar.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 3.3</b> verás cómo invertir en publicidad sin perder el control.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="4">Repasar accesibilidad</button><button class="small-btn primary" type="button" data-goto="6">Repasar la mini guía visual</button></div>
+    <div class="sources">Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

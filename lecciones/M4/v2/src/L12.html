@@ -1,0 +1,226 @@
+<style>.tabpane.wideshot{grid-template-columns:1.6fr 1fr}@media(max-width:860px){.tabpane.wideshot{grid-template-columns:1fr}}</style>
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las tres notas del caso y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.2 · Caso de decisión</span>
+      <h1 class="reveal">Usa tus datos para decidir</h1>
+      <p class="lead reveal">Los datos no sirven por estar en un panel: sirven cuando ayudan a responder preguntas del negocio. <strong>Haz clic en cada nota</strong> para ver qué números revisa Marcela.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">📱</span><span><span class="from">Nota 1 · Redes sociales</span><span class="preview">Seguidores y “me gusta”…</span><span class="full">Instagram muestra alcance, seguidores y “me gusta”. Los revisa todos los días, pero no sabe qué hacer con ellos.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🌐</span><span><span class="from">Nota 2 · Sitio web</span><span class="preview">Sesiones y usuarios…</span><span class="full">Google Analytics muestra sesiones, usuarios, páginas y eventos. Las cifras no coinciden con las de las redes.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🧾</span><span><span class="from">Nota 3 · Ventas</span><span class="preview">Una planilla aparte…</span><span class="full">Las ventas están en otra planilla. Revisa todo cada semana y termina sin saber qué indicador debería importar más.</span></span><span class="badge">Dato</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela confundida frente a varios paneles con gráficos en su portátil, celular y tableta" src="img/m12_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debería hacer primero?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Definir qué quiere saber o decidir.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Revisar todos los números disponibles.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Abrir más plataformas de analítica.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: más ruido, no más claridad.</strong> <span class="fb-body">Revisar todas las métricas sin prioridad consume tiempo y no lleva a ninguna decisión.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: otro panel que nadie mira.</strong> <span class="fb-body">Más herramientas no resuelven la falta de criterio para interpretar los datos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El indicador debe estar conectado con una pregunta o decisión concreta del negocio. Desde ahí se eligen los datos.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Mirar menos métricas y decidir mejor</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+
+<!-- 3 · KPI -->
+<section class="slide" data-title="Qué es un KPI" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">KPI</span>
+  <h2>Un KPI es un indicador con propósito</h2>
+  <p>KPI significa indicador clave de desempeño. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">❓</div><strong>1 · Pregunta</strong><span>¿Qué quiero saber?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Parte por el negocio</strong><span>“¿Está funcionando mi campaña de la colección Living?”</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📏</div><strong>2 · Indicador</strong><span>¿Qué dato me ayuda?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Un dato que responde</strong><span>Costo por venta y ventas de la semana.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧭</div><strong>3 · Decisión</strong><span>¿Qué haré según el resultado?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mantener, ajustar o detener</strong><span>Si el costo por venta sube dos semanas seguidas, cambio el anuncio.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⚠️</div><strong>Métrica de vanidad</strong><span>¿Qué es?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Se ve bien, no decide nada</strong><span>Seguidores o “me gusta” sin relación con tu objetivo.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · OBJETIVO E INDICADOR -->
+<section class="slide" data-title="Indicadores útiles" data-audio="p04" data-gate="pairs" data-gate-msg="Une los cinco objetivos con su indicador.">
+  <span class="eyebrow amber">Indicadores útiles</span>
+  <h2>Selecciona el indicador según el objetivo</h2>
+  <p><strong>Selecciona un objetivo</strong> a la izquierda y luego el indicador que mejor lo refleja.</p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 5</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa qué pregunta responde cada indicador: ¿cuántas personas vieron?, ¿cuántas quisieron saber más?, ¿cuántas escribieron?, ¿cuántas compraron?, ¿cuánto costó?">
+    <div>
+      <button class="pl" type="button" data-k="vis">Generar visibilidad</button>
+      <button class="pl" type="button" data-k="int">Generar interés</button>
+      <button class="pl" type="button" data-k="con">Generar contactos</button>
+      <button class="pl" type="button" data-k="ven">Generar ventas</button>
+      <button class="pl" type="button" data-k="efi">Evaluar eficiencia</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="efi" data-fb="El costo por resultado dice cuánto cuesta obtener cada resultado.">Costo por resultado</button>
+      <button class="pr" type="button" data-k="vis" data-fb="Alcance e impresiones dicen cuántas personas estuvieron expuestas.">Alcance / impresiones</button>
+      <button class="pr" type="button" data-k="ven" data-fb="Las ventas o eventos clave de compra dicen cuántas acciones comerciales ocurrieron.">Ventas / eventos clave de compra</button>
+      <button class="pr" type="button" data-k="int" data-fb="Clics y visitas dicen cuántas personas quisieron saber más.">Clics / visitas</button>
+      <button class="pr" type="button" data-k="con" data-fb="Conversaciones y formularios dicen cuántas oportunidades se generaron.">Conversaciones / formularios</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+</section>
+
+<!-- 5 · GOOGLE ANALYTICS -->
+<section class="slide" data-title="Google Analytics 4" data-audio="p05" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Google Analytics 4</span>
+  <h2>Piensa en el recorrido, no solo en el tráfico</h2>
+  <p>Capturas recreadas de los informes de Google Analytics 4 con datos ficticios de Casa Nativa. <strong>Revisa las cuatro pestañas.</strong></p>
+  <div class="task" id="tbTask">Informes revisados <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">Adquisición</button><button class="tab" type="button" role="tab">Interacción</button><button class="tab" type="button" role="tab">Eventos clave</button><button class="tab" type="button" role="tab">Comparación</button></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Informe de adquisición de tráfico de Google Analytics 4 por grupo de canales" src="img/ga4_adq.jpg"/></div><div><h3 style="margin-top:0">¿Desde dónde llegan las personas?</h3><p><b>Informes › Adquisición › Adquisición de tráfico</b> agrupa las visitas por canal: redes sociales, tráfico directo, anuncios, búsqueda orgánica o correo.</p></div></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Informe de páginas y pantallas de Google Analytics 4" src="img/ga4_paginas.jpg"/></div><div><h3 style="margin-top:0">¿Qué páginas consultan?</h3><p><b>Interacción › Páginas y pantallas</b> muestra vistas, usuarios y tiempo de interacción. Aquí Casa Nativa descubre que la colección Living concentra el interés.</p></div></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Informe de eventos clave de Google Analytics 4" src="img/ga4_eventos.jpg"/></div><div><h3 style="margin-top:0">¿Qué acciones importantes completan?</h3><p>Los <b>eventos clave</b> (antes llamados “conversiones”) registran compras, clics a WhatsApp o formularios enviados. Tú decides qué eventos marcar como clave.</p></div></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Tabla de adquisición de tráfico con tasa de interacción y eventos clave por canal" src="img/ga4_adq.jpg"/></div><div><h3 style="margin-top:0">¿Qué canal aporta mejores resultados?</h3><p>Compara canales por <b>eventos clave e ingresos</b>, no solo por sesiones. En el ejemplo, la búsqueda orgánica trae menos visitas que Instagram, pero con mayor tasa de interacción.</p></div></div>
+  </div>
+</section>
+
+<!-- 6 · DOS CAMPAÑAS -->
+<section class="slide" data-title="Comparar campañas" data-audio="p06" data-gate="cloze" data-gate-msg="Completa las cuatro frases y presiona Comprobar.">
+  <span class="eyebrow amber">Cálculo simple</span>
+  <div class="grid-2">
+    <div>
+      <h2>Dos campañas, resultados distintos</h2>
+      <div class="grid-2" style="gap:10px"><div class="metric" style="background:#fff;border-radius:12px;padding:12px;border:1px solid #e3e7ea"><small>Campaña A</small><div class="big">1.500</div><small>visitas · 10 ventas</small></div><div class="metric" style="background:#fff;border-radius:12px;padding:12px;border:1px solid #e3e7ea"><small>Campaña B</small><div class="big">900</div><small>visitas · 27 ventas</small></div></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela y su ayudante revisan un panel simple en el portátil" src="img/m12_panel.jpg"/></div>
+  </div>
+  <div class="cloze-box" data-gate="cloze" data-ok="La campaña B convierte 3 de cada 100 visitas, más de cuatro veces que la A. Si el objetivo es vender, más visitas no significa mejores resultados." data-no="Revisa los espacios en rojo: la tasa de conversión es ventas dividido por visitas, por cien.">
+    <div class="cloze"><b>➗ Fórmula:</b> la tasa de conversión es <select data-ans="b" aria-label="Fórmula"><option value="">…</option><option value="a">visitas ÷ ventas</option><option value="b">ventas ÷ visitas × 100</option><option value="c">visitas − ventas</option></select>.</div>
+    <div class="cloze"><b>A:</b> 10 ÷ 1.500 × 100 = <select data-ans="a" aria-label="Campaña A"><option value="">…</option><option value="a">0,67%</option><option value="b">6,7%</option><option value="c">15%</option></select>.</div>
+    <div class="cloze"><b>B:</b> 27 ÷ 900 × 100 = <select data-ans="c" aria-label="Campaña B"><option value="">…</option><option value="a">0,3%</option><option value="b">33%</option><option value="c">3%</option></select>.</div>
+    <div class="cloze"><b>🎯 Conclusión:</b> si el objetivo es vender, la campaña más eficiente es <select data-ans="b" aria-label="Conclusión"><option value="">…</option><option value="a">la A, porque tiene más visitas</option><option value="b">la B, porque convierte mejor</option><option value="c">ninguna, no se pueden comparar</option></select>.</div>
+    <button class="small-btn primary ccheck" type="button" style="margin-top:12px">Comprobar</button>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 7 · PANEL MÍNIMO -->
+<section class="slide" data-title="Panel mínimo" data-audio="p07" data-gate="sim" data-gate-msg="Completa las cuatro filas y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Arma el panel mínimo de Casa Nativa</h2>
+  <p><b>Objetivo:</b> aumentar las ventas de la colección Living. Elige la mejor opción para cada fila y presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="fila(s)" data-miss-t="Faltan definiciones." data-miss-b="Completa las cuatro filas antes de guardar." data-ok="Pocas métricas, conectadas con el objetivo, revisadas con frecuencia y con una decisión asociada: eso es un panel útil.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Panel semanal · Casa Nativa</div>
+        <table class="seltable stack">
+          <tr data-ans="b" data-ok="Mide directamente el objetivo." data-no="El indicador principal debe medir el objetivo: ventas, no popularidad."><td><b>Indicador principal</b><small>¿Logramos el objetivo?</small><span class="why"></span></td><td><select aria-label="Indicador principal"><option value="">Elegir…</option><option value="a">Seguidores nuevos en Instagram.</option><option value="b">Ventas semanales de la colección Living.</option><option value="c">Total de “me gusta”.</option></select></td></tr>
+          <tr data-ans="c" data-ok="Indica cuánto cuesta cada venta lograda con anuncios." data-no="Para evaluar eficiencia conviene un costo por resultado."><td><b>Indicador de eficiencia</b><small>¿A qué costo?</small><span class="why"></span></td><td><select aria-label="Indicador de eficiencia"><option value="">Elegir…</option><option value="a">Impresiones totales.</option><option value="b">Cantidad de publicaciones.</option><option value="c">Costo por venta de los anuncios.</option></select></td></tr>
+          <tr data-ans="a" data-ok="Una revisión fija y frecuente permite reaccionar a tiempo." data-no="Revisar muy poco o demasiado seguido lleva a decisiones tardías o impulsivas."><td><b>Frecuencia</b><small>¿Cada cuánto se revisa?</small><span class="why"></span></td><td><select aria-label="Frecuencia"><option value="">Elegir…</option><option value="a">Cada lunes, 20 minutos.</option><option value="b">Cuando haya tiempo.</option><option value="c">Cada hora.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Una regla clara convierte el dato en acción." data-no="El panel debe indicar qué haremos si el resultado empeora."><td><b>Decisión asociada</b><small>¿Qué haremos si empeora?</small><span class="why"></span></td><td><select aria-label="Decisión"><option value="">Elegir…</option><option value="a">Esperar a ver qué pasa.</option><option value="b">Si el costo por venta sube dos semanas seguidas, probar un nuevo anuncio.</option><option value="c">Cambiar todo el sitio web.</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Panel semanal recreado en Looker Studio con tres indicadores y una nota de acción" src="img/looker_panel.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Decidir con datos, no con impresiones</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>La campaña A tuvo 1.500 visitas y 10 ventas; la B, 900 visitas y 27 ventas. Solo puedo mantener una. ¿Cuál dejo?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela y su ayudante revisan un panel en el portátil" src="img/m12_panel.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · Si el objetivo es vender, ¿cuál parece más eficiente?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La campaña A, porque tiene más visitas.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La campaña B, porque produce más ventas con menos visitas.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No se puede comparar nada.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: mucho tráfico, pocas ventas</div><div class="branch-body"><div><p>Marcela mantiene la campaña que trae más visitas, pero las ventas bajan. Más visitas no implican mejores resultados comerciales.</p></div><div><p class="hint">Mira el indicador del objetivo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: decidir a ciegas</div><div class="branch-body"><div><p>Los datos permiten una comparación inicial: ventas ÷ visitas. Ignorarlos lleva a decidir por intuición.</p></div><div><p class="hint">Un cálculo simple basta.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La campaña B convierte 3% de las visitas; la A, 0,67%. Si el objetivo es vender, B es más eficiente.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Una semana después:</strong> el panel muestra que las ventas bajaron 20% respecto de la semana anterior.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debería hacer primero?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Revisar en el informe de adquisición qué canal cambió antes de actuar.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Rediseñar todo el sitio web de inmediato.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Publicar el doble en redes sin revisar los datos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: mucho esfuerzo, causa desconocida</div><div class="branch-body"><div><p>El rediseño toma semanas y el problema era otro. Cambiar todo sin diagnóstico rara vez resuelve.</p></div><div><p class="hint">Primero entiende qué cambió.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más actividad, mismo resultado</div><div class="branch-body"><div><p>Publicar más sin saber qué cambió puede no tener efecto. Los datos ya muestran dónde mirar.</p></div><div><p class="hint">Revisa la adquisición por canal.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El informe muestra que bajó el tráfico de anuncios: la campaña B se pausó por falta de presupuesto. Marcela la reactiva y las ventas se recuperan. El dato llevó a la causa.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Define tu panel mínimo</h2>
+  <div class="story">Una tienda de tu rubro quiere aumentar sus ventas en línea. Su panel tiene <b>18 métricas</b>: seguidores, “me gusta”, impresiones, sesiones, rebote y otras. Lo revisa “cuando puede” y no ha definido qué hará si los números empeoran. Las ventas no aparecen en el panel.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el panel tiene muchas métricas y ninguna conectada con el objetivo. Un panel mínimo sería: <b>objetivo</b> aumentar ventas en línea; <b>indicador 1</b> ventas semanales; <b>indicador 2</b> tasa de conversión del sitio; <b>indicador 3</b> costo por venta de los anuncios; <b>frecuencia</b> cada lunes; <b>decisión</b> si la tasa de conversión cae dos semanas seguidas, revisar la página de producto y el proceso de pago. Para tu negocio completa esos mismos seis campos.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.2</h2>
+    <p>Ya puedes conectar tus indicadores con preguntas del negocio, leer los informes básicos de Google Analytics 4 y armar un panel mínimo para decidir.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 4.3</b> construirás tu plan de acción digital.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="4">Repasar Google Analytics</button><button class="small-btn primary" type="button" data-goto="6">Repasar el panel mínimo</button></div>
+    <div class="sources">Imágenes generadas con IA y capturas recreadas con datos ficticios. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

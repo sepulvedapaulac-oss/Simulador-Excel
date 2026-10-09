@@ -1,0 +1,18 @@
+{"audio":{
+"p01":"Bienvenida a la lección uno punto tres: organiza y protege tus archivos en la nube. María necesita enviar la lista de precios vigente, pero encuentra tres versiones distintas en tres lugares. Abre cada archivo y luego elige la mejor mejora inicial.",
+"p03":"Google Drive y OneDrive tienen pantallas distintas, pero funcionan con la misma lógica. Lee cada afirmación y decide si es verdadera o falsa.",
+"p04":"María creó cuatro carpetas principales: administración, ventas, proveedores y marketing. Ubica cada archivo en la carpeta que corresponde. Fíjate en cómo el nombre del archivo ya indica su contenido.",
+"p05":"Si hoy los documentos de tu negocio están repartidos, hay una secuencia para ordenarlos. Ordena los cuatro pasos con las flechas y luego presiona comprobar.",
+"p06":"Compartir no significa dar acceso total. Toca cada tarjeta para descubrir cuándo conviene cada permiso y qué revisar antes de enviar un enlace.",
+"p07":"Practica en este simulador. María compartirá la lista de precios para proveedores. Elige el acceso adecuado para cada persona y el alcance del enlace, y luego presiona guardar.",
+"p08":"Caso aplicado de seguridad. Pedro, que manejaba los pedidos en línea, termina hoy su trabajo en la empresa. Tenía acceso a carpetas compartidas y conocía la contraseña del correo del negocio. Ayuda a María a tomar dos decisiones.",
+"quiz":"Es hora de comprobar lo aprendido. Responde cinco preguntas. Necesitas al menos ochenta por ciento, es decir, cuatro de cinco, para finalizar la lección. Si no lo logras, puedes reintentar.",
+"p10":"Aplica lo aprendido a una carpeta crítica de tu negocio. Lee la situación, responde cada pregunta del checklist con sí o no, y luego revisa la respuesta modelo.",
+"p11":"¡Felicitaciones! Completaste la lección uno punto tres y el módulo uno. Diagnosticaste el punto de partida digital, entendiste la lógica de un ecosistema de productividad y aplicaste criterios de organización, permisos y seguridad básica en tus archivos."},
+"video":[
+{"t":"La misma lógica","img":"l3_hero","lines":["Google Drive y OneDrive tienen interfaces distintas, pero la misma lógica.","Guardar, organizar, compartir y colaborar sobre una versión común."],"keys":[["Guardar y acceder desde cualquier equipo",1],["Organizar en carpetas",1],["Compartir y colaborar",1]]},
+{"t":"Nombres claros","img":"l3_versiones","lines":["Una convención simple de nombres evita las cadenas de final, final dos y definitivo.","Por ejemplo: año y mes, contenido y área, como dos mil veintiséis guion diez, lista de precios, proveedores."],"keys":[["Formato: AAAA-MM_Contenido_Área",1],["2026-10_ListaPrecios_Proveedores.xlsx",1],["Una sola fuente principal",0]]},
+{"t":"Permisos","img":"l3_proveedor","lines":["Compartir no significa dar acceso total.","El permiso debe corresponder a la tarea: ver, comentar o editar. Y antes de enviar un enlace, revisa a quién alcanza."],"keys":[["Ver · Comentar · Editar",1],["Enlace restringido por defecto",1],["El acceso necesario, no más",0]]},
+{"t":"Cuentas protegidas","img":"l3_2fa","lines":["Protege las cuentas del negocio.","Usa contraseñas robustas, una cuenta por persona y verificación en dos pasos, que pide un segundo código además de la contraseña."],"keys":[["Contraseñas robustas y únicas",1],["Una cuenta por persona",1],["Verificación en dos pasos",1]]},
+{"t":"Retirar accesos","img":"l3_salida","lines":["Cuando alguien deja de necesitar la información, se retiran sus accesos.","Y los archivos quedan en cuentas del negocio, no en cuentas personales."],"keys":[["Revisar enlaces compartidos",0],["Retirar accesos que no se usan",0],["La información es del negocio",1]]}
+]}

@@ -1,0 +1,233 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Abre los tres archivos y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.3 · Organiza y protege tus archivos en la nube</span>
+      <h1 class="reveal">¿Cuál es la lista de precios vigente?</h1>
+      <p class="lead reveal">María debe enviar hoy la lista de precios a un cliente y encuentra tres “versiones finales”. <strong>Haz clic en cada archivo</strong> para ver dónde está.</p>
+      <div class="tiles three reveal" data-reveal="hookQ" data-cls="open">
+        <button class="tile" type="button" data-ri><span class="front"><span class="i">📊</span>Lista precios FINAL.xlsx</span><span class="back">📧 Adjunto en un correo de hace tres semanas. Nadie sabe si después se actualizó.</span></button>
+        <button class="tile" type="button" data-ri><span class="front"><span class="i">📊</span>Lista precios FINAL2.xlsx</span><span class="back">📱 Guardado solo en el teléfono de María. Si el teléfono se pierde, se pierde el archivo.</span></button>
+        <button class="tile" type="button" data-ri><span class="front"><span class="i">📊</span>Lista precios nueva definitiva.xlsx</span><span class="back">📁 En una carpeta compartida, pero sin fecha en el nombre y con precios distintos a los otros dos.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Tres versiones impresas de una lista de precios con correcciones y signos de interrogación" src="img/l3_versiones.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Cuál es la mejor mejora inicial?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Definir una carpeta común en la nube y una regla simple para nombrar los archivos.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Crear más copias por si una se pierde.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Dejar el archivo principal solo en el teléfono de María, que es la dueña.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: más versiones posibles.</strong> <span class="fb-body">Cada copia nueva puede cambiar por separado. El riesgo de enviar un precio antiguo aumenta.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: el negocio depende de un teléfono.</strong> <span class="fb-body">Si el teléfono se pierde o María no está, nadie puede acceder a la lista vigente.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Una carpeta común y una convención de nombres reducen las versiones duplicadas y permiten reconocer el archivo vigente. En esta lección verás cómo organizarlo, compartirlo con el permiso justo y protegerlo.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Organizar, compartir y proteger en la nube</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · LA MISMA LÓGICA -->
+<section class="slide" data-title="La misma lógica" data-audio="p03" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow">Drive y OneDrive</span>
+  <div class="grid-2">
+    <div>
+      <h2>Pantallas distintas, la misma lógica</h2>
+      <p>Google Drive y OneDrive cambian su diseño con el tiempo, pero funcionan con los mismos principios: <strong>guardar, organizar, compartir y colaborar</strong>. Decide si cada afirmación es <strong>verdadera o falsa</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="María trabaja en un portátil con carpetas en la nube" src="img/l3_hero.jpg"/></div>
+  </div>
+  <div class="tf" id="tf">
+    <div class="tf-prog"></div>
+    <div class="tf-claim"></div>
+    <div class="tf-btns"><button type="button" data-a="1">✓ Verdadero</button><button type="button" data-a="0">✕ Falso</button></div>
+    <div class="tf-exp"></div>
+  </div>
+  <div class="sources">Referencia: Ayuda de Google Drive; Soporte de Microsoft OneDrive.</div>
+</section>
+
+<!-- 4 · CADA ARCHIVO EN SU CARPETA -->
+<section class="slide" data-title="Estructura de carpetas" data-audio="p04" data-gate="cls" data-gate-msg="Ubica los siete archivos en su carpeta.">
+  <span class="eyebrow amber">Estructura</span>
+  <h2>Cada archivo en su carpeta</h2>
+  <p>María creó cuatro carpetas principales. <strong>Selecciona un archivo</strong> y luego la carpeta donde corresponde (también puedes arrastrarlo). Fíjate en que el nombre ya indica el contenido.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Archivos ubicados <span class="tick" id="clTick">0 / 7</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="p" data-fb="Las facturas de compra van en Proveedores." data-no="Es una factura de un proveedor de harina.">📄 2026-09_Factura_HarinasSur.pdf</button>
+      <button class="cardx" type="button" data-cat="v" data-fb="La lista para clientes es material de Ventas." data-no="Es la lista que ven los clientes. ¿Qué área la usa a diario?">📊 2026-10_ListaPrecios_Clientes.xlsx</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="Los contratos del local son documentos de Administración." data-no="El contrato de arriendo es un documento administrativo.">📄 2026-01_Contrato_ArriendoLocal.pdf</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="Las piezas de campañas van en Marketing." data-no="Es una imagen para una campaña en redes sociales.">🖼️ 2026-12_Campaña_Navidad_Instagram.png</button>
+      <button class="cardx" type="button" data-cat="v" data-fb="Los pedidos de clientes van en Ventas." data-no="Son pedidos de cafeterías que le compran a María.">📊 2026-10_Pedidos_Cafeterias.xlsx</button>
+      <button class="cardx" type="button" data-cat="p" data-fb="Las cotizaciones de compra van en Proveedores." data-no="Es una cotización que envió un proveedor de envases.">📄 2026-10_Cotizacion_Envases.pdf</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="Las remuneraciones son información administrativa y sensible." data-no="Las remuneraciones son un documento interno de Administración.">📊 2026-09_Remuneraciones.xlsx</button>
+    </div>
+    <div class="bins four">
+      <div class="bin" data-cat="a" role="button" tabindex="0"><h3>📁 01 Administración</h3></div>
+      <div class="bin" data-cat="v" role="button" tabindex="0"><h3>📁 02 Ventas</h3></div>
+      <div class="bin" data-cat="p" role="button" tabindex="0"><h3>📁 03 Proveedores</h3></div>
+      <div class="bin" data-cat="m" role="button" tabindex="0"><h3>📁 04 Marketing</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+  <div class="callout"><strong>Convención de nombres:</strong> <code>AAAA-MM_Contenido_Detalle.ext</code>. El año y el mes al inicio ordenan los archivos cronológicamente y evitan “final”, “final2” o “definitivo”.</div>
+</section>
+
+<!-- 5 · ORDENAR EL ESPACIO -->
+<section class="slide" data-title="Ordenar el espacio" data-audio="p05" data-gate="ord" data-gate-msg="Ordena los cuatro pasos y presiona Comprobar.">
+  <span class="eyebrow">Paso a paso</span>
+  <div class="grid-2">
+    <div>
+      <h2>¿Cómo se ordena un espacio de trabajo en la nube?</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar de primero a último y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Inventario, estructura, migración y permisos: así se evita llevar el desorden a la nube y compartir de más." data-no="Pista: no puedes asignar permisos a carpetas que aún no existen, ni crear carpetas sin saber qué documentos tienes.">
+        <ul class="order">
+          <li data-p="3"><b>Migración:</b> mover primero los archivos vigentes y eliminar duplicados con cuidado.</li>
+          <li data-p="4"><b>Permisos:</b> asignar acceso según la función y revisar los enlaces compartidos.</li>
+          <li data-p="1"><b>Inventario:</b> identificar qué documentos son necesarios y quién los usa.</li>
+          <li data-p="2"><b>Estructura:</b> definir 3 a 5 carpetas principales que el equipo entienda.</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="María revisa su estructura de carpetas en la nube" src="img/l3_hero.jpg"/></div>
+  </div>
+</section>
+
+<!-- 6 · TIPOS DE PERMISO -->
+<section class="slide" data-title="Tipos de permiso" data-audio="p06" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow violet">Permisos</span>
+  <h2>Compartir no significa dar acceso total</h2>
+  <p>El permiso debe corresponder a la tarea. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Permisos revisados <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">👁️</div><strong>Ver</strong><span>¿Cuándo conviene?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Consultar sin modificar</strong><span>Cuando la persona necesita revisar la información, pero no debería cambiarla. Ej.: un proveedor que consulta precios.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💬</div><strong>Comentar</strong><span>¿Cuándo conviene?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Sugerir sin editar</strong><span>Cuando la persona revisa y propone cambios, pero la decisión es de otra. Ej.: la contadora revisa un presupuesto.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">✏️</div><strong>Editar</strong><span>¿Cuándo conviene?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mantener vigente</strong><span>Solo para quienes actualizan el contenido. Ej.: el vendedor que registra pedidos.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔗</div><strong>Enlace</strong><span>¿Qué revisar antes de enviarlo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Alcance del enlace</strong><span>Si funciona solo para personas agregadas o para cualquiera que lo reciba. Ante la duda, restringido.</span></div></div></button>
+  </div>
+  <div class="sources">Referencia: Ayuda de Google Drive, “Compartir archivos”; Soporte de Microsoft, “Compartir archivos y carpetas de OneDrive”.</div>
+</section>
+
+<!-- 7 · SIMULADOR -->
+<section class="slide" data-title="Simulador de permisos" data-audio="p07" data-gate="sim" data-gate-msg="Configura los cuatro accesos y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Comparte la lista de precios con el permiso justo</h2>
+  <p>Elige el acceso de cada persona y el alcance del enlace; luego presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-ok="Cada persona tiene el acceso necesario para su tarea y el enlace solo funciona para quienes agregaste.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Compartir “2026-10_ListaPrecios_Proveedores.xlsx”</div>
+        <table class="seltable">
+          <tr data-ans="ver" data-ok="Solo consulta precios: lectura evita cambios accidentales." data-no="El proveedor solo consulta precios; editar o comentar agrega un riesgo innecesario."><td><b>Harinas del Sur</b><small>Proveedor externo · consulta precios</small><span class="why"></span></td><td><select aria-label="Acceso del proveedor"><option value="">Elegir…</option><option value="ver">Puede ver</option><option value="com">Puede comentar</option><option value="edi">Puede editar</option></select></td></tr>
+          <tr data-ans="edi" data-ok="Él mantiene la lista vigente: necesita edición." data-no="Carlos actualiza los precios cada mes; sin edición no puede hacer su trabajo."><td><b>Carlos</b><small>Vendedor · actualiza los precios</small><span class="why"></span></td><td><select aria-label="Acceso de Carlos"><option value="">Elegir…</option><option value="ver">Puede ver</option><option value="com">Puede comentar</option><option value="edi">Puede editar</option></select></td></tr>
+          <tr data-ans="com" data-ok="Revisa y sugiere: comentar le permite aportar sin cambiar los precios." data-no="La contadora propone ajustes, pero la decisión es de María: el permiso justo es comentar."><td><b>Patricia</b><small>Contadora externa · revisa y sugiere</small><span class="why"></span></td><td><select aria-label="Acceso de Patricia"><option value="">Elegir…</option><option value="ver">Puede ver</option><option value="com">Puede comentar</option><option value="edi">Puede editar</option></select></td></tr>
+          <tr data-ans="res" data-ok="Restringido: solo las personas agregadas pueden abrirlo, aunque el enlace se reenvíe." data-no="Con “cualquier persona con el enlace”, un correo reenviado expone precios internos."><td><b>🔗 Acceso general</b><small>¿Quién puede abrir el enlace?</small><span class="why"></span></td><td><select aria-label="Alcance del enlace"><option value="">Elegir…</option><option value="res">Restringido</option><option value="any">Cualquier persona con el enlace</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Proveedor de harina consulta una lista de precios en una tableta en su bodega" src="img/l3_proveedor.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de María</span>
+  <h2>Pedro termina hoy su trabajo</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/maria_avatar.jpg" alt=""/> María · Empanadas Doña María</div>
+      <div class="bubble"><span class="who">María</span>Pedro manejaba los pedidos en línea. Tenía edición en la carpeta de Ventas, algunos archivos en su cuenta personal y sabía la contraseña del correo del negocio. ¿Qué hago antes de que se vaya?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="María recibe el portátil de trabajo de Pedro en su último día" src="img/l3_salida.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace María con los accesos y archivos de Pedro?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Nada por ahora: Pedro es de confianza.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Retirar sus accesos y trasladar a la cuenta del negocio los archivos que tenía en su cuenta personal.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Eliminar la carpeta de Ventas completa.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: accesos que nadie necesita</div><div class="branch-body"><div><p>Pedro conserva acceso a información comercial que ya no necesita y los archivos siguen en su cuenta personal. No se trata de desconfianza: es higiene básica de accesos.</p></div><div><p class="hint">Acceso necesario, no más.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde información del equipo</div><div class="branch-body"><div><p>Borrar la carpeta elimina pedidos y listas que el resto del equipo necesita. El problema son los accesos, no la carpeta.</p></div><div><p class="hint">Retira el acceso, conserva la información.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Retirar los accesos que ya no se necesitan y mover los archivos a cuentas del negocio protege la información y asegura la continuidad.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="grid-2" style="margin-top:18px;align-items:center"><div class="story" style="margin-top:0"><strong>Mismo día:</strong> María recuerda que todo el equipo, incluido Pedro, entra al correo del negocio con la misma contraseña.</div><div class="photo-frame wide"><img alt="Celular con una pantalla de verificación en dos pasos" src="img/l3_2fa.jpg"/></div></div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué medida protege mejor la cuenta?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Cambiar la contraseña y enviarla por WhatsApp al equipo.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Anotar la nueva contraseña en un papel junto al computador.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Cambiar la contraseña, dar cuentas individuales y activar la verificación en dos pasos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el problema se repetirá</div><div class="branch-body"><div><p>Si la contraseña sigue siendo compartida, cada vez que alguien se vaya habrá que cambiarla, y el chat deja la clave expuesta.</p></div><div><p class="hint">Una cuenta por persona.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la clave queda a la vista</div><div class="branch-body"><div><p>Un papel junto al computador expone la cuenta a cualquiera que pase por el local.</p></div><div><p class="hint">Protege la cuenta, no la anotes.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Cuentas individuales evitan compartir credenciales y la verificación en dos pasos bloquea el ingreso aunque una contraseña se filtre.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <div class="sources">Referencia: CISA, “More than a Password” (autenticación multifactor); INCIBE, sección “Protege tu empresa”.</div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Revisa una carpeta crítica</h2>
+  <div class="story">Imagina la carpeta <b>Proveedores</b> de tu negocio: tiene archivos llamados “factura nueva.pdf” y “precios FINAL2.xlsx”, un enlace compartido como <b>“cualquier persona con el enlace”</b> desde hace un año y acceso de edición para una persona que ya no trabaja en la empresa.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> renombra los archivos con la convención <code>AAAA-MM_Contenido_Detalle</code> (por ejemplo, <code>2026-10_Factura_HarinasSur.pdf</code>) y deja una sola versión vigente; cambia el enlace a <b>restringido</b> y comparte solo con las personas que lo necesitan; retira el acceso de la persona que ya no trabaja en la empresa; y asigna <b>ver, comentar o editar</b> según la tarea de cada una. Si la cuenta del negocio es compartida, crea cuentas individuales y activa la verificación en dos pasos.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Cierre del módulo" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Módulo 1 completado</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.3 y el Módulo 1</h2>
+    <p>Diagnosticaste el punto de partida digital, entendiste la lógica de un ecosistema de productividad y aplicaste criterios de organización, permisos y seguridad básica en archivos.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Lo que lograste en el módulo:</strong> <b>Diagnosticar</b> procesos reales antes de elegir tecnología · <b>Conectar</b> herramientas con necesidades concretas · <b>Proteger</b> la información con estructura, permisos y cuentas seguras. Desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar la estructura de carpetas</button><button class="small-btn primary" type="button" data-goto="6">Repasar el simulador de permisos</button></div>
+    <div class="sources">Fuentes: Ayuda de Google Drive, “Compartir archivos”; Soporte de Microsoft, “Compartir archivos y carpetas de OneDrive”; CISA, “More than a Password”; INCIBE, sección “Protege tu empresa”. Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

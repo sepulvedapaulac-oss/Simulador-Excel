@@ -1,0 +1,230 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las tres notas del caso y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.3 · Integrador final</span>
+      <h1 class="reveal">Construye tu plan de acción digital</h1>
+      <p class="lead reveal">Llegó el momento de convertir lo aprendido en decisiones concretas. El plan debe ser priorizado, realista y medible. <strong>Haz clic en cada nota</strong> para conocer la situación de Marcela.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">📚</span><span><span class="from">Nota 1 · Lo aprendido</span><span class="preview">Muchas ideas nuevas…</span><span class="full">Casa Nativa aprendió a ordenar archivos, vender en línea, comunicar, invertir en publicidad, automatizar, gestionar clientes y leer datos.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">⏳</span><span><span class="from">Nota 2 · Recursos</span><span class="preview">Dos personas…</span><span class="full">El equipo es Marcela y una ayudante media jornada. No pueden hacerlo todo a la vez.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🤔</span><span><span class="from">Nota 3 · La duda</span><span class="preview">¿Por dónde empiezo?…</span><span class="full">Marcela debe decidir qué hacer primero y qué puede sostener realmente durante los próximos tres meses.</span></span><span class="badge">Dato</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela planifica frente a un muro con notas adhesivas y una línea de tiempo" src="img/m13_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué hace que un plan sea útil?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Prioridades claras, responsables, plazos e indicadores.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Incorporar la mayor cantidad posible de plataformas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Copiar el plan de una empresa más grande.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: muchas herramientas, poca mejora.</strong> <span class="fb-body">Usar muchas plataformas no garantiza avanzar si no existe una prioridad clara y alguien que las gestione.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: un plan que no calza.</strong> <span class="fb-body">Copiar acciones de otra empresa puede ignorar las necesidades y los recursos reales de tu negocio.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Un buen plan prioriza pocas acciones realistas, cada una con responsable, plazo e indicador. En esta lección construirás el tuyo.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Menos ideas sueltas, más acciones con dirección</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+
+<!-- 3 · DIAGNÓSTICO -->
+<section class="slide" data-title="Diagnóstico" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Paso 1</span>
+  <h2>Vuelve al diagnóstico</h2>
+  <p>Cuatro preguntas para mirar tu negocio con honestidad. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Preguntas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">👍</div><strong>Qué funciona</strong><span>¿Qué mantener?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Prácticas que aportan</strong><span>Casa Nativa: las carpetas compartidas y el catálogo de WhatsApp ya funcionan.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🤕</div><strong>Qué duele</strong><span>¿Qué cuesta hoy?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Pérdidas de tiempo o ventas</strong><span>Olvida hacer seguimiento a cotizaciones y pierde ventas.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧩</div><strong>Qué falta</strong><span>¿Qué no existe aún?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Capacidades o procesos</strong><span>Un registro de clientes y un panel semanal de indicadores.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⏸️</div><strong>Qué puede esperar</strong><span>¿Qué no es prioridad?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Ideas útiles, pero no hoy</strong><span>Abrir una nueva red social o desarrollar una app propia.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · IMPACTO Y ESFUERZO -->
+<section class="slide" data-title="Impacto y esfuerzo" data-audio="p04" data-gate="cls" data-gate-msg="Ubica las ocho acciones en su cuadrante.">
+  <span class="eyebrow amber">Paso 2</span>
+  <h2>Prioriza por impacto y esfuerzo</h2>
+  <p><strong>Selecciona una acción de Casa Nativa</strong> y luego el cuadrante que corresponde.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Acciones ubicadas <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="p" data-fb="Ataca la pérdida de ventas y basta una planilla: alto impacto, bajo esfuerzo." data-no="¿Cuánto cuesta empezar una planilla y cuánto ayuda a vender?">Registrar clientes y próximas acciones</button>
+      <button class="cardx" type="button" data-cat="p" data-fb="Libera horas cada semana con una configuración simple." data-no="¿Cuánto tiempo ahorra y cuánto toma configurarlo?">Automatizar 5 preguntas frecuentes</button>
+      <button class="cardx" type="button" data-cat="e" data-fb="Puede aumentar ventas, pero exige catálogo, pagos y despacho: por etapas." data-no="¿Se puede hacer bien en una semana?">Abrir una tienda en línea propia</button>
+      <button class="cardx" type="button" data-cat="e" data-fb="Tiene alto potencial, pero requiere aprender, medir y ajustar: por etapas." data-no="¿Requiere poco o mucho trabajo continuo?">Campañas de publicidad con panel de medición</button>
+      <button class="cardx" type="button" data-cat="r" data-fb="Es rápido, pero mueve poco la aguja: hazlo si no distrae." data-no="¿Esto cambia las ventas?">Cambiar la foto de portada de Facebook</button>
+      <button class="cardx" type="button" data-cat="r" data-fb="Toma minutos y ayuda un poco: resuélvelo sin desviar las prioridades." data-no="¿Cuánto esfuerzo y cuánto impacto tiene?">Actualizar el horario en Google Maps</button>
+      <button class="cardx" type="button" data-cat="d" data-fb="Hoy exige mucho contenido y su audiencia no está ahí: postergar." data-no="¿La audiencia prioritaria de Casa Nativa está ahí?">Publicar videos diarios en una nueva red social</button>
+      <button class="cardx" type="button" data-cat="d" data-fb="Muy costosa y no resuelve un problema actual: descartar por ahora." data-no="¿Resuelve un problema actual?">Desarrollar una app propia</button>
+    </div>
+    <div class="bins four">
+      <div class="bin" data-cat="p" role="button" tabindex="0"><h3>🚀 Alto impacto · bajo esfuerzo<br><small>Priorizar primero</small></h3></div>
+      <div class="bin" data-cat="e" role="button" tabindex="0"><h3>🧗 Alto impacto · alto esfuerzo<br><small>Planificar por etapas</small></h3></div>
+      <div class="bin" data-cat="r" role="button" tabindex="0"><h3>🧹 Bajo impacto · bajo esfuerzo<br><small>Resolver si no distrae</small></h3></div>
+      <div class="bin" data-cat="d" role="button" tabindex="0"><h3>⏸️ Bajo impacto · alto esfuerzo<br><small>Postergar o descartar</small></h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 5 · DE NECESIDAD A ACCIÓN -->
+<section class="slide" data-title="De necesidad a acción" data-audio="p05" data-gate="ord" data-gate-msg="Ordena los cinco elementos y presiona Comprobar.">
+  <span class="eyebrow">Paso 3</span>
+  <div class="grid-2">
+    <div>
+      <h2>Convierte una necesidad en una acción concreta</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar los elementos y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Problema, acción, responsable, plazo e indicador: así una idea se vuelve un compromiso que se puede cumplir y medir." data-no="Pista: todo parte del problema; el indicador es lo último, porque mide si la acción funcionó.">
+        <ul class="order">
+          <li data-p="3"><b>Responsable:</b> “Marcela.”</li>
+          <li data-p="1"><b>Problema:</b> “Perdemos ventas porque olvidamos hacer seguimiento.”</li>
+          <li data-p="5"><b>Indicador:</b> “Todas las ventas y cotizaciones tienen una próxima acción registrada.”</li>
+          <li data-p="2"><b>Acción:</b> “Registrar cada cliente y su próxima acción en una planilla compartida.”</li>
+          <li data-p="4"><b>Plazo:</b> “Implementar durante las próximas dos semanas.”</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela revisa tareas en una tableta mientras su ayudante empaca un pedido" src="img/m13_equipo.jpg"/></div>
+  </div>
+</section>
+
+<!-- 6 · INTEGRA LOS MÓDULOS -->
+<section class="slide" data-title="Integra los módulos" data-audio="p06" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Paso 4</span>
+  <h2>Integra los cuatro módulos</h2>
+  <p>Cada módulo aporta una pregunta para tu plan. <strong>Revisa las cuatro pestañas.</strong></p>
+  <div class="task" id="tbTask">Módulos revisados <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">1 · Productividad y nube</button><button class="tab" type="button" role="tab">2 · Canales de venta</button><button class="tab" type="button" role="tab">3 · Marketing digital</button><button class="tab" type="button" role="tab">4 · Clientes y datos</button></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Tablero del plan de 90 días con tareas por hacer, en curso y listas" src="img/plan_tablero.jpg"/></div><div><h3 style="margin-top:0">¿Qué debemos ordenar, proteger o estandarizar?</h3><p>Carpetas compartidas, reglas de nombres, permisos y herramientas de trabajo en equipo.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Tienda en línea de decoración artesanal en un portátil" src="img/m5_tienda.jpg"/></div><div><h3 style="margin-top:0">¿Qué parte del proceso comercial necesita menos fricción?</h3><p>Perfil comercial, canal de venta, medios de pago, confirmación y despacho.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Marcela revisa un panel de anuncios y un presupuesto" src="img/m9_hero.jpg"/></div><div><h3 style="margin-top:0">¿A quién queremos llegar y con qué estrategia?</h3><p>Audiencia prioritaria, marca reconocible y accesible, publicidad con control y automatización con trato humano.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Ficha de cliente en un CRM" src="img/crm_ficha.jpg"/></div><div><h3 style="margin-top:0">¿Qué necesitamos registrar, medir y mejorar?</h3><p>Registro de clientes, segmentos, seguimiento y un panel mínimo de indicadores.</p></div></div>
+  </div>
+</section>
+
+<!-- 7 · PRIORIDAD 1 -->
+<section class="slide" data-title="Prioridad 1" data-audio="p07" data-gate="sim" data-gate-msg="Completa las cuatro filas y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Arma la prioridad 1 del plan de Casa Nativa</h2>
+  <p><b>Problema:</b> Marcela pierde ventas porque olvida hacer seguimiento a cotizaciones. Elige la mejor opción para cada fila y presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="fila(s)" data-miss-t="Faltan definiciones." data-miss-b="Completa las cuatro filas antes de guardar." data-ok="Acción concreta, responsable único, plazo realista e indicador verificable: la prioridad 1 está lista para empezar.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Plan de Acción Digital · Prioridad 1</div>
+        <table class="seltable stack">
+          <tr data-ans="c" data-ok="Ataca directamente la causa del problema." data-no="La acción debe resolver la falta de seguimiento, no otra cosa."><td><b>Acción</b><small>¿Qué haremos?</small><span class="why"></span></td><td><select aria-label="Acción"><option value="">Elegir…</option><option value="a">Abrir una cuenta en una nueva red social.</option><option value="b">Rediseñar el logo.</option><option value="c">Registrar cada cliente y cotización con su próxima acción en una planilla compartida.</option></select></td></tr>
+          <tr data-ans="a" data-ok="Una persona responsable evita que la tarea quede en el aire." data-no="“Todos” o “alguien” suele significar nadie."><td><b>Responsable</b><small>¿Quién se hace cargo?</small><span class="why"></span></td><td><select aria-label="Responsable"><option value="">Elegir…</option><option value="a">Marcela.</option><option value="b">Todo el equipo.</option><option value="c">Alguien, cuando tenga tiempo.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Un plazo corto y concreto permite empezar ya." data-no="El plazo debe tener una fecha concreta y realista."><td><b>Plazo</b><small>¿Para cuándo?</small><span class="why"></span></td><td><select aria-label="Plazo"><option value="">Elegir…</option><option value="a">Algún día de este año.</option><option value="b">Implementado en las próximas dos semanas.</option><option value="c">Mañana, todo terminado.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Se puede verificar y está ligado al problema." data-no="El indicador debe mostrar si el seguimiento realmente mejoró."><td><b>Indicador</b><small>¿Cómo sabremos si funcionó?</small><span class="why"></span></td><td><select aria-label="Indicador"><option value="">Elegir…</option><option value="a">Que el equipo se sienta más ordenado.</option><option value="b">El 100% de las cotizaciones tiene próxima acción y fecha registrada.</option><option value="c">Número de seguidores en redes.</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Tablero del plan de 90 días de Casa Nativa" src="img/plan_tablero.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Cuatro oportunidades, una prioridad</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Detecté cuatro oportunidades: ordenar Drive, abrir una nueva red social, automatizar preguntas frecuentes y empezar a registrar clientes. Estoy perdiendo ventas porque olvido hacer seguimiento. ¿Por dónde parto?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela planifica frente al muro con notas" src="img/m13_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué debería priorizar?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Abrir una nueva red social.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Comenzar a registrar clientes y próximas acciones.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Reorganizar todas las carpetas primero.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más trabajo, el mismo problema</div><div class="branch-body"><div><p>La nueva red atrae algunos seguidores, pero las cotizaciones siguen sin seguimiento y las ventas se siguen perdiendo.</p></div><div><p class="hint">Ataca la causa del problema detectado.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: importante, pero no urgente</div><div class="branch-body"><div><p>Ordenar archivos ayuda, pero no es la prioridad inmediata si el problema principal es perder oportunidades comerciales.</p></div><div><p class="hint">¿Qué cuesta ventas hoy?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Registrar clientes y próximas acciones ataca directamente la causa: en tres semanas, Marcela recupera dos cotizaciones que habría olvidado.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Entusiasmada,</strong> Marcela arma un plan de 90 días con <b>siete prioridades</b> al mismo tiempo, para ella y su ayudante de media jornada.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué le recomiendas?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Reducir a tres prioridades, cada una con responsable, plazo e indicador.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Mantener las siete y trabajar más horas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Contratar una agencia para hacerlo todo sin participar.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: todo empezado, nada terminado</div><div class="branch-body"><div><p>A las seis semanas hay siete tareas a medias y un equipo agotado. Un plan que no se puede sostener no mejora el negocio.</p></div><div><p class="hint">Menos acciones, mejor ejecutadas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: depender de otros</div><div class="branch-body"><div><p>Una agencia puede ayudar, pero sin la participación de Marcela el plan no refleja sus necesidades ni deja capacidades instaladas.</p></div><div><p class="hint">El plan es tuyo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Tres prioridades —registrar clientes, automatizar preguntas frecuentes y un panel semanal— con responsables y plazos. Las otras ideas quedan en “puede esperar” para el siguiente trimestre.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Construye tu plan de 90 días</h2>
+  <div class="story">Un emprendimiento de tu rubro escribió este plan: <b>“Prioridad 1: mejorar las redes sociales. Responsable: todos. Plazo: este año. Indicador: que nos vaya mejor.”</b> Además, agregó otras ocho prioridades para los mismos tres meses.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el plan tiene buenas intenciones, pero no se puede ejecutar ni medir. Una versión útil: <b>Prioridad 1</b> — problema: “recibimos consultas por Instagram que no se convierten en ventas”; acción: “responder con un mensaje guía y registrar cada consulta con su próxima acción”; responsable: “la dueña”; plazo: “en dos semanas”; indicador: “porcentaje de consultas con seguimiento registrado”. Y no más de <b>tres prioridades</b> por trimestre. Completa tu plan con: <b>Prioridad 1, 2 y 3</b>, cada una con <b>acción, responsable, plazo e indicador</b>.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Curso completado</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.3 y el curso</h2>
+    <p>Ya tienes las herramientas para construir un plan de acción digital priorizado, realista y medible. Digitalizar no es hacer todo al mismo tiempo: es avanzar paso a paso.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Tu siguiente paso:</strong> completa la plantilla del Plan de Acción Digital con tres prioridades para tu negocio y revísala cada mes.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar impacto y esfuerzo</button><button class="small-btn primary" type="button" data-goto="6">Repasar la prioridad 1</button></div>
+    <div class="sources">Imágenes generadas con IA y capturas recreadas con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
