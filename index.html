@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de Nivel Excel</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/excel.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">X</span><span><b>Simulador de Nivel Excel</b><small class="org"></small></span></div>
+    <div class="who" id="who"></div>
+    <div class="timer" id="timer" hidden></div>
+  </header>
+
+  <!-- ============ 1. Registro ============ -->
+  <main id="view-start" class="view">
+    <section class="card start">
+      <div class="start-info">
+        <h1>¿Cuál es tu nivel de Excel?</h1>
+        <p class="lead">Este simulador mide tu nivel <b>básico</b>, <b>intermedio</b> y <b>avanzado</b> mediante actividades prácticas en un entorno similar a Microsoft Excel: escribirás fórmulas, darás formato, ordenarás y filtrarás datos, crearás gráficos, tablas dinámicas, macros y más.</p>
+        <ul class="steps">
+          <li><span>1</span> Ingresa tus datos.</li>
+          <li><span>2</span> Resuelve las actividades de cada nivel. Comienzas por el nivel Básico.</li>
+          <li><span>3</span> Si apruebas un nivel (<b class="pass-pct"></b>), avanzas al siguiente.</li>
+          <li><span>4</span> Al final verás el nivel alcanzado y el curso recomendado.</li>
+        </ul>
+        <div class="tips">
+          <b>Antes de comenzar</b>
+          <ul>
+            <li>Usa un computador (no celular) con pantalla completa.</li>
+            <li>Las fórmulas se escriben como en Excel en español: <code>=SUMA(A1:A5)</code>, con argumentos separados por punto y coma <code>;</code>.</li>
+            <li>Cada nivel tiene un tiempo máximo. Tu avance se guarda automáticamente.</li>
+          </ul>
+        </div>
+      </div>
+      <form id="form-start" class="start-form" novalidate>
+        <div id="resume" class="resume" hidden></div>
+        <h2>Identificación</h2>
+        <label>Nombre<input name="nombre" autocomplete="given-name" required></label>
+        <label>Apellido<input name="apellido" autocomplete="family-name" required></label>
+        <label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
+        <label class="chk"><input type="checkbox" name="acepto" required> Acepto que mis resultados sean registrados y revisados por el equipo docente.</label>
+        <p class="form-err" id="start-err"></p>
+        <button class="btn pri big" type="submit">Comenzar evaluación</button>
+        <p class="small mobile-warn">Para una mejor experiencia, usa un computador.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ============ 2. Introducción de nivel / resultado de nivel ============ -->
+  <main id="view-level" class="view" hidden>
+    <section class="card level-card" id="level-card"></section>
+  </main>
+
+  <!-- ============ 3. Espacio de trabajo ============ -->
+  <main id="view-work" class="view work" hidden>
+    <aside class="side">
+      <div class="side-head">
+        <div class="lvl" id="work-level"></div>
+        <div class="tlist" id="task-list"></div>
+      </div>
+      <div class="task" id="task-panel"></div>
+      <div class="side-foot">
+        <button class="btn" id="btn-prev" type="button">← Anterior</button>
+        <button class="btn" id="btn-next" type="button">Siguiente →</button>
+        <button class="btn warn" id="btn-finish" type="button">Finalizar nivel</button>
+      </div>
+    </aside>
+    <section class="stage">
+      <div id="sheet-host" class="sheet-host"></div>
+      <div id="quiz-host" class="quiz-host" hidden></div>
+    </section>
+  </main>
+
+  <!-- ============ 4. Resultado final ============ -->
+  <main id="view-end" class="view" hidden>
+    <section class="card end" id="end-card"></section>
+  </main>
+
+  <div id="app-modal" class="app-modal" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/formula.js"></script>
+  <script src="js/workbook.js"></script>
+  <script src="js/sheetui.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

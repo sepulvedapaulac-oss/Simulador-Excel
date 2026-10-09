@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel docente · Simulador Excel</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">X</span><span><b>Panel docente</b><small class="org"></small></span></div>
+    <a class="btn" href="index.html" style="margin-left:auto">Ir al simulador</a>
+  </header>
+  <main class="view">
+    <section class="card wide" id="login">
+      <h1>Resultados de los alumnos</h1>
+      <p class="lead" id="mode-text"></p>
+      <form id="login-form" class="login" hidden>
+        <label>Clave del panel<input type="password" name="key" autocomplete="current-password" required></label>
+        <button class="btn pri" type="submit">Ver resultados</button>
+        <p class="form-err" id="login-err"></p>
+      </form>
+    </section>
+
+    <section class="card wide" id="results" hidden>
+      <div class="toolbar">
+        <h1>Resultados <small id="count"></small></h1>
+        <input id="q" type="search" placeholder="Buscar por nombre, apellido o correo">
+        <select id="f-level">
+          <option value="">Todos los niveles</option>
+          <option>Inicial</option><option>Básico</option><option>Intermedio</option><option>Avanzado</option><option value="__curso">En curso</option>
+        </select>
+        <button class="btn" id="reload" type="button">⟳ Actualizar</button>
+        <button class="btn pri" id="csv" type="button">⬇ Descargar CSV (Excel)</button>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="tablewrap">
+        <table class="res">
+          <thead><tr>
+            <th data-k="fechaInicio">Fecha</th><th data-k="nombre">Nombre</th><th data-k="apellido">Apellido</th><th data-k="correo">Correo</th>
+            <th data-k="nivel">Nivel alcanzado</th><th data-k="basico" class="num">Básico</th><th data-k="intermedio" class="num">Intermedio</th><th data-k="avanzado" class="num">Avanzado</th>
+            <th data-k="duracionMin" class="num">Min.</th><th data-k="estado">Estado</th><th></th>
+          </tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="small" id="note"></p>
+    </section>
+  </main>
+  <div id="app-modal" class="app-modal" hidden></div>
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

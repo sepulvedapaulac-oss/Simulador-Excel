@@ -1,0 +1,186 @@
+/* ===================== Entorno tipo Excel ===================== */
+.xl {
+  --xl-green: #217346;
+  --xl-green-d: #185c37;
+  --xl-grid: #d4d4d4;
+  --xl-head: #f3f3f3;
+  --xl-sel: rgba(33, 115, 70, 0.12);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 420px;
+  font-family: "Segoe UI", Calibri, Arial, sans-serif;
+  font-size: 13px;
+  color: #222;
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.xl button { font-family: inherit; }
+.xl-rtabs { display: flex; background: var(--xl-green); padding: 0 6px; gap: 2px; flex-wrap: wrap; }
+.xl-rtab { background: transparent; color: #fff; border: 0; padding: 7px 12px 6px; font-size: 13px; cursor: pointer; border-radius: 4px 4px 0 0; }
+.xl-rtab:hover { background: rgba(255, 255, 255, .15); }
+.xl-rtab.on { background: #f3f3f3; color: var(--xl-green-d); font-weight: 600; }
+.xl-ribbon { display: flex; gap: 0; background: #f3f3f3; border-bottom: 1px solid #d6d6d6; padding: 4px 4px 0; overflow-x: auto; min-height: 84px; }
+.xl-group { display: flex; flex-direction: column; border-right: 1px solid #dadada; padding: 0 6px; flex-shrink: 0; }
+.xl-items { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-start; max-width: 380px; flex: 1; align-content: flex-start; }
+.xl-glabel { font-size: 11px; color: #666; text-align: center; padding: 2px 0 3px; white-space: nowrap; }
+.xl-rbtn { display: inline-flex; align-items: center; gap: 4px; background: transparent; border: 1px solid transparent; border-radius: 3px; padding: 3px 6px; cursor: pointer; font-size: 12px; color: #222; min-height: 26px; }
+.xl-rbtn:hover { background: #e1e1e1; border-color: #c6c6c6; }
+.xl-rbtn.on { background: #c5e0cf; border-color: #8fbf9f; }
+.xl-rbtn.big { flex-direction: column; min-width: 58px; max-width: 92px; padding: 4px 6px; text-align: center; min-height: 56px; justify-content: flex-start; }
+.xl-rbtn.big .ic { font-size: 20px; line-height: 24px; }
+.xl-rbtn .ic { font-size: 14px; min-width: 16px; text-align: center; }
+.xl-rbtn.icon { width: 30px; justify-content: center; padding: 3px; }
+.xl-rbtn .lb { white-space: normal; line-height: 1.15; }
+.xl-rbtn .dd { font-size: 9px; color: #666; }
+.xl-rsel { font-size: 12px; padding: 3px; border: 1px solid #c6c6c6; border-radius: 3px; height: 26px; }
+
+.xl-fbar { display: flex; align-items: stretch; border-bottom: 1px solid #d6d6d6; background: #fff; height: 30px; }
+.xl-namebox { width: 110px; border: 0; border-right: 1px solid #d6d6d6; padding: 0 6px; font-size: 13px; font-family: inherit; }
+.xl-fx { display: flex; align-items: center; padding: 0 10px; color: #555; border-right: 1px solid #d6d6d6; cursor: pointer; font-family: Georgia, serif; }
+.xl-fx:hover { background: #eee; }
+.xl-formula { flex: 1; border: 0; padding: 0 8px; font-size: 13px; font-family: Consolas, "Segoe UI", monospace; outline: none; }
+.xl-namebox:focus, .xl-formula:focus { outline: 2px solid var(--xl-green); outline-offset: -2px; }
+
+.xl-gridwrap { flex: 1; overflow: auto; position: relative; background: #fff; outline: none; }
+.xl-grid { border-collapse: separate; border-spacing: 0; table-layout: fixed; user-select: none; position: relative; }
+.xl-grid th, .xl-grid td { height: 24px; box-sizing: border-box; padding: 0; }
+.xl-grid thead th { position: sticky; top: 0; background: var(--xl-head); z-index: 5; border-right: 1px solid var(--xl-grid); border-bottom: 1px solid #bdbdbd; font-weight: 400; color: #444; font-size: 12px; text-align: center; }
+.xl-grid th.corner { left: 0; z-index: 7; cursor: pointer; background: linear-gradient(135deg, #f3f3f3 60%, #c8c8c8 60%); }
+.xl-grid th.ch { cursor: s-resize; position: sticky; }
+.xl-grid th.ch .rsz { position: absolute; right: -3px; top: 0; width: 6px; height: 100%; cursor: col-resize; z-index: 2; }
+.xl-grid th.rh { position: sticky; left: 0; background: var(--xl-head); z-index: 4; border-right: 1px solid #bdbdbd; border-bottom: 1px solid var(--xl-grid); font-weight: 400; color: #444; font-size: 12px; text-align: center; cursor: e-resize; }
+.xl-grid th.rh.fzr { z-index: 6; }
+.xl-grid th.hsel { background: #d2d2d2; color: var(--xl-green-d); font-weight: 600; }
+.xl-grid td { border-right: 1px solid #e3e3e3; border-bottom: 1px solid #e3e3e3; white-space: nowrap; overflow: hidden; position: relative; cursor: cell; font-size: 13px; }
+.xl-grid td .v { padding: 0 4px; line-height: 23px; overflow: hidden; text-overflow: clip; }
+.xl-grid td.bd { border: 1px solid #555; }
+.xl-grid td.insel { box-shadow: inset 0 0 0 9999px var(--xl-sel); }
+.xl-grid td.act { box-shadow: none; }
+.xl-grid td.err .v { color: #c00000; }
+.xl-grid td.cm::after { content: ""; position: absolute; top: 0; right: 0; border-style: solid; border-width: 0 7px 7px 0; border-color: transparent #c00000 transparent transparent; }
+.xl-grid td.fzb { border-bottom: 2px solid #9a9a9a; }
+.xl-grid td.fzrt { border-right: 2px solid #9a9a9a; }
+.xl-grid td.tr-prec { outline: 2px solid #1f4fd1; outline-offset: -2px; background-image: linear-gradient(rgba(31,79,209,.08), rgba(31,79,209,.08)); }
+.xl-grid td.tr-dep { outline: 2px dashed #c00000; outline-offset: -2px; }
+.xl-grid td.tr-self { outline: 2px solid #1f4fd1; outline-offset: -2px; }
+.xl-grid td.hasf .v { padding-right: 20px; }
+.xl-grid .fbtn { position: absolute; right: 2px; top: 3px; width: 17px; height: 17px; font-size: 10px; line-height: 14px; padding: 0; border: 1px solid #b5b5b5; background: #fff; border-radius: 2px; cursor: pointer; color: #444; }
+.xl-grid .fbtn.on { background: #ddebf7; border-color: #2f75b5; color: #2f75b5; }
+.xl-selbox { position: absolute; border: 2px solid var(--xl-green); pointer-events: none; z-index: 8; display: none; box-sizing: border-box; }
+.xl-handle { position: absolute; right: -5px; bottom: -5px; width: 7px; height: 7px; background: var(--xl-green); border: 1px solid #fff; cursor: crosshair; pointer-events: auto; }
+.xl-gridwrap.copying .xl-selbox { border-style: dashed; }
+.xl-fillbox { position: absolute; border: 2px dashed #777; pointer-events: none; z-index: 8; display: none; box-sizing: border-box; }
+.xl-editor { position: absolute; z-index: 12; border: 2px solid var(--xl-green); padding: 0 3px; font-size: 13px; font-family: "Segoe UI", Calibri, Arial, sans-serif; outline: none; box-sizing: border-box; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+.xl-editor.idle { opacity: 0; pointer-events: none; caret-color: transparent; border-color: transparent; box-shadow: none; }
+.xl-hint { position: absolute; z-index: 13; display: none; background: #ffffe1; border: 1px solid #a0a0a0; padding: 2px 6px; font-size: 12px; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
+.xl-suggest { position: absolute; z-index: 14; display: none; background: #fff; border: 1px solid #a0a0a0; box-shadow: 0 2px 8px rgba(0,0,0,.2); max-width: 460px; }
+.xl-suggest .it { padding: 3px 8px; cursor: pointer; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.xl-suggest .it:first-child, .xl-suggest .it:hover { background: #e8f2ec; }
+.xl-suggest .it span { color: #666; }
+.xl-dvbtn { position: absolute; z-index: 11; width: 18px; font-size: 10px; border: 1px solid #a6a6a6; background: #f3f3f3; cursor: pointer; padding: 0; }
+.xl-overlays { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 9; }
+
+.xl-chart { position: absolute; background: #fff; border: 1px solid #bfbfbf; box-shadow: 0 2px 10px rgba(0,0,0,.18); display: flex; flex-direction: column; }
+.xl-chart-bar { height: 22px; display: flex; align-items: center; gap: 4px; padding: 0 6px; background: #f6f6f6; border-bottom: 1px solid #e3e3e3; cursor: move; font-size: 11px; color: #666; }
+.xl-chart-bar span { flex: 1; }
+.xl-chart-bar button { border: 0; background: transparent; cursor: pointer; font-size: 12px; padding: 0 4px; color: #555; }
+.xl-chart-bar button:hover { background: #e2e2e2; }
+.xl-chart-body { flex: 1; }
+.xl-control { position: absolute; display: flex; align-items: center; gap: 2px; background: #fff; border: 1px dashed #bbb; padding: 2px 4px; font-size: 12px; }
+.xl-control select { font-size: 12px; min-width: 120px; }
+.xl-control.spin button { width: 22px; height: 14px; font-size: 8px; line-height: 8px; padding: 0; display: block; }
+.xl-control.spin { flex-direction: column; padding: 2px; }
+.xl-control .grip { cursor: move; color: #999; font-size: 12px; padding: 0 2px; }
+
+.xl-tabs { display: flex; align-items: center; gap: 2px; background: #f3f3f3; border-top: 1px solid #d6d6d6; padding: 0 8px; height: 30px; overflow-x: auto; }
+.xl-stab { border: 0; background: transparent; padding: 5px 14px; cursor: pointer; font-size: 12.5px; color: #333; border-bottom: 3px solid transparent; white-space: nowrap; }
+.xl-stab:hover { background: #e6e6e6; }
+.xl-stab.on { background: #fff; color: var(--xl-green-d); font-weight: 600; border-bottom-color: var(--xl-green); }
+.xl-stab-edit { font-size: 12.5px; padding: 3px 6px; width: 120px; }
+.xl-sadd { border: 0; background: transparent; font-size: 18px; color: #555; cursor: pointer; padding: 0 8px; }
+.xl-status { display: flex; align-items: center; gap: 12px; background: var(--xl-green); color: #fff; height: 24px; padding: 0 10px; font-size: 12px; }
+.xl-status .sum { margin-left: auto; }
+.xl-status .rec { background: #c00000; color: #fff; border: 0; border-radius: 3px; font-size: 11.5px; padding: 2px 8px; cursor: pointer; animation: xlpulse 1.4s infinite; }
+@keyframes xlpulse { 50% { opacity: .7; } }
+.xl-collapse { display: none; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); z-index: 40; background: #fff; border: 1px solid #888; box-shadow: 0 4px 16px rgba(0,0,0,.3); padding: 8px 10px; gap: 10px; align-items: center; border-radius: 4px; }
+.xl-collapse .tx { font-family: Consolas, monospace; background: #f3f3f3; padding: 3px 8px; border: 1px solid #ccc; min-width: 140px; }
+.xl-collapse button, .xl-dfoot button, .xl-popup button { font-size: 12.5px; padding: 5px 14px; border: 1px solid #adadad; background: #fdfdfd; border-radius: 3px; cursor: pointer; }
+.xl-collapse button.pri, .xl-dfoot button.pri, .xl-fpop .pri { background: #217346; color: #fff; border-color: #185c37; }
+.xl-toast { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 7px 14px; border-radius: 4px; font-size: 12.5px; z-index: 30; transition: opacity .4s; max-width: 80%; }
+.xl-toast.out { opacity: 0; }
+.xl-gridwrap.protected .xl-grid td { cursor: not-allowed; }
+
+/* Popups y menús */
+.xl-popup { position: fixed; z-index: 1000; background: #fff; border: 1px solid #a0a0a0; box-shadow: 0 4px 14px rgba(0,0,0,.22); font-family: "Segoe UI", Calibri, Arial, sans-serif; font-size: 12.5px; }
+.xl-menu { display: flex; flex-direction: column; min-width: 190px; padding: 3px 0; max-height: 360px; overflow: auto; }
+.xl-menu button { text-align: left; border: 0 !important; background: transparent !important; padding: 6px 16px !important; border-radius: 0 !important; }
+.xl-menu button:hover { background: #e8f2ec !important; }
+.xl-menu .sep { height: 1px; background: #e0e0e0; margin: 3px 0; }
+.xl-colors { padding: 6px; width: 200px; }
+.xl-colors .none { width: 100%; margin-bottom: 6px; }
+.xl-colors .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; }
+.xl-colors .grid button { width: 16px; height: 16px; padding: 0 !important; border: 1px solid #ccc !important; border-radius: 0 !important; }
+.xl-fpop { width: 250px; padding: 6px; }
+.xl-fpop .lnk { display: block; width: 100%; text-align: left; border: 0 !important; background: transparent !important; padding: 4px 6px !important; }
+.xl-fpop .lnk:hover { background: #e8f2ec !important; }
+.xl-fpop hr { border: 0; border-top: 1px solid #e3e3e3; margin: 4px 0; }
+.xl-fpop .cust { padding: 2px 4px 6px; }
+.xl-fpop .cust .t { font-weight: 600; margin-bottom: 3px; }
+.xl-fpop .cust select { width: 120px; font-size: 12px; }
+.xl-fpop .cust input { width: 92px; font-size: 12px; }
+.xl-fpop .vals { max-height: 180px; overflow: auto; border: 1px solid #d0d0d0; padding: 4px; display: flex; flex-direction: column; gap: 2px; }
+.xl-fpop .vals label { white-space: nowrap; cursor: pointer; }
+.xl-fpop .btns { display: flex; justify-content: flex-end; gap: 6px; margin-top: 6px; }
+.xl-fpop .btns button { padding: 4px 10px; }
+
+/* Diálogos */
+.xl-modal { position: fixed; inset: 0; background: rgba(0,0,0,.25); z-index: 900; display: flex; align-items: center; justify-content: center; font-family: "Segoe UI", Calibri, Arial, sans-serif; font-size: 13px; }
+.xl-dialog { background: #fff; width: 430px; max-width: calc(100vw - 24px); max-height: calc(100vh - 40px); display: flex; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,.35); border: 1px solid #888; }
+.xl-dhead { display: flex; align-items: center; padding: 8px 12px; background: #fff; border-bottom: 1px solid #e3e3e3; font-weight: 600; }
+.xl-dhead span { flex: 1; }
+.xl-dhead .x { border: 0; background: transparent; font-size: 14px; cursor: pointer; }
+.xl-dbody { padding: 12px 14px; overflow: auto; }
+.xl-dfoot { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 14px; border-top: 1px solid #eee; background: #fafafa; flex-wrap: wrap; }
+.xl-dfoot .left { margin-right: auto; }
+.xl-dfoot .left + .left { margin-right: 0; }
+.xl-form .row { margin-bottom: 9px; }
+.xl-form .row > label { display: block; font-size: 12px; color: #444; margin-bottom: 3px; }
+.xl-form .row.chk label { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #222; }
+.xl-form .inp { display: flex; gap: 4px; }
+.xl-form input[type=text], .xl-form input[type=password], .xl-form select, .xl-form textarea { width: 100%; box-sizing: border-box; padding: 5px 7px; border: 1px solid #adadad; border-radius: 2px; font-size: 13px; font-family: inherit; }
+.xl-form input:focus, .xl-form select:focus, .xl-form textarea:focus { outline: 2px solid #217346; outline-offset: -1px; }
+.xl-form .pick { border: 1px solid #adadad; background: #f3f3f3; cursor: pointer; padding: 0 9px; font-size: 14px; }
+.xl-form .help { font-size: 11.5px; color: #777; margin-top: 3px; }
+.xl-form .info { font-size: 12.5px; color: #333; }
+.xl-form .radios { display: flex; flex-direction: column; gap: 4px; }
+.xl-form .err { color: #c00000; font-size: 12.5px; min-height: 16px; white-space: pre-line; }
+.xl-alert { display: flex; gap: 12px; align-items: flex-start; }
+.xl-alert .ic { font-size: 24px; }
+.xl-list table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.xl-list th, .xl-list td { border-bottom: 1px solid #eee; padding: 5px 6px; text-align: left; }
+.xl-list .errc { color: #c00000; font-weight: 600; }
+.xl-list button { font-size: 12px; padding: 2px 8px; }
+.muted { color: #777; }
+.xl-scen .cols { display: flex; gap: 10px; }
+.xl-scen .lst { flex: 1; border: 1px solid #adadad; min-height: 150px; max-height: 220px; overflow: auto; padding: 2px; }
+.xl-scen .lst .it { padding: 3px 6px; cursor: pointer; }
+.xl-scen .lst .it.on { background: #217346; color: #fff; }
+.xl-scen .btns { display: flex; flex-direction: column; gap: 6px; width: 140px; }
+.xl-scen .btns button { padding: 5px 8px; border: 1px solid #adadad; background: #fdfdfd; cursor: pointer; }
+.xl-scen .info { margin-top: 8px; font-size: 12px; }
+.xl-fnlist .top { display: flex; gap: 6px; margin-bottom: 6px; }
+.xl-fnlist .top input { flex: 1; padding: 5px; }
+.xl-fnlist .lst { height: 170px; overflow: auto; border: 1px solid #adadad; }
+.xl-fnlist .lst .it { padding: 2px 8px; cursor: pointer; font-size: 12.5px; }
+.xl-fnlist .lst .it.on { background: #217346; color: #fff; }
+.xl-fnlist .desc { min-height: 48px; margin-top: 8px; font-size: 12.5px; }
+.xl-vba { display: flex; gap: 8px; }
+.xl-vba .proj { width: 150px; font-size: 12px; background: #f6f6f6; border: 1px solid #ddd; padding: 6px; }
+.xl-vba .code { flex: 1; margin: 0; background: #fff; border: 1px solid #ddd; padding: 8px; font-size: 12px; min-height: 220px; max-height: 360px; overflow: auto; color: #00008b; }
+.xl-print { background: #888; padding: 16px; max-height: 60vh; overflow: auto; }
+.xl-print table { background: #fff; border-collapse: collapse; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.xl-print td { padding: 3px 8px; font-size: 11px; min-width: 50px; border: 1px dotted #ddd; }
