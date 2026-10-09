@@ -100,9 +100,8 @@
       const sp = $('#see-prev');
       if (sp) sp.onclick = () => { S = prev; route(); };
       $('#new-eval').onclick = () => {
-        if (!prev.finished && !confirm('Se perderá el avance de la evaluación en curso. ¿Desea continuar?')) return;
-        localStorage.removeItem(SKEY);
-        box.hidden = true;
+        const reset = () => { try { localStorage.removeItem(SKEY); } catch (e) { /* sin almacenamiento */ } box.hidden = true; };
+        if (prev.finished) reset(); else appConfirm('Se perderá el avance de la evaluación en curso. ¿Desea continuar?', reset);
       };
     }
     $('#form-start').addEventListener('submit', (e) => {
@@ -174,7 +173,7 @@
     const gn = $('#go-next');
     if (gn) gn.onclick = () => { S.levelIdx++; S.taskIdx = 0; S.phase = 'intro'; persist(); renderLevelIntro(); };
     const sh = $('#stop-here');
-    if (sh) sh.onclick = () => { if (confirm('¿Seguro que deseas terminar la evaluación ahora?')) finishAll(); };
+    if (sh) sh.onclick = () => appConfirm('¿Seguro que deseas terminar la evaluación ahora?', finishAll);
   }
 
   /* ----------------------------- Trabajo ----------------------------- */
@@ -234,7 +233,7 @@
     $('#btn-prev').disabled = i === 0;
     $('#btn-next').disabled = i === L.tasks.length - 1;
     const rb = $('#btn-reset');
-    if (rb) rb.onclick = () => { if (confirm('Se borrarán los cambios realizados en esta actividad. ¿Continuar?')) { delete S.states[t.id]; persist(); openTask(S.taskIdx); } };
+    if (rb) rb.onclick = () => appConfirm('Se borrarán los cambios realizados en esta actividad. ¿Continuar?', () => { delete S.states[t.id]; persist(); openTask(S.taskIdx); });
     if (t.type === 'quiz') {
       $('#sheet-host').hidden = true;
       $('#quiz-host').hidden = false;
@@ -355,7 +354,7 @@
       '<div class="row center noprint"><button class="btn" type="button" id="print">🖨 Imprimir / guardar comprobante (PDF)</button><button class="btn" type="button" id="new">Nueva evaluación</button></div>';
     renderSyncState();
     $('#print').onclick = () => { document.querySelectorAll('#end-card details').forEach((d) => { d.open = true; }); window.print(); };
-    $('#new').onclick = () => appConfirm('Se cerrará este resultado en este navegador (ya quedó registrado). ¿Comenzar una nueva evaluación?', () => { localStorage.removeItem(SKEY); location.reload(); });
+    $('#new').onclick = () => appConfirm('Se cerrará este resultado en este navegador (ya quedó registrado). ¿Comenzar una nueva evaluación?', () => { try { localStorage.removeItem(SKEY); } catch (e) { /* sin almacenamiento */ } location.reload(); });
   }
 
   /* ----------------------------- Diálogos ----------------------------- */
