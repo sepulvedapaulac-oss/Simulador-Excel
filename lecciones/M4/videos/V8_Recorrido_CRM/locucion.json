@@ -1,0 +1,96 @@
+[
+{
+"id": "g01",
+"sc": 1,
+"escena": "Información dispersa",
+"txt": "Cuando los datos de clientes están repartidos entre mensajes, planillas, correos y teléfonos, hacer seguimiento se vuelve difícil. Un CRM permite reunir esa información y transformarla en acciones comerciales más ordenadas. En este video veremos un recorrido básico utilizando HubSpot como ejemplo."
+},
+{
+"id": "g02",
+"sc": 2,
+"escena": "Vista general de HubSpot",
+"txt": "Un CRM, o sistema de gestión de relaciones con clientes, no es simplemente una agenda digital. Su valor está en ayudarnos a saber quién es el cliente, qué ha ocurrido en la relación y cuál debería ser el siguiente paso."
+},
+{
+"id": "g03",
+"sc": 3,
+"escena": "Lista de contactos",
+"txt": "Comencemos por los contactos. Aquí podemos mantener un registro centralizado de las personas con las que el negocio mantiene una relación comercial. En lugar de buscar información en distintas aplicaciones, contamos con un punto de consulta común."
+},
+{
+"id": "g04",
+"sc": 4,
+"escena": "Ficha de Daniela Soto",
+"txt": "Abramos un ejemplo. Daniela es clienta de Casa Nativa. En su ficha podemos registrar información básica como nombre, correo, teléfono y otros datos útiles para la relación comercial. Lo importante es guardar solo información que realmente necesitaremos utilizar."
+},
+{
+"id": "g05",
+"sc": 5,
+"escena": "Propiedades del contacto",
+"txt": "También podemos incorporar información que ayude a comprender mejor al cliente. Por ejemplo, podemos registrar que Daniela tiene interés en decoración infantil o que ya ha realizado más de una compra. Estos datos posteriormente permiten segmentar y personalizar acciones.",
+"extra": 2
+},
+{
+"id": "g06",
+"sc": 6,
+"escena": "Historial de actividad",
+"txt": "Otro elemento importante es el historial. Un CRM permite mantener contexto sobre interacciones, actividades o gestiones realizadas. Así evitamos depender únicamente de la memoria de una persona para saber qué ocurrió con un cliente."
+},
+{
+"id": "g07",
+"sc": 7,
+"escena": "Crear una nota",
+"txt": "Supongamos que Daniela consulta por una nueva colección. Podemos registrar una nota breve que deje constancia de esa interacción. El objetivo no es escribir conversaciones completas, sino conservar información que facilite el seguimiento posterior.",
+"extra": 2.5
+},
+{
+"id": "g08",
+"sc": 8,
+"escena": "Crear una tarea",
+"txt": "Ahora agregamos algo especialmente útil: la próxima acción. Podemos crear una tarea para contactar a Daniela el viernes y enviarle información cuando la colección esté disponible. De esta manera, el CRM ayuda a transformar información en una acción concreta.",
+"extra": 3
+},
+{
+"id": "g09",
+"sc": 9,
+"escena": "Filtros",
+"txt": "Cuando la base empieza a crecer, podemos utilizar filtros para encontrar grupos de contactos con características similares. Por ejemplo, clientes recurrentes, personas interesadas en una categoría determinada o contactos que necesitan seguimiento."
+},
+{
+"id": "g10",
+"sc": 10,
+"escena": "Segmento filtrado",
+"txt": "Esta segmentación permite evitar mensajes iguales para toda la base. Casa Nativa podría identificar a clientes recurrentes interesados en decoración infantil y compartir con ellos información relevante, en lugar de enviar una promoción genérica a todas las personas.",
+"extra": 2
+},
+{
+"id": "g11",
+"sc": 11,
+"escena": "Tres segmentos",
+"txt": "Los segmentos pueden responder a diferentes necesidades. Un cliente nuevo puede necesitar acompañamiento después de su primera compra. Un cliente recurrente puede valorar novedades relacionadas con sus intereses. Y un cliente inactivo puede requerir una estrategia de reactivación."
+},
+{
+"id": "g12",
+"sc": 12,
+"escena": "Registro y fidelización",
+"txt": "Aquí aparece la relación entre registro y fidelización. Fidelizar no consiste solamente en enviar descuentos. Significa utilizar el historial y el conocimiento del cliente para entregar comunicaciones más pertinentes y realizar seguimiento en el momento adecuado."
+},
+{
+"id": "g13",
+"sc": 13,
+"escena": "El ciclo del CRM",
+"txt": "Podemos resumir la lógica en cinco pasos: registrar, mantener contexto, segmentar, definir una próxima acción y aprender del resultado. El CRM es la herramienta que permite sostener ese ciclo."
+},
+{
+"id": "g14",
+"sc": 14,
+"escena": "Tres preguntas",
+"txt": "Antes de incorporar un CRM en tu negocio, pregúntate: qué información necesitas registrar, qué grupos de clientes sería útil distinguir y qué acciones de seguimiento quieres dejar de manejar solo de memoria."
+},
+{
+"id": "g15",
+"sc": 15,
+"escena": "Cierre",
+"txt": "No necesitas comenzar con una base compleja. Empieza con pocos datos, mantenlos actualizados y asegúrate de que cada registro ayude a tomar una decisión o realizar una acción."
+}
+]

@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Del contacto al seguimiento: recorrido práctico por un CRM</title>
+<style>
+@font-face{font-family:LD;src:url(fonts/lexend-deca-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:LD;src:url(fonts/lexend-deca-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:LD;src:url(fonts/lexend-deca-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:LD;src:url(fonts/lexend-deca-latin-700-normal.woff2);font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:LD,Inter,Arial,sans-serif;color:#33475b}
+#bg{position:absolute;inset:0;background:linear-gradient(135deg,#1b2a38 0%,#213343 55%,#4a2c22 100%)}
+#note{position:absolute;left:40px;top:18px;font-size:19px;color:rgba(255,255,255,.9);background:rgba(0,0,0,.28);padding:7px 16px;border-radius:18px;z-index:5}
+#sc{position:absolute;inset:0}
+/* ===== interfaz tipo HubSpot ===== */
+.app{position:absolute;left:40px;top:66px;width:1840px;height:884px;border-radius:14px;overflow:hidden;background:#f5f8fa;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.top{position:absolute;left:0;right:0;top:0;height:56px;background:#213343;display:flex;align-items:center;gap:18px;padding:0 20px 0 14px;color:#fff}
+.logo{width:34px;height:34px;border-radius:50%;background:#ff5c35;display:grid;place-items:center}
+.logo i{width:12px;height:12px;border-radius:50%;border:3px solid #fff;display:block}
+.srch{width:520px;height:36px;border-radius:6px;background:#2f4558;display:flex;align-items:center;padding:0 14px;font-size:15px;color:#b6c5d3;margin-left:40px}
+.top .acc{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:15px;color:#dfe7ee}
+.top .acc b{width:34px;height:34px;border-radius:50%;background:#f3ebdd;color:#b5573b;display:grid;place-items:center;font-size:14px}
+.rail{position:absolute;left:0;top:56px;bottom:0;width:64px;background:#2d3e50;display:flex;flex-direction:column;align-items:center;padding-top:16px;gap:10px}
+.rail span{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;color:#b6c5d3;font-size:19px;font-weight:600}
+.rail span.on{background:#ff5c35;color:#fff}
+.fly{position:absolute;left:64px;top:56px;width:260px;bottom:0;background:#fff;border-right:1px solid #cbd6e2;padding:18px 0;z-index:3}
+.fly h5{font-size:13px;letter-spacing:.08em;color:#7c98b6;padding:0 22px 10px}
+.fly div{padding:12px 22px;font-size:18px;color:#33475b}
+.fly div.on{background:#e5f5f8;border-left:4px solid #00a4bd;font-weight:600}
+.main{position:absolute;left:64px;right:0;top:56px;bottom:0;overflow:hidden}
+.ph{display:flex;align-items:center;gap:14px;padding:20px 28px 0}
+.ph h1{font-size:30px;font-weight:600;color:#213343}
+.ph .cnt{font-size:16px;color:#516f90;margin-left:4px}
+.btn{border-radius:6px;padding:9px 18px;font-size:16px;font-weight:600;border:1px solid #cbd6e2;background:#fff;color:#33475b;white-space:nowrap}
+.btn.pri{background:#ff5c35;border-color:#ff5c35;color:#fff}
+.btn.sec{border-color:#ff5c35;color:#ff5c35}
+.vtabs{display:flex;gap:4px;padding:16px 28px 0;border-bottom:1px solid #cbd6e2}
+.vtabs span{padding:10px 18px;font-size:16px;border:1px solid #cbd6e2;border-bottom:none;border-radius:6px 6px 0 0;background:#eaf0f6;color:#516f90;white-space:nowrap}
+.vtabs span.on{background:#fff;color:#213343;font-weight:600;position:relative;top:1px}
+.fbar{display:flex;gap:10px;padding:14px 28px;align-items:center;background:#fff;border-bottom:1px solid #dfe3eb}
+.fbar .dd{font-size:15px;color:#0091ae;font-weight:600;padding:6px 4px;white-space:nowrap}
+.fbar .dd.f{border:1px solid #cbd6e2;border-radius:6px;padding:6px 12px}
+.fbar .dd.on{background:#e5f5f8;border-color:#00a4bd}
+.fbar .s{width:300px;height:36px;border:1px solid #cbd6e2;border-radius:6px;font-size:15px;color:#7c98b6;display:flex;align-items:center;padding:0 12px}
+table.ix{border-collapse:collapse;width:100%;background:#fff;font-size:16px}
+table.ix th{background:#f5f8fa;color:#33475b;font-size:13px;letter-spacing:.06em;text-align:left;padding:12px 14px;border-bottom:1px solid #cbd6e2;border-right:1px solid #dfe3eb;white-space:nowrap}
+table.ix td{padding:13px 14px;border-bottom:1px solid #dfe3eb;white-space:nowrap}
+table.ix td.nm{color:#0091ae;font-weight:600;display:flex;align-items:center;gap:10px}
+table.ix tr.hov td{background:#e5f5f8}
+.ava{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:600;flex:none}
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:14px;font-weight:600}
+.t-rec{background:#e5f8f0;color:#00704d}.t-new{background:#e5f5f8;color:#00708a}.t-int{background:#f5ecff;color:#6a3fb5}.t-ina{background:#fff1e0;color:#a35200}
+/* ficha */
+.rl{position:absolute;left:0;top:0;bottom:0;width:430px;background:#fff;border-right:1px solid #cbd6e2;padding:16px 22px;overflow:hidden}
+.rl .bc{font-size:15px;color:#0091ae;font-weight:600}
+.rl .hd{display:flex;gap:14px;align-items:center;margin-top:16px}
+.rl .hd .ava{width:64px;height:64px;font-size:22px}
+.rl .hd b{display:block;font-size:24px;color:#213343;font-weight:600}
+.rl .hd small{display:block;font-size:15px;color:#516f90;margin-top:3px}
+.acts{display:flex;justify-content:space-between;margin:18px 4px 6px}
+.acts div{text-align:center;font-size:13px;color:#33475b;width:58px}
+.acts div i{display:grid;place-items:center;width:42px;height:42px;margin:0 auto 5px;border-radius:50%;border:1px solid #cbd6e2;background:#f5f8fa;font-style:normal;font-size:18px;color:#516f90}
+.acts div.on i{background:#ff5c35;border-color:#ff5c35;color:#fff}
+.sect{margin-top:12px;border-top:1px solid #dfe3eb;padding-top:12px}
+.sect h4{font-size:16px;color:#213343;font-weight:600;margin-bottom:6px}
+.prop{padding:7px 8px;border-radius:6px}
+.prop small{display:block;font-size:13px;color:#516f90}
+.prop div{font-size:16px;color:#213343;margin-top:2px;min-height:22px}
+.prop.ed{background:#e5f5f8;outline:2px solid #00a4bd}
+.rm{position:absolute;left:430px;right:350px;top:0;bottom:0;padding:16px 26px;overflow:hidden}
+.rtabs{display:flex;gap:28px;border-bottom:2px solid #dfe3eb;font-size:17px}
+.rtabs span{padding:8px 2px;color:#516f90}
+.rtabs span.on{color:#213343;font-weight:600;border-bottom:3px solid #213343;margin-bottom:-2px}
+.chips{display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+.chips span{font-size:14px;padding:5px 12px;border-radius:14px;background:#eaf0f6;color:#33475b}
+.chips span.on{background:#213343;color:#fff}
+.tl h6{font-size:14px;color:#516f90;letter-spacing:.05em;margin:14px 0 8px;font-weight:600}
+.ev{background:#fff;border:1px solid #dfe3eb;border-radius:8px;padding:12px 16px;margin-bottom:10px;font-size:16px;line-height:1.4;color:#33475b}
+.ev small{display:flex;justify-content:space-between;font-size:14px;color:#516f90;margin-bottom:4px}
+.ev small b{color:#213343;font-weight:600}
+.ev.new{border-color:#00a4bd;box-shadow:0 0 0 3px rgba(0,164,189,.18)}
+.ev.task{border-left:5px solid #ff5c35}
+.rr{position:absolute;right:0;top:0;bottom:0;width:350px;background:#fff;border-left:1px solid #cbd6e2;padding:18px 20px}
+.rr .card{border-bottom:1px solid #dfe3eb;padding:12px 0;font-size:15px;color:#33475b;line-height:1.45}
+.rr .card h4{font-size:15px;color:#213343;font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between}
+.rr .card h4 span{color:#0091ae}
+/* paneles flotantes (nota / tarea) */
+.dock{position:absolute;right:30px;bottom:0;width:700px;background:#fff;border-radius:8px 8px 0 0;box-shadow:0 -6px 40px rgba(0,0,0,.28);overflow:hidden;z-index:6}
+.dock .dh{height:52px;background:#213343;color:#fff;display:flex;align-items:center;padding:0 18px;font-size:18px;font-weight:600}
+.dock .dh span{margin-left:auto;font-weight:400;opacity:.8}
+.dock .db{padding:16px 20px;font-size:16px}
+.dock .to{font-size:15px;color:#516f90;padding-bottom:10px;border-bottom:1px solid #dfe3eb}
+.dock .to b{background:#eaf0f6;color:#33475b;border-radius:12px;padding:3px 10px;font-weight:500}
+.dock .ta{min-height:110px;padding:14px 2px;font-size:19px;color:#213343;line-height:1.45}
+.dock .ta.ph0{color:#99afc4}
+.dock .tb{display:flex;gap:16px;color:#516f90;font-size:15px;padding:8px 0;border-top:1px solid #dfe3eb}
+.dock .df{display:flex;align-items:center;gap:12px;padding:12px 20px;border-top:1px solid #dfe3eb;background:#f5f8fa;font-size:15px}
+.fi{border:1px solid #cbd6e2;border-radius:6px;padding:10px 12px;font-size:17px;color:#213343;background:#fff;min-height:44px}
+.fl{font-size:13px;color:#516f90;margin:10px 0 4px;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.caret{display:inline-block;width:2px;height:22px;background:#213343;vertical-align:-4px;margin-left:1px}
+/* panel de filtros */
+.drw{position:absolute;right:0;top:0;bottom:0;width:560px;background:#fff;border-left:1px solid #cbd6e2;box-shadow:-10px 0 30px rgba(0,0,0,.15);z-index:5}
+.drw .dh{height:60px;background:#213343;color:#fff;display:flex;align-items:center;padding:0 22px;font-size:20px;font-weight:600}
+.drw .dh span{margin-left:auto;opacity:.8;font-weight:400}
+.drw .db{padding:18px 22px}
+.drw .grp{border:1px solid #cbd6e2;border-radius:8px;padding:14px;margin-bottom:12px}
+.drw .grp h6{font-size:14px;color:#516f90;font-weight:600;margin-bottom:10px}
+.cond{background:#f5f8fa;border:1px solid #dfe3eb;border-radius:6px;padding:12px 14px;font-size:16px;color:#213343;line-height:1.4;margin-bottom:8px}
+.cond b{font-weight:600}
+.and{font-size:13px;font-weight:700;color:#516f90;margin:4px 0 8px 4px}
+.plist div{padding:11px 12px;font-size:17px;border-bottom:1px solid #eef2f6;color:#33475b}
+.plist div.on{background:#e5f5f8;color:#00708a;font-weight:600}
+/* escenas de concepto */
+.cardw{position:absolute;background:#fff;border-radius:22px;padding:28px 32px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.cardw h3{font-size:34px;color:#213343;margin-bottom:10px;font-weight:600}
+.cardw p{font-size:24px;line-height:1.4;color:#33475b}
+.callout{position:absolute;background:#213343;color:#fff;border-radius:16px;padding:18px 24px;font-size:24px;line-height:1.35;box-shadow:0 14px 30px rgba(0,0,0,.35);z-index:7}
+.callout b{color:#ffb199}
+/* destacado, cursor y subtítulos */
+#hl{position:absolute;border:5px solid #ffd60a;border-radius:12px;box-shadow:0 0 0 4000px rgba(10,18,26,.30);z-index:80;display:none}
+#hlLabel{position:absolute;background:#ffd60a;color:#1a1a1a;font-weight:700;font-size:23px;padding:8px 18px;border-radius:22px;z-index:81;display:none;white-space:nowrap}
+#cursor{position:absolute;z-index:100;width:0;height:0;display:none}
+#cursor svg{position:absolute;left:-4px;top:-2px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+#cursor .halo{position:absolute;left:-24px;top:-24px;width:48px;height:48px;border-radius:50%;background:rgba(255,214,10,.35)}
+#ripple{position:absolute;z-index:99;border:5px solid #ffbe00;border-radius:50%;display:none}
+#sub{position:absolute;left:150px;right:150px;bottom:22px;text-align:center;z-index:120}
+#sub span{display:inline-block;background:rgba(10,18,26,.9);color:#fff;font-size:33px;font-weight:500;line-height:1.35;padding:12px 28px;border-radius:16px}
+#sub span:empty{display:none}
+</style></head>
+<body>
+<div id="bg"></div>
+<div id="note">Recreación de HubSpot con fines educativos · contactos ficticios · Casa Nativa es una empresa ficticia</div>
+<section id="sc"></section>
+<div id="hl"></div><div id="hlLabel"></div><div id="ripple"></div>
+<div id="cursor"><div class="halo"></div><svg width="30" height="38" viewBox="0 0 30 38"><path d="M2 2 L2 30 L9 23 L14 35 L19 33 L14 21 L24 21 Z" fill="#fff" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+<div id="sub"><span></span></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),ease=t=>t*t*(3-2*t),seg=(f,a,b)=>clamp((f-a)/(b-a),0,1),lerp=(a,b,t)=>a+(b-a)*t;
+const typed=(s,f,a,b)=>s.slice(0,Math.round(s.length*seg(f,a,b)));
+/* contactos ficticios (datos inventados: correos de dominio de ejemplo y teléfonos 0000) */
+const C=[
+ {n:'Daniela Soto',i:'DS',c:'#00a4bd',e:'daniela.soto@ejemplo.cl',p:'+56 9 0000 0101',t:'Cliente recurrente',k:'rec',x:'Decoración infantil',u:'Consultó nueva colección',a:'Contactar viernes'},
+ {n:'Andrés Pérez',i:'AP',c:'#7fd1de',e:'andres.perez@ejemplo.cl',p:'+56 9 0000 0102',t:'Cliente nuevo',k:'new',x:'Iluminación',u:'Primera compra',a:'Consultar satisfacción'},
+ {n:'Carla Muñoz',i:'CM',c:'#a35dd9',e:'carla.munoz@ejemplo.cl',p:'+56 9 0000 0103',t:'Interesada',k:'int',x:'Decoración living',u:'Solicitó información',a:'Enviar catálogo'},
+ {n:'Fernanda Rojas',i:'FR',c:'#f2a541',e:'fernanda.rojas@ejemplo.cl',p:'+56 9 0000 0104',t:'Cliente inactivo',k:'ina',x:'Textiles',u:'Compra hace 7 meses',a:'Acción de reactivación'},
+ {n:'Tomás Herrera',i:'TH',c:'#00bda5',e:'tomas.herrera@ejemplo.cl',p:'+56 9 0000 0105',t:'Cliente recurrente',k:'rec',x:'Decoración infantil',u:'Compró repisas infantiles',a:'Avisar novedades'},
+ {n:'Josefina Lagos',i:'JL',c:'#516f90',e:'josefina.lagos@ejemplo.cl',p:'+56 9 0000 0106',t:'Cliente nuevo',k:'new',x:'Textiles',u:'Primera compra',a:'Consultar satisfacción'},
+ {n:'Matías Fuentes',i:'MF',c:'#e66e50',e:'matias.fuentes@ejemplo.cl',p:'+56 9 0000 0107',t:'Cliente recurrente',k:'rec',x:'Iluminación',u:'Tercera compra',a:'Enviar novedades'},
+ {n:'Valeria Núñez',i:'VN',c:'#99afc4',e:'valeria.nunez@ejemplo.cl',p:'+56 9 0000 0108',t:'Cliente inactivo',k:'ina',x:'Decoración living',u:'Compra hace 9 meses',a:'Acción de reactivación'}];
+function shell(inner,{rail='crm',fly=null}={}){
+ const R=[['⌂','home'],['✉','mk'],['👥','crm'],['☰','rep'],['⚙','cfg']].map(([g,id])=>`<span class="${id===rail?'on':''}" ${id==='crm'?'id="railcrm"':''}>${g}</span>`).join('');
+ const F=fly?`<div class="fly"><h5>CRM</h5>${['Contactos','Empresas','Negocios','Tickets','Segmentos','Tareas','Bandeja de entrada'].map(x=>`<div class="${x===fly?'on':''}" id="fl_${x.split(' ')[0]}">${x}</div>`).join('')}</div>`:'';
+ return `<div class="app"><div class="top"><div class="logo"><i></i></div><div class="srch">🔍&nbsp; Buscar en HubSpot</div><div class="acc">Casa Nativa <b>MA</b></div></div><div class="rail">${R}</div>${F}<div class="main" ${fly?'style="left:324px"':''}>${inner}</div></div>`}
+function table(rows,hov=-1){return `<table class="ix" id="tbl"><tr><th style="width:44px">☐</th><th>NOMBRE</th><th>CORREO</th><th>NÚMERO DE TELÉFONO</th><th>TIPO DE CLIENTE</th><th>INTERÉS PRINCIPAL</th><th>ÚLTIMA ACTIVIDAD</th><th>PRÓXIMA ACCIÓN</th></tr>
+ ${rows.map((c,j)=>`<tr class="${j===hov?'hov':''}" id="r_${c.i}"><td>☐</td><td class="nm"><span class="ava" style="background:${c.c}">${c.i}</span>${c.n}</td><td>${c.e}</td><td>${c.p}</td><td><span class="tag t-${c.k}">${c.t}</span></td><td>${c.x}</td><td>${c.u}</td><td>${c.a}</td></tr>`).join('')}</table>`}
+function index(rows,{tabs=['Todos los contactos','Mis contactos','Recurrentes · Infantil'],on=0,n=rows.length,fon=false,showTab3=false,hov=-1}={}){
+ const T=tabs.filter((x,j)=>j<2||showTab3).map((x,j)=>`<span class="${j===on?'on':''}" id="vt${j}">${x}</span>`).join('')+'<span style="background:none;border:none;color:#0091ae">+ Añadir vista</span>';
+ return `<div class="ph"><h1>Contactos</h1><span class="cnt">${n} registros</span><span style="margin-left:auto"></span><span class="btn">Acciones ▾</span><span class="btn">Importar</span><span class="btn pri">Crear contacto</span></div>
+ <div class="vtabs">${T}</div>
+ <div class="fbar"><span class="s">🔍 Buscar nombre, teléfono, correo…</span><span class="dd f">Propietario del contacto ▾</span><span class="dd f">Tipo de cliente ▾</span><span class="dd f">Interés principal ▾</span><span class="dd f">Última actividad ▾</span><span class="dd f ${fon?'on':''}" id="fadv">☷ Filtros avanzados${fon?' (2)':''}</span><span style="margin-left:auto" class="dd">Editar columnas</span></div>
+ <div style="padding:0 28px">${table(rows,hov)}</div>`}
+/* ficha de Daniela */
+const EV0=[
+ ['📝 Nota','2 sep 2026','<b>Marcela</b> · Compró un móvil de fieltro para cuna. Pidió que le avisemos cuando lleguen piezas en tonos pastel.'],
+ ['✉ Correo','14 ago 2026','Confirmación de compra · Pedido CN-1009 · Lámpara infantil de cerámica'],
+ ['📞 Llamada registrada','3 jun 2026','Consultó plazos de despacho. Prefiere coordinar por WhatsApp.'],
+ ['👤 Contacto creado','12 mar 2026','Origen: formulario de la tienda en línea']];
+function record({tab=1,editI=0,editT=0,newNote=0,task=0,actOn=null,chip=0,props=true}={}){
+ const D=C[0];
+ const ints=editI<1?(editI>0?'':'—'):'Decoración infantil',tip=editT<1?'—':'Cliente recurrente';
+ const ev=[];
+ if(task)ev.push(`<h6>PRÓXIMAS</h6><div class="ev task ${task===2?'new':''}" id="evtask"><small><b>☑ Tarea · Por hacer</b><span>Vence: vie 16 oct 2026, 10:00</span></small>Contactar a Daniela el viernes · enviarle información cuando la colección esté disponible <span style="color:#516f90">· Asignada a Marcela</span></div>`);
+ ev.push('<h6>OCTUBRE 2026</h6>');
+ if(newNote)ev.push(`<div class="ev ${newNote===2?'new':''}" id="evnote"><small><b>📝 Nota</b><span>9 oct 2026 · Marcela</span></small>Consultó por nueva colección infantil.</div>`);
+ else ev.push(`<div class="ev" style="color:#7c98b6;border-style:dashed">Sin actividades este mes</div>`);
+ ev.push('<h6>ANTERIORES</h6>');
+ EV0.forEach(([a,b,c],j)=>ev.push(`<div class="ev" ${j===0?'id="ev0"':''}><small><b>${a}</b><span>${b}</span></small>${c}</div>`));
+ const P=(id,l,v,cls='')=>`<div class="prop ${cls}" id="${id}"><small>${l}</small><div>${v}</div></div>`;
+ return `<div class="rl"><div class="bc">‹ Contactos</div><div class="hd"><span class="ava" style="background:${D.c}">${D.i}</span><div><b>${D.n}</b><small>${D.e}</small><small>${D.p}</small></div></div>
+  <div class="acts" id="acts">${[['✎','Nota'],['✉','Correo'],['☏','Llamada'],['☑','Tarea'],['▦','Reunión'],['⋯','Más']].map(([g,l])=>`<div class="${actOn===l?'on':''}" id="a_${l}"><i>${g}</i>${l}</div>`).join('')}</div>
+  <div class="sect" id="about"><h4>⌄ Acerca de este contacto</h4>
+  <div id="basic">${P('pe','Correo',D.e)}${P('pp','Número de teléfono',D.p)}${P('po','Propietario del contacto','Marcela · Casa Nativa')}</div>
+  ${P('pl','Etapa del ciclo de vida','Cliente')}
+  <div id="custom">${P('pt','Tipo de cliente',tip+(editT>0&&editT<1?'<span class="caret"></span>':''),editT>0&&editT<1.5?'ed':'')}${P('pi','Interés principal',(editI>0&&editI<1?typed('Decoración infantil',editI,0,1)+'<span class="caret"></span>':ints),editI>0&&editI<1.5?'ed':'')}${P('pn','Número de compras','3')}</div>
+  ${P('pc','Canal preferido','WhatsApp')}</div></div>
+ <div class="rm"><div class="rtabs"><span class="${tab===0?'on':''}">Resumen</span><span class="${tab===1?'on':''}">Actividades</span><span>Ingresos</span></div>
+  <div class="chips">${['Actividad','Notas','Correos','Llamadas','Tareas','Reuniones'].map((x,j)=>`<span class="${j===chip?'on':''}">${x}</span>`).join('')}</div>
+  <div class="tl" id="tl">${ev.join('')}</div></div>
+ <div class="rr"><div class="card"><h4>Empresas (0) <span>+ Añadir</span></h4>Sin empresa asociada</div><div class="card"><h4>Negocios (1) <span>+ Añadir</span></h4>Pedido lámpara infantil · Cerrado ganado</div><div class="card" id="segcard"><h4>Segmentos (2)</h4>Clientes recurrentes<br>Interés · Decoración infantil</div><div class="card"><h4>Archivos (0)</h4>—</div></div>`}
+/* utilidades */
+let CUR={x:1500,y:700};
+function pos(sel,dx=.5,dy=.5){if(typeof sel==='object')return sel;const e=$(sel);if(!e)return CUR;const r=e.getBoundingClientRect();return {x:r.left+r.width*dx,y:r.top+r.height*dy}}
+/* cursor: keys=[[f,sel],…] mueve entre puntos; clicks=[f,…] */
+function cursor(f,T,keys,clicks=[]){const c=$('#cursor'),r=$('#ripple');
+ if(!keys||!keys.length||f<keys[0][0]-.04||f>keys[keys.length-1][0]+.08){c.style.display='none';r.style.display='none';return}
+ let p=pos(keys[0][1]);for(let j=0;j<keys.length-1;j++){const [fa,sa]=keys[j],[fb,sb]=keys[j+1];if(f>=fa){const A=pos(sa),B=pos(sb);const t=ease(seg(f,fa+(fb-fa)*.15,fb));p={x:lerp(A.x,B.x,t),y:lerp(A.y,B.y,t)}}}
+ if(f>keys[keys.length-1][0])p=pos(keys[keys.length-1][1]);
+ CUR=p;c.style.display='block';c.style.left=p.x+'px';c.style.top=p.y+'px';r.style.display='none';
+ for(const cf of clicks){const dt=(f-cf)*T;if(dt>=0&&dt<.45){const s=20+dt*150;r.style.display='block';r.style.width=r.style.height=s+'px';r.style.left=(p.x-s/2)+'px';r.style.top=(p.y-s/2)+'px';r.style.opacity=1-dt/.45}}}
+function noCur(){$('#cursor').style.display='none';$('#ripple').style.display='none'}
+function hl(sel,label,pad=8){const h=$('#hl'),l=$('#hlLabel');const e=sel&&$(sel);if(!e){h.style.display=l.style.display='none';return}
+  const r=e.getBoundingClientRect();h.style.display='block';h.style.left=(r.left-pad)+'px';h.style.top=(r.top-pad)+'px';h.style.width=(r.width+2*pad)+'px';h.style.height=(r.height+2*pad)+'px';
+  if(label){l.style.display='block';l.textContent=label;const lw=l.offsetWidth;let x=r.left-pad,y=r.top-pad-52;if(y<70)y=r.bottom+pad+10;if(x+lw>1890)x=1890-lw;l.style.left=x+'px';l.style.top=y+'px'}else l.style.display='none'}
+const pick=(f,arr)=>{let r=null;for(const a of arr)if(f>=a[0]&&f<a[1])r=a;return r};
+function hls(f,arr){const a=pick(f,arr);hl(a?a[2]:null,a?a[3]:null,a&&a[4]!=null?a[4]:8)}
+function sub(t){$('#sub span').textContent=t||''}
+const SC={};
+/* 1 · información dispersa → vista ordenada */
+SC[1]=(f,T)=>{const m=ease(seg(f,.52,.7)),o=1-m,tb=seg(f,.66,.78);
+ const it=[
+  [150,150,-6,`<div style="background:#fff;border-radius:10px;width:520px;overflow:hidden;font-size:17px"><div style="background:#0f9d58;color:#fff;padding:8px 14px;font-weight:600">▦ Clientes_2026_final_v3.xlsx</div><div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;font-size:16px">${['Nombre','Teléfono','Compra','D. Soto','?','infantil','Andrés','+56 9 0000…','lámpara','Carla M.','—','¿living?'].map(x=>`<span style="padding:7px 10px;border:1px solid #e2e3e3">${x}</span>`).join('')}</div></div>`],
+  [1180,130,5,`<div style="background:#e6ddd4;border-radius:18px;padding:14px;width:560px"><div style="font-size:15px;color:#555;margin-bottom:8px">💬 WhatsApp · Daniela</div><div style="background:#fff;border-radius:12px;padding:12px 14px;font-size:20px;line-height:1.35">Hola! ¿Ya llegó la nueva colección infantil? 🧸</div><div style="background:#d7f0e6;border-radius:12px;padding:12px 14px;font-size:20px;margin-top:8px;margin-left:110px">¡Te aviso apenas llegue!</div></div>`],
+  [260,560,4,`<div style="background:#fff59d;width:390px;padding:22px 24px;font-size:24px;line-height:1.35;font-family:'Comic Sans MS',cursive;box-shadow:0 10px 20px rgba(0,0,0,.25)">Llamar a Andrés:<br>¿le gustó la lámpara?<br><span style="font-size:18px">(¿martes o miércoles?)</span></div>`],
+  [1100,560,-4,`<div style="background:#fff;border-radius:12px;width:600px;overflow:hidden"><div style="background:#f2f6fc;padding:10px 16px;font-size:16px;color:#444">✉ Bandeja de entrada · 37 sin leer</div><div style="padding:12px 16px;font-size:19px;border-bottom:1px solid #eee"><b>Carla Muñoz</b> — Re: ¿tienen catálogo de living?</div><div style="padding:12px 16px;font-size:19px;color:#666">Fernanda R. — Consulta por textiles (marzo)</div></div>`]];
+ const cx=960,cy=470;
+ let h=it.map(([x,y,r,html],j)=>{const a=seg(f,.03+j*.06,.1+j*.06);const X=lerp(x,cx-150,m),Y=lerp(y,cy-60,m),s=lerp(1,.25,m);
+  return `<div style="position:absolute;left:${X}px;top:${Y}px;transform:rotate(${r*(1-m)}deg) scale(${s});transform-origin:center;opacity:${a*o}">${html}</div>`}).join('');
+ h+=`<div style="position:absolute;left:0;right:0;top:420px;text-align:center;font-size:54px;font-weight:700;color:#fff;opacity:${seg(f,.28,.34)*(1-seg(f,.48,.52))};text-shadow:0 4px 16px rgba(0,0,0,.6)">¿Dónde quedó cada dato?</div>`;
+ h+=`<div style="position:absolute;left:240px;top:150px;width:1440px;opacity:${tb};transform:translateY(${(1-tb)*30}px)"><div style="font-size:44px;color:#fff;font-weight:700;margin-bottom:22px;text-align:center">Todo en un solo lugar: <span style="color:#ffb199">un CRM</span></div>
+  <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.4)">${table(C.slice(0,4)).replace('NÚMERO DE TELÉFONO','TELÉFONO')}</div>
+  <div style="display:flex;gap:18px;justify-content:center;margin-top:30px">${['¿Quién es?','¿Qué ocurrió?','¿Qué sigue?'].map((x,j)=>`<span style="background:#ff5c35;color:#fff;font-size:28px;font-weight:600;padding:12px 26px;border-radius:30px;opacity:${seg(f,.8+j*.05,.85+j*.05)}">${x}</span>`).join('')}</div></div>`;
+ $('#sc').innerHTML=h;hl(null);noCur()};
+/* 2 · vista general */
+SC[2]=(f,T)=>{const inner=`<div class="ph"><h1>Contactos</h1><span class="cnt">8 registros</span></div><div style="padding:20px 28px">${table(C.slice(0,5))}</div>`;
+ $('#sc').innerHTML=shell(inner,{fly:f>.08?'Contactos':null})+[['¿Quién es el cliente?','Datos de contacto y propiedades útiles','👤'],['¿Qué ha ocurrido?','Historial de notas, correos, llamadas y compras','🕑'],['¿Cuál es el siguiente paso?','Tareas y próximas acciones con fecha','➜']].map(([a,b,ic],j)=>{const o=seg(f,.42+j*.12,.48+j*.12);
+  return `<div class="cardw" style="left:${520+j*450}px;top:${600-(1-o)*30}px;width:420px;opacity:${o};z-index:9"><div style="font-size:44px">${ic}</div><h3 style="font-size:30px">${a}</h3><p style="font-size:21px">${b}</p></div>`}).join('')+
+  `<div class="callout" style="left:520px;top:420px;opacity:${seg(f,.12,.18)*(1-seg(f,.4,.44))}">Un CRM <b>no es solo una agenda digital</b>:<br>conecta datos, historial y próximas acciones.</div>`;
+ hls(f,[[.08,.36,'.fly','Menú CRM']]);noCur()};
+/* 3 · lista de contactos */
+SC[3]=(f,T)=>{$('#sc').innerHTML=shell(index(C,{hov:f>.86?0:-1}));
+ hls(f,[[.16,.56,'#tbl','Registro centralizado de contactos'],[.56,.8,'.fbar','Un punto de consulta común: buscar y filtrar']]);
+ cursor(f,T,[[.82,{x:900,y:700}],[.95,'#r_DS .nm']],[])};
+/* 4 · ficha */
+SC[4]=(f,T)=>{if(f<.1){$('#sc').innerHTML=shell(index(C,{hov:0}));cursor(f,T,[[0,'#r_DS .nm'],[.06,'#r_DS .nm']],[.04]);hl(null);return}
+ $('#sc').innerHTML=shell(record({}));
+ hls(f,[[.18,.42,'.rl .hd','Ficha del contacto'],[.42,.72,'#basic','Datos básicos: nombre, correo, teléfono'],[.72,.99,'#about','Solo lo que realmente usaremos']]);noCur()};
+/* 5 · propiedades */
+SC[5]=(f,T)=>{const eI=f<.3?0:f<.42?seg(f,.3,.42)*.999:1+seg(f,.42,.5),eT=f<.55?0:f<.62?.5:1+seg(f,.62,.7);
+ $('#sc').innerHTML=shell(record({editI:eI,editT:eT}));
+ cursor(f,T,[[.2,{x:900,y:500}],[.28,'#pi'],[.5,'#pi'],[.55,'#pt'],[.68,'#pt']],[.28,.55,.6]);
+ if(f>.55&&f<.63){const p=pos('#pt');$('#sc').insertAdjacentHTML('beforeend',`<div style="position:absolute;left:${p.x-150}px;top:${p.y+22}px;width:300px;background:#fff;border:1px solid #cbd6e2;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:9;font-size:17px">${['Cliente nuevo','Cliente recurrente','Interesada/o','Cliente inactivo'].map(x=>`<div style="padding:10px 14px;${x==='Cliente recurrente'&&f>.58?'background:#e5f5f8;color:#00708a;font-weight:600':''}">${x}</div>`).join('')}</div>`)}
+ hls(f,[[.72,.99,'#custom','Datos para segmentar y personalizar']]);
+ if(f>.72)$('#sc').insertAdjacentHTML('beforeend',`<div class="callout" style="left:560px;top:690px;opacity:${seg(f,.74,.8)}">Interés: <b>Decoración infantil</b> · Tipo: <b>Cliente recurrente</b> · <b>3 compras</b></div>`)};
+/* 6 · historial */
+SC[6]=(f,T)=>{$('#sc').innerHTML=shell(record({editI:2,editT:2}));
+ hls(f,[[.12,.55,'#tl','Historial: contexto de la relación'],[.55,.95,'#ev0','¿Qué pasó la última vez?']]);
+ if(f>.6)$('#sc').insertAdjacentHTML('beforeend',`<div class="callout" style="left:1080px;top:700px;opacity:${seg(f,.62,.68)}">Sin depender de la memoria<br>de <b>una sola persona</b></div>`);noCur()};
+/* 7 · nota */
+SC[7]=(f,T)=>{const open=f>.2&&f<.8,saved=f>=.8;
+ $('#sc').innerHTML=shell(record({editI:2,editT:2,actOn:f>.17&&f<.8?'Nota':null,newNote:saved?2:0}));
+ if(open){const txt=typed('Consultó por nueva colección infantil.',f,.3,.55);
+  $('.app').insertAdjacentHTML('beforeend',`<div class="dock" id="dock"><div class="dh">Nota<span>— ⤢ ✕</span></div><div class="db"><div class="to">Para: <b>Daniela Soto</b></div><div class="ta ${txt?'':'ph0'}">${txt||'Comienza a escribir para dejar una nota…'}${txt&&f<.58?'<span class="caret"></span>':''}</div><div class="tb">B&nbsp; I&nbsp; U&nbsp; ⋯&nbsp; 🔗&nbsp; 📎&nbsp; @ Mencionar</div></div><div class="df"><span class="btn pri" id="savenote">Crear nota</span><span style="color:#516f90">☐ Crear una tarea de seguimiento</span></div></div>`)}
+ cursor(f,T,[[.08,{x:1100,y:600}],[.17,'#a_Nota i'],[.3,'#a_Nota i'],[.62,'#savenote'],[.8,'#savenote']],[.17,.74]);
+ hls(f,[[.38,.62,'#dock','Nota breve, no la conversación completa',6],[.84,.99,'#evnote','Queda en el historial']])};
+/* 8 · tarea */
+SC[8]=(f,T)=>{const open=f>.17&&f<.8,saved=f>=.8;
+ $('#sc').innerHTML=shell(record({editI:2,editT:2,newNote:1,task:saved?2:0,actOn:open?'Tarea':null}));
+ if(open){const t1=typed('Contactar a Daniela el viernes',f,.24,.38),t2=typed('Enviarle información cuando la colección esté disponible.',f,.48,.64);
+  $('.app').insertAdjacentHTML('beforeend',`<div class="dock" id="dock" style="width:760px"><div class="dh">Tarea<span>— ⤢ ✕</span></div><div class="db">
+   <div class="fi" id="tt" style="font-size:20px;font-weight:600">${t1||'<span style="color:#99afc4;font-weight:400">Introduce tu tarea</span>'}${f>.24&&f<.4?'<span class="caret"></span>':''}</div>
+   <div class="row"><div><div class="fl">Fecha de vencimiento</div><div class="fi" id="tdue" style="${f>.4?'border-color:#00a4bd;background:#e5f5f8':''}">${f>.42?'Viernes 16/10/2026':'En 3 días hábiles'}</div></div><div><div class="fl">Hora</div><div class="fi">10:00</div></div><div><div class="fl">Recordatorio</div><div class="fi">El mismo día, 9:00</div></div></div>
+   <div class="row"><div><div class="fl">Tipo de tarea</div><div class="fi">Por hacer</div></div><div><div class="fl">Prioridad</div><div class="fi">Media</div></div><div><div class="fl">Asignada a</div><div class="fi">Marcela</div></div></div>
+   <div class="fl">Notas</div><div class="fi" style="min-height:70px">${t2}${f>.48&&f<.66?'<span class="caret"></span>':''}</div></div>
+   <div class="df"><span class="btn pri" id="savetask">Crear</span><span class="btn">Crear y añadir otra</span><span style="margin-left:auto;color:#516f90">Asociada a: Daniela Soto</span></div></div>`)}
+ cursor(f,T,[[.06,{x:1000,y:600}],[.15,'#a_Tarea i'],[.36,'#a_Tarea i'],[.42,'#tdue'],[.66,'#tdue'],[.74,'#savetask'],[.8,'#savetask']],[.15,.42,.76]);
+ hls(f,[[.4,.47,'#tdue','Viernes',6],[.84,.99,'#evtask','Próxima acción concreta']])};
+/* 9 · filtros */
+SC[9]=(f,T)=>{const open=f>.2;
+ $('#sc').innerHTML=shell(index(C,{fon:false})+(open?`<div class="drw" id="drw"><div class="dh">Filtros avanzados<span>✕</span></div><div class="db"><div class="grp"><h6>GRUPO 1</h6><div class="fi" style="color:#99afc4">🔍 Buscar propiedades</div>
+  <div class="plist" id="plist" style="margin-top:8px">${['Tipo de cliente','Interés principal','Última actividad','Próxima acción','Etapa del ciclo de vida','Número de compras','Canal preferido'].map((x,j)=>`<div class="${(f>.45&&f<.6&&j===0)||(f>=.6&&f<.75&&j===1)||(f>=.75&&j===2)?'on':''}" id="pl${j}">${x}</div>`).join('')}</div></div></div></div>`:''));
+ cursor(f,T,[[.06,{x:1000,y:600}],[.16,'#fadv'],[.3,'#fadv']],[.16]);
+ hls(f,[[.42,.6,'#pl0','Clientes recurrentes'],[.6,.75,'#pl1','Interés en una categoría'],[.75,.97,'#pl2','Contactos que necesitan seguimiento']])};
+/* 10 · segmento filtrado */
+SC[10]=(f,T)=>{const app=f>.12,rows=app?C.filter(c=>c.k==='rec'&&c.x==='Decoración infantil'):C,saved=f>.55;
+ const conds=`<div class="cond"><b>Tipo de cliente</b> es cualquiera de <b>Cliente recurrente</b></div><div class="and">Y</div><div class="cond" style="opacity:${seg(f,.04,.1)}"><b>Interés principal</b> es cualquiera de <b>Decoración infantil</b></div>`;
+ $('#sc').innerHTML=shell(index(rows,{fon:app,showTab3:saved,on:saved?2:0})+(f<.45?`<div class="drw" id="drw"><div class="dh">Filtros avanzados<span>✕</span></div><div class="db"><div class="grp" id="conds"><h6>GRUPO 1</h6>${conds}</div><div style="color:#0091ae;font-weight:600;font-size:16px">+ Añadir grupo de filtros</div></div></div>`:''));
+ if(f>.38&&f<.56)$('.ph').insertAdjacentHTML('beforeend','<span class="btn sec" id="savev" style="position:absolute;right:430px;top:90px">Guardar vista</span>');
+ cursor(f,T,[[.36,{x:1300,y:400}],[.46,'#savev'],[.54,'#savev']],[.48]);
+ hls(f,[[.06,.36,'#conds','Dos condiciones',6],[.56,.72,'#vt2','Vista guardada'],[.72,.99,'#tbl','Mensaje relevante para este grupo']]);
+ if(f>.74)$('#sc').insertAdjacentHTML('beforeend',`<div class="callout" style="left:420px;top:640px;opacity:${seg(f,.76,.82)}">✕ Promoción genérica para toda la base<br>✓ <b>Novedades de la colección infantil</b> para quienes ya compran y les interesa</div>`)};
+/* 11 · tres segmentos */
+SC[11]=(f,T)=>{const S=[['Clientes nuevos','new','Primera compra reciente','Acompañamiento después de la primera compra','Andrés Pérez → consultar satisfacción'],['Clientes recurrentes','rec','Más de una compra','Novedades relacionadas con sus intereses','Daniela Soto → nueva colección infantil'],['Clientes inactivos','ina','Sin compras en 6 meses o más','Estrategia de reactivación','Fernanda Rojas → acción de reactivación']];
+ const n={new:2,rec:3,ina:2};
+ const inner=`<div class="ph"><h1>Segmentos</h1><span style="margin-left:auto"></span><span class="btn pri">Crear segmento</span></div><div style="padding:20px 28px"><table class="ix"><tr><th>NOMBRE</th><th>TAMAÑO</th><th>TIPO</th><th>OBJETO</th><th>ÚLTIMA ACTUALIZACIÓN</th></tr>${S.map(s=>`<tr><td class="nm">${s[0]}</td><td>${n[s[1]]}</td><td>Activo</td><td>Contacto</td><td>9 oct 2026</td></tr>`).join('')}<tr><td class="nm">Recurrentes · Decoración infantil</td><td>2</td><td>Activo</td><td>Contacto</td><td>9 oct 2026</td></tr></table></div>`;
+ $('#sc').innerHTML=shell(inner,{fly:'Segmentos'})+S.map((s,j)=>{const o=seg(f,.16+j*.22,.22+j*.22);return `<div class="cardw" id="seg${j}" style="left:${400+j*500}px;top:${470-(1-o)*30}px;width:470px;opacity:${o};z-index:9;padding:24px 28px"><span class="tag t-${s[1]}" style="font-size:18px">${s[0]}</span><p style="font-size:17px;color:#516f90;margin-top:8px">${s[2]}</p><h3 style="font-size:27px;margin-top:10px;line-height:1.25">${s[3]}</h3><p style="font-size:19px;margin-top:10px;border-top:1px solid #dfe3eb;padding-top:10px">Ej.: ${s[4]}</p></div>`}).join('');
+ hl(null);noCur()};
+/* 12 · registro y fidelización */
+SC[12]=(f,T)=>{$('#sc').innerHTML=shell(record({editI:2,editT:2,newNote:1,task:1}));
+ hls(f,[[.06,.3,'#custom','Conocimiento del cliente'],[.3,.6,'#tl','Historial'],[.6,.99,'#evtask','Seguimiento en el momento adecuado']]);
+ $('#sc').insertAdjacentHTML('beforeend',`<div class="callout" style="left:1556px;top:540px;width:310px;opacity:${seg(f,.2,.26)};font-size:22px">Fidelizar <b>no es solo enviar descuentos</b>.<br><br>Historial + conocimiento del cliente → comunicaciones más pertinentes</div>`);noCur()};
+/* 13 · ciclo */
+SC[13]=(f,T)=>{const st=['Registrar','Mantener contexto','Segmentar','Definir próxima acción','Aprender del resultado'],ic=['✎','🕑','◎','☑','↻'];const cx=960,cy=500,R=330;
+ let h=`<svg style="position:absolute;inset:0" width="1920" height="1080"><circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/><circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#ff5c35" stroke-width="6" stroke-dasharray="${2*Math.PI*R}" stroke-dashoffset="${2*Math.PI*R*(1-seg(f,.12,.78))}" transform="rotate(-90 ${cx} ${cy})"/></svg>`;
+ h+=`<div style="position:absolute;left:${cx-150}px;top:${cy-150}px;width:300px;height:300px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.4);opacity:${seg(f,.02,.08)}"><div><div style="width:64px;height:64px;border-radius:50%;background:#ff5c35;margin:0 auto 10px;display:grid;place-items:center"><i style="width:22px;height:22px;border-radius:50%;border:5px solid #fff;display:block"></i></div><b style="font-size:40px;color:#213343">CRM</b><div style="font-size:20px;color:#516f90">sostiene el ciclo</div></div></div>`;
+ st.forEach((s,j)=>{const a=-Math.PI/2+j*2*Math.PI/5,x=cx+R*Math.cos(a),y=cy+R*Math.sin(a),o=seg(f,.1+j*.12,.16+j*.12),on=f>=.1+j*.12&&f<.22+j*.12;
+  h+=`<div style="position:absolute;left:${x-150}px;top:${y-62}px;width:300px;height:124px;border-radius:20px;background:${on?'#ff5c35':'#fff'};color:${on?'#fff':'#213343'};display:flex;align-items:center;gap:14px;padding:0 20px;box-shadow:0 10px 24px rgba(0,0,0,.35);opacity:${o};transform:scale(${on?1.08:1})"><span style="font-size:40px">${ic[j]}</span><div><small style="font-size:17px;opacity:.8">Paso ${j+1}</small><b style="display:block;font-size:26px;line-height:1.15">${s}</b></div></div>`});
+ h+=`<div style="position:absolute;left:0;right:0;top:880px;text-align:center;color:#cfdbe6;font-size:26px;opacity:${seg(f,.8,.86)}">Contacto → Registro → Segmentación → Seguimiento → Fidelización</div>`;
+ $('#sc').innerHTML=h;hl(null);noCur()};
+/* 14 · tres preguntas */
+SC[14]=(f,T)=>{const Q=[['¿Qué información necesito registrar?','Solo los datos que usarás para decidir o actuar.'],['¿Qué grupos de clientes me conviene distinguir?','Nuevos, recurrentes, inactivos, por interés…'],['¿Qué seguimiento quiero dejar de manejar de memoria?','Llamadas, avisos de novedades, consultas pendientes.']];
+ $('#sc').innerHTML=`<div style="position:absolute;left:0;right:0;top:120px;text-align:center;color:#fff;font-size:50px;font-weight:700;opacity:${seg(f,.02,.08)}">Antes de incorporar un CRM en tu negocio</div>`+Q.map(([q,d],j)=>{const o=seg(f,.18+j*.22,.24+j*.22);return `<div class="cardw" style="left:220px;width:1480px;top:${260+j*210-(1-o)*20}px;opacity:${o};display:flex;gap:30px;align-items:center;padding:26px 36px"><span style="flex:none;width:90px;height:90px;border-radius:50%;background:#ff5c35;color:#fff;display:grid;place-items:center;font-size:46px;font-weight:700">${j+1}</span><div><h3 style="margin:0">${q}</h3><p>${d}</p></div></div>`}).join('');hl(null);noCur()};
+/* 15 · cierre */
+SC[15]=(f,T)=>{$('#sc').innerHTML=`<div style="position:absolute;inset:0;background:url(img/m11_registro.jpg) center/cover"></div><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,51,67,.97),rgba(33,51,67,.88) 55%,rgba(33,51,67,.35))"></div>
+ <div style="position:absolute;left:120px;top:190px;width:1150px;color:#fff;opacity:${seg(f,.03,.1)}"><div style="font-size:68px;font-weight:700;line-height:1.12">Empieza con pocos datos.<br><span style="color:#ffb199">Mantenlos actualizados.</span></div>
+ <div style="font-size:32px;margin-top:30px;line-height:1.4;opacity:${seg(f,.45,.52)}">Cada registro debe ayudarte a tomar una decisión o realizar una acción.</div>
+ <div style="margin-top:44px;background:rgba(255,255,255,.12);border-left:6px solid #ff5c35;border-radius:12px;padding:22px 28px;font-size:28px;line-height:1.4;opacity:${seg(f,.7,.78)}">“Ya sé cómo pasar de una lista de nombres a una base que me dice <b>qué sé del cliente</b> y <b>qué debo hacer después</b>.”</div></div>`;
+ hl(null);noCur()};
+window.R=function(k,f,T,subtitle){$('#note').style.display=[2,3,4,5,6,7,8,9,10,11,12].includes(k)?'block':'none';SC[k](f,T);sub(subtitle)};
+</script>
+</body></html>
