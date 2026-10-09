@@ -79,137 +79,137 @@ podemos registrar que Daniela tiene interés en decoración infantil o que ya ha
 Estos datos posteriormente permiten segmentar y personalizar acciones.
 
 21
-00:01:42,224 --> 00:01:45,469
+00:01:40,224 --> 00:01:43,469
 Otro elemento importante es el historial.
 
 22
-00:01:45,469 --> 00:01:52,515
+00:01:43,469 --> 00:01:50,515
 Un CRM permite mantener contexto sobre interacciones, actividades o gestiones realizadas.
 
 23
-00:01:52,515 --> 00:02:00,431
+00:01:50,515 --> 00:01:58,431
 Así evitamos depender únicamente de la memoria de una persona para saber qué ocurrió con un cliente.
 
 24
-00:02:01,531 --> 00:02:05,406
+00:01:59,531 --> 00:02:03,406
 Supongamos que Daniela consulta por una nueva colección.
 
 25
-00:02:05,406 --> 00:02:10,388
+00:02:03,406 --> 00:02:08,388
 Podemos registrar una nota breve que deje constancia de esa interacción.
 
 26
-00:02:10,388 --> 00:02:13,987
+00:02:08,388 --> 00:02:11,987
 El objetivo no es escribir conversaciones completas,
 
 27
-00:02:13,987 --> 00:02:18,484
+00:02:11,987 --> 00:02:16,484
 sino conservar información que facilite el seguimiento posterior.
 
 28
-00:02:22,084 --> 00:02:25,289
+00:02:17,584 --> 00:02:20,789
 Ahora agregamos algo especialmente útil:
 
 29
-00:02:25,289 --> 00:02:26,731
+00:02:20,789 --> 00:02:22,231
 la próxima acción.
 
 30
-00:02:26,731 --> 00:02:36,264
+00:02:22,231 --> 00:02:31,764
 Podemos crear una tarea para contactar a Daniela el viernes y enviarle información cuando la colección esté disponible.
 
 31
-00:02:36,264 --> 00:02:42,512
+00:02:31,764 --> 00:02:38,012
 De esta manera, el CRM ayuda a transformar información en una acción concreta.
 
 32
-00:02:46,612 --> 00:02:48,884
+00:02:39,112 --> 00:02:41,384
 Cuando la base empieza a crecer,
 
 33
-00:02:48,884 --> 00:02:55,272
+00:02:41,384 --> 00:02:47,772
 podemos utilizar filtros para encontrar grupos de contactos con características similares.
 
 34
-00:02:55,272 --> 00:02:57,685
+00:02:47,772 --> 00:02:50,185
 Por ejemplo, clientes recurrentes,
 
 35
-00:02:57,685 --> 00:03:03,931
+00:02:50,185 --> 00:02:56,431
 personas interesadas en una categoría determinada o contactos que necesitan seguimiento.
 
 36
-00:03:05,031 --> 00:03:09,788
+00:02:57,531 --> 00:03:02,288
 Esta segmentación permite evitar mensajes iguales para toda la base.
 
 37
-00:03:09,788 --> 00:03:19,093
+00:03:02,288 --> 00:03:11,593
 Casa Nativa podría identificar a clientes recurrentes interesados en decoración infantil y compartir con ellos información relevante,
 
 38
-00:03:19,093 --> 00:03:23,500
+00:03:11,593 --> 00:03:16,000
 en lugar de enviar una promoción genérica a todas las personas.
 
 39
-00:03:26,600 --> 00:03:30,594
+00:03:17,100 --> 00:03:21,094
 Los segmentos pueden responder a diferentes necesidades.
 
 40
-00:03:30,594 --> 00:03:36,086
+00:03:21,094 --> 00:03:26,586
 Un cliente nuevo puede necesitar acompañamiento después de su primera compra.
 
 41
-00:03:36,086 --> 00:03:41,577
+00:03:26,586 --> 00:03:32,077
 Un cliente recurrente puede valorar novedades relacionadas con sus intereses.
 
 42
-00:03:41,577 --> 00:03:46,427
+00:03:32,077 --> 00:03:36,927
 Y un cliente inactivo puede requerir una estrategia de reactivación.
 
 43
-00:03:47,527 --> 00:03:51,496
+00:03:38,027 --> 00:03:41,996
 Aquí aparece la relación entre registro y fidelización.
 
 44
-00:03:51,496 --> 00:03:55,320
+00:03:41,996 --> 00:03:45,820
 Fidelizar no consiste solamente en enviar descuentos.
 
 45
-00:03:55,320 --> 00:04:06,361
+00:03:45,820 --> 00:03:56,861
 Significa utilizar el historial y el conocimiento del cliente para entregar comunicaciones más pertinentes y realizar seguimiento en el momento adecuado.
 
 46
-00:04:07,461 --> 00:04:11,176
+00:03:57,961 --> 00:04:01,676
 Podemos resumir la lógica en cinco pasos:
 
 47
-00:04:11,176 --> 00:04:19,602
+00:04:01,676 --> 00:04:10,102
 registrar, mantener contexto, segmentar, definir una próxima acción y aprender del resultado.
 
 48
-00:04:19,602 --> 00:04:24,676
+00:04:10,102 --> 00:04:15,176
 El CRM es la herramienta que permite sostener ese ciclo.
 
 49
-00:04:25,776 --> 00:04:29,639
+00:04:16,276 --> 00:04:20,139
 Antes de incorporar un CRM en tu negocio, pregúntate:
 
 50
-00:04:29,639 --> 00:04:32,263
+00:04:20,139 --> 00:04:22,763
 qué información necesitas registrar,
 
 51
-00:04:32,263 --> 00:04:40,718
+00:04:22,763 --> 00:04:31,218
 qué grupos de clientes sería útil distinguir y qué acciones de seguimiento quieres dejar de manejar solo de memoria.
 
 52
-00:04:41,818 --> 00:04:45,067
+00:04:32,318 --> 00:04:35,567
 No necesitas comenzar con una base compleja.
 
 53
-00:04:45,067 --> 00:04:46,839
+00:04:35,567 --> 00:04:37,339
 Empieza con pocos datos,
 
 54
-00:04:46,839 --> 00:04:54,592
+00:04:37,339 --> 00:04:45,092
 mantenlos actualizados y asegúrate de que cada registro ayude a tomar una decisión o realizar una acción.

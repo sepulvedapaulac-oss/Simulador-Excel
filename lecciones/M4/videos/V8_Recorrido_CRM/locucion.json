@@ -27,8 +27,7 @@
 "id": "g05",
 "sc": 5,
 "escena": "Propiedades del contacto",
-"txt": "También podemos incorporar información que ayude a comprender mejor al cliente. Por ejemplo, podemos registrar que Daniela tiene interés en decoración infantil o que ya ha realizado más de una compra. Estos datos posteriormente permiten segmentar y personalizar acciones.",
-"extra": 2
+"txt": "También podemos incorporar información que ayude a comprender mejor al cliente. Por ejemplo, podemos registrar que Daniela tiene interés en decoración infantil o que ya ha realizado más de una compra. Estos datos posteriormente permiten segmentar y personalizar acciones."
 },
 {
 "id": "g06",
@@ -40,15 +39,13 @@
 "id": "g07",
 "sc": 7,
 "escena": "Crear una nota",
-"txt": "Supongamos que Daniela consulta por una nueva colección. Podemos registrar una nota breve que deje constancia de esa interacción. El objetivo no es escribir conversaciones completas, sino conservar información que facilite el seguimiento posterior.",
-"extra": 2.5
+"txt": "Supongamos que Daniela consulta por una nueva colección. Podemos registrar una nota breve que deje constancia de esa interacción. El objetivo no es escribir conversaciones completas, sino conservar información que facilite el seguimiento posterior."
 },
 {
 "id": "g08",
 "sc": 8,
 "escena": "Crear una tarea",
-"txt": "Ahora agregamos algo especialmente útil: la próxima acción. Podemos crear una tarea para contactar a Daniela el viernes y enviarle información cuando la colección esté disponible. De esta manera, el CRM ayuda a transformar información en una acción concreta.",
-"extra": 3
+"txt": "Ahora agregamos algo especialmente útil: la próxima acción. Podemos crear una tarea para contactar a Daniela el viernes y enviarle información cuando la colección esté disponible. De esta manera, el CRM ayuda a transformar información en una acción concreta."
 },
 {
 "id": "g09",
@@ -60,8 +57,7 @@
 "id": "g10",
 "sc": 10,
 "escena": "Segmento filtrado",
-"txt": "Esta segmentación permite evitar mensajes iguales para toda la base. Casa Nativa podría identificar a clientes recurrentes interesados en decoración infantil y compartir con ellos información relevante, en lugar de enviar una promoción genérica a todas las personas.",
-"extra": 2
+"txt": "Esta segmentación permite evitar mensajes iguales para toda la base. Casa Nativa podría identificar a clientes recurrentes interesados en decoración infantil y compartir con ellos información relevante, en lugar de enviar una promoción genérica a todas las personas."
 },
 {
 "id": "g11",
