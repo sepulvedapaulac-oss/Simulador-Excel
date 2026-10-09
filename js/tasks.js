@@ -795,26 +795,66 @@
     },
   });
 
+  const fmtOk = (wb, sh, rg) => addrs(rg).every((a) => { const st = H.st(wb, sh, a); return st.bold && st.fill && st.fill !== '#ffffff' && st.align === 'center'; });
+  /** Ejecuta una macro en una copia del libro y devuelve la copia (o null si falla) */
+  function runCopy(wb, name, sheet, rg, prep) {
+    const c = wb.clone();
+    if (prep) prep(c);
+    const r = F.parseRange(rg);
+    try { global.XLVBA.run(c, c.vba || '', name, { sheet, sel: { r1: r.r1, c1: r.c1, r2: r.r2, c2: r.c2 }, act: { r: r.r1, c: r.c1 } }); } catch (e) { return null; }
+    return c;
+  }
+  const findSub = (wb, n) => global.XLVBA.listSubs(wb.vba || '').find((x) => txt(x) === txt(n));
+
   A.push({
-    id: 'A8', module: 'Módulo 7 · Macros en Excel', title: 'Grabar y ejecutar una macro',
-    intro: 'Automatiza el formato de los encabezados del reporte.',
+    id: 'A8', module: 'Módulo 7 · Macros en Excel', title: 'Crear y ejecutar una macro',
+    intro: 'Automatiza el formato de los encabezados del reporte con una macro llamada <b>FormatoEncabezado</b>.',
     steps: [
-      'Selecciona <b>A1:E1</b> y usa <b>Programador > Grabar macro</b> con el nombre <b>FormatoEncabezado</b>.',
-      'Mientras graba, aplica <b>negrita</b>, un <b>color de relleno</b> y alineación <b>centrada</b>. Luego <b>detén la grabación</b>.',
-      'Selecciona <b>A10:E10</b> y <b>ejecuta</b> la macro desde <b>Programador > Macros</b>.',
+      'Crea la macro <b>FormatoEncabezado</b> que aplique a la <b>selección</b>: <b>negrita</b>, un <b>color de relleno</b> y alineación <b>centrada</b>.',
+      'Puedes <b>grabarla</b> (selecciona A1:E1, Programador &gt; Grabar macro, aplica los formatos y Detener grabación) o <b>escribirla en VBA</b> (Programador &gt; Visual Basic o Alt+F11).',
+      'Selecciona <b>A10:E10</b> y <b>ejecuta</b> la macro (Programador &gt; Macros o Alt+F8).',
     ],
-    hint: 'La macro graba las acciones de formato que realizas. Al ejecutarla, se aplican sobre la selección actual.',
+    hint: 'Si grabas, selecciona el rango ANTES de empezar a grabar: así la macro trabajará sobre la selección y no sobre un rango fijo.',
     setup: () => ({ sheets: [{ name: 'Reporte', widths: [100, 100, 100, 100, 100], data: [['Mes', 'Ingresos', 'Gastos', 'Utilidad', 'Margen'], ['Enero', 5200000, 3900000, '=B2-C2', '=D2/B2'], ['Febrero', 4800000, 3700000, '=B3-C3', '=D3/B3'], ['Marzo', 6100000, 4200000, '=B4-C4', '=D4/B4'], [], [], [], [], ['Resumen trimestral'], ['Indicador', 'Mínimo', 'Máximo', 'Promedio', 'Total'], ['Ingresos', '=MIN(B2:B4)', '=MAX(B2:B4)', '=PROMEDIO(B2:B4)', '=SUMA(B2:B4)']], styles: { 'B2:D4': { fmt: 'number', dec: 0 }, 'E2:E4': { fmt: 'percent' }, 'B11:E11': { fmt: 'number', dec: 0 } } }] }),
     check: (wb) => {
-      const mc = wb.macros.find((m) => txt(m.name) === 'formatoencabezado');
-      const keys = mc ? mc.steps.filter((x) => x.op === 'style').reduce((o, x) => Object.assign(o, x.patch), {}) : {};
-      const ran = wb.macroRuns.some((r) => txt(r.name) === 'formatoencabezado' && (() => { const rg = F.parseRange(r.range); return rg && rg.r1 <= 9 && rg.r2 >= 9 && rg.c1 === 0 && rg.c2 >= 4 && txt(r.sheet) === 'reporte'; })());
-      const fmtd = addrs('A10:E10').every((a) => { const st = H.st(wb, 'Reporte', a); return st.bold && st.fill; });
+      const name = findSub(wb, 'FormatoEncabezado');
+      const works = !!name && (() => {
+        const c = runCopy(wb, name, 'Reporte', 'G20:H20', (x) => x.clearRange('Reporte', F.parseRange('A1:Z40'), 'formats'));
+        const c2 = runCopy(wb, name, 'Reporte', 'A10:E10', (x) => x.clearRange('Reporte', F.parseRange('A1:Z40'), 'formats'));
+        return (c && fmtOk(c, 'Reporte', 'G20:H20')) || (c2 && fmtOk(c2, 'Reporte', 'A10:E10'));
+      })();
+      const ran = wb.macroRuns.some((r) => txt(r.name) === 'formatoencabezado' && txt(r.sheet) === 'reporte');
       return [
-        it('Macro "FormatoEncabezado" grabada', !!mc, 1),
-        it('La macro aplica negrita, relleno y centrado', !!mc && keys.bold && keys.fill && keys.align === 'center', 1),
-        it('La macro se ejecutó sobre A10:E10', ran, 1),
-        it('A10:E10 quedó con el formato', fmtd, 0.5),
+        it('Macro "FormatoEncabezado" creada (grabada o escrita en VBA)', !!name, 1),
+        it('La macro aplica negrita, relleno y centrado', works, 1.5),
+        it('La macro se ejecutó en la hoja Reporte', ran, 1),
+        it('A10:E10 quedó con el formato', fmtOk(wb, 'Reporte', 'A10:E10'), 0.5),
+      ];
+    },
+  });
+
+  const A11sales = [['Andrea', 1250000], ['Bruno', 840000], ['Camila', 1530000], ['Diego', 990000], ['Elisa', 1010000], ['Fabián', 720000], ['Gloria', 1890000], ['Hugo', 1000000], ['Irene', 650000], ['Jorge', 1340000]];
+  A.push({
+    id: 'A11', module: 'Módulo 7 · Macros en Excel (código VBA)', title: 'Corregir y ejecutar código VBA',
+    intro: 'El libro ya tiene una macro llamada <b>ResaltarVentas</b>. Debería marcar en <b>negrita y color rojo</b> las ventas <b>mayores a 1.000.000</b> de <b>B2:B11</b>, pero tiene errores.',
+    steps: [
+      'Abre el editor con <b>Programador &gt; Visual Basic</b> (Alt+F11) y revisa el código de <b>ResaltarVentas</b>.',
+      'Corrígelo: hoy no revisa todas las filas y solo aplica negrita. Debe recorrer <b>B2:B11</b> y además poner el texto en <b>rojo</b>.',
+      '<b>Ejecuta</b> la macro (F5 en el editor o Programador &gt; Macros).',
+    ],
+    hint: 'El color de la fuente se cambia con  celda.Font.Color = vbRed',
+    setup: () => ({
+      sheets: [{ name: 'Ventas', widths: [110, 110], data: rowsData(['Vendedor', 'Venta'], A11sales), styles: { 'A1:B1': { bold: true, fill: '#dce6f1' }, 'B2:B11': { fmt: 'number', dec: 0 } } }],
+      vba: 'Sub ResaltarVentas()\n    Dim celda As Range\n    For Each celda In Range("B2:B10")\n        If celda.Value > 1000000 Then\n            celda.Font.Bold = True\n        End If\n    Next celda\nEnd Sub\n',
+    }),
+    check: (wb) => {
+      const name = findSub(wb, 'ResaltarVentas');
+      const good = (w) => A11sales.every((d, i) => { const st = H.st(w, 'Ventas', 'B' + (i + 2)); const red = st.color === '#ff0000'; return d[1] > 1000000 ? st.bold && red : !st.bold && !red; });
+      const c = name ? runCopy(wb, name, 'Ventas', 'D1', (x) => x.clearRange('Ventas', F.parseRange('B2:B11'), 'formats')) : null;
+      return [
+        it('El código corregido marca en negrita y rojo solo las ventas > 1.000.000 de B2:B11', !!c && good(c), 2),
+        it('La macro se ejecutó', wb.macroRuns.some((r) => txt(r.name) === 'resaltarventas'), 0.5),
+        it('La hoja quedó con las ventas correctas resaltadas', good(wb), 1),
       ];
     },
   });

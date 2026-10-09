@@ -1,9 +1,9 @@
 # Simulador de Nivel Excel (Básico · Intermedio · Avanzado)
 
-Plataforma web para evaluar el nivel de Excel de los alumnos mediante **actividades prácticas en un entorno similar a Microsoft Excel**: cinta de opciones, barra de fórmulas, celdas, hojas, fórmulas en español, gráficos, tablas dinámicas, filtros, escenarios, controles de formulario y macros.
+Plataforma web de **nivelación**: identifica el nivel de Excel de cada alumno para **recomendarle qué curso tomar**, mediante **actividades prácticas en un entorno similar a Microsoft Excel**: cinta de opciones, barra de fórmulas, celdas, hojas, fórmulas en español, gráficos, tablas dinámicas, filtros, escenarios, controles de formulario y macros.
 
-- **Alumno** (`index.html`): se identifica con **nombre, apellido y correo**, resuelve las actividades y al final ve su **nivel alcanzado** y el **curso recomendado**.
-- **Docente** (`admin.html`): ve el listado de todos los alumnos con nombre, apellido, correo, nivel y porcentaje por nivel, más el detalle de cada actividad. Puede descargarlo en CSV para abrirlo en Excel.
+- **Alumno** (`index.html`): se identifica con **nombre, apellido y correo**, resuelve las actividades de los tres niveles y al final ve su **curso recomendado** y su perfil por nivel. No hay nota de aprobación.
+- **Docente** (`admin.html`): ve el listado de todos los alumnos con nombre, apellido, correo, **curso recomendado**, nivel identificado y % logrado por nivel, más el detalle de cada actividad (incluye las que el alumno marcó "No sé hacerlo"). Puede descargarlo en CSV para abrirlo en Excel.
 - Los resultados también quedan en una **planilla de Google Sheets** de su cuenta.
 
 No necesita Lovable ni servidores pagados: funciona con **GitHub Pages** (gratis) y **Google Sheets** (gratis).
@@ -16,11 +16,11 @@ No necesita Lovable ni servidores pagados: funciona con **GitHub Pages** (gratis
 |---|---|---|
 | Básico | 11 (10 prácticas + 1 de preguntas rápidas) | Curso *Herramientas de Microsoft Excel nivel básico* (módulos 1 a 9) |
 | Intermedio | 13 (12 prácticas + 1 de preguntas rápidas) | Curso *nivel intermedio* (módulos 1 a 8) |
-| Avanzado | 10 (9 prácticas + 1 de preguntas rápidas) | Curso *nivel avanzado* (módulos 1 a 7) |
+| Avanzado | 11 (10 prácticas + 1 de preguntas rápidas) | Curso *nivel avanzado* (módulos 1 a 7) |
 
-- El alumno parte en **Básico**. Si obtiene **60 % o más**, pasa a **Intermedio**, y luego a **Avanzado**.
+- El alumno rinde **Básico → Intermedio → Avanzado**. No hay "aprobado" ni "reprobado". Si no conoce un tema, presiona **No sé hacerlo** y sigue; al terminar un nivel puede continuar o terminar y ver su recomendación.
 - Cada actividad práctica se corrige automáticamente revisando **lo que el alumno hizo en la planilla**: valores, si usó fórmulas (y cuáles), referencias absolutas, formatos, reglas, gráficos, tablas dinámicas, etc. En varias actividades se cambian los datos "por detrás" para comprobar que las fórmulas funcionan de verdad y no son valores escritos a mano.
-- **Nivel alcanzado** = último nivel aprobado (o "Inicial" si no aprueba Básico), con su recomendación de curso.
+- **Curso recomendado** = el primer nivel que el alumno todavía no domina. Internamente se considera que "domina" un nivel cuando logra el 70 % de sus actividades (valor `MASTERY_PERCENT`, ajustable). El alumno ve un perfil cualitativo por nivel: *Lo domina*, *Conocimiento parcial* o *Por aprender*.
 
 ### Contenidos evaluados
 
@@ -28,7 +28,14 @@ No necesita Lovable ni servidores pagados: funciona con **GitHub Pages** (gratis
 
 **Intermedio:** nombres de rango · DIA, MES, AÑO, HOY · IZQUIERDA, DERECHA, LARGO, NOMPROPIO, CONCATENAR · ENTERO, REDONDEAR, TRUNCAR · BUSCARV · CONTAR.SI y SUMAR.SI · SI, Y, SI anidado · gráficos de columnas y circular · tablas dinámicas · ordenamiento por varios niveles · validación de datos · auditoría de fórmulas y SI.ERROR.
 
-**Avanzado:** funciones anidadas · INDICE + COINCIDIR · SUMAR.SI.CONJUNTO / CONTAR.SI.CONJUNTO · administrador de escenarios · consolidación de datos de varias hojas · filtro avanzado con criterios Y/O · formularios con cuadro combinado y control de número · grabar y ejecutar macros · tablas dinámicas de doble entrada.
+**Avanzado:** funciones anidadas · INDICE + COINCIDIR · SUMAR.SI.CONJUNTO / CONTAR.SI.CONJUNTO · administrador de escenarios · consolidación de datos de varias hojas · filtro avanzado con criterios Y/O · formularios con cuadro combinado y control de número · crear y ejecutar macros (grabadas o escritas en VBA) · corregir código VBA · tablas dinámicas de doble entrada.
+
+### Macros y alumnos que ya saben Excel
+
+- **Programador > Visual Basic (Alt+F11)** abre un editor de VBA real: se puede escribir, modificar y ejecutar código (F5). El simulador interpreta VBA habitual: `Range`, `Cells`, `Selection`, `ActiveCell`, `Offset`, `.Value`, `.Formula`, `.Font`, `.Interior`, `.HorizontalAlignment`, `.NumberFormat`, `With`, `For`, `For Each`, `If/ElseIf/Else`, `Do/Loop`, `MsgBox`, `WorksheetFunction`, `RGB`, `vbRed`, etc. Muestra errores de compilación y de ejecución con número de línea, como Excel.
+- La **grabadora** genera el mismo código que Excel e incluye la opción **Usar referencias relativas**.
+- Las macros se corrigen **por lo que hacen**: el simulador ejecuta la macro del alumno en una copia del libro y revisa el resultado, así que da igual si la grabó o la escribió a mano.
+- Se aceptan los atajos de experto: Ctrl+1 (Formato de celdas), Alt+F11, Alt+F8, Ctrl+Shift+L (filtro), Alt+= (autosuma), F4 (referencias absolutas), Ctrl+Shift+$ y Ctrl+Shift+%. En general, la corrección revisa el **resultado** y no el camino usado.
 
 ---
 
@@ -77,9 +84,8 @@ Envíe a los alumnos solo el enlace del simulador (no el de `admin.html`).
 |---|---|---|
 | `ORG_NAME` | Nombre que aparece en el encabezado | `Tremen Partner` |
 | `APPS_SCRIPT_URL` | URL de Google Apps Script (Paso 2) | vacío |
-| `PASS_PERCENT` | % mínimo para aprobar un nivel | `60` |
+| `MASTERY_PERCENT` | Uso interno: % desde el que se considera que domina un nivel (define el curso recomendado; el alumno no lo ve como nota) | `70` |
 | `TIME_LIMITS` | Minutos por nivel (`0` = sin límite) | 30 / 40 / 45 |
-| `ADAPTIVE` | `true`: termina al reprobar un nivel. `false`: rinde los 3 niveles | `true` |
 | `SHOW_DETAIL_TO_STUDENT` | Mostrar al alumno el detalle por actividad | `true` |
 
 Las actividades están en `js/tasks.js` (datos, instrucciones y criterios de corrección de cada una).
@@ -104,6 +110,7 @@ backend/Code.gs   Google Apps Script (guardar y leer resultados)
 js/config.js      Configuración
 js/tasks.js       Banco de actividades y corrección
 js/formula.js     Motor de fórmulas (español)
+js/vba.js         Intérprete de VBA para las macros
 js/workbook.js    Modelo del libro (ordenar, filtrar, tablas dinámicas, …)
 js/sheetui.js     Interfaz tipo Excel
 js/app.js         Flujo del alumno
@@ -119,4 +126,5 @@ python3 -m http.server 8765          # en la carpeta del proyecto
 node tests/run.js                    # cada actividad: 0 % vacía y 100 % con la solución
 node tests/ui.js                     # recorrido completo usando la interfaz
 node tests/smoke.js                  # todos los botones de la cinta, deshacer, recarga
+node tests/expert.js                 # Ctrl+1, "No sé hacerlo", VBA escrito a mano, grabadora relativa
 ```

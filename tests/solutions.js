@@ -31,7 +31,8 @@ window.__solutions = {
   A5(ui, wb) { const R=(sh)=>({sheet:sh,r1:1,c1:1,r2:5,c2:1}); wb.consolidate({fn:'sum',refs:[R('Norte'),R('Centro'),R('Sur')],dest:{sheet:'Consolidado',r:1,c:1},links:true}); },
   A6(ui, wb) { const s=wb.activeSheet; [['G1','Región'],['H1','Producto'],['I1','Monto'],['G2','Norte'],['I2','>500000'],['G3','Sur'],['H3','Tablet']].forEach(([a,v])=>{const p=XLF.parseAddr(a); wb.setInput(s,p.r,p.c,v);}); wb.advancedFilter({list:{sheet:s.name,r1:0,c1:0,r2:16,c2:3},criteria:{sheet:s.name,r1:0,c1:6,r2:2,c2:8},copyTo:{sheet:s.name,r:5,c:6}}); },
   A7(ui, wb) { const s=wb.activeSheet; s.controls.push({type:'combo',range:'A2:A6',link:'E2',x:600,y:30}); s.controls.push({type:'spin',link:'E4',min:1,max:10,step:1,x:600,y:80}); wb.setInput(s,1,4,3); wb.setInput(s,3,4,3); wb.setInput(s,2,4,'=INDICE(B2:B6;E2)'); wb.setInput(s,4,4,'=E3*E4'); },
-  A8(ui, wb) { wb.macros.push({name:'FormatoEncabezado',steps:[{op:'style',patch:{bold:true}},{op:'style',patch:{fill:'#ffc000'}},{op:'style',patch:{align:'center'}}]}); ui.render(); ui.selectRange(XLF.parseRange('A10:E10')); ui.runMacro('FormatoEncabezado'); },
+  A8(ui, wb) { wb.vba = 'Sub FormatoEncabezado()\n    With Selection\n        .Font.Bold = True\n        .Interior.Color = RGB(255, 192, 0)\n        .HorizontalAlignment = xlCenter\n    End With\nEnd Sub'; ui.render(); ui.selectRange(XLF.parseRange('A10:E10')); ui.runMacro('FormatoEncabezado'); },
+  A11(ui, wb) { wb.vba = wb.vba.replace('B2:B10', 'B2:B11').replace('celda.Font.Bold = True', 'celda.Font.Bold = True\n            celda.Font.Color = vbRed'); ui.render(); ui.runMacro('ResaltarVentas'); },
   A9(ui, wb) { const i=wb.addSheet(); wb.createPivot({src:{sheet:'Datos',r1:0,c1:0,r2:16,c2:3},rowField:'Producto',colField:'Región',valField:'Monto',agg:'avg',sheet:wb.sheets[i].name,r:2,c:0}); },
   A10: { answers: ['xlsm', 1, 1, 1] },
 };

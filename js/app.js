@@ -33,20 +33,23 @@
   }
 
   /* ----------------------------- Resultado ----------------------------- */
+  /* Perfil de dominio por nivel (uso interno para recomendar el curso; no es una nota de aprobación) */
+  const mastery = () => C.MASTERY_PERCENT || 70;
+  function domain(pct) {
+    if (pct >= mastery()) return { key: 'dom', label: 'Lo domina' };
+    if (pct >= mastery() / 2) return { key: 'par', label: 'Conocimiento parcial' };
+    return { key: 'no', label: 'Por aprender' };
+  }
+  /** índice del último nivel dominado de forma consecutiva desde Básico (-1 = ninguno) */
   function finalLevel() {
     let reached = -1;
-    T.levels.forEach((l, i) => { const r = S.levels[l.id]; if (r && r.passed) reached = i; });
-    if (!C.ADAPTIVE) {
-      // nivel = el más alto aprobado de forma consecutiva desde básico
-      reached = -1;
-      for (let i = 0; i < T.levels.length; i++) { const r = S.levels[T.levels[i].id]; if (r && r.passed) reached = i; else break; }
-    }
+    for (let i = 0; i < T.levels.length; i++) { const r = S.levels[T.levels[i].id]; if (r && r.pct >= mastery()) reached = i; else break; }
     return reached;
   }
   function levelName(idx) { return idx < 0 ? 'Inicial' : T.levels[idx].name; }
+  function recommendedShort(idx) { return idx >= T.levels.length - 1 ? 'Ninguno (domina el avanzado)' : T.levels[idx + 1].name; }
   function recommendation(idx) {
-    if (idx < 0) return 'Curso ' + T.levels[0].course;
-    if (idx >= T.levels.length - 1) return 'Domina los contenidos del nivel avanzado. Puede profundizar en análisis de datos y automatización (VBA).';
+    if (idx >= T.levels.length - 1) return 'Domina los contenidos de los tres niveles. Puede profundizar en análisis de datos y automatización con VBA.';
     return 'Curso ' + T.levels[idx + 1].course;
   }
   function buildRecord() {
@@ -58,7 +61,7 @@
     for (const l of T.levels) {
       const r = L[l.id];
       if (!r) continue;
-      detalle[l.id] = { pct: Math.round(r.pct), aprobado: r.passed, tiempoMin: Math.round(r.timeSec / 6) / 10, tareas: r.tasks.map((t) => ({ id: t.id, titulo: t.title, modulo: t.module, puntaje: Math.round(t.score * 100), criterios: t.items.map((x) => [x.label, x.f != null ? Math.round(x.f * 100) / 100 : x.ok ? 1 : 0]) })) };
+      detalle[l.id] = { pct: Math.round(r.pct), dominio: domain(r.pct).label, tiempoMin: Math.round(r.timeSec / 6) / 10, tareas: r.tasks.map((t) => ({ id: t.id, titulo: t.title, modulo: t.module, puntaje: Math.round(t.score * 100), omitida: !!t.skipped, criterios: t.items.map((x) => [x.label, x.f != null ? Math.round(x.f * 100) / 100 : x.ok ? 1 : 0]) })) };
     }
     return {
       id: S.id,
@@ -68,7 +71,8 @@
       apellido: S.student.apellido,
       correo: S.student.correo,
       estado: S.finished ? 'Finalizado' : 'En curso (' + level().name + ')',
-      nivel: S.finished ? levelName(fl) : (fl >= 0 ? levelName(fl) + ' (parcial)' : 'En evaluación'),
+      nivel: S.finished ? levelName(fl) : 'En evaluación',
+      cursoRecomendado: S.finished ? recommendedShort(fl) : '',
       recomendacion: S.finished ? recommendation(fl) : '',
       basico: pct('basico'),
       intermedio: pct('intermedio'),
@@ -87,7 +91,6 @@
   /* ----------------------------- Registro ----------------------------- */
   function initStart() {
     $('.org').textContent = C.ORG_NAME ? ' · ' + C.ORG_NAME : '';
-    for (const e of document.querySelectorAll('.pass-pct')) e.textContent = C.PASS_PERCENT + '% o más';
     const prev = loadSession();
     if (prev && prev.student) {
       const box = $('#resume');
@@ -141,9 +144,9 @@
       '<div class="lv-badge lv-' + L.id + '">Nivel ' + (S.levelIdx + 1) + ' de ' + T.levels.length + '</div>' +
       '<h1>' + esc(L.name) + '</h1>' +
       '<p class="lead">Basado en el temario del curso <b>' + esc(L.course) + '</b>.</p>' +
-      '<div class="facts"><div><b>' + L.tasks.length + '</b><span>actividades</span></div><div><b>' + (mins ? mins + ' min' : 'Sin límite') + '</b><span>tiempo máximo</span></div><div><b>' + C.PASS_PERCENT + '%</b><span>para aprobar</span></div></div>' +
+      '<div class="facts"><div><b>' + L.tasks.length + '</b><span>actividades</span></div><div><b>' + (mins ? mins + ' min' : 'Sin límite') + '</b><span>tiempo máximo</span></div></div>' +
       '<h3>Contenidos que se evalúan</h3><ul class="topics">' + modules.map((m) => '<li>' + esc(m) + '</li>').join('') + '</ul>' +
-      '<p class="small">Puedes moverte libremente entre las actividades del nivel. Cuando termines, presiona <b>Finalizar nivel</b>. ' + (mins ? 'Si se acaba el tiempo, el nivel se entrega automáticamente.' : '') + '</p>' +
+      '<p class="small">Puedes moverte libremente entre las actividades. Si no conoces un tema, presiona <b>No sé hacerlo</b> y pasa a la siguiente: no es una prueba para aprobar, sirve para recomendarte el curso adecuado. Cuando termines, presiona <b>Finalizar nivel</b>. ' + (mins ? 'Si se acaba el tiempo, el nivel se entrega automáticamente.' : '') + '</p>' +
       '<button class="btn pri big" id="go-level" type="button">Comenzar nivel ' + esc(L.name) + '</button>';
     show('view-level');
     $('#go-level').onclick = () => {
@@ -158,22 +161,14 @@
   function renderLevelResult() {
     stopTimer();
     const L = level();
-    const r = S.levels[L.id];
     const next = T.levels[S.levelIdx + 1];
-    const passed = r.passed;
-    let html = '<div class="lv-badge lv-' + L.id + '">Nivel ' + esc(L.name) + ' completado</div>' +
-      '<h1>' + (passed ? '¡Aprobaste el nivel ' + esc(L.name) + '!' : 'Nivel ' + esc(L.name) + ' finalizado') + '</h1>' +
-      '<div class="big-pct ' + (passed ? 'ok' : 'no') + '">' + Math.round(r.pct) + '%</div>';
-    if (next) {
-      html += '<p class="lead">' + (passed ? 'Puedes continuar con el nivel <b>' + esc(next.name) + '</b>.' : 'Puedes continuar con el nivel ' + esc(next.name) + '.') + '</p>' +
-        '<div class="row center"><button class="btn pri big" id="go-next" type="button">Continuar al nivel ' + esc(next.name) + '</button><button class="btn" id="stop-here" type="button">Terminar la evaluación aquí</button></div>';
-    }
-    $('#level-card').innerHTML = html;
+    $('#level-card').innerHTML = '<div class="lv-badge lv-' + L.id + '">Nivel ' + esc(L.name) + ' completado</div>' +
+      '<h1>¡Bien! Terminaste el nivel ' + esc(L.name) + '</h1>' +
+      '<p class="lead">Continúa con el nivel <b>' + esc(next.name) + '</b>. Si sus contenidos te resultan desconocidos, puedes terminar aquí: la recomendación de curso considerará lo que hayas realizado.</p>' +
+      '<div class="row center"><button class="btn pri big" id="go-next" type="button">Continuar al nivel ' + esc(next.name) + '</button><button class="btn" id="stop-here" type="button">Terminar y ver mi recomendación</button></div>';
     show('view-level');
-    const gn = $('#go-next');
-    if (gn) gn.onclick = () => { S.levelIdx++; S.taskIdx = 0; S.phase = 'intro'; persist(); renderLevelIntro(); };
-    const sh = $('#stop-here');
-    if (sh) sh.onclick = () => appConfirm('¿Seguro que deseas terminar la evaluación ahora?', finishAll);
+    $('#go-next').onclick = () => { S.levelIdx++; S.taskIdx = 0; S.phase = 'intro'; persist(); renderLevelIntro(); };
+    $('#stop-here').onclick = () => appConfirm('¿Terminar la evaluación ahora? Los niveles no realizados se considerarán "por aprender".', finishAll);
   }
 
   /* ----------------------------- Trabajo ----------------------------- */
@@ -210,7 +205,7 @@
     $('#task-list').innerHTML = L.tasks.map((t, i) => {
       const st = S.states[t.id];
       const done = st && (st.touched || (st.answers && st.answers.some((a) => a != null && a !== '')));
-      return '<button type="button" class="tl' + (i === S.taskIdx ? ' on' : '') + (done ? ' done' : '') + '" data-i="' + i + '" title="' + esc(t.title) + '">' + (i + 1) + '</button>';
+      return '<button type="button" class="tl' + (i === S.taskIdx ? ' on' : '') + (done ? ' done' : '') + (st && st.skipped && !done ? ' skip' : '') + '" data-i="' + i + '" title="' + esc(t.title) + '">' + (i + 1) + '</button>';
     }).join('');
     for (const b of document.querySelectorAll('#task-list .tl')) b.onclick = () => openTask(+b.dataset.i);
   }
@@ -229,9 +224,18 @@
       '<p>' + t.intro + '</p>' +
       (t.steps ? '<ol class="t-steps">' + t.steps.map((s) => '<li>' + s + '</li>').join('') + '</ol>' : '') +
       (t.hint ? '<details class="hint"><summary>💡 Ver ayuda</summary><p>' + esc(t.hint) + '</p></details>' : '') +
-      (t.type === 'quiz' ? '' : '<button class="btn small-btn" id="btn-reset" type="button">↺ Reiniciar esta actividad</button>');
+      '<div class="row"><button class="btn small-btn" id="btn-skip" type="button">No sé hacerlo → siguiente</button>' +
+      (t.type === 'quiz' ? '' : '<button class="btn small-btn" id="btn-reset" type="button">↺ Reiniciar esta actividad</button>') + '</div>' +
+      (S.states[t.id] && S.states[t.id].skipped ? '<p class="small skipped-note">Marcaste esta actividad como "No sé hacerlo". Si la resuelves igual, se considerará tu trabajo.</p>' : '');
     $('#btn-prev').disabled = i === 0;
     $('#btn-next').disabled = i === L.tasks.length - 1;
+    $('#btn-skip').onclick = () => {
+      saveCurrent();
+      const cur = S.states[t.id] || {};
+      S.states[t.id] = { ...cur, skipped: true, touched: false };
+      persist();
+      if (i < L.tasks.length - 1) openTask(i + 1); else { renderTaskList(); confirmFinishLevel(); }
+    };
     const rb = $('#btn-reset');
     if (rb) rb.onclick = () => appConfirm('Se borrarán los cambios realizados en esta actividad. ¿Continuar?', () => { delete S.states[t.id]; persist(); openTask(S.taskIdx); });
     if (t.type === 'quiz') {
@@ -290,7 +294,7 @@
   /* ----------------------------- Entrega ----------------------------- */
   function confirmFinishLevel() {
     const L = level();
-    const pending = L.tasks.filter((t) => !S.states[t.id]).length;
+    const pending = L.tasks.filter((t) => !S.states[t.id] || (!S.states[t.id].touched && !S.states[t.id].skipped && !S.states[t.id].answers)).length;
     appConfirm('¿Finalizar el nivel ' + L.name + '?' + (pending ? '\n\nTienes ' + pending + ' actividad(es) sin abrir o sin cambios.' : '') + '\n\nNo podrás volver a modificar este nivel.', finishLevel);
   }
 
@@ -298,15 +302,16 @@
     saveCurrent();
     const L = level();
     const tasks = L.tasks.map((t) => {
-      const g = T.grade(t, S.states[t.id]);
-      return { id: t.id, title: t.title, module: t.module, score: g.score, items: g.items };
+      const stt = S.states[t.id];
+      const g = T.grade(t, stt && stt.skipped && !stt.touched && !(stt.answers && stt.answers.some((a) => a != null && a !== '')) ? null : stt);
+      const skipped = !!(stt && stt.skipped && g.score === 0);
+      return { id: t.id, title: t.title, module: t.module, score: g.score, items: skipped ? [{ label: 'El alumno indicó "No sé hacerlo"', ok: false, w: 1 }] : g.items, skipped };
     });
     const pct = (tasks.reduce((s, x) => s + x.score, 0) / tasks.length) * 100;
-    S.levels[L.id] = { pct, passed: pct >= C.PASS_PERCENT, tasks, timeSec: Math.round((Date.now() - S.levelStartedAt) / 1000), finishedAt: new Date().toISOString() };
+    S.levels[L.id] = { pct, tasks, timeSec: Math.round((Date.now() - S.levelStartedAt) / 1000), finishedAt: new Date().toISOString() };
     const next = T.levels[S.levelIdx + 1];
-    const continues = next && (S.levels[L.id].passed || !C.ADAPTIVE);
     persist();
-    if (!continues) { finishAll(); return; }
+    if (!next) { finishAll(); return; }
     S.phase = 'levelResult';
     persist();
     sync();
@@ -338,7 +343,7 @@
     const lvls = T.levels.map((l) => {
       const r = S.levels[l.id];
       return '<div class="lvrow"><span class="lv-dot lv-' + l.id + '"></span><b>' + esc(l.name) + '</b>' +
-        (r ? '<div class="bar"><i style="width:' + Math.round(r.pct) + '%"></i></div><span class="pc">' + Math.round(r.pct) + '%</span><span class="tag ' + (r.passed ? 'ok' : 'no') + '">' + (r.passed ? 'Aprobado' : 'No aprobado') + '</span>' : '<div class="bar"></div><span class="pc">—</span><span class="tag">No rendido</span>') + '</div>';
+        (r ? '<div class="bar"><i class="d-' + domain(r.pct).key + '" style="width:' + Math.max(2, Math.round(r.pct)) + '%"></i></div><span class="tag d-' + domain(r.pct).key + '">' + domain(r.pct).label + '</span>' : '<div class="bar"></div><span class="tag">No realizado</span>') + '</div>';
     }).join('');
     let detail = '';
     if (C.SHOW_DETAIL_TO_STUDENT) {
@@ -347,8 +352,9 @@
     $('#end-card').innerHTML =
       '<p class="small">Evaluación ' + esc(S.id) + ' · ' + esc(new Date(S.finishedAt || Date.now()).toLocaleString('es-CL')) + '</p>' +
       '<h1>Resultado de ' + esc(S.student.nombre + ' ' + S.student.apellido) + '</h1>' +
-      '<div class="final-level lv-' + (fl >= 0 ? T.levels[fl].id : 'inicial') + '"><span>Nivel alcanzado</span><b>' + esc(levelName(fl)) + '</b></div>' +
-      '<p class="lead"><b>Recomendación:</b> ' + esc(recommendation(fl)) + '</p>' +
+      '<div class="final-level lv-' + (fl < T.levels.length - 1 ? T.levels[fl + 1].id : 'avanzado') + '"><span>' + (fl < T.levels.length - 1 ? 'Curso recomendado' : 'Resultado') + '</span><b>' + esc(fl < T.levels.length - 1 ? 'Excel ' + T.levels[fl + 1].name : 'Domina Excel avanzado') + '</b></div>' +
+      '<p class="lead">' + esc(recommendation(fl)) + '.</p><p class="small">Nivel identificado: <b>' + esc(levelName(fl)) + '</b>. Esta evaluación no tiene nota de aprobación: el perfil muestra qué contenidos dominas y cuáles te conviene aprender.</p>' +
+      '<h3>Tu perfil por nivel</h3>' +
       '<div class="lvls">' + lvls + '</div>' + detail +
       '<p id="sync-state" class="sync"></p>' +
       '<div class="row center noprint"><button class="btn" type="button" id="print">🖨 Imprimir / guardar comprobante (PDF)</button><button class="btn" type="button" id="new">Nueva evaluación</button></div>';

@@ -157,7 +157,11 @@
         return sh;
       });
       this.names = d.names || {};
-      this.macros = d.macros || [];
+      this.vba = d.vba || '';
+      if (!this.vba && d.macros && d.macros.length && global.XLVBA) {
+        // migración del formato anterior (pasos de formato) a código VBA
+        this.vba = d.macros.map((m) => 'Sub ' + m.name + '()\n' + m.steps.flatMap((x) => (x.op === 'clear' ? ['Selection.ClearContents'] : global.XLVBA.patchToLines(x.patch))).map((l) => '    ' + l).join('\n') + '\nEnd Sub').join('\n\n');
+      }
       this.macroRuns = d.macroRuns || [];
       this.scenarios = d.scenarios || [];
       this.active = Math.min(d.active || 0, this.sheets.length - 1);
@@ -165,7 +169,7 @@
       this.invalidate();
     }
     toJSON() {
-      return { sheets: this.sheets, names: this.names, macros: this.macros, macroRuns: this.macroRuns, scenarios: this.scenarios, active: this.active };
+      return { sheets: this.sheets, names: this.names, vba: this.vba, macroRuns: this.macroRuns, scenarios: this.scenarios, active: this.active };
     }
     clone() { return new Workbook(this.toJSON()); }
     invalidate() { this.cache = new Map(); this.computing = new Set(); }

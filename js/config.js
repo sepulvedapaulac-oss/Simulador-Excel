@@ -9,15 +9,13 @@ window.SIM_CONFIG = {
   // Mientras esté vacía, los resultados se guardan solo en el navegador (modo demostración).
   APPS_SCRIPT_URL: '',
 
-  // Porcentaje mínimo para aprobar un nivel y avanzar al siguiente
-  PASS_PERCENT: 60,
+  // Uso interno para recomendar el curso (no se muestra al alumno como nota):
+  // se considera que el alumno "domina" un nivel si logra este % de sus actividades.
+  // El curso recomendado es el primer nivel que no domina.
+  MASTERY_PERCENT: 70,
 
   // Tiempo máximo por nivel, en minutos (0 = sin límite)
   TIME_LIMITS: { basico: 30, intermedio: 40, avanzado: 45 },
-
-  // true: si el alumno no aprueba un nivel, la evaluación termina ahí.
-  // false: el alumno rinde los tres niveles siempre.
-  ADAPTIVE: true,
 
   // Mostrar al alumno el detalle de lo logrado en cada actividad al finalizar
   SHOW_DETAIL_TO_STUDENT: true,

@@ -29,8 +29,8 @@
         <h1>Resultados <small id="count"></small></h1>
         <input id="q" type="search" placeholder="Buscar por nombre, apellido o correo">
         <select id="f-level">
-          <option value="">Todos los niveles</option>
-          <option>Inicial</option><option>Básico</option><option>Intermedio</option><option>Avanzado</option><option value="__curso">En curso</option>
+          <option value="">Todos los cursos recomendados</option>
+          <option value="Básico">Recomendado: Básico</option><option value="Intermedio">Recomendado: Intermedio</option><option value="Avanzado">Recomendado: Avanzado</option><option value="Ninguno">Domina el avanzado</option><option value="__curso">En curso</option>
         </select>
         <button class="btn" id="reload" type="button">⟳ Actualizar</button>
         <button class="btn pri" id="csv" type="button">⬇ Descargar CSV (Excel)</button>
@@ -40,7 +40,7 @@
         <table class="res">
           <thead><tr>
             <th data-k="fechaInicio">Fecha</th><th data-k="nombre">Nombre</th><th data-k="apellido">Apellido</th><th data-k="correo">Correo</th>
-            <th data-k="nivel">Nivel alcanzado</th><th data-k="basico" class="num">Básico</th><th data-k="intermedio" class="num">Intermedio</th><th data-k="avanzado" class="num">Avanzado</th>
+            <th data-k="cursoRecomendado">Curso recomendado</th><th data-k="nivel">Nivel identificado</th><th data-k="basico" class="num">Básico</th><th data-k="intermedio" class="num">Intermedio</th><th data-k="avanzado" class="num">Avanzado</th>
             <th data-k="duracionMin" class="num">Min.</th><th data-k="estado">Estado</th><th></th>
           </tr></thead>
           <tbody id="rows"></tbody>

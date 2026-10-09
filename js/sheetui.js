@@ -78,6 +78,7 @@
         { cmd: 'deleteRow', icon: '⊟', label: 'Eliminar filas' },
         { cmd: 'deleteCol', icon: '⊟', label: 'Eliminar columnas' },
         { cmd: 'colWidth', icon: '↔', label: 'Ancho de columna' },
+        { cmd: 'formatCells', icon: '▤', label: 'Formato de celdas (Ctrl+1)' },
       ] },
       { label: 'Edición', items: [
         { cmd: 'autosum', icon: 'Σ', label: 'Autosuma' },
@@ -144,9 +145,10 @@
     ] },
     { id: 'programador', label: 'Programador', groups: [
       { label: 'Código', items: [
+        { cmd: 'vba', icon: '⌨', label: 'Visual Basic (Alt+F11)', big: true },
+        { cmd: 'macros', icon: '▶', label: 'Macros (Alt+F8)', big: true },
         { cmd: 'recordMacro', icon: '⏺', label: 'Grabar macro', big: true, tog: '_recording' },
-        { cmd: 'macros', icon: '▶', label: 'Macros', big: true },
-        { cmd: 'vba', icon: '⌨', label: 'Visual Basic', big: true },
+        { cmd: 'relRefs', icon: '⇲', label: 'Usar referencias relativas', tog: '_rel' },
       ] },
       { label: 'Controles (Insertar)', items: [
         { cmd: 'ctlCombo', icon: '☰▾', label: 'Cuadro combinado' },
@@ -284,6 +286,7 @@
         else if (k === '_filter') on = !!this.sh.filter;
         else if (k === '_protected') on = !!this.sh.protected;
         else if (k === '_recording') on = !!this.recording;
+        else if (k === '_rel') on = !!this.relRefs;
         else on = !!st[k];
         b.classList.toggle('on', on);
         if (k === '_recording') b.querySelector('.lb').textContent = this.recording ? 'Detener grabación' : 'Grabar macro';
@@ -464,6 +467,8 @@
       }
       if (this.editing && !this.commitEdit()) return;
       this.wb.active = i;
+      this.recLine('Sheets(' + global.XLVBA.vbaStr(this.wb.sheets[i].name) + ').Select');
+      if (this.recording) { this.recording.curAct = { r: 0, c: 0 }; this.recording.lastSelKey = i + ':A1'; }
       this.act = { r: 0, c: 0 };
       this.anchor = { r: 0, c: 0 };
       this.sel = { r1: 0, c1: 0, r2: 0, c2: 0 };
@@ -505,6 +510,7 @@
       this.updateRibbonState();
       this.updateDvButton();
       this.updateStatus();
+      this.recSelect();
     }
 
     positionSelBox() {
@@ -1021,6 +1027,7 @@
       this.hideHint();
       if (this.wb.active !== E.sheet) { this.wb.active = E.sheet; this.act = { r: E.r, c: E.c }; this.sel = { r1: E.r, c1: E.c, r2: E.r, c2: E.c }; this.anchor = { ...this.act }; }
       if (changed) {
+        this.recLine('ActiveCell.FormulaLocal = ' + global.XLVBA.vbaStr(v));
         this.mutate(() => { this.wb.setInput(sh, E.r, E.c, v === '' ? '' : v); }, { allowProtected: true });
       } else this.render();
       this.focus();
@@ -1159,6 +1166,7 @@
           ['Insertar fila', () => this.cmd('insertRow')], ['Insertar columna', () => this.cmd('insertCol')],
           ['Eliminar fila', () => this.cmd('deleteRow')], ['Eliminar columna', () => this.cmd('deleteCol')], null,
           ['Borrar contenido', () => this.cmd('clearContents')],
+          ['Formato de celdas…', () => this.cmd('formatCells')],
           ['Ordenar de A a Z', () => this.cmd('sortAsc')], ['Ordenar de Z a A', () => this.cmd('sortDesc')], null,
           [this.sh.comments[F.addr(this.act.r, this.act.c)] ? 'Modificar comentario' : 'Insertar comentario', () => this.cmd('newComment')],
           ['Definir nombre…', () => this.cmd('defineName')],
@@ -1426,6 +1434,12 @@
       if (k === 'Home') { e.preventDefault(); this.select(ctrl ? 0 : this.act.r, 0, e.shiftKey); return; }
       if (k === 'PageDown' || k === 'PageUp') { e.preventDefault(); this.moveAct(k === 'PageDown' ? 15 : -15, 0, e.shiftKey); return; }
       if (k === 'Escape') { this.clip = null; this.wrap.classList.remove('copying'); return; }
+      if (e.altKey && (k === 'F11' || k === 'F8')) { e.preventDefault(); this.cmd(k === 'F11' ? 'vba' : 'macros'); return; }
+      if (e.altKey && !ctrl && (k === '=' || e.code === 'Digit0' && e.shiftKey)) { e.preventDefault(); this.cmd('autosum'); return; }
+      if (ctrl && e.shiftKey && (k === 'L' || k === 'l')) { e.preventDefault(); this.cmd('filter'); return; }
+      if (ctrl && e.shiftKey && (k === '$' || e.code === 'Digit4')) { e.preventDefault(); this.cmd('currencyQuick'); return; }
+      if (ctrl && e.shiftKey && (k === '%' || e.code === 'Digit5')) { e.preventDefault(); this.cmd('percentQuick'); return; }
+      if (ctrl && (k === '1' || e.code === 'Digit1')) { e.preventDefault(); this.cmd('formatCells'); return; }
       if (ctrl) {
         const kk = k.toLowerCase();
         const map = { z: 'undo', y: 'redo', b: 'bold', n: 'bold', i: 'italic', k: 'italic', u: 'underline', s: 'save', d: 'fillDown', a: 'selectAll', f: 'findReplace', l: 'findReplace', h: 'findReplace' };
@@ -1474,7 +1488,7 @@
     /* ======================= Comandos ======================= */
     styleCmd(patch) {
       this.mutate(() => this.wb.applyStyle(this.sh, this.sel, patch));
-      if (this.recording) this.recording.steps.push({ op: 'style', patch: { ...patch } });
+      this.recLine(...global.XLVBA.patchToLines(patch));
     }
     curStyle() { const c = this.sh.cells[F.addr(this.act.r, this.act.c)]; return (c && c.style) || {}; }
     regionForData() {
@@ -1521,7 +1535,7 @@
         case 'decDec': this.mutate(() => this.wb.stepDecimals(sh, s, -1)); break;
         case 'clearContents':
           this.mutate(() => this.wb.clearRange(sh, s, 'contents'));
-          if (this.recording) this.recording.steps.push({ op: 'clear' });
+          this.recLine('Selection.ClearContents');
           break;
         case 'clearFormats': this.mutate(() => this.wb.clearRange(sh, s, 'formats')); break;
         case 'clearAll': this.mutate(() => this.wb.clearRange(sh, s, 'all')); break;
@@ -1592,6 +1606,8 @@
         case 'freezeCol': this.mutate(() => { sh.freeze = { r: 0, c: 1 }; }, { allowProtected: true }); break;
         case 'unfreeze': this.mutate(() => { sh.freeze = { r: 0, c: 0 }; }, { allowProtected: true }); break;
         case 'recordMacro': this.recordMacro(); break;
+        case 'relRefs': this.relRefs = !this.relRefs; this.updateRibbonState(); this.toast(this.relRefs ? 'Grabación con referencias relativas activada.' : 'Grabación con referencias absolutas.'); break;
+        case 'formatCells': this.formatCellsDialog(); break;
         case 'macros': this.macroDialog(); break;
         case 'vba': this.vbaDialog(); break;
         case 'ctlCombo': this.controlDialog('combo'); break;
@@ -2483,52 +2499,114 @@
       return out;
     }
 
-    /* ----------------------- Macros ----------------------- */
+    async formatCellsDialog() {
+      const st = this.curStyle();
+      const colorOpts = [['', '(sin cambio)'], ['none', 'Sin color / Automático'], ['#ffff00', 'Amarillo'], ['#ffc000', 'Naranjo'], ['#ff0000', 'Rojo'], ['#c00000', 'Rojo oscuro'], ['#92d050', 'Verde claro'], ['#00b050', 'Verde'], ['#00b0f0', 'Celeste'], ['#0070c0', 'Azul'], ['#7030a0', 'Morado'], ['#dce6f1', 'Azul pálido'], ['#e2efda', 'Verde pálido'], ['#d9d9d9', 'Gris'], ['#000000', 'Negro'], ['#ffffff', 'Blanco']];
+      const v = await this.form('Formato de celdas', [
+        { name: 'fmt', label: 'Número — Categoría', type: 'select', value: st.fmt || 'general', options: [['general', 'General'], ['number', 'Número'], ['currency', 'Moneda'], ['percent', 'Porcentaje'], ['date', 'Fecha'], ['text', 'Texto']] },
+        { name: 'dec', label: 'Posiciones decimales', type: 'number', value: st.dec != null ? st.dec : '', placeholder: 'predeterminado', show: (x) => ['number', 'currency', 'percent', 'general'].includes(x.fmt) },
+        { name: 'align', label: 'Alineación horizontal', type: 'select', value: st.align || '', options: [['', 'General'], ['left', 'Izquierda'], ['center', 'Centrar'], ['right', 'Derecha']] },
+        { name: 'bold', label: 'Negrita', type: 'checkbox', value: !!st.bold },
+        { name: 'italic', label: 'Cursiva', type: 'checkbox', value: !!st.italic },
+        { name: 'underline', label: 'Subrayado', type: 'checkbox', value: !!st.underline },
+        { name: 'color', label: 'Fuente — Color', type: 'select', value: '', options: colorOpts },
+        { name: 'fill', label: 'Relleno — Color de fondo', type: 'select', value: '', options: colorOpts },
+        { name: 'border', label: 'Bordes', type: 'select', value: st.border ? 'all' : 'none', options: [['none', 'Ninguno'], ['all', 'Todos los bordes']] },
+      ], { validate: (x) => (x.dec !== '' && (isNaN(+x.dec) || +x.dec < 0 || +x.dec > 10) ? 'Las posiciones decimales deben estar entre 0 y 10.' : null) });
+      if (!v) return;
+      const patch = { fmt: v.fmt === 'general' ? null : v.fmt, dec: v.dec === '' ? null : +v.dec, align: v.align || null, bold: v.bold, italic: v.italic, underline: v.underline, border: v.border === 'all' };
+      if (v.color) patch.color = v.color === 'none' ? null : v.color;
+      if (v.fill) patch.fill = v.fill === 'none' ? null : v.fill;
+      this.styleCmd(patch);
+    }
+
+    /* ----------------------- Macros (VBA) ----------------------- */
+    recLine(...lines) { if (this.recording && !this.runningMacro) { this.recording.lines.push(...lines); this.recording.lastWasSelect = false; } }
+    recSelect() {
+      const R = this.recording;
+      if (!R || this.runningMacro || this.editing) return;
+      const s = this.sel;
+      const key = this.wb.active + ':' + F.rangeToStr(s);
+      if (R.lastSelKey === key) return;
+      R.lastSelKey = key;
+      let base;
+      if (R.lastWasSelect) { R.lines.pop(); base = R.baseBeforeLast; } else base = R.curAct;
+      R.baseBeforeLast = base;
+      const size = F.rangeToStr({ r1: 0, c1: 0, r2: s.r2 - s.r1, c2: s.c2 - s.c1 });
+      let line;
+      if (R.relative) {
+        const dr = s.r1 - base.r; const dc = s.c1 - base.c;
+        line = 'ActiveCell.' + (dr || dc ? 'Offset(' + dr + ', ' + dc + ').' : '') + 'Range("' + size + '").Select';
+      } else line = 'Range("' + F.rangeToStr(s) + '").Select';
+      R.lines.push(line);
+      R.lastWasSelect = true;
+      R.curAct = { r: s.r1, c: s.c1 };
+    }
     async recordMacro() {
       if (this.recording) {
         const rec = this.recording;
         this.recording = null;
-        this.mutate(() => {
-          this.wb.macros = this.wb.macros.filter((m) => m.name.toLowerCase() !== rec.name.toLowerCase());
-          this.wb.macros.push({ name: rec.name, steps: rec.steps, desc: rec.desc });
-        }, { allowProtected: true });
-        this.toast('Macro «' + rec.name + '» grabada (' + rec.steps.length + ' acciones).');
+        const body = rec.lines.map((l) => '    ' + l).join('\n');
+        const code = 'Sub ' + rec.name + '()\n\'\n\' ' + rec.name + ' Macro\n' + (rec.desc ? "' " + rec.desc.replace(/\n/g, ' ') + '\n' : '') + "'\n" + (body ? body + '\n' : '') + 'End Sub';
+        this.mutate(() => { this.wb.vba = global.XLVBA.upsertSub(this.wb.vba || '', rec.name, code); }, { allowProtected: true });
+        this.toast('Macro «' + rec.name + '» grabada. Puede verla en Programador > Visual Basic.');
         return;
       }
+      const existing = global.XLVBA.listSubs(this.wb.vba || '');
       const v = await this.form('Grabar macro', [
-        { name: 'name', label: 'Nombre de la macro', value: 'Macro' + (this.wb.macros.length + 1) },
+        { name: 'name', label: 'Nombre de la macro', value: 'Macro' + (existing.length + 1) },
         { name: 'store', label: 'Guardar macro en', type: 'select', options: [['this', 'Este libro']] },
         { name: 'desc', label: 'Descripción', type: 'textarea', rows: 2 },
+        { type: 'info', text: this.relRefs ? 'Se grabará con <b>referencias relativas</b>.' : 'Se grabará con referencias absolutas. (Programador &gt; Usar referencias relativas para cambiarlo).' },
       ], { validate: (x) => (!/^[A-Za-zÀ-ÿÑñ][A-Za-zÀ-ÿÑñ0-9_]*$/.test(x.name.trim()) ? 'El nombre de la macro no es válido: debe comenzar con una letra y no puede contener espacios.' : null) });
       if (!v) return;
-      this.recording = { name: v.name.trim(), steps: [], desc: v.desc };
+      this.recording = { name: v.name.trim(), lines: [], desc: v.desc.trim(), relative: !!this.relRefs, curAct: { ...this.act }, lastSelKey: this.wb.active + ':' + F.rangeToStr(this.sel), lastWasSelect: false };
       this.updateRibbonState();
       this.updateStatus();
-      this.toast('Grabando… aplique los formatos y luego presione "Detener grabación".');
+      this.toast('Grabando… realice las acciones y luego presione "Detener grabación".');
     }
-    runMacro(name) {
-      const mc = this.wb.macros.find((m) => m.name.toLowerCase() === name.toLowerCase());
-      if (!mc) return;
-      const s = this.sel;
-      this.mutate(() => {
-        for (const st of mc.steps) {
-          if (st.op === 'style') this.wb.applyStyle(this.sh, s, st.patch);
-          else if (st.op === 'clear') this.wb.clearRange(this.sh, s, 'contents');
-        }
-        this.wb.macroRuns.push({ name: mc.name, sheet: this.sh.name, range: F.rangeToStr(s), at: Date.now() });
-      });
-      this.toast('Macro «' + mc.name + '» ejecutada en ' + F.rangeToStr(s));
+    async runMacro(name) {
+      const before = this.snapshot();
+      const selBefore = { ...this.sel };
+      const sheetBefore = this.sh.name;
+      let res = null; let err = null;
+      this.runningMacro = true;
+      try { res = global.XLVBA.run(this.wb, this.wb.vba || '', name, { sheet: this.sh.name, sel: { ...this.sel }, act: { ...this.act } }); } catch (e) { err = e; }
+      this.runningMacro = false;
+      this.undo.push(before);
+      this.redo = [];
+      if (res) {
+        const i = this.wb.sheets.findIndex((s) => s.name === res.sheet);
+        if (i >= 0) this.wb.active = i;
+        this.sel = { ...res.sel };
+        this.act = { ...res.act };
+        this.anchor = { ...res.act };
+        this.wb.macroRuns.push({ name, sheet: sheetBefore, range: F.rangeToStr(selBefore), at: Date.now() });
+      }
+      this.wb.invalidate();
+      this.clampSel();
+      this.render();
+      this.changed();
+      if (err) {
+        await this.alert((err.line ? 'Línea ' + err.line + ': ' : '') + err.message + '\n\nAbra Programador > Visual Basic para revisar el código.', 'Microsoft Visual Basic para Aplicaciones');
+        return false;
+      }
+      for (const msg of res.msgs) await this.alert(msg, 'Microsoft Excel');
+      if (!res.msgs.length) this.toast('Macro «' + name + '» ejecutada.');
+      return true;
     }
     macroDialog() {
       const body = el('div', 'xl-scen');
       let selIdx = 0;
       let m;
+      const list = () => global.XLVBA.listSubs(this.wb.vba || '');
       const draw = () => {
-        body.innerHTML = '<div class="cols"><div class="lst"></div><div class="btns"></div></div>';
+        const subs = list();
+        body.innerHTML = '<div class="row"><label>Nombre de la macro</label><input class="mname nokey" value="' + esc(subs[selIdx] || '') + '"></div><div class="cols"><div class="lst"></div><div class="btns"></div></div>';
         const lst = body.querySelector('.lst');
-        if (!this.wb.macros.length) lst.innerHTML = '<p class="muted">No hay macros en este libro. Use Programador &gt; Grabar macro.</p>';
-        this.wb.macros.forEach((mc, i) => {
-          const it = el('div', 'it' + (i === selIdx ? ' on' : ''), esc(mc.name));
+        if (!subs.length) lst.innerHTML = '<p class="muted">No hay macros en este libro. Use Programador &gt; Grabar macro, o escriba un nombre y presione Crear.</p>';
+        subs.forEach((n, i) => {
+          const it = el('div', 'it' + (i === selIdx ? ' on' : ''), esc(n));
           it.onclick = () => { selIdx = i; draw(); };
           it.ondblclick = () => { selIdx = i; run(); };
           lst.appendChild(it);
@@ -2536,36 +2614,81 @@
         const btns = body.querySelector('.btns');
         const mk = (label, fn) => { const b = el('button', null, label); b.type = 'button'; b.onclick = fn; btns.appendChild(b); };
         mk('Ejecutar', run);
-        mk('Paso a paso / Modificar', () => { const mc = this.wb.macros[selIdx]; if (mc) { m.close(); this.vbaDialog(mc.name); } });
-        mk('Eliminar', () => { if (this.wb.macros[selIdx]) { this.mutate(() => { this.wb.macros.splice(selIdx, 1); }, { allowProtected: true }); selIdx = 0; draw(); } });
+        mk('Modificar', () => { const n = list()[selIdx]; if (n) { m.close(); this.vbaDialog(n); } });
+        mk('Crear', () => {
+          const n = body.querySelector('.mname').value.trim();
+          if (!/^[A-Za-zÀ-ÿÑñ][A-Za-zÀ-ÿÑñ0-9_]*$/.test(n)) { this.toast('Escriba un nombre válido (sin espacios) para la macro.'); return; }
+          if (!list().some((x) => x.toLowerCase() === n.toLowerCase())) this.mutate(() => { this.wb.vba = global.XLVBA.upsertSub(this.wb.vba || '', n, 'Sub ' + n + '()\n\n    \nEnd Sub'); }, { allowProtected: true });
+          m.close();
+          this.vbaDialog(n);
+        });
+        mk('Eliminar', () => { const n = list()[selIdx]; if (n) { this.mutate(() => { this.wb.vba = global.XLVBA.removeSub(this.wb.vba || '', n); }, { allowProtected: true }); selIdx = 0; draw(); } });
       };
-      const run = () => { const mc = this.wb.macros[selIdx]; if (!mc) return; m.close(); this.runMacro(mc.name); };
+      const run = () => {
+        const typed = body.querySelector('.mname').value.trim();
+        const n = list().find((x) => x.toLowerCase() === typed.toLowerCase()) || list()[selIdx];
+        if (!n) return;
+        m.close();
+        this.runMacro(n);
+      };
       draw();
       m = this.modal('Macro', body, [{ label: 'Cancelar', value: 'cancel' }], null, { width: 480 });
     }
-    vbaFor(mc) {
-      const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return 'RGB(' + (n >> 16 & 255) + ', ' + (n >> 8 & 255) + ', ' + (n & 255) + ')'; };
-      let code = 'Sub ' + mc.name + '()\n\'\n\' ' + mc.name + ' Macro\n' + (mc.desc ? '\' ' + mc.desc + '\n' : '') + '\'\n';
-      for (const st of mc.steps) {
-        if (st.op === 'clear') { code += '    Selection.ClearContents\n'; continue; }
-        const p = st.patch;
-        if ('bold' in p) code += '    Selection.Font.Bold = ' + (p.bold ? 'True' : 'False') + '\n';
-        if ('italic' in p) code += '    Selection.Font.Italic = ' + (p.italic ? 'True' : 'False') + '\n';
-        if ('underline' in p) code += '    Selection.Font.Underline = ' + (p.underline ? 'xlUnderlineStyleSingle' : 'xlUnderlineStyleNone') + '\n';
-        if ('fill' in p) code += p.fill ? '    With Selection.Interior\n        .Pattern = xlSolid\n        .Color = ' + rgb(p.fill) + '\n    End With\n' : '    Selection.Interior.Pattern = xlNone\n';
-        if ('color' in p) code += '    Selection.Font.Color = ' + (p.color ? rgb(p.color) : 'xlAutomatic') + '\n';
-        if ('align' in p) code += '    Selection.HorizontalAlignment = ' + ({ left: 'xlLeft', center: 'xlCenter', right: 'xlRight' }[p.align]) + '\n';
-        if ('fmt' in p) code += '    Selection.NumberFormat = "' + ({ number: '#,##0.00', currency: '$ #,##0', percent: '0%', date: 'dd-mm-yyyy', text: '@' }[p.fmt] || 'General') + '"\n';
-        if ('border' in p) code += '    Selection.Borders.LineStyle = ' + (p.border ? 'xlContinuous' : 'xlNone') + '\n';
-      }
-      return code + 'End Sub';
-    }
     vbaDialog(focusName) {
       const body = el('div', 'xl-vba');
-      const list = this.wb.macros;
-      body.innerHTML = '<div class="proj">VBAProject (Libro1)<br>&nbsp;&nbsp;📁 Módulos<br>&nbsp;&nbsp;&nbsp;&nbsp;📄 Módulo1</div><pre class="code"></pre>';
-      body.querySelector('.code').textContent = list.length ? list.map((mc) => this.vbaFor(mc)).join('\n\n') : "' No hay macros grabadas en este libro.\n' Use Programador > Grabar macro para crear una.";
-      this.modal('Microsoft Visual Basic para Aplicaciones' + (focusName ? ' — ' + focusName : ''), body, [{ label: 'Cerrar', value: 'ok', primary: true }], null, { width: 680 });
+      const subs = global.XLVBA.listSubs(this.wb.vba || '');
+      body.innerHTML = '<div class="proj"><b>VBAProject (Libro1)</b><br>📁 Microsoft Excel Objetos<br>&nbsp;&nbsp;' + this.wb.sheets.map((s, i) => '📄 Hoja' + (i + 1) + ' (' + esc(s.name) + ')').join('<br>&nbsp;&nbsp;') + '<br>📁 Módulos<br>&nbsp;&nbsp;📄 Módulo1<div class="subs">' + (subs.length ? '<b>Procedimientos</b><br>' + subs.map((s) => esc(s)).join('<br>') : '') + '</div></div>' +
+        '<div class="ed"><textarea class="code nokey" spellcheck="false" wrap="off"></textarea><div class="vstatus"></div>' +
+        '<details class="vref"><summary>Referencia rápida de VBA</summary><pre>Range("A1").Value = 100          \' escribir un valor\nRange("B2").Formula = "=SUM(A1:A5)"\nSelection.Font.Bold = True\nSelection.Interior.Color = RGB(255, 255, 0)\nSelection.HorizontalAlignment = xlCenter\nRange("C2:C9").NumberFormat = "$ #,##0"\nCells(i, 2).Value              \' fila i, columna 2\nFor i = 2 To 10 ... Next i\nFor Each celda In Range("B2:B10") ... Next celda\nIf celda.Value > 100 Then ... ElseIf ... Else ... End If\nWith Selection.Font ... End With\nMsgBox "Listo"</pre></details></div>';
+      const ta = body.querySelector('.code');
+      const status = body.querySelector('.vstatus');
+      ta.value = this.wb.vba && this.wb.vba.trim() ? this.wb.vba : "' Módulo1\n' Escriba aquí sus macros. Ejemplo:\n\nSub MiMacro()\n    Range(\"A1\").Value = \"Hola\"\nEnd Sub\n";
+      const save = () => {
+        const code = ta.value;
+        if (code !== (this.wb.vba || '')) this.mutate(() => { this.wb.vba = code; }, { allowProtected: true });
+        const e = global.XLVBA.check(code);
+        status.textContent = e ? '⚠ ' + (e.line ? 'Línea ' + e.line + ': ' : '') + e.message : '✓ Sin errores de compilación. Módulo guardado.';
+        status.className = 'vstatus ' + (e ? 'bad' : 'ok');
+        return !e;
+      };
+      const subAtCaret = () => {
+        const before = ta.value.slice(0, ta.selectionStart);
+        const all = [...before.matchAll(/^\s*(?:(?:Public|Private)\s+)?Sub\s+([A-Za-zÀ-ÿÑñ_][A-Za-zÀ-ÿÑñ0-9_]*)/gim)];
+        if (all.length) return all[all.length - 1][1];
+        return global.XLVBA.listSubs(ta.value)[0];
+      };
+      const runIt = () => {
+        if (!save()) return false;
+        const n = subAtCaret();
+        if (!n) { status.textContent = 'No hay ninguna macro (Sub) para ejecutar.'; status.className = 'vstatus bad'; return false; }
+        dlg.close();
+        this.runMacro(n);
+        return true;
+      };
+      ta.addEventListener('keydown', (e) => {
+        e.stopPropagation();
+        if (e.key === 'Tab') { e.preventDefault(); const s = ta.selectionStart; ta.setRangeText('    ', s, ta.selectionEnd, 'end'); }
+        else if (e.key === 'F5') { e.preventDefault(); runIt(); }
+        else if (e.key === 'Escape') { e.preventDefault(); save(); dlg.close(); }
+        else if (e.key === 's' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); save(); }
+      });
+      const dlg = this.modal('Microsoft Visual Basic para Aplicaciones - Libro1 - [Módulo1 (Código)]', body, [
+        { label: '▶ Ejecutar macro (F5)', value: 'run', left: true },
+        { label: 'Guardar', value: 'save' },
+        { label: 'Cerrar', value: 'ok', primary: true },
+      ], (b) => {
+        if (b === 'run') { runIt(); return true; }
+        if (b === 'save') { save(); return false; }
+        save();
+        return true;
+      }, { width: 900 });
+      setTimeout(() => {
+        ta.focus();
+        if (focusName) {
+          const idx = ta.value.search(new RegExp('Sub\\s+' + focusName + '\\s*\\(', 'i'));
+          if (idx >= 0) { const nl = ta.value.indexOf('\n', idx); ta.setSelectionRange(nl + 1, nl + 1); ta.scrollTop = Math.max(0, ta.value.slice(0, idx).split('\n').length * 17 - 40); }
+        } else ta.setSelectionRange(0, 0);
+      }, 10);
     }
 
     /* ----------------------- Controles de formulario ----------------------- */
