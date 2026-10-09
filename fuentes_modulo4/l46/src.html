@@ -1,0 +1,380 @@
+<title>Lección 4.6 — Investigación y medidas de resguardo</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.phone.chat{min-height:440px;max-width:320px}
+.phone .chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #d7e2e6;font-weight:900;color:#173f4e;font-size:.9rem}
+.phone .chat-h .av{width:30px;height:30px;border-radius:50%;background:#173f4e;color:#fff;display:grid;place-items:center;font-size:.72rem;flex:none}
+.phone .chat-h small{display:block;font-weight:700;color:#5f7180;font-size:.7rem}
+.phone .cmsg{background:#fff;border:1px solid #c9d6dc;border-radius:14px 14px 14px 4px;padding:9px 12px;font-size:.86rem;max-width:88%;align-self:flex-start;animation:rise .35s ease both;color:#172431}
+.phone .cmsg.me{background:#d8f3ef;border-color:#a9dbd7;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.phone .cmsg time{display:block;font-size:.66rem;color:#5f7180;text-align:right;margin-top:2px}
+.phone .dots{display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid #c9d6dc;width:max-content}
+.phone .dots span{width:7px;height:7px;border-radius:50%;background:#5f7180;animation:blink 1s infinite}
+.phone .dots span:nth-child(2){animation-delay:.2s}.phone .dots span:nth-child(3){animation-delay:.4s}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-radius:16px;padding:12px;font-size:.86rem;color:#172431}
+.phone .grow{flex:1}
+.tabs-photo{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:start}
+.tabs-photo>*{min-width:0}
+.tabs-photo .photo-frame{aspect-ratio:3/2}
+.tpane{display:none;border:1px solid var(--line);border-radius:20px;padding:16px;background:var(--surface3)}
+.tpane.active{display:block;animation:rise .35s ease both}
+.tpane h3{margin-top:0}
+.tpane ul{margin:.4rem 0;padding-left:1.2rem}
+.doc-tip{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--amber-soft);color:var(--amber-ink);font-size:.88rem;font-weight:700}
+.hs-panel .bar2{margin-top:8px;padding:9px 12px;border-radius:12px;background:var(--good-soft);color:var(--good);font-weight:700;font-size:.9rem}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.vline>span:first-child{min-width:0}
+.vline .lbl{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.pending{margin-top:14px;border:1px dashed var(--line);border-radius:16px;background:var(--surface);padding:4px 14px}
+.pending summary{cursor:pointer;font-weight:850;padding:10px 0}
+.pending ul{margin:.2rem 0 .8rem;padding-left:1.2rem}
+.timeline-mini{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.timeline-mini span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:800;background:var(--surface);color:var(--ink2)}
+@media(max-width:860px){.hook-grid,.tabs-photo,.case-head{grid-template-columns:1fr}}
+@media(max-width:600px){.vline{grid-template-columns:1fr}.vline .vb{flex-wrap:wrap}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.6</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:19" data-gate="hook" data-gate-msg="Abre el mensaje de la jefatura y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.6 · Investigación y medidas de resguardo</span>
+      <h1 class="reveal">Proteger sin prejuzgar</h1>
+      <p class="lead reveal">Ayer, Daniela, analista de <strong>Horizonte Servicios</strong>, presentó una denuncia por acoso laboral contra su supervisor. Hoy, la jefatura del área le escribe a Camila, del Equipo de Personas, con una propuesta. <strong>Presiona “Abrir mensaje” para leerla.</strong></p>
+      <div class="photo-frame reveal"><img alt="Camila lee un mensaje en su celular, de pie junto a un ventanal de la oficina, con gesto serio" src="{{IMG:i46_hero}}"/></div>
+    </div>
+    <div class="phone chat reveal" id="phone"></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería responder Camila a la jefatura?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí, firmémoslo. Cualquier separación sirve para protegerla, aunque gane menos por un tiempo.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Sí, pero que el traslado dure menos de 30 días, lo mismo que la investigación.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“No. Separemos espacios o turnos sin tocar su cargo ni su sueldo, y ofrezcámosle atención psicológica temprana en la mutualidad.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: denunciar le cuesta el sueldo</div><div class="branch-body"><div><p>Daniela pasa a un puesto con menor ingreso por haber denunciado. Una medida de resguardo <strong>no puede ser gravosa ni perjudicar</strong> a la persona denunciante. Además, el resto del equipo aprende que denunciar tiene costo, y la empresa queda expuesta a un reclamo por represalia.</p></div><div><p class="hint">La protección no puede trasladar el costo de la denuncia a quien la presentó.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un perjuicio “temporal” sigue siendo perjuicio</div><div class="branch-body"><div><p>Acortar la duración no cambia el problema: durante ese tiempo Daniela igual pierde ingresos. Las medidas de resguardo <strong>no pueden producir menoscabo</strong> a la persona denunciante, sin importar cuánto duren.</p></div><div><p class="hint">Lo que importa no es el plazo, sino si la medida la perjudica.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-C"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>Separar los espacios, redistribuir la jornada y derivar a <strong>atención psicológica temprana</strong> (mutualidad o ISL) son medidas de resguardo que protegen <strong>sin perjudicar</strong> a la persona denunciante y sin sancionar por adelantado a la persona denunciada.</p></div><div><p class="hint">En esta lección verás cómo elegir estas medidas y cómo debe llevarse la investigación.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 20 s</span>
+  <h2>¿Qué pasa después de recibir una denuncia?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · PRINCIPIOS -->
+<section class="slide" data-title="Principios" data-audio="p03" data-dur="0:18" data-gate="tabs" data-gate-msg="Revisa las cinco pestañas de principios.">
+  <span class="eyebrow amber">Lección 4.6 · Principios de la investigación</span>
+  <h2>Nueve principios para una investigación justa</h2>
+  <p>El reglamento de la Ley Karin (D.S. N°21) fija los principios que guían toda investigación. Los agrupamos en cinco pestañas. <strong>Selecciona cada pestaña</strong> y lee el error frecuente que conviene evitar.</p>
+  <div class="task" id="tabTask">Pestañas revisadas <span class="tick" id="tabTick">1 / 5</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">⚖️ Imparcialidad</button><button class="tab" type="button" data-t="1">🔒 Confidencialidad</button><button class="tab" type="button" data-t="2">🗣️ Debido proceso</button><button class="tab" type="button" data-t="3">🤝 Género y no discriminación</button><button class="tab" type="button" data-t="4">⏱️ Celeridad</button></div>
+  <div class="tabs-photo">
+    <div class="photo-frame"><img alt="Dos profesionales del Equipo de Personas revisan una carpeta de antecedentes en una sala de reuniones" src="{{IMG:i46_principios}}"/></div>
+    <div>
+      <div class="tpane active"><h3>Imparcialidad y razonabilidad</h3><p>Quien investiga no puede tener interés en el resultado: debe estar <b>capacitado</b> y <b>sin conflicto de interés</b> con ninguna de las partes.</p><ul><li><b>Imparcialidad:</b> escucha a todas las partes con la misma apertura, sin una opinión formada de antemano.</li><li><b>Razonabilidad:</b> las conclusiones se fundan en los antecedentes reunidos, y las medidas son proporcionales a los hechos.</li></ul><div class="doc-tip">Error frecuente: encargar la investigación a alguien cercano a la persona denunciada o que ya “sabe” quién tiene la razón.</div></div>
+      <div class="tpane"><h3>Confidencialidad y no revictimización</h3><ul><li><b>Confidencialidad:</b> los hechos, las declaraciones y los documentos solo los conocen quienes participan en la investigación. Se resguardan la privacidad y la honra de todas las personas involucradas.</li><li><b>No revictimización:</b> se evita que la persona denunciante tenga que repetir su relato sin necesidad, se le pregunta con respeto y nunca se la culpa por lo ocurrido.</li></ul><div class="doc-tip">Error frecuente: pedirle que cuente lo ocurrido ante su equipo o ante varias jefaturas “para aclarar”.</div></div>
+      <div class="tpane"><h3>Debido proceso y colaboración</h3><ul><li><b>Debido proceso:</b> ambas partes son oídas y pueden aportar pruebas (documentos, mensajes, testigos). La investigación queda <b>por escrito</b>.</li><li><b>Colaboración:</b> quienes participan aportan la información que conocen, y la empresa facilita tiempos y espacios para que la investigación avance.</li></ul><div class="doc-tip">Error frecuente: concluir solo con la versión de una de las partes, sin entrevistar a la otra ni revisar sus pruebas.</div></div>
+      <div class="tpane"><h3>Perspectiva de género y no discriminación</h3><ul><li><b>Perspectiva de género:</b> se consideran las relaciones de poder y los estereotipos que pueden influir en cómo se vive y se relata una conducta.</li><li><b>No discriminación:</b> todas las personas reciben el mismo trato, sin distinciones por sexo, edad, cargo, origen u otra condición.</li></ul><div class="doc-tip">Error frecuente: restar credibilidad a un relato porque “en esa área siempre se ha bromeado así”.</div></div>
+      <div class="tpane"><h3>Celeridad: 30 días hábiles administrativos</h3><ul><li>La investigación debe concluir en <b>30 días</b>. La Dirección del Trabajo precisó que son <b>días hábiles administrativos</b>: de lunes a viernes, sin festivos, contados desde la recepción de la denuncia.</li><li>El <b>feriado</b> o la <b>licencia médica</b> de las partes <b>no suspende</b> el plazo: la investigación se organiza para cumplirlo.</li></ul><div class="doc-tip">Error frecuente: “congelar” la investigación hasta que una de las partes vuelva de vacaciones o de licencia.</div></div>
+    </div>
+  </div>
+  <p class="sources">Referencias: D.S. N°21/2024 del Ministerio del Trabajo (principios del procedimiento); Código del Trabajo, arts. 211-A a 211-E (Ley 21.643); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · MEDIDAS DE RESGUARDO -->
+<section class="slide" data-title="Medidas de resguardo" data-audio="p04" data-dur="0:18" data-gate="bins" data-gate-msg="Clasifica las ocho medidas en su columna.">
+  <span class="eyebrow">Lección 4.6 · Medidas de resguardo</span>
+  <h2>¿Protege o perjudica?</h2>
+  <p>Al recibir una denuncia, la empresa adopta medidas de resguardo <strong>de inmediato</strong>, según la gravedad de los hechos, la seguridad de las personas y las condiciones de trabajo. <strong>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna</strong> que corresponde.</p>
+  <div class="task" id="binTask">Medidas clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins">
+    <div class="bin good-bin" data-b="1" role="button" tabindex="0"><h3>✓ Protege sin perjudicar</h3></div>
+    <div class="bin bad-bin" data-b="0" role="button" tabindex="0"><h3>✕ Perjudica o prejuzga</h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 184 y 211-A a 211-E (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 5 · LA ENTREVISTA -->
+<section class="slide" data-title="La entrevista" data-audio="p05" data-dur="0:18" data-gate="hs" data-gate-msg="Explora los cinco puntos de la sala de entrevistas.">
+  <span class="eyebrow violet">Lección 4.6 · La entrevista de investigación</span>
+  <h2>Una sala que cuida a las personas y a la evidencia</h2>
+  <p>Así se prepara una entrevista de investigación en Horizonte Servicios. <strong>Haz clic en cada número de la imagen</strong> para descubrir la buena práctica que representa.</p>
+  <div class="task" id="hsTask">Puntos explorados <span class="tick" id="hsTick">0 / 5</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Sala de entrevistas privada con la puerta cerrada, una investigadora que toma notas en un notebook, una trabajadora con un vaso de agua frente a ella, una carpeta sobre la mesa y un calendario en la pared" src="{{IMG:i46_entrevista}}"/>
+      <button class="hs" type="button" style="left:10%;top:45%" data-hs="0" aria-label="Punto 1">1</button>
+      <button class="hs" type="button" style="left:36%;top:52%" data-hs="1" aria-label="Punto 2">2</button>
+      <button class="hs" type="button" style="left:68%;top:48%" data-hs="2" aria-label="Punto 3">3</button>
+      <button class="hs" type="button" style="left:52%;top:80%" data-hs="3" aria-label="Punto 4">4</button>
+      <button class="hs" type="button" style="left:87%;top:22%" data-hs="4" aria-label="Punto 5">5</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: D.S. N°21/2024 del Ministerio del Trabajo (confidencialidad, no revictimización, debido proceso, celeridad); Código del Trabajo, art. 211-A letra d (privacidad y honra).</p>
+</section>
+
+<!-- 6 · DESPUÉS DE INVESTIGAR -->
+<section class="slide" data-title="Después de investigar" data-audio="p06" data-dur="0:18" data-gate="acc" data-gate-msg="Abre las cuatro etapas que siguen a la investigación.">
+  <span class="eyebrow amber">Lección 4.6 · Después de investigar</span>
+  <h2>Del informe a la comunicación: cuatro etapas con plazo</h2>
+  <p>Cuando la investigación interna termina, todavía quedan pasos obligatorios. <strong>Abre cada etapa</strong> para conocer qué ocurre y en qué plazo.</p>
+  <div class="task" id="accTask">Etapas revisadas <span class="tick" id="accTick">0 / 4</span></div>
+  <div class="acc" id="acc">
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>El informe de la investigación<span class="sub">Al cierre, dentro de los 30 días hábiles</span></span><span class="tg">＋</span></button><div class="acc-body">La investigación concluye con un <b>informe escrito</b> que reúne los hechos denunciados, las declaraciones, los antecedentes revisados y las conclusiones. Debe poder explicar <b>por qué</b> se llegó a cada conclusión.<div class="example"><b>Ejemplo:</b> el informe del caso de Daniela detalla a quiénes se entrevistó, qué pruebas aportó cada parte y qué hechos se dieron por acreditados.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Revisión de la Inspección del Trabajo<span class="sub">La DT tiene 30 días para pronunciarse</span></span><span class="tg">＋</span></button><div class="acc-body">En una investigación interna, el empleador <b>remite el informe y sus conclusiones a la Inspección del Trabajo</b>. La Dirección del Trabajo se pronuncia dentro de <b>30 días</b>; si no lo hace, <b>se consideran válidas las conclusiones</b> del informe.<div class="example"><b>Ojo:</b> si la denuncia es contra el empleador o quien lo representa (por ejemplo, la gerencia), o si la empresa decide remitirla, la investigación la realiza directamente la Inspección del Trabajo.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Medidas y sanciones<span class="sub">Dentro de 15 días</span></span><span class="tg">＋</span></button><div class="acc-body">Dentro de <b>15 días</b> desde que recibe el pronunciamiento (o desde que se consideran válidas las conclusiones), el empleador debe <b>disponer y aplicar</b> las medidas o sanciones que correspondan, según su reglamento interno:<ul><li>amonestación verbal o escrita;</li><li>multa de hasta el 25% de la remuneración diaria (art. 154 N°10);</li><li>despido por la causal del art. 160, si corresponde.</li></ul></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">4</span><span>Comunicación y garantía de indemnidad<span class="sub">A ambas partes, sin represalias</span></span><span class="tg">＋</span></button><div class="acc-body">Las medidas o sanciones se <b>comunican a la persona denunciante y a la persona denunciada</b>. Durante todo el proceso, y después, rige la <b>garantía de indemnidad</b>: nadie puede sufrir represalias por denunciar o por declarar como testigo.<div class="example"><b>Si ocurre:</b> la persona afectada puede reclamar mediante el procedimiento de tutela laboral (art. 485 del Código del Trabajo).</div></div></div>
+  </div>
+  <details class="pending"><summary>📌 Cambio en trámite: ¿qué propone el nuevo reglamento? (no vigente)</summary>
+    <p>En 2026 el Gobierno preparó un nuevo reglamento de la Ley Karin. A octubre de 2026 lo firmó el ministro, pero <b>falta la firma presidencial y la toma de razón de Contraloría</b>, por lo que <b>no está vigente</b>. Entre otros cambios, propone:</p>
+    <ul><li>un control de admisibilidad de las denuncias, con 3 días para que la persona denunciante complemente una denuncia insuficiente;</li><li>atención temprana en 3 días hábiles;</li><li>prioridad a las investigaciones internas.</li></ul>
+    <p class="hint">Mientras no entre en vigencia, se aplican las reglas que viste en esta lección.</p>
+  </details>
+  <p class="sources">Referencias: Código del Trabajo, arts. 154, 160, 211-B a 211-E y 485 (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 7 · CASO: EL PLAN -->
+<section class="slide" data-title="Caso: el plan" data-audio="p07" data-dur="0:20" data-gate="vl" data-gate-msg="Evalúa las seis líneas del plan de investigación.">
+  <span class="eyebrow amber">El caso de Camila · El plan de investigación</span>
+  <h2>Seis decisiones antes de la primera entrevista</h2>
+  <div class="case-head">
+    <div><p>La empresa decidió investigar internamente la denuncia de Daniela contra su supervisor, Héctor. La jefatura del área envía a Camila este borrador. <strong>Para cada línea, decide si cumple o no cumple</strong> con los principios de la investigación.</p><div class="task" id="vlTask">Líneas evaluadas <span class="tick" id="vlTick">0 / 6</span></div></div>
+    <div class="photo-frame"><img alt="Camila revisa en su notebook un documento junto a una jefatura en una oficina abierta" src="{{IMG:i46_caso}}"/></div>
+  </div>
+  <div class="slip" id="vlines"><div class="slip-h"><span>Plan de investigación · Denuncia N°07</span><span>Borrador de la jefatura del área</span></div></div>
+  <p class="sources">Referencias: D.S. N°21/2024 del Ministerio del Trabajo; Código del Trabajo, arts. 211-A a 211-E (Ley 21.643); criterio de la Dirección del Trabajo sobre el plazo de 30 días hábiles administrativos.</p>
+</section>
+
+<!-- 8 · CASO: EL INFORME -->
+<section class="slide" data-title="Caso: el informe" data-audio="p08" data-dur="0:17" data-gate="caso" data-gate-msg="Resuelve las dos decisiones sobre el informe.">
+  <span class="eyebrow amber">El caso de Camila · El cierre</span>
+  <h2>La investigación terminó. ¿Y ahora?</h2>
+  <div class="story"><strong>Día hábil 27:</strong> la investigación interna concluyó dentro del plazo. El informe da por acreditados los hechos denunciados por Daniela. Daniela sigue con licencia médica.</div>
+  <div class="timeline-mini"><span>Denuncia</span><span>→ Investigación (30 días hábiles)</span><span>→ Inspección del Trabajo (30 días)</span><span>→ Medidas (15 días)</span></div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace la empresa con el informe?</h3>
+  <div class="options" data-choice="caso1" data-correct="A" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Lo remite, con sus conclusiones, a la Inspección del Trabajo.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Despide hoy mismo a Héctor y archiva el expediente sin informar a nadie.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Lo guarda hasta que Daniela vuelva de su licencia médica.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>En una investigación interna, el informe y sus conclusiones se <strong>remiten a la Inspección del Trabajo</strong>, que tiene 30 días para pronunciarse.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se salta etapas obligatorias</div><div class="branch-body"><div><p>Antes de aplicar sanciones, el informe debe <strong>remitirse a la Inspección del Trabajo</strong>. Además, las medidas deben <strong>comunicarse a ambas partes</strong>; archivar sin informar deja a Daniela sin saber qué pasó con su denuncia.</p></div><div><p class="hint">Revisa el orden de las etapas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el proceso se detiene sin motivo</div><div class="branch-body"><div><p>La licencia médica de una de las partes <strong>no suspende</strong> los plazos del procedimiento. Retener el informe atrasa las medidas y deja el problema sin resolver.</p></div><div><p class="hint">Los plazos siguen corriendo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Treinta días después:</strong> la Inspección del Trabajo no se ha pronunciado sobre el informe.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué corresponde hacer?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Esperar el pronunciamiento el tiempo que sea necesario, sin aplicar ninguna medida.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Volver a investigar desde cero, porque el informe perdió validez.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Considerar válidas las conclusiones y, dentro de 15 días, aplicar las medidas o sanciones del reglamento interno y comunicarlas a Daniela y a Héctor.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una espera sin fin</div><div class="branch-body"><div><p>Si la Dirección del Trabajo no se pronuncia dentro de 30 días, <strong>se consideran válidas las conclusiones</strong> del informe. No hay que esperar indefinidamente.</p></div><div><p class="hint">El silencio de la DT tiene un efecto definido.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: revictimización innecesaria</div><div class="branch-body"><div><p>El informe no pierde validez: al contrario, se consideran válidas sus conclusiones. Repetir la investigación obligaría a Daniela a relatar todo de nuevo.</p></div><div><p class="hint">Recuerda el principio de no revictimización.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Las conclusiones se consideran válidas. Dentro de <strong>15 días</strong>, la empresa aplica las medidas o sanciones que correspondan y las <strong>comunica a ambas partes</strong>, cuidando que nadie sufra represalias.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-C a 211-E (Ley 21.643); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:17" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:19" data-gate="qf pass" data-gate-msg="Responde las ocho situaciones de la ronda (y aprueba la Comprobación).">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Respeta o vulnera los principios de la investigación?</h2>
+  <p>Ocho situaciones que podrían ocurrir en cualquier empresa. <strong>Decide para cada una</strong> si respeta o vulnera los principios, e intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:17" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.6</h2>
+    <p>Ya puedes elegir medidas de resguardo que protegen sin perjudicar, y reconocer cuándo una investigación es imparcial, confidencial, oportuna y respeta el debido proceso.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> proteger sin prejuzgar. La medida de resguardo cuida a las personas mientras se investiga; la investigación, con plazos y garantías, es la que permite decidir. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los principios</button><button class="small-btn primary" type="button" data-goto="3">Repasar las medidas de resguardo</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 2, 154, 160, 184, 211-A a 211-E y 485 (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l46';
+const FIRST_KEYS=['hook','vl','caso1','caso2c','qf'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Recibir no es resolver',lines:['Cuando la empresa recibe una denuncia de acoso o violencia, recibir no es resolver.','Debe informar el procedimiento a la persona denunciante y adoptar de inmediato medidas de resguardo.'],
+  html:`<div class="v-icons"><div><span class="i">📩</span>Denuncia recibida</div><div data-at="1"><span class="i">ℹ️</span>Informar el procedimiento</div><div data-at="1"><span class="i">🛡️</span>Medidas de resguardo inmediatas</div></div>`},
+ {t:'Medidas de resguardo',lines:['Se eligen según la gravedad, la seguridad de las personas y las condiciones de trabajo.','Por ejemplo: separar espacios, redistribuir la jornada o derivar a atención psicológica temprana de la mutualidad o el ISL.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Gravedad</span><span class="on">Seguridad</span><span class="on">Condiciones de trabajo</span></div><div class="v-icons" style="margin-top:14px"><div data-at="1"><span class="i">🚪</span>Separar espacios</div><div data-at="1"><span class="i">🕒</span>Redistribuir la jornada</div><div data-at="1"><span class="i">💬</span>Atención psicológica temprana</div></div>`},
+ {t:'Sin costo para quien denuncia',lines:['Ninguna medida puede ser gravosa ni perjudicar a la persona denunciante: no se rebaja su sueldo ni se la traslada a un puesto inferior.','Tampoco es una sanción anticipada para la persona denunciada.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.15rem">Proteger sin perjudicar</div><div class="v-chk"><span class="v-strike">Rebajar el sueldo</span><span class="v-strike">Puesto inferior</span><span data-at="1" class="v-strike">Sanción anticipada</span></div>`},
+ {t:'Principios',lines:['La investigación sigue los principios del D.S. 21: perspectiva de género, no discriminación, no revictimización, confidencialidad, imparcialidad, celeridad, razonabilidad, debido proceso y colaboración.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Perspectiva de género</span><span class="on">No discriminación</span><span class="on">No revictimización</span><span class="on">Confidencialidad</span><span class="on">Imparcialidad</span><span class="on">Celeridad</span><span class="on">Razonabilidad</span><span class="on">Debido proceso</span><span class="on">Colaboración</span></div>`},
+ {t:'Debido proceso',lines:['Ambas partes son oídas y pueden aportar pruebas.','Todo queda por escrito, y quien investiga debe estar capacitado y sin conflicto de interés.'],
+  html:`<div class="v-icons"><div><span class="i">🗣️</span>Ambas partes son oídas</div><div><span class="i">📎</span>Pueden aportar pruebas</div><div data-at="1"><span class="i">📝</span>Todo por escrito</div><div data-at="1"><span class="i">⚖️</span>Sin conflicto de interés</div></div>`},
+ {t:'Plazos',lines:['La investigación concluye en 30 días hábiles administrativos; el feriado o la licencia médica no suspenden el plazo.','El informe se remite a la Inspección del Trabajo, que se pronuncia en 30 días.'],
+  html:`<div class="v-big">30</div><div class="v-sub">días hábiles administrativos · sin suspensión por feriado o licencia</div><div class="v-steps" style="margin-top:12px"><div data-at="1">Informe → Inspección del Trabajo: 30 días para pronunciarse</div></div>`},
+ {t:'Cierre sin represalias',lines:['Después, la empresa tiene 15 días para aplicar las medidas o sanciones y comunicarlas a ambas partes.','Y nadie puede sufrir represalias por denunciar o declarar.'],
+  html:`<div class="v-big">15</div><div class="v-sub">días para aplicar y comunicar medidas o sanciones</div><div class="v-icons" style="margin-top:12px"><div data-at="1"><span class="i">🛡️</span>Garantía de indemnidad: sin represalias</div></div>`}
+]};
+const Q=[
+ {q:'¿Cuál es la finalidad de una medida de resguardo?',o:['Sancionar por adelantado a la persona denunciada.','Proteger a las personas mientras se investiga, sin perjudicar a la persona denunciante.','Demostrar que la denuncia es verdadera.'],c:1,f:'La medida de resguardo protege mientras se investiga. No es una sanción anticipada ni prueba nada, y no puede perjudicar a la persona denunciante.'},
+ {q:'Según el criterio de la Dirección del Trabajo, ¿en qué plazo debe concluir la investigación?',o:['30 días corridos, que se suspenden durante las licencias médicas.','15 días hábiles.','30 días hábiles administrativos, sin suspenderse por feriado o licencia.','60 días hábiles.'],c:2,f:'Son 30 días hábiles administrativos (lunes a viernes, sin festivos) desde la recepción de la denuncia. El feriado o la licencia de las partes no suspende el plazo.'},
+ {q:'Una persona declara como testigo y, días después, su jefatura le quita un proyecto “por desconfianza”. ¿Qué se está vulnerando?',o:['La garantía de indemnidad: no puede haber represalias contra quien denuncia o declara como testigo.','Nada: los testigos no tienen protección especial.','Solo el principio de celeridad.'],c:0,f:'La garantía de indemnidad protege a quien denuncia y a quien declara como testigo. Una represalia puede reclamarse mediante tutela laboral.'},
+ {q:'La Inspección del Trabajo recibe el informe de una investigación interna y no se pronuncia dentro de 30 días. ¿Qué ocurre?',o:['La investigación queda anulada.','La empresa debe esperar sin plazo.','La denuncia se archiva.','Se consideran válidas las conclusiones del informe.'],c:3,f:'Si la DT no se pronuncia en 30 días, se consideran válidas las conclusiones. Luego la empresa tiene 15 días para aplicar y comunicar las medidas o sanciones.'},
+ {q:'¿Cuál de estas prácticas respeta el principio de no revictimización?',o:['Pedir a la persona denunciante que repita su relato ante cada jefatura.','Entrevistarla en un espacio privado, con preguntas respetuosas y sin pedirle que repita su relato sin necesidad.','Confrontarla con la persona denunciada en una reunión abierta.','Informar los avances del caso en la reunión del equipo.'],c:1,f:'No revictimizar significa evitar exposiciones y relatos repetidos innecesarios, y tratar a la persona con respeto, en un espacio privado y confidencial.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: chat en el celular ---------- */
+const phone=$('#phone');
+const phHead=`<div class="bar"><span>08:47</span><span>📶 🔋</span></div><div class="chat-h"><span class="av">MR</span><span>Marcelo · Jefatura de Operaciones<small>en línea</small></span></div>`;
+phone.innerHTML=phHead+`<div class="grow"></div><div class="notif">💬 <b>1 mensaje nuevo</b> de Marcelo</div><button class="pbtn" type="button" id="showMsg">Abrir mensaje</button>`;
+function addMsg(html){const g=$('.grow',phone);g.insertAdjacentHTML('beforebegin',html)}
+$('#showMsg').addEventListener('click',()=>{$('#showMsg').remove();$('.notif',phone).remove();
+  addMsg('<div class="dots" id="dts"><span></span><span></span><span></span></div>');
+  setTimeout(()=>{$('#dts').remove();addMsg('<div class="cmsg">Camila, ya viste que Daniela presentó una denuncia contra Héctor, su supervisor 😟<time>08:47</time></div>');
+    setTimeout(()=>{addMsg('<div class="cmsg">Para separarla del problema, desde mañana la paso a la bodega. Es un puesto con menor sueldo, pero así no se topan. ¿Lo firmamos hoy?<time>08:48</time></div>');
+      setTimeout(()=>{addMsg('<div class="cmsg me">Déjame revisarlo antes de responder 🤔<time>08:50</time></div>');$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)},700)},700)},900)});
+$('[data-choice=hook] [data-opt=C]').addEventListener('click',()=>{if(!$('#reply',phone))addMsg('<div class="cmsg me" id="reply">No la cambiemos a un puesto con menor sueldo: la medida no puede perjudicarla. Separemos espacios o turnos sin tocar su cargo, y la derivamos a la mutualidad 🛡️<time>08:55</time></div>')});
+
+/* ---------- Pestañas: principios ---------- */
+const tTab=tracker('tabs',5,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Clasificar medidas ---------- */
+const CARDS=[
+ ['Ubicar a las personas involucradas en espacios físicos distintos',1,'Separar los espacios físicos es una medida de resguardo prevista, y no le quita nada a la persona denunciante.'],
+ ['Trasladar a la persona denunciante a un puesto con menor ingreso',0,'Es gravosa: le produce un menoscabo económico por haber denunciado.'],
+ ['Ajustar los turnos para que no coincidan, sin cambiar la remuneración',1,'Redistribuir el tiempo de jornada protege sin perjudicar.'],
+ ['Pedirle a la persona denunciante que use sus vacaciones mientras se investiga',0,'Le traslada el costo de la denuncia: pierde días de feriado por haber denunciado.'],
+ ['Derivar a la persona denunciante a atención psicológica temprana de la mutualidad o el ISL',1,'Es una de las medidas que contempla la ley, a través del organismo administrador de la Ley 16.744.'],
+ ['Despedir a la persona denunciada antes de investigar',0,'Prejuzga: una medida de resguardo no es una sanción anticipada. Primero se investiga.'],
+ ['Que la persona denunciante reporte temporalmente a otra jefatura, con el mismo cargo y sueldo',1,'Separa la relación con la persona denunciada sin menoscabo para quien denunció.'],
+ ['Cambiarla a un turno nocturno que no pidió, sin su bono habitual',0,'Es perjudicial: empeora sus condiciones y su ingreso.']];
+const corder=[1,0,5,2,3,4,7,6];let selC=null,placedN=0;
+$('#pool').innerHTML=corder.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',CARDS[c][2]);
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,'No corresponde.',CARDS[c][1]?'Pregúntate: ¿esta medida le quita algo a la persona denunciante o castiga por adelantado? Si no, protege.':'Pregúntate: ¿quién paga el costo de esta medida? Si es la persona denunciante, o si castiga antes de investigar, no es adecuada.')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+
+/* ---------- Hotspots: sala de entrevistas ---------- */
+const HS=[
+ ['Puerta cerrada: confidencialidad','La entrevista se hace en un <b>espacio privado</b>, sin interrupciones ni personas ajenas. Lo que se dice solo lo conocen quienes participan en la investigación.','Resguarda la privacidad y la honra de todas las personas involucradas.'],
+ ['Registro escrito','Quien investiga deja cada declaración <b>por escrito</b> y la persona entrevistada puede revisarla. Debe estar <b>capacitado</b> y no tener conflicto de interés con las partes.','Debido proceso: la investigación queda por escrito.'],
+ ['Trato digno, sin revictimizar','Preguntas abiertas y respetuosas, pausas cuando se necesitan y nunca preguntas que culpen a la persona. Se evita que tenga que <b>repetir su relato</b> sin necesidad.','No revictimización y perspectiva de género.'],
+ ['Antecedentes de ambas partes','La carpeta reúne las <b>pruebas que aporta cada parte</b>: mensajes, correos, nombres de testigos. La persona denunciada también es oída y puede presentar sus antecedentes.','Debido proceso e imparcialidad.'],
+ ['El calendario: celeridad','Las entrevistas se agendan pronto: la investigación debe terminar en <b>30 días hábiles administrativos</b>. El feriado o la licencia de alguna de las partes no suspende el plazo.','Celeridad: planificar desde el primer día.']];
+const tHs=tracker('hs',5,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][1]}</p><div class="bar2">✓ ${HS[k][2]}</div>`;tHs(k)}));
+
+/* ---------- Acordeón: después de investigar ---------- */
+const tAcc=tracker('acc',4,'#accTick','#accTask');
+$$('#acc .acc-item').forEach((it,k)=>it.querySelector('.acc-head').addEventListener('click',()=>{it.classList.toggle('open');it.classList.add('seen');tAcc(k)}));
+
+/* ---------- Veredicto por línea: plan de investigación ---------- */
+const VL=[
+ ['Quién investiga','El gerente del área, amigo cercano de Héctor, conducirá la investigación.',0,'No cumple: hay conflicto de interés. Quien investiga debe ser imparcial, estar capacitado y no tener relación con las partes.','piensa en la relación de quien investiga con la persona denunciada.'],
+ ['Entrevistas','Se entrevistará a Daniela, a Héctor y a los testigos que cada uno proponga.',1,'Cumple: ambas partes son oídas y pueden aportar pruebas. Es debido proceso.','¿se escucha a ambas partes?'],
+ ['Plazo','Mientras Daniela esté con licencia médica, el plazo de 30 días queda suspendido.',0,'No cumple: el feriado o la licencia médica de las partes no suspende el plazo de 30 días hábiles administrativos.','revisa qué dijo la DT sobre licencias y feriados.'],
+ ['Registro','Cada declaración quedará en un acta escrita, guardada con acceso restringido.',1,'Cumple: la investigación queda por escrito y se resguarda la confidencialidad.','¿queda constancia y se protege la información?'],
+ ['Reunión de equipo','Daniela relatará lo ocurrido en una reunión con su equipo, para “aclarar” la situación.',0,'No cumple: la expone ante otras personas, la revictimiza y rompe la confidencialidad.','piensa en la confidencialidad y en no revictimizar.'],
+ ['Resguardo','Daniela y Héctor trabajarán en pisos distintos, sin cambios en su cargo ni sueldo, y ella será derivada a la mutualidad.',1,'Cumple: separa los espacios sin perjudicarla y ofrece atención psicológica temprana.','¿la medida protege sin quitarle nada?']];
+$('#vlines').insertAdjacentHTML('beforeend',VL.map((v,i)=>`<div class="vline" data-i="${i}"><span><span class="lbl">${v[0]}</span><br/>${v[1]}</span><span class="vb"><button type="button" data-a="1">Cumple</button><button type="button" data-a="0">No cumple</button></span><div class="vexp"></div></div>`).join(''));
+let vlN=0,vlFirst=true;
+$$('#vlines .vline').forEach(l=>$$('.vb button',l).forEach(b=>b.addEventListener('click',()=>{if(l.classList.contains('locked'))return;const v=VL[+l.dataset.i],ok=+b.dataset.a===v[2];
+  if(ok){l.classList.add('answered','locked');b.classList.add('good');$$('.vb button',l).forEach(x=>x.disabled=true);$('.vexp',l).innerHTML=`<div class="feedback good" style="margin:0">${v[3]}</div>`;vlN++;$('#vlTick').textContent=`${vlN} / 6`;if(vlN===6){S.first.vl=vlFirst;$('#vlTask').classList.add('ok');done('vl')}}
+  else{vlFirst=false;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);l.classList.add('answered');$('.vexp',l).innerHTML=`<div class="feedback bad" style="margin:0">Revisa: ${v[4]}</div>`}})));
+
+/* ---------- Ronda rápida: transferencia ---------- */
+const QF=[
+ ['Comentar el caso en el almuerzo del equipo “para que estén atentos”',0,'Vulnera la confidencialidad: solo deben conocerlo quienes participan en la investigación.'],
+ ['Dar a ambas partes la oportunidad de declarar y aportar pruebas',1,'Respeta el debido proceso.'],
+ ['Pausar la investigación porque la persona denunciada tomó vacaciones',0,'Vulnera la celeridad: el feriado no suspende el plazo de 30 días hábiles.'],
+ ['Encargar la investigación a una persona capacitada y sin relación con las partes',1,'Respeta la imparcialidad.'],
+ ['Descartar la denuncia porque “así se ha bromeado siempre en el área”',0,'Vulnera la perspectiva de género y la no discriminación: la costumbre no justifica una conducta.'],
+ ['Dejar cada declaración por escrito',1,'Respeta el debido proceso: la investigación queda por escrito.'],
+ ['Bajar la evaluación de desempeño de un testigo después de que declaró',0,'Vulnera la garantía de indemnidad: no puede haber represalias contra quien declara.'],
+ ['Fundar las conclusiones en los antecedentes reunidos y no en rumores',1,'Respeta la razonabilidad.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente criterio!':'Recuerda: una investigación justa es imparcial, confidencial, oportuna, escucha a ambas partes y no permite represalias.'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Situación ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns"><button type="button" data-v="1">✓ Respeta</button><button type="button" data-v="0">✕ Vulnera</button></div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} ${c[1]?'Respeta':'Vulnera'} los principios.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},1400)}))}
+qfRender();
+/*{{TAIL}}*/
+})();
+</script>

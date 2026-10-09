@@ -1,0 +1,349 @@
+<title>Lección 4.7 — Conflicto no es lo mismo que acoso</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* Ajustes propios de la lección 4.7 */
+.flipdeck.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+.flipdeck.four .face{min-height:190px}
+.face .kind{align-self:flex-start;font-size:.7rem;padding:4px 10px}
+.face.back .kind{background:var(--surface);color:var(--teal-ink)}
+.seltable td.selcol{width:230px}
+.tag-cat{display:inline-block;margin-top:4px;font-size:.78rem;font-weight:800;color:var(--muted)}
+@media(max-width:860px){.flipdeck.four{grid-template-columns:1fr}}
+@media(max-width:560px){
+  #seltable tr{display:grid;grid-template-columns:1fr}
+  #seltable td{border-bottom:none}
+  #seltable tr td:last-child{border-bottom:1px solid var(--line2);padding-top:0}
+  .seltable td.selcol{width:auto}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.7</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:18" data-gate="hook" data-gate-msg="Revisa los cuatro campos del reporte y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.7 · Conflicto no es lo mismo que acoso</span>
+      <h1 class="reveal">“Eso es acoso laboral”… ¿o no?</h1>
+      <p class="lead reveal">Rodrigo y Valentina discutieron fuerte por la distribución de tareas y ambos elevaron la voz. Un compañero dijo: “Eso es acoso laboral”. Camila, del Equipo de Personas de Horizonte Servicios, recibe este reporte. <strong>Haz clic en cada campo</strong> para revisarlo.</p>
+      <div class="form reveal" id="form">
+        <button class="ffield" type="button"><span class="lbl">Tipo de incidente</span><span>Acoso laboral</span><span class="flag">⚠️ Se clasificó antes de revisar los hechos. ¿Hubo agresión u hostigamiento, o un desacuerdo?</span></button>
+        <button class="ffield" type="button"><span class="lbl">Descripción</span><span>Discusión intensa entre Rodrigo y Valentina por quién asume nuevas tareas. Ambos elevaron la voz.</span><span class="flag">⚠️ Describe un desacuerdo mutuo y puntual. No menciona insultos, amenazas, humillación ni perjuicio laboral.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Fuente</span><span>Comentario de un compañero: “Eso es acoso laboral”.</span><span class="flag">⚠️ Es la opinión de un tercero, no un hecho verificado. Falta escuchar a las personas involucradas.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Acción propuesta</span><span>Amonestar a ambos por acoso.</span><span class="flag">⚠️ Se propone sancionar sin conocer los hechos ni seguir ningún procedimiento.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa un reporte de incidente en su escritorio, en una oficina con luz natural" src="{{IMG:i47_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">Con lo que dice el reporte, ¿cuál es la clasificación inicial más prudente?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Acoso laboral, porque elevaron la voz.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Violencia en el trabajo ejercida por terceros.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Un conflicto laboral que requiere gestión, revisando antecedentes adicionales y sin cerrar la posibilidad de una denuncia.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: se etiqueta sin hechos.</strong> <span class="fb-body">Elevar la voz en una discusión mutua no basta por sí solo. El acoso laboral exige agresión u hostigamiento con menoscabo, maltrato, humillación o perjuicio laboral. Clasificar así, de entrada, puede ser injusto con ambas personas.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: categoría equivocada.</strong> <span class="fb-body">La violencia de terceros proviene de clientes, proveedores o usuarios. Aquí discuten dos integrantes del mismo equipo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Con estos hechos, lo prudente es tratarlo como conflicto y gestionarlo, pero revisando si hay algo más. Si aparecen agresión, hostigamiento o humillación, cambia la clasificación. En esta lección aprenderás a distinguirlo.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Qué distingue un conflicto de un acoso laboral?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CLASIFICAR SITUACIONES -->
+<section class="slide" data-title="Clasificar situaciones" data-audio="p03" data-dur="0:18" data-gate="tbl" data-gate-msg="Clasifica correctamente las seis situaciones y presiona Comprobar.">
+  <span class="eyebrow">Lección 4.7 · Cinco categorías distintas</span>
+  <h2>¿Qué tipo de situación es cada una?</h2>
+  <p>Lee cada situación y elige su categoría en el selector: <strong>conflicto</strong>, <strong>facultad de dirección</strong>, <strong>posible acoso laboral</strong>, <strong>acoso sexual</strong> o <strong>violencia de terceros</strong>. Luego presiona <strong>Comprobar</strong>. Las filas en rojo se pueden corregir.</p>
+  <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+  <p class="sources">Referencia: Código del Trabajo, art. 2 (definiciones de acoso sexual, acoso laboral y violencia en el trabajo ejercida por terceros, Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · ELEMENTOS LEGALES -->
+<section class="slide" data-title="Elementos legales" data-audio="p04" data-dur="0:17" data-gate="tree" data-gate-msg="Analiza los tres ejemplos respondiendo las preguntas del árbol.">
+  <span class="eyebrow">Lección 4.7 · Elementos de la definición legal</span>
+  <h2>Tres preguntas antes de hablar de acoso laboral</h2>
+  <div class="grid-2">
+    <div>
+      <p>La definición legal tiene elementos que deben revisarse uno a uno. Elige un ejemplo y <strong>responde Sí o No</strong> a cada pregunta. Si te equivocas, verás una pista.</p>
+      <div class="callout"><strong>Definición legal:</strong> agresión u hostigamiento ejercido por el empleador o por uno o más trabajadores, por cualquier medio, una sola vez o de manera reiterada, que cause menoscabo, maltrato o humillación, o que amenace o perjudique la situación laboral o las oportunidades en el empleo.</div>
+      <div class="task" id="trTask">Ejemplos analizados <span class="tick" id="trTick">0 / 3</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Dos integrantes de un equipo discrepan frente a un tablero de planificación en una sala de reuniones" src="{{IMG:i47_reunion}}"/></div>
+  </div>
+  <div class="ex-tabs" id="exTabs" style="margin-top:14px"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <p class="sources">Referencia: Código del Trabajo, art. 2, inciso segundo (Ley 21.643, Ley Karin).</p>
+</section>
+
+<!-- 5 · APARIENCIAS -->
+<section class="slide" data-title="Lo que parece" data-audio="p05" data-dur="0:16" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow amber">Lección 4.7 · Lo que parece y lo que es</span>
+  <h2>“Parece acoso, pero…” y “parece conflicto, pero…”</h2>
+  <p>Algunas situaciones engañan a primera vista. <strong>Toca cada tarjeta</strong> para ver qué criterio aplica.</p>
+  <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck four">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="eyebrow amber kind">Parece acoso, pero…</span><div class="big">📋</div><strong>“La jefatura me asignó otras tareas”</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span class="eyebrow kind">Criterio</span><strong>Facultad de dirección</strong><span>Asignar o redistribuir tareas acordes al cargo, dar instrucciones y fijar prioridades, con respeto, es ejercicio legítimo de la dirección. Se puede conversar, pero por sí solo no es acoso.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="eyebrow amber kind">Parece acoso, pero…</span><div class="big">📝</div><strong>“Me corrigieron un error en el informe”</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span class="eyebrow kind">Criterio</span><strong>Corregir con respeto es legítimo</strong><span>Evaluar el desempeño y corregir errores de forma respetuosa no es acoso. Sería distinto si la corrección se usa para humillar, descalificar en público o perjudicar sin fundamento.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="eyebrow violet kind">Parece conflicto, pero…</span><div class="big">⚡</div><strong>“Fue solo una discusión, pasó una vez”</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span class="eyebrow kind">Criterio</span><strong>Una sola vez puede bastar</strong><span>Si en esa ocasión hubo insultos, humillación frente al equipo o una amenaza a su empleo, puede ser acoso laboral aunque no se repita. La Ley Karin eliminó la exigencia de reiteración.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="eyebrow violet kind">Parece conflicto, pero…</span><div class="big">🗨️</div><strong>“Son roces normales entre compañeros”</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span class="eyebrow kind">Criterio</span><strong>Hostigamiento entre pares</strong><span>Si los “roces” son burlas, aislamiento o descalificaciones dirigidas contra una misma persona, hay hostigamiento. El acoso laboral también puede venir de colegas, no solo de la jefatura.</span></div></div></button>
+  </div>
+  <p class="sources">Referencia: Código del Trabajo, art. 2 (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 6 · MITOS -->
+<section class="slide" data-title="Mitos frecuentes" data-audio="p06" data-dur="0:16" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow violet">Lección 4.7 · Mitos sobre el acoso laboral</span>
+  <h2>¿Verdadero o falso?</h2>
+  <p>Estas frases se escuchan a menudo en los equipos. Decide si cada afirmación es <strong>verdadera o falsa</strong> y lee la explicación antes de seguir.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Referencia: Código del Trabajo, arts. 2 y 211-A a 211-B (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 7 · CASO APLICADO: PRIMEROS PASOS -->
+<section class="slide" data-title="Caso: primeros pasos" data-audio="p07" data-dur="0:17" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Revisar antes de clasificar</span>
+  <h2>Rodrigo y Valentina: ¿qué hace Camila primero?</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>Situación:</strong> tras la discusión, el ambiente del equipo quedó tenso. El compañero que dijo “eso es acoso” insiste en que se sancione a ambos. Rodrigo y Valentina están molestos, pero ninguno ha presentado una denuncia.</div>
+    <div class="photo-frame wide"><img alt="Camila conversa con dos integrantes del equipo en una sala de reuniones pequeña" src="{{IMG:i47_mediacion}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Cuál es el primer paso?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2wrap">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Amonestar a ambos por escrito para dar una señal clara al equipo.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Conversar por separado con Rodrigo, Valentina y quienes presenciaron la discusión, para separar hechos de opiniones, e informarles que pueden denunciar si lo estiman.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Decirles que “son cosas que pasan” y no hacer nada más.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: sanción sin hechos</div><div class="branch-body"><div><p>Sancionar sin conocer qué ocurrió es injusto y no resuelve la causa del conflicto. Las sanciones por acoso se aplican después de un procedimiento, no por la opinión de un tercero.</p></div><div><p class="hint">Primero, los hechos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se minimiza</div><div class="branch-body"><div><p>Ignorar la situación deja crecer el conflicto y podría ocultar algo más grave. Además, el empleador tiene un deber general de proteger la salud de su equipo, que incluye los riesgos psicosociales.</p></div><div><p class="hint">Un conflicto también se gestiona.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Escuchar a las partes y a testigos permite saber si hubo agresión, hostigamiento, humillación o perjuicio laboral. Recordar el canal de denuncia evita cerrar la puerta a una situación más grave.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2wrap" hidden>
+    <div class="story" style="margin-top:18px"><strong>Lo que Camila averigua:</strong> fue una discusión puntual y mutua. No hubo insultos, amenazas ni burlas. La causa: la jefatura no había definido quién asumiría las tareas de un colega con licencia.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Cómo gestiona Camila la situación?</h3>
+    <div class="options" data-choice="caso2" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Abrir una investigación por acoso laboral contra ambos.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Cerrar el tema: si no es acoso, no hay nada que gestionar.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Facilitar una conversación entre ambos con la jefatura, aclarar la distribución de tareas, acordar reglas de convivencia y hacer seguimiento.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se convierte un desacuerdo en acoso</div><div class="branch-body"><div><p>Con estos hechos no aparecen los elementos del acoso laboral. Tratarlo así desgasta a las personas y no resuelve la causa real: tareas mal distribuidas.</p></div><div><p class="hint">Revisa qué causó el conflicto.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el conflicto sigue vivo</div><div class="branch-body"><div><p>Que no sea acoso no significa que no haya nada que hacer. Si la causa no se aborda, la tensión vuelve y puede escalar.</p></div><div><p class="hint">Un conflicto también requiere gestión.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Es una buena práctica de gestión: conversación facilitada, intervención de la jefatura para aclarar tareas, acuerdos de convivencia y seguimiento. Así se aborda la causa sin etiquetar a nadie.</p></div><div><p class="hint">Veamos qué pasa dos semanas después.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencia: Código del Trabajo, arts. 2 y 184 (Ley 21.643, Ley Karin). La conversación facilitada y la mediación interna se presentan como buenas prácticas de gestión.</p>
+</section>
+
+<!-- 8 · CASO APLICADO: DOS SEMANAS DESPUÉS -->
+<section class="slide" data-title="Caso: dos semanas después" data-audio="p08" data-dur="0:16" data-gate="caso3" data-gate-msg="Toma la decisión correcta para continuar.">
+  <span class="eyebrow amber">El caso de Camila · Cuando el conflicto cambia</span>
+  <h2>“Ahora se burla de mí frente a todos”</h2>
+  <div class="grid-2">
+    <div>
+      <div class="chat">
+        <div class="persona"><span class="avatar mgr">VA</span> Valentina</div>
+        <div class="bubble"><span class="who">Valentina</span>Desde la conversación, Rodrigo me ridiculiza en el chat del equipo, me deja fuera de las reuniones y dice que “no voy a durar”. Quiero denunciarlo, pero no tengo una carta escrita.</div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Camila escucha a una trabajadora en una sala de entrevistas privada y toma notas" src="{{IMG:i47_entrevista}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">¿Qué hace Camila?</h3>
+  <div class="options" data-choice="caso3" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Recibe la denuncia verbal: levanta un acta que Valentina firma, le entrega copia, le informa el procedimiento y la empresa adopta de inmediato medidas de resguardo.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le pide que vuelva con una carta formal y pruebas, porque ya se trató como conflicto.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Organiza otra conversación entre ambos para que se reconcilien, sin registrar la denuncia.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso3-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Ahora aparecen burlas, aislamiento y una amenaza a su permanencia: hechos que pueden ser hostigamiento con menoscabo o perjuicio. Se trata como <strong>posible acoso laboral</strong>. La denuncia puede ser verbal: se levanta un acta firmada y se entrega copia. Luego, la empresa investiga o, dentro de 3 días hábiles, remite los antecedentes a la Inspección del Trabajo.</p></div><div><p class="hint">Recibir no es resolver: la investigación determinará los hechos.</p></div></div></div></template>
+  <template data-for="caso3-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se obstaculiza la denuncia</div><div class="branch-body"><div><p>No se puede exigir una carta formal: la denuncia puede ser escrita o verbal. Que antes se gestionara como conflicto no impide denunciar hechos nuevos.</p></div><div><p class="hint">Ante la duda, la empresa debe recibir la denuncia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso3-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se expone a la persona denunciante</div><div class="branch-body"><div><p>Forzar una reconciliación ante una posible conducta de acoso puede revictimizar a Valentina y deja sin procedimiento hechos que deben investigarse. La mediación sirve para conflictos, no reemplaza una denuncia.</p></div><div><p class="hint">Cuando aparecen hostigamiento o humillación, se activa el procedimiento.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <p class="sources">Referencia: Código del Trabajo, arts. 2 y 211-A a 211-B (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:15" data-gate="order pass" data-gate-msg="Ordena los cinco pasos correctamente.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Cómo abordarías un conflicto en tu equipo?</h2>
+  <p>Piensa en una discusión fuerte en tu propio equipo. Usa las flechas para ordenar los pasos de arriba hacia abajo y presiona <strong>Comprobar orden</strong>.</p>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencia: Código del Trabajo, arts. 2, 184 y 211-A a 211-B (Ley 21.643, Ley Karin). La secuencia de gestión de conflictos es una buena práctica, no un procedimiento legal obligatorio.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:16" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.7</h2>
+    <p>Ya puedes distinguir un conflicto laboral de una posible conducta de acoso revisando los elementos legales, sin minimizar lo grave ni convertir cualquier desacuerdo en acoso.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> primero los hechos, luego la clasificación. Un conflicto se gestiona; un posible acoso se denuncia e investiga. Y ante la duda, la denuncia siempre se recibe.</div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="3">Repasar los elementos legales</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 2, 154, 184, 211-A a 211-E (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l47';
+const FIRST_KEYS=['hook','caso1','caso2','caso3'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'No toda discusión es acoso',lines:['Una discusión fuerte incomoda, pero no siempre es acoso.','Para clasificarla, primero se revisan los hechos y los elementos que exige la ley.'],
+  html:`<div class="v-icons"><div><span class="i">🗣️</span>Discusión</div><div><span class="i">≠</span></div><div><span class="i">⚠️</span>Acoso automático</div></div><div class="v-sub fadein" data-at="1">Primero los hechos, luego la clasificación</div>`},
+ {t:'La definición legal',lines:['El Código del Trabajo define acoso laboral como toda agresión u hostigamiento,','ejercida por el empleador o por uno o más trabajadores,','por cualquier medio.'],
+  html:`<div class="v-sub" style="margin-bottom:6px">Acoso laboral · art. 2</div><div class="v-chk"><span class="on">Agresión u hostigamiento</span><span data-at="1">Empleador o trabajadores</span><span data-at="2">Por cualquier medio</span></div>`},
+ {t:'Los efectos',lines:['Además, debe causar menoscabo, maltrato o humillación,','o bien amenazar o perjudicar la situación laboral o las oportunidades en el empleo.'],
+  html:`<div class="v-steps"><div class="on">Menoscabo, maltrato o humillación</div><div data-at="1">Amenaza o perjuicio a la situación laboral</div></div>`},
+ {t:'Una sola vez puede bastar',lines:['Desde la Ley Karin, ya no se exige que la conducta se repita.','Una sola conducta puede ser acoso laboral si cumple todos estos elementos.'],
+  html:`<div class="v-big">1 vez</div><div class="v-sub fadein" data-at="1">puede bastar si se cumplen los elementos legales</div>`},
+ {t:'Conflicto y dirección',lines:['Un desacuerdo sobre tareas o prioridades es un conflicto.','Y asignar tareas, evaluar o corregir errores con respeto es ejercicio legítimo de la dirección, no acoso.'],
+  html:`<div class="v-icons"><div><span class="i">🤝</span>Conflicto</div><div class="dim" data-at="1"><span class="i">📋</span>Facultad de dirección</div></div>`},
+ {t:'El conflicto se gestiona',lines:['Pero un conflicto no se ignora.','Se gestiona con una conversación facilitada, mediación interna, reglas de convivencia y apoyo de la jefatura.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">No se ignora</span><span data-at="1">Conversación facilitada</span><span data-at="1">Mediación interna</span><span data-at="1">Reglas de convivencia</span><span data-at="1">Apoyo de la jefatura</span></div>`},
+ {t:'Ante la duda',lines:['Evita dos errores: minimizar lo grave y llamar acoso a cualquier diferencia.','Ante la duda, la persona puede denunciar y la empresa debe recibir la denuncia.'],
+  html:`<div class="v-final">No minimizar · No etiquetar</div><div class="v-sub fadein" data-at="1">Ante la duda, la denuncia <em>siempre</em> se recibe</div>`}
+]};
+const Q=[
+ {q:'Según el Código del Trabajo, ¿quién puede ejercer acoso laboral?',o:['Solo la jefatura directa.','El empleador o uno o más trabajadores.','Solo clientes o proveedores.'],c:1,f:'La definición incluye conductas del empleador o de uno o más trabajadores. Lo que hacen clientes o proveedores es violencia de terceros.'},
+ {q:'Una jefatura, en una sola ocasión, humilla a un trabajador frente al equipo y lo amenaza con despedirlo si vuelve a opinar. ¿Qué corresponde?',o:['Descartarlo, porque no se repitió.','Tratarlo como un simple conflicto entre pares.','Tratarlo como posible acoso laboral: una sola conducta puede bastar si cumple los elementos legales.'],c:2,f:'Desde la Ley Karin no se exige reiteración. Hay humillación y amenaza a la situación laboral.'},
+ {q:'¿Cuál de estas situaciones es, en principio, ejercicio legítimo de las facultades de dirección?',o:['Corregir con respeto un error en un informe y pedir que se rehaga.','Burlarse del trabajo de una persona en el chat del equipo.','Amenazar con no renovar el contrato a quien opine distinto.','Excluir a una persona de todas las reuniones sin motivo.'],c:0,f:'Corregir errores con respeto es parte de dirigir el trabajo. Las demás opciones pueden ser hostigamiento o amenaza.'},
+ {q:'Dos colegas discuten sobre prioridades, sin insultos, amenazas ni burlas. ¿Qué es lo más adecuado?',o:['Abrir de inmediato una investigación por acoso.','Ignorarlo: los conflictos se resuelven solos.','Amonestar a ambos por escrito.','Gestionarlo como conflicto: conversación facilitada, acuerdos y seguimiento, sin cerrar la posibilidad de denunciar.'],c:3,f:'Un conflicto no es acoso, pero sí requiere gestión. Si aparecen nuevos hechos, la persona puede denunciar.'},
+ {q:'Una trabajadora quiere denunciar, pero su jefatura cree que “es solo un conflicto”. ¿Qué corresponde?',o:['Rechazar la denuncia hasta que traiga pruebas.','Recibir la denuncia: ante la duda, la persona puede denunciar y los hechos se determinan en el procedimiento.','Pedirle que primero lo resuelva conversando con la otra persona.'],c:1,f:'La empresa debe recibir la denuncia. Recibir no es resolver: la investigación determinará si hubo acoso.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: reporte por revisar ---------- */
+const ff=$$('#form .ffield');
+ff.forEach(f=>f.addEventListener('click',()=>{f.classList.add('open');if(ff.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Tabla con selectores ---------- */
+const CAT=['Conflicto laboral','Facultad de dirección','Posible acoso laboral','Acoso sexual','Violencia de terceros'];
+const ROWS=[
+ ['Dos analistas discrepan en una reunión sobre qué proyecto priorizar. Debaten con firmeza, sin descalificarse.',0,'Es un desacuerdo sobre decisiones de trabajo, sin agresión ni hostigamiento: conflicto que se gestiona.'],
+ ['La jefatura reasigna tareas acordes al cargo y entrega observaciones a un informe en una reunión privada y respetuosa.',1,'Asignar tareas y corregir con respeto es ejercicio legítimo de las facultades de dirección.'],
+ ['Un compañero excluye a una colega de las reuniones y difunde burlas sobre ella en el chat del equipo durante semanas.',2,'Hay hostigamiento entre pares que causa menoscabo o humillación: posible acoso laboral.'],
+ ['Un supervisor insiste con invitaciones de carácter sexual que una trabajadora ya rechazó y le insinúa que influirán en su renovación.',3,'Son requerimientos de carácter sexual no consentidos que amenazan su situación laboral: acoso sexual.'],
+ ['Un proveedor grita e insulta a la recepcionista porque le pidieron esperar su turno.',4,'La conducta viene de alguien ajeno a la relación laboral (proveedor): violencia en el trabajo ejercida por terceros.'],
+ ['En una sola ocasión, la jefatura humilla a un trabajador frente a todo el equipo y lo amenaza con despedirlo si “vuelve a opinar”.',2,'Aunque ocurrió una vez, hay humillación y amenaza a su situación laboral: posible acoso laboral.']];
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td><b>${r[0]}</b><span class="why" hidden></span></td><td class="selcol"><select aria-label="Categoría de la situación ${i+1}"><option value="">Elige…</option>${CAT.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
+$('#tblCheck').addEventListener('click',()=>{let ok=0;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[1];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent=r[2];if(g)ok++});
+  if(ok===ROWS.length){feedback($('#tblFb'),true,'¡Todo correcto!','Seis de seis situaciones bien clasificadas. Fíjate en quién realiza la conducta, qué ocurre y qué efecto produce.');done('tbl')}
+  else feedback($('#tblFb'),false,`${ok} de ${ROWS.length} correctas.`,'Corrige las filas en rojo (o sin respuesta) y vuelve a comprobar. Pista: pregúntate quién actúa, si hay agresión u hostigamiento y qué efecto produce.')});
+
+/* ---------- Árbol de decisión ---------- */
+const NODES=['¿Hay agresión u hostigamiento, más allá de un desacuerdo o una instrucción de trabajo?','¿Lo ejerce el empleador o uno o más trabajadores (y no un cliente, proveedor o usuario)?','¿Causa menoscabo, maltrato o humillación, o amenaza o perjudica la situación laboral?'];
+const EXS=[
+ {n:'Rodrigo y Valentina discuten fuerte por la distribución de tareas. Ambos elevan la voz, sin insultos ni amenazas, y al día siguiente siguen trabajando juntos.',path:[0],res:'conf'},
+ {n:'Un usuario del servicio insulta y amenaza a un ejecutivo en el mesón de atención.',path:[1,0],res:'terc'},
+ {n:'En una reunión, una jefatura llama “inútil” a una analista frente a todos y le dice que “no va a durar en la empresa”. Ocurrió una vez.',path:[1,1,1],res:'acoso'}];
+const RES={conf:['good','Conflicto laboral','No hay agresión ni hostigamiento: es un desacuerdo. No es acoso, pero sí requiere gestión (conversación, acuerdos y seguimiento).'],
+ terc:['good','Violencia en el trabajo ejercida por terceros','Hay agresión, pero proviene de un usuario, ajeno a la relación laboral. También debe abordarse y prevenirse.'],
+ acoso:['good','Posible acoso laboral','Hay agresión de la jefatura, con humillación y amenaza a su empleo. Aunque fue una sola vez, puede bastar: corresponde activar el procedimiento.']};
+const HINT=[['Fíjate: hay insultos, amenazas o descalificaciones, no solo un desacuerdo.','Discutir con firmeza sobre tareas, sin descalificar, es un desacuerdo, no una agresión.'],
+ ['Quien actúa forma parte de la empresa (empleador o trabajador).','Quien actúa es ajeno a la relación laboral.'],
+ ['Revisa el efecto: humillar frente a todos y amenazar el empleo sí causa menoscabo y perjuicio.','Revisa el efecto sobre la persona.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Ejemplo ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Situación:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 3`;if(solved.size===3){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Tarjetas ---------- */
+const tFc=tracker('cards',4,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Si la conducta ocurrió una sola vez, no puede ser acoso laboral.',false,'Desde la Ley Karin, el acoso laboral puede manifestarse una sola vez o de manera reiterada. Lo que importa es que se cumplan los elementos legales.'],
+ ['Solo una jefatura puede cometer acoso laboral.',false,'La ley incluye al empleador y a uno o más trabajadores. Puede darse entre pares e incluso hacia una jefatura.'],
+ ['Asignar tareas, dar instrucciones o corregir un error con respeto no es acoso laboral.',true,'Es ejercicio legítimo de las facultades de dirección. Cambia si se usa para humillar, hostigar o perjudicar.'],
+ ['Si se concluye que es un conflicto y no acoso, la empresa no tiene nada más que hacer.',false,'Un conflicto también requiere gestión: conversación facilitada, mediación interna, reglas de convivencia o intervención de la jefatura.'],
+ ['Si una persona cree que vivió acoso, puede denunciar aunque otros piensen que es solo un conflicto.',true,'Ante la duda, la persona puede denunciar y la empresa debe recibir la denuncia. La investigación determinará los hechos.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">Recuerda: una sola vez puede bastar, el acoso puede venir de colegas, dirigir con respeto no es acoso, el conflicto también se gestiona y la denuncia siempre se recibe.</span></div>`;
+    S.first.tf=n===TF.length;done('tf');return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Ordenar pasos ---------- */
+const ORDER=['Escuchar por separado a las personas involucradas y a testigos, separando hechos de opiniones.','Revisar si hay agresión u hostigamiento con menoscabo, humillación o perjuicio laboral. Si lo hay, se recibe la denuncia y se activa el procedimiento.','Si es un conflicto, facilitar una conversación entre las partes, con apoyo de la jefatura o mediación interna.','Acordar reglas de convivencia y aclarar la distribución de tareas.','Registrar los acuerdos, hacer seguimiento y recordar al equipo el canal de denuncia.'];
+let cur=[2,4,0,3,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se conocen los hechos; luego se clasifica con los elementos legales. Si es conflicto, se gestiona con conversación, acuerdos y seguimiento, sin cerrar la vía de denuncia.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Recuerda: antes de gestionar o clasificar, hay que conocer los hechos.`)});
+/*{{TAIL}}*/
+})();
+</script>

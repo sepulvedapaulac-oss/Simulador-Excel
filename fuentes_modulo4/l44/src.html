@@ -1,0 +1,423 @@
+<title>Lección 4.4 — El protocolo como herramienta de gestión</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.phone.chat{min-height:440px;max-width:320px}
+.phone .chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #d7e2e6;font-weight:900;color:#173f4e;font-size:.9rem}
+.phone .chat-h .av{width:30px;height:30px;border-radius:50%;background:#173f4e;color:#fff;display:grid;place-items:center;font-size:.72rem;flex:none}
+.phone .chat-h small{display:block;font-weight:700;color:#5f7180;font-size:.7rem}
+.phone .cmsg{background:#fff;border:1px solid #c9d6dc;border-radius:14px 14px 14px 4px;padding:9px 12px;font-size:.86rem;max-width:88%;align-self:flex-start;animation:rise .35s ease both;color:#172431}
+.phone .cmsg.me{background:#d8f3ef;border-color:#a9dbd7;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.phone .cmsg time{display:block;font-size:.66rem;color:#5f7180;text-align:right;margin-top:2px}
+.phone .dots{display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid #c9d6dc;width:max-content}
+.phone .dots span{width:7px;height:7px;border-radius:50%;background:#5f7180;animation:blink 1s infinite}
+.phone .dots span:nth-child(2){animation-delay:.2s}.phone .dots span:nth-child(3){animation-delay:.4s}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-radius:16px;padding:12px;font-size:.86rem;color:#172431}
+.phone .grow{flex:1}
+/* Índice del protocolo con interruptores */
+.idx-doc .toggle-row{grid-template-columns:1fr auto}
+.idx-doc .toggle-row>span:first-child{min-width:0}
+.tg-sw{display:flex;gap:8px;align-items:center}
+.tg-sw small{font-weight:900;font-size:.8rem;min-width:52px;text-align:right;color:var(--bad)}
+.toggle-row.on .tg-sw small{color:var(--good)}
+.toggle-row .why{grid-column:1/-1;padding:10px 12px;border-radius:12px;font-size:.9rem;animation:rise .3s ease both}
+.toggle-row.ok{background:var(--good-soft)}
+.toggle-row.ko{background:var(--bad-soft)}
+.toggle-row.ok .why{background:var(--surface);border:1px solid var(--good-line)}
+.toggle-row.ko .why{background:var(--surface);border:1px solid var(--line)}
+.idx-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.84rem;font-weight:800;color:var(--muted);margin:6px 0 10px}
+/* Intranet en el celular */
+.phone .ph-hi{font-size:.95rem;font-weight:900;color:#173f4e}
+.phone .ph-menu{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.phone .ph-menu button{border:1px solid #c9d6dc;background:#fff;color:#172431;border-radius:14px;padding:12px 8px;font:inherit;font-size:.8rem;font-weight:800;cursor:pointer;display:grid;gap:4px;justify-items:center;text-align:center}
+.phone .ph-menu button .e{font-size:1.3rem}
+.phone .ph-menu button.hl{border-color:#0f7a82;background:#d8f3ef}
+.phone .ch{display:grid;grid-template-columns:24px 1fr;gap:6px;align-items:start;font-size:.8rem;padding:6px 0;border-top:1px dashed #d7e2e6}
+.phone .ch:first-of-type{border-top:0}
+.phone .back{background:none;border:none;color:#0f7a82;font-weight:900;font-size:.8rem;text-align:left;cursor:pointer;padding:0}
+.steps-side{display:grid;gap:10px}
+.steps-side .photo-frame{aspect-ratio:3/2;max-width:380px}
+/* Línea de evidencias de cuatro hitos */
+.evline.four{grid-template-columns:repeat(4,1fr)}
+.evline.four .evnode .t{font-size:1.4rem}
+.evnode small{max-width:150px}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.flipdeck .face{min-height:210px}
+@media(max-width:860px){.hook-grid,.case-head{grid-template-columns:1fr}.evline.four{grid-template-columns:1fr}}
+@media(max-width:420px){.idx-doc .toggle-row{grid-template-columns:1fr}.tg-sw{justify-content:flex-end}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.4</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:19" data-gate="hook" data-gate-msg="Abre el mensaje de la auditoría y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.4 · El protocolo como herramienta de gestión</span>
+      <h1 class="reveal">Un protocolo firmado no basta si nadie lo usa</h1>
+      <p class="lead reveal"><strong>Meta:</strong> reconocer los componentes clave del protocolo de prevención y su función práctica en la gestión. Camila, del Equipo de Personas de <strong>Horizonte Servicios</strong>, recibe el adelanto de una auditoría. <strong>Presiona “Abrir mensaje” para leerlo.</strong></p>
+      <div class="photo-frame reveal"><img alt="Camila revisa su celular en una sala de reuniones, junto a carpetas de una auditoría" src="{{IMG:i44_hero}}"/></div>
+    </div>
+    <div class="phone chat reveal" id="phone"></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería responder Camila a la auditora?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Tenemos el protocolo firmado por la gerencia: con eso la empresa ya cumple.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Vamos a implementarlo de verdad: medidas para cada riesgo con objetivos medibles, canales claros y difundidos, capacitación y seguimiento.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Pediremos a un abogado que lo reescriba con más detalle jurídico y lo dejaremos guardado en Gerencia.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un protocolo que solo existe en papel</div><div class="branch-body"><div><p>La ley no pide solo <strong>elaborar</strong> el protocolo: también exige <strong>ponerlo en conocimiento</strong> e <strong>implementarlo</strong>. Si una persona sufre acoso y no sabe dónde denunciar, la firma de la gerencia no la protege.</p></div><div><p class="hint">Un documento firmado demuestra que se redactó, no que funciona.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>Camila entiende el protocolo como una <strong>herramienta de gestión</strong>: riesgos identificados, medidas con objetivos medibles, información y capacitación, canales conocidos y seguimiento para mejorar.</p></div><div><p class="hint">En esta lección verás cada componente y cómo demostrar que funciona.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más páginas, el mismo problema</div><div class="branch-body"><div><p>Un texto más largo y técnico, guardado en Gerencia, sigue sin llegar a las personas. El problema que detectó la auditoría no es de redacción: faltan <strong>medidas por riesgo, difusión de los canales y seguimiento</strong>.</p></div><div><p class="hint">El valor del protocolo está en su implementación.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Qué debe tener un protocolo para que funcione?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CONTENIDO MÍNIMO -->
+<section class="slide" data-title="Contenido mínimo" data-audio="p03" data-dur="0:20" data-gate="tog" data-gate-msg="Marca correctamente si cada sección del índice cumple o falta.">
+  <span class="eyebrow">Lección 4.4 · Contenido mínimo del protocolo</span>
+  <h2>¿Qué le falta al protocolo de Horizonte Servicios?</h2>
+  <p>Este es el índice del protocolo que revisó la auditoría, con un resumen de lo que dice cada sección. <strong>Activa el interruptor de las secciones que cumplen</strong> con lo que exige la ley y deja apagadas las que <strong>faltan o están incompletas</strong>. Luego presiona <strong>Revisar índice</strong>.</p>
+  <div class="idx-legend"><span style="color:var(--good)">● Encendido = Cumple</span><span style="color:var(--bad)">● Apagado = Falta</span></div>
+  <div class="task" id="tgTask">Secciones bien evaluadas <span class="tick" id="tgTick">0 / 7</span></div>
+  <div class="slip idx-doc" id="idx">
+    <div class="slip-h"><span>Protocolo de prevención del acoso sexual, laboral y violencia en el trabajo</span><span>Horizonte Servicios · versión 2024</span></div>
+    <div class="slip-sec">Índice y resumen</div>
+  </div>
+  <button class="small-btn primary" type="button" id="tgCheck" style="margin-top:12px">Revisar índice</button>
+  <div class="fb" id="tgFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 154 N°12 y 211-A (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · DIFUSIÓN REAL -->
+<section class="slide" data-title="Difusión real" data-audio="p04" data-dur="0:18" data-gate="phone" data-gate-msg="Completa los tres pasos del simulador de la intranet.">
+  <span class="eyebrow amber">Lección 4.4 · Canales de denuncia al alcance de todos</span>
+  <h2>¿Encuentra Luis dónde denunciar?</h2>
+  <p>Después de la auditoría, Horizonte Servicios actualizó su intranet. Luis, ejecutivo del call center, quiere saber cómo presentar una denuncia. <strong>Usa el celular de la izquierda</strong> y sigue los pasos de la derecha.</p>
+  <div class="phone-wrap">
+    <div class="phone" id="phone2"></div>
+    <div class="steps-side">
+      <div class="sstep on" id="ps0"><b>Paso 1 · Buscar el acceso</b><br/>Toca en la intranet la sección donde esperarías encontrar el canal de denuncia.</div>
+      <div class="sstep" id="ps1"><b>Paso 2 · Abrir los canales</b><br/>Dentro de la sección, busca cómo denunciar.</div>
+      <div class="sstep" id="ps2"><b>Paso 3 · Una duda de Luis</b><br/>Luis prefiere contarlo en persona. Elige en el celular la respuesta correcta.</div>
+      <div class="fb" id="phoneFb"></div>
+      <div class="photo-frame"><img alt="Ejecutivo de call center con audífonos revisa su celular en un pasillo de la oficina" src="{{IMG:i44_intranet}}"/></div>
+    </div>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 211-A y 211-B (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 5 · EVIDENCIAS -->
+<section class="slide" data-title="Evidencias" data-audio="p05" data-dur="0:17" data-gate="ev aud" data-gate-msg="Revisa las cuatro evidencias y toma la decisión de auditoría.">
+  <span class="eyebrow violet">Lección 4.4 · Evidencias de implementación</span>
+  <h2>¿Qué demuestra cada documento?</h2>
+  <div class="grid-2">
+    <div><p>La auditora reunió cuatro evidencias. <strong>Haz clic en cada una</strong> para ver qué demuestra y qué no. Cuando revises las cuatro, aparecerá la decisión.</p><div class="task" id="evTask">Evidencias revisadas <span class="tick" id="evTick">0 / 4</span></div></div>
+    <div class="photo-frame wide"><img alt="Una auditora externa revisa carpetas y una planilla junto a Camila en una mesa de trabajo" src="{{IMG:i44_auditoria}}"/></div>
+  </div>
+  <div class="evline four" id="evline">
+    <button class="evnode" type="button" data-k="0"><span class="t">📄</span><small>Protocolo firmado</small></button>
+    <button class="evnode" type="button" data-k="1"><span class="t">🧭</span><small>Matriz de riesgos</small></button>
+    <button class="evnode" type="button" data-k="2"><span class="t">📧</span><small>Correo de difusión</small></button>
+    <button class="evnode" type="button" data-k="3"><span class="t">🗣️</span><small>Entrevistas al personal</small></button>
+  </div>
+  <div class="dpanel" id="evPanel"><p class="hint">Selecciona una evidencia para ver qué demuestra.</p></div>
+  <div class="phase" id="audQ" hidden>
+    <h3 style="margin-top:18px">¿Qué conclusión debería quedar en el informe de auditoría?</h3>
+    <div class="options" data-choice="aud" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La empresa cumple: el protocolo existe, está firmado y se envió por correo.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No existe protocolo: hay que empezar desde cero.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>El protocolo está elaborado, pero no implementado: faltan medidas por riesgo con objetivos medibles, difusión efectiva de los canales y seguimiento.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="aud-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se confunde enviar con poner en conocimiento</div><div class="branch-body"><div><p>Un correo con un archivo adjunto no asegura que las personas conozcan el protocolo, y las entrevistas muestran que no lo conocen. Además, los riesgos identificados no tienen medidas asociadas.</p></div><div><p class="hint">Mira lo que muestran las entrevistas y la matriz.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde lo que sí existe</div><div class="branch-body"><div><p>El protocolo existe y la matriz ya identifica riesgos: es una buena base. El problema es que no se gestiona. Empezar de cero retrasa la mejora sin necesidad.</p></div><div><p class="hint">Distingue lo que está hecho de lo que falta.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-C"><div class="branch good"><div class="branch-head">✓ Conclusión correcta</div><div class="branch-body"><div><p>Se cumplió la primera parte (elaborar), pero no las otras dos que exige el artículo 211-A: <strong>poner en conocimiento</strong> e <strong>implementar</strong>. El plan debe asociar medidas a cada riesgo, difundir los canales y medir su avance.</p></div><div><p class="hint">Esa conclusión orienta el plan de mejora.</p></div></div></div></template>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, art. 211-A (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 6 · FUNCIÓN DE CADA COMPONENTE -->
+<section class="slide" data-title="Para qué sirve" data-audio="p06" data-dur="0:17" data-gate="cards" data-gate-msg="Voltea las seis tarjetas.">
+  <span class="eyebrow">Lección 4.4 · Para qué sirve cada componente</span>
+  <h2>Cada pieza cumple una función en la gestión</h2>
+  <p>Por delante ves un componente que exige la ley. <strong>Toca cada tarjeta para voltearla</strong> y descubrir para qué sirve en el día a día.</p>
+  <div class="task" id="fcTask">Componentes revisados <span class="tick" id="fcTick">0 / 6</span></div>
+  <div class="flipdeck">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔎</div><strong>Identificación de peligros y evaluación de riesgos psicosociales</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Para saber qué controlar y dónde</strong><span>Muestra en qué áreas y situaciones hay más riesgo (por ejemplo, atención de público o trabajo en terreno), con <b>perspectiva de género</b>. Sin este diagnóstico, las medidas son genéricas.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🎯</div><strong>Medidas de prevención y control con objetivos medibles</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Para actuar y comprobar si funciona</strong><span>Cada riesgo tiene una medida concreta, con responsable y plazo, y un <b>objetivo medible</b> que permite saber si la medida está dando resultado y corregirla.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🎓</div><strong>Información y capacitación</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Para que las personas sepan actuar</strong><span>Informa y capacita sobre los <b>riesgos identificados</b>, las <b>medidas preventivas</b>, los <b>derechos</b> y las <b>responsabilidades</b>. Así cada persona reconoce una conducta indebida y sabe qué hacer.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔒</div><strong>Resguardo de la privacidad y la honra</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Para dar confianza</strong><span>Protege la información de la persona denunciante, de la persona denunciada y de los testigos. Si nadie confía en la reserva, nadie denuncia.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📈</div><strong>Mecanismos de seguimiento</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Para corregir y mejorar</strong><span>Revisa periódicamente si las medidas se cumplen y si alcanzan sus objetivos. Con esa información se ajusta el protocolo: <b>mejora continua</b>, como en cualquier riesgo laboral.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📣</div><strong>Canales de denuncia e instituciones</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Para que nadie quede sin saber dónde acudir</strong><span>La empresa informa sus <b>canales para recibir denuncias</b> y las <b>instituciones públicas</b> donde denunciar y acceder a prestaciones de seguridad social y atención psicológica temprana.</span></div></div></button>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, art. 211-A (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 7 · CASO APLICADO 1 -->
+<section class="slide" data-title="Caso: plan de mejora" data-audio="p07" data-dur="0:17" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del plan de mejora.">
+  <span class="eyebrow amber">Lección 4.4 · Del hallazgo al plan de mejora</span>
+  <h2>El riesgo está identificado. ¿Y la medida?</h2>
+  <div class="case-head">
+    <div class="story" style="margin:0">La matriz de riesgos indica que en el <strong>call center</strong> hay llamadas de clientes que insultan o amenazan a las ejecutivas y ejecutivos. Es un riesgo de <strong>violencia en el trabajo ejercida por terceros</strong>. Hasta ahora no tiene ninguna medida asociada. Camila arma el plan con la supervisora del área.</div>
+    <div class="photo-frame"><img alt="Camila conversa con la supervisora del call center frente a una pizarra con notas adhesivas" src="{{IMG:i44_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué medida incluye Camila en el protocolo?</h3>
+  <div class="options" data-choice="casoA" data-correct="B" data-then="casoPh2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Un afiche en el call center que diga “Aquí nos tratamos con respeto”.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Un procedimiento para cortar llamadas abusivas con respaldo de la supervisión, una pausa después de una llamada difícil y un registro de incidentes, con responsable y plazo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Esperar a que llegue alguna denuncia para saber si el riesgo es real.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="casoA-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una medida que no controla el riesgo</div><div class="branch-body"><div><p>El afiche no cambia lo que ocurre en una llamada abusiva: la ejecutiva sigue sin saber si puede cortar ni a quién avisar. Una medida de control debe actuar sobre el riesgo identificado.</p></div><div><p class="hint">Piensa en qué hace la persona cuando la llamada se vuelve violenta.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoA-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la prevención llega tarde</div><div class="branch-body"><div><p>La prevención no espera una denuncia. El riesgo ya está identificado en la matriz: el protocolo debe definir medidas para prevenirlo y controlarlo ahora.</p></div><div><p class="hint">Se gestiona como cualquier riesgo laboral.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoA-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Son medidas concretas, ligadas al riesgo identificado, con responsable y plazo. Ahora falta definir cómo se sabrá si funcionan.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="casoPh2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Dos semanas después:</strong> la gerencia pregunta cómo sabrán, en seis meses, si las medidas del call center están funcionando.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué propone Camila?</h3>
+    <div class="options" data-choice="casoB" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Revisar que el protocolo tenga más páginas que la versión anterior.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pedir a la gerencia que vuelva a firmar el protocolo cada semestre.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Definir objetivos medibles (personas capacitadas, incidentes registrados con respuesta de la supervisión, personas que conocen el canal) y revisarlos en el seguimiento.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="casoB-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se mide el papel, no el resultado</div><div class="branch-body"><div><p>La extensión del documento no dice nada sobre si las personas están más protegidas. La ley pide <strong>objetivos medibles</strong> para controlar la eficacia de las medidas.</p></div><div><p class="hint">Mide lo que cambia en el trabajo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoB-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una firma no es seguimiento</div><div class="branch-body"><div><p>Volver a firmar no muestra si las medidas se aplicaron ni si dieron resultado. El seguimiento revisa datos y corrige lo que no funciona.</p></div><div><p class="hint">¿Qué dato mostraría una mejora real?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoB-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Con objetivos medibles y un mecanismo de seguimiento, la empresa puede comprobar la eficacia de cada medida y <strong>corregirla y mejorarla</strong> de forma continua.</p></div><div><p class="hint">Así el protocolo se convierte en una herramienta de gestión.</p></div></div></div></template>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 2 y 211-A (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 8 · CASO APLICADO 2 -->
+<section class="slide" data-title="Caso: todo empleador" data-audio="p08" data-dur="0:16" data-gate="caso2" data-gate-msg="Resuelve las dos decisiones sobre la empresa contratista.">
+  <span class="eyebrow amber">Lección 4.4 · Una obligación de todo empleador</span>
+  <h2>“Somos pocos, no necesitamos protocolo”</h2>
+  <div class="chat">
+    <div class="persona"><span class="avatar mgr">LA</span> Encargado de Limpiezas Andinas · empresa contratista de aseo, 8 personas</div>
+    <div class="bubble"><span class="who">Encargado</span>Camila, vi que ustedes están actualizando su protocolo. Nosotros somos una empresa chica, así que eso no nos aplica, ¿cierto?</div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué le responde Camila?</h3>
+  <div class="options" data-choice="casoC" data-correct="A" data-then="casoPh4">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí aplica: todo empleador debe tener protocolo. Tu mutualidad o el ISL te pueden entregar un modelo y asistencia técnica para adaptarlo a los riesgos de tu empresa.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Es cierto: el protocolo solo es obligatorio para empresas grandes.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Copia el nuestro tal cual, cambiando solo el nombre de la empresa.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="casoC-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una empresa sin protocolo</div><div class="branch-body"><div><p>El artículo 211-A obliga a <strong>todo empleador</strong>, sin importar su tamaño. Las ocho personas de la contratista quedarían sin medidas preventivas ni canales claros.</p></div><div><p class="hint">La obligación no depende del número de personas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoC-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: medidas que no calzan con sus riesgos</div><div class="branch-body"><div><p>Los riesgos de un equipo de aseo que trabaja en distintos turnos y recintos no son los de un call center. El protocolo debe partir de la <strong>identificación de sus propios peligros</strong>.</p></div><div><p class="hint">Un modelo sirve como base, pero hay que adaptarlo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoC-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La obligación es de todo empleador. Los organismos administradores de la Ley 16.744 (mutualidades e ISL) prestan asistencia técnica y entregan modelos, muy útiles para empresas pequeñas.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="casoPh4" hidden>
+    <div class="story" style="margin-top:18px"><strong>Un mes después:</strong> la contratista ya adaptó su protocolo. El encargado pregunta qué debe hacer para que sea válido frente a su personal.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Cómo se pone en conocimiento el protocolo?</h3>
+    <div class="options" data-choice="casoD" data-correct="B" data-gate="caso2">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Basta con enviar un correo con el archivo adjunto.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Incorporarlo al Reglamento Interno, darlo a conocer a todo el personal, publicar los canales de denuncia y las instituciones a las que se puede acudir, y capacitar.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Guardarlo en la oficina del encargado para entregarlo a quien lo pida.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="casoD-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: difusión aparente</div><div class="branch-body"><div><p>Muchas personas del equipo de aseo no revisan el correo durante su turno. Un adjunto no asegura que conozcan los canales ni sus derechos.</p></div><div><p class="hint">Poner en conocimiento es lograr que la información llegue.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoD-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el mismo error de la auditoría</div><div class="branch-body"><div><p>Si hay que pedirlo, nadie lo conoce. Es justamente lo que detectó la auditoría en Horizonte Servicios.</p></div><div><p class="hint">La información debe ser clara y accesible.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoD-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El protocolo forma parte del <strong>Reglamento Interno de Orden, Higiene y Seguridad</strong>, que incluye el procedimiento, las medidas de resguardo y las sanciones. Además, la empresa debe informar los <strong>canales de denuncia</strong> y las <strong>instituciones públicas</strong> disponibles, y capacitar.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 154 N°12 y 211-A (Ley 21.643, Ley Karin); Ley 16.744; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:16" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:16" data-gate="bins pass" data-gate-msg="Clasifica las ocho evidencias en su columna.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Gestión real o solo papel?</h2>
+  <p>Imagina que mañana llega una auditoría a tu organización. <strong>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna</strong> que corresponde: ¿esa evidencia demuestra que el protocolo se gestiona, o solo que existe?</p>
+  <div class="task" id="binTask">Evidencias clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins">
+    <div class="bin good-bin" data-b="1" role="button" tabindex="0"><h3>✓ Demuestra gestión</h3></div>
+    <div class="bin bad-bin" data-b="0" role="button" tabindex="0"><h3>✕ Solo papel</h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 154 N°12 y 211-A (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:16" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.4</h2>
+    <p>Ya puedes reconocer el contenido mínimo del protocolo de prevención, explicar para qué sirve cada componente, cómo se incorpora al Reglamento Interno y qué evidencias muestran que funciona como herramienta de gestión.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> el valor del protocolo está en su implementación: riesgos identificados, medidas con objetivos medibles, personas informadas y capacitadas, canales conocidos y seguimiento. <strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar el contenido mínimo</button><button class="small-btn primary" type="button" data-goto="5">Repasar para qué sirve cada componente</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 2, 154 N°12, 184 y 211-A a 211-E (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; Ley 16.744; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l44';
+const FIRST_KEYS=['hook','aud','casoA','casoB','casoC','casoD'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Más que un archivo',lines:['La auditoría lo dejó claro: Horizonte Servicios tiene un protocolo firmado, pero nadie sabe dónde está.','Un protocolo guardado en un cajón no protege a nadie.'],
+  html:`<div class="v-icons"><div><span class="i">📄</span>Protocolo firmado</div><div><span class="i">🗄️</span>Guardado en Gerencia</div><div class="dim" data-at="1"><span class="i">❓</span>Nadie lo conoce</div></div>`},
+ {t:'Lo que exige la ley',lines:['El artículo 211-A del Código del Trabajo obliga a todo empleador a elaborar, poner en conocimiento e implementar un protocolo de prevención.','Cubre acoso sexual, acoso laboral y violencia en el trabajo.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem">Art. 211-A · Código del Trabajo</div><div class="v-chk"><span class="on">Elaborar</span><span class="on">Poner en conocimiento</span><span class="on">Implementar</span></div><div class="v-chk"><span data-at="1">Acoso sexual</span><span data-at="1">Acoso laboral</span><span data-at="1">Violencia en el trabajo</span></div>`},
+ {t:'Todo empleador',lines:['La obligación no depende del tamaño de la empresa.','Las mutualidades y el ISL entregan modelos de protocolo y asistencia técnica, pero cada empresa debe adaptarlo a sus propios riesgos.'],
+  html:`<div class="v-icons"><div><span class="i">🏢</span>Empresa grande</div><div><span class="i">🏪</span>Empresa pequeña</div><div class="dim" data-at="1"><span class="i">🧰</span>Modelo y asistencia de mutualidad o ISL</div></div>`},
+ {t:'Reglamento Interno',lines:['El protocolo se incorpora al Reglamento Interno de Orden, Higiene y Seguridad.','Según el artículo 154, el reglamento incluye el procedimiento, las medidas de resguardo y las sanciones.'],
+  html:`<div class="v-log"><div><span>Reglamento Interno</span><span>+ protocolo</span></div><div class="bad" data-at="1" style="color:var(--teal2)"><span>Procedimiento</span><span>✓</span></div><div class="bad" data-at="1" style="color:var(--teal2)"><span>Medidas de resguardo</span><span>✓</span></div><div class="bad" data-at="1" style="color:var(--teal2)"><span>Sanciones</span><span>✓</span></div></div>`},
+ {t:'Riesgos y medidas',lines:['El contenido mínimo parte por identificar peligros y evaluar los riesgos psicosociales, con perspectiva de género.','Luego, medidas para prevenir y controlar esos riesgos, con objetivos medibles.'],
+  html:`<div class="v-steps"><div data-at="0">Identificar peligros</div><div data-at="0">Evaluar riesgos psicosociales · perspectiva de género</div><div data-at="1">Medidas de prevención y control</div><div data-at="1">Objetivos medibles</div></div>`},
+ {t:'Personas y resguardo',lines:['También exige informar y capacitar sobre los riesgos, las medidas, los derechos y las responsabilidades,','resguardar la privacidad y la honra de los involucrados, y contar con mecanismos de seguimiento.'],
+  html:`<div class="v-icons"><div><span class="i">🎓</span>Informar y capacitar</div><div class="dim" data-at="1"><span class="i">🔒</span>Privacidad y honra</div><div class="dim" data-at="1"><span class="i">📈</span>Seguimiento</div></div>`},
+ {t:'Canales visibles',lines:['Por último, la empresa debe informar los canales para denunciar y las instituciones públicas donde denunciar y acceder a prestaciones y atención psicológica temprana.','Si nadie lo conoce, el protocolo no funciona.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Canales de denuncia</span><span class="on">Instituciones públicas</span><span class="on">Atención psicológica temprana</span></div><div class="v-final" style="margin-top:14px">Conocido + aplicado<br/><em>= protocolo que funciona</em></div>`}
+]};
+const Q=[
+ {q:'¿Qué exige el artículo 211-A del Código del Trabajo respecto del protocolo de prevención?',o:['Tener un documento firmado por la gerencia.','Elaborarlo, ponerlo en conocimiento de las personas trabajadoras e implementarlo.','Redactarlo solo cuando se presente la primera denuncia.'],c:1,f:'La obligación tiene tres partes: elaborar, poner en conocimiento e implementar. Un documento firmado cubre solo la primera.'},
+ {q:'¿Cuál de estos elementos forma parte del contenido mínimo del protocolo?',o:['El organigrama completo de la empresa.','La lista de sanciones aplicadas en años anteriores.','Medidas para prevenir y controlar los riesgos, con objetivos medibles para controlar su eficacia.'],c:2,f:'El contenido mínimo incluye identificar peligros y evaluar riesgos psicosociales, medidas con objetivos medibles, información y capacitación, resguardo de la privacidad y honra, y mecanismos de seguimiento.'},
+ {q:'¿Dónde se incorpora el protocolo de prevención?',o:['Al Reglamento Interno de Orden, Higiene y Seguridad.','Al contrato de trabajo de cada jefatura.','A un anexo confidencial que solo conoce la gerencia.','A ningún documento: es independiente.'],c:0,f:'Se incorpora al Reglamento Interno, que según el artículo 154 N°12 incluye el procedimiento, las medidas de resguardo y las sanciones.'},
+ {q:'Una empresa tiene 6 personas trabajadoras. ¿Debe tener protocolo de prevención?',o:['No, solo las empresas grandes están obligadas.','Solo si la Inspección del Trabajo lo solicita.','Solo si existe un sindicato.','Sí. La obligación es de todo empleador, y puede apoyarse en los modelos y la asistencia técnica de su mutualidad o del ISL.'],c:3,f:'El artículo 211-A obliga a todo empleador. Las mutualidades y el ISL entregan modelos y asistencia técnica, útiles para empresas pequeñas.'},
+ {q:'¿Qué debe informar el empleador a las personas trabajadoras sobre las denuncias?',o:['Solo el correo de la gerencia.','Los canales para recibir denuncias y las instituciones públicas para denunciar y acceder a prestaciones de seguridad social y atención psicológica temprana.','Nada, hasta que alguien presente una denuncia.'],c:1,f:'La información sobre canales e instituciones debe estar disponible para todas las personas, antes de que ocurra un caso.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: chat en el celular ---------- */
+const phone=$('#phone');
+const phHead=`<div class="bar"><span>10:05</span><span>📶 🔋</span></div><div class="chat-h"><span class="av">PR</span><span>Paula Rojas · Auditoría externa<small>en línea</small></span></div>`;
+phone.innerHTML=phHead+`<div class="grow"></div><div class="notif">💬 <b>1 mensaje nuevo</b> de Auditoría externa</div><button class="pbtn" type="button" id="showMsg">Abrir mensaje</button>`;
+function addMsg(html){const g=$('.grow',phone);g.insertAdjacentHTML('beforebegin',html)}
+$('#showMsg').addEventListener('click',()=>{$('#showMsg').remove();$('.notif',phone).remove();
+  addMsg('<div class="dots" id="dts"><span></span><span></span><span></span></div>');
+  setTimeout(()=>{$('#dts').remove();addMsg('<div class="cmsg">Camila, te adelanto el hallazgo principal de la auditoría de prevención 📋<time>10:05</time></div>');
+    setTimeout(()=>{addMsg('<div class="cmsg">Tienen protocolo firmado, pero en las entrevistas casi nadie sabe dónde está. El canal de denuncia no es claro y no hay medidas para cada riesgo identificado.<time>10:06</time></div>');
+      setTimeout(()=>{addMsg('<div class="cmsg">¿Qué plan proponen antes del cierre del informe?<time>10:06</time></div>');
+        setTimeout(()=>{addMsg('<div class="cmsg me">Déjame revisarlo con el equipo antes de responder 👀<time>10:08</time></div>');$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)},600)},600)},700)},900)});
+$('[data-choice=hook] [data-opt=B]').addEventListener('click',()=>{if(!$('#reply',phone))addMsg('<div class="cmsg me" id="reply">Lo vamos a implementar de verdad: medidas por riesgo con metas medibles, canales visibles, capacitación y seguimiento. Te envío el plan 📎<time>10:15</time></div>')});
+
+/* ---------- Índice del protocolo: cumple o falta ---------- */
+const TG=[
+ ['1. Identificación de peligros y evaluación de riesgos','Matriz de riesgos psicosociales por área (atención de público, call center, terreno), con análisis por género.',true,'Cumple: identifica peligros y evalúa riesgos psicosociales con perspectiva de género. Es la base de todo lo demás.'],
+ ['2. Medidas de prevención y control','“Se promoverá un buen clima laboral en todas las áreas.” Sin medidas por riesgo, responsables, plazos ni indicadores.',false,'Falta: la ley exige medidas para prevenir y controlar cada riesgo identificado, con objetivos medibles para controlar su eficacia y mejorarlas.'],
+ ['3. Información y capacitación','“El protocolo estará disponible en Gerencia para quien lo solicite.”',false,'Falta: hay que informar y capacitar activamente sobre los riesgos, las medidas preventivas, los derechos y las responsabilidades. Esperar a que alguien lo pida no es informar.'],
+ ['4. Resguardo de la privacidad y la honra','Acceso restringido a los antecedentes y compromiso de confidencialidad de quienes reciben e investigan denuncias.',true,'Cumple: contempla medidas para resguardar la privacidad y la honra de todas las personas involucradas.'],
+ ['5. Canales de denuncia','“Las denuncias se presentan por carta formal dirigida a la Gerencia General.”',false,'Falta: la denuncia puede hacerse por escrito o verbalmente, a la empresa o directamente a la Inspección del Trabajo, y no se puede exigir una carta formal. También deben informarse las instituciones públicas y el acceso a atención psicológica temprana.'],
+ ['6. Mecanismos de seguimiento','Revisión semestral de indicadores (capacitaciones, conocimiento del canal, medidas cumplidas) y actualización del protocolo.',true,'Cumple: el seguimiento permite comprobar si las medidas funcionan y corregirlas. Ojo: solo servirá cuando existan medidas con objetivos medibles (sección 2).'],
+ ['7. Relación con el Reglamento Interno','“Documento independiente; no forma parte del Reglamento Interno.”',false,'Falta: el protocolo se incorpora al Reglamento Interno de Orden, Higiene y Seguridad, que incluye el procedimiento, las medidas de resguardo y las sanciones (art. 154 N°12).']];
+$('#idx').insertAdjacentHTML('beforeend',TG.map((t,i)=>`<div class="toggle-row" data-i="${i}"><span><b>${t[0]}</b><br/><span class="hint">${t[1]}</span></span><span class="tg-sw"><small>Falta</small><button class="sw" type="button" aria-pressed="false" aria-label="Marcar si la sección ${i+1} cumple"></button></span></div>`).join(''));
+$$('#idx .toggle-row').forEach(r=>$('.sw',r).addEventListener('click',()=>{const on=r.classList.toggle('on');$('.sw',r).setAttribute('aria-pressed',on?'true':'false');$('.tg-sw small',r).textContent=on?'Cumple':'Falta';r.classList.remove('ok','ko');const w=$('.why',r);if(w)w.remove()}));
+let tgTries=0;
+$('#tgCheck').addEventListener('click',()=>{let ok=0;tgTries++;
+  $$('#idx .toggle-row').forEach(r=>{const t=TG[+r.dataset.i],g=r.classList.contains('on')===t[2];r.classList.remove('ok','ko');r.classList.add(g?'ok':'ko');
+    const old=$('.why',r);if(old)old.remove();r.insertAdjacentHTML('beforeend',`<div class="why"><b style="color:${g?'var(--good)':'var(--bad)'}">${g?'✓ Bien evaluada.':'✕ Revisa esta sección.'}</b> ${g?t[3]:'Pregúntate: ¿esta sección permite gestionar el riesgo en la práctica, como exige la ley?'}</div>`);if(g)ok++});
+  $('#tgTick').textContent=`${ok} / 7`;
+  if(ok===7){$('#tgTask').classList.add('ok');feedback($('#tgFb'),true,'Índice revisado.','Al protocolo le faltan cuatro piezas: medidas con objetivos medibles, información y capacitación, canales correctos y su incorporación al Reglamento Interno. Por eso la auditoría concluyó que no funciona.');done('tog')}
+  else feedback($('#tgFb'),false,`${ok} de 7 secciones bien evaluadas.`,'Las filas en rojo tienen una evaluación incorrecta. Cambia su interruptor y vuelve a presionar “Revisar índice”.')});
+
+/* ---------- Intranet en el celular ---------- */
+let ph=0;const phone2=$('#phone2');
+const p2Top=()=>`<div class="bar"><span>13:20</span><span>📶 🔋</span></div><div class="appt">Horizonte Conecta · Intranet</div>`;
+function p2Draw(){
+  if(ph===0)phone2.innerHTML=p2Top()+`<div class="ph-hi">Hola, Luis 👋</div><div class="ph-menu"><button type="button" data-m="liq"><span class="e">💵</span>Mis liquidaciones</button><button type="button" data-m="docs"><span class="e">📁</span>Documentos</button><button type="button" data-m="ben"><span class="e">🎁</span>Beneficios</button><button type="button" data-m="karin"><span class="e">🤝</span>Convivencia y Ley Karin</button></div><div class="card">📌 <b>Destacado:</b> conoce cómo prevenimos el acoso y la violencia en el trabajo.</div>`;
+  if(ph===1)phone2.innerHTML=p2Top()+`<button class="back" type="button" id="pBack">← Inicio</button><div class="card"><b>Protocolo de prevención</b><br/>Versión vigente, incorporada al Reglamento Interno. Resumen en 2 minutos.</div><button class="pbtn alt" type="button" id="pRisk">🧭 Riesgos y medidas de mi área</button><button class="pbtn" type="button" id="pHow">📣 ¿Cómo denunciar?</button>`;
+  if(ph===2)phone2.innerHTML=p2Top()+`<div class="card"><b>Canales de denuncia</b><div class="ch"><span>✍️</span><span>Por escrito: formulario en línea o correo al Equipo de Personas.</span></div><div class="ch"><span>🗣️</span><span>Verbalmente: en persona con el Equipo de Personas.</span></div><div class="ch"><span>🏛️</span><span>Directamente en la Inspección del Trabajo.</span></div><div class="ch"><span>💚</span><span>Atención psicológica temprana: mutualidad o ISL.</span></div></div><p style="font-size:.8rem;font-weight:800;margin:0">Luis prefiere contarlo en persona. ¿Qué ocurre?</p><button class="pbtn alt" type="button" id="pBad">Debe escribir una carta formal</button><button class="pbtn" type="button" id="pGood">Puede hacerlo verbalmente: se levanta un acta</button>`;
+  if(ph===3)phone2.innerHTML=p2Top()+`<div class="card">✅ <b>Denuncia verbal</b><br/>Quien la recibe levanta un <b>acta</b>, Luis la firma y recibe una <b>copia</b>. La empresa le informa el procedimiento y adopta medidas de resguardo.</div><div class="card">La información estaba a <b>dos toques</b> desde el inicio. Eso es poner el protocolo en conocimiento.</div>`;
+  $$('.ph-menu button',phone2).forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.m;
+    if(m==='karin'){ph=1;$('#ps0').className='sstep ok';$('#ps1').className='sstep on';p2Draw();p2Info('Acceso directo desde el inicio, con un nombre que todos entienden. Así se ve una difusión real.',true)}
+    else if(m==='docs')p2Info('Antes de la auditoría, el protocolo estaba aquí, dentro de un PDF largo. Por eso nadie lo encontraba. Busca un acceso más directo.',false);
+    else p2Info('Esta sección no tiene relación con la prevención del acoso. Busca otra opción del menú.',false)}));
+  const bk=$('#pBack');if(bk)bk.addEventListener('click',()=>{ph=0;$('#ps0').className='sstep on';$('#ps1').className='sstep';p2Draw()});
+  const rk=$('#pRisk');if(rk)rk.addEventListener('click',()=>p2Info('Bien que exista: muestra a Luis los riesgos de su área y las medidas vigentes. Pero él busca cómo denunciar.',false));
+  const hw=$('#pHow');if(hw)hw.addEventListener('click',()=>{ph=2;$('#ps1').className='sstep ok';$('#ps2').className='sstep on';p2Draw();p2Info('Los canales están a la vista, junto con la Inspección del Trabajo y la atención psicológica temprana: lo que la empresa debe informar.',true)});
+  const bd=$('#pBad');if(bd)bd.addEventListener('click',()=>p2Info('No se puede exigir una carta formal. La denuncia puede hacerse por escrito o verbalmente.',false));
+  const gd=$('#pGood');if(gd)gd.addEventListener('click',()=>{ph=3;$('#ps2').className='sstep ok';p2Draw();p2Info('Correcto. En la denuncia verbal se levanta un acta que firma la persona denunciante, quien recibe copia.',true);done('phone')});
+}
+function p2Info(t,ok){feedback($('#phoneFb'),ok,ok?'✓':'Revisa esta opción.',t)}
+p2Draw();
+
+/* ---------- Evidencias de implementación ---------- */
+const EV=[['📄 Protocolo firmado (2024)','Demuestra que el protocolo se <b>elaboró</b>. No demuestra que las personas lo conozcan ni que se aplique: es solo la primera de las tres obligaciones del artículo 211-A.'],
+ ['🧭 Matriz de riesgos psicosociales','Identifica riesgos por área, como los insultos de clientes en el call center. Pero ningún riesgo tiene una <b>medida asociada</b>, ni responsable, ni objetivo medible.'],
+ ['📧 Correo de difusión','Se envió un correo masivo con el PDF adjunto. No hubo charla, ni publicación en la intranet, ni registro de capacitación. Enviar un archivo <b>no asegura poner en conocimiento</b>.'],
+ ['🗣️ Entrevistas al personal','Casi ninguna de las personas entrevistadas sabe dónde está el protocolo ni cómo denunciar. Es la prueba más directa de que <b>no está implementado</b>.']];
+const tEv=tracker('ev',4,'#evTick','#evTask');
+$$('#evline .evnode').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#evline .evnode').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#evPanel').innerHTML=`<h3 style="margin-top:0">${EV[k][0]}</h3><p>${EV[k][1]}</p>`;tEv(k);
+  if(S.done.has('ev')&&$('#audQ').hidden){$('#audQ').hidden=false}}));
+
+/* ---------- Tarjetas: para qué sirve ---------- */
+const tFc=tracker('cards',6,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+
+/* ---------- Clasificar evidencias ---------- */
+const CARDS=[['Matriz de riesgos psicosociales actualizada por área',1],['Protocolo firmado y guardado en la oficina de Gerencia',0],['Medidas por riesgo con responsable, plazo y objetivo medible',1],['Correo masivo con el PDF adjunto, sin otra acción',0],['Registro de capacitaciones con asistencia y contenidos',1],['Canales de denuncia e instituciones publicados en la intranet y en lugares visibles',1],['Protocolo copiado de otra empresa sin adaptarlo a los riesgos propios',0],['Informe de seguimiento con ajustes al protocolo',1]];
+const order=[1,0,3,2,6,5,4,7];let selC=null,placedN=0;
+$('#pool').innerHTML=order.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',CARDS[c][1]?'Esta evidencia muestra que el protocolo se aplica, se conoce o se mide.':'Esta evidencia solo muestra que el protocolo existe, no que funcione.');
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,'No corresponde.',CARDS[c][1]?'Piensa: ¿esta evidencia muestra que algo se aplicó, se difundió o se midió?':'Piensa: ¿esto prueba que las personas conocen y usan el protocolo, o solo que el documento existe?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+/*{{TAIL}}*/
+})();
+</script>

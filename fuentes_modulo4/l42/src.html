@@ -1,0 +1,351 @@
+<title>Lección 4.2 — Distinguir acoso laboral, acoso sexual y violencia</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* Ajustes propios de la Lección 4.2 */
+.label-stack{display:grid;gap:10px;margin-top:6px}
+.label-stack .label-line{margin:0;min-height:96px}
+.label-line .rk{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.cloze .def{margin:0 0 12px;padding-bottom:12px;border-bottom:1px dashed var(--line2)}
+.cloze .def:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.cloze .def b.k{display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-ink);line-height:1.6}
+.cloze select{max-width:100%}
+.elem-list{list-style:none;padding:0!important;margin:.4rem 0 0!important;display:grid;gap:6px}
+.elem-list li{padding:8px 10px;border-radius:12px;background:var(--surface);border:1px solid var(--line2)}
+.elem-list li b{color:var(--teal-ink)}
+.tabpane .warn{margin-top:10px;padding:8px 10px;border-radius:12px;background:var(--amber-soft);color:var(--ink);font-size:.9rem}
+.qf .btns.three button{min-width:150px}
+.vl4 .vline{grid-template-columns:1fr}
+.vl4 .vb{flex-wrap:wrap}
+.vl4 .vline .rk{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-right:6px}
+.bins.four .bin{min-height:130px}
+.bins.four .bin h3{color:var(--violet)}
+.bins.four .bin.b1 h3{color:var(--amber-ink)}
+.bins.four .bin.b2 h3{color:var(--teal-ink)}
+.bins.four .bin.b3 h3{color:var(--ink2)}
+.bins.four .bin p{margin:0;font-size:.8rem;color:var(--muted)}
+@media(max-width:560px){
+  .cloze{font-size:1rem;line-height:2.1;padding:14px}
+  .qf .btns.three button{min-width:0;flex:1 1 100%}
+  .vl4 .vb button{flex:1 1 45%}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.2</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:18" data-gate="hook" data-gate-msg="Despega las tres etiquetas y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.2 · Tres reportes, tres conductas</span>
+      <h1 class="reveal">Clasificar bien cambia la respuesta</h1>
+      <p class="lead reveal">En una misma semana, Camila, del Equipo de Personas de Horizonte Servicios, recibe tres reportes. Quien los registró les puso una etiqueta rápida. <strong>Haz clic en cada etiqueta para despegarla</strong> y leer qué ocurrió realmente.</p>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa tres reportes impresos sobre su escritorio" src="{{IMG:i42_hero}}"/></div>
+  </div>
+  <div class="label-stack reveal">
+    <div class="label-line"><div><span class="rk">Reporte 1 · Bodega</span><br/><strong>El supervisor de turno</strong> llamó “inútil” a Paula frente a todo el equipo y le dijo que le haría la vida imposible. Ella salió afectada de la reunión.</div>
+      <button class="sticker" type="button" data-st="0">“SOLO UN MAL DÍA” · toca para despegar</button></div>
+    <div class="label-line"><div><span class="rk">Reporte 2 · Atención telefónica</span><br/><strong>Un compañero</strong> envía a Javiera mensajes de carácter sexual por chat. Ella le pidió que se detuviera, pero él sigue escribiendo.</div>
+      <button class="sticker" type="button" data-st="1">“UNA BROMA” · toca para despegar</button></div>
+    <div class="label-line"><div><span class="rk">Reporte 3 · Sucursal</span><br/><strong>Un cliente</strong> insultó y amenazó a Tomás en el mesón de atención porque su trámite se demoró.</div>
+      <button class="sticker" type="button" data-st="2">“CLIENTE MOLESTO” · toca para despegar</button></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">Las tres etiquetas tratan los reportes como asuntos menores. ¿Qué debería hacer Camila primero?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Archivarlos: son desacuerdos o situaciones puntuales que se resolverán solos.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Clasificar cada reporte según los elementos legales: quién realiza la conducta, qué ocurrió y qué efecto produjo.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Tratar los tres como acoso laboral, porque todos ocurrieron en el trabajo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: se minimiza un riesgo real.</strong> <span class="fb-body">Una humillación, mensajes sexuales no consentidos y una amenaza no son simples desacuerdos. Archivarlos deja a tres personas sin protección y a la empresa sin cumplir su deber de cuidado.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: una etiqueta equivocada.</strong> <span class="fb-body">Ocurrir en el trabajo no basta para hablar de acoso laboral. Los mensajes sexuales no consentidos son acoso sexual, y la amenaza de un cliente es violencia ejercida por un tercero. Cada conducta tiene su propia definición.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Antes de responder, Camila debe mirar los hechos: quién actúa, qué hizo y qué efecto tuvo. En esta lección aprenderás a distinguir acoso laboral, acoso sexual y violencia de terceros, sin confundirlos con un desacuerdo.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · tres conductas, tres definiciones</span>
+  <h2>¿En qué se diferencian estas conductas?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  <div class="sources">Referencia: Código del Trabajo, art. 2 (modificado por la Ley N°21.643, Ley Karin).</div>
+</section>
+
+<!-- 3 · DEFINICIONES LEGALES -->
+<section class="slide" data-title="Las definiciones" data-audio="p03" data-dur="0:18" data-gate="cloze" data-gate-msg="Completa los seis espacios de las tres definiciones y presiona Comprobar.">
+  <span class="eyebrow">Marco legal · Artículo 2 del Código del Trabajo</span>
+  <h2>Las palabras exactas de la ley</h2>
+  <p>Cada definición tiene elementos que la distinguen. Elige la expresión correcta en cada espacio y luego presiona <strong>Comprobar definiciones</strong>.</p>
+  <div class="cloze">
+    <p class="def"><b class="k">Acoso laboral</b>Toda conducta que constituya agresión u hostigamiento ejercida por el empleador o por uno o más
+      <select id="z1" aria-label="Espacio 1"><option value="">elige…</option><option>clientes</option><option>trabajadores</option><option>sindicatos</option></select>,
+      en contra de otro u otros trabajadores, por cualquier medio, ya sea que se manifieste
+      <select id="z2" aria-label="Espacio 2"><option value="">elige…</option><option>al menos tres veces</option><option>una sola vez</option><option>solo por escrito</option></select> o de manera reiterada,
+      y que tenga como resultado su menoscabo, maltrato o
+      <select id="z3" aria-label="Espacio 3"><option value="">elige…</option><option>desacuerdo</option><option>evaluación</option><option>humillación</option></select>,
+      o bien que amenace o perjudique su situación laboral o sus oportunidades en el empleo.</p>
+    <p class="def"><b class="k">Acoso sexual</b>Que una persona realice, en forma indebida, por cualquier medio, requerimientos de carácter sexual,
+      <select id="z4" aria-label="Espacio 4"><option value="">elige…</option><option>no consentidos</option><option>no denunciados</option><option>presenciales</option></select>
+      por quien los recibe, y que amenacen o perjudiquen su situación laboral o sus oportunidades en el empleo.</p>
+    <p class="def"><b class="k">Violencia ejercida por terceros</b>Conductas que afecten a las trabajadoras y trabajadores,
+      <select id="z5" aria-label="Espacio 5"><option value="">elige…</option><option>fuera</option><option>con ocasión</option><option>al término</option></select> de la prestación de servicios,
+      por parte de
+      <select id="z6" aria-label="Espacio 6"><option value="">elige…</option><option>jefaturas</option><option>compañeros</option><option>clientes</option></select>, proveedores o usuarios, entre otros.</p>
+  </div>
+  <button class="small-btn primary" type="button" id="zCheck" style="margin-top:12px">Comprobar definiciones</button>
+  <div class="fb" id="zFb"></div>
+  <div class="sources">Referencia: Código del Trabajo, art. 2, incisos modificados por la Ley N°21.643 (Ley Karin), vigente desde el 1 de agosto de 2024.</div>
+</section>
+
+<!-- 4 · CONDUCTA Y CATEGORÍA -->
+<section class="slide" data-title="Conducta y categoría" data-audio="p04" data-dur="0:18" data-gate="pairs" data-gate-msg="Une las cinco situaciones con su categoría.">
+  <span class="eyebrow amber">Cinco situaciones, cinco respuestas</span>
+  <h2>¿Qué es cada situación?</h2>
+  <p>Selecciona una situación de la columna izquierda y luego la categoría que le corresponde a la derecha. Ojo: no todo lo que incomoda es acoso.</p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 5</span></div>
+  <div class="pairs"><div id="pl"></div><div id="pr"></div></div>
+  <div class="fb" id="prFb"></div>
+  <div class="sources">Referencia: Código del Trabajo, art. 2 (Ley N°21.643); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</div>
+</section>
+
+<!-- 5 · LAS TRES CONDUCTAS -->
+<section class="slide" data-title="Las tres conductas" data-audio="p05" data-dur="0:15" data-gate="tabs" data-gate-msg="Revisa las tres conductas.">
+  <span class="eyebrow violet">Quién, qué y con qué efecto</span>
+  <h2>Tres conductas contrarias a la dignidad</h2>
+  <p>Selecciona cada conducta para ver sus elementos y el error que conviene evitar al clasificarla.</p>
+  <div class="task" id="tabTask">Conductas revisadas <span class="tick" id="tabTick">1 / 3</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">🧭 Acoso laboral</button><button class="tab" type="button" data-t="1">🚫 Acoso sexual</button><button class="tab" type="button" data-t="2">🏪 Violencia de terceros</button></div>
+  <div class="tabpane active"><div class="photo-frame wide"><img alt="En una sala de reuniones, un supervisor de pie habla con tono duro a una trabajadora mientras el equipo observa incómodo" src="{{IMG:i42_laboral}}"/></div><div><h3 style="margin-top:0">Acoso laboral</h3>
+    <ul class="elem-list"><li><b>Quién:</b> el empleador o uno o más trabajadores (jefaturas, pares o incluso personas a cargo).</li><li><b>Qué:</b> agresión u hostigamiento, por cualquier medio: en persona, por correo o por chat.</li><li><b>Cuántas veces:</b> una sola vez o de manera reiterada.</li><li><b>Efecto:</b> menoscabo, maltrato o humillación, o amenaza o perjuicio a su situación laboral u oportunidades en el empleo.</li></ul>
+    <div class="warn">⚠️ <b>No confundir:</b> asignar tareas, evaluar el desempeño o corregir un error con respeto es ejercicio legítimo de la dirección.</div></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="En un pasillo de oficina, una trabajadora mira su celular con expresión incómoda" src="{{IMG:i42_sexual}}"/></div><div><h3 style="margin-top:0">Acoso sexual</h3>
+    <ul class="elem-list"><li><b>Quién:</b> cualquier persona: una jefatura, un par u otra persona.</li><li><b>Qué:</b> requerimientos de carácter sexual realizados en forma indebida, por cualquier medio (comentarios, mensajes, invitaciones, gestos).</li><li><b>Clave:</b> no son consentidos por quien los recibe.</li><li><b>Efecto:</b> amenazan o perjudican su situación laboral o sus oportunidades en el empleo.</li></ul>
+    <div class="warn">⚠️ <b>No confundir:</b> llamarlo “broma” no cambia su naturaleza. Lo que importa es que la persona no lo consiente.</div></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="En el mesón de atención de una sucursal, un cliente molesto gesticula frente a un trabajador que mantiene la calma" src="{{IMG:i42_terceros}}"/></div><div><h3 style="margin-top:0">Violencia ejercida por terceros</h3>
+    <ul class="elem-list"><li><b>Quién:</b> personas ajenas a la relación laboral: clientes, proveedores o usuarios, entre otros.</li><li><b>Cuándo:</b> con ocasión de la prestación de servicios: en el mesón, en terreno, por teléfono.</li><li><b>Efecto:</b> conductas que afectan a las trabajadoras y trabajadores.</li><li><b>Deber:</b> el empleador debe proteger eficazmente la vida y salud de su equipo, incluidos los riesgos psicosociales.</li></ul>
+    <div class="warn">⚠️ <b>No confundir:</b> un reclamo respetuoso no es violencia; un insulto o una amenaza, sí puede serlo.</div></div></div>
+  <div class="sources">Referencias: Código del Trabajo, arts. 2 y 184 (Ley N°21.643, Ley Karin). El acoso sexual y el laboral pueden ser causal de despido sin indemnización (art. 160 N°1, letras b y f).</div>
+</section>
+
+<!-- 6 · CLASIFICAR RÁPIDO -->
+<section class="slide" data-title="Clasificar rápido" data-audio="p06" data-dur="0:17" data-gate="qf" data-gate-msg="Clasifica las ocho situaciones.">
+  <span class="eyebrow">¿Laboral, sexual o de terceros?</span>
+  <h2>Ocho situaciones, una decisión cada una</h2>
+  <p>Lee cada situación y elige la categoría. Fíjate primero en <strong>quién</strong> realiza la conducta y luego en <strong>qué</strong> hizo. Intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+  <div class="sources">Referencia: Código del Trabajo, art. 2 (Ley N°21.643).</div>
+</section>
+
+<!-- 7 · LOS REPORTES DE CAMILA -->
+<section class="slide" data-title="Los reportes de Camila" data-audio="p07" data-dur="0:17" data-gate="vl" data-gate-msg="Da un veredicto a los cuatro reportes de la bandeja.">
+  <span class="eyebrow amber">Caso aplicado · La bandeja de Camila</span>
+  <h2>Un veredicto para cada reporte</h2>
+  <p>A los tres reportes de la semana se sumó un cuarto. Para cada uno, elige la categoría que corresponde. Revisa <strong>quién</strong> actúa, <strong>qué</strong> hizo y <strong>qué efecto</strong> produjo.</p>
+  <div class="task" id="vlTask">Reportes clasificados <span class="tick" id="vlTick">0 / 4</span></div>
+  <div class="slip vl4" id="vlines"><div class="slip-h"><span>Reportes recibidos · Equipo de Personas</span><span>Horizonte Servicios</span></div></div>
+  <div class="sources">Referencias: Código del Trabajo, art. 2 (Ley N°21.643); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</div>
+</section>
+
+<!-- 8 · UNA SOLA VEZ -->
+<section class="slide" data-title="“Fue solo una vez”" data-audio="p08" data-dur="0:17" data-gate="caso" data-gate-msg="Toma la decisión sobre el Reporte 1.">
+  <span class="eyebrow amber">Caso aplicado · El Reporte 1</span>
+  <h2>“Fue solo una vez”</h2>
+  <div class="callout"><strong>La jefatura del supervisor llama a Camila:</strong> “Lo de Paula fue un mal momento. Pasó una sola vez, así que no puede ser acoso. Mejor que conversen y lo cerramos”.</div>
+  <h3 style="margin-top:16px">¿Qué debería hacer Camila?</h3>
+  <div class="options" data-choice="caso" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Cerrar el reporte: si ocurrió una sola vez, no puede ser acoso laboral.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Tratarlo solo como un conflicto y organizar una conversación entre Paula y el supervisor.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Tratarlo como posible acoso laboral: recibir la denuncia de Paula, informarle el procedimiento y adoptar medidas de resguardo.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se aplica una regla que ya no existe</div><div class="branch-body"><div><p>Desde la Ley Karin, el acoso laboral puede manifestarse <strong>una sola vez</strong> si produce menoscabo, maltrato o humillación. Cerrar el reporte por ese motivo deja a Paula sin protección.</p></div><div><p class="hint">Antes se exigía reiteración. Hoy no.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un hecho grave tratado como desacuerdo</div><div class="branch-body"><div><p>Una conversación sirve para un conflicto. Aquí hay agresión pública, humillación y una amenaza: son elementos de posible acoso laboral. Ponerla frente a frente con el supervisor puede revictimizarla.</p></div><div><p class="hint">Si aparece humillación, se activa el procedimiento.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La conducta reúne los elementos del acoso laboral: la ejerce un trabajador, es una agresión y produjo humillación. Camila recibe la denuncia sin prejuzgar, informa el procedimiento y protege a Paula con medidas de resguardo.</p></div><div><p class="hint">Clasificar bien es el primer paso para proteger.</p></div></div></div></template>
+  <div class="sources">Referencias: Código del Trabajo, arts. 2 y 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:17" data-gate="bins pass" data-gate-msg="Clasifica las ocho situaciones en su columna.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Cómo clasificarías lo que ocurre en tu trabajo?</h2>
+  <p>Estas situaciones podrían ocurrir en cualquier empresa. Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna que corresponde.</p>
+  <div class="task" id="binTask">Situaciones clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins four">
+    <div class="bin b0" data-b="0" role="button" tabindex="0"><h3>🧭 Acoso laboral</h3><p>Agresión u hostigamiento entre personas de la empresa</p></div>
+    <div class="bin b1" data-b="1" role="button" tabindex="0"><h3>🚫 Acoso sexual</h3><p>Requerimientos sexuales no consentidos</p></div>
+    <div class="bin b2" data-b="2" role="button" tabindex="0"><h3>🏪 Violencia de terceros</h3><p>Clientes, proveedores o usuarios</p></div>
+    <div class="bin b3" data-b="3" role="button" tabindex="0"><h3>🤝 No es acoso: se gestiona</h3><p>Conflicto o dirección legítima</p></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <div class="sources">Referencias: Código del Trabajo, art. 2 (Ley N°21.643); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:16" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.2</h2>
+    <p>Ya puedes distinguir el acoso laboral, el acoso sexual y la violencia ejercida por terceros revisando quién actúa, qué ocurrió y qué efecto produjo, sin confundirlos con un desacuerdo.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> clasificar bien no es poner etiquetas; es el primer paso para proteger. Ante la duda, la persona siempre puede denunciar y la empresa debe recibir la denuncia. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar las definiciones</button><button class="small-btn primary" type="button" data-goto="4">Repasar las tres conductas</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 2, 160, 184 y 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l42';
+const FIRST_KEYS=['hook','qf','vl','caso'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Tres reportes',lines:['En una sola semana, Camila recibe tres reportes: la humillación de un supervisor, mensajes sexuales no consentidos y la amenaza de un cliente.','¿Son lo mismo? No. Cada uno tiene su propia definición legal.'],
+  html:`<div class="v-icons"><div><span class="i">🧭</span>Supervisor</div><div><span class="i">💬</span>Compañero</div><div><span class="i">🏪</span>Cliente</div></div><div class="note" data-at="1">Tres conductas distintas</div>`},
+ {t:'Trato libre de violencia',lines:['La Ley Karin exige que las relaciones laborales se funden en un trato libre de violencia, compatible con la dignidad y con perspectiva de género.','Estas tres conductas atentan contra esa dignidad.'],
+  html:`<div class="v-final">Un trato <em>libre de violencia</em></div><div class="v-chk"><span data-at="0">Dignidad</span><span data-at="0">Perspectiva de género</span><span data-at="1">Acoso laboral</span><span data-at="1">Acoso sexual</span><span data-at="1">Violencia de terceros</span></div>`},
+ {t:'Acoso laboral',lines:['Acoso laboral es una agresión u hostigamiento ejercido por el empleador o por uno o más trabajadores, por cualquier medio.','Basta una sola vez si produce menoscabo, maltrato o humillación, o perjudica su situación laboral.'],
+  html:`<div class="v-steps"><div data-at="0">Quién: empleador o trabajadores</div><div data-at="0">Qué: agresión u hostigamiento</div><div data-at="1">Una sola vez o reiterada</div><div data-at="1">Efecto: menoscabo, maltrato o humillación</div></div>`},
+ {t:'Acoso sexual',lines:['Acoso sexual son requerimientos de carácter sexual, realizados en forma indebida y no consentidos por quien los recibe, por cualquier medio.','Amenazan o perjudican su situación laboral o sus oportunidades en el empleo.'],
+  html:`<div style="text-align:center"><span class="v-tag">NO CONSENTIDO</span></div><div class="v-chk"><span data-at="0">Carácter sexual</span><span data-at="0">Cualquier medio</span><span data-at="1">Afecta su situación laboral</span></div>`},
+ {t:'Violencia de terceros',lines:['La violencia en el trabajo también puede venir de afuera: clientes, proveedores o usuarios, entre otros.','Lo decisivo es que afecte a quien trabaja, con ocasión de la prestación de servicios.'],
+  html:`<div class="v-icons"><div><span class="i">🛒</span>Clientes</div><div><span class="i">🚚</span>Proveedores</div><div><span class="i">🧾</span>Usuarios</div></div><div class="note" data-at="1">Con ocasión de la prestación de servicios</div>`},
+ {t:'No todo desacuerdo es acoso',lines:['Una discusión respetuosa sobre prioridades es un conflicto, y corregir un error con respeto es parte de la dirección.','Pero tampoco minimices una conducta grave porque ocurrió solo una vez.'],
+  html:`<div class="v-final"><span class="v-strike" data-at="0">Todo es acoso</span></div><div class="v-final" style="margin-top:14px"><span class="v-strike" data-at="1">“Fue solo una vez”</span></div>`},
+ {t:'Tres preguntas',lines:['Para clasificar, pregúntate:','¿quién realiza la conducta?,','¿qué ocurrió?,','y ¿qué efecto produjo en la persona? Ante la duda, siempre se puede denunciar.'],
+  html:`<div class="v-steps"><div data-at="1">¿Quién realiza la conducta?</div><div data-at="2">¿Qué ocurrió?</div><div data-at="3">¿Qué efecto produjo?</div></div>`}
+]};
+const Q=[
+ {q:'Un supervisor humilla a una trabajadora frente al equipo. Ocurrió una sola vez. Según el Código del Trabajo modificado por la Ley Karin…',o:['no puede ser acoso laboral, porque se exige reiteración.','puede ser acoso laboral: basta una sola vez si produce menoscabo, maltrato o humillación.','es solo un conflicto entre dos personas.'],c:1,f:'La definición actual dice “una sola vez o de manera reiterada”. La reiteración ya no es un requisito.'},
+ {q:'¿Qué elemento es indispensable para que exista acoso sexual?',o:['Que ocurra dentro de la oficina.','Que quien lo realiza sea una jefatura.','Que los requerimientos de carácter sexual no sean consentidos por quien los recibe.','Que exista contacto físico.'],c:2,f:'La ley habla de requerimientos de carácter sexual no consentidos, realizados por cualquier medio y por cualquier persona.'},
+ {q:'Un proveedor amenaza a un bodeguero mientras este recibe un despacho. ¿Cómo se clasifica inicialmente?',o:['Violencia en el trabajo ejercida por terceros.','Acoso laboral.','Conflicto interno entre trabajadores.'],c:0,f:'El proveedor es ajeno a la relación laboral y la amenaza ocurre con ocasión de la prestación de servicios.'},
+ {q:'¿Cuál de estas situaciones, por sí sola, NO constituye acoso ni violencia?',o:['Un compañero sigue enviando bromas sexuales a una colega que le pidió detenerse.','Una jefa ridiculiza a un analista ante todo el equipo.','Un cliente insulta y amenaza a una cajera.','Dos colegas discuten con respeto sobre qué tarea priorizar.'],c:3,f:'Un desacuerdo respetuoso es un conflicto que se gestiona. No hay agresión, hostigamiento ni humillación.'},
+ {q:'Según el Código del Trabajo, el acoso laboral puede ser ejercido por…',o:['solo la jefatura directa.','el empleador o por uno o más trabajadores.','clientes, proveedores o usuarios.'],c:1,f:'Puede venir del empleador o de cualquier trabajador, también de pares. Si viene de clientes o proveedores, es violencia de terceros.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: etiquetas despegables ---------- */
+const peeled=new Set();
+$$('.sticker').forEach(st=>st.addEventListener('click',()=>{st.classList.add('peeled');peeled.add(st.dataset.st);
+  if(peeled.size===3)setTimeout(()=>{const q=$('#hookQ');if(q.hidden){q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})}},500)}));
+
+/* ---------- Completar las definiciones ---------- */
+$('#zCheck').addEventListener('click',()=>{const ans={z1:'trabajadores',z2:'una sola vez',z3:'humillación',z4:'no consentidos',z5:'con ocasión',z6:'clientes'};let ok=0;
+  Object.entries(ans).forEach(([id,v])=>{const s=$('#'+id);const g=s.value===v;s.classList.toggle('good',g);s.classList.toggle('bad',!g);if(g)ok++});
+  if(ok===6){feedback($('#zFb'),true,'Definiciones completas.','El acoso laboral viene de dentro de la empresa y basta una sola vez; el acoso sexual se define por la falta de consentimiento; la violencia de terceros viene de clientes, proveedores o usuarios, con ocasión del trabajo.');done('cloze')}
+  else feedback($('#zFb'),false,`${ok} de 6 correctas.`,'Corrige los espacios marcados en rojo. Pista: piensa en quién actúa, cuántas veces y qué efecto produce.')});
+
+/* ---------- Parejas: conducta ↔ categoría ---------- */
+const PAIRS=[['Una jefa grita a un analista frente al equipo y lo ridiculiza por un error','Acoso laboral'],['Un compañero insiste por chat con invitaciones de carácter sexual pese a las negativas','Acoso sexual'],['Un proveedor amenaza a la recepcionista cuando le pide la guía de despacho','Violencia ejercida por terceros'],['Dos analistas discuten con respeto qué tarea priorizar','Conflicto laboral que se gestiona'],['La jefatura corrige un informe en privado, con observaciones concretas','Ejercicio legítimo de la dirección']];
+const PWHY=['Agresión de una jefatura que produce humillación: acoso laboral.','Requerimientos de carácter sexual no consentidos: acoso sexual.','Quien amenaza es ajeno a la relación laboral: violencia de terceros.','No hay agresión ni humillación: es un desacuerdo que se gestiona.','Corregir con respeto es parte de las facultades de dirección.'];
+const rOrder=[2,4,0,3,1];let selL=null,pDone=0;
+$('#pl').innerHTML=PAIRS.map((p,i)=>`<button class="pl" type="button" data-i="${i}">${p[0]}</button>`).join('');
+$('#pr').innerHTML=rOrder.map(i=>`<button class="pr" type="button" data-i="${i}">${PAIRS[i][1]}</button>`).join('');
+$$('.pl').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;selL=b.dataset.i;$$('.pl').forEach(x=>x.classList.toggle('sel',x===b))}));
+$$('.pr').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;if(selL==null){feedback($('#prFb'),false,'Primero elige una situación.','Selecciona una situación de la columna izquierda.');return}
+  if(b.dataset.i===selL){b.classList.add('done');const l=$(`.pl[data-i="${selL}"]`);l.classList.add('done');l.classList.remove('sel');l.textContent='✓ '+l.textContent;pDone++;
+    $('#prTick').textContent=`${pDone} / 5`;feedback($('#prFb'),true,'Pareja correcta.',PWHY[+selL]);selL=null;if(pDone===5){$('#prTask').classList.add('ok');done('pairs')}}
+  else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');feedback($('#prFb'),false,'No corresponde.','Revisa quién realiza la conducta, qué hizo y si hubo agresión, humillación o un requerimiento sexual no consentido.')}}));
+
+/* ---------- Pestañas: las tres conductas ---------- */
+const tTab=tracker('tabs',3,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tabpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Ronda rápida ---------- */
+const CAT=['acoso laboral','acoso sexual','violencia de terceros'];
+const QF=[['Un jefe ridiculiza a una vendedora por su acento delante de sus compañeros',0,'Lo ejerce una jefatura de la empresa y produce humillación.'],
+ ['Una pasajera insulta y amenaza a un conductor de la empresa al subir al bus',2,'Quien actúa es una usuaria, ajena a la relación laboral.'],
+ ['Un colega envía stickers de connotación sexual a una compañera que le pidió no hacerlo',1,'Son requerimientos de carácter sexual que ella no consiente.'],
+ ['Un paciente insulta y amenaza a una técnica de enfermería durante la atención',2,'El paciente es un usuario y la conducta ocurre con ocasión del servicio.'],
+ ['Varios compañeros esparcen rumores para aislar a un trabajador nuevo',0,'Es hostigamiento ejercido por trabajadores: puede ser acoso laboral.'],
+ ['Un supervisor condiciona un cambio de turno a aceptar una invitación de carácter sexual',1,'Requerimiento sexual no consentido que amenaza su situación laboral.'],
+ ['Un proveedor amenaza a la encargada de bodega porque rechazó un despacho',2,'El proveedor es un tercero ajeno a la relación laboral.'],
+ ['Una gerenta amenaza con despedir a un analista si vuelve a reclamar por sus gritos',0,'Agresión del empleador que amenaza su situación laboral.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente criterio!':'Recuerda: primero mira quién actúa. Si es alguien de la empresa, piensa en acoso laboral o sexual; si es un cliente, proveedor o usuario, en violencia de terceros.'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Situación ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns three"><button type="button" data-v="0">🧭 Acoso laboral</button><button type="button" data-v="1">🚫 Acoso sexual</button><button type="button" data-v="2">🏪 Violencia de terceros</button></div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} Es ${CAT[c[1]]}.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},1500)}))}
+qfRender();
+
+/* ---------- Veredicto por reporte ---------- */
+const VLAB=['Acoso laboral','Acoso sexual','Violencia de terceros','Conflicto: se gestiona'];
+const VL=[['Reporte 1 · Bodega','El supervisor de turno llamó “inútil” a Paula frente al equipo y le dijo que le haría la vida imposible. Ocurrió una vez.',0,'Acoso laboral: agresión de un trabajador que produjo humillación y amenaza su situación laboral. Basta una sola vez.'],
+ ['Reporte 2 · Atención telefónica','Un compañero envía a Javiera mensajes de carácter sexual por chat; ella le pidió que se detuviera.',1,'Acoso sexual: requerimientos de carácter sexual, por cualquier medio, que ella no consiente.'],
+ ['Reporte 3 · Sucursal','Un cliente insultó y amenazó a Tomás en el mesón porque su trámite se demoró.',2,'Violencia ejercida por terceros: el cliente es ajeno a la relación laboral y actuó con ocasión de la atención.'],
+ ['Reporte 4 · Proyectos','Dos coordinadoras discutieron en una reunión qué proyecto priorizar. Ambas se expresaron con respeto.',3,'Conflicto laboral: no hay agresión, hostigamiento ni humillación. Se gestiona con una conversación facilitada o con la jefatura.']];
+$('#vlines').insertAdjacentHTML('beforeend',VL.map((v,i)=>`<div class="vline" data-i="${i}"><span><span class="rk">${v[0]}</span><br/>${v[1]}</span><span class="vb">${VLAB.map((l,k)=>`<button type="button" data-a="${k}">${l}</button>`).join('')}</span><div class="vexp"></div></div>`).join(''));
+let vlN=0,vlFirst=true;
+const VHINT=['¿Quién actúa? Es alguien de la empresa, y hubo agresión con humillación.','¿Qué ocurrió? Hay mensajes de carácter sexual que la persona no consiente.','¿Quién actúa? Es una persona ajena a la empresa.','¿Hubo agresión, hostigamiento o humillación? Aquí no.'];
+$$('#vlines .vline').forEach(l=>$$('.vb button',l).forEach(b=>b.addEventListener('click',()=>{if(l.classList.contains('answered'))return;const i=+l.dataset.i,v=VL[i],ok=+b.dataset.a===v[2];
+  if(ok){l.classList.add('answered');b.classList.add('good');$$('.vb button',l).forEach(x=>x.disabled=true);$('.vexp',l).innerHTML=`<div class="feedback good" style="margin:0">${v[3]}</div>`;vlN++;$('#vlTick').textContent=`${vlN} / 4`;if(vlN===4){S.first.vl=vlFirst;$('#vlTask').classList.add('ok');done('vl')}}
+  else{vlFirst=false;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);l.classList.add('answered');$('.vexp',l).innerHTML=`<div class="feedback bad" style="margin:0">Revisa: ${VHINT[i]}</div>`;setTimeout(()=>l.classList.remove('answered'),1800)}})));
+
+/* ---------- Clasificar en columnas ---------- */
+const CARDS=[['Un compañero se burla a diario de una colega en el chat del equipo y la excluye de las reuniones',0],['Una jefatura insulta a un trabajador delante de sus pares durante una reunión',0],['Una persona recibe comentarios insistentes sobre su cuerpo y propuestas de citas que ya rechazó',1],['Una jefatura insinúa que la renovación de un contrato depende de aceptar una salida a solas',1],['Un usuario insulta y amenaza a una técnica durante una visita a terreno',2],['Un cliente envía audios amenazantes a un ejecutivo por un reclamo',2],['Dos equipos discrepan sobre los plazos de un proyecto y lo conversan en una reunión',3],['Una jefatura asigna una tarea nueva acorde al cargo y explica por qué',3]];
+const BWHY=['Agresión u hostigamiento de personas de la empresa: posible acoso laboral.','Requerimiento de carácter sexual no consentido: posible acoso sexual.','La conducta viene de un tercero, con ocasión del trabajo: violencia de terceros.','No hay agresión ni humillación: es un conflicto o una decisión legítima que se gestiona.'];
+const order=[4,0,6,2,7,5,1,3];let selC=null,placedN=0;
+$('#pool').innerHTML=order.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',BWHY[CARDS[c][1]]);
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,'No corresponde.','Pregúntate: ¿quién realiza la conducta?, ¿qué ocurrió?, ¿produjo humillación, maltrato o un requerimiento sexual no consentido?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+/*{{TAIL}}*/
+})();
+</script>

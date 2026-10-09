@@ -1,0 +1,328 @@
+<title>Lección 4.3 — Prevenir antes de reaccionar</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Lección 4.3: ajustes propios ---- */
+.photo-frame.banner{aspect-ratio:21/9;margin:12px 0 4px}
+.photo-cap{font-size:.85rem;color:var(--muted);font-weight:650;margin:4px 0 0}
+#cmp{min-height:340px}
+#cmp .side p{margin:0;line-height:1.55}
+.plan-head{margin:14px 0 8px;font-weight:850;color:var(--ink)}
+.plan-head b{color:var(--teal-ink)}
+.cloze.plan{font-size:1.02rem;line-height:2.1}
+.cloze.plan ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.cloze.plan select{max-width:100%;white-space:normal}
+.seltable td.sit{min-width:0}
+.seltable .arealbl{display:block;font-size:.78rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:860px){
+  #cmp{min-height:520px}
+  .photo-frame.banner{aspect-ratio:16/10}
+  #seltable tr{display:grid;grid-template-columns:1fr}
+  #seltable td{width:auto!important;border-bottom:none}
+  #seltable tr{border-bottom:1px solid var(--line2)}
+  .cloze.plan select{width:100%}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.3</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:19" data-gate="hook" data-gate-msg="Revisa los cuatro campos de la matriz y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.3 · Prevenir antes de reaccionar</span>
+      <h1 class="reveal">Sin denuncias no significa sin riesgos</h1>
+      <p class="lead reveal">En Horizonte Servicios solo se habla de Ley Karin cuando llega una denuncia. Camila encontró esta matriz del área de <strong>Atención a clientes</strong>. <strong>Haz clic en cada campo</strong> para revisarlo.</p>
+      <div class="form reveal" id="form">
+        <button class="ffield" type="button"><span class="lbl">Peligros identificados</span><span>— sin completar —</span><span class="flag">⚠️ No se identificó ningún peligro, aunque el equipo atiende todos los días a clientes molestos.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Evaluación del riesgo</span><span>“Bajo: no hay denuncias”</span><span class="flag">⚠️ La falta de denuncias no mide el riesgo. Tampoco se analizó quiénes están más expuestos (perspectiva de género).</span></button>
+        <button class="ffield" type="button"><span class="lbl">Medida de control</span><span>Circular anual: “el acoso está prohibido”</span><span class="flag">⚠️ No tiene responsable ni objetivo medible: no se puede saber si funciona.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Seguimiento</span><span>“Revisar si llega una denuncia”</span><span class="flag">⚠️ El seguimiento depende de que el daño ya haya ocurrido.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa una pizarra con notas adhesivas de colores en una sala de reuniones" src="{{IMG:i43_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Cuál es la acción más coherente con una gestión preventiva?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Esperar a que ocurra una denuncia para completar la matriz.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Mapear los riesgos por procesos y áreas, definir medidas y revisar periódicamente su eficacia.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Reforzar la circular anual indicando que el acoso está prohibido.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: se llega tarde.</strong> <span class="fb-body">Si se espera una denuncia, el daño ya ocurrió. La ley exige un protocolo de prevención que identifique peligros y evalúe riesgos antes de que haya casos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: prevención solo en el papel.</strong> <span class="fb-body">Una circular informa una prohibición, pero no identifica peligros del área ni permite medir si el riesgo bajó. Es útil como complemento, no como gestión preventiva.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Prevenir es gestionar el riesgo: identificar peligros por área, evaluar, definir medidas verificables y revisar si funcionan. Eso es lo que verás en esta lección.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 15 s</span>
+  <h2>¿Qué exige la Ley Karin para prevenir?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CONTENIDO MÍNIMO DEL PROTOCOLO -->
+<section class="slide" data-title="Contenido del protocolo" data-audio="p03" data-dur="0:17" data-gate="acc" data-gate-msg="Abre los cinco componentes del protocolo.">
+  <span class="eyebrow">Lección 4.3 · Contenido mínimo del protocolo</span>
+  <h2>Cinco componentes de la gestión preventiva</h2>
+  <p>El artículo 211-A del Código del Trabajo fija qué debe contener el protocolo de prevención. <strong>Haz clic en cada componente</strong> para ver qué exige y cómo se ve en Horizonte Servicios.</p>
+  <div class="task" id="accTask">Componentes revisados <span class="tick" id="accTick">0 / 5</span></div>
+  <div class="acc" id="acc">
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>Identificar peligros y evaluar riesgos<span class="sub">¿Dónde y cómo podría ocurrir acoso o violencia?</span></span><span class="tg">＋</span></button><div class="acc-body">Se analizan, por área y proceso, las situaciones que pueden generar acoso sexual, acoso laboral o violencia de terceros, y se evalúan los <b>riesgos psicosociales</b> asociados, <b>con perspectiva de género</b>: quiénes están más expuestos y por qué.<div class="example"><b>Ejemplo:</b> en el mesón de atención trabajan sobre todo mujeres jóvenes que, al cierre, atienden solas a clientes molestos.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Medidas de prevención y control<span class="sub">¿Qué haremos y cómo sabremos si funciona?</span></span><span class="tg">＋</span></button><div class="acc-body">Las medidas deben ser concretas y tener <b>objetivos medibles</b> que permitan controlar su eficacia y velar por su <b>mejoramiento y corrección continua</b>.<div class="example"><b>Ejemplo:</b> pauta para atender a clientes agresivos, con una persona responsable y un registro de incidentes que muestre si la situación mejora.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Informar y capacitar<span class="sub">¿Qué deben saber las personas trabajadoras?</span></span><span class="tg">＋</span></button><div class="acc-body">Las personas deben conocer los <b>riesgos identificados</b>, las <b>medidas preventivas</b> y sus <b>derechos y responsabilidades</b>. La empresa también debe informar los <b>canales de denuncia</b> y las instituciones públicas para denunciar y acceder a prestaciones de seguridad social y atención psicológica temprana.<div class="example"><b>Ejemplo:</b> una inducción breve para cada área, con los riesgos de ese puesto y dónde denunciar.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">4</span><span>Resguardar la privacidad y la honra<span class="sub">¿Cómo cuidamos a las personas involucradas?</span></span><span class="tg">＋</span></button><div class="acc-body">El protocolo incluye medidas para proteger la <b>privacidad y la honra</b> de todas las personas involucradas: quien denuncia, quien es denunciado y quienes declaran.<div class="example"><b>Ejemplo:</b> los registros de incidentes se guardan con acceso restringido y nunca se comentan casos en reuniones de equipo.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">5</span><span>Mecanismos de seguimiento<span class="sub">¿Quién revisa los resultados y qué se corrige?</span></span><span class="tg">＋</span></button><div class="acc-body">El protocolo debe prever cómo se hará el <b>seguimiento</b>: quién revisa los indicadores, con qué periodicidad (la que defina el propio protocolo) y cómo se ajustan las medidas que no funcionan.<div class="example"><b>Ejemplo:</b> el Equipo de Personas revisa con cada jefatura el registro de incidentes en las fechas fijadas en el protocolo y actualiza la matriz.</div></div></div>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 2, 154 N°12, 184 y 211-A (Ley 21.643, Ley Karin); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · CICLO DE GESTIÓN -->
+<section class="slide" data-title="Ciclo de gestión" data-audio="p04" data-dur="0:16" data-gate="order" data-gate-msg="Ordena los cinco pasos del ciclo y presiona Comprobar orden.">
+  <span class="eyebrow">Lección 4.3 · El ciclo de gestión del riesgo</span>
+  <h2>Prevenir es un ciclo, no un trámite</h2>
+  <div class="grid-2">
+    <div><p>El protocolo se gestiona como cualquier riesgo laboral. Usa las flechas <strong>↑ ↓</strong> para mover cada paso hasta formar la secuencia correcta, de arriba hacia abajo. Luego presiona <strong>Comprobar orden</strong>.</p></div>
+    <div class="photo-frame wide"><img alt="Camila facilita un taller con personas de distintas áreas en el comedor de la empresa" src="{{IMG:i43_taller}}"/></div>
+  </div>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 184 y 211-A (Ley 21.643); Política Nacional de Seguridad y Salud en el Trabajo (D.S. N°2 de 2024).</p>
+</section>
+
+<!-- 5 · RIESGOS POR ÁREA -->
+<section class="slide" data-title="Riesgos por área" data-audio="p05" data-dur="0:17" data-gate="tbl" data-gate-msg="Elige la medida adecuada para las cinco áreas y presiona Comprobar.">
+  <span class="eyebrow">Lección 4.3 · Peligros y medidas por área</span>
+  <h2>Cada área tiene sus propios peligros</h2>
+  <div class="photo-frame banner"><img alt="Dos técnicos de terreno con chaleco reflectante revisan su ruta frente a un edificio residencial al atardecer" src="{{IMG:i43_terreno}}"/></div>
+  <p class="photo-cap">Equipo de Terreno de Horizonte Servicios: trabaja fuera de la empresa, en espacios de clientes.</p>
+  <p>Lee la situación observada en cada área y <strong>elige la medida preventiva</strong> que mejor la controla. Luego presiona <strong>Comprobar</strong>. Las filas en rojo deben corregirse.</p>
+  <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 2 (violencia ejercida por terceros), 184 y 211-A (Ley 21.643, Ley Karin).</p>
+</section>
+
+<!-- 6 · MEDIDA VERIFICABLE -->
+<section class="slide" data-title="Medida verificable" data-audio="p06" data-dur="0:17" data-gate="cmp" data-gate-msg="Desliza el comparador completamente hacia la izquierda.">
+  <span class="eyebrow amber">Lección 4.3 · Medidas con objetivos medibles</span>
+  <h2>De la circular anual a una medida verificable</h2>
+  <p>Ambas versiones buscan prevenir el acoso en el mesón de atención. <strong>Desliza el comparador hacia la izquierda</strong> para ver la medida rediseñada y fíjate en qué cambia.</p>
+  <div class="cmp" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in"><span class="eyebrow">Antes</span><h3>Circular anual</h3><p><b>Qué se hace:</b> un correo cada año que recuerda que el acoso está prohibido.<br/><b>Riesgo que controla:</b> no está definido.<br/><b>Responsable:</b> nadie en particular.<br/><b>Objetivo medible:</b> ninguno.<br/><b>Revisión:</b> no existe; nadie sabe si funcionó.</p></div></div>
+    <div class="side after"><div class="in"><span class="eyebrow amber">Después</span><h3>Medida verificable</h3><p><b>Qué se hace:</b> pauta para atender a clientes agresivos, apoyo de un par y capacitación del equipo del mesón.<br/><b>Riesgo que controla:</b> violencia de clientes en la atención.<br/><b>Responsable:</b> jefatura de Atención con el Equipo de Personas.<br/><b>Objetivo medible:</b> todo el equipo capacitado y un registro de incidentes que muestre la evolución.<br/><b>Revisión:</b> en las fechas que fija el protocolo; si no mejora, se corrige.</p></div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador antes y después"/>
+  <div class="fb" id="cmpFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, art. 211-A letra b (medidas con objetivos medibles y mejora continua), Ley 21.643.</p>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:19" data-gate="caso1" data-gate-msg="Toma la decisión correcta en el caso de Terreno.">
+  <span class="eyebrow amber">El caso de Camila · Equipo de Terreno</span>
+  <h2>“No quiere denunciar, solo pidió no ir sola”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">JT</span> Jefatura de Terreno</div>
+      <div class="bubble"><span class="who">Jefatura</span>Valentina, una técnica, me contó que en un condominio un cliente le hace comentarios de carácter sexual cada vez que va. No quiere presentar una denuncia, solo pidió no ir sola. ¿Qué hacemos?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Camila conversa con la jefatura de Terreno en una oficina pequeña con puerta de vidrio" src="{{IMG:i43_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:14px">¿Qué debería hacer Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Nada por ahora: si Valentina no presenta una denuncia, la empresa no tiene obligación de actuar.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Sacar a Valentina de Terreno y asignarla a bodega con menor remuneración, para que no vuelva a ese cliente.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Registrar el peligro en la matriz de Terreno, aplicar de inmediato una medida (visitas en dupla a ese cliente) e informar a Valentina sus derechos y los canales de denuncia, por si decide usarlos.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el riesgo sigue activo</div><div class="branch-body"><div><p>El deber de protección del empleador (art. 184) y el protocolo de prevención <strong>no dependen de una denuncia</strong>. Ya se conoce un peligro concreto: violencia de un tercero en terreno. Si no se actúa, Valentina y otras técnicas siguen expuestas.</p></div><div><p class="hint">Prevenir no espera una denuncia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se castiga a quien informó</div><div class="branch-body"><div><p>Bajar su remuneración o trasladarla a un puesto inferior le produce <strong>menoscabo</strong> y desalienta que otras personas reporten riesgos. La medida debe controlar el peligro, no perjudicar a quien lo dio a conocer.</p></div><div><p class="hint">La medida actúa sobre el riesgo, no sobre la persona afectada.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila trata el relato como un <strong>peligro identificado</strong>: lo incorpora a la matriz, aplica una medida de control y se asegura de que Valentina conozca sus derechos y los canales. Si Valentina decide denunciar, la empresa debe recibir la denuncia.</p></div><div><p class="hint">Identificar → controlar → informar.</p></div></div></div></template>
+  <p class="sources">Fuente: Código del Trabajo, arts. 2, 184 y 211-A (Ley 21.643, Ley Karin).</p>
+</section>
+
+<!-- 8 · SEGUIMIENTO DEL CASO -->
+<section class="slide" data-title="Seguimiento del caso" data-audio="p08" data-dur="0:17" data-gate="caso2" data-gate-msg="Decide qué hacer con los resultados del seguimiento.">
+  <span class="eyebrow amber">El caso de Camila · Revisión de resultados</span>
+  <h2>La capacitación se hizo, pero el riesgo no bajó</h2>
+  <div class="story"><strong>Algunos meses después:</strong> el equipo de Terreno ya trabaja con visitas en dupla al condominio y todas las personas del mesón de atención fueron capacitadas. Sin embargo, el registro de incidentes del mesón muestra que los episodios de insultos de clientes <strong>no han disminuido</strong>.</div>
+  <h3 style="margin-top:14px">¿Qué hace Camila con ese resultado?</h3>
+  <div class="options" data-choice="caso2" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Vuelve a evaluar el riesgo con el equipo del mesón, ajusta las medidas y pide asistencia técnica a la mutualidad de la empresa.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Da la medida por cumplida: la capacitación ya se hizo y eso fue lo comprometido.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Deja de llevar el registro de incidentes, porque genera alarma en el equipo.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se cumple la actividad, no el objetivo</div><div class="branch-body"><div><p>Haber capacitado no significa que el riesgo esté controlado. El objetivo medible existe justamente para detectar que la medida <strong>no está funcionando</strong> y corregirla.</p></div><div><p class="hint">La ley pide mejora y corrección continua.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde el seguimiento</div><div class="branch-body"><div><p>Sin registro no hay forma de saber si las medidas sirven. El protocolo exige <strong>mecanismos de seguimiento</strong>; eliminar el indicador solo oculta el problema.</p></div><div><p class="hint">Lo que no se mide, no se puede corregir.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>El seguimiento mostró que la medida no basta, así que Camila <strong>vuelve al inicio del ciclo</strong>: evalúa de nuevo y ajusta. Las mutualidades y el ISL, como organismos administradores de la Ley 16.744, prestan asistencia técnica para la prevención.</p></div><div><p class="hint">Seguimiento → corrección → nueva evaluación.</p></div></div></div></template>
+  <p class="sources">Fuente: Código del Trabajo, art. 211-A (Ley 21.643, Ley Karin); Ley 16.744 (organismos administradores).</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:16" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:16" data-gate="cloze pass" data-gate-msg="Elige un área y completa correctamente el plan preventivo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Tu plan preventivo para un área</h2>
+  <p><strong>1.</strong> Elige un área que conozcas. <strong>2.</strong> Completa el plan eligiendo la opción correcta en cada espacio. <strong>3.</strong> Presiona <strong>Comprobar plan</strong>.</p>
+  <div class="chips2" id="areaChips">
+    <button class="chip2" type="button" data-a="0">Atención a clientes</button>
+    <button class="chip2" type="button" data-a="1">Terreno</button>
+    <button class="chip2" type="button" data-a="2">Oficina</button>
+    <button class="chip2" type="button" data-a="3">Turno nocturno</button>
+  </div>
+  <p class="plan-head" id="planHead">Plan preventivo · <b>elige un área</b></p>
+  <div class="cloze plan"><ol>
+    <li>Identifico los peligros <select id="z1" aria-label="Cómo identifico los peligros"><option value="">elige…</option><option>revisando solo las denuncias del último año</option><option>conversando con las personas del área y observando sus tareas e interacciones</option><option>según la opinión de la gerencia</option></select></li>
+    <li>Evalúo los riesgos psicosociales <select id="z2" aria-label="Cómo evalúo los riesgos"><option value="">elige…</option><option>con perspectiva de género, considerando quiénes están más expuestos</option><option>solo si hubo una denuncia</option><option>según la antigüedad de cada persona</option></select></li>
+    <li>Defino una medida <select id="z3" aria-label="Cómo defino la medida"><option value="">elige…</option><option>general, igual para todas las áreas</option><option>sin responsable, para no recargar a nadie</option><option>concreta, con responsable y un objetivo medible</option></select></li>
+    <li>Informo y capacito sobre <select id="z4" aria-label="Sobre qué informo y capacito"><option value="">elige…</option><option>las sanciones aplicadas a otras personas</option><option>los riesgos, las medidas, los derechos y responsabilidades, y los canales de denuncia</option><option>solo el texto del reglamento interno</option></select></li>
+    <li>En todo momento resguardo <select id="z5" aria-label="Qué resguardo"><option value="">elige…</option><option>la privacidad y la honra de las personas involucradas</option><option>la difusión de los casos como ejemplo</option><option>la rapidez por sobre la reserva</option></select></li>
+    <li>Hago seguimiento <select id="z6" aria-label="Cómo hago seguimiento"><option value="">elige…</option><option>solo cuando llega una denuncia</option><option>una vez, al aprobar el protocolo</option><option>revisando el indicador y corrigiendo la medida si no funciona</option></select></li>
+  </ol></div>
+  <button class="small-btn primary" type="button" id="zCheck" style="margin-top:12px">Comprobar plan</button>
+  <div class="fb" id="zFb"></div>
+  <div id="zModel" hidden class="callout"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Fuente: Código del Trabajo, art. 211-A (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:17" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.3</h2>
+    <p>Ya puedes mirar el acoso y la violencia como riesgos que se gestionan: identificar peligros, evaluar con perspectiva de género, definir medidas verificables, informar y capacitar, resguardar a las personas y hacer seguimiento.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="2">Repasar el contenido del protocolo</button><button class="small-btn" type="button" data-goto="4">Repasar riesgos por área</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 2, 154, 184, 211-A a 211-E (Ley 21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l43';
+const FIRST_KEYS=['hook','caso1','caso2'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'No esperar la denuncia',lines:['La Ley Karin no se activa solo cuando llega una denuncia.','Todo empleador debe elaborar, dar a conocer e implementar un protocolo de prevención del acoso y la violencia en el trabajo.'],
+  html:`<div class="v-icons"><div><span class="i">📨</span>Denuncia</div><div><span class="i">≠</span></div><div class="dim" data-at="1"><span class="i">🛡️</span>Prevención</div></div><div class="note" data-at="1">Protocolo de prevención · art. 211-A</div>`},
+ {t:'Peligros y riesgos',lines:['El primer contenido del protocolo es identificar los peligros y evaluar los riesgos psicosociales asociados,','siempre con perspectiva de género: quién está más expuesto y por qué.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Atención a clientes</span><span class="on">Terreno</span><span class="on">Oficina</span><span class="on">Turno nocturno</span></div><div class="v-sub fadein" data-at="1">Perspectiva de género: ¿quién está más expuesto?</div>`},
+ {t:'Medidas medibles',lines:['Luego, el protocolo define medidas para prevenir y controlar esos riesgos,','con objetivos medibles que permitan controlar su eficacia y corregirlas de forma continua.'],
+  html:`<div class="v-icons"><div><span class="i">🧩</span>Medida</div><div class="dim" data-at="1"><span class="i">🎯</span>Objetivo medible</div><div class="dim" data-at="1"><span class="i">🔁</span>Mejora continua</div></div>`},
+ {t:'Informar y capacitar',lines:['Las personas deben conocer los riesgos identificados, las medidas preventivas, sus derechos y responsabilidades,','y también los canales para denunciar y las instituciones públicas a las que pueden acudir.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Riesgos</span><span class="on">Medidas</span><span class="on">Derechos</span><span class="on">Responsabilidades</span><span data-at="1">Canales de denuncia</span><span data-at="1">Instituciones públicas</span></div>`},
+ {t:'Privacidad y honra',lines:['El protocolo incluye medidas para resguardar la privacidad y la honra de todas las personas involucradas.','Prevenir no es exponer casos ni buscar culpables.'],
+  html:`<div class="v-big">🔒</div><div class="v-sub">Privacidad y honra</div><div class="note" data-at="1">Prevenir ≠ exponer casos</div>`},
+ {t:'Seguimiento',lines:['Por último, se necesitan mecanismos de seguimiento.','Identificar, evaluar, definir medidas, informar y revisar: un ciclo que vuelve a empezar.'],
+  html:`<div class="v-steps"><div data-at="1">Identificar peligros</div><div data-at="1">Evaluar riesgos</div><div data-at="1">Definir medidas</div><div data-at="1">Informar y capacitar</div><div data-at="0">Seguimiento y mejora</div></div>`},
+ {t:'Apoyo y reglamento',lines:['El protocolo se incorpora al reglamento interno de orden, higiene y seguridad.','Las mutualidades y el Instituto de Seguridad Laboral entregan asistencia técnica y modelos de protocolo, muy útiles para empresas pequeñas.'],
+  html:`<div class="v-icons"><div><span class="i">📘</span>Reglamento interno</div><div class="dim" data-at="1"><span class="i">🤝</span>Mutualidades e ISL</div></div><div class="v-final fadein" data-at="1" style="margin-top:14px">Prevenir <em>antes</em> de reaccionar</div>`}
+]};
+const Q=[
+ {q:'¿Cuándo debe una empresa gestionar los riesgos de acoso y violencia en el trabajo?',o:['Solo cuando recibe una denuncia.','En forma permanente, mediante su protocolo de prevención, haya o no denuncias.','Una vez al año, enviando una circular.'],c:1,f:'El protocolo de prevención es obligatorio para todo empleador y se gestiona como cualquier riesgo laboral, sin esperar denuncias.'},
+ {q:'Según el artículo 211-A, ¿qué debe considerar la identificación de peligros y evaluación de riesgos?',o:['Solo los riesgos físicos del puesto.','Únicamente las denuncias de años anteriores.','Los riesgos psicosociales asociados, con perspectiva de género.'],c:2,f:'La ley exige evaluar los riesgos psicosociales asociados al acoso y la violencia, con perspectiva de género.'},
+ {q:'¿Qué caracteriza a una medida preventiva bien diseñada?',o:['Tiene objetivos medibles que permiten controlar su eficacia y corregirla.','Se comunica una sola vez por correo.','Depende solo de la buena voluntad de las jefaturas.','Se aplica únicamente en el área con más denuncias.'],c:0,f:'El protocolo pide medidas con objetivos medibles para controlar su eficacia y velar por su mejoramiento y corrección continua.'},
+ {q:'¿Qué deben conocer las personas trabajadoras según el protocolo?',o:['Solo el nombre de la persona encargada de Personas.','Las sanciones aplicadas a otros trabajadores.','Únicamente el reglamento de higiene y seguridad.','Los riesgos identificados, las medidas preventivas, sus derechos y responsabilidades, y los canales de denuncia.'],c:3,f:'Informar y capacitar incluye riesgos, medidas, derechos y responsabilidades; además, la empresa debe informar los canales de denuncia y las instituciones públicas.'},
+ {q:'Una empresa pequeña no sabe cómo elaborar su protocolo. ¿Dónde puede obtener asistencia técnica?',o:['En ninguna parte: debe contratar una consultora.','En su organismo administrador de la Ley 16.744 (mutualidad o ISL).','En el sindicato de otra empresa.'],c:1,f:'Las mutualidades y el ISL prestan asistencia técnica y entregan modelos de protocolo.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: matriz por revisar ---------- */
+const ff=$$('#form .ffield');
+ff.forEach(f=>f.addEventListener('click',()=>{f.classList.add('open');if(ff.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Acordeón: contenido mínimo ---------- */
+const tAcc=tracker('acc',5,'#accTick','#accTask');
+$$('#acc .acc-item').forEach((it,k)=>it.querySelector('.acc-head').addEventListener('click',()=>{it.classList.toggle('open');it.classList.add('seen');tAcc(k)}));
+
+/* ---------- Ordenar pasos: ciclo de gestión ---------- */
+const ORDER=['Identificar los peligros en cada área y proceso, conversando con quienes trabajan ahí.','Evaluar los riesgos psicosociales asociados, con perspectiva de género.','Definir medidas de prevención y control, con responsable y objetivo medible.','Informar y capacitar sobre riesgos, medidas, derechos y canales de denuncia.','Hacer seguimiento: medir la eficacia, corregir y volver a evaluar.'];
+let cur=[3,0,4,1,2];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se identifica y evalúa; con esa información se definen medidas, se informa a las personas y se hace seguimiento. Si el seguimiento muestra que algo no funciona, el ciclo vuelve a empezar.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Pregúntate: ¿puedo definir una medida sin saber antes qué riesgo controla? Ajusta y vuelve a comprobar.`)});
+
+/* ---------- Tabla con selectores: riesgos por área ---------- */
+const MED=['Pauta para atender a clientes agresivos, apoyo de un par y registro de incidentes','Visitas en dupla o contacto de verificación durante la visita, y canal de alerta','Formación de jefaturas en trato respetuoso y difusión del canal de denuncia','Iluminación y acompañamiento en espacios aislados, y canal de denuncia disponible en ese turno','Pauta para terminar llamadas abusivas y pausa de recuperación después de ellas'];
+const ROWS=[['Atención a clientes (mesón)','Clientes molestos levantan la voz e insultan al equipo cuando hay demoras.',0,'Es violencia ejercida por terceros: se controla con una pauta de atención, apoyo de un par y un registro que permita medir la evolución.'],
+ ['Terreno','Técnicas visitan solas los domicilios de clientes; una relata comentarios de carácter sexual.',1,'El trabajo en solitario en espacios del cliente aumenta la exposición: visitas en dupla o contacto de verificación reducen el riesgo.'],
+ ['Oficina','Una jefatura corrige errores con burlas frente al equipo.',2,'Corregir es una facultad legítima, pero con respeto. Formar a las jefaturas y difundir el canal previene el acoso laboral.'],
+ ['Turno nocturno','Pocas personas en el edificio; pasillos y estacionamiento con poca luz.',3,'El aislamiento y la poca supervisión aumentan el riesgo: se actúa sobre el espacio y se asegura un canal accesible en ese horario.'],
+ ['Central telefónica','Ejecutivas y ejecutivos reciben llamadas con insultos y amenazas.',4,'La violencia de usuarios también ocurre por teléfono: una pauta para cortar llamadas abusivas y pausas de recuperación la controlan.']];
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td class="sit"><span class="arealbl">${r[0]}</span><b>${r[1]}</b><span class="why" hidden></span></td><td style="width:260px"><select aria-label="Medida para ${r[0]}"><option value="">Elige una medida…</option>${MED.map((m,k)=>`<option value="${k}">${m}</option>`).join('')}</select></td></tr>`).join('');
+$('#tblCheck').addEventListener('click',()=>{let ok=0;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[2];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent=r[3];if(g)ok++});
+  if(ok===5){feedback($('#tblFb'),true,'¡Todo correcto!','Cada área tiene peligros distintos y, por eso, medidas distintas. Una misma circular no controla riesgos tan diferentes.');done('tbl')}
+  else feedback($('#tblFb'),false,`${ok} de 5 correctas.`,'Corrige las filas en rojo (o sin respuesta): busca la medida que actúa directamente sobre la situación descrita.')});
+
+/* ---------- Comparador antes/después ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');feedback($('#cmpFb'),true,'Ahora sí se puede verificar.','La medida rediseñada dice qué riesgo controla, quién responde, cómo se mide y cuándo se revisa. Así la empresa puede demostrar que previene y corregir lo que no funciona.')}}});
+
+/* ---------- Transferencia: plan preventivo ---------- */
+const AREAS=['Atención a clientes','Terreno','Oficina','Turno nocturno'];
+const MODEL=['<strong>Ejemplo · Atención a clientes:</strong> peligro: insultos y amenazas de clientes en horas de alta demanda. Evaluación: quiénes atienden solas o solos y en qué horario. Medida: pauta para clientes agresivos y apoyo de un par, a cargo de la jefatura de Atención; objetivo: todo el equipo capacitado y registro de incidentes al día. Seguimiento: revisar el registro en las fechas del protocolo y ajustar.',
+ '<strong>Ejemplo · Terreno:</strong> peligro: visitas en solitario a domicilios de clientes. Evaluación: qué personas van solas y a qué lugares, con perspectiva de género. Medida: visitas en dupla a clientes con antecedentes y contacto de verificación; responsable: jefatura de Terreno. Seguimiento: revisar reportes de visitas y corregir rutas o parejas.',
+ '<strong>Ejemplo · Oficina:</strong> peligro: trato hostil al corregir errores. Evaluación: equipos con alta presión y quiénes reciben más correcciones. Medida: formación de jefaturas en retroalimentación respetuosa y difusión del canal de denuncia; responsable: Equipo de Personas. Seguimiento: revisar consultas y reportes, y reforzar donde sea necesario.',
+ '<strong>Ejemplo · Turno nocturno:</strong> peligro: aislamiento y poca supervisión en espacios con poca luz. Evaluación: quiénes trabajan solas o solos y sus trayectos. Medida: mejorar iluminación, acompañamiento en espacios aislados y canal accesible en ese turno; responsable: jefatura del turno. Seguimiento: revisar incidentes y el estado de las mejoras.'];
+let area=-1;
+$$('#areaChips .chip2').forEach(c=>c.addEventListener('click',()=>{area=+c.dataset.a;$$('#areaChips .chip2').forEach(x=>x.classList.toggle('on',x===c));$('#planHead').innerHTML=`Plan preventivo · <b>${AREAS[area]}</b>`;if(!$('#zModel').hidden)$('#zModel').innerHTML=MODEL[area]}));
+const ZANS={z1:'conversando con las personas del área y observando sus tareas e interacciones',z2:'con perspectiva de género, considerando quiénes están más expuestos',z3:'concreta, con responsable y un objetivo medible',z4:'los riesgos, las medidas, los derechos y responsabilidades, y los canales de denuncia',z5:'la privacidad y la honra de las personas involucradas',z6:'revisando el indicador y corrigiendo la medida si no funciona'};
+$('#zCheck').addEventListener('click',()=>{if(area<0){feedback($('#zFb'),false,'Primero elige un área.','Selecciona arriba el área en la que piensas aplicar el plan.');return}
+  let ok=0;Object.entries(ZANS).forEach(([id,v])=>{const s=$('#'+id);const g=s.value===v;s.classList.toggle('good',g);s.classList.toggle('bad',!g);if(g)ok++});
+  if(ok===6){feedback($('#zFb'),true,'Plan completo.','Tu plan recorre los cinco componentes del protocolo: identificar y evaluar, medidas verificables, informar y capacitar, resguardar a las personas y hacer seguimiento.');$('#zModel').innerHTML=MODEL[area];$('#zModel').hidden=false;done('cloze')}
+  else feedback($('#zFb'),false,`${ok} de 6 correctas.`,'Corrige los espacios en rojo. Pista: una medida preventiva no depende de que exista una denuncia y debe poder medirse.')});
+/*{{TAIL}}*/
+})();
+</script>

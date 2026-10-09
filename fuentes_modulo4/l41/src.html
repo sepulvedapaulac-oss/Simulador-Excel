@@ -1,0 +1,342 @@
+<title>Lección 4.1 — El derecho a trabajar en un entorno seguro</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.survey{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.survey span{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--amber-soft);color:var(--amber-ink);font-weight:800;font-size:.84rem}
+.phone.chat{min-height:440px;max-width:320px}
+.phone .chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #d7e2e6;font-weight:900;color:#173f4e;font-size:.9rem}
+.phone .chat-h .av{width:30px;height:30px;border-radius:50%;background:#173f4e;color:#fff;display:grid;place-items:center;font-size:.72rem;flex:none}
+.phone .chat-h small{display:block;font-weight:700;color:#5f7180;font-size:.7rem}
+.phone .cmsg{background:#fff;border:1px solid #c9d6dc;border-radius:14px 14px 14px 4px;padding:9px 12px;font-size:.86rem;max-width:88%;align-self:flex-start;animation:rise .35s ease both;color:#172431}
+.phone .cmsg.me{background:#d8f3ef;border-color:#a9dbd7;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.phone .cmsg time{display:block;font-size:.66rem;color:#5f7180;text-align:right;margin-top:2px}
+.phone .dots{display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid #c9d6dc;width:max-content}
+.phone .dots span{width:7px;height:7px;border-radius:50%;background:#5f7180;animation:blink 1s infinite}
+.phone .dots span:nth-child(2){animation-delay:.2s}.phone .dots span:nth-child(3){animation-delay:.4s}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-radius:16px;padding:12px;font-size:.86rem;color:#172431}
+.phone .grow{flex:1}
+.flipdeck .face .def{font-size:.9rem;color:var(--ink2)}
+.flipdeck .face .tagk{align-self:flex-start;font-size:.72rem;font-weight:900;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
+.hs-panel .todo{margin-top:8px;padding:9px 12px;border-radius:12px;background:var(--good-soft);color:var(--good);font-weight:700;font-size:.9rem}
+.hs-panel .kind{display:inline-block;margin-bottom:6px;padding:3px 10px;border-radius:999px;background:var(--amber-soft);color:var(--amber-ink);font-weight:850;font-size:.78rem}
+#tiles .tile.open{background:var(--good-soft);color:var(--good);border:2px solid var(--good-line)}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.minilist{margin:.5rem 0 0;padding-left:1.1rem}
+@media(max-width:860px){.hook-grid,.case-head{grid-template-columns:1fr}.flipdeck{grid-template-columns:1fr}}
+@media(min-width:861px){.flipdeck.six{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.1</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:18" data-gate="hook" data-gate-msg="Abre el mensaje de la gerencia y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.1 · El derecho a trabajar en un entorno seguro</span>
+      <h1 class="reveal">La prevención comienza antes de una denuncia</h1>
+      <p class="lead reveal">Camila, del Equipo de Personas de <strong>Horizonte Servicios</strong>, terminó de revisar la encuesta interna de clima. No hay ninguna denuncia formal, pero las respuestas muestran tres señales repetidas:</p>
+      <div class="survey reveal"><span>📢 Gritos de clientes</span><span>😶 Bromas humillantes</span><span>🤐 Temor a denunciar</span></div>
+      <p class="reveal" style="margin-top:12px">La gerencia le escribe por chat. <strong>Presiona “Abrir mensaje” en el celular para leerlo.</strong></p>
+      <div class="photo-frame reveal"><img alt="Camila revisa en su notebook los resultados de una encuesta interna, con el celular en la mano, en una oficina con luz natural" src="{{IMG:i41_hero}}"/></div>
+    </div>
+    <div class="phone chat reveal" id="phone"></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería responder Camila a la gerencia?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí, esperemos. Mientras no exista una denuncia formal, la empresa no tiene nada que hacer.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“No esperemos: revisemos los riesgos que muestra la encuesta, reforcemos las medidas del protocolo de prevención y recordemos a todos los canales de denuncia y de apoyo.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Pidamos a cada equipo que lo resuelva entre ellos, de manera informal, para no hacer más grande el tema.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el riesgo sigue creciendo</div><div class="branch-body"><div><p>Pasan los meses y nada cambia. Las personas que temían denunciar siguen sin hacerlo y el desgaste aumenta. El deber de protección del empleador es <strong>preventivo</strong>: obliga a identificar y controlar los riesgos, no solo a reaccionar cuando llega una denuncia.</p></div><div><p class="hint">La ausencia de denuncias no significa ausencia de riesgo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>Las relaciones laborales deben fundarse en un <strong>trato libre de violencia</strong>, compatible con la dignidad y con perspectiva de género. Por eso la empresa debe <strong>proteger eficazmente</strong> a las personas (art. 184) y gestionar un <strong>protocolo de prevención</strong> (art. 211-A) sin esperar una denuncia.</p></div><div><p class="hint">En esta lección verás qué derecho está en juego y qué debe hacer la empresa.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la responsabilidad se traslada a quien sufre el problema</div><div class="branch-body"><div><p>Dejarlo “entre ellos” deja solas a las personas afectadas, justo cuando la encuesta dice que tienen temor. La prevención es una <strong>obligación del empleador</strong>: debe evaluar los riesgos, adoptar medidas y asegurar canales conocidos y confiables.</p></div><div><p class="hint">Gestionar no es delegar el problema en los equipos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 20 s</span>
+  <h2>¿Qué derecho protege la Ley Karin y qué debe hacer la empresa?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CONCEPTOS CLAVE -->
+<section class="slide" data-title="Conceptos clave" data-audio="p03" data-dur="0:17" data-gate="cards" data-gate-msg="Voltea las seis tarjetas para conocer cada concepto.">
+  <span class="eyebrow">Lección 4.1 · Un derecho y tres conductas</span>
+  <h2>¿Qué significa trabajar en un entorno seguro?</h2>
+  <p>Toca cada tarjeta para voltearla. En el frente verás el concepto; al reverso, lo que dice la ley. <strong>Voltea las seis.</strong></p>
+  <div class="task" id="fcTask">Conceptos revisados <span class="tick" id="fcTick">0 / 6</span></div>
+  <div class="flipdeck six">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="tagk">El derecho</span><div class="big">🕊️</div><strong>Trato libre de violencia</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Artículo 2 del Código del Trabajo</strong><span class="def">Las relaciones laborales deben fundarse siempre en un <b>trato libre de violencia</b>, <b>compatible con la dignidad</b> de la persona y con perspectiva de género.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="tagk">El derecho</span><div class="big">⚖️</div><strong>Perspectiva de género</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Igualdad y no discriminación</strong><span class="def">Implica adoptar medidas para <b>promover la igualdad</b> y <b>erradicar la discriminación</b> por motivo de género. También se aplica al evaluar los riesgos.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="tagk">Conducta 1</span><div class="big">🚫</div><strong>Acoso sexual</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Requerimientos sexuales no consentidos</strong><span class="def">Requerimientos de carácter sexual, por cualquier medio, <b>no consentidos</b> por quien los recibe, que amenazan o perjudican su situación laboral o sus oportunidades en el empleo.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="tagk">Conducta 2</span><div class="big">⚠️</div><strong>Acoso laboral</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Agresión u hostigamiento</strong><span class="def">Del empleador o de otros trabajadores, que produce menoscabo, maltrato o humillación, o perjudica la situación laboral. <b>Puede bastar una sola vez</b>; ya no se exige reiteración.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="tagk">Conducta 3</span><div class="big">🗣️</div><strong>Violencia de terceros</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Personas ajenas a la relación laboral</strong><span class="def">Conductas de <b>clientes, proveedores o usuarios</b>, entre otros, que afectan a las personas trabajadoras con ocasión de su trabajo. Los gritos de un cliente pueden estar aquí.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><span class="tagk">La obligación</span><div class="big">🛡️</div><strong>Deber de protección</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Artículo 184 del Código del Trabajo</strong><span class="def">El empleador debe tomar <b>todas las medidas necesarias</b> para proteger eficazmente la vida y salud de las personas trabajadoras, <b>incluidos los riesgos psicosociales</b>.</span></div></div></button>
+  </div>
+  <div class="feedback good" id="fcDone" hidden><strong>Tres conductas, un mismo derecho.</strong> <span class="fb-body">El acoso sexual, el acoso laboral y la violencia de terceros son contrarios a la dignidad de la persona. Desde el <b>1 de agosto de 2024</b>, con la Ley Karin, el empleador debe prevenirlos, investigarlos y sancionarlos.</span></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 2 y 184 (Ley N°21.643, Ley Karin, vigente desde el 1 de agosto de 2024).</p>
+</section>
+
+<!-- 4 · SEÑALES DE RIESGO -->
+<section class="slide" data-title="Señales de riesgo" data-audio="p04" data-dur="0:18" data-gate="hs" data-gate-msg="Explora los cinco puntos de la sala de atención.">
+  <span class="eyebrow amber">Lección 4.1 · Señales antes de una denuncia</span>
+  <h2>Lo que la encuesta describía, visto en un día de trabajo</h2>
+  <p>Esta es la sala de atención a clientes de Horizonte Servicios. <strong>Haz clic en cada número</strong>: verás qué señal de riesgo aparece y qué debería hacer la empresa, aunque nadie haya denunciado.</p>
+  <div class="task" id="hsTask">Señales exploradas <span class="tick" id="hsTick">0 / 5</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Sala de atención a clientes: un cliente alza la voz frente al mesón, una trabajadora lo atiende tensa, al fondo un grupo de colegas ríe mirando un celular mientras otra persona baja la mirada, un diario mural vacío en la pared y una persona duda en el pasillo frente a una puerta cerrada" src="{{IMG:i41_meson}}"/>
+      <button class="hs" type="button" style="left:17%;top:38%" data-hs="0" aria-label="Punto 1">1</button>
+      <button class="hs" type="button" style="left:35%;top:62%" data-hs="1" aria-label="Punto 2">2</button>
+      <button class="hs" type="button" style="left:67%;top:34%" data-hs="2" aria-label="Punto 3">3</button>
+      <button class="hs" type="button" style="left:50%;top:15%" data-hs="3" aria-label="Punto 4">4</button>
+      <button class="hs" type="button" style="left:88%;top:62%" data-hs="4" aria-label="Punto 5">5</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 2, 184 y 211-A (Ley N°21.643, Ley Karin).</p>
+</section>
+
+<!-- 5 · IDEAS EQUIVOCADAS -->
+<section class="slide" data-title="Mitos frecuentes" data-audio="p05" data-dur="0:15" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow violet">Lección 4.1 · Ideas equivocadas sobre la prevención</span>
+  <h2>“Si nadie ha denunciado, no hay nada que hacer”</h2>
+  <p>En el comité de gerencia aparecen varias frases. Decide si cada afirmación es <strong>verdadera o falsa</strong> y lee la explicación antes de pasar a la siguiente.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 2, 184 y 211-A (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 6 · OBLIGACIONES DEL EMPLEADOR -->
+<section class="slide" data-title="Obligaciones del empleador" data-audio="p06" data-dur="0:14" data-gate="tiles" data-gate-msg="Descubre las ocho fichas.">
+  <span class="eyebrow">Lección 4.1 · El protocolo de prevención</span>
+  <h2>¿Qué debe hacer la empresa para prevenir?</h2>
+  <p>Todo empleador debe <strong>elaborar, dar a conocer e implementar</strong> un protocolo de prevención del acoso sexual, el acoso laboral y la violencia en el trabajo (art. 211-A). <strong>Toca cada ficha</strong> para descubrir una obligación.</p>
+  <div class="task" id="tlTask">Obligaciones descubiertas <span class="tick" id="tlTick">0 / 8</span></div>
+  <div class="tiles" id="tiles"></div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Toca una ficha para ver el detalle.</p></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 154 N°12, 184 y 211-A (Ley N°21.643, Ley Karin); Ley N°16.744.</p>
+</section>
+
+<!-- 7 · CASO APLICADO (1) -->
+<section class="slide" data-title="Caso: el primer paso" data-audio="p07" data-dur="0:15" data-gate="caso1" data-gate-msg="Elige el primer paso correcto para Camila.">
+  <span class="eyebrow amber">Lección 4.1 · El caso de Horizonte Servicios</span>
+  <h2>La gerencia pide una propuesta</h2>
+  <div class="case-head">
+    <div class="story" style="margin:0">Camila presenta los resultados de la encuesta a la gerencia y a la jefatura de Atención a Clientes. El 38% de quienes atienden público dice haber recibido gritos o insultos de clientes en el último mes; varias personas mencionan bromas humillantes en su equipo y dicen que no denuncian “por miedo a quedar mal”. <strong>Elige qué debería proponer Camila como primer paso.</strong></div>
+    <div class="photo-frame"><img alt="Camila presenta resultados en una sala de reuniones a un gerente y a una jefatura de atención a clientes" src="{{IMG:i41_reunion}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué propone Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Actualizar la evaluación de riesgos psicosociales del protocolo con estos resultados, con perspectiva de género, y definir medidas con objetivos medibles y seguimiento.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pedir los nombres de quienes respondieron la encuesta para citarlos y pedirles que presenten una denuncia.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Repetir la encuesta el próximo año para ver si la situación empeora antes de hacer cambios.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>El protocolo se gestiona como cualquier riesgo laboral: <strong>identificar, evaluar, definir medidas, informar y capacitar, y hacer seguimiento</strong>. La encuesta es un insumo valioso para esa evaluación y para medir si las medidas funcionan.</p></div><div><p class="hint">Continúa: dos semanas después ocurre un incidente.</p></div></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se rompe la confianza</div><div class="branch-body"><div><p>Identificar a quienes respondieron y presionarlos para denunciar vulnera la <strong>privacidad</strong> que el protocolo debe resguardar y aumenta el temor que ya mostraba la encuesta. Denunciar es una decisión de la persona afectada; la empresa debe prevenir igual.</p></div><div><p class="hint">La prevención no depende de que alguien denuncie.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un año más de exposición</div><div class="branch-body"><div><p>Las señales ya están identificadas. Esperar un año deja a las personas expuestas sin medidas. El deber del artículo 184 exige <strong>proteger eficazmente</strong>, y el protocolo pide medidas de prevención y control, no solo medir.</p></div><div><p class="hint">Medir sirve para controlar las medidas, no para postergarlas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <p class="sources">Referencias: Código del Trabajo, arts. 184 y 211-A (Ley N°21.643, Ley Karin).</p>
+</section>
+
+<!-- 8 · CASO APLICADO (2) -->
+<section class="slide" data-title="Caso: un incidente" data-audio="p08" data-dur="0:15" data-gate="caso2" data-gate-msg="Resuelve la segunda decisión del caso.">
+  <span class="eyebrow amber">Lección 4.1 · El caso de Horizonte Servicios</span>
+  <h2>Un cliente insulta a Javiera en el mesón</h2>
+  <div class="case-head">
+    <div class="story" style="margin:0"><strong>Dos semanas después:</strong> un cliente molesto por una demora grita e insulta a Javiera frente a la fila. Ella termina la atención, pero queda visiblemente afectada. No ha presentado ninguna denuncia y dice que “no quiere hacer problema”. Su jefatura llama a Camila. <strong>Elige cómo debería actuar Camila.</strong></div>
+    <div class="photo-frame"><img alt="Una jefatura conversa con una trabajadora de atención a clientes en una sala privada, con un vaso de agua sobre la mesa" src="{{IMG:i41_apoyo}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 2 · ¿Qué hace Camila?</h3>
+  <div class="options" data-choice="caso2" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Le recuerda que atender clientes difíciles es parte del cargo y le pide volver al mesón.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le dice que, para poder ayudarla, primero debe entregar una carta formal de denuncia.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Aplica las medidas del protocolo: la jefatura la releva del mesón, se registra el incidente, se le informan los canales de denuncia y cómo acceder a atención psicológica temprana.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se normaliza la violencia</div><div class="branch-body"><div><p>Los insultos de un cliente pueden ser <strong>violencia en el trabajo ejercida por terceros</strong>. No son “parte del cargo”: el empleador debe proteger la vida y salud de Javiera, incluidos los riesgos psicosociales.</p></div><div><p class="hint">Atender público no obliga a soportar violencia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una barrera que la ley no exige</div><div class="branch-body"><div><p>La protección no depende de una denuncia, y si Javiera decide denunciar puede hacerlo <strong>por escrito o verbalmente</strong>, a la empresa o a la Inspección del Trabajo. No se le puede exigir una carta formal.</p></div><div><p class="hint">Primero se protege; denunciar es su decisión.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Camila protege a Javiera de inmediato, deja registro para el seguimiento del protocolo y le entrega información para que ella decida: los <strong>canales de denuncia</strong>, las instituciones públicas y la <strong>atención psicológica temprana</strong> a través de la mutualidad o el ISL.</p></div><div><p class="hint">Caso resuelto: proteger, registrar e informar.</p></div></div></div></template>
+  <p class="sources">Referencias: Código del Trabajo, arts. 2, 184, 211-A y 211-B (Ley N°21.643, Ley Karin); Ley N°16.744.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:13" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:16" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Tu organización previene o solo espera?</h2>
+  <div class="story">La gerencia propone: “Pongamos un afiche con el correo de denuncias en la sala de atención y demos el tema por cerrado”. Antes de aceptar, Camila revisa la propuesta con un checklist de prevención, el mismo que podrías usar en tu organización.</div>
+  <p style="margin-top:12px">Responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta y lee la explicación. Al terminar, revisa la respuesta modelo.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el afiche ayuda a dar a conocer un canal, pero no cumple por sí solo el deber preventivo. Camila propone: <b>1)</b> actualizar la evaluación de riesgos psicosociales con los resultados de la encuesta y con perspectiva de género; <b>2)</b> definir medidas concretas (por ejemplo, un procedimiento para atender a clientes agresivos y apoyo de jefatura en el mesón) con objetivos medibles; <b>3)</b> capacitar a los equipos y jefaturas sobre las tres conductas, sus derechos y responsabilidades; <b>4)</b> informar los canales de denuncia (escrita o verbal, a la empresa o a la Inspección del Trabajo) y cómo acceder a atención psicológica temprana en la mutualidad o el ISL; y <b>5)</b> hacer seguimiento, por ejemplo repitiendo la medición, y corregir lo que no funcione.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 2, 184, 211-A y 211-B (Ley N°21.643, Ley Karin); Ley N°16.744.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:18" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.1</h2>
+    <p>Ya puedes reconocer el derecho a un trabajo libre de violencia y acoso, distinguir las tres conductas de la Ley Karin y explicar por qué el deber del empleador empieza con la prevención, antes de cualquier denuncia.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la ausencia de denuncias no es ausencia de riesgo. Prevenir, informar los canales y ofrecer apoyo temprano es parte de la misma obligación de protección. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar las señales de riesgo</button><button class="small-btn primary" type="button" data-goto="5">Repasar las obligaciones</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 2, 154, 184, 211-A y 211-B (Ley N°21.643, Ley Karin, vigente desde el 1 de agosto de 2024); D.S. N°21/2024 del Ministerio del Trabajo; Ley N°16.744; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l41';
+const FIRST_KEYS=['hook','tf','caso1','caso2'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Las señales',lines:['Camila revisa una encuesta interna de Horizonte Servicios.','Aparecen gritos de clientes, bromas humillantes y temor a denunciar. No existe una denuncia formal, pero sí hay señales de riesgo.'],
+  html:`<div class="v-icons"><div><span class="i">📊</span>Encuesta interna</div><div class="dim" data-at="1"><span class="i">📢</span>Gritos de clientes</div><div class="dim" data-at="1"><span class="i">😶</span>Bromas humillantes</div><div class="dim" data-at="1"><span class="i">🤐</span>Temor a denunciar</div></div><div class="note" data-at="1">Sin denuncia formal, pero con señales de riesgo</div>`},
+ {t:'Un derecho',lines:['El artículo 2 del Código del Trabajo establece que las relaciones laborales deben fundarse en un trato libre de violencia,','compatible con la dignidad de la persona y con perspectiva de género.'],
+  html:`<div class="v-final">Trato libre de violencia</div><div class="v-chk"><span class="on">Art. 2 Código del Trabajo</span><span data-at="1">Compatible con la dignidad</span><span data-at="1">Con perspectiva de género</span></div>`},
+ {t:'Ley Karin',lines:['La Ley 21.643, Ley Karin, rige desde el 1 de agosto de 2024.','Modificó el Código del Trabajo para prevenir, investigar y sancionar el acoso y la violencia.'],
+  html:`<div class="v-big" style="font-size:clamp(2rem,7vw,3.6rem)">Ley 21.643</div><div class="v-sub">Ley Karin · vigente desde el 1 de agosto de 2024</div><div class="v-chk"><span data-at="1">Prevenir</span><span data-at="1">Investigar</span><span data-at="1">Sancionar</span></div>`},
+ {t:'Tres conductas',lines:['La ley distingue tres conductas contrarias a la dignidad:','el acoso sexual, el acoso laboral y la violencia ejercida por terceros, como clientes, proveedores o usuarios.'],
+  html:`<div class="v-sub" style="margin:0 0 14px">Contrarias a la dignidad de la persona</div><div class="v-icons"><div class="dim" data-at="1"><span class="i">🚫</span>Acoso sexual</div><div class="dim" data-at="1"><span class="i">⚠️</span>Acoso laboral</div><div class="dim" data-at="1"><span class="i">🗣️</span>Violencia de terceros</div></div>`},
+ {t:'Deber de protección',lines:['Según el artículo 184, el empleador debe tomar todas las medidas necesarias para proteger eficazmente la vida y salud de las personas trabajadoras,','incluidos los riesgos psicosociales.'],
+  html:`<div class="v-icons"><div><span class="i">🛡️</span>Art. 184 · Proteger eficazmente la vida y la salud</div><div class="dim" data-at="1"><span class="i">🧠</span>También los riesgos psicosociales</div></div>`},
+ {t:'El protocolo',lines:['Según el artículo 211-A, toda empresa debe tener un protocolo de prevención.','Identifica peligros, evalúa riesgos, define medidas, informa y capacita, resguarda la privacidad y hace seguimiento.'],
+  html:`<div class="v-sub" style="margin:0 0 12px">Protocolo de prevención · art. 211-A</div><div class="v-steps"><div data-at="1">Identificar peligros y evaluar riesgos</div><div data-at="1">Medidas de prevención y control</div><div data-at="1">Informar y capacitar</div><div data-at="1">Resguardar privacidad y honra</div><div data-at="1">Seguimiento y mejora</div></div>`},
+ {t:'Sin esperar denuncia',lines:['La prevención no espera una denuncia.','La empresa debe informar los canales de denuncia, las instituciones públicas y cómo acceder a atención psicológica temprana.'],
+  html:`<div class="v-final">Prevenir<br/><em data-at="1">antes de la denuncia</em></div><div class="v-chk"><span data-at="1">Canales de denuncia</span><span data-at="1">Instituciones públicas</span><span data-at="1">Atención psicológica temprana</span></div>`}
+]};
+const Q=[
+ {q:'¿Desde cuándo rige la Ley N°21.643, conocida como Ley Karin?',o:['Desde el 15 de enero de 2024, el día de su publicación.','Desde el 1 de agosto de 2024.','Desde el 1 de enero de 2026.'],c:1,f:'La ley se publicó el 15 de enero de 2024, pero entró en vigencia el 1 de agosto de 2024.'},
+ {q:'Según el artículo 2 del Código del Trabajo, ¿en qué deben fundarse las relaciones laborales?',o:['En la ausencia total de desacuerdos entre las personas.','En el trato cordial entre jefaturas, sin incluir a clientes ni proveedores.','En un trato libre de violencia, compatible con la dignidad de la persona y con perspectiva de género.'],c:2,f:'Ese es el principio que incorporó la Ley Karin al artículo 2. Los desacuerdos pueden existir; lo que no cabe es la violencia.'},
+ {q:'Un cliente insulta a gritos a una trabajadora del mesón de atención. ¿Con qué conducta de la Ley Karin se relaciona?',o:['Con la violencia en el trabajo ejercida por terceros ajenos a la relación laboral.','Con el acoso sexual.','Con ninguna: el cliente no es trabajador de la empresa.','Con un conflicto laboral entre colegas.'],c:0,f:'La ley incluye las conductas de clientes, proveedores o usuarios, entre otros, que afectan a las personas trabajadoras con ocasión de su trabajo.'},
+ {q:'Una encuesta muestra señales de riesgo, pero nadie ha denunciado. ¿Qué corresponde?',o:['Esperar a que alguien presente una denuncia formal.','Pedir los nombres de quienes respondieron para que denuncien.','Nada: las encuestas no forman parte de la prevención.','Evaluar los riesgos psicosociales, adoptar medidas preventivas y reforzar la información sobre canales y apoyo.'],c:3,f:'El deber de protección (art. 184) y el protocolo (art. 211-A) son preventivos: se gestionan sin esperar una denuncia.'},
+ {q:'¿Qué debe informar el empleador a las personas trabajadoras, según la Ley Karin?',o:['Solo el correo electrónico de la gerencia.','Los canales para recibir denuncias, las instituciones públicas para denunciar y cómo acceder a prestaciones de seguridad social y atención psicológica temprana.','Los nombres de las personas que han sido denunciadas.'],c:1,f:'Informar canales, instituciones y acceso a atención psicológica temprana es parte de la prevención. La privacidad y honra de los involucrados también debe resguardarse.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: chat en el celular ---------- */
+const phone=$('#phone');
+const phHead=`<div class="bar"><span>08:47</span><span>📶 🔋</span></div><div class="chat-h"><span class="av">PO</span><span>Patricio · Gerencia de Operaciones<small>en línea</small></span></div>`;
+phone.innerHTML=phHead+`<div class="grow"></div><div class="notif">💬 <b>1 mensaje nuevo</b> de Gerencia de Operaciones</div><button class="pbtn" type="button" id="showMsg">Abrir mensaje</button>`;
+function addMsg(html){const g=$('.grow',phone);g.insertAdjacentHTML('beforebegin',html)}
+$('#showMsg').addEventListener('click',()=>{$('#showMsg').remove();$('.notif',phone).remove();
+  addMsg('<div class="dots" id="dts"><span></span><span></span><span></span></div>');
+  setTimeout(()=>{$('#dts').remove();addMsg('<div class="cmsg">Camila, vi el resumen de la encuesta de clima 📊<time>08:47</time></div>');
+    setTimeout(()=>{addMsg('<div class="cmsg">Hay comentarios de gritos de clientes y bromas pesadas, pero nadie ha hecho una denuncia formal. ¿Lo dejamos hasta que alguien denuncie?<time>08:48</time></div>');
+      setTimeout(()=>{addMsg('<div class="cmsg me">Déjame revisarlo bien antes de responder 👀<time>08:49</time></div>');$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)},700)},700)},900)});
+$('[data-choice=hook] [data-opt=B]').addEventListener('click',()=>{if(!$('#reply',phone))addMsg('<div class="cmsg me" id="reply">No conviene esperar: la ley nos pide prevenir. Propongo revisar los riesgos, reforzar el protocolo y recordar los canales de denuncia y apoyo. Te envío una propuesta 📋<time>08:55</time></div>')});
+
+/* ---------- Tarjetas: conceptos clave ---------- */
+const tFc=tracker('cards',6,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k);if(S.done.has('cards'))$('#fcDone').hidden=false}));
+
+/* ---------- Hotspots: señales de riesgo ---------- */
+const HS=[
+ ['Un cliente grita e insulta','Posible violencia de terceros','Los clientes, proveedores o usuarios también pueden ejercer violencia contra las personas trabajadoras. Que ocurra “de vez en cuando” no la vuelve aceptable.','Qué hacer: incluir la atención a público en la evaluación de riesgos y definir cómo actuar ante un cliente agresivo (apoyo de jefatura, relevo, registro del incidente).'],
+ ['La trabajadora del mesón queda afectada','Riesgo psicosocial','La exposición repetida a gritos e insultos afecta la salud. El artículo 184 obliga a proteger eficazmente la vida y salud, incluidos los riesgos psicosociales.','Qué hacer: pausas y relevo después de un incidente, y orientación para acceder a atención psicológica temprana en la mutualidad o el ISL.'],
+ ['Bromas a costa de un colega','Posible acoso laboral','Las bromas que humillan o menoscaban a una persona pueden ser acoso laboral. Con la Ley Karin, una sola conducta puede bastar si cumple los elementos de la definición.','Qué hacer: capacitar a equipos y jefaturas sobre las conductas, y que las jefaturas intervengan cuando ven estas situaciones.'],
+ ['Un diario mural sin información','Canales que nadie conoce','Si las personas no saben dónde ni cómo denunciar, el canal no sirve. El empleador debe informar los canales de denuncia y las instituciones públicas a las que pueden acudir.','Qué hacer: difundir los canales en varios formatos (inducción, intranet, reuniones) y verificar que las personas los conozcan.'],
+ ['Alguien duda antes de acercarse','Temor a denunciar','El temor es una señal de riesgo en sí misma. La denuncia puede hacerse por escrito o verbalmente, a la empresa o a la Inspección del Trabajo, y no caben represalias contra quien denuncia.','Qué hacer: explicar el procedimiento, resguardar la privacidad y reforzar que denunciar no trae consecuencias negativas.']];
+const tHs=tracker('hs',5,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<span class="kind">${HS[k][1]}</span><h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][2]}</p><div class="todo">${HS[k][3]}</div>`;tHs(k)}));
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Si nadie ha presentado una denuncia formal, la empresa todavía no tiene obligaciones que cumplir.',false,'El deber de protección (art. 184) y el protocolo de prevención (art. 211-A) obligan a identificar riesgos y adoptar medidas antes de cualquier denuncia.'],
+ ['Los gritos e insultos de un cliente pueden ser violencia en el trabajo que la empresa debe prevenir.',true,'La Ley Karin incluye la violencia ejercida por terceros ajenos a la relación laboral, como clientes, proveedores o usuarios.'],
+ ['Para que exista acoso laboral, la conducta siempre tiene que repetirse varias veces.',false,'Antes se exigía reiteración. Hoy la conducta puede manifestarse una sola vez o de manera reiterada, si cumple los elementos de la definición.'],
+ ['El empleador debe informar cómo acceder a atención psicológica temprana, además de los canales de denuncia.',true,'Debe informar los canales de denuncia, las instituciones públicas y cómo acceder a prestaciones de seguridad social y atención psicológica temprana, que entregan las mutualidades o el ISL.'],
+ ['Las bromas humillantes son parte del clima del equipo y no tienen relación con la Ley Karin.',false,'Una broma que humilla o menoscaba a una persona puede ser acoso laboral. El trato debe ser compatible con la dignidad de la persona.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">La idea central: la prevención no espera una denuncia. Las tres conductas (acoso sexual, acoso laboral y violencia de terceros) se previenen identificando riesgos, adoptando medidas e informando canales y apoyo.</span></div>`;
+    S.first.tf=n===TF.length;done('tf');return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Fichas: obligaciones del empleador ---------- */
+const TILES=[
+ ['📋','Tener un protocolo','Elaborar, poner en conocimiento e implementar un protocolo de prevención del acoso sexual, laboral y la violencia en el trabajo, que se incorpora al Reglamento Interno de Orden, Higiene y Seguridad.'],
+ ['🔎','Identificar y evaluar','Identificar los peligros y evaluar los riesgos psicosociales asociados, con perspectiva de género. La encuesta de Camila es un buen insumo.'],
+ ['🛡️','Prevenir y controlar','Adoptar medidas para prevenir y controlar esos riesgos, con objetivos medibles para saber si funcionan.'],
+ ['🎓','Informar y capacitar','Informar y capacitar a las personas trabajadoras sobre los riesgos identificados, las medidas preventivas y sus derechos y responsabilidades.'],
+ ['🔒','Resguardar la privacidad','Adoptar medidas para resguardar la privacidad y la honra de todas las personas involucradas.'],
+ ['🔁','Hacer seguimiento','Contar con mecanismos de seguimiento para velar por el mejoramiento y la corrección continua de las medidas.'],
+ ['📮','Dar a conocer los canales','Informar los canales para recibir denuncias y las instituciones públicas a las que se puede denunciar, como la Inspección del Trabajo.'],
+ ['🧠','Orientar el apoyo temprano','Informar cómo acceder a prestaciones de seguridad social y atención psicológica temprana a través del organismo administrador de la Ley 16.744 (mutualidad o ISL), que también entrega asistencia técnica y modelos de protocolo.']];
+$('#tiles').innerHTML=TILES.map((t,i)=>`<button class="tile" type="button" data-i="${i}" aria-label="Descubrir obligación ${i+1}">${i+1}</button>`).join('');
+const tTl=tracker('tiles',8,'#tlTick','#tlTask');
+$$('#tiles .tile').forEach(b=>b.addEventListener('click',()=>{const t=TILES[+b.dataset.i];b.classList.add('open');b.innerHTML=`<span><span style="font-size:1.6rem">${t[0]}</span><br/>${t[1]}</span>`;$('#tlPanel').innerHTML=`<h3 style="margin-top:0">${t[0]} ${t[1]}</h3><p>${t[2]}</p>`;tTl(b.dataset.i)}));
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[
+ ['¿Basta un afiche con el correo de denuncias para cumplir el deber de prevenir?',0,'No. Informar el canal es una parte; el protocolo exige además evaluar riesgos, adoptar medidas, capacitar y hacer seguimiento.'],
+ ['¿Debe la empresa evaluar los riesgos psicosociales de la atención a público, con perspectiva de género?',1,'Sí. Identificar peligros y evaluar riesgos psicosociales con perspectiva de género es el primer contenido mínimo del protocolo.'],
+ ['¿Las medidas deben tener objetivos medibles y seguimiento?',1,'Sí. Así la empresa puede saber si funcionan y corregirlas.'],
+ ['¿Puede la empresa exigir una carta formal para recibir una denuncia?',0,'No. La denuncia puede hacerse por escrito o verbalmente, a la empresa o directamente a la Inspección del Trabajo.'],
+ ['¿Hay que informar cómo acceder a atención psicológica temprana en la mutualidad o el ISL?',1,'Sí. Es parte de la información que el empleador debe entregar, junto con los canales de denuncia y las instituciones públicas.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===YN.length){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>

@@ -1,0 +1,389 @@
+<title>Lección 4.5 — ¿Qué ocurre cuando se presenta una denuncia?</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Estilos propios de la Lección 4.5 ---- */
+.hero-grid .photo-frame.wide{aspect-ratio:3/2}
+.label-line.req{min-height:132px}
+.label-line.req .quote{display:block;margin-top:6px;font-size:1.02rem;font-weight:750;color:var(--ink)}
+.label-line.req .sticker{font-size:.98rem;padding:10px;text-align:center;line-height:1.35}
+.dayline.tl7{height:auto;min-height:104px}
+.dayline.tl7 .dseg{font-size:.8rem;line-height:1.2;padding:10px 6px;gap:4px;flex:1 1 0}
+.dayline.tl7 .dseg.dt{background:linear-gradient(180deg,var(--violet),var(--navy))}
+.tl-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;font-weight:800;color:var(--muted);margin-top:6px}
+.tl-legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.cmp.acta{display:grid;min-height:0}
+.cmp.acta .side{position:relative;grid-area:1/1;inset:auto}
+.cmp.acta .after{background:var(--good-soft)}
+.acta-row{display:grid;grid-template-columns:170px 1fr;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.acta-row:last-child{border-bottom:none}
+.acta-row b{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.acta-row .x{color:var(--bad);font-weight:750}
+.acta-row .ok{color:var(--good);font-weight:750}
+.cmp-labels{display:flex;justify-content:space-between;font-size:.8rem;font-weight:850;color:var(--muted);gap:10px}
+.v-tl.three{grid-template-columns:repeat(3,1fr)}
+.v-tl>div[data-at] .n{transition:background .4s,border-color .4s}
+.v-tl>div.on .n{background:var(--teal2);border-color:var(--teal2);color:var(--stage)}
+.v-tl>div.on small{color:var(--stage-ink)}
+@media(max-width:860px){
+  .dayline.tl7 .dseg{flex:1 1 45%!important;min-height:70px}
+  .acta-row{grid-template-columns:1fr;gap:2px}
+  .label-line.req{min-height:170px}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 4 · LECCIÓN 4.5</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:20" data-gate="hook" data-gate-msg="Despega la etiqueta y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.5 · Recibir una denuncia</span>
+      <h1 class="reveal">Recibir correctamente también es parte del procedimiento</h1>
+      <p class="lead reveal">Marcela, ejecutiva de Atención a Clientes de <strong>Horizonte Servicios</strong>, se acerca al Equipo de Personas. La jefatura ya le pegó una etiqueta a su solicitud. <strong>Haz clic en la etiqueta para despegarla</strong> y ver qué pidió realmente Marcela.</p>
+      <div class="label-line req reveal">
+        <div><strong>Solicitud presentada en forma verbal</strong> · Equipo de Personas<span class="quote">“Quiero denunciar, pero no sé cómo escribirlo”.</span><span class="hint">Marcela pide hacer una denuncia por acoso laboral. No trae nada escrito.</span></div>
+        <button class="sticker" type="button" id="sticker">“QUE VUELVA CON UNA CARTA FORMAL” · toca para despegar</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Una trabajadora conversa con Camila en el mesón del Equipo de Personas" src="{{IMG:i45_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">¿Qué debería hacer Camila ante la denuncia verbal de Marcela?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Pedirle que vuelva solo cuando tenga una carta redactada.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Recibirla, registrar sus antecedentes en un acta y continuar con las actuaciones que siguen.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Resolver en ese momento si los hechos son verdaderos o falsos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: se cierra la puerta.</strong> <span class="fb-body">La denuncia puede presentarse por escrito o verbalmente. Exigir una carta formal desalienta a Marcela y retrasa la protección que la empresa le debe.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se adelanta el juicio.</strong> <span class="fb-body">Recibir no es resolver. En la recepción no se decide si los hechos son verdaderos: eso corresponde a una investigación con debido proceso.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La denuncia verbal se recibe y se registra en un acta. Luego se informa el procedimiento, se adoptan medidas de resguardo y se decide quién investiga. En esta lección verás cada paso.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Qué ocurre desde que alguien dice “quiero denunciar”?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · PLAZOS -->
+<section class="slide" data-title="De la recepción a las medidas" data-audio="p03" data-dur="0:19" data-gate="day" data-gate-msg="Revisa los siete momentos del procedimiento.">
+  <span class="eyebrow">Lección 4.5 · Plazos del procedimiento</span>
+  <h2>De la recepción a las medidas: siete momentos</h2>
+  <p>Este es el recorrido de una denuncia presentada en la empresa. <strong>Haz clic en cada bloque</strong> para ver qué ocurre y cuál es su plazo.</p>
+  <div class="task" id="dayTask">Momentos revisados <span class="tick" id="dayTick">0 / 7</span></div>
+  <div class="dayline tl7" id="dayline">
+    <button class="dseg ord" type="button" data-k="0">Recepción<small>Día 0</small></button>
+    <button class="dseg ord" type="button" data-k="1">Acta<small>Día 0</small></button>
+    <button class="dseg ord" type="button" data-k="2">Resguardo<small>De inmediato</small></button>
+    <button class="dseg ext" type="button" data-k="3">Investigar o remitir<small>Hasta 3 días hábiles</small></button>
+    <button class="dseg dt" type="button" data-k="4">Investigación<small>30 días</small></button>
+    <button class="dseg dt" type="button" data-k="5">Pronunciamiento DT<small>30 días</small></button>
+    <button class="dseg dt" type="button" data-k="6">Medidas<small>15 días</small></button>
+  </div>
+  <div class="tl-legend"><span><i style="background:var(--teal)"></i>Al recibir</span><span><i style="background:var(--amber)"></i>Primera decisión</span><span><i style="background:var(--violet)"></i>Investigación y cierre</span></div>
+  <div class="dpanel" id="dpanel"><p class="hint">Selecciona un bloque para ver la explicación.</p></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · EL ACTA -->
+<section class="slide" data-title="El acta" data-audio="p04" data-dur="0:20" data-gate="cmp" data-gate-msg="Desliza el comparador hasta el final para ver el acta correcta.">
+  <span class="eyebrow amber">El acta de una denuncia verbal</span>
+  <h2>Misma conversación, dos actas muy distintas</h2>
+  <p>Primero ves un acta mal levantada. <strong>Desliza el control hacia la izquierda</strong> para descubrir, línea por línea, cómo se ve el acta correcta.</p>
+  <div class="cmp acta" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in">
+      <span class="eyebrow amber">Acta mal levantada</span>
+      <div class="acta-row"><b>Persona denunciante</b><span class="x">“Una trabajadora de Atención”</span></div>
+      <div class="acta-row"><b>Hechos</b><span class="x">“Problemas con su jefe. Parece exagerado.”</span></div>
+      <div class="acta-row"><b>Persona denunciada</b><span class="x">No se consulta</span></div>
+      <div class="acta-row"><b>Firma y copia</b><span class="x">Sin firma de la denunciante · sin copia</span></div>
+      <div class="acta-row"><b>Procedimiento</b><span class="x">No se le informa</span></div>
+      <div class="acta-row"><b>Resguardo</b><span class="x">“Se verá más adelante”</span></div>
+    </div></div>
+    <div class="side after"><div class="in">
+      <span class="eyebrow">Acta correcta</span>
+      <div class="acta-row"><b>Persona denunciante</b><span class="ok">Nombre completo, RUT, cargo y área</span></div>
+      <div class="acta-row"><b>Hechos</b><span class="ok">Relato con sus palabras: qué ocurrió, fechas aproximadas y lugares, sin opiniones de quien recibe</span></div>
+      <div class="acta-row"><b>Persona denunciada</b><span class="ok">Individualizada en lo posible; antecedentes o posibles testigos</span></div>
+      <div class="acta-row"><b>Firma y copia</b><span class="ok">Firma de la persona denunciante · se le entrega copia</span></div>
+      <div class="acta-row"><b>Procedimiento</b><span class="ok">Se le informa cómo sigue y que también puede acudir a la Inspección del Trabajo</span></div>
+      <div class="acta-row"><b>Resguardo</b><span class="ok">Se registran las medidas adoptadas de inmediato</span></div>
+    </div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador entre el acta mal levantada y el acta correcta"/>
+  <div class="cmp-labels"><span>◀ Desliza hasta aquí para ver el acta correcta</span><span>Inicio</span></div>
+  <div class="fb" id="cmpFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 5 · PRIMERAS ACTUACIONES -->
+<section class="slide" data-title="Primeras actuaciones" data-audio="p05" data-dur="0:18" data-gate="order" data-gate-msg="Ordena las cinco actuaciones correctamente.">
+  <span class="eyebrow">Lección 4.5 · Primeras actuaciones</span>
+  <h2>¿Qué hace primero quien recibe la denuncia?</h2>
+  <div class="grid-2">
+    <div><p>Camila recibe a Marcela en una sala privada. Estas son sus cinco primeras actuaciones, pero están desordenadas. <strong>Usa las flechas</strong> para moverlas hasta formar la secuencia correcta, de arriba hacia abajo, y presiona <strong>Comprobar orden</strong>.</p></div>
+    <div class="photo-frame wide"><img alt="Camila escucha a una trabajadora en una sala de entrevistas privada, con una carpeta sobre la mesa" src="{{IMG:i45_sala}}"/></div>
+  </div>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 6 · QUIÉN INVESTIGA -->
+<section class="slide" data-title="¿Quién investiga?" data-audio="p06" data-dur="0:17" data-gate="tree" data-gate-msg="Resuelve los cuatro ejemplos respondiendo las preguntas.">
+  <span class="eyebrow">Lección 4.5 · ¿Quién investiga?</span>
+  <h2>¿Investiga la empresa o la Inspección del Trabajo?</h2>
+  <p>Elige un ejemplo y responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta, una a la vez. Si te equivocas, verás una pista.</p>
+  <div class="task" id="trTask">Ejemplos resueltos <span class="tick" id="trTick">0 / 4</span></div>
+  <div class="ex-tabs" id="exTabs"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 7 · CASO APLICADO (1) -->
+<section class="slide" data-title="Caso: la recepción" data-audio="p07" data-dur="0:16" data-gate="caso" data-gate-msg="Resuelve las dos decisiones de la recepción.">
+  <span class="eyebrow amber">El caso de Camila · La recepción</span>
+  <h2>“No sé cómo escribirlo”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="bubble"><span class="who">Marcela</span>Quiero denunciar a mi supervisor. Me grita delante de los clientes y me dijo que, si me quejo, me cambia de turno. Pero no sé cómo escribirlo.</div>
+      <div class="bubble"><span class="who">Jefatura de Personas</span>Camila, dile que vuelva cuando tenga una carta. Así queda todo formal.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="La jefatura de Personas conversa con Camila en un pasillo de oficina" src="{{IMG:i45_pasillo}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso1b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sigue la indicación: le pide a Marcela que vuelva con una carta firmada.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Recibe la denuncia verbal en una sala privada y levanta un acta con el relato de Marcela.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Llama primero al supervisor para escuchar su versión antes de registrar nada.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: denuncia obstaculizada</div><div class="branch-body"><div><p>La ley permite denunciar <strong>verbalmente</strong>. Si Marcela se va sin ser recibida, puede no volver, o acudir directamente a la Inspección del Trabajo, mientras la empresa no adopta ninguna medida de resguardo.</p></div><div><p class="hint">No se puede exigir una carta formal.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se expone a la denunciante</div><div class="branch-body"><div><p>Contactar al supervisor antes de recibir la denuncia rompe la confidencialidad y puede exponer a Marcela a represalias. Escuchar a ambas partes ocurre después, en la <strong>investigación</strong>, no en la recepción.</p></div><div><p class="hint">Recibir no es investigar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila recibe la denuncia con trato digno y en privado. Escribe el acta con las palabras de Marcela, se la lee y le pide que la firme. Después le entrega una copia.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso1b" hidden>
+    <div class="story" style="margin-top:18px"><strong>Mientras redactan el acta,</strong> Marcela duda: “¿Puedo hacerlo anónimo? No quiero que mi supervisor sepa que fui yo”.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué le responde Camila?</h3>
+    <div class="options" data-choice="caso1b" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí, la registro como anónima y la investigamos igual”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Sin tu nombre no se puede hacer nada. Avísame si cambias de opinión”.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“La denuncia debe llevar tu nombre, pero el procedimiento es confidencial y la ley prohíbe represalias por denunciar”.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso1b-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el procedimiento no puede iniciarse</div><div class="branch-body"><div><p>La denuncia debe <strong>individualizar a la persona denunciante</strong>. Una denuncia anónima no permite iniciar el procedimiento, y Marcela creería que su caso está en curso cuando no lo está.</p></div><div><p class="hint">Revisa el requisito de individualización.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: Marcela queda sin orientación</div><div class="branch-body"><div><p>Es cierto que se necesita su nombre, pero cerrar la conversación así deja a Marcela sin información. Quien recibe debe <strong>explicar el procedimiento</strong> y las garantías que la protegen.</p></div><div><p class="hint">Informar también es parte de recibir.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La denuncia individualiza a Marcela, pero el procedimiento se rige por la <strong>confidencialidad</strong> y existe <strong>garantía de indemnidad</strong>: no se pueden adoptar represalias contra quien denuncia o declara como testigo.</p></div><div><p class="hint">Recepción resuelta. Continúa con lo que sigue.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-A a 211-E y 485 (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 8 · CASO APLICADO (2) -->
+<section class="slide" data-title="Caso: después de recibir" data-audio="p08" data-dur="0:17" data-gate="caso2" data-gate-msg="Resuelve las dos decisiones sobre lo que sigue.">
+  <span class="eyebrow amber">El caso de Camila · Después de recibir</span>
+  <h2>La denuncia ya está en el acta. ¿Y ahora?</h2>
+  <div class="grid-2" style="align-items:center">
+    <div><div class="story" style="margin-top:0">Marcela firmó el acta y recibió su copia. No recuerda las fechas exactas y no tiene mensajes guardados. La jefatura de Personas comenta: <em>“Está incompleta. Archívala hasta que traiga pruebas”.</em></div></div>
+    <div class="photo-frame wide"><img alt="Camila revisa una planilla de turnos junto a una supervisora en una oficina abierta" src="{{IMG:i45_turnos}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 3 · ¿Qué hace Camila con la denuncia “incompleta”?</h3>
+  <div class="options" data-choice="caso2" data-correct="A" data-then="caso2b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>No la archiva: registra lo que Marcela sí puede relatar (fechas aproximadas, lugares, posibles testigos), la orienta y le permite complementarla.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La archiva hasta que Marcela traiga pruebas documentales.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le pide que retire la denuncia y la presente de nuevo cuando tenga todo claro.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la denuncia se descarta sin más</div><div class="branch-body"><div><p>No se le pueden exigir pruebas para recibir la denuncia. Reunir antecedentes es tarea de la <strong>investigación</strong>. Archivarla deja a Marcela sin protección y a la empresa sin cumplir su deber.</p></div><div><p class="hint">Recibir no exige probar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se desalienta la denuncia</div><div class="branch-body"><div><p>Pedirle que la retire equivale a no recibirla. Una denuncia con información incompleta no se descarta: se orienta a la persona y se le permite completarla.</p></div><div><p class="hint">Orientar, no devolver.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila deja constancia de lo que Marcela recuerda y le explica que puede aportar más antecedentes. <strong>Cambio en trámite:</strong> un nuevo reglamento de la Ley Karin propone un plazo de 3 días para que la persona complemente una denuncia insuficiente. A octubre de 2026 <strong>no está vigente</strong>: lo firmó el ministro, pero falta la firma presidencial y la toma de razón de Contraloría.</p></div><div><p class="hint">Sigue con la última decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2b" hidden>
+    <div class="story" style="margin-top:18px"><strong>Un detalle importante:</strong> Marcela y su supervisor comparten el mismo turno y el mismo módulo de atención.</div>
+    <h3 style="margin-top:14px">Decisión 4 · ¿Qué medida de resguardo propone Camila?</h3>
+    <div class="options" data-choice="caso2b" data-correct="B" data-gate="caso2">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Trasladar a Marcela al turno de noche, con un sueldo menor, para separarlos.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Separar los espacios o redistribuir la jornada sin perjudicar a Marcela, ofrecerle atención psicológica temprana y decidir en 3 días hábiles si se investiga o se remite.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Despedir de inmediato al supervisor.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2b-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la medida castiga a quien denuncia</div><div class="branch-body"><div><p>Las medidas de resguardo <strong>no pueden ser gravosas</strong> ni producir menoscabo a la persona denunciante. Rebajar su sueldo o empeorar su turno la perjudica por haber denunciado.</p></div><div><p class="hint">Proteger, no perjudicar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2b-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: sanción sin investigación</div><div class="branch-body"><div><p>Las medidas de resguardo protegen sin prejuzgar: <strong>no son una sanción anticipada</strong>. Primero se investiga con debido proceso. Las sanciones se aplican después del informe.</p></div><div><p class="hint">Recibir no es resolver.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2b-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La separación de espacios, la redistribución de la jornada y la derivación a atención psicológica temprana (mutualidad o ISL) son medidas previstas por la ley. Luego, dentro de 3 días hábiles, la empresa dispone una investigación interna o remite los antecedentes a la Inspección del Trabajo.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo. Nuevo reglamento de la Ley Karin: en trámite, no vigente a octubre de 2026.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:16" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:17" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>“Quiero denunciar, pero no me pidan que escriba nada”</h2>
+  <div class="story">Andrés, vendedor de una sucursal, le cuenta a su jefatura de turno que un proveedor lo ha insultado y amenazado varias veces en la bodega. Quiere denunciar, pero no quiere escribir nada.</div>
+  <p style="margin-top:12px">Imagina que este caso llega a tu organización. Responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta del checklist.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo: ¿qué evidencia debería quedar?</strong> (1) Un <b>acta</b> de la denuncia verbal, firmada por Andrés, con <b>copia entregada</b>. (2) Constancia de que se le <b>informó el procedimiento</b> y la opción de acudir a la Inspección del Trabajo. (3) Registro de las <b>medidas de resguardo</b> adoptadas de inmediato, por ejemplo, que no atienda solo a ese proveedor. (4) La decisión de <b>investigar internamente o remitir</b> a la Inspección dentro de 3 días hábiles, con su respaldo. Recibir, registrar, proteger e investigar son cuatro momentos distintos.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 2 y 211-A a 211-E (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:18" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.5</h2>
+    <p>Ya puedes reconocer las primeras actuaciones frente a una denuncia: recibirla por escrito o verbalmente, registrarla en un acta, individualizar a la persona denunciante, informarle el procedimiento, protegerla de inmediato y dar continuidad al proceso.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> recibir no es resolver. Una buena recepción deja evidencia, protege a las personas y permite que la investigación ocurra con debido proceso. Desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los plazos</button><button class="small-btn primary" type="button" data-goto="3">Repasar el acta</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 2, 184, 211-A a 211-E y 485 (Ley N°21.643, Ley Karin); D.S. N°21/2024 del Ministerio del Trabajo; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l45';
+const FIRST_KEYS=['hook','caso1','caso1b','caso2','caso2b'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Dos formas, dos lugares',lines:['Una denuncia de acoso o violencia en el trabajo puede presentarse por escrito o verbalmente.','Puede hacerse ante la empresa o directamente en la Inspección del Trabajo.','Nunca se puede exigir una carta formal.'],
+  html:`<div class="v-icons"><div><span class="i">✍️</span>Por escrito</div><div><span class="i">🗣️</span>Verbalmente</div><div class="dim" data-at="1"><span class="i">🏢</span>Ante la empresa</div><div class="dim" data-at="1"><span class="i">🏛️</span>Inspección del Trabajo</div></div><div class="note" data-at="2">No se puede exigir una carta formal</div>`},
+ {t:'El acta',lines:['Si la denuncia es verbal, quien la recibe levanta un acta con el relato de la persona.','La persona denunciante la firma','y recibe una copia.'],
+  html:`<div class="v-steps"><div data-at="0">Se levanta un acta con su relato</div><div data-at="1">La firma la persona denunciante</div><div data-at="2">Recibe una copia</div></div>`},
+ {t:'Individualización',lines:['La denuncia debe individualizar a la persona denunciante y describir los hechos.','En lo posible, también identifica a la persona denunciada y aporta antecedentes.','Una denuncia anónima no permite iniciar el procedimiento.'],
+  html:`<div class="v-chk" style="margin-top:0"><span data-at="0">Persona denunciante identificada</span><span data-at="0">Hechos descritos</span><span data-at="1">Persona denunciada, en lo posible</span><span data-at="1">Antecedentes</span></div><div class="note" data-at="2">Sin individualización no se inicia el procedimiento</div>`},
+ {t:'Informar y resguardar',lines:['Al recibir la denuncia, el empleador informa el procedimiento a la persona denunciante.','Y adopta de inmediato medidas de resguardo: separar espacios, redistribuir la jornada o derivar a atención psicológica temprana.'],
+  html:`<div class="v-icons"><div><span class="i">📋</span>Informar el procedimiento</div><div class="dim" data-at="1"><span class="i">🛡️</span>Resguardo inmediato</div></div><div class="v-chk"><span data-at="1">Separar espacios</span><span data-at="1">Redistribuir la jornada</span><span data-at="1">Atención psicológica temprana</span></div>`},
+ {t:'Investigar o remitir',lines:['Luego, la empresa dispone una investigación interna o, dentro de tres días hábiles, remite los antecedentes a la Inspección del Trabajo.','Si la denuncia es contra el empleador o quien lo representa, investiga la Inspección.'],
+  html:`<div class="v-big">3 días hábiles</div><div class="v-sub">Investigación interna o remisión a la Inspección del Trabajo</div><div class="note" data-at="1">Contra el empleador → investiga la Inspección del Trabajo</div>`},
+ {t:'Plazos que siguen',lines:['La investigación debe concluir en treinta días.','Si investigó la empresa, la Inspección se pronuncia sobre el informe dentro de treinta días.','Después, el empleador tiene quince días para aplicar las medidas o sanciones.'],
+  html:`<div class="v-tl three"><div data-at="0"><div class="n">30</div><small>días de investigación</small></div><div data-at="1"><div class="n">30</div><small>días para el pronunciamiento de la Inspección</small></div><div data-at="2"><div class="n">15</div><small>días para medidas o sanciones</small></div></div>`},
+ {t:'Recibir no es resolver',lines:['Recuerda: recibir no es resolver.','En la recepción no se decide si los hechos son verdaderos.','Se recibe con trato digno, imparcial y sin revictimizar.'],
+  html:`<div class="v-final">Recibir <em>no es</em> resolver</div><div class="v-chk"><span data-at="2">Trato digno</span><span data-at="2">Imparcial</span><span data-at="2">Sin revictimizar</span></div><div class="note" data-at="1">La verdad de los hechos se determina en la investigación</div>`}
+]};
+const Q=[
+ {q:'¿Cómo puede presentarse una denuncia de acoso laboral, sexual o de violencia en el trabajo?',o:['Solo por escrito, con una carta firmada.','Por escrito o verbalmente, ante la empresa o directamente en la Inspección del Trabajo.','Solo verbalmente, ante la jefatura directa.'],c:1,f:'La denuncia puede ser escrita o verbal, y presentarse ante la empresa o en la Inspección del Trabajo. No se puede exigir una carta formal.'},
+ {q:'Si la denuncia es verbal, ¿qué debe hacer quien la recibe?',o:['Tomar una nota informal y guardarla.','Pedir que la persona la envíe después por correo.','Levantar un acta, que firma la persona denunciante, y entregarle una copia.','Grabar la conversación sin avisar.'],c:2,f:'La denuncia verbal se registra en un acta firmada por la persona denunciante, quien recibe una copia.'},
+ {q:'¿Puede iniciarse el procedimiento con una denuncia anónima?',o:['No: la denuncia debe individualizar a la persona denunciante.','Sí, en todos los casos.','Sí, si la presenta una jefatura.'],c:0,f:'La denuncia debe individualizar a la persona denunciante. El procedimiento es confidencial y existe garantía de indemnidad frente a represalias.'},
+ {q:'Recibida la denuncia en la empresa, si esta no la investiga internamente, ¿en qué plazo debe remitir los antecedentes a la Inspección del Trabajo?',o:['30 días','15 días','10 días hábiles','3 días hábiles'],c:3,f:'El empleador dispone una investigación interna o, dentro de 3 días hábiles, remite los antecedentes a la Inspección del Trabajo.'},
+ {q:'¿Qué ocurre en el momento de recibir la denuncia?',o:['Se decide si los hechos son verdaderos.','Se registra, se informa el procedimiento y se adoptan medidas de resguardo, sin resolver el fondo.','Se aplica una sanción provisoria a la persona denunciada.'],c:1,f:'Recibir no es resolver: se registra, se informa y se protege. Los hechos se determinan en la investigación.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: etiqueta despegable ---------- */
+$('#sticker').addEventListener('click',e=>{e.currentTarget.classList.add('peeled');setTimeout(()=>{const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},500)});
+
+/* ---------- Línea de tiempo del procedimiento ---------- */
+const DAY=[
+ ['Recepción · día 0','La denuncia se recibe <b>por escrito o verbalmente</b>, en la empresa o en la Inspección del Trabajo. El trato es digno, imparcial y sin revictimizar. En este momento <b>no se decide si los hechos son verdaderos</b>.'],
+ ['Acta · día 0','Si la denuncia es verbal, se levanta un <b>acta</b> que firma la persona denunciante, quien recibe <b>copia</b>. La denuncia individualiza a la persona denunciante, describe los hechos y, en lo posible, identifica a la persona denunciada y aporta antecedentes.'],
+ ['Resguardo · de inmediato','Al recibir la denuncia, el empleador <b>informa el procedimiento</b> y adopta <b>de inmediato</b> medidas de resguardo: separar espacios, redistribuir la jornada o derivar a atención psicológica temprana (mutualidad o ISL). No pueden perjudicar a la persona denunciante.'],
+ ['Investigar o remitir · hasta 3 días hábiles','La empresa dispone una <b>investigación interna</b> o, dentro de <b>3 días hábiles</b>, <b>remite</b> los antecedentes a la Inspección del Trabajo. Si la denuncia es contra el empleador o quien lo representa, investiga la Inspección.'],
+ ['Investigación · 30 días','La investigación debe concluir en <b>30 días</b>. La Dirección del Trabajo precisa que son días hábiles administrativos (lunes a viernes, sin festivos), contados desde la recepción de la denuncia. El feriado o la licencia médica de las partes no suspende el plazo.'],
+ ['Pronunciamiento de la Inspección · 30 días','Si investigó la empresa, remite el informe y sus conclusiones a la Inspección del Trabajo, que se pronuncia dentro de <b>30 días</b>. Si no lo hace, se consideran válidas las conclusiones del informe.'],
+ ['Medidas o sanciones · 15 días','Dentro de <b>15 días</b> desde la recepción del informe o del pronunciamiento, el empleador dispone y aplica las medidas o sanciones que correspondan, y las comunica a la persona denunciante y a la persona denunciada.']];
+const tDay=tracker('day',7,'#dayTick','#dayTask');
+$$('#dayline .dseg').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#dayline .dseg').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#dpanel').innerHTML=`<h3 style="margin-top:0">${DAY[k][0]}</h3><p>${DAY[k][1]}</p>`;tDay(k)}));
+
+/* ---------- Comparador de actas ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');
+  feedback($('#cmpFb'),true,'Así se ve un acta correcta.','Identifica a la persona denunciante, recoge los hechos con sus palabras y sin juicios de quien recibe, lleva su firma y se le entrega copia. Además, deja constancia de que se informó el procedimiento y de las medidas de resguardo.')}}});
+
+/* ---------- Ordenar primeras actuaciones ---------- */
+const ORDER=['Recibir a la persona en un lugar privado y escucharla con trato digno, sin juzgar.','Levantar el acta con los hechos en sus palabras e individualizar a la persona denunciante.','Leer el acta con ella, pedirle que la firme y entregarle una copia.','Informarle el procedimiento y adoptar de inmediato medidas de resguardo.','Dentro de 3 días hábiles, disponer la investigación interna o remitir a la Inspección del Trabajo.'];
+let cur=[2,4,0,3,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se recibe y se registra; luego la persona firma y recibe copia; después se le informa y se la protege; y, dentro de 3 días hábiles, se decide quién investiga. Ninguno de estos pasos decide si los hechos son verdaderos.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 actuaciones están en su lugar (en verde). Piensa: no se puede firmar un acta que aún no existe, ni decidir quién investiga antes de proteger.`)});
+
+/* ---------- Árbol: ¿quién investiga? ---------- */
+const NODES=['¿La denuncia se presentó directamente en la Inspección del Trabajo?','¿La denuncia es contra el empleador o quien lo representa (por ejemplo, la gerencia)?','¿La empresa opta por remitir los antecedentes a la Inspección del Trabajo?'];
+const EXS=[
+ {n:'Un analista denuncia ante Personas a su supervisora. La empresa cuenta con una persona capacitada y sin conflicto de interés, y decide investigar.',path:[0,0,0],res:'int'},
+ {n:'Una asistente denuncia ante Personas al gerente general de la empresa.',path:[0,1],res:'emp'},
+ {n:'Un técnico presenta su denuncia directamente en la oficina de la Inspección del Trabajo.',path:[1],res:'dir'},
+ {n:'Una vendedora denuncia a un compañero. Quien debería investigar es pariente del denunciado, y la empresa decide no investigar internamente.',path:[0,0,1],res:'rem'}];
+const RES={int:['good','Investigación interna','La empresa investiga y la investigación debe concluir en 30 días. Al terminar, remite el informe y sus conclusiones a la Inspección del Trabajo, que se pronuncia dentro de 30 días.'],
+ emp:['good','Investiga la Inspección del Trabajo','Cuando la denuncia es contra el empleador o quien lo representa, la investigación corresponde a la Inspección del Trabajo. La empresa igual debe adoptar medidas de resguardo.'],
+ dir:['good','Investiga la Inspección del Trabajo','La persona puede denunciar directamente en la Inspección del Trabajo, sin pasar antes por la empresa.'],
+ rem:['good','Investiga la Inspección del Trabajo','La empresa puede remitir los antecedentes a la Inspección dentro de 3 días hábiles desde la recepción. Mientras tanto, mantiene las medidas de resguardo.']};
+const HINT=[['Revisa: la denuncia se presentó en la Inspección, no en la empresa.','Revisa: la denuncia se presentó ante la empresa.'],['Revisa: la persona denunciada representa al empleador.','Revisa: la persona denunciada no es el empleador ni lo representa.'],['Revisa: la empresa decidió no investigar internamente.','Revisa: la empresa decidió investigar ella misma.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Ejemplo ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Situación:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 4`;if(solved.size===4){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[['¿Debe exigirse que Andrés presente la denuncia por escrito?',0,'No. La denuncia puede ser verbal. Quien la recibe levanta un acta, que Andrés firma, y le entrega copia.'],
+ ['¿Corresponde informarle el procedimiento y que también puede acudir a la Inspección del Trabajo?',1,'Sí. Informar el procedimiento es parte de recibir la denuncia.'],
+ ['¿Puede la jefatura de turno decidir en esa conversación si los insultos ocurrieron?',0,'No. Recibir no es resolver: los hechos se determinan en la investigación.'],
+ ['¿Aplica la Ley Karin aunque quien agrede sea un proveedor y no un compañero?',1,'Sí. La violencia ejercida por terceros ajenos a la relación laboral, como clientes o proveedores, también está cubierta.'],
+ ['¿Deben adoptarse medidas de resguardo de inmediato?',1,'Sí. Al recibir la denuncia, el empleador adopta de inmediato medidas de resguardo que no perjudiquen a Andrés.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===5){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>
