@@ -149,9 +149,9 @@ const C=[
  {n:'Valeria Núñez',i:'VN',c:'#99afc4',e:'valeria.nunez@ejemplo.cl',p:'+56 9 0000 0108',t:'Cliente inactivo',k:'ina',x:'Decoración living',u:'Compra hace 9 meses',a:'Acción de reactivación'}];
 function shell(inner,{rail='crm',fly=null}={}){
  const R=[['⌂','home'],['✉','mk'],['👥','crm'],['☰','rep'],['⚙','cfg']].map(([g,id])=>`<span class="${id===rail?'on':''}" ${id==='crm'?'id="railcrm"':''}>${g}</span>`).join('');
- const F=fly?`<div class="fly"><h5>CRM</h5>${['Contactos','Empresas','Negocios','Tickets','Segmentos','Tareas','Bandeja de entrada'].map(x=>`<div class="${x===fly?'on':''}" id="fl_${x.split(' ')[0]}">${x}</div>`).join('')}</div>`:'';
+ const F=fly?`<div class="fly"><h5>CRM</h5><div id="flist" style="padding:0">${['Contactos','Empresas','Negocios','Tickets','Segmentos','Tareas','Bandeja de entrada'].map(x=>`<div class="${x===fly?'on':''}" id="fl_${x.split(' ')[0]}">${x}</div>`).join('')}</div></div>`:'';
  return `<div class="app"><div class="top"><div class="logo"><i></i></div><div class="srch">🔍&nbsp; Buscar en HubSpot</div><div class="acc">Casa Nativa <b>MA</b></div></div><div class="rail">${R}</div>${F}<div class="main" ${fly?'style="left:324px"':''}>${inner}</div></div>`}
-function table(rows,hov=-1){return `<table class="ix" id="tbl"><tr><th style="width:44px">☐</th><th>NOMBRE</th><th>CORREO</th><th>NÚMERO DE TELÉFONO</th><th>TIPO DE CLIENTE</th><th>INTERÉS PRINCIPAL</th><th>ÚLTIMA ACTIVIDAD</th><th>PRÓXIMA ACCIÓN</th></tr>
+function table(rows,hov=-1){return `<table class="ix" id="tbl"><tr id="thr"><th style="width:44px">☐</th><th>NOMBRE</th><th>CORREO</th><th>NÚMERO DE TELÉFONO</th><th>TIPO DE CLIENTE</th><th>INTERÉS PRINCIPAL</th><th>ÚLTIMA ACTIVIDAD</th><th>PRÓXIMA ACCIÓN</th></tr>
  ${rows.map((c,j)=>`<tr class="${j===hov?'hov':''}" id="r_${c.i}"><td>☐</td><td class="nm"><span class="ava" style="background:${c.c}">${c.i}</span>${c.n}</td><td>${c.e}</td><td>${c.p}</td><td><span class="tag t-${c.k}">${c.t}</span></td><td>${c.x}</td><td>${c.u}</td><td>${c.a}</td></tr>`).join('')}</table>`}
 function index(rows,{tabs=['Todos los contactos','Mis contactos','Recurrentes · Infantil'],on=0,n=rows.length,fon=false,showTab3=false,hov=-1}={}){
  const T=tabs.filter((x,j)=>j<2||showTab3).map((x,j)=>`<span class="${j===on?'on':''}" id="vt${j}">${x}</span>`).join('')+'<span style="background:none;border:none;color:#0091ae">+ Añadir vista</span>';
@@ -227,9 +227,9 @@ SC[2]=(f,T)=>{const inner=`<div class="ph"><h1>Contactos</h1><span class="cnt">8
   `<div class="callout" style="left:520px;top:420px;opacity:${seg(f,.12,.18)*(1-seg(f,.4,.44))}">Un CRM <b>no es solo una agenda digital</b>:<br>conecta datos, historial y próximas acciones.</div>`;
  hls(f,[[.08,.36,'.fly','Menú CRM']]);noCur()};
 /* 3 · lista de contactos */
-SC[3]=(f,T)=>{$('#sc').innerHTML=shell(index(C,{hov:f>.86?0:-1}));
+SC[3]=(f,T)=>{$('#sc').innerHTML=shell(index(C,{hov:-1}));
  hls(f,[[.16,.56,'#tbl','Registro centralizado de contactos'],[.56,.8,'.fbar','Un punto de consulta común: buscar y filtrar']]);
- cursor(f,T,[[.82,{x:900,y:700}],[.95,'#r_DS .nm']],[])};
+ noCur()};
 /* 4 · ficha */
 SC[4]=(f,T)=>{if(f<.1){$('#sc').innerHTML=shell(index(C,{hov:0}));cursor(f,T,[[0,'#r_DS .nm'],[.06,'#r_DS .nm']],[.04]);hl(null);return}
  $('#sc').innerHTML=shell(record({}));
@@ -271,17 +271,16 @@ SC[9]=(f,T)=>{const open=f>.2;
  cursor(f,T,[[.06,{x:1000,y:600}],[.16,'#fadv'],[.3,'#fadv']],[.16]);
  hls(f,[[.42,.6,'#pl0','Clientes recurrentes'],[.6,.75,'#pl1','Interés en una categoría'],[.75,.97,'#pl2','Contactos que necesitan seguimiento']])};
 /* 10 · segmento filtrado */
-SC[10]=(f,T)=>{const app=f>.12,rows=app?C.filter(c=>c.k==='rec'&&c.x==='Decoración infantil'):C,saved=f>.55;
+SC[10]=(f,T)=>{const app=f>.12,rows=app?C.filter(c=>c.k==='rec'&&c.x==='Decoración infantil'):C,saved=false;
  const conds=`<div class="cond"><b>Tipo de cliente</b> es cualquiera de <b>Cliente recurrente</b></div><div class="and">Y</div><div class="cond" style="opacity:${seg(f,.04,.1)}"><b>Interés principal</b> es cualquiera de <b>Decoración infantil</b></div>`;
  $('#sc').innerHTML=shell(index(rows,{fon:app,showTab3:saved,on:saved?2:0})+(f<.45?`<div class="drw" id="drw"><div class="dh">Filtros avanzados<span>✕</span></div><div class="db"><div class="grp" id="conds"><h6>GRUPO 1</h6>${conds}</div><div style="color:#0091ae;font-weight:600;font-size:16px">+ Añadir grupo de filtros</div></div></div>`:''));
- if(f>.38&&f<.56)$('.ph').insertAdjacentHTML('beforeend','<span class="btn sec" id="savev" style="position:absolute;right:430px;top:90px">Guardar vista</span>');
- cursor(f,T,[[.36,{x:1300,y:400}],[.46,'#savev'],[.54,'#savev']],[.48]);
- hls(f,[[.06,.36,'#conds','Dos condiciones',6],[.56,.72,'#vt2','Vista guardada'],[.72,.99,'#tbl','Mensaje relevante para este grupo']]);
- if(f>.74)$('#sc').insertAdjacentHTML('beforeend',`<div class="callout" style="left:420px;top:640px;opacity:${seg(f,.76,.82)}">✕ Promoción genérica para toda la base<br>✓ <b>Novedades de la colección infantil</b> para quienes ya compran y les interesa</div>`)};
+ noCur();
+ hls(f,[[.06,.4,'#conds','Dos condiciones',6],[.5,1.01,'#tbl','Mensaje relevante para este grupo']]);
+ if(f>.52&&f<1)$('#sc').insertAdjacentHTML('beforeend',`<div class="callout" style="left:420px;top:640px;opacity:${seg(f,.54,.6)}">✕ Promoción genérica para toda la base<br>✓ <b>Novedades de la colección infantil</b> para quienes ya compran y les interesa</div>`)};
 /* 11 · tres segmentos */
 SC[11]=(f,T)=>{const S=[['Clientes nuevos','new','Primera compra reciente','Acompañamiento después de la primera compra','Andrés Pérez → consultar satisfacción'],['Clientes recurrentes','rec','Más de una compra','Novedades relacionadas con sus intereses','Daniela Soto → nueva colección infantil'],['Clientes inactivos','ina','Sin compras en 6 meses o más','Estrategia de reactivación','Fernanda Rojas → acción de reactivación']];
  const n={new:2,rec:3,ina:2};
- const inner=`<div class="ph"><h1>Segmentos</h1><span style="margin-left:auto"></span><span class="btn pri">Crear segmento</span></div><div style="padding:20px 28px"><table class="ix"><tr><th>NOMBRE</th><th>TAMAÑO</th><th>TIPO</th><th>OBJETO</th><th>ÚLTIMA ACTUALIZACIÓN</th></tr>${S.map(s=>`<tr><td class="nm">${s[0]}</td><td>${n[s[1]]}</td><td>Activo</td><td>Contacto</td><td>9 oct 2026</td></tr>`).join('')}<tr><td class="nm">Recurrentes · Decoración infantil</td><td>2</td><td>Activo</td><td>Contacto</td><td>9 oct 2026</td></tr></table></div>`;
+ const inner=`<div class="ph"><h1>Segmentos</h1><span style="margin-left:auto"></span><span class="btn pri">Crear segmento</span></div><div style="padding:20px 28px"><table class="ix" id="segtbl"><tr><th>NOMBRE</th><th>TAMAÑO</th><th>TIPO</th><th>OBJETO</th><th>ÚLTIMA ACTUALIZACIÓN</th></tr>${S.map(s=>`<tr><td class="nm">${s[0]}</td><td>${n[s[1]]}</td><td>Activo</td><td>Contacto</td><td>9 oct 2026</td></tr>`).join('')}<tr><td class="nm">Recurrentes · Decoración infantil</td><td>2</td><td>Activo</td><td>Contacto</td><td>9 oct 2026</td></tr></table></div>`;
  $('#sc').innerHTML=shell(inner,{fly:'Segmentos'})+S.map((s,j)=>{const o=seg(f,.16+j*.22,.22+j*.22);return `<div class="cardw" id="seg${j}" style="left:${400+j*500}px;top:${470-(1-o)*30}px;width:470px;opacity:${o};z-index:9;padding:24px 28px"><span class="tag t-${s[1]}" style="font-size:18px">${s[0]}</span><p style="font-size:17px;color:#516f90;margin-top:8px">${s[2]}</p><h3 style="font-size:27px;margin-top:10px;line-height:1.25">${s[3]}</h3><p style="font-size:19px;margin-top:10px;border-top:1px solid #dfe3eb;padding-top:10px">Ej.: ${s[4]}</p></div>`}).join('');
  hl(null);noCur()};
 /* 12 · registro y fidelización */
@@ -305,6 +304,22 @@ SC[15]=(f,T)=>{$('#sc').innerHTML=`<div style="position:absolute;inset:0;backgro
  <div style="font-size:32px;margin-top:30px;line-height:1.4;opacity:${seg(f,.45,.52)}">Cada registro debe ayudarte a tomar una decisión o realizar una acción.</div>
  <div style="margin-top:44px;background:rgba(255,255,255,.12);border-left:6px solid #ff5c35;border-radius:12px;padding:22px 28px;font-size:28px;line-height:1.4;opacity:${seg(f,.7,.78)}">“Ya sé cómo pasar de una lista de nombres a una base que me dice <b>qué sé del cliente</b> y <b>qué debo hacer después</b>.”</div></div>`;
  hl(null);noCur()};
-window.R=function(k,f,T,subtitle){$('#note').style.display=[2,3,4,5,6,7,8,9,10,11,12].includes(k)?'block':'none';SC[k](f,T);sub(subtitle)};
+/* ampliaciones: e = avance (0–1) de la frase agregada al final de cada escena */
+const EXT={
+ 2:e=>{hl(e<.55?'#flist':'#fl_Contactos',e<.55?'Menú CRM':'Empezamos por Contactos',4)},
+ 3:e=>{if(e<.78){hl('#thr','Columnas: lo esencial de cada persona',4);noCur()}else{hl(null);$$('#r_DS td').forEach(td=>td.style.background=e>.9?'#e5f5f8':'');cursor(e,1,[[.78,{x:900,y:760}],[.92,'#r_DS .nm']],[])}},
+ 4:e=>{const z=e<.3?['.rl','Izquierda: datos del contacto']:e<.62?['.rm','Centro: actividades']:['.rr','Derecha: información relacionada'];hl(z[0],z[1],0)},
+ 5:(e,Te)=>{const p=pos('#pi');$('#sc').insertAdjacentHTML('beforeend',`<div id="dd" style="position:absolute;left:${p.x-150}px;top:${p.y+26}px;width:300px;background:#fff;border:1px solid #cbd6e2;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:9;font-size:17px;opacity:${seg(e,.05,.15)}"><div style="padding:8px 14px;font-size:13px;color:#516f90">Interés principal · lista de opciones</div>${['Decoración infantil','Decoración living','Iluminación','Textiles'].map(x=>`<div style="padding:10px 14px;${x==='Decoración infantil'?'background:#e5f5f8;color:#00708a;font-weight:600':''}">${x==='Decoración infantil'?'✓ ':''}${x}</div>`).join('')}</div>`);
+  cursor(e,Te,[[0,"#pi"],[.1,'#pi'],[.45,'#pi']],[.08]);hl(e<.45?'#pi':'#dd',e<.45?'Clic en el campo':'Mismas opciones para todo el equipo',6)},
+ 7:e=>{hl('#evnote','Fecha y autora, visible para todo el equipo',6)},
+ 8:e=>{if(e<.55)hl('#evtask','Asociada a la ficha · vencimiento · recordatorio',6);else{hl(null);$('#sc').insertAdjacentHTML('beforeend',`<div class="cardw" id="tlist" style="left:620px;top:480px;width:900px;padding:22px 26px;z-index:9;opacity:${seg(e,.55,.65)}"><div style="font-size:15px;color:#516f90;font-weight:600;letter-spacing:.05em">TAREAS · VENCEN ESTA SEMANA</div>${[['Contactar a Daniela el viernes','Daniela Soto','vie 16 oct',1],['Consultar satisfacción','Andrés Pérez','lun 12 oct',0],['Enviar catálogo de living','Carla Muñoz','mar 13 oct',0]].map(([a,b,c,o])=>`<div style="display:flex;gap:16px;align-items:center;padding:12px 6px;border-bottom:1px solid #dfe3eb;font-size:19px;${o?'background:#fff4f0;font-weight:600':''}"><span>☐</span><span style="flex:1;color:#213343">${a}</span><span style="color:#0091ae">${b}</span><span style="color:#516f90;width:110px">${c}</span></div>`).join('')}</div>`)}},
+ 10:(e,Te)=>{const saved=e>.45;const rows=C.filter(c=>c.k==='rec'&&c.x==='Decoración infantil');
+  $('#sc').innerHTML=shell(index(rows,{fon:true,showTab3:saved,on:saved?2:0}));
+  if(!saved){$('.main').insertAdjacentHTML('beforeend','<span class="btn sec" id="savev" style="position:absolute;right:30px;top:76px;z-index:4">Guardar vista</span>');cursor(e,Te,[[0,{x:1300,y:500}],[.25,'#savev'],[.45,'#savev']],[.3]);hl('#savev','Guardar como vista',6)}
+  else{noCur();hl('#vt2','Vista guardada: se consulta con un clic',4)}},
+ 11:e=>{hl('#segtbl','Segmentos activos: se actualizan solos',4)},
+ 12:e=>{hl('#evtask','A quién avisar, qué mostrar y cuándo',6)}};
+window.R=function(k,f,T,subtitle,q){$('#note').style.display=[2,3,4,5,6,7,8,9,10,11,12].includes(k)?'block':'none';
+ if(q&&EXT[k]){const t=f*T,A=.5+(T-1.1)*q,T0=A+.6,e=clamp((t-A)/(T-A-.6),0,1);SC[k](Math.min(1,t/T0),T0);if(t>A)EXT[k](e,T-A-.6)}else SC[k](f,T);sub(subtitle)};
 </script>
 </body></html>

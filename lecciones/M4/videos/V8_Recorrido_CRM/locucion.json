@@ -9,25 +9,29 @@
 "id": "g02",
 "sc": 2,
 "escena": "Vista general de HubSpot",
-"txt": "Un CRM, o sistema de gestión de relaciones con clientes, no es simplemente una agenda digital. Su valor está en ayudarnos a saber quién es el cliente, qué ha ocurrido en la relación y cuál debería ser el siguiente paso."
+"txt": "Un CRM, o sistema de gestión de relaciones con clientes, no es simplemente una agenda digital. Su valor está en ayudarnos a saber quién es el cliente, qué ha ocurrido en la relación y cuál debería ser el siguiente paso. En HubSpot, el menú CRM reúne contactos, empresas, negocios, tareas y segmentos. En este recorrido nos concentraremos en los contactos, porque son el punto de partida.",
+"q": 0.5659
 },
 {
 "id": "g03",
 "sc": 3,
 "escena": "Lista de contactos",
-"txt": "Comencemos por los contactos. Aquí podemos mantener un registro centralizado de las personas con las que el negocio mantiene una relación comercial. En lugar de buscar información en distintas aplicaciones, contamos con un punto de consulta común."
+"txt": "Comencemos por los contactos. Aquí podemos mantener un registro centralizado de las personas con las que el negocio mantiene una relación comercial. En lugar de buscar información en distintas aplicaciones, contamos con un punto de consulta común. En esta vista, cada fila es una persona, y las columnas muestran lo esencial: correo, teléfono, tipo de cliente, interés principal, última actividad y próxima acción.",
+"q": 0.5966
 },
 {
 "id": "g04",
 "sc": 4,
 "escena": "Ficha de Daniela Soto",
-"txt": "Abramos un ejemplo. Daniela es clienta de Casa Nativa. En su ficha podemos registrar información básica como nombre, correo, teléfono y otros datos útiles para la relación comercial. Lo importante es guardar solo información que realmente necesitaremos utilizar."
+"txt": "Abramos un ejemplo. Daniela es clienta de Casa Nativa. En su ficha podemos registrar información básica como nombre, correo, teléfono y otros datos útiles para la relación comercial. Lo importante es guardar solo información que realmente necesitaremos utilizar. La ficha se organiza en tres zonas: a la izquierda, los datos del contacto; al centro, sus actividades; y a la derecha, la información relacionada, como negocios y segmentos.",
+"q": 0.5995
 },
 {
 "id": "g05",
 "sc": 5,
 "escena": "Propiedades del contacto",
-"txt": "También podemos incorporar información que ayude a comprender mejor al cliente. Por ejemplo, podemos registrar que Daniela tiene interés en decoración infantil o que ya ha realizado más de una compra. Estos datos posteriormente permiten segmentar y personalizar acciones."
+"txt": "También podemos incorporar información que ayude a comprender mejor al cliente. Por ejemplo, podemos registrar que Daniela tiene interés en decoración infantil o que ya ha realizado más de una compra. Estos datos posteriormente permiten segmentar y personalizar acciones. Para completar un campo, basta con hacer clic sobre él y elegir el valor. Conviene usar listas de opciones: así todas las personas del equipo registran los datos de la misma forma.",
+"q": 0.5996
 },
 {
 "id": "g06",
@@ -39,7 +43,8 @@
 "id": "g07",
 "sc": 7,
 "escena": "Crear una nota",
-"txt": "Supongamos que Daniela consulta por una nueva colección. Podemos registrar una nota breve que deje constancia de esa interacción. El objetivo no es escribir conversaciones completas, sino conservar información que facilite el seguimiento posterior."
+"txt": "Supongamos que Daniela consulta por una nueva colección. Podemos registrar una nota breve que deje constancia de esa interacción. El objetivo no es escribir conversaciones completas, sino conservar información que facilite el seguimiento posterior. Al guardarla, la nota queda en el historial con la fecha y el nombre de quien la escribió, visible para todo el equipo.",
+"q": 0.6739
 },
 {
 "id": "g08",
@@ -57,19 +62,22 @@
 "id": "g10",
 "sc": 10,
 "escena": "Segmento filtrado",
-"txt": "Esta segmentación permite evitar mensajes iguales para toda la base. Casa Nativa podría identificar a clientes recurrentes interesados en decoración infantil y compartir con ellos información relevante, en lugar de enviar una promoción genérica a todas las personas."
+"txt": "Esta segmentación permite evitar mensajes iguales para toda la base. Casa Nativa podría identificar a clientes recurrentes interesados en decoración infantil y compartir con ellos información relevante, en lugar de enviar una promoción genérica a todas las personas. Además, podemos guardar este filtro como una vista, para volver a consultarlo cada vez que lo necesitemos, sin configurarlo de nuevo.",
+"q": 0.665
 },
 {
 "id": "g11",
 "sc": 11,
 "escena": "Tres segmentos",
-"txt": "Los segmentos pueden responder a diferentes necesidades. Un cliente nuevo puede necesitar acompañamiento después de su primera compra. Un cliente recurrente puede valorar novedades relacionadas con sus intereses. Y un cliente inactivo puede requerir una estrategia de reactivación."
+"txt": "Los segmentos pueden responder a diferentes necesidades. Un cliente nuevo puede necesitar acompañamiento después de su primera compra. Un cliente recurrente puede valorar novedades relacionadas con sus intereses. Y un cliente inactivo puede requerir una estrategia de reactivación. En HubSpot, estos grupos pueden guardarse como segmentos activos, que se actualizan solos cuando un contacto cumple o deja de cumplir las condiciones.",
+"q": 0.6505
 },
 {
 "id": "g12",
 "sc": 12,
 "escena": "Registro y fidelización",
-"txt": "Aquí aparece la relación entre registro y fidelización. Fidelizar no consiste solamente en enviar descuentos. Significa utilizar el historial y el conocimiento del cliente para entregar comunicaciones más pertinentes y realizar seguimiento en el momento adecuado."
+"txt": "Aquí aparece la relación entre registro y fidelización. Fidelizar no consiste solamente en enviar descuentos. Significa utilizar el historial y el conocimiento del cliente para entregar comunicaciones más pertinentes y realizar seguimiento en el momento adecuado. Por ejemplo, cuando llegue la colección infantil, Marcela sabrá a quién avisar primero, qué mostrarle y en qué fecha hacerlo.",
+"q": 0.6761
 },
 {
 "id": "g13",
