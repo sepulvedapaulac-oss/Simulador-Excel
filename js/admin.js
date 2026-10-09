@@ -41,11 +41,11 @@
       $('#login').hidden = !r.remote ? false : true;
       $('#results').hidden = false;
       $('#note').innerHTML = r.remote
-        ? 'Los datos se obtienen de la hoja de cálculo de Google configurada. También puede revisarlos directamente en esa planilla.'
+        ? (Store.backend === 'microsoft' ? 'Los datos se obtienen del archivo Excel de resultados (OneDrive/SharePoint).' : 'Los datos se obtienen de la hoja de cálculo de Google configurada. También puede revisarlos directamente en esa planilla.')
         : '';
       draw();
     } catch (e) {
-      $('#login-err').textContent = 'No se pudo conectar con Google Apps Script. Revise la URL en js/config.js y que la app web esté publicada con acceso para "Cualquier usuario". (' + e.message + ')';
+      $('#login-err').textContent = (Store.backend === 'microsoft' ? 'No se pudo conectar con el flujo de Power Automate. Revise POWER_AUTOMATE_LIST_URL en js/config.js y que el flujo esté activado. (' : 'No se pudo conectar con Google Apps Script. Revise la URL en js/config.js y que la app web esté publicada con acceso para "Cualquier usuario". (') + e.message + ')';
       $('#login').hidden = false;
     }
   }
@@ -122,13 +122,16 @@
   $('#csv').onclick = csv;
   for (const th of document.querySelectorAll('th[data-k]')) th.onclick = () => { const k = th.dataset.k; if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = 1; } draw(); };
 
-  if (Store.remote) {
-    $('#mode-text').textContent = 'Ingrese la clave del panel (la misma que definió en el archivo Code.gs de Google Apps Script).';
+  const excelLink = C.EXCEL_RESULTS_URL ? ' <a class="btn" target="_blank" rel="noopener" href="' + esc(C.EXCEL_RESULTS_URL) + '">Abrir el Excel de resultados ↗</a>' : '';
+  if (Store.remote && Store.canList) {
+    $('#mode-text').innerHTML = 'Ingrese la clave del panel (la que definió en ' + (Store.backend === 'google' ? 'el archivo Code.gs de Google Apps Script' : 'el flujo "Listar resultados" de Power Automate') + ').' + excelLink;
     $('#login-form').hidden = false;
     $('#login-form').addEventListener('submit', (e) => { e.preventDefault(); key = e.target.key.value; load(); });
     if (key) load();
+  } else if (Store.remote) {
+    $('#mode-text').innerHTML = '<div class="demo">Los resultados se están guardando en su <b>archivo Excel de OneDrive/SharePoint</b> (tabla «Resultados»). Ábralo para revisarlos.' + excelLink + '<br><span class="small">Para ver también la tabla aquí, cree el flujo opcional «Listar resultados» (backend/MICROSOFT.md, paso 4).</span></div>';
   } else {
-    $('#mode-text').innerHTML = '<div class="demo">⚠️ <b>Modo demostración.</b> Aún no se configuró Google Sheets (APPS_SCRIPT_URL en <code>js/config.js</code>), por lo que solo se ven las evaluaciones realizadas <b>en este mismo navegador</b>. Siga el README para recibir los resultados de todos los alumnos.</div>';
+    $('#mode-text').innerHTML = '<div class="demo">⚠️ <b>Modo demostración.</b> Aún no se configuró dónde guardar los resultados (<code>js/config.js</code>), por lo que solo se ven las evaluaciones realizadas <b>en este mismo navegador</b>. Siga el README para recibir los resultados de todos los alumnos.</div>';
     load();
   }
 })();

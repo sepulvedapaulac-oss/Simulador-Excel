@@ -4,9 +4,9 @@ Plataforma web de **nivelación**: identifica el nivel de Excel de cada alumno p
 
 - **Alumno** (`index.html`): se identifica con **nombre, apellido y correo**, resuelve las actividades de los tres niveles y al final ve su **curso recomendado** y su perfil por nivel. No hay nota de aprobación.
 - **Docente** (`admin.html`): ve el listado de todos los alumnos con nombre, apellido, correo, **curso recomendado**, nivel identificado y % logrado por nivel, más el detalle de cada actividad (incluye las que el alumno marcó "No sé hacerlo"). Puede descargarlo en CSV para abrirlo en Excel.
-- Los resultados también quedan en una **planilla de Google Sheets** de su cuenta.
+- Los resultados también quedan en un **archivo Excel de OneDrive/SharePoint** (vía Power Automate) o en **Google Sheets**, según lo que elija.
 
-No necesita Lovable ni servidores pagados: funciona con **GitHub Pages** (gratis) y **Google Sheets** (gratis).
+No necesita Lovable: el sitio se publica gratis con **GitHub Pages**, y los resultados se guardan en **Excel (Microsoft)** o en **Google Sheets**.
 
 ---
 
@@ -51,7 +51,17 @@ No necesita Lovable ni servidores pagados: funciona con **GitHub Pages** (gratis
 
 > Hasta completar el Paso 2 el simulador funciona en **modo demostración**: los resultados se guardan solo en el navegador donde se rindió la evaluación.
 
-### Paso 2 · Recibir los resultados en Google Sheets
+### Paso 2 · Elegir dónde se guardan los resultados
+
+Los alumnos **no trabajan en Excel ni en Google Sheets**: trabajan en la planilla del simulador, que usa las fórmulas de **Microsoft Excel en español**. Esta elección solo define **dónde se archivan los resultados** (una fila por alumno).
+
+#### Opción A · Microsoft Excel (OneDrive / SharePoint) con Power Automate
+
+Guía paso a paso: **[backend/MICROSOFT.md](backend/MICROSOFT.md)**. Usa el archivo plantilla [`backend/Resultados-Simulador.xlsx`](backend/Resultados-Simulador.xlsx).
+
+> Requiere **Power Automate Premium**, porque el disparador "Cuando se recibe una solicitud HTTP" es Premium.
+
+#### Opción B · Google Sheets (gratis)
 
 1. Cree una **hoja de cálculo nueva** en Google Drive (por ejemplo "Resultados Simulador Excel").
 2. En la hoja: menú **Extensiones → Apps Script**.
@@ -62,15 +72,16 @@ No necesita Lovable ni servidores pagados: funciona con **GitHub Pages** (gratis
    - *Quién tiene acceso:* **Cualquier usuario**
    - Presione **Implementar** y autorice el acceso con su cuenta de Google.
 6. Copie la **URL de la aplicación web** (termina en `/exec`).
-7. En GitHub abra `js/config.js`, presione ✏️ (editar) y pegue la URL:
+7. En GitHub abra `js/config.js`, presione ✏️ (editar) y complete:
    ```js
+   BACKEND: 'google',
    APPS_SCRIPT_URL: 'https://script.google.com/macros/s/XXXXXXXX/exec',
    ```
    Guarde con **Commit changes**.
 
-Listo: cada alumno que rinda la evaluación aparecerá en la pestaña **Resultados** de su planilla y en el **panel docente** (`admin.html`, ingresando su clave). La fila se crea al comenzar (estado *En curso*) y se actualiza al terminar cada nivel.
-
 > Si más adelante modifica `Code.gs`, use **Implementar → Administrar implementaciones → Editar → Nueva versión** para mantener la misma URL.
+
+Con cualquiera de las dos opciones, cada alumno queda como una fila en su planilla y en el **panel docente** (`admin.html`). La fila se crea al comenzar (estado *En curso*) y se actualiza al terminar cada nivel.
 
 ### Paso 3 · Compartir con los alumnos
 
@@ -83,7 +94,10 @@ Envíe a los alumnos solo el enlace del simulador (no el de `admin.html`).
 | Opción | Para qué sirve | Valor inicial |
 |---|---|---|
 | `ORG_NAME` | Nombre que aparece en el encabezado | `Tremen Partner` |
-| `APPS_SCRIPT_URL` | URL de Google Apps Script (Paso 2) | vacío |
+| `BACKEND` | Dónde guardar resultados: `'microsoft'` o `'google'` | `'microsoft'` |
+| `POWER_AUTOMATE_SAVE_URL` / `POWER_AUTOMATE_LIST_URL` | URLs de los flujos de Power Automate (Opción A) | vacío |
+| `EXCEL_RESULTS_URL` | Enlace al Excel de resultados, para abrirlo desde el panel (Opción A) | vacío |
+| `APPS_SCRIPT_URL` | URL de Google Apps Script (Opción B) | vacío |
 | `MASTERY_PERCENT` | Uso interno: % desde el que se considera que domina un nivel (define el curso recomendado; el alumno no lo ve como nota) | `70` |
 | `TIME_LIMITS` | Minutos por nivel (`0` = sin límite) | 30 / 40 / 45 |
 | `SHOW_DETAIL_TO_STUDENT` | Mostrar al alumno el detalle por actividad | `true` |
@@ -106,6 +120,8 @@ Las actividades están en `js/tasks.js` (datos, instrucciones y criterios de cor
 ```
 index.html        Simulador para alumnos
 admin.html        Panel docente
+backend/MICROSOFT.md            Guía Power Automate + Excel (OneDrive/SharePoint)
+backend/Resultados-Simulador.xlsx  Plantilla Excel con la tabla «Resultados»
 backend/Code.gs   Google Apps Script (guardar y leer resultados)
 js/config.js      Configuración
 js/tasks.js       Banco de actividades y corrección

@@ -5,8 +5,20 @@ window.SIM_CONFIG = {
   // Nombre que aparece en el encabezado
   ORG_NAME: 'Tremen Partner',
 
-  // URL de la aplicación web de Google Apps Script (ver README, paso 2).
-  // Mientras esté vacía, los resultados se guardan solo en el navegador (modo demostración).
+  // Dónde se guardan los resultados de los alumnos: 'microsoft' o 'google'.
+  // Mientras no se complete la URL correspondiente, el simulador funciona en
+  // modo demostración (los resultados quedan solo en el navegador).
+  BACKEND: 'microsoft',
+
+  // --- Opción Microsoft: Excel en OneDrive/SharePoint + Power Automate (backend/MICROSOFT.md)
+  // URL del flujo "Guardar resultado" (disparador "Cuando se recibe una solicitud HTTP").
+  POWER_AUTOMATE_SAVE_URL: '',
+  // (Opcional) URL del flujo "Listar resultados", para ver la tabla en el Panel docente.
+  POWER_AUTOMATE_LIST_URL: '',
+  // (Opcional) Enlace al archivo Excel de resultados, para abrirlo desde el Panel docente.
+  EXCEL_RESULTS_URL: '',
+
+  // --- Opción Google: Google Sheets + Apps Script (backend/Code.gs)
   APPS_SCRIPT_URL: '',
 
   // Uso interno para recomendar el curso (no se muestra al alumno como nota):
