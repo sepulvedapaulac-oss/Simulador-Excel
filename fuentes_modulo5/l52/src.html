@@ -1,0 +1,406 @@
+<title>Lección 5.2 — Renuncia, mutuo acuerdo y vencimiento del plazo</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Estilos propios de la Lección 5.2 ---- */
+.hero-grid .photo-frame.wide{aspect-ratio:3/2}
+.label-line.tri{min-height:220px}
+.label-line.tri .case{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;padding:8px 0;border-bottom:1px dashed var(--line)}
+.label-line.tri .case:last-child{border-bottom:none}
+.label-line.tri .case .n{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.label-line.tri .case span{min-width:0}
+.label-line.tri .sticker{font-size:1rem;padding:12px;text-align:center;line-height:1.4}
+.cmp.acta{display:grid;min-height:0}
+.cmp.acta .side{position:relative;grid-area:1/1;inset:auto}
+.cmp.acta .after{background:var(--good-soft)}
+.acta-row{display:grid;grid-template-columns:170px 1fr;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.acta-row:last-child{border-bottom:none}
+.acta-row b{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.acta-row .x{color:var(--bad);font-weight:750}
+.acta-row .ok{color:var(--good);font-weight:750}
+.cmp-labels{display:flex;justify-content:space-between;font-size:.8rem;font-weight:850;color:var(--muted);gap:10px}
+.cmp-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:center}
+.cmp-grid>*{min-width:0}
+.cmp-grid .photo-frame{aspect-ratio:3/2}
+.tree-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tree-legend span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:800;background:var(--surface);color:var(--ink2)}
+.hs-panel .bar2{margin-top:8px;padding:9px 12px;border-radius:12px;background:var(--good-soft);color:var(--good);font-weight:700;font-size:.9rem}
+.bins.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bins.four .bin{min-height:180px}
+.bins.four .bin h3{color:var(--ink2)}
+.bins.four .bin h3 small{display:block;font-size:.76rem;font-weight:750;color:var(--muted);margin-top:2px}
+.bins.four .cardx{font-size:.84rem}
+.vline>span:first-child{min-width:0}
+.vline .lbl{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.calc-mini{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.calc-mini span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:800;background:var(--surface);color:var(--ink2)}
+@media(max-width:1100px){.bins.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){.cmp-grid,.case-head{grid-template-columns:1fr}.acta-row{grid-template-columns:1fr;gap:2px}.label-line.tri{min-height:300px}}
+@media(max-width:600px){.vline{grid-template-columns:1fr}.vline .vb{flex-wrap:wrap}.bins.four{grid-template-columns:1fr}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.2</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:22" data-gate="hook" data-gate-msg="Despega la etiqueta de la carpeta y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.2 · Renuncia, mutuo acuerdo y vencimiento del plazo</span>
+      <h1 class="reveal">Tres salidas, tres lógicas distintas</h1>
+      <p class="lead reveal">Es miércoles. La jefatura de Operaciones de <strong>Horizonte Servicios</strong> deja sobre el escritorio de Camila, del Equipo de Personas, una carpeta con tres términos de contrato y una etiqueta pegada encima. <strong>Haz clic en la etiqueta para despegarla</strong> y ver qué hay en la carpeta.</p>
+      <div class="label-line tri reveal">
+        <div>
+          <div class="case"><span class="n">1</span><span><strong>Rodrigo</strong> · entregó a su jefatura una carta de renuncia escrita a mano. Nadie la ha ratificado.</span></div>
+          <div class="case"><span class="n">2</span><span><strong>Paula</strong> · conversó con la empresa y ambas partes quieren terminar el contrato de común acuerdo.</span></div>
+          <div class="case"><span class="n">3</span><span><strong>Tomás</strong> · su contrato a plazo fijo vence este viernes. La jefatura quiere que siga trabajando la próxima semana “mientras vemos”, sin firmar nada.</span></div>
+        </div>
+        <button class="sticker" type="button" id="sticker">“LOS TRES SE CIERRAN IGUAL” · toca para despegar</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila, del Equipo de Personas, abre una carpeta con documentos en su escritorio mientras una jefatura le explica la situación" src="{{IMG:i52_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">Sobre Tomás, ¿qué debería responder Camila a la jefatura?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“No hay riesgo: el contrato vence el viernes, así que lo que pase después no cuenta.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Hay que decidir antes del viernes: si Tomás sigue trabajando con nuestro conocimiento después del vencimiento, su contrato pasa a ser indefinido.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Que siga trabajando y firmamos un anexo cuando haya tiempo; es solo un trámite administrativo.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: un contrato indefinido sin haberlo decidido.</strong> <span class="fb-body">Lo que pasa después del vencimiento sí cuenta. Si la persona sigue prestando servicios con conocimiento del empleador una vez vencido el plazo, el contrato <b>se transforma en indefinido</b>.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: el papel llega tarde.</strong> <span class="fb-body">No es un simple trámite. Si Tomás sigue trabajando después del vencimiento, la continuidad ya produce efectos sobre la naturaleza del contrato. La decisión (renovar por escrito o terminar) se toma <b>antes</b> del viernes.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La continuidad después del vencimiento transforma el plazo fijo en indefinido. Y la etiqueta también estaba equivocada: renuncia, mutuo acuerdo y vencimiento <b>no se cierran igual</b>. En esta lección verás quién decide en cada caso y qué formalidades exige la ley.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 22 s</span>
+  <h2>¿Quién decide y qué papel se necesita?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · LA RENUNCIA RATIFICADA -->
+<section class="slide" data-title="La renuncia ratificada" data-audio="p03" data-dur="0:18" data-gate="cmp" data-gate-msg="Desliza el comparador hasta el final para ver la renuncia correcta.">
+  <span class="eyebrow amber">Lección 5.2 · Formalidades de la renuncia</span>
+  <h2>La misma renuncia, dos documentos muy distintos</h2>
+  <div class="cmp-grid">
+    <div><p>A la izquierda está la carta de Rodrigo tal como llegó a su jefatura. <strong>Desliza el control hacia la izquierda</strong> para descubrir, fila por fila, cómo debe quedar una renuncia que la empresa sí puede invocar.</p></div>
+    <div class="photo-frame"><img alt="Una persona trabajadora firma un documento ante un notario en el mesón de una notaría" src="{{IMG:i52_notaria}}"/></div>
+  </div>
+  <div class="cmp acta" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in">
+      <span class="eyebrow amber">Carta tal como llegó</span>
+      <div class="acta-row"><b>Quién decide</b><span>Rodrigo, por su cuenta</span></div>
+      <div class="acta-row"><b>Forma</b><span>Carta escrita a mano</span></div>
+      <div class="acta-row"><b>Firma</b><span>Firmada por Rodrigo</span></div>
+      <div class="acta-row"><b>Ratificación</b><span class="x">Ninguna: solo la recibió su jefatura</span></div>
+      <div class="acta-row"><b>Aviso</b><span class="x">“Me voy el viernes” (dos días después)</span></div>
+      <div class="acta-row"><b>¿Se puede invocar?</b><span class="x">No: falta la ratificación que exige el art. 177</span></div>
+    </div></div>
+    <div class="side after"><div class="in">
+      <span class="eyebrow">Renuncia que cumple</span>
+      <div class="acta-row"><b>Quién decide</b><span class="ok">Rodrigo: es una decisión unilateral de la persona trabajadora</span></div>
+      <div class="acta-row"><b>Forma</b><span class="ok">Por escrito</span></div>
+      <div class="acta-row"><b>Firma</b><span class="ok">Firmada por Rodrigo</span></div>
+      <div class="acta-row"><b>Ratificación</b><span class="ok">Ante un ministro de fe (inspector del trabajo, notario, oficial del Registro Civil o secretario municipal) o firmada electrónicamente en el sitio de la Dirección del Trabajo</span></div>
+      <div class="acta-row"><b>Aviso</b><span class="ok">Con al menos 30 días de anticipación</span></div>
+      <div class="acta-row"><b>¿Se puede invocar?</b><span class="ok">Sí: cumple el art. 177</span></div>
+    </div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador entre la carta sin ratificar y la renuncia ratificada"/>
+  <div class="cmp-labels"><span>◀ Desliza hasta aquí para ver la renuncia que cumple</span><span>Inicio</span></div>
+  <div class="fb" id="cmpFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 159 N°2 y 177; Ley 21.361 (firma electrónica en el sitio de la Dirección del Trabajo); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · ¿PLAZO FIJO O INDEFINIDO? -->
+<section class="slide" data-title="¿Plazo fijo o indefinido?" data-audio="p04" data-dur="0:18" data-gate="tree" data-gate-msg="Resuelve los cuatro ejemplos respondiendo las preguntas.">
+  <span class="eyebrow">Lección 5.2 · Vencimiento del plazo</span>
+  <h2>¿El plazo fijo se transformó en indefinido?</h2>
+  <p>Un contrato a plazo fijo dura como máximo <b>1 año</b> (<b>2 años</b> para gerentes o personas con título profesional o técnico). Pero hay situaciones que lo convierten en indefinido. <strong>Elige un ejemplo y responde Sí o No</strong> a cada pregunta, una a la vez. Si te equivocas, verás una pista.</p>
+  <div class="task" id="trTask">Ejemplos resueltos <span class="tick" id="trTick">0 / 4</span></div>
+  <div class="ex-tabs" id="exTabs"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <div class="tree-legend"><span>Basta un “Sí” para que el contrato pase a ser indefinido</span></div>
+  <p class="sources">Referencias: Código del Trabajo, art. 159 N°4 (vencimiento del plazo y reglas de transformación en indefinido); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 5 · EL ESCRITORIO DE CAMILA -->
+<section class="slide" data-title="Los documentos del cierre" data-audio="p05" data-dur="0:17" data-gate="hs" data-gate-msg="Explora los cinco puntos del escritorio de Camila.">
+  <span class="eyebrow violet">Lección 5.2 · Los documentos del cierre</span>
+  <h2>Cinco documentos sobre el escritorio</h2>
+  <p>Es jueves, un día antes del vencimiento del contrato de Tomás. <strong>Haz clic en cada número de la imagen</strong> para descubrir qué función cumple ese documento en el término.</p>
+  <div class="task" id="hsTask">Puntos explorados <span class="tick" id="hsTick">0 / 5</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Escritorio de Camila visto desde arriba en ángulo: a la izquierda una carta manuscrita, al centro un anexo con un lápiz, un contrato abierto, una carpeta con un finiquito a la derecha y un calendario de escritorio con un día marcado" src="{{IMG:i52_escritorio}}"/>
+      <button class="hs" type="button" style="left:14%;top:44%" data-hs="0" aria-label="Punto 1">1</button>
+      <button class="hs" type="button" style="left:38%;top:66%" data-hs="1" aria-label="Punto 2">2</button>
+      <button class="hs" type="button" style="left:52%;top:32%" data-hs="2" aria-label="Punto 3">3</button>
+      <button class="hs" type="button" style="left:76%;top:58%" data-hs="3" aria-label="Punto 4">4</button>
+      <button class="hs" type="button" style="left:88%;top:22%" data-hs="4" aria-label="Punto 5">5</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 73, 159 y 177; Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 6 · CUATRO FORMAS DE TÉRMINO -->
+<section class="slide" data-title="¿Quién tomó la iniciativa?" data-audio="p06" data-dur="0:17" data-gate="bins" data-gate-msg="Clasifica las ocho situaciones en su columna.">
+  <span class="eyebrow">Lección 5.2 · Causales del art. 159</span>
+  <h2>¿Quién o qué puso fin al contrato?</h2>
+  <p>Cada situación corresponde a una causal distinta del art. 159. <strong>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna</strong> que corresponde. Pista: fíjate en quién tomó la iniciativa.</p>
+  <div class="task" id="binTask">Situaciones clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins four">
+    <div class="bin" data-b="0" role="button" tabindex="0"><h3>✍️ Renuncia<small>Decide la persona trabajadora</small></h3></div>
+    <div class="bin" data-b="1" role="button" tabindex="0"><h3>🤝 Mutuo acuerdo<small>Deciden ambas partes</small></h3></div>
+    <div class="bin" data-b="2" role="button" tabindex="0"><h3>📅 Vencimiento del plazo<small>Llega la fecha convenida</small></h3></div>
+    <div class="bin" data-b="3" role="button" tabindex="0"><h3>🏗️ Conclusión de obra o faena<small>Termina el trabajo que originó el contrato</small></h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, art. 159 N°1, 2, 4 y 5; art. 163 inciso 3.</p>
+</section>
+
+<!-- 7 · CASO: EL CIERRE DE LOS TRES -->
+<section class="slide" data-title="Caso: el cierre de los tres" data-audio="p07" data-dur="0:18" data-gate="vl" data-gate-msg="Evalúa las siete líneas de la lista de cierre.">
+  <span class="eyebrow amber">El caso de Camila · El cierre de los tres casos</span>
+  <h2>Siete líneas antes de firmar</h2>
+  <p>Camila redactó esta lista para cerrar los casos de Rodrigo, Paula y Tomás. <strong>Para cada línea, decide si cumple o no cumple</strong> con lo que exige la ley.</p>
+  <div class="task" id="vlTask">Líneas evaluadas <span class="tick" id="vlTick">0 / 7</span></div>
+  <div class="slip" id="vlines"><div class="slip-h"><span>Lista de cierre · Operaciones</span><span>Borrador del jueves</span></div></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 73, 159, 163 y 177; Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 8 · CASO: FIN DE LA OBRA -->
+<section class="slide" data-title="Caso: fin de la obra" data-audio="p08" data-dur="0:14" data-gate="caso" data-gate-msg="Resuelve las dos decisiones sobre el término de Martín.">
+  <span class="eyebrow amber">El caso de Camila · Conclusión de la obra</span>
+  <h2>La remodelación terminó. ¿Y el contrato de Martín?</h2>
+  <div class="case-head">
+    <div class="story" style="margin:0"><strong>La situación:</strong> en 2025, Horizonte Servicios contrató a Martín, técnico eléctrico, para la remodelación de su sucursal de Rancagua. Su contrato dice que dura “hasta el término de la obra”. La obra concluyó hoy, después de <b>8 meses y 10 días</b> de trabajo.</div>
+    <div class="photo-frame"><img alt="Un técnico eléctrico con casco y chaleco reflectante revisa planos junto a una supervisora en una obra de remodelación terminada" src="{{IMG:i52_obra}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué causal corresponde?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Vencimiento del plazo convenido (art. 159 N°4).</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Conclusión del trabajo o servicio que dio origen al contrato (art. 159 N°5).</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Necesidades de la empresa (art. 161).</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: causal que no calza con los hechos</div><div class="branch-body"><div><p>El contrato de Martín no tenía una <strong>fecha</strong> de término, sino una <strong>obra</strong>. La causal se elige según los hechos reales: aquí terminó el trabajo que dio origen al contrato.</p></div><div><p class="hint">Mira qué dice el contrato: “hasta el término de la obra”.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se construye una causal que no corresponde</div><div class="branch-body"><div><p>El art. 161 exige hechos objetivos de la organización, como una racionalización o una baja en la productividad. Aquí no hay nada de eso: simplemente <strong>concluyó la obra</strong> para la que Martín fue contratado.</p></div><div><p class="hint">La causal se elige por los hechos, no por conveniencia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El contrato terminó porque <strong>concluyó la obra</strong> que le dio origen: es la causal del art. 159 N°5. Ni Martín ni la empresa tomaron la iniciativa: la determinó el fin del trabajo.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="calc-mini"><span>Duración: 8 meses y 10 días</span><span>Contrato celebrado en 2025</span><span>Remuneración: $900.000</span></div>
+    <h3 style="margin-top:14px">Decisión 2 · Además de los pagos pendientes y el feriado proporcional, ¿qué incluye su finiquito?</h3>
+    <div class="options" data-choice="caso2" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Nada más: al concluir la obra no procede ninguna indemnización.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>30 días de remuneración por año de servicio, como en el art. 161.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Una indemnización de 2,5 días de remuneración por cada mes trabajado: 8 meses × 2,5 = 20 días.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un finiquito incompleto</div><div class="branch-body"><div><p>Si el contrato por obra o faena duró <strong>un mes o más</strong>, al concluir la obra corresponde la indemnización del art. 163 inciso 3. Omitirla deja a Martín sin un pago que la ley le reconoce.</p></div><div><p class="hint">Martín trabajó más de un mes.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se aplica la regla de otra causal</div><div class="branch-body"><div><p>Los 30 días por año de servicio corresponden al art. 161 (o a un despido declarado injustificado). Para la conclusión de la obra, la regla es otra: <strong>2,5 días por cada mes</strong> trabajado.</p></div><div><p class="hint">Cada causal tiene su propio cálculo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Se cuentan los meses trabajados y la fracción <strong>superior a 15 días</strong>. Los 10 días restantes no alcanzan, así que son 8 meses × 2,5 = <strong>20 días de remuneración</strong>, más remuneraciones pendientes y feriado proporcional.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 73, 159 N°5, 161 y 163 inciso 3 (contratos por obra o faena celebrados desde 2022).</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:17" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:16" data-gate="order pass" data-gate-msg="Ordena los cinco pasos para cerrar una renuncia (y aprueba la Comprobación).">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Cómo se cierra correctamente una renuncia?</h2>
+  <p>La próxima vez que alguien de tu equipo entregue su renuncia, estos son los pasos que deberías seguir, pero están desordenados. <strong>Usa las flechas</strong> para ordenarlos de arriba hacia abajo y presiona <strong>Comprobar orden</strong>.</p>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 73, 159 N°2 y 177; Ley 21.361 (finiquito electrónico).</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:18" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.2</h2>
+    <p>Ya distingues la renuncia, el mutuo acuerdo, el vencimiento del plazo y la conclusión de la obra: quién toma la iniciativa en cada caso, qué formalidades exige la ley y qué pagos corresponden.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> no todos los términos se cierran igual. Primero identifica quién decidió y por qué terminó el contrato; luego exige el documento que corresponde, ratificado cuando la ley lo pide, y revisa los pagos antes de firmar el finiquito. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar la renuncia ratificada</button><button class="small-btn primary" type="button" data-goto="3">Repasar el plazo fijo</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 73, 159 a 177 (y 454 N°1); Ley 19.728 (seguro de cesantía); Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l52';
+const FIRST_KEYS=['hook','vl','caso1','caso2'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Tres formas de terminar',lines:['Renuncia, mutuo acuerdo y vencimiento del plazo están en el artículo 159 del Código del Trabajo.','Son causales objetivas, pero cada una sigue su propia lógica.'],
+  html:`<div class="v-icons"><div><span class="i">✍️</span>Renuncia</div><div><span class="i">🤝</span>Mutuo acuerdo</div><div><span class="i">📅</span>Vencimiento del plazo</div></div><div class="v-sub" data-at="1" style="margin-top:16px">Art. 159 · causales objetivas · lógicas distintas</div>`},
+ {t:'La renuncia',lines:['La renuncia es una decisión unilateral de la persona trabajadora.','Debe constar por escrito y avisarse al empleador con al menos 30 días de anticipación.'],
+  html:`<div class="v-icons"><div><span class="i">🙋</span>Decide la persona trabajadora</div><div data-at="1"><span class="i">📝</span>Por escrito</div><div data-at="1"><span class="i">⏳</span>Aviso de 30 días</div></div>`},
+ {t:'El mutuo acuerdo',lines:['En el mutuo acuerdo, la persona trabajadora y el empleador deciden terminar juntos.','Consta por escrito y no genera indemnización por años de servicio, salvo que se pacte una.'],
+  html:`<div class="v-icons"><div><span class="i">🤝</span>Deciden ambas partes</div><div data-at="1"><span class="i">📝</span>Por escrito</div></div><div class="v-chk"><span data-at="1" class="v-strike">Indemnización legal por años de servicio</span><span data-at="1" class="on">Salvo que se pacte</span></div>`},
+ {t:'La formalidad del artículo 177',lines:['Para que la empresa los invoque, renuncia y acuerdo deben ir firmados por la persona trabajadora.','Y ratificados ante un ministro de fe, o firmados electrónicamente en el sitio de la Dirección del Trabajo.'],
+  html:`<div class="v-steps"><div data-at="0">Documento escrito</div><div data-at="0">Firmado por la persona trabajadora</div><div data-at="1">Ratificado ante ministro de fe</div><div data-at="1">o firmado electrónicamente en el sitio de la DT</div></div>`},
+ {t:'Vencimiento del plazo',lines:['El contrato a plazo fijo dura como máximo un año, o dos para gerentes y personas con título profesional o técnico.','Al llegar la fecha convenida, el contrato termina.'],
+  html:`<div class="v-eq"><span>1 año</span><span class="op">·</span><span class="q">2 años</span></div><div class="v-sub">máximo general · gerentes o título profesional o técnico</div><div class="v-icons" style="margin-top:14px"><div data-at="1"><span class="i">📅</span>Llega la fecha: termina el contrato</div></div>`},
+ {t:'Cuándo pasa a indefinido',lines:['Pasa a indefinido si sigue trabajando, con conocimiento del empleador, tras el vencimiento, o si hay segunda renovación.','También con más de dos contratos a plazo, 12 meses o más en 15 meses.'],
+  html:`<div class="v-steps"><div data-at="0">Sigue trabajando después del vencimiento</div><div data-at="0">Segunda renovación</div><div data-at="1">Más de dos contratos: 12 meses o más en un período de 15</div></div><div class="v-sub" data-at="1" style="margin-top:12px">→ contrato indefinido</div>`},
+ {t:'Conclusión de obra o faena',lines:['Si un contrato por obra o faena duró un mes o más, al concluir la obra se pagan 2,5 días de remuneración por mes trabajado.','Y todo finiquito revisa feriado y pagos pendientes.'],
+  html:`<div class="v-big">2,5</div><div class="v-sub">días de remuneración por cada mes trabajado</div><div class="v-chk" style="margin-top:14px"><span data-at="1">Remuneraciones pendientes</span><span data-at="1">Feriado pendiente y proporcional</span><span data-at="1">Finiquito</span></div>`}
+]};
+const Q=[
+ {q:'En la renuncia, ¿quién toma la iniciativa de terminar el contrato?',o:['El empleador.','Ambas partes, en conjunto.','La persona trabajadora, de forma unilateral.'],c:2,f:'La renuncia es una decisión unilateral de la persona trabajadora, con aviso de al menos 30 días. Cuando deciden ambas partes, es mutuo acuerdo.'},
+ {q:'Según el art. 177, ¿qué se necesita para que el empleador pueda invocar una renuncia?',o:['Que conste por escrito, firmada por la persona trabajadora y ratificada ante un ministro de fe, o firmada electrónicamente en el sitio de la Dirección del Trabajo.','Basta un correo de la persona trabajadora a su jefatura.','Que la jefatura la firme como recibida.','Un aviso verbal con 30 días de anticipación.'],c:0,f:'El art. 177 exige el documento escrito, firmado por la persona trabajadora y ratificado ante un ministro de fe (inspector, notario, oficial del Registro Civil o secretario municipal, entre otros), o firmado electrónicamente en el sitio de la DT.'},
+ {q:'Un contrato a plazo ya se renovó una vez. La empresa quiere renovarlo de nuevo. ¿Qué ocurre?',o:['Sigue siendo a plazo fijo por un año más.','La empresa debe esperar 15 meses para renovarlo.','Necesita autorización de la Inspección del Trabajo.','Con la segunda renovación, el contrato se transforma en indefinido.'],c:3,f:'La segunda renovación transforma el contrato a plazo fijo en indefinido. También ocurre si la persona sigue trabajando con conocimiento del empleador después del vencimiento.'},
+ {q:'Paula y la empresa terminan el contrato de mutuo acuerdo. ¿Procede la indemnización legal por años de servicio?',o:['Sí, siempre que haya trabajado un año o más.','No, salvo que las partes pacten una.','Solo si el acuerdo se firma ante notario.'],c:1,f:'El mutuo acuerdo no genera indemnización legal por años de servicio. Las partes pueden pactar una, pero es parte del acuerdo, no una obligación legal.'},
+ {q:'Una persona contratada por obra trabajó 6 meses y la obra concluyó. ¿Qué indemnización corresponde?',o:['Ninguna.','30 días de remuneración por año de servicio.','2,5 días de remuneración por cada mes trabajado: 15 días.','La última remuneración mensual completa.'],c:2,f:'Si el contrato por obra o faena duró un mes o más, corresponden 2,5 días de remuneración por cada mes trabajado (y fracción superior a 15 días): 6 × 2,5 = 15 días.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: etiqueta despegable ---------- */
+$('#sticker').addEventListener('click',e=>{e.currentTarget.classList.add('peeled');setTimeout(()=>{const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},500)});
+
+/* ---------- Comparador: renuncia ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');
+  feedback($('#cmpFb'),true,'Así se ve una renuncia que la empresa puede invocar.','La decisión sigue siendo de Rodrigo, pero ahora consta por escrito, está ratificada ante un ministro de fe (o firmada electrónicamente en el sitio de la DT) y respeta el aviso de al menos 30 días. Sin la ratificación, el empleador no puede invocarla.')}}});
+
+/* ---------- Árbol: ¿plazo fijo o indefinido? ---------- */
+const NODES=['¿Siguió prestando servicios, con conocimiento del empleador, después de vencido el plazo?','¿Hubo una segunda renovación?','¿Prestó servicios discontinuos con más de dos contratos a plazo, durante 12 meses o más, en un período de 15 meses?'];
+const EXS=[
+ {n:'<b>Tomás</b> tiene un contrato de 6 meses que vence el viernes. El lunes siguiente vuelve a su puesto, la jefatura lo sabe y no se firma nada.',path:[1],res:'c1'},
+ {n:'<b>Valentina</b> firmó un contrato de 3 meses. Antes del vencimiento firmó por escrito una primera renovación por 3 meses más. Es su único contrato con la empresa y deja de trabajar el último día del nuevo plazo.',path:[0,0,0],res:'fijo'},
+ {n:'<b>Ignacio</b> tiene un contrato de 4 meses que ya se renovó una vez por escrito. Antes del nuevo vencimiento, la empresa le pide firmar otra renovación por 4 meses.',path:[0,1],res:'c2'},
+ {n:'<b>Fernanda</b> firmó cuatro contratos a plazo cortos en los últimos 15 meses, con pausas entre uno y otro, y en total trabajó 13 meses. Nunca siguió trabajando después de un vencimiento y no hubo renovaciones.',path:[0,0,1],res:'c3'}];
+const RES={c1:['good','Contrato indefinido','La continuidad de los servicios con conocimiento del empleador, una vez vencido el plazo, transforma el contrato en indefinido. Por eso la decisión se toma antes del vencimiento.'],
+ fijo:['good','Sigue siendo a plazo fijo: termina por vencimiento del plazo','La primera renovación por escrito está permitida y la duración total (6 meses) está bajo el máximo. Termina por el art. 159 N°4, sin indemnización por años de servicio; igual se pagan feriado proporcional y pendientes.'],
+ c2:['good','Contrato indefinido','La segunda renovación transforma el contrato en indefinido, aunque se firme por escrito.'],
+ c3:['good','Contrato indefinido (presunción legal)','Más de dos contratos a plazo, con servicios discontinuos durante 12 meses o más en un período de 15 meses, hacen presumir que el contrato es indefinido.']};
+const HINT=[['Revisa: la persona volvió a trabajar después del vencimiento y la jefatura lo sabía.','Revisa: dejó de trabajar al llegar la fecha; no siguió después del vencimiento.'],['Revisa: el contrato ya se había renovado una vez y ahora se renueva otra vez.','Revisa: hubo como máximo una renovación.'],['Revisa: son más de dos contratos y suman 12 meses o más dentro de 15 meses.','Revisa: no hay más de dos contratos a plazo en ese período.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Ejemplo ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Situación:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 4`;if(solved.size===4){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Hotspots: escritorio de Camila ---------- */
+const HS=[
+ ['La carta de renuncia de Rodrigo','La renuncia es una <b>decisión unilateral</b> de la persona trabajadora y debe avisarse con <b>al menos 30 días</b> de anticipación. Para que la empresa pueda invocarla, debe estar <b>firmada por Rodrigo y ratificada</b> ante un ministro de fe, o firmada electrónicamente en el sitio de la DT.','Art. 159 N°2 y art. 177.'],
+ ['El anexo de renovación','Si la empresa quiere que Tomás siga, el anexo de renovación se firma <b>por escrito y antes del vencimiento</b>. Una primera renovación está permitida; con una <b>segunda renovación</b>, el contrato pasa a ser indefinido.','Decidir antes del viernes evita un indefinido no buscado.'],
+ ['El contrato a plazo fijo','Indica la <b>fecha de término</b> convenida. Su duración máxima es de <b>1 año</b>, o <b>2 años</b> para gerentes o personas con título profesional o técnico. Al llegar la fecha, el contrato termina por vencimiento del plazo, sin indemnización por años de servicio.','Art. 159 N°4.'],
+ ['El finiquito','Cierra la relación laboral: debe constar <b>por escrito</b>, firmado por la persona trabajadora y <b>ratificado</b> ante un ministro de fe o firmado electrónicamente en el sitio de la DT. El empleador lo pone a disposición <b>dentro de 10 días hábiles</b> desde la separación, y el pago se hace al ratificar. Incluye remuneraciones pendientes y el feriado pendiente y proporcional.','Art. 73 y art. 177; Ley 21.361.'],
+ ['El calendario','El viernes vence el contrato de Tomás. Si sigue trabajando después de esa fecha <b>con conocimiento del empleador</b>, el contrato se transforma en indefinido. Por eso el calendario marca el día límite para decidir: renovar por escrito o terminar.','La continuidad después del vencimiento tiene efectos.']];
+const tHs=tracker('hs',5,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][1]}</p><div class="bar2">✓ ${HS[k][2]}</div>`;tHs(k)}));
+
+/* ---------- Clasificar: cuatro formas de término ---------- */
+const BN=['Renuncia','Mutuo acuerdo','Vencimiento del plazo','Conclusión de obra o faena'];
+const CARDS=[
+ ['Rodrigo avisa por escrito que dejará la empresa en 30 días para aceptar otro trabajo.',0,'Renuncia: la iniciativa es solo de la persona trabajadora.'],
+ ['Una vendedora decide irse, firma su carta y la ratifica ante notario.',0,'Renuncia: decisión unilateral de la persona trabajadora, ratificada ante un ministro de fe.'],
+ ['Paula y la empresa conversan y firman juntas el término, con un bono de salida que ellas mismas pactan.',1,'Mutuo acuerdo: deciden ambas partes. El bono existe porque se pactó, no porque la ley lo exija.'],
+ ['La empresa propone terminar, la persona trabajadora acepta y ambas firman un documento ante un inspector del trabajo.',1,'Mutuo acuerdo: aunque la empresa lo propuso, el término es una decisión conjunta.'],
+ ['Llega la fecha de término escrita en un contrato a plazo de 4 meses que no se renovó.',2,'Vencimiento del plazo: termina por la llegada de la fecha convenida.'],
+ ['Un contrato a plazo de 6 meses llega a su fecha y la persona deja de trabajar ese mismo día.',2,'Vencimiento del plazo: no hubo continuidad después de la fecha, así que no se transforma en indefinido.'],
+ ['Termina la instalación eléctrica del edificio para la que se contrató a un técnico.',3,'Conclusión de obra o faena: terminó el trabajo que dio origen al contrato.'],
+ ['Finaliza el proyecto de digitalización de archivos que dio origen al contrato de una analista.',3,'Conclusión de obra o faena: si duró un mes o más, corresponden 2,5 días de remuneración por cada mes trabajado.']];
+const corder=[4,0,6,2,5,1,7,3];let selC=null,placedN=0;
+$('#pool').innerHTML=corder.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',CARDS[c][2]);
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,`No es ${BN[+b].toLowerCase()}.`,'Pregúntate quién o qué puso fin al contrato: ¿la persona trabajadora sola, ambas partes, la fecha del contrato o el fin del trabajo que lo originó?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+
+/* ---------- Veredicto por línea: lista de cierre ---------- */
+const VL=[
+ ['Rodrigo · renuncia','Se archiva la carta escrita a mano de Rodrigo como respaldo suficiente del término.',0,'No cumple: para invocar la renuncia, la carta debe estar firmada por Rodrigo y ratificada ante un ministro de fe, o firmada electrónicamente en el sitio de la DT.','¿qué exige el art. 177 para que la empresa pueda invocarla?'],
+ ['Rodrigo · renuncia','Se acuerda con Rodrigo que ratifique su renuncia ante un notario o la firme electrónicamente en el sitio de la Dirección del Trabajo.',1,'Cumple: así la renuncia queda en condiciones de ser invocada por la empresa.','¿es una de las formas de ratificación que acepta la ley?'],
+ ['Paula · mutuo acuerdo','El documento dice que la empresa “debe por ley” pagarle indemnización por años de servicio.',0,'No cumple: el mutuo acuerdo no genera indemnización legal por años de servicio. Pueden pactar un pago, pero es un acuerdo, no una obligación legal.','¿el mutuo acuerdo genera por sí solo indemnización legal?'],
+ ['Paula · mutuo acuerdo','El acuerdo queda por escrito, firmado por Paula y ratificado ante un inspector del trabajo.',1,'Cumple: es la formalidad que exige el art. 177.','¿consta por escrito, firmado y ratificado?'],
+ ['Tomás · plazo fijo','Tomás seguirá trabajando la próxima semana “mientras vemos”, sin ningún documento.',0,'No cumple: si sigue trabajando con conocimiento del empleador después del vencimiento, el contrato se transforma en indefinido.','¿qué pasa si la persona sigue trabajando después de la fecha?'],
+ ['Tomás · plazo fijo','Antes del viernes, la empresa decide: firmar por escrito una primera renovación o terminar el contrato por vencimiento del plazo.',1,'Cumple: la decisión se toma antes del vencimiento y queda por escrito.','¿se decide a tiempo y por escrito?'],
+ ['Los tres casos','En cada finiquito se revisan remuneraciones pendientes y feriado pendiente y proporcional, y se pone a disposición dentro de 10 días hábiles desde la separación.',1,'Cumple: son los pagos que siempre se revisan y el plazo para otorgar el finiquito.','¿qué se revisa en todo finiquito y en qué plazo?']];
+$('#vlines').insertAdjacentHTML('beforeend',VL.map((v,i)=>`<div class="vline" data-i="${i}"><span><span class="lbl">${v[0]}</span><br/>${v[1]}</span><span class="vb"><button type="button" data-a="1">Cumple</button><button type="button" data-a="0">No cumple</button></span><div class="vexp"></div></div>`).join(''));
+let vlN=0,vlFirst=true;
+$$('#vlines .vline').forEach(l=>$$('.vb button',l).forEach(b=>b.addEventListener('click',()=>{if(l.classList.contains('locked'))return;const v=VL[+l.dataset.i],ok=+b.dataset.a===v[2];
+  if(ok){l.classList.add('answered','locked');b.classList.add('good');$$('.vb button',l).forEach(x=>x.disabled=true);$('.vexp',l).innerHTML=`<div class="feedback good" style="margin:0">${v[3]}</div>`;vlN++;$('#vlTick').textContent=`${vlN} / 7`;if(vlN===7){S.first.vl=vlFirst;$('#vlTask').classList.add('ok');done('vl')}}
+  else{vlFirst=false;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),900);l.classList.add('answered');$('.vexp',l).innerHTML=`<div class="feedback bad" style="margin:0">Revisa: ${v[4]}</div>`}})));
+
+/* ---------- Ordenar: cerrar una renuncia ---------- */
+const ORDER=['Recibir la carta de renuncia escrita y revisar la fecha de salida: el aviso debe darse con al menos 30 días de anticipación.','Verificar que la persona trabajadora firme la renuncia y la ratifique ante un ministro de fe, o la firme electrónicamente en el sitio de la DT.','Calcular los pagos del cierre: remuneraciones pendientes y feriado pendiente y proporcional (sin indemnización por años de servicio).','Preparar el finiquito y ponerlo a disposición dentro de 10 días hábiles desde la separación.','Ratificar el finiquito ante un ministro de fe o electrónicamente, pagar al ratificar y archivar todo el respaldo.'];
+let cur=[2,4,0,3,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se recibe la renuncia y se revisa el aviso; luego se formaliza con la ratificación del art. 177; después se calculan los pagos, se pone el finiquito a disposición en plazo y, al ratificarlo, se paga y se archiva la evidencia completa.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Piensa: no se puede calcular el cierre de una renuncia que aún no está formalizada, ni pagar antes de ratificar el finiquito.`)});
+/*{{TAIL}}*/
+})();
+</script>

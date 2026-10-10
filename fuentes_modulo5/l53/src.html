@@ -1,0 +1,350 @@
+<title>Lección 5.3 — Necesidades de la empresa y otras causales</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Lección 5.3: ajustes propios ---- */
+.photo-frame.banner{aspect-ratio:21/9;margin:12px 0 4px}
+.photo-cap{font-size:.85rem;color:var(--muted);font-weight:650;margin:4px 0 0}
+.acc-body .example.no{border-color:var(--bad-line);background:var(--bad-soft)}
+.acc-body .example + .example{margin-top:8px}
+#tiles{grid-template-columns:repeat(4,minmax(0,1fr))}
+#tiles .tile.open{background:var(--amber-soft);color:var(--ink);border:2px solid var(--line)}
+#tiles .tile .num{display:block;font-size:.78rem;font-weight:900;letter-spacing:.04em;color:var(--muted)}
+.tiles-note{margin-top:12px}
+.seltable td.sit{min-width:0}
+.seltable td.selcol{width:320px}
+.cloze.plan{font-size:1.02rem;line-height:2.1}
+.cloze.plan ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.cloze.plan select{max-width:100%;white-space:normal}
+.plan-head{margin:14px 0 8px;font-weight:850;color:var(--ink)}
+.plan-head b{color:var(--teal-ink)}
+.scen{font-size:.95rem}
+@media(max-width:860px){
+  .photo-frame.banner{aspect-ratio:16/10}
+  #tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #seltable tr{display:grid;grid-template-columns:1fr}
+  #seltable td{border-bottom:none}
+  #seltable tr td:last-child{border-bottom:1px solid var(--line2);padding-top:0}
+  .seltable td.selcol{width:auto}
+  .cloze.plan select{width:100%}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.3</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:19" data-gate="hook" data-gate-msg="Revisa los cuatro campos de la solicitud y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.3 · Necesidades de la empresa y otras causales</span>
+      <h1 class="reveal">No basta con invocar una frase legal</h1>
+      <p class="lead reveal">La Gerencia Comercial de Horizonte Servicios envió a Camila esta solicitud para desvincular a Andrés, analista comercial con seis años en la empresa. <strong>Haz clic en cada campo</strong> para revisarlo.</p>
+      <div class="form reveal" id="form">
+        <button class="ffield" type="button"><span class="lbl">Causal propuesta</span><span>Art. 161 · “Necesidades de la empresa”</span><span class="flag">⚠️ La solicitud no menciona ningún cambio en la organización: ni reestructuración, ni cierre, ni baja en la actividad del área.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Motivo descrito</span><span>“Relación tensa con su jefatura; ya no confía en él”</span><span class="flag">⚠️ Es una relación personal, no una necesidad de la empresa. El motivo real y la etiqueta jurídica no coinciden.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Antecedentes adjuntos</span><span>— ninguno —</span><span class="flag">⚠️ Sin hechos objetivos ni documentos, la carta no tendría qué relatar y en un juicio no se podrían agregar otros hechos.</span></button>
+        <button class="ffield" type="button"><span class="lbl">Observación</span><span>“Se paga la indemnización y se cierra rápido”</span><span class="flag">⚠️ Pagar no corrige una causal mal fundada. Si un tribunal la declara improcedente, se agrega un recargo.</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila lee con atención una solicitud impresa en la oficina del Equipo de Personas mientras un gerente espera de pie" src="{{IMG:i53_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">La única razón documentada es que la jefatura “ya no confía” en Andrés. ¿Basta para invocar necesidades de la empresa?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sí, porque la confianza también es una necesidad de la empresa.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No necesariamente: debe existir un fundamento objetivo de la organización que sea compatible con la causal.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Sí, siempre que se pague la indemnización completa.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: la causal queda sin hechos.</strong> <span class="fb-body">La pérdida de confianza en una persona concreta es un tema de relación o de desempeño. El artículo 161 exige razones objetivas de la empresa, como una reestructuración o un cambio en el mercado. Un tribunal podría declarar el despido improcedente.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: pagar no sana la causal.</strong> <span class="fb-body">La indemnización es un efecto de la causal, no su fundamento. Si el tribunal declara improcedente el artículo 161, la indemnización por años de servicio se recarga en un 30%.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La causal se elige según los hechos reales y debe poder sostenerse con evidencia. En esta lección verás qué cuenta como necesidad de la empresa y cómo distinguirla de las otras causales.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 26 s</span>
+  <h2>¿Cuándo procede la causal de necesidades de la empresa?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · QUÉ CUENTA COMO NECESIDAD -->
+<section class="slide" data-title="Qué es una necesidad" data-audio="p03" data-dur="0:17" data-gate="acc" data-gate-msg="Abre los cinco criterios para continuar.">
+  <span class="eyebrow">Lección 5.3 · Qué cuenta como necesidad de la empresa</span>
+  <h2>Hechos de la organización, no de la relación</h2>
+  <p>El artículo 161 menciona ejemplos de necesidades de la empresa, establecimiento o servicio. <strong>Haz clic en cada criterio</strong> para ver un ejemplo que sí lo sostiene y otro que no.</p>
+  <div class="task" id="accTask">Criterios revisados <span class="tick" id="accTick">0 / 5</span></div>
+  <div class="acc" id="acc">
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>Racionalización o modernización<span class="sub">La empresa reorganiza sus procesos o incorpora tecnología.</span></span><span class="tg">＋</span></button><div class="acc-body">Procede cuando el cambio hace innecesarios uno o más puestos de trabajo.<div class="example"><b>Sí lo sostiene:</b> se automatiza la digitación de facturas y se suprimen los dos cargos que hacían esa tarea, sin reemplazarlos.</div><div class="example no"><b>No lo sostiene:</b> se habla de “modernizar el área”, pero se contrata a otra persona para el mismo cargo y las mismas funciones.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Bajas en la productividad<span class="sub">Se refiere a la empresa o al establecimiento, no a una persona.</span></span><span class="tg">＋</span></button><div class="acc-body">La baja debe afectar la actividad de la empresa, un establecimiento o un servicio, y explicar por qué sobran puestos.<div class="example"><b>Sí lo sostiene:</b> la sucursal de Rancagua procesa la mitad de las solicitudes que hace dos años y se reduce su dotación.</div><div class="example no"><b>No lo sostiene:</b> una persona tiene bajo rendimiento individual. Eso es desempeño y se gestiona por otras vías.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Cambios en el mercado o la economía<span class="sub">Factores externos que obligan a ajustar la organización.</span></span><span class="tg">＋</span></button><div class="acc-body">El cambio externo debe tener un efecto concreto en los puestos que se eliminan.<div class="example"><b>Sí lo sostiene:</b> termina el contrato con el principal cliente y se cierra el equipo que lo atendía en forma exclusiva.</div><div class="example no"><b>No lo sostiene:</b> se invoca “la crisis” en términos generales, sin cifras y sin relación con el cargo de la persona.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">4</span><span>Lo que no es una necesidad de la empresa<span class="sub">Problemas de desempeño, conducta o relaciones personales.</span></span><span class="tg">＋</span></button><div class="acc-body">El artículo 161 no es una etiqueta genérica para cualquier problema. Si el motivo real es la persona y no la organización, esta causal no corresponde.<div class="example no"><b>No lo sostiene:</b> “la jefatura ya no confía en él”, “no encaja en el equipo”, “tuvimos una discusión”.</div><div class="example"><b>Qué hacer:</b> si hay una conducta grave y comprobada, revisar el artículo 160; si es una diferencia de relación o desempeño, gestionarla y documentarla.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">5</span><span>La evidencia que la sostiene<span class="sub">Hechos verificables, anteriores a la decisión.</span></span><span class="tg">＋</span></button><div class="acc-body">La carta debe relatar los hechos, no solo citar el artículo: en un juicio, el empleador no puede alegar hechos distintos de los señalados en la carta.<div class="example"><b>Ejemplos de respaldo:</b> informe de reestructuración con fecha, organigrama antes y después, cifras de actividad del área y criterios para definir los cargos afectados.</div></div></div>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162 y 454 N°1; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · CAUSAL ADECUADA -->
+<section class="slide" data-title="Causal adecuada" data-audio="p04" data-dur="0:17" data-gate="tbl" data-gate-msg="Elige la causal adecuada para las seis situaciones y presiona Comprobar.">
+  <span class="eyebrow">Lección 5.3 · Cada causal tiene sus propios hechos</span>
+  <h2>¿Qué causal corresponde a cada situación?</h2>
+  <p>Lee cada situación y <strong>elige la causal adecuada</strong>; en algunos casos, ninguna corresponde todavía. Luego presiona <strong>Comprobar</strong>. Las filas en rojo deben corregirse.</p>
+  <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 159, 160 y 161; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 5 · MITOS -->
+<section class="slide" data-title="Mitos frecuentes" data-audio="p05" data-dur="0:19" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow violet">Lección 5.3 · Mitos sobre el artículo 161</span>
+  <h2>¿Verdadero o falso?</h2>
+  <p>Estas frases se escuchan cuando se decide un despido. Decide si cada afirmación es <strong>verdadera o falsa</strong> y lee la explicación antes de seguir.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162, 168 y 454 N°1.</p>
+</section>
+
+<!-- 6 · CAUSALES DEL ART. 160 -->
+<section class="slide" data-title="Causales disciplinarias" data-audio="p06" data-dur="0:15" data-gate="tiles" data-gate-msg="Descubre las siete fichas del artículo 160.">
+  <span class="eyebrow amber">Lección 5.3 · Causales del artículo 160</span>
+  <h2>Siete causales que exigen hechos graves y comprobados</h2>
+  <div class="photo-frame banner"><img alt="Camila y un supervisor revisan carpetas y registros de asistencia en una sala de archivo" src="{{IMG:i53_archivo}}"/></div>
+  <p class="photo-cap">Antes de invocar una causal disciplinaria, el Equipo de Personas revisa los registros que la sostienen.</p>
+  <p>Estas causales no dan derecho a indemnización por años de servicio, por eso exigen hechos precisos. <strong>Toca cada ficha</strong> para descubrir la causal y qué tendría que poder probarse.</p>
+  <div class="task" id="tlTask">Fichas descubiertas <span class="tick" id="tlTick">0 / 7</span></div>
+  <div class="tiles" id="tiles"></div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Toca una ficha para ver el detalle.</p></div>
+  <div class="fb tiles-note" id="tlFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 160, 168 y 174.</p>
+</section>
+
+<!-- 7 · CASO: LA GERENCIA INSISTE -->
+<section class="slide" data-title="Caso: otra etiqueta" data-audio="p07" data-dur="0:15" data-gate="caso" data-gate-msg="Toma la decisión correcta en el caso de Andrés.">
+  <span class="eyebrow amber">El caso de Camila · Cambiar la etiqueta no cambia los hechos</span>
+  <h2>“Entonces usemos otra causal”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">GC</span> Gerencia Comercial</div>
+      <div class="bubble"><span class="who">Gerente</span>Si el 161 no sirve, pongamos “incumplimiento grave” del 160, así no pagamos indemnización. O hagamos un desahucio con 30 días de aviso. Lo importante es que Andrés salga este mes.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Camila conversa con el gerente comercial y la jefatura de Andrés en una sala de reuniones" src="{{IMG:i53_reunion}}"/></div>
+  </div>
+  <h3 style="margin-top:14px">¿Qué responde Camila?</h3>
+  <div class="options" data-choice="caso" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Acepta el art. 160 N°7, incumplimiento grave de las obligaciones del contrato, porque no exige indemnización por años de servicio.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Prepara un desahucio con 30 días de aviso, porque sirve para cualquier persona trabajadora.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Explica que hoy no hay hechos que sostengan ninguna causal. Propone gestionar la relación con la jefatura, fijar expectativas claras y documentar hechos concretos si los hubiera.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una causal disciplinaria sin hechos</div><div class="branch-body"><div><p>El artículo 160 exige un incumplimiento <strong>grave</strong> y <strong>comprobado</strong>. No hay ninguno documentado. Si el tribunal declara el despido injustificado, la indemnización por años de servicio se recarga en 80%, y hasta 100% si no había motivo plausible.</p></div><div><p class="hint">La causal no se construye después de decidir.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el desahucio no aplica</div><div class="branch-body"><div><p>El desahucio escrito del empleador solo procede respecto de gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de <strong>exclusiva confianza</strong> y trabajadoras o trabajadores de <strong>casa particular</strong>. Andrés es analista comercial.</p></div><div><p class="hint">“Ya no confío” no convierte un cargo en uno de exclusiva confianza.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila separa el <strong>motivo real</strong> (una relación tensa) de la <strong>etiqueta jurídica</strong>. Como no hay hechos que sostengan el 161, el 160 ni el desahucio, propone gestionar la situación y registrar hechos concretos. Si ambas partes quisieran terminar, podrían pactarlo libremente por mutuo acuerdo, por escrito y ratificado ante un ministro de fe; no se puede imponer.</p></div><div><p class="hint">Primero los hechos; después, si corresponde, la causal.</p></div></div></div></template>
+  <p class="sources">Fuente: Código del Trabajo, arts. 159 N°1, 160, 161, 168 y 177.</p>
+</section>
+
+<!-- 8 · CASO: UNA REESTRUCTURACIÓN REAL -->
+<section class="slide" data-title="Caso: reestructuración" data-audio="p08" data-dur="0:14" data-gate="caso2" data-gate-msg="Decide cómo actuar ante la reestructuración.">
+  <span class="eyebrow amber">El caso de Camila · Cuando sí hay un cambio en la organización</span>
+  <h2>Una reestructuración documentada… y una licencia médica</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>Tres meses después:</strong> el directorio aprueba, con un informe fechado, automatizar las cotizaciones comerciales y fusionar dos cargos de analista en uno. El cargo de Andrés es uno de los que se suprime, según criterios escritos. Andrés gana <strong>$900.000</strong> y hoy está con <strong>licencia médica</strong>.</div>
+    <div class="photo-frame wide"><img alt="Camila revisa con una analista de finanzas un informe de reestructuración sobre un escritorio con documentos" src="{{IMG:i53_plan}}"/></div>
+  </div>
+  <h3 style="margin-top:14px">¿Qué hace Camila?</h3>
+  <div class="options" data-choice="caso2" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Envía hoy la carta por art. 161, porque ahora sí hay una reestructuración y la licencia no cambia nada.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Espera el término de la licencia. Luego prepara una carta que relate los hechos de la reestructuración, con aviso de 30 días o indemnización sustitutiva, años de servicio y cotizaciones al día, con copia a la Inspección.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Prepara una carta breve que diga solo “necesidades de la empresa, art. 161”, para no dar detalles que puedan discutirse.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la ley lo prohíbe</div><div class="branch-body"><div><p>El artículo 161 <strong>no puede invocarse</strong> respecto de personas trabajadoras con licencia médica. Aunque la reestructuración sea real, el momento importa.</p></div><div><p class="hint">Revisa siempre licencia y fuero antes de decidir.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la empresa queda sin defensa</div><div class="branch-body"><div><p>La carta debe indicar la causal <strong>y los hechos</strong> en que se funda. En un juicio, el empleador no puede alegar hechos distintos de los señalados en la carta. Una carta vacía vuelve muy difícil sostener la causal, y si se declara improcedente hay un recargo de 30%.</p></div><div><p class="hint">Citar el artículo no es explicar los hechos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Ahora el motivo real es un cambio objetivo de la organización, respaldado por documentos anteriores a la decisión. Camila respeta la licencia y arma una cadena coherente: carta con hechos, aviso o indemnización sustitutiva (una remuneración mensual, $900.000), indemnización por años de servicio, cotizaciones al día, feriado pendiente o proporcional y copia a la Inspección dentro de plazo.</p></div><div><p class="hint">Causal, hechos, comunicación, pagos y evidencia, en la misma dirección.</p></div></div></div></template>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162, 163, 168, 172, 454 N°1 y 73; Ley 19.728 (seguro de cesantía).</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:17" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:15" data-gate="cloze pass" data-gate-msg="Elige una situación y completa correctamente el análisis.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Motivo real vs. etiqueta jurídica</h2>
+  <p><strong>1.</strong> Elige una situación parecida a las que ves en tu trabajo. <strong>2.</strong> Completa el análisis eligiendo la opción correcta en cada espacio. <strong>3.</strong> Presiona <strong>Comprobar análisis</strong>.</p>
+  <div class="chips2" id="scChips">
+    <button class="chip2" type="button" data-s="0">Se cierra un área</button>
+    <button class="chip2" type="button" data-s="1">Inasistencias reiteradas</button>
+    <button class="chip2" type="button" data-s="2">Diferencias con la jefatura</button>
+  </div>
+  <div class="story scen" id="scText">Elige una situación para ver su descripción.</div>
+  <p class="plan-head" id="planHead">Análisis · <b>elige una situación</b></p>
+  <div class="cloze plan"><ol>
+    <li>El motivo real de la decisión es <select id="z1" aria-label="Motivo real"><option value="">elige…</option><option>un cambio objetivo en la organización</option><option>una conducta grave y comprobada de la persona</option><option>una diferencia de relación o de confianza</option></select></li>
+    <li>La causal que corresponde a ese motivo es <select id="z2" aria-label="Causal que corresponde"><option value="">elige…</option><option>el art. 161, necesidades de la empresa</option><option>el art. 160, en el numeral que calce con los hechos</option><option>ninguna por ahora: se gestiona la situación y se documentan hechos</option></select></li>
+    <li>Los hechos que la sostienen deben ser <select id="z3" aria-label="Cómo deben ser los hechos"><option value="">elige…</option><option>redactados después, para que calcen con la causal</option><option>concretos, verificables y anteriores a la decisión</option><option>generales, como “reestructuración” o “pérdida de confianza”</option></select></li>
+    <li>La carta de término <select id="z4" aria-label="Qué hace la carta"><option value="">elige…</option><option>cita solo el número del artículo</option><option>se entrega en forma verbal</option><option>relata esos hechos, no solo cita el artículo</option></select></li>
+    <li>Si el motivo real y la etiqueta no coinciden, <select id="z5" aria-label="Qué hago si no coinciden"><option value="">elige…</option><option>no invoco esa causal, porque podría declararse improcedente o injustificada</option><option>pago más indemnización para compensar</option><option>ajusto la redacción hasta que calce</option></select></li>
+  </ol></div>
+  <button class="small-btn primary" type="button" id="zCheck" style="margin-top:12px">Comprobar análisis</button>
+  <div class="fb" id="zFb"></div>
+  <div id="zModel" hidden class="callout"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 159 a 177 y 454 N°1; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:15" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.3</h2>
+    <p>Ya puedes analizar si existe una verdadera necesidad de la empresa, distinguirla de las causales de los artículos 159 y 160 y del desahucio, y reconocer los límites de licencia médica y fuero. Un término correcto combina causal, hechos, comunicación, pagos, formalización y evidencia.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="2">Repasar qué es una necesidad</button><button class="small-btn" type="button" data-goto="5">Repasar las causales del art. 160</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 159 a 177 (y 454 N°1); Ley 19.728 (seguro de cesantía); Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l53';
+const FIRST_KEYS=['hook','caso','caso2'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Una causal, no una etiqueta',lines:['El contrato de trabajo solo termina por una causal legal.','Esa causal se elige según los hechos reales, antes de decidir, y nunca se construye después.'],
+  html:`<div class="v-icons"><div><span class="i">📋</span>Hechos reales</div><div><span class="i">→</span></div><div class="dim" data-at="1"><span class="i">⚖️</span>Causal legal</div></div><div class="note" data-at="1">Primero los hechos, después la causal</div>`},
+ {t:'Artículo 161',lines:['El artículo 161 trata las necesidades de la empresa, establecimiento o servicio,','como la racionalización o modernización, las bajas en la productividad o los cambios del mercado o la economía.'],
+  html:`<div class="v-big">Art. 161</div><div class="v-chk" data-at="1"><span class="on">Racionalización o modernización</span><span class="on">Bajas en la productividad</span><span class="on">Cambios en el mercado o la economía</span></div>`},
+ {t:'Hechos objetivos',lines:['Esta causal se funda en hechos objetivos de la organización.','No sirve para resolver problemas de desempeño, de conducta ni de relaciones personales.'],
+  html:`<div class="v-icons"><div><span class="i">🏢</span>Organización</div><div><span class="i">≠</span></div><div class="dim" data-at="1"><span class="i">🙍</span>Desempeño, conducta o relación</div></div>`},
+ {t:'Aviso y pagos',lines:['Con el artículo 161 se avisa con 30 días de anticipación o se paga una indemnización sustitutiva.','Con un año o más de servicio, además corresponde indemnización por años de servicio.'],
+  html:`<div class="v-big">30 días</div><div class="v-sub">de aviso o indemnización sustitutiva</div><div class="note" data-at="1">+ indemnización por años de servicio (1 año o más)</div>`},
+ {t:'Otras causales',lines:['El artículo 159 reúne causales objetivas, como la renuncia, el mutuo acuerdo o el vencimiento del plazo.','El artículo 160 reúne causales disciplinarias, que exigen hechos graves y comprobados.'],
+  html:`<div class="v-steps"><div>Art. 159 · causales objetivas</div><div data-at="1">Art. 160 · causales disciplinarias</div></div>`},
+ {t:'Límites',lines:['El artículo 161 no puede invocarse con licencia médica.','El desahucio solo procede en cargos de gerencia, de exclusiva confianza y en casa particular.','Y con fuero, despedir exige autorización judicial previa.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">🩺 Licencia médica: no al art. 161</span><span data-at="1">✉️ Desahucio: solo cargos específicos</span><span data-at="2">⚖️ Fuero: desafuero judicial</span></div>`},
+ {t:'Pagar no sana',lines:['Pagar la indemnización no corrige una causal mal fundada.','Si el tribunal declara improcedente el artículo 161, la indemnización por años de servicio se recarga en 30%.'],
+  html:`<div class="v-icons"><div><span class="i">💵</span>Pagar</div><div><span class="i">≠</span></div><div><span class="i">✅</span>Causal válida</div></div><div class="v-big fadein" data-at="1">+30%</div>`}
+]};
+const Q=[
+ {q:'¿Cuál de estas situaciones puede fundar la causal de necesidades de la empresa?',o:['La jefatura ya no confía en la persona.','La empresa automatiza un proceso y suprime los cargos que lo realizaban.','La persona llegó atrasada varias veces este mes.'],c:1,f:'La automatización que hace innecesarios ciertos cargos es un hecho objetivo de la organización (racionalización o modernización).'},
+ {q:'¿Respecto de quiénes procede el desahucio escrito del empleador?',o:['Cualquier persona con contrato indefinido.','Personas con más de once años de servicio.','Gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y trabajadoras o trabajadores de casa particular.'],c:2,f:'El desahucio solo procede respecto de esos cargos; no es una forma general de despedir con aviso.'},
+ {q:'Si un tribunal declara improcedente el despido por artículo 161, ¿qué ocurre?',o:['La indemnización por años de servicio se recarga en 30%.','Nada, porque la indemnización ya se pagó.','La indemnización se recarga en 80%.','El finiquito se anula de forma automática.'],c:0,f:'El artículo 168 fija un recargo de 30% cuando la aplicación del artículo 161 se declara improcedente. El 80% corresponde al artículo 160 injustificado.'},
+ {q:'Una persona está con licencia médica y su área se reestructura. ¿Qué corresponde?',o:['Despedirla por artículo 161 de inmediato.','Despedirla por artículo 160 N°3 por sus ausencias.','Aplicarle un desahucio con 30 días de aviso.','No invocar el artículo 161 mientras dure la licencia médica.'],c:3,f:'El artículo 161 no puede invocarse respecto de personas con licencia médica. Las ausencias por licencia, además, están justificadas.'},
+ {q:'¿Qué exige una causal del artículo 160?',o:['Solo la decisión de la gerencia.','Hechos graves y debidamente comprobados que calcen con uno de sus numerales.','Pagar la indemnización sustitutiva del aviso previo.'],c:1,f:'Las causales disciplinarias exigen hechos precisos, graves y comprobados. Si se declara injustificado, el recargo es de 80%, y hasta 100% si no había motivo plausible.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: solicitud por revisar ---------- */
+const ff=$$('#form .ffield');
+ff.forEach(f=>f.addEventListener('click',()=>{f.classList.add('open');if(ff.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Acordeón: qué cuenta como necesidad ---------- */
+const tAcc=tracker('acc',5,'#accTick','#accTask');
+$$('#acc .acc-item').forEach((it,k)=>it.querySelector('.acc-head').addEventListener('click',()=>{it.classList.toggle('open');it.classList.add('seen');tAcc(k)}));
+
+/* ---------- Tabla con selectores: causal adecuada ---------- */
+const CAU=['Art. 161 · necesidades de la empresa','Art. 160 N°3 · inasistencias','Art. 159 N°4 · plazo vencido','Desahucio del empleador','Ninguna por ahora'];
+const ROWS=[
+ ['Se pierde el contrato con el principal cliente y se cierra el equipo que lo atendía en forma exclusiva; los cargos no se reubican.',0,'Es un cambio en las condiciones del mercado con efecto concreto en esos cargos: art. 161, con aviso o indemnización sustitutiva e indemnización por años de servicio si corresponde.'],
+ ['Un analista no se presentó dos lunes del mes, sin aviso ni justificación; está en el registro de asistencia.',1,'Faltar sin causa justificada dos lunes en el mes calza con el art. 160 N°3, y el registro permite comprobarlo.'],
+ ['La jefatura “no se lleva bien” con una ejecutiva. No hay cambios en el área ni faltas documentadas.',4,'Es una diferencia de relación: no sostiene el art. 161 ni el 160. Se gestiona y se documentan hechos concretos si los hubiera.'],
+ ['Un contrato a plazo fijo de seis meses, nunca renovado, llega a su fecha de término y la persona deja de trabajar ese día.',2,'Es el vencimiento del plazo convenido (art. 159 N°4). Ojo: si sigue trabajando con conocimiento del empleador, el contrato se vuelve indefinido.'],
+ ['El directorio decide reemplazar al gerente general, que tiene facultades generales de administración.',3,'El desahucio escrito procede respecto de gerentes con facultades generales de administración y otros cargos de exclusiva confianza.'],
+ ['El área de Andrés se reestructura con un informe fechado, pero él está con licencia médica.',4,'El art. 161 no puede invocarse respecto de personas con licencia médica. Se espera su término y se revisa entonces la decisión.']];
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td class="sit"><b>${r[0]}</b><span class="why" hidden></span></td><td class="selcol"><select aria-label="Causal para la situación ${i+1}"><option value="">Elige la causal…</option>${CAU.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
+$('#tblCheck').addEventListener('click',()=>{let ok=0;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[1];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent=r[2];if(g)ok++});
+  if(ok===6){feedback($('#tblFb'),true,'¡Todo correcto!','Cada causal exige sus propios hechos. Cuando los hechos no calzan con ninguna, la respuesta correcta es no invocar una causal todavía.');done('tbl')}
+  else feedback($('#tblFb'),false,`${ok} de 6 correctas.`,'Corrige las filas en rojo (o sin respuesta). Pregúntate: ¿el motivo está en la organización, en una conducta comprobada, en el contrato o en el tipo de cargo?')});
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Si pago la indemnización, puedo usar el artículo 161 para cualquier despido.',false,'Pagar no corrige una causal mal fundada. Si el tribunal la declara improcedente, la indemnización por años de servicio se recarga en 30%.'],
+ ['Una baja en la productividad de toda una sucursal puede fundar el artículo 161; el bajo rendimiento de una sola persona, no.',true,'La causal mira la empresa, el establecimiento o el servicio. El desempeño individual se gestiona por otras vías.'],
+ ['Puedo despedir por artículo 161 a una persona con licencia médica si le pago todo lo que corresponde.',false,'La ley prohíbe invocar el artículo 161 respecto de personas trabajadoras con licencia médica, aunque se pague.'],
+ ['El desahucio permite despedir a cualquier persona trabajadora con 30 días de aviso.',false,'Solo procede respecto de gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y casa particular.'],
+ ['En un juicio, la empresa no puede alegar hechos distintos de los que señaló en la carta de despido.',true,'Por eso la carta debe relatar los hechos que sostienen la causal, no solo citar el artículo.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">Recuerda: pagar no sana la causal, la productividad se mide en la organización, la licencia médica impide el artículo 161, el desahucio es para cargos específicos y la carta fija los hechos.</span></div>`;
+    S.first.tf=n===TF.length;done('tf');return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Fichas: causales del art. 160 ---------- */
+const TILES=[
+ ['🚫','Conductas indebidas graves','N°1. Conductas indebidas de carácter grave, debidamente comprobadas: falta de probidad, acoso sexual, vías de hecho, injurias, conducta inmoral que afecte a la empresa o acoso laboral.','Prueba: hechos precisos, fechas, testigos o la investigación que los acredite.'],
+ ['🤝','Negociaciones prohibidas','N°2. Negociaciones dentro del giro del negocio que hubieran sido prohibidas por escrito en el contrato.','Prueba: la cláusula escrita del contrato y la negociación concreta.'],
+ ['📅','No concurrencia injustificada','N°3. Faltar sin causa justificada dos días seguidos, dos lunes en el mes o un total de tres días en el mes.','Prueba: el registro de asistencia y la falta de justificación (una licencia médica sí justifica).'],
+ ['🚪','Abandono del trabajo','N°4. Abandono del trabajo por parte de la persona trabajadora.','Prueba: el registro de la salida sin permiso ni causa justificada.'],
+ ['⚠️','Imprudencias temerarias','N°5. Actos, omisiones o imprudencias temerarias que afecten la seguridad.','Prueba: el hecho concreto, el riesgo generado y los registros del incidente.'],
+ ['🔨','Perjuicio material intencional','N°6. Perjuicio material causado intencionalmente en instalaciones, maquinarias, herramientas, útiles de trabajo, productos o mercaderías.','Prueba: el daño y la intención; un accidente o un descuido no basta.'],
+ ['📄','Incumplimiento grave','N°7. Incumplimiento grave de las obligaciones que impone el contrato.','Prueba: la obligación concreta, cómo se incumplió y por qué es grave. “Ya no confío” no es un incumplimiento.']];
+$('#tiles').innerHTML=TILES.map((t,i)=>`<button class="tile" type="button" data-i="${i}" aria-label="Descubrir causal N°${i+1}">N°${i+1}</button>`).join('');
+const tTl=tracker('tiles',7,'#tlTick','#tlTask');const tlSeen=new Set();
+$$('#tiles .tile').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,t=TILES[i];b.classList.add('open');b.innerHTML=`<span><span class="num">N°${i+1}</span><span style="font-size:1.4rem">${t[0]}</span><br/>${t[1]}</span>`;
+  $('#tlPanel').innerHTML=`<h3 style="margin-top:0">${t[0]} ${t[1]}</h3><p>${t[2]}</p><p class="hint" style="margin-bottom:0"><b>${t[3]}</b></p>`;tlSeen.add(i);tTl(i);
+  if(tlSeen.size===7&&!$('#tlFb').innerHTML)feedback($('#tlFb'),true,'Revisaste las siete causales.','Todas exigen hechos precisos y comprobados. Si el tribunal declara injustificado el despido, la indemnización por años de servicio se recarga en 80% (hasta 100% si no había motivo plausible). Y si la persona tiene fuero, despedir por el art. 160 exige autorización judicial previa: el desafuero.')}));
+
+/* ---------- Transferencia: motivo real vs. etiqueta ---------- */
+const SC=[
+ {n:'Se cierra un área',d:'La empresa deja de prestar un servicio porque terminó el contrato con el cliente que lo financiaba. Hay un informe fechado y los cargos del área no se reubican.',z1:'un cambio objetivo en la organización',z2:'el art. 161, necesidades de la empresa',m:'<strong>Ejemplo · cierre de un área:</strong> motivo real y etiqueta coinciden. La carta relata el término del contrato con el cliente, el cierre del área y los cargos suprimidos; se da aviso de 30 días o se paga la indemnización sustitutiva, y la indemnización por años de servicio si corresponde. Antes, se revisa que nadie esté con licencia médica o con fuero.'},
+ {n:'Inasistencias reiteradas',d:'Una persona faltó sin aviso ni justificación tres días distintos este mes. Los días constan en el registro de asistencia y no presentó licencia ni permiso.',z1:'una conducta grave y comprobada de la persona',z2:'el art. 160, en el numeral que calce con los hechos',m:'<strong>Ejemplo · inasistencias:</strong> el motivo está en una conducta comprobada, que calza con el art. 160 N°3 (tres días en el mes). La carta indica las fechas exactas y se conserva el registro de asistencia. Si la persona tuviera fuero, haría falta desafuero.'},
+ {n:'Diferencias con la jefatura',d:'Una jefatura dice que “ya no confía” en un analista después de varias discusiones. No hay cambios en la organización ni faltas documentadas.',z1:'una diferencia de relación o de confianza',z2:'ninguna por ahora: se gestiona la situación y se documentan hechos',m:'<strong>Ejemplo · diferencias con la jefatura:</strong> el motivo real no calza con el art. 161 ni con el 160. Se gestiona la relación (conversación, expectativas claras, seguimiento) y se registran hechos concretos si aparecen.'}];
+const ZC={z3:'concretos, verificables y anteriores a la decisión',z4:'relata esos hechos, no solo cita el artículo',z5:'no invoco esa causal, porque podría declararse improcedente o injustificada'};
+const CLOSE='<br/><br/><b>Pregunta para tu organización:</b> si mañana una autoridad pidiera acreditar una decisión como esta, ¿qué documento sería el más difícil de reconstruir?';
+let sc=-1;
+$$('#scChips .chip2').forEach(c=>c.addEventListener('click',()=>{sc=+c.dataset.s;$$('#scChips .chip2').forEach(x=>x.classList.toggle('on',x===c));$('#scText').textContent=SC[sc].d;$('#planHead').innerHTML=`Análisis · <b>${SC[sc].n}</b>`;$('#zFb').innerHTML='';$('#zModel').hidden=true;$$('.cloze.plan select').forEach(s=>s.classList.remove('good','bad'))}));
+$('#zCheck').addEventListener('click',()=>{if(sc<0){feedback($('#zFb'),false,'Primero elige una situación.','Selecciona arriba la situación que quieres analizar.');return}
+  const ans=Object.assign({z1:SC[sc].z1,z2:SC[sc].z2},ZC);let ok=0;
+  Object.entries(ans).forEach(([id,v])=>{const s=$('#'+id);const g=s.value===v;s.classList.toggle('good',g);s.classList.toggle('bad',!g);if(g)ok++});
+  if(ok===5){feedback($('#zFb'),true,'Análisis correcto.','Separaste el motivo real de la etiqueta jurídica y exigiste hechos verificables, una carta que los relate y coherencia entre ambos.');$('#zModel').innerHTML=SC[sc].m+CLOSE;$('#zModel').hidden=false;done('cloze')}
+  else feedback($('#zFb'),false,`${ok} de 5 correctas.`,'Corrige los espacios en rojo. Pista: lee de nuevo la situación y pregúntate dónde está el motivo: en la organización, en una conducta comprobada o en una relación.')});
+/*{{TAIL}}*/
+})();
+</script>

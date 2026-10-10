@@ -1,0 +1,387 @@
+<title>Lección 5.1 — ¿Cómo puede terminar una relación laboral?</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Estilos propios de la Lección 5.1 ---- */
+.hero-grid .photo-frame.wide{aspect-ratio:3/2}
+.mobile{max-width:360px;margin:14px 0 6px;border:9px solid var(--ink2);border-radius:32px;background:var(--surface2);box-shadow:var(--shadow);overflow:hidden}
+.mobile .mbar{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;font-size:.72rem;font-weight:800;color:var(--muted);background:var(--surface)}
+.mobile .mhead{display:flex;gap:10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:var(--surface);font-weight:850;font-size:.88rem}
+.mobile .mhead small{display:block;font-weight:700;color:var(--muted);font-size:.72rem}
+.mobile .mdot{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--on-accent);font-weight:900;font-size:.8rem}
+.mobile .mbody{display:grid;gap:8px;padding:12px;min-height:150px;align-content:start}
+.mobile .bubble{font-size:.88rem;max-width:100%;animation:rise .35s ease both}
+.mobile .bubble .tag3{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.7rem;font-weight:850;color:var(--muted)}
+.mobile .mfoot{padding:10px 12px;border-top:1px solid var(--line);background:var(--surface)}
+.mobile .mfoot .small-btn{width:100%}
+.dayline.tl6{height:auto;min-height:96px}
+.dayline.tl6 .dseg{font-size:.8rem;line-height:1.2;padding:10px 6px;gap:4px;flex:1 1 0}
+.dayline.tl6 .dseg.dt{background:linear-gradient(180deg,var(--violet),var(--navy))}
+.tl-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;font-weight:800;color:var(--muted);margin-top:6px}
+.tl-legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.elem-list{list-style:none;padding:0!important;margin:.4rem 0 0!important;display:grid;gap:6px}
+.elem-list li{padding:8px 10px;border-radius:12px;background:var(--surface);border:1px solid var(--line2);font-size:.93rem}
+.elem-list li b{color:var(--teal-ink)}
+.tabpane .warn{margin-top:10px;padding:8px 10px;border-radius:12px;background:var(--amber-soft);color:var(--ink);font-size:.9rem}
+.tabpane .photo-frame.wide{aspect-ratio:3/2}
+.flipdeck.five .face{min-height:210px}
+.flipdeck.five .face.back span{font-size:.9rem}
+.ficha{border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface);display:grid;gap:6px;font-size:.93rem}
+.ficha .row{display:grid;grid-template-columns:130px 1fr;gap:10px}
+.ficha .row b{font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.v-fam{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:640px;margin:0 auto;text-align:center}
+.v-fam>div{padding:14px 8px;border-radius:14px;background:rgba(255,255,255,.07);opacity:.25;transition:opacity .4s,background .4s;font-weight:800}
+.v-fam>div.on{opacity:1;background:rgba(43,194,177,.16)}
+.v-fam b{display:block;font-size:clamp(1.2rem,3.4vw,1.9rem);color:var(--teal2)}
+.v-fam small{display:block;color:var(--stage-muted);font-weight:700;margin-top:4px}
+@media(max-width:860px){
+  .dayline.tl6 .dseg{flex:1 1 45%!important;min-height:70px}
+  .mobile{margin-left:auto;margin-right:auto}
+  .ficha .row{grid-template-columns:1fr;gap:2px}
+}
+@media(max-width:560px){
+  .v-fam{grid-template-columns:1fr;gap:6px}
+  .v-fam>div{padding:8px}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.1</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:20" data-gate="hook" data-gate-msg="Abre los mensajes del celular de Camila y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.1 · Formas de término</span>
+      <h1 class="reveal">Tres cierres el mismo día, tres caminos distintos</h1>
+      <p class="lead reveal">Es lunes en <strong>Horizonte Servicios</strong>. El celular de Camila, del Equipo de Personas, no deja de vibrar. <strong>Presiona “Ver mensajes”</strong> para leer lo que llegó esta mañana.</p>
+      <div class="mobile reveal" aria-label="Celular de Camila con mensajes">
+        <div class="mbar"><span>09:12</span><span>📶 🔋</span></div>
+        <div class="mhead"><span class="mdot">EP</span><span>Equipo de Personas<small>3 mensajes nuevos</small></span></div>
+        <div class="mbody" id="threadBody"><p class="hint" style="margin:0">Tienes mensajes sin leer.</p></div>
+        <div class="mfoot"><button class="small-btn primary" type="button" id="showMsg">Ver mensajes</button></div>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa su celular en su escritorio del Equipo de Personas, junto a tres carpetas separadas" src="{{IMG:i51_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">La jefatura de Operaciones dice: “Terminemos el contrato y después vemos qué causal usamos”. ¿Qué debería responder Camila?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Está bien, si la persona está de acuerdo, la causal se define después”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Primero identifiquemos la causal legal y verifiquemos que los hechos permitan sostenerla”.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“La causal solo importa para redactar el finiquito, así que podemos avanzar”.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: un término sin base.</strong> <span class="fb-body">El contrato solo termina por una causal legal, y esta se elige según los hechos reales <b>antes</b> de decidir. Si la persona está de acuerdo, eso podría ser un mutuo acuerdo, que también es una causal con sus propias formalidades.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se pierde el control del proceso.</strong> <span class="fb-body">La causal no es un dato del finiquito. Define la carta, el aviso, los pagos, las indemnizaciones y la evidencia que la empresa deberá conservar.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La causal no es una formalidad posterior: determina el procedimiento, las consecuencias económicas y la evidencia necesaria. En esta lección verás por qué la renuncia, el plazo fijo y las necesidades de la empresa se gestionan de forma distinta.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 25 s</span>
+  <h2>¿Cómo termina un contrato de trabajo?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · TRES FAMILIAS DE CAUSALES -->
+<section class="slide" data-title="Tres familias de causales" data-audio="p03" data-dur="0:18" data-gate="tabs" data-gate-msg="Revisa las tres familias de causales: artículos 159, 160 y 161.">
+  <span class="eyebrow">Lección 5.1 · Causales legales</span>
+  <h2>Tres familias de causales, tres lógicas distintas</h2>
+  <p><strong>Haz clic en cada artículo</strong> para ver qué causales agrupa, qué exige y qué efecto tiene en los pagos.</p>
+  <div class="task" id="tabTask">Familias revisadas <span class="tick" id="tabTick">1 / 3</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">📄 Art. 159 · Objetivas</button><button class="tab" type="button" data-t="1">⚠️ Art. 160 · Disciplinarias</button><button class="tab" type="button" data-t="2">🏢 Art. 161 · Necesidades de la empresa</button></div>
+  <div class="tabpane active"><div class="photo-frame wide"><img alt="En una notaría, una persona trabajadora firma un documento frente a una notaria mientras Camila espera a su lado" src="{{IMG:i51_t159}}"/></div><div><h3 style="margin-top:0">Art. 159 · Causales objetivas</h3>
+    <ul class="elem-list"><li><b>Cuáles:</b> mutuo acuerdo; renuncia (con aviso de al menos 30 días); muerte de la persona trabajadora; vencimiento del plazo; conclusión de la obra o servicio; caso fortuito o fuerza mayor.</li><li><b>Lógica:</b> no hay reproche a nadie; el contrato termina por un hecho o una decisión que la ley reconoce.</li><li><b>Formalidad:</b> la renuncia y el mutuo acuerdo constan por escrito, firmados y ratificados ante un ministro de fe (o firmados electrónicamente en el sitio de la DT).</li><li><b>Pagos:</b> no hay indemnización por años de servicio (salvo pacto). En obra o faena de un mes o más, corresponden 2,5 días por mes trabajado.</li></ul>
+    <div class="warn">⚠️ <b>Ojo:</b> si la persona sigue trabajando, con conocimiento del empleador, después de vencido el plazo, el contrato se transforma en indefinido.</div></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="En una sala de reuniones, una jefatura y una analista revisan con seriedad una carpeta con registros, sin la persona involucrada presente" src="{{IMG:i51_t160}}"/></div><div><h3 style="margin-top:0">Art. 160 · Causales disciplinarias</h3>
+    <ul class="elem-list"><li><b>Cuáles:</b> conductas indebidas graves debidamente comprobadas (falta de probidad, acoso sexual o laboral, vías de hecho, injurias); negociaciones prohibidas; ausencias injustificadas; abandono; imprudencias temerarias; perjuicio material intencional; incumplimiento grave del contrato.</li><li><b>Lógica:</b> hay un hecho grave imputable a la persona trabajadora.</li><li><b>Evidencia:</b> los hechos deben estar <b>debidamente comprobados</b>; una sospecha o una molestia no basta.</li><li><b>Pagos:</b> bien aplicada, no hay indemnización por años de servicio.</li></ul>
+    <div class="warn">⚠️ <b>Ojo:</b> si el tribunal la declara injustificada, la indemnización se paga con un recargo de 80%, y hasta 100% si no había motivo plausible.</div></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="En una bodega con un nuevo sistema automatizado, un gerente explica un cambio de procesos a Camila frente a estanterías ordenadas" src="{{IMG:i51_t161}}"/></div><div><h3 style="margin-top:0">Art. 161 · Necesidades de la empresa</h3>
+    <ul class="elem-list"><li><b>Cuándo:</b> racionalización o modernización, bajas en la productividad, cambios en el mercado o en la economía que hagan necesaria la separación.</li><li><b>Lógica:</b> se funda en <b>hechos objetivos de la organización</b>, no en el desempeño, la conducta ni las relaciones personales.</li><li><b>Aviso:</b> 30 días de anticipación o pago de la indemnización sustitutiva (la última remuneración mensual).</li><li><b>Pagos:</b> con un año o más de servicio, indemnización de 30 días por año y fracción superior a seis meses, con tope de 330 días.</li></ul>
+    <div class="warn">⚠️ <b>Ojo:</b> no puede invocarse respecto de una persona con licencia médica. El desahucio escrito solo procede para cargos de exclusiva confianza, gerencias con facultades de administración y trabajo de casa particular.</div></div></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 159, 160, 161, 163, 168 y 177; Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · SITUACIÓN Y CAUSAL -->
+<section class="slide" data-title="Situación y causal" data-audio="p04" data-dur="0:16" data-gate="pairs" data-gate-msg="Une las seis situaciones con su causal.">
+  <span class="eyebrow amber">Lección 5.1 · De los hechos a la causal</span>
+  <h2>¿Qué causal corresponde a cada situación?</h2>
+  <p>Selecciona una situación de la columna izquierda y luego la causal que le corresponde a la derecha. Fíjate en <strong>quién decide</strong> y en <strong>qué hecho</strong> produce el término.</p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 6</span></div>
+  <div class="pairs"><div id="pl"></div><div id="pr"></div></div>
+  <div class="fb" id="prFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 159, 160 y 161.</p>
+</section>
+
+<!-- 5 · LA CADENA DEL CIERRE -->
+<section class="slide" data-title="La cadena del cierre" data-audio="p05" data-dur="0:17" data-gate="day" data-gate-msg="Revisa los seis eslabones de la cadena del cierre.">
+  <span class="eyebrow">Lección 5.1 · Del hecho al finiquito</span>
+  <h2>Un término correcto es una cadena de seis eslabones</h2>
+  <p>Cada eslabón depende del anterior. <strong>Haz clic en cada bloque</strong> para ver qué ocurre, qué plazo tiene y qué evidencia debe quedar.</p>
+  <div class="task" id="dayTask">Eslabones revisados <span class="tick" id="dayTick">0 / 6</span></div>
+  <div class="dayline tl6" id="dayline">
+    <button class="dseg ord" type="button" data-k="0">1. Causal<small>Antes de decidir</small></button>
+    <button class="dseg ord" type="button" data-k="1">2. Hechos y evidencia<small>Antes de decidir</small></button>
+    <button class="dseg ext" type="button" data-k="2">3. Carta y aviso<small>3 días hábiles</small></button>
+    <button class="dseg ext" type="button" data-k="3">4. Cotizaciones al día<small>Al despedir</small></button>
+    <button class="dseg dt" type="button" data-k="4">5. Finiquito<small>10 días hábiles</small></button>
+    <button class="dseg dt" type="button" data-k="5">6. Pago y ratificación<small>Al ratificar</small></button>
+  </div>
+  <div class="tl-legend"><span><i style="background:var(--teal)"></i>Antes de decidir</span><span><i style="background:var(--amber)"></i>Al comunicar</span><span><i style="background:var(--violet)"></i>Cierre</span></div>
+  <div class="dpanel" id="dpanel"><p class="hint">Selecciona un bloque para ver la explicación.</p></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 162, 163, 172, 177 y 454 N°1; Ley 21.361 (finiquito electrónico).</p>
+</section>
+
+<!-- 6 · LA CAUSAL DEFINE -->
+<section class="slide" data-title="Lo que define la causal" data-audio="p06" data-dur="0:15" data-gate="cards" data-gate-msg="Voltea las cinco tarjetas.">
+  <span class="eyebrow violet">Lección 5.1 · Consecuencias de la causal</span>
+  <h2>La causal define…</h2>
+  <p>Cada tarjeta muestra algo que cambia según la causal. <strong>Toca cada tarjeta para voltearla</strong> y descubre la regla.</p>
+  <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 5</span></div>
+  <div class="flipdeck five">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⏳</div><strong>…el aviso</strong><span>¿Quién avisa y con cuánta anticipación?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Aviso</strong><span><b>Renuncia:</b> la persona trabajadora avisa con al menos 30 días. <b>Art. 161:</b> el empleador avisa con 30 días o paga la indemnización sustitutiva (la última remuneración mensual). <b>Art. 160:</b> no hay aviso previo.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💵</div><strong>…la indemnización</strong><span>¿Corresponde pagar años de servicio?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Indemnización</strong><span>Por regla general, solo en el <b>art. 161</b> con un año o más: 30 días por año (tope 330 días; base máxima 90 UF). Ejemplo: $900.000 y 4 años = $3.600.000. Se puede descontar el aporte del empleador al seguro de cesantía. No procede en renuncia, vencimiento del plazo ni art. 160 bien aplicado.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">✉️</div><strong>…la carta</strong><span>¿Qué debe decir la comunicación?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Carta</strong><span>Por escrito, en persona o por carta certificada: <b>causal, hechos</b> y estado de las cotizaciones con comprobantes. En juicio, la empresa no puede alegar hechos distintos de los que escribió.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🗂️</div><strong>…la evidencia</strong><span>¿Qué debe poder probar la empresa?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Evidencia</strong><span><b>Art. 160:</b> hechos debidamente comprobados. <b>Art. 161:</b> hechos objetivos de la organización. <b>Renuncia y mutuo acuerdo:</b> documento firmado y ratificado ante ministro de fe o firmado electrónicamente en la DT.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🛡️</div><strong>…la protección</strong><span>¿Qué pasa si la persona tiene fuero?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Fuero</strong><span>Con fuero (maternal, sindical u otro), para terminar por vencimiento del plazo, conclusión de la obra o art. 160 se necesita <b>autorización judicial previa</b> (desafuero, art. 174). Y el art. 161 no puede usarse con licencia médica.</span></div></div></button>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 159, 160, 161, 162, 163, 172, 174, 177 y 454 N°1; Ley 19.728 (seguro de cesantía).</p>
+</section>
+
+<!-- 7 · CASO APLICADO (1) -->
+<section class="slide" data-title="Caso: la desvinculación" data-audio="p07" data-dur="0:15" data-gate="caso" data-gate-msg="Resuelve las dos decisiones sobre la desvinculación.">
+  <span class="eyebrow amber">El caso de Camila · “Después vemos la causal”</span>
+  <h2>La jefatura quiere desvincular hoy</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="bubble"><span class="who">Jefatura de Operaciones</span>Quiero desvincular hoy a Rodrigo. Pongamos “necesidades de la empresa”, que es lo más rápido, y después vemos qué causal queda mejor.</div>
+      <div class="bubble camila"><span class="who">Camila</span>Antes de redactar nada, cuéntame qué pasó.</div>
+    </div>
+    <div class="ficha" aria-label="Ficha de Rodrigo">
+      <div class="row"><b>Persona</b><span>Rodrigo, supervisor de turno</span></div>
+      <div class="row"><b>Antigüedad</b><span>4 años, contrato indefinido</span></div>
+      <div class="row"><b>Remuneración</b><span>$900.000 mensuales</span></div>
+      <div class="row"><b>Área</b><span>Operaciones: sin cambios de procesos ni recortes</span></div>
+    </div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace Camila con la propuesta de usar “necesidades de la empresa”?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso1b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La acepta: el art. 161 sirve para cualquier desvinculación y se paga indemnización.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pide los hechos concretos y verifica si existe una razón objetiva de la organización que justifique separar el cargo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Redacta la carta citando solo “art. 161” para no comprometer a la empresa con detalles.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: causal sin hechos que la sostengan</div><div class="branch-body"><div><p>El art. 161 exige <strong>hechos objetivos de la organización</strong> (modernización, baja de productividad, cambios del mercado). En Operaciones no hay cambios ni recortes. Si el tribunal lo declara improcedente, la indemnización se paga con un <strong>recargo de 30%</strong>.</p></div><div><p class="hint">Pagar indemnización no convierte en válida una causal.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: carta sin hechos</div><div class="branch-body"><div><p>La carta debe indicar la causal <strong>y los hechos en que se funda</strong>. Además, en un juicio la empresa no puede alegar hechos distintos de los que señaló en la carta. Callar los hechos deja a la empresa sin defensa.</p></div><div><p class="hint">Citar el artículo no basta.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La causal se elige según los hechos reales, antes de decidir. Camila pregunta y descubre que no hay ninguna reestructuración: la jefatura está molesta por el desempeño de Rodrigo y por roces con su equipo.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso1b" hidden>
+    <div class="story" style="margin-top:18px"><strong>La jefatura insiste:</strong> “Entonces usemos el artículo 160, incumplimiento grave. Todos saben que no rinde”. No hay registros, evaluaciones ni retroalimentación escrita.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué recomienda Camila?</h3>
+    <div class="options" data-choice="caso1b" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Despedir hoy por art. 160 N°7: la jefatura conoce bien el caso.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pedirle a Rodrigo que firme una renuncia para evitar conflictos.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No terminar hoy: documentar el desempeño con hechos, fechas y retroalimentación, y decidir solo cuando los hechos acreditados encajen en una causal.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso1b-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: despido sin hechos comprobados</div><div class="branch-body"><div><p>Las causales del art. 160 exigen hechos graves <strong>debidamente comprobados</strong>. “Todos saben” no es evidencia. Si el tribunal declara el despido injustificado, la indemnización se paga con un <strong>recargo de 80%</strong>, y hasta 100% si no había motivo plausible.</p></div><div><p class="hint">Sin evidencia, no hay causal disciplinaria.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: renuncia que no es voluntaria</div><div class="branch-body"><div><p>La renuncia es una <strong>decisión unilateral de la persona trabajadora</strong>. Presionar para obtenerla desvirtúa la causal y expone a la empresa a que se discuta en juicio cómo terminó realmente la relación.</p></div><div><p class="hint">La empresa no puede elegir la causal de otro.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Un problema de desempeño se gestiona primero: hechos concretos, fechas, retroalimentación y registros. Si más adelante los hechos acreditados configuran una causal, se aplica esa. La causal nunca se “construye” después de decidir.</p></div><div><p class="hint">Primera situación resuelta.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 159 N°2, 160, 161, 162, 168 y 454 N°1.</p>
+</section>
+
+<!-- 8 · CASO APLICADO (2) -->
+<section class="slide" data-title="Caso: plazo fijo y renuncia" data-audio="p08" data-dur="0:16" data-gate="caso2" data-gate-msg="Resuelve las dos decisiones sobre el plazo fijo y la renuncia.">
+  <span class="eyebrow amber">El caso de Camila · Las otras dos situaciones</span>
+  <h2>Un plazo que vence y una renuncia sobre el escritorio</h2>
+  <div class="grid-2" style="align-items:start">
+    <div class="story" style="margin-top:0"><strong>Daniela</strong> fue contratada a plazo fijo por seis meses como asistente de bodega y su contrato se renovó una vez. Vence este viernes. La jefatura comenta: <em>“Que siga unos días más mientras decidimos”</em>.</div>
+    <div class="story" style="margin-top:0"><strong>Javier</strong>, analista con 4 años en la empresa, dejó una carta de renuncia firmada, con aviso de 30 días. Pregunta cuánto le pagarán y cuándo.</div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 3 · ¿Qué hace Camila con el contrato de Daniela?</h3>
+  <div class="options" data-choice="caso2" data-correct="A" data-then="caso2b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Pide que se decida antes del viernes. Si no continúa, comunica por escrito el término por vencimiento del plazo, con cotizaciones al día, y revisa si Daniela tiene fuero.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Deja que Daniela siga trabajando unos días después del viernes y luego le comunica el término por vencimiento del plazo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Renueva el contrato a plazo fijo una segunda vez, por un mes, para ganar tiempo.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el contrato pasa a ser indefinido</div><div class="branch-body"><div><p>Si la persona sigue prestando servicios con conocimiento del empleador <strong>después de vencido el plazo</strong>, el contrato se transforma en indefinido. Ya no podría terminarse por vencimiento del plazo.</p></div><div><p class="hint">La decisión debe tomarse antes del vencimiento.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la segunda renovación lo hace indefinido</div><div class="branch-body"><div><p>El contrato de Daniela ya se renovó una vez. Una <strong>segunda renovación</strong> lo transforma en contrato indefinido, aunque se firme como plazo fijo.</p></div><div><p class="hint">Revisa cuántas renovaciones lleva.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>El vencimiento del plazo es una causal del art. 159 N°4: se comunica por escrito dentro de 3 días hábiles, con copia a la Inspección y cotizaciones al día. No genera indemnización por años de servicio, pero sí feriado proporcional y remuneraciones pendientes. Si Daniela tuviera fuero, se necesitaría desafuero judicial previo.</p></div><div><p class="hint">Sigue con la última decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2b" hidden>
+    <h3 style="margin-top:18px">Decisión 4 · ¿Qué le responde Camila a Javier sobre su cierre?</h3>
+    <div class="options" data-choice="caso2b" data-correct="C" data-gate="caso2">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Con 4 años, te corresponden 4 meses de indemnización por años de servicio”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Con la carta basta; no hace falta ningún otro trámite ni documento”.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“La renuncia no da indemnización por años de servicio, pero te pagaremos remuneraciones pendientes y feriado. Debe estar ratificada ante ministro de fe o firmada en la DT, y el finiquito estará en 10 días hábiles”.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2b-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un pago que no corresponde</div><div class="branch-body"><div><p>La renuncia es una causal del art. 159: <strong>no genera indemnización legal por años de servicio</strong>. Prometerla crea una expectativa falsa y un error en el finiquito.</p></div><div><p class="hint">Revisa qué causal genera indemnización.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2b-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: renuncia que no puede invocarse</div><div class="branch-body"><div><p>Para que el empleador pueda invocar la renuncia, debe estar <strong>firmada y ratificada ante un ministro de fe</strong> (inspector, notario, oficial del Registro Civil o secretario municipal, entre otros) o firmada electrónicamente en el sitio de la DT. Y siempre hay que otorgar el finiquito.</p></div><div><p class="hint">La formalidad es parte del cierre.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2b-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Renuncia, vencimiento y necesidades de la empresa terminan la relación, pero cada una activa pagos y formalidades distintas. En la renuncia de Javier se revisan remuneraciones pendientes, feriado pendiente y proporcional, cotizaciones al día y un finiquito dentro de 10 días hábiles, que se paga al ratificarlo.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 73, 159 N°2 y N°4, 162, 174 y 177; Ley 21.361 (finiquito electrónico).</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:16" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>“No encaja con el equipo: pongamos necesidades de la empresa”</h2>
+  <div class="story">Una jefatura de tu organización pide desvincular a una persona con 5 años de antigüedad por “necesidades de la empresa”. Al preguntar, explica que “no encaja con el equipo”. La persona está con licencia médica esta semana.</div>
+  <p style="margin-top:12px">Imagina que este caso llega a tu escritorio. Responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta y luego abre la respuesta modelo.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo: ¿qué debería existir antes de terminar?</strong> (1) Una <b>causal legal</b> elegida según hechos reales: “no encaja” no es un hecho objetivo de la organización, así que el art. 161 no corresponde. (2) <b>Hechos y evidencia</b> verificables que la sostengan. (3) Una <b>carta</b> con causal, hechos y estado de cotizaciones, y su copia a la Inspección. (4) <b>Comprobantes de cotizaciones</b> pagadas. (5) Un <b>finiquito</b> con todos los pagos dentro de 10 días hábiles. Pregúntate: ¿qué documento sería el más difícil de reconstruir si mañana una autoridad pidiera acreditar esta decisión? Ese es el que debes cuidar primero.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 161, 162, 163, 177 y 454 N°1.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:15" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.1</h2>
+    <p>Ya puedes reconocer las principales formas de término de la relación laboral y explicar por qué la causal define la comunicación, los pagos, las formalidades y la evidencia.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> un término correcto combina causal, hechos, comunicación, pagos, formalización y evidencia. Desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar las causales</button><button class="small-btn primary" type="button" data-goto="4">Repasar la cadena del cierre</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 159 a 177 y 454 N°1; Ley 19.728 (seguro de cesantía); Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l51';
+const FIRST_KEYS=['hook','caso1','caso1b','caso2','caso2b'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Solo por causal legal',lines:['Un contrato de trabajo solo termina por una causal que la ley contempla.','Y la causal se elige según los hechos reales, antes de decidir. Nunca se construye después.'],
+  html:`<div class="v-final">Primero la <em>causal</em>, después la decisión</div><div class="v-chk"><span data-at="1">Hechos reales</span><span data-at="1">Antes de decidir</span><span data-at="1">Nunca después</span></div>`},
+ {t:'Tres familias',lines:['El Código del Trabajo agrupa las causales en tres familias.','El artículo 159, causales objetivas. El artículo 160, causales disciplinarias. Y el artículo 161, necesidades de la empresa.'],
+  html:`<div class="v-fam"><div data-at="1"><b>Art. 159</b>Objetivas<small>Sin reproche</small></div><div data-at="1"><b>Art. 160</b>Disciplinarias<small>Hechos graves</small></div><div data-at="1"><b>Art. 161</b>Necesidades de la empresa<small>Hechos de la organización</small></div></div>`},
+ {t:'Artículo 159',lines:['El artículo 159 incluye mutuo acuerdo, renuncia con al menos treinta días de aviso y muerte de la persona trabajadora;','vencimiento del plazo, conclusión de la obra y caso fortuito o fuerza mayor.'],
+  html:`<div class="v-chk" style="margin-top:0"><span data-at="0">Mutuo acuerdo</span><span data-at="0">Renuncia · aviso de 30 días</span><span data-at="0">Muerte</span><span data-at="1">Vencimiento del plazo</span><span data-at="1">Conclusión de la obra</span><span data-at="1">Caso fortuito o fuerza mayor</span></div>`},
+ {t:'Artículo 160',lines:['El artículo 160 exige hechos graves debidamente comprobados, como la falta de probidad o las ausencias injustificadas.','Bien aplicado, no hay indemnización por años de servicio.'],
+  html:`<div class="v-icons"><div><span class="i">⚖️</span>Hechos graves</div><div><span class="i">🔎</span>Debidamente comprobados</div><div class="dim" data-at="1"><span class="i">🚫</span>Sin indemnización por años de servicio</div></div>`},
+ {t:'Artículo 161',lines:['El artículo 161 se funda en hechos objetivos de la organización, no en el desempeño.','Exige treinta días de aviso o indemnización sustitutiva y, desde un año de servicio, indemnización por años de servicio.'],
+  html:`<div class="v-big">30 días</div><div class="v-sub">de aviso o indemnización sustitutiva</div><div class="v-chk"><span data-at="0">Hechos de la organización</span><span data-at="1">Indemnización por años de servicio</span></div>`},
+ {t:'La carta',lines:['La comunicación va por escrito, con la causal, los hechos y el estado de las cotizaciones.','Se entrega dentro de tres días hábiles, con copia a la Inspección del Trabajo.'],
+  html:`<div class="v-steps"><div data-at="0">Causal invocada</div><div data-at="0">Hechos en que se funda</div><div data-at="0">Estado de las cotizaciones</div><div data-at="1">3 días hábiles · copia a la Inspección</div></div>`},
+ {t:'El cierre',lines:['Si las cotizaciones no están pagadas, el despido no pone término al contrato.','Y el finiquito se pone a disposición dentro de diez días hábiles, y se paga al ratificarlo.'],
+  html:`<div class="v-tl three"><div data-at="0"><div class="n">💳</div><small>Cotizaciones al día</small></div><div data-at="1"><div class="n">10</div><small>días hábiles para el finiquito</small></div><div data-at="1"><div class="n">✍️</div><small>Pago al ratificar</small></div></div>`}
+]};
+const Q=[
+ {q:'¿Cuándo debe definirse la causal de término?',o:['Después de comunicar el despido, cuando se redacta el finiquito.','Antes de decidir, según los hechos reales que la sostienen.','Solo si la persona trabajadora reclama ante la Inspección.'],c:1,f:'La causal se elige según los hechos reales y antes de decidir. Nunca se construye después, porque define carta, aviso, pagos y evidencia.'},
+ {q:'Si una persona trabajadora renuncia, ¿con cuánta anticipación debe avisar a lo menos?',o:['No necesita avisar.','15 días.','30 días.','60 días.'],c:2,f:'La renuncia es una decisión unilateral de la persona trabajadora, con aviso al empleador de al menos 30 días de anticipación.'},
+ {q:'¿En qué caso procede, por regla general, la indemnización por años de servicio?',o:['Término por necesidades de la empresa (art. 161) con un año o más de servicio.','Renuncia de la persona trabajadora.','Vencimiento del plazo convenido.'],c:0,f:'Procede en el art. 161 con un año o más (o si el tribunal declara el despido injustificado). No procede en renuncia, vencimiento del plazo ni art. 160 bien aplicado.'},
+ {q:'¿Qué ocurre si, al despedir, las cotizaciones previsionales no están pagadas íntegramente?',o:['Nada: el despido es válido igual.','Solo se paga una multa administrativa.','Se pagan en el finiquito y el despido queda firme.','El despido no pone término al contrato hasta que se convalide pagando las cotizaciones.'],c:3,f:'El despido no produce el efecto de terminar el contrato. El empleador debe pagar remuneraciones y cotizaciones hasta convalidarlo, pagando lo adeudado y comunicándolo por carta certificada.'},
+ {q:'¿Dentro de qué plazo debe entregarse la carta de término, por regla general?',o:['10 días hábiles.','3 días hábiles siguientes a la separación, con copia a la Inspección del Trabajo.','30 días corridos.'],c:1,f:'La carta se entrega dentro de 3 días hábiles (6 si la causal es caso fortuito o fuerza mayor), con copia a la Inspección dentro del mismo plazo. Los 10 días hábiles son para el finiquito.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: mensajes en el celular ---------- */
+const MSGS=[['Javier · Análisis','Camila, te dejé en tu escritorio mi carta de renuncia. Doy aviso con 30 días.','Renuncia'],
+ ['Remuneraciones','Recordatorio: el contrato a plazo fijo de Daniela, asistente de bodega, vence este viernes.','Plazo fijo'],
+ ['Jefatura de Operaciones','Necesito desvincular a Rodrigo por necesidades de la empresa. Terminemos y después vemos qué causal usamos.','Desvinculación']];
+$('#showMsg').addEventListener('click',e=>{e.currentTarget.closest('.mfoot').remove();const tb=$('#threadBody');tb.innerHTML='';let i=0;
+  const step=()=>{tb.insertAdjacentHTML('beforeend','<div class="typing"><span></span><span></span><span></span></div>');
+    setTimeout(()=>{$('.typing',tb).remove();const m=MSGS[i];tb.insertAdjacentHTML('beforeend',`<div class="bubble"><span class="who">${m[0]}</span>${m[1]}<br/><span class="tag3">${m[2]}</span></div>`);i++;
+      if(i<MSGS.length)setTimeout(step,250);else setTimeout(()=>{const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},500)},650)};
+  step()});
+
+/* ---------- Pestañas: tres familias ---------- */
+const tTab=tracker('tabs',3,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tabpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Parejas: situación ↔ causal ---------- */
+const PAIRS=[['Una analista entrega una carta firmada: se va de la empresa y avisa con 30 días','Renuncia (art. 159 N°2)'],
+ ['El contrato de un reemplazo llegó a la fecha pactada y la persona dejó de trabajar ese día','Vencimiento del plazo (art. 159 N°4)'],
+ ['La empresa automatiza la digitación de facturas y suprime esos cargos','Necesidades de la empresa (art. 161)'],
+ ['Un bodeguero faltó tres días en el mes sin justificación, y está registrado','No concurrencia injustificada (art. 160 N°3)'],
+ ['Empresa y trabajadora firman ante notario un acuerdo para terminar el contrato','Mutuo acuerdo (art. 159 N°1)'],
+ ['Terminó la construcción del edificio para la que se contrató a un maestro','Conclusión de la obra (art. 159 N°5)']];
+const PWHY=['La decide la persona trabajadora, en forma unilateral, con aviso de al menos 30 días.','El contrato termina por el hecho objetivo de llegar la fecha pactada, sin que la persona siga trabajando.','Es un hecho objetivo de la organización (modernización), no del desempeño de las personas.','Es una causal disciplinaria: dos días seguidos, dos lunes en el mes o tres días en el mes sin causa justificada.','Es una decisión conjunta de ambas partes, por escrito y ratificada ante ministro de fe.','Termina la obra que dio origen al contrato; si duró un mes o más, corresponden 2,5 días por mes trabajado.'];
+const rOrder=[2,4,0,5,3,1];let selL=null,pDone=0;
+$('#pl').innerHTML=PAIRS.map((p,i)=>`<button class="pl" type="button" data-i="${i}">${p[0]}</button>`).join('');
+$('#pr').innerHTML=rOrder.map(i=>`<button class="pr" type="button" data-i="${i}">${PAIRS[i][1]}</button>`).join('');
+$$('.pl').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;selL=b.dataset.i;$$('.pl').forEach(x=>x.classList.toggle('sel',x===b))}));
+$$('.pr').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;if(selL==null){feedback($('#prFb'),false,'Primero elige una situación.','Selecciona una situación de la columna izquierda.');return}
+  if(b.dataset.i===selL){b.classList.add('done');const l=$(`.pl[data-i="${selL}"]`);l.classList.add('done');l.classList.remove('sel');l.textContent='✓ '+l.textContent;pDone++;
+    $('#prTick').textContent=`${pDone} / 6`;feedback($('#prFb'),true,'Pareja correcta.',PWHY[+selL]);selL=null;if(pDone===6){$('#prTask').classList.add('ok');done('pairs')}}
+  else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');feedback($('#prFb'),false,'No corresponde.','Pregúntate quién decide el término (la persona, ambas partes o la empresa) y si el hecho es objetivo, disciplinario o de la organización.')}}));
+
+/* ---------- Cadena del cierre ---------- */
+const DAY=[
+ ['1. Causal · antes de decidir','El contrato solo termina por una <b>causal legal</b> (arts. 159, 160 o 161). Se elige según los hechos reales y <b>antes</b> de decidir el término. De ella dependen todos los eslabones que siguen.'],
+ ['2. Hechos y evidencia · antes de decidir','Cada causal necesita su respaldo: hechos graves <b>debidamente comprobados</b> en el art. 160; hechos <b>objetivos de la organización</b> en el art. 161; renuncia o mutuo acuerdo <b>firmados y ratificados</b>. Contrato, anexos, registros y cálculos deben formar una cadena consistente.'],
+ ['3. Carta y aviso · 3 días hábiles','Por escrito, en persona o por carta certificada al domicilio del contrato: <b>causal, hechos</b> y estado de las cotizaciones con comprobantes. Plazo: <b>3 días hábiles</b> desde la separación (6 si es caso fortuito o fuerza mayor), con copia a la Inspección. En el art. 161, aviso de 30 días o indemnización sustitutiva, y la carta indica el monto total a pagar.'],
+ ['4. Cotizaciones al día · al despedir','Las cotizaciones deben estar pagadas hasta el último día del mes anterior al despido. Si no lo están, el despido <b>no pone término al contrato</b>: la empresa sigue pagando remuneraciones y cotizaciones hasta convalidarlo, pagando lo adeudado y avisando por carta certificada.'],
+ ['5. Finiquito · 10 días hábiles','El empleador debe otorgar el finiquito y ponerlo a disposición dentro de <b>10 días hábiles</b> desde la separación. Incluye remuneraciones pendientes, horas extraordinarias, feriado pendiente y proporcional, y las indemnizaciones que correspondan según la causal.'],
+ ['6. Pago y ratificación · al ratificar','El finiquito debe constar por escrito y ratificarse ante un <b>ministro de fe</b> (inspector, notario, oficial del Registro Civil o secretario municipal, entre otros) o firmarse electrónicamente en el sitio de la DT. El <b>pago se hace al ratificar</b>.']];
+const tDay=tracker('day',6,'#dayTick','#dayTask');
+$$('#dayline .dseg').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#dayline .dseg').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#dpanel').innerHTML=`<h3 style="margin-top:0">${DAY[k][0]}</h3><p>${DAY[k][1]}</p>`;tDay(k)}));
+
+/* ---------- Tarjetas: la causal define ---------- */
+const tFc=tracker('cards',5,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[['¿Sirve el art. 161 para terminar por problemas de relación o de “encaje” con el equipo?',0,'No. El art. 161 se funda en hechos objetivos de la organización, no en el desempeño, la conducta ni las relaciones personales.'],
+ ['¿Puede invocarse el art. 161 mientras la persona está con licencia médica?',0,'No. La ley no permite invocar el art. 161 respecto de una persona con licencia médica.'],
+ ['¿Debe la carta explicar los hechos y no solo citar el artículo?',1,'Sí. La carta indica causal y hechos; en juicio, la empresa no puede alegar hechos distintos de los señalados.'],
+ ['¿Hay que verificar que las cotizaciones estén pagadas y adjuntar los comprobantes?',1,'Sí. Si no están pagadas íntegramente, el despido no pone término al contrato hasta convalidarlo.'],
+ ['¿Debe el finiquito quedar a disposición dentro de 10 días hábiles desde la separación?',1,'Sí. El finiquito se otorga dentro de 10 días hábiles y se paga al ratificarlo.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===YN.length){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>

@@ -1,0 +1,413 @@
+<title>Lección 5.4 — Comunicar correctamente el término</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* Dos versiones de la carta */
+.versions.letters .version .say{font-size:.95rem;font-weight:600;line-height:1.5}
+.letter-doc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:6px}
+.letter-doc .lh{font-size:.78rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.letter-doc .ln{display:block}
+.letter-doc .mark{display:inline-block;font-size:.72rem;font-weight:900;padding:2px 8px;border-radius:999px;background:var(--mint);border:1px solid var(--mint-line);color:var(--teal);margin-right:6px}
+.letter-doc.thin .ln{font-size:1.05rem;font-weight:700}
+.letter-doc .empty{color:var(--muted);font-style:italic;font-size:.88rem}
+/* Carta línea a línea */
+.carta-doc .toggle-row{grid-template-columns:1fr auto}
+.carta-doc .toggle-row>span:first-child{min-width:0}
+.tg-sw{display:flex;gap:8px;align-items:center}
+.tg-sw small{font-weight:900;font-size:.8rem;min-width:52px;text-align:right;color:var(--bad)}
+.toggle-row.on .tg-sw small{color:var(--good)}
+.toggle-row .why{grid-column:1/-1;padding:10px 12px;border-radius:12px;font-size:.9rem;animation:rise .3s ease both}
+.toggle-row.ok{background:var(--good-soft)}
+.toggle-row.ko{background:var(--bad-soft)}
+.toggle-row.ok .why{background:var(--surface);border:1px solid var(--good-line)}
+.toggle-row.ko .why{background:var(--surface);border:1px solid var(--line)}
+.tg-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.84rem;font-weight:800;color:var(--muted);margin:6px 0 10px}
+.carta-doc .quote{font-style:italic}
+/* Sitio de la DT en el celular */
+.phone .ph-hi{font-size:.92rem;font-weight:900;color:#173f4e}
+.phone .ph-menu{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.phone .ph-menu button{border:1px solid #c9d6dc;background:#fff;color:#172431;border-radius:14px;padding:12px 8px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;display:grid;gap:4px;justify-items:center;text-align:center}
+.phone .ph-menu button .e{font-size:1.25rem}
+.phone .fld{display:grid;grid-template-columns:1fr;gap:2px;font-size:.78rem;padding:6px 0;border-top:1px dashed #d7e2e6}
+.phone .fld:first-of-type{border-top:0}
+.phone .fld small{color:#5f7180;font-weight:800}
+.phone .q{font-size:.8rem;font-weight:800;margin:0}
+.steps-side{display:grid;gap:10px}
+.steps-side .photo-frame{aspect-ratio:3/2;max-width:380px}
+/* Evidencias del envío */
+.photo-frame.big{aspect-ratio:21/9;margin:12px 0 4px}
+@media(max-width:600px){.photo-frame.big{aspect-ratio:3/2}}
+.evline.four{grid-template-columns:repeat(4,1fr)}
+.evline.four .evnode .t{font-size:1.3rem}
+.evnode small{max-width:150px}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.draft{border:1px dashed var(--line);border-radius:16px;padding:12px 16px;background:var(--surface2);margin-top:14px;font-size:.95rem}
+.draft b{display:block;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+@media(max-width:860px){.case-head{grid-template-columns:1fr}.evline.four{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.carta-doc .toggle-row{grid-template-columns:1fr}.tg-sw{justify-content:flex-end}.evline.four{grid-template-columns:1fr}.yn-item{grid-template-columns:1fr}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.4</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:18" data-gate="hook" data-gate-msg="Abre las dos versiones de la carta y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.4 · Comunicar correctamente el término</span>
+      <h1 class="reveal">La carta debe explicar, no solo nombrar una causal</h1>
+      <p class="lead reveal"><strong>Meta:</strong> identificar los elementos esenciales de la comunicación de término y entender por qué la carta es la evidencia de la decisión. En <strong>Horizonte Servicios</strong> se suprimirá el cargo de Rodrigo, analista de despacho. La jefatura le muestra a Camila su borrador y pregunta: <em>“¿No basta con citar el artículo?”</em> <strong>Haz clic en cada versión de la carta.</strong></p>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila y una jefatura revisan una carta impresa sobre un escritorio con documentos" src="{{IMG:i54_hero}}"/></div>
+  </div>
+  <div class="versions letters" id="versions">
+    <button class="version" type="button"><span class="who"><span class="avatar mgr">JD</span> Borrador de la jefatura</span><span class="hint2">Toca para leer la carta</span><span class="say"><span class="letter-doc thin"><span class="lh">Carta de término · Rodrigo Pérez</span><span class="ln">“Se pone término a su contrato por necesidades de la empresa.”</span><span class="empty">(No dice nada más.)</span></span></span></button>
+    <button class="version" type="button"><span class="who"><span class="avatar">CA</span> Borrador de Camila</span><span class="hint2">Toca para leer la carta</span><span class="say"><span class="letter-doc"><span class="lh">Carta de término · Rodrigo Pérez</span><span class="ln"><span class="mark">Causal</span>Art. 161 del Código del Trabajo, necesidades de la empresa.</span><span class="ln"><span class="mark">Hechos</span>La automatización del control de inventario reorganiza el área de despacho y suprime el cargo de analista de despacho desde esta fecha.</span><span class="ln"><span class="mark">Cotizaciones</span>Pagadas hasta el mes anterior; se adjuntan comprobantes.</span><span class="ln"><span class="mark">Pagos</span>Sin aviso de 30 días: indemnización sustitutiva y por años de servicio, con el monto total a pagar.</span></span></span></button>
+  </div>
+  <div id="hookQ" hidden>
+    <h3>¿Qué le responde Camila a la jefatura?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Tu versión basta: con citar la causal se cumple. Los detalles se explican si Rodrigo demanda.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Usemos la segunda: la carta debe indicar la causal, los hechos concretos, el estado de las cotizaciones y, en este caso, el monto total a pagar. Es nuestra evidencia.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Da lo mismo cuál enviemos: si la carta tiene un error, el despido se anula igual.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una carta que no se puede defender</div><div class="branch-body"><div><p>Si Rodrigo demanda, la empresa <strong>no podrá alegar hechos distintos</strong> de los que señaló en la carta (art. 454 N°1). Una carta que solo nombra la causal deja a la empresa sin hechos que probar, y a Rodrigo sin saber qué ocurrió.</p></div><div><p class="hint">Los detalles no se pueden agregar después.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se subestima la carta</div><div class="branch-body"><div><p>Los errores u omisiones de la carta <strong>no invalidan</strong> el término, pero pueden sancionarse administrativamente y, sobre todo, limitan lo que la empresa puede probar en un juicio. Por eso no da lo mismo cuál se envíe.</p></div><div><p class="hint">La carta fija los hechos de la decisión.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>La carta debe permitir que Rodrigo entienda qué ocurrió y que la empresa pueda demostrarlo. Citar el artículo no explica los hechos.</p></div><div><p class="hint">En esta lección verás cada elemento de la carta, sus plazos y su envío.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 18 s</span>
+  <h2>¿Qué debe tener una comunicación de término?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · LA CARTA LÍNEA A LÍNEA -->
+<section class="slide" data-title="La carta, línea a línea" data-audio="p03" data-dur="0:19" data-gate="tog" data-gate-msg="Marca correctamente si cada línea de la carta cumple o falta.">
+  <span class="eyebrow">Lección 5.4 · Contenido de la carta de término</span>
+  <h2>¿Qué le falta a esta carta?</h2>
+  <p>La jefatura mejoró su borrador, pero aún no está lista. Lee cada línea. <strong>Activa el interruptor de las líneas que cumplen</strong> con el artículo 162 y deja apagadas las que <strong>faltan o están incompletas</strong>. Luego presiona <strong>Revisar carta</strong>.</p>
+  <div class="tg-legend"><span style="color:var(--good)">● Encendido = Cumple</span><span style="color:var(--bad)">● Apagado = Falta</span></div>
+  <div class="task" id="tgTask">Líneas bien evaluadas <span class="tick" id="tgTick">0 / 7</span></div>
+  <div class="slip carta-doc" id="carta">
+    <div class="slip-h"><span>Carta de término de contrato · Segundo borrador</span><span>Horizonte Servicios · Rodrigo Pérez</span></div>
+    <div class="slip-sec">Contenido, línea a línea</div>
+  </div>
+  <button class="small-btn primary" type="button" id="tgCheck" style="margin-top:12px">Revisar carta</button>
+  <div class="fb" id="tgFb"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162 y 454 N°1; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 4 · COPIA A LA INSPECCIÓN -->
+<section class="slide" data-title="Copia a la Inspección" data-audio="p04" data-dur="0:19" data-gate="phone" data-gate-msg="Completa los tres pasos del envío en el celular.">
+  <span class="eyebrow amber">Lección 5.4 · Copia a la Inspección del Trabajo</span>
+  <h2>Camila envía la copia desde el sitio de la DT</h2>
+  <p>La carta ya está corregida y entregada. Ahora la copia debe llegar a la Inspección del Trabajo. <strong>Usa el celular de la izquierda</strong> y sigue los pasos de la derecha. Los nombres de las opciones son referenciales.</p>
+  <div class="phone-wrap">
+    <div class="phone" id="phone"></div>
+    <div class="steps-side">
+      <div class="sstep on" id="ps0"><b>Paso 1 · Elegir el trámite</b><br/>En el sitio de la Dirección del Trabajo, toca el trámite que corresponde.</div>
+      <div class="sstep" id="ps1"><b>Paso 2 · El plazo</b><br/>Revisa los datos y elige en el celular hasta cuándo puede enviarse la copia.</div>
+      <div class="sstep" id="ps2"><b>Paso 3 · El comprobante</b><br/>Envía la copia y decide qué hacer con el comprobante.</div>
+      <div class="fb" id="phoneFb"></div>
+      <div class="photo-frame"><img alt="Camila, en su escritorio, completa un trámite en línea con su celular junto a una carpeta" src="{{IMG:i54_dt}}"/></div>
+    </div>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, art. 162; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 5 · EVIDENCIAS DEL ENVÍO -->
+<section class="slide" data-title="Evidencias del envío" data-audio="p05" data-dur="0:17" data-gate="ev aud" data-gate-msg="Revisa las cuatro evidencias y toma la decisión.">
+  <span class="eyebrow violet">Lección 5.4 · La carta como evidencia</span>
+  <h2>“Esa carta no vale: yo no la firmé”</h2>
+  <p>Una semana después, Rodrigo le escribe a Camila que la carta no tiene valor porque se negó a firmar la copia. Camila reúne las evidencias del proceso. <strong>Haz clic en cada una</strong> para ver qué demuestra; luego aparecerá la decisión.</p>
+  <div class="photo-frame big"><img alt="Camila entrega un sobre en el mesón de una oficina de correos para enviarlo por carta certificada" src="{{IMG:i54_correo}}"/></div>
+  <div class="task" id="evTask">Evidencias revisadas <span class="tick" id="evTick">0 / 4</span></div>
+  <div class="evline four" id="evline">
+    <button class="evnode" type="button" data-k="0"><span class="t">✋</span><small>Día 0 · Entrega personal</small></button>
+    <button class="evnode" type="button" data-k="1"><span class="t">✉️</span><small>Día 0 · Carta certificada</small></button>
+    <button class="evnode" type="button" data-k="2"><span class="t">🏛️</span><small>Día 1 · Copia a la Inspección</small></button>
+    <button class="evnode" type="button" data-k="3"><span class="t">📎</span><small>Anexo · Comprobantes de cotizaciones</small></button>
+  </div>
+  <div class="dpanel" id="evPanel"><p class="hint">Selecciona una evidencia para ver qué demuestra.</p></div>
+  <div class="phase" id="audQ" hidden>
+    <h3 style="margin-top:18px">¿Qué le responde Camila a Rodrigo?</h3>
+    <div class="options" data-choice="aud" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Tienes razón: sin tu firma, el término no existe. Repetiremos todo el proceso.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Lo importante es que la Inspección recibió copia; la carta para ti era un trámite opcional.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“La carta se te entregó personalmente y también se envió por carta certificada al domicilio de tu contrato, dentro de plazo. Aquí están los comprobantes.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="aud-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se confunde firma con comunicación</div><div class="branch-body"><div><p>La ley exige comunicar por escrito, en forma personal o por carta certificada al domicilio del contrato. La firma de recepción ayuda a probar, pero <strong>no es lo que da validez</strong> a la comunicación. Camila tiene otras evidencias de la entrega.</p></div><div><p class="hint">Mira el comprobante de la carta certificada.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se invierte la obligación</div><div class="branch-body"><div><p>La carta a la persona trabajadora es la <strong>comunicación principal</strong>. La copia a la Inspección es una obligación adicional, en el mismo plazo; no la reemplaza.</p></div><div><p class="hint">Ambas son exigibles.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-C"><div class="branch good"><div class="branch-head">✓ Respuesta correcta</div><div class="branch-body"><div><p>Camila puede demostrar <strong>cómo, cuándo y qué</strong> se comunicó: entrega personal, carta certificada al domicilio del contrato, copia a la Inspección dentro de plazo y comprobantes de cotizaciones. Esa cadena de evidencias respalda la decisión.</p></div><div><p class="hint">Por eso cada envío deja un comprobante archivado.</p></div></div></div></template>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, art. 162; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 6 · PLAZOS Y REQUISITOS -->
+<section class="slide" data-title="Plazos y requisitos" data-audio="p06" data-dur="0:16" data-gate="qf" data-gate-msg="Responde las ocho afirmaciones.">
+  <span class="eyebrow">Lección 5.4 · Plazos y requisitos de la comunicación</span>
+  <h2>¿Correcto o incorrecto?</h2>
+  <p>Lee cada afirmación sobre la comunicación de término y decide si es <strong>correcta</strong> o <strong>incorrecta</strong>. Intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162 y 454 N°1; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 7 · CASO: ANTES DE ENVIAR -->
+<section class="slide" data-title="Caso: antes de enviar" data-audio="p07" data-dur="0:18" data-gate="caso" data-gate-msg="Resuelve las dos decisiones antes de enviar la carta.">
+  <span class="eyebrow amber">Lección 5.4 · Revisar antes de comunicar</span>
+  <h2>Las cotizaciones no están al día</h2>
+  <div class="case-head">
+    <div class="story" style="margin:0">Antes de firmar la carta de Rodrigo, Camila pide a Contabilidad los comprobantes de pago de cotizaciones. La respuesta la sorprende: por un error en la plataforma de pago, <strong>dos meses de cotizaciones de Rodrigo no se pagaron</strong>.</div>
+    <div class="photo-frame"><img alt="Camila y una analista contable revisan planillas de pago de cotizaciones en un computador" src="{{IMG:i54_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace Camila?</h3>
+  <div class="options" data-choice="casoA" data-correct="C" data-then="casoPh2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Envía la carta igual y deja el pago de las cotizaciones para después del finiquito.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Escribe en la carta que las cotizaciones están al día, para no retrasar el proceso.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Gestiona el pago de las cotizaciones adeudadas antes de comunicar el despido y adjunta los comprobantes a la carta.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="casoA-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el despido no termina el contrato</div><div class="branch-body"><div><p>Si al momento del despido las cotizaciones no están pagadas íntegramente, el despido <strong>no produce el efecto de poner término al contrato</strong>. La empresa seguirá debiendo remuneraciones y cotizaciones hasta convalidarlo.</p></div><div><p class="hint">Primero se regulariza, después se comunica.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoA-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una carta falsa</div><div class="branch-body"><div><p>La carta debe informar el <strong>estado real</strong> de pago de las cotizaciones y adjuntar los comprobantes. Declarar algo falso no paga la deuda: el despido igual no pondría término al contrato y la carta perdería credibilidad como evidencia.</p></div><div><p class="hint">Los comprobantes mostrarían la verdad.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoA-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Con las cotizaciones devengadas hasta el último día del mes anterior pagadas y sus comprobantes adjuntos, el despido podrá producir sus efectos.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="casoPh2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Mientras tanto:</strong> la jefatura propone agregar a la carta una línea más: <em>“Además, su desempeño en el último semestre no fue el esperado”.</em></div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué hechos deja Camila en la carta?</h3>
+    <div class="options" data-choice="casoB" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Agrega la frase del desempeño: mientras más motivos, más sólida queda la carta.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Describe solo los hechos objetivos de la reorganización: la automatización del inventario, el área afectada, el cargo suprimido y la fecha.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No describe ningún hecho, para no darle argumentos a Rodrigo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="casoB-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una causal mal fundada</div><div class="branch-body"><div><p>Las necesidades de la empresa se fundan en <strong>hechos objetivos de la organización</strong>, no en el desempeño ni en la conducta. Mezclar motivos debilita la carta y puede llevar a que el despido se declare improcedente.</p></div><div><p class="hint">Cada causal tiene sus propios hechos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoB-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la empresa se queda sin defensa</div><div class="branch-body"><div><p>En un juicio, el empleador <strong>no puede alegar hechos distintos</strong> de los señalados en la carta (art. 454 N°1). Si la carta no describe hechos, no habrá hechos que probar.</p></div><div><p class="hint">Callar los hechos perjudica a la empresa.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoB-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Los hechos concretos y verificables de la reorganización son los que justifican el artículo 161. Son también los únicos que la empresa podrá probar si hay juicio.</p></div><div><p class="hint">La carta queda lista para enviarse.</p></div></div></div></template>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162 y 454 N°1; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 8 · CASO: COTIZACIONES IMPAGAS -->
+<section class="slide" data-title="Caso: convalidar" data-audio="p08" data-dur="0:17" data-gate="caso2" data-gate-msg="Resuelve las dos decisiones sobre el despido con cotizaciones impagas.">
+  <span class="eyebrow amber">Lección 5.4 · Cotizaciones impagas y convalidación</span>
+  <h2>Un despido que ya se comunicó</h2>
+  <div class="chat">
+    <div class="persona"><span class="avatar mgr">GS</span> Gerencia de la sede Valparaíso</div>
+    <div class="bubble"><span class="who">Gerencia</span>Camila, hace un mes despedimos a Marcela por necesidades de la empresa. Hoy descubrimos que tenía un mes de cotizaciones sin pagar cuando le enviamos la carta. ¿Qué pasa ahora?</div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué efecto tuvo ese despido?</h3>
+  <div class="options" data-choice="casoC" data-correct="A" data-then="casoPh4">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>No produjo el efecto de poner término al contrato: la empresa debe pagar las remuneraciones y cotizaciones hasta que lo convalide.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>El contrato terminó igual; solo queda pagar una multa por el atraso.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Nada cambia, porque Marcela ya firmó la recepción de la carta.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="casoC-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se subestima la deuda</div><div class="branch-body"><div><p>El artículo 162 es claro: si las cotizaciones no estaban pagadas íntegramente al momento del despido, este <strong>no pone término al contrato</strong>. Mientras no se convalide, se siguen debiendo remuneraciones y cotizaciones.</p></div><div><p class="hint">Cada día sin convalidar aumenta el costo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoC-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la firma no paga cotizaciones</div><div class="branch-body"><div><p>Que Marcela haya recibido la carta no cambia el problema. La regla depende del <strong>pago íntegro de las cotizaciones</strong>, no de la firma de recepción.</p></div><div><p class="hint">Mira el estado previsional.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="casoC-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Es la regla del artículo 162 inciso 5, conocida como <strong>Ley Bustos</strong>. La empresa sigue obligada a pagar remuneraciones y cotizaciones hasta convalidar el despido.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="casoPh4" hidden>
+    <div class="story" style="margin-top:18px"><strong>La gerencia pregunta:</strong> “Entonces, ¿cómo lo arreglamos?”</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Cómo se convalida el despido?</h3>
+    <div class="options" data-choice="casoD" data-correct="B" data-gate="caso2">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Pagando la deuda en silencio: basta con que quede al día.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pagando las cotizaciones morosas y comunicándolo a Marcela por carta certificada.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Enviando una nueva carta de despido con otra causal.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="casoD-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: falta la comunicación</div><div class="branch-body"><div><p>Pagar es necesario, pero no suficiente: la convalidación exige además <strong>comunicar el pago</strong> a la persona trabajadora por carta certificada.</p></div><div><p class="hint">Otra vez, la evidencia escrita importa.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoD-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se construye una causal después</div><div class="branch-body"><div><p>Cambiar de causal para salir del problema es construirla después de decidir. El problema no es la causal sino las <strong>cotizaciones impagas</strong>, y sigue ahí.</p></div><div><p class="hint">La causal se elige por los hechos reales.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="casoD-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El despido se convalida <strong>pagando las cotizaciones morosas y comunicándolo por carta certificada</strong>. Hasta ese momento, la empresa debe las remuneraciones y cotizaciones del período.</p></div><div><p class="hint">Caso resuelto. Lo mejor es revisar las cotizaciones antes de enviar cualquier carta.</p></div></div></div></template>
+  </div>
+  <p class="sources">Fuente: Código del Trabajo, art. 162 incisos 5 y siguientes (Ley Bustos); criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:16" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:17" data-gate="yn model pass" data-gate-msg="Responde las cinco preguntas del checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Lee la carta como lo haría una tercera persona</h2>
+  <p>Una jefatura de tu organización te envía este borrador. Léelo como si fueras otra persona: ¿entenderías qué ocurrió, qué causal se aplicó y qué la respalda? <strong>Responde Sí o No en cada pregunta</strong> y luego revisa la respuesta modelo.</p>
+  <div class="draft"><b>Borrador recibido</b>“Le comunicamos el término de su contrato por la causal del artículo 161 del Código del Trabajo, necesidades de la empresa, debido a la reestructuración del área de ventas, que suprime tres cargos de ejecutivo desde el 1 de noviembre. No se dará aviso con 30 días de anticipación: se pagará la indemnización sustitutiva del aviso previo y la indemnización por años de servicio. Sus cotizaciones están pagadas hasta el mes anterior; se adjuntan los comprobantes. La carta se entregará personalmente.”</div>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el borrador tiene la <b>causal</b>, <b>hechos concretos</b> (área, cargos y fecha) y el <b>estado de las cotizaciones con comprobantes</b>. Antes de enviarlo faltan dos cosas: indicar el <b>monto total a pagar</b>, porque no se dio el aviso de 30 días, y enviar la <b>copia a la Inspección del Trabajo</b> dentro del mismo plazo de 3 días hábiles (puede hacerse en el sitio de la DT). Archiva la carta, el comprobante de entrega o de la carta certificada, la copia a la Inspección y los comprobantes de cotizaciones.<br/><br/><strong>Para pensar:</strong> si mañana una autoridad te pidiera acreditar esta decisión, ¿qué documento sería el más difícil de reconstruir en tu organización?</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 161, 162 y 454 N°1; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:17" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.4</h2>
+    <p>Ya puedes revisar una carta de término: forma de entrega, causal, hechos, estado de las cotizaciones, plazos, aviso o indemnización sustitutiva con su monto, copia a la Inspección y su valor como evidencia.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la carta no solo comunica: fija los hechos que la empresa podrá probar. Un término correcto combina causal, hechos, comunicación, pagos, cotizaciones al día y evidencia. <strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar la carta línea a línea</button><button class="small-btn primary" type="button" data-goto="7">Repasar la convalidación</button></div>
+    <p class="sources">Fuentes: Código del Trabajo, arts. 159 a 177 y 454 N°1; Ley 19.728 (seguro de cesantía); Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l54';
+const FIRST_KEYS=['hook','aud','qf','casoA','casoB','casoC','casoD'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Una sola línea',lines:['“Se pone término a su contrato por necesidades de la empresa.”','Esa línea no le dice a la persona qué ocurrió, ni le sirve a la empresa para demostrarlo.'],
+  html:`<div class="v-icons"><div><span class="i">📄</span>“…por necesidades de la empresa.”</div><div class="dim" data-at="1"><span class="i">❓</span>¿Qué ocurrió?</div><div class="dim" data-at="1"><span class="i">⚖️</span>¿Cómo se prueba?</div></div>`},
+ {t:'Por escrito',lines:['El artículo 162 exige comunicar el término por escrito.','La carta se entrega personalmente, o se envía por carta certificada al domicilio señalado en el contrato.'],
+  html:`<div class="v-big">Art. 162</div><div class="v-icons"><div data-at="1"><span class="i">✋</span>Entrega personal</div><div data-at="1"><span class="i">✉️</span>Carta certificada al domicilio del contrato</div></div>`},
+ {t:'Qué dice la carta',lines:['La carta indica la causal legal, los hechos en que se funda,','y el estado de pago de las cotizaciones previsionales, adjuntando los comprobantes.'],
+  html:`<div class="v-chk"><span class="on">Causal legal</span><span class="on">Hechos</span><span data-at="1">Cotizaciones + comprobantes</span></div>`},
+ {t:'Plazos',lines:['Se comunica dentro de los 3 días hábiles siguientes a la separación, o 6 si la causal es caso fortuito o fuerza mayor.','La copia a la Inspección del Trabajo, en el mismo plazo.'],
+  html:`<div class="v-log"><div><span>Carta a la persona</span><span>3 días hábiles</span></div><div><span>Caso fortuito o fuerza mayor</span><span>6 días hábiles</span></div><div class="bad" data-at="1" style="color:var(--teal2)"><span>Copia a la Inspección</span><span>mismo plazo</span></div></div>`},
+ {t:'Necesidades de la empresa',lines:['En el artículo 161 se avisa con 30 días de anticipación, o se paga la indemnización sustitutiva del aviso previo.','En ese caso, la carta indica el monto total a pagar.'],
+  html:`<div class="v-icons"><div><span class="i">📅</span>Aviso de 30 días</div><div><span class="i">o</span></div><div><span class="i">💵</span>Indemnización sustitutiva</div></div><div class="note" data-at="1">La carta indica el monto total a pagar</div>`},
+ {t:'Cotizaciones impagas',lines:['Si las cotizaciones no están pagadas íntegramente, el despido no pone término al contrato.','La empresa sigue pagando remuneraciones y cotizaciones hasta convalidarlo.'],
+  html:`<div class="v-icons"><div><span class="i">⛔</span>Cotizaciones impagas</div><div><span class="i">→</span></div><div><span class="i">📌</span>Contrato vigente</div></div><div class="note" data-at="1">Se paga hasta convalidar el despido</div>`},
+ {t:'La carta como evidencia',lines:['En un juicio, la empresa no puede alegar hechos distintos de los señalados en la carta.','Por eso la carta explica los hechos: no basta con citar el artículo.'],
+  html:`<div class="v-final">La carta fija los hechos.<br/><em>No basta con citar el artículo.</em></div>`}
+]};
+const Q=[
+ {q:'Según el artículo 162, ¿cómo debe comunicarse el término del contrato?',o:['Por mensaje de texto o correo personal, si la persona lo lee.','Por escrito, entregado personalmente o por carta certificada al domicilio señalado en el contrato.','Verbalmente, frente a un testigo.'],c:1,f:'La comunicación es escrita y se entrega en forma personal o por carta certificada al domicilio que indica el contrato.'},
+ {q:'¿Qué debe indicar la carta de término?',o:['Solo el número del artículo invocado.','La causal y la antigüedad de la persona.','La causal legal, los hechos en que se funda y el estado de pago de las cotizaciones, adjuntando los comprobantes.'],c:2,f:'Causal, hechos y estado de las cotizaciones previsionales devengadas hasta el último día del mes anterior, con comprobantes.'},
+ {q:'¿Cuál es el plazo para comunicar el término?',o:['3 días hábiles desde la separación; 6 si la causal es caso fortuito o fuerza mayor.','30 días corridos desde la separación.','10 días hábiles, igual que el finiquito.','No existe un plazo legal.'],c:0,f:'La carta se entrega dentro de 3 días hábiles (6 en caso fortuito o fuerza mayor), y la copia a la Inspección en el mismo plazo.'},
+ {q:'Se despide por necesidades de la empresa sin dar aviso con 30 días de anticipación. ¿Qué corresponde?',o:['No se paga nada adicional.','Se descuenta un mes de remuneración.','Basta con explicar la urgencia en la carta.','Pagar la indemnización sustitutiva del aviso previo e indicar en la carta el monto total a pagar.'],c:3,f:'En el artículo 161, el aviso de 30 días puede reemplazarse por la indemnización sustitutiva; en ese caso la carta indica el monto total a pagar.'},
+ {q:'Si hay juicio, ¿qué hechos puede alegar el empleador para justificar el despido?',o:['Cualquier hecho que logre probar.','Solo los hechos señalados en la carta de término.','Solo los que informe la Inspección del Trabajo.'],c:1,f:'El artículo 454 N°1 impide alegar hechos distintos de los indicados en la carta. Por eso la carta debe explicar los hechos.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: dos versiones de la carta ---------- */
+const vers=$$('#versions .version');
+vers.forEach(v=>v.addEventListener('click',()=>{v.classList.add('open');if(vers.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Carta línea a línea: cumple o falta ---------- */
+const TG=[
+ ['Forma de entrega','“Se entrega personalmente hoy. Si no es posible, se enviará por carta certificada al domicilio señalado en su contrato.”',true,'Cumple: son las dos formas que admite el artículo 162. El domicilio es el que indica el contrato.'],
+ ['Causal legal','“Artículo 161 inciso primero del Código del Trabajo: necesidades de la empresa.”',true,'Cumple: identifica la causal legal invocada. Pero la causal sola no basta: hay que explicar los hechos.'],
+ ['Hechos','“Por razones de reorganización interna.”',false,'Falta: es una frase genérica. Debe describir hechos concretos y verificables: la automatización del inventario, el área afectada, el cargo suprimido y desde cuándo.'],
+ ['Cotizaciones previsionales','“Sus cotizaciones están al día.” No se adjuntan comprobantes.',false,'Falta: debe informar el estado de pago de las cotizaciones devengadas hasta el último día del mes anterior y adjuntar los comprobantes.'],
+ ['Aviso previo','“Su último día de trabajo es hoy.” No menciona la indemnización sustitutiva.',false,'Falta: en el artículo 161 se da aviso con 30 días de anticipación o se paga la indemnización sustitutiva del aviso previo. La carta debe decir cuál.'],
+ ['Montos','“Los montos se informarán en el finiquito.”',false,'Falta: cuando se paga la indemnización sustitutiva, la carta debe indicar el monto total a pagar. No se puede postergar al finiquito.'],
+ ['Copia a la Inspección','“Se enviará copia a la Inspección del Trabajo, por el sitio de la DT, dentro del mismo plazo de 3 días hábiles.”',true,'Cumple: la copia se remite en el mismo plazo y puede enviarse electrónicamente.']];
+$('#carta').insertAdjacentHTML('beforeend',TG.map((t,i)=>`<div class="toggle-row" data-i="${i}"><span><b>${i+1}. ${t[0]}</b><br/><span class="hint quote">${t[1]}</span></span><span class="tg-sw"><small>Falta</small><button class="sw" type="button" aria-pressed="false" aria-label="Marcar si la línea ${i+1} cumple"></button></span></div>`).join(''));
+$$('#carta .toggle-row').forEach(r=>$('.sw',r).addEventListener('click',()=>{const on=r.classList.toggle('on');$('.sw',r).setAttribute('aria-pressed',on?'true':'false');$('.tg-sw small',r).textContent=on?'Cumple':'Falta';r.classList.remove('ok','ko');const w=$('.why',r);if(w)w.remove()}));
+$('#tgCheck').addEventListener('click',()=>{let ok=0;
+  $$('#carta .toggle-row').forEach(r=>{const t=TG[+r.dataset.i],g=r.classList.contains('on')===t[2];r.classList.remove('ok','ko');r.classList.add(g?'ok':'ko');
+    const old=$('.why',r);if(old)old.remove();r.insertAdjacentHTML('beforeend',`<div class="why"><b style="color:${g?'var(--good)':'var(--bad)'}">${g?'✓ Bien evaluada.':'✕ Revisa esta línea.'}</b> ${g?t[3]:'Pregúntate: ¿esta línea le permite a Rodrigo saber qué ocurrió y a la empresa demostrarlo, como exige el artículo 162?'}</div>`);if(g)ok++});
+  $('#tgTick').textContent=`${ok} / 7`;
+  if(ok===7){$('#tgTask').classList.add('ok');feedback($('#tgFb'),true,'Carta revisada.','Faltan cuatro elementos: hechos concretos, estado de las cotizaciones con comprobantes, la indemnización sustitutiva del aviso previo y el monto total a pagar. Sin ellos, la carta no explica ni prueba la decisión.');done('tog')}
+  else feedback($('#tgFb'),false,`${ok} de 7 líneas bien evaluadas.`,'Las filas en rojo tienen una evaluación incorrecta. Cambia su interruptor y vuelve a presionar “Revisar carta”.')});
+
+/* ---------- Sitio de la DT en el celular ---------- */
+let ph=0;const phone=$('#phone');
+const pTop=()=>`<div class="bar"><span>11:40</span><span>📶 🔋</span></div><div class="appt">Sitio de la Dirección del Trabajo</div>`;
+function pDraw(){
+  if(ph===0)phone.innerHTML=pTop()+`<div class="ph-hi">Trámites para empleadores</div><div class="ph-menu"><button type="button" data-m="cert"><span class="e">📜</span>Certificados</button><button type="button" data-m="fin"><span class="e">🤝</span>Finiquito</button><button type="button" data-m="term"><span class="e">✉️</span>Comunicación de término de contrato</button><button type="button" data-m="cons"><span class="e">💬</span>Consultas</button></div><div class="card">ℹ️ Los nombres de este menú son referenciales.</div>`;
+  if(ph===1)phone.innerHTML=pTop()+`<div class="card"><b>Comunicación de término</b><div class="fld"><small>Persona trabajadora</small>Rodrigo Pérez</div><div class="fld"><small>Causal invocada</small>Art. 161 · necesidades de la empresa</div><div class="fld"><small>Hechos</small>Supresión del cargo de analista de despacho por automatización del inventario</div><div class="fld"><small>Fecha de separación</small>Hoy</div></div><p class="q">¿En qué plazo debe enviarse esta copia?</p><button class="pbtn alt" type="button" id="p30">Dentro de 30 días</button><button class="pbtn alt" type="button" id="pFin">Junto con el finiquito</button><button class="pbtn" type="button" id="p3">Dentro de 3 días hábiles desde la separación</button>`;
+  if(ph===2)phone.innerHTML=pTop()+`<div class="card">✅ <b>Copia enviada</b><br/>Comprobante de envío N° 58213<br/>Fecha y hora registradas</div><p class="q">¿Qué hace Camila con el comprobante?</p><button class="pbtn alt" type="button" id="pDrop">Nada: la Inspección ya lo tiene</button><button class="pbtn" type="button" id="pKeep">Lo descarga y lo archiva con la carta</button>`;
+  if(ph===3)phone.innerHTML=pTop()+`<div class="card">📁 <b>Carpeta del término · Rodrigo Pérez</b><br/>✔ Carta firmada por la empresa<br/>✔ Comprobante de entrega<br/>✔ Comprobantes de cotizaciones<br/>✔ Comprobante de copia a la Inspección</div><div class="card">Cada envío deja una evidencia. Juntas muestran <b>qué</b>, <b>cómo</b> y <b>cuándo</b> se comunicó.</div>`;
+  $$('.ph-menu button',phone).forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.m;
+    if(m==='term'){ph=1;$('#ps0').className='sstep ok';$('#ps1').className='sstep on';pDraw();pInfo('Ese es el trámite: la copia de la comunicación de término puede enviarse electrónicamente.',true)}
+    else if(m==='fin')pInfo('El finiquito es otro documento, posterior. Ahora Camila debe enviar la copia de la carta de término.',false);
+    else pInfo('Esta opción no corresponde a la copia de la carta de término. Busca otra.',false)}));
+  const a=$('#p30');if(a)a.addEventListener('click',()=>pInfo('Treinta días es el aviso previo del artículo 161, no el plazo de la copia.',false));
+  const f=$('#pFin');if(f)f.addEventListener('click',()=>pInfo('La copia no espera al finiquito: tiene el mismo plazo que la carta.',false));
+  const t=$('#p3');if(t)t.addEventListener('click',()=>{ph=2;$('#ps1').className='sstep ok';$('#ps2').className='sstep on';pDraw();pInfo('Correcto. La copia a la Inspección se envía en el mismo plazo que la carta: 3 días hábiles desde la separación.',true)});
+  const d=$('#pDrop');if(d)d.addEventListener('click',()=>pInfo('El comprobante es la prueba de que la empresa cumplió. Si no se archiva, después será difícil demostrarlo.',false));
+  const k=$('#pKeep');if(k)k.addEventListener('click',()=>{ph=3;$('#ps2').className='sstep ok';pDraw();pInfo('Así se construye la evidencia: el comprobante queda junto a la carta y los demás respaldos.',true);done('phone')});
+}
+function pInfo(t,ok){feedback($('#phoneFb'),ok,ok?'✓':'Revisa esta opción.',t)}
+pDraw();
+
+/* ---------- Evidencias del envío ---------- */
+const EV=[['✋ Día 0 · Entrega personal','Camila y la jefatura entregaron la carta a Rodrigo en una reunión privada. Él la leyó y se la llevó, pero <b>se negó a firmar la copia</b>. Quedó registrado en un acta interna con la hora de la reunión.'],
+ ['✉️ Día 0 · Carta certificada','Ese mismo día, Camila envió la carta por <b>carta certificada al domicilio señalado en el contrato</b>. El comprobante de la oficina de correos muestra la fecha y el destino.'],
+ ['🏛️ Día 1 · Copia a la Inspección','La copia se envió por el sitio de la Dirección del Trabajo, <b>dentro del plazo de 3 días hábiles</b>. El comprobante de envío está archivado.'],
+ ['📎 Anexo · Comprobantes de cotizaciones','La carta adjunta los comprobantes de pago de las cotizaciones <b>hasta el último día del mes anterior</b>. Muestran que estaban pagadas al momento del despido.']];
+const tEv=tracker('ev',4,'#evTick','#evTask');
+$$('#evline .evnode').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#evline .evnode').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#evPanel').innerHTML=`<h3 style="margin-top:0">${EV[k][0]}</h3><p>${EV[k][1]}</p>`;tEv(k);
+  if(S.done.has('ev')&&$('#audQ').hidden){$('#audQ').hidden=false}}));
+
+/* ---------- Ronda rápida: plazos y requisitos ---------- */
+const QF=[['La carta se entrega dentro de los 3 días hábiles siguientes a la separación.',1,'Es el plazo general del artículo 162.'],
+ ['Si la causal es caso fortuito o fuerza mayor, el plazo es de 6 días hábiles.',1,'Es la excepción al plazo general.'],
+ ['Basta con enviar la carta al correo electrónico personal de la persona.',0,'La carta se entrega personalmente o por carta certificada al domicilio señalado en el contrato.'],
+ ['La copia a la Inspección del Trabajo tiene un plazo de 30 días.',0,'La copia se envía dentro del mismo plazo que la carta.'],
+ ['En el artículo 161 sin aviso de 30 días, se paga la indemnización sustitutiva del aviso previo.',1,'Y la carta debe indicar el monto total a pagar.'],
+ ['Citar el número del artículo basta como fundamento del despido.',0,'La carta debe indicar los hechos en que se funda la causal.'],
+ ['La carta informa el estado de pago de las cotizaciones hasta el último día del mes anterior, con comprobantes.',1,'Es uno de los contenidos obligatorios del artículo 162.'],
+ ['Un error en la carta anula automáticamente el término del contrato.',0,'Los errores u omisiones no invalidan el término, pero pueden sancionarse y limitan lo que la empresa puede alegar en juicio.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente! Dominas los plazos y requisitos de la carta.':'Recuerda: por escrito, con causal, hechos y cotizaciones; en 3 días hábiles (6 en caso fortuito), con copia a la Inspección en el mismo plazo.'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Afirmación ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns"><button type="button" data-v="1">✓ Correcto</button><button type="button" data-v="0">✕ Incorrecto</button></div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} Es ${c[1]?'correcta':'incorrecta'}.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},1600)}))}
+qfRender();
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[['¿Indica la causal legal invocada?',1,'Sí: artículo 161, necesidades de la empresa.'],
+ ['¿Describe hechos concretos y verificables?',1,'Sí: la reestructuración del área de ventas, los tres cargos suprimidos y la fecha.'],
+ ['¿Informa el estado de las cotizaciones con comprobantes?',1,'Sí: pagadas hasta el mes anterior, con comprobantes adjuntos.'],
+ ['¿Indica el monto total a pagar?',0,'No. Como no se da el aviso de 30 días, la carta debe indicar el monto total a pagar.'],
+ ['¿Con entregar la carta se cumple todo lo que exige la ley?',0,'No. Falta enviar copia a la Inspección del Trabajo dentro del mismo plazo.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===YN.length){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>
