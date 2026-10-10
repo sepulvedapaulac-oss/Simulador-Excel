@@ -1,0 +1,181 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="apps hook" data-gate-msg="Revisa las cuatro herramientas del escritorio de Camila y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.2 · Herramientas de IA</span>
+      <h1 class="reveal">Cuatro herramientas, una planilla confidencial</h1>
+      <p class="lead reveal">Camila debe analizar por qué subieron las horas extra en AndesCorp. En su notebook tiene cuatro herramientas con IA. <strong>Toca cada una</strong> para ver qué ofrece.</p>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Manos sobre un notebook con un asistente de IA abierto junto a una planilla" src="img/i12_hero.jpg"/></div>
+  </div>
+  <div data-open="apps" data-then="hookQ">
+    <div class="task">Herramientas revisadas <span class="tick">0 / 4</span></div>
+    <div class="apps">
+      <button class="app-tile" type="button" data-o="1"><span class="ai">💬</span><b>Chat de IA público y gratuito</b><small>Se abre en el navegador con una cuenta personal</small><span class="d">Responde preguntas, explica fórmulas y redacta textos. Las condiciones de uso pueden permitir que la información ingresada se use para mejorar el servicio.</span></button>
+      <button class="app-tile" type="button" data-o="2"><span class="ai">📊</span><b>Asistente integrado en la planilla corporativa</b><small>Incluido en la licencia de la empresa</small><span class="d">Sugiere fórmulas, crea columnas de control y resume tablas dentro del archivo, bajo la cuenta y las políticas de AndesCorp.</span></button>
+      <button class="app-tile" type="button" data-o="3"><span class="ai">📄</span><b>Extensión gratuita “Lector de PDF con IA”</b><small>Instalada por Camila desde una tienda de complementos</small><span class="d">Resume documentos largos. No está claro dónde procesa los archivos ni quién la desarrolla; TI no la ha revisado.</span></button>
+      <button class="app-tile" type="button" data-o="4"><span class="ai">🛡️</span><b>Plataforma de IA corporativa aprobada por TI</b><small>Acceso con la cuenta de la empresa</small><span class="d">Chat y análisis de archivos con acuerdos de confidencialidad, control de accesos y registro de uso. Aprobada para información interna.</span></button>
+    </div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">Camila quiere analizar la base de horas extra con nombres, RUT y montos. ¿Cuál debería ser su primer paso?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Subir la base a la extensión de PDF, que es la más rápida.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Revisar qué herramientas están autorizadas para datos confidenciales y preparar solo los datos necesarios.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Usar cualquiera: todas las herramientas de IA funcionan igual.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: datos personales en un servicio desconocido.</strong> <span class="fb-body">La extensión no fue revisada por TI y no se sabe dónde procesa los archivos. Subir nombres, RUT y montos expone información personal de 250 personas.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se ignora la diferencia clave.</strong> <span class="fb-body">Las herramientas pueden parecerse en lo que hacen, pero difieren en <b>dónde procesan los datos, quién accede y qué acuerdos de confidencialidad existen</b>. Eso define si puedes usarlas con información salarial.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Antes de elegir una herramienta por lo que hace, hay que saber si está autorizada para el tipo de dato que se usará. En esta lección verás cómo elegir la modalidad adecuada según la tarea y las condiciones de seguridad.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · VIDEO (sin narración) -->
+<section class="slide" data-title="Video: tipos de herramientas" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Cuatro formas de trabajar con IA</h2>
+  <p class="silent-note">🔇 Este video no tiene narración: los textos y subtítulos avanzan solos. Puedes pausar o saltar entre capítulos.</p>
+  <div class="player silent" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver texto completo del video</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · MODALIDADES (pestañas) -->
+<section class="slide" data-title="Modalidades de uso" data-gate="tabs" data-gate-msg="Revisa las cuatro modalidades.">
+  <span class="eyebrow">Lección 1.2 · Modalidades</span>
+  <h2>¿Qué modalidad de IA conviene para cada tarea?</h2>
+  <p><strong>Haz clic en cada pestaña</strong> para ver para qué sirve cada modalidad, un ejemplo en remuneraciones y el cuidado principal.</p>
+  <div data-tabs="tabs">
+    <div class="task">Modalidades revisadas <span class="tick">1 / 4</span></div>
+    <div class="tabs"><button class="tab" type="button">💬 Asistentes conversacionales</button><button class="tab" type="button">📊 IA en la ofimática</button><button class="tab" type="button">📄 Lectura de documentos</button><button class="tab" type="button">🔎 Análisis de datos</button></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo de instrucción</strong><br/>“Explícame paso a paso qué hace esta fórmula: =SI(Y(C2>45;D2=\"Turno\");(C2-45)*E2*1,5;0). No necesito que calcules resultados.”</div><div><h3 style="margin-top:0">Asistentes conversacionales</h3>
+      <ul class="elem-list"><li><b>Para qué sirven:</b> conversar, explicar conceptos, resolver dudas de fórmulas y redactar borradores.</li><li><b>En remuneraciones:</b> entender una fórmula heredada, preparar una respuesta a una consulta frecuente o estructurar un procedimiento.</li><li><b>Cuidado:</b> en su versión pública, no ingreses datos personales ni información salarial real.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo de instrucción</strong><br/>“Agrega una columna que marque con ‘REVISAR’ las filas donde las horas extra superen las 12 semanales.”</div><div><h3 style="margin-top:0">IA integrada en la ofimática</h3>
+      <ul class="elem-list"><li><b>Para qué sirve:</b> trabajar dentro de la planilla, el documento o el correo: sugerir fórmulas, crear columnas de control y resumir tablas.</li><li><b>En remuneraciones:</b> generar controles de cuadratura sin copiar los datos a otro sistema.</li><li><b>Cuidado:</b> úsala con la cuenta corporativa y revisa cada fórmula con casos conocidos antes de confiar en ella.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo de instrucción</strong><br/>“Resume en una tabla las cláusulas sobre horas extra y bonos de este contrato colectivo. Indica el número de cláusula de cada punto.”</div><div><h3 style="margin-top:0">Lectura y explicación de documentos</h3>
+      <ul class="elem-list"><li><b>Para qué sirve:</b> resumir documentos largos, extraer condiciones y comparar versiones.</li><li><b>En remuneraciones:</b> revisar un contrato colectivo, un reglamento interno o un dictamen.</li><li><b>Cuidado:</b> pide siempre la referencia (cláusula o página) para verificar contra el original. Solo en herramientas autorizadas.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo de instrucción</strong><br/>“En esta base sintética de 250 registros, identifica las áreas con mayor variación de horas extra entre agosto y septiembre.”</div><div><h3 style="margin-top:0">Análisis de datos</h3>
+      <ul class="elem-list"><li><b>Para qué sirve:</b> encontrar patrones, valores atípicos y variaciones en una base de datos, y proponer gráficos.</li><li><b>En remuneraciones:</b> explorar variaciones de costos o de horas extra entre periodos.</li><li><b>Cuidado:</b> trabaja con datos sintéticos, agregados o anonimizados, y confirma cada hallazgo con la fuente.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 4 · PÚBLICA VS. CORPORATIVA (tabla con revelado) -->
+<section class="slide" data-title="Pública o corporativa" data-gate="cmp" data-gate-msg="Revisa los seis criterios de la comparación.">
+  <span class="eyebrow amber">Lección 1.2 · Seguridad de la información</span>
+  <h2>Herramienta pública o entorno corporativo autorizado</h2>
+  <div class="grid-2">
+    <div><p>Lo que hacen puede ser parecido; <strong>cómo tratan tus datos</strong> no lo es. <strong>Toca cada criterio</strong> para comparar las dos opciones.</p>
+      <div class="story">Rodrigo, encargado de seguridad de TI en AndesCorp, le explica a Camila qué revisar antes de usar una herramienta con información interna.</div></div>
+    <div class="photo-frame wide"><img alt="Encargado de seguridad TI explica a Camila el uso de herramientas autorizadas frente a un notebook" src="img/i12_seguridad.jpg"/></div>
+  </div>
+  <div data-reveal="cmp">
+    <div class="task">Criterios revisados <span class="tick">0 / 6</span></div>
+    <table class="cmpt">
+      <thead><tr><th>Criterio</th><th>Herramienta pública con cuenta personal</th><th>Entorno corporativo autorizado</th></tr></thead>
+      <tbody>
+        <tr><td>Dónde se procesan los datos</td><td><span class="val pub" data-l="Pública">En servidores del proveedor, sin acuerdo con tu empresa.</span></td><td><span class="val emp" data-l="Corporativa">En servicios contratados por la empresa, con condiciones definidas.</span></td></tr>
+        <tr><td>Uso de tus datos para entrenar</td><td><span class="val pub" data-l="Pública">Puede estar permitido según las condiciones de uso.</span></td><td><span class="val emp" data-l="Corporativa">Normalmente excluido por contrato.</span></td></tr>
+        <tr><td>Control de accesos</td><td><span class="val pub" data-l="Pública">Depende de tu cuenta personal.</span></td><td><span class="val emp" data-l="Corporativa">Cuentas corporativas, permisos por rol y baja al dejar la empresa.</span></td></tr>
+        <tr><td>Registro y trazabilidad</td><td><span class="val pub" data-l="Pública">La empresa no ve qué se compartió.</span></td><td><span class="val emp" data-l="Corporativa">Registro de uso que permite auditar.</span></td></tr>
+        <tr><td>Acuerdos de confidencialidad</td><td><span class="val pub" data-l="Pública">No existen entre el proveedor y tu empresa.</span></td><td><span class="val emp" data-l="Corporativa">Existen y se revisan con TI y el área legal.</span></td></tr>
+        <tr><td>¿Datos de remuneraciones reales?</td><td><span class="val pub" data-l="Pública">No. Solo datos ficticios o información pública.</span></td><td><span class="val emp" data-l="Corporativa">Solo si la política lo autoriza y con los datos mínimos necesarios.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout" style="margin-top:10px"><strong>Regla práctica:</strong> si no sabes dónde se procesan los datos ni quién puede verlos, trata la herramienta como pública. Ante la duda, consulta a TI antes de usarla.</div>
+</section>
+
+<!-- 5 · EMPAREJAR NECESIDAD Y MODALIDAD -->
+<section class="slide" data-title="Necesidad y modalidad" data-gate="pairs" data-gate-msg="Une las cuatro necesidades con su modalidad.">
+  <span class="eyebrow amber">Lección 1.2 · Actividad</span>
+  <h2>¿Qué modalidad resuelve cada necesidad de Camila?</h2>
+  <p>Selecciona una necesidad de la izquierda y luego la modalidad más adecuada a la derecha.</p>
+  <div data-pairs="pairs">
+    <div class="task">Parejas formadas <span class="tick">0 / 4</span></div>
+    <div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: el análisis de horas extra" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Elegir y preparar</span>
+  <h2>El análisis de horas extra, paso a paso</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>La situación:</strong> la gerencia pide explicar el aumento de horas extra de septiembre. Camila tiene una base con 250 registros: nombre, RUT, cuenta bancaria, área, horas extra y monto pagado.</div>
+    <div class="ficha" aria-label="Herramientas disponibles"><div class="row"><b>Opción 1</b><span>Chat público con cuenta personal</span></div><div class="row"><b>Opción 2</b><span>Plataforma corporativa aprobada por TI</span></div><div class="row"><b>Opción 3</b><span>Extensión gratuita de PDF</span></div></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿En qué entorno hace el análisis?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso1b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>En el chat público, porque es el que mejor conoce.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>En la plataforma corporativa aprobada por TI.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>En la extensión de PDF, convirtiendo la planilla a PDF.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: información interna fuera del control de la empresa</div><div class="branch-body"><div><p>Conocer bien una herramienta no la vuelve segura. El chat público con cuenta personal <strong>no tiene acuerdos de confidencialidad</strong> con AndesCorp ni registro de lo compartido.</p></div><div><p class="hint">La comodidad no reemplaza la autorización.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un servicio no revisado</div><div class="branch-body"><div><p>Cambiar el formato del archivo no cambia el riesgo. La extensión <strong>no fue revisada por TI</strong> y no se sabe dónde procesa los documentos.</p></div><div><p class="hint">El formato no protege los datos; el entorno sí.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La plataforma corporativa tiene acuerdos de confidencialidad, control de accesos y registro de uso. Es el entorno adecuado para información interna.</p></div><div><p class="hint">Ahora falta decidir qué datos cargar.</p></div></div></div></template>
+  <div class="phase" id="caso1b" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · ¿Qué datos carga Camila en la plataforma?</h3>
+    <div class="options" data-choice="caso1b" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La base completa: si la plataforma está autorizada, no hay problema.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Solo los nombres y montos, sin RUT.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Un código interno en lugar de nombre y RUT, más área, horas extra y monto; sin datos bancarios.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso1b-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más datos de los necesarios</div><div class="branch-body"><div><p>Aunque el entorno esté autorizado, se aplica el principio de <strong>minimización</strong>: compartir solo lo necesario para la tarea. Las cuentas bancarias y el RUT no aportan nada al análisis de variaciones.</p></div><div><p class="hint">Autorizado no significa “todo vale”.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: siguen siendo datos identificables</div><div class="branch-body"><div><p>El nombre junto al monto identifica a cada persona y su remuneración. Para analizar variaciones por área basta con un <strong>código interno</strong>.</p></div><div><p class="hint">Quitar el RUT no basta si el nombre sigue ahí.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Entorno autorizado más datos mínimos: Camila puede analizar las variaciones por área sin exponer la identidad de las personas ni sus datos bancarios. Si necesita volver a una persona, usa la tabla de códigos que queda en su equipo.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: FICHA DE SELECCIÓN -->
+<section class="slide" data-title="Tu ficha de selección" data-gate="ficha pass" data-gate-msg="Completa tu ficha de selección de herramienta.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tu ficha de selección de herramientas</h2>
+  <p>Elige una tarea real de tu trabajo y completa la ficha. Al generarla, verás si la combinación de tarea, datos y herramienta es segura o si necesita ajustes.</p>
+  <div data-builder="ficha">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi ficha</button></div>
+    <div class="out-wrap" hidden></div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.2</h2>
+    <p>Ya puedes elegir la modalidad de IA según la tarea y distinguir cuándo una herramienta es adecuada para información salarial.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> primero el entorno autorizado, después los datos mínimos y, por último, la modalidad que mejor resuelve la tarea. En la próxima lección aprenderás a escribir instrucciones efectivas.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar las modalidades</button><button class="small-btn primary" type="button" data-goto="3">Repasar la comparación</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>

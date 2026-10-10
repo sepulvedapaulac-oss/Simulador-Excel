@@ -729,7 +729,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
 .aichat .a mark{background:var(--amber-soft);color:var(--amber-ink);padding:0 3px;border-radius:4px}
 /* Constructor (matriz / ficha) */
 .builder{display:grid;gap:10px;margin-top:12px}
-.brow{display:grid;grid-template-columns:1fr 260px;gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.brow{display:grid;grid-template-columns:1fr minmax(260px,360px);gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
 .brow label{font-weight:750}
 .brow select,.brow textarea,.brow input{font:inherit;font-weight:700;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);width:100%}
 .brow textarea{min-height:70px;resize:vertical;font-weight:600}
@@ -756,7 +756,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
 .cmpt tr:not(.open) td:not(:first-child)::before{content:"Toca el criterio para ver";color:var(--muted);font-size:.8rem;font-style:italic}
 .cmpt tr:not(.open) .val{display:none}
 .cmpt .pub{color:var(--bad)}.cmpt .emp{color:var(--good)}
-@media(max-width:640px){.cmpt thead{display:none}.cmpt tr{display:grid;grid-template-columns:1fr 1fr;margin-bottom:10px}.cmpt td{border:1px solid var(--line)!important;border-radius:0!important}.cmpt td:first-child{grid-column:1/-1;width:auto;border-radius:14px 14px 0 0!important}.cmpt td:last-child{border-radius:0 0 14px 0!important}.cmpt td:nth-child(2){border-radius:0 0 0 14px!important}}
+@media(max-width:640px){.cmpt .val[data-l]::before{content:attr(data-l);display:block;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:2px}.cmpt thead{display:none}.cmpt tr{display:grid;grid-template-columns:1fr 1fr;margin-bottom:10px}.cmpt td{border:1px solid var(--line)!important;border-radius:0!important}.cmpt td:first-child{grid-column:1/-1;width:auto;border-radius:14px 14px 0 0!important}.cmpt td:last-child{border-radius:0 0 14px 0!important}.cmpt td:nth-child(2){border-radius:0 0 0 14px!important}}
 /* Escritorio con apps */
 .apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
 .app-tile{border:2px solid var(--line2);border-radius:18px;background:var(--surface);padding:12px;text-align:left;cursor:pointer;display:grid;gap:4px;font:inherit;color:inherit}

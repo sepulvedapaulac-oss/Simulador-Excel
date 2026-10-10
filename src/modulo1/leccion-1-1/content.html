@@ -1,0 +1,178 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Abre el correo de Marcela y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.1 · IA para analistas de remuneraciones</span>
+      <h1 class="reveal">¿Le pasarías el cierre de remuneraciones a una IA?</h1>
+      <p class="lead reveal">Es lunes en <strong>AndesCorp</strong>. Camila Torres, analista senior de remuneraciones, tiene un correo sin leer de su jefatura. <strong>Presiona “Abrir correo”</strong> para leerlo.</p>
+      <div class="mail reveal" data-open="mail" data-then="hookQ">
+        <div class="mtop"><i></i><i></i><i></i><span>Bandeja de entrada · 1 sin leer</span></div>
+        <div class="mhdr"><span class="avatar mgr">MR</span><span><b>Marcela Rojas · Gerenta de Personas</b><small>Asunto: Cierre de este mes con IA</small></span></div>
+        <div class="mbody2" id="mailBody"><p class="hint" style="margin:0">Tienes un mensaje sin leer.</p></div>
+        <div class="mfoot"><button class="small-btn primary" type="button" data-o="1" id="openMail">Abrir correo</button></div>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila, analista de remuneraciones, revisa una planilla en su notebook" src="img/i11_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">Marcela propone que la IA calcule todos los sueldos de este mes. ¿Qué debería responder Camila?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“De acuerdo. La IA calcula más rápido que nosotros y así cerramos antes”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Probemos la IA en tareas de apoyo, como revisar fórmulas o redactar respuestas, y mantengamos el cálculo en el sistema de remuneraciones con validación nuestra”.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Mejor no usemos IA: es un riesgo y no aporta nada al proceso”.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: pagos sin respaldo.</strong> <span class="fb-body">Un modelo generativo no es un sistema de cálculo: predice respuestas probables y puede equivocarse en sumas, topes o porcentajes sin advertirlo. Delegarle el cálculo completo pone en riesgo la exactitud de los pagos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se pierde una oportunidad.</strong> <span class="fb-body">Descartar la IA por completo deja fuera tareas donde aporta mucho valor con bajo riesgo: explicar fórmulas, ordenar información o redactar borradores. El desafío es usarla con criterio, no evitarla.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Buena respuesta.</strong> <span class="fb-body">La IA puede acelerar muchas tareas del proceso, pero el cálculo oficial sigue en el sistema de remuneraciones y la validación es tuya. En esta lección aprenderás a distinguir qué tareas conviene apoyar con IA y cuáles requieren siempre criterio profesional.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: qué es la IA generativa" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>IA generativa: qué hace y qué no hace</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · MITOS Y REALIDADES (tarjetas) -->
+<section class="slide" data-title="Mitos y realidades" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow violet">Lección 1.1 · Capacidades y límites</span>
+  <h2>Cuatro creencias frecuentes sobre la IA</h2>
+  <p>Cada tarjeta muestra algo que se escucha a menudo en las áreas de remuneraciones. <strong>Tócala para voltearla</strong> y descubre qué hay de cierto.</p>
+  <div data-flip="cards">
+    <div class="task">Tarjetas revisadas <span class="tick">0 / 4</span></div>
+    <div class="flipdeck">
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📚</div><strong>“La IA conoce la normativa vigente”</strong><span>¿Mito o realidad?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mito</strong><span>Puede tener información desactualizada o inventar artículos y circulares que no existen. Los parámetros legales y previsionales se contrastan siempre con fuentes oficiales del período, como la Dirección del Trabajo, el SII o la Superintendencia de Pensiones.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🗣️</div><strong>“Si suena segura, es correcta”</strong><span>¿Mito o realidad?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mito</strong><span>La IA redacta con fluidez y seguridad incluso cuando se equivoca. El tono convincente no es evidencia: lo que valida una respuesta es contrastarla con datos y fuentes verificables.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧮</div><strong>“La IA calcula igual que Excel”</strong><span>¿Mito o realidad?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mito</strong><span>Excel aplica fórmulas exactas. Un modelo generativo predice texto y puede fallar en sumas o porcentajes. Pídele la <b>fórmula</b> para tu planilla, no el resultado, y pruébala con casos conocidos.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🤝</div><strong>“Usar IA ahorra tiempo en tareas repetitivas”</strong><span>¿Mito o realidad?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Realidad, con condiciones</strong><span>Ordenar datos, explicar fórmulas o redactar borradores puede tomar minutos en vez de horas. El ahorro es real cuando el resultado se revisa y la responsabilidad sigue siendo tuya.</span></div></div></button>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · CICLO DE REMUNERACIONES (hotspots) -->
+<section class="slide" data-title="La IA en el ciclo mensual" data-audio="p04" data-gate="ciclo" data-gate-msg="Explora las seis etapas del ciclo de remuneraciones.">
+  <span class="eyebrow">Lección 1.1 · Oportunidades en el proceso</span>
+  <h2>¿Dónde puede ayudar la IA en el ciclo mensual?</h2>
+  <p>El diagrama muestra las seis etapas del cierre de AndesCorp. <strong>Toca cada etapa</strong> para ver cómo puede apoyar la IA y qué cuidado exige.</p>
+  <div data-hotspot="ciclo">
+    <div class="task">Etapas exploradas <span class="tick">0 / 6</span></div>
+    <div class="hs-wrap">
+      <div class="cycle" aria-label="Ciclo mensual de remuneraciones">
+        <div class="center">Cierre mensual<br/>AndesCorp</div>
+        <button class="hs" type="button" data-k="0" style="left:50%;top:9%"><b>1</b>Novedades</button>
+        <button class="hs" type="button" data-k="1" style="left:87%;top:30%"><b>2</b>Cálculo</button>
+        <button class="hs" type="button" data-k="2" style="left:87%;top:70%"><b>3</b>Revisión</button>
+        <button class="hs" type="button" data-k="3" style="left:50%;top:91%"><b>4</b>Pago</button>
+        <button class="hs" type="button" data-k="4" style="left:13%;top:70%"><b>5</b>Reportes</button>
+        <button class="hs" type="button" data-k="5" style="left:13%;top:30%"><b>6</b>Consultas</button>
+      </div>
+      <div class="hs-panel"><p class="hint">Selecciona una etapa del ciclo para ver la explicación.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · CLASIFICAR TAREAS (arrastrar) -->
+<section class="slide" data-title="¿Le confiarías esta tarea?" data-audio="p05" data-gate="sort" data-gate-msg="Clasifica las seis tareas en la columna que corresponde.">
+  <span class="eyebrow amber">Lección 1.1 · Actividad</span>
+  <h2>¿Le confiarías esta tarea a la IA?</h2>
+  <p><strong>Arrastra cada tarea</strong> a la columna que corresponde, o tócala y luego toca la columna. Piensa en el riesgo para la exactitud del pago y para la confidencialidad de los datos.</p>
+  <div data-sort="sort">
+    <div class="task">Tareas clasificadas <span class="tick">0 / 6</span></div>
+    <div class="pool"></div>
+    <div class="bins bins3"></div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · CASO: LA RESPUESTA SEGURA -->
+<section class="slide" data-title="Caso: una respuesta muy segura" data-audio="p06" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Una respuesta convincente</span>
+  <h2>La IA responde con total seguridad</h2>
+  <div class="grid-2">
+    <div class="aichat" aria-label="Conversación de Camila con un asistente de IA">
+      <div class="ahead"><span class="dot">✦</span> Asistente de IA público</div>
+      <div class="u">¿Cuál es el tope imponible para AFP de este mes?</div>
+      <div class="a">El tope imponible vigente es de <mark>84,3 UF</mark>, según la <mark>Circular N.º 2.415</mark> de la Superintendencia de Pensiones. Puedes aplicarlo directamente en tu planilla.</div>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Lo que Camila no sabe todavía:</strong> la cifra no coincide con la publicada para el período y esa circular no existe. La respuesta está bien redactada, pero es inventada.</div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace Camila con la respuesta?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso1b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La aplica en la planilla: la IA citó una circular, así que debe ser correcta.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Verifica el tope en la fuente oficial del período y usa la IA solo para que le explique el concepto o le proponga una fórmula de control.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le hace la misma pregunta dos veces más: si repite la cifra, la usa.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un parámetro inventado en los pagos</div><div class="branch-body"><div><p>La IA puede <strong>inventar referencias</strong> con apariencia oficial. Aplicar un tope incorrecto afecta las cotizaciones de todas las personas que superan ese monto y obliga a reliquidar.</p></div><div><p class="hint">Una cita no es una verificación.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: repetir no es comprobar</div><div class="branch-body"><div><p>Un modelo puede repetir el mismo error varias veces. La consistencia de sus respuestas <strong>no prueba</strong> que sean correctas; solo la fuente oficial lo hace.</p></div><div><p class="hint">Busca la fuente, no la repetición.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila revisa el valor publicado para el período y detecta la diferencia. La IA sí le sirve para entender qué es el tope imponible y para redactar una fórmula que compare cada renta con ese tope.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso1b" hidden>
+    <div class="story" style="margin-top:18px"><strong>Marcela pregunta:</strong> “Entonces, si se equivoca, ¿la IA no nos sirve para remuneraciones?”</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué le responde Camila?</h3>
+    <div class="options" data-choice="caso1b" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“No sirve. Es mejor seguir haciendo todo a mano”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Sirve como apoyo si verificamos: por ejemplo, para proponer una fórmula de control que luego probamos con casos conocidos”.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Sirve si pagamos una versión premium, porque esa no se equivoca”.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso1b-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se descarta una herramienta útil</div><div class="branch-body"><div><p>Que la IA se equivoque en datos normativos no la vuelve inútil. Es muy eficaz explicando, ordenando y redactando, siempre que exista una <strong>verificación</strong> antes de usar el resultado.</p></div><div><p class="hint">El problema no es la herramienta, sino usarla sin control.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una falsa sensación de seguridad</div><div class="branch-body"><div><p>Ninguna versión de un modelo generativo garantiza respuestas exactas. Las versiones empresariales pueden ofrecer más <strong>seguridad de los datos</strong>, pero igual requieren validación humana.</p></div><div><p class="hint">Pagar más no elimina la verificación.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La IA asiste y la persona decide. Usada como apoyo, con fuentes oficiales y pruebas con casos conocidos, puede ahorrar tiempo sin poner en riesgo los pagos.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: MATRIZ DE OPORTUNIDADES -->
+<section class="slide" data-title="Tu matriz de oportunidades" data-audio="p08" data-gate="matriz matriz_model pass" data-gate-msg="Completa tu matriz y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tu matriz de oportunidades y riesgos</h2>
+  <p>Piensa en tu propio proceso mensual. Para cada tarea, <strong>elige el nivel de uso de IA</strong> que consideras adecuado. Puedes agregar una tarea propia. Luego genera tu matriz y compárala con la respuesta modelo.</p>
+  <div data-builder="matriz">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi matriz</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> la IA aporta más valor en tareas de <b>explicación, orden y redacción</b>, y exige más control a medida que la tarea se acerca al <b>pago</b> o usa <b>datos personales</b>. Revisa la explicación bajo cada tarea.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.1</h2>
+    <p>Ya puedes distinguir qué hace bien la IA generativa, cuáles son sus límites y en qué etapas del proceso de remuneraciones conviene usarla como apoyo.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y clasificaciones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la IA asiste; tú decides y respondes por el resultado. En la próxima lección verás qué herramientas existen y cuáles puedes usar con información salarial.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar el ciclo</button><button class="small-btn primary" type="button" data-goto="4">Repasar la clasificación</button></div>
+    <p class="sources">Imágenes: Canva. Narración: síntesis de voz (es-CL). Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>

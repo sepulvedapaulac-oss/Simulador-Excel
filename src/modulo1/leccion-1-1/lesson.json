@@ -1,0 +1,319 @@
+{
+ "id": "ia_rem_l11",
+ "ident": "IAREM_M1_L11",
+ "zip_name": "Leccion_1_1_Que_puede_hacer_la_IA",
+ "title": "Lección 1.1 — ¿Qué puede hacer la IA por un analista de remuneraciones?",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LECCIÓN 1.1",
+ "voice": true,
+ "pass": 0.8,
+ "narration": {
+  "p01": "Te damos la bienvenida a la lección uno punto uno. Camila Torres, analista senior de remuneraciones en AndesCorp, acaba de recibir un correo de su jefatura. Ábrelo y ayúdala a responder: ¿qué tareas del proceso se le pueden confiar a una inteligencia artificial?",
+  "p03": "Hay creencias muy repetidas sobre la inteligencia artificial. Algunas son mitos y otras son ciertas, pero con condiciones. Voltea cada tarjeta y descubre qué hay detrás de cada una.",
+  "p04": "El cierre mensual tiene seis etapas: novedades, cálculo, revisión, pago, reportes y consultas. En cada una la inteligencia artificial puede aportar algo distinto, y en cada una exige un cuidado diferente. Explóralas todas.",
+  "p05": "Ahora te toca decidir. Clasifica cada tarea según cuánto se le puede confiar a la inteligencia artificial. Piensa en dos preguntas: ¿qué pasa si se equivoca?, y ¿qué datos necesita?",
+  "p06": "Camila le hace una pregunta normativa a un asistente público. La respuesta llega rápido, bien redactada y con una cita oficial. ¿Qué debería hacer con ella? Decide.",
+  "quiz": "Llegó el momento de comprobar lo aprendido. Son cinco preguntas y necesitas al menos cuatro correctas para finalizar la lección. Cada respuesta incluye una explicación.",
+  "p08": "Lleva lo aprendido a tu propio trabajo. Para cada tarea, elige el nivel de uso de inteligencia artificial que te parece adecuado. Después compara tu matriz con la respuesta modelo.",
+  "p09": "Terminaste la lección uno punto uno. Recuerda la regla de oro: la inteligencia artificial asiste, y tú decides y respondes por el resultado. En la próxima lección conocerás las herramientas disponibles y cuáles puedes usar con información salarial."
+ },
+ "video": {
+  "voice": true,
+  "scenes": [
+   {
+    "t": "Qué es la IA generativa",
+    "lines": [
+     "La inteligencia artificial generativa es un tipo de sistema que produce textos, tablas o código a partir de las instrucciones que le das.",
+     "Aprendió patrones de enormes cantidades de información, y con ellos predice cuál es la respuesta más probable."
+    ],
+    "html": "<div class=\"v-icons\"><div><span class=\"i\">✍️</span>Textos</div><div><span class=\"i\">📊</span>Tablas</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">🔮</span>Predice la respuesta más probable</div></div>"
+   },
+   {
+    "t": "Calcular no es predecir",
+    "lines": [
+     "Tu sistema de remuneraciones es determinístico: con los mismos datos y parámetros, siempre entrega el mismo resultado.",
+     "Un modelo generativo, en cambio, puede responder distinto cada vez, y a veces se equivoca con total seguridad."
+    ],
+    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Sistema de remuneraciones</b>Mismos datos, mismo resultado<small>Determinístico</small></div><div class=\"warn\" data-at=\"1\"><b>Modelo generativo</b>Puede variar y equivocarse<small>Probabilístico</small></div></div>"
+   },
+   {
+    "t": "Dónde aporta valor",
+    "lines": [
+     "La inteligencia artificial es muy útil para explicar fórmulas, ordenar información, resumir procedimientos y redactar borradores.",
+     "También ayuda a detectar patrones o datos atípicos que conviene revisar."
+    ],
+    "html": "<div class=\"v-final\">Un <em>asistente</em> para el trabajo diario</div><div class=\"v-chk\"><span data-at=\"0\">Explicar fórmulas</span><span data-at=\"0\">Ordenar información</span><span data-at=\"0\">Redactar borradores</span><span data-at=\"1\">Detectar datos atípicos</span></div>"
+   },
+   {
+    "t": "Sus límites",
+    "lines": [
+     "Puede inventar datos o artículos legales, cometer errores de cálculo y sacar conclusiones sin respaldo.",
+     "Por eso, todo lo que produce es un borrador que una persona debe verificar."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">Inventa referencias</div><div data-at=\"0\">Comete errores de cálculo</div><div data-at=\"0\">Concluye sin respaldo</div><div data-at=\"1\">Todo resultado es un borrador</div></div>"
+   },
+   {
+    "t": "La regla de oro",
+    "lines": [
+     "La inteligencia artificial asiste; la persona decide y responde por el resultado.",
+     "En esta lección aprenderás a distinguir qué tareas puedes apoyar con inteligencia artificial y cuáles requieren siempre tu criterio profesional."
+    ],
+    "html": "<div class=\"v-final\">La IA <em>asiste</em>.<br/>Tú <em>decides</em>.</div><div class=\"v-chk\"><span data-at=\"1\">Apoyo</span><span data-at=\"1\">Verificación</span><span data-at=\"1\">Responsabilidad</span></div>"
+   }
+  ]
+ },
+ "hotspots": {
+  "ciclo": [
+   {
+    "t": "1. Recepción de novedades",
+    "lvl": [
+     "mid",
+     "Con controles"
+    ],
+    "html": "<div><b>Cómo ayuda:</b> ordenar en una tabla las novedades que llegan por correo (licencias, horas extra, bonos) y detectar las que vienen incompletas.</div><div><b>Cuidado:</b> las novedades contienen datos personales. Usa solo herramientas autorizadas y comparte lo mínimo necesario.</div>"
+   },
+   {
+    "t": "2. Cálculo",
+    "lvl": [
+     "no",
+     "No sin intervención humana"
+    ],
+    "html": "<div><b>Cómo ayuda:</b> explicar cómo se calcula un concepto o proponer la fórmula de Excel para un haber o descuento.</div><div><b>Cuidado:</b> el cálculo oficial se hace en el sistema de remuneraciones. La IA no debe calcular ni definir parámetros legales por su cuenta.</div>"
+   },
+   {
+    "t": "3. Revisión y cuadratura",
+    "lvl": [
+     "ok",
+     "Apoyo recomendado"
+    ],
+    "html": "<div><b>Cómo ayuda:</b> sugerir fórmulas de control, revisar la lógica de una planilla y señalar variaciones inusuales entre meses.</div><div><b>Cuidado:</b> cada alerta es una hipótesis. Confírmala con los registros originales antes de corregir.</div>"
+   },
+   {
+    "t": "4. Pago y archivos",
+    "lvl": [
+     "no",
+     "No sin intervención humana"
+    ],
+    "html": "<div><b>Cómo ayuda:</b> redactar una lista de verificación previa al envío de la nómina bancaria y del archivo previsional.</div><div><b>Cuidado:</b> la IA nunca debe generar ni enviar archivos de pago. La aprobación es siempre de una persona autorizada.</div>"
+   },
+   {
+    "t": "5. Reportes de gestión",
+    "lvl": [
+     "ok",
+     "Apoyo recomendado"
+    ],
+    "html": "<div><b>Cómo ayuda:</b> transformar una tabla de costos en un resumen ejecutivo claro y proponer qué gráfico usar.</div><div><b>Cuidado:</b> revisa que cada cifra del texto coincida con la fuente y que no aparezcan explicaciones causales sin respaldo.</div>"
+   },
+   {
+    "t": "6. Consultas de colaboradores",
+    "lvl": [
+     "mid",
+     "Con controles"
+    ],
+    "html": "<div><b>Cómo ayuda:</b> redactar borradores de respuesta claros sobre conceptos de la liquidación, como gratificación o descuentos.</div><div><b>Cuidado:</b> verifica la normativa y el caso concreto antes de enviar. Nunca compartas datos de una persona con otra.</div>"
+   }
+  ]
+ },
+ "sorts": {
+  "sort": {
+   "bins": [
+    {
+     "id": "ok",
+     "title": "✓ Apoyo recomendado",
+     "cls": "good-bin"
+    },
+    {
+     "id": "mid",
+     "title": "⚠ Con controles",
+     "cls": "mid-bin"
+    },
+    {
+     "id": "no",
+     "title": "✕ No sin intervención humana",
+     "cls": "bad-bin"
+    }
+   ],
+   "order": [
+    2,
+    0,
+    4,
+    1,
+    5,
+    3
+   ],
+   "items": [
+    {
+     "t": "Explicar qué hace una fórmula BUSCARV heredada que no entiendes",
+     "bin": "ok",
+     "why": "Es una tarea de explicación, sin datos personales y fácil de verificar probando la fórmula.",
+     "hint": "¿Qué riesgo hay en pedir que te expliquen una fórmula? Es fácil de comprobar y no requiere datos de personas."
+    },
+    {
+     "t": "Redactar un borrador de respuesta a una consulta sobre gratificación",
+     "bin": "mid",
+     "why": "La IA redacta bien, pero la respuesta incluye criterios normativos que debes verificar antes de enviarla.",
+     "hint": "La redacción es útil, pero el contenido normativo puede estar equivocado. ¿Se puede enviar sin revisar?"
+    },
+    {
+     "t": "Calcular y aprobar automáticamente los sueldos del mes",
+     "bin": "no",
+     "why": "El cálculo y la aprobación de pagos requieren el sistema oficial y la autorización de una persona responsable.",
+     "hint": "Piensa en qué pasa si se equivoca: afecta directamente los pagos de las personas."
+    },
+    {
+     "t": "Resumir el procedimiento interno de cierre en una lista de pasos",
+     "bin": "ok",
+     "why": "Ordenar y resumir un documento interno no confidencial es una tarea de bajo riesgo y alto valor.",
+     "hint": "Resumir un procedimiento propio es fácil de revisar y no expone datos personales."
+    },
+    {
+     "t": "Detectar variaciones atípicas en horas extra con datos anonimizados",
+     "bin": "mid",
+     "why": "Es un buen uso si los datos están anonimizados y cada alerta se confirma con los registros originales.",
+     "hint": "Es útil, pero depende de cómo se preparan los datos y de confirmar cada alerta."
+    },
+    {
+     "t": "Enviar al banco la nómina de pago generada por la IA",
+     "bin": "no",
+     "why": "Los archivos de pago nunca se delegan: deben salir del sistema oficial y contar con aprobación humana.",
+     "hint": "Es el último paso antes de que el dinero llegue a las personas. ¿Puede hacerse sin control?"
+    }
+   ]
+  }
+ },
+ "builders": {
+  "matriz": {
+   "title": "Mi matriz de oportunidades y riesgos de IA",
+   "colA": "Tarea",
+   "colB": "Nivel de uso de IA",
+   "rows": [
+    {
+     "label": "Revisar las fórmulas de la planilla de horas extra",
+     "options": [
+      "Apoyo recomendado",
+      "Con controles",
+      "No sin intervención humana"
+     ],
+     "model": 0,
+     "why": "<b>Modelo: Apoyo recomendado.</b> Revisar la lógica de fórmulas es una tarea de explicación y control; se valida probando con casos conocidos."
+    },
+    {
+     "label": "Responder consultas frecuentes sobre la liquidación",
+     "options": [
+      "Apoyo recomendado",
+      "Con controles",
+      "No sin intervención humana"
+     ],
+     "model": 1,
+     "why": "<b>Modelo: Con controles.</b> La IA ayuda a redactar, pero cada respuesta debe revisarse contra la normativa y el caso concreto antes de enviarse."
+    },
+    {
+     "label": "Calcular finiquitos",
+     "options": [
+      "Apoyo recomendado",
+      "Con controles",
+      "No sin intervención humana"
+     ],
+     "model": 2,
+     "why": "<b>Modelo: No sin intervención humana.</b> El finiquito tiene efectos legales y económicos; la IA puede explicar conceptos, pero el cálculo y la revisión son profesionales."
+    },
+    {
+     "label": "Preparar el resumen mensual de costos para la gerencia",
+     "options": [
+      "Apoyo recomendado",
+      "Con controles",
+      "No sin intervención humana"
+     ],
+     "model": 0,
+     "why": "<b>Modelo: Apoyo recomendado</b> (con datos agregados). Redactar y estructurar un informe es una fortaleza de la IA; revisa que las cifras coincidan con la fuente."
+    },
+    {
+     "label": "Cargar las novedades del mes al sistema",
+     "options": [
+      "Apoyo recomendado",
+      "Con controles",
+      "No sin intervención humana"
+     ],
+     "model": 1,
+     "why": "<b>Modelo: Con controles.</b> La IA puede ordenar las novedades antes de la carga, pero la carga y su validación se hacen en el sistema oficial."
+    },
+    {
+     "type": "text",
+     "label": "Una tarea propia (opcional): describe la tarea y el nivel que le asignarías",
+     "ph": "Ej.: conciliar el libro de remuneraciones con contabilidad · Con controles"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "q": "¿Cuál es la principal diferencia entre tu sistema de remuneraciones y un modelo de IA generativa?",
+   "o": [
+    "El sistema es determinístico: con los mismos datos entrega siempre el mismo resultado; el modelo predice respuestas y puede variar.",
+    "El modelo generativo es más exacto porque aprendió de más información.",
+    "No hay diferencia si ambos reciben los mismos datos."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: el sistema aplica reglas fijas; el modelo genera la respuesta más probable, que puede variar o estar equivocada.",
+    "Haber aprendido de mucha información no lo vuelve exacto: puede equivocarse con total seguridad.",
+    "Sí hay diferencia: aunque reciban los mismos datos, el modelo puede responder distinto cada vez."
+   ]
+  },
+  {
+   "q": "Camila necesita entender una fórmula anidada que heredó de otra analista. ¿Cómo clasificarías esta tarea?",
+   "o": [
+    "No sin intervención humana.",
+    "Apoyo recomendado: es una tarea de explicación, fácil de verificar.",
+    "Prohibida: nunca se deben mostrar fórmulas a la IA."
+   ],
+   "c": 1,
+   "f": [
+    "Es una tarea de bajo riesgo: no toca pagos ni datos personales y se verifica probando la fórmula.",
+    "Correcto: explicar fórmulas es uno de los mejores usos de la IA y su resultado se puede comprobar con casos conocidos.",
+    "Una fórmula sin datos personales no es información confidencial; explicarla es un uso apropiado."
+   ]
+  },
+  {
+   "q": "Una IA responde con seguridad un parámetro legal y cita una circular. ¿Qué corresponde hacer?",
+   "o": [
+    "Usarlo, porque citó una fuente oficial.",
+    "Preguntar de nuevo y usarlo si se repite.",
+    "Verificarlo en la fuente oficial del período antes de usarlo."
+   ],
+   "c": 2,
+   "f": [
+    "La IA puede inventar referencias con apariencia oficial; una cita no es una verificación.",
+    "Un modelo puede repetir el mismo error; la repetición no prueba que la cifra sea correcta.",
+    "Correcto: los parámetros legales y previsionales siempre se contrastan con la fuente oficial vigente."
+   ]
+  },
+  {
+   "q": "¿En qué etapa del ciclo la IA NO debería actuar sin intervención humana?",
+   "o": [
+    "Generar y enviar los archivos de pago.",
+    "Proponer fórmulas de control para la revisión.",
+    "Redactar un resumen ejecutivo de costos."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: los archivos de pago salen del sistema oficial y requieren aprobación de una persona autorizada.",
+    "Proponer fórmulas de control es un apoyo recomendado: luego se prueban y validan.",
+    "Redactar un resumen es una fortaleza de la IA, siempre que se revisen las cifras."
+   ]
+  },
+  {
+   "q": "¿Qué frase resume mejor el uso responsable de la IA en remuneraciones?",
+   "o": [
+    "La IA decide y la persona revisa solo si hay reclamos.",
+    "La IA asiste; la persona decide y responde por el resultado.",
+    "La IA solo sirve si se paga una versión premium."
+   ],
+   "c": 1,
+   "f": [
+    "La revisión no puede depender de los reclamos: la validación ocurre antes de usar cualquier resultado.",
+    "Correcto: esa es la regla de oro del curso.",
+    "Ninguna versión elimina la necesidad de verificar; la diferencia está en la seguridad de los datos, no en la exactitud garantizada."
+   ]
+  }
+ ]
+}
