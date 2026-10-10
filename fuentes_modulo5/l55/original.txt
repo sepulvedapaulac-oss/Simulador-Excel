@@ -1,0 +1,45 @@
+ class="app">
+ Legislación Laboral · Módulo 5 Pantalla 1 de 8 
+Lección 5.5 
+Indemnizaciones y prestaciones asociadas 
+Primero identifica la causal; después calcula 
+ Meta de aprendizaje: Distinguir las principales prestaciones e indemnizaciones asociadas al término, evitando asumir que todas proceden en cualquier causal. 
+Situación inicial 
+Antes de decidir, revisa el cierre completo 
+Una jefatura pregunta: “¿Cuánto hay que pagarle?”. Camila responde con otra pregunta: “¿Por qué causal terminará el contrato y cuánto tiempo lleva trabajando?”. 
+Identifica la causal, los antecedentes, la comunicación, los pagos y la evidencia que deberían existir. 
+Conceptos clave 
+Lo que debes reconocer 
+Indemnización por años de servicio 
+Cuando procede legalmente por aplicación del artículo 161 y existe al menos un año de servicio, corresponde 30 días de la última remuneración mensual por cada año y fracción superior a seis meses, con límite general de 330 días, salvo reglas especiales. 
+Aviso previo 
+Si corresponde aviso de 30 días y no se otorga, puede proceder una indemnización sustitutiva equivalente a la última remuneración mensual, en los términos legales. 
+Feriado pendiente o proporcional 
+Al término deben revisarse días de feriado que correspondan compensar conforme a los artículos 73 y 71. 
+Otras prestaciones 
+Remuneraciones pendientes, horas extraordinarias u otros conceptos adeudados también deben incorporarse al cierre si corresponden. 
+Referencia general: Código del Trabajo, especialmente artículos 159 a 177, y criterios de la Dirección del Trabajo vigentes a octubre de 2026. 
+Explorar 
+Abre cada criterio antes de actuar 
+ ¿Qué causal o regla corresponde? ＋ Identifica primero la base legal. No construyas la causal después de decidir el resultado. 
+ ¿Qué comunicación o pago se activa? ＋ Revisa aviso, carta, indemnizaciones, feriado, remuneraciones pendientes y finiquito según corresponda. 
+ ¿Qué evidencia debe conservarse? ＋ Contrato, anexos, carta, respaldos de la causal, cotizaciones, cálculos, finiquito y comprobantes deben formar una cadena consistente. 
+Decisión aplicada 
+Selecciona una alternativa 
+ Un contrato termina por vencimiento del plazo. ¿Debe pagarse automáticamente indemnización legal por años de servicio? 
+Sí, siempre que haya trabajado más de un año. 
+No. La indemnización legal por años de servicio no procede automáticamente por esa causal. 
+Sí, porque todo término genera indemnización. 
+Comprobar respuesta Correcto. La procedencia de cada indemnización depende de la causal y de los requisitos legales aplicables. 
+Feedback aplicado 
+Qué criterio deberías llevarte 
+ Criterio: Correcto. La procedencia de cada indemnización depende de la causal y de los requisitos legales aplicables. 1 Define la causal o obligación aplicable. 2 Verifica requisitos, plazos, pagos y formalidades. 3 Conserva evidencia coherente del proceso completo. 
+Transferencia 
+Llévalo a tu realidad laboral 
+Antes de calcular montos, construye una tabla: causal → antigüedad → aviso → indemnización → feriado → pagos pendientes. 
+ Pregunta de cierre: ¿qué documento sería el más difícil de reconstruir si mañana una autoridad solicitara acreditar esta decisión? 
+Lección completada 
+Has finalizado la Lección 5.5 
+Desde el panel izquierdo puedes volver a cualquier tema sin recorrer nuevamente toda la lección. 
+ Idea final: un término correcto combina causal, hechos, comunicación, pagos, formalización y evidencia. 
+ 
