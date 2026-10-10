@@ -19,14 +19,14 @@ Plataforma: **Moodle**. Formato visual de referencia: `referencia/Leccion_5_1_..
 | # | Recurso | Por módulo | Total | Formato / destino |
 |---|---|---:|---:|---|
 | 1 | Lecciones interactivas con video integrado | 4 | 16 | SCORM 1.2 (HTML) |
-| 2 | Video del módulo incrustado en Moodle | 1 | 4 | MP4 + subtítulos `.vtt` |
+| 2 | Video del módulo incrustado en Moodle | 1 | 4 | MP4 1080p + subtítulos `.vtt` |
 | 3 | Material PDF | 2 | 8 | PDF descargable |
 | 4 | Resumen tipo carrusel | 1 | 4 | HTML |
 | 5 | Glosario tipo carrusel | 1 | 4 | HTML |
-| 6 | Laboratorios prácticos (simulador) | 2 | 8 | Artefacto HTML |
+| 6 | Laboratorios prácticos (simulador) | 2 | 8 | Artefacto HTML → SCORM 1.2 tras aprobación |
 | 7 | Cuestionario de selección múltiple (10 preguntas) | 1 | 4 (40 preguntas) | Moodle XML |
 | 8 | Evaluación final aplicada: caso ramificado | 1 (desde M2) | 3 | Laboratorio SCORM 1.2 |
-| 9 | Caso de análisis en Mindsmith | 4 (1 por lección) | 16 | Mindsmith (solo casos) |
+| 9 | Caso de análisis en Mindsmith | 1 | 4 | Mindsmith (solo casos) |
 
 Imágenes: **Canva**, estilo fotográfico realista, coherente con la referencia.
 
@@ -46,6 +46,7 @@ Imágenes: **Canva**, estilo fotográfico realista, coherente con la referencia.
 - Preguntas contextualizadas en el caso de Camila, no de memoria.
 
 ### 3.3 Laboratorios (artefactos HTML)
+- **Flujo de entrega:** primero se construyen como HTML para revisión. Una vez aprobados, se empaquetan en SCORM 1.2 con registro de nota y se les integra la narración con la voz de Catalina.
 - Son simuladores aplicativos. El principal es un **simulador de Excel en el navegador**: celdas, fórmulas, validación y comprobación automática.
 - Usan datos 100 % sintéticos, con retroalimentación inmediata y opción de reintentar.
 
@@ -54,7 +55,7 @@ Imágenes: **Canva**, estilo fotográfico realista, coherente con la referencia.
 - Feedback en cada nodo y puntaje enviado a Moodle.
 
 ### 3.5 Mindsmith
-- Solo casos de análisis: 1 por lección, 16 en total. Complementan la lección y no la reemplazan.
+- Solo casos de análisis: **1 por módulo, 4 en total**. Integran los contenidos de las cuatro lecciones del módulo.
 
 ## 4. Sistema visual (homologado con la referencia 5.1)
 
@@ -79,37 +80,37 @@ Imágenes: **Canva**, estilo fotográfico realista, coherente con la referencia.
 
 ## 5. Mapa de lecciones y herramientas interactivas
 
-| Lección | Voz | Herramientas interactivas principales | Caso Mindsmith |
-|---|:-:|---|---|
-| **1.1** ¿Qué puede hacer la IA por un analista? | ✅ | Clasificar arrastrando · Hotspot (ciclo de remuneraciones) · Flashcards | ¿Le confiarías esta tarea a la IA? |
-| **1.2** Herramientas de IA para el trabajo cotidiano | — | Pestañas · Emparejar · Tabla comparativa | Camila elige herramienta |
-| **1.3** Cómo elaborar prompts efectivos | ✅ | Constructor de prompts · Deslizador antes/después · Acordeón | Mejorar un prompt vago |
-| **1.4** Uso responsable y protección de datos | — | Decisiones por escenario · Línea de tiempo (Ley 21.719) · Checklist | La base real en herramienta pública |
-| **2.1** La información que debe revisar la IA | ✅ | Hotspot sobre liquidación · Clasificar haberes · Acordeón | Registros incompletos |
-| **2.2** IA como asistente para fórmulas de Excel | — | Chat IA simulado · Flashcards de funciones · Probador de fórmulas | La búsqueda que asocia mal |
-| **2.3** Detección asistida de inconsistencias | ✅ | Tabla de alertas (corregir/investigar/descartar) · Pestañas · Emparejar | Anomalía vs. error |
-| **2.4** Validación y control de calidad | — | Ordenar secuencia · Resaltar la premisa errónea · Stepper | La IA con un supuesto falso |
-| **3.1** Preparación de datos para análisis | ✅ | Limpiar tabla · Flashcards (agregado/anonimizado/sintético) · Acordeón | Tres bases, tres formatos |
-| **3.2** Variaciones mensuales | — | Calculadora con deslizador · Clasificar hecho/hipótesis/error · Pestañas | El 8 % de aumento |
-| **3.3** Indicadores y visualización | ✅ | Selector de gráficos · Hotspot (gráfico engañoso) · Emparejar | El gráfico que exagera |
-| **3.4** Informes ejecutivos con IA | — | Editor de informe (marcar frases) · Línea de tiempo · Checklist | Informe con afirmaciones sin respaldo |
-| **4.1** Oportunidades de automatización | ✅ | Matriz esfuerzo-impacto arrastrable · Flashcards · Pestañas | Mapa del cierre de Camila |
-| **4.2** Asistentes de IA para tareas administrativas | — | Chat IA simulado (configura tu asistente) · Acordeón · Checklist | Respuestas a consultas frecuentes |
-| **4.3** Flujo de remuneraciones asistido por IA | ✅ | Ordenar flujo arrastrando · Hotspot (diagrama) · Stepper | Dónde va el control humano |
-| **4.4** Proyecto integrador | — | Constructor guiado del proyecto · Línea de tiempo de implementación · Rúbrica de autoevaluación | Propuesta para la gerencia |
+| Lección | Voz | Herramientas interactivas principales |
+|---|:-:|---|
+| **1.1** ¿Qué puede hacer la IA por un analista? | ✅ | Clasificar arrastrando · Hotspot (ciclo de remuneraciones) · Flashcards |
+| **1.2** Herramientas de IA para el trabajo cotidiano | — | Pestañas · Emparejar · Tabla comparativa |
+| **1.3** Cómo elaborar prompts efectivos | ✅ | Constructor de prompts · Deslizador antes/después · Acordeón |
+| **1.4** Uso responsable y protección de datos | — | Decisiones por escenario · Línea de tiempo (Ley 21.719) · Checklist |
+| **2.1** La información que debe revisar la IA | ✅ | Hotspot sobre liquidación · Clasificar haberes · Acordeón |
+| **2.2** IA como asistente para fórmulas de Excel | — | Chat IA simulado · Flashcards de funciones · Probador de fórmulas |
+| **2.3** Detección asistida de inconsistencias | ✅ | Tabla de alertas (corregir/investigar/descartar) · Pestañas · Emparejar |
+| **2.4** Validación y control de calidad | — | Ordenar secuencia · Resaltar la premisa errónea · Stepper |
+| **3.1** Preparación de datos para análisis | ✅ | Limpiar tabla · Flashcards (agregado/anonimizado/sintético) · Acordeón |
+| **3.2** Variaciones mensuales | — | Calculadora con deslizador · Clasificar hecho/hipótesis/error · Pestañas |
+| **3.3** Indicadores y visualización | ✅ | Selector de gráficos · Hotspot (gráfico engañoso) · Emparejar |
+| **3.4** Informes ejecutivos con IA | — | Editor de informe (marcar frases) · Línea de tiempo · Checklist |
+| **4.1** Oportunidades de automatización | ✅ | Matriz esfuerzo-impacto arrastrable · Flashcards · Pestañas |
+| **4.2** Asistentes de IA para tareas administrativas | — | Chat IA simulado (configura tu asistente) · Acordeón · Checklist |
+| **4.3** Flujo de remuneraciones asistido por IA | ✅ | Ordenar flujo arrastrando · Hotspot (diagrama) · Stepper |
+| **4.4** Proyecto integrador | — | Constructor guiado del proyecto · Línea de tiempo de implementación · Rúbrica de autoevaluación |
 
 Todas las lecciones incluyen, además: video integrado, comprobación breve, transferencia al trabajo y pantalla de finalización.
 
 ## 6. Recursos complementarios por módulo
 
-| Módulo | PDF 1 | PDF 2 | Laboratorio A | Laboratorio B | Evaluación final ramificada |
-|---|---|---|---|---|---|
-| **1** Fundamentos | Guía: IA generativa en remuneraciones, usos y límites | Checklist de uso responsable y protección de datos | Laboratorio de prompts (respuestas IA simuladas) | Semáforo de datos: anonimizar una planilla en el simulador Excel | — (se evalúa con el cuestionario XML) |
-| **2** Revisión | Guía de fórmulas de control en Excel | Protocolo de validación de resultados de IA | Fórmulas de control (BUSCARX/SI/COINCIDIR con casos de prueba) | Auditoría del cierre: 12 registros con errores | "Cierre de remuneraciones bajo revisión" |
-| **3** Análisis | Guía de preparación de datos y diccionario de variables | Plantilla de informe ejecutivo | Variaciones mensuales (absoluta, %, por área) | Tablero de indicadores (KPI y gráficos) | "La gerencia necesita respuestas" |
-| **4** Automatización | Biblioteca de prompts para remuneraciones | Guía para diseñar un flujo de cierre asistido por IA y rúbrica | Checklist de cierre con controles automáticos | Simulador de flujo con puntos de control | "Modernizando el cierre mensual" |
+| Módulo | PDF 1 | PDF 2 | Laboratorio A | Laboratorio B | Evaluación final ramificada | Caso Mindsmith |
+|---|---|---|---|---|---|---|
+| **1** Fundamentos | Guía: IA generativa en remuneraciones, usos y límites | Checklist de uso responsable y protección de datos | Laboratorio de prompts (respuestas IA simuladas) | Semáforo de datos: anonimizar una planilla en el simulador Excel | — (se evalúa con el cuestionario XML) | Camila y la propuesta de usar IA con datos salariales |
+| **2** Revisión | Guía de fórmulas de control en Excel | Protocolo de validación de resultados de IA | Fórmulas de control (BUSCARX/SI/COINCIDIR con casos de prueba) | Auditoría del cierre: 12 registros con errores | "Cierre de remuneraciones bajo revisión" | El cierre con diferencias en horas extraordinarias |
+| **3** Análisis | Guía de preparación de datos y diccionario de variables | Plantilla de informe ejecutivo | Variaciones mensuales (absoluta, %, por área) | Tablero de indicadores (KPI y gráficos) | "La gerencia necesita respuestas" | Explicar a la gerencia el aumento del 8 % |
+| **4** Automatización | Biblioteca de prompts para remuneraciones | Guía para diseñar un flujo de cierre asistido por IA y rúbrica | Checklist de cierre con controles automáticos | Simulador de flujo con puntos de control | "Modernizando el cierre mensual" | Rediseñar una tarea del cierre con control humano |
 
-Cada módulo incluye además: **1 video Moodle** (presentación y síntesis del módulo, con Catalina), **resumen carrusel** y **glosario carrusel**.
+Cada módulo incluye además: **1 video Moodle en MP4** (1080p, presentación y síntesis del módulo, con la voz de Catalina y subtítulos `.vtt`), **resumen carrusel** y **glosario carrusel**.
 
 ## 7. Evaluación (propuesta de ponderación en Moodle)
 
@@ -125,12 +126,13 @@ Cada módulo pesa 25 %.
 
 1. **Voz Catalina:** el entorno de desarrollo debe permitir el dominio `speech.platform.bing.com` para generar los MP3 con `edge-tts`.
 2. **Canva:** autorizar el conector de Canva para obtener y exportar las imágenes.
-3. **Mindsmith:** conectado (organización "Equipo de paula"). Los casos se crean al producir cada lección.
+3. **Mindsmith:** conectado (organización "Equipo de paula"). Se crea un caso al cerrar cada módulo.
 
 ## 9. Orden de producción
 
 1. Lección modelo **1.1** (con voz) y **1.2** (sin voz), para validar los patrones visual y técnico.
-2. Laboratorios y cuestionario XML del módulo 1, más resumen, glosario y PDF.
-3. Video Moodle del módulo 1 y casos Mindsmith 1.1–1.4.
-4. Repetir para los módulos 2–4, sumando la evaluación final ramificada.
-5. Prueba en Moodle (PC y móvil) y verificación del registro SCORM.
+2. Laboratorios del módulo 1 en HTML para revisión. Tras la aprobación, se empaquetan en SCORM con la voz de Catalina.
+3. Cuestionario XML, resumen, glosario y PDF del módulo 1.
+4. Video MP4 del módulo 1 y caso Mindsmith del módulo 1.
+5. Repetir para los módulos 2–4, sumando la evaluación final ramificada.
+6. Prueba en Moodle (PC y móvil) y verificación del registro SCORM.
