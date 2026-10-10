@@ -38,9 +38,32 @@ def tts(text, out, engine):
                            check=True, capture_output=True)
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-ac", "1", "-b:a", "64k", str(cached)], check=True)
             wav.unlink(missing_ok=True)
+        elif engine == "chatterbox":
+            sys.exit(f"Falta pregenerar con Chatterbox: {text[:60]}…")
         else:
             sys.exit(f"Motor de voz desconocido: {engine}")
     shutil.copy(cached, out)
+
+
+def cache_path(text, engine):
+    return CACHE / (hashlib.sha1(f"{engine}|{EDGE_VOICE}|{text}".encode()).hexdigest() + ".mp3")
+
+
+def pregenerate_chatterbox(texts):
+    """Genera en un solo proceso todos los textos que aún no están en caché."""
+    CACHE.mkdir(parents=True, exist_ok=True)
+    todo = [t for t in dict.fromkeys(texts) if not cache_path(t, "chatterbox").exists()]
+    if not todo:
+        return
+    jobs = [{"text": t, "out": str(cache_path(t, "chatterbox").with_suffix(".wav"))} for t in todo]
+    jf = CACHE / "jobs.json"
+    jf.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
+    print(f"Chatterbox: generando {len(jobs)} audios…", flush=True)
+    subprocess.run([os.environ.get("CBX_PYTHON", "/tmp/cbx2/bin/python"), str(TOOLS / "voz" / "cbx_batch.py"), str(jf)], check=True)
+    for j in jobs:
+        wav = Path(j["out"])
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-ac", "1", "-b:a", "80k", str(wav.with_suffix(".mp3"))], check=True)
+        wav.unlink(missing_ok=True)
 
 
 def duration(path):
@@ -123,6 +146,11 @@ def build(src: Path, engine: str):
 
     voice = bool(meta.get("voice"))
     audio = {}
+    if voice and engine == "chatterbox":
+        texts = list(meta.get("narration", {}).values())
+        if meta.get("video", {}).get("voice"):
+            texts += [" ".join(sc["lines"]) for sc in meta["video"]["scenes"]]
+        pregenerate_chatterbox(texts)
     if voice:
         for key, text in meta.get("narration", {}).items():
             f = out / "audio" / f"{key}.mp3"
@@ -176,7 +204,7 @@ def build(src: Path, engine: str):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("src", nargs="+")
-    ap.add_argument("--voice", default=os.environ.get("VOICE_ENGINE", "edge"), choices=["edge", "pocket"])
+    ap.add_argument("--voice", default=os.environ.get("VOICE_ENGINE", "chatterbox"), choices=["chatterbox", "edge", "pocket"])
     a = ap.parse_args()
     for s in a.src:
         build((ROOT / s).resolve(), a.voice)
