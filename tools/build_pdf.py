@@ -46,7 +46,7 @@ li{margin-bottom:1.2mm}
 .box.warn{background:var(--bad-soft);border:1px solid #e6a1b2;border-left:5px solid var(--bad)}
 .box.ok{background:var(--good-soft);border:1px solid #8dcf9d;border-left:5px solid var(--good)}
 .box.prompt{background:#f6f8fa;border:1px dashed var(--line);font-family:"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:9.2pt;white-space:pre-wrap}
-table{width:100%;border-collapse:collapse;margin:2mm 0 4mm;font-size:9.6pt;break-inside:auto}
+table{width:100%;table-layout:fixed;border-collapse:collapse;margin:2mm 0 4mm;font-size:9.6pt;break-inside:auto}
 th{background:var(--navy);color:#fff;text-align:left;padding:2.2mm 2.6mm;font-weight:700}
 td{border-bottom:1px solid var(--line);padding:2.2mm 2.6mm;vertical-align:top}
 tr{break-inside:avoid}
@@ -62,6 +62,7 @@ tbody tr:nth-child(even) td{background:#f4f8f9}
 .check li small{display:block;color:var(--muted);font-size:8.8pt}
 .sign{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6mm;margin-top:8mm}
 .sign div{border-top:1px solid var(--muted);padding-top:1.5mm;font-size:8.8pt;color:var(--muted)}
+code{font-family:"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:8.4pt;overflow-wrap:anywhere;background:#f1f5f7;border-radius:1mm;padding:0 .8mm}
 .src{font-size:8.6pt;color:var(--muted)}
 .toc{list-style:none;padding:0;counter-reset:t}
 .toc li{display:flex;gap:3mm;padding:2mm 0;border-bottom:1px dotted var(--line)}

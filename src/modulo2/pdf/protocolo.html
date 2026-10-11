@@ -1,0 +1,83 @@
+<!--{"title": "Protocolo de validación de resultados de IA", "short": "Protocolo · Validación de resultados de IA", "subtitle": "Pasos, criterios de aceptación y registros para validar lo que entrega un asistente de IA antes de usarlo en el cierre de remuneraciones.", "module": "Módulo 2 · Revisión asistida por IA", "file": "M2_Protocolo_validacion_resultados_IA.pdf", "img": "i24_hero.jpg", "kind": "Protocolo"}-->
+
+<section>
+  <h2>Propósito y alcance</h2>
+  <p class="lead">Este protocolo define cómo se valida cualquier resultado generado con IA (alertas, fórmulas, resúmenes, explicaciones o informes) antes de usarlo en el proceso de remuneraciones. Validar es un proceso con evidencia, no una impresión.</p>
+  <table>
+    <thead><tr><th style="width:30%">Aplica a</th><th>No reemplaza</th></tr></thead>
+    <tbody>
+      <tr><td>Alertas de inconsistencias, fórmulas de control, explicaciones de normas, borradores de respuestas e informes.</td><td>El cálculo del sistema oficial, la aprobación de pagos ni la revisión legal.</td></tr>
+    </tbody>
+  </table>
+  <div class="box key"><b>Principio:</b> la IA señala; una persona responsable verifica, decide y deja registro.</div>
+</section>
+
+<section>
+  <h2><span class="n">1</span>Los seis pasos</h2>
+  <table>
+    <thead><tr><th style="width:6%">#</th><th style="width:24%">Paso</th><th>Qué se hace</th><th style="width:26%">Evidencia</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Definir el criterio</b></td><td>Antes de pedir el resultado, define qué lo hace aceptable (exactitud, tolerancia, fuente).</td><td>Criterio escrito en la ficha.</td></tr>
+      <tr><td>2</td><td><b>Contrastar</b></td><td>Compara cifras, parámetros y referencias con el sistema o la fuente oficial vigente.</td><td>Fuente y fecha consultada.</td></tr>
+      <tr><td>3</td><td><b>Probar con un caso conocido</b></td><td>Aplica el resultado a un registro cuyo valor correcto ya conoces.</td><td>Caso de prueba y resultado.</td></tr>
+      <tr><td>4</td><td><b>Revisar casos borde</b></td><td>Valores en el umbral, ceros, celdas vacías, ingresos o egresos del mes.</td><td>Lista de casos revisados.</td></tr>
+      <tr><td>5</td><td><b>Segunda revisión</b></td><td>Otra persona revisa los hallazgos con impacto en pagos (principio de cuatro ojos).</td><td>Nombre y fecha del revisor.</td></tr>
+      <tr><td>6</td><td><b>Documentar y aprobar</b></td><td>Registra qué se pidió, con qué herramienta, qué se aceptó o rechazó y por qué.</td><td>Registro de validación.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Criterios de aceptación por tipo de resultado</h2>
+  <table>
+    <thead><tr><th style="width:22%">Resultado</th><th>Se acepta cuando…</th><th style="width:30%">Se rechaza cuando…</th></tr></thead>
+    <tbody>
+      <tr><td><b>Alerta de inconsistencia</b></td><td>Hay evidencia en el registro de origen que la confirma.</td><td>La alerta se explica por una novedad aprobada (falso positivo).</td></tr>
+      <tr><td><b>Fórmula</b></td><td>Reproduce los casos de prueba, incluidos los casos borde.</td><td>Falla un caso o usa una regla no entregada.</td></tr>
+      <tr><td><b>Parámetro o norma</b></td><td>Coincide con la fuente oficial del período.</td><td>No tiene fuente o la referencia no existe.</td></tr>
+      <tr><td><b>Explicación o resumen</b></td><td>Cada afirmación se puede rastrear al documento original.</td><td>Agrega condiciones que no están en el documento.</td></tr>
+      <tr><td><b>Borrador de respuesta</b></td><td>Es correcto, claro y no contiene datos personales innecesarios.</td><td>Promete montos o plazos no verificados.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Señales de alerta en una respuesta de IA</h2>
+  <div class="grid2">
+    <div class="card"><h4><span class="tag r">Premisa errónea</span></h4>Afirma algo incorrecto como base, por ejemplo una jornada máxima o un recargo distinto al vigente.</div>
+    <div class="card"><h4><span class="tag r">Referencia inventada</span></h4>Cita una circular, dictamen o artículo con número que no existe.</div>
+    <div class="card"><h4><span class="tag a">Supuesto oculto</span></h4>Completa un dato que no le entregaste sin advertirlo.</div>
+    <div class="card"><h4><span class="tag a">Exceso de certeza</span></h4>Montos exactos sin mostrar el cálculo ni la fuente.</div>
+  </div>
+  <div class="box info"><b>Referencias vigentes útiles para contrastar:</b> recargo mínimo de horas extraordinarias de 50 % (Código del Trabajo, art. 32); jornada ordinaria máxima de 42 horas semanales desde el 26 de abril de 2026 (Ley 21.561, que la reduce a 40 horas en 2028).</div>
+</section>
+
+<section class="page">
+  <h2><span class="n">4</span>Registro de validación</h2>
+  <p>Completa una fila por cada resultado de IA que se use en el cierre.</p>
+  <table>
+    <thead><tr><th>Fecha</th><th>Resultado de IA</th><th>Herramienta</th><th>Criterio</th><th>Evidencia</th><th>Decisión</th><th>Responsable</th><th>Revisor</th></tr></thead>
+    <tbody>
+      <tr><td>28-10</td><td>Alerta EMP-118 bono duplicado</td><td>Asistente corporativo</td><td>Un bono por mes</td><td>Dos registros del bono</td><td><span class="tag g">Corregir</span></td><td>Camila</td><td>Rodrigo</td></tr>
+      <tr><td>28-10</td><td>Alerta horas extra Planta +18 %</td><td>Asistente corporativo</td><td>Variación &gt; 10 %</td><td>Turno extra aprobado</td><td><span class="tag v">Descartar</span></td><td>Camila</td><td>—</td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Checklist de cuatro ojos</h2>
+  <ul class="check">
+    <li>El revisor entiende qué se le pidió a la IA y con qué datos.</li>
+    <li>Los datos entregados a la IA estaban minimizados y seudonimizados.</li>
+    <li>Cada hallazgo con impacto en pagos tiene evidencia en el registro de origen.</li>
+    <li>Las fórmulas usadas pasaron los casos de prueba documentados.</li>
+    <li>Los parámetros se contrastaron con la fuente oficial del período.</li>
+    <li>Las correcciones se hicieron en el sistema oficial, no en la planilla de control.</li>
+    <li>El registro de validación quedó completo y firmado.</li>
+  </ul>
+  <div class="sign"><div>Responsable</div><div>Revisor</div><div>Fecha de aprobación</div></div>
+  <p class="src" style="margin-top:6mm">Material formativo. Adapta este protocolo a la política interna de tu empresa. Datos del curso ficticios.</p>
+</section>

@@ -1,0 +1,102 @@
+<!--{"title": "Guía de fórmulas de control en Excel", "short": "Guía · Fórmulas de control en Excel", "subtitle": "Fórmulas para revisar el cierre de remuneraciones, cómo pedirlas a un asistente de IA y cómo probarlas antes de confiar en ellas.", "module": "Módulo 2 · Revisión asistida por IA", "file": "M2_Guia_formulas_de_control_en_Excel.pdf", "img": "i22_hero.jpg", "kind": "Guía"}-->
+
+<section>
+  <h2>Cómo usar esta guía</h2>
+  <p class="lead">Una fórmula de control no calcula la remuneración: <b>compara</b> lo pagado con lo esperado y marca lo que merece revisión. Esta guía reúne las fórmulas más útiles para el cierre mensual, escritas como en Excel en español (separador <b>;</b> y coma decimal).</p>
+  <ul class="toc">
+    <li>Principios de una buena columna de control</li>
+    <li>Funciones esenciales y su uso en remuneraciones</li>
+    <li>Recetario de controles para el cierre</li>
+    <li>Cómo pedirle una fórmula a la IA</li>
+    <li>Errores típicos en fórmulas sugeridas por IA</li>
+    <li>Cómo probar una fórmula con casos conocidos</li>
+  </ul>
+  <div class="box info"><b>Datos de ejemplo.</b> Los ejemplos usan una tabla seudonimizada: A = código (EMP-001), B = área, C = sueldo base, D = horas extra, E = valor hora, F = horas extra pagadas, G = bono pagado. Los valores son ficticios e ilustrativos.</div>
+</section>
+
+<section>
+  <h2><span class="n">1</span>Principios de una buena columna de control</h2>
+  <div class="grid2">
+    <div class="card"><h4>Conectada al dato</h4>Usa referencias a las celdas originales; nunca copies valores a mano.</div>
+    <div class="card"><h4>Una pregunta por columna</h4>Cada control responde una sola pregunta: ¿coincide el bono?, ¿existe el código?</div>
+    <div class="card"><h4>Resultado legible</h4>Devuelve “OK” o “REVISAR”, o la diferencia en pesos, no un valor ambiguo.</div>
+    <div class="card"><h4>Probada antes de usar</h4>Valida la fórmula con casos cuyo resultado conoces, incluidos casos borde.</div>
+  </div>
+  <div class="box key"><b>Idea clave:</b> la columna de control señala; la persona revisa la evidencia y decide si corrige.</div>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Funciones esenciales</h2>
+  <table>
+    <thead><tr><th style="width:22%">Función</th><th>Qué hace</th><th style="width:40%">Uso de control</th></tr></thead>
+    <tbody>
+      <tr><td><b>SI</b></td><td>Devuelve un valor u otro según una condición.</td><td><code>=SI(D2&gt;12;"REVISAR";"OK")</code></td></tr>
+      <tr><td><b>Y / O</b></td><td>Combinan varias condiciones.</td><td><code>=SI(Y(D2&gt;0;F2=0);"FALTA PAGO";"OK")</code></td></tr>
+      <tr><td><b>BUSCARX</b></td><td>Busca un valor y devuelve el dato asociado; admite un valor si no se encuentra.</td><td><code>=BUSCARX(A2;Maestro!A:A;Maestro!C:C;"NO EXISTE")</code></td></tr>
+      <tr><td><b>BUSCARV</b></td><td>Busca en la primera columna de una tabla.</td><td><code>=BUSCARV(A2;Maestro!$A$2:$D$500;3;FALSO)</code> (siempre con FALSO)</td></tr>
+      <tr><td><b>COINCIDIR</b></td><td>Devuelve la posición de un valor en un rango.</td><td><code>=SI.ERROR(COINCIDIR(A2;Maestro!$A$2:$A$500;0);"NO EXISTE")</code></td></tr>
+      <tr><td><b>INDICE + COINCIDIR</b></td><td>Búsqueda flexible por fila y columna.</td><td><code>=INDICE(Maestro!$C$2:$C$500;COINCIDIR(A2;Maestro!$A$2:$A$500;0))</code></td></tr>
+      <tr><td><b>CONTAR.SI</b></td><td>Cuenta las celdas que cumplen un criterio.</td><td><code>=SI(CONTAR.SI($A$2:$A$500;A2)&gt;1;"DUPLICADO";"OK")</code></td></tr>
+      <tr><td><b>SUMAR.SI.CONJUNTO</b></td><td>Suma con varios criterios.</td><td><code>=SUMAR.SI.CONJUNTO($F$2:$F$500;$B$2:$B$500;"Planta")</code></td></tr>
+      <tr><td><b>REDONDEAR</b></td><td>Redondea a los decimales indicados.</td><td><code>=REDONDEAR(D2*E2*1,5;0)</code></td></tr>
+      <tr><td><b>SI.ERROR</b></td><td>Reemplaza un error por un valor legible.</td><td><code>=SI.ERROR(BUSCARV(...);"NO EXISTE")</code></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Recetario de controles para el cierre</h2>
+  <table>
+    <thead><tr><th style="width:28%">Pregunta de control</th><th>Fórmula (fila 2, luego rellenar hacia abajo)</th></tr></thead>
+    <tbody>
+      <tr><td>¿Las horas extra pagadas coinciden con horas × valor hora × 1,5?</td><td><code>=SI(ABS(F2-REDONDEAR(D2*E2*1,5;0))&gt;1;"REVISAR";"OK")</code></td></tr>
+      <tr><td>¿El código existe en el maestro de personal?</td><td><code>=SI(ESERROR(COINCIDIR(A2;Maestro!$A$2:$A$500;0));"NO EXISTE";"OK")</code></td></tr>
+      <tr><td>¿El código aparece más de una vez en la nómina?</td><td><code>=SI(CONTAR.SI($A$2:$A$500;A2)&gt;1;"DUPLICADO";"OK")</code></td></tr>
+      <tr><td>¿Los días trabajados superan los días del mes?</td><td><code>=SI(H2&gt;30;"REVISAR";"OK")</code></td></tr>
+      <tr><td>¿Hay horas extra sobre el umbral interno de revisión?</td><td><code>=SI(D2&gt;12;"REVISAR";"OK")</code></td></tr>
+      <tr><td>¿El total de la tabla cuadra con el total del sistema?</td><td><code>=SI(SUMA(F2:F500)=Sistema!B5;"CUADRA";"DIFERENCIA")</code></td></tr>
+      <tr><td>¿Cuánto varió el total del área respecto del mes anterior?</td><td><code>=SUMAR.SI(B:B;"Planta";F:F)/SUMAR.SI(Anterior!B:B;"Planta";Anterior!F:F)-1</code></td></tr>
+    </tbody>
+  </table>
+  <div class="box warn"><b>Recuerda:</b> el recargo mínimo legal de las horas extraordinarias es de 50 % sobre el sueldo convenido (Código del Trabajo, art. 32). Los umbrales internos de revisión (por ejemplo, 12 horas) son criterios de la empresa, no límites legales.</div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Cómo pedirle una fórmula a la IA</h2>
+  <p>Una buena solicitud indica la versión de Excel, las columnas, la regla y el resultado esperado, e incluye un caso de prueba.</p>
+  <div class="box prompt">Uso Excel en español (separador punto y coma).
+Tengo una tabla en la hoja Nomina: A = código, D = horas extra, E = valor hora, F = horas extra pagadas (filas 2 a 421).
+Necesito una fórmula para la columna G que muestre "REVISAR" si F no coincide con D × E × 1,5 redondeado a cero decimales (tolerancia de 1 peso) y "OK" en caso contrario.
+Usa referencias relativas para poder rellenar hacia abajo.
+Ejemplo para probar: D = 10, E = 5.000, F = 75.000 → debe dar "OK".
+Explica la fórmula en tres pasos.</div>
+  <div class="box ok"><b>Pide siempre la explicación.</b> Si no entiendes la fórmula, no la uses todavía: pide que la descomponga paso a paso.</div>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Errores típicos en fórmulas sugeridas por IA</h2>
+  <table>
+    <thead><tr><th style="width:30%">Error</th><th>Cómo se ve</th><th style="width:34%">Corrección</th></tr></thead>
+    <tbody>
+      <tr><td><b>Separador incorrecto</b></td><td><code>=SI(D2&gt;12,"REVISAR","OK")</code></td><td>En Excel en español: <code>;</code></td></tr>
+      <tr><td><b>Funciones en inglés</b></td><td><code>=IF(...)</code>, <code>=VLOOKUP(...)</code></td><td>Usa SI, BUSCARV, BUSCARX.</td></tr>
+      <tr><td><b>Rango sin fijar</b></td><td><code>CONTAR.SI(A2:A500;A2)</code> se desplaza al rellenar.</td><td>Fija el rango: <code>$A$2:$A$500</code>.</td></tr>
+      <tr><td><b>BUSCARV aproximado</b></td><td>Falta el cuarto argumento.</td><td>Agrega <code>FALSO</code> para coincidencia exacta.</td></tr>
+      <tr><td><b>Sin control de errores</b></td><td>Aparece #N/A con códigos nuevos.</td><td>Usa SI.ERROR o el argumento de BUSCARX.</td></tr>
+      <tr><td><b>Regla inventada</b></td><td>Recargo de 25 % o tope que nadie definió.</td><td>Entrega la regla en la instrucción y verifícala.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Cómo probar una fórmula</h2>
+  <ul class="check">
+    <li><b>Caso normal:</b> un registro cuyo resultado calculaste a mano.</li>
+    <li><b>Caso con error sembrado:</b> modifica un valor y confirma que la fórmula lo detecta.</li>
+    <li><b>Caso borde:</b> cero horas extra, celda vacía, código nuevo, valor exactamente en el umbral.</li>
+    <li><b>Relleno hacia abajo:</b> revisa la última fila y confirma que las referencias se desplazaron bien.</li>
+    <li><b>Cuadratura:</b> el total de la columna controlada coincide con el sistema.</li>
+  </ul>
+  <div class="box key"><b>Regla de oro:</b> una fórmula sugerida por IA es un borrador hasta que pasa tus casos de prueba.</div>
+  <p class="src">Valores y datos del curso son ficticios e ilustrativos. Verifica parámetros legales y previsionales en las fuentes oficiales vigentes.</p>
+</section>
