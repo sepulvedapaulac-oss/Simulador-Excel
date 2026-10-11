@@ -20,7 +20,7 @@ EDGE_VOICE = "es-CL-CatalinaNeural"
 
 def tag(engine):
     """Versión de la voz en la clave de caché: cambiarla obliga a regenerar."""
-    return "chatterbox-v2-whisper" if engine == "chatterbox" else engine
+    return "chatterbox-v3-neutra-viva" if engine == "chatterbox" else engine
 
 
 def tts(text, out, engine):

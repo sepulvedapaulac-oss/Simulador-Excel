@@ -120,7 +120,7 @@ if(L.video&&$('#player')){
   if(!silent){vA.addEventListener('timeupdate',onTime);vA.addEventListener('ended',onEnded)}
   /* Música de fondo (bucle libre de derechos): suena solo mientras el video se reproduce */
   const mA=L.music?new Audio(L.music):null;
-  if(mA){mA.loop=true;mA.preload='auto';mA.volume=silent?0.35:0.12}
+  if(mA){mA.loop=true;mA.preload='auto';mA.volume=silent?0.4:0.16}
   let musicOn=store.get(L.id+'-music')!=='0';
   const music={play(){if(mA&&musicOn){const p=mA.play();if(p&&p.catch)p.catch(()=>{})}},pause(){if(mA)mA.pause()}};
   const _cp=clock.play.bind(clock),_cs=clock.pause.bind(clock);
