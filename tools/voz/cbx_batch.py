@@ -21,7 +21,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from tts_norm import norm
 
 REF = str(Path(__file__).with_name("referencia_latina.wav"))
-EXAGGERATION, CFG = 0.5, 0.5   # emoción media (elegida por la autora del curso)
+import os
+EXAGGERATION, CFG = float(os.environ.get("CBX_EXA", 0.5)), float(os.environ.get("CBX_CFG", 0.5))
 PAUSE = 0.35                    # segundos entre frases
 TAIL, HEAD, FADE = 0.14, 0.06, 0.05
 MIN_SIM, TRIES = 0.84, 3
