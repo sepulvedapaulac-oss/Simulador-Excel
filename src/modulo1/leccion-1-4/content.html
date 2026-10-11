@@ -1,0 +1,161 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.4 · Uso responsable</span>
+      <h1 class="reveal">Un análisis en cinco minutos… ¿a qué costo?</h1>
+      <p class="lead reveal">Son las 18:40 y Camila necesita entregar mañana un análisis de remuneraciones. Tiene una idea para terminar rápido.</p>
+      <div class="story reveal"><strong>Lo que Camila piensa hacer:</strong> exportar la base real de los 250 colaboradores (nombres, RUT, sueldos, AFP, cuentas bancarias y licencias médicas) y subirla a un chat de IA público con su cuenta personal para obtener el análisis de inmediato.</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Carpeta confidencial con un candado junto a un notebook con una planilla" src="img/i14_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué debería hacer Camila?</h3>
+  <div class="options" data-choice="hook" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Subir la base: es solo para un análisis interno y nadie más lo verá.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Subirla, pero borrar después la conversación del chat.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No subirla: preparar datos mínimos y anonimizados, y usar solo una herramienta autorizada por la empresa.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: exposición de datos personales y sensibles.</strong> <span class="fb-body">Al subirla, la información sale del control de la empresa. Incluye datos de salud (licencias médicas) y datos financieros de 250 personas. Que “nadie más lo vea” no depende de Camila.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: borrar no deshace el envío.</strong> <span class="fb-body">Una vez enviados, los datos ya fueron procesados por un tercero. Eliminar la conversación de la pantalla no garantiza que se eliminen de los sistemas del proveedor.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La rapidez nunca justifica exponer información personal. En esta lección verás qué datos son sensibles, cómo minimizarlos y qué cambia con la nueva Ley de Protección de Datos Personales.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO (sin narración) -->
+<section class="slide" data-title="Video: datos que se cuidan" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>La información salarial se cuida</h2>
+  <p class="silent-note">🔇 Este video no tiene narración: los textos y subtítulos avanzan solos. Puedes pausar o saltar entre capítulos.</p>
+  <div class="player silent" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver texto completo del video</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CLASIFICAR DATOS (tabla con selectores) -->
+<section class="slide" data-title="¿Qué tipo de dato es?" data-gate="datos" data-gate-msg="Clasifica correctamente los siete datos de la planilla.">
+  <span class="eyebrow amber">Lección 1.4 · Actividad</span>
+  <h2>¿Qué tipo de dato es cada columna de la planilla?</h2>
+  <p>Estas son columnas reales de una planilla de remuneraciones. <strong>Elige la clasificación correcta</strong> para cada una. Si te equivocas, puedes volver a elegir.</p>
+  <div data-seltable="datos">
+    <div class="task">Datos bien clasificados <span class="tick">0 / 7</span></div>
+    <table class="seltable"><tbody></tbody></table>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Clave:</strong> un <b>dato personal</b> identifica o permite identificar a una persona. Un <b>dato sensible</b> revela aspectos íntimos (salud, afiliación sindical, origen, creencias) y exige una protección reforzada.</div>
+</section>
+
+<!-- 4 · CUATRO ESCENARIOS -->
+<section class="slide" data-title="Cuatro escenarios" data-gate="esc" data-gate-msg="Resuelve los cuatro escenarios.">
+  <span class="eyebrow amber">El caso de Camila · Decisiones de seguridad</span>
+  <h2>Cuatro situaciones, cuatro decisiones</h2>
+  <div class="grid-2">
+    <p>Durante la semana, Camila enfrenta cuatro situaciones en las que podría usar IA. Decide en cada una qué información puede usar y qué control necesita.</p>
+    <div class="photo-frame wide"><img alt="Equipo de Personas revisa una política de uso de datos en una pantalla" src="img/i14_equipo.jpg"/></div>
+  </div>
+  <h3 style="margin-top:14px">Escenario 1 · Explicar una fórmula de horas extra</h3>
+  <div class="options" data-choice="e1" data-correct="B" data-then="e2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Copia la planilla con los nombres para que la IA entienda el contexto.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Copia solo la fórmula y describe qué contiene cada columna, sin datos de personas.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="e1-A"><div class="feedback bad"><strong>No es necesario.</strong> <span class="fb-body">Para explicar una fórmula basta con la fórmula y la descripción de las columnas. Los nombres no aportan nada y exponen datos personales.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="e1-B"><div class="feedback good"><strong>Correcto: minimización.</strong> <span class="fb-body">Compartes solo lo que la tarea necesita. Este tipo de consulta incluso puede hacerse en una herramienta general, porque no contiene datos personales.</span></div></template>
+  <div class="phase" id="e2" hidden>
+    <h3 style="margin-top:18px">Escenario 2 · Analizar el ausentismo por área</h3>
+    <div class="options" data-choice="e2" data-correct="A" data-then="e3">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Usa datos agregados por área (días de ausencia totales), en la herramienta corporativa.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Usa el detalle de cada licencia médica con su diagnóstico.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="e2-B"><div class="feedback bad"><strong>Datos de salud innecesarios.</strong> <span class="fb-body">El diagnóstico es un dato sensible y no es necesario para analizar el ausentismo por área. Los datos agregados responden la pregunta sin exponer a nadie.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="e2-A"><div class="feedback good"><strong>Correcto: agregación.</strong> <span class="fb-body">Cuando la pregunta es de gestión, los datos agregados suelen bastar. Ojo: si un área tiene una o dos personas, el agregado puede identificarlas; en ese caso agrupa áreas.</span></div></template>
+  </div>
+  <div class="phase" id="e3" hidden>
+    <h3 style="margin-top:18px">Escenario 3 · Practicar la revisión de una planilla con IA</h3>
+    <div class="options" data-choice="e3" data-correct="B" data-then="e4">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Usa la planilla real “porque solo es para practicar”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Crea una base sintética con datos inventados que imitan la estructura real.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="e3-A"><div class="feedback bad"><strong>Practicar no cambia la naturaleza del dato.</strong> <span class="fb-body">Los datos reales siguen siendo personales aunque el objetivo sea aprender. Para practicar, lo ideal son los datos sintéticos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="e3-B"><div class="feedback good"><strong>Correcto: datos sintéticos.</strong> <span class="fb-body">Los datos sintéticos no corresponden a personas reales, así que el riesgo de confidencialidad desaparece. Son la mejor opción para practicar y probar fórmulas.</span></div></template>
+  </div>
+  <div class="phase" id="e4" hidden>
+    <h3 style="margin-top:18px">Escenario 4 · La IA propone corregir tres liquidaciones</h3>
+    <div class="options" data-choice="e4" data-correct="B" data-gate="esc">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Aplica las correcciones de inmediato: la IA ya revisó.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Verifica cada propuesta con los registros originales, documenta la revisión y solicita la aprobación correspondiente.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="e4-A"><div class="feedback bad"><strong>Sin supervisión humana.</strong> <span class="fb-body">La responsabilidad por los pagos es de la empresa y de quien los aprueba, no de la herramienta. Cada corrección debe verificarse y quedar registrada.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="e4-B"><div class="feedback good"><strong>Correcto: supervisión y trazabilidad.</strong> <span class="fb-body">Verificar, documentar y aprobar permite demostrar después por qué se hizo cada cambio. Es la base del principio de responsabilidad.</span></div></template>
+  </div>
+</section>
+
+<!-- 5 · LEY 21.719 (línea de tiempo) -->
+<section class="slide" data-title="Ley 21.719" data-gate="ley" data-gate-msg="Revisa los cinco hitos de la línea de tiempo.">
+  <span class="eyebrow">Lección 1.4 · Marco normativo</span>
+  <h2>Ley 21.719: qué cambia en la protección de datos personales</h2>
+  <p>Chile actualizó su ley de protección de datos personales. <strong>Toca cada hito</strong> para ver qué significa para el área de remuneraciones.</p>
+  <div data-panel="ley">
+    <div class="task">Hitos revisados <span class="tick">0 / 5</span></div>
+    <div class="tline" style="--n:5">
+      <button type="button" data-k="0"><span class="dot">1999</span><small>Ley 19.628</small></button>
+      <button type="button" data-k="1"><span class="dot">2024</span><small>Se publica la Ley 21.719</small></button>
+      <button type="button" data-k="2"><span class="dot">⚖️</span><small>Principios y derechos</small></button>
+      <button type="button" data-k="3"><span class="dot">🏛️</span><small>Agencia y sanciones</small></button>
+      <button type="button" data-k="4"><span class="dot">2026</span><small>Entrada en vigencia</small></button>
+    </div>
+    <div class="xp-panel"><p class="hint" style="margin:0">Selecciona un hito para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: Ley 19.628 sobre protección de la vida privada; Ley 21.719, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales (publicada en diciembre de 2024; vigencia desde el 1 de diciembre de 2026). Verifica siempre el texto oficial en la Biblioteca del Congreso Nacional.</p>
+</section>
+
+<!-- 6 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 7 · CHECKLIST (transferencia) -->
+<section class="slide" data-title="Tu checklist de uso responsable" data-gate="check check_model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tu lista de verificación antes de usar IA</h2>
+  <div class="story">Mañana quieres pedirle a la IA que te ayude a revisar las horas extra del mes. Antes de escribir la primera instrucción, responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta.</div>
+  <div data-yn="check">
+    <div class="yn-list" style="margin-top:12px"></div>
+    <button class="small-btn primary model-btn" type="button" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+    <div class="callout model" hidden><strong>Respuesta modelo · las 6 preguntas antes de usar IA:</strong> (1) ¿La herramienta está autorizada para este tipo de datos? (2) ¿Necesito realmente datos personales o bastan agregados o sintéticos? (3) ¿Quité identificadores directos (nombre, RUT, cuenta bancaria)? (4) ¿Hay algún dato sensible (salud, sindicato) que pueda evitar? (5) ¿Cómo voy a verificar el resultado? (6) ¿Quién aprueba antes de aplicar cambios? Guarda esta lista: será parte de tu procedimiento de trabajo.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 8 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.4 y el Módulo 1</h2>
+    <p>Ya puedes reconocer datos personales y sensibles, aplicar la minimización y conocer los cambios de la Ley 21.719 para usar IA de forma responsable.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y clasificaciones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> primero el entorno autorizado, luego los datos mínimos y siempre la verificación humana. En el Módulo 2 usarás todo esto para revisar remuneraciones con IA.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los tipos de datos</button><button class="small-btn primary" type="button" data-goto="4">Repasar la Ley 21.719</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios. Este material es formativo y no reemplaza la asesoría legal.</p>
+  </div>
+</section>

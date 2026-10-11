@@ -1,0 +1,242 @@
+{
+ "id": "ia_rem_l14",
+ "ident": "IAREM_M1_L14",
+ "zip_name": "Leccion_1_4_Uso_responsable_y_datos",
+ "title": "Lección 1.4 — Uso responsable de IA y protección de información salarial",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LECCIÓN 1.4",
+ "voice": false,
+ "pass": 0.8,
+ "video": {
+  "voice": false,
+  "scenes": [
+   {
+    "t": "Datos personales",
+    "lines": [
+     "Un dato personal es cualquier información que identifica o permite identificar a una persona.",
+     "En remuneraciones casi todo lo es: nombre, RUT, sueldo, cuenta bancaria o AFP."
+    ],
+    "html": "<div class=\"v-chk\" style=\"margin-top:0\"><span data-at=\"0\">Nombre</span><span data-at=\"0\">RUT</span><span data-at=\"1\">Sueldo</span><span data-at=\"1\">Cuenta bancaria</span><span data-at=\"1\">AFP</span></div>"
+   },
+   {
+    "t": "Datos sensibles",
+    "lines": [
+     "Algunos datos son sensibles: revelan aspectos íntimos, como la salud o la afiliación sindical.",
+     "Una licencia médica con su diagnóstico es un dato sensible y exige protección reforzada."
+    ],
+    "html": "<div class=\"v-icons\"><div><span class=\"i\">🩺</span>Salud</div><div><span class=\"i\">🤝</span>Afiliación sindical</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">🛡️</span>Protección reforzada</div></div>"
+   },
+   {
+    "t": "Minimizar",
+    "lines": [
+     "La regla de oro es la minimización: usa solo los datos que la tarea necesita.",
+     "Para explicar una fórmula no necesitas nombres; para un análisis por área bastan los totales."
+    ],
+    "html": "<div class=\"v-final\">Solo lo <em>necesario</em> para la tarea</div><div class=\"v-chk\"><span data-at=\"1\">Sin nombres</span><span data-at=\"1\">Sin RUT</span><span data-at=\"1\">Sin cuentas</span></div>"
+   },
+   {
+    "t": "Anonimizar o inventar",
+    "lines": [
+     "Anonimizar es quitar o reemplazar lo que identifica a cada persona, cuidando que no se pueda volver a identificar.",
+     "Los datos sintéticos, en cambio, son inventados: imitan la estructura real, pero no corresponden a nadie."
+    ],
+    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Anonimizados</b>Datos reales sin identificadores<small>Cuidado con la reidentificación</small></div><div data-at=\"1\"><b>Sintéticos</b>Datos inventados<small>Ideales para practicar</small></div></div>"
+   },
+   {
+    "t": "Responsabilidad",
+    "lines": [
+     "Usar IA no traslada la responsabilidad: la empresa y quien aprueba responden por los datos y los pagos.",
+     "Verifica, documenta y deja registro de cada decisión."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">Herramienta autorizada</div><div data-at=\"0\">Datos mínimos</div><div data-at=\"1\">Verificación humana</div><div data-at=\"1\">Registro de la decisión</div></div>"
+   }
+  ]
+ },
+ "seltables": {
+  "datos": {
+   "options": [
+    "No es dato personal",
+    "Dato personal",
+    "Dato sensible"
+   ],
+   "rows": [
+    {
+     "label": "RUT",
+     "c": 1,
+     "why": "Identifica directamente a la persona.",
+     "hint": "¿Permite saber de quién se trata?"
+    },
+    {
+     "label": "Sueldo base de una persona",
+     "c": 1,
+     "why": "Asociado a una persona, revela información económica personal.",
+     "hint": "Unido a la persona, ¿dice algo sobre ella?"
+    },
+    {
+     "label": "Diagnóstico de una licencia médica",
+     "c": 2,
+     "why": "Es información de salud: dato sensible con protección reforzada.",
+     "hint": "Piensa en qué aspecto de la vida de la persona revela."
+    },
+    {
+     "label": "Afiliación a un sindicato",
+     "c": 2,
+     "why": "La afiliación sindical es un dato sensible.",
+     "hint": "Este dato revela una pertenencia que la ley protege especialmente."
+    },
+    {
+     "label": "Costo total de remuneraciones del área Ventas (área de 40 personas)",
+     "c": 0,
+     "why": "Es un dato agregado de un grupo grande: no identifica a nadie.",
+     "hint": "¿Permite identificar a una persona en particular?"
+    },
+    {
+     "label": "Número de cuenta bancaria",
+     "c": 1,
+     "why": "Es un dato personal financiero que identifica a su titular.",
+     "hint": "¿A quién pertenece este número?"
+    },
+    {
+     "label": "Código interno aleatorio (sin tabla de correspondencia compartida)",
+     "c": 0,
+     "why": "Si la tabla que lo vincula con la persona se guarda aparte y no se comparte, quien recibe los datos no puede identificar a nadie.",
+     "hint": "Sin la tabla de correspondencia, ¿se puede saber quién es?"
+    }
+   ]
+  }
+ },
+ "panels": {
+  "ley": [
+   {
+    "t": "1999 · Ley 19.628",
+    "html": "<p>Fue la primera ley chilena sobre protección de la vida privada y el tratamiento de datos personales. Con los años quedó desactualizada frente a la digitalización y al uso masivo de datos.</p>"
+   },
+   {
+    "t": "Diciembre de 2024 · Se publica la Ley 21.719",
+    "html": "<p>La nueva ley moderniza la protección de datos personales, alinea a Chile con estándares internacionales y fija un periodo de preparación para que las organizaciones se adecúen.</p><div class=\"example\">Para remuneraciones: es el momento de revisar qué datos se tratan, con qué finalidad, quién accede y con qué herramientas.</div>"
+   },
+   {
+    "t": "Principios y derechos",
+    "html": "<p>El tratamiento de datos debe respetar principios como <b>licitud, finalidad, proporcionalidad, calidad, seguridad, responsabilidad, transparencia y confidencialidad</b>.</p><p>Las personas tienen derechos de <b>acceso, rectificación, supresión, oposición, portabilidad y bloqueo</b> sobre sus datos.</p><div class=\"example\">Proporcionalidad = minimización: usar solo los datos necesarios para la tarea, también al trabajar con IA.</div>"
+   },
+   {
+    "t": "Agencia de Protección de Datos Personales y sanciones",
+    "html": "<p>La ley crea la <b>Agencia de Protección de Datos Personales</b>, que fiscaliza y sanciona. Las infracciones se clasifican en leves, graves y gravísimas, con multas que aumentan según su gravedad y que pueden ser significativas para la empresa.</p><div class=\"example\">Subir datos de salud de los trabajadores a una herramienta no autorizada podría constituir una infracción.</div>"
+   },
+   {
+    "t": "1 de diciembre de 2026 · Entrada en vigencia",
+    "html": "<p>A partir de esa fecha la ley es plenamente exigible. Las prácticas de uso de IA con datos de trabajadores deben cumplirla: herramientas autorizadas, datos mínimos, medidas de seguridad y registro de decisiones.</p>"
+   }
+  ]
+ },
+ "yn": {
+  "check": [
+   [
+    "¿La herramienta que usaré está autorizada por la empresa para datos internos?",
+    1,
+    "Sí: es lo primero que debes confirmar. Si no lo sabes, consulta a TI antes de usarla."
+   ],
+   [
+    "¿Es necesario incluir el RUT de cada persona para revisar las horas extra?",
+    0,
+    "No: un código interno basta. El RUT es un identificador directo que la tarea no necesita."
+   ],
+   [
+    "¿Debo quitar los datos de licencias médicas si no son parte del análisis?",
+    1,
+    "Sí: son datos sensibles. Si la tarea no los requiere, no se incluyen."
+   ],
+   [
+    "¿Puedo aplicar las correcciones que proponga la IA sin revisarlas?",
+    0,
+    "No: cada propuesta se verifica con los registros originales y se aprueba antes de aplicarse."
+   ],
+   [
+    "¿Conviene dejar registro de qué datos usé y cómo validé el resultado?",
+    1,
+    "Sí: la trazabilidad permite demostrar que se actuó con responsabilidad."
+   ]
+  ]
+ },
+ "quiz": [
+  {
+   "q": "¿Cuál de estos datos es un dato sensible?",
+   "o": [
+    "El área donde trabaja una persona.",
+    "El diagnóstico de una licencia médica.",
+    "El costo total de remuneraciones de la empresa.",
+    "El nombre del cargo."
+   ],
+   "c": 1,
+   "f": [
+    "El área, sola, no revela aspectos íntimos; puede ser dato personal si identifica a alguien, pero no es sensible.",
+    "Correcto: la información de salud es un dato sensible y requiere protección reforzada.",
+    "Es un dato agregado de la empresa; no identifica a nadie.",
+    "El cargo no revela aspectos íntimos de la persona."
+   ]
+  },
+  {
+   "q": "¿Qué significa aplicar la minimización al usar IA?",
+   "o": [
+    "Usar la herramienta el menor tiempo posible.",
+    "Compartir solo los datos que la tarea necesita.",
+    "Reducir el tamaño del archivo.",
+    "Borrar la conversación al terminar."
+   ],
+   "c": 1,
+   "f": [
+    "El tiempo de uso no protege los datos.",
+    "Correcto: es el principio de proporcionalidad aplicado a la práctica.",
+    "El tamaño del archivo no cambia la naturaleza de los datos.",
+    "Borrar la conversación no deshace el envío."
+   ]
+  },
+  {
+   "q": "¿Cuál es la principal diferencia entre datos anonimizados y datos sintéticos?",
+   "o": [
+    "No hay diferencia.",
+    "Los anonimizados provienen de personas reales sin identificadores; los sintéticos son inventados.",
+    "Los sintéticos siempre identifican a las personas.",
+    "Los anonimizados se pueden subir a cualquier herramienta."
+   ],
+   "c": 1,
+   "f": [
+    "Sí la hay: su origen y su riesgo son distintos.",
+    "Correcto: por eso los sintéticos son la mejor opción para practicar.",
+    "Al contrario: los sintéticos no corresponden a personas reales.",
+    "Aun anonimizados, pueden reidentificarse; se usan en herramientas autorizadas."
+   ]
+  },
+  {
+   "q": "La IA propone corregir tres liquidaciones. ¿Qué corresponde?",
+   "o": [
+    "Aplicar las correcciones de inmediato.",
+    "Verificar con los registros originales, documentar y solicitar aprobación.",
+    "Pedir a la IA que confirme su propia respuesta.",
+    "Ignorar la propuesta."
+   ],
+   "c": 1,
+   "f": [
+    "Aplicar sin revisar traslada a los pagos cualquier error de la IA.",
+    "Correcto: supervisión humana y trazabilidad.",
+    "La IA puede repetir su error; la verificación es humana.",
+    "La propuesta puede ser útil: se revisa, no se descarta sin más."
+   ]
+  },
+  {
+   "q": "¿Desde cuándo es plenamente exigible la Ley 21.719 de protección de datos personales?",
+   "o": [
+    "Desde 1999.",
+    "Desde el 1 de diciembre de 2026.",
+    "Solo para empresas públicas.",
+    "No es obligatoria."
+   ],
+   "c": 1,
+   "f": [
+    "En 1999 se dictó la Ley 19.628, la normativa anterior.",
+    "Correcto: la ley entra en vigencia el 1 de diciembre de 2026.",
+    "La ley aplica también a empresas privadas.",
+    "Es una ley obligatoria, con fiscalización y sanciones."
+   ]
+  }
+ ]
+}

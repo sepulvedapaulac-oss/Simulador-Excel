@@ -30,6 +30,12 @@ const path = require('path');
       for (const t of sl.querySelectorAll('[data-tabs] .tab')) click(t);
       for (const a of sl.querySelectorAll('[data-acc] .acc-head')) click(a);
       for (const r of sl.querySelectorAll('[data-reveal] tbody tr td:first-child')) click(r);
+      for (const b of sl.querySelectorAll('[data-panel] [data-k]')) click(b);
+      for (const root of sl.querySelectorAll('[data-cmp]')) { const r = root.querySelector('input[type=range]'); for (const v of [0, 100]) { r.value = v; r.dispatchEvent(new Event('input', { bubbles: true })); } }
+      for (const root of sl.querySelectorAll('[data-seltable]')) { const cfg = window.LESSON.seltables[root.dataset.seltable];
+        root.querySelectorAll('tbody tr').forEach((tr, i) => { const s = tr.querySelector('select'); const wrong = (cfg.rows[i].c + 1) % cfg.options.length;
+          if (i === 0) { s.value = String(wrong); s.dispatchEvent(new Event('change', { bubbles: true })); }
+          s.value = String(cfg.rows[i].c); s.dispatchEvent(new Event('change', { bubbles: true })); }); }
       // clasificar: probar un error y luego aciertos
       const sortRoot = sl.querySelector('[data-sort]');
       if (sortRoot) {
@@ -89,7 +95,7 @@ const path = require('path');
       await page.waitForTimeout(100);
     }
     // checklist sí/no
-    await page.evaluate(() => { const sl = document.querySelector('.slide.active'); sl.querySelectorAll('.yn-item .yn button:first-child').forEach(b => b.click()); const m = sl.querySelector('#modelBtn'); if (m && !m.disabled) m.click(); });
+    await page.evaluate(() => { const sl = document.querySelector('.slide.active'); sl.querySelectorAll('.yn-item .yn button:first-child').forEach(b => b.click()); const m = sl.querySelector('#modelBtn, [data-yn] .model-btn'); if (m && !m.disabled) m.click(); });
     await page.waitForTimeout(150);
     await shot(i + 1);
     const state = await page.evaluate(() => ({ next: document.querySelector('#nextBtn').disabled, msg: document.querySelector('#gateMsg').textContent, title: document.querySelector('.slide.active').dataset.title }));
