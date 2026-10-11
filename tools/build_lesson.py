@@ -18,10 +18,15 @@ CACHE = ROOT / ".cache" / "tts"
 EDGE_VOICE = "es-CL-CatalinaNeural"
 
 
+def tag(engine):
+    """Versión de la voz en la clave de caché: cambiarla obliga a regenerar."""
+    return "chatterbox-v2-whisper" if engine == "chatterbox" else engine
+
+
 def tts(text, out, engine):
     """Genera un MP3 con la voz elegida (con caché por texto y motor)."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    key = hashlib.sha1(f"{engine}|{EDGE_VOICE}|{text}".encode()).hexdigest()
+    key = hashlib.sha1(f"{tag(engine)}|{EDGE_VOICE}|{text}".encode()).hexdigest()
     cached = CACHE / f"{key}.mp3"
     if not cached.exists():
         if engine == "edge":
@@ -46,7 +51,7 @@ def tts(text, out, engine):
 
 
 def cache_path(text, engine):
-    return CACHE / (hashlib.sha1(f"{engine}|{EDGE_VOICE}|{text}".encode()).hexdigest() + ".mp3")
+    return CACHE / (hashlib.sha1(f"{tag(engine)}|{EDGE_VOICE}|{text}".encode()).hexdigest() + ".mp3")
 
 
 def pregenerate_chatterbox(texts):
@@ -170,6 +175,11 @@ def build(src: Path, engine: str):
     else:
         # Sin narración: se quitan los atributos de audio para que no aparezcan botones
         content = re.sub(r'\sdata-audio="[^"]*"', "", content)
+    music = None
+    if meta.get("video") and meta.get("music", True):
+        shutil.copy(TOOLS / "assets" / "musica_fondo.mp3", out / "audio" / "musica_fondo.mp3")
+        music = "audio/musica_fondo.mp3"
+    if not any((out / "audio").iterdir()):
         (out / "audio").rmdir()
 
     for img in sorted(set(re.findall(r'img/([\w.-]+\.(?:jpg|png|webp|svg))', content))):
@@ -179,6 +189,7 @@ def build(src: Path, engine: str):
 
     lesson = {k: v for k, v in meta.items() if k not in ("narration", "title", "course_label", "ident", "zip_name")}
     lesson["audio"] = audio
+    lesson["music"] = music
     autonarr = ('<label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label>'
                 if voice else '<span class="autonarr" title="Esta lección no tiene narración">🔇 Lección sin narración</span>')
     page = TEMPLATE.format(

@@ -118,6 +118,13 @@ if(L.video&&$('#player')){
   function onTime(){const sc=VID.scenes[V.si];V.sync(clock.time);if(silent&&clock.t>=sc.dur)onEnded()}
   function onEnded(){if(V.si<VID.scenes.length-1){V.load(V.si+1);if(V.playing)clock.play()}else{clock.pause();V.playing=false;V.ended=true;V.sync(VID.scenes[V.si].dur);done('video');V.btn();$('#vPlay').textContent='↺ Repetir'}}
   if(!silent){vA.addEventListener('timeupdate',onTime);vA.addEventListener('ended',onEnded)}
+  /* Música de fondo (bucle libre de derechos): suena solo mientras el video se reproduce */
+  const mA=L.music?new Audio(L.music):null;
+  if(mA){mA.loop=true;mA.preload='auto';mA.volume=silent?0.35:0.12}
+  let musicOn=store.get(L.id+'-music')!=='0';
+  const music={play(){if(mA&&musicOn){const p=mA.play();if(p&&p.catch)p.catch(()=>{})}},pause(){if(mA)mA.pause()}};
+  const _cp=clock.play.bind(clock),_cs=clock.pause.bind(clock);
+  clock.play=function(){_cp();music.play()};clock.pause=function(){_cs();music.pause()};
   V={si:0,li:-1,playing:false,ended:false,seen:new Set(),
     renderScene(si){const sc=VID.scenes[si],el=$('#scene');el.innerHTML=sc.html;el.style.animation='none';void el.offsetWidth;el.style.animation='';
       $('#stageTag').textContent=`Capítulo ${si+1} de ${VID.scenes.length} · ${sc.t}`;chaps.forEach((c,k)=>c.classList.toggle('on',k===si))},
@@ -139,6 +146,10 @@ if(L.video&&$('#player')){
   $('#vCC').addEventListener('click',e=>{e.currentTarget.classList.toggle('on');$('#caption').classList.toggle('off')});
   function updMute(){const b=$('#vMute');if(!b)return;b.classList.toggle('on',!vA.muted);b.textContent=vA.muted?'🔇 Silencio':'🔊 Sonido'}
   const mb=$('#vMute');if(mb){if(silent)mb.remove();else mb.addEventListener('click',()=>{vA.muted=!vA.muted;updMute()})}
+  if(mA){const bb=document.createElement('button');bb.type='button';bb.className='ctrl'+(musicOn?' on':'');bb.id='vMusic';
+    const lbl=()=>{bb.textContent=musicOn?'🎵 Música':'🎵 Sin música';bb.classList.toggle('on',musicOn)};lbl();
+    bb.addEventListener('click',()=>{musicOn=!musicOn;store.set(L.id+'-music',musicOn?'1':'0');lbl();if(musicOn&&V.playing)music.play();else music.pause()});
+    $('#vCC').after(bb)}
 }
 
 /* ---------- Pestañas ---------- */

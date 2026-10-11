@@ -6,7 +6,7 @@ L = {
  "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LECCIÓN 1.1",
  "voice": True, "pass": 0.8,
  "narration": {
-  "p01": "Te damos la bienvenida a la lección uno punto uno. Camila Torres, analista senior de remuneraciones en AndesCorp, acaba de recibir un correo de su jefatura. Ábrelo y ayúdala a responder: ¿qué tareas del proceso se le pueden confiar a una inteligencia artificial?",
+  "p01": "Te damos la bienvenida a la lección uno punto uno. Camila Torres, analista senior de remuneraciones en AndesCorp, acaba de recibir un correo de su jefatura. Ábrelo y ayuda a Camila a responder: ¿qué tareas del proceso se le pueden confiar a una inteligencia artificial?",
   "p03": "Hay creencias muy repetidas sobre la inteligencia artificial. Algunas son mitos y otras son ciertas, pero con condiciones. Voltea cada tarjeta y descubre qué hay detrás de cada una.",
   "p04": "El cierre mensual tiene seis etapas: novedades, cálculo, revisión, pago, reportes y consultas. En cada una la inteligencia artificial puede aportar algo distinto, y en cada una exige un cuidado diferente. Explóralas todas.",
   "p05": "Ahora te toca decidir. Clasifica cada tarea según cuánto se le puede confiar a la inteligencia artificial. Piensa en dos preguntas: ¿qué pasa si se equivoca?, y ¿qué datos necesita?",
@@ -21,9 +21,9 @@ L = {
     "Aprendió patrones de enormes cantidades de información, y con ellos predice cuál es la respuesta más probable."],
    "html": "<div class=\"v-icons\"><div><span class=\"i\">✍️</span>Textos</div><div><span class=\"i\">📊</span>Tablas</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">🔮</span>Predice la respuesta más probable</div></div>"},
   {"t": "Calcular no es predecir", "lines": [
-    "Tu sistema de remuneraciones es determinístico: con los mismos datos y parámetros, siempre entrega el mismo resultado.",
+    "Tu sistema de remuneraciones aplica reglas fijas: con los mismos datos y parámetros, siempre entrega el mismo resultado.",
     "Un modelo generativo, en cambio, puede responder distinto cada vez, y a veces se equivoca con total seguridad."],
-   "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Sistema de remuneraciones</b>Mismos datos, mismo resultado<small>Determinístico</small></div><div class=\"warn\" data-at=\"1\"><b>Modelo generativo</b>Puede variar y equivocarse<small>Probabilístico</small></div></div>"},
+   "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Sistema de remuneraciones</b>Mismos datos, mismo resultado<small>Reglas fijas</small></div><div class=\"warn\" data-at=\"1\"><b>Modelo generativo</b>Puede variar y equivocarse<small>Predice respuestas</small></div></div>"},
   {"t": "Dónde aporta valor", "lines": [
     "La inteligencia artificial es muy útil para explicar fórmulas, ordenar información, resumir procedimientos y redactar borradores.",
     "También ayuda a detectar patrones o datos atípicos que conviene revisar."],
@@ -68,7 +68,7 @@ L = {
   ]}},
  "quiz": [
   {"q": "¿Cuál es la principal diferencia entre tu sistema de remuneraciones y un modelo de IA generativa?",
-   "o": ["El sistema es determinístico: con los mismos datos entrega siempre el mismo resultado; el modelo predice respuestas y puede variar.", "El modelo generativo es más exacto porque aprendió de más información.", "No hay diferencia si ambos reciben los mismos datos."], "c": 0,
+   "o": ["El sistema aplica reglas fijas: con los mismos datos entrega siempre el mismo resultado; el modelo predice respuestas y puede variar.", "El modelo generativo es más exacto porque aprendió de más información.", "No hay diferencia si ambos reciben los mismos datos."], "c": 0,
    "f": ["Correcto: el sistema aplica reglas fijas; el modelo genera la respuesta más probable, que puede variar o estar equivocada.", "Haber aprendido de mucha información no lo vuelve exacto: puede equivocarse con total seguridad.", "Sí hay diferencia: aunque reciban los mismos datos, el modelo puede responder distinto cada vez."]},
   {"q": "Camila necesita entender una fórmula anidada que heredó de otra analista. ¿Cómo clasificarías esta tarea?",
    "o": ["No sin intervención humana.", "Apoyo recomendado: es una tarea de explicación, fácil de verificar.", "Prohibida: nunca se deben mostrar fórmulas a la IA."], "c": 1,

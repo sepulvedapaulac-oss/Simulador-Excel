@@ -7,7 +7,7 @@
  "voice": true,
  "pass": 0.8,
  "narration": {
-  "p01": "Te damos la bienvenida a la lección uno punto uno. Camila Torres, analista senior de remuneraciones en AndesCorp, acaba de recibir un correo de su jefatura. Ábrelo y ayúdala a responder: ¿qué tareas del proceso se le pueden confiar a una inteligencia artificial?",
+  "p01": "Te damos la bienvenida a la lección uno punto uno. Camila Torres, analista senior de remuneraciones en AndesCorp, acaba de recibir un correo de su jefatura. Ábrelo y ayuda a Camila a responder: ¿qué tareas del proceso se le pueden confiar a una inteligencia artificial?",
   "p03": "Hay creencias muy repetidas sobre la inteligencia artificial. Algunas son mitos y otras son ciertas, pero con condiciones. Voltea cada tarjeta y descubre qué hay detrás de cada una.",
   "p04": "El cierre mensual tiene seis etapas: novedades, cálculo, revisión, pago, reportes y consultas. En cada una la inteligencia artificial puede aportar algo distinto, y en cada una exige un cuidado diferente. Explóralas todas.",
   "p05": "Ahora te toca decidir. Clasifica cada tarea según cuánto se le puede confiar a la inteligencia artificial. Piensa en dos preguntas: ¿qué pasa si se equivoca?, y ¿qué datos necesita?",
@@ -30,10 +30,10 @@
    {
     "t": "Calcular no es predecir",
     "lines": [
-     "Tu sistema de remuneraciones es determinístico: con los mismos datos y parámetros, siempre entrega el mismo resultado.",
+     "Tu sistema de remuneraciones aplica reglas fijas: con los mismos datos y parámetros, siempre entrega el mismo resultado.",
      "Un modelo generativo, en cambio, puede responder distinto cada vez, y a veces se equivoca con total seguridad."
     ],
-    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Sistema de remuneraciones</b>Mismos datos, mismo resultado<small>Determinístico</small></div><div class=\"warn\" data-at=\"1\"><b>Modelo generativo</b>Puede variar y equivocarse<small>Probabilístico</small></div></div>"
+    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Sistema de remuneraciones</b>Mismos datos, mismo resultado<small>Reglas fijas</small></div><div class=\"warn\" data-at=\"1\"><b>Modelo generativo</b>Puede variar y equivocarse<small>Predice respuestas</small></div></div>"
    },
    {
     "t": "Dónde aporta valor",
@@ -248,7 +248,7 @@
   {
    "q": "¿Cuál es la principal diferencia entre tu sistema de remuneraciones y un modelo de IA generativa?",
    "o": [
-    "El sistema es determinístico: con los mismos datos entrega siempre el mismo resultado; el modelo predice respuestas y puede variar.",
+    "El sistema aplica reglas fijas: con los mismos datos entrega siempre el mismo resultado; el modelo predice respuestas y puede variar.",
     "El modelo generativo es más exacto porque aprendió de más información.",
     "No hay diferencia si ambos reciben los mismos datos."
    ],
