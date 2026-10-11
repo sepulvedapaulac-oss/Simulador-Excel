@@ -1,0 +1,171 @@
+<style>
+/* Laboratorio 2B · componentes propios (usa los tokens del tema) */
+.l2-tbl{max-height:360px;border:1px solid var(--line);border-radius:14px;margin-top:10px;background:var(--surface)}
+.l2-tbl .datatbl{margin-top:0;font-size:.8rem}
+.l2-tbl .datatbl th,.l2-tbl .datatbl td{white-space:nowrap}
+.l2-tbl .datatbl th{position:sticky;top:0;z-index:1}
+.l2-tbl .datatbl td.n{text-align:right}
+.l2-tbl .datatbl td.dup{background:var(--amber-soft)}
+.l2-cap{font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 0}
+.ai-rep .a{max-width:100%!important;width:100%}
+.ai-rep .a .tblwrap{margin-top:6px}
+.ai-rep .a .datatbl td:first-child{font-weight:900;color:var(--violet)}
+.al-list{display:grid;gap:10px;margin-top:12px}
+.al-card{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface2)}
+.al-card.good{background:var(--good-soft);border-color:var(--good-line)}
+.al-card.bad{background:var(--bad-soft);border-color:var(--bad-line)}
+.al-card .al-t{font-weight:700;font-size:.93rem}
+.al-card .al-t b.num{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:8px;background:var(--violet-soft);color:var(--violet);margin-right:6px;font-size:.82rem}
+.al-sel{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:10px;margin-top:10px}
+.al-sel label,.act-card label{display:grid;gap:4px;font-size:.76rem;font-weight:800;color:var(--muted);min-width:0}
+.l2-select{font:inherit;font-weight:700;font-size:.88rem;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;min-width:0;max-width:100%;white-space:normal}
+.al-fb{font-size:.86rem;margin-top:8px;color:var(--ink2);font-weight:600}
+.al-fb:empty{display:none}
+.l2-hints{display:grid;gap:8px;margin-top:10px}
+.l2-hints details{border:1px solid var(--line2);border-radius:12px;background:var(--surface);padding:8px 12px}
+.l2-hints summary{cursor:pointer;font-weight:800;font-size:.9rem}
+.l2-hints summary b{color:var(--teal-ink)}
+.l2-hints details p{margin:8px 0 0;font-size:.88rem}
+.l2-hints code,.l2-mini code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--chip);padding:1px 5px;border-radius:6px;font-size:.84rem;word-break:break-word}
+.act-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.act-card{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface2);min-width:0}
+.act-card.good{background:var(--good-soft);border-color:var(--good-line)}
+.act-card.bad{background:var(--bad-soft);border-color:var(--bad-line)}
+.act-card.half{background:var(--amber-soft);border-color:var(--amber)}
+.act-head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.act-head strong{font-size:1rem}
+.act-tag{font-size:.72rem;font-weight:900;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--muted)}
+.act-tag.ia{background:var(--violet-soft);color:var(--violet)}
+.act-ctl{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.act-ctl span{font-size:.76rem;font-weight:800;padding:3px 8px;border-radius:8px;background:var(--surface);border:1px solid var(--line2);font-variant-numeric:tabular-nums}
+.act-ctl span.flag{background:var(--bad-soft);border-color:var(--bad-line);color:var(--bad)}
+.note-form{display:grid;gap:10px;margin-top:12px}
+.note-form label{display:grid;gap:4px;font-size:.82rem;font-weight:800;color:var(--muted)}
+.note-form textarea{font:inherit;font-size:.93rem;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;min-height:58px;resize:vertical}
+.l2-score{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.l2-score span{font-size:.82rem;font-weight:900;padding:5px 10px;border-radius:999px;background:var(--mint);color:var(--teal-ink)}
+.l2-mini{font-size:.9rem}
+@media(max-width:760px){.al-sel,.act-grid{grid-template-columns:1fr}.slide{padding:18px 14px}}
+</style>
+
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 2B · Módulo 2</span>
+  <h1>Auditoría del cierre: 12 registros con errores</h1>
+  <div class="hero-grid">
+    <div>
+      <p class="lead">Es el cierre de <strong>octubre</strong> en AndesCorp. Camila le pidió a la herramienta de IA corporativa revisar una muestra de <strong>12 registros</strong> seudonimizados antes del pago. La IA entregó un informe con <strong>7 alertas</strong>. Rodrigo, jefe de Compensaciones, es claro: <em>“La IA ayuda a mirar, pero el cierre lo firmamos nosotros. Verifica todo.”</em></p>
+      <div class="story" style="margin-top:10px"><strong>Lo que sabemos:</strong> algunas alertas de la IA son correctas, otras son <b>falsos positivos</b> y hay errores reales que la IA <b>no vio</b>. Tu trabajo es separar unos de otros con evidencia.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Analista de remuneraciones revisa en su notebook una planilla del cierre junto al informe de alertas de un asistente de IA" src="img/i23_b.jpg"/></div>
+  </div>
+  <div class="grid-2" style="margin-top:6px">
+    <div class="callout"><strong>Tu misión tiene tres etapas:</strong>
+      <ul class="elem-list" style="margin-top:8px">
+        <li><b>1. Revisar el informe de la IA:</b> clasifica cada alerta como confirmada o falso positivo y elige la evidencia.</li>
+        <li><b>2. Controles en Excel:</b> construye columnas de control con fórmulas para encontrar lo que la IA no vio.</li>
+        <li><b>3. Decidir y comunicar:</b> define la acción para cada registro y redacta tu nota de hallazgos.</li>
+      </ul>
+      <p style="margin:8px 0 0">Puntaje: etapa 1 (35 %) + etapa 2 (30 %) + etapa 3 (35 %). Apruebas con <b>70%</b>. En las etapas 1 y 3 cuenta tu <b>primera revisión</b>; después puedes corregir con el feedback para avanzar.</p></div>
+    <div class="story" style="margin-top:14px"><strong>Reglas del cierre de AndesCorp (datos ficticios):</strong>
+      <ul class="l2-mini" style="margin:6px 0 0;padding-left:18px">
+        <li>Horas extra = horas × valor hora × <b>1,5</b> (recargo mínimo de 50 %, Código del Trabajo, art. 32).</li>
+        <li>El sueldo mensual se liquida sobre una <b>base de 30 días</b>: sueldo proporcional = sueldo base ÷ 30 × días trabajados (máximo 30).</li>
+        <li>Total haberes = sueldo proporcional + horas extra pagadas + bono.</li>
+        <li>Cada bono debe aparecer <b>una sola vez</b> en la carga de bonos del mes.</li>
+      </ul></div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · ETAPA 1 -->
+<section class="slide" data-title="Etapa 1: revisar el informe de la IA" data-gate="e1" data-gate-msg="Clasifica las 7 alertas con su evidencia y presiona “Revisar mi clasificación” hasta que todas estén en verde.">
+  <span class="lab-badge">Etapa 1 de 3</span>
+  <h2>¿Qué alertas de la IA resisten la verificación?</h2>
+  <p>Lee el informe y compáralo con los datos del cierre. Para cada alerta decide si está <b>confirmada</b> o es un <b>falso positivo</b>, y elige la evidencia que lo demuestra.</p>
+  <div class="aichat ai-rep">
+    <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo · informe de revisión</div>
+    <div class="u">Actúa como analista de remuneraciones. Revisa los 12 registros seudonimizados del cierre de octubre de AndesCorp (adjunto la tabla y la carga de bonos). Reglas: horas extra × 1,5; sueldo base 30 días; total = sueldo proporcional + horas extra + bono. No modifiques datos ni inventes valores. Entrega una tabla con cada alerta y su motivo.</div>
+    <div class="a"><b>Revisé los 12 registros. Encontré 7 alertas:</b><div class="tblwrap"><table class="datatbl" id="aiTable"><thead><tr><th>#</th><th>Registro</th><th>Alerta</th></tr></thead><tbody></tbody></table></div>
+      <p style="margin:8px 0 0">Los demás registros no presentan observaciones. <small>(Respuesta generada por IA: verifica antes de usar.)</small></p></div>
+  </div>
+  <p class="l2-cap">Datos del cierre · octubre (ficticios)</p>
+  <div class="tblwrap l2-tbl"><table class="datatbl" id="dataTable"></table></div>
+  <p class="l2-cap">Carga de bonos del mes (sistema)</p>
+  <div class="tblwrap l2-tbl" style="max-height:none"><table class="datatbl" id="bonoTable"></table></div>
+  <div class="task" id="e1task">Alertas bien clasificadas <span class="tick" id="e1tick">0 / 7</span></div>
+  <div class="al-list" id="alList"></div>
+  <div class="hj-tools"><button class="small-btn primary" type="button" id="e1Check">Revisar mi clasificación</button></div>
+  <div id="e1Out"></div>
+</section>
+
+<!-- 3 · ETAPA 2 -->
+<section class="slide" data-title="Etapa 2: controles en Excel" data-gate="e2" data-gate-msg="Construye las cinco columnas de control y presiona “Revisar mis controles” hasta que todas estén en verde.">
+  <span class="lab-badge">Etapa 2 de 3</span>
+  <h2>Construye tus columnas de control</h2>
+  <div class="grid-2">
+    <div>
+      <p>Las columnas <b>A a J</b> tienen el cierre (bloqueado) y las filas <b>17 a 25</b>, la carga de bonos. En las columnas <b>L a P</b> crea un control por columna, desde la fila 2 a la 13:</p>
+      <ol class="elem-list">
+        <li><b>L · HE recalculada:</b> horas × valor hora × 1,5.</li>
+        <li><b>M · Dif. HE:</b> horas extra pagadas menos tu recálculo.</li>
+        <li><b>N · Días &gt; 30:</b> marca los registros con más de 30 días.</li>
+        <li><b>O · Veces en carga de bonos:</b> cuántas veces aparece el código en la carga.</li>
+        <li><b>P · Dif. total:</b> total haberes menos el total recalculado.</li>
+      </ol>
+      <p class="hint" style="margin-top:8px">Escribe la fórmula en la fila 2, vuelve a esa celda y usa “Rellenar hacia abajo”. Usa punto y coma (;) entre argumentos y coma decimal (1,5).</p>
+    </div>
+    <div>
+      <div class="story" style="margin-top:0"><strong>¿Por qué controles con fórmulas?</strong> Porque revisan los 12 registros con la misma regla y no se cansan ni se saltan filas. Así verificas a la IA con evidencia, no con intuición.</div>
+      <div class="l2-hints">
+        <details><summary>Pista para <b>L</b> y <b>M</b></summary><p>En L2: <code>=E2*F2*1,5</code>. En M2: <code>=G2-L2</code>. Un resultado distinto de 0 es una diferencia.</p></details>
+        <details><summary>Pista para <b>N</b></summary><p>Usa SI: <code>=SI(C2&gt;30;"REVISAR";"OK")</code></p></details>
+        <details><summary>Pista para <b>O</b></summary><p>Usa CONTAR.SI con el rango fijo (con $) para que no se mueva al rellenar: <code>=CONTAR.SI($A$17:$A$25;A2)</code>. Un 2 indica una carga duplicada.</p></details>
+        <details><summary>Pista para <b>P</b></summary><p>Total recalculado = sueldo proporcional + horas extra pagadas + bono: <code>=J2-(D2/30*C2+G2+H2)</code></p></details>
+      </div>
+    </div>
+  </div>
+  <div id="hoja2"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" id="fillBtn">⤓ Rellenar hacia abajo (hasta la fila 13)</button><button class="small-btn primary" type="button" id="e2Check">Revisar mis controles</button></div>
+  <div id="e2Out"></div>
+</section>
+
+<!-- 4 · ETAPA 3 -->
+<section class="slide" data-title="Etapa 3: decidir y comunicar" data-gate="e3 nota" data-gate-msg="Revisa tus acciones hasta que estén todas en verde y genera tu nota de hallazgos.">
+  <span class="lab-badge">Etapa 3 de 3</span>
+  <h2>¿Qué hacemos con cada registro antes del pago?</h2>
+  <p>Debajo de cada registro ves la alerta de la IA (si la hubo) y el resultado de <b>tus controles</b>. Elige la acción: <b>sin acción</b>, <b>corregir antes del pago</b> (la causa es clara y el valor correcto se puede calcular) o <b>investigar con jefatura</b> (falta un dato o una confirmación para saber el valor correcto).</p>
+  <div class="task" id="e3task">Registros bien resueltos <span class="tick" id="e3tick">0 / 12</span></div>
+  <div class="act-grid" id="actGrid"></div>
+  <div class="hj-tools"><button class="small-btn primary" type="button" id="e3Check">Revisar mis acciones</button></div>
+  <div id="e3Out"></div>
+
+  <h3 style="margin-top:22px">Tu nota de hallazgos para Rodrigo</h3>
+  <p>Completa la plantilla. Las dos primeras líneas se llenan con tus acciones; puedes editarlas.</p>
+  <div class="note-form">
+    <label>Registros a corregir antes del pago<textarea id="nt0" placeholder="Ej.: EMP-1xx: motivo y valor correcto"></textarea></label>
+    <label>Registros a investigar con jefatura<textarea id="nt1" placeholder="Ej.: EMP-1xx: qué dato falta confirmar"></textarea></label>
+    <label>Alertas de la IA descartadas (falsos positivos) y por qué<textarea id="nt2" placeholder="Indica los códigos y la evidencia"></textarea></label>
+    <label>Errores que la IA no detectó<textarea id="nt3" placeholder="Indica los códigos y qué control los encontró"></textarea></label>
+    <label>Control que propongo para el próximo cierre<textarea id="nt4" placeholder="Ej.: mantener las columnas de control antes de enviar datos a la IA…"></textarea></label>
+  </div>
+  <div class="hj-tools"><button class="small-btn primary" type="button" id="ntBtn">Generar mi nota</button></div>
+  <div id="ntOut"></div>
+</section>
+
+<!-- 5 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en la auditoría</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labTries">—</div><small>Revisiones realizadas</small></div>
+  </div>
+  <div id="labDetail"></div>
+  <div class="callout"><strong>Lo que este cierre enseña:</strong> la IA acertó en 5 de sus 7 alertas, pero 2 eran falsos positivos y dejó fuera 2 errores reales (EMP-108 y EMP-112). Tus columnas de control revisan las 12 filas con la misma regla: úsalas antes y después de pedir ayuda a la IA. <b>La IA asiste; el sistema calcula; tú verificas.</b></div>
+  <h3>Tu nota de hallazgos</h3>
+  <div id="labNote"></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn primary" type="button" id="retryLab">↺ Reintentar el laboratorio</button><button class="small-btn" type="button" data-goto="1">Volver a la etapa 1</button><button class="small-btn" type="button" data-goto="2">Volver a la etapa 2</button><button class="small-btn" type="button" data-goto="3">Volver a la etapa 3</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios y seudonimizados. El informe de IA es simulado con fines formativos; ningún dato sale de tu navegador. Las reglas de cálculo son ilustrativas del curso: verifica siempre la normativa vigente y la política interna de tu empresa.</p>
+</section>

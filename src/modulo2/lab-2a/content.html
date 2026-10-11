@@ -1,0 +1,164 @@
+<style>
+.lab-steps{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+.lab-steps li{padding-left:0}
+.ia-formula{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;background:var(--surface2);border:1px dashed var(--violet);border-radius:10px;padding:6px 10px;margin-top:6px;overflow-wrap:anywhere;word-break:break-word}
+.lab-hint{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:0 14px}
+.lab-hint summary{cursor:pointer;font-weight:800;padding:10px 0;color:var(--teal-ink)}
+.lab-hint p{margin:0 0 10px}
+.lab-hint code,.lab-steps code,.story code,.callout code{overflow-wrap:anywhere;word-break:break-word}
+.pts-chip{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;background:var(--mint);color:var(--teal-ink);font-weight:900;font-size:.8rem;vertical-align:middle}
+.test-cases td:first-child{font-weight:800;white-space:nowrap}
+.formula-lib .promptbox{overflow-wrap:anywhere;word-break:break-word}
+.lab-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start}
+.lab-intro>*{min-width:0}
+.lab-intro .photo-frame img{width:100%;display:block}
+@media (max-width:820px){.lab-intro{grid-template-columns:1fr}.aichat .u,.aichat .a{max-width:100%}}
+</style>
+
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 2A · Módulo 2</span>
+  <h1>Fórmulas de control</h1>
+  <div class="lab-intro">
+    <div>
+      <p class="lead">Es día de cierre en AndesCorp. Camila le pidió a un asistente de IA tres fórmulas de control para revisar la nómina de octubre. La IA respondió rápido y con mucha seguridad… pero <strong>una fórmula que no se ha probado no es un control</strong>. Tu misión: probarlas en el simulador de Excel, encontrar sus fallas y corregirlas.</p>
+      <div class="aichat">
+        <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo</div>
+        <div class="u">Necesito fórmulas de Excel para controlar la nómina antes del cierre: traer el valor hora desde el maestro, marcar casos a revisar y detectar códigos que no existan en el maestro.</div>
+        <div class="a">¡Claro! Aquí tienes tres fórmulas <b>listas para usar</b>. Solo cópialas y arrástralas hacia abajo. 😊</div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Camila revisa en su notebook una planilla de control de nómina junto a una lista de verificación" src="img/i22_b.jpg"/></div>
+  </div>
+  <div class="grid-2">
+    <div class="callout"><strong>Cuatro desafíos con revisión automática:</strong>
+      <ul class="elem-list" style="margin-top:8px">
+        <li><b>1. BUSCARX</b>: traer el valor hora desde el maestro (25 puntos).</li>
+        <li><b>2. SI</b>: marcar “REVISAR” cuando corresponde (30 puntos).</li>
+        <li><b>3. COINCIDIR</b>: detectar códigos que no existen en el maestro (25 puntos).</li>
+        <li><b>4. Casos de prueba</b>: anotar el resultado esperado y comprobar que la fórmula lo reproduce (20 puntos).</li>
+      </ul>
+      <p style="margin:8px 0 0">Puedes revisar y corregir las veces que quieras: se guarda tu mejor resultado en cada desafío. Apruebas con <b>70%</b>.</p></div>
+    <div class="story" style="margin-top:0"><strong>Cómo funciona el simulador:</strong> se escribe como en Excel en español, con <b>punto y coma</b> entre argumentos (<code>=SUMA(D2:D13)</code>). Usa <b>$</b> para fijar un rango (<code>$H$2:$H$13</code>) y el botón <b>“Rellenar hacia abajo”</b> para copiar la fórmula de la fila 2 al resto de la columna. Todos los datos son ficticios y los montos, ilustrativos.</div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · DESAFÍO 1 · BUSCARX -->
+<section class="slide" data-title="Desafío 1: BUSCARX" data-gate="d1" data-gate-msg="Corrige la fórmula y presiona “Revisar mi fórmula” al menos una vez.">
+  <span class="lab-badge">Desafío 1 de 4</span>
+  <h2>Traer el valor hora desde el maestro <span class="pts-chip">25 puntos</span></h2>
+  <div class="aichat">
+    <div class="ahead"><span class="dot">✦</span> Fórmula propuesta por la IA para D2</div>
+    <div class="a">Para traer el valor hora del maestro usa:<div class="ia-formula">=BUSCARX(A2;$F$2:$F$13;$H$2:$H$13)</div></div>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p>La nómina está en <b>A:C</b> y el maestro de colaboradores en <b>F:H</b>. La fórmula de la IA ya está escrita en la columna <b>D</b>. Pruébala:</p>
+      <ol class="lab-steps">
+        <li><b>1.</b> Observa la columna D: ¿funciona en todas las filas?</li>
+        <li><b>2.</b> Selecciona <b>D2</b> y corrige la fórmula en la barra <i>fx</i>. Si el código no existe en el maestro, debe mostrar el texto <code>NO EXISTE</code>.</li>
+        <li><b>3.</b> Con D2 seleccionada, presiona <b>“Rellenar hacia abajo”</b> y luego <b>“Revisar mi fórmula”</b>.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Caso de prueba clave:</strong> un código que <b>no está</b> en el maestro. En el cierre siempre aparecen: ingresos recientes que aún no se cargan o códigos mal digitados. Mira también la columna <b>E</b>: compara el valor hora de la nómina con el del maestro.</div>
+  </div>
+  <div id="hoja1"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" data-fill="1">⤓ Rellenar hacia abajo (hasta la fila 13)</button><button class="small-btn primary" type="button" data-check="1">Revisar mi fórmula</button></div>
+  <details class="lab-hint"><summary>Necesito una pista</summary><p>BUSCARX tiene un cuarto argumento opcional, <b>si_no_se_encuentra</b>: lo que debe mostrar cuando no encuentra el valor buscado. Se agrega después del rango de resultado, separado por punto y coma, con el texto entre comillas.</p></details>
+  <div id="out1" aria-live="polite"></div>
+</section>
+
+<!-- 3 · DESAFÍO 2 · SI -->
+<section class="slide" data-title="Desafío 2: SI de control" data-gate="d2" data-gate-msg="Corrige la fórmula y presiona “Revisar mi fórmula” al menos una vez.">
+  <span class="lab-badge">Desafío 2 de 4</span>
+  <h2>Marcar los casos a revisar <span class="pts-chip">30 puntos</span></h2>
+  <div class="aichat">
+    <div class="ahead"><span class="dot">✦</span> Fórmula propuesta por la IA para E2</div>
+    <div class="a">Esta fórmula marca “REVISAR” si las horas extra superan 12 o si el bono no coincide con la regla del área:<div class="ia-formula">=SI(O(C2&gt;12,D2&lt;&gt;BUSCARX(B2,G2:G6,H2:H6)),"REVISAR","OK")</div></div>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p><b>Regla de control:</b> un caso se marca <b>REVISAR</b> si tiene <b>más de 12 horas extra</b> en el mes <b>o</b> si el <b>bono informado</b> es distinto del bono de cierre de su área (tabla de parámetros en <b>G:H</b>). En otro caso, <b>OK</b>.</p>
+      <ol class="lab-steps">
+        <li><b>1.</b> Observa el resultado de la fórmula de la IA en la columna E.</li>
+        <li><b>2.</b> Corrige <b>E2</b>: revisa el separador de argumentos.</li>
+        <li><b>3.</b> Rellena hacia abajo y comprueba que <b>todas</b> las filas funcionen. Si alguna falla, revisa qué le pasó al rango de parámetros al copiar la fórmula.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Ojo:</strong> que la fila 2 funcione no significa que la fórmula esté bien. Al rellenar hacia abajo, Excel desplaza los rangos que no tienen <b>$</b>. Revisa la fórmula de una fila de más abajo, por ejemplo <b>E9</b>, en la barra <i>fx</i>.</div>
+  </div>
+  <div id="hoja2"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" data-fill="2">⤓ Rellenar hacia abajo (hasta la fila 13)</button><button class="small-btn primary" type="button" data-check="2">Revisar mi fórmula</button></div>
+  <details class="lab-hint"><summary>Necesito una pista</summary><p>En Excel en español los argumentos se separan con <b>;</b> (la coma es el separador decimal). Para que la tabla de parámetros no se mueva al copiar, fíjala con <b>$</b>: <code>$G$2:$G$6</code> y <code>$H$2:$H$6</code>.</p></details>
+  <div id="out2" aria-live="polite"></div>
+</section>
+
+<!-- 4 · DESAFÍO 3 · COINCIDIR -->
+<section class="slide" data-title="Desafío 3: COINCIDIR" data-gate="d3" data-gate-msg="Corrige la fórmula y presiona “Revisar mi fórmula” al menos una vez.">
+  <span class="lab-badge">Desafío 3 de 4</span>
+  <h2>Detectar códigos que no existen en el maestro <span class="pts-chip">25 puntos</span></h2>
+  <div class="aichat">
+    <div class="ahead"><span class="dot">✦</span> Fórmula propuesta por la IA para C2</div>
+    <div class="a">COINCIDIR busca el código en el maestro; si da error, el código no existe:<div class="ia-formula">=SI(ESERROR(COINCIDIR(A2;$F$2:$F$13;0));"NO EXISTE";"OK")</div></div>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p>La nómina está en <b>A:B</b> y el maestro en <b>E:F</b>. La fórmula de la IA ya está en la columna C.</p>
+      <ol class="lab-steps">
+        <li><b>1.</b> <b>Prueba con un caso conocido:</b> EMP-001 sí está en el maestro (fila 2). ¿Qué dice la fórmula?</li>
+        <li><b>2.</b> Corrige <b>C2</b> para que busque en el lugar correcto y rellena hacia abajo.</li>
+        <li><b>3.</b> En <b>C15</b> escribe una fórmula que cuente cuántos códigos dicen <code>NO EXISTE</code>.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Mira con atención:</strong> un código puede verse igual a uno del maestro y no serlo. Por eso el control se hace con una fórmula y no “a ojo”. El total de C15 es el dato que Camila reportará a Rodrigo antes de cerrar.</div>
+  </div>
+  <div id="hoja3"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" data-fill="3">⤓ Rellenar hacia abajo (hasta la fila 13)</button><button class="small-btn primary" type="button" data-check="3">Revisar mi fórmula</button></div>
+  <details class="lab-hint"><summary>Necesito una pista</summary><p>COINCIDIR(valor_buscado; rango; 0) debe buscar el código en la columna de <b>códigos</b> del maestro, no en la de áreas. Para contar: <code>=CONTAR.SI(rango;"NO EXISTE")</code>.</p></details>
+  <div id="out3" aria-live="polite"></div>
+</section>
+
+<!-- 5 · DESAFÍO 4 · CASOS DE PRUEBA -->
+<section class="slide" data-title="Desafío 4: casos de prueba" data-gate="d4" data-gate-msg="Completa los casos y presiona “Revisar mis casos” al menos una vez.">
+  <span class="lab-badge">Desafío 4 de 4</span>
+  <h2>Prueba tu fórmula con casos diseñados <span class="pts-chip">20 puntos</span></h2>
+  <p>Un buen control se prueba con casos donde <b>tú ya sabes la respuesta</b>, incluidos los casos límite. Rodrigo preparó cinco casos ficticios para la fórmula del desafío 2.</p>
+  <div class="tblwrap"><table class="datatbl test-cases"><thead><tr><th>Caso</th><th>Qué pone a prueba</th></tr></thead><tbody>
+    <tr><td>Caso 1</td><td>Exactamente 12 horas extra y bono correcto (límite de la regla).</td></tr>
+    <tr><td>Caso 2</td><td>13 horas extra y bono correcto.</td></tr>
+    <tr><td>Caso 3</td><td>Pocas horas extra, pero bono distinto del de su área.</td></tr>
+    <tr><td>Caso 4</td><td>Sin horas extra y bono correcto.</td></tr>
+    <tr><td>Caso 5</td><td>Bono no informado (celda vacía).</td></tr>
+  </tbody></table></div>
+  <div class="grid-2">
+    <ol class="lab-steps">
+      <li><b>1.</b> En la columna <b>E</b> escribe el resultado que <b>esperas</b> para cada caso: <code>OK</code> o <code>REVISAR</code>. Hazlo antes de mirar la fórmula.</li>
+      <li><b>2.</b> En <b>F2</b> escribe tu fórmula corregida del desafío 2, adaptada a esta hoja: aquí los parámetros están en <b>I2:J6</b>. Rellena hacia abajo hasta la fila 6.</li>
+      <li><b>3.</b> La columna <b>G</b> compara ambos resultados. Presiona <b>“Revisar mis casos”</b>.</li>
+    </ol>
+    <div class="story" style="margin-top:0"><strong>¿Por qué el caso 1 es tan importante?</strong> Si la regla dice “más de 12”, 12 horas no se marca. Una fórmula con <code>&gt;=</code> en lugar de <code>&gt;</code> pasaría casi todas las pruebas… menos esta.</div>
+  </div>
+  <div id="hoja4"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" data-fill="4">⤓ Rellenar hacia abajo (hasta la fila 6)</button><button class="small-btn primary" type="button" data-check="4">Revisar mis casos</button></div>
+  <details class="lab-hint"><summary>Necesito una pista</summary><p>Es la misma lógica del desafío 2; solo cambia la ubicación de la tabla de parámetros: <code>$I$2:$I$6</code> (áreas) y <code>$J$2:$J$6</code> (bonos).</p></details>
+  <div id="out4" aria-live="polite"></div>
+</section>
+
+<!-- 6 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labTries">—</div><small>Revisiones realizadas</small></div>
+  </div>
+  <div id="labDetail"></div>
+  <h3>Tus fórmulas de control</h3>
+  <p>Estas son las fórmulas que dejaste en la fila 2 de cada desafío. Guárdalas en tu planilla de cierre.</p>
+  <div id="labLib" class="formula-lib"></div>
+  <div class="callout"><strong>Lo que aprendiste:</strong> la IA propuso tres fórmulas “listas para usar” y las tres fallaban: una con códigos inexistentes, otra con el separador y los rangos sin fijar, y otra buscando en la columna equivocada. <b>La IA asiste y tú verificas</b>: prueba cada fórmula con casos conocidos, casos límite y datos que no existen antes de usarla en el cierre.</div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" data-goto="1">Mejorar el desafío 1</button><button class="small-btn" type="button" data-goto="2">Mejorar el desafío 2</button><button class="small-btn" type="button" data-goto="3">Mejorar el desafío 3</button><button class="small-btn" type="button" data-goto="4">Mejorar el desafío 4</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios y montos ilustrativos del curso. Ningún dato sale de tu navegador.</p>
+</section>

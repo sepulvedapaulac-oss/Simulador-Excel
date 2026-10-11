@@ -1,0 +1,298 @@
+<style>
+/* Lección 2.1 · componentes propios: liquidación con puntos y ficha de revisión */
+.liq{border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden;font-size:.9rem}
+.liq-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;padding:12px 16px;background:var(--navy);color:var(--surface)}
+.liq-top b{font-size:1rem;letter-spacing:.02em}
+.liq-top small{color:inherit;opacity:.85}
+.liq-sec{position:relative;padding:10px 16px 10px 62px;border-top:1px solid var(--line2)}
+.liq-sec:first-of-type{border-top:0}
+.liq-sec h4{margin:0 0 6px;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-ink)}
+.liq-row{display:flex;justify-content:space-between;gap:12px;padding:2px 0;color:var(--ink2)}
+.liq-row span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;color:var(--ink)}
+.liq-row.sum{border-top:1px dashed var(--line);margin-top:4px;padding-top:5px;font-weight:800;color:var(--ink)}
+.liq-row small{color:var(--muted)}
+.liq-id{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px}
+.liq-id div{color:var(--ink2)}
+.liq-id b{color:var(--ink)}
+.mask{display:inline-block;background:var(--ink);color:transparent;border-radius:4px;min-width:84px;user-select:none}
+.liq-total{background:var(--mint)}
+.liq-total .liq-row.big span{font-size:1.05rem;font-weight:900;color:var(--teal-ink)}
+.liq .hs{left:12px;top:10px;transform:none;width:38px;height:38px;border-width:2px;font-size:.95rem;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.liq-note{padding:8px 16px;font-size:.78rem;color:var(--muted);background:var(--surface2);border-top:1px solid var(--line2)}
+@media(min-width:861px){.liq-wrap{grid-template-columns:1.05fr .95fr}}
+.liq-wrap .hs-panel{position:sticky;top:76px}
+.liq-wrap .hs-panel.inline{position:static;margin:8px 10px 10px;min-height:0}
+@media(max-width:860px){.liq-sec{padding-left:58px}.liq-id{grid-template-columns:1fr}}
+
+.ficha{border:2px dashed var(--teal);border-radius:20px;padding:14px 16px;background:var(--surface3)}
+.ficha h3{margin:0 0 4px}
+.fslot{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--surface);border:1px solid var(--line2)}
+.fslot .n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:900;background:var(--chip);color:var(--muted)}
+.fslot b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.fslot .v{color:var(--muted);font-style:italic;font-size:.92rem}
+.fslot.filled{border-color:var(--good-line);background:var(--good-soft)}
+.fslot.filled .n{background:var(--good);color:var(--on-accent)}
+.fslot.filled .v{color:var(--ink);font-style:normal}
+.acc-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:start}
+.acc-grid>*{min-width:0}
+.acc-body .src{display:grid;gap:6px;margin-top:6px}
+.acc-body .src div{font-size:.92rem}
+@media(max-width:860px){.acc-grid{grid-template-columns:1fr}.acc-grid .photo-frame{order:-1}}
+.fout h4{margin:12px 0 4px;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--teal-ink)}
+.fout ul{margin:0;padding-left:20px}
+.fout li{margin:2px 0}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Abre el mensaje de Rodrigo y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.1 · Revisión asistida por IA</span>
+      <h1 class="reveal">¿Qué información debe revisar la IA?</h1>
+      <p class="lead reveal">Faltan tres días para el cierre de octubre en <strong>AndesCorp</strong>. Rodrigo, jefe de Compensaciones, le escribe a Camila. <strong>Presiona “Abrir mensaje”</strong> para leerlo.</p>
+      <div class="mail reveal" data-open="mail" data-then="hookQ">
+        <div class="mtop"><i></i><i></i><i></i><span>Bandeja de entrada · 1 sin leer</span></div>
+        <div class="mhdr"><span class="avatar mgr">R</span><span><b>Rodrigo · Jefe de Compensaciones</b><small>Asunto: Revisión del cierre de octubre con IA</small></span></div>
+        <div class="mbody2" id="mailBody"><p class="hint" style="margin:0">Tienes un mensaje sin leer.</p></div>
+        <div class="mfoot"><button class="small-btn primary" type="button" data-o="1" id="openMail">Abrir mensaje</button></div>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa una liquidación de sueldo impresa junto a su notebook, con una lista de verificación al lado" src="img/i21_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería hacer Camila antes de usar la IA en la revisión?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Subir la planilla completa de octubre, tal como sale del sistema, y pedirle que diga si está todo bien.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Definir primero qué información entra, contra qué reglas se compara y qué resultado espera de la IA.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Responder que no: la revisión del cierre no se puede apoyar con IA.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: datos expuestos y una respuesta vaga.</strong> <span class="fb-body">La planilla completa trae nombres, RUT y cuentas bancarias que la revisión no necesita. Y sin reglas ni formato, la IA solo puede dar comentarios generales del tipo “revisa los totales”.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se pierde un buen apoyo.</strong> <span class="fb-body">La IA es muy útil para señalar posibles inconsistencias en muchos registros a la vez. El riesgo no está en usarla, sino en usarla sin definir la información, las reglas y el resultado.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Así se empieza.</strong> <span class="fb-body">Una buena revisión asistida parte por una <b>ficha de revisión</b>: información mínima y seudonimizada, reglas verificadas y un resultado que se pueda revisar. La IA señala posibles inconsistencias; Camila decide. En esta lección prepararás esa ficha.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: la ficha de revisión" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Información, reglas y resultado: la base de toda revisión</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · HOTSPOT SOBRE LA LIQUIDACIÓN -->
+<section class="slide" data-title="Anatomía de una liquidación" data-audio="p03" data-gate="liq" data-gate-msg="Explora los siete puntos de la liquidación.">
+  <span class="eyebrow">Lección 2.1 · Qué mirar en una liquidación</span>
+  <h2>Una liquidación, siete zonas que revisar</h2>
+  <p>Esta liquidación ficticia de AndesCorp tiene siete puntos numerados. <strong>Toca cada número</strong> para ver qué revisar en esa zona y qué datos puede o no recibir la IA.</p>
+  <div data-hotspot="liq">
+    <div class="task">Zonas exploradas <span class="tick">0 / 7</span></div>
+    <div class="hs-wrap liq-wrap">
+      <div class="liq" aria-label="Liquidación de sueldo ficticia de AndesCorp, octubre 2026">
+        <div class="liq-top"><b>ANDESCORP S.A. · LIQUIDACIÓN DE SUELDO</b><small>Octubre 2026 · documento ficticio</small></div>
+        <div class="liq-sec" data-z="0">
+          <button class="hs" type="button" data-k="0" aria-label="Punto 1: encabezado y datos del trabajador">1</button>
+          <h4>Datos del trabajador</h4>
+          <div class="liq-id">
+            <div>Nombre: <span class="mask">oculto</span></div>
+            <div>RUT: <span class="mask">oculto</span></div>
+            <div>Código: <b>EMP-118</b></div>
+            <div>Área: <b>Ventas</b></div>
+            <div>Cargo: <b>Ejecutivo comercial</b></div>
+            <div>Jornada: <b>42 h semanales</b> · Días: <b>30</b></div>
+          </div>
+        </div>
+        <div class="liq-sec" data-z="1">
+          <button class="hs" type="button" data-k="1" aria-label="Punto 2: haberes imponibles">2</button>
+          <h4>Haberes imponibles</h4>
+          <div class="liq-row"><span>Sueldo base</span><span>$950.000</span></div>
+          <div class="liq-row"><span>Horas extra <small>(8 h, recargo 50 %)</small></span><span>$63.333</span></div>
+          <div class="liq-row"><span>Gratificación <small>(art. 50, con tope)</small></span><span>$209.396</span></div>
+          <div class="liq-row"><span>Bono de producción</span><span>$120.000</span></div>
+          <div class="liq-row sum"><span>Total imponible</span><span>$1.342.729</span></div>
+        </div>
+        <div class="liq-sec" data-z="2">
+          <button class="hs" type="button" data-k="2" aria-label="Punto 3: haberes no imponibles">3</button>
+          <h4>Haberes no imponibles</h4>
+          <div class="liq-row"><span>Asignación de colación</span><span>$60.000</span></div>
+          <div class="liq-row"><span>Asignación de movilización</span><span>$45.000</span></div>
+          <div class="liq-row sum"><span>Total no imponible</span><span>$105.000</span></div>
+        </div>
+        <div class="liq-sec" data-z="3">
+          <button class="hs" type="button" data-k="3" aria-label="Punto 4: descuentos legales">4</button>
+          <h4>Descuentos legales</h4>
+          <div class="liq-row"><span>AFP <small>(11,44 %, ilustrativa)</small></span><span>$153.608</span></div>
+          <div class="liq-row"><span>Salud Fonasa <small>(7 %)</small></span><span>$93.991</span></div>
+          <div class="liq-row"><span>Seguro de cesantía <small>(0,6 %, contrato indefinido)</small></span><span>$8.056</span></div>
+          <div class="liq-row sum"><span>Total previsional</span><span>$255.655</span></div>
+        </div>
+        <div class="liq-sec" data-z="4">
+          <button class="hs" type="button" data-k="4" aria-label="Punto 5: impuesto único">5</button>
+          <h4>Impuesto único</h4>
+          <div class="liq-row"><span>Base tributable</span><span>$1.087.074</span></div>
+          <div class="liq-row"><span>Impuesto único <small>(tabla ilustrativa)</small></span><span>$6.223</span></div>
+        </div>
+        <div class="liq-sec" data-z="5">
+          <button class="hs" type="button" data-k="5" aria-label="Punto 6: otros descuentos">6</button>
+          <h4>Otros descuentos</h4>
+          <div class="liq-row"><span>Anticipo de sueldo</span><span>$100.000</span></div>
+          <div class="liq-row"><span>Seguro complementario de salud</span><span>$12.500</span></div>
+          <div class="liq-row sum"><span>Total otros descuentos</span><span>$112.500</span></div>
+        </div>
+        <div class="liq-sec liq-total" data-z="6">
+          <button class="hs" type="button" data-k="6" aria-label="Punto 7: totales y líquido a pagar">7</button>
+          <h4>Totales</h4>
+          <div class="liq-row"><span>Total haberes</span><span>$1.447.729</span></div>
+          <div class="liq-row"><span>Total descuentos</span><span>$374.378</span></div>
+          <div class="liq-row big"><span><b>Líquido a pagar</b></span><span>$1.073.351</span></div>
+          <div class="liq-row"><span>Depósito en cuenta</span><span><span class="mask">oculto</span></span></div>
+        </div>
+        <div class="liq-note">Datos ficticios. Tasas, topes y tabla de impuesto son valores ilustrativos del curso: verifícalos siempre en la fuente oficial del período.</div>
+      </div>
+      <div class="hs-panel"><p class="hint">Selecciona un punto numerado de la liquidación para ver qué revisar y qué datos puede recibir la IA.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · CLASIFICAR HABERES -->
+<section class="slide" data-title="¿Imponible o no imponible?" data-audio="p04" data-gate="haberes" data-gate-msg="Clasifica los nueve haberes en la columna que corresponde.">
+  <span class="eyebrow amber">Lección 2.1 · Actividad</span>
+  <h2>Clasifica los haberes</h2>
+  <p>Una regla de revisión muy común es verificar que cada haber esté en el grupo correcto. <strong>Arrastra cada haber</strong> a su columna, o tócalo y luego toca la columna. Pista: ¿el pago remunera el trabajo o compensa un gasto?</p>
+  <div data-sort="haberes">
+    <div class="task">Haberes clasificados <span class="tick">0 / 9</span></div>
+    <div class="pool"></div>
+    <div class="bins"></div>
+    <div class="fb"></div>
+  </div>
+  <div class="callout"><strong>Para la revisión con IA:</strong> esta clasificación es una <b>regla</b> que tú le entregas. La IA puede señalar un concepto mal clasificado o un no imponible que subió mucho, pero si un monto es “razonable” lo decide una persona con la política de la empresa.</div>
+</section>
+
+<!-- 5 · FUENTES QUE SE CRUZAN (acordeón) -->
+<section class="slide" data-title="Las fuentes que se cruzan" data-audio="p05" data-gate="fuentes" data-gate-msg="Abre las cinco fuentes de la revisión.">
+  <span class="eyebrow violet">Lección 2.1 · Contra qué se compara</span>
+  <h2>Cinco fuentes que debe cruzar la revisión</h2>
+  <p>Una liquidación sola no dice si está bien. La revisión compara contra otras fuentes. <strong>Abre cada fuente</strong> para ver qué aporta, qué se cruza y qué dato mínimo puede recibir la IA.</p>
+  <div class="acc-grid">
+    <div data-acc="fuentes">
+      <div class="task">Fuentes revisadas <span class="tick">0 / 5</span></div>
+      <div class="acc">
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>Maestro de personal<span class="sub">Quién es cada trabajador para el sistema</span></span><span class="tg">＋</span></button><div class="acc-body"><div class="src"><div><b>Aporta:</b> sueldo base pactado, cargo, área, jornada, tipo de contrato, AFP y sistema de salud.</div><div><b>Se cruza con:</b> el sueldo base y los descuentos legales de la liquidación.</div><div><b>Dato mínimo para la IA:</b> código EMP, área, jornada, tipo de contrato, AFP. Sin nombre, RUT ni dirección.</div></div><div class="example">Alerta típica: “EMP-034 tiene contrato a plazo fijo en el maestro, pero el seguro de cesantía se descontó como indefinido”.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Novedades del mes<span class="sub">Lo que cambió en octubre</span></span><span class="tg">＋</span></button><div class="acc-body"><div class="src"><div><b>Aporta:</b> ingresos, egresos, bonos aprobados, anticipos, licencias, cambios de sueldo o de jornada.</div><div><b>Se cruza con:</b> los conceptos variables y los otros descuentos.</div><div><b>Dato mínimo para la IA:</b> código, tipo de novedad, monto o días. Las licencias, sin diagnóstico.</div></div><div class="example">Alerta típica: “EMP-152 recibe un bono de producción, pero no hay novedad aprobada para octubre”.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Asistencia y horas extra<span class="sub">Lo que realmente se trabajó</span></span><span class="tg">＋</span></button><div class="acc-body"><div class="src"><div><b>Aporta:</b> días trabajados, ausencias y horas extraordinarias registradas y autorizadas.</div><div><b>Se cruza con:</b> los días pagados y las horas extra de la liquidación, con recargo mínimo de 50 %.</div><div><b>Dato mínimo para la IA:</b> código, días trabajados, horas extra registradas y pagadas.</div></div><div class="example">Alerta típica: “EMP-207 tiene 8 horas extra pagadas y 0 registradas en asistencia”.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">4</span><span>Parámetros previsionales oficiales<span class="sub">Las reglas del período</span></span><span class="tg">＋</span></button><div class="acc-body"><div class="src"><div><b>Aporta:</b> topes imponibles, tasas de AFP, seguro de cesantía, tabla de impuesto único y valores de UF y UTM del mes.</div><div><b>Se cruza con:</b> las bases y montos de cada descuento legal.</div><div><b>Para la IA:</b> no son datos personales. Tú los verificas en la fuente oficial (Superintendencia de Pensiones, SII) y se los entregas; nunca le pidas que los recuerde.</div></div><div class="example">Alerta típica: “la base de la AFP supera el tope del período en tres casos”.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">5</span><span>Liquidación del mes anterior<span class="sub">El punto de comparación</span></span><span class="tg">＋</span></button><div class="acc-body"><div class="src"><div><b>Aporta:</b> los montos de septiembre por concepto y por trabajador.</div><div><b>Se cruza con:</b> cada concepto de octubre, para encontrar variaciones sin explicación.</div><div><b>Dato mínimo para la IA:</b> código, concepto, monto de septiembre y de octubre, y un umbral de variación que tú defines.</div></div><div class="example">Alerta típica: “la movilización de EMP-089 subió 60 % sin novedad que lo explique”.</div></div></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Escritorio de trabajo con varias planillas impresas y un notebook, listas para cruzar información del cierre" src="img/i21_b.jpg"/></div>
+  </div>
+</section>
+
+<!-- 6 · CASO: LA FICHA DE REVISIÓN DE OCTUBRE -->
+<section class="slide" data-title="Caso: la ficha de octubre" data-audio="p06" data-gate="caso" data-gate-msg="Toma las tres decisiones de la ficha de revisión.">
+  <span class="eyebrow amber">El caso de Camila · Cierre de octubre</span>
+  <h2>Camila prepara la ficha de revisión</h2>
+  <div class="grid-2">
+    <div>
+      <div class="story" style="margin-top:0"><strong>La situación:</strong> AndesCorp tiene 420 trabajadores. Rodrigo aprobó usar el asistente de IA corporativo para la revisión previa al pago de octubre. Antes de abrirlo, Camila completa una ficha con tres definiciones.</div>
+      <p class="hint" style="margin-top:10px">Cada decisión correcta completa una parte de la ficha.</p>
+    </div>
+    <div class="ficha" aria-live="polite">
+      <h3>Ficha de revisión · Octubre 2026</h3>
+      <div class="fslot" id="slot1"><span class="n">1</span><div><b>Información que entra</b><span class="v">Pendiente</span></div></div>
+      <div class="fslot" id="slot2"><span class="n">2</span><div><b>Reglas de comparación</b><span class="v">Pendiente</span></div></div>
+      <div class="fslot" id="slot3"><span class="n">3</span><div><b>Resultado esperado</b><span class="v">Pendiente</span></div></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:18px">Decisión 1 · ¿Qué información entra a la IA?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>El libro de remuneraciones completo, con nombre, RUT, cuenta bancaria y todos los conceptos, para que no falte nada.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Solo los totales de octubre por área, para no exponer a nadie.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Una tabla con código EMP, área, conceptos y montos de octubre y septiembre, más las novedades y horas registradas por código.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos de más</div><div class="branch-body"><div><p>Nombre, RUT y cuenta bancaria no ayudan a detectar ninguna inconsistencia y quedan expuestos. La Ley 21.719 exige tratar solo los datos <strong>necesarios</strong> para la finalidad.</p></div><div><p class="hint">Pregúntate qué dato necesita cada regla.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos de menos</div><div class="branch-body"><div><p>Con totales por área no se puede saber qué caso tiene la diferencia. La IA solo diría que “Ventas subió”, sin señalar a quién revisar. Los datos deben ser <strong>mínimos, pero suficientes</strong>.</p></div><div><p class="hint">Seudonimizar no es lo mismo que agregar todo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Son los datos que las reglas necesitan, identificados con un código. La tabla que relaciona cada código con la persona se queda en el sistema de AndesCorp.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · ¿Contra qué reglas se compara?</h3>
+    <div class="options" data-choice="caso2" data-correct="A" data-then="caso3">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Los parámetros oficiales de octubre que Camila verificó, las reglas internas escritas (montos de colación y movilización, bonos aprobados) y un umbral de variación respecto de septiembre.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Los topes y tasas que la IA conoce: así Camila ahorra tiempo buscándolos.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Ninguna regla: la IA es buena para encontrar lo que se ve raro.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Con reglas explícitas, cada alerta se puede explicar: “la base supera el tope”, “el bono no tiene novedad”, “la movilización subió más del umbral”. Los valores de la ficha son ilustrativos del curso hasta que Camila los confirma en la fuente oficial.</p></div><div><p class="hint">Falta definir el resultado.</p></div></div></div></template>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: parámetros sin respaldo</div><div class="branch-body"><div><p>La IA puede tener topes y tasas <strong>desactualizados</strong> o inventarlos con seguridad. Si la regla está mal, la revisión entera queda mal: marca errores que no existen y deja pasar los reales.</p></div><div><p class="hint">Las reglas las verifica y entrega la persona.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: alertas que no se pueden explicar</div><div class="branch-body"><div><p>Sin reglas, la IA marca lo que le parece inusual según patrones generales. Algunas alertas serán ruido y otros errores pasarán sin ser vistos. No hay forma de saber <strong>por qué</strong> marcó cada caso.</p></div><div><p class="hint">Revisar es comparar contra algo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+
+  <div class="phase" id="caso3" hidden>
+    <h3 style="margin-top:18px">Decisión 3 · ¿Qué resultado le pide a la IA?</h3>
+    <div class="options" data-choice="caso3" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Que corrija los montos con error y entregue la planilla lista para cargar al sistema.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Una tabla de posibles inconsistencias con código, concepto, regla aplicada, diferencia y dato que falta para confirmar, sin modificar montos.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Una respuesta breve: “el cierre está bien” o “el cierre tiene errores”.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso3-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la IA decide por Camila</div><div class="branch-body"><div><p>Una alerta es una hipótesis. Corregir sin confirmar la causa puede convertir un dato correcto en un error. Los ajustes se hacen <strong>en el sistema</strong>, después de que una persona revisa la fuente original.</p></div><div><p class="hint">La IA señala; la persona decide.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-B"><div class="branch good"><div class="branch-head">✓ Ficha completa</div><div class="branch-body"><div><p>Con esa tabla, Camila puede priorizar, ir al registro original de cada caso y decidir si corrige, investiga o descarta. Eso es lo que verás en la lección 2.3.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+    <template data-for="caso3-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un veredicto que no se puede revisar</div><div class="branch-body"><div><p>Un “está bien” no dice qué se comparó ni cómo. Un “tiene errores” no dice dónde. Camila necesita un resultado <strong>verificable</strong>, caso por caso.</p></div><div><p class="hint">Pide un formato que puedas revisar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: MI FICHA DE REVISIÓN -->
+<section class="slide" data-title="Tu ficha de revisión" data-audio="p08" data-gate="ficha ficha_model pass" data-gate-msg="Genera tu ficha y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Construye tu ficha de revisión</h2>
+  <p>Piensa en tu próximo cierre. <strong>Completa cada elemento de la ficha</strong>: el proceso, las fuentes, las reglas, los datos mínimos y el formato de salida. Luego genera tu ficha, compárala con la respuesta modelo y cópiala.</p>
+  <div data-builder="ficha">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi ficha</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> una buena ficha cruza <b>varias fuentes</b>, usa <b>reglas verificadas</b> por ti, entrega <b>datos mínimos seudonimizados</b> y pide un <b>resultado revisable</b> caso por caso. Revisa la explicación bajo cada elemento.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.1</h2>
+    <p>Ya sabes qué revisar en cada zona de una liquidación, qué fuentes cruzar y cómo preparar una ficha de revisión con información mínima, reglas verificadas y un resultado revisable.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y clasificaciones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> antes de pedirle a la IA que revise, define qué información entra, contra qué reglas se compara y qué resultado esperas. La IA señala posibles inconsistencias; tú decides. En la próxima lección usarás la IA para construir fórmulas de Excel.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar la liquidación</button><button class="small-btn primary" type="button" data-goto="5">Repasar el caso</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios. Los parámetros son valores ilustrativos del curso.</p>
+  </div>
+</section>

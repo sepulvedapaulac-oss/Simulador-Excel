@@ -1,0 +1,11 @@
+{
+ "id": "ia_rem_lab2b",
+ "ident": "IAREM_M2_LAB2B",
+ "zip_name": "Laboratorio_2B_Auditoria_del_cierre",
+ "title": "Laboratorio 2B — Auditoría del cierre: 12 registros con errores",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 2 · LABORATORIO 2B",
+ "voice": false,
+ "pass": 0.7,
+ "lab": true,
+ "hoja": true
+}

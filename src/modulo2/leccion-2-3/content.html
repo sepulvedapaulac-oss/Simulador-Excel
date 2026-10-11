@@ -1,0 +1,239 @@
+<style>
+/* Lección 2.3 · componentes propios: informe de IA y tabla de alertas */
+.ai-report{border:1px solid var(--line);border-radius:20px;background:var(--surface2);padding:14px 16px;display:grid;gap:10px}
+.ai-report .ahead{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.ai-report .ahead .dot{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--violet-soft);color:var(--violet);font-size:.9rem}
+.ai-report .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ai-report .kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.ai-report .kpi b{display:block;font-size:1.45rem;color:var(--teal-ink);font-variant-numeric:tabular-nums}
+.ai-report .kpi small{color:var(--muted);font-weight:700;font-size:.78rem}
+.ai-report .a{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:.93rem}
+.al-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 4px}
+.al-legend div{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:10px 12px;font-size:.88rem}
+.al-legend b{display:block;margin-bottom:2px}
+.al-legend .c b{color:var(--bad)}.al-legend .i b{color:var(--amber-ink)}.al-legend .d b{color:var(--good)}
+.al-head{display:grid;grid-template-columns:120px minmax(0,1fr) 340px;gap:12px;padding:0 14px;margin-top:10px;font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.al-list{display:grid;gap:8px;margin-top:6px}
+.al-row{display:grid;grid-template-columns:120px minmax(0,1fr) 340px;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-left:6px solid var(--line);border-radius:16px;background:var(--surface)}
+.al-row>*{min-width:0}
+.al-row .al-id{display:grid;gap:4px;justify-items:start}
+.al-row .al-id b{font-variant-numeric:tabular-nums}
+.al-row .al-n{font-size:.72rem;font-weight:900;color:var(--muted)}
+.al-row .al-t{font-weight:800}
+.al-row .al-d{font-size:.88rem;color:var(--ink2);margin-top:4px}
+.al-row .al-d::before{content:"Dato revisado: ";font-weight:850;color:var(--muted)}
+.al-acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.al-acts button{font:inherit;font-size:.84rem;white-space:nowrap;font-weight:850;padding:9px 6px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);cursor:pointer}
+.al-acts button:hover:not(:disabled){border-color:var(--teal)}
+.al-acts button:disabled{cursor:default}
+.al-acts button.bad{background:var(--bad-soft);border-color:var(--bad-line);color:var(--bad)}
+.al-acts button.good{background:var(--good-soft);border-color:var(--good-line);color:var(--good)}
+.al-acts button.dim{opacity:.45}
+.al-row .al-fb{grid-column:1/-1}
+.al-row .al-fb:empty{display:none}
+.al-row .al-fb .feedback{margin:0}
+.al-row.solved{border-left-color:var(--good)}
+.al-row.tried:not(.solved){border-left-color:var(--amber)}
+.al-sum{margin-top:12px}
+.al-sum .tally{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+@media(max-width:860px){
+  .al-head{display:none}
+  .al-row{grid-template-columns:1fr;gap:8px}
+  .al-row .al-id{grid-auto-flow:column;justify-content:start;align-items:center;gap:8px}
+  .al-legend{grid-template-columns:1fr}
+}
+@media(max-width:560px){.ai-report .kpi b{font-size:1.2rem}.al-acts button{font-size:.76rem;padding:10px 2px;letter-spacing:-.01em}}
+/* Constructor de la matriz: tres columnas por alerta en escritorio */
+[data-builder="matriz"] .builder{grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-builder="matriz"] .brow:not(.full){grid-column:1/-1}
+[data-builder="matriz"] .brow.full label{font-size:.9rem}
+[data-builder="matriz"] .brow textarea{min-height:64px}
+@media(max-width:860px){[data-builder="matriz"] .builder{grid-template-columns:1fr}}
+.tabpane .evid{margin-top:10px;padding:8px 10px;border-radius:12px;background:var(--mint);border:1px solid var(--mint-line);font-size:.9rem}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Lee el informe de la IA y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.3 · Detección asistida de inconsistencias</span>
+      <h1 class="reveal">Diez alertas antes del pago: ¿cuáles son errores de verdad?</h1>
+      <p class="lead reveal">Es el cierre de octubre en <strong>AndesCorp</strong>. Camila le entregó al asistente de IA corporativo la planilla seudonimizada y doce reglas de revisión. <strong>Este es el informe que recibió.</strong></p>
+      <div class="ai-report reveal" aria-label="Informe del asistente de IA sobre el cierre de octubre">
+        <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo · Revisión del cierre</div>
+        <div class="kpis"><div class="kpi"><b>420</b><small>liquidaciones revisadas</small></div><div class="kpi"><b>12</b><small>reglas entregadas</small></div><div class="kpi"><b>10</b><small>alertas</small></div></div>
+        <div class="a">Encontré <b>10 posibles inconsistencias</b>. Te entrego la tabla con el código de cada persona, la alerta y el dato revisado. <mark>Te recomiendo revisarlas antes de aprobar el pago.</mark></div>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa en su pantalla una tabla de alertas con filas marcadas en colores junto a su libreta de notas" src="img/i23_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué debería hacer Camila con las diez alertas?</h3>
+  <div class="options" data-choice="hook" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Corregir las diez en el sistema: si la IA las encontró, son errores.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Revisar cada alerta con evidencia, decidir si corresponde corregir, investigar o descartar, y dejarlo registrado.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Ignorar el informe: la IA se equivoca, así que no vale la pena revisarlo.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: errores nuevos.</strong> <span class="fb-body">Una alerta es una hipótesis. Algunas tienen una explicación válida que la IA no conocía, como un turno extra aprobado. Corregirlas sin revisar crea errores donde no los había.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: errores reales que llegan al pago.</strong> <span class="fb-body">La IA puede equivocarse, pero también detecta en minutos diferencias que a una persona le tomaría horas encontrar. Descartar todo el informe deja pasar errores reales.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback good"><strong>Exacto.</strong> <span class="fb-body">La IA señala; tú confirmas con evidencia, decides y documentas. En esta lección aprenderás a distinguir errores reales de falsos positivos y a respaldar cada decisión.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: alertas con criterio" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>La IA señala, tú decides</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · TIPOS DE INCONSISTENCIAS (pestañas) -->
+<section class="slide" data-title="Tipos de inconsistencias" data-audio="p03" data-gate="tipos" data-gate-msg="Abre las cuatro pestañas.">
+  <span class="eyebrow">Lección 2.3 · Clasificar para revisar mejor</span>
+  <h2>Cuatro tipos de inconsistencias</h2>
+  <p>Saber de qué tipo es una inconsistencia te dice <strong>dónde buscar la evidencia</strong> y qué regla debe recibir la IA para detectarla. <strong>Abre cada pestaña.</strong></p>
+  <div data-tabs="tipos">
+    <div class="task">Tipos revisados <span class="tick">1 / 4</span></div>
+    <div class="tabs"><button class="tab" type="button">🗂️ De datos o registro</button><button class="tab" type="button">🧮 De cálculo</button><button class="tab" type="button">📋 De parámetros</button><button class="tab" type="button">📜 De reglas internas o contrato</button></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplos del cierre</strong><br/>Días trabajados mayores que los días del mes · un mismo bono cargado dos veces · una persona desvinculada que sigue en la nómina · dos fichas con la misma cuenta de depósito.</div><div><h3 style="margin-top:0">De datos o registro</h3>
+      <ul class="elem-list"><li><b>Qué son:</b> datos mal ingresados, duplicados, incompletos o fuera de rango.</li><li><b>Cómo ayuda la IA:</b> encuentra valores imposibles, duplicados y registros que no calzan con otros, como una fecha de término anterior al periodo pagado.</li><li><b>Dónde está la evidencia:</b> control de asistencia, ficha de la persona, registro de novedades aprobadas.</li></ul>
+      <div class="evid">Regla para la IA: “Marca los registros con días trabajados mayores que los días del mes o con fecha de término anterior al periodo”.</div></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplos del cierre</strong><br/>Horas extra pagadas con un recargo menor al 50 % · un descuento proporcional mal aplicado · una fórmula de la planilla de control que suma un rango incompleto.</div><div><h3 style="margin-top:0">De cálculo</h3>
+      <ul class="elem-list"><li><b>Qué son:</b> montos que no coinciden con la fórmula o la regla de cálculo que corresponde.</li><li><b>Cómo ayuda la IA:</b> recalcula filas con la regla que le entregas y señala diferencias, o revisa la lógica de una fórmula de control.</li><li><b>Dónde está la evidencia:</b> el cálculo del sistema de remuneraciones y tu cuadratura con casos conocidos.</li></ul>
+      <div class="evid">Regla para la IA: “Compara el monto de horas extra con horas por valor hora por uno coma cinco. El recargo mínimo es de 50 % según el art. 32 del Código del Trabajo”.</div></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplos del cierre</strong><br/>Tasa de AFP del mes anterior · tope imponible desactualizado · ingreso mínimo antiguo en el tope de gratificación. <i>Valores ilustrativos del curso.</i></div><div><h3 style="margin-top:0">De parámetros</h3>
+      <ul class="elem-list"><li><b>Qué son:</b> valores legales o previsionales que cambian en el tiempo y quedaron sin actualizar.</li><li><b>Cómo ayuda la IA:</b> compara los parámetros aplicados con la tabla del periodo que tú le entregas.</li><li><b>Dónde está la evidencia:</b> la fuente oficial del periodo. Nunca la memoria de la IA.</li></ul>
+      <div class="warn">Un parámetro mal cargado afecta a todas las personas que lo usan. Corrige en el origen y revisa a todos los afectados.</div></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplos del cierre</strong><br/>Bono de producción fuera de la política interna · reajuste de un anexo de contrato no aplicado · asignación pactada en el contrato colectivo pagada con otro monto.</div><div><h3 style="margin-top:0">De reglas internas o contrato</h3>
+      <ul class="elem-list"><li><b>Qué son:</b> pagos que no respetan lo que dice la política de la empresa, el contrato individual o el contrato colectivo.</li><li><b>Cómo ayuda la IA:</b> solo puede revisarlas si le entregas la regla, por ejemplo la cláusula del bono sin datos personales.</li><li><b>Dónde está la evidencia:</b> la política vigente, el contrato, el anexo o la cláusula correspondiente.</li></ul>
+      <div class="warn">Si la IA no recibió la regla, no puede detectar el error. Aquí aparecen la mayoría de los falsos positivos y de las omisiones.</div></div></div>
+  </div>
+</section>
+
+<!-- 4 · TABLA DE ALERTAS -->
+<section class="slide" data-title="Tabla de alertas" data-audio="p04" data-gate="alertas" data-gate-msg="Decide qué hacer con las diez alertas.">
+  <span class="eyebrow amber">Lección 2.3 · Actividad</span>
+  <h2>Decide qué hacer con cada alerta</h2>
+  <p>Esta es la tabla que entregó la IA, con datos seudonimizados. Lee la alerta y el dato revisado, y <strong>elige una decisión para cada fila</strong>. Si te equivocas, verás por qué y podrás volver a elegir.</p>
+  <div class="al-legend" aria-label="Significado de cada decisión">
+    <div class="c"><b>🔧 Corregir</b>La evidencia confirma un error real.</div>
+    <div class="i"><b>🔎 Investigar</b>Falta evidencia para concluir.</div>
+    <div class="d"><b>✓ Descartar</b>La evidencia muestra que el dato es correcto: falso positivo.</div>
+  </div>
+  <div id="alertas">
+    <div class="task">Alertas resueltas <span class="tick">0 / 10</span></div>
+    <div class="al-head" aria-hidden="true"><span>Código</span><span>Alerta de la IA y dato revisado</span><span>Tu decisión</span></div>
+    <div class="al-list"></div>
+    <div class="al-sum"></div>
+  </div>
+  <p class="hint" style="margin-top:10px">Montos y tasas: valores ilustrativos del curso. Verifica siempre los parámetros en la fuente oficial del periodo.</p>
+</section>
+
+<!-- 5 · EMPAREJAR -->
+<section class="slide" data-title="Cada alerta, su evidencia" data-audio="p05" data-gate="pairs" data-gate-msg="Forma las seis parejas.">
+  <span class="eyebrow amber">Lección 2.3 · Actividad</span>
+  <h2>¿Qué evidencia confirma cada inconsistencia?</h2>
+  <p><strong>Toca una inconsistencia</strong> de la izquierda y luego <strong>el control o documento</strong> de la derecha que permite confirmarla o descartarla.</p>
+  <div data-pairs="pairs">
+    <div class="task">Parejas formadas <span class="tick">0 / 6</span></div>
+    <div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div>
+    <div class="fb"></div>
+  </div>
+  <div class="callout"><strong>Regla práctica:</strong> la evidencia está en la fuente original del dato, no en otra respuesta de la IA. Preguntarle de nuevo no confirma nada.</div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: lo que la IA no vio" data-audio="p06" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Antes de cerrar</span>
+  <h2>Diez alertas resueltas… ¿cierre listo?</h2>
+  <div class="grid-2">
+    <div>
+      <div class="story" style="margin-top:0"><strong>La situación:</strong> Camila resolvió las diez alertas. Rodrigo, jefe de Compensaciones, escribe: “Si la IA ya revisó todo, ¿cerramos hoy?”.</div>
+      <div class="story"><strong>Lo que Camila nota:</strong> su cuadratura habitual de Planta compara el total de horas extra por valor hora por 1,5 con el total pagado. Hay una diferencia de <b>$214.300</b> (valor ilustrativo del curso) en seis personas, y <b>ninguna alerta</b> la menciona.</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Planilla de cuadratura de horas extra revisada con una lupa, junto a una calculadora" src="img/i23_b.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace Camila con la diferencia?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso1b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Cierra igual: la IA revisó las 420 liquidaciones y no encontró nada en esas personas.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le pide a la IA que “revise todo de nuevo con más cuidado”.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Investiga la diferencia en el sistema antes del pago y agrega la regla del recargo de horas extra a la instrucción del próximo cierre.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un error real llega al pago</div><div class="branch-body"><div><p>La IA revisó contra las doce reglas que recibió, y ninguna hablaba del recargo. <strong>Que no haya alerta no significa que no haya error.</strong> Seis personas recibirían menos de lo que corresponde.</p></div><div><p class="hint">Tus controles habituales siguen vigentes.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la misma revisión, el mismo resultado</div><div class="branch-body"><div><p>Pedir “más cuidado” no le entrega la regla que le faltaba. La IA puede volver a omitir el error. Lo que cambia el resultado es <strong>investigar con evidencia</strong> y <strong>agregar la regla</strong>.</p></div><div><p class="hint">Precisa la instrucción, no insistas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila revisa en el sistema y encuentra que esas seis personas tenían el recargo configurado al 25 %. Se corrige al 50 % antes del pago, como exige el art. 32 del Código del Trabajo, y la regla queda en la instrucción de revisión del próximo mes.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso1b" hidden>
+    <div class="story" style="margin-top:18px"><strong>Rodrigo pide:</strong> “Déjame un respaldo de la revisión para el archivo del cierre”.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué le entrega Camila?</h3>
+    <div class="options" data-choice="caso1b" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Un registro de alertas: cada alerta con su evidencia, la decisión, el responsable y la fecha, incluidas las descartadas y la diferencia que la IA no detectó.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La conversación completa con la IA, exportada como archivo.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Solo la lista de las cinco correcciones aplicadas.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso1b-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un respaldo que no respalda</div><div class="branch-body"><div><p>El chat muestra lo que dijo la IA, pero <strong>no la evidencia revisada ni quién decidió</strong>. Quien lea el archivo no podrá reconstruir por qué se corrigió o descartó cada alerta.</p></div><div><p class="hint">El respaldo es de tus decisiones, no de la conversación.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: decisiones sin explicar</div><div class="branch-body"><div><p>Si faltan las alertas descartadas, nadie sabrá por qué se aceptó un alza de horas extra o un sueldo distinto. Y la omisión de la IA <strong>es un aprendizaje</strong> para mejorar las reglas.</p></div><div><p class="hint">Registra todas las decisiones, no solo las correcciones.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Con ese registro, el cierre queda respaldado: cualquier persona puede ver qué se revisó, con qué evidencia y quién decidió. Además, Camila agrega la regla nueva a su lista de criterios.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: MATRIZ PERSONAL DE ALERTAS -->
+<section class="slide" data-title="Tu matriz de alertas" data-audio="p08" data-gate="matriz matriz_model pass" data-gate-msg="Completa tu matriz y revisa el modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tu matriz personal de alertas</h2>
+  <p>Primero responde sobre una alerta estándar. Luego define <strong>dos alertas de tu propio cierre</strong>: el criterio que revisará la IA, la evidencia que lo confirma y quién decide. Genera tu matriz y compárala con el modelo.</p>
+  <div data-builder="matriz">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi matriz</button><button class="small-btn model-btn" type="button" disabled>Ver matriz modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Matriz modelo (extracto):</strong>
+      <div class="out" style="background:var(--surface)"><table><thead><tr><th>Criterio para la IA</th><th>Evidencia</th><th>Responsable</th></tr></thead><tbody>
+        <tr><td>Días trabajados mayores que los días del mes</td><td>Control de asistencia y fechas de ingreso o término</td><td>Analista; aprueba jefatura</td></tr>
+        <tr><td>Horas extra con recargo menor al 50 %</td><td>Configuración del concepto en el sistema y cuadratura con casos conocidos</td><td>Analista que mantiene la configuración</td></tr>
+        <tr><td>Tasa de AFP distinta de la tabla del periodo</td><td>Tabla de parámetros verificada en la fuente oficial</td><td>Analista de parámetros; revisa jefatura</td></tr>
+        <tr><td>Pago a persona con fecha de término anterior al periodo</td><td>Ficha y documento de término firmado</td><td>Analista; informa a quien gestiona el finiquito</td></tr>
+      </tbody></table></div>
+      <p style="margin:10px 0 0">Cada alerta se registra con <b>evidencia, decisión, responsable y fecha</b>, también las descartadas. Revisa la explicación bajo cada pregunta.</p></div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.3</h2>
+    <p>Ya puedes usar las alertas de la IA con criterio: distinguir errores reales de falsos positivos, buscar la evidencia en la fuente, decidir y documentar cada decisión.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Alertas y decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la IA señala; tú confirmas con evidencia, decides y documentas. En la próxima lección verás cómo validar resultados y controlar la calidad antes del cierre.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los tipos</button><button class="small-btn primary" type="button" data-goto="3">Volver a la tabla de alertas</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios. Montos y tasas: valores ilustrativos del curso.</p>
+  </div>
+</section>

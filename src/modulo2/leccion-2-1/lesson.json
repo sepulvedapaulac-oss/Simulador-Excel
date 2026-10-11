@@ -1,0 +1,338 @@
+{
+ "id": "ia_rem_l21",
+ "ident": "IAREM_M2_L21",
+ "zip_name": "Leccion_2_1_Informacion_que_revisa_la_IA",
+ "title": "Lección 2.1 — La información que debe revisar la IA",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 2 · LECCIÓN 2.1",
+ "voice": true,
+ "pass": 0.8,
+ "narration": {
+  "p01": "Te damos la bienvenida a la lección dos punto uno, la primera del módulo de revisión asistida por inteligencia artificial. Se acerca el cierre de octubre en AndesCorp y Rodrigo, jefe de Compensaciones, le escribe a Camila con una propuesta. Abre su mensaje y decide qué debería hacer Camila primero.",
+  "p03": "Esta es una liquidación de sueldo ficticia de AndesCorp. Cada zona tiene algo que revisar y una pregunta clave: qué datos puede recibir la inteligencia artificial y cuáles nunca. Toca los siete puntos numerados.",
+  "p04": "Para revisar bien, primero hay que distinguir los haberes imponibles de los no imponibles. Arrastra cada haber a su columna, o tócalo y luego toca la columna. Pregúntate si el pago remunera el trabajo o si compensa un gasto.",
+  "p05": "Una revisión no se hace mirando una sola planilla. Se cruzan varias fuentes: el maestro de personal, las novedades del mes, la asistencia, los parámetros previsionales oficiales y la liquidación del mes anterior. Abre cada una y mira qué aporta.",
+  "p06": "Camila prepara la ficha de revisión para el cierre de octubre. Tiene que decidir qué información entra, contra qué reglas se compara y qué resultado espera de la inteligencia artificial. Toma las tres decisiones con ella.",
+  "quiz": "Llegó el momento de comprobar lo aprendido. Son cinco preguntas y necesitas al menos cuatro correctas para finalizar la lección. Cada alternativa tiene su explicación.",
+  "p08": "Ahora construye tu propia ficha de revisión. Elige las fuentes, las reglas, los datos mínimos y el formato de salida que usarías en tu empresa. Después compárala con la respuesta modelo y cópiala para tu próximo cierre.",
+  "p09": "Terminaste la lección dos punto uno. Recuerda: antes de pedirle a la inteligencia artificial que revise, define qué información entra, contra qué reglas se compara y qué resultado esperas. La inteligencia artificial señala posibles inconsistencias, y tú decides. En la próxima lección usarás la inteligencia artificial para construir fórmulas de Excel."
+ },
+ "video": {
+  "voice": true,
+  "scenes": [
+   {
+    "t": "Revisar no es calcular",
+    "lines": [
+     "La liquidación la calcula el sistema de remuneraciones. La revisión asistida llega después, antes del pago.",
+     "Su objetivo es encontrar posibles inconsistencias a tiempo, no rehacer el cálculo."
+    ],
+    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Sistema de remuneraciones</b>Calcula la liquidación<small>Reglas configuradas</small></div><div data-at=\"1\"><b>Revisión asistida</b>Señala posibles inconsistencias<small>Antes del pago</small></div></div>"
+   },
+   {
+    "t": "Qué información entra",
+    "lines": [
+     "A la inteligencia artificial solo entra lo mínimo que cada regla necesita: un código, el área, los conceptos y los montos.",
+     "Nunca entran datos que identifiquen a la persona, como su nombre, su número de identificación o su cuenta bancaria."
+    ],
+    "html": "<div class=\"v-chk\"><span data-at=\"0\">Código EMP</span><span data-at=\"0\">Área</span><span data-at=\"0\">Conceptos</span><span data-at=\"0\">Montos</span></div><div class=\"v-final\" data-at=\"1\" style=\"margin-top:14px\">Sin nombre · sin identificación · sin cuenta</div>"
+   },
+   {
+    "t": "Contra qué reglas",
+    "lines": [
+     "Sin reglas, la inteligencia artificial solo puede adivinar qué es raro.",
+     "Por eso le entregas los parámetros oficiales del período, ya verificados, las reglas internas de la empresa y la liquidación del mes anterior."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">Sin reglas, adivina</div><div data-at=\"1\">Parámetros oficiales verificados</div><div data-at=\"1\">Reglas internas escritas</div><div data-at=\"1\">Mes anterior para comparar</div></div>"
+   },
+   {
+    "t": "Qué resultado esperas",
+    "lines": [
+     "Pide un resultado que puedas revisar: una tabla con el código, el concepto, la regla, la diferencia y el dato que falta para confirmar.",
+     "La inteligencia artificial no corrige montos. Señala, y tú investigas."
+    ],
+    "html": "<div class=\"v-icons\"><div><span class=\"i\">🔎</span>Código y concepto</div><div><span class=\"i\">📏</span>Regla y diferencia</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">🙋</span>Tú investigas y decides</div></div>"
+   },
+   {
+    "t": "La ficha de revisión",
+    "lines": [
+     "Estas tres definiciones forman la ficha de revisión: información, reglas y resultado esperado.",
+     "En esta lección acompañarás a Camila a preparar la ficha del cierre de octubre. La inteligencia artificial señala; la persona decide."
+    ],
+    "html": "<div class=\"v-final\">La IA <em>señala</em>.<br/>Tú <em>decides</em>.</div><div class=\"v-chk\"><span data-at=\"0\">Información</span><span data-at=\"0\">Reglas</span><span data-at=\"0\">Resultado</span></div>"
+   }
+  ]
+ },
+ "hotspots": {
+  "liq": [
+   {
+    "t": "1. Encabezado y datos del trabajador",
+    "lvl": [
+     "no",
+     "Identidad: no entra a la IA"
+    ],
+    "html": "<div><b>Qué revisar:</b> que el período, el cargo, el área, la jornada de cuarenta y dos horas y los días trabajados coincidan con el maestro de personal y con la asistencia.</div><div><b>¿Y la IA?</b> No recibe nombre, RUT ni dirección. Se reemplazan por un código como <b>EMP-118</b>. El área y la jornada sí pueden entrar si una regla los necesita.</div>"
+   },
+   {
+    "t": "2. Haberes imponibles",
+    "lvl": [
+     "ok",
+     "Entra con código"
+    ],
+    "html": "<div><b>Qué revisar:</b> sueldo base contra el contrato; horas extra contra el registro de asistencia y con recargo mínimo de 50 % (Código del Trabajo, art. 32); gratificación según su modalidad y tope (art. 50); bonos contra la novedad aprobada.</div><div><b>¿Y la IA?</b> Puede recibir conceptos, cantidades y montos asociados al código. La regla de cálculo se la entregas tú; no le pidas que la suponga.</div>"
+   },
+   {
+    "t": "3. Haberes no imponibles",
+    "lvl": [
+     "ok",
+     "Entra con código"
+    ],
+    "html": "<div><b>Qué revisar:</b> que cada concepto sea realmente no imponible: colación, movilización o viático por montos razonables, que compensan un gasto y no remuneran trabajo. Un alza brusca o un “bono” informado como no imponible es una alerta.</div><div><b>¿Y la IA?</b> Puede comparar montos y variaciones contra el mes anterior. Si un monto es razonable o no, lo decide una persona con la política de la empresa.</div>"
+   },
+   {
+    "t": "4. Descuentos legales: AFP, salud y seguro de cesantía",
+    "lvl": [
+     "mid",
+     "Solo datos mínimos"
+    ],
+    "html": "<div><b>Qué revisar:</b> que la base sea el total imponible con su tope, que la tasa corresponda a la AFP del trabajador, que la cotización de salud coincida con el maestro y que el seguro de cesantía corresponda al tipo de contrato. Las tasas que ves son <b>ilustrativas del curso</b>.</div><div><b>¿Y la IA?</b> Puede recibir la AFP, la tasa y el tipo de contrato. Nunca información médica, licencias con diagnóstico ni detalles del plan de salud que no necesite la regla.</div>"
+   },
+   {
+    "t": "5. Impuesto único de segunda categoría",
+    "lvl": [
+     "mid",
+     "Con tabla oficial entregada por ti"
+    ],
+    "html": "<div><b>Qué revisar:</b> que la base tributable sea el total imponible menos las cotizaciones previsionales, y que el tramo corresponda a la tabla del mes publicada por el SII.</div><div><b>¿Y la IA?</b> Entrégale la tabla oficial del mes que tú verificaste. No le pidas que “recuerde” los tramos ni el valor de la UTM: puede tenerlos desactualizados.</div>"
+   },
+   {
+    "t": "6. Otros descuentos",
+    "lvl": [
+     "mid",
+     "Solo datos mínimos"
+    ],
+    "html": "<div><b>Qué revisar:</b> que cada descuento voluntario (anticipo, seguro complementario, préstamo) tenga autorización y esté informado en las novedades del mes, y que respete los límites legales.</div><div><b>¿Y la IA?</b> Puede recibir el tipo y el monto del descuento. Nunca el detalle de deudas, retenciones judiciales o datos de terceros, como los beneficiarios de una pensión de alimentos.</div>"
+   },
+   {
+    "t": "7. Totales y líquido a pagar",
+    "lvl": [
+     "ok",
+     "Entra sin datos bancarios"
+    ],
+    "html": "<div><b>Qué revisar:</b> que total haberes menos total descuentos dé el líquido, y comparar con el mes anterior: una variación grande sin novedad que la explique es una alerta.</div><div><b>¿Y la IA?</b> Puede señalar variaciones sobre un umbral que tú defines, por ejemplo más de 15 %. La cuenta bancaria de depósito nunca entra.</div>"
+   }
+  ]
+ },
+ "sorts": {
+  "haberes": {
+   "bins": [
+    {
+     "id": "imp",
+     "title": "Imponible",
+     "sub": "Remunera el trabajo: base de cotizaciones",
+     "cls": "good-bin"
+    },
+    {
+     "id": "noimp",
+     "title": "No imponible",
+     "sub": "Compensa un gasto, en monto razonable",
+     "cls": "mid-bin"
+    }
+   ],
+   "order": [
+    5,
+    0,
+    7,
+    2,
+    6,
+    1,
+    8,
+    3,
+    4
+   ],
+   "items": [
+    {
+     "t": "Sueldo base",
+     "bin": "imp",
+     "why": "Es la remuneración fija pactada en el contrato: siempre es imponible.",
+     "hint": "¿Este pago remunera el trabajo o compensa un gasto?"
+    },
+    {
+     "t": "Horas extraordinarias",
+     "bin": "imp",
+     "why": "Remuneran trabajo adicional a la jornada; son imponibles y se revisan contra la asistencia.",
+     "hint": "Las horas extra pagan trabajo efectivo. ¿Eso compensa un gasto?"
+    },
+    {
+     "t": "Gratificación legal",
+     "bin": "imp",
+     "why": "Es remuneración (arts. 47 y 50 del Código del Trabajo) y forma parte de la base imponible.",
+     "hint": "La gratificación es una participación en utilidades que recibe el trabajador. ¿Es un reembolso?"
+    },
+    {
+     "t": "Bono de producción",
+     "bin": "imp",
+     "why": "Remunera el desempeño o la producción: es imponible aunque su monto varíe cada mes.",
+     "hint": "Que un bono sea variable no lo vuelve no imponible. ¿Qué paga?"
+    },
+    {
+     "t": "Comisiones por ventas",
+     "bin": "imp",
+     "why": "Son remuneración variable por el trabajo de venta; son imponibles.",
+     "hint": "Las comisiones pagan el resultado del trabajo. ¿Compensan un gasto?"
+    },
+    {
+     "t": "Asignación de colación",
+     "bin": "noimp",
+     "why": "Compensa el gasto de alimentación. No es imponible mientras su monto sea razonable.",
+     "hint": "La colación cubre un gasto del trabajador, no remunera su trabajo."
+    },
+    {
+     "t": "Asignación de movilización",
+     "bin": "noimp",
+     "why": "Compensa el gasto de traslado. No es imponible si el monto es razonable.",
+     "hint": "La movilización cubre el costo de llegar al trabajo. ¿Remunera algo?"
+    },
+    {
+     "t": "Viático",
+     "bin": "noimp",
+     "why": "Cubre gastos de alojamiento y alimentación por viajes de trabajo; no es imponible en monto razonable.",
+     "hint": "El viático reembolsa gastos de un viaje laboral."
+    },
+    {
+     "t": "Asignación de pérdida de caja (monto razonable)",
+     "bin": "noimp",
+     "why": "Compensa el riesgo de faltantes de quien maneja dinero. En monto razonable, no es imponible.",
+     "hint": "Esta asignación cubre posibles faltantes de caja. ¿Paga trabajo o compensa un riesgo?"
+    }
+   ]
+  }
+ },
+ "builders": {
+  "ficha": {
+   "title": "Mi ficha de revisión asistida por IA",
+   "rows": [
+    {
+     "type": "text",
+     "label": "Proceso o planilla que revisarás",
+     "ph": "Ej.: cierre mensual de remuneraciones de planta, horas extra de bodega…"
+    },
+    {
+     "label": "1 · Fuentes que cruzarás",
+     "options": [
+      "Solo la liquidación del mes",
+      "La liquidación del mes y la del mes anterior",
+      "Maestro de personal, novedades, asistencia, parámetros oficiales y mes anterior"
+     ],
+     "model": 2,
+     "why": "<b>Modelo:</b> cruza las cinco fuentes. Una liquidación sola no muestra si falta una novedad, si las horas extra tienen respaldo o si un parámetro cambió."
+    },
+    {
+     "label": "2 · Reglas de comparación",
+     "options": [
+      "Lo que la IA sepa de la normativa",
+      "Parámetros oficiales del período, verificados por mí, y reglas internas escritas",
+      "Ninguna: que la IA encuentre lo raro"
+     ],
+     "model": 1,
+     "why": "<b>Modelo:</b> parámetros oficiales del período verificados por ti y reglas internas escritas. Sin reglas, la IA adivina; con parámetros “de memoria”, puede usar valores desactualizados."
+    },
+    {
+     "label": "3 · Datos mínimos que entregarás",
+     "options": [
+      "La planilla completa, con nombre, RUT y cuenta bancaria",
+      "Código seudónimo (EMP-…), área, conceptos y montos necesarios para cada regla",
+      "Solo los totales de la empresa"
+     ],
+     "model": 1,
+     "why": "<b>Modelo:</b> código seudónimo, área, conceptos y montos que cada regla necesita. Nombre, RUT y cuenta nunca son necesarios; los totales solos no permiten encontrar casos."
+    },
+    {
+     "label": "4 · Formato de salida",
+     "options": [
+      "La planilla corregida y lista para pagar",
+      "Tabla de posibles inconsistencias: código, concepto, regla, diferencia y dato para confirmar",
+      "Un párrafo que diga si el cierre está bien o mal"
+     ],
+     "model": 1,
+     "why": "<b>Modelo:</b> una tabla de posibles inconsistencias con el dato para confirmar. La IA no entrega planillas corregidas ni dictámenes generales: tú investigas y decides."
+    },
+    {
+     "type": "text",
+     "label": "Una regla propia que quieras verificar (opcional)",
+     "ph": "Ej.: la movilización no varía más de 10 % respecto del mes anterior sin una novedad que lo explique"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "q": "Antes de pedirle a la IA que revise el cierre, ¿qué debe definir Camila?",
+   "o": [
+    "Qué información entra, contra qué reglas se compara y qué resultado espera.",
+    "Qué herramienta responde más rápido.",
+    "Nada: basta con adjuntar la planilla del mes."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: esas tres definiciones forman la ficha de revisión y hacen que el resultado sea útil y verificable.",
+    "La rapidez no garantiza una revisión útil. Sin información, reglas y formato definidos, la respuesta será genérica.",
+    "Una planilla sin reglas ni formato produce comentarios vagos y, además, puede exponer datos que la tarea no necesita."
+   ]
+  },
+  {
+   "q": "¿Cuál de estos haberes es normalmente no imponible?",
+   "o": [
+    "Bono de producción.",
+    "Asignación de colación por un monto razonable.",
+    "Horas extraordinarias."
+   ],
+   "c": 1,
+   "f": [
+    "El bono de producción remunera el desempeño: es imponible aunque varíe cada mes.",
+    "Correcto: la colación compensa un gasto de alimentación y no es imponible mientras su monto sea razonable.",
+    "Las horas extra remuneran trabajo efectivo y son imponibles."
+   ]
+  },
+  {
+   "q": "¿Qué datos debería entregar Camila a la IA para revisar las horas extra de octubre?",
+   "o": [
+    "Las liquidaciones en PDF, con nombre, RUT y cuenta de cada persona.",
+    "Solo el total de horas extra de la empresa.",
+    "Una tabla con código EMP, área, horas registradas, horas pagadas y monto."
+   ],
+   "c": 2,
+   "f": [
+    "Las liquidaciones completas exponen datos personales que la revisión no necesita.",
+    "Con un total no se puede detectar qué caso tiene una diferencia: faltan los datos por código.",
+    "Correcto: son los datos mínimos, seudonimizados, que la regla necesita para comparar."
+   ]
+  },
+  {
+   "q": "La revisión necesita el tope imponible y las tasas de cotización. ¿De dónde salen?",
+   "o": [
+    "De lo que responda la IA cuando se los pregunte.",
+    "De la fuente oficial del período: Camila los verifica y los incluye en la ficha.",
+    "De la ficha del año pasado, porque casi no cambian."
+   ],
+   "c": 1,
+   "f": [
+    "La IA puede entregar valores desactualizados o inventados con total seguridad.",
+    "Correcto: los parámetros se verifican en la fuente oficial del período y se entregan como regla de comparación.",
+    "Los parámetros cambian; usar valores antiguos genera alertas falsas o deja errores sin detectar."
+   ]
+  },
+  {
+   "q": "La IA marca que EMP-207 tiene ocho horas extra pagadas sin respaldo en la asistencia. ¿Qué hace Camila?",
+   "o": [
+    "La trata como posible inconsistencia: revisa el registro original y la novedad, y luego decide.",
+    "Le pide a la IA que corrija el monto en la planilla.",
+    "La descarta, porque la IA a veces se equivoca."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: la IA señala y la persona investiga con la fuente original antes de decidir.",
+    "La IA no corrige montos: cualquier ajuste se hace en el sistema, después de confirmar la causa.",
+    "Descartarla sin revisar es tan riesgoso como aceptarla sin revisar; se confirma con el registro original."
+   ]
+  }
+ ]
+}

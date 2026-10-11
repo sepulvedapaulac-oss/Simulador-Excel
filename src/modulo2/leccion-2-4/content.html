@@ -1,0 +1,234 @@
+<style>
+/* Componentes propios de la Lección 2.4: ordenar, resaltar premisa, stepper */
+.order li{min-width:0}
+.order li .txt{min-width:0}
+.order li .txt small{display:block;font-weight:600;color:var(--good);margin-top:3px}
+.order li .mv button{color:var(--ink)}
+.order li .mv button:disabled{opacity:.35;cursor:not-allowed}
+.order.locked li .mv{display:none}
+.ord-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pm-list{display:grid;gap:14px;margin-top:12px}
+.pm-card{border:1px solid var(--line);border-radius:20px;background:var(--surface2);padding:14px;display:grid;gap:10px}
+.pm-card.solved{border-color:var(--good-line)}
+.pm-card .ahead{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pm-card .ahead .dot{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--violet-soft);color:var(--violet);font-size:.9rem}
+.pm-card .ahead .st{margin-left:auto;text-transform:none;letter-spacing:0;padding:3px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.pm-card.solved .ahead .st{color:var(--good);border-color:var(--good-line);background:var(--good-soft)}
+.pm-q{justify-self:end;max-width:92%;padding:10px 12px;border-radius:14px;border-bottom-right-radius:4px;background:var(--teal);color:var(--on-accent);font-size:.93rem}
+.pm-a{max-width:96%;padding:10px 12px;border-radius:14px;border-bottom-left-radius:4px;background:var(--surface);border:1px solid var(--line);font-size:.95rem;line-height:1.75}
+.sent{cursor:pointer;border-radius:6px;padding:2px 3px;border-bottom:2px dashed var(--line);transition:background .15s;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sent:hover,.sent:focus-visible{background:var(--amber-soft);outline:none;border-bottom-color:var(--amber)}
+.sent.okpick{background:var(--good-soft);border-bottom-color:var(--good-line)}
+.sent.found{background:var(--bad-soft);color:var(--bad);border-bottom:2px solid var(--bad);font-weight:700}
+.sent.found::before{content:"✕ ";font-weight:900}
+.pm-card.solved .sent{cursor:default;pointer-events:none}
+.pm-card .fb:empty{display:none}
+.stp{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start;margin-top:12px}
+.stp>*{min-width:0}
+.stp .sstep{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:center;font-weight:800;font-size:.92rem}
+.stp .sstep .n{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.stp .sstep.on .n{background:var(--teal);color:var(--on-accent)}
+.stp .sstep.ok .n{background:var(--good);color:var(--on-accent)}
+.stp-panel{border:1px solid var(--line);border-radius:20px;padding:16px 18px;background:var(--surface3)}
+.stp-panel h3{margin-top:0}
+.stp-panel .ctx{color:var(--ink2)}
+.stp-panel .datatbl td.diff{color:var(--bad);font-weight:900}
+.stp-next{margin-top:12px}
+.stp-log{margin-top:14px;border:1px dashed var(--mint-line);border-radius:16px;background:var(--callout-bg);padding:12px 14px}
+.stp-log h4{margin:0 0 6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--teal-ink)}
+.stp-log ol{margin:0;padding-left:1.2rem;display:grid;gap:4px;font-size:.88rem}
+.stp-log ol:empty::before{content:"Aún no hay registros: se completan a medida que avanzas.";color:var(--muted);margin-left:-1.2rem}
+.stp-log li{animation:rise .35s ease both}
+@media(max-width:860px){
+  .stp{grid-template-columns:1fr}
+  .stp .steps-side{grid-template-columns:repeat(6,1fr);gap:6px}
+  .stp .sstep{grid-template-columns:1fr;justify-items:center;padding:8px 4px}
+  .stp .sstep span:last-child{display:none}
+}
+@media(max-width:560px){
+  .order li{grid-template-columns:30px 1fr auto;gap:8px;padding:10px}
+  .order li .mv{flex-direction:column;gap:4px}
+  .order li .mv button{width:34px;height:30px}
+  .pm-q,.pm-a{max-width:100%}
+  .stp-panel{padding:12px}
+  .stp-panel .datatbl{font-size:.74rem}
+  .stp-panel .datatbl th,.stp-panel .datatbl td{padding:5px 4px}
+}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.4 · Validación y control de calidad</span>
+      <h1 class="reveal">“Todo cuadra”, dice la IA. ¿Y ahora?</h1>
+      <p class="lead reveal">Son las 17:30. Camila pidió a la IA corporativa un informe de variaciones de septiembre contra agosto. Rodrigo lo necesita a las 18:00.</p>
+      <div class="story reveal"><strong>Lo que respondió la IA:</strong> “El total de haberes sube 4,8 %. La variación se explica por horas extra en Planta y por dos ingresos en Ventas. Revisé los cálculos y todo cuadra.”</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista revisa en su pantalla un informe con cifras y marcas de verificación junto a una lista de control" src="img/i24_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué debería hacer Camila?</h3>
+  <div class="options" data-choice="hook" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviarlo: la IA dice que revisó los cálculos y que todo cuadra.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Darle una mirada rápida y, si las cifras se ven razonables, enviarlo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Aplicar un protocolo: criterio de aceptación, contraste con el sistema y prueba con un caso conocido; si no alcanza, avisar a Rodrigo en qué estado está.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: la IA se evalúa a sí misma.</strong> <span class="fb-body">“Revisé y todo cuadra” es parte de la respuesta, no una evidencia. Si hay un error, llegará a Rodrigo con apariencia de informe validado.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: una impresión no es una validación.</strong> <span class="fb-body">Los errores de la IA suelen verse razonables. Sin criterio ni evidencia, “se ve bien” no permite saber qué se revisó ni detectar lo que no se ve.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Validar es un proceso, no una impresión: criterios definidos antes, evidencia, trazabilidad y una persona responsable. Y si el tiempo no alcanza, se informa el estado real en lugar de enviar algo sin revisar. Eso aprenderás en esta lección.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO (sin narración) -->
+<section class="slide" data-title="Video: validar es un proceso" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Validar es un proceso, no una impresión</h2>
+  <p class="silent-note">🔇 Este video no tiene narración: los textos y subtítulos avanzan solos. Puedes pausar o saltar entre capítulos.</p>
+  <div class="player silent" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver texto completo del video</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ORDENAR SECUENCIA -->
+<section class="slide" data-title="El protocolo en orden" data-gate="orden" data-gate-msg="Ordena correctamente los seis pasos del protocolo.">
+  <span class="eyebrow amber">Lección 2.4 · Actividad</span>
+  <h2>Ordena el protocolo de validación</h2>
+  <p>Estos son los seis pasos para validar un resultado de IA, pero están desordenados. <strong>Usa las flechas</strong> para moverlos y luego presiona <b>Comprobar orden</b>. Puedes intentarlo las veces que necesites.</p>
+  <div id="ordRoot">
+    <div class="task">Pasos en su lugar <span class="tick">0 / 6</span></div>
+    <ol class="order" aria-label="Pasos del protocolo de validación"></ol>
+    <div class="ord-actions"><button class="small-btn primary" type="button" id="ordCheck">Comprobar orden</button></div>
+    <div class="fb" style="margin-top:10px"></div>
+  </div>
+</section>
+
+<!-- 4 · RESALTAR LA PREMISA ERRÓNEA -->
+<section class="slide" data-title="La frase que falla" data-gate="premisa" data-gate-msg="Encuentra la frase errónea en las cuatro respuestas.">
+  <span class="eyebrow amber">Lección 2.4 · Actividad</span>
+  <h2>Resalta la premisa errónea</h2>
+  <p>Cada respuesta de la IA suena convincente, pero contiene <strong>una frase incorrecta</strong>. Tócala para marcarla. Si eliges una frase correcta, verás por qué lo es y podrás seguir buscando.</p>
+  <div id="pmRoot">
+    <div class="task">Premisas erróneas encontradas <span class="tick">0 / 4</span></div>
+    <div class="pm-list"></div>
+  </div>
+  <p class="sources">Las respuestas de IA de esta actividad son ficticias, incluidas sus referencias. Referencias: Código del Trabajo, arts. 32 y 41; Ley 21.561 (jornada de 42 horas desde el 26 de abril de 2026). Verifica siempre los valores vigentes en la fuente oficial.</p>
+</section>
+
+<!-- 5 · STEPPER -->
+<section class="slide" data-title="Paso a paso: el informe" data-gate="stepper" data-gate-msg="Completa los seis pasos de la validación.">
+  <span class="eyebrow amber">El caso de Camila · Validación guiada</span>
+  <h2>Camila valida el informe de variaciones, paso a paso</h2>
+  <p>Acompaña a Camila en cada paso del protocolo. En cada uno, <strong>elige la mejor decisión</strong>. Cada paso correcto deja una línea en la bitácora de validación.</p>
+  <div class="stp" id="stpRoot">
+    <div class="steps-side" aria-label="Pasos de la validación"></div>
+    <div>
+      <div class="stp-panel" aria-live="polite"></div>
+      <div class="stp-log"><h4>🗂️ Bitácora de validación</h4><ol></ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CASO APLICADO -->
+<section class="slide" data-title="Caso: el cierre con apuro" data-gate="caso" data-gate-msg="Resuelve las tres decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Decisiones</span>
+  <h2>El cierre con apuro</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>La situación:</strong> en octubre, Rodrigo pide a Camila usar la IA para preparar el cálculo de la gratificación de un grupo de trabajadores y revisar las horas extra del mes. El cierre es mañana y el equipo está con poco personal.</div>
+    <div class="photo-frame wide"><img alt="Dos analistas revisan juntos un informe impreso con marcas de revisión" src="img/i24_b.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué hace Camila antes de pedirle el cálculo a la IA?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Nada especial: revisará el resultado cuando llegue.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Acuerda con Rodrigo los criterios de aceptación: cuadratura con el sistema por trabajador, tope de la gratificación verificado en la fuente oficial y casos borde a revisar.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le pide a la IA que, al final, indique qué tan segura está de su respuesta.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la vara se fija al ver el resultado</div><div class="branch-body"><div><p>Sin criterios previos, la revisión depende de la impresión del momento y del apuro. Es muy fácil aceptar lo que “parece” correcto.</p></div><div><p class="hint">El criterio se define antes, no después.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la seguridad de la IA no es evidencia</div><div class="branch-body"><div><p>La IA puede declararse muy segura de un resultado erróneo. Su nivel de confianza no reemplaza un criterio verificable contra el sistema y la fuente oficial.</p></div><div><p class="hint">Confianza declarada ≠ evidencia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Con criterios acordados por escrito, Camila y Rodrigo saben de antemano qué debe cumplir el resultado. El tope de la gratificación del art. 50 (4,75 ingresos mínimos mensuales al año) se verificará en la fuente, no se toma de la IA.</p></div><div><p class="hint">Ahora llega el resultado.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · El total de horas extra cuadra con el sistema, pero EMP-118 tiene $40.000 de más y EMP-127, $40.000 de menos. ¿Qué hace?</h3>
+    <div class="options" data-choice="caso2" data-correct="C" data-then="caso3">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Lo acepta: el total es lo que importa para el cierre.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Corrige a mano los dos montos en el informe y no deja nota.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No lo acepta: el criterio era por trabajador. Registra el hallazgo, busca la causa en el sistema y corrige ahí.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: dos liquidaciones con error</div><div class="branch-body"><div><p>Los errores se compensan en el total, pero cada trabajador recibe un monto incorrecto. El criterio acordado era la cuadratura por trabajador.</p></div><div><p class="hint">Un total que cuadra puede esconder errores individuales.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde la trazabilidad</div><div class="branch-body"><div><p>Sin registro, nadie sabrá por qué cambiaron esos montos. Además, si la causa está en el sistema (por ejemplo, horas asignadas al trabajador equivocado), el error se repetirá el próximo mes.</p></div><div><p class="hint">Se corrige la causa, y se registra.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Camila descubre que 4 horas de EMP-127 se registraron a EMP-118. Corrige el registro en el sistema y anota el hallazgo con su evidencia.</p></div><div><p class="hint">Falta la aprobación.</p></div></div></div></template>
+  </div>
+  <div class="phase" id="caso3" hidden>
+    <h3 style="margin-top:18px">Decisión 3 · Rodrigo le dice: “Si a ti te cuadra, apruébalo tú misma; yo no alcanzo a revisarlo”. ¿Qué responde Camila?</h3>
+    <div class="options" data-choice="caso3" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Propone que Andrés haga la segunda revisión con la evidencia y que Rodrigo apruebe sobre ese registro, aunque tome unos minutos más.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Lo aprueba ella misma: ya hizo una revisión completa.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le pide a la IA una segunda revisión y la registra como control de cuatro ojos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso3-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: sin cuatro ojos</div><div class="branch-body"><div><p>Quien hizo el trabajo no puede ser su único control: tiende a repetir el mismo razonamiento. Además, la responsabilidad de aprobar queda difusa.</p></div><div><p class="hint">Hacer y aprobar son roles distintos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un control que no es independiente</div><div class="branch-body"><div><p>La IA puede ayudar a buscar errores, pero no reemplaza la revisión de una persona responsable. Registrarla como cuatro ojos sería un registro engañoso.</p></div><div><p class="hint">La IA asiste; las personas validan y responden.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-A"><div class="branch good"><div class="branch-head">✓ Correcto: evidencia, trazabilidad y responsable</div><div class="branch-body"><div><p>La segunda revisión es independiente y Rodrigo aprueba sobre la evidencia, no sobre la confianza. Si algo falla después, se puede reconstruir qué se revisó y quién respondió.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: PROTOCOLO PERSONAL + CHECKLIST DE CUATRO OJOS -->
+<section class="slide" data-title="Tu protocolo de validación" data-gate="protocolo protocolo_model pass" data-gate-msg="Genera tu protocolo y revisa la checklist de cuatro ojos.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tu protocolo personal de validación</h2>
+  <p>Elige un resultado de IA que uses o quieras usar en tu trabajo y arma tu protocolo. Al generarlo verás si tiene puntos débiles. Después revisa la <b>checklist de cuatro ojos</b> para entregársela a quien haga tu segunda revisión.</p>
+  <div data-builder="protocolo">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi protocolo</button><button class="small-btn model-btn" type="button" disabled>Ver checklist de cuatro ojos</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden style="margin-top:12px"><strong>Checklist de cuatro ojos (para quien revisa):</strong>
+      <ol style="margin:.4rem 0 0;padding-left:1.2rem">
+        <li>¿Los criterios de aceptación están escritos y son anteriores al resultado?</li>
+        <li>¿Las cifras se contrastaron con el sistema y las normas con la fuente oficial (no con otra IA)?</li>
+        <li>¿Hay al menos un caso conocido calculado a mano y coincide?</li>
+        <li>¿Se revisaron ingresos, egresos, licencias, topes y cambios de jornada?</li>
+        <li>¿Cada diferencia tiene su causa identificada y su corrección registrada?</li>
+        <li>¿Revisé con la evidencia, sin quedarme solo con las conclusiones de quien hizo el trabajo?</li>
+        <li>¿Queda registro de versión, instrucción usada, evidencias, quién revisó, quién aprueba y la fecha?</li>
+      </ol>
+    </div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.4 y el Módulo 2</h2>
+    <p>Ya puedes validar un resultado de IA con un protocolo: criterios definidos antes, contraste con el sistema y la fuente oficial, caso conocido, casos borde, segunda revisión y registro.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y hallazgos acertados al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> validar es un proceso, no una impresión. Si no puedes mostrar el criterio, la evidencia y quién aprobó, el resultado todavía no está validado. En el Módulo 3 usarás estos controles para analizar datos y preparar informes.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar el protocolo</button><button class="small-btn primary" type="button" data-goto="4">Repasar la validación guiada</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios. Los valores usados son ilustrativos del curso: verifícalos siempre en la fuente oficial. Este material es formativo y no reemplaza la asesoría legal.</p>
+  </div>
+</section>

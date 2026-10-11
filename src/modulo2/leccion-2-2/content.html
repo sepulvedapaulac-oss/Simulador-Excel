@@ -1,0 +1,243 @@
+<style>
+/* Componentes propios de la Lección 2.2: chat simulado, tarjetas de funciones y probador de fórmulas */
+.fml{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;font-weight:700;background:var(--chip);color:var(--ink);border:1px solid var(--line2);border-radius:8px;padding:2px 7px;overflow-wrap:anywhere;word-break:break-word}
+.fml.blk{display:block;margin:6px 0;padding:8px 10px}
+.aichat .u .fml{background:rgba(255,255,255,.18);color:inherit;border-color:rgba(255,255,255,.35)}
+.chat22{display:grid;gap:12px}
+.chat22 .aichat{min-height:120px}
+.chat22 .aichat>*{overflow-wrap:anywhere}
+.chat22 .n{justify-self:center;max-width:96%;font-size:.84rem;font-weight:750;color:var(--amber-ink);background:var(--amber-soft);border:1px dashed var(--story-line);border-radius:12px;padding:8px 12px;text-align:center;animation:rise .35s ease both}
+.chat22 .u,.chat22 .a{animation:rise .35s ease both}
+.chat22 .ask{font-weight:850;margin:4px 0 0}
+.chat22 .options{margin:8px 0 0}
+.chat22 .opt span:last-child{overflow-wrap:anywhere}
+.chat22 .round-tag{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--violet);background:var(--violet-soft);border-radius:999px;padding:3px 10px}
+.flipdeck.fx9 .face{min-height:230px}
+.flipdeck.fx9 .face .big{font-size:1.35rem;letter-spacing:.01em;overflow-wrap:anywhere}
+.flipdeck.fx9 .face .syn{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;color:var(--muted);overflow-wrap:anywhere}
+.flipdeck.fx9 .face.back span{font-size:.88rem}
+.flipdeck.fx9 .face.back .fml{font-size:.76rem}
+.tests22{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.tcard{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:16px;background:var(--surface);padding:12px 14px;display:grid;gap:6px;min-width:0}
+.tcard.ok{border-left-color:var(--good);background:var(--good-soft)}
+.tcard.no{border-left-color:var(--bad)}
+.tcard h3{margin:0;font-size:1rem}
+.tcard .st{font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tcard.ok .st{color:var(--good)}
+.tcard.no .st{color:var(--bad)}
+.tcard p{margin:0;font-size:.9rem}
+.tcard .small-btn{justify-self:start}
+.cases{display:grid;gap:4px;margin-top:4px;font-size:.84rem}
+.cases div{padding:5px 8px;border-radius:8px;background:var(--surface2);border:1px solid var(--line2);overflow-wrap:anywhere}
+.cases .ok{border-color:var(--good-line);background:var(--good-soft);color:var(--good)}
+.cases .no{border-color:var(--bad-line);background:var(--bad-soft);color:var(--bad)}
+#hoja22 .hj-grid td{min-width:84px}
+#hoja22 .hj-grid td[data-k^="H"]{min-width:170px;max-width:210px}
+.checklist22{margin:8px 0 0;padding-left:0;list-style:none;display:grid;gap:6px}
+.checklist22 li{padding:7px 10px;border-radius:10px;background:var(--surface2);border:1px solid var(--line2);font-size:.9rem}
+@media(max-width:760px){.tests22{grid-template-columns:1fr}}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.2 · Fórmulas con IA</span>
+      <h1 class="reveal">Dos segundos para escribirla, ¿cuánto para probarla?</h1>
+      <p class="lead reveal">Camila prepara la planilla de control de horas extra de octubre en AndesCorp. Le pidió a la IA corporativa una fórmula para traer el valor hora de cada código, y la respuesta llegó al instante.</p>
+      <div class="aichat reveal" aria-label="Respuesta de la IA a Camila">
+        <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo</div>
+        <div class="a">Usa esta fórmula en la columna E y cópiala hacia abajo: <span class="fml">=BUSCARV(A2;Parametros!A2:C9;3)</span></div>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista de remuneraciones frente a una planilla de Excel con fórmulas, junto a un asistente de IA en la pantalla" src="img/i22_hero.jpg"/></div>
+  </div>
+  <div class="story"><strong>Lo que está en juego:</strong> la planilla tiene 420 filas y el cierre es mañana. Si la fórmula trae el valor hora de otra persona, el monto de horas extra quedará mal pagado.</div>
+  <h3 style="margin-top:18px">¿Qué hace Camila antes de copiar la fórmula en las 420 filas?</h3>
+  <div class="options" data-choice="hook" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La copia de inmediato: la IA conoce Excel mejor que ella.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La prueba con dos o tres códigos cuyo valor hora conoce, incluido uno que no existe, y revisa qué devuelve.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le pregunta a la IA si está segura de que la fórmula es correcta.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: un error multiplicado por 420.</strong> <span class="fb-body">A esta fórmula le falta el cuarto argumento (FALSO). Sin coincidencia exacta, BUSCARV puede devolver el valor hora de otra fila sin mostrar ningún error. La IA escribe rápido, pero no conoce tu tabla ni la prueba por ti.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: la IA confirma su propio error.</strong> <span class="fb-body">Lo más probable es que responda que sí. Que la IA lo afirme no comprueba nada: lo que demuestra que una fórmula funciona es probarla con casos cuyo resultado conoces.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Con un código que no existe, la fórmula igual devuelve un valor: le falta la coincidencia exacta. En esta lección aprenderás a pedir fórmulas con contexto, a detectar los errores típicos de la IA y a probar cada fórmula antes de usarla.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO (sin narración) -->
+<section class="slide" data-title="Video: pedir y probar fórmulas" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>La IA escribe la fórmula; tú la pruebas</h2>
+  <p class="silent-note">🔇 Este video no tiene narración: los textos y subtítulos avanzan solos. Puedes pausar o saltar entre capítulos.</p>
+  <div class="player silent" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver texto completo del video</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CHAT IA SIMULADO -->
+<section class="slide" data-title="Chat: pedir y corregir" data-gate="chat" data-gate-msg="Resuelve los cinco pedidos del chat con la IA.">
+  <span class="eyebrow amber">Lección 2.2 · Chat con la IA</span>
+  <h2>Camila arma su planilla de control con ayuda de la IA</h2>
+  <div class="grid-2">
+    <p>Tú decides qué le escribe Camila a la IA. Primero, cómo pedir la fórmula; después, cómo pedir cada corrección cuando la respuesta trae un error. <strong>Elige el mensaje que enviarías</strong> en cada pedido.</p>
+    <div class="ficha" aria-label="Estructura de la planilla de control">
+      <div class="row"><b>A · B</b><span>Código (EMP-001…) · Área</span></div>
+      <div class="row"><b>D · E</b><span>Horas extra del mes · Valor hora</span></div>
+      <div class="row"><b>F</b><span>Monto de horas extra (fórmula)</span></div>
+      <div class="row"><b>I2</b><span>Recargo: 1,5 (50 %)</span></div>
+    </div>
+  </div>
+  <div class="chat22" id="chat22">
+    <div class="task">Pedidos resueltos <span class="tick">0 / 5</span></div>
+    <div class="aichat" id="chatLog" aria-live="polite" aria-label="Conversación de Camila con el asistente de IA">
+      <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo · Excel</div>
+    </div>
+    <div id="chatAsk"></div>
+    <div class="fb" id="chatFb"></div>
+  </div>
+</section>
+
+<!-- 4 · FLASHCARDS DE FUNCIONES -->
+<section class="slide" data-title="Funciones clave" data-gate="fx" data-gate-msg="Voltea las nueve tarjetas de funciones.">
+  <span class="eyebrow">Lección 2.2 · Funciones de control</span>
+  <h2>Nueve funciones que conviene saber pedir</h2>
+  <p>No necesitas memorizar la sintaxis: la IA te la escribe. Sí necesitas saber <strong>qué hace cada función</strong> para pedir la correcta y reconocer cuándo la respuesta no tiene sentido. <strong>Toca cada tarjeta</strong> para ver qué hace y un uso de control en remuneraciones.</p>
+  <div data-flip="fx">
+    <div class="task">Tarjetas revisadas <span class="tick">0 / 9</span></div>
+    <div class="flipdeck fx9">
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">SI</div><span class="syn">=SI(prueba;si_verdadero;si_falso)</span><strong>Decide entre dos resultados</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>SI</strong><span>Evalúa una condición y devuelve un resultado si se cumple y otro si no.</span><span><b>Control:</b> marcar horas extra sobre el umbral que defina tu empresa.</span><span class="fml blk">=SI(D2&gt;12;"REVISAR";"OK")</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">Y / O</div><span class="syn">=Y(cond1;cond2) · =O(cond1;cond2)</span><strong>Combina condiciones</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Y / O</strong><span><b>Y</b> es verdadero si se cumplen todas las condiciones; <b>O</b>, si se cumple al menos una. Se usan dentro de SI.</span><span><b>Control:</b> detectar horas extra registradas sin valor hora.</span><span class="fml blk">=SI(Y(D2&gt;0;E2=0);"REVISAR";"OK")</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">BUSCARV</div><span class="syn">=BUSCARV(valor;tabla;columna;FALSO)</span><strong>Busca un dato por código</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>BUSCARV</strong><span>Busca un valor en la primera columna de una tabla y devuelve el dato de otra columna de esa fila.</span><span><b>Control:</b> traer el valor hora por código. Siempre con <b>FALSO</b> (coincidencia exacta) y el rango fijado con $.</span><span class="fml blk">=BUSCARV(I4;$A$2:$E$9;5;FALSO)</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">BUSCARX</div><span class="syn">=BUSCARX(valor;buscar_en;devolver;si_no_existe)</span><strong>La búsqueda moderna</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>BUSCARX</strong><span>Busca con coincidencia exacta por defecto, en cualquier dirección, y permite un aviso si no encuentra. Disponible en Microsoft 365 y Excel 2021 o posterior.</span><span><b>Control:</b> búsqueda por código con aviso visible.</span><span class="fml blk">=BUSCARX(I4;A2:A9;E2:E9;"No existe")</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">INDICE + COINCIDIR</div><span class="syn">=INDICE(devolver;COINCIDIR(valor;buscar_en;0))</span><strong>Buscar en cualquier versión</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>INDICE + COINCIDIR</strong><span>COINCIDIR encuentra la posición del código (con 0, exacta) e INDICE devuelve el dato en esa posición. Funciona en versiones antiguas y busca hacia la izquierda.</span><span class="fml blk">=INDICE(E2:E9;COINCIDIR(I4;A2:A9;0))</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">SUMAR.SI.CONJUNTO</div><span class="syn">=SUMAR.SI.CONJUNTO(sumar;rango1;crit1;rango2;crit2)</span><strong>Suma con varias condiciones</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>SUMAR.SI.CONJUNTO</strong><span>Suma solo los valores que cumplen todas las condiciones.</span><span><b>Control:</b> cuadrar las horas extra de un área contra el resumen del sistema.</span><span class="fml blk">=SUMAR.SI.CONJUNTO(D2:D9;B2:B9;"Planta";D2:D9;"&gt;10")</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">CONTAR.SI</div><span class="syn">=CONTAR.SI(rango;criterio)</span><strong>Cuenta lo que cumple un criterio</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>CONTAR.SI</strong><span>Cuenta las celdas que cumplen un criterio.</span><span><b>Control:</b> detectar códigos duplicados (resultado mayor que 1) o contar cuántos casos quedaron en REVISAR.</span><span class="fml blk">=CONTAR.SI($A$2:$A$9;A2)</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">SI.ERROR</div><span class="syn">=SI.ERROR(valor;valor_si_error)</span><strong>Reemplaza un error</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>SI.ERROR</strong><span>Si la fórmula da error, muestra el resultado que elijas.</span><span><b>Control:</b> un aviso legible cuando un código no existe. Cuidado: no ocultes errores con un 0, que pasaría como monto válido.</span><span class="fml blk">=SI.ERROR(BUSCARV(I4;$A$2:$E$9;5;FALSO);"Código no existe")</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">REDONDEAR</div><span class="syn">=REDONDEAR(número;decimales)</span><strong>Ajusta los decimales</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>REDONDEAR</strong><span>Redondea un número a los decimales indicados (0 = al peso).</span><span><b>Control:</b> comparar al peso con el monto del sistema y evitar diferencias por decimales.</span><span class="fml blk">=REDONDEAR(D2*E2*1,5;0)</span></div></div></button>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Para pedir mejor:</strong> si sabes qué función necesitas, nómbrala en tu instrucción (“usa SUMAR.SI.CONJUNTO”). Si no lo sabes, describe la regla y pide que la IA te explique por qué eligió esa función.</div>
+</section>
+
+<!-- 5 · PROBADOR DE FÓRMULAS (hoja.js) -->
+<section class="slide" data-title="Probador de fórmulas" data-gate="probador" data-gate-msg="Corrige las cuatro fórmulas y presiona “Probar con casos conocidos” hasta que todas pasen.">
+  <span class="eyebrow amber">Lección 2.2 · Probador de fórmulas</span>
+  <h2>Pega, corrige y prueba las fórmulas de la IA</h2>
+  <div class="grid-2">
+    <div>
+      <p>Esta es la planilla de control de Camila con 8 colaboradores ficticios. La IA propuso cuatro fórmulas y <strong>cada una trae un error típico</strong>. Para cada tarjeta:</p>
+      <ol class="elem-list" style="list-style:none">
+        <li><b>1.</b> Presiona <b>“Pegar propuesta de la IA”</b> y mira qué resultado da.</li>
+        <li><b>2.</b> Corrige la fórmula en la barra <b>fx</b> y presiona Enter o ✓.</li>
+        <li><b>3.</b> Presiona <b>“Probar con casos conocidos”</b>: el probador compara cada resultado con valores que ya sabes que son correctos.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Casos conocidos:</strong> EMP-003 tiene 8 horas extra y valor hora $4.000, así que su monto debe ser <b>8 × 4.000 × 1,5 = $48.000</b>. EMP-006 no tuvo horas extra: su monto debe ser <b>$0</b>. El código EMP-099 no existe.<br/><small>Recargo mínimo legal de 50 % sobre el sueldo convenido (Código del Trabajo, art. 32). El valor hora viene calculado desde el sistema; todos los valores son ficticios.</small></div>
+  </div>
+  <div class="tests22" id="tests22">
+    <div class="tcard" data-t="0"><span class="st">Pendiente</span><h3>1 · Monto de horas extra (F2 a F9)</h3><p>La IA propuso <span class="fml">=D2*E2*I2</span> para F2, “para copiar hacia abajo”.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="small-btn paste" type="button">Pegar propuesta de la IA en F2</button><button class="small-btn fill" type="button">⤓ Rellenar F2 hacia abajo</button></div><div class="cases"></div></div>
+    <div class="tcard" data-t="1"><span class="st">Pendiente</span><h3>2 · Buscar el valor hora (I5)</h3><p>Para el código escrito en I4, la IA propuso <span class="fml">=BUSCARV(I4;A2:E9;5)</span>.</p><div><button class="small-btn paste" type="button">Pegar propuesta de la IA en I5</button></div><div class="cases"></div></div>
+    <div class="tcard" data-t="2"><span class="st">Pendiente</span><h3>3 · Horas extra de Operaciones (I7)</h3><p>La IA propuso <span class="fml">=SUMAR.SI(B2:B9,"Operaciones",D2:D9)</span>.</p><div><button class="small-btn paste" type="button">Pegar propuesta de la IA en I7</button></div><div class="cases"></div></div>
+    <div class="tcard" data-t="3"><span class="st">Pendiente</span><h3>4 · Personas con más de 10 h extra (I8)</h3><p>La IA propuso <span class="fml">=COUNTIF(D2:D9;"&gt;10")</span>.</p><div><button class="small-btn paste" type="button">Pegar propuesta de la IA en I8</button></div><div class="cases"></div></div>
+  </div>
+  <div id="hoja22"></div>
+  <div class="hj-tools"><button class="small-btn primary" type="button" id="testBtn">▶ Probar con casos conocidos</button></div>
+  <div id="testOut" aria-live="polite"></div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: la columna de control" data-gate="caso" data-gate-msg="Resuelve las tres decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Una columna de control</span>
+  <h2>Rodrigo pide un control antes del cierre</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>La situación:</strong> Rodrigo, jefe de Compensaciones, quiere que antes de cerrar octubre la planilla marque las filas donde el monto de horas extra informado por el sistema (columna G) no coincide con <b>horas × valor hora × 1,5</b>. Son 420 filas y Camila quiere apoyarse en la IA para escribir la fórmula.</div>
+    <div class="photo-frame wide"><img alt="Camila y Rodrigo revisan en un notebook una columna de control con celdas marcadas para revisar" src="img/i22_b.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Cómo empieza Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Pega en el chat la base de 420 filas, con nombres, y pide: “revisa si las horas extra están bien”.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pide una fórmula de control: describe las columnas D, E y G, la regla del recargo de 50 %, que usa Excel en español y que la fórmula irá en H2; pide además una explicación y casos de prueba.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le pide a la IA que calcule ella los montos correctos de las 420 personas para comparar.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos expuestos y una revisión que no se puede verificar</div><div class="branch-body"><div><p>Para escribir una fórmula no se necesitan datos de personas. Además, una revisión “a ojo” de la IA no deja una regla que se pueda probar ni repetir el próximo mes.</p></div><div><p class="hint">Pide la herramienta (la fórmula), no el veredicto.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la IA calculando en lugar de la planilla</div><div class="branch-body"><div><p>Un modelo generativo puede equivocarse en operaciones aritméticas y no deja trazabilidad. La IA asiste con la fórmula; <strong>el cálculo lo hace Excel</strong>, donde se puede revisar celda por celda.</p></div><div><p class="hint">La IA asiste; la planilla calcula.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La IA responde: <span class="fml">=SI(G2&lt;&gt;D2*E2*1,5;"REVISAR";"OK")</span> y explica que compara el monto del sistema con el cálculo esperado.</p></div><div><p class="hint">Ahora toca probarla.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · Las pruebas muestran una sorpresa</h3>
+    <div class="ficha" aria-label="Resultados de las pruebas"><div class="row"><b>Caso 1</b><span>Monto correcto conocido → muestra <b>OK</b> ✓</span></div><div class="row"><b>Caso 2</b><span>Error conocido de $5.000 → muestra <b>REVISAR</b> ✓</span></div><div class="row"><b>Caso 3</b><span>Monto correcto, pero el cálculo da $36.832,5 y el sistema pagó $36.833 (redondeo al peso) → muestra <b>REVISAR</b> ✕</span></div></div>
+    <div class="options" data-choice="caso2" data-correct="B" data-then="caso3">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Descarta el control: si la fórmula falla en un caso, la IA no sirve para esto.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le explica a la IA el caso 3 y pide que tolere diferencias de hasta $1 por redondeo; luego repite las tres pruebas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La usa así y revisa a mano los casos que marque por redondeo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde una buena herramienta</div><div class="branch-body"><div><p>Las pruebas existen justamente para encontrar estos detalles. La fórmula está cerca: solo necesita una tolerancia de redondeo. Ajustar es más rápido que empezar de cero.</p></div><div><p class="hint">Una prueba fallida es información, no un fracaso.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el ruido esconde los errores reales</div><div class="branch-body"><div><p>Con decimales en cientos de filas, la columna se llenaría de falsos REVISAR. Entre tantas alertas falsas, un error real de $5.000 pasaría inadvertido.</p></div><div><p class="hint">Un control con demasiadas alertas deja de mirarse.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La IA propone <span class="fml">=SI(ABS(G2-REDONDEAR(D2*E2*1,5;0))&gt;1;"REVISAR";"OK")</span>. Camila repite las tres pruebas: OK, REVISAR y OK. Ahora sí coincide con lo esperado.</p></div><div><p class="hint">Falta decidir cómo usarla en el cierre.</p></div></div></div></template>
+  </div>
+  <div class="phase" id="caso3" hidden>
+    <h3 style="margin-top:18px">Decisión 3 · La fórmula pasó las pruebas. ¿Y ahora?</h3>
+    <div class="options" data-choice="caso3" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La copia en las 420 filas y cierra la planilla de inmediato.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le pide a la IA que confirme que la fórmula final es correcta antes de copiarla.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La copia, revisa la primera fila, una del medio y la última, cuadra el total de G con el sistema, documenta la fórmula y las pruebas, y envía los casos REVISAR a Rodrigo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso3-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: sin revisión al copiar ni registro</div><div class="branch-body"><div><p>Al copiar pueden aparecer errores nuevos (por ejemplo, referencias que se desplazan). Y sin documentar, nadie podrá revisar el control el próximo mes ni explicar por qué se marcó un caso.</p></div><div><p class="hint">Probar no termina en la fila 2.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una confirmación que no prueba nada</div><div class="branch-body"><div><p>Camila ya tiene algo mejor que la opinión de la IA: pruebas con resultados conocidos. Lo que falta es revisar la copia, cuadrar totales y dejar registro.</p></div><div><p class="hint">La evidencia la dan las pruebas, no la IA.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El control queda probado, cuadrado y documentado. Rodrigo revisa solo los casos marcados y aprueba el cierre. El próximo mes, la fórmula y sus casos de prueba se reutilizan.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: PLANTILLA + CHECKLIST -->
+<section class="slide" data-title="Tu plantilla para pedir fórmulas" data-gate="plantilla pass" data-gate-msg="Genera tu plantilla de instrucción para pedir fórmulas.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tu plantilla para pedir fórmulas y tu checklist de prueba</h2>
+  <p>Piensa en una fórmula que necesites en tu planilla de remuneraciones. Completa la plantilla y genera tu instrucción: junto a ella obtendrás el checklist de prueba que aplicarás antes de usar la fórmula.</p>
+  <div data-builder="plantilla">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi instrucción</button><button class="small-btn model-btn" type="button" disabled>Ver ejemplo modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Ejemplo modelo:</strong><div class="promptbox">Uso Excel en español (funciones en español y punto y coma como separador). En mi planilla de control, D2:D420 tiene las horas extra del mes, E2:E420 el valor hora y G2:G420 el monto de horas extra informado por el sistema. Necesito una fórmula para H2, que copiaré hasta H420, que muestre "REVISAR" cuando G no coincida con horas × valor hora × 1,5 (recargo de 50 %), con una tolerancia de $1 por redondeo, y "OK" en caso contrario. Explícame la fórmula paso a paso, indica qué referencias deben ir fijas con $ y sugiere tres casos de prueba con su resultado esperado. No calcules los montos.</div></div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.2</h2>
+    <p>Ya puedes pedir fórmulas a la IA con contexto, reconocer sus errores típicos y probar cada fórmula con casos conocidos antes de usarla.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la IA acelera la escritura y la explicación de fórmulas, pero toda fórmula se prueba con casos conocidos antes de usarla. Pide con contexto (columnas, regla y Excel en español) y corrige con precisión. En la próxima lección usarás estas fórmulas para detectar inconsistencias.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar las funciones</button><button class="small-btn primary" type="button" data-goto="4">Volver al probador</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios. Recargo de horas extraordinarias: mínimo 50 % sobre el sueldo convenido (Código del Trabajo, art. 32); verifica siempre la normativa vigente en la Dirección del Trabajo.</p>
+  </div>
+</section>

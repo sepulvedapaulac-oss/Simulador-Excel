@@ -1,0 +1,98 @@
+<!--{"title": "Guía de preparación de datos y diccionario de variables", "short": "Guía · Preparación de datos y diccionario de variables", "subtitle": "Cómo dejar una base de remuneraciones lista para analizar con IA: limpieza, seudonimización, agregación y un diccionario de variables que evite malas interpretaciones.", "module": "Módulo 3 · Análisis e informes con IA", "file": "M3_Guia_preparacion_de_datos_y_diccionario.pdf", "img": "i31_hero.jpg", "kind": "Guía"}-->
+
+<section>
+  <h2>Por qué preparar los datos</h2>
+  <p class="lead">La calidad de un análisis con IA depende de los datos que recibe. Una base con códigos duplicados, áreas escritas de distintas formas o montos con formatos mezclados produce conclusiones equivocadas, aunque la redacción suene impecable.</p>
+  <ul class="toc">
+    <li>Flujo de preparación en seis pasos</li>
+    <li>Limpieza: los diez problemas más frecuentes</li>
+    <li>Protección: seudonimizar, agregar o usar datos sintéticos</li>
+    <li>Diccionario de variables: plantilla y ejemplo</li>
+    <li>Cómo entregarle la base a la IA</li>
+  </ul>
+  <div class="box info"><b>Caso.</b> La gerencia pidió a Camila explicar la variación del costo de remuneraciones entre septiembre y octubre. Antes de usar el asistente corporativo, prepara una base de análisis a partir de la exportación del sistema.</div>
+</section>
+
+<section>
+  <h2><span class="n">1</span>Flujo de preparación en seis pasos</h2>
+  <table>
+    <thead><tr><th style="width:6%">#</th><th style="width:24%">Paso</th><th>Qué se hace</th><th style="width:28%">Control</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Definir la pregunta</b></td><td>¿Qué quieres explicar y con qué nivel de detalle (empresa, área, cargo)?</td><td>Pregunta escrita en una frase.</td></tr>
+      <tr><td>2</td><td><b>Seleccionar variables</b></td><td>Solo las columnas que responden la pregunta.</td><td>Cada columna tiene un motivo.</td></tr>
+      <tr><td>3</td><td><b>Limpiar</b></td><td>Formatos, duplicados, vacíos, categorías inconsistentes.</td><td>Conteo de registros antes y después.</td></tr>
+      <tr><td>4</td><td><b>Proteger</b></td><td>Seudonimizar, agregar o generar datos sintéticos.</td><td>Ningún identificador directo.</td></tr>
+      <tr><td>5</td><td><b>Documentar</b></td><td>Diccionario de variables y supuestos.</td><td>Toda columna está definida.</td></tr>
+      <tr><td>6</td><td><b>Cuadrar</b></td><td>Totales de la base vs. totales del sistema.</td><td>Diferencia = 0.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Limpieza: los diez problemas más frecuentes</h2>
+  <table>
+    <thead><tr><th style="width:30%">Problema</th><th>Ejemplo</th><th style="width:34%">Solución en Excel</th></tr></thead>
+    <tbody>
+      <tr><td>Espacios sobrantes</td><td>“Ventas ” y “Ventas”</td><td><code>=ESPACIOS(B2)</code></td></tr>
+      <tr><td>Mayúsculas inconsistentes</td><td>“planta”, “PLANTA”</td><td><code>=MAYUSC(B2)</code> o lista validada</td></tr>
+      <tr><td>Códigos duplicados</td><td>EMP-118 dos veces</td><td><code>=CONTAR.SI($A$2:$A$500;A2)&gt;1</code></td></tr>
+      <tr><td>Montos como texto</td><td>“850.000” alineado a la izquierda</td><td>Convertir a número y verificar suma</td></tr>
+      <tr><td>Celdas vacías</td><td>Área sin informar</td><td>Completar desde el maestro con BUSCARX</td></tr>
+      <tr><td>Periodos mezclados</td><td>Registros de septiembre en octubre</td><td>Filtrar por columna de período</td></tr>
+      <tr><td>Unidades distintas</td><td>Horas en decimal y en hh:mm</td><td>Unificar a horas decimales</td></tr>
+      <tr><td>Ingresos y egresos del mes</td><td>Personas con días parciales</td><td>Variable “días trabajados”</td></tr>
+      <tr><td>Valores atípicos</td><td>Horas extra = 200</td><td>Revisar contra asistencia antes de excluir</td></tr>
+      <tr><td>Totales incluidos como filas</td><td>Fila “TOTAL” dentro de los datos</td><td>Eliminar filas de subtotal</td></tr>
+    </tbody>
+  </table>
+  <div class="box warn"><b>No “limpies” un dato atípico eliminándolo:</b> primero verifica si es un error o un hecho real (por ejemplo, un turno extra aprobado).</div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Protección de los datos</h2>
+  <div class="grid2">
+    <div class="card"><h4><span class="tag g">Seudonimizar</span></h4>Reemplaza nombre y RUT por un código (EMP-001). Útil cuando necesitas el detalle por persona sin identificarla.</div>
+    <div class="card"><h4><span class="tag g">Agregar</span></h4>Totales o promedios por área, cargo o tramo. Útil para tendencias. Evita grupos de menos de cinco personas, que permiten reidentificar.</div>
+    <div class="card"><h4><span class="tag v">Datos sintéticos</span></h4>Datos ficticios con la misma estructura. Útiles para diseñar fórmulas o probar instrucciones sin riesgo.</div>
+    <div class="card"><h4><span class="tag r">Nunca</span></h4>RUT, nombres, cuentas bancarias, diagnósticos, afiliación sindical ni datos de salud en una base para IA.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Diccionario de variables</h2>
+  <p>El diccionario le dice a la IA (y a cualquier lector) qué significa cada columna, en qué unidad está y de dónde viene. Evita que la IA suponga, por ejemplo, que “bono” incluye la gratificación.</p>
+  <table>
+    <thead><tr><th style="width:16%">Variable</th><th>Definición</th><th style="width:13%">Tipo / unidad</th><th style="width:18%">Valores válidos</th><th style="width:15%">Fuente</th></tr></thead>
+    <tbody>
+      <tr><td><b>codigo</b></td><td>Identificador seudonimizado del colaborador.</td><td>Texto</td><td>EMP-001 a EMP-420</td><td>Tabla de correspondencia (resguardada)</td></tr>
+      <tr><td><b>area</b></td><td>Área o centro de costo al cierre del mes.</td><td>Texto</td><td>Ventas, Operaciones, Finanzas, Planta, Bodega</td><td>Maestro de personal</td></tr>
+      <tr><td><b>periodo</b></td><td>Mes de la remuneración.</td><td>Fecha (AAAA-MM)</td><td>2026-09, 2026-10</td><td>Sistema de remuneraciones</td></tr>
+      <tr><td><b>dias_trab</b></td><td>Días trabajados del mes (base 30).</td><td>Número</td><td>0 a 30</td><td>Asistencia</td></tr>
+      <tr><td><b>sueldo_base</b></td><td>Sueldo base mensual pactado.</td><td>Pesos</td><td>&gt; 0</td><td>Contrato</td></tr>
+      <tr><td><b>horas_extra</b></td><td>Horas extraordinarias pagadas en el mes.</td><td>Horas decimales</td><td>0 a 40</td><td>Asistencia aprobada</td></tr>
+      <tr><td><b>monto_he</b></td><td>Monto pagado por horas extra (recargo 50 %).</td><td>Pesos</td><td>≥ 0</td><td>Sistema</td></tr>
+      <tr><td><b>bonos</b></td><td>Bonos variables del mes (producción, metas); excluye gratificación.</td><td>Pesos</td><td>≥ 0</td><td>Sistema</td></tr>
+      <tr><td><b>haberes_total</b></td><td>Total de haberes del mes.</td><td>Pesos</td><td>&gt; 0</td><td>Sistema</td></tr>
+      <tr><td><b>estado</b></td><td>Situación en el mes.</td><td>Texto</td><td>Vigente, Ingreso, Egreso</td><td>Maestro de personal</td></tr>
+    </tbody>
+  </table>
+  <div class="box key"><b>Consejo:</b> pega el diccionario al inicio de tu instrucción. Reduce las interpretaciones erróneas más que cualquier otra mejora.</div>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Cómo entregarle la base a la IA</h2>
+  <div class="box prompt">Actúa como analista de remuneraciones. Te entrego una base seudonimizada de octubre y septiembre de 2026
+(una fila por colaborador y período) y su diccionario de variables.
+Calcula la variación del total de haberes por área (absoluta y porcentual) y descompónla en: sueldo base,
+horas extra y bonos. Considera ingresos y egresos con la variable estado.
+No intentes identificar personas ni inventes datos; si una variación no se explica con estas columnas, indícalo como hipótesis.
+Entrega una tabla por área y tres conclusiones de máximo dos líneas cada una.</div>
+  <ul class="check">
+    <li>La base cuadra con los totales del sistema.</li>
+    <li>No hay identificadores directos ni datos sensibles.</li>
+    <li>El diccionario acompaña la instrucción.</li>
+    <li>La herramienta es la corporativa autorizada.</li>
+    <li>Las conclusiones se contrastan con la base antes de informarlas.</li>
+  </ul>
+  <p class="src">Datos y personajes del curso son ficticios. Valores ilustrativos.</p>
+</section>

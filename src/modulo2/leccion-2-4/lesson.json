@@ -1,0 +1,437 @@
+{
+ "id": "ia_rem_l24",
+ "ident": "IAREM_M2_L24",
+ "zip_name": "Leccion_2_4_Validacion_y_control_de_calidad",
+ "title": "Lección 2.4 — Validación y control de calidad de resultados de IA",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 2 · LECCIÓN 2.4",
+ "voice": false,
+ "pass": 0.8,
+ "video": {
+  "voice": false,
+  "scenes": [
+   {
+    "t": "Una impresión no es una validación",
+    "lines": [
+     "Un resultado de IA puede verse ordenado, completo y seguro de sí mismo. Eso no lo hace correcto.",
+     "Validar es un proceso: tiene pasos, evidencia, registro y una persona responsable."
+    ],
+    "html": "<div class=\"v-vs\"><div class=\"warn\" data-at=\"0\"><b>“Se ve bien”</b>Impresión<small>No deja evidencia</small></div><div data-at=\"1\"><b>Validado</b>Proceso<small>Pasos · evidencia · responsable</small></div></div>"
+   },
+   {
+    "t": "Criterios antes de mirar",
+    "lines": [
+     "Antes de usar el resultado, define qué debe cumplir para aceptarlo: qué debe cuadrar, con qué fuente y con qué tolerancia.",
+     "Si defines el criterio después de ver el resultado, es fácil convencerte de que está bien."
+    ],
+    "html": "<div class=\"v-final\">Criterio de aceptación <em>antes</em> de revisar</div><div class=\"v-chk\"><span data-at=\"0\">¿Qué debe cuadrar?</span><span data-at=\"0\">¿Contra qué fuente?</span><span data-at=\"0\">¿Con qué tolerancia?</span></div>"
+   },
+   {
+    "t": "Contrastar y probar",
+    "lines": [
+     "Contrasta las cifras con el sistema de remuneraciones y las normas con la fuente oficial, no con otra respuesta de IA.",
+     "Luego prueba con un caso conocido: un trabajador cuyo resultado ya calculaste a mano."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">Totales vs. libro de remuneraciones</div><div data-at=\"0\">Norma vs. fuente oficial</div><div data-at=\"1\">Caso conocido: ¿coincide?</div></div>"
+   },
+   {
+    "t": "Casos borde",
+    "lines": [
+     "Los errores se esconden en los casos especiales: ingresos y egresos del mes, licencias, cambios de jornada y remuneraciones sobre el tope imponible.",
+     "Revísalos aparte, porque un promedio que cuadra puede ocultarlos."
+    ],
+    "html": "<div class=\"v-icons\"><div><span class=\"i\">🟢</span>Ingresos</div><div><span class=\"i\">🔴</span>Egresos</div><div><span class=\"i\">🩺</span>Licencias</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">📏</span>Topes y jornada</div></div>"
+   },
+   {
+    "t": "Cuatro ojos y registro",
+    "lines": [
+     "Una segunda persona revisa con la misma evidencia y los mismos criterios: es el control de cuatro ojos.",
+     "Al final se documenta qué se revisó, con qué evidencia, qué se corrigió, quién revisó y quién aprobó."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">👀 Segunda revisión</div><div data-at=\"1\">🗂️ Evidencia y hallazgos</div><div data-at=\"1\">✅ Responsable que aprueba</div></div>"
+   }
+  ]
+ },
+ "order": {
+  "protocolo": {
+   "steps": [
+    {
+     "t": "Definir el criterio de aceptación",
+     "why": "Se define antes de mirar el resultado: qué debe cumplir, contra qué fuente y con qué tolerancia."
+    },
+    {
+     "t": "Contrastar con la fuente oficial o el sistema",
+     "why": "Las cifras se comparan con el sistema de remuneraciones; las normas, con su fuente oficial."
+    },
+    {
+     "t": "Probar con un caso conocido",
+     "why": "Un caso que ya calculaste a mano revela si la lógica de la IA es correcta."
+    },
+    {
+     "t": "Revisar los casos borde",
+     "why": "Ingresos, egresos, licencias, topes y cambios de jornada: donde suelen esconderse los errores."
+    },
+    {
+     "t": "Segunda revisión (cuatro ojos)",
+     "why": "Otra persona revisa con la misma evidencia y los mismos criterios."
+    },
+    {
+     "t": "Documentar y aprobar",
+     "why": "Queda registro de la evidencia, los hallazgos y quién aprobó: eso es trazabilidad."
+    }
+   ],
+   "start": [
+    3,
+    0,
+    5,
+    2,
+    4,
+    1
+   ]
+  }
+ },
+ "premisas": [
+  {
+   "q": "EMP-014 trabajó 46 horas la semana del 4 de mayo de 2026 y tiene pactada la jornada ordinaria máxima. ¿Cuántas horas extra hizo?",
+   "s": [
+    "Para calcular las horas extraordinarias se compara el tiempo trabajado con la jornada ordinaria pactada.",
+    "La jornada ordinaria máxima es de 45 horas semanales, así que EMP-014 tiene 1 hora extra.",
+    "Las horas extraordinarias deben pactarse por escrito.",
+    "Te recomiendo contrastar el resultado con el registro de asistencia."
+   ],
+   "c": 1,
+   "why": "Desde el 26 de abril de 2026 la jornada ordinaria máxima es de <b>42 horas semanales</b> (Ley 21.561, que la reduce gradualmente a 40 horas en 2028). Con jornada máxima pactada, EMP-014 tiene <b>4 horas extra</b>, no 1. La IA usó un dato desactualizado.",
+   "ok": [
+    "Correcto: la hora extra se determina en relación con la jornada pactada.",
+    "",
+    "Correcto: el Código del Trabajo exige que las horas extraordinarias se pacten por escrito.",
+    "Correcto y útil: contrastar con la fuente es parte de validar."
+   ]
+  },
+  {
+   "q": "¿Cómo calculo el valor de una hora extra?",
+   "s": [
+    "El valor de la hora ordinaria se obtiene a partir del sueldo convenido y de la jornada semanal.",
+    "Sobre ese valor se aplica un recargo de 25 %, que es el mínimo legal.",
+    "Si el contrato pacta un recargo mayor, se aplica el pactado.",
+    "Las horas extra se pagan junto con las remuneraciones ordinarias del período."
+   ],
+   "c": 1,
+   "why": "El recargo mínimo legal es de <b>50 % sobre el sueldo convenido</b> (Código del Trabajo, art. 32). Con 25 %, cada hora extra quedaría pagada por debajo de la ley.",
+   "ok": [
+    "Correcto: es la base del cálculo.",
+    "",
+    "Correcto: el 50 % es un mínimo; el contrato puede mejorarlo.",
+    "Correcto: se liquidan con las remuneraciones del período respectivo."
+   ]
+  },
+  {
+   "q": "En el informe de septiembre, ¿qué haberes son imponibles?",
+   "s": [
+    "El sueldo base y las horas extraordinarias son imponibles.",
+    "La asignación de colación también es imponible, porque se paga todos los meses.",
+    "La asignación de movilización, en cambio, no es imponible cuando su monto es razonable.",
+    "Revisa siempre cómo está configurado cada haber en el sistema."
+   ],
+   "c": 1,
+   "why": "La asignación de colación <b>no constituye remuneración</b> (Código del Trabajo, art. 41) y, si su monto es razonable, <b>no es imponible</b>. Que se pague todos los meses no la vuelve imponible: la IA inventó una regla que suena lógica.",
+   "ok": [
+    "Correcto: ambos son remuneración y son imponibles.",
+    "",
+    "Correcto: igual que la colación, la movilización razonable no es remuneración.",
+    "Correcto: el sistema y su configuración son la fuente para contrastar."
+   ]
+  },
+  {
+   "q": "¿Cuál es el tope imponible para AFP este año?",
+   "s": [
+    "El tope imponible limita la remuneración sobre la que se calculan las cotizaciones.",
+    "Según la Circular N.º 4.127 de la Superintendencia de Pensiones, el tope para 2026 es de 95,7 UF.",
+    "El tope se actualiza periódicamente, por lo que conviene confirmarlo cada año.",
+    "Antes de usar cualquier valor, confírmalo en la fuente oficial."
+   ],
+   "c": 1,
+   "why": "La cifra y la circular son <b>inventadas</b>: la IA puede “citar” documentos que no existen con total seguridad. Un número con referencia no está verificado hasta que lo encuentras en la fuente oficial (Superintendencia de Pensiones).",
+   "ok": [
+    "Correcto: esa es la función del tope imponible.",
+    "",
+    "Correcto: por eso nunca se usa un valor de memoria.",
+    "Correcto: es exactamente el hábito que buscamos."
+   ]
+  }
+ ],
+ "stepper": [
+  {
+   "t": "Definir el criterio",
+   "ctx": "Antes de abrir el informe de variaciones que generó la IA, Camila anota cómo decidirá si lo acepta.",
+   "q": "¿Qué criterio de aceptación define?",
+   "o": [
+    "Que el informe se vea coherente y bien redactado.",
+    "Totales por área iguales al libro de remuneraciones del sistema (diferencia $0), toda variación mayor a 10 % con causa respaldada y ningún trabajador faltante.",
+    "Que la IA confirme, al final, que revisó sus propios cálculos."
+   ],
+   "c": 1,
+   "f": [
+    "La redacción no prueba nada sobre las cifras. Un criterio debe poder cumplirse o no con evidencia.",
+    "Es medible, tiene fuente (el sistema) y tolerancia definida. Ahora la revisión tiene una vara clara.",
+    "La IA puede repetir su propio error con la misma seguridad: la confirmación no es evidencia."
+   ],
+   "log": "Criterio: totales por área = libro de remuneraciones ($0 de diferencia); variaciones &gt; 10 % con causa; sin faltantes."
+  },
+  {
+   "t": "Contrastar con el sistema",
+   "ctx": "Camila compara los totales del informe con el libro de remuneraciones del sistema.",
+   "table": [
+    [
+     "Área",
+     "Informe IA",
+     "Sistema"
+    ],
+    [
+     "Ventas",
+     "$48.310.000",
+     "$48.310.000"
+    ],
+    [
+     "Operaciones",
+     "$61.025.000",
+     "$61.025.000"
+    ],
+    [
+     "Planta",
+     "$72.480.000",
+     "$72.480.000"
+    ],
+    [
+     "Bodega",
+     "$18.420.000",
+     "$19.150.000"
+    ],
+    [
+     "Finanzas",
+     "$22.960.000",
+     "$22.960.000"
+    ]
+   ],
+   "q": "Bodega no cuadra. ¿Qué hace Camila?",
+   "o": [
+    "La acepta: la diferencia es menor a 4 % del área.",
+    "Corrige el número del informe para que coincida y sigue.",
+    "Registra la diferencia y busca su causa: el informe omitió a EMP-311 y EMP-312, ingresados el 20 de septiembre."
+   ],
+   "c": 2,
+   "f": [
+    "El criterio era $0 de diferencia. Si cambias la tolerancia al ver el resultado, ya no es un criterio.",
+    "Cambiar la cifra sin saber por qué difiere oculta el problema: las conclusiones del informe sobre Bodega siguen siendo erróneas.",
+    "Una diferencia es un hallazgo: se registra y se explica. Ahora sabe que la IA no consideró los ingresos del mes."
+   ],
+   "log": "Contraste: Bodega difiere en $730.000. Causa: faltan EMP-311 y EMP-312 (ingresos del 20/09). Hallazgo registrado."
+  },
+  {
+   "t": "Probar con un caso conocido",
+   "ctx": "Camila calculó a mano las horas extra de EMP-022: 10 horas con un valor hora ordinaria de $5.000. Con el recargo legal de 50 %, el pago correcto es $75.000. El informe de la IA indica $62.500.",
+   "q": "¿Qué concluye?",
+   "o": [
+    "La IA aplicó un recargo de 25 %: todo el cálculo de horas extra del informe debe recalcularse con el sistema.",
+    "Corrige solo a EMP-022: el resto debe estar bien.",
+    "La diferencia es pequeña; no vale la pena revisarla."
+   ],
+   "c": 0,
+   "f": [
+    "$62.500 / 10 horas = $6.250 por hora, es decir, $5.000 + 25 %. Si la regla es incorrecta, falla en todos los casos, no solo en uno.",
+    "Un caso conocido sirve para detectar errores de lógica. Si la regla está mal, el error se repite en todos los trabajadores con horas extra.",
+    "No es un monto aislado: revela una regla mal aplicada que afecta a todo el informe."
+   ],
+   "log": "Caso conocido: EMP-022 debía ser $75.000; la IA indicó $62.500 (recargo 25 %). Horas extra recalculadas con el sistema."
+  },
+  {
+   "t": "Revisar casos borde",
+   "ctx": "Con los totales y el caso conocido revisados, Camila decide qué casos especiales mirar aparte.",
+   "q": "¿Qué revisa?",
+   "o": [
+    "Solo los cinco sueldos más altos.",
+    "Ingresos y egresos del mes, licencias médicas, cambios de jornada y remuneraciones sobre el tope imponible.",
+    "Nada más: si el caso conocido ya se corrigió, el resto debe estar bien."
+   ],
+   "c": 1,
+   "f": [
+    "Los sueldos altos son solo un tipo de caso borde. Los ingresos del mes ya demostraron que hay otros.",
+    "Son las situaciones donde los cálculos cambian: días proporcionales, subsidios, topes y nuevas jornadas.",
+    "Un caso probado no cubre las situaciones especiales, que siguen reglas distintas."
+   ],
+   "log": "Casos borde revisados: 6 ingresos, 3 egresos, 4 licencias, 2 cambios de jornada, 5 sobre el tope imponible."
+  },
+  {
+   "t": "Segunda revisión",
+   "ctx": "El informe corregido está listo. Falta el control de cuatro ojos.",
+   "q": "¿Cómo lo organiza?",
+   "o": [
+    "Lo revisa ella misma de nuevo mañana, con la mente fresca.",
+    "Pide a Andrés, otro analista, revisarlo con los mismos criterios y la evidencia, antes de mostrarle sus conclusiones.",
+    "Le pide a Rodrigo que lo apruebe directamente, sin la evidencia, porque confía en ella."
+   ],
+   "c": 1,
+   "f": [
+    "Revisar el propio trabajo ayuda, pero no es un control de cuatro ojos: se tiende a repetir el mismo razonamiento.",
+    "Una persona distinta, con los mismos criterios y evidencia, puede encontrar lo que Camila no vio.",
+    "Aprobar sin evidencia es confiar, no validar. La aprobación debe apoyarse en lo revisado."
+   ],
+   "log": "Segunda revisión: Andrés (analista) revisó con la misma evidencia. Sin nuevos hallazgos."
+  },
+  {
+   "t": "Documentar y aprobar",
+   "ctx": "Rodrigo aprobará el informe. Camila prepara el respaldo.",
+   "q": "¿Qué deja registrado?",
+   "o": [
+    "Solo el informe final, para no acumular archivos.",
+    "Un correo a Rodrigo que diga: “Revisado, está OK”.",
+    "Versión del informe, instrucción usada, criterios, evidencias, hallazgos y correcciones, quién revisó, quién aprobó y la fecha."
+   ],
+   "c": 2,
+   "f": [
+    "Sin la evidencia, nadie podrá saber después qué se revisó ni por qué se corrigió.",
+    "“Está OK” no dice qué se revisó, con qué evidencia ni qué se corrigió.",
+    "Eso es trazabilidad: cualquier persona puede reconstruir qué se hizo, con qué evidencia y quién responde."
+   ],
+   "log": "Registro: informe v2, instrucción, criterios, evidencias y hallazgos archivados. Revisó: Andrés. Aprobó: Rodrigo."
+  }
+ ],
+ "builders": {
+  "protocolo": {
+   "title": "Mi protocolo de validación",
+   "rows": [
+    {
+     "type": "text",
+     "label": "Resultado de IA que validarás",
+     "ph": "Ej.: informe de variaciones mensuales generado con IA"
+    },
+    {
+     "label": "Criterio de aceptación (definido antes)",
+     "options": [
+      "Cifras iguales al sistema, con tolerancia definida por escrito",
+      "Que el resultado se vea razonable",
+      "Que la IA confirme que está correcto"
+     ]
+    },
+    {
+     "label": "Fuente para contrastar",
+     "options": [
+      "Sistema de remuneraciones o libro de remuneraciones",
+      "Fuente oficial de la norma (ley, Dirección del Trabajo, Superintendencia)",
+      "Otra respuesta de IA"
+     ]
+    },
+    {
+     "label": "Caso conocido de prueba",
+     "options": [
+      "Un trabajador calculado a mano",
+      "Un mes anterior ya cerrado y aprobado",
+      "No usaré caso de prueba"
+     ]
+    },
+    {
+     "label": "Casos borde que revisarás",
+     "options": [
+      "Ingresos, egresos, licencias, topes y cambios de jornada",
+      "Solo los montos más altos",
+      "Ninguno"
+     ]
+    },
+    {
+     "label": "Segunda revisión (cuatro ojos)",
+     "options": [
+      "Otra persona, con los mismos criterios y evidencia",
+      "Yo misma o yo mismo, al día siguiente",
+      "Sin segunda revisión"
+     ]
+    },
+    {
+     "type": "text",
+     "label": "Dónde quedará el registro y quién aprueba",
+     "ph": "Ej.: carpeta de cierre del mes; aprueba el jefe de Compensaciones"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "q": "¿Cuándo se definen los criterios de aceptación de un resultado de IA?",
+   "o": [
+    "Después de revisar el resultado, según lo que se encuentre.",
+    "Antes de usar el resultado, idealmente antes de verlo.",
+    "Solo si el resultado parece tener errores.",
+    "Cuando lo pida la auditoría."
+   ],
+   "c": 1,
+   "f": [
+    "Definirlos después facilita ajustar la vara al resultado y aceptarlo sin evidencia.",
+    "Correcto: el criterio previo hace que la revisión sea objetiva y comparable.",
+    "Los errores de IA suelen verse correctos; por eso el criterio aplica siempre.",
+    "La validación es parte del trabajo diario, no solo de una auditoría."
+   ]
+  },
+  {
+   "q": "La IA cita una circular para justificar un tope. ¿Qué haces?",
+   "o": [
+    "La uso: si tiene número, debe existir.",
+    "Le pido a la IA que confirme que la circular existe.",
+    "Busco la circular y el valor en la fuente oficial antes de usarlos.",
+    "Uso el valor, pero no menciono la circular."
+   ],
+   "c": 2,
+   "f": [
+    "La IA puede inventar referencias con formato muy creíble.",
+    "La IA puede confirmar su propio error; la verificación se hace en la fuente.",
+    "Correcto: una referencia no está verificada hasta que la encuentras en la fuente oficial.",
+    "El valor sigue sin verificar; quitar la referencia solo oculta el problema."
+   ]
+  },
+  {
+   "q": "Los totales del informe de la IA cuadran con el sistema. ¿Está validado?",
+   "o": [
+    "Sí: si el total cuadra, el detalle también.",
+    "No necesariamente: faltan el caso conocido, los casos borde, la segunda revisión y el registro.",
+    "Sí, si además está bien redactado.",
+    "No: los totales nunca sirven para validar."
+   ],
+   "c": 1,
+   "f": [
+    "Diferencias por trabajador pueden compensarse y dejar el total igual.",
+    "Correcto: cuadrar los totales es un paso importante, pero no es todo el protocolo.",
+    "La redacción no es evidencia sobre las cifras.",
+    "Sí sirven: contrastar totales es un paso clave, solo que no el único."
+   ]
+  },
+  {
+   "q": "¿Qué caracteriza un buen control de cuatro ojos?",
+   "o": [
+    "Que la misma persona revise dos veces.",
+    "Que otra persona revise con los mismos criterios y la evidencia.",
+    "Que la jefatura apruebe sin revisar porque confía en el equipo.",
+    "Que la IA revise el trabajo de la persona."
+   ],
+   "c": 1,
+   "f": [
+    "Quien hizo el trabajo tiende a repetir su razonamiento y no ver sus errores.",
+    "Correcto: una mirada independiente con la misma evidencia detecta lo que se pasó por alto.",
+    "Aprobar sin evidencia es confiar, no controlar.",
+    "La IA puede apoyar, pero la segunda revisión es humana y responsable."
+   ]
+  },
+  {
+   "q": "¿Qué debe incluir el registro de una validación?",
+   "o": [
+    "Solo el resultado final.",
+    "Un “OK” de quien revisó.",
+    "Criterios, evidencias, hallazgos, correcciones, quién revisó, quién aprobó y la fecha.",
+    "La conversación completa con la IA, sin nada más."
+   ],
+   "c": 2,
+   "f": [
+    "Sin evidencia nadie puede reconstruir qué se revisó.",
+    "Un OK no dice qué se revisó ni con qué evidencia.",
+    "Correcto: así cualquier persona puede reconstruir la decisión y saber quién responde.",
+    "La conversación ayuda, pero faltan criterios, evidencias y responsables."
+   ]
+  }
+ ]
+}
