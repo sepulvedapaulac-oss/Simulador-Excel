@@ -1,0 +1,16 @@
+import json, pathlib
+OPTS = ["🟢 Usar tal cual", "🟡 Transformar", "🔴 Eliminar"]
+L = {"id": "ia_rem_lab1b", "ident": "IAREM_M1_LAB1B", "zip_name": "Laboratorio_1B_Semaforo_de_datos",
+ "title": "Laboratorio 1B — Semáforo de datos", "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LABORATORIO 1B",
+ "voice": False, "pass": 0.7, "lab": True, "hoja": True,
+ "seltables": {"semaforo": {"options": OPTS, "rows": [
+  {"label": "Nombre", "c": 1, "why": "Se reemplaza por un código interno: así puedes volver a la persona solo con la tabla de códigos, que queda en tu equipo.", "hint": "La IA no necesita saber quién es, pero tú sí necesitas poder volver a cada caso."},
+  {"label": "RUT", "c": 2, "why": "Identificador directo que el análisis no necesita: se elimina.", "hint": "¿Aporta algo el RUT a un análisis de horas extra por área?"},
+  {"label": "Área", "c": 0, "why": "Es la variable del análisis y, en áreas con varias personas, no identifica a nadie.", "hint": "Es justamente el criterio por el que se pide el análisis."},
+  {"label": "Sueldo base", "c": 0, "why": "Asociado a un código y no a un nombre, sirve para dimensionar el costo de las horas extra.", "hint": "Sin nombre ni RUT, ¿sigue siendo útil para el análisis?"},
+  {"label": "Horas extra del mes", "c": 0, "why": "Es el dato central del análisis.", "hint": "Es el dato que la gerencia quiere analizar."},
+  {"label": "Cuenta bancaria", "c": 2, "why": "Dato financiero personal sin ninguna utilidad para este análisis.", "hint": "¿Para qué necesitaría la IA una cuenta bancaria?"},
+  {"label": "AFP", "c": 2, "why": "No se necesita para analizar horas extra: se elimina (minimización).", "hint": "Piensa en la minimización: ¿lo necesita la tarea?"},
+  {"label": "Diagnóstico de licencia médica", "c": 2, "why": "Dato sensible de salud, irrelevante para este análisis.", "hint": "Es un dato sensible y no forma parte de la pregunta."}
+ ]}}}
+pathlib.Path(__file__).with_name("lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8"); print("ok")

@@ -1,0 +1,60 @@
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 1B · Módulo 1</span>
+  <h1>Semáforo de datos</h1>
+  <p class="lead">La gerencia pidió analizar con IA las <strong>horas extra por área</strong>. Camila tiene la planilla completa, con datos personales y sensibles. Antes de usar cualquier herramienta, debe preparar una <strong>tabla segura</strong> con solo lo necesario.</p>
+  <div class="grid-2">
+    <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
+      <ul class="elem-list" style="margin-top:8px"><li><b>1. Semáforo:</b> decide qué hacer con cada columna (usar, transformar o eliminar).</li><li><b>2. Tabla segura:</b> constrúyela en el simulador de Excel con fórmulas y comprueba con controles de cuadratura que no perdiste información.</li></ul>
+      <p style="margin:8px 0 0">Puntaje: semáforo (40 %) + tabla segura (60 %). Apruebas con <b>70%</b>.</p></div>
+    <div class="story" style="margin-top:0"><strong>Recuerda:</strong> las fórmulas en este simulador se escriben como en Excel en español, con punto y coma entre argumentos. Ejemplo: <code>=SUMA(D2:D11)</code>.</div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · SEMÁFORO -->
+<section class="slide" data-title="Etapa 1: semáforo" data-gate="semaforo" data-gate-msg="Clasifica correctamente las ocho columnas.">
+  <span class="lab-badge">Etapa 1 de 2</span>
+  <h2>¿Qué hacemos con cada columna?</h2>
+  <p>Para el análisis de <b>horas extra por área</b>, elige para cada columna: <b>🟢 Usar tal cual</b>, <b>🟡 Transformar</b> (reemplazar por código o agregar) o <b>🔴 Eliminar</b>.</p>
+  <div data-seltable="semaforo">
+    <div class="task">Columnas bien clasificadas <span class="tick">0 / 8</span></div>
+    <table class="seltable"><tbody></tbody></table>
+  </div>
+</section>
+
+<!-- 3 · TABLA SEGURA EN EXCEL -->
+<section class="slide" data-title="Etapa 2: tabla segura" data-gate="tabla" data-gate-msg="Completa la tabla segura y presiona “Revisar mi tabla” hasta que todos los controles estén en verde.">
+  <span class="lab-badge">Etapa 2 de 2</span>
+  <h2>Construye la tabla segura en el simulador de Excel</h2>
+  <div class="grid-2">
+    <div>
+      <p>Las columnas <b>A a H</b> tienen la planilla original (bloqueada). En las columnas <b>J a M</b> arma la tabla segura. La columna J ya tiene los códigos.</p>
+      <ol class="elem-list" style="list-style:none">
+        <li><b>1.</b> Selecciona <b>K2</b> y escribe <code>=C2</code> (área). Presiona Enter.</li>
+        <li><b>2.</b> Vuelve a K2 y presiona <b>“Rellenar hacia abajo”</b> para copiar la fórmula hasta la fila 11.</li>
+        <li><b>3.</b> Repite en <b>L2</b> (sueldo base, columna D) y <b>M2</b> (horas extra, columna E).</li>
+        <li><b>4.</b> En <b>L13</b> y <b>M13</b> escribe los totales con <code>=SUMA(…)</code> para cuadrar con el original.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>¿Por qué fórmulas y no copiar y pegar?</strong> Porque la tabla segura queda conectada al original: si se corrige un dato, se actualiza sola. Y el control de totales demuestra que la tabla segura no perdió ni duplicó información.</div>
+  </div>
+  <div id="hoja1"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" id="fillBtn">⤓ Rellenar hacia abajo (hasta la fila 11)</button><button class="small-btn primary" type="button" id="checkBtn">Revisar mi tabla</button></div>
+  <div id="checkOut"></div>
+</section>
+
+<!-- 4 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labSem">—</div><small>Semáforo correcto al primer intento</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+  </div>
+  <div class="callout"><strong>Tu tabla segura está lista para la IA.</strong> Ahora puedes usarla en la herramienta corporativa con una instrucción como esta:
+    <div class="promptbox">Actúa como analista de remuneraciones. Te entrego una tabla anonimizada con código, área, sueldo base y horas extra de 10 colaboradores (octubre). Identifica qué áreas concentran más horas extra y si hay casos que superen 12 horas en el mes. No intentes identificar a las personas ni inventes datos. Entrega una tabla por área y una lista de casos a revisar.</div></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" data-goto="1">Repasar el semáforo</button><button class="small-btn primary" type="button" data-goto="2">Volver a la tabla segura</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios. Ningún dato sale de tu navegador.</p>
+</section>

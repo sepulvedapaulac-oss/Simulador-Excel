@@ -36,7 +36,7 @@ function Hoja(root,opts){
   function evalCell(k,stack=new Set()){
     if(stack.has(k))throw new FErr('#¡REF!');
     const s=get(k);if(s==='')return '';
-    if(s[0]!=='=' ){const n=s.replace(/\./g,'').replace(',','.');return /^-?\d+(\.\d+)?$/.test(n)&&/^[-\d.,]+$/.test(s)?parseFloat(n):s}
+    if(s[0]!=='='&&/^0\d/.test(s))return s;if(s[0]!=='=' ){const n=s.replace(/\./g,'').replace(',','.');return /^-?\d+(\.\d+)?$/.test(n)&&/^[-\d.,]+$/.test(s)?parseFloat(n):s}
     stack.add(k);const v=evalFormula(s.slice(1),stack);stack.delete(k);return v}
   function rangeVals(a,b,stack){const A=parseRef(a),B=parseRef(b);const out=[];
     for(let r=Math.min(A.r,B.r);r<=Math.max(A.r,B.r);r++){const row=[];for(let c=Math.min(A.c,B.c);c<=Math.max(A.c,B.c);c++)row.push(evalCell(colName(c)+(r+1),stack));out.push(row)}return out}
