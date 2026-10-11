@@ -2,7 +2,9 @@
    - Celdas A1…, barra de fórmulas, selección, edición con Enter/Tab/flechas.
    - Fórmulas: números (coma decimal), referencias, rangos, + - * / ^ &, comparaciones,
      funciones SUMA, PROMEDIO, CONTAR, CONTARA, MAX, MIN, SI, Y, O, NO, REDONDEAR, ABS,
-     BUSCARV, CONTAR.SI, SUMAR.SI, TEXTO, CONCATENAR, SI.ERROR, ESBLANCO.
+     BUSCARV, CONTAR.SI, SUMAR.SI, TEXTO, CONCATENAR, SI.ERROR, ESBLANCO,
+     BUSCARX, COINCIDIR, INDICE, SUMAR.SI.CONJUNTO, CONTAR.SI.CONJUNTO, PROMEDIO.SI, SUMAPRODUCTO,
+     ENTERO, TRUNCAR, ESNUMERO, ESERROR, IZQUIERDA, DERECHA, LARGO, MAYUSC, ESPACIOS.
    - Separador de argumentos: punto y coma (;), como en Excel en español.
    Uso: const h = Hoja(contenedor, {cols, rows, data:{A1:'Nombre',...}, locked:['A1',...], onChange}) */
 (function(){
@@ -91,6 +93,24 @@ function Hoja(root,opts){
           if(!row)throw new FErr('#N/A');if(col<1||col>row.length)throw new FErr('#¡REF!');return row[col-1]}
         case 'CONTAR.SI':{const vals=flat([ev(0)]),crit=ev(1);return vals.filter(v=>matchCrit(v,crit)).length}
         case 'SUMAR.SI':{const vals=flat([ev(0)]),crit=ev(1),sum=args[2]?flat([ev(2)]):vals;return vals.reduce((a,v,i)=>a+(matchCrit(v,crit)&&typeof sum[i]==='number'?sum[i]:0),0)}
+        case 'BUSCARX':{const key=ev(0),look=flat([ev(1)]),ret=ev(2);if(!ret||!ret.range)throw new FErr('#¡VALOR!');const rv=ret.range.length===1?ret.range[0]:ret.range.map(r=>r[0]);
+          const k=typeof key==='string'?key.toLowerCase():key;const i=look.findIndex(v=>(typeof v==='string'?v.toLowerCase():v)==k);if(i<0){if(args[3])return ev(3);throw new FErr('#N/A')}return rv[i]}
+        case 'COINCIDIR':{const key=ev(0),look=flat([ev(1)]);const k=typeof key==='string'?key.toLowerCase():key;const i=look.findIndex(v=>(typeof v==='string'?v.toLowerCase():v)==k);if(i<0)throw new FErr('#N/A');return i+1}
+        case 'INDICE':{const r=ev(0);if(!r||!r.range)throw new FErr('#¡VALOR!');const rows=r.range;let ri=num(ev(1)),ci=args[2]?num(ev(2)):1;if(rows.length===1&&!args[2]){ci=ri;ri=1}
+          if(ri<1||ri>rows.length||ci<1||ci>rows[0].length)throw new FErr('#¡REF!');return rows[ri-1][ci-1]}
+        case 'SUMAR.SI.CONJUNTO':{const sum=flat([ev(0)]);const cr=[];for(let j=1;j<args.length;j+=2)cr.push([flat([ev(j)]),ev(j+1)]);return sum.reduce((a,v,i)=>a+(cr.every(([r,c])=>matchCrit(r[i],c))&&typeof v==='number'?v:0),0)}
+        case 'CONTAR.SI.CONJUNTO':{const cr=[];for(let j=0;j<args.length;j+=2)cr.push([flat([ev(j)]),ev(j+1)]);const n=cr[0][0].length;let c=0;for(let i=0;i<n;i++)if(cr.every(([r,cc])=>matchCrit(r[i],cc)))c++;return c}
+        case 'PROMEDIO.SI':{const vals=flat([ev(0)]),crit=ev(1),av=args[2]?flat([ev(2)]):vals;const v=vals.map((x,i)=>matchCrit(x,crit)?av[i]:null).filter(x=>typeof x==='number');if(!v.length)throw new FErr('#¡DIV/0!');return v.reduce((a,b)=>a+b,0)/v.length}
+        case 'SUMAPRODUCTO':{const arrs=args.map(a=>flat([a()]));return arrs[0].reduce((a,_,i)=>a+arrs.reduce((m,arr)=>m*(typeof arr[i]==='number'?arr[i]:0),1),0)}
+        case 'ENTERO':return Math.floor(num(ev(0)));
+        case 'TRUNCAR':{const n=num(ev(0)),f=Math.pow(10,num(ev(1)||0));return Math.trunc(n*f)/f}
+        case 'ESNUMERO':return typeof ev(0)==='number';
+        case 'ESERROR':try{ev(0);return false}catch(e){return true}
+        case 'IZQUIERDA':return fmtPlain(ev(0)).slice(0,args[1]?num(ev(1)):1);
+        case 'DERECHA':{const x=fmtPlain(ev(0)),n=args[1]?num(ev(1)):1;return x.slice(Math.max(0,x.length-n))}
+        case 'LARGO':return fmtPlain(ev(0)).length;
+        case 'MAYUSC':return fmtPlain(ev(0)).toUpperCase();
+        case 'ESPACIOS':return fmtPlain(ev(0)).trim().replace(/\s+/g,' ');
         default:throw new FErr('#¿NOMBRE?')}}
     function matchCrit(v,c){if(typeof c==='number')return v===c;const m=/^(<=|>=|<>|<|>|=)?(.*)$/.exec(String(c));const o=m[1]||'=',x=m[2];const n=parseFloat(x.replace(',','.'));
       const a=isNaN(n)?String(v).toLowerCase():v,b=isNaN(n)?x.toLowerCase():n;

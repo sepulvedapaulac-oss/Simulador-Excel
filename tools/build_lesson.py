@@ -152,7 +152,7 @@ def build(src: Path, engine: str):
     (out / "audio").mkdir(parents=True)
     (out / "img").mkdir()
 
-    voice = bool(meta.get("voice"))
+    voice = bool(meta.get("voice")) and engine != "none"  # "none": vista previa sin narración
     audio = {}
     if voice and engine == "chatterbox":
         texts = list(meta.get("narration", {}).values())
@@ -219,7 +219,7 @@ def build(src: Path, engine: str):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("src", nargs="+")
-    ap.add_argument("--voice", default=os.environ.get("VOICE_ENGINE", "chatterbox"), choices=["chatterbox", "edge", "pocket"])
+    ap.add_argument("--voice", default=os.environ.get("VOICE_ENGINE", "chatterbox"), choices=["chatterbox", "edge", "pocket", "none"])
     a = ap.parse_args()
     for s in a.src:
         build((ROOT / s).resolve(), a.voice)
