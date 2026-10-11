@@ -1,0 +1,168 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Lee la conversación y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.3 · Instrucciones efectivas</span>
+      <h1 class="reveal">“Revisa esta planilla”… ¿y la IA qué entiende?</h1>
+      <p class="lead reveal">Camila decidió probar la IA con una tarea simple. Escribió una instrucción rápida y esperó una revisión útil. <strong>Mira lo que recibió.</strong></p>
+      <div class="aichat reveal" aria-label="Conversación de Camila con un asistente de IA">
+        <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo</div>
+        <div class="u">Revisa esta planilla.</div>
+        <div class="a">¡Claro! Para revisar una planilla te recomiendo verificar que los datos estén completos, que las fórmulas sean correctas y que el formato sea consistente. También es útil revisar los totales. ¿Hay algo más en lo que pueda ayudarte?</div>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila escribe en su notebook rodeada de notas adhesivas con listas de verificación" src="img/i13_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Por qué la respuesta fue tan general?</h3>
+  <div class="options" data-choice="hook" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Porque la IA no sirve para revisar planillas de remuneraciones.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Porque la instrucción no dijo qué revisar, con qué criterios, qué datos había ni cómo entregar el resultado.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Porque las instrucciones a la IA funcionan mejor si se escriben en inglés.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>No es la herramienta.</strong> <span class="fb-body">La IA puede ayudar mucho en una revisión, pero necesita saber qué buscar. Con una instrucción vaga, entrega una respuesta igual de vaga.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>El idioma no es el problema.</strong> <span class="fb-body">Los asistentes actuales trabajan bien en español. Lo que faltó fue información: tarea, contexto, datos, restricciones y formato.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback good"><strong>Exacto.</strong> <span class="fb-body">La calidad de la respuesta depende de la calidad de la instrucción. En esta lección aprenderás a construir instrucciones, o <em>prompts</em>, con cinco componentes que transforman una respuesta genérica en una útil.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: anatomía de un prompt" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Anatomía de una buena instrucción</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · LOS CINCO COMPONENTES (acordeón) -->
+<section class="slide" data-title="Los cinco componentes" data-audio="p03" data-gate="acc" data-gate-msg="Abre los cinco componentes del acordeón.">
+  <span class="eyebrow">Lección 1.3 · Estructura</span>
+  <h2>Cinco componentes de una instrucción efectiva</h2>
+  <p><strong>Abre cada componente</strong> para ver qué significa y un ejemplo aplicado a remuneraciones.</p>
+  <div data-acc="acc">
+    <div class="task">Componentes revisados <span class="tick">0 / 5</span></div>
+    <div class="acc">
+      <div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>Tarea<span class="sub">¿Qué quieres que haga exactamente?</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Usa un verbo concreto: <b>revisar, explicar, comparar, clasificar, redactar</b>. Evita pedidos abiertos como “mira esto”.</p><div class="example">“<b>Identifica</b> posibles inconsistencias entre las horas extra registradas y los montos pagados.”</div></div></div>
+      <div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Contexto<span class="sub">¿Para qué y en qué situación?</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Indica el rol, el propósito y el marco: área, periodo, país y normativa aplicable.</p><div class="example">“Actúa como asistente de análisis de remuneraciones de una empresa chilena. Es el cierre de septiembre.”</div></div></div>
+      <div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Información<span class="sub">¿Con qué datos trabajará?</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Describe los datos que entregas y sus columnas. Usa siempre datos ficticios o anonimizados.</p><div class="example">“Te entrego una tabla ficticia con: código, área, horas extra, valor hora y monto pagado.”</div></div></div>
+      <div class="acc-item"><button class="acc-head" type="button"><span class="ico">4</span><span>Restricciones<span class="sub">¿Qué no debe hacer?</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Fija límites: no inventar datos, no modificar valores, señalar supuestos, pedir aclaraciones si falta información.</p><div class="example">“No inventes datos ni corrijas montos. Si necesitas información adicional, pregúntame antes de concluir.”</div></div></div>
+      <div class="acc-item"><button class="acc-head" type="button"><span class="ico">5</span><span>Formato<span class="sub">¿Cómo quieres el resultado?</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Define la forma de la respuesta: tabla, lista, columnas, extensión o tono.</p><div class="example">“Entrega una tabla con: código, alerta detectada, razón y dato que falta para confirmarla.”</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · ANTES / DESPUÉS (deslizador) -->
+<section class="slide" data-title="Antes y después" data-audio="p04" data-gate="cmp" data-gate-msg="Mueve el deslizador hasta ambos extremos para comparar.">
+  <span class="eyebrow amber">Lección 1.3 · Comparación</span>
+  <h2>La misma tarea, dos instrucciones distintas</h2>
+  <p><strong>Mueve el deslizador</strong> hacia la izquierda y hacia la derecha para comparar la instrucción vaga con la estructurada y lo que obtuvo cada una.</p>
+  <div data-cmp="cmp">
+    <div class="task">Versiones comparadas <span class="tick">0 / 2</span></div>
+    <div class="cmp tall">
+      <div class="side before"><span class="eyebrow amber" style="justify-self:start">Instrucción vaga</span><div class="promptbox">Revisa esta planilla.</div><p><b>Resultado:</b> consejos generales sobre “verificar datos y fórmulas”. No identifica ningún problema concreto ni dice qué revisar primero.</p></div>
+      <div class="side after"><span class="eyebrow" style="justify-self:end">Instrucción estructurada</span><div class="promptbox">Actúa como asistente de análisis de remuneraciones. En esta tabla ficticia de 12 registros (código, área, horas extra, valor hora, monto), identifica filas donde el monto no coincida con horas × valor hora × 1,5. No modifiques valores. Entrega una tabla con: código, diferencia y posible causa.</div><p><b>Resultado:</b> una tabla con 3 registros a revisar, la diferencia de cada uno y una hipótesis verificable.</p></div>
+      <div class="handle"></div>
+    </div>
+    <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label="Deslizador para comparar instrucción vaga y estructurada"/>
+  </div>
+</section>
+
+<!-- 5 · CONSTRUCTOR DE PROMPTS -->
+<section class="slide" data-title="Construye tu instrucción" data-audio="p05" data-gate="prompt" data-gate-msg="Elige una opción para cada componente y genera tu instrucción.">
+  <span class="eyebrow amber">Lección 1.3 · Actividad</span>
+  <h2>Construye una instrucción efectiva</h2>
+  <p>Camila necesita revisar la planilla de <b>bonos de producción</b> de septiembre. <strong>Elige una opción para cada componente</strong> y genera la instrucción. Verás su calidad y qué mejorar.</p>
+  <div data-builder="prompt">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar instrucción</button></div>
+    <div class="out-wrap" hidden></div>
+  </div>
+</section>
+
+<!-- 6 · CASO: ITERAR -->
+<section class="slide" data-title="Caso: mejorar la respuesta" data-audio="p06" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Iterar</span>
+  <h2>La respuesta llegó, pero con un problema</h2>
+  <div class="grid-2">
+    <div class="aichat">
+      <div class="ahead"><span class="dot">✦</span> Asistente de IA corporativo</div>
+      <div class="a">Revisé la tabla. El registro <b>B-07</b> tiene una diferencia de $18.400. <mark>Según el contrato colectivo, el bono debería ser de $95.000</mark>, así que recomiendo corregirlo.</div>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Lo que Camila nota:</strong> ella nunca entregó el contrato colectivo. La IA supuso un monto que no estaba en los datos.</div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Cómo mejora Camila su instrucción?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso1b">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Acepta la recomendación: la IA debe conocer los contratos colectivos.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le pide lo mismo, pero con más urgencia: “Revisa bien esta vez”.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Agrega una restricción: “Usa solo los datos entregados; si necesitas un parámetro que no está, indícalo como pregunta en vez de suponerlo”.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una corrección basada en un supuesto</div><div class="branch-body"><div><p>La IA no tenía el contrato. El monto de $95.000 es un <strong>supuesto presentado como hecho</strong>. Corregir el pago con esa base podría generar un error real.</p></div><div><p class="hint">Si no está en los datos, no es un hecho.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el mismo problema</div><div class="branch-body"><div><p>Pedir “más cuidado” no cambia lo que la IA sabe ni lo que puede hacer. Lo que mejora la respuesta es <strong>agregar información o límites concretos</strong>.</p></div><div><p class="hint">Iterar es precisar, no insistir.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Con esa restricción, la IA responde: “Para confirmar la diferencia de B-07 necesito el monto del bono pactado. ¿Puedes indicarlo?”. Ahora la respuesta es honesta y verificable.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso1b" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · La IA pide el contrato colectivo. ¿Qué hace Camila?</h3>
+    <div class="options" data-choice="caso1b" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Le entrega solo la cláusula del bono, sin nombres ni datos personales, dentro de la herramienta corporativa autorizada.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Sube el contrato completo con la lista de trabajadores afiliados al sindicato.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Copia el contrato en un chat público porque es más rápido.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso1b-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos sensibles innecesarios</div><div class="branch-body"><div><p>La afiliación sindical es un <strong>dato sensible</strong>. Para revisar el monto del bono basta con la cláusula; el resto sobra.</p></div><div><p class="hint">Comparte solo lo necesario para la tarea.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: información interna fuera de control</div><div class="branch-body"><div><p>Un contrato colectivo es información interna. Un chat público con cuenta personal <strong>no tiene acuerdos de confidencialidad</strong> con la empresa.</p></div><div><p class="hint">Recuerda la lección 1.2.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso1b-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Información mínima, en un entorno autorizado. Con la cláusula, la IA confirma la diferencia y Camila la valida con el sistema de remuneraciones antes de corregir.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA: DOS PROMPTS REUTILIZABLES -->
+<section class="slide" data-title="Tus prompts reutilizables" data-audio="p08" data-gate="mios mios_model pass" data-gate-msg="Escribe tus dos instrucciones y revisa los modelos.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Tus dos primeras instrucciones reutilizables</h2>
+  <p>Escribe dos instrucciones para tareas reales de tu trabajo usando los cinco componentes. Luego compáralas con los modelos y guárdalas: serán el inicio de tu biblioteca de prompts.</p>
+  <div data-builder="mios">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Guardar mis instrucciones</button><button class="small-btn model-btn" type="button" disabled>Ver instrucciones modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Modelo 1 · Revisar una fórmula:</strong><div class="promptbox">Actúa como asistente experto en Excel para remuneraciones. Explica paso a paso qué hace esta fórmula y en qué casos podría dar un resultado incorrecto: [fórmula]. No calcules montos. Entrega: explicación simple, posibles errores y una prueba con valores conocidos.</div>
+      <strong style="display:block;margin-top:10px">Modelo 2 · Responder una consulta frecuente:</strong><div class="promptbox">Actúa como analista de remuneraciones de una empresa chilena. Redacta un borrador de respuesta, en tono cercano y claro, para un colaborador que pregunta por qué cambió su gratificación este mes. Usa solo esta información: [datos generales sin nombres]. No afirmes normativa que no te haya entregado; marca entre corchetes lo que debo verificar. Máximo 120 palabras.</div></div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.3</h2>
+    <p>Ya puedes construir instrucciones con tarea, contexto, información, restricciones y formato, y mejorarlas iterando con precisión.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> una buena instrucción no es larga, es completa. En la próxima lección verás cómo proteger la información salarial al usar IA.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los componentes</button><button class="small-btn primary" type="button" data-goto="4">Volver al constructor</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>

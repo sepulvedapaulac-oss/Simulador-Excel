@@ -259,6 +259,38 @@ function renderReport(){const pct=Q.length?Math.round(S.quiz.score/Q.length*100)
   if($('#fEsc'))$('#fEsc').textContent=`${fk.filter(k=>S.first[k]).length} / ${fk.length}`}
 $$('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.goto)));
 
+/* ---------- Deslizador antes / después ---------- */
+$$('[data-cmp]').forEach(root=>{const key=root.dataset.cmp,box=$('.cmp',root),rng=$('input[type=range]',root);const seen=new Set();
+  const t=tracker(key,2,root);
+  const upd=()=>{const v=+rng.value;box.style.setProperty('--cut',v+'%');if(v<=15&&!seen.has('a')){seen.add('a');t('a')}if(v>=85&&!seen.has('b')){seen.add('b');t('b')}};
+  rng.addEventListener('input',upd);upd()});
+
+/* ---------- Línea de tiempo / pasos con panel ---------- */
+$$('[data-panel]').forEach(root=>{const key=root.dataset.panel,data=L.panels[key],btns=$$('[data-k]',root),pan=$('.xp-panel',root);
+  const t=tracker(key,btns.length,root);
+  btns.forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k,d=data[k];btns.forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+    pan.innerHTML=`<h3 style="margin-top:0">${d.t}</h3>${d.html}`;t(k)}))});
+
+/* ---------- Checklist sí / no con respuesta modelo ---------- */
+$$('[data-yn]').forEach(root=>{const key=root.dataset.yn,items=L.yn[key],list=$('.yn-list',root),mb=$('.model-btn',root);let n=0;
+  list.innerHTML=items.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+  $$('.yn-item',list).forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=items[+it.dataset.i],ok=+b.dataset.a===y[1];
+    if(!(('yn'+key+it.dataset.i) in S.first))S.first['yn'+key+it.dataset.i]=ok;
+    it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;n++;
+    if(n===items.length){done(key);if(mb)mb.disabled=false}})));
+  if(mb)mb.addEventListener('click',()=>{const m=$('.model',root);if(m)m.hidden=false;done(key+'_model')})});
+
+/* ---------- Tabla de clasificación con selectores ---------- */
+$$('[data-seltable]').forEach(root=>{const key=root.dataset.seltable,cfg=L.seltables[key],tb=$('tbody',root);let ok=new Set();
+  const t=tracker(key,cfg.rows.length,root);
+  tb.innerHTML=cfg.rows.map((r,i)=>`<tr data-i="${i}"><td><b>${r.label}</b>${r.ex?`<span class="why" style="color:var(--muted)">${r.ex}</span>`:''}</td><td><select aria-label="Clasificación de ${esc(r.label)}"><option value="">Elige…</option>${cfg.options.map((o,j)=>`<option value="${j}">${o}</option>`).join('')}</select><span class="why"></span></td></tr>`).join('');
+  $$('tr',tb).forEach(tr=>$('select',tr).addEventListener('change',e=>{const i=+tr.dataset.i,r=cfg.rows[i],v=e.target.value;if(v==='')return;const good=+v===r.c;
+    if(!(('st'+key+i) in S.first))S.first['st'+key+i]=good;
+    tr.classList.toggle('good',good);tr.classList.toggle('bad',!good);
+    $$('.why',tr)[$$('.why',tr).length-1].innerHTML=good?`✓ ${r.why}`:`✕ ${r.hint||'Revisa esta clasificación.'}`;
+    if(good){ok.add(i);t(i);e.target.disabled=true}}))});
+
 /* ---------- Ganchos propios de la lección ---------- */
 if(typeof L.init==='function')L.init({$,$$,done:k=>done(k),feedback,S,esc,go:i=>go(i)});
 

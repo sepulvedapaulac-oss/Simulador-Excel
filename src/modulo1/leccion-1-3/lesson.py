@@ -1,0 +1,72 @@
+# Genera lesson.json de la Lección 1.3 (con voz)
+import json, pathlib
+L = {
+ "id": "ia_rem_l13", "ident": "IAREM_M1_L13", "zip_name": "Leccion_1_3_Prompts_efectivos",
+ "title": "Lección 1.3 — Cómo elaborar prompts efectivos",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LECCIÓN 1.3",
+ "voice": True, "pass": 0.8,
+ "narration": {
+  "p01": "Te damos la bienvenida a la lección uno punto tres. Camila escribió una instrucción rápida y recibió una respuesta muy general. ¿Por qué pasó eso? Lee la conversación y descúbrelo.",
+  "p03": "Una instrucción efectiva tiene cinco componentes: tarea, contexto, información, restricciones y formato. Abre cada uno y mira cómo se aplica a una revisión de remuneraciones.",
+  "p04": "Compara la misma tarea escrita de dos formas. Mueve el deslizador de un extremo a otro y fíjate cuánto cambia el resultado cuando la instrucción es completa.",
+  "p05": "Ahora te toca a ti. Elige la mejor opción para cada componente y genera tu instrucción. Verás su calidad y qué podrías mejorar.",
+  "p06": "La respuesta llegó, pero la inteligencia artificial supuso un dato que nadie le entregó. ¿Cómo debería Camila mejorar su instrucción? Decide.",
+  "quiz": "Comprueba lo aprendido. Son cinco preguntas y necesitas al menos cuatro correctas para finalizar. Cada respuesta incluye una explicación.",
+  "p08": "Lleva esto a tu trabajo. Escribe dos instrucciones para tareas reales y compáralas con los modelos. Serán el comienzo de tu biblioteca de prompts.",
+  "p09": "Terminaste la lección uno punto tres. Recuerda: una buena instrucción no es larga, es completa. En la próxima lección veremos cómo proteger la información salarial."
+ },
+ "video": {"voice": True, "scenes": [
+  {"t": "Qué es un prompt", "lines": [
+    "Un prompt es la instrucción que le das a la inteligencia artificial.",
+    "Mientras más clara y completa sea, más útil y verificable será la respuesta."],
+   "html": "<div class=\"v-final\">Instrucción <em>clara</em> = respuesta <em>útil</em></div><div class=\"v-chk\"><span data-at=\"1\">Clara</span><span data-at=\"1\">Completa</span><span data-at=\"1\">Verificable</span></div>"},
+  {"t": "Tarea y contexto", "lines": [
+    "Empieza por la tarea: un verbo concreto, como revisar, explicar o comparar.",
+    "Luego agrega contexto: tu rol, el propósito y el periodo que estás revisando."],
+   "html": "<div class=\"v-steps\"><div data-at=\"0\">Tarea: un verbo concreto</div><div data-at=\"1\">Contexto: rol, propósito y periodo</div></div>"},
+  {"t": "Información y restricciones", "lines": [
+    "Describe los datos que entregas, siempre ficticios o anonimizados.",
+    "Y fija límites: que no invente datos, que no modifique valores y que pregunte si le falta algo."],
+   "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Información</b>Columnas y datos<small>Ficticios o anonimizados</small></div><div class=\"warn\" data-at=\"1\"><b>Restricciones</b>No inventar, no modificar<small>Preguntar si falta algo</small></div></div>"},
+  {"t": "Formato", "lines": [
+    "Termina indicando cómo quieres el resultado: una tabla, una lista o un texto breve.",
+    "Así podrás revisarlo rápido y compararlo con tus registros."],
+   "html": "<div class=\"v-icons\"><div><span class=\"i\">📋</span>Tabla</div><div><span class=\"i\">📝</span>Lista</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">🔎</span>Fácil de verificar</div></div>"},
+  {"t": "Iterar", "lines": [
+    "Si la respuesta no sirve, no insistas: precisa.",
+    "Agrega el dato que faltaba o el límite que no estaba, y vuelve a intentarlo."],
+   "html": "<div class=\"v-final\">Iterar es <em>precisar</em>, no insistir</div><div class=\"v-chk\"><span data-at=\"1\">Agrega información</span><span data-at=\"1\">Agrega límites</span></div>"}
+ ]},
+ "builders": {
+  "prompt": {"title": "Tu instrucción", "rows": [
+   {"label": "Tarea", "options": ["Revisa esto.", "Identifica los registros donde el bono pagado no coincida con la regla de cálculo."], "good": 1},
+   {"label": "Contexto", "options": ["(sin contexto)", "Actúa como asistente de análisis de remuneraciones de una empresa chilena; es el cierre de septiembre."], "good": 1},
+   {"label": "Información", "options": ["Te paso la planilla completa con nombres, RUT y cuentas bancarias.", "Te entrego una tabla ficticia con código, área, unidades producidas, tarifa por unidad y bono pagado."], "good": 1},
+   {"label": "Restricciones", "options": ["Corrige todo lo que encuentres.", "No modifiques valores ni inventes datos; si falta un parámetro, pregúntame."], "good": 1},
+   {"label": "Formato", "options": ["Responde como quieras.", "Entrega una tabla con código, diferencia detectada y posible causa."], "good": 1}
+  ]},
+  "mios": {"title": "Mis instrucciones reutilizables", "colA": "Tarea", "colB": "Instrucción", "rows": [
+   {"type": "text", "label": "Instrucción 1 · para revisar o explicar una fórmula o planilla", "ph": "Actúa como… Revisa/Explica… Te entrego… No… Entrega una tabla con…"},
+   {"type": "text", "label": "Instrucción 2 · para redactar una comunicación o respuesta", "ph": "Actúa como… Redacta… Usa solo esta información… No afirmes… Máximo…"}
+  ]}
+ },
+ "quiz": [
+  {"q": "¿Cuáles son los cinco componentes de una instrucción efectiva vistos en la lección?",
+   "o": ["Saludo, pregunta, urgencia, idioma y firma.", "Tarea, contexto, información, restricciones y formato.", "Tema, extensión, fuente, autor y fecha."], "c": 1,
+   "f": ["El saludo y la urgencia no cambian lo que la IA sabe ni lo que debe hacer.", "Correcto: esos cinco elementos definen qué hacer, con qué datos, con qué límites y cómo entregarlo.", "Son datos de un documento, no componentes de una instrucción."]},
+  {"q": "¿Qué restricción ayuda más a evitar que la IA invente información?",
+   "o": ["“Sé muy preciso”.", "“Usa solo los datos entregados; si falta algo, pregúntame”.", "“Responde rápido”."], "c": 1,
+   "f": ["Es una buena intención, pero no le dice qué hacer cuando falta información.", "Correcto: obliga a la IA a declarar lo que falta en vez de suponerlo.", "La rapidez no tiene relación con la exactitud."]},
+  {"q": "La IA supuso un monto que no estaba en los datos. ¿Cuál es la mejor forma de iterar?",
+   "o": ["Repetir la misma instrucción con más énfasis.", "Agregar el dato que faltaba o una restricción concreta y volver a intentar.", "Aceptar el monto porque la IA suele tener razón."], "c": 1,
+   "f": ["Insistir no cambia la información disponible; el resultado será igual.", "Correcto: iterar es precisar la instrucción con información o límites.", "Un supuesto no verificado no puede usarse para corregir pagos."]},
+  {"q": "¿Qué datos deberías incluir en una instrucción para revisar una planilla?",
+   "o": ["La planilla real con nombres, RUT y cuentas bancarias.", "Una tabla ficticia o anonimizada con las columnas necesarias para la tarea.", "Ningún dato: la IA debe adivinar."], "c": 1,
+   "f": ["Expone datos personales que la tarea no necesita.", "Correcto: datos mínimos y protegidos, suficientes para la revisión.", "Sin datos, la IA solo puede dar recomendaciones generales."]},
+  {"q": "¿Para qué sirve definir el formato de la respuesta?",
+   "o": ["Para que la respuesta sea más larga.", "Para obtener un resultado fácil de revisar y comparar con tus registros.", "No sirve: el formato no importa."], "c": 1,
+   "f": ["La extensión no es el objetivo; lo es la utilidad.", "Correcto: una tabla con columnas definidas se verifica en minutos.", "Un formato claro ahorra tiempo de revisión y reduce errores."]}
+ ]
+}
+pathlib.Path(__file__).with_name("lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
+print("lesson.json OK")
