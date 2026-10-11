@@ -176,7 +176,7 @@ def build(src: Path, engine: str):
         # Sin narración: se quitan los atributos de audio para que no aparezcan botones
         content = re.sub(r'\sdata-audio="[^"]*"', "", content)
     music = None
-    if meta.get("video") and meta.get("music", True):
+    if meta.get("video") and meta.get("music", False):  # la autora prefiere los videos sin música
         shutil.copy(TOOLS / "assets" / "musica_fondo.mp3", out / "audio" / "musica_fondo.mp3")
         music = "audio/musica_fondo.mp3"
     if not any((out / "audio").iterdir()):
