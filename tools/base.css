@@ -797,3 +797,42 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
 .cmp.tall{min-height:400px}
 .cmp .side p{margin:6px 0 0}
 @media(max-width:560px){.cmp.tall{min-height:640px}}
+/* ==== Simulador de hoja de cálculo ==== */
+.hoja{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);margin-top:12px}
+.hj-bar{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--surface2);border-bottom:1px solid var(--line)}
+.hj-name{min-width:52px;text-align:center;font-weight:900;font-size:.82rem;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-family:ui-monospace,Menlo,Consolas,monospace}
+.hj-fx{font-style:italic;font-weight:900;color:var(--teal-ink)}
+.hj-input{flex:1;min-width:0;font:inherit;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.hj-input:read-only{color:var(--muted)}
+.hj-ok{border:none;background:var(--teal);color:var(--on-accent);border-radius:8px;width:34px;height:32px;font-weight:900;cursor:pointer}
+.hj-wrap{overflow:auto;max-height:440px}
+.hj-grid{border-collapse:collapse;font-size:.82rem;font-variant-numeric:tabular-nums;min-width:100%}
+.hj-grid th{position:sticky;top:0;background:var(--chip);color:var(--muted);font-weight:800;padding:4px 8px;border:1px solid var(--line2);z-index:1;font-size:.74rem}
+.hj-grid tbody th{position:sticky;left:0;z-index:1;width:36px}
+.hj-grid .hj-corner{left:0;z-index:2}
+.hj-grid td{border:1px solid var(--line2);padding:5px 8px;min-width:92px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:cell;color:var(--ink);background:var(--surface)}
+.hj-grid td.num{text-align:right}
+.hj-grid td.lock{background:var(--surface2)}
+.hj-grid td.fx{color:var(--teal-ink);font-weight:700}
+.hj-grid td.err{color:var(--bad);font-weight:800}
+.hj-grid td.sel{outline:2px solid var(--teal);outline-offset:-2px;background:var(--mint)}
+.hj-grid td.hdr{font-weight:900;background:var(--mint);color:var(--teal-ink)}
+.hj-grid td.ok{background:var(--good-soft)}
+.hj-grid td.bad{background:var(--bad-soft)}
+.hj-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.checks2{display:grid;gap:6px;margin-top:10px}
+.checks2 div{padding:8px 10px;border-radius:10px;font-size:.9rem;border:1px solid var(--line);background:var(--surface)}
+.checks2 .ok{border-color:var(--good-line);background:var(--good-soft)}
+.checks2 .no{border-color:var(--bad-line);background:var(--bad-soft)}
+/* Laboratorio de prompts */
+.promptarea{width:100%;min-height:150px;font:inherit;font-size:.95rem;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);resize:vertical}
+.comp-chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.comp-chips span{padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:850;border:1px solid var(--line);background:var(--surface2);color:var(--muted)}
+.comp-chips span.ok{border-color:var(--good-line);background:var(--good-soft);color:var(--good)}
+.comp-chips span.no{border-color:var(--bad-line);background:var(--bad-soft);color:var(--bad)}
+.lab-badge{display:inline-block;padding:4px 10px;border-radius:999px;background:var(--violet-soft);color:var(--violet);font-weight:900;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase}
+.datatbl{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:8px;font-variant-numeric:tabular-nums}
+.datatbl th,.datatbl td{border:1px solid var(--line2);padding:6px 8px;text-align:left}
+.datatbl th{background:var(--chip);font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.datatbl .tblwrap{overflow:auto}
+.tblwrap{overflow:auto;max-width:100%}

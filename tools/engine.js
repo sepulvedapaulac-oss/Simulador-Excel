@@ -254,7 +254,7 @@ function renderPassBox(){const el=$('#passBox');if(!el)return;const pct=Math.rou
   el.innerHTML=!S.quiz.taken?'':passScore()?`<div class="feedback good"><strong>Comprobación: ${pct}%.</strong> <span class="fb-body">Superaste el mínimo de 80%. Completa esta actividad y presiona <b>Siguiente</b> para finalizar.</span></div>`
     :`<div class="feedback bad"><strong>Comprobación: ${pct}%.</strong> <span class="fb-body">Necesitas al menos 80% para finalizar la lección.</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="toQuiz">Volver a la Comprobación</button></div></div>`;
   const tq=$('#toQuiz');if(tq)tq.addEventListener('click',()=>{S.quiz.answers=[];qi=0;S.done.delete('pass');qRender();go(+$('#qcard').closest('section').dataset.idx)})}
-function renderReport(){const pct=Q.length?Math.round(S.quiz.score/Q.length*100):0;const fk=Object.keys(S.first);
+function renderReport(){if(typeof L.report==='function'){L.report();return}const pct=Q.length?Math.round(S.quiz.score/Q.length*100):0;const fk=Object.keys(S.first);
   if($('#fPct'))$('#fPct').textContent=`${pct}%`;
   if($('#fEsc'))$('#fEsc').textContent=`${fk.filter(k=>S.first[k]).length} / ${fk.length}`}
 $$('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.goto)));
@@ -308,8 +308,10 @@ const T0=Date.now();let startSlide=0;
 function scSave(){if(!SC.ok)return;
   const d={v:1,cur:S.cur,max:S.max,done:[...S.done],first:S.first,qa:S.quiz.answers.length===Q.length?S.quiz.answers:[],c:S.completed};
   SC.set('cmi.suspend_data',JSON.stringify(d));SC.set('cmi.core.lesson_location',String(S.cur));
-  if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
-  if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed');SC.commit()}
+  if(typeof L.score==='function'){const sc=L.score();SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',sc);
+    if(S.completed)SC.set('cmi.core.lesson_status',sc>=(L.pass||0.7)*100?'passed':'failed')}
+  else{if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
+  if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed')}SC.commit()}
 if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(st===''||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');
   try{const d=JSON.parse(SC.get('cmi.suspend_data')||'{}');if(d.v===1){S.max=+d.max||0;(d.done||[]).forEach(k=>S.done.add(k));S.first=d.first||{};S.completed=!!d.c;
     if(d.qa&&d.qa.length===Q.length){S.quiz.answers=d.qa;qi=Q.length;qRender()}
