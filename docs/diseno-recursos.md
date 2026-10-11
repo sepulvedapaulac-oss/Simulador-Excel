@@ -35,7 +35,7 @@ Imágenes: **Canva**, estilo fotográfico realista, coherente con la referencia.
 ### 3.1 Lecciones SCORM
 - **Todas** tienen video integrado: un reproductor con escenario oscuro, capítulos y subtítulos, como en la referencia 5.1.
 - **Narración alternada:** las lecciones x.1 y x.3 van **con voz**; las x.2 y x.4 van **sin voz** (el video muestra textos animados y subtítulos).
-- Voz: **Catalina (Chile)**, `es-CL-CatalinaNeural` de Microsoft, gratuita mediante `edge-tts`.
+- Voz: **Chatterbox Multilingual** (código abierto, licencia MIT, gratuita), versión “más viva”, con acento latino neutro. Control de calidad automático por frase con Whisper. Videos **sin música**.
 - Cada lección combina **herramientas interactivas distintas** (ver §5). Ninguna repite la combinación de otra.
 - Las pantallas se desbloquean al completar la interacción, como en la referencia (`data-gate`).
 - Se registra en SCORM: `lesson_status`, `score.raw` y `suspend_data` para retomar el avance.
@@ -46,7 +46,7 @@ Imágenes: **Canva**, estilo fotográfico realista, coherente con la referencia.
 - Preguntas contextualizadas en el caso de Camila, no de memoria.
 
 ### 3.3 Laboratorios (artefactos HTML)
-- **Flujo de entrega:** primero se construyen como HTML para revisión. Una vez aprobados, se empaquetan en SCORM 1.2 con registro de nota y se les integra la narración con la voz de Catalina.
+- **Flujo de entrega:** primero se construyen como HTML para revisión. Una vez aprobados, se empaquetan en SCORM 1.2 con registro de nota y se les integra la narración con la voz del curso.
 - Son simuladores aplicativos. El principal es un **simulador de Excel en el navegador**: celdas, fórmulas, validación y comprobación automática.
 - Usan datos 100 % sintéticos, con retroalimentación inmediata y opción de reintentar.
 
@@ -110,7 +110,7 @@ Todas las lecciones incluyen, además: video integrado, comprobación breve, tra
 | **3** Análisis | Guía de preparación de datos y diccionario de variables | Plantilla de informe ejecutivo | Variaciones mensuales (absoluta, %, por área) | Tablero de indicadores (KPI y gráficos) | "La gerencia necesita respuestas" | Explicar a la gerencia el aumento del 8 % |
 | **4** Automatización | Biblioteca de prompts para remuneraciones | Guía para diseñar un flujo de cierre asistido por IA y rúbrica | Checklist de cierre con controles automáticos | Simulador de flujo con puntos de control | "Modernizando el cierre mensual" | Rediseñar una tarea del cierre con control humano |
 
-Cada módulo incluye además: **1 video Moodle en MP4** (1080p, presentación y síntesis del módulo, con la voz de Catalina y subtítulos `.vtt`), **resumen carrusel** y **glosario carrusel**.
+Cada módulo incluye además: **1 video Moodle en MP4** (1080p, presentación y síntesis del módulo, con la voz del curso, sin música y con subtítulos `.vtt`), **resumen carrusel** y **glosario carrusel**.
 
 ## 7. Evaluación (propuesta de ponderación en Moodle)
 
@@ -124,14 +124,14 @@ Cada módulo pesa 25 %.
 
 ## 8. Pendientes técnicos
 
-1. **Voz Catalina:** el entorno de desarrollo debe permitir el dominio `speech.platform.bing.com` para generar los MP3 con `edge-tts`.
+1. **Voz:** se genera localmente con Chatterbox (sin costo ni servicios externos).
 2. **Canva:** autorizar el conector de Canva para obtener y exportar las imágenes.
-3. **Mindsmith:** conectado (organización "Equipo de paula"). Se crea un caso al cerrar cada módulo.
+3. **Mindsmith:** conectado (organización "Equipo de paula"). Casos creados (sin publicar): M1 `cmv38d6dx000007nooffs3n54`, M2 `cmv38qdi3000006k1j4nd1mfc`.
 
 ## 9. Orden de producción
 
 1. Lección modelo **1.1** (con voz) y **1.2** (sin voz), para validar los patrones visual y técnico.
-2. Laboratorios del módulo 1 en HTML para revisión. Tras la aprobación, se empaquetan en SCORM con la voz de Catalina.
+2. Laboratorios del módulo 1 en HTML para revisión. Tras la aprobación, se empaquetan en SCORM con la voz del curso.
 3. Cuestionario XML, resumen, glosario y PDF del módulo 1.
 4. Video MP4 del módulo 1 y caso Mindsmith del módulo 1.
 5. Repetir para los módulos 2–4, sumando la evaluación final ramificada.
