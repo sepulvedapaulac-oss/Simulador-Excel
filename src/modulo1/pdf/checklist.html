@@ -1,0 +1,80 @@
+<!--{"title": "Checklist de uso responsable y protección de datos", "short": "Checklist · Uso responsable y protección de datos", "subtitle": "Lista de verificación para usar IA en remuneraciones con herramientas autorizadas, datos mínimos y control humano. Imprímela o úsala en cada consulta.", "module": "Módulo 1 · Fundamentos de IA en remuneraciones", "file": "M1_Checklist_uso_responsable_y_datos.pdf", "img": "i14_hero.jpg", "kind": "Checklist"}-->
+
+<section>
+  <h2>Antes de usar la IA</h2>
+  <p class="lead">Marca cada punto. Si alguno queda sin marcar, detente y ajusta antes de continuar.</p>
+  <h3>A. La tarea</h3>
+  <ul class="check">
+    <li>La tarea es de explicación, orden, redacción o revisión.<small>No es cálculo oficial, aprobación de pagos ni definición de parámetros legales.</small></li>
+    <li>Sé cómo voy a verificar la respuesta.<small>Fuente oficial, sistema de remuneraciones o un caso conocido.</small></li>
+    <li>Si la respuesta estuviera equivocada, el error se detectaría antes de afectar un pago.</li>
+  </ul>
+  <h3>B. La herramienta</h3>
+  <ul class="check">
+    <li>Uso una herramienta corporativa autorizada por TI, con mi cuenta laboral.</li>
+    <li>No uso extensiones, aplicaciones ni chats públicos para información de la empresa.</li>
+    <li>Conozco la política interna de uso de IA (o consulté a TI o al encargado de datos).</li>
+  </ul>
+  <h3>C. Los datos</h3>
+  <ul class="check">
+    <li>Incluyo solo las columnas que la tarea necesita (minimización).</li>
+    <li>Reemplacé nombres y RUT por códigos internos (seudonimización).<small>Ejemplo: EMP-001, EMP-002…</small></li>
+    <li>Eliminé cuentas bancarias, AFP, direcciones y teléfonos si no son necesarios.</li>
+    <li>No incluyo datos sensibles: salud, diagnósticos, afiliación sindical, origen o creencias.</li>
+    <li>Cuando no necesito el detalle, uso totales o promedios por área (agregación).</li>
+    <li>Los totales de la tabla minimizada cuadran con el original.</li>
+  </ul>
+</section>
+
+<section class="page">
+  <h2>Al escribir la instrucción</h2>
+  <ul class="check">
+    <li><b>Tarea:</b> empecé con un verbo concreto (explica, identifica, redacta, compara).</li>
+    <li><b>Contexto:</b> indiqué el rol, el propósito y el período.</li>
+    <li><b>Información:</b> describí los datos o la regla que entrego.</li>
+    <li><b>Restricciones:</b> pedí no inventar, no modificar valores y preguntar si falta algo.</li>
+    <li><b>Formato:</b> definí cómo quiero el resultado (tabla, lista, pasos, extensión).</li>
+    <li>Revisé que la instrucción no contenga datos personales antes de enviarla.</li>
+  </ul>
+
+  <h2 style="margin-top:7mm">Al recibir la respuesta</h2>
+  <ul class="check">
+    <li>Contrasté cifras y parámetros con la fuente oficial del período.</li>
+    <li>Probé la respuesta con un caso cuyo resultado conozco.</li>
+    <li>Puedo explicar la respuesta con mis palabras.</li>
+    <li>Las referencias citadas (leyes, circulares, dictámenes) existen y están vigentes.</li>
+    <li>Ajusté el texto antes de enviarlo a un colaborador o a la jefatura.</li>
+    <li>Registré qué pedí, con qué herramienta y quién validó el resultado.</li>
+  </ul>
+
+  <div class="box warn"><b>Señales para detenerte:</b> la IA entrega un parámetro sin fuente, supone un dato que no le diste, responde con montos exactos que no puedes reconstruir o te pide más datos personales de los necesarios.</div>
+</section>
+
+<section class="page">
+  <h2>Semáforo rápido de datos</h2>
+  <table>
+    <thead><tr><th style="width:30%">Dato</th><th style="width:20%">Decisión</th><th>Alternativa segura</th></tr></thead>
+    <tbody>
+      <tr><td>Nombre</td><td><span class="tag r">Eliminar</span></td><td>Código interno (EMP-001).</td></tr>
+      <tr><td>RUT</td><td><span class="tag r">Eliminar</span></td><td>Código interno.</td></tr>
+      <tr><td>Cuenta bancaria</td><td><span class="tag r">Eliminar</span></td><td>No se requiere para análisis.</td></tr>
+      <tr><td>Diagnóstico de licencia</td><td><span class="tag r">Eliminar</span></td><td>Si se necesita, solo “días de licencia”.</td></tr>
+      <tr><td>AFP o isapre</td><td><span class="tag a">Transformar</span></td><td>Solo si la tarea lo exige, agrupado.</td></tr>
+      <tr><td>Fecha de nacimiento</td><td><span class="tag a">Transformar</span></td><td>Tramo de edad.</td></tr>
+      <tr><td>Área o centro de costo</td><td><span class="tag g">Usar</span></td><td>Útil para agregados por área.</td></tr>
+      <tr><td>Sueldo base, horas extra, bonos</td><td><span class="tag g">Usar</span></td><td>Con código, nunca con nombre.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:6mm">Ley 21.719 en cinco puntos</h2>
+  <div class="grid2">
+    <div class="card"><h4>Vigencia</h4>Plenamente exigible desde el 1 de diciembre de 2026.</div>
+    <div class="card"><h4>Alcance</h4>Aplica a empresas públicas y privadas, incluidos los datos de sus trabajadores.</div>
+    <div class="card"><h4>Principios</h4>Licitud, finalidad, proporcionalidad (minimización), calidad, seguridad y confidencialidad.</div>
+    <div class="card"><h4>Fiscalización</h4>La Agencia de Protección de Datos Personales fiscaliza y sanciona.</div>
+  </div>
+  <div class="box key"><b>Sanciones:</b> la ley distingue infracciones leves, graves y gravísimas, con multas según su gravedad. Usar IA con datos de trabajadores debe cumplir la ley, no solo ser eficiente.</div>
+
+  <div class="sign"><div>Revisado por</div><div>Fecha</div><div>Herramienta utilizada</div></div>
+  <p class="src" style="margin-top:6mm">Este checklist es material formativo y no reemplaza la política interna de la empresa ni la asesoría legal. Datos y personajes del curso son ficticios.</p>
+</section>
