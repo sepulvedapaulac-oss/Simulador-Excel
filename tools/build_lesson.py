@@ -114,6 +114,9 @@ TEMPLATE = """<!DOCTYPE html>
 </div></nav>
 
 <script>
+{hoja}
+</script>
+<script>
 window.LESSON={lesson_json};
 </script>
 <script>
@@ -191,11 +194,12 @@ def build(src: Path, engine: str):
     lesson["audio"] = audio
     lesson["music"] = music
     autonarr = ('<label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label>'
-                if voice else '<span class="autonarr" title="Esta lección no tiene narración">🔇 Lección sin narración</span>')
+                if voice else ('<span class="autonarr">🧪 Laboratorio práctico</span>' if meta.get("lab") else '<span class="autonarr" title="Esta lección no tiene narración">🔇 Lección sin narración</span>'))
     page = TEMPLATE.format(
         title_full=html.escape(meta["title"]), course_label=meta["course_label"], autonarr=autonarr,
         css=(TOOLS / "base.css").read_text(encoding="utf-8"), content=content,
         lesson_json=json.dumps(lesson, ensure_ascii=False), lesson_js=lesson_js,
+        hoja=(TOOLS / "hoja.js").read_text(encoding="utf-8") if meta.get("hoja") else "",
         engine=(TOOLS / "engine.js").read_text(encoding="utf-8"))
     (out / "index.html").write_text(page, encoding="utf-8")
 

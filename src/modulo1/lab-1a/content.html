@@ -1,0 +1,58 @@
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 1A · Módulo 1</span>
+  <h1>Laboratorio de prompts</h1>
+  <p class="lead">Camila tiene tres tareas pendientes y quiere resolverlas con ayuda de IA. Tu misión es escribir, para cada una, la instrucción que le darías a la IA. Un <strong>asistente simulado</strong> responderá según la calidad de tu instrucción.</p>
+  <div class="grid-2">
+    <div class="callout"><strong>Cómo se evalúa cada desafío (5 puntos):</strong>
+      <ul class="elem-list" style="margin-top:8px"><li><b>Tarea</b> con un verbo concreto</li><li><b>Contexto</b>: rol, propósito o periodo</li><li><b>Información</b>: qué datos entregas</li><li><b>Restricciones</b>: qué no debe hacer</li><li><b>Formato</b> del resultado</li></ul>
+      <p style="margin:8px 0 0">Si tu instrucción incluye datos personales (RUT, nombres, cuentas), pierdes puntos. Puedes intentar cada desafío las veces que quieras: se guarda tu mejor puntaje. Apruebas con <b>70%</b>.</p></div>
+    <div class="story" style="margin-top:0"><strong>Consejo:</strong> no hay una única respuesta correcta. Lo importante es que la instrucción sea completa y segura. Al final podrás copiar tus tres instrucciones para tu biblioteca de prompts.</div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · DESAFÍO 1 -->
+<section class="slide" data-title="Desafío 1: explicar una fórmula" data-gate="d0" data-gate-msg="Envía al menos una instrucción al asistente.">
+  <span class="lab-badge">Desafío 1 de 3</span>
+  <h2>Explicar una fórmula heredada</h2>
+  <div class="story">Camila heredó esta fórmula de la planilla de horas extra y no entiende qué calcula ni por qué a veces da cero:<div class="promptbox">=SI(Y(C2&gt;45;D2="Turno");(C2-45)*E2*1,5;0)</div><small>C = horas semanales · D = tipo de jornada · E = valor hora</small></div>
+  <div data-prompt-lab="0"></div>
+</section>
+
+<!-- 3 · DESAFÍO 2 -->
+<section class="slide" data-title="Desafío 2: detectar inconsistencias" data-gate="d1" data-gate-msg="Envía al menos una instrucción al asistente.">
+  <span class="lab-badge">Desafío 2 de 3</span>
+  <h2>Detectar inconsistencias en los bonos</h2>
+  <div class="story">La regla del bono de producción es: <b>unidades producidas × $1.200</b>. Camila quiere que la IA revise esta tabla ficticia de octubre.</div>
+  <div class="tblwrap"><table class="datatbl"><thead><tr><th>Código</th><th>Área</th><th>Unidades</th><th>Bono pagado</th></tr></thead><tbody>
+    <tr><td>P-01</td><td>Planta</td><td>120</td><td>$144.000</td></tr><tr><td>P-02</td><td>Planta</td><td>95</td><td>$114.000</td></tr>
+    <tr><td>P-03</td><td>Planta</td><td>110</td><td>$121.000</td></tr><tr><td>P-04</td><td>Bodega</td><td>80</td><td>$96.000</td></tr>
+    <tr><td>P-05</td><td>Bodega</td><td>130</td><td>$165.000</td></tr><tr><td>P-06</td><td>Planta</td><td>100</td><td>$120.000</td></tr></tbody></table></div>
+  <div data-prompt-lab="1"></div>
+</section>
+
+<!-- 4 · DESAFÍO 3 -->
+<section class="slide" data-title="Desafío 3: responder una consulta" data-gate="d2" data-gate-msg="Envía al menos una instrucción al asistente.">
+  <span class="lab-badge">Desafío 3 de 3</span>
+  <h2>Responder una consulta de un colaborador</h2>
+  <div class="story">Un colaborador escribe: <em>“¿Por qué este mes me descontaron más por la AFP si mi sueldo base no cambió?”</em>. Ese mes recibió horas extra y un bono. Camila quiere un borrador de respuesta claro y cercano.</div>
+  <div data-prompt-lab="2"></div>
+</section>
+
+<!-- 5 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labTries">—</div><small>Intentos realizados</small></div>
+  </div>
+  <div id="labDetail"></div>
+  <h3>Tu biblioteca de prompts</h3>
+  <p>Estas son tus mejores instrucciones. Cópialas y guárdalas para reutilizarlas en tu trabajo.</p>
+  <div id="labLib"></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn primary" type="button" id="copyLib">Copiar mis tres instrucciones</button><button class="small-btn" type="button" data-goto="1">Mejorar el desafío 1</button><button class="small-btn" type="button" data-goto="2">Mejorar el desafío 2</button><button class="small-btn" type="button" data-goto="3">Mejorar el desafío 3</button></div>
+  <p class="sources">Laboratorio con asistente simulado: las respuestas son generadas por reglas para fines formativos y no se envía información a ningún servicio externo. Datos ficticios.</p>
+</section>
