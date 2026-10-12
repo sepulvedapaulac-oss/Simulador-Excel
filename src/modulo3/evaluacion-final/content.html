@@ -1,0 +1,178 @@
+<style>
+/* ---- Evaluación final ramificada (componentes propios, usan los tokens del curso) ---- */
+.ev-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.ev-rule{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface2)}
+.ev-rule b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.ev-rule.opt b{color:var(--good)}.ev-rule.acc b{color:var(--amber-ink)}.ev-rule.risk b{color:var(--bad)}
+.ev-rule small{display:block;margin-top:2px}
+.ev-comps{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.ev-comps li{padding:6px 12px;border-radius:999px;background:var(--mint);color:var(--teal-ink);font-weight:850;font-size:.84rem}
+.ev-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.ev-fact{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--surface2)}
+.ev-fact b{display:block;font-size:1.5rem;color:var(--teal);line-height:1.1;font-variant-numeric:tabular-nums}
+.ev-fact small{display:block;margin-top:4px}
+
+.ev-head{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:18px;background:var(--surface2);border:1px solid var(--line)}
+.ev-head .ev-when{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ev-count{font-size:.84rem;font-weight:850;color:var(--muted);font-variant-numeric:tabular-nums}
+.ev-bar{flex-basis:100%;height:8px;background:var(--track);border-radius:999px;overflow:hidden}
+.ev-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2));transition:width .35s ease}
+.ev-dots{display:flex;gap:6px;flex-wrap:wrap}
+.ev-dots i{width:12px;height:12px;border-radius:50%;background:var(--track);display:block}
+.ev-dots i.opt{background:var(--good)}.ev-dots i.acc{background:var(--amber)}.ev-dots i.risk{background:var(--bad)}
+.ev-dots i.now{background:var(--surface);box-shadow:inset 0 0 0 3px var(--teal)}
+
+.ev-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start;margin-top:14px}
+.ev-layout>*{min-width:0}
+.ev-node{animation:rise .35s ease both}
+.ev-node h2{margin-top:10px}
+.ev-sit p{max-width:none}
+.ev-msg{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;margin:12px 0;padding:12px 14px;border-radius:16px;background:var(--surface2);border:1px solid var(--line)}
+.ev-msg .who{font-weight:900;font-size:.84rem;color:var(--muted)}
+.ev-msg p{margin:.2rem 0 0}
+.ev-ai{border-color:var(--mint-line);background:var(--mint)}
+.ev-ai .avatar{background:linear-gradient(135deg,var(--violet),var(--teal))}
+.ev-q{font-weight:900;margin:16px 0 4px;color:var(--navy)}
+.ev-opts{display:grid;gap:10px;margin:8px 0 0}
+.ev-opt{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;width:100%;border:2px solid var(--line2);border-radius:16px;background:var(--surface);padding:12px 14px;text-align:left;font-weight:700;cursor:pointer;transition:border-color .15s,transform .15s}
+.ev-opt .letter{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--chip);font-weight:900}
+.ev-opt:hover:not(:disabled){border-color:var(--teal);transform:translateX(3px)}
+.ev-opt:disabled{cursor:default}
+.ev-opt.dim{opacity:.5}
+.ev-opt.sel.opt{border-color:var(--good-line);background:var(--good-soft)}
+.ev-opt.sel.acc{border-color:var(--amber);background:var(--amber-soft)}
+.ev-opt.sel.risk{border-color:var(--bad-line);background:var(--bad-soft)}
+.ev-opt.sel .letter{background:var(--surface)}
+.ev-opt.best:not(.sel){border-style:dashed;border-color:var(--good-line);opacity:.85}
+.ev-fb{margin-top:14px;border-radius:18px;border:1px solid var(--line);overflow:hidden;animation:rise .35s ease both;background:var(--surface3)}
+.ev-fb-head{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:12px 16px;font-weight:900}
+.ev-fb.opt .ev-fb-head{background:var(--good-soft);color:var(--good)}
+.ev-fb.acc .ev-fb-head{background:var(--amber-soft);color:var(--amber-ink)}
+.ev-fb.risk .ev-fb-head{background:var(--bad-soft);color:var(--bad)}
+.ev-fb-head .pts{margin-left:auto;font-variant-numeric:tabular-nums}
+.ev-fb-body{padding:12px 16px 16px}
+.ev-fb-body h4{margin:.4rem 0 .3rem;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.ev-fb-body p{margin:.2rem 0 .6rem;max-width:none}
+.ev-fb .ev-best{font-size:.9rem;padding:10px 12px;border-radius:12px;background:var(--good-soft);border:1px solid var(--good-line)}
+.ev-next{margin-top:6px}
+
+.ev-exp{border:1px solid var(--line);border-radius:20px;background:var(--surface2);padding:0;position:sticky;top:96px}
+.ev-exp summary{cursor:pointer;list-style:none;padding:14px 16px;font-weight:900;color:var(--navy);display:flex;gap:8px;align-items:center}
+.ev-exp summary::-webkit-details-marker{display:none}
+.ev-exp summary::after{content:"▾";margin-left:auto;transition:transform .2s}
+.ev-exp:not([open]) summary::after{transform:rotate(-90deg)}
+.ev-exp .ev-exp-body{padding:0 14px 14px;display:grid;gap:8px;max-height:calc(100vh - 230px);overflow:auto}
+.ev-entry{border:1px solid var(--line);border-left:5px solid var(--track);border-radius:12px;background:var(--surface);padding:8px 10px;font-size:.84rem}
+.ev-entry.opt{border-left-color:var(--good)}.ev-entry.acc{border-left-color:var(--amber)}.ev-entry.risk{border-left-color:var(--bad)}
+.ev-entry .t{display:block;font-weight:900;font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.ev-entry .d{display:block;font-weight:750;margin-top:2px}
+.ev-empty{font-size:.85rem;color:var(--muted)}
+.ev-total{font-size:.84rem;font-weight:850;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+
+.ev-outcome{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:14px;padding:18px;border-radius:22px;border:1px solid var(--line)}
+.ev-outcome.clean{background:var(--good-soft);border-color:var(--good-line)}
+.ev-outcome.obs{background:var(--amber-soft);border-color:var(--story-line)}
+.ev-outcome.inc{background:var(--bad-soft);border-color:var(--bad-line)}
+.ev-ring{width:112px;height:112px;border-radius:50%;display:grid;place-items:center}
+.ev-ring span{width:86px;height:86px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:1.5rem;font-weight:900;font-variant-numeric:tabular-nums}
+.ev-outcome h3{margin:.1rem 0 .4rem;font-size:1.3rem}
+.ev-outcome p{margin:.2rem 0;max-width:none}
+.ev-outcome ul{margin:.4rem 0 0;padding-left:1.2rem}
+.ev-route{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+.ev-route .n{padding:5px 10px;border-radius:10px;font-size:.8rem;font-weight:850;border:1px solid var(--line);background:var(--surface)}
+.ev-route .n.opt{border-color:var(--good-line);color:var(--good)}.ev-route .n.acc{border-color:var(--amber);color:var(--amber-ink)}.ev-route .n.risk{border-color:var(--bad-line);color:var(--bad)}
+.ev-route .arr{color:var(--muted);font-weight:900}
+.ev-comp{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface);margin-top:10px}
+.ev-comp .top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ev-comp .top b{font-size:1rem}
+.ev-comp .top .pill{margin-left:auto}
+.ev-cbar{height:10px;background:var(--track);border-radius:999px;overflow:hidden;margin:8px 0}
+.ev-cbar span{display:block;height:100%}
+.ev-comp p{margin:.2rem 0 0;font-size:.92rem;max-width:none}
+.ev-steps{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:8px}
+.ev-steps th,.ev-steps td{border-bottom:1px solid var(--line2);padding:8px 6px;text-align:left;vertical-align:top}
+.ev-steps th{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ev-steps td.p{white-space:nowrap;font-weight:900;font-variant-numeric:tabular-nums}
+
+@media(max-width:1180px){
+  .ev-layout{grid-template-columns:1fr}
+  .ev-exp{position:static}
+  .ev-exp .ev-exp-body{max-height:none}
+}
+@media(max-width:860px){
+  .ev-rules,.ev-facts{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .ev-rules{grid-template-columns:1fr}
+  .ev-outcome{grid-template-columns:1fr;justify-items:start}
+  .ev-ring{width:96px;height:96px}.ev-ring span{width:74px;height:74px;font-size:1.25rem}
+  .ev-steps .hide-m{display:none}
+  .ev-opt{grid-template-columns:30px 1fr;gap:10px;padding:11px 12px}
+  .ev-opt .letter{width:28px;height:28px}
+}
+</style>
+
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión de la evaluación" data-gate="start" data-gate-msg="Presiona “Comenzar la evaluación”.">
+  <div class="hero-grid">
+    <div>
+      <span class="lab-badge">Evaluación final · Módulo 3</span>
+      <h1>La gerencia necesita respuestas</h1>
+      <p class="lead">El costo de remuneraciones de octubre subió <strong>8 %</strong> y la gerenta general quiere entender por qué. Tú, en el rol de Camila, prepararás los datos, analizarás la variación con apoyo de IA, armarás el tablero y enviarás el informe. El caso <strong>se bifurca</strong>: lo que decidas cambia lo que ocurre después.</p>
+      <ul class="ev-comps" aria-label="Competencias evaluadas">
+        <li>Preparación de datos</li><li>Análisis de variaciones</li><li>Indicadores y gráficos</li><li>Informe ejecutivo y validación</li>
+      </ul>
+    </div>
+    <div class="photo-frame wide"><img src="img/i34_hero.jpg" alt="Analista de remuneraciones mostrando a una gerenta un informe impreso con gráficos de indicadores, sentadas a una mesa de reuniones"/></div>
+  </div>
+  <div class="callout"><strong>Cómo se evalúa</strong>
+    <p style="margin:6px 0 0">En cada momento eliges una de tres decisiones. Recibes de inmediato la consecuencia y el criterio. Cada recorrido tiene entre 7 y 8 decisiones y tu nota es el <b>puntaje acumulado dividido por el máximo posible de tu ruta</b>.</p>
+    <div class="ev-rules">
+      <div class="ev-rule opt"><b>3 puntos</b><small>Decisión óptima: verificada, clara y a tiempo.</small></div>
+      <div class="ev-rule acc"><b>2 puntos</b><small>Decisión aceptable: no causa daño, pero deja dudas u observaciones.</small></div>
+      <div class="ev-rule risk"><b>0 puntos</b><small>Decisión riesgosa: puede llevar a la gerencia a decidir con información errónea o exponer datos.</small></div>
+    </div>
+  </div>
+  <div class="story"><strong>El desenlace depende de tu puntaje:</strong> informe sólido (85 % o más), informe con observaciones (60 % a 84 %) o informe con errores (menos de 60 %). Apruebas con <b>70 %</b>. Puedes reintentar el caso y se registra tu mejor intento.</div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar la evaluación →</button>
+</section>
+
+<!-- 2 · ANTECEDENTES -->
+<section class="slide" data-title="Antecedentes del caso">
+  <span class="lab-badge">Antecedentes</span>
+  <h2>Lunes 3 de noviembre, 08:45 · AndesCorp</h2>
+  <div class="grid-2">
+    <div>
+      <p>El cierre de octubre ya se pagó. Al revisar el costo total, la gerencia ve un alza que no esperaba. Andrea Rivas, gerenta general, escribe a Compensaciones:</p>
+      <div class="ev-msg"><span class="avatar mgr">A</span><div><span class="who">Andrea Rivas · gerenta general</span><p>“Necesito entender por qué subimos 8 % en octubre. Quiero un informe breve y un tablero por área para el miércoles a las 12:00. Con eso presupuestamos noviembre.”</p></div></div>
+      <div class="ev-facts">
+        <div class="ev-fact"><b>+8,0 %</b><small>costo de octubre frente a septiembre</small></div>
+        <div class="ev-fact"><b>$39,9 M</b><small>de variación total</small></div>
+        <div class="ev-fact"><b>412 → 420</b><small>personas en la dotación</small></div>
+        <div class="ev-fact"><b>2 días</b><small>para entregar informe y tablero</small></div>
+      </div>
+    </div>
+    <div class="photo-frame"><img src="img/i33_b.jpg" alt="Equipo en una sala de reuniones revisando un tablero proyectado con gráficos de barras y de anillo"/></div>
+  </div>
+  <div class="callout"><strong>Lo que sabes por las lecciones 3.1 a 3.4</strong>
+    <ul class="elem-list" style="margin-top:8px">
+      <li><b>Base mínima y cuadrada:</b> códigos EMP-001…, sin nombre, RUT ni diagnósticos; conteo y totales iguales al sistema antes de analizar.</li>
+      <li><b>Descomponer la variación:</b> dotación, reajuste, horas extra y bonos; los efectos deben sumar el total.</li>
+      <li><b>Indicadores y gráficos honestos:</b> cada indicador con su fórmula; barras con eje en cero, título con la conclusión y fuente.</li>
+      <li><b>La IA redacta, tú respondes:</b> revisar cada frase, separar hechos de hipótesis y enviar con segunda lectura.</li>
+    </ul>
+  </div>
+  <p class="sources">Caso con datos completamente ficticios. Los montos son valores ilustrativos del curso.</p>
+</section>
+
+<!-- 3 · EL CASO -->
+<section class="slide" data-title="El caso: decisiones" data-gate="fin" data-gate-msg="Completa el caso hasta el desenlace.">
+  <div id="evCase" aria-live="polite"></div>
+</section>
+
+<!-- 4 · RESULTADOS -->
+<section class="slide" data-title="Desenlace y resultados" data-report>
+  <span class="lab-badge">Resultados de la evaluación</span>
+  <div id="evReport"></div>
+  <p class="sources">Evaluación con caso simulado y datos ficticios. Ningún dato sale de tu navegador.</p>
+</section>
