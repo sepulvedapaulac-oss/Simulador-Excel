@@ -1,0 +1,59 @@
+# Genera lesson.json de la Lección 4.2 (sin narración)
+import json, pathlib
+
+L = {
+ "id": "ia_rem_l42", "ident": "IAREM_M4_L42", "zip_name": "Leccion_4_2_Asistentes_de_IA_para_tareas_administrativas",
+ "title": "Lección 4.2 — Asistentes de IA para tareas administrativas",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 4 · LECCIÓN 4.2",
+ "voice": False, "pass": 0.8,
+ "video": {"voice": False, "scenes": [
+  {"t": "Un asistente para lo repetitivo", "lines": [
+    "Un asistente de IA puede apoyar tareas administrativas: redactar, resumir, clasificar y responder preguntas frecuentes.",
+    "Libera tiempo para lo que requiere criterio, como revisar casos y atender reclamos."],
+   "html": "<div class=\"v-icons\"><div><span class=\"i\">✉️</span>Redactar</div><div><span class=\"i\">📄</span>Resumir</div><div class=\"dim\" data-at=\"1\"><span class=\"i\">💬</span>Responder</div></div>"},
+  {"t": "Las instrucciones lo son todo", "lines": [
+    "Un asistente se configura con instrucciones permanentes: su rol, sus fuentes, sus límites y su estilo.",
+    "Sin esas instrucciones, responde como un asistente genérico y puede equivocarse con seguridad."],
+   "html": "<div class=\"v-chk\"><span data-at=\"0\">Rol</span><span data-at=\"0\">Fuentes</span><span data-at=\"1\">Límites</span><span data-at=\"1\">Estilo</span></div>"},
+  {"t": "Fuentes aprobadas", "lines": [
+    "El asistente responde solo con la guía y las políticas aprobadas que le adjuntas.",
+    "Alguien es responsable de mantener esas fuentes al día y de volver a probar tras cada cambio."],
+   "html": "<div class=\"v-steps\"><div data-at=\"0\">Adjuntar fuentes aprobadas</div><div data-at=\"1\">Asignar un responsable</div><div data-at=\"1\">Probar tras cada cambio</div></div>"},
+  {"t": "Datos y derivación", "lines": [
+    "El asistente no recibe datos personales ni revisa casos individuales.",
+    "Los temas legales, los reclamos y lo que no está en las fuentes se derivan a una persona."],
+   "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Lo resuelve</b>Conceptos generales<small>Con fuentes aprobadas</small></div><div class=\"warn\" data-at=\"1\"><b>Lo deriva</b>Casos, reclamos y temas legales<small>A una persona</small></div></div>"},
+  {"t": "Probar antes de abrir", "lines": [
+    "Antes de ponerlo en uso, se prueba con consultas reales y difíciles.",
+    "En esta lección configurarás un asistente y lo pondrás a prueba."],
+   "html": "<div class=\"v-final\">Configura, <em>prueba</em>,<br/>y recién entonces abre.</div>"}
+ ]},
+ "yn": {"lanzar": [
+  ["¿La herramienta está autorizada por la empresa para este uso?", 1, "Sí: solo se usan herramientas con acuerdo de tratamiento de datos y aprobación de la empresa."],
+  ["¿Puede responder con información de internet si no encuentra la respuesta en las fuentes?", 0, "No: debe decir que no tiene la información y derivar. Internet puede traer normas de otro país o desactualizadas."],
+  ["¿Puede pedir el RUT para revisar un caso más rápido?", 0, "No: los casos individuales se revisan en el canal formal, con acceso controlado."],
+  ["¿Está definido a quién deriva los reclamos y temas legales?", 1, "Sí: la derivación debe tener un destino y un plazo de respuesta."],
+  ["¿Basta con probarlo con dos preguntas fáciles antes de abrirlo?", 0, "No: se prueba con consultas reales, incluidas las difíciles y las que debe derivar."],
+  ["¿Hay una persona responsable de actualizar sus fuentes y revisar sus respuestas?", 1, "Sí: sin responsable, el asistente se desactualiza y nadie detecta sus errores."]
+ ]},
+ "quiz": [
+  {"q": "¿Qué deben definir las instrucciones de un asistente de consultas de remuneraciones?",
+   "o": ["Solo el tono de las respuestas.", "Rol, fuentes permitidas, tratamiento de datos, límites y derivación, y estilo.", "Nada: el asistente ya sabe responder."], "c": 1,
+   "f": ["El tono importa, pero sin fuentes ni límites puede responder con información equivocada.", "Correcto: son las piezas que hacen al asistente confiable.", "Sin instrucciones responde como un asistente genérico, que no conoce las políticas de la empresa."]},
+  {"q": "Un trabajador escribe su RUT y pregunta si su liquidación está bien. ¿Qué debe hacer el asistente?",
+   "o": ["Pedirle también su sueldo para revisarla.", "Indicar que no revisa casos individuales, sugerir no compartir datos y derivar al canal formal.", "Estimar el monto con un sueldo promedio."], "c": 1,
+   "f": ["Pedir más datos agrava el problema: el chat no está autorizado para tratarlos.", "Correcto: protege los datos y la persona recibe atención en el canal adecuado.", "Inventar cifras genera expectativas falsas y reclamos."]},
+  {"q": "La pregunta no está en la guía del asistente. ¿Qué respuesta es la adecuada?",
+   "o": ["Una respuesta segura basada en lo que suele hacerse en otras empresas.", "Decir que no tiene esa información y derivar a Compensaciones.", "No responder."], "c": 1,
+   "f": ["Lo que hacen otras empresas no vale para AndesCorp y puede inducir a error.", "Correcto: reconocer el límite y derivar evita respuestas inventadas.", "Siempre se responde, aunque sea para derivar."]},
+  {"q": "Cambió un valor normativo que usa el asistente. ¿Qué corresponde?",
+   "o": ["Esperar a que el asistente lo aprenda solo.", "Actualizar la fuente con el valor oficial, registrar la fecha y volver a probar.", "Desactivar el asistente para siempre."], "c": 1,
+   "f": ["El asistente usa las fuentes adjuntas: no se actualiza solo.", "Correcto: fuente actualizada, fecha registrada y prueba posterior.", "Basta con actualizar y probar; no hay que perder la herramienta."]},
+  {"q": "¿Qué tarea NO debe quedar a cargo del asistente?",
+   "o": ["Explicar qué es el tope imponible.", "Clasificar correos por tema.", "Resolver un reclamo por un descuento mal aplicado."], "c": 2,
+   "f": ["Es un concepto general que puede explicar con la guía aprobada.", "Clasificar es un buen uso, con revisión de los temas sensibles.", "Correcto: un reclamo individual lo revisa y responde una persona."]}
+ ]
+}
+p = pathlib.Path(__file__).with_name("lesson.json")
+p.write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
+print("lesson.json OK")

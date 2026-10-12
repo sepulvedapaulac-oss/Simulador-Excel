@@ -1,0 +1,175 @@
+<style>
+/* Lección 4.2 · configurador de asistente y pruebas con consultas simuladas */
+.cfg{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:start}
+@media(max-width:860px){.cfg{grid-template-columns:1fr}}
+.cfg .field{display:block;margin-bottom:10px;font-weight:800;font-size:.9rem}
+.cfg .field small{display:block;font-weight:600;color:var(--muted);margin-top:2px}
+.cfg select{width:100%;margin-top:4px;padding:9px 10px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;white-space:normal}
+.sysprompt{margin-top:10px;border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:var(--surface2);font-size:.84rem;color:var(--muted);line-height:1.5}
+.sysprompt b{color:var(--ink)}
+.tests{display:grid;gap:8px;margin:0 0 10px}
+.tbtn{all:unset;cursor:pointer;display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-size:.9rem;font-weight:700}
+.tbtn:focus-visible{outline:3px solid var(--teal2);outline-offset:2px}
+.tbtn .st{flex:none;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:var(--track);font-size:.8rem}
+.tbtn.ok{border-color:var(--good-line);background:var(--good-soft)}.tbtn.ok .st{background:var(--good);color:#fff}
+.tbtn.no{border-color:var(--bad-line,#e3a3a8);background:var(--bad-soft,#fdecee)}.tbtn.no .st{background:var(--bad);color:#fff}
+.tbtn.cur{box-shadow:0 0 0 3px color-mix(in srgb,var(--teal2) 35%,transparent)}
+.tverdict{font-size:.86rem;font-weight:750;padding:8px 12px;border-radius:12px;margin-top:2px}
+.tverdict.ok{background:var(--good-soft);color:var(--good)}.tverdict.no{background:var(--bad-soft,#fdecee);color:var(--bad)}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Lección 4.2 · Automatización y proyecto integrador</span>
+      <h1>Un asistente para las consultas de siempre</h1>
+      <p class="lead">Compensaciones recibe unas <strong>120 consultas al mes</strong> por correo: cómo se calcula la gratificación, qué es el tope imponible, cuándo se paga un bono. El 70 % se repite todos los meses.</p>
+      <div class="story"><strong>Rodrigo:</strong> “Configuremos un asistente de IA para que responda esas consultas. Camila, ¿cómo lo armarías?”</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Analista escribiendo en un asistente de chat en su notebook, en una oficina" src="img/i42_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué es lo primero que debe definir Camila?</h3>
+  <div class="options" data-choice="hook" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Qué tan amable será el asistente.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Nada: el asistente ya sabe de remuneraciones.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Su rol, las fuentes que puede usar, qué datos no debe recibir y cuándo debe derivar a una persona.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Es importante, pero no lo primero.</strong> <span class="fb-body">Un asistente amable que responde con información equivocada o pide el RUT causa más problemas que uno serio y correcto.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: respuestas genéricas o erróneas.</strong> <span class="fb-body">El asistente no conoce las políticas de AndesCorp y puede mezclar normas de otros países o versiones antiguas.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback good"><strong>Así se configura.</strong> <span class="fb-body">Las instrucciones del asistente definen su rol, sus fuentes, sus límites y sus derivaciones. En esta lección configurarás uno y lo pondrás a prueba.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: asistentes de IA" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Asistentes de IA para tareas administrativas</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen el texto y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ACORDEÓN: USOS -->
+<section class="slide" data-title="Cinco usos administrativos" data-gate="usos" data-gate-msg="Abre los cinco usos.">
+  <span class="eyebrow violet">Lección 4.2 · Usos</span>
+  <h2>Tareas administrativas que un asistente puede apoyar</h2>
+  <p>Cada uso tiene un beneficio y un cuidado. <strong>Abre cada elemento.</strong></p>
+  <div class="grid-2">
+    <div data-acc="usos">
+      <div class="task">Usos revisados <span class="tick">0 / 5</span></div>
+      <div class="acc">
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">✉️</span><span>Redactar correos y comunicados<span class="sub">Plazos, recordatorios, avisos</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Borradores claros a partir de los datos que entregas: fechas, montos agregados, instrucciones.</p><div class="example"><b>Cuidado:</b> revisa fechas y cifras antes de enviar; la IA puede completar datos que no le diste.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">📄</span><span>Resumir documentos<span class="sub">Políticas, contratos colectivos, circulares</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Resúmenes y tablas comparativas para entender rápido un documento largo.</p><div class="example"><b>Cuidado:</b> el resumen no reemplaza el documento. Para decidir, verifica en el texto original y en la fuente oficial vigente.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">💬</span><span>Responder preguntas frecuentes<span class="sub">Con fuentes aprobadas</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Explicaciones generales de conceptos de la liquidación usando una guía aprobada por Compensaciones.</p><div class="example"><b>Cuidado:</b> no revisa casos individuales ni interpreta la ley; deriva al canal formal.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">🗂️</span><span>Clasificar solicitudes<span class="sub">Ordenar la bandeja de entrada</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Etiquetar correos por tema y urgencia: novedades, consultas, reclamos, certificados.</p><div class="example"><b>Cuidado:</b> los reclamos y los temas sensibles los revisa siempre una persona.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">📝</span><span>Preparar minutas y planes de trabajo<span class="sub">Reuniones y calendario del cierre</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Ordenar acuerdos, responsables y plazos a partir de tus notas.</p><div class="example"><b>Cuidado:</b> confirma los acuerdos con los participantes; no incluyas datos personales en las notas.</div></div></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Escritorio ordenado con un notebook, carpetas y una libreta con una lista de verificación" src="img/i42_b.jpg"/></div>
+  </div>
+</section>
+
+<!-- 4 · CONFIGURA TU ASISTENTE -->
+<section class="slide" data-title="Configura tu asistente" data-gate="asis" data-gate-msg="Configura el asistente y logra que responda bien las cuatro consultas de prueba.">
+  <span class="eyebrow amber">Lección 4.2 · Actividad</span>
+  <h2>Configura el asistente y ponlo a prueba</h2>
+  <p>Elige cada parte de las instrucciones del asistente. Luego <strong>prueba las cuatro consultas</strong> de trabajadores. Si una respuesta falla, ajusta la configuración y vuelve a probar.</p>
+  <div class="cfg" id="cfgRoot">
+    <div>
+      <label class="field">1 · Rol<small>Quién es y para qué existe</small><select data-k="rol"><option value="">Elige…</option><option value="a">Experto legal que responde cualquier duda laboral</option><option value="b">Asistente de Compensaciones de AndesCorp que explica conceptos de la liquidación</option><option value="c">Asistente general, sin un rol definido</option></select></label>
+      <label class="field">2 · Fuentes<small>De dónde saca la información</small><select data-k="fuente"><option value="">Elige…</option><option value="a">Internet y su propio conocimiento</option><option value="b">Solo la guía de liquidación y las políticas internas aprobadas que se adjuntan</option></select></label>
+      <label class="field">3 · Datos personales<small>Qué puede recibir</small><select data-k="datos"><option value="">Elige…</option><option value="a">Puede pedir RUT y sueldo para revisar cada caso</option><option value="b">No pide ni recibe datos personales; los casos individuales van al canal formal</option></select></label>
+      <label class="field">4 · Límites y derivación<small>Qué hace cuando no sabe</small><select data-k="lim"><option value="">Elige…</option><option value="a">Responde siempre con seguridad, aunque no esté en las fuentes</option><option value="b">Si no está en las fuentes o es un tema legal, lo dice y deriva a Compensaciones</option></select></label>
+      <label class="field">5 · Estilo<small>Cómo responde</small><select data-k="tono"><option value="">Elige…</option><option value="a">Técnico y extenso, con citas de artículos</option><option value="b">Claro, breve y amable, con un ejemplo cuando ayuda</option></select></label>
+      <div class="sysprompt" id="sysPrompt"></div>
+    </div>
+    <div>
+      <div class="task">Consultas respondidas correctamente <span class="tick" id="tTick">0 / 4</span></div>
+      <div class="tests" id="tests"></div>
+      <div class="aichat" id="tChat" aria-live="polite"><div class="ahead"><span class="dot">✦</span> Asistente de Compensaciones · prueba</div><p class="hint" style="margin:0">Elige una consulta para probar el asistente.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · CASO -->
+<section class="slide" data-title="Caso: el asistente en marcha" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>El primer mes del asistente</h2>
+  <div class="story" style="margin-top:0"><strong>La situación:</strong> el asistente lleva tres semanas respondiendo consultas. Resuelve el 65 % sin derivar. Aparecen dos situaciones nuevas.</div>
+
+  <h3 style="margin-top:18px">Decisión 1 · Cambió el valor del tope imponible y la guía del asistente tiene el valor anterior. ¿Qué hace Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Nada: el asistente se actualiza solo con información de internet.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Actualiza la guía con el valor de la fuente oficial, registra la fecha del cambio y prueba de nuevo las consultas sobre el tope.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Agrega una nota al final de la guía: “el valor puede haber cambiado”.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: respuestas desactualizadas</div><div class="branch-body"><div><p>El asistente usa solo las fuentes adjuntas. Seguirá informando el valor anterior y los trabajadores recibirán un dato equivocado.</p></div><div><p class="hint">Alguien es responsable de mantener las fuentes.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: duda en vez de respuesta</div><div class="branch-body"><div><p>Una advertencia vaga no corrige el dato. El trabajador sigue sin saber cuál es el valor vigente.</p></div><div><p class="hint">Corrige la fuente y prueba de nuevo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La guía tiene un responsable, una fecha de actualización y se vuelve a probar tras cada cambio. Así el asistente sigue siendo confiable.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · Un trabajador escribe molesto: “Me descontaron mal y nadie me responde”. ¿Qué debe pasar?</h3>
+    <div class="options" data-choice="caso2" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>El asistente reconoce la molestia, no discute el caso, y deriva el reclamo a una persona de Compensaciones con plazo de respuesta.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>El asistente explica cómo se calculan los descuentos para demostrar que están bien.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>El asistente le pide su liquidación y su RUT para revisarla.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el reclamo escala</div><div class="branch-body"><div><p>Sin revisar el caso, el asistente no puede saber si el descuento está bien. Responder con una explicación general a un reclamo aumenta la molestia.</p></div><div><p class="hint">Los reclamos los atiende una persona.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos personales en el chat</div><div class="branch-body"><div><p>El asistente no está configurado para tratar datos personales. El caso se revisa en el canal formal, con acceso controlado.</p></div><div><p class="hint">Recuerda la configuración de datos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Derivación correcta</div><div class="branch-body"><div><p>El asistente resuelve lo general y deriva lo individual y sensible. La persona recibe atención humana a tiempo.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 6 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 7 · CHECKLIST -->
+<section class="slide" data-title="Antes de lanzar un asistente" data-gate="lanzar lanzar_model pass" data-gate-msg="Responde las seis preguntas y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Checklist antes de poner en uso un asistente</h2>
+  <div class="story">Piensa en un asistente que quisieras usar en tu equipo. Responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta.</div>
+  <div data-yn="lanzar">
+    <div class="yn-list" style="margin-top:12px"></div>
+    <button class="small-btn primary model-btn" type="button" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+    <div class="callout model" hidden><strong>Respuesta modelo · antes de lanzar:</strong> (1) herramienta autorizada por la empresa; (2) fuentes aprobadas y con responsable de actualización; (3) sin datos personales en el chat; (4) derivación definida para casos individuales, legales y reclamos; (5) pruebas con consultas reales antes de abrirlo; (6) revisión periódica de respuestas y aviso de que es un asistente de IA.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 8 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.2</h2>
+    <p>Ya sabes configurar un asistente de IA para tareas administrativas con rol, fuentes, límites y derivación.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> un asistente es tan confiable como sus instrucciones y sus fuentes. Resuelve lo general, deriva lo individual y alguien es responsable de mantenerlo. En la próxima lección diseñarás un flujo de cierre asistido por IA.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="3">Volver a configurar el asistente</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
