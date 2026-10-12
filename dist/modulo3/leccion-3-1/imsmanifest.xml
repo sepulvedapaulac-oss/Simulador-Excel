@@ -4,6 +4,19 @@
   <organizations default="ORG-IAREM_M3_L31"><organization identifier="ORG-IAREM_M3_L31"><title>Lección 3.1 — Preparación de datos para análisis</title>
     <item identifier="ITEM-IAREM_M3_L31" identifierref="RES-IAREM_M3_L31" isvisible="true"><title>Lección 3.1 — Preparación de datos para análisis</title><adlcp:masteryscore>80</adlcp:masteryscore></item></organization></organizations>
   <resources><resource identifier="RES-IAREM_M3_L31" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="audio/p01.mp3"/>
+      <file href="audio/p03.mp3"/>
+      <file href="audio/p04.mp3"/>
+      <file href="audio/p05.mp3"/>
+      <file href="audio/p06.mp3"/>
+      <file href="audio/p08.mp3"/>
+      <file href="audio/p09.mp3"/>
+      <file href="audio/quiz.mp3"/>
+      <file href="audio/video_1.mp3"/>
+      <file href="audio/video_2.mp3"/>
+      <file href="audio/video_3.mp3"/>
+      <file href="audio/video_4.mp3"/>
+      <file href="audio/video_5.mp3"/>
       <file href="img/i31_b.jpg"/>
       <file href="img/i31_hero.jpg"/>
       <file href="index.html"/>
