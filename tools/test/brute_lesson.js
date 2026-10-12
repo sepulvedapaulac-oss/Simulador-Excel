@@ -52,6 +52,12 @@ const path = require('path');
     console.log(`${i + 1}/${n} ${st.t} · ${i === n - 1 ? 'fin' : st.b ? 'BLOQUEADO ' + st.m : 'ok (' + tries + ' acciones)'}`);
     if (i < n - 1) { if (st.b) break; await page.click('#nextBtn'); await page.waitForTimeout(250); }
   }
+  // PDF_OUT=ruta.pdf: si la pantalla final ofrece descarga de PDF (#fePdf), la prueba y la guarda
+  if (process.env.PDF_OUT && await page.$('.slide.active #fePdf')) {
+    const [dl] = await Promise.all([page.waitForEvent('download', { timeout: 10000 }), page.click('.slide.active #fePdf')]);
+    await dl.saveAs(process.env.PDF_OUT);
+    console.log('PDF descargado:', dl.suggestedFilename(), '->', process.env.PDF_OUT);
+  }
   const sc = await page.evaluate(() => window.LESSON && window.LESSON.score ? window.LESSON.score() : null);
   if (sc !== null) console.log('Puntaje (score):', sc);
   const ov = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);

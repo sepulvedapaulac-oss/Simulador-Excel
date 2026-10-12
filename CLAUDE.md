@@ -6,6 +6,7 @@ Rama de trabajo: `ccr-82420ce4-vyunoh`. No crear pull requests salvo que la auto
 
 ## Estado (octubre 2026)
 Los cuatro módulos están terminados, con voz en las lecciones x.1 y x.3, y entregados a la autora.
+- Evaluación final del curso (`src/evaluacion-curso/`): un SCORM con Parte 1 (20 preguntas M1.P1…M4.P5, en `preguntas.py`, también como banco XML) y Parte 2 (laboratorio de análisis con cuatro tareas, una por módulo, con simulador de Excel). Nota 50/50, aprobación 70 %. Al final descarga un PDF de resultados generado en el navegador (sin librerías externas). Prueba: `PDF_OUT=salida.pdf STEPS=tools/test/steps/stepsfe_opt.json node tools/test/brute_lesson.js dist/evaluacion-curso salida`.
 - Pendiente de decisión de la autora: agregar narración a los laboratorios (hoy sin voz).
 - Casos Mindsmith creados y **sin publicar** (la autora los publica): M1 `cmv38d6dx000007nooffs3n54`, M2 `cmv38qdi3000006k1j4nd1mfc`, M3 `cmv4svhtu000006l33odfrudv`, M4 `cmv4tzacm000006pdw1ewhn55`.
 
