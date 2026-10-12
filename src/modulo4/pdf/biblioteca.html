@@ -1,0 +1,56 @@
+<!--{"title": "Biblioteca de prompts para remuneraciones", "short": "Biblioteca · Prompts para remuneraciones", "subtitle": "Instrucciones probadas para las tareas más frecuentes del área, con los datos que se pueden entregar, el resultado esperado y cómo verificarlo.", "module": "Módulo 4 · Automatización y proyecto integrador", "file": "M4_Biblioteca_de_prompts_para_remuneraciones.pdf", "img": "i42_hero.jpg", "kind": "Biblioteca"}-->
+
+<section>
+  <h2>Cómo usar esta biblioteca</h2>
+  <p class="lead">Cada instrucción sigue la estructura del curso: <b>rol, contexto, tarea, restricciones y formato</b>. Reemplaza lo que está entre corchetes con tus datos y revisa siempre el resultado antes de usarlo.</p>
+  <table>
+    <thead><tr><th style="width:24%">Antes de usar un prompt</th><th>Pregúntate</th></tr></thead>
+    <tbody>
+      <tr><td><b>Herramienta</b></td><td>¿Es una herramienta autorizada por la empresa, con acuerdo de tratamiento de datos?</td></tr>
+      <tr><td><b>Datos</b></td><td>¿Entrego solo lo necesario, con códigos en vez de nombres y RUT, sin datos de salud?</td></tr>
+      <tr><td><b>Verificación</b></td><td>¿Cómo voy a comprobar el resultado: sistema, fuente oficial, caso conocido?</td></tr>
+    </tbody>
+  </table>
+  <div class="box key"><b>Regla de oro:</b> la IA propone; tú verificas y respondes por el resultado. Ningún prompt reemplaza el cálculo del sistema ni la fuente oficial.</div>
+</section>
+
+<section>
+  <h2><span class="n">1</span>Explicar y comunicar</h2>
+  <h3>1.1 · Explicar un concepto de la liquidación</h3>
+  <div class="box prompt">Actúa como analista de Compensaciones. Explica en lenguaje simple, en máximo 120 palabras y con un ejemplo numérico ficticio, qué es [concepto: tope imponible / gratificación legal / horas extraordinarias] para un trabajador sin formación técnica. Usa solo la información del documento adjunto [guía de liquidación aprobada]. Si algo no está en el documento, indícalo en vez de suponer.</div>
+  <p><b>Verifica:</b> que el ejemplo use valores ficticios y que la explicación coincida con la guía y con la fuente oficial vigente.</p>
+  <h3>1.2 · Borrador de comunicado a jefaturas</h3>
+  <div class="box prompt">Redacta un correo breve y cordial para las jefaturas de AndesCorp recordando el plazo de envío de novedades de [mes]: [fecha y hora límite], el formulario que deben usar [enlace] y qué datos debe tener cada novedad (código del trabajador, concepto, monto o cantidad y aprobación). Máximo 8 líneas, con una lista de 3 puntos.</div>
+  <p><b>Verifica:</b> fechas, enlace y que no se agreguen condiciones que no indicaste.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Fórmulas y controles en Excel</h2>
+  <h3>2.1 · Pedir una fórmula de control</h3>
+  <div class="box prompt">Trabajo en Excel en español (separador punto y coma). En la hoja [nombre], la columna A tiene el código del trabajador, B las horas extra de la nómina y C las horas aprobadas en asistencia, desde la fila 2 hasta la [n]. Necesito en D la diferencia sin signo y en E el texto "OK" si la diferencia es 0 o "REVISAR" si no. Entrega las fórmulas para la fila 2, explica cada una en una línea e incluye un caso de prueba con su resultado esperado.</div>
+  <p><b>Verifica:</b> prueba la fórmula con un caso conocido, un caso borde (cero horas) y un error sembrado, y revisa que funcione al rellenar hacia abajo.</p>
+  <h3>2.2 · Explicar una fórmula heredada</h3>
+  <div class="box prompt">Explícame paso a paso qué hace esta fórmula de Excel en español y en qué casos podría dar un resultado incorrecto: [pega la fórmula]. Las columnas significan: [describe cada columna usada]. No la cambies; solo explícala y lista los riesgos.</div>
+</section>
+
+<section class="page">
+  <h2><span class="n">3</span>Revisión y análisis</h2>
+  <h3>3.1 · Revisar posibles inconsistencias</h3>
+  <div class="box prompt">Actúa como revisor de remuneraciones. Te entrego una tabla con códigos EMP, área, concepto y monto de [mes] y del mes anterior (datos cuadrados con el sistema). Señala posibles inconsistencias según estas reglas: registros duplicados, montos que varían más de [x] % respecto del mes anterior, conceptos nuevos sin novedad asociada. Entrega una tabla con código, regla incumplida y evidencia. No corrijas nada ni inventes causas: solo señala.</div>
+  <p><b>Verifica:</b> cada alerta contra el registro de origen. Clasifícala en corregir, investigar o descartar, y deja registro.</p>
+  <h3>3.2 · Analizar una variación mensual</h3>
+  <div class="box prompt">Te entrego el costo por área y por componente (dotación, reajuste, horas extra, bonos) de [mes base] y [mes actual], en millones de pesos y cuadrado con el sistema. Calcula la variación absoluta y porcentual por área, su participación en la variación total y los efectos por componente. Comprueba que los efectos sumen la variación total. Separa los hechos calculados de las hipótesis y marca qué fuente confirmaría cada hipótesis. Entrega una tabla y tres conclusiones de máximo dos líneas.</div>
+  <h3>3.3 · Borrador de informe ejecutivo</h3>
+  <div class="box prompt">Redacta un informe ejecutivo de una página para la gerencia con esta estructura: conclusión principal, tabla de efectos, lectura por área, hipótesis y pendientes, recomendación con supuestos. Usa solo las cifras de la tabla adjunta. No agregues causas ni referencias normativas que no estén en la tabla. Al final, lista las cifras que usaste para verificarlas.</div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Automatización y asistentes</h2>
+  <h3>4.1 · Instrucciones permanentes de un asistente de consultas</h3>
+  <div class="box prompt">Eres el asistente de Compensaciones de [empresa]. Explicas conceptos generales de la liquidación usando solo la guía y las políticas adjuntas. No pides ni recibes datos personales: si alguien comparte su RUT o pregunta por su caso, sugiere no compartir datos y deriva al canal formal [correo o formulario]. Si la pregunta es legal, es un reclamo o no está en las fuentes, dilo y deriva. Responde en forma clara, breve y amable, con un ejemplo cuando ayude. Indica al inicio de cada conversación que eres un asistente de IA.</div>
+  <h3>4.2 · Ordenar novedades y marcar dudas</h3>
+  <div class="box prompt">Ordena las novedades del formulario adjunto en una tabla con estas columnas: código EMP, concepto, monto o cantidad, jefatura que aprueba, estado. Marca el estado como "DUDOSA" cuando falte el monto, el concepto o la aprobación, o cuando el texto sea ambiguo, e indica el motivo. No completes datos faltantes ni interpretes montos.</div>
+  <h3>4.3 · Identificar oportunidades de automatización</h3>
+  <div class="box prompt">Te entrego el inventario de tareas del cierre mensual con su frecuencia, horas al mes, errores habituales y lo que se necesitaría para automatizarlas. Clasifica cada tarea en una matriz de impacto y esfuerzo (victoria rápida, proyecto mayor, mejora menor, no priorizar), justificando en una línea. Indica qué tareas no conviene automatizar por requerir criterio o tener alto riesgo legal.</div>
+  <p class="src">Material formativo. Adapta las instrucciones a tu empresa y verifica siempre los resultados. Datos del curso ficticios.</p>
+</section>

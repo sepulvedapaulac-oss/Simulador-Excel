@@ -1,0 +1,88 @@
+<!--{"title": "Guía para diseñar un flujo de cierre asistido por IA", "short": "Guía · Flujo de cierre asistido por IA y rúbrica", "subtitle": "Pasos para rediseñar el cierre de remuneraciones con IA y control humano, con la rúbrica para evaluar el proyecto integrador.", "module": "Módulo 4 · Automatización y proyecto integrador", "file": "M4_Guia_flujo_de_cierre_asistido_y_rubrica.pdf", "img": "i43_hero.jpg", "kind": "Guía"}-->
+
+<section>
+  <h2>Propósito</h2>
+  <p class="lead">Esta guía ordena el diseño de un cierre de remuneraciones asistido por IA: qué automatizar, quién hace cada etapa, dónde decide una persona y cómo se mide el resultado. Incluye la rúbrica del proyecto integrador del curso.</p>
+  <div class="box key"><b>Principio:</b> la IA asiste, el sistema calcula y una persona decide antes de cargar y de pagar. Todo queda registrado.</div>
+</section>
+
+<section>
+  <h2><span class="n">1</span>Cinco pasos para diseñar el flujo</h2>
+  <table>
+    <thead><tr><th style="width:5%">#</th><th style="width:24%">Paso</th><th>Qué se hace</th><th style="width:26%">Resultado</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Inventariar</b></td><td>Listar las tareas del cierre con frecuencia, horas al mes y errores habituales.</td><td>Inventario con línea base.</td></tr>
+      <tr><td>2</td><td><b>Priorizar</b></td><td>Aplicar los cuatro criterios y ubicar cada tarea en la matriz de impacto y esfuerzo.</td><td>Primer piloto elegido.</td></tr>
+      <tr><td>3</td><td><b>Asignar actores</b></td><td>Definir para cada etapa si la hace la IA, el sistema o una persona.</td><td>Diagrama de quién hace qué.</td></tr>
+      <tr><td>4</td><td><b>Ubicar controles</b></td><td>Poner un punto de control humano antes de cada carga al sistema y antes del pago, con reemplazo definido.</td><td>Puntos de control y responsables.</td></tr>
+      <tr><td>5</td><td><b>Medir y escalar</b></td><td>Comparar con la línea base, ajustar, documentar y extender por etapas.</td><td>Informe de resultados y plan.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Flujo de referencia</h2>
+  <table>
+    <thead><tr><th style="width:5%">#</th><th style="width:25%">Etapa</th><th style="width:16%">Actor</th><th>Qué ocurre</th><th style="width:22%">Registro</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Recepción de novedades</td><td><span class="tag v">IA asiste</span></td><td>Formulario único; la IA ordena y marca las novedades dudosas con su motivo.</td><td>Planilla de carga con marcas.</td></tr>
+      <tr><td>2</td><td>Validación de novedades</td><td><span class="tag a">Persona</span></td><td>Se aclara cada novedad dudosa con la jefatura; solo entra lo confirmado.</td><td>Respuesta de la jefatura.</td></tr>
+      <tr><td>3</td><td>Cálculo</td><td><span class="tag g">Sistema</span></td><td>Liquidaciones con los parámetros vigentes del período.</td><td>Libro de remuneraciones.</td></tr>
+      <tr><td>4</td><td>Controles automáticos</td><td><span class="tag v">IA y fórmulas</span></td><td>Cuadraturas contra el mes anterior y fuentes de control; la IA señala posibles inconsistencias.</td><td>Hoja de controles y alertas.</td></tr>
+      <tr><td>5</td><td>Revisión de alertas</td><td><span class="tag a">Persona</span></td><td>Corregir, investigar o descartar cada alerta con evidencia; correcciones en el sistema.</td><td>Bitácora con decisión y evidencia.</td></tr>
+      <tr><td>6</td><td>Aprobación y pago</td><td><span class="tag a">Persona</span></td><td>Segundo revisor aprueba con el resumen de alertas; archivo del banco generado desde el sistema.</td><td>Aprobación con nombre y fecha.</td></tr>
+    </tbody>
+  </table>
+  <div class="box warn"><b>Nunca:</b> la IA calcula lo oficial, carga en el sistema sin validación, corrige registros por su cuenta o aprueba la nómina.</div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Hoja de controles mínima</h2>
+  <table>
+    <thead><tr><th>Control</th><th style="width:24%">Compara</th><th style="width:14%">Tolerancia</th><th style="width:30%">Fórmula de estado (ejemplo)</th></tr></thead>
+    <tbody>
+      <tr><td>Dotación pagada</td><td>Sistema vs maestro de personal</td><td>0</td><td><code>=SI(ABS(B2-C2)&lt;=D2;"OK";"REVISAR")</code></td></tr>
+      <tr><td>Total haberes</td><td>Sistema vs libro</td><td>$1 mil</td><td>Igual a la anterior, fila 3</td></tr>
+      <tr><td>Horas extra</td><td>Nómina vs asistencia</td><td>0</td><td>Igual a la anterior, fila 4</td></tr>
+      <tr><td>Cotizaciones</td><td>Sistema vs planilla previsional</td><td>$1 mil</td><td>Igual a la anterior, fila 5</td></tr>
+      <tr><td>Líquido a pagar</td><td>Sistema vs archivo del banco</td><td>$1 mil</td><td>Igual a la anterior, fila 6</td></tr>
+      <tr><td><b>Pendientes</b></td><td colspan="2">Controles en “REVISAR”</td><td><code>=CONTAR.SI(F2:F6;"REVISAR")</code></td></tr>
+    </tbody>
+  </table>
+  <h3>Bitácora del cierre</h3>
+  <table>
+    <thead><tr><th>Fecha</th><th>Etapa</th><th>Hallazgo o decisión</th><th>Evidencia</th><th>Responsable</th><th>Revisor</th></tr></thead>
+    <tbody>
+      <tr><td>03-12</td><td>Validación</td><td>Novedad EMP-144: bono de turno $45.000</td><td>Correo de la jefatura</td><td>Camila</td><td>—</td></tr>
+      <tr><td>04-12</td><td>Alertas</td><td>Duplicado EMP-317 corregido</td><td>Libro del sistema</td><td>Camila</td><td>Rodrigo</td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Rúbrica del proyecto integrador</h2>
+  <table>
+    <thead><tr><th style="width:19%">Criterio</th><th>Inicial (1)</th><th>En desarrollo (2)</th><th>Logrado (3)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Problema y objetivo</b></td><td>“Usar IA” sin un problema medido.</td><td>Problema claro, sin cifras.</td><td>Problema medido con línea base y objetivo concreto.</td></tr>
+      <tr><td><b>Datos y protección</b></td><td>Datos personales completos o herramienta no autorizada.</td><td>Protege los datos, pero sin definir los mínimos.</td><td>Datos mínimos, seudonimizados, herramienta autorizada.</td></tr>
+      <tr><td><b>Herramienta y control humano</b></td><td>La IA decide o calcula lo oficial sin revisión.</td><td>Revisión después del pago o sin responsable.</td><td>Herramienta más simple, control antes del pago, responsable y reemplazo.</td></tr>
+      <tr><td><b>Indicadores</b></td><td>Sin indicador o solo percepción.</td><td>Indicador sin línea base ni meta.</td><td>Indicadores de tiempo y calidad con línea base, meta y plazo.</td></tr>
+      <tr><td><b>Plan y riesgos</b></td><td>Implementación completa de una vez.</td><td>Piloto sin riesgos ni aprobaciones identificados.</td><td>Piloto por etapas, aprobaciones y plan ante fallas.</td></tr>
+    </tbody>
+  </table>
+  <div class="box info"><b>Interpretación:</b> 13 a 15 puntos, listo para presentar; 9 a 12, aplicar las mejoras antes de presentar; 5 a 8, rehacer los criterios en nivel inicial.</div>
+  <h3>Checklist antes de presentar a la gerencia</h3>
+  <ul class="check">
+    <li>El problema está medido y la línea base es propia.</li>
+    <li>La herramienta está autorizada y los datos son mínimos.</li>
+    <li>Cada etapa tiene actor definido y el cálculo oficial queda en el sistema.</li>
+    <li>Los puntos de control están antes de cargar y de pagar, con reemplazo.</li>
+    <li>Los indicadores tienen meta y plazo, y se medirán contra la línea base.</li>
+    <li>El plan avanza por etapas, con prueba en datos ficticios y piloto.</li>
+  </ul>
+  <div class="sign"><div>Elaboró</div><div>Revisó</div><div>Fecha</div></div>
+  <p class="src" style="margin-top:6mm">Material formativo. Adapta la guía a la política interna de tu empresa. Datos del curso ficticios.</p>
+</section>
