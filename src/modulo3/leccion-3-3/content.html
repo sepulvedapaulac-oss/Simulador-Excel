@@ -1,0 +1,196 @@
+<style>
+/* Lección 3.3 · selector de gráficos y gráfico engañoso */
+.chq{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:12px 14px;margin-top:12px}
+.chq.ok{border-color:var(--good-line);background:var(--good-soft)}
+.chq h4{margin:0 0 8px;font-size:1rem}
+.chopts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.chopt{border:2px solid var(--line);border-radius:14px;background:var(--surface2);padding:8px;cursor:pointer;font:inherit;color:inherit;display:grid;gap:4px;justify-items:center;font-size:.82rem;font-weight:800}
+.chopt svg{width:100%;max-width:120px;height:56px}
+.chopt.good{border-color:var(--good-line);background:var(--good-soft)}
+.chopt.bad{border-color:var(--bad-line);background:var(--bad-soft)}
+.chopt:disabled{cursor:default}
+.chprev{margin-top:10px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:12px;align-items:center}
+.chprev svg{width:100%;height:auto;background:var(--surface);border:1px solid var(--line2);border-radius:12px}
+@media(max-width:760px){.chopts{grid-template-columns:repeat(2,minmax(0,1fr))}.chprev{grid-template-columns:1fr}}
+.eng{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.eng svg{display:block;width:100%;height:auto}
+.eng .hs{font-size:.9rem}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.3 · Indicadores y visualización</span>
+      <h1 class="reveal">Un tablero que ayude a decidir</h1>
+      <p class="lead reveal">La gerencia pidió un tablero con los indicadores de octubre. Camila le pidió a la IA una propuesta y recibió <strong>doce gráficos</strong>: anillos de colores, barras en tres dimensiones y un velocímetro animado.</p>
+      <div class="story reveal"><strong>La gerenta:</strong> “Necesito ver en un minuto cuánto costamos, por qué subimos y dónde están las horas extra.”</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista observando un tablero de indicadores con gráficos en un monitor grande" src="img/i33_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Cómo debería continuar Camila?</h3>
+  <div class="options" data-choice="hook" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Partir de las tres preguntas de la gerenta, elegir pocos indicadores con fórmula clara y un gráfico adecuado para cada uno.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Usar los doce gráficos de la IA: mientras más información, mejor.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Elegir los gráficos más llamativos para captar la atención.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: nadie encuentra lo importante.</strong> <span class="fb-body">Doce gráficos no se leen en un minuto. Un tablero útil responde pocas preguntas con pocos indicadores.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: gráficos que distraen o engañan.</strong> <span class="fb-body">Los efectos 3D y los velocímetros se ven bien, pero dificultan leer el valor y pueden exagerar diferencias.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-A"><div class="feedback good"><strong>Así se diseña un tablero.</strong> <span class="fb-body">Pregunta → indicador con fórmula → gráfico adecuado. La IA ayuda a calcular y a proponer, pero la selección y la revisión son tuyas.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: indicadores y gráficos" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>De los datos a las decisiones</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · SELECTOR DE GRÁFICOS -->
+<section class="slide" data-title="Elige el gráfico" data-audio="p03" data-gate="graf" data-gate-msg="Elige el gráfico correcto para las cuatro preguntas.">
+  <span class="eyebrow amber">Lección 3.3 · Actividad</span>
+  <h2>Cada pregunta, su gráfico</h2>
+  <p>Para cada pregunta de la gerencia, <strong>elige el tipo de gráfico</strong> que la responde mejor. Verás una vista previa con datos ficticios de AndesCorp.</p>
+  <div id="chRoot">
+    <div class="task">Preguntas resueltas <span class="tick">0 / 4</span></div>
+    <div id="chList"></div>
+  </div>
+</section>
+
+<!-- 4 · HOTSPOT: GRÁFICO ENGAÑOSO -->
+<section class="slide" data-title="El gráfico engañoso" data-audio="p04" data-gate="eng" data-gate-msg="Encuentra los cinco problemas del gráfico.">
+  <span class="eyebrow">Lección 3.3 · Revisar lo que propone la IA</span>
+  <h2>Cinco trampas en un gráfico atractivo</h2>
+  <p>La IA propuso este gráfico de horas extra por área. <strong>Toca cada número</strong> para ver qué problema tiene y cómo corregirlo.</p>
+  <div data-hotspot="eng">
+    <div class="task">Problemas encontrados <span class="tick">0 / 5</span></div>
+    <div class="hs-wrap">
+      <div class="eng" aria-label="Gráfico de barras engañoso con eje truncado, efecto 3D y colores sin significado">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Horas extra por área, eje desde 300">
+          <rect width="640" height="400" fill="#fbfcfd"/>
+          <text x="320" y="34" text-anchor="middle" font-size="22" font-weight="800" fill="#172431">Gráfico 1</text>
+          <g font-size="12" fill="#5f7180" text-anchor="end">
+            <text x="62" y="344">300</text><text x="62" y="284">350</text><text x="62" y="224">400</text><text x="62" y="164">450</text><text x="62" y="104">500</text><text x="62" y="74">525</text>
+          </g>
+          <g stroke="#d8e2e6"><line x1="70" y1="340" x2="610" y2="340"/><line x1="70" y1="280" x2="610" y2="280"/><line x1="70" y1="220" x2="610" y2="220"/><line x1="70" y1="160" x2="610" y2="160"/><line x1="70" y1="100" x2="610" y2="100"/></g>
+          <!-- barras 3D: alto = (valor-300)*1.2 -->
+          <g>
+            <polygon points="112,76 132,60 202,60 182,76" fill="#ff9b6a"/><polygon points="182,76 202,60 202,324 182,340" fill="#d9663a"/><rect x="112" y="76" width="70" height="264" fill="#ff7b42"/>
+            <polygon points="242,160 262,144 332,144 312,160" fill="#9be59a"/><polygon points="312,160 332,144 332,324 312,340" fill="#3ea64a"/><rect x="242" y="160" width="70" height="180" fill="#5ccf5a"/>
+            <polygon points="372,268 392,252 462,252 442,268" fill="#a7b8ff"/><polygon points="442,268 462,252 462,324 442,340" fill="#4b5fd1"/><rect x="372" y="268" width="70" height="72" fill="#6c7cff"/>
+            <polygon points="502,316 522,300 592,300 572,316" fill="#ffd36e"/><polygon points="572,316 592,300 592,324 572,340" fill="#c99a1c"/><rect x="502" y="316" width="70" height="24" fill="#ffc23d"/>
+          </g>
+          <g font-size="14" font-weight="700" fill="#172431" text-anchor="middle">
+            <text x="147" y="364">Planta</text><text x="277" y="364">Operaciones</text><text x="407" y="364">Ventas</text><text x="537" y="364">Bodega</text>
+          </g>
+          <g font-size="13" fill="#28404e" text-anchor="middle"><text x="147" y="54">520</text><text x="277" y="138">450</text><text x="407" y="246">360</text><text x="537" y="294">320</text></g>
+        </svg>
+        <button class="hs" type="button" data-k="0" style="left:8%;top:78%">1</button>
+        <button class="hs" type="button" data-k="1" style="left:33%;top:20%">2</button>
+        <button class="hs" type="button" data-k="2" style="left:66%;top:45%">3</button>
+        <button class="hs" type="button" data-k="3" style="left:62%;top:9%">4</button>
+        <button class="hs" type="button" data-k="4" style="left:90%;top:94%">5</button>
+      </div>
+      <div class="hs-panel"><p class="hint">Selecciona un número del gráfico para ver el problema.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · EMPAREJAR -->
+<section class="slide" data-title="Indicador y fórmula" data-audio="p05" data-gate="kpi" data-gate-msg="Forma las cinco parejas.">
+  <span class="eyebrow amber">Lección 3.3 · Actividad</span>
+  <h2>Une cada indicador con su fórmula</h2>
+  <p>Selecciona un indicador de la izquierda y luego su fórmula a la derecha.</p>
+  <div data-pairs="kpi">
+    <div class="task">Parejas formadas <span class="tick">0 / 5</span></div>
+    <div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: el tablero de octubre" data-audio="p06" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>Camila arma el tablero para la gerenta</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>Las preguntas:</strong> ¿cuánto costamos?, ¿por qué subimos?, ¿dónde están las horas extra? Datos de octubre: costo $537,9 M (+8,0 %), dotación 420, horas extra $21,2 M, bonos $45,4 M (incluye bono anual de $18,6 M).</div>
+    <div class="photo-frame wide"><img alt="Equipo discutiendo un gráfico proyectado en una sala de reuniones" src="img/i33_b.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">Decisión 1 · ¿Qué indicadores pone arriba del tablero?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Los doce que propuso la IA, en dos filas.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Solo el costo total.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Costo total y variación (monto y %), costo promedio por persona y peso de las horas extra, con un gráfico de efectos que explique el 8 %.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Demasiado</div><div class="branch-body"><div><p>La gerenta no encontrará la respuesta en un minuto. Los indicadores secundarios pueden ir en una segunda página.</p></div><div><p class="hint">Responde las tres preguntas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Insuficiente</div><div class="branch-body"><div><p>El total responde “cuánto”, pero no “por qué” ni “dónde”.</p></div><div><p class="hint">Faltan dos preguntas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Responde las tres preguntas</div><div class="branch-body"><div><p>Cuánto (costo y variación), por qué (gráfico de efectos: bonos, reajuste, dotación, horas extra) y dónde (peso y distribución de las horas extra).</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · La IA dibujó el gráfico de horas extra con el eje desde 300 horas. ¿Qué hace Camila?</h3>
+    <div class="options" data-choice="caso2" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Lo deja: así se nota más el problema de Planta.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Lo rehace con el eje en cero, barras planas de un color con Planta destacada, título con la conclusión y fuente.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Lo cambia por un gráfico de anillo con las cuatro áreas.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Exagera</div><div class="branch-body"><div><p>Planta tiene 1,4 veces las horas de Ventas, pero el gráfico sugiere casi cuatro. La gerencia podría tomar una decisión desproporcionada.</p></div><div><p class="hint">Un gráfico informa; no convence.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Cambia la pregunta</div><div class="branch-body"><div><p>El anillo muestra la composición, pero hace más difícil comparar áreas de tamaño parecido. Para comparar, barras con el eje en cero.</p></div><div><p class="hint">El problema era el eje, no el tipo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch good"><div class="branch-head">✓ Gráfico honesto</div><div class="branch-body"><div><p>“Planta concentra el 32 % de las horas extra de octubre. Fuente: asistencia aprobada, octubre 2026.” Se lee en segundos y no exagera.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA -->
+<section class="slide" data-title="La ficha de tu indicador" data-audio="p08" data-gate="ficha ficha_model pass" data-gate-msg="Genera la ficha y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Diseña la ficha de un indicador</h2>
+  <p>Elige un indicador que uses o necesites. <strong>Completa la ficha</strong>, genérala y compárala con la respuesta modelo.</p>
+  <div data-builder="ficha">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi ficha</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> nombre, fórmula, fuente cuadrada, gráfico según la pregunta y control antes de publicar.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.3</h2>
+    <p>Ya sabes elegir indicadores con fórmula, el gráfico adecuado para cada pregunta y detectar las trampas de un gráfico.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> cifras cuadradas y gráficos honestos. En la próxima lección convertirás este análisis en un informe ejecutivo.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar el gráfico engañoso</button><button class="small-btn primary" type="button" data-goto="5">Repasar el caso</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
