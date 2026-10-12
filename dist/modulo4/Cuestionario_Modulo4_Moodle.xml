@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/IA en Remuneraciones/Módulo 4 · Automatización y proyecto integrador</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-01 Candidata a automatizar</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál de estas tareas cumple mejor los criterios para automatizarla primero?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Repetitiva, regla clara, datos ordenados y riesgo controlable.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Consolidar cada mes las novedades que envían las jefaturas, con un formulario y reglas claras.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Es repetitiva, frecuente, tiene regla clara, datos ordenables y su error se detecta en la cuadratura antes de pagar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Decidir el monto de un acuerdo de término con un trabajador.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Depende de criterio, negociación y responsabilidad legal: se puede asistir con información, no automatizar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Calcular finiquitos con un programa propio desarrollado desde cero.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Pocos casos al mes, alto riesgo legal y el sistema ya los calcula: no conviene.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Responder reclamos individuales de liquidación.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Un reclamo requiere revisar el caso y empatía: lo atiende una persona.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-02 Matriz impacto-esfuerzo</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Integrar el sistema de asistencia con remuneraciones ahorraría 15 horas al mes, pero requiere seis meses de desarrollo de Tecnología. ¿En qué cuadrante de la matriz se ubica?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Victorias rápidas primero; proyectos mayores, planificados.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Proyecto mayor: alto impacto y alto esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Vale la pena, pero se planifica en la cartera de proyectos; no es un primer piloto.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Victoria rápida: alto impacto y bajo esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Seis meses de desarrollo no es bajo esfuerzo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mejora menor: bajo impacto y bajo esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Ahorrar 15 horas al mes es un impacto alto.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No priorizar: bajo impacto y alto esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El impacto es alto; solo requiere planificación de largo plazo.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-03 Herramienta más simple</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Para cuadrar las horas extra de asistencia con las de la nómina existe una regla exacta. ¿Qué herramienta conviene?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Primero lo que hace el sistema, luego planilla, flujo e IA donde aporte.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Una planilla con fórmulas de cuadratura, como BUSCARX y una columna de diferencia.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Es exacta, verificable y no tiene costo adicional: la herramienta más simple que resuelve la tarea.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Un asistente de IA generativa que compare las listas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Donde hay una regla exacta, la IA agrega riesgo de error sin aportar valor.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Un desarrollo a medida con un proveedor externo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Es caro y lento para una tarea que resuelve una planilla.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Revisar a ojo ambas listas cada mes.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Es lento y propenso a errores; justo lo que se quiere mejorar.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-04 Instrucciones del asistente</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Compensaciones configura un asistente para responder consultas frecuentes de liquidación. ¿Qué instrucción es clave para evitar respuestas inventadas?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Rol, fuentes aprobadas, datos mínimos, límites y derivación.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Usar solo la guía y las políticas aprobadas; si algo no está en ellas o es un tema legal, decirlo y derivar a Compensaciones.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Fuentes limitadas y derivación evitan que el asistente complete con información de otro país o desactualizada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Responder siempre con seguridad para dar confianza.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La seguridad sin fuente es justamente lo que produce respuestas inventadas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Buscar en internet lo que no encuentre en la guía.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Internet puede traer normas de otros países o versiones antiguas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usar un tono técnico con citas de artículos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El estilo importa, pero no evita respuestas sin respaldo.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-05 Datos en el asistente</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Un trabajador escribe su RUT en el asistente de consultas y pregunta si le pagaron bien. ¿Qué debe hacer el asistente?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El asistente no recibe datos personales ni revisa casos.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Indicar que no revisa casos individuales, sugerir no compartir datos y derivar al canal formal.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Protege los datos y la persona recibe atención en el canal con acceso controlado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pedir también el sueldo base para revisar el caso.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Pedir más datos agrava el problema: el asistente no está autorizado para tratarlos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Estimar el pago con un sueldo promedio.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Inventar cifras genera expectativas falsas y reclamos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Guardar el RUT para responder más rápido la próxima vez.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Acumula datos personales sin necesidad ni autorización.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-06 Actores del flujo</text></name>
+    <questiontext format="html"><text><![CDATA[<p>En un cierre asistido por IA, ¿quién calcula las liquidaciones oficiales?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>IA asiste, sistema calcula, persona decide.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>El sistema de remuneraciones, con los parámetros vigentes.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Es la fuente oficial: toda corrección se hace ahí, con respaldo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>El asistente de IA, porque es más rápido.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La IA asiste, pero no reemplaza el cálculo oficial ni sus parámetros.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Una planilla paralela preparada por la IA.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Una planilla paralela no es oficial y puede tener errores sin revisar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cada analista a mano.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Calcular a mano 422 liquidaciones es lento y propenso a errores.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-07 Punto de control</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA marca como dudosa la novedad “pagar lo mismo del mes pasado más lo de la campaña”. ¿Qué corresponde?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El control humano va antes de cargar y de pagar.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Aclarar con la jefatura el concepto y el monto aprobados antes de cargarla al sistema.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Lo ambiguo lo resuelve una persona con quien lo envió, antes de que afecte el pago.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Dejar que la IA interprete el monto con el historial.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La IA puede sumar un concepto de otro período: se pagaría algo no aprobado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cargarla y revisarla después del pago.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Revisar después del pago obliga a reliquidar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eliminarla para no atrasar el cierre.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Eliminar una novedad puede dejar a alguien sin un pago que sí correspondía.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-08 Alertas de la IA</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA señala que EMP-052 tiene horas extra 40 % sobre su promedio. Asistencia confirma un turno especial aprobado. ¿Qué hace Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Corregir, investigar o descartar, siempre con evidencia.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Descarta la alerta, registra la evidencia del turno aprobado y no modifica el registro.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Es un falso positivo: se descarta con evidencia y queda registrado en la bitácora.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Rebaja las horas al promedio para que la alerta desaparezca.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Rebajar horas aprobadas genera un pago menor y un reclamo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Deja que la IA corrija el registro automáticamente.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Una alerta no es un error confirmado; las correcciones las decide una persona.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ignora la alerta sin registrar nada.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Toda alerta se cierra con una decisión registrada.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-09 Medir el piloto</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Tras el piloto, la consolidación de novedades bajó de 10 a 3 horas y los errores, de 6 a 1. ¿Cómo se presenta a la gerencia?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Resultados medidos contra la línea base.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Comparando esas cifras con la línea base y mostrando la bitácora como respaldo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Indicadores propios, comparados con la línea base y con evidencia: la gerencia puede decidir.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Con el 80 % de ahorro que mencionan estudios del sector.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Una cifra ajena no es un resultado propio y no se puede respaldar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Con una encuesta de percepción del equipo, solamente.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La percepción complementa, pero no reemplaza la medición.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Con el número de veces que se usó la herramienta.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El uso mide actividad, no resultado.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4-10 Escalar el proyecto</text></name>
+    <questiontext format="html"><text><![CDATA[<p>El piloto funcionó y la gerencia pregunta cómo seguir. ¿Qué es lo recomendado?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Escalar por etapas, documentado y con controles.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Documentar el procedimiento, capacitar a un reemplazo y sumar otra tarea por etapas, con su propia línea base.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> El proyecto crece de forma sostenible, auditable y sin depender de una sola persona.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Aplicar IA a todo el cierre el mes siguiente.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Escalar sin etapas ni documentación aumenta el riesgo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eliminar la validación humana porque la IA casi no se equivocó.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Los pocos errores son mérito del control humano; quitarlo devuelve el riesgo al pago.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Detener el proyecto porque ya cumplió su objetivo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Un piloto exitoso es la base para extender la mejora.</p>]]></text></feedback>
+    </answer>
+  </question>
+</quiz>
