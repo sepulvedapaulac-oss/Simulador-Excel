@@ -1,0 +1,192 @@
+<style>
+/* Lección 3.2 · calculadora de variación con deslizadores */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.calc>*{min-width:0}
+@media(max-width:860px){.calc{grid-template-columns:1fr}}
+.sl{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:12px 14px;margin-bottom:10px}
+.sl label{display:flex;justify-content:space-between;gap:10px;font-weight:800;font-size:.92rem}
+.sl label output{font-variant-numeric:tabular-nums;color:var(--teal-ink)}
+.sl small{display:block;color:var(--muted);margin-top:2px}
+.sl input[type=range]{width:100%;margin-top:8px;accent-color:var(--teal)}
+.sl.hit{border-color:var(--good-line);background:var(--good-soft)}
+.res{border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow);padding:14px 16px}
+.res h4{margin:0 0 8px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.kpi{border-radius:14px;background:var(--surface2);border:1px solid var(--line2);padding:8px 10px}
+.kpi b{display:block;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.kpi small{color:var(--muted)}
+.eff{margin-top:12px;display:grid;gap:7px}
+.eff .row{display:grid;grid-template-columns:110px 1fr 86px;gap:8px;align-items:center;font-size:.86rem}
+.eff .bar{height:12px;border-radius:999px;background:var(--track);overflow:hidden}
+.eff .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.eff .bar span.neg{background:var(--bad)}
+.eff .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.target{margin-top:10px;font-size:.86rem}
+@media(max-width:560px){.kpis{grid-template-columns:1fr}.eff .row{grid-template-columns:86px 1fr 70px}}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.2 · Variaciones mensuales</span>
+      <h1 class="reveal">Octubre subió 8 %. ¿Por qué?</h1>
+      <p class="lead reveal">Con la base ya preparada, Camila le pidió al asistente corporativo un primer análisis. La IA respondió en segundos:</p>
+      <div class="aichat reveal"><div class="ahead"><span class="dot">✦</span> Asistente corporativo</div><div class="a">“El costo subió 8 % principalmente por el <b>reajuste de 2 %</b> aplicado en octubre. Además, el costo por trabajador bajó gracias a los nuevos ingresos.”</div></div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista comparando dos meses en un notebook con un gráfico de barras" src="img/i32_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué debería hacer Camila con esa respuesta?</h3>
+  <div class="options" data-choice="hook" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviarla a la gerencia: la IA analizó la base completa.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Descartarla: la IA no sirve para análisis.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Calcular la variación por componente y comprobar cada afirmación con la base antes de usarla.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: un informe con errores.</strong> <span class="fb-body">Como verás en esta lección, el reajuste no es la causa principal y el costo por trabajador no bajó. Una explicación fluida no es una explicación verificada.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: pierdes un buen apoyo.</strong> <span class="fb-body">La IA calcula y ordena muy rápido. El problema no es usarla, sino aceptar sus conclusiones sin comprobarlas.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback good"><strong>Así se analiza.</strong> <span class="fb-body">Primero se calcula cuánto cambió cada componente; después se separan los hechos de las hipótesis. Lo harás en esta lección.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: cuánto y por qué" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Cuánto cambió y qué lo explica</h2>
+  <p>Video sin narración: los textos aparecen en pantalla. Puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · PESTAÑAS -->
+<section class="slide" data-title="Cómo medir una variación" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Lección 3.2 · Conceptos</span>
+  <h2>Cuatro formas de mirar una variación</h2>
+  <p><strong>Abre cada pestaña.</strong> Los ejemplos usan los datos ficticios de AndesCorp.</p>
+  <div data-tabs="tabs">
+    <div class="task">Pestañas revisadas <span class="tick">1 / 4</span></div>
+    <div class="tabs"><button class="tab" type="button">💲 Absoluta</button><button class="tab" type="button">％ Porcentual</button><button class="tab" type="button">🧩 Por componente</button><button class="tab" type="button">⚠️ Trampas</button></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Septiembre: $498,0 M · Octubre: $537,9 M<br/>Variación absoluta = 537,9 − 498,0 = <b>$39,9 M</b></div><div><h3 style="margin-top:0">Variación absoluta</h3><ul class="elem-list"><li><b>Qué mide:</b> cuánto dinero más (o menos) se pagó.</li><li><b>Para qué sirve:</b> dimensionar el impacto real en el presupuesto.</li><li><b>Fórmula en Excel:</b> <code>=C2-B2</code></li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>39,9 / 498,0 = <b>8,0 %</b></div><div><h3 style="margin-top:0">Variación porcentual</h3><ul class="elem-list"><li><b>Qué mide:</b> el cambio en proporción al mes base.</li><li><b>Para qué sirve:</b> comparar áreas de distinto tamaño.</li><li><b>Fórmula en Excel:</b> <code>=C2/B2-1</code> con formato de porcentaje. Se divide siempre por el valor <b>inicial</b>.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Dotación +$8,8 M · Reajuste +$9,2 M · Horas extra +$3,2 M · Bonos +$18,6 M = <b>$39,9 M</b></div><div><h3 style="margin-top:0">Variación por componente</h3><ul class="elem-list"><li><b>Qué mide:</b> qué parte del cambio aporta cada causa.</li><li><b>Efecto dotación:</b> personas adicionales × costo promedio del mes base.</li><li><b>Efecto reajuste:</b> dotación nueva × cambio del costo promedio.</li><li><b>Control:</b> la suma de los efectos debe ser igual a la variación total.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Un área de 2 personas sube 50 % ($0,9 M). Ventas sube 3 % ($4,1 M).</div><div><h3 style="margin-top:0">Trampas frecuentes</h3><ul class="elem-list"><li><b>Base pequeña:</b> porcentajes enormes con poco dinero. Informa siempre el monto.</li><li><b>Dividir por el mes final:</b> da un porcentaje menor al real.</li><li><b>Promedios que engañan:</b> el costo por trabajador cambia si entran personas con sueldos distintos.</li><li><b>Conceptos únicos:</b> un bono anual infla un mes; no es una tendencia.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 4 · CALCULADORA -->
+<section class="slide" data-title="Calculadora de variación" data-gate="calc" data-gate-msg="Ajusta los cuatro deslizadores hasta reproducir octubre.">
+  <span class="eyebrow amber">Lección 3.2 · Actividad</span>
+  <h2>Reproduce octubre con la calculadora</h2>
+  <p>Los deslizadores parten en los valores de <b>septiembre</b>. <strong>Muévelos hasta los valores de octubre</strong> (están en la tarjeta bajo los deslizadores) y observa qué efecto pesa más en la variación.</p>
+  <div class="calc" id="calcRoot">
+    <div>
+      <div class="sl" data-k="dot"><label>Dotación <output></output></label><small>Personas con remuneración en el mes</small><input type="range" min="400" max="440" step="1" aria-label="Dotación"/></div>
+      <div class="sl" data-k="prom"><label>Sueldo base promedio <output></output></label><small>Incluye el reajuste del mes</small><input type="range" min="1050000" max="1200000" step="2000" aria-label="Sueldo base promedio"/></div>
+      <div class="sl" data-k="he"><label>Horas extra (total) <output></output></label><small>Monto pagado en el mes</small><input type="range" min="15000000" max="25000000" step="40000" aria-label="Horas extra total"/></div>
+      <div class="sl" data-k="bon"><label>Bonos (total) <output></output></label><small>Bonos variables del mes</small><input type="range" min="20000000" max="50000000" step="200000" aria-label="Bonos total"/></div>
+      <div class="example"><strong>Valores de octubre (base cuadrada):</strong> dotación 420 · sueldo promedio $1.122.000 · horas extra $21.240.000 · bonos $45.400.000</div>
+    </div>
+    <div class="res" aria-live="polite">
+      <h4>Resultado</h4>
+      <div class="kpis"><div class="kpi"><small>Costo del mes</small><b id="kTot">—</b></div><div class="kpi"><small>Variación vs. septiembre</small><b id="kVar">—</b></div><div class="kpi"><small>Costo por persona</small><b id="kPer">—</b></div></div>
+      <div class="eff" id="effs"></div>
+      <div class="target" id="calcMsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · HECHO / HIPÓTESIS / ERROR -->
+<section class="slide" data-title="Hecho, hipótesis o error" data-gate="hhe" data-gate-msg="Clasifica las ocho afirmaciones.">
+  <span class="eyebrow amber">Lección 3.2 · Actividad</span>
+  <h2>¿Hecho, hipótesis o error?</h2>
+  <p>Estas afirmaciones vienen del informe de la IA y de comentarios del equipo. <strong>Arrastra cada una</strong> a su columna, o tócala y luego toca la columna. Usa los datos de la calculadora.</p>
+  <div data-sort="hhe">
+    <div class="task">Afirmaciones clasificadas <span class="tick">0 / 8</span></div>
+    <div class="pool"></div>
+    <div class="bins bins3"></div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: la explicación del 8 %" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>Camila corrige la explicación de la IA</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>Lo que sabe ahora:</strong> la variación es $39,9 M (+8,0 %). Los bonos aportan $18,6 M, el reajuste $9,2 M, la dotación $8,8 M y las horas extra $3,2 M. En la carpeta de novedades hay un bono anual de cumplimiento aprobado para octubre.</div>
+    <div class="photo-frame wide"><img alt="Manos señalando una tendencia en un informe impreso con gráficos" src="img/i32_b.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">Decisión 1 · ¿Cuál es la mejor explicación principal para la gerencia?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“El alza se explica por el reajuste de 2 %.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Casi la mitad del alza ($18,6 M) corresponde al bono anual de cumplimiento, un pago único de octubre; el resto, a 8 ingresos netos, el reajuste y horas extra de Planta.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“El costo subió 8 % por múltiples factores.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: decisión basada en un error</div><div class="branch-body"><div><p>El reajuste explica solo el 23 % del alza. La gerencia podría concluir que el costo seguirá así, cuando la mitad del aumento es un pago único.</p></div><div><p class="hint">Mira el efecto más grande.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: no explica nada</div><div class="branch-body"><div><p>“Múltiples factores” no ayuda a decidir. La gerencia necesita saber cuánto aporta cada causa y cuáles se repetirán.</p></div><div><p class="hint">Cuantifica los efectos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Explicación cuantificada</div><div class="branch-body"><div><p>Cada causa tiene su monto y queda claro qué es recurrente y qué no. El bono anual está confirmado por la novedad aprobada: dejó de ser hipótesis.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · La gerencia pregunta si noviembre volverá al nivel de septiembre. ¿Qué responde Camila?</h3>
+    <div class="options" data-choice="caso2" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sin el bono anual, noviembre debería quedar cerca de $519 M (+4 %): los ingresos y el reajuste se mantienen. Las horas extra dependen de si sigue el pedido especial; lo confirmaré con Operaciones.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Sí, volverá exactamente a $498 M.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Le preguntaré a la IA cuánto será noviembre.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: promesa equivocada</div><div class="branch-body"><div><p>Los 8 ingresos y el reajuste son permanentes: el costo base subió. Prometer el nivel de septiembre genera una sorpresa en noviembre.</p></div><div><p class="hint">Separa lo recurrente de lo único.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una cifra sin respaldo</div><div class="branch-body"><div><p>La IA no conoce los planes de Operaciones ni las novedades de noviembre. Una proyección se construye con los efectos verificados y supuestos explícitos.</p></div><div><p class="hint">Usa los efectos que ya calculaste.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Proyección con supuestos explícitos</div><div class="branch-body"><div><p>537,9 − 18,6 (bono anual) ≈ $519 M. La respuesta distingue lo recurrente, lo único y lo que falta confirmar. Así se informa en la lección 3.4.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA -->
+<section class="slide" data-title="Tu instrucción de análisis" data-gate="var var_model pass" data-gate-msg="Genera tu instrucción y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Arma tu instrucción para analizar una variación</h2>
+  <p>Piensa en una variación que debas explicar. <strong>Completa cada elemento</strong>, genera tu instrucción y compárala con la respuesta modelo.</p>
+  <div data-builder="var">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi instrucción</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> datos agregados y cuadrados, cálculos explícitos con efectos que sumen la variación, hechos separados de hipótesis y un formato breve y verificable.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.2</h2>
+    <p>Ya sabes calcular variaciones absolutas y porcentuales, descomponerlas en efectos que cuadran y separar hechos, hipótesis y errores en un informe de IA.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y clasificaciones al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> ninguna explicación llega a la gerencia sin cuadrar con los números. En la próxima lección elegirás indicadores y gráficos para mostrarlos.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar la calculadora</button><button class="small-btn primary" type="button" data-goto="5">Repasar el caso</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
