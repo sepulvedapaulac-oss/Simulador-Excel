@@ -1,0 +1,2 @@
+{"[data-builder]":[["eval","(()=>{const r=document.querySelector('.slide.active [data-builder]');r.querySelectorAll('select').forEach(s=>{s.value='1';s.dispatchEvent(new Event('input',{bubbles:true}))});r.querySelectorAll('textarea').forEach(t=>{t.value='Control de horas extra';t.dispatchEvent(new Event('input',{bubbles:true}))});r.querySelector('.mk').click();r.querySelector('.model-btn').click()})()"]],
+"#rubRoot":[["eval","document.querySelectorAll('#rubRoot .rub-row').forEach(r=>r.querySelectorAll('.rub-lv button')[2].click())"]]}

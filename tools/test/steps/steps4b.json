@@ -1,0 +1,3 @@
+{"#startLab":[["click","#startLab"]],
+"#simRoot":[["eval","(()=>{const v=['per','ia','ia','per','ia','ia'];document.querySelectorAll('#simRoot select').forEach((s,i)=>{s.value=v[i];s.dispatchEvent(new Event('change'))})})()"],["click","#simRun"],["eval","(()=>{const v=['ia','per','sis','ia','per','per'];document.querySelectorAll('#simRoot select').forEach((s,i)=>{s.value=v[i];s.dispatchEvent(new Event('change'))})})()"],["click","#simRun"]],
+"[data-choice=v1]":[["click","[data-choice=v1] [data-opt=C]"],["click","[data-choice=v2] [data-opt=A]"]]}

@@ -1,0 +1,1 @@
+{"#ordRoot": [["eval", "(()=>{const list=document.querySelector('.slide.active #ordRoot .order');for(let p=0;p<list.children.length;p++){let guard=20;while(guard--){const lis=[...list.children];const idx=lis.findIndex(li=>+li.dataset.k===p);if(idx<=p)break;lis[idx].querySelector('button[data-d=\"-1\"]').click()}}document.getElementById('ordCheck').click()})()"]]}

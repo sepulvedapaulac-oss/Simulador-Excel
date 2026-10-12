@@ -1,0 +1,5 @@
+{"#startLab":[["click","#startLab"]],
+"#hoja1":[["cell","D2","=BUSCARX(A2;$F$2:$F$13;$H$2:$H$13;\"NO EXISTE\")"],["sel","D2"],["click","[data-fill=\"1\"]"],["click","[data-check=\"1\"]"]],
+"#hoja2":[["cell","E2","=SI(O(C2>12;D2<>BUSCARX(B2;$G$2:$G$6;$H$2:$H$6));\"REVISAR\";\"OK\")"],["sel","E2"],["click","[data-fill=\"2\"]"],["click","[data-check=\"2\"]"]],
+"#hoja3":[["cell","C2","=SI(ESERROR(COINCIDIR(A2;$E$2:$E$13;0));\"NO EXISTE\";\"OK\")"],["sel","C2"],["click","[data-fill=\"3\"]"],["cell","C15","=CONTAR.SI(C2:C13;\"NO EXISTE\")"],["click","[data-check=\"3\"]"]],
+"#hoja4":[["cell","E2","OK"],["cell","E3","REVISAR"],["cell","E4","REVISAR"],["cell","E5","OK"],["cell","E6","REVISAR"],["cell","F2","=SI(O(C2>12;D2<>BUSCARX(B2;$I$2:$I$6;$J$2:$J$6));\"REVISAR\";\"OK\")"],["sel","F2"],["click","[data-fill=\"4\"]"],["click","[data-check=\"4\"]"]]}

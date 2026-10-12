@@ -1,0 +1,1 @@
+{"#calcRoot":[["eval","(()=>{const O={dot:420,prom:1122000,he:21240000,bon:45400000};document.querySelectorAll(\"#calcRoot .sl\").forEach(s=>{const i=s.querySelector(\"input\");i.value=O[s.dataset.k];i.dispatchEvent(new Event(\"input\",{bubbles:true}))})})()"]]}

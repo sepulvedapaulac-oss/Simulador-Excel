@@ -1,0 +1,3 @@
+{"#startLab":[["click","#startLab"]],
+"#hoja1":[["cell","E2","=ABS(B2-C2)"],["sel","E2"],["click","#fillBtn"],["cell","F2","=SI(E2<=D2;\"OK\";\"REVISAR\")"],["sel","F2"],["click","#fillBtn"],["cell","F9","=CONTAR.SI(F2:F7;\"REVISAR\")"],["cell","F10","=SI(F9=0;\"LISTO\";\"PENDIENTE\")"],["click","#checkBtn"]],
+"[data-choice=v1]":[["click","[data-choice=v1] [data-opt=B]"],["click","[data-choice=v2] [data-opt=C]"],["click","[data-choice=v3] [data-opt=A]"]]}

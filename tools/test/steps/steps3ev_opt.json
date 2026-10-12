@@ -1,0 +1,1 @@
+{"#startLab":[["click","#startLab"]],"#evCase":[["eval","(async()=>{const seq=[1,0,1,2,0,0,2];for(const o of seq){document.querySelector('#evCase .ev-opt[data-o=\"'+o+'\"]').click();await new Promise(r=>setTimeout(r,60));document.getElementById('evNext').click();await new Promise(r=>setTimeout(r,60))}})()"]]}

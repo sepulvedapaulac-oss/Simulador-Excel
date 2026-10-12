@@ -1,0 +1,1 @@
+{"#hoja22":[["cell","F2","=D2*E2*$I$2"],["click","#tests22 .tcard .fill"],["cell","I5","=BUSCARV(I4;A2:E9;5;FALSO)"],["cell","I7","=SUMAR.SI(B2:B9;\"Operaciones\";D2:D9)"],["cell","I8","=CONTAR.SI(D2:D9;\">10\")"],["click","#testBtn"]]}
