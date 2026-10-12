@@ -1,0 +1,88 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.353
+Te damos la bienvenida al segundo módulo.
+
+00:00:02.353 --> 00:00:09.528
+Aquí vas a usar la inteligencia artificial para revisar el cierre de remuneraciones, sin perder el control de cada resultado.
+
+00:00:10.133 --> 00:00:14.340
+Es fin de mes en AndesCorp y Camila enfrenta un cierre con diferencias.
+
+00:00:14.340 --> 00:00:18.191
+Las horas extra del área Planta subieron un dieciocho por ciento.
+
+00:00:18.191 --> 00:00:21.390
+El asistente de IA entrega varias alertas en segundos.
+
+00:00:21.390 --> 00:00:24.293
+Pero Camila sabe que no todas son errores reales.
+
+00:00:24.900 --> 00:00:28.490
+En la primera lección aprenderás a preparar la revisión.
+
+00:00:28.490 --> 00:00:33.363
+Defines qué datos entran, siempre mínimos y con códigos en lugar de nombres.
+
+00:00:33.363 --> 00:00:35.799
+Defines contra qué reglas se comparan.
+
+00:00:35.799 --> 00:00:38.364
+Y defines qué resultado esperas recibir.
+
+00:00:38.967 --> 00:00:43.210
+En la segunda lección usarás la IA para escribir fórmulas de control.
+
+00:00:43.210 --> 00:00:47.146
+Aprenderás a pedirlas con contexto, indicando columnas y reglas.
+
+00:00:47.146 --> 00:00:52.005
+Reconocerás errores típicos, como el separador equivocado o un rango sin fijar.
+
+00:00:52.005 --> 00:00:55.695
+Y probarás cada fórmula con casos conocidos antes de usarla.
+
+00:00:56.300 --> 00:00:59.964
+En la tercera lección trabajarás con las alertas de la IA.
+
+00:00:59.964 --> 00:01:03.818
+Decidirás si cada una se corrige, se investiga o se descarta.
+
+00:01:03.818 --> 00:01:09.124
+Verás que la IA produce falsos positivos y que también puede pasar por alto errores.
+
+00:01:09.124 --> 00:01:11.588
+Por eso cada alerta necesita evidencia.
+
+00:01:12.200 --> 00:01:15.957
+En la cuarta lección convertirás la validación en un proceso.
+
+00:01:15.957 --> 00:01:19.715
+Definirás criterios de aceptación antes de usar un resultado.
+
+00:01:19.715 --> 00:01:23.842
+Aprenderás a detectar premisas erróneas en las respuestas de la IA.
+
+00:01:23.842 --> 00:01:28.400
+Y aplicarás la revisión de cuatro ojos, dejando registro de cada decisión.
+
+00:01:29.000 --> 00:01:30.960
+Después pondrás todo en práctica.
+
+00:01:30.960 --> 00:01:36.366
+En el laboratorio dos A probarás y corregirás fórmulas de control en el simulador de Excel.
+
+00:01:36.366 --> 00:01:40.761
+En el laboratorio dos B auditarás un cierre de doce registros con errores.
+
+00:01:40.761 --> 00:01:45.632
+Y en la evaluación final enfrentarás un caso donde cada decisión cambia el camino.
+
+00:01:46.233 --> 00:01:48.768
+Recuerda la idea central de este módulo:
+
+00:01:48.768 --> 00:01:53.456
+la IA señala, pero eres tú quien decide, con evidencia y dejando registro.
+
+00:01:53.456 --> 00:01:54.153
+Comencemos.
