@@ -1,0 +1,201 @@
+<style>
+/* Lección 3.1 · componente propio: limpiar la tabla */
+.clean-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow)}
+.clean{width:100%;border-collapse:collapse;font-size:.88rem;min-width:620px}
+.clean th{background:var(--navy);color:var(--surface);text-align:left;padding:9px 10px;font-weight:800;font-size:.8rem}
+.clean td{padding:7px 10px;white-space:nowrap;border-top:1px solid var(--line2);font-variant-numeric:tabular-nums}
+.clean td.n{text-align:right}
+.clean tr.gone td{text-decoration:line-through;opacity:.45}
+.cbtn{all:unset;cursor:pointer;display:inline-block;padding:2px 8px;border-radius:8px;border:2px dashed var(--amber);background:var(--amber-soft);color:var(--ink);font-weight:700;white-space:pre}
+.cbtn:focus-visible{outline:3px solid var(--teal2);outline-offset:2px}
+.cbtn.sel{border-style:solid;box-shadow:0 0 0 3px color-mix(in srgb,var(--amber) 35%,transparent)}
+.cbtn.ok{border:2px solid var(--good-line);background:var(--good-soft);cursor:default;white-space:normal}
+.clean-panel{margin-top:12px;border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface2);min-height:70px}
+.clean-panel h4{margin:0 0 6px}
+.clean-panel .options{margin-top:8px}
+.clean-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:8px 0 10px}
+.clean-legend span{display:inline-flex;align-items:center;gap:6px}
+.clean-legend i{display:inline-block;width:16px;height:12px;border-radius:4px;border:2px dashed var(--amber);background:var(--amber-soft)}
+.clean-legend i.ok{border:2px solid var(--good-line);background:var(--good-soft)}
+.dict{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:start}
+.dict>*{min-width:0}
+@media(max-width:860px){.dict{grid-template-columns:1fr}.dict .photo-frame{order:-1}}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.1 · Análisis e informes con IA</span>
+      <h1 class="reveal">Antes de analizar, preparar</h1>
+      <p class="lead reveal">La gerencia de AndesCorp pregunta por qué el costo de remuneraciones de octubre subió <strong>8 %</strong> respecto de septiembre. Camila tiene la exportación completa del sistema: 420 trabajadores, 38 columnas, con nombres, RUT y diagnósticos de licencias.</p>
+      <div class="story reveal"><strong>Rodrigo:</strong> “Súbela al asistente y que nos diga qué pasó. La gerenta quiere la respuesta mañana.”</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista ordenando una base de datos en una planilla en un monitor ancho" src="img/i31_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Cuál debería ser el primer paso de Camila?</h3>
+  <div class="options" data-choice="hook" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Subir la exportación completa al asistente corporativo y pedirle que explique el alza.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Definir la pregunta, preparar una base limpia, protegida y cuadrada, y recién entonces usar la IA.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Pedirle a la IA que adivine las causas más probables sin entregarle datos.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: datos expuestos y conclusiones dudosas.</strong> <span class="fb-body">La exportación trae datos que el análisis no necesita (RUT, diagnósticos) y errores sin limpiar: duplicados, áreas mal escritas, filas de totales. La IA analizaría eso con total seguridad.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: respuestas genéricas.</strong> <span class="fb-body">Sin datos, la IA solo puede listar causas típicas (“reajustes”, “horas extra”) que no explican lo que pasó en AndesCorp. La gerencia necesita cifras verificables.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback good"><strong>Así se empieza.</strong> <span class="fb-body">Un buen análisis con IA parte por una base preparada: pregunta clara, datos limpios, protegidos, documentados y cuadrados con el sistema. En esta lección prepararás esa base con Camila.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: preparar los datos" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Datos de calidad, análisis de calidad</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · LIMPIAR LA TABLA -->
+<section class="slide" data-title="Limpia la base" data-audio="p03" data-gate="limpiar" data-gate-msg="Corrige los seis problemas de la tabla.">
+  <span class="eyebrow amber">Lección 3.1 · Actividad</span>
+  <h2>Limpia la exportación de octubre</h2>
+  <p>Este es un extracto de la exportación, ya sin nombres ni RUT. Tiene <strong>seis problemas</strong> marcados con borde punteado. <strong>Toca cada celda marcada</strong> y elige cómo corregirla.</p>
+  <div id="cleanRoot">
+    <div class="task">Problemas corregidos <span class="tick">0 / 6</span></div>
+    <div class="clean-legend"><span><i></i> Celda con problema</span><span><i class="ok"></i> Corregida</span></div>
+    <div class="clean-wrap"><table class="clean" aria-label="Extracto de la exportación de octubre"><thead><tr><th>Código</th><th>Área</th><th>Período</th><th>Sueldo base</th><th>Horas extra</th><th>Bonos</th><th>Estado</th></tr></thead><tbody></tbody></table></div>
+    <div class="clean-panel" aria-live="polite"><p class="hint" style="margin:0">Selecciona una celda marcada para ver el problema.</p></div>
+  </div>
+</section>
+
+<!-- 4 · FLASHCARDS -->
+<section class="slide" data-title="Cuatro formas de proteger" data-audio="p04" data-gate="proteger" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow violet">Lección 3.1 · Proteger los datos</span>
+  <h2>¿Seudonimizar, agregar, anonimizar o sintetizar?</h2>
+  <p>Cada técnica protege de una forma distinta y sirve para un tipo de análisis. <strong>Voltea cada tarjeta.</strong></p>
+  <div data-flip="proteger">
+    <div class="task">Tarjetas revisadas <span class="tick">0 / 4</span></div>
+    <div class="flipdeck">
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔑</div><strong>Seudonimizar</strong><span>¿Qué es y cuándo usarlo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Reemplazar identificadores por códigos</strong><span>Nombre y RUT pasan a ser EMP-001, EMP-002… La tabla de correspondencia queda resguardada en el sistema. <b>Úsalo</b> cuando necesitas el detalle por persona, por ejemplo para revisar casos. Sigue siendo dato personal.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📊</div><strong>Agregar</strong><span>¿Qué es y cuándo usarlo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Totales o promedios por grupo</strong><span>Costo por área, promedio por cargo, tramos de sueldo. <b>Úsalo</b> para tendencias y variaciones. Ojo: con grupos de menos de cinco personas se puede reconocer a alguien; júntalos en “otras áreas”.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🫥</div><strong>Anonimizar</strong><span>¿Qué es y cuándo usarlo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Transformación irreversible</strong><span>Nadie puede volver a identificar a las personas, ni siquiera con información adicional. Se logra combinando agregación, eliminación de identificadores y generalización (por ejemplo, tramos de edad). <b>Úsalo</b> para compartir resultados fuera del área.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧪</div><strong>Datos sintéticos</strong><span>¿Qué es y cuándo usarlo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Datos ficticios con la misma estructura</strong><span>Columnas y rangos realistas, pero ninguna persona real. <b>Úsalos</b> para diseñar fórmulas, probar instrucciones o capacitar, antes de tocar los datos reales.</span></div></div></button>
+    </div>
+  </div>
+  <div class="callout"><strong>Regla práctica:</strong> usa el nivel de detalle mínimo que responda tu pregunta. Si un agregado basta, no entregues datos por persona.</div>
+</section>
+
+<!-- 5 · ACORDEÓN: DICCIONARIO DE VARIABLES -->
+<section class="slide" data-title="El diccionario de variables" data-audio="p05" data-gate="dicc" data-gate-msg="Abre los cinco elementos del diccionario.">
+  <span class="eyebrow violet">Lección 3.1 · Documentar</span>
+  <h2>Qué debe tener un diccionario de variables</h2>
+  <p>El diccionario le dice a la IA, y a cualquier lector, qué significa cada columna. <strong>Abre cada elemento.</strong></p>
+  <div class="dict">
+    <div data-acc="dicc">
+      <div class="task">Elementos revisados <span class="tick">0 / 5</span></div>
+      <div class="acc">
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>Nombre de la variable<span class="sub">Corto, sin espacios ni tildes</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Usa nombres estables y fáciles de citar en una instrucción: <code>codigo</code>, <code>area</code>, <code>horas_extra</code>, <code>haberes_total</code>.</p><div class="example">Evita “Total 2” o “Columna nueva”: la IA no sabe a qué se refieren.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Definición<span class="sub">Qué incluye y qué no</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Una frase que precise el alcance. Es el elemento que más evita errores de interpretación.</p><div class="example"><b>bonos:</b> bonos variables del mes (producción, metas); <b>excluye</b> la gratificación.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Tipo y unidad<span class="sub">Pesos, horas, días, texto, fecha</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Indica la unidad y el formato. Las horas en decimal (7,5) no son lo mismo que en hh:mm (7:30).</p><div class="example"><b>horas_extra:</b> número decimal, horas del mes. <b>periodo:</b> AAAA-MM.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">4</span><span>Valores válidos<span class="sub">Rangos y categorías permitidas</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Lista las categorías y los rangos esperados. Sirven para detectar errores y para que la IA no invente categorías.</p><div class="example"><b>area:</b> Ventas, Operaciones, Finanzas, Planta, Bodega. <b>dias_trab:</b> 0 a 30.</div></div></div>
+        <div class="acc-item"><button class="acc-head" type="button"><span class="ico">5</span><span>Fuente<span class="sub">De dónde viene el dato</span></span><span class="tg">＋</span></button><div class="acc-body"><p>Indica el sistema o registro de origen. Permite verificar un dato cuando el análisis muestra algo inesperado.</p><div class="example"><b>horas_extra:</b> registro de asistencia aprobado. <b>sueldo_base:</b> contrato vigente.</div></div></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Pantalla con una tabla anonimizada con códigos y celdas sombreadas, junto a un candado" src="img/i31_b.jpg"/></div>
+  </div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: la base de octubre" data-audio="p06" data-gate="caso" data-gate-msg="Resuelve las tres decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Variación de octubre</span>
+  <h2>Camila prepara la base de análisis</h2>
+  <div class="story" style="margin-top:0"><strong>La situación:</strong> Camila ya limpió la exportación y dejó solo código, área, período, sueldo base, horas extra, bonos, total de haberes y estado (vigente, ingreso o egreso). El área Finanzas tiene solo tres personas.</div>
+
+  <h3 style="margin-top:18px">Decisión 1 · ¿Cómo presenta el área Finanzas en el análisis por área?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Con el detalle de sus tres personas: ya tienen códigos, así que no hay riesgo.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Agregada en “Otras áreas” junto con otra área pequeña, para que no se pueda reconocer a nadie.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La elimina de la base para no complicarse.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: reidentificación</div><div class="branch-body"><div><p>En un área de tres personas, cualquiera que conozca el equipo puede deducir quién gana cuánto, aunque tengan códigos. Seudonimizar no basta en grupos pequeños.</p></div><div><p class="hint">Piensa en el tamaño del grupo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: totales incompletos</div><div class="branch-body"><div><p>Sin Finanzas, el total de la base deja de cuadrar con el sistema y la variación de la empresa queda mal calculada.</p></div><div><p class="hint">Hay una forma de protegerla sin perderla.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La agregación protege a las personas y mantiene los totales completos. Queda anotado en el diccionario: “Otras áreas = Finanzas + Bodega administrativa”.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · La base tiene 418 registros; el sistema informa 420 trabajadores en octubre. ¿Qué hace?</h3>
+    <div class="options" data-choice="caso2" data-correct="C" data-then="caso3">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sigue adelante: dos registros de 420 no cambian el resultado.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le pide a la IA que estime los dos registros que faltan.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Busca los dos registros faltantes y no analiza hasta que la base cuadre en conteo y total de haberes.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: podrían faltar justo los que explican la variación</div><div class="branch-body"><div><p>Los dos faltantes eran ingresos de octubre con sueldos altos: explican parte del 8 %. Sin ellos, el análisis atribuiría el alza a otra causa.</p></div><div><p class="hint">La cuadratura va antes que el análisis.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: datos inventados</div><div class="branch-body"><div><p>La IA no sabe qué registros faltan. Cualquier estimación sería inventada y contaminaría el análisis.</p></div><div><p class="hint">Los datos se completan desde el sistema.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Camila encuentra dos ingresos del 28 de octubre que la exportación filtraba por fecha. Con 420 registros y el total de haberes igual al del sistema, la base cuadra.</p></div><div><p class="hint">Última decisión.</p></div></div></div></template>
+  </div>
+
+  <div class="phase" id="caso3" hidden>
+    <h3 style="margin-top:18px">Decisión 3 · ¿Qué le entrega a la IA junto con la base?</h3>
+    <div class="options" data-choice="caso3" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>El diccionario de variables y una instrucción con la pregunta, las restricciones y el formato de salida.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Solo la base: la IA entiende los nombres de las columnas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La base y la tabla de correspondencia entre códigos y nombres, para que el informe sea más claro.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso3-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: interpretaciones erradas</div><div class="branch-body"><div><p>Sin diccionario, la IA podría sumar la gratificación dentro de “bonos” o tratar “estado” como un dato sin importancia, cuando explica ingresos y egresos.</p></div><div><p class="hint">Documenta antes de entregar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se anula la protección</div><div class="branch-body"><div><p>La tabla de correspondencia permite volver a identificar a cada persona. Nunca sale del sistema de la empresa.</p></div><div><p class="hint">El informe usa códigos o agregados.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-A"><div class="branch good"><div class="branch-head">✓ Base lista</div><div class="branch-body"><div><p>Pregunta clara, base limpia, protegida, documentada y cuadrada. Con eso, el análisis de la próxima lección tendrá cifras confiables.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA -->
+<section class="slide" data-title="Tu plan de preparación" data-audio="p08" data-gate="plan plan_model pass" data-gate-msg="Genera tu plan y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Arma tu plan de preparación de datos</h2>
+  <p>Piensa en un análisis que necesites hacer. <strong>Completa cada elemento</strong>, genera tu plan, compáralo con la respuesta modelo y cópialo.</p>
+  <div data-builder="plan">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi plan</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> una pregunta concreta, solo las variables necesarias, protección con códigos y agregados, y una base cuadrada con el sistema antes de entregarla. Revisa la explicación bajo cada elemento.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.1</h2>
+    <p>Ya sabes preparar una base para analizar con IA: definir la pregunta, limpiar, proteger, documentar y cuadrar.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> si la base no está limpia, protegida y cuadrada, el análisis no empieza. En la próxima lección calcularás e interpretarás las variaciones mensuales.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar la limpieza</button><button class="small-btn primary" type="button" data-goto="5">Repasar el caso</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
