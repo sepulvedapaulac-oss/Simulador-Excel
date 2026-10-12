@@ -1,0 +1,88 @@
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 4A · Módulo 4</span>
+  <h1>Checklist de cierre con controles automáticos</h1>
+  <p class="lead">Antes de aprobar la nómina de noviembre, Rodrigo quiere una <strong>hoja de controles</strong> que diga sola qué está en orden y qué falta revisar. Camila la construirá en el simulador de Excel.</p>
+  <div class="grid-2">
+    <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
+      <ul class="elem-list" style="margin-top:8px"><li><b>1. Construir:</b> fórmulas que calculen la diferencia de cada control, su estado y si el cierre está listo para aprobar.</li><li><b>2. Decidir:</b> qué hacer con los controles que quedan en “REVISAR”.</li></ul>
+      <p style="margin:8px 0 0">Puntaje: fórmulas (70 %) + decisiones (30 %). Apruebas con <b>70%</b>.</p></div>
+    <div class="story" style="margin-top:0"><strong>Recuerda:</strong> un control automático compara dos fuentes que deberían coincidir. Si la diferencia supera la tolerancia, el control queda en “REVISAR” y una persona decide qué hacer.</div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · CONSTRUIR -->
+<section class="slide" data-title="Etapa 1: construir" data-gate="tabla" data-gate-msg="Completa las columnas E y F y las celdas F9 y F10, y presiona “Revisar mis controles” hasta que todo esté en verde.">
+  <span class="lab-badge">Etapa 1 de 2</span>
+  <h2>Construye la hoja de controles</h2>
+  <div class="grid-2">
+    <div>
+      <p>Cada fila compara el valor del <b>sistema</b> (B) con una <b>fuente de control</b> (C). Los montos están en miles de pesos.</p>
+      <ol class="elem-list" style="list-style:none">
+        <li><b>1.</b> En <b>E2</b>: diferencia sin signo <code>=ABS(B2-C2)</code>. Rellena hasta la fila 7.</li>
+        <li><b>2.</b> En <b>F2</b>: estado con <code>SI</code>: “OK” si la diferencia es menor o igual a la tolerancia (D2); si no, “REVISAR”. Rellena hasta la fila 7.</li>
+        <li><b>3.</b> En <b>F9</b>: cuántos controles están en “REVISAR”, con <code>CONTAR.SI</code>.</li>
+        <li><b>4.</b> En <b>F10</b>: “LISTO” si F9 es cero; si no, “PENDIENTE”.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Tip:</strong> en Excel en español los argumentos se separan con <b>punto y coma</b> y los textos van entre comillas: <code>=SI(E2&lt;=D2;"OK";"REVISAR")</code>.</div>
+  </div>
+  <div id="hoja1"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" id="fillBtn">⤓ Rellenar hacia abajo (hasta la fila 7)</button><button class="small-btn primary" type="button" id="checkBtn">Revisar mis controles</button></div>
+  <div id="checkOut"></div>
+</section>
+
+<!-- 3 · DECIDIR -->
+<section class="slide" data-title="Etapa 2: decidir" data-gate="v1 v2 v3" data-gate-msg="Responde las tres decisiones.">
+  <span class="lab-badge">Etapa 2 de 2</span>
+  <h2>Dos controles en “REVISAR”: ¿qué hace Camila?</h2>
+  <p>Tu hoja muestra dos controles pendientes: <b>horas extra</b> (22 horas de diferencia) y <b>líquido a pagar contra el archivo del banco</b> ($120 mil de diferencia).</p>
+  <h3 style="margin-top:16px">1 · Horas extra: la nómina tiene 1.284 horas y la asistencia aprobada, 1.262.</h3>
+  <div class="options" data-choice="v1" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Cambiar la tolerancia a 25 horas para que el control quede en “OK”.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Buscar qué registros explican las 22 horas, confirmarlo con asistencia y corregir en el sistema antes de aprobar.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Pedirle a la IA que reparta las 22 horas entre las áreas.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v1-A"><div class="feedback bad"><strong>Eso esconde el problema.</strong> <span class="fb-body">Subir la tolerancia para que el control “pase” anula su propósito: se pagarían horas que la asistencia no respalda.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v1-C"><div class="feedback bad"><strong>La IA no sabe dónde está la diferencia.</strong> <span class="fb-body">Repartir horas sin respaldo es inventar datos. La diferencia se busca en los registros.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v1-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Camila encuentra 22 horas cargadas dos veces a EMP-208. Las corrige en el sistema y el control queda en “OK”.</span></div></template>
+
+  <h3 style="margin-top:16px">2 · Líquido a pagar: el sistema suma $412.660 mil y el archivo del banco, $412.540 mil.</h3>
+  <div class="options" data-choice="v2" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Editar a mano el archivo del banco para que sume lo mismo que el sistema.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Enviar igual: $120 mil es poco frente a $412 millones.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Identificar a quién corresponde la diferencia y volver a generar el archivo del banco desde el sistema.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v2-A"><div class="feedback bad"><strong>Riesgo alto.</strong> <span class="fb-body">Editar a mano el archivo de pago rompe la trazabilidad y puede pagarle a la persona equivocada. El archivo se genera desde el sistema.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v2-B"><div class="feedback bad"><strong>Para una persona no es poco.</strong> <span class="fb-body">Esos $120 mil pueden ser el sueldo incompleto de alguien. Toda diferencia en el pago se explica antes de enviar.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v2-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El archivo se generó antes de un ajuste de EMP-091. Al regenerarlo desde el sistema, ambos totales coinciden.</span></div></template>
+
+  <h3 style="margin-top:16px">3 · Con las correcciones, F9 muestra 0 y F10 dice “LISTO”. ¿Qué sigue?</h3>
+  <div class="options" data-choice="v3" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Guardar la hoja de controles con las correcciones anotadas y pedir a Rodrigo la aprobación con esa evidencia.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Aprobar la nómina ella misma: la hoja ya dice “LISTO”.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Borrar las filas corregidas para que la hoja quede limpia.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v3-B"><div class="feedback bad"><strong>Falta el segundo revisor.</strong> <span class="fb-body">“LISTO” significa que los controles pasan, no que la nómina está aprobada. La aprobación es de otra persona.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v3-C"><div class="feedback bad"><strong>Se pierde la evidencia.</strong> <span class="fb-body">Las correcciones son parte del registro del cierre. Se anotan, no se borran.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v3-A"><div class="feedback good"><strong>Cierre controlado.</strong> <span class="fb-body">Hoja de controles, correcciones registradas y aprobación de un segundo revisor: el cierre queda auditable.</span></div></template>
+</section>
+
+<!-- 4 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labCalc">—</div><small>Controles de fórmulas en verde (mejor intento)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+  </div>
+  <div class="callout"><strong>Instrucción reutilizable para pedir ayuda a la IA con tu hoja de controles:</strong>
+    <div class="promptbox">Actúa como analista de remuneraciones. Tengo una hoja de controles de cierre en Excel en español con estas columnas: control, valor del sistema, valor de control, tolerancia, diferencia y estado. Propón las fórmulas para la diferencia sin signo, el estado (“OK” o “REVISAR” según la tolerancia), el conteo de pendientes y un indicador final de “LISTO” o “PENDIENTE”. Usa punto y coma como separador. No inventes controles ni valores: trabaja solo con las columnas que te indico y explica cada fórmula en una línea.</div></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" data-goto="1">Volver a la hoja</button><button class="small-btn primary" type="button" data-goto="2">Volver a las decisiones</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios. Ningún dato sale de tu navegador.</p>
+</section>

@@ -1,0 +1,11 @@
+{
+ "id": "ia_rem_lab4a",
+ "ident": "IAREM_M4_LAB4A",
+ "zip_name": "Laboratorio_4A_Checklist_de_cierre",
+ "title": "Laboratorio 4A — Checklist de cierre con controles automáticos",
+ "course_label": "IA EN REMUNERACIONES · MÓDULO 4 · LABORATORIO 4A",
+ "voice": false,
+ "pass": 0.7,
+ "lab": true,
+ "hoja": true
+}
