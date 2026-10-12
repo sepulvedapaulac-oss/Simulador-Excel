@@ -1,0 +1,180 @@
+<style>
+/* Lección 4.3 · ordenar el flujo, diagrama con puntos y stepper (componentes de la lección 2.4) */
+.order li{min-width:0}
+.order li .txt{min-width:0}
+.order li .txt small{display:block;font-weight:600;color:var(--good);margin-top:3px}
+.order li .mv button{color:var(--ink)}
+.order li .mv button:disabled{opacity:.35;cursor:not-allowed}
+.order.locked li .mv{display:none}
+.ord-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.flow{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.flow svg{display:block;width:100%;height:auto}
+.flow .hs{font-size:.85rem;width:34px;height:34px;border-width:2px}
+.flow-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:8px 0 0}
+.flow-legend span{display:inline-flex;align-items:center;gap:6px}
+.flow-legend i{width:14px;height:14px;border-radius:4px;display:inline-block}
+.stp{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start;margin-top:12px}
+.stp>*{min-width:0}
+.stp .sstep{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:center;font-weight:800;font-size:.92rem}
+.stp .sstep .n{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.stp .sstep.on .n{background:var(--teal);color:var(--on-accent)}
+.stp .sstep.ok .n{background:var(--good);color:var(--on-accent)}
+.stp-panel{border:1px solid var(--line);border-radius:20px;padding:16px 18px;background:var(--surface3)}
+.stp-panel h3{margin-top:0}
+.stp-panel .ctx{color:var(--ink2)}
+.stp-panel .datatbl td.diff{color:var(--bad);font-weight:900}
+.stp-next{margin-top:12px}
+.stp-log{margin-top:14px;border:1px dashed var(--mint-line);border-radius:16px;background:var(--callout-bg);padding:12px 14px}
+.stp-log h4{margin:0 0 6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--teal-ink)}
+.stp-log ol{margin:0;padding-left:1.2rem;display:grid;gap:4px;font-size:.88rem}
+.stp-log ol:empty::before{content:"Aún no hay registros: se completan a medida que avanzas.";color:var(--muted);margin-left:-1.2rem}
+@media(max-width:860px){.stp{grid-template-columns:1fr}.stp .steps-side{display:flex;flex-wrap:wrap;gap:8px}.stp .sstep{grid-template-columns:28px auto}.stp .sstep span:last-child{display:none}.stp .sstep.on span:last-child{display:inline}}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.3 · Automatización y proyecto integrador</span>
+      <h1 class="reveal">Un cierre asistido, con control humano</h1>
+      <p class="lead reveal">El piloto de novedades funcionó: de <strong>10 a 3 horas al mes</strong> y de 6 a 1 error. Ahora Rodrigo pide rediseñar el cierre completo usando IA donde aporte.</p>
+      <div class="story reveal"><strong>Rodrigo:</strong> “Dibujemos el flujo nuevo. Quiero saber qué hace la IA, qué hace el sistema y dónde revisa una persona.”</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Equipo de tres personas revisando un diagrama de flujo proyectado en una sala de reuniones" src="img/i43_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Dónde deben ubicarse los puntos de control humano?</h3>
+  <div class="options" data-choice="hook" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Antes de cada paso que cambia datos oficiales o un pago: al validar novedades, al corregir alertas y al aprobar la nómina.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Solo al final, cuando la nómina ya está pagada.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>En ninguna parte: si la IA está bien configurada, no hace falta.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: errores que ya se pagaron.</strong> <span class="fb-body">Revisar después del pago obliga a reliquidar, pedir devoluciones y explicar el error a las personas. El control debe evitar el error, no solo encontrarlo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: nadie responde por el resultado.</strong> <span class="fb-body">La IA puede equivocarse con total seguridad y los datos de entrada cambian cada mes. Siempre hay una persona responsable que revisa y aprueba.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-A"><div class="feedback good"><strong>Así se diseña.</strong> <span class="fb-body">El control humano va justo antes de que algo se vuelva oficial o se pague. En esta lección ordenarás el flujo y verás qué hace cada actor.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: el flujo asistido" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>IA, sistema y personas en el mismo flujo</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ORDENAR EL FLUJO -->
+<section class="slide" data-title="Ordena el flujo" data-audio="p03" data-gate="orden" data-gate-msg="Ordena correctamente los siete pasos del flujo.">
+  <span class="eyebrow amber">Lección 4.3 · Actividad</span>
+  <h2>Ordena el flujo del cierre asistido</h2>
+  <p>Estos son los siete pasos del nuevo cierre, pero están desordenados. <strong>Usa las flechas</strong> para moverlos y luego presiona <b>Comprobar orden</b>. Puedes intentarlo las veces que necesites.</p>
+  <div id="ordRoot">
+    <div class="task">Pasos en su lugar <span class="tick">0 / 7</span></div>
+    <ol class="order" aria-label="Pasos del flujo del cierre"></ol>
+    <div class="ord-actions"><button class="small-btn primary" type="button" id="ordCheck">Comprobar orden</button></div>
+    <div class="fb" style="margin-top:10px"></div>
+  </div>
+</section>
+
+<!-- 4 · DIAGRAMA CON PUNTOS -->
+<section class="slide" data-title="Quién hace qué" data-audio="p04" data-gate="diag" data-gate-msg="Revisa los cinco puntos del diagrama.">
+  <span class="eyebrow violet">Lección 4.3 · El diagrama</span>
+  <h2>Quién hace qué en el cierre asistido</h2>
+  <p>Cada etapa tiene un actor principal y un registro que deja evidencia. <strong>Toca cada número</strong> del diagrama.</p>
+  <div data-hotspot="diag">
+    <div class="task">Etapas revisadas <span class="tick">0 / 5</span></div>
+    <div class="hs-wrap">
+      <div>
+        <div class="flow">
+          <svg viewBox="0 0 800 340" role="img" aria-label="Diagrama del cierre asistido en cinco etapas: novedades, validación, cálculo, controles y aprobación">
+            <rect width="800" height="340" fill="#fbfcfd"/>
+            <g font-size="13" font-weight="800" fill="#5f7180"><text x="20" y="74">IA</text><text x="20" y="174">Persona</text><text x="20" y="274">Sistema</text></g>
+            <g stroke="#e3eaee" stroke-width="1"><line x1="90" y1="110" x2="790" y2="110"/><line x1="90" y1="210" x2="790" y2="210"/></g>
+            <g stroke="#8aa0aa" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+              <path d="M178 70 L218 160"/><path d="M318 170 L358 260"/><path d="M458 270 L498 70"/><path d="M598 70 L638 160"/>
+            </g>
+            <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8aa0aa"/></marker></defs>
+            <rect x="90" y="40" width="120" height="60" rx="14" fill="#efe9ff" stroke="#7c5cd6" stroke-width="2"/><text x="150" y="66" text-anchor="middle" font-size="13" font-weight="800" fill="#3d2c7a">1 · Novedades</text><text x="150" y="84" text-anchor="middle" font-size="11" fill="#3d2c7a">ordena y marca dudas</text>
+            <rect x="215" y="140" width="120" height="60" rx="14" fill="#fff4e0" stroke="#e0911b" stroke-width="2"/><text x="275" y="166" text-anchor="middle" font-size="13" font-weight="800" fill="#7a4a06">2 · Validación</text><text x="275" y="184" text-anchor="middle" font-size="11" fill="#7a4a06">aclara con jefaturas</text>
+            <rect x="345" y="240" width="120" height="60" rx="14" fill="#e3f6f4" stroke="#159aa3" stroke-width="2"/><text x="405" y="266" text-anchor="middle" font-size="13" font-weight="800" fill="#0c5a60">3 · Cálculo</text><text x="405" y="284" text-anchor="middle" font-size="11" fill="#0c5a60">liquidaciones oficiales</text>
+            <rect x="490" y="40" width="120" height="60" rx="14" fill="#efe9ff" stroke="#7c5cd6" stroke-width="2"/><text x="550" y="66" text-anchor="middle" font-size="13" font-weight="800" fill="#3d2c7a">4 · Controles</text><text x="550" y="84" text-anchor="middle" font-size="11" fill="#3d2c7a">cuadra y señala alertas</text>
+            <rect x="630" y="140" width="140" height="60" rx="14" fill="#fff4e0" stroke="#e0911b" stroke-width="2"/><text x="700" y="166" text-anchor="middle" font-size="13" font-weight="800" fill="#7a4a06">5 · Aprobación</text><text x="700" y="184" text-anchor="middle" font-size="11" fill="#7a4a06">cuatro ojos y pago</text>
+          </svg>
+          <button class="hs" type="button" data-k="0" style="left:27%;top:7%">1</button>
+          <button class="hs" type="button" data-k="1" style="left:42.6%;top:36.5%">2</button>
+          <button class="hs" type="button" data-k="2" style="left:58.8%;top:66%">3</button>
+          <button class="hs" type="button" data-k="3" style="left:77%;top:7%">4</button>
+          <button class="hs" type="button" data-k="4" style="left:95.5%;top:36.5%">5</button>
+        </div>
+        <div class="flow-legend"><span><i style="background:#efe9ff;border:2px solid #7c5cd6"></i> IA asiste</span><span><i style="background:#fff4e0;border:2px solid #e0911b"></i> Persona decide</span><span><i style="background:#e3f6f4;border:2px solid #159aa3"></i> Sistema calcula</span></div>
+      </div>
+      <div class="hs-panel"><p class="hint">Selecciona un número del diagrama para ver qué ocurre en esa etapa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · STEPPER -->
+<section class="slide" data-title="Paso a paso: el primer cierre" data-audio="p05" data-gate="stepper" data-gate-msg="Completa los cinco pasos del cierre.">
+  <span class="eyebrow amber">El caso de Camila · Cierre de noviembre</span>
+  <h2>Camila ejecuta el primer cierre asistido</h2>
+  <p>Acompaña a Camila en cada etapa. En cada una, <strong>elige la mejor decisión</strong>. Cada paso correcto deja una línea en la bitácora del cierre.</p>
+  <div class="stp" id="stpRoot">
+    <div class="steps-side" aria-label="Etapas del cierre"></div>
+    <div>
+      <div class="stp-panel" aria-live="polite"></div>
+      <div class="stp-log"><h4>🗂️ Bitácora del cierre</h4><ol></ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 7 · TRANSFERENCIA -->
+<section class="slide" data-title="Tu etapa asistida" data-audio="p07" data-gate="etapa etapa_model pass" data-gate-msg="Genera tu diseño y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Diseña una etapa asistida de tu proceso</h2>
+  <p>Elige una etapa de tu cierre. <strong>Completa cada elemento</strong>, genera tu diseño, compáralo con la respuesta modelo y cópialo.</p>
+  <div data-builder="etapa">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi diseño</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> la IA asiste en lo repetitivo, el sistema calcula lo oficial, una persona decide antes de que algo se pague y cada decisión queda registrada. Revisa la explicación bajo cada elemento.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 8 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p08" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.3</h2>
+    <p>Ya sabes diseñar un flujo de cierre asistido por IA con puntos de control humano y registro.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la IA asiste, el sistema calcula y una persona decide antes de pagar, con registro de cada paso. En la próxima lección armarás tu proyecto integrador.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar el diagrama</button><button class="small-btn primary" type="button" data-goto="4">Repasar el cierre</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
