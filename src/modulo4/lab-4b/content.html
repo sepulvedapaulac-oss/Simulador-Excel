@@ -1,0 +1,87 @@
+<style>
+/* Laboratorio 4B · simulador de flujo con puntos de control */
+.fl{display:grid;gap:10px;margin-top:12px}
+.fl-row{display:grid;grid-template-columns:34px minmax(0,1fr) 210px;gap:10px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:var(--surface)}
+.fl-row .n{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--chip);font-weight:900}
+.fl-row small{display:block;color:var(--muted);font-weight:600;margin-top:2px}
+.fl-row select{width:100%;padding:8px 10px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.fl-row.ia{border-left:5px solid #7c5cd6}.fl-row.sis{border-left:5px solid #159aa3}.fl-row.per{border-left:5px solid #e0911b}
+@media(max-width:700px){.fl-row{grid-template-columns:30px minmax(0,1fr)}.fl-row select{grid-column:1/-1}}
+.sim-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.sim-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+@media(max-width:700px){.sim-kpi{grid-template-columns:1fr}}
+.sim-kpi div{border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:var(--surface2)}
+.sim-kpi b{display:block;font-size:1.4rem;font-variant-numeric:tabular-nums}
+.inc{display:grid;gap:8px;margin-top:12px}
+.inc div{border-radius:14px;padding:10px 12px;font-size:.9rem;border:1px solid var(--line)}
+.inc .ok{background:var(--good-soft);border-color:var(--good-line)}
+.inc .no{background:var(--bad-soft);border-color:var(--bad-line)}
+</style>
+
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 4B · Módulo 4</span>
+  <h1>Simulador de flujo con puntos de control</h1>
+  <p class="lead">Rodrigo quiere ver si el nuevo flujo del cierre resiste un mes difícil. Tú diseñarás quién hace cada etapa y el simulador lanzará <strong>cinco incidentes reales</strong> para ver cuáles se detectan antes del pago.</p>
+  <div class="grid-2">
+    <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
+      <ul class="elem-list" style="margin-top:8px"><li><b>1. Diseñar y simular:</b> asigna a cada etapa la IA, el sistema o una persona, y simula el mes hasta que ningún incidente llegue al pago.</li><li><b>2. Reflexionar:</b> dos decisiones sobre tu diseño.</li></ul>
+      <p style="margin:8px 0 0">Puntaje: diseño (40 %) + incidentes controlados (40 %) + reflexión (20 %). Apruebas con <b>70%</b>.</p></div>
+    <div class="story" style="margin-top:0"><strong>Ojo con el tiempo:</strong> el equipo dispone de <b>20 horas</b> para el cierre. Si todo lo hace una persona, no alcanza; si nada lo revisa una persona, los errores llegan al pago.</div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · DISEÑAR Y SIMULAR -->
+<section class="slide" data-title="Etapa 1: diseñar y simular" data-gate="sim" data-gate-msg="Ajusta el diseño y simula hasta controlar los cinco incidentes.">
+  <span class="lab-badge">Etapa 1 de 2</span>
+  <h2>Diseña el flujo y simula el mes</h2>
+  <p>Elige quién hace cada etapa. Luego presiona <b>Simular el mes</b>. Si algún incidente llega al pago, revisa la explicación, ajusta el diseño y vuelve a simular.</p>
+  <div id="simRoot">
+    <div class="fl"></div>
+    <div class="sim-bar"><button class="small-btn primary" type="button" id="simRun">▶ Simular el mes</button><span class="hint" id="simInfo">Simulaciones: 0</span></div>
+    <div id="simOut" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 3 · REFLEXIONAR -->
+<section class="slide" data-title="Etapa 2: reflexionar" data-gate="v1 v2" data-gate-msg="Responde las dos decisiones.">
+  <span class="lab-badge">Etapa 2 de 2</span>
+  <h2>¿Qué aprendiste de la simulación?</h2>
+  <h3 style="margin-top:16px">1 · Rodrigo propone que la IA también calcule las liquidaciones “para ganar tiempo”. ¿Qué le respondes?</h3>
+  <div class="options" data-choice="v1" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Que sí: la IA es más rápida que el sistema.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Que sí, si una persona revisa las 422 liquidaciones a mano.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Que no: el sistema calcula con los parámetros vigentes y es la fuente oficial; la IA aporta en ordenar, señalar y redactar.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v1-A"><div class="feedback bad"><strong>El cálculo ya es rápido.</strong> <span class="fb-body">El sistema calcula en minutos y con los parámetros oficiales. La IA podría equivocarse en un cálculo sin que nadie lo note.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v1-B"><div class="feedback bad"><strong>Se pierde todo el ahorro.</strong> <span class="fb-body">Revisar a mano 422 liquidaciones consume más tiempo del que se gana. El cálculo oficial queda en el sistema.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v1-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Cada actor hace lo que mejor sabe hacer: la IA asiste, el sistema calcula y la persona decide.</span></div></template>
+
+  <h3 style="margin-top:16px">2 · ¿Qué tienen en común las etapas que asignaste a una persona?</h3>
+  <div class="options" data-choice="v2" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Están justo antes de que algo se cargue al sistema o se pague, y requieren criterio.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Son las etapas más fáciles del cierre.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Son las que la IA no conoce todavía.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v2-B"><div class="feedback bad"><strong>Al contrario.</strong> <span class="fb-body">Son las que requieren criterio y responsabilidad: validar lo dudoso, decidir sobre alertas y aprobar.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v2-C"><div class="feedback bad"><strong>No es un tema de conocimiento.</strong> <span class="fb-body">Aunque la IA mejore, alguien debe responder por las decisiones que afectan pagos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v2-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Los puntos de control humano se ubican donde se decide y antes del impacto en el pago.</span></div></template>
+</section>
+
+<!-- 4 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labDet">—</div><small>Etapas bien asignadas · incidentes controlados (mejor simulación)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+  </div>
+  <div class="callout"><strong>Regla para diseñar cualquier flujo asistido:</strong>
+    <div class="promptbox">La IA ordena, clasifica, señala y redacta. El sistema de remuneraciones calcula lo oficial. Una persona valida lo dudoso, decide sobre cada alerta y aprueba antes de pagar, con un segundo revisor. Cada decisión queda registrada con responsable, evidencia y fecha.</div></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" data-goto="1">Volver al simulador</button><button class="small-btn primary" type="button" data-goto="2">Volver a la reflexión</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios. Ningún dato sale de tu navegador.</p>
+</section>
