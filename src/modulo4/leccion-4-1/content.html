@@ -1,0 +1,188 @@
+<style>
+/* Lección 4.1 · matriz de impacto y esfuerzo (usa el clasificador del motor con cuatro cuadrantes) */
+.mx-wrap{display:grid;grid-template-columns:26px minmax(0,1fr);gap:8px;align-items:stretch}
+.mx-wrap .bins{grid-template-columns:1fr 1fr}
+.mx-wrap .bin{min-height:150px}
+.mx-ax{position:absolute;font-size:.76rem;font-weight:850;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.mx-ax.y{position:static;writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;white-space:nowrap}
+.mx-ax.x{position:static;display:flex;justify-content:space-between;margin:8px 0 0 34px}
+.task-meta{display:block;font-weight:600;font-size:.78rem;color:var(--muted);margin-top:3px}
+@media(max-width:860px){.mx-wrap{display:block}.mx-ax.y{display:none}.mx-ax.x{display:none}.mx-wrap .bins{grid-template-columns:1fr}.mx-wrap .bin{min-height:90px}}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.1 · Automatización y proyecto integrador</span>
+      <h1 class="reveal">¿Qué conviene automatizar primero?</h1>
+      <p class="lead reveal">El cierre mensual de AndesCorp toma <strong>seis días hábiles</strong>. Camila calcula que casi la mitad del tiempo se va en tareas repetitivas: copiar novedades desde correos, cuadrar planillas y responder las mismas consultas.</p>
+      <div class="story reveal"><strong>Rodrigo:</strong> “Leí que la IA puede hacer todo el cierre sola. ¿Por qué no lo automatizamos completo desde el próximo mes?”</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista ordenando notas adhesivas en una matriz de dos por dos sobre una pared de vidrio" src="img/i41_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué le propondrías a Rodrigo?</h3>
+  <div class="options" data-choice="hook" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Automatizar todo el cierre de una vez: mientras antes, mejor.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Hacer un inventario de tareas, priorizarlas por impacto, esfuerzo y riesgo, y empezar por una con control humano definido.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Comprar primero una herramienta de automatización y después ver en qué usarla.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: riesgo alto y difícil de controlar.</strong> <span class="fb-body">Si se automatiza todo a la vez y algo falla, nadie sabe dónde está el error. Además, hay tareas que requieren criterio, como aprobar un finiquito o responder un reclamo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: una solución buscando un problema.</strong> <span class="fb-body">Sin saber qué tareas consumen tiempo ni cuáles son seguras de automatizar, la herramienta puede terminar sin uso o aplicada donde no conviene.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback good"><strong>Así se empieza.</strong> <span class="fb-body">Automatizar bien es elegir: tareas repetitivas, con reglas claras y riesgo controlable, una a la vez y con una persona responsable del resultado. En esta lección aprenderás a priorizarlas.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: oportunidades" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Automatizar con criterio</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · FLASHCARDS: CRITERIOS -->
+<section class="slide" data-title="Cuatro criterios" data-audio="p03" data-gate="crit" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow violet">Lección 4.1 · Criterios</span>
+  <h2>¿Cuándo conviene automatizar una tarea?</h2>
+  <p>Una buena candidata cumple estos cuatro criterios. <strong>Voltea cada tarjeta.</strong></p>
+  <div data-flip="crit">
+    <div class="task">Tarjetas revisadas <span class="tick">0 / 4</span></div>
+    <div class="flipdeck">
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔁</div><strong>Repetitiva y frecuente</strong><span>¿Qué significa?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Se hace igual muchas veces</strong><span>Todos los meses, con los mismos pasos y bastante volumen. <b>Ejemplo:</b> consolidar 60 correos de novedades en una planilla. Una tarea que ocurre una vez al año rara vez justifica el esfuerzo.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📏</div><strong>Regla clara</strong><span>¿Qué significa?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Se puede escribir como “si… entonces…”</strong><span>Si las horas extra del sistema no coinciden con la asistencia, se marca para revisar. <b>Ojo:</b> si la decisión depende de criterio o negociación, la tarea se asiste, no se automatiza.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🗂️</div><strong>Datos ordenados y confiables</strong><span>¿Qué significa?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Entradas con estructura estable</strong><span>Formularios, planillas con columnas fijas o reportes del sistema. Si cada jefatura envía las novedades en un formato distinto, primero se ordena la entrada y después se automatiza.</span></div></div></button>
+      <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🛡️</div><strong>Riesgo controlable</strong><span>¿Qué significa?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Un error se detecta antes de pagar</strong><span>Existe un punto de control humano y una forma de verificar el resultado. Las tareas que afectan directamente el pago o los datos sensibles necesitan revisión antes de aplicarse.</span></div></div></button>
+    </div>
+  </div>
+  <div class="callout"><strong>Regla práctica:</strong> automatiza lo repetitivo; deja a las personas lo que requiere criterio, empatía o responsabilidad legal.</div>
+</section>
+
+<!-- 4 · MATRIZ -->
+<section class="slide" data-title="Matriz impacto-esfuerzo" data-audio="p04" data-gate="matriz" data-gate-msg="Ubica las ocho tareas en la matriz.">
+  <span class="eyebrow amber">Lección 4.1 · Actividad</span>
+  <h2>Prioriza las tareas del cierre</h2>
+  <p>Camila hizo un inventario de tareas. Cada tarjeta indica las horas que se ahorrarían al mes y lo que haría falta para automatizarla. <strong>Arrastra o toca cada tarea y ubícala en el cuadrante que corresponde.</strong></p>
+  <div data-sort="matriz">
+    <div class="task">Tareas ubicadas <span class="tick">0 / 8</span></div>
+    <div class="pool"></div>
+    <div class="mx-wrap"><span class="mx-ax y">Mayor impacto →</span><div class="bins"></div></div>
+    <div class="mx-ax x"><span>← Menor esfuerzo</span><span>Mayor esfuerzo →</span></div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 5 · PESTAÑAS: HERRAMIENTAS -->
+<section class="slide" data-title="Tipos de herramientas" data-audio="p05" data-gate="herr" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Lección 4.1 · Herramientas</span>
+  <h2>No todo se automatiza con IA</h2>
+  <p>Cada tipo de herramienta resuelve un problema distinto. <strong>Revisa las cuatro pestañas.</strong></p>
+  <div data-tabs="herr">
+    <div class="task">Pestañas revisadas <span class="tick">1 / 4</span></div>
+    <div class="tabs"><button class="tab" type="button">📐 Planilla</button><button class="tab" type="button">✦ IA generativa</button><button class="tab" type="button">🔁 Flujos</button><button class="tab" type="button">🏢 Sistema</button></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Cuadrar las horas extra de asistencia con las de la nómina usando BUSCARX y una columna de diferencia.</div><div><h3 style="margin-top:0">Fórmulas, tablas y consultas de planilla</h3><ul class="elem-list"><li><b>Sirven para:</b> cálculos y controles con reglas exactas.</li><li><b>Ventaja:</b> resultado verificable, sin costo adicional.</li><li><b>Cuidado:</b> documentar la planilla y protegerla para que nadie rompa una fórmula.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Redactar el borrador del informe de variaciones o una respuesta a una consulta frecuente.</div><div><h3 style="margin-top:0">Asistentes de IA generativa</h3><ul class="elem-list"><li><b>Sirven para:</b> redactar, resumir, clasificar textos y proponer fórmulas.</li><li><b>Ventaja:</b> rapidez con textos y tareas poco estructuradas.</li><li><b>Cuidado:</b> puede equivocarse con seguridad. Siempre hay revisión humana y nunca reemplaza el cálculo del sistema.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Un formulario de novedades que guarda cada respuesta en una planilla y avisa a Compensaciones.</div><div><h3 style="margin-top:0">Flujos automáticos</h3><ul class="elem-list"><li><b>Sirven para:</b> mover información entre aplicaciones y enviar avisos.</li><li><b>Ventaja:</b> eliminan el copiar y pegar.</li><li><b>Cuidado:</b> definir quién lo mantiene, qué pasa si falla y quién tiene acceso a los datos.</li></ul></div></div>
+    <div class="tabpane"><div class="example" style="margin:0"><strong>Ejemplo</strong><br/>Activar la carga masiva de novedades o los reportes programados que el sistema ya incluye.</div><div><h3 style="margin-top:0">Funciones del sistema de remuneraciones</h3><ul class="elem-list"><li><b>Sirven para:</b> cálculos oficiales, cargas masivas y reportes estándar.</li><li><b>Ventaja:</b> es la fuente oficial y ya está validada.</li><li><b>Cuidado:</b> revisar primero lo que el sistema ya hace antes de construir algo por fuera.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 6 · CASO -->
+<section class="slide" data-title="Caso: el primer piloto" data-audio="p06" data-gate="caso" data-gate-msg="Resuelve las tres decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Modernizar el cierre</span>
+  <h2>Camila elige el primer piloto</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>La situación:</strong> Rodrigo aprobó un piloto de tres meses. Camila debe elegir la tarea, definir cómo participa la IA y explicar cómo medirá si funcionó.</div>
+    <div class="photo-frame"><img alt="Notebook con un flujo automatizado de cinco pasos marcados con visto bueno" src="img/i41_b.jpg"/></div>
+  </div>
+
+  <h3 style="margin-top:18px">Decisión 1 · ¿Con qué tarea parte el piloto?</h3>
+  <div class="options" data-choice="caso1" data-correct="A" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Consolidar las novedades que llegan por correo: 10 horas al mes, mismos pasos cada mes y se puede ordenar con un formulario.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Calcular los finiquitos con IA, porque son los casos más complejos.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Integrar el sistema de asistencia con remuneraciones, aunque Tecnología lo puede programar recién en seis meses.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el riesgo más alto en el primer paso</div><div class="branch-body"><div><p>Los finiquitos tienen poco volumen, mucho criterio y efecto legal directo. Un error genera reclamos y multas. No es un buen primer piloto.</p></div><div><p class="hint">Busca volumen, regla clara y riesgo bajo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el piloto no empieza</div><div class="branch-body"><div><p>Es una buena idea de largo plazo, pero depende de otra área y no se puede probar en tres meses. Queda en la cartera como proyecto mayor.</p></div><div><p class="hint">Un piloto debe poder probarse pronto.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Buena elección</div><div class="branch-body"><div><p>Es repetitiva, tiene volumen, la regla es clara y un error se detecta en la cuadratura antes de pagar. Es una victoria rápida.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · Las jefaturas a veces escriben novedades ambiguas (“pagar lo de siempre a Juan”). ¿Cómo participa la IA?</h3>
+    <div class="options" data-choice="caso2" data-correct="B" data-then="caso3">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La IA interpreta cada correo y carga las novedades directo en el sistema, sin revisión.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Un formulario ordena la entrada; la IA clasifica los casos ambiguos y los marca, y Camila los aclara con la jefatura antes de cargar.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Mejor no usar IA: seguir copiando a mano.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: pagos con supuestos</div><div class="branch-body"><div><p>“Lo de siempre” puede ser un bono, horas extra o nada. Si la IA lo interpreta sola, se paga algo que nadie aprobó.</p></div><div><p class="hint">Lo ambiguo lo resuelve una persona.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde la oportunidad</div><div class="branch-body"><div><p>La tarea cumple los criterios. El problema no es la IA, sino dónde se ubica el control humano.</p></div><div><p class="hint">Busca la combinación de herramienta y control.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La herramienta hace lo repetitivo, la IA señala lo dudoso y la persona decide. El punto de control queda antes de la carga.</p></div><div><p class="hint">Última decisión.</p></div></div></div></template>
+  </div>
+
+  <div class="phase" id="caso3" hidden>
+    <h3 style="margin-top:18px">Decisión 3 · ¿Cómo sabrá Camila si el piloto funcionó?</h3>
+    <div class="options" data-choice="caso3" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Preguntándole al equipo si siente que el cierre es más rápido.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Contando cuántas veces se usó la herramienta.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Midiendo antes y después las horas dedicadas y los errores de novedades detectados en la cuadratura.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso3-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: sin evidencia</div><div class="branch-body"><div><p>La percepción es útil, pero no permite decidir si conviene extender el piloto ni demostrar el ahorro.</p></div><div><p class="hint">Necesitas una línea base.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se mide actividad, no resultado</div><div class="branch-body"><div><p>Usar mucho una herramienta no significa ahorrar tiempo ni reducir errores.</p></div><div><p class="hint">Mide lo que querías mejorar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso3-C"><div class="branch good"><div class="branch-head">✓ Piloto bien definido</div><div class="branch-body"><div><p>Con la línea base de 10 horas y 6 errores al mes, Camila podrá mostrar el resultado con cifras al final de los tres meses.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 7 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 8 · TRANSFERENCIA -->
+<section class="slide" data-title="Tu ficha de oportunidad" data-audio="p08" data-gate="ficha ficha_model pass" data-gate-msg="Genera tu ficha y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Arma la ficha de una oportunidad de automatización</h2>
+  <p>Piensa en una tarea repetitiva de tu trabajo. <strong>Completa cada elemento</strong>, genera tu ficha, compárala con la respuesta modelo y cópiala.</p>
+  <div data-builder="ficha">
+    <div class="builder"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary mk" type="button">Generar mi ficha</button><button class="small-btn model-btn" type="button" disabled>Ver respuesta modelo</button></div>
+    <div class="out-wrap" hidden></div>
+    <div class="callout model" hidden><strong>Idea clave de la respuesta modelo:</strong> una tarea repetitiva con regla clara, la herramienta más simple que la resuelve, un punto de control humano antes de pagar y un indicador medido antes y después. Revisa la explicación bajo cada elemento.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 9 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p09" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.1</h2>
+    <p>Ya sabes identificar y priorizar oportunidades de automatización en el proceso de remuneraciones.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y clasificaciones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> automatiza lo repetitivo, con regla clara y riesgo controlable, una tarea a la vez y con control humano. En la próxima lección configurarás asistentes de IA para tareas administrativas.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar la matriz</button><button class="small-btn primary" type="button" data-goto="5">Repasar el caso</button></div>
+    <p class="sources">Imágenes: Canva. Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
