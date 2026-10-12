@@ -1,0 +1,166 @@
+<style>
+/* Lección 3.4 · editor de informe: marcar frases que deben corregirse */
+.memo{border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow);padding:16px 18px;line-height:1.75}
+.memo-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line2);padding-bottom:8px;margin-bottom:8px;font-size:.86rem;color:var(--muted)}
+.memo-head b{color:var(--ink)}
+.sent{all:unset;cursor:pointer;border-radius:6px;padding:1px 3px;transition:background .15s}
+.sent:hover{background:var(--chip)}
+.sent:focus-visible{outline:3px solid var(--teal2)}
+.sent.flag{background:var(--bad-soft);text-decoration:line-through;text-decoration-color:var(--bad);cursor:default}
+.sent.okc{background:var(--good-soft);cursor:default}
+.fixbox{margin-top:12px;display:grid;gap:8px}
+.fix{border:1px solid var(--bad-line);border-left:5px solid var(--bad);border-radius:14px;background:var(--surface2);padding:10px 12px;font-size:.92rem}
+.fix .tagp{display:inline-block;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--bad);margin-bottom:4px}
+.fix .rw{margin-top:6px;padding:8px 10px;border-radius:10px;background:var(--good-soft);border:1px solid var(--good-line)}
+.memo-msg{margin-top:10px}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-gate="hook" data-gate-msg="Responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.4 · Informes ejecutivos con IA</span>
+      <h1 class="reveal">Una página para la gerencia</h1>
+      <p class="lead reveal">Camila ya sabe por qué octubre subió 8 %. Ahora debe escribir el informe para la gerenta. Le pidió a la IA un borrador y llegó en segundos, bien redactado y con tono profesional.</p>
+      <div class="story reveal"><strong>Rodrigo:</strong> “Se ve impecable. Envíalo ya, que la reunión es a las tres.”</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Analista presentando un informe ejecutivo impreso con gráficos a una gerenta" src="img/i34_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">¿Qué debería hacer Camila con el borrador?</h3>
+  <div class="options" data-choice="hook" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviarlo: la redacción es muy buena.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Revisar cada frase contra la base y el análisis, corregir lo necesario y pedir una segunda lectura antes de enviarlo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Reescribirlo desde cero sin IA, por las dudas.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: el informe lleva errores con la firma de Camila.</strong> <span class="fb-body">Una buena redacción no garantiza cifras correctas. Como verás, el borrador tiene cinco frases que no pueden llegar a la gerencia.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: tiempo perdido.</strong> <span class="fb-body">El borrador tiene mucho que sirve. Lo eficiente es revisarlo con método: verificar, corregir y aprobar.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="hook-B"><div class="feedback good"><strong>La IA redacta; tú firmas.</strong> <span class="fb-body">En esta lección revisarás el borrador frase por frase y armarás tu lista de verificación antes de enviar.</span></div></template>
+</section>
+
+<!-- 2 · VIDEO -->
+<section class="slide" data-title="Video: el informe ejecutivo" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Un informe para decidir</h2>
+  <p>Video sin narración: los textos aparecen en pantalla. Puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · LÍNEA DE TIEMPO -->
+<section class="slide" data-title="Del dato al informe" data-gate="linea" data-gate-msg="Revisa las seis etapas de la línea de tiempo.">
+  <span class="eyebrow violet">Lección 3.4 · El proceso</span>
+  <h2>Tres días, seis etapas</h2>
+  <p>Así preparó Camila el informe de octubre. <strong>Toca cada etapa</strong> de la línea de tiempo.</p>
+  <div data-panel="linea">
+    <div class="task">Etapas revisadas <span class="tick">0 / 6</span></div>
+    <div class="tline" style="--n:6">
+      <button type="button" data-k="0"><span class="dot">❓</span><small>Pregunta y destinatario</small></button>
+      <button type="button" data-k="1"><span class="dot">🧹</span><small>Base cuadrada</small></button>
+      <button type="button" data-k="2"><span class="dot">🧮</span><small>Cálculo y efectos</small></button>
+      <button type="button" data-k="3"><span class="dot">✍️</span><small>Borrador con IA</small></button>
+      <button type="button" data-k="4"><span class="dot">🔎</span><small>Verificar cada frase</small></button>
+      <button type="button" data-k="5"><span class="dot">👀</span><small>Segunda lectura y envío</small></button>
+    </div>
+    <div class="xp-panel"><p class="hint" style="margin:0">Selecciona una etapa para ver la explicación.</p></div>
+  </div>
+</section>
+
+<!-- 4 · EDITOR DE INFORME -->
+<section class="slide" data-title="Edita el borrador" data-gate="memo" data-gate-msg="Marca las cinco frases que deben corregirse.">
+  <span class="eyebrow amber">Lección 3.4 · Actividad</span>
+  <h2>Marca las frases que no pueden llegar a la gerencia</h2>
+  <p>Este es el borrador de la IA. Tiene <strong>cinco frases</strong> con problemas: cifras erróneas, juicios sin evidencia, datos personales o referencias inventadas. <strong>Toca cada frase problemática.</strong> Usa los datos verificados de la lección 3.2.</p>
+  <div id="memoRoot">
+    <div class="task">Frases corregidas <span class="tick">0 / 5</span></div>
+    <div class="memo" aria-label="Borrador del informe ejecutivo">
+      <div class="memo-head"><span><b>Para:</b> Gerencia General · <b>De:</b> Compensaciones</span><span>Borrador generado por IA · Octubre 2026</span></div>
+      <div id="memoText"></div>
+    </div>
+    <div class="memo-msg" aria-live="polite"></div>
+    <div class="fixbox"></div>
+  </div>
+</section>
+
+<!-- 5 · CASO -->
+<section class="slide" data-title="Caso: la presión del envío" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>Faltan dos horas para la reunión</h2>
+  <div class="grid-2">
+    <div class="story" style="margin-top:0"><strong>La situación:</strong> Camila corrigió las cinco frases. Rodrigo insiste en enviarlo ya; nadie más ha leído el informe. Además, la gerenta pidió “una recomendación concreta”.</div>
+    <div class="photo-frame wide"><img alt="Notebook con un informe y hojas impresas con párrafos marcados con resaltador" src="img/i34_b.jpg"/></div>
+  </div>
+  <h3 style="margin-top:18px">Decisión 1 · ¿Qué recomendación incluye?</h3>
+  <div class="options" data-choice="caso1" data-correct="A" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Presupuestar noviembre en torno a $519 M (sin bono anual) y confirmar con Operaciones, antes del 15 de noviembre, si el pedido especial mantiene las horas extra de Planta.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Congelar las contrataciones para bajar el costo.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Seguir monitoreando la situación.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ No se desprende del análisis</div><div class="branch-body"><div><p>El alza se explica sobre todo por un pago único. Congelar contrataciones es una decisión de negocio que el análisis no respalda.</p></div><div><p class="hint">La recomendación sale de los datos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ No es concreta</div><div class="branch-body"><div><p>“Monitorear” no dice qué, quién ni cuándo. La gerenta pidió algo accionable.</p></div><div><p class="hint">Qué, cuánto, quién y cuándo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Recomendación accionable</div><div class="branch-body"><div><p>Cifra respaldada por el análisis, responsable y plazo. La hipótesis de las horas extra queda explícita y con su verificación.</p></div><div><p class="hint">Última decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <h3 style="margin-top:18px">Decisión 2 · Rodrigo pide enviarlo sin segunda lectura. ¿Qué hace Camila?</h3>
+    <div class="options" data-choice="caso2" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Lo envía: ya lo revisó ella.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Le pide a la IA una segunda revisión y lo envía.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Pide a Rodrigo diez minutos para leerlo juntos contra la tabla de efectos, lo envía con fuente y período, y guarda la versión enviada con la base.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-A"><div class="branch bad"><div class="branch-head">✕ Sin control independiente</div><div class="branch-body"><div><p>Quien escribe no ve sus propios errores. Diez minutos de segunda lectura evitan un informe corregido ante la gerencia.</p></div><div><p class="hint">Cuatro ojos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ No es una segunda lectura</div><div class="branch-body"><div><p>La IA puede revisar estilo, pero no sabe si una cifra coincide con la base ni si una causa está confirmada.</p></div><div><p class="hint">La revisión es humana y con evidencia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch good"><div class="branch-head">✓ Enviado con respaldo</div><div class="branch-body"><div><p>El informe llega a tiempo, verificado por dos personas y con trazabilidad. Si la gerenta pregunta por una cifra, la base está guardada.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 6 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 7 · CHECKLIST -->
+<section class="slide" data-title="Tu checklist de envío" data-gate="envio envio_model pass" data-gate-msg="Responde las seis preguntas y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu trabajo</span>
+  <h2>Antes de enviar un informe hecho con IA</h2>
+  <div class="story">Piensa en el próximo informe que enviarás a tu jefatura. Responde <strong>Sí</strong> o <strong>No</strong> a cada pregunta.</div>
+  <div data-yn="envio">
+    <div class="yn-list" style="margin-top:12px"></div>
+    <button class="small-btn primary model-btn" type="button" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+    <div class="callout model" hidden><strong>Respuesta modelo · checklist de envío:</strong> (1) cifras cuadradas con la base; (2) hipótesis marcadas o confirmadas; (3) sin datos personales ni cargos que identifiquen; (4) referencias normativas verificadas; (5) fuente y período visibles; (6) segunda lectura y versión guardada.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 8 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.4</h2>
+    <p>Ya sabes estructurar un informe ejecutivo, revisar un borrador de IA frase por frase y enviarlo con respaldo.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y respuestas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la IA redacta; tú verificas, firmas y respondes por cada cifra. En el Módulo 4 diseñarás un flujo de cierre asistido por IA.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar el borrador</button><button class="small-btn primary" type="button" data-goto="4">Repasar el caso</button></div>
+    <p class="sources">Imágenes: Canva. Los datos, personas y empresa del caso son ficticios.</p>
+  </div>
+</section>
