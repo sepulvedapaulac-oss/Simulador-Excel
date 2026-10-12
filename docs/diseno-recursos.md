@@ -126,7 +126,7 @@ Cada módulo pesa 25 %.
 
 1. **Voz:** se genera localmente con Chatterbox (sin costo ni servicios externos).
 2. **Canva:** autorizar el conector de Canva para obtener y exportar las imágenes.
-3. **Mindsmith:** conectado (organización "Equipo de paula"). Casos creados (sin publicar): M1 `cmv38d6dx000007nooffs3n54`, M2 `cmv38qdi3000006k1j4nd1mfc`, M3 `cmv4svhtu000006l33odfrudv`.
+3. **Mindsmith:** conectado (organización "Equipo de paula"). Casos creados (sin publicar): M1 `cmv38d6dx000007nooffs3n54`, M2 `cmv38qdi3000006k1j4nd1mfc`, M3 `cmv4svhtu000006l33odfrudv`, M4 `cmv4tzacm000006pdw1ewhn55`.
 
 ## 9. Orden de producción
 
