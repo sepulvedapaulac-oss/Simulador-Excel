@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/IA en Remuneraciones/Módulo 3 · Análisis e informes con IA</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-01 Base mínima</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Camila quiere analizar con IA la variación del costo de octubre. ¿Qué base debe preparar?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Datos mínimos, con códigos y sin información sensible.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Una tabla con código de persona, área, período, conceptos y monto, sin nombre, RUT ni diagnósticos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Es la información mínima para analizar: permite agrupar y comparar sin exponer datos personales.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La exportación completa del sistema, para que la IA tenga todo el contexto.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La exportación completa incluye RUT, cuentas y diagnósticos que el análisis no necesita.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Solo el total de la empresa de cada mes.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Con un solo total no se puede explicar qué áreas o conceptos causan la variación.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Una tabla con nombres en vez de códigos, para reconocer a las personas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El nombre no aporta al análisis y aumenta el riesgo. Se usan códigos.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-02 Cuadratura</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La base preparada suma $536,3 M y el sistema informa $537,9 M para octubre. ¿Qué corresponde hacer?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Primero cuadrar, después analizar.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Buscar la diferencia y cuadrar conteo y total con el sistema antes de analizar.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Una base que no cuadra produce conclusiones sobre cifras que no son las reales.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Seguir: la diferencia es menor al 1 %.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Una diferencia pequeña puede ser una persona omitida o un concepto duplicado. Se explica antes de analizar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pedirle a la IA que ajuste los montos para que cuadren.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Ajustar montos sin causa es falsear la base. La diferencia se investiga.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usar el total del sistema y los montos por área de la base.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Mezclar fuentes que no cuadran deja el informe sin respaldo.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-03 Variación porcentual</text></name>
+    <questiontext format="html"><text><![CDATA[<p>El costo de Planta pasó de $110,3 M en septiembre a $125,7 M en octubre. ¿Cuál es su variación porcentual?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Variación % = (actual − base) / base × 100.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>+14,0 %.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> (125,7 − 110,3) / 110,3 × 100 = 14,0 %. Se divide por el valor del período base.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+12,3 %.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Ese resultado divide por octubre (125,7). La variación se calcula sobre septiembre, el período base.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+15,4 %.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> 15,4 es la variación absoluta en millones, no el porcentaje.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+38,6 %.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> 38,6 % es la participación de Planta en la variación total, no su variación porcentual.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-04 Nivel y cambio</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA afirma: “Ventas explica la mayor parte del alza porque es el área de mayor costo”. Ventas aporta $9,6 M y Planta $15,4 M de una variación de $39,9 M. ¿Qué error comete?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Participación en la variación = variación del área / variación total.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Confunde el área de mayor costo con el área de mayor variación.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Ventas es la más grande, pero Planta aporta el 38,6 % del cambio. Nivel y cambio son cosas distintas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ninguno: el área más grande siempre explica más.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Un área grande puede variar poco. Se mide la participación en la variación.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Calcula mal el total de octubre.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El total no está en discusión; el error es de interpretación.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usa miles de pesos en vez de pesos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La unidad no cambia la conclusión; el problema es comparar nivel con cambio.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-05 Referencia absoluta</text></name>
+    <questiontext format="html"><text><![CDATA[<p>En F2 Camila escribe <code>=D2/D7*100</code> para la participación y rellena hacia abajo. En F3 aparece <code>=D3/D8*100</code> y el resultado falla. ¿Cómo lo corrige?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Total fijo al rellenar: $D$7.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Fijando el total con referencia absoluta: =D2/$D$7*100.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> El signo $ impide que la referencia al total se desplace al copiar la fórmula.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Escribiendo la fórmula a mano en cada fila.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Funciona, pero es lento y propenso a errores. La referencia absoluta lo resuelve.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cambiando D7 por el número del total.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Un valor fijo escrito a mano no se actualiza si cambian los datos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usando =SUMA(D2:D6) en cada fila.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Eso suma variaciones, no calcula la participación de cada área.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-06 Descomponer la variación</text></name>
+    <questiontext format="html"><text><![CDATA[<p>El costo subió $39,9 M. Camila calcula los efectos: dotación $8,8 M, reajuste $9,2 M, horas extra $3,2 M y bonos $18,6 M. ¿Qué confirma que el análisis es consistente?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Los efectos deben sumar el total.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Que los efectos suman la variación total de $39,9 M.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Si la suma de los efectos no da el total, falta un efecto o hay un cálculo errado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que la IA esté de acuerdo con la descomposición.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El acuerdo de la IA no prueba nada. La prueba es que los efectos cuadren con el total.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que el efecto mayor sea el reajuste.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> No hay un efecto que deba ser el mayor; aquí lo es el bono anual.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que cada efecto sea menor a $10 M.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El tamaño de cada efecto no valida el análisis; la suma sí.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-07 Hecho o hipótesis</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál de estas frases del borrador del informe es una <b>hipótesis</b> que debe marcarse como tal?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Separar hechos calculados de causas posibles.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>“Las horas extra de Planta probablemente aumentaron por la mayor demanda de fin de año”.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Es una causa posible que aún no se confirma con Operaciones. Se presenta como hipótesis o se verifica.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“El costo de octubre subió 8,0 % frente a septiembre”.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Es un hecho calculado con la base cuadrada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“La dotación pasó de 412 a 420 personas”.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Es un hecho verificable en el sistema.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“El bono anual de cumplimiento sumó $18,6 M”.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Es un hecho respaldado por la carpeta de novedades y la base.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-08 Indicador con fórmula</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál es la forma correcta de calcular el <b>peso de las horas extra</b> de un área?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Cada indicador con su fórmula explícita.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Horas extra del área / costo total del área × 100.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Mide qué parte del costo del área corresponde a horas extra y permite comparar áreas de distinto tamaño.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Horas extra del área / dotación del área.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Eso es un monto de horas extra por persona, no un peso porcentual.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Horas extra del área / horas extra de la empresa × 100.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Eso es la participación del área en las horas extra de la empresa, otro indicador.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Costo del área / horas extra del área.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La relación está invertida y no tiene una interpretación útil.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-09 Gráfico honesto</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA propone un gráfico de barras en 3D con el eje vertical desde 300 para comparar el costo por área. ¿Qué ajuste lo vuelve honesto?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Eje en cero, sin 3D, título con conclusión y fuente.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Barras planas con el eje desde cero, título con la conclusión y fuente con el período.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Así las diferencias se ven en su proporción real y el gráfico se puede verificar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mantener el eje desde 300 para que se noten las diferencias.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Cortar el eje exagera las diferencias y puede llevar a una decisión equivocada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cambiarlo por un gráfico de anillo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> El anillo compara mal valores parecidos y no resuelve el problema.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Agregar más colores para distinguir mejor las áreas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Los colores decorativos distraen; basta un color y un acento en el área principal.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3-10 Antes de enviar</text></name>
+    <questiontext format="html"><text><![CDATA[<p>El informe para la gerencia está listo a las 11:30 y la entrega es a las 12:00. ¿Qué debe hacer Camila antes de enviarlo?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Segunda lectura, respaldo y trazabilidad antes de enviar.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Una segunda lectura contra la tabla de efectos, confirmar que cada cifra tiene respaldo y guardar la versión enviada con su base.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> La revisión de cuatro ojos y la trazabilidad permiten responder cualquier pregunta de la gerencia.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Enviarlo tal como lo redactó la IA, porque el texto es claro.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Un texto fluido no garantiza cifras correctas. Cada frase se revisa.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pedirle a la IA que confirme que no hay errores.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> La IA no puede validar su propio borrador contra la fuente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Enviarlo y revisarlo después con calma.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Una vez enviado, la gerencia puede decidir sobre cifras sin revisar.</p>]]></text></feedback>
+    </answer>
+  </question>
+</quiz>
