@@ -1,0 +1,73 @@
+<style>
+/* Laboratorio 3B · diseñador de gráfico del tablero */
+.dz{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;align-items:start}
+@media(max-width:860px){.dz{grid-template-columns:1fr}}
+.dz .field{display:block;margin-bottom:10px;font-weight:800;font-size:.9rem}
+.dz select,.dz input[type=text]{width:100%;margin-top:4px;padding:9px 10px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.dz .chk{display:flex;gap:8px;align-items:center;font-weight:700;margin:6px 0}
+.chart-out{border:1px solid var(--line);border-radius:18px;background:#fff;padding:10px}
+.chart-out svg{display:block;width:100%;height:auto}
+</style>
+
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 3B · Módulo 3</span>
+  <h1>Tablero de indicadores de octubre</h1>
+  <p class="lead">La gerenta pidió un tablero con tres indicadores por área: <strong>costo promedio por persona</strong>, <strong>peso de las horas extra</strong> y <strong>peso de los bonos</strong>. La IA propuso un gráfico en 3D con el eje desde 1.000. Camila decide construirlo ella misma.</p>
+  <div class="grid-2">
+    <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
+      <ul class="elem-list" style="margin-top:8px"><li><b>1. Indicadores:</b> calcúlalos con fórmulas en el simulador de Excel.</li><li><b>2. Gráfico:</b> diseña el gráfico principal del tablero sin trampas: tipo, eje, título y fuente.</li></ul>
+      <p style="margin:8px 0 0">Puntaje: indicadores (60 %) + gráfico (40 %). Apruebas con <b>70%</b>.</p></div>
+    <div class="story" style="margin-top:0"><strong>Recuerda:</strong> cada indicador tiene una fórmula. Costo promedio = costo / dotación. Peso de horas extra = horas extra / costo × 100. Peso de bonos = bonos / costo × 100.</div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · INDICADORES -->
+<section class="slide" data-title="Etapa 1: indicadores" data-gate="tabla" data-gate-msg="Completa las columnas F, G y H y presiona “Revisar mis indicadores” hasta que todos estén en verde.">
+  <span class="lab-badge">Etapa 1 de 2</span>
+  <h2>Calcula los indicadores por área</h2>
+  <p>Datos de octubre en <b>miles de pesos</b>, cuadrados con el sistema. Escribe cada fórmula en la fila 2, redondeada a un decimal con <code>REDONDEAR(…;1)</code>, y rellena hacia abajo <b>hasta la fila 7</b> (el total también lleva su indicador).</p>
+  <ol class="elem-list" style="list-style:none">
+    <li><b>F2 · Costo promedio por persona:</b> costo (C) / dotación (B).</li>
+    <li><b>G2 · Peso de las horas extra (%):</b> horas extra (D) / costo (C) × 100.</li>
+    <li><b>H2 · Peso de los bonos (%):</b> bonos (E) / costo (C) × 100.</li>
+  </ol>
+  <div id="hoja1"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" id="fillBtn">⤓ Rellenar hacia abajo (hasta la fila 7)</button><button class="small-btn primary" type="button" id="checkBtn">Revisar mis indicadores</button></div>
+  <div id="checkOut"></div>
+</section>
+
+<!-- 3 · GRÁFICO -->
+<section class="slide" data-title="Etapa 2: el gráfico" data-gate="graf" data-gate-msg="Diseña el gráfico y presiona “Revisar mi gráfico” hasta que pase los cinco controles.">
+  <span class="lab-badge">Etapa 2 de 2</span>
+  <h2>Diseña el gráfico principal del tablero</h2>
+  <p>La pregunta de la gerenta: <b>“¿Dónde pesan más las horas extra?”</b>. Elige el indicador, el tipo de gráfico y sus elementos. La vista previa usa <b>tus</b> cálculos de la etapa 1.</p>
+  <div class="dz" id="dzRoot">
+    <div>
+      <label class="field">Indicador que muestra<select id="gK"><option value="">Elige…</option><option value="F">Costo promedio por persona</option><option value="G">Peso de las horas extra (%)</option><option value="H">Peso de los bonos (%)</option></select></label>
+      <label class="field">Tipo de gráfico<select id="gT"><option value="">Elige…</option><option value="bar">Barras</option><option value="line">Líneas</option><option value="donut">Anillo</option></select></label>
+      <label class="chk"><input type="checkbox" id="gZ"/> El eje vertical parte en cero</label>
+      <label class="chk"><input type="checkbox" id="gH"/> Destacar con color solo el área principal</label>
+      <label class="chk"><input type="checkbox" id="gS"/> Incluir fuente y período</label>
+      <label class="field">Título del gráfico<input type="text" id="gTitle" placeholder="Escribe un título con la conclusión"/></label>
+      <button class="small-btn primary" type="button" id="gCheck">Revisar mi gráfico</button>
+    </div>
+    <div><div class="chart-out" id="gOut"><p class="hint" style="margin:6px">La vista previa aparece al elegir el indicador y el tipo de gráfico.</p></div><div id="gMsg" style="margin-top:10px"></div></div>
+  </div>
+</section>
+
+<!-- 4 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labDet">—</div><small>Indicadores · controles del gráfico (mejor intento)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+  </div>
+  <div class="callout"><strong>Instrucción reutilizable para pedir un gráfico a la IA:</strong>
+    <div class="promptbox">Con esta tabla de indicadores por área (datos cuadrados, octubre 2026), propón un gráfico de barras planas para comparar el peso de las horas extra. Eje vertical desde cero, un solo color con el área principal destacada, título con la conclusión y fuente con el período. Sin efectos 3D ni colores decorativos.</div></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" data-goto="1">Volver a los indicadores</button><button class="small-btn primary" type="button" data-goto="2">Volver al gráfico</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios. Ningún dato sale de tu navegador.</p>
+</section>
