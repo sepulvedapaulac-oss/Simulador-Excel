@@ -1,0 +1,88 @@
+<!-- 1 · MISIÓN -->
+<section class="slide active" data-title="Misión del laboratorio" data-gate="start" data-gate-msg="Presiona “Comenzar laboratorio”.">
+  <span class="lab-badge">Laboratorio 3A · Módulo 3</span>
+  <h1>Variaciones mensuales por área</h1>
+  <p class="lead">La gerencia quiere saber <strong>qué áreas explican el alza de 8 %</strong> del costo de octubre. La IA entregó una conclusión, pero Camila quiere comprobarla con sus propias fórmulas antes de informar.</p>
+  <div class="grid-2">
+    <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
+      <ul class="elem-list" style="margin-top:8px"><li><b>1. Calcular:</b> en el simulador de Excel, la variación absoluta, la variación porcentual y la participación de cada área en la variación total.</li><li><b>2. Verificar:</b> contrastar la conclusión de la IA con tus cálculos.</li></ul>
+      <p style="margin:8px 0 0">Puntaje: cálculos (70 %) + verificación (30 %). Apruebas con <b>70%</b>.</p></div>
+    <div class="aichat" style="margin-top:0"><div class="ahead"><span class="dot">✦</span> Asistente corporativo</div><div class="a">“Ventas es el área que más explica el alza de octubre: aporta más de la mitad del aumento. Planta subió poco.”</div></div>
+  </div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
+</section>
+
+<!-- 2 · CÁLCULOS -->
+<section class="slide" data-title="Etapa 1: calcular" data-gate="tabla" data-gate-msg="Completa las columnas D, E y F y presiona “Revisar mis cálculos” hasta que todos los controles estén en verde.">
+  <span class="lab-badge">Etapa 1 de 2</span>
+  <h2>Calcula las variaciones en el simulador de Excel</h2>
+  <div class="grid-2">
+    <div>
+      <p>Las columnas <b>B</b> y <b>C</b> tienen el costo de septiembre y octubre por área, en <b>miles de pesos</b> (datos cuadrados con el sistema). La fila 7 tiene los totales.</p>
+      <ol class="elem-list" style="list-style:none">
+        <li><b>1.</b> En <b>D2</b>: variación absoluta <code>=C2-B2</code>. Rellena hacia abajo hasta la fila 7.</li>
+        <li><b>2.</b> En <b>E2</b>: variación porcentual redondeada a un decimal, por ejemplo <code>=REDONDEAR(D2/B2*100;1)</code>. Rellena hasta la fila 7.</li>
+        <li><b>3.</b> En <b>F2</b>: participación de cada área en la variación total, en %. Debe dividir por el total <b>D7</b> fijado con <b>$</b>. Rellena hasta la fila 6.</li>
+        <li><b>4.</b> En <b>F7</b>: suma de las participaciones con <code>=SUMA(…)</code>. Debe dar 100.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>¿Por qué fijar D7 con $?</strong> Al rellenar hacia abajo, una referencia relativa se desplaza (D8, D9…). <code>$D$7</code> mantiene el total fijo en todas las filas. Si F7 no da 100, algo se desplazó.</div>
+  </div>
+  <div id="hoja1"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" id="fillBtn">⤓ Rellenar hacia abajo</button><button class="small-btn primary" type="button" id="checkBtn">Revisar mis cálculos</button></div>
+  <div id="checkOut"></div>
+</section>
+
+<!-- 3 · VERIFICAR -->
+<section class="slide" data-title="Etapa 2: verificar" data-gate="v1 v2 v3" data-gate-msg="Responde las tres preguntas de verificación.">
+  <span class="lab-badge">Etapa 2 de 2</span>
+  <h2>¿La conclusión de la IA resiste tus cálculos?</h2>
+  <div class="aichat"><div class="ahead"><span class="dot">✦</span> Asistente corporativo</div><div class="a">“Ventas es el área que más explica el alza de octubre: aporta más de la mitad del aumento. Planta subió poco.”</div></div>
+  <h3 style="margin-top:16px">1 · ¿Qué área explica la mayor parte de la variación?</h3>
+  <div class="options" data-choice="v1" data-correct="B">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Ventas, con más de la mitad, como dice la IA.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Planta, con cerca del 39 % de la variación ($15,4 M de $39,9 M).</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Bodega, porque tiene la mayor variación porcentual.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v1-A"><div class="feedback bad"><strong>Revisa la columna F.</strong> <span class="fb-body">Ventas aporta 24,1 % de la variación ($9,6 M). La IA se equivocó: es el área más grande, pero no la que más cambió.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v1-C"><div class="feedback bad"><strong>Revisa la columna E.</strong> <span class="fb-body">Bodega tiene la menor variación porcentual (3,5 %) y aporta solo $2,2 M.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v1-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Planta sube 14,0 % y aporta 38,6 % de la variación total. La afirmación de la IA era un error.</span></div></template>
+
+  <h3 style="margin-top:16px">2 · ¿Por qué la IA pudo equivocarse con Ventas?</h3>
+  <div class="options" data-choice="v2" data-correct="A">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Confundió el área de mayor costo con el área de mayor variación.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Porque los datos de Ventas están mal.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Porque la IA siempre se equivoca con los porcentajes.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v2-B"><div class="feedback bad"><strong>Los datos están cuadrados.</strong> <span class="fb-body">El error está en la interpretación, no en la base.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v2-C"><div class="feedback bad"><strong>No siempre.</strong> <span class="fb-body">La IA puede calcular bien, pero también confundir conceptos. Por eso se verifica cada afirmación.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v2-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Ventas es el área más grande ($159,8 M), pero no la que más varió. Es una confusión frecuente entre nivel y cambio.</span></div></template>
+
+  <h3 style="margin-top:16px">3 · ¿Cómo debería quedar la conclusión para la gerencia?</h3>
+  <div class="options" data-choice="v3" data-correct="C">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Todas las áreas subieron de forma similar.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Ventas explica más de la mitad del alza.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Planta explica el 39 % del alza (+$15,4 M, +14,0 %); le siguen Ventas (24 %) y Operaciones (21 %).”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="v3-A"><div class="feedback bad"><strong>No es así.</strong> <span class="fb-body">Las variaciones van de 3,5 % (Bodega) a 14,0 % (Planta).</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v3-B"><div class="feedback bad"><strong>Es la conclusión errónea de la IA.</strong> <span class="fb-body">Tus cálculos la contradicen.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="v3-C"><div class="feedback good"><strong>Conclusión verificada.</strong> <span class="fb-body">Monto, porcentaje y participación, todo respaldado por tus fórmulas.</span></div></template>
+</section>
+
+<!-- 4 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados del laboratorio</span>
+  <h2>Tu desempeño en el laboratorio</h2>
+  <div class="report" style="text-align:left">
+    <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
+    <div class="metric"><div class="big" id="labCalc">—</div><small>Controles de cálculo en verde (mejor intento)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+  </div>
+  <div class="callout"><strong>Instrucción reutilizable para tu próximo análisis:</strong>
+    <div class="promptbox">Actúa como analista de remuneraciones. Te entrego el costo por área de septiembre y octubre (miles de pesos, datos cuadrados). Calcula para cada área la variación absoluta, la variación porcentual y su participación en la variación total, y comprueba que las participaciones sumen 100 %. Distingue el área de mayor costo del área de mayor variación. No inventes causas: si propones una, márcala como hipótesis. Entrega una tabla y tres conclusiones breves.</div></div>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" data-goto="1">Volver a los cálculos</button><button class="small-btn primary" type="button" data-goto="2">Volver a la verificación</button></div>
+  <p class="sources">Laboratorio con datos completamente ficticios. Ningún dato sale de tu navegador.</p>
+</section>
