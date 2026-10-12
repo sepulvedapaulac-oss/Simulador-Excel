@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/IA en Remuneraciones/Evaluación final del curso · Parte 1</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>M1.P1 Alcance de la IA generativa</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Camila le pide a un asistente de IA el monto exacto de la liquidación de una persona. ¿Qué debe considerar?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: la IA asiste en redacción, resumen y análisis; el cálculo oficial queda en el sistema y todo resultado se verifica.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>La IA generativa puede redactar y explicar, pero puede inventar cifras; el cálculo oficial lo hace el sistema de remuneraciones.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: la IA asiste en redacción, resumen y análisis; el cálculo oficial queda en el sistema y todo resultado se verifica.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La IA calcula mejor que el sistema porque usa más datos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la IA no reemplaza al sistema oficial y puede equivocarse con total seguridad.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Si la respuesta es clara y detallada, se puede usar sin revisar.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: una respuesta fluida no es una respuesta verificada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La IA solo sirve para traducir textos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: también ayuda a resumir, clasificar, proponer fórmulas y redactar borradores.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M1.P2 Herramientas autorizadas</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué herramienta de IA corresponde usar con información de remuneraciones de la empresa?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: la herramienta autorizada tiene condiciones de uso y protección de datos definidas por la empresa.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cualquier herramienta gratuita, porque es más rápida.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: una herramienta gratuita personal puede guardar y reutilizar los datos sin control de la empresa.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>La herramienta corporativa autorizada, con acuerdo de tratamiento de datos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: la herramienta autorizada tiene condiciones de uso y protección de datos definidas por la empresa.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La que use la mayoría del equipo en su teléfono personal.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la popularidad no da autorización ni garantiza la protección de los datos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ninguna: la IA está prohibida en remuneraciones.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: se puede usar, con herramientas autorizadas, datos mínimos y verificación.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M1.P3 Estructura de una instrucción</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué instrucción tiene más probabilidades de entregar un resultado útil?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: incluye rol, tarea, contexto, información, restricciones y formato de salida.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“Explícame las horas extra.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: falta contexto, información, restricciones y formato.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“Haz un informe bueno sobre el cierre.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: “bueno” no es un criterio; la IA tendrá que suponer qué esperas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>“Actúa como analista de remuneraciones. Con esta tabla de códigos y horas extra de octubre, identifica quién supera 12 horas semanales, sin inventar datos, y entrégalo en una tabla.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: incluye rol, tarea, contexto, información, restricciones y formato de salida.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“Revisa todo y dime si está bien.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: sin reglas ni datos, la revisión queda al criterio de la IA.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M1.P4 Datos sensibles</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál de estos datos es sensible según la Ley 21.719 y no debe incluirse al trabajar con IA?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: los datos de salud son sensibles y requieren protección reforzada; el análisis no los necesita.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>El área de trabajo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el área es un dato laboral que, agregado, sirve para analizar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>El diagnóstico de una licencia médica.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: los datos de salud son sensibles y requieren protección reforzada; el análisis no los necesita.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>El período de remuneración.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el período no identifica a nadie.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>El código interno EMP-101.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el código reemplaza al nombre y al RUT; es la forma recomendada de trabajar.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M1.P5 Minimización de datos</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Para pedir a la IA un análisis de horas extra por área, ¿qué tabla corresponde entregar?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: es la información mínima necesaria, con códigos en vez de identificadores.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La exportación completa con nombre, RUT y cuenta bancaria.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: incluye datos que el análisis no necesita y que exponen a las personas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Código EMP, área, período y horas extra, sin identificadores directos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: es la información mínima necesaria, con códigos en vez de identificadores.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Solo los nombres de las personas con más horas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: los nombres no aportan al análisis y exponen datos personales.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Una foto de la pantalla del sistema.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: una captura puede mostrar datos de más y no se puede verificar fácilmente.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M2.P1 Haberes imponibles</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál de estos haberes es normalmente imponible?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: las horas extraordinarias son remuneración y, por lo tanto, imponibles.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La asignación de colación.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la colación, en monto razonable, no es imponible.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>La asignación de movilización.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la movilización, en monto razonable, no es imponible.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Las horas extraordinarias.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: las horas extraordinarias son remuneración y, por lo tanto, imponibles.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>El viático.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el viático compensa gastos del trabajo y no es imponible.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M2.P2 Fórmulas en Excel en español</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA propone =SI(D2>12,"REVISAR","OK") y Excel en español marca error. ¿Qué corriges?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: en Excel en español los argumentos se separan con punto y coma.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cambiar SI por IF.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: IF es el nombre en inglés y produce #¿NOMBRE? en Excel en español.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Reemplazar las comas por punto y coma.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: en Excel en español los argumentos se separan con punto y coma.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Quitar las comillas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: los textos dentro de una fórmula van entre comillas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Escribir el resultado a mano.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: se pierde el control automático; basta con corregir el separador.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M2.P3 Tratamiento de alertas</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA alerta que EMP-088 tiene 60 horas extra. La asistencia aprobada confirma un turno especial autorizado. ¿Qué haces?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: es un falso positivo; se descarta con evidencia y queda registrado.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Rebajar las horas al promedio del área.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: rebajar horas aprobadas genera un pago menor y un reclamo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Descartar la alerta con la evidencia de la asistencia aprobada.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: es un falso positivo; se descarta con evidencia y queda registrado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pedir a la IA que corrija el registro.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: las correcciones las decide una persona en el sistema oficial.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ignorarla sin registrar nada.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: toda alerta se cierra con una decisión registrada.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M2.P4 Premisas erróneas</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA afirma: “La jornada ordinaria máxima es de 45 horas semanales”, para una semana de mayo de 2026. ¿Qué haces?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: es una premisa errónea; la jornada se redujo a 42 horas desde el 26 de abril de 2026 y bajará a 40 en 2028.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Aceptarlo: la IA conoce la ley.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la IA puede usar información desactualizada con total seguridad.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Verificar en la fuente oficial: desde el 26 de abril de 2026 la jornada máxima es de 42 horas (Ley 21.561).</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: es una premisa errónea; la jornada se redujo a 42 horas desde el 26 de abril de 2026 y bajará a 40 en 2028.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usar 45 horas porque es lo que se usó siempre.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la norma cambió; usar la anterior calcula mal las horas extra.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Promediar 42 y 45 horas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: no hay promedio posible; se usa la norma vigente del período.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M2.P5 Validación con cuatro ojos</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué completa la validación de un resultado de IA antes de usarlo en el cierre?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: cuatro ojos y registro dan trazabilidad al control.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que los totales se vean razonables.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: “se ve razonable” no es un criterio verificable.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que la IA confirme que revisó su respuesta.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la IA puede repetir su error con la misma seguridad.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Una segunda revisión por otra persona y un registro con criterio, evidencia y responsable.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: cuatro ojos y registro dan trazabilidad al control.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Guardar la conversación con la IA.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la conversación no muestra qué se verificó ni quién aprobó.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3.P1 Cuadratura de la base</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La base para analizar suma 418 personas y el sistema informa 420. ¿Qué haces antes de analizar?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: si la base no cuadra con el sistema, el análisis no empieza.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Seguir: la diferencia es pequeña.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: dos registros pueden ser justamente los que explican la variación.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Buscar los dos registros faltantes y cuadrar conteo y total con el sistema.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: si la base no cuadra con el sistema, el análisis no empieza.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pedir a la IA que estime los faltantes.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la IA inventaría datos que no conoce.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Analizar solo las áreas que cuadran.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: un análisis parcial no responde la pregunta de la gerencia.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3.P2 Variación porcentual</text></name>
+    <questiontext format="html"><text><![CDATA[<p>El costo de un área pasó de $120,0 M a $126,0 M. ¿Cuál es su variación porcentual?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: (126,0 − 120,0) / 120,0 × 100 = 5,0 %.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+4,8 %</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: 4,8 % resulta de dividir por el valor final (126,0); se divide por el valor inicial.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>+5,0 %</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: (126,0 − 120,0) / 120,0 × 100 = 5,0 %.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+6,0 %</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: 6,0 es la variación absoluta en millones, no el porcentaje.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+6,0 M %</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: mezcla la variación absoluta con un porcentaje.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3.P3 Nivel y cambio</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La IA dice que Ventas explica la mayor parte del alza porque es el área de mayor costo. ¿Qué error comete?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: lo que explica el alza es la participación de cada área en la variación, no su tamaño.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ninguno.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el área más grande puede variar poco.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Confunde el área de mayor costo con el área de mayor variación.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: lo que explica el alza es la participación de cada área en la variación, no su tamaño.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usa miles de pesos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la unidad no cambia la conclusión.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Calcula mal el total.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el problema es de interpretación, no de cálculo.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3.P4 Gráficos honestos</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué ajuste vuelve honesto un gráfico de barras que compara el costo por área?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: así el gráfico muestra la proporción real y se puede verificar.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eje vertical desde 300 para que se noten las diferencias.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: cortar el eje exagera las diferencias.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Efecto 3D y un color por área.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el 3D distorsiona y los colores decorativos distraen.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Barras planas, eje desde cero, título con la conclusión y fuente con el período.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: así el gráfico muestra la proporción real y se puede verificar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cambiarlo a un gráfico de anillo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el anillo compara mal valores parecidos.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M3.P5 Hecho o hipótesis</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál frase del borrador del informe es una hipótesis que debe marcarse como tal?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: es una causa posible que debe confirmarse con Operaciones o presentarse como hipótesis.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“El costo subió 8,0 % respecto de septiembre.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: es un hecho calculado con la base cuadrada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“La dotación pasó de 412 a 420 personas.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: es un hecho verificable en el sistema.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>“Las horas extra de Planta subieron por la demanda de fin de año.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: es una causa posible que debe confirmarse con Operaciones o presentarse como hipótesis.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>“El bono anual sumó $18,6 M.”</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: es un hecho respaldado por las novedades del mes.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4.P1 Qué automatizar</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué tarea es mejor candidata para automatizar primero?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: es repetitiva, frecuente, con regla clara y su error se detecta antes de pagar.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Negociar un acuerdo con el sindicato.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: requiere criterio y negociación; se asiste, no se automatiza.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Consolidar cada mes las novedades enviadas por las jefaturas.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: es repetitiva, frecuente, con regla clara y su error se detecta antes de pagar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Decidir un despido.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: es una decisión con efecto legal y humano.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Calcular finiquitos con un programa propio.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: pocos casos, alto riesgo legal y el sistema ya los calcula.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4.P2 Matriz de impacto y esfuerzo</text></name>
+    <questiontext format="html"><text><![CDATA[<p>En la matriz de impacto y esfuerzo, ¿qué cuadrante se aborda primero?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: las victorias rápidas generan ahorro pronto y confianza para proyectos mayores.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Alto impacto y bajo esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: las victorias rápidas generan ahorro pronto y confianza para proyectos mayores.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Alto impacto y alto esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: son valiosos, pero se planifican después.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bajo impacto y alto esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: es el cuadrante que no conviene priorizar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bajo impacto y bajo esfuerzo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: son mejoras menores; se hacen cuando hay tiempo.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4.P3 Configurar un asistente</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué instrucción evita que un asistente de consultas invente respuestas?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: fuentes aprobadas, límites y derivación hacen confiable al asistente.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Responder siempre con seguridad.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la seguridad sin fuente produce respuestas inventadas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Buscar en internet lo que no esté en la guía.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: internet puede traer normas de otro país o desactualizadas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Usar solo las fuentes aprobadas y, si algo no está en ellas o es legal, decirlo y derivar a Compensaciones.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: fuentes aprobadas, límites y derivación hacen confiable al asistente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Usar un tono técnico con citas de artículos.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el estilo no evita las respuestas sin respaldo.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4.P4 Control humano</text></name>
+    <questiontext format="html"><text><![CDATA[<p>En un cierre asistido por IA, ¿dónde se ubica el control humano?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: la persona decide antes de que algo se vuelva oficial o se pague.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Después del pago, si alguien reclama.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: después del pago el error ya ocurrió y obliga a reliquidar.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Antes de cargar novedades al sistema y antes de aprobar el pago, con un segundo revisor.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: la persona decide antes de que algo se vuelva oficial o se pague.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>En ninguna parte si la IA está bien configurada.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: siempre hay una persona responsable del resultado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Solo una vez al año.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el control acompaña cada cierre.</p>]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>M4.P5 Medir un piloto</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cómo se demuestra que un piloto de automatización funcionó?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Correcto: indicadores propios contra la línea base muestran el resultado real.</p>]]></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p>¡Respuesta correcta!</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p>Respuesta incorrecta. Revisa la explicación de tu alternativa.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Con la opinión del equipo.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: la percepción complementa, pero no permite decidir.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Con la cantidad de veces que se usó la herramienta.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: el uso mide actividad, no resultado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Comparando horas y errores con la línea base medida antes del piloto.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Correcto.</strong> Correcto: indicadores propios contra la línea base muestran el resultado real.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Con el porcentaje de ahorro que sugiere la IA.</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p><strong>Incorrecto.</strong> Incorrecto: una cifra sin medición propia no tiene respaldo.</p>]]></text></feedback>
+    </answer>
+  </question>
+</quiz>
