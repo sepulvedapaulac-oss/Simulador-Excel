@@ -1,0 +1,245 @@
+{
+ "id": "tls_lk_l14",
+ "ident": "TLS_LK_M1_L4",
+ "zip_name": "Leccion_1_4_Medidas_de_Resguardo",
+ "title": "M1 · L4 — Medidas de resguardo",
+ "course_label": "TREMEN PARTNER · TLS® · LEY KARIN · MÓDULO 1 · LECCIÓN 4",
+ "voice": true,
+ "pass": 0.8,
+ "voz": {
+  "tag": "tls",
+  "pause": 0.28,
+  "min_sim": 0.88,
+  "tries": 4,
+  "norm_db": -1,
+  "bitrate": "96k"
+ },
+ "narration": {
+  "p01": "Comenzamos la cuarta lección. La denuncia ya fue recibida y el expediente está en marcha. Ahora aparece un nuevo desafío: proteger a las personas mientras la investigación avanza. Una medida de resguardo no anticipa culpabilidad. Su función es reducir riesgos durante el procedimiento.",
+  "p02": "Andrea y su jefatura continúan compartiendo espacios y rutinas de trabajo. Aún no existe una conclusión sobre los hechos. Frente a esta situación, esperar hasta el final puede dejar un riesgo sin control. La respuesta adecuada comienza por evaluar de inmediato qué medida de resguardo necesita el caso.",
+  "p03": "Una medida de resguardo es preventiva y cautelar. Busca proteger eficazmente a las personas involucradas durante el procedimiento. No es una sanción anticipada, no declara que los hechos ocurrieron y no determina responsabilidad. Proteger y prejuzgar son decisiones distintas.",
+  "p04": "Antes de elegir una medida, analiza tres variables del caso concreto: la gravedad de los hechos imputados, la seguridad de la persona denunciante y las posibilidades que ofrecen las condiciones de trabajo. La decisión no debe seguir una receta automática, sino responder a estos elementos.",
+  "p05": "En el expediente ele ka cero veintiséis, Andrea y su jefatura mantienen contacto cotidiano y es posible reorganizar temporalmente los espacios sin alterar funciones esenciales. La separación física es una de las medidas expresamente contempladas por la normativa y puede ser pertinente cuando reduce el riesgo sin transformar el resguardo en un castigo.",
+  "p06": "La organización del tiempo de trabajo también puede utilizarse como medida de resguardo. Redistribuir temporalmente horarios o jornada puede disminuir el contacto entre las personas involucradas. Pero la medida debe revisarse por su efecto: no debería generar un perjuicio laboral o económico para la persona denunciante.",
+  "p07": "La normativa también contempla facilitar a la persona denunciante acceso a atención psicológica temprana a través de los programas del organismo administrador de la Ley dieciséis mil setecientos cuarenta y cuatro. Quien gestiona el procedimiento facilita ese acceso; no diagnostica ni interpreta clínicamente a la persona.",
+  "p08": "Las medidas mencionadas por la ley no constituyen una lista cerrada. Según las particularidades del caso, pueden evaluarse otras alternativas que resguarden eficazmente a las personas. Además, una medida puede modificarse durante la investigación si deja de ser adecuada o suficiente.",
+  "p09": "Vuelve al caso de Andrea. Comparte espacio con su jefatura, la organización puede cambiar temporalmente su ubicación y ella mantiene sus funciones y remuneraciones. La mejor medida no es necesariamente la más severa, sino la que controla el riesgo de manera eficaz y proporcional, con seguimiento posterior.",
+  "p10": "Proteger no es castigar. Una medida mal diseñada puede generar un nuevo perjuicio si hace recaer el costo del resguardo sobre la persona denunciante o si se utiliza como una declaración anticipada de responsabilidad. Por eso, documenta por qué se adopta la medida y qué riesgo busca controlar.",
+  "p11": "Utiliza esta herramienta TLS: riesgo, protección, impacto y seguimiento. Primero identifica el riesgo que necesitas controlar. Luego define qué medida puede reducirlo. Después analiza el impacto que tendrá sobre las personas y el trabajo. Finalmente, revisa si la medida sigue siendo adecuada.",
+  "quiz": "Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.",
+  "p12": "Una medida no se adopta y se olvida. Durante la investigación pueden cambiar los antecedentes, las condiciones de trabajo o la eficacia del resguardo. En el seguimiento verifica si el riesgo disminuyó, si la medida sigue siendo necesaria, si produjo efectos no previstos y si corresponde mantenerla, ajustarla o sustituirla.",
+  "p13": "Has completado la cuarta lección. El expediente ele ka cero veintiséis ya cuenta con una medida de resguardo evaluada y trazable. A partir de ahora suma una nueva herramienta a tu criterio investigativo: riesgo, protección, impacto y seguimiento. En la próxima lección decidirás cómo iniciar y organizar la investigación."
+ },
+ "video": {
+  "voice": true,
+  "scenes": [
+   {
+    "t": "Qué es una medida de resguardo",
+    "lines": [
+     "Una medida de resguardo es preventiva y cautelar: protege a las personas mientras dura el procedimiento.",
+     "No es una sanción anticipada, no declara que los hechos ocurrieron y no determina responsabilidad."
+    ],
+    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Proteger</b>Reducir riesgos<small>Durante el procedimiento</small></div><div class=\"warn\" data-at=\"1\"><b>Prejuzgar</b>Sancionar o declarar<small>No es su función</small></div></div>"
+   },
+   {
+    "t": "De inmediato",
+    "lines": [
+     "Las medidas se evalúan y adoptan de manera inmediata, apenas se recibe la denuncia.",
+     "Esperar hasta el final de la investigación puede dejar un riesgo sin control."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">Denuncia recibida</div><div data-at=\"0\">Evaluar el riesgo</div><div data-at=\"1\">Adoptar la medida</div></div>"
+   },
+   {
+    "t": "Tres variables",
+    "lines": [
+     "Para elegir una medida se consideran la gravedad de los hechos imputados, la seguridad de la persona denunciante y las posibilidades que ofrecen las condiciones de trabajo.",
+     "No hay una receta automática: la medida responde al caso concreto."
+    ],
+    "html": "<div class=\"v-icons\"><div data-at=\"0\"><span class=\"i\">⚠️</span>Gravedad</div><div data-at=\"0\"><span class=\"i\">🛡️</span>Seguridad</div><div data-at=\"0\"><span class=\"i\">🏢</span>Condiciones de trabajo</div></div>"
+   },
+   {
+    "t": "Medidas posibles",
+    "lines": [
+     "La ley menciona la separación de espacios, la redistribución del tiempo de jornada y la atención psicológica temprana a través del organismo administrador de la Ley dieciséis mil setecientos cuarenta y cuatro.",
+     "No es una lista cerrada, y ninguna medida debe perjudicar a la persona denunciante."
+    ],
+    "html": "<div class=\"v-chk\"><span data-at=\"0\">Separar espacios</span><span data-at=\"0\">Redistribuir la jornada</span><span data-at=\"0\">Atención psicológica</span><span data-at=\"1\">Sin perjuicio para quien denuncia</span></div>"
+   },
+   {
+    "t": "La herramienta TLS",
+    "lines": [
+     "Antes de proponer o mantener una medida, revisa riesgo, protección, impacto y seguimiento.",
+     "Una medida no se adopta y se olvida: se revisa mientras avanza la investigación."
+    ],
+    "html": "<div class=\"v-final\">Riesgo · Protección ·<br/><em>Impacto</em> · Seguimiento</div>"
+   }
+  ]
+ },
+ "sorts": {
+  "s03": {
+   "bins": [
+    {
+     "id": "Sí es resguardo",
+     "title": "Sí es resguardo"
+    },
+    {
+     "id": "No es resguardo",
+     "title": "No es resguardo"
+    }
+   ],
+   "items": [
+    {
+     "t": "Una actuación preventiva mientras se desarrolla el procedimiento.",
+     "bin": "Sí es resguardo",
+     "why": "Es su naturaleza: preventiva y cautelar.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Una sanción anticipada a la persona denunciada.",
+     "bin": "No es resguardo",
+     "why": "Sancionar exige una investigación concluida.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Proteger eficazmente a las personas involucradas.",
+     "bin": "Sí es resguardo",
+     "why": "Su finalidad es proteger eficazmente a quienes participan.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Una declaración de culpabilidad.",
+     "bin": "No es resguardo",
+     "why": "La medida no declara responsabilidad.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Una conclusión sobre si los hechos ocurrieron.",
+     "bin": "No es resguardo",
+     "why": "El fondo se resuelve al final de la investigación.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Una decisión que se revisa si cambian las circunstancias.",
+     "bin": "Sí es resguardo",
+     "why": "Puede modificarse si deja de ser adecuada o suficiente.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    }
+   ]
+  }
+ },
+ "pairs": {
+  "s09": {
+   "items": [
+    [
+     "Separar temporalmente los espacios y hacer seguimiento.",
+     "<span class=\"lk-princ\">Proporcional y revisable</span><br/><span class=\"lk-small\">Reduce el contacto sin anticipar responsabilidad.</span>",
+     "<b>Proporcional y revisable</b>: Reduce el contacto sin anticipar responsabilidad."
+    ],
+    [
+     "Trasladar a Andrea a un puesto con menor remuneración variable.",
+     "<span class=\"lk-princ\">Perjudica a la denunciante</span><br/><span class=\"lk-small\">Contradice la finalidad protectora.</span>",
+     "<b>Perjudica a la denunciante</b>: Contradice la finalidad protectora."
+    ],
+    [
+     "Mantener todo igual hasta saber quién tiene razón.",
+     "<span class=\"lk-princ\">Omite el deber de resguardo</span><br/><span class=\"lk-small\">No evalúa ninguna medida tras la denuncia.</span>",
+     "<b>Omite el deber de resguardo</b>: No evalúa ninguna medida tras la denuncia."
+    ],
+    [
+     "Suspender a la jefatura “para que aprenda”.",
+     "<span class=\"lk-princ\">Sanción anticipada</span><br/><span class=\"lk-small\">Usa la medida como castigo.</span>",
+     "<b>Sanción anticipada</b>: Usa la medida como castigo."
+    ]
+   ],
+   "order": [
+    2,
+    3,
+    0,
+    1
+   ],
+   "hint": "Pregúntate quién asume el costo de la medida y si anticipa responsabilidad."
+  }
+ },
+ "quiz": [
+  {
+   "q": "¿Qué es una medida de resguardo?",
+   "o": [
+    "Una sanción anticipada contra la persona denunciada.",
+    "Una declaración de responsabilidad.",
+    "Una actuación preventiva para proteger a las personas durante el procedimiento.",
+    "Una decisión que se adopta al terminar la investigación."
+   ],
+   "c": 2,
+   "f": [
+    "La medida no sanciona: se adopta sin conocer todavía el resultado de la investigación.",
+    "No declara responsabilidad ni que los hechos ocurrieron.",
+    "La medida es preventiva y cautelar: protege durante el procedimiento sin resolver el fondo.",
+    "Al terminar la investigación ya no se protege durante el procedimiento: la medida se evalúa al inicio."
+   ]
+  },
+  {
+   "q": "¿Cuándo deben evaluarse las medidas de resguardo?",
+   "o": [
+    "De inmediato, una vez recibida la denuncia.",
+    "Al concluir la investigación.",
+    "Solo si la persona denunciante las solicita.",
+    "Cuando la Inspección del Trabajo lo ordene."
+   ],
+   "c": 0,
+   "f": [
+    "Las medidas deben evaluarse y adoptarse de manera inmediata, atendiendo al caso concreto.",
+    "Esperar al final deja el riesgo sin control durante todo el procedimiento.",
+    "No dependen de una solicitud: el empleador debe evaluarlas de oficio.",
+    "La evaluación corresponde al empleador desde la recepción, sin esperar una orden externa."
+   ]
+  },
+  {
+   "q": "¿Qué variables se consideran para definir una medida?",
+   "o": [
+    "Solo la antigüedad de las personas involucradas.",
+    "La opinión del equipo de trabajo.",
+    "El cargo de la persona denunciada.",
+    "La gravedad de los hechos, la seguridad de la persona denunciante y las condiciones de trabajo."
+   ],
+   "c": 3,
+   "f": [
+    "La antigüedad no es una de las variables que orientan la decisión.",
+    "La opinión del equipo no es un criterio y, además, consultarla vulneraría la confidencialidad.",
+    "El cargo de la persona denunciada no define por sí solo la medida.",
+    "La medida responde a la gravedad de los hechos, la seguridad de la denunciante y las posibilidades reales de la organización del trabajo."
+   ]
+  },
+  {
+   "q": "Respecto de la atención psicológica temprana, quien gestiona el procedimiento debe:",
+   "o": [
+    "Diagnosticar si la persona necesita tratamiento.",
+    "Facilitar el acceso a través del organismo administrador de la Ley N.º 16.744.",
+    "Usar la evaluación psicológica como prueba.",
+    "Exigirla como condición para investigar."
+   ],
+   "c": 1,
+   "f": [
+    "Quien gestiona el procedimiento no diagnostica: esa es una función clínica.",
+    "Corresponde facilitar el acceso al programa previsto; no asumir funciones clínicas.",
+    "La atención psicológica protege a la persona; no es una diligencia probatoria.",
+    "La atención es un apoyo que se ofrece; no puede condicionar la investigación."
+   ]
+  },
+  {
+   "q": "Proponer trasladar a Andrea a un puesto con menor remuneración variable es:",
+   "o": [
+    "Inadecuado, porque genera un perjuicio a la persona denunciante.",
+    "Adecuado, porque separa a las personas.",
+    "Obligatorio en todos los casos de acoso.",
+    "Correcto si la jefatura está de acuerdo."
+   ],
+   "c": 0,
+   "f": [
+    "Una medida que perjudica económica o laboralmente a la denunciante contradice su finalidad protectora.",
+    "Separar a las personas no justifica trasladar el costo del resguardo a quien denuncia.",
+    "No hay una medida obligatoria para todos los casos: depende de las variables del caso concreto.",
+    "El acuerdo de la jefatura no vuelve adecuada una medida que perjudica a la persona denunciante."
+   ]
+  }
+ ]
+}

@@ -18,9 +18,15 @@ CACHE = ROOT / ".cache" / "tts"
 EDGE_VOICE = "es-CL-CatalinaNeural"
 
 
+# Perfil de voz opcional por lección ("voz" en lesson.json). Ejemplo, perfil TLS:
+# {"tag": "tls", "pause": 0.28, "min_sim": 0.88, "tries": 4, "norm_db": -1, "bitrate": "96k"}
+PROFILE = {}
+
+
 def tag(engine):
     """Versión de la voz en la clave de caché: cambiarla obliga a regenerar."""
-    return "chatterbox-v3-neutra-viva" if engine == "chatterbox" else engine
+    base = "chatterbox-v3-neutra-viva" if engine == "chatterbox" else engine
+    return f"{base}-{PROFILE['tag']}" if engine == "chatterbox" and PROFILE.get("tag") else base
 
 
 def tts(text, out, engine):
@@ -64,10 +70,14 @@ def pregenerate_chatterbox(texts):
     jf = CACHE / "jobs.json"
     jf.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
     print(f"Chatterbox: generando {len(jobs)} audios…", flush=True)
-    subprocess.run([os.environ.get("CBX_PYTHON", "/tmp/cbx2/bin/python"), str(TOOLS / "voz" / "cbx_batch.py"), str(jf)], check=True)
+    env = dict(os.environ)
+    for k, e in (("pause", "CBX_PAUSE"), ("min_sim", "CBX_MIN_SIM"), ("tries", "CBX_TRIES"), ("norm_db", "CBX_NORM_DB")):
+        if k in PROFILE:
+            env[e] = str(PROFILE[k])
+    subprocess.run([os.environ.get("CBX_PYTHON", "/tmp/cbx2/bin/python"), str(TOOLS / "voz" / "cbx_batch.py"), str(jf)], check=True, env=env)
     for j in jobs:
         wav = Path(j["out"])
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-ac", "1", "-b:a", "80k", str(wav.with_suffix(".mp3"))], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-ac", "1", "-b:a", PROFILE.get("bitrate", "80k"), str(wav.with_suffix(".mp3"))], check=True)
         wav.unlink(missing_ok=True)
 
 
@@ -143,6 +153,8 @@ MANIFEST = """<?xml version="1.0" encoding="UTF-8"?>
 
 def build(src: Path, engine: str):
     meta = json.loads((src / "lesson.json").read_text(encoding="utf-8"))
+    PROFILE.clear()
+    PROFILE.update(meta.get("voz", {}))
     content = (src / "content.html").read_text(encoding="utf-8")
     lesson_js = (src / "lesson.js").read_text(encoding="utf-8") if (src / "lesson.js").exists() else ""
     rel = src.relative_to(ROOT / "src")
@@ -190,7 +202,7 @@ def build(src: Path, engine: str):
     if not any((out / "img").iterdir()):
         (out / "img").rmdir()
 
-    lesson = {k: v for k, v in meta.items() if k not in ("narration", "title", "course_label", "ident", "zip_name")}
+    lesson = {k: v for k, v in meta.items() if k not in ("narration", "title", "course_label", "ident", "zip_name", "voz")}
     lesson["audio"] = audio
     lesson["music"] = music
     autonarr = ('<label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label>'

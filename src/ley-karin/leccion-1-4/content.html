@@ -1,0 +1,332 @@
+<style id="tema-tls">
+/* Tema TLS (Tremen Partner) sobre el motor común del curso.
+   Paleta TLS: primario #171697 · turquesa #00A5AB · navy #101044 · amarillo #FFD65C.
+   lesson.py copia este archivo al bloque <style id="tema-tls"> de cada content.html. */
+:root{
+  --bg:#e6eaf2; --bg2:#eef1f6; --surface:#ffffff; --surface2:#f6f7fb; --surface3:#fbfbfe;
+  --ink:#11131a; --ink2:#2b2f45; --muted:#4b5563;
+  --teal:#00A5AB; --teal2:#00A5AB; --teal-ink:#00757a; --navy:#101044; --line:#d9dee8; --line2:#e1e5ee; --mint:#eaf8f8; --mint-line:#9fdcde;
+  --violet:#171697; --violet-soft:#f1f0ff; --amber:#e0a800; --amber-soft:#fff7dc; --amber-ink:#7a5a00;
+  --story-bg:#fffaeb; --story-line:#f3dc93; --callout-bg:#eaf8f8; --callout-line:#9fdcde;
+  --good:#087f5b; --good-soft:#e7f6ef; --good-line:#8fd3b6; --bad:#b42318; --bad-soft:#fdecea; --bad-line:#f0a9a1;
+  --track:#d9dee8; --chip:#eceef6; --on-accent:#ffffff;
+  --shadow:0 10px 26px rgba(16,16,68,.08);
+  --stage:#101044; --stage2:#1d1c7a; --stage-ink:#eef0ff; --stage-muted:#a9b0e6; --stage-bad:#ff9a8f; --stage-amber:#FFD65C;
+  --lk-primary:#171697; --lk-yellow:#FFD65C; --lk-head:#101044;
+  --font:Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}}
+:root[data-theme="dark"]{
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--lk-head)}
+.topbar-row .course{color:var(--lk-primary)}
+.small-btn.primary,.nav-btn.next{background:var(--lk-primary);color:#fff}
+.tab.active{background:var(--lk-primary);border-color:var(--lk-primary);color:#fff}
+.completion .icon{background:linear-gradient(135deg,var(--lk-primary),var(--teal))}
+.photo-frame.wide.lk-hero{aspect-ratio:4/3}
+/* Bloques de contenido TLS */
+.lk-casebar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;background:var(--lk-primary);color:#fff;padding:12px 16px;border-radius:14px;margin-top:6px;font-size:.92rem}
+.lk-casebar strong{color:var(--lk-yellow);letter-spacing:.05em}
+.lk-instr{display:flex;gap:10px;align-items:flex-start;background:var(--mint);border-left:4px solid var(--teal);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:.95rem}
+.lk-instr b{color:var(--lk-head)}
+.lk-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin:16px 0}
+.lk-banner{position:relative;min-height:240px;border-radius:20px;overflow:hidden;background-size:cover;background-position:center;margin:14px 0 18px;box-shadow:var(--shadow)}
+.lk-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,68,.86),rgba(16,16,68,.2) 65%,transparent)}
+.lk-banner .cap{position:absolute;z-index:2;left:24px;bottom:20px;right:24px;max-width:480px;color:#fff}
+.lk-banner .cap h3{color:#fff;margin:0 0 4px;font-size:1.35rem}
+.lk-banner .cap p{margin:0;color:#fff}
+.lk-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.lk-split>*{min-width:0}
+.lk-photo{min-height:300px;border-radius:20px;background-size:cover;background-position:center;box-shadow:var(--shadow)}
+.lk-folder{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:20px;box-shadow:var(--shadow);margin:12px 0}
+.lk-tag{display:inline-block;background:var(--lk-primary);color:#fff;padding:6px 10px;border-radius:8px;font-weight:800;letter-spacing:.05em;font-size:.8rem;margin-bottom:10px}
+.lk-mail{background:var(--surface2);border:1px solid var(--line);border-left:4px solid var(--lk-yellow);border-radius:12px;padding:16px;margin:10px 0;font-style:italic}
+.lk-small{font-size:.86rem;color:var(--muted)}
+.lk-tool{background:#101044;color:#fff;border-radius:18px;padding:20px;margin:12px 0}
+.lk-tool h2,.lk-tool h3{color:#fff;font-size:clamp(1.1rem,2.4vw,1.55rem)}
+.lk-toolflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.lk-toolflow div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-top:3px solid var(--lk-yellow);padding:12px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:.9rem}
+.lk-toolflow small{display:block;font-weight:400;opacity:.88;color:#fff}
+.lk-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:14px 0}
+.lk-flow div{padding:14px 8px;text-align:center;background:var(--lk-primary);color:#fff;border-radius:12px;font-weight:800;font-size:.9rem}
+.lk-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lk-duo>*{min-width:0}.lk-duo .lk-box{margin:0}
+.lk-legal{border-left:4px solid var(--lk-primary);background:var(--surface2);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:.95rem}
+.lk-legal b{color:var(--lk-head)}
+.lk-princ{font-weight:900;color:var(--lk-head)}
+.lk-details{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:12px 16px;margin-top:16px}
+.lk-details summary{cursor:pointer;font-weight:800;color:var(--lk-head)}
+.lk-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.lk-gate{font-size:.85rem;color:var(--muted);font-weight:700;margin:8px 0 0}
+.lk-next{border:1px dashed var(--teal);border-radius:14px;padding:14px 16px;text-align:left;margin:14px 0}
+.lk-next small{display:block;color:var(--teal-ink);font-weight:900;letter-spacing:.08em}
+.lk-next b{color:var(--lk-head)}
+.lk-recap-tools{display:flex;flex-direction:column;gap:6px;text-align:left;margin-top:14px}
+.lk-recap-tools div{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:8px 12px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-size:.9rem}
+.lk-recap-tools div b{color:var(--lk-head);min-width:52px}
+.lk-recap-tools div.now{background:var(--lk-primary);color:#fff;border-color:var(--lk-primary)}
+.lk-recap-tools div.now b{color:var(--lk-yellow)}
+/* Selección múltiple */
+.lk-multi .opt.sel{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-multi .opt.sel .letter{background:var(--lk-primary);color:#fff}
+/* Ordenar */
+.lk-order{list-style:none;padding:0;margin:12px 0;counter-reset:o}
+.lk-order li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;counter-increment:o}
+.lk-order li:before{content:counter(o);flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.lk-order li span{flex:1;font-weight:700;min-width:0}
+.lk-order li button{border:1px solid var(--line);background:var(--surface2);border-radius:8px;width:40px;height:36px;cursor:pointer}
+.lk-order li button:disabled{opacity:.35;cursor:default}
+.lk-order.ok li{border-color:var(--good-line);background:var(--good-soft)}
+/* Completar */
+.lk-cloze{font-size:1.04rem;line-height:2.2}
+.lk-cloze select{border:2px solid var(--line);border-radius:10px;padding:4px 8px;background:var(--surface);color:var(--ink);max-width:100%;font:inherit;font-size:.95rem}
+.lk-cloze select.ok{border-color:var(--good-line);background:var(--good-soft)}
+.lk-cloze select.bad{border-color:var(--bad-line);background:var(--bad-soft)}
+/* Tarjetas para explorar (panel) */
+.lk-rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px}
+.lk-rv{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;cursor:pointer;box-shadow:var(--shadow);position:relative}
+.lk-rv b{color:var(--lk-head);padding-right:18px}
+.lk-rv span{font-size:.88rem;color:var(--muted)}
+.lk-rv:hover{border-color:var(--teal)}
+.lk-rv.active{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-rv.seen:after{content:"✓";position:absolute;top:10px;right:12px;color:var(--good);font-weight:900}
+.lk-rv-panel{margin-top:12px;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:14px;padding:14px 16px;background:var(--surface3)}
+.lk-rv-panel.ok{border-left-color:var(--good)}.lk-rv-panel.bad{border-left-color:var(--bad)}
+.lk-rv-panel h3{margin:0 0 6px;font-size:1.02rem}
+/* Lista de compromisos */
+.lk-chk{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;margin:8px 0;cursor:pointer}
+.lk-chk .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid var(--line);display:grid;place-items:center;font-weight:900}
+.lk-chk.on{border-color:var(--teal);background:var(--mint)}
+.lk-chk.on .bx{background:var(--teal);border-color:var(--teal);color:#fff}
+.lk-chk.on .bx:after{content:"✓"}
+.lk-chk h3{margin:0 0 2px;font-size:1.02rem}
+/* Transferencia */
+.lk-fl{display:block;font-weight:800;margin:14px 0 6px;color:var(--lk-head)}
+.lk-transfer textarea{width:100%;min-height:86px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);color:var(--ink);font:inherit;resize:vertical}
+.lk-cnt{font-size:.75rem;color:var(--muted);text-align:right}
+.lk-model{margin-top:14px}
+/* Clasificar: columnas según cantidad de categorías */
+.bins.bins4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bins.bins5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px){.bins.bins4,.bins.bins5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Puntos de interés sobre foto */
+.hs-stage .hs{background:var(--lk-primary)}
+.hs-stage .hs.seen{background:var(--teal);color:#fff}
+.hs-stage .hs.active{background:var(--lk-yellow);color:#101044}
+@media(max-width:860px){
+  .lk-split,.lk-duo{grid-template-columns:1fr}
+  .lk-photo{min-height:220px}
+  .lk-banner{min-height:210px}
+  .bins.bins4,.bins.bins5{grid-template-columns:1fr}
+  .hs-stage .hs{width:36px;height:36px}
+}
+.tabpane.solo.active{display:block}
+.tabpane.solo ul{padding-left:1.2rem}
+.lk-next p{margin:4px 0 0;max-width:none}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="s00" data-gate-msg="Voltea las 3 tarjetas.">
+<div class="hero-grid"><div><span class="eyebrow">Módulo 1 · Lección 4</span>
+<h1>Medidas de resguardo</h1>
+<p class="lead">Protege a las personas mientras la investigación avanza, sin convertir una medida preventiva en una sanción anticipada.</p>
+<div class="lk-casebar"><span>Proteger también exige criterio</span><strong>LK-026 · ETAPA 04</strong></div></div><div class="photo-frame wide lk-hero"><img alt="Imagen de portada de la lección: Medidas de resguardo" src="img/lk4_img1.jpg"/></div></div>
+<div class="lk-instr"><span>👆</span><span><b>Para comenzar:</b> toca las tres tarjetas para descubrir qué lograrás en esta lección.</span></div>
+<div data-flip="s00"><div class="task">Tarjetas descubiertas <span class="tick">0 / 3</span></div><div class="flipdeck"><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Proteger</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Evalúa</strong> de inmediato qué riesgo necesita controlarse tras recibir la denuncia.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Sin prejuzgar</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Distingue</strong> una medida de resguardo de una sanción o una declaración de responsabilidad.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Revisar</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Documenta</strong> por qué se adopta la medida y revisa si sigue siendo adecuada.</span></div></div></button></div></div>
+</section>
+
+<!-- VIDEO -->
+<section class="slide" data-title="Video: proteger sin prejuzgar" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Proteger sin prejuzgar</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 4 · ANDREA SIGUE CERCA -->
+<section class="slide" data-title="Andrea sigue cerca" data-audio="p02" data-gate="s02" data-gate-msg="Elige el razonamiento correcto.">
+<span class="eyebrow">Situación</span>
+<h2>Andrea sigue trabajando cerca de su jefatura</h2>
+<div class="lk-split">
+<div aria-label="Andrea trabaja en su escritorio mientras su jefatura pasa por el pasillo" class="lk-photo" role="img" style="background-image:url('img/lk4_img2.jpg')"></div>
+<div class="lk-folder"><span class="lk-tag">EXPEDIENTE LK-026</span><p>La denuncia describe desacreditaciones frente al equipo, una frase asociada a soportar la presión y exclusión de reuniones.</p><p><strong>Aún no existe una conclusión sobre los hechos.</strong> Andrea y la persona denunciada siguen compartiendo espacios y rutinas.</p></div>
+</div>
+<div class="lk-instr"><span>🧭</span><span><b>¿Qué corresponde hacer ahora?</b> Cada opción explica por qué funciona o no.</span></div>
+<div><div class="options" data-choice="s02" data-correct="B"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Esperar a terminar la investigación antes de intervenir.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Evaluar de inmediato qué medida de resguardo resulta necesaria.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Suspender automáticamente a la persona denunciada como sanción preventiva.</span></button></div><div class="fb"></div><template data-for="s02-A"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">Esperar el resultado puede dejar sin control un riesgo que debe evaluarse desde la recepción de la denuncia.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s02-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Las medidas de resguardo deben evaluarse y adoptarse de manera inmediata, atendiendo al caso concreto.</span></div></template><template data-for="s02-C"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">Una medida de resguardo no equivale a una sanción ni permite anticipar responsabilidad.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template></div>
+</section>
+
+<!-- 5 · PARA QUÉ SIRVE -->
+<section class="slide" data-title="Para qué sirve" data-audio="p03" data-gate="s03" data-gate-msg="Clasifica todos los elementos." data-review="Qué es una medida">
+<span class="eyebrow">Concepto</span>
+<h2>¿Para qué sirve una medida de resguardo?</h2>
+<p class="lead">Su finalidad es proteger durante el procedimiento. No determina si los hechos ocurrieron ni quién tiene responsabilidad.</p>
+<div class="lk-instr"><span>🗂️</span><span><b>Clasifica cada afirmación</b> según si describe o no una medida de resguardo: toca una tarjeta y luego la columna que corresponde, o arrástrala.</span></div>
+<div data-sort="s03"><div class="task">Elementos clasificados <span class="tick">0 / 6</span></div><div class="pool"></div><div class="bins bins"></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> <strong>Proteger y prejuzgar son acciones distintas.</strong> La medida es preventiva, protege durante el procedimiento y se revisa; no declara culpas ni resuelve el fondo.</div></div>
+</section>
+
+<!-- 6 · TRES VARIABLES -->
+<section class="slide" data-title="Tres variables" data-audio="p04" data-gate="s04" data-gate-msg="Abre las 3 secciones." data-review="Variables para decidir">
+<span class="eyebrow">Criterios</span>
+<h2>Tres variables antes de decidir</h2>
+<p class="lead">La medida debe responder al caso concreto, no a una receta automática.</p>
+<div class="lk-instr"><span>👆</span><span><b>Abre las tres variables</b> para ver qué pregunta responde cada una.</span></div>
+<div data-acc="s04"><div class="task">Secciones abiertas <span class="tick">0 / 3</span></div><div class="acc"><div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>1. Gravedad de los hechos</span><span class="tg">＋</span></button><div class="acc-body">¿Qué se denuncia y qué nivel de resguardo exige? Considera la entidad de los hechos imputados al definir la intensidad y características de la medida.</div></div><div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>2. Seguridad de la persona denunciante</span><span class="tg">＋</span></button><div class="acc-body">¿Qué riesgo necesita controlarse? Considera la necesidad de prevenir exposición o afectación durante el procedimiento.</div></div><div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>3. Condiciones de trabajo</span><span class="tg">＋</span></button><div class="acc-body">¿Qué alternativas permite la organización del trabajo? La medida debe ser viable en el contexto real, sin perder su finalidad protectora.</div></div></div></div>
+</section>
+
+<!-- 7 · SEPARAR ESPACIOS -->
+<section class="slide" data-title="Separar espacios" data-audio="p05" data-gate="s05" data-gate-msg="Resuelve las decisiones del caso.">
+<span class="eyebrow">Caso aplicado</span>
+<h2>Separar espacios puede ser una medida adecuada</h2>
+<div class="lk-banner" style="background-image:url('img/lk4_img3.jpg')"><div class="cap"><h3>En LK-026</h3><p>Andrea y su jefatura trabajan en el mismo sector. Es posible reorganizar temporalmente los espacios sin alterar funciones esenciales.</p></div></div>
+<div class="lk-box"><h3>Decisión 1 de 2 · ¿Qué alternativa se ajusta mejor a una lógica de resguardo?</h3><div class="options" data-choice="s05_1" data-correct="A" data-then="s05_p2"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Separar temporalmente los espacios de trabajo y revisar su impacto.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Enviar a Andrea a un espacio aislado y con peores condiciones.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Impedir de inmediato que la persona denunciada realice cualquier función.</span></button></div><div class="fb"></div><template data-for="s05_1-A"><div class="feedback good"><strong>Bien orientado.</strong> <span class="fb-body">La separación de espacios puede reducir el contacto mientras se investiga, siempre que su implementación no perjudique a la persona denunciante. Ahora decide cómo implementarla.</span></div></template><template data-for="s05_1-B"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Trasladar a Andrea a condiciones desfavorables transforma una medida protectora en una carga para la denunciante.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_1-C"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">La separación no implica que la persona denunciada deba ser excluida automáticamente de todo trabajo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><div class="phase" hidden="" id="s05_p2"><div style="margin-top:18px"><h3>Decisión 2 de 2 · ¿Cómo la implementas?</h3><div class="options" data-choice="s05_2" data-correct="C" data-gate="s05"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Anuncias al equipo el cambio y explicas que hay una denuncia en curso.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Cambias a Andrea a una sala sin ventilación porque era la única libre.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Documentas el motivo, informas solo lo necesario a las personas involucradas y fijas una fecha de revisión.</span></button></div><div class="fb"></div><template data-for="s05_2-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Explicar al equipo el motivo expone la denuncia y vulnera la confidencialidad.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_2-B"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Si quien cambia de lugar queda en peores condiciones, el resguardo se convierte en un perjuicio.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_2-C"><div class="feedback good"><strong>Decisión acertada.</strong> <span class="fb-body">Documentar el motivo, informar solo lo necesario a las personas involucradas y fijar una revisión mantiene el resguardo trazable y proporcional.</span></div></template></div></div></div>
+</section>
+
+<!-- 8 · REDISTRIBUIR LA JORNADA -->
+<section class="slide" data-title="Redistribuir la jornada" data-audio="p06" data-gate="s06" data-gate-msg="Completa los espacios y presiona Revisar.">
+<span class="eyebrow">Aplicación</span>
+<h2>También puede redistribuirse el tiempo de jornada</h2>
+<div class="lk-flow" style="grid-template-columns:repeat(3,1fr)"><div>ANTES<br/><small>Coincidencia permanente de horarios y espacios</small></div><div>MEDIDA<br/><small>Redistribución temporal de horarios o jornada</small></div><div>REVISIÓN<br/><small>¿Protege sin producir menoscabo?</small></div></div>
+<div class="lk-instr"><span>✍️</span><span><b>Completa la regla</b> eligiendo la opción correcta en cada espacio y presiona <b>Revisar</b>.</span></div>
+<div class="lk-cloze" data-hint="Piensa en quién no debe salir perjudicado por la medida." data-key="s06" data-lk="cloze" data-okmsg="La medida se evalúa también por sus &lt;strong&gt;consecuencias laborales y económicas&lt;/strong&gt;: proteger no puede costarle a la persona denunciante.">
+<p>Cuando la separación física
+    <select data-ok="b"><option value="">elige…</option><option value="a">ya fue aplicada a todo el equipo</option><option value="b">no basta o no resulta viable</option><option value="c">resulta incómoda para la jefatura</option></select>,
+    puede redistribuirse temporalmente
+    <select data-ok="a"><option value="">elige…</option><option value="a">el tiempo de jornada</option><option value="b">la remuneración</option><option value="c">el cargo de la denunciante</option></select>.
+    La medida debe revisarse por sus consecuencias
+    <select data-ok="c"><option value="">elige…</option><option value="a">para la imagen del área</option><option value="b">para la productividad</option><option value="c">laborales y económicas</option></select>
+    y no debe producir un
+    <select data-ok="a"><option value="">elige…</option><option value="a">menoscabo a la persona denunciante</option><option value="b">cambio de horario</option><option value="c">registro escrito</option></select>.</p>
+</div>
+</section>
+
+<!-- 9 · ATENCIÓN PSICOLÓGICA -->
+<section class="slide" data-title="Atención psicológica" data-audio="p07" data-gate="s07" data-gate-msg="Marca las afirmaciones correctas y presiona Revisar." data-review="Atención psicológica">
+<span class="eyebrow">Recurso</span>
+<h2>Atención psicológica temprana</h2>
+<div class="lk-legal"><b>Una medida de apoyo, no una conclusión clínica.</b> La normativa contempla facilitar a la persona denunciante acceso a atención psicológica temprana mediante los programas del organismo administrador de la Ley N.º 16.744.</div>
+<div class="lk-box">
+<h3>¿Qué corresponde hacer a quien gestiona el procedimiento?</h3>
+<div class="lk-instr"><span>☑️</span><span><b>Marca todo lo que sí corresponde</b> y presiona <b>Revisar</b>.</span></div>
+<div class="lk-multi" data-hint="Quien investiga facilita el acceso; no asume funciones clínicas." data-key="s07" data-lk="multi" data-okmsg="Corresponde &lt;strong&gt;facilitar el acceso&lt;/strong&gt; al mecanismo previsto y dejarlo registrado. El rol investigativo no incluye diagnosticar ni usar la atención como prueba."><div class="options"><button class="opt" data-ok="1" type="button"><span class="letter">1</span><span>Informar a Andrea que puede acceder a atención psicológica temprana.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">2</span><span>Determinar personalmente si Andrea necesita tratamiento.</span></button><button class="opt" data-ok="1" type="button"><span class="letter">3</span><span>Facilitar el acceso a través del organismo administrador de la Ley N.º 16.744.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">4</span><span>Usar la evaluación psicológica como prueba de los hechos.</span></button><button class="opt" data-ok="1" type="button"><span class="letter">5</span><span>Dejar registro de que la medida se ofreció o activó.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">6</span><span>Exigir que asista como condición para investigar.</span></button></div></div>
+</div>
+</section>
+
+<!-- 10 · OTRAS MEDIDAS POSIBLES -->
+<section class="slide" data-title="Otras medidas posibles" data-audio="p08" data-gate="s08" data-gate-msg="Revisa las 3 pestañas.">
+<span class="eyebrow">Decisión</span>
+<h2>La lista legal no agota las posibilidades</h2>
+<p class="lead">Separar espacios, redistribuir jornada y facilitar atención psicológica temprana son ejemplos relevantes, pero la medida debe ajustarse a las particularidades del caso.</p>
+<div class="lk-box">
+<div class="lk-instr"><span>📑</span><span><b>Revisa otras alternativas</b> tocando cada pestaña.</span></div>
+<div data-tabs="s08"><div class="task">Pestañas revisadas <span class="tick">1 / 3</span></div><div class="tabs"><button class="tab" type="button">Reorganizar interacciones</button><button class="tab" type="button">Ajustar la organización</button><button class="tab" type="button">Modificar una medida</button></div><div class="tabpane solo"><div><h3>Reorganizar interacciones laborales</h3><p>Reducir contactos que no sean necesarios. Puede ser pertinente si controla efectivamente el riesgo y no genera perjuicio. Debe justificarse según el caso concreto.</p></div></div><div class="tabpane solo"><div><h3>Ajustar temporalmente la organización del trabajo</h3><p>Según las posibilidades reales del puesto. Puede evaluarse si es compatible con las funciones y protege eficazmente, sin producir menoscabo a la persona denunciante.</p></div></div><div class="tabpane solo"><div><h3>Modificar una medida existente</h3><p>Si deja de ser adecuada o suficiente. Las medidas pueden modificarse durante la investigación cuando sea necesario para resguardar eficazmente la vida y salud de las personas involucradas.</p></div></div></div>
+</div>
+</section>
+
+<!-- 11 · ¿QUÉ MEDIDA ELEGIRÍAS? -->
+<section class="slide" data-title="¿Qué medida elegirías?" data-audio="p09" data-gate="s09" data-gate-msg="Une todos los elementos.">
+<span class="eyebrow">Microcaso</span>
+<h2>¿Qué medida elegirías para Andrea?</h2>
+<div class="lk-folder"><span class="lk-tag">DATOS DISPONIBLES</span><p>Andrea y su jefatura comparten espacio. Es posible reorganizar temporalmente la ubicación de trabajo. Andrea mantiene sus funciones y remuneraciones habituales. No existen todavía conclusiones sobre responsabilidad.</p></div>
+<div class="lk-instr"><span>🔗</span><span><b>Une cada medida con su evaluación.</b> Toca una medida (izquierda) y luego la evaluación (derecha).</span></div>
+<div data-pairs="s09"><div class="task">Parejas formadas <span class="tick">0 / 4</span></div><div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> No busques la medida más severa: busca la que controle el riesgo de forma <strong>eficaz y proporcional</strong>, con seguimiento.</div></div>
+</section>
+
+<!-- 12 · PROTEGER NO ES CASTIGAR -->
+<section class="slide" data-title="Proteger no es castigar" data-audio="p10" data-gate="s10" data-gate-msg="Revisa los 3 elementos.">
+<span class="eyebrow">Contraste</span>
+<h2>Proteger no es castigar</h2>
+<p class="lead">Una medida mal diseñada puede convertirse en una nueva fuente de perjuicio.</p>
+<div class="lk-instr"><span>🔎</span><span><b>Abre cada frase</b> y descubre si la actuación es adecuada.</span></div>
+<div data-key="s10" data-lk="reveal"><div class="task">Elementos revisados <span class="tick">0 / 3</span></div><div class="lk-rv-grid"><button class="lk-rv" data-fb="Incorrecto: la Dirección del Trabajo ha señalado que las medidas no pueden ser gravosas o perjudiciales para la persona denunciante ni producir menoscabo." data-kind="bad" type="button"><b>“Movamos a Andrea donde moleste menos.”</b><span>La denunciante absorbe el costo del resguardo.</span></button><button class="lk-rv" data-fb="Incorrecto: una medida de resguardo no equivale a una sanción anticipada contra la persona denunciada." data-kind="bad" type="button"><b>“Si fue denunciado, ya sabemos lo que pasó.”</b><span>La medida se usa como declaración de responsabilidad.</span></button><button class="lk-rv" data-fb="Correcto: una medida debe responder al riesgo y puede revisarse si cambian los antecedentes o su eficacia." data-kind="ok" type="button"><b>“Documentemos por qué se adopta y revisemos si funciona.”</b><span>Resguardo trazable y revisable.</span></button></div><div class="lk-rv-panel" hidden=""></div></div>
+</section>
+
+<!-- 13 · HERRAMIENTA TLS -->
+<section class="slide" data-title="Herramienta TLS" data-audio="p11" data-gate="s11" data-gate-msg="Ordena los pasos y presiona «Comprobar orden»." data-review="Herramienta TLS">
+<span class="eyebrow">Herramienta TLS</span>
+<h2>Cuatro preguntas antes de proponer o mantener una medida</h2>
+<div class="lk-box">
+<div class="lk-instr"><span>↕️</span><span><b>Ordena la herramienta</b> desde el primer paso (arriba) hasta el último (abajo) y presiona <b>Comprobar orden</b>.</span></div>
+<div data-hint="No puedes elegir una medida sin saber qué riesgo necesitas controlar." data-items='["RIESGO · ¿Qué necesito controlar?","PROTECCIÓN · ¿Qué medida lo reduce?","IMPACTO · ¿Qué efecto produce?","SEGUIMIENTO · ¿Sigue siendo adecuada?"]' data-key="s11" data-lk="order" data-okmsg="&lt;strong&gt;RIESGO → PROTECCIÓN → IMPACTO → SEGUIMIENTO.&lt;/strong&gt; Primero identificas qué controlar, luego eliges la medida, verificas que no perjudique y la revisas en el tiempo." data-start="[2,3,0,1]"></div>
+</div>
+</section>
+
+<!-- 14 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+<span class="eyebrow violet">Comprobación</span>
+<div class="qhead"><h2 style="margin-bottom:0">¿Protegerías sin prejuzgar?</h2><div class="qdots" id="qdots"></div></div>
+<p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Cada alternativa explica por qué es correcta o no. Si no lo logras, puedes reintentar.</p>
+<div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 15 · SEGUIMIENTO Y TRANSFERENCIA -->
+<section class="slide" data-title="Seguimiento y transferencia" data-audio="p12" data-gate="s13 pass" data-gate-msg="Completa los campos y compara con la referencia (requiere 80 % en la Comprobación).">
+<span class="eyebrow">Seguimiento · Transferencia</span>
+<h2>Una medida no se adopta y se olvida</h2>
+<div class="lk-banner" style="background-image:url('img/lk4_img1.jpg')"><div class="cap"><h3>Día 6 · Expediente LK-026</h3><p>La investigadora verifica cómo funciona la reorganización y si produjo efectos no previstos.</p></div></div>
+<div class="lk-legal"><b>En el seguimiento se comprueba:</b> si el riesgo que motivó la medida disminuyó · si sigue siendo necesaria y adecuada · si produjo perjuicios laborales o económicos · si corresponde mantenerla, ajustarla o sustituirla.</div>
+<div class="lk-instr"><span>📝</span><span><b>Diseña tu propuesta de resguardo para LK-026.</b> Escribe una frase breve en cada campo (mínimo 20 caracteres) y compara con la referencia.</span></div>
+<div class="lk-box lk-transfer" data-key="s13" data-lk="transfer"><label class="lk-fl">1. ¿Qué riesgo necesitas controlar?</label>
+<textarea placeholder="Ej.: el contacto cotidiano entre…"></textarea>
+<label class="lk-fl">2. ¿Qué medida propones y por qué es proporcional?</label>
+<textarea placeholder="Ej.: separar temporalmente…"></textarea>
+<label class="lk-fl">3. ¿Cómo verificarás que no perjudique a Andrea y cuándo la revisarás?</label>
+<textarea placeholder="Ej.: revisar al día 6 que…"></textarea><div class="callout lk-model" hidden=""><strong>Respuesta de referencia (una de varias posibles):</strong>
+<ol><li><b>Riesgo:</b> el contacto cotidiano entre Andrea y su jefatura mientras se investiga, que puede exponerla a nuevas desacreditaciones.</li>
+<li><b>Medida:</b> separar temporalmente los espacios de trabajo manteniendo funciones, remuneraciones y condiciones de Andrea; es proporcional porque reduce el contacto sin sancionar ni declarar responsabilidad.</li>
+<li><b>Seguimiento:</b> documentar el motivo y revisarla en una fecha definida (por ejemplo, el día 6): comprobar si el riesgo disminuyó, si generó algún perjuicio y si corresponde mantenerla, ajustarla o sustituirla.</li></ol>
+<span class="lk-small">Recuerda: proteger no es castigar.</span></div></div>
+</section>
+
+<!-- 16 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p13" data-report>
+<div class="completion">
+<div class="icon">✓</div>
+<span class="eyebrow">Lección completada</span>
+<h2>LK-026 ya está protegido para avanzar</h2>
+<p>La denuncia fue recibida, registrada y ahora cuenta con una medida de resguardo evaluada y trazable.</p>
+<div class="lk-recap-tools">
+<div><b>M1L3</b><span>RECIBE → REGISTRA → REVISA → RESGUARDA → DERIVA</span></div>
+<div class="now"><b>M1L4</b><span>RIESGO → PROTECCIÓN → IMPACTO → SEGUIMIENTO</span></div>
+</div><div class="lk-next"><small>SIGUIENTE LECCIÓN</small><b>M1L5 · Decisión y planificación inicial de la investigación</b><p>¿Qué debe investigarse, qué diligencias necesitamos y en qué orden?</p></div>
+<div class="report" style="text-align:left">
+<div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+<div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y actividades acertadas al primer intento</small></div>
+<div class="metric"><div class="big" style="color:var(--good)">Aprobada</div><small>Estado de la lección</small></div>
+</div>
+<div class="callout" style="text-align:left"><strong>Repasa cuando quieras</strong><div class="completion-actions" id="reviewBtns" style="justify-content:flex-start;margin-top:10px"></div></div>
+<div class="sources">Fuentes: Código del Trabajo, Libro II, Título IV (Ley N.º 21.643); D.S. N.º 21 (2024), Ministerio del Trabajo y Previsión Social; Ley N.º 16.744; criterios de la Dirección del Trabajo sobre medidas de resguardo.</div>
+<p class="sources">Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+</div>
+</section>

@@ -10,6 +10,13 @@ Los cuatro módulos están terminados, con voz en las lecciones x.1 y x.3, y ent
 - Pendiente de decisión de la autora: agregar narración a los laboratorios (hoy sin voz).
 - Casos Mindsmith creados y **sin publicar** (la autora los publica): M1 `cmv38d6dx000007nooffs3n54`, M2 `cmv38qdi3000006k1j4nd1mfc`, M3 `cmv4svhtu000006l33odfrudv`, M4 `cmv4tzacm000006pdw1ewhn55`.
 
+## Lecciones TLS · Ley Karin (`src/ley-karin/`)
+Cinco lecciones de otro curso (Tremen Partner · TLS®, Módulo 1 de Ley Karin, caso Andrea / expediente LK-026), homologadas al motor del curso a partir de los SCORM originales de la autora. Se mantienen sus textos, actividades, imágenes (`src/img/lkN_*.jpg`) y la **paleta TLS** (#171697, #00A5AB, #101044, #FFD65C), definida en `src/ley-karin/tema.css`. Se agregaron un video narrado por capítulos y retroalimentación por alternativa en la comprobación.
+- `tema.css` y `comun.js` (actividades sin equivalente en el motor: selección múltiple, ordenar, completar, tarjetas para explorar, compromisos y transferencia) son compartidos: cada `lesson.py` copia el tema a `content.html` y arma `lesson.js` (comun.js + `propio.js` opcional). Edita esos dos archivos, no las copias.
+- Voz: perfil «tls» en `lesson.json` (`"voz"`): referencia `tools/voz/referencia_latina.wav`, exageración 0,75, guía 0,35, pausa 0,28 s, Whisper ≥ 88 % con 4 intentos, pico a −1 dBFS, MP3 96 kbps.
+- Compilar: `python3 src/ley-karin/leccion-1-N/lesson.py && python3 tools/build_lesson.py src/ley-karin/leccion-1-N`. Salida en `dist/ley-karin/` y `dist/Leccion_1_N_*_SCORM12.zip`.
+- Si Chatterbox falla con `'NoneType' object is not callable` (perth), instala `setuptools<81` en el entorno de voz.
+
 ## Recursos por módulo
 4 lecciones (x.1 y x.3 con voz; x.2 y x.4 sin voz) · laboratorios A y B (SCORM con nota, aprobación 70 %) · evaluación final ramificada desde el Módulo 2 · cuestionario Moodle XML de 10 preguntas con feedback en cada alternativa · 2 PDF · carruseles HTML de resumen y glosario · video MP4 1080p con voz, sin música, con subtítulos `.vtt` · 1 caso Mindsmith. Detalle completo en `docs/diseno-recursos.md`; reglas de redacción y exactitud normativa en `docs/brief-produccion.md`.
 

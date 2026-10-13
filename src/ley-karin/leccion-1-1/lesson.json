@@ -1,0 +1,253 @@
+{
+ "id": "tls_lk_l11",
+ "ident": "TLS_LK_M1_L1",
+ "zip_name": "Leccion_1_1_Ley_Karin_Proceso_Investigativo",
+ "title": "M1 · L1 — Ley Karin aplicada al proceso investigativo",
+ "course_label": "TREMEN PARTNER · TLS® · LEY KARIN · MÓDULO 1 · LECCIÓN 1",
+ "voice": true,
+ "pass": 0.8,
+ "voz": {
+  "tag": "tls",
+  "pause": 0.28,
+  "min_sim": 0.88,
+  "tries": 4,
+  "norm_db": -1,
+  "bitrate": "96k"
+ },
+ "narration": {
+  "p01": "Comenzamos la primera lección. Una denuncia no llega acompañada de una conclusión. Nuestro trabajo será transformar la información inicial en un proceso serio, trazable y basado en antecedentes. A lo largo de este caso, el expediente ele ka cero veintiséis irá creciendo. Tu desafío será analizar, reconocer y decidir sin adelantar el resultado.",
+  "p02": "A las nueve doce llega una denuncia relacionada con una jefatura. El relato menciona desacreditaciones frente al equipo, una frase atribuida al jefe y la exclusión de dos reuniones. Antes de actuar, detente en una pregunta clave: ¿qué sabemos realmente? Por ahora existe un relato que debe encauzarse y hechos que necesitan ser investigados.",
+  "p03": "Ordenar la información es el primer paso para investigar bien. Distingue lo que el relato afirma de aquello que todavía estamos suponiendo. Sabemos qué episodios se mencionan, pero aún debemos precisar contexto, fechas, participantes y antecedentes. Investigar exige identificar qué falta y qué fuentes podrían ayudarnos a contrastar las versiones.",
+  "p04": "Investigar no significa averiguar rápidamente quién tiene razón. Significa transformar hechos alegados en un proceso estructurado de recopilación, contraste y análisis. El recorrido va desde el relato hacia los hechos a investigar, las diligencias y el análisis, hasta llegar a conclusiones que puedan fundamentarse.",
+  "p05": "Antes de buscar respuestas, revisa cómo estás formulando la pregunta. La opción más sólida no es creer, descartar ni elegir una diligencia por intuición. Primero delimita qué hechos se investigarán y qué antecedentes podrían permitir contrastarlos. Esa decisión inicial condiciona la calidad de todo el proceso.",
+  "p06": "El investigador no actúa solo por intuición. La investigación se desarrolla dentro de un marco normativo y organizacional. En este curso distinguiremos constantemente entre la norma, el procedimiento aplicable y la decisión investigativa. El Código del Trabajo, la Ley veintiún mil seiscientos cuarenta y tres, el reglamento aplicable y las reglas internas forman parte de ese mapa de referencia.",
+  "p07": "Cada actuación debe pasar por filtros básicos. La confidencialidad exige manejar la información de forma reservada y pertinente. La imparcialidad evita partir desde una conclusión predeterminada. La celeridad exige avanzar oportunamente. Y el debido proceso requiere que las personas involucradas puedan aportar antecedentes y ejercer sus derechos durante el procedimiento.",
+  "p08": "Aparece un nuevo antecedente. Una integrante del equipo dice que estuvo en una de las reuniones, que hubo una discusión fuerte y que Andrea salió afectada. ¿Qué cambia? No tenemos una conclusión definitiva. Tenemos una nueva fuente potencial de información cuyo relato debe obtenerse, registrarse y analizarse formalmente.",
+  "p09": "El expediente sigue incompleto. Dos errores opuestos pueden deteriorar una investigación: confirmar demasiado pronto una conclusión ya asumida, o descartar la denuncia porque al inicio todavía faltan antecedentes. La tarea investigativa consiste en mantener abierta la pregunta mientras se recopila y contrasta información pertinente.",
+  "p10": "Recuerda esta estructura: hecho, antecedente, análisis y conclusión. Primero identifica qué se alega. Luego, qué información existe. Después, analiza qué permite sostener esa información. Solo entonces formula una conclusión proporcional. No saltes del relato directamente al resultado: entre ambos existe trabajo investigativo.",
+  "quiz": "Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.",
+  "p11": "Ahora aplica la lógica al expediente ele ka cero veintiséis. No necesitas resolver el caso. Solo organiza tu pensamiento. Define un hecho concreto que investigarías primero, identifica un antecedente que buscarías y escribe una conclusión que todavía no puedes formular. Tus respuestas te ayudarán a separar investigación de interpretación.",
+  "p12": "Desde ahora, antes de concluir, delimita qué se alega. Antes de creer o descartar, busca antecedentes que permitan contrastar versiones. Antes de actuar, revisa el marco procedimental y los principios que orientan tu actuación. Y durante todo el proceso, distingue hecho, antecedente, análisis y conclusión.",
+  "p13": "Has completado la primera etapa. El expediente queda abierto y la pregunta investigativa debe seguir abierta también. En la próxima lección tendrás que distinguir situaciones que pueden corresponder a acoso laboral, acoso sexual, violencia en el trabajo u otras problemáticas laborales. Avanza con método, no con supuestos."
+ },
+ "video": {
+  "voice": true,
+  "scenes": [
+   {
+    "t": "Una denuncia inicia un proceso",
+    "lines": [
+     "Cuando llega una denuncia, lo que tienes en las manos es un relato: hechos alegados por una persona.",
+     "Ese relato no es una prueba ni una conclusión. Es el punto de partida de un proceso que debe ordenarse."
+    ],
+    "html": "<div class=\"v-vs\"><div data-at=\"0\"><b>Relato</b>Hechos alegados<small>Punto de partida</small></div><div class=\"warn\" data-at=\"1\"><b>Conclusión</b>Todavía no existe<small>Requiere investigar</small></div></div>"
+   },
+   {
+    "t": "Separar hechos de interpretaciones",
+    "lines": [
+     "Antes de actuar, distingue lo que el relato afirma de lo que tú estás suponiendo.",
+     "Calificar la conducta, dudar de quien denuncia o dar por suficiente la evidencia son interpretaciones que todavía no tienen respaldo."
+    ],
+    "html": "<div class=\"v-chk\"><span data-at=\"0\">¿Qué dice el relato?</span><span data-at=\"0\">¿Qué estoy suponiendo?</span><span data-at=\"1\">¿Qué falta averiguar?</span></div>"
+   },
+   {
+    "t": "El recorrido de una investigación",
+    "lines": [
+     "Del relato se delimitan los hechos a investigar. Luego se planifican diligencias y se analiza lo obtenido.",
+     "Solo al final se formulan conclusiones, y deben ser proporcionales a lo que los antecedentes permiten sostener."
+    ],
+    "html": "<div class=\"v-steps\"><div data-at=\"0\">Relato</div><div data-at=\"0\">Hechos a investigar</div><div data-at=\"0\">Diligencias</div><div data-at=\"1\">Análisis</div><div data-at=\"1\">Conclusiones</div></div>"
+   },
+   {
+    "t": "Un marco y cuatro principios",
+    "lines": [
+     "La investigación se desarrolla dentro de un marco: el Código del Trabajo, la Ley veintiún mil seiscientos cuarenta y tres, su reglamento y las reglas internas.",
+     "Cada actuación pasa por cuatro filtros: confidencialidad, imparcialidad, celeridad y debido proceso."
+    ],
+    "html": "<div class=\"v-icons\"><div data-at=\"0\"><span class=\"i\">⚖️</span>Marco normativo</div><div data-at=\"1\"><span class=\"i\">🔒</span>Confidencialidad</div><div data-at=\"1\"><span class=\"i\">🧭</span>Imparcialidad</div><div data-at=\"1\"><span class=\"i\">⏱️</span>Celeridad</div><div data-at=\"1\"><span class=\"i\">🛡️</span>Debido proceso</div></div>"
+   },
+   {
+    "t": "La herramienta TLS",
+    "lines": [
+     "Recuerda la secuencia: hecho, antecedente, análisis y conclusión.",
+     "No saltes del relato al resultado. Entre ambos existe trabajo investigativo."
+    ],
+    "html": "<div class=\"v-final\">Hecho → Antecedente →<br/><em>Análisis</em> → Conclusión</div>"
+   }
+  ]
+ },
+ "sorts": {
+  "s10": {
+   "bins": [
+    {
+     "id": "Hecho",
+     "title": "Hecho"
+    },
+    {
+     "id": "Antecedente",
+     "title": "Antecedente"
+    },
+    {
+     "id": "Análisis",
+     "title": "Análisis"
+    },
+    {
+     "id": "Conclusión",
+     "title": "Conclusión"
+    }
+   ],
+   "items": [
+    {
+     "t": "La denunciante señala que fue excluida de dos reuniones del área.",
+     "bin": "Hecho",
+     "why": "Es lo que se alega: el punto de partida que debe investigarse.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Invitaciones de calendario y lista de asistentes de esas reuniones.",
+     "bin": "Antecedente",
+     "why": "Es información disponible que permite contrastar lo alegado.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Comparar las invitaciones con la nómina del equipo permite verificar si la exclusión ocurrió y a quiénes afectó.",
+     "bin": "Análisis",
+     "why": "Evalúa qué permiten sostener los antecedentes.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Según la denuncia, el jefe habría dicho: “si no puedes soportar la presión, busca otro trabajo”.",
+     "bin": "Hecho",
+     "why": "Es una conducta alegada que todavía debe verificarse.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Declaración formal de la integrante del equipo que estuvo en una de las reuniones.",
+     "bin": "Antecedente",
+     "why": "Es una fuente de información que se obtiene y registra.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    },
+    {
+     "t": "Con los antecedentes reunidos y analizados, se da por acreditada (o no) la exclusión de las reuniones.",
+     "bin": "Conclusión",
+     "why": "Solo se formula al final, proporcional a lo que el análisis sostiene.",
+     "hint": "Revisa qué describe el elemento y en qué categoría encaja mejor."
+    }
+   ]
+  }
+ },
+ "pairs": {
+  "s07": {
+   "items": [
+    [
+     "Comentas detalles del caso con jefaturas que no participan en la investigación.",
+     "<span class=\"lk-princ\">Confidencialidad</span><br/><span class=\"lk-small\">Manejo reservado y pertinente de la información.</span>",
+     "<b>Confidencialidad</b>: Manejo reservado y pertinente de la información."
+    ],
+    [
+     "Decides desde el inicio que la versión de la jefatura es la correcta.",
+     "<span class=\"lk-princ\">Imparcialidad</span><br/><span class=\"lk-small\">No partir de una conclusión predeterminada.</span>",
+     "<b>Imparcialidad</b>: No partir de una conclusión predeterminada."
+    ],
+    [
+     "Dejas pasar semanas sin realizar ninguna diligencia.",
+     "<span class=\"lk-princ\">Celeridad</span><br/><span class=\"lk-small\">Avanzar oportunamente, dentro de los plazos.</span>",
+     "<b>Celeridad</b>: Avanzar oportunamente, dentro de los plazos."
+    ],
+    [
+     "No das a la persona denunciada la oportunidad de aportar antecedentes.",
+     "<span class=\"lk-princ\">Debido proceso</span><br/><span class=\"lk-small\">Oportunidad de aportar antecedentes y ejercer derechos.</span>",
+     "<b>Debido proceso</b>: Oportunidad de aportar antecedentes y ejercer derechos."
+    ]
+   ],
+   "order": [
+    2,
+    3,
+    0,
+    1
+   ],
+   "hint": "Pregúntate qué se pone en riesgo con esa actuación: ¿la reserva de la información, la neutralidad, el tiempo o los derechos de las personas?"
+  }
+ },
+ "quiz": [
+  {
+   "q": "Al recibir la denuncia del expediente LK-026, ¿qué existe en ese momento?",
+   "o": [
+    "Prueba suficiente de acoso laboral.",
+    "Un relato con hechos alegados que deben ser investigados.",
+    "Un conflicto interpersonal que no requiere investigación.",
+    "Una acusación que debe validarse con el denunciado antes de registrarla."
+   ],
+   "c": 1,
+   "f": [
+    "Una denuncia no es prueba suficiente: aporta hechos alegados que todavía deben delimitarse y contrastarse.",
+    "Una denuncia inicia un proceso: aporta hechos alegados que deben delimitarse y contrastarse. No es prueba ni se descarta de entrada.",
+    "Calificar el caso como conflicto interpersonal antes de investigar es descartar sin antecedentes.",
+    "La denuncia se registra al recibirla. Pedir que el denunciado la “valide” antes vulnera la confidencialidad y la imparcialidad."
+   ]
+  },
+  {
+   "q": "¿Cuál es la primera tarea más sólida para quien investiga?",
+   "o": [
+    "Entrevistar al denunciado para ver si reconoce lo ocurrido.",
+    "Revisar si la denunciante ha tenido conflictos anteriores.",
+    "Buscar correos o mensajes y, si no existen, cerrar el caso.",
+    "Delimitar los hechos a investigar y los antecedentes que permitirían contrastarlos."
+   ],
+   "c": 3,
+   "f": [
+    "Elegir una diligencia por intuición, sin haber delimitado los hechos, desordena la investigación y puede hacer perder información.",
+    "Revisar conflictos anteriores de la denunciante desplaza el foco desde los hechos hacia la credibilidad de la persona.",
+    "La ausencia inicial de documentos no cierra la pregunta: existen otras fuentes, como testigos, calendarios o registros.",
+    "Delimitar hechos y antecedentes ordena las diligencias. Las otras opciones actúan por intuición o descartan antes de investigar."
+   ]
+  },
+  {
+   "q": "Una integrante del equipo comenta que “hubo una discusión fuerte”. ¿Qué valor tiene ese comentario?",
+   "o": [
+    "Es una fuente potencial cuyo relato debe obtenerse y analizarse formalmente.",
+    "Confirma definitivamente la denuncia.",
+    "Demuestra que solo hubo un conflicto interpersonal.",
+    "No tiene ningún valor por haber sido informal."
+   ],
+   "c": 0,
+   "f": [
+    "Un comentario informal abre una fuente de información: hay que obtener su relato de manera formal y analizarlo, sin sobrevalorarlo ni descartarlo.",
+    "Un comentario informal, que además no recuerda las palabras, no puede confirmar por sí solo la denuncia.",
+    "“Discusión fuerte” no permite concluir que fue solo un conflicto; sería decidir sin antecedentes.",
+    "Que sea informal no lo vuelve inútil: indica una fuente cuyo relato debe obtenerse de manera formal."
+   ]
+  },
+  {
+   "q": "Comentar el caso con otras jefaturas que no participan en la investigación afecta principalmente:",
+   "o": [
+    "La celeridad.",
+    "El debido proceso.",
+    "La confidencialidad.",
+    "La imparcialidad."
+   ],
+   "c": 2,
+   "f": [
+    "La celeridad se refiere a avanzar oportunamente. Aquí el problema es con quién se comparte la información.",
+    "El debido proceso protege la posibilidad de aportar antecedentes y ejercer derechos. El problema aquí es la reserva.",
+    "La información del procedimiento requiere manejo reservado y pertinente: compartirla con terceros no involucrados vulnera la confidencialidad.",
+    "La imparcialidad evita partir de una conclusión predeterminada. Compartir el caso afecta, sobre todo, la reserva."
+   ]
+  },
+  {
+   "q": "¿Cuál es el orden correcto de la herramienta TLS?",
+   "o": [
+    "Hecho → Conclusión → Antecedente → Análisis.",
+    "Hecho → Antecedente → Análisis → Conclusión.",
+    "Antecedente → Hecho → Conclusión → Análisis.",
+    "Relato → Conclusión → Diligencias → Análisis."
+   ],
+   "c": 1,
+   "f": [
+    "La conclusión no puede ir antes del antecedente ni del análisis: sería concluir sin respaldo.",
+    "Primero se identifica qué se alega, luego qué información existe, después qué permite sostener y solo al final qué puede fundamentarse.",
+    "El punto de partida es lo que se alega, no la información disponible, y la conclusión siempre va al final.",
+    "Esta secuencia pone la conclusión antes de las diligencias y del análisis: es justo el error que la herramienta evita."
+   ]
+  }
+ ]
+}

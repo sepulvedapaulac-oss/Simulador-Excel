@@ -1,0 +1,184 @@
+# Genera lesson.json, sincroniza el tema TLS en content.html y arma lesson.js (comun.js + ganchos propios)
+import json, pathlib, re
+H = pathlib.Path(__file__).parent
+L = {'id': 'tls_lk_l12',
+ 'ident': 'TLS_LK_M1_L2',
+ 'zip_name': 'Leccion_1_2_Es_Ley_Karin',
+ 'title': 'M1 · L2 — ¿Es Ley Karin? Acoso laboral, sexual y violencia en el trabajo',
+ 'course_label': 'TREMEN PARTNER · TLS® · LEY KARIN · MÓDULO 1 · LECCIÓN 2',
+ 'voice': True,
+ 'pass': 0.8,
+ 'voz': {'tag': 'tls', 'pause': 0.28, 'min_sim': 0.88, 'tries': 4, 'norm_db': -1, 'bitrate': '96k'},
+ 'narration': {'p01': 'En esta lección aprenderás a distinguir situaciones que pueden corresponder a acoso laboral, acoso sexual, violencia en el trabajo ejercida por terceros u '
+                      'otras problemáticas laborales. Antes de poner una etiqueta, observa cuatro elementos: la conducta, el contexto, quiénes intervienen y el efecto que se '
+                      'describe.',
+               'p02': 'Tres situaciones llegan el mismo día. Una jefatura desacredita a una analista frente al equipo. Otra persona recibe comentarios de carácter sexual no '
+                      'deseados. Y una trabajadora es insultada y amenazada por un cliente. Los tres relatos requieren atención, pero no describen necesariamente la misma '
+                      'categoría jurídica.',
+               'p03': 'Etiquetar demasiado pronto puede sesgar la investigación. El relato inicial orienta, pero no reemplaza el análisis. Antes de clasificar, pregunta qué '
+                      'ocurrió concretamente, en qué contexto, quiénes intervinieron y qué resultado o amenaza se describe. Esa información permite construir una hipótesis sin '
+                      'convertirla todavía en conclusión.',
+               'p04': 'En el acoso laboral, la frecuencia por sí sola no decide el caso. La definición vigente permite que la conducta se manifieste una sola vez o de manera '
+                      'reiterada. Lo relevante es analizar si existe agresión u hostigamiento y si produce menoscabo, maltrato, humillación, o amenaza o perjudica la situación '
+                      'laboral o las oportunidades en el empleo.',
+               'p05': 'Imagina una descalificación grave realizada una sola vez frente a todo el equipo. No corresponde descartarla solo porque no existen episodios anteriores, '
+                      'pero tampoco basta su gravedad para concluir automáticamente que existe acoso laboral. La tarea es analizar los demás elementos y recopilar antecedentes '
+                      'que permitan sostener una conclusión.',
+               'p06': 'Para analizar un posible acoso sexual, observa tres elementos. Primero, si existe un requerimiento de carácter sexual realizado de forma indebida. Segundo, '
+                      'si no fue consentido por quien lo recibe. Y tercero, si amenaza o perjudica su situación laboral o sus oportunidades en el empleo. La investigación debe '
+                      'centrarse en estos elementos, no en etiquetas generales.',
+               'p07': 'Si una persona afirma que los comentarios de carácter sexual eran solo una broma, esa explicación no cierra el análisis. Quien investiga debe recopilar '
+                      'antecedentes, revisar el contexto y contrastar los elementos de la definición. La intención declarada por quien realizó la conducta no reemplaza el '
+                      'análisis de lo ocurrido y de sus efectos laborales.',
+               'p08': 'En la violencia en el trabajo ejercida por terceros cambia una pregunta central: ¿quién realiza la conducta? La definición incluye acciones que afectan a '
+                      'trabajadoras o trabajadores con ocasión de la prestación de servicios y que provienen de personas ajenas a la relación laboral, como clientes, proveedores '
+                      'o usuarios.',
+               'p09': 'Si un cliente insulta y amenaza a una trabajadora durante la atención, el hecho no queda fuera del análisis por tratarse de alguien externo a la empresa. '
+                      'Debe examinarse como una posible situación de violencia en el trabajo ejercida por un tercero, considerando el contexto y los antecedentes disponibles.',
+               'p10': 'No toda tensión, desacuerdo o decisión de gestión constituye automáticamente acoso. Expresiones como fue una discusión, es una jefatura exigente o se '
+                      'llevan mal son etiquetas cotidianas. La investigación debe volver a la conducta concreta: qué ocurrió, quién intervino, en qué circunstancias y qué '
+                      'resultado o amenaza se describe.',
+               'p11': 'Antes de clasificar, utiliza esta herramienta: conducta, contexto, sujetos y efecto. Conducta: ¿qué ocurrió? Contexto: ¿cuándo, dónde y en qué '
+                      'circunstancias? Sujetos: ¿quiénes intervienen? Efecto: ¿qué resultado, menoscabo o amenaza se describe? Cuatro preguntas simples pueden evitar conclusiones '
+                      'apresuradas.',
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+                       'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
+               'p12': 'Volvamos al expediente ele ka cero veintiséis. Andrea relata desacreditaciones frente al equipo, una frase de su jefatura y la exclusión de dos reuniones. '
+                      'Todavía no necesitas clasificar definitivamente el caso. Primero elige una conducta concreta, identifica qué contexto falta precisar y determina qué '
+                      'elemento necesita ser contrastado con antecedentes.',
+               'p13': 'Has completado la segunda lección. Ya cuentas con dos herramientas: hecho, antecedente, análisis y conclusión; y conducta, contexto, sujetos y efecto. En '
+                      'la próxima lección trabajarás la recepción y gestión inicial de una denuncia. Recuerda: clasificar bien comienza por observar bien.'},
+ 'video': {'voice': True,
+           'scenes': [{'t': 'Tres categorías distintas',
+                       'lines': ['La Ley Karin distingue el acoso laboral, el acoso sexual y la violencia en el trabajo ejercida por terceros.',
+                                 'Cada una tiene elementos propios. Por eso, antes de clasificar, hay que observar con cuidado.'],
+                       'html': '<div class="v-icons"><div data-at="0"><span class="i">🏢</span>Acoso laboral</div><div data-at="0"><span class="i">🚫</span>Acoso sexual</div><div '
+                               'data-at="0"><span class="i">🧍</span>Violencia por terceros</div><div class="dim" data-at="1"><span class="i">🔍</span>Observa antes de '
+                               'clasificar</div></div>'},
+                      {'t': 'Acoso laboral',
+                       'lines': ['Desde la Ley Karin, el acoso laboral puede manifestarse una sola vez o de manera reiterada.',
+                                 'Se analiza si hay agresión u hostigamiento que produzca menoscabo, maltrato o humillación, o que amenace o perjudique la situación laboral.'],
+                       'html': '<div class="v-vs"><div data-at="0"><b>Frecuencia</b>Una vez o reiterada<small>No decide el caso</small></div><div '
+                               'data-at="1"><b>Efecto</b>Menoscabo, maltrato o perjuicio<small>Se analiza</small></div></div>'},
+                      {'t': 'Acoso sexual',
+                       'lines': ['En un posible acoso sexual se observan tres elementos: un requerimiento de carácter sexual indebido, que no es consentido por quien lo recibe, y '
+                                 'que amenaza o perjudica su situación laboral.',
+                                 'La intención que declare quien realizó la conducta no reemplaza ese análisis.'],
+                       'html': '<div class="v-steps"><div data-at="0">Requerimiento sexual indebido</div><div data-at="0">No consentido</div><div data-at="0">Amenaza o perjuicio '
+                               'laboral</div><div data-at="1">“Era una broma” no cierra el análisis</div></div>'},
+                      {'t': 'Violencia ejercida por terceros',
+                       'lines': ['La violencia en el trabajo ejercida por terceros proviene de personas ajenas a la relación laboral, como clientes, proveedores o usuarios.',
+                                 'Que quien agrede no pertenezca a la empresa no excluye el caso: es justamente lo que define esta categoría.'],
+                       'html': '<div class="v-vs"><div data-at="0"><b>¿Quién actúa?</b>Cliente, proveedor o usuario<small>Ajeno a la relación laboral</small></div><div '
+                               'data-at="1"><b>¿Cuándo?</b>Con ocasión del trabajo<small>Durante la prestación de servicios</small></div></div>'},
+                      {'t': 'La herramienta TLS',
+                       'lines': ['Antes de clasificar, responde cuatro preguntas: conducta, contexto, sujetos y efecto.',
+                                 'Qué ocurrió, en qué circunstancias, quiénes intervienen y qué resultado o amenaza se describe.'],
+                       'html': '<div class="v-final">Conducta · Contexto ·<br/><em>Sujetos</em> · Efecto</div>'}]},
+ 'sorts': {'s10': {'bins': [{'id': 'Etiqueta cotidiana', 'title': 'Etiqueta cotidiana'}, {'id': 'Conducta concreta', 'title': 'Conducta concreta'}],
+                   'items': [{'t': '“Fue una discusión.”',
+                              'bin': 'Etiqueta cotidiana',
+                              'why': 'Resume una impresión; no describe qué ocurrió.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Le dijo frente al equipo que su trabajo “no servía para nada”.',
+                              'bin': 'Conducta concreta',
+                              'why': 'Describe palabras, lugar y personas presentes: se puede contrastar.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': '“Es una jefatura exigente.”',
+                              'bin': 'Etiqueta cotidiana',
+                              'why': 'Califica a la persona; no identifica una conducta.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'La excluyó de la convocatoria a dos reuniones del área.',
+                              'bin': 'Conducta concreta',
+                              'why': 'Es verificable con convocatorias y registros.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': '“Se llevan mal desde hace tiempo.”',
+                              'bin': 'Etiqueta cotidiana',
+                              'why': 'Describe una relación, no un hecho.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Le asignó plazos de 24 horas solo a ella durante un mes.',
+                              'bin': 'Conducta concreta',
+                              'why': 'Es una decisión concreta que se puede comparar con la del resto del equipo.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'}]}},
+ 'pairs': {'s11': {'items': [['“Me dijo que si no soportaba la presión, buscara otro trabajo.”',
+                              '<span class="lk-princ">Conducta</span><br/><span class="lk-small">¿Qué ocurrió?</span>',
+                              '<b>Conducta</b>: ¿Qué ocurrió?'],
+                             ['“Fue la semana pasada, en la reunión del área, delante de todos.”',
+                              '<span class="lk-princ">Contexto</span><br/><span class="lk-small">¿Cuándo, dónde, en qué circunstancias?</span>',
+                              '<b>Contexto</b>: ¿Cuándo, dónde, en qué circunstancias?'],
+                             ['“Mi jefe directo, a mí.”',
+                              '<span class="lk-princ">Sujetos</span><br/><span class="lk-small">¿Quiénes intervienen?</span>',
+                              '<b>Sujetos</b>: ¿Quiénes intervienen?'],
+                             ['“Desde entonces no me invitan a las reuniones donde se reparten los proyectos.”',
+                              '<span class="lk-princ">Efecto</span><br/><span class="lk-small">¿Qué resultado se describe?</span>',
+                              '<b>Efecto</b>: ¿Qué resultado se describe?']],
+                   'order': [2, 3, 0, 1],
+                   'hint': 'Pregúntate: ¿esto describe lo que pasó, dónde y cuándo, quiénes, o qué efecto tuvo?'}},
+ 'hotspots': {'s09': [{'t': '1. Quien realiza la conducta',
+                       'html': '<p>Un cliente: es un <strong>tercero ajeno a la relación laboral</strong>. Esa condición no excluye el caso; es precisamente el elemento que '
+                               'define esta categoría.</p>'},
+                      {'t': '2. Quien la recibe',
+                       'html': '<p>Una trabajadora que está prestando servicios. La protección se refiere a ella, aunque quien agrede no pertenezca a la empresa.</p>'},
+                      {'t': '3. El contexto', 'html': '<p>Ocurre <strong>con ocasión de la prestación de servicios</strong>: durante la atención en el mesón.</p>'},
+                      {'t': '4. Posibles fuentes',
+                       'html': '<p>Compañeros presentes, registros de atención o cámaras pueden aportar antecedentes. Conclusión: debe analizarse como <strong>posible violencia '
+                               'en el trabajo ejercida por un tercero</strong>, no como acoso laboral ni descartarse.</p>'}]},
+ 'quiz': [{'q': 'Una jefatura descalifica gravemente a una persona frente al equipo, una sola vez. ¿Cómo se analiza?',
+           'o': ['Se descarta porque no hubo reiteración.',
+                 'Es automáticamente acoso laboral por su gravedad.',
+                 'No se descarta por la frecuencia; se analizan los demás elementos de la definición.',
+                 'Solo se investiga si existen testigos.'],
+           'c': 2,
+           'f': ['La reiteración ya no es un requisito: desde la Ley Karin, el acoso laboral puede manifestarse una sola vez.',
+                 'La gravedad no basta para concluir automáticamente: hay que analizar los demás elementos y reunir antecedentes.',
+                 'Desde la Ley N.º 21.643 el acoso laboral puede manifestarse una sola vez o de manera reiterada. La frecuencia no decide el caso: se analizan conducta, sujetos, '
+                 'contexto y resultado.',
+                 'La existencia de testigos no condiciona la investigación: hay otras fuentes y el deber de investigar existe igual.']},
+          {'q': '¿Qué elementos se analizan en un posible acoso sexual?',
+           'o': ['Requerimiento de carácter sexual indebido, no consentido, que amenace o perjudique la situación laboral u oportunidades en el empleo.',
+                 'La intención declarada de quien realizó la conducta.',
+                 'Que la conducta se haya repetido al menos tres veces.',
+                 'Que exista una relación jerárquica entre las personas.'],
+           'c': 0,
+           'f': ['La definición del art. 2 del Código del Trabajo se centra en el requerimiento de carácter sexual, la ausencia de consentimiento y su incidencia laboral.',
+                 'La intención declarada es un antecedente, pero no es un elemento de la definición.',
+                 'La definición no exige un número mínimo de repeticiones.',
+                 'El acoso sexual no requiere una relación jerárquica: puede ocurrir entre pares o desde otras posiciones.']},
+          {'q': 'Un cliente insulta y amenaza a una trabajadora durante la atención. ¿Cómo se analiza?',
+           'o': ['No corresponde porque el cliente no es trabajador.',
+                 'Es necesariamente acoso laboral.',
+                 'Es un simple conflicto de atención al público.',
+                 'Como posible violencia en el trabajo ejercida por un tercero.'],
+           'c': 3,
+           'f': ['Que el cliente no sea trabajador no excluye el caso: la ley protege frente a terceros ajenos a la relación laboral.',
+                 'El acoso laboral ocurre en el marco de la relación laboral. Cuando actúa un tercero externo, la categoría es otra.',
+                 'Llamarlo “conflicto de atención” es una etiqueta cotidiana que reemplaza el análisis de lo ocurrido.',
+                 'La Ley Karin incorporó expresamente la violencia ejercida por terceros ajenos a la relación laboral, como clientes, proveedores o usuarios.']},
+          {'q': 'Quien hizo comentarios de carácter sexual dice que “era solo una broma”. ¿Qué valor tiene esa explicación?',
+           'o': ['Cierra el caso, porque no hubo intención.',
+                 'Es un antecedente, pero no reemplaza el análisis de la conducta, el consentimiento y sus efectos.',
+                 'Confirma automáticamente el acoso sexual.',
+                 'Obliga a la persona afectada a probar que no era broma.'],
+           'c': 1,
+           'f': ['La intención declarada no cierra el caso: se analiza lo ocurrido y sus efectos laborales.',
+                 'La intención declarada es un antecedente más. El análisis se centra en lo ocurrido y en sus efectos laborales.',
+                 'Tampoco confirma el acoso: la explicación es un antecedente más que debe contrastarse.',
+                 'No se traslada a la persona afectada la carga de probar la intención: corresponde investigar con los antecedentes.']},
+          {'q': '¿Cuál es la herramienta TLS de esta lección?',
+           'o': ['Hecho → Antecedente → Análisis → Conclusión.',
+                 'Recibe → Registra → Revisa → Resguarda → Deriva.',
+                 'Conducta → Contexto → Sujetos → Efecto.',
+                 'Riesgo → Protección → Impacto → Seguimiento.'],
+           'c': 2,
+           'f': ['Esa es la herramienta de la lección uno, para ordenar la investigación.',
+                 'Esa secuencia corresponde a la recepción y gestión de la denuncia, que verás en la próxima lección.',
+                 'Conducta, contexto, sujetos y efecto: cuatro preguntas antes de clasificar.',
+                 'Esa herramienta corresponde a las medidas de resguardo.']}]}
+(H / "lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
+css = (H.parent / "tema.css").read_text(encoding="utf-8")
+c = (H / "content.html").read_text(encoding="utf-8")
+c = re.sub(r'<style id="tema-tls">.*?</style>', lambda m: '<style id="tema-tls">\n' + css + '</style>', c, count=1, flags=re.S)
+(H / "content.html").write_text(c, encoding="utf-8")
+propio = (H / "propio.js").read_text(encoding="utf-8") if (H / "propio.js").exists() else ""
+(H / "lesson.js").write_text((H.parent / "comun.js").read_text(encoding="utf-8") + propio, encoding="utf-8")
+print("lesson.json, content.html y lesson.js actualizados")

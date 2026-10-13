@@ -1,0 +1,163 @@
+# Genera lesson.json, sincroniza el tema TLS en content.html y arma lesson.js (comun.js + ganchos propios)
+import json, pathlib, re
+H = pathlib.Path(__file__).parent
+L = {'id': 'tls_lk_l13',
+ 'ident': 'TLS_LK_M1_L3',
+ 'zip_name': 'Leccion_1_3_Recepcion_Gestion_Denuncia',
+ 'title': 'M1 · L3 — Recepción y gestión inicial de la denuncia',
+ 'course_label': 'TREMEN PARTNER · TLS® · LEY KARIN · MÓDULO 1 · LECCIÓN 3',
+ 'voice': True,
+ 'pass': 0.8,
+ 'voz': {'tag': 'tls', 'pause': 0.28, 'min_sim': 0.88, 'tries': 4, 'norm_db': -1, 'bitrate': '96k'},
+ 'narration': {'p01': 'Comenzamos la tercera lección. La denuncia ya ingresó y desde este momento cada actuación importa. Tu primera tarea no es resolver el caso, sino recibir '
+                      'correctamente el relato, dejar trazabilidad y activar el procedimiento que corresponda. Recibir bien también es parte de investigar bien.',
+               'p02': 'A las nueve doce Andrea envía un relato sobre situaciones que atribuye a su jefatura. Frente a ese primer contacto, evita convertir la recepción en un '
+                      'interrogatorio o pedir pruebas de inmediato. El primer paso es registrar el ingreso y revisar qué antecedentes fueron entregados y cuáles necesitan '
+                      'precisión.',
+               'p03': 'Recibir todavía no es investigar. En esta etapa separa tres acciones. Primero, incorporar el relato sin interrogar. Segundo, registrar la forma y el '
+                      'momento de ingreso. Y tercero, revisar si existen vacíos o inconsistencias que deban complementarse. Esa separación protege la calidad del procedimiento.',
+               'p04': 'La denuncia puede presentarse por escrito o verbalmente. Si es escrita, se conserva el documento recibido. Si es verbal, quien la recibe debe levantar un '
+                      'acta, obtener la firma de la persona denunciante y entregarle una copia. La denuncia puede presentarse ante la empresa o ante la respectiva Inspección del '
+                      'Trabajo.',
+               'p05': 'El relato de Andrea identifica a las personas involucradas, pero algunas fechas y circunstancias todavía son imprecisas. Eso no autoriza a desechar la '
+                      'denuncia. Ante una denuncia inconsistente, corresponde dar un plazo razonable para complementarla y avanzar con los antecedentes disponibles, sin inventar '
+                      'por cuenta propia lo que falta.',
+               'p06': 'Ahora revisa qué información ya está disponible y qué requiere precisión. Sabemos quién denuncia, quién es la persona señalada y cuáles son las conductas '
+                      'mencionadas. Todavía necesitamos afinar temporalidad, circunstancias y antecedentes que permitan contrastar los hechos. Identificar esos vacíos es parte de '
+                      'una buena recepción.',
+               'p07': 'La trazabilidad permite reconstruir el procedimiento. Debe quedar claro cuándo ingresó la denuncia, cómo se registró, qué información se revisó y qué '
+                      'actuación se definió después. No se trata de acumular documentos, sino de que otra persona pueda comprender qué se hizo y por qué.',
+               'p08': 'La confidencialidad comienza desde el primer contacto. El procedimiento debe manejarse con reserva y el acceso al relato debe limitarse a quienes '
+                      'intervienen legítimamente en su gestión o investigación. Reenviar la denuncia a personas que no necesitan conocerla aumenta innecesariamente el riesgo para '
+                      'quienes participan.',
+               'p09': 'Recibida la denuncia en la empresa, el empleador debe decidir si realizará una investigación interna o si remitirá los antecedentes a la Inspección del '
+                      'Trabajo dentro del plazo legal de tres días. Independientemente de esa decisión, las medidas de resguardo necesarias deben evaluarse y adoptarse de manera '
+                      'inmediata.',
+               'p10': 'Hay errores tempranos que pueden debilitar todo el procedimiento. Descartar porque el relato no parece grave, negarse a recibir porque faltan datos o '
+                      'socializar la denuncia para pedir opiniones son atajos que reemplazan el análisis por impresiones. La primera gestión debe ser formal, reservada y '
+                      'trazable.',
+               'p11': 'Utiliza esta secuencia para ordenar la gestión inicial: recibe, registra, revisa, resguarda y deriva. Recibe el relato. Registra su ingreso. Revisa qué '
+                      'falta. Resguarda a las personas y la información. Y deriva o activa el curso procedimental que corresponda. Cada paso prepara la investigación que viene '
+                      'después.',
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+                       'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
+               'p12': 'Aplica la secuencia al expediente ele ka cero veintiséis. Registra un dato que conservarías de inmediato. Define qué información pedirías complementar sin '
+                      'anticipar una conclusión. Y detecta un riesgo de confidencialidad que controlarías desde ahora. Recuerda que recibir formalmente la denuncia no reemplaza '
+                      'la evaluación inmediata de medidas de resguardo.',
+               'p13': 'Has completado la tercera lección. El expediente ya está formalmente en marcha. Hasta ahora cuentas con tres herramientas: hecho, antecedente, análisis y '
+                      'conclusión; conducta, contexto, sujetos y efecto; y recibe, registra, revisa, resguarda y deriva. En la próxima lección trabajarás las medidas de resguardo '
+                      'sin anticipar el resultado de la investigación.'},
+ 'video': {'voice': True,
+           'scenes': [{'t': 'Recibir no es investigar',
+                       'lines': ['La recepción es el primer contacto formal con la denuncia. No es el momento de interrogar ni de pedir pruebas.',
+                                 'Se incorpora el relato, se registra cómo y cuándo ingresó, y se revisa qué falta precisar.'],
+                       'html': '<div class="v-steps"><div data-at="0">Incorporar el relato</div><div data-at="0">Registrar forma y momento</div><div data-at="1">Revisar '
+                               'vacíos</div></div>'},
+                      {'t': 'Escrita o verbal',
+                       'lines': ['La denuncia puede presentarse por escrito o de forma verbal, ante la empresa o ante la Inspección del Trabajo.',
+                                 'Si es verbal, se levanta un acta, la firma la persona denunciante y se le entrega una copia.'],
+                       'html': '<div class="v-vs"><div data-at="0"><b>Escrita</b>Se conserva el documento<small>Fecha y canal de ingreso</small></div><div '
+                               'data-at="1"><b>Verbal</b>Acta firmada y copia<small>Para la persona denunciante</small></div></div>'},
+                      {'t': 'Trazabilidad y confidencialidad',
+                       'lines': ['Debe quedar claro cuándo ingresó la denuncia, cómo se registró y qué se decidió después.',
+                                 'Desde el primer contacto, el acceso al relato se limita a quienes intervienen legítimamente en su gestión.'],
+                       'html': '<div class="v-icons"><div data-at="0"><span class="i">🗂️</span>Trazabilidad</div><div data-at="1"><span class="i">🔒</span>Reserva desde el '
+                               'inicio</div></div>'},
+                      {'t': 'Investigar o derivar',
+                       'lines': ['Recibida la denuncia, el empleador decide si investiga internamente o si remite los antecedentes a la Inspección del Trabajo dentro de tres '
+                                 'días.',
+                                 'En cualquier caso, las medidas de resguardo se evalúan de inmediato.'],
+                       'html': '<div class="v-vs"><div data-at="0"><b>Investigación interna</b>Conduce la empresa<small>Con sus garantías</small></div><div '
+                               'data-at="0"><b>Derivación</b>Inspección del Trabajo<small>Dentro de 3 días</small></div></div><div class="v-chk"><span data-at="1">Resguardo '
+                               'inmediato en ambos casos</span></div>'},
+                      {'t': 'La herramienta TLS',
+                       'lines': ['Ordena la gestión inicial con cinco verbos: recibe, registra, revisa, resguarda y deriva.',
+                                 'Cada paso prepara la investigación que viene después.'],
+                       'html': '<div class="v-final">Recibe · Registra · Revisa ·<br/><em>Resguarda</em> · Deriva</div>'}]},
+ 'sorts': {'s06': {'bins': [{'id': 'Disponible', 'title': 'Disponible'}, {'id': 'Requiere precisión', 'title': 'Requiere precisión'}],
+                   'items': [{'t': 'Persona denunciante: Andrea.',
+                              'bin': 'Disponible',
+                              'why': 'La persona denunciante está individualizada: es relevante para iniciar el procedimiento.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Persona señalada: su jefatura directa.',
+                              'bin': 'Disponible',
+                              'why': 'Existe una persona señalada en el relato; aún no corresponde concluir sobre su responsabilidad.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Fechas en que ocurrieron los hechos.',
+                              'bin': 'Requiere precisión',
+                              'why': 'Debe precisarse lo suficiente para orientar diligencias.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Conductas descritas en el relato.',
+                              'bin': 'Disponible',
+                              'why': 'El relato aporta conductas iniciales, que se precisarán y contrastarán después.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Personas que presenciaron los hechos.',
+                              'bin': 'Requiere precisión',
+                              'why': 'Quiénes estaban presentes es clave para planificar entrevistas.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Circunstancias de cada episodio.',
+                              'bin': 'Requiere precisión',
+                              'why': 'Las circunstancias permiten entender el contexto de cada episodio.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'}]}},
+ 'pairs': {'s11': {'items': [['Levantar un acta firmada cuando la denuncia es verbal.', '<span class="lk-princ">Recibe</span>', ''],
+                             ['Anotar fecha, canal de ingreso y documentos recibidos.', '<span class="lk-princ">Registra</span>', ''],
+                             ['Detectar que faltan fechas y pedir que se complementen.', '<span class="lk-princ">Revisa</span>', ''],
+                             ['Limitar el acceso al relato y evaluar medidas de protección.', '<span class="lk-princ">Resguarda</span>', ''],
+                             ['Definir investigación interna o remisión a la Inspección del Trabajo.', '<span class="lk-princ">Deriva</span>', '']],
+                   'order': [3, 4, 0, 2, 1],
+                   'hint': 'Piensa en qué momento de la primera gestión ocurre esa actuación.'}},
+ 'quiz': [{'q': 'Llega la denuncia de Andrea por correo. ¿Cuál es el primer paso?',
+           'o': ['Llamarla y pedirle que pruebe lo ocurrido.',
+                 'Registrar la recepción y revisar los antecedentes disponibles.',
+                 'Reenviar el correo a otras jefaturas para pedir opinión.',
+                 'Esperar a que presente más antecedentes antes de registrarla.'],
+           'c': 1,
+           'f': ['Pedir pruebas en el primer contacto convierte la recepción en un interrogatorio y anticipa el análisis.',
+                 'La primera gestión es una recepción formal y trazable, sin anticipar conclusiones ni exponer la información.',
+                 'Reenviar la denuncia a otras jefaturas vulnera la confidencialidad y expone a quienes participan.',
+                 'La denuncia se registra cuando ingresa. Esperar deja el procedimiento sin trazabilidad y sin plazo de inicio.']},
+          {'q': 'Si la denuncia es verbal, quien la recibe debe:',
+           'o': ['Anotarla en su agenda personal.',
+                 'Pedir que la envíe por escrito o no tramitarla.',
+                 'Reenviarla por chat a quien investigará.',
+                 'Levantar un acta, obtener la firma de la persona denunciante y entregarle una copia.'],
+           'c': 3,
+           'f': ['Una agenda personal no deja un registro formal ni trazable del ingreso.',
+                 'La denuncia verbal es válida: no puede exigirse que se presente por escrito para tramitarla.',
+                 'Reenviar por chat expone información sensible y no formaliza la denuncia.',
+                 'La denuncia verbal se formaliza con un acta firmada por la persona denunciante, quien recibe una copia.']},
+          {'q': 'La denuncia tiene fechas imprecisas. ¿Qué corresponde?',
+           'o': ['Permitir que se complemente en un plazo razonable y avanzar con lo disponible.',
+                 'Rechazarla hasta que esté completa.',
+                 'Que quien la recibe complete las fechas según su criterio.',
+                 'Archivarla como conflicto interpersonal.'],
+           'c': 0,
+           'f': ['Una denuncia inconsistente debe poder complementarse dentro de un plazo razonable; no se omite.',
+                 'Una denuncia incompleta no se rechaza: corresponde dar oportunidad de complementarla.',
+                 'Quien recibe no puede completar los hechos por su cuenta: estaría inventando antecedentes.',
+                 'Archivarla como conflicto interpersonal es descartar sin investigar.']},
+          {'q': 'Si el empleador no realizará la investigación interna, ¿en qué plazo remite los antecedentes a la Inspección del Trabajo?',
+           'o': ['30 días.', '10 días.', '3 días.', 'No existe un plazo.'],
+           'c': 2,
+           'f': ['Treinta días es el plazo de la investigación, no el de la derivación.',
+                 'Diez días no corresponde al plazo legal de remisión.',
+                 'El plazo legal para remitir la denuncia a la Inspección del Trabajo es de tres días.',
+                 'Sí existe un plazo legal, y es breve: tres días.']},
+          {'q': '¿Desde cuándo rige la confidencialidad del procedimiento?',
+           'o': ['Desde que se cita a las partes a entrevista.',
+                 'Desde la recepción de la denuncia.',
+                 'Desde que se emite el informe final.',
+                 'Solo si la persona denunciante la solicita.'],
+           'c': 1,
+           'f': ['La reserva no espera a las entrevistas: protege el relato desde que ingresa.',
+                 'La reserva acompaña al procedimiento desde el primer contacto: el acceso al relato se limita a quienes intervienen legítimamente.',
+                 'Esperar al informe final dejaría expuesto todo el procedimiento.',
+                 'La confidencialidad no depende de una solicitud: es una característica del procedimiento.']}]}
+(H / "lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
+css = (H.parent / "tema.css").read_text(encoding="utf-8")
+c = (H / "content.html").read_text(encoding="utf-8")
+c = re.sub(r'<style id="tema-tls">.*?</style>', lambda m: '<style id="tema-tls">\n' + css + '</style>', c, count=1, flags=re.S)
+(H / "content.html").write_text(c, encoding="utf-8")
+propio = (H / "propio.js").read_text(encoding="utf-8") if (H / "propio.js").exists() else ""
+(H / "lesson.js").write_text((H.parent / "comun.js").read_text(encoding="utf-8") + propio, encoding="utf-8")
+print("lesson.json, content.html y lesson.js actualizados")

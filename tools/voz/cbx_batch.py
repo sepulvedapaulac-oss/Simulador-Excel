@@ -23,9 +23,10 @@ from tts_norm import norm
 REF = str(Path(__file__).with_name("referencia_latina.wav"))
 import os
 EXAGGERATION, CFG = float(os.environ.get("CBX_EXA", 0.75)), float(os.environ.get("CBX_CFG", 0.35))  # voz "más viva" elegida por la autora
-PAUSE = 0.35                    # segundos entre frases
+PAUSE = float(os.environ.get("CBX_PAUSE", 0.35))   # segundos entre frases
 TAIL, HEAD, FADE = 0.14, 0.06, 0.05
-MIN_SIM, TRIES = 0.84, 3
+MIN_SIM, TRIES = float(os.environ.get("CBX_MIN_SIM", 0.84)), int(os.environ.get("CBX_TRIES", 3))
+NORM_DB = os.environ.get("CBX_NORM_DB")  # p. ej. "-1": normaliza el pico de cada audio a -1 dBFS
 
 
 def sentences(text):
@@ -91,7 +92,10 @@ def main():
                     break
             report.append({"texto": s, "escuchado": best[2], "similitud": round(best[1], 2)})
             pieces += [best[0], torch.zeros(1, int(model.sr * PAUSE))]
-        ta.save(job["out"], torch.cat(pieces[:-1], dim=1), model.sr)
+        out = torch.cat(pieces[:-1], dim=1)
+        if NORM_DB is not None:
+            out = out * (10 ** (float(NORM_DB) / 20) / out.abs().max().clamp(min=1e-6))
+        ta.save(job["out"], out, model.sr)
         print(f"[{i}/{len(jobs)}] {Path(job['out']).name}", flush=True)
     rep = Path(sys.argv[1]).with_name("control_calidad_voz.json")
     old = json.loads(rep.read_text(encoding="utf-8")) if rep.exists() else []

@@ -1,0 +1,168 @@
+# Genera lesson.json, sincroniza el tema TLS en content.html y arma lesson.js (comun.js + ganchos propios)
+import json, pathlib, re
+H = pathlib.Path(__file__).parent
+L = {'id': 'tls_lk_l15',
+ 'ident': 'TLS_LK_M1_L5',
+ 'zip_name': 'Leccion_1_5_Planificacion_Inicial_Investigacion',
+ 'title': 'M1 · L5 — Decisión y planificación inicial de la investigación',
+ 'course_label': 'TREMEN PARTNER · TLS® · LEY KARIN · MÓDULO 1 · LECCIÓN 5',
+ 'voice': True,
+ 'pass': 0.8,
+ 'voz': {'tag': 'tls', 'pause': 0.28, 'min_sim': 0.88, 'tries': 4, 'norm_db': -1, 'bitrate': '96k'},
+ 'narration': {'p01': 'Comenzamos la quinta lección. Ya tienes una denuncia formalizada y medidas de resguardo. Ahora debes convertir el relato en un plan investigativo concreto, '
+                      'trazable y ejecutable. Investigar no es acumular antecedentes: es saber qué necesitas esclarecer y cómo vas a hacerlo.',
+               'p02': 'El expediente ele ka cero veintiséis está abierto. Andrea describió varias situaciones, pero todavía no sabes cuáles podrán acreditarse ni qué explicación '
+                      'entregarán las demás personas involucradas. El mejor punto de partida no es buscar pruebas a favor de una versión, sino delimitar los hechos concretos que '
+                      'necesitan esclarecimiento.',
+               'p03': 'Una investigación sólida conecta cada diligencia con una pregunta concreta. Reunir correos, testimonios y documentos por si sirven puede producir mucho '
+                      'material y poca claridad. Antes de pedir un antecedente, pregúntate qué hecho necesitas esclarecer y qué pregunta investigativa responderá esa diligencia.',
+               'p04': 'El relato de Andrea contiene varias afirmaciones que deben separarse. Una posible desacreditación frente al equipo, un comentario atribuido a la jefatura y '
+                      'la exclusión de dos reuniones. No investigues una impresión global. Convierte cada afirmación en un acontecimiento concreto que pueda ser contrastado.',
+               'p05': 'Una buena pregunta investigativa no contiene la conclusión dentro de sí misma. Si Andrea afirma que fue excluida de dos reuniones, pregunta cuáles fueron, '
+                      'si debía participar, quién definió los asistentes y qué registros existen. Formular bien la pregunta evita investigar para confirmar una idea previa.',
+               'p06': 'Una misma pregunta puede requerir distintas fuentes. Las personas pueden aportar relatos y observaciones. Los documentos, registros formales. Las '
+                      'comunicaciones, interacciones registradas. Y otros registros pueden aportar huellas verificables. La calidad del plan depende de relacionar cada fuente con '
+                      'el hecho que buscas esclarecer.',
+               'p07': 'Identificar una fuente no basta. Debes decidir qué actuación permitirá obtener información pertinente. Si necesitas saber si Andrea debía participar en una '
+                      'reunión, puedes solicitar convocatorias, revisar participantes y responsables y, después, contrastar versiones. Cada diligencia debe tener un propósito '
+                      'reconocible.',
+               'p08': 'El orden también forma parte del plan. Algunas diligencias conviene realizarlas primero para preservar antecedentes o entender mejor qué preguntar después. '
+                      'Frente a las reuniones del expediente, una secuencia razonada puede ser preservar y revisar registros, precisar antecedentes y luego contrastar las '
+                      'versiones de quienes participaron.',
+               'p09': 'La planificación también exige revisar quién conducirá la investigación. El procedimiento debe respetar confidencialidad, imparcialidad, celeridad y '
+                      'perspectiva de género. Cuando la investigación interna la realiza el empleador, la ley establece que debe designar preferentemente a una persona '
+                      'trabajadora con formación en materias de acoso, género o derechos fundamentales.',
+               'p10': 'Antes de comenzar, detecta tres errores frecuentes. Primero, convertir una hipótesis en veredicto: buscar cómo demostrar el acoso. Segundo, programar '
+                      'diligencias sin una pregunta investigativa, como entrevistar a todos por defecto. Tercero, comenzar a ejecutar antes de haber separado y delimitado los '
+                      'hechos.',
+               'p11': 'Utiliza esta ruta TLS para diseñar el plan: hechos, preguntas, fuentes, diligencias y secuencia. Hechos: qué debo esclarecer. Preguntas: qué necesito '
+                      'saber. Fuentes: dónde puede estar la información. Diligencias: qué haré para obtenerla. Secuencia: en qué orden conviene actuar.',
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+                       'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
+               'p12': 'Ahora construye el primer plan del expediente ele ka cero veintiséis. Elige un hecho concreto, formula una pregunta investigativa, identifica posibles '
+                      'fuentes y define las primeras diligencias en un orden razonado. Revisa al final si tu plan intenta esclarecer el hecho o demostrar una conclusión que ya '
+                      'asumiste.',
+               'p13': 'Has completado las cinco lecciones del módulo uno. Pasaste de una denuncia inicial a un expediente formalizado, resguardado y con una estrategia de '
+                      'investigación. Ya puedes conectar cinco herramientas: hecho, antecedente, análisis y conclusión; conducta, contexto, sujetos y efecto; recibe, registra, '
+                      'revisa, resguarda y deriva; riesgo, protección, impacto y seguimiento; y hechos, preguntas, fuentes, diligencias y secuencia.'},
+ 'video': {'voice': True,
+           'scenes': [{'t': 'Investigar no es acumular',
+                       'lines': ['Reunir correos, testimonios y documentos por si sirven produce mucho material y poca claridad.',
+                                 'Una investigación sólida conecta cada diligencia con una pregunta concreta sobre un hecho.'],
+                       'html': '<div class="v-vs"><div class="warn" data-at="0"><b>Acumular</b>Todo, por si sirve<small>Mucho material, poca claridad</small></div><div '
+                               'data-at="1"><b>Investigar</b>Cada diligencia, una pregunta<small>Propósito reconocible</small></div></div>'},
+                      {'t': 'Hechos y preguntas',
+                       'lines': ['Primero, separa el relato en hechos concretos que puedan contrastarse.',
+                                 'Luego formula preguntas que no contengan la conclusión: qué reuniones fueron, quién definió los asistentes y qué registros existen.'],
+                       'html': '<div class="v-steps"><div data-at="0">Separar el relato en hechos</div><div data-at="1">Preguntar sin concluir</div></div>'},
+                      {'t': 'Fuentes y diligencias',
+                       'lines': ['Las personas aportan relatos; los documentos, registros formales; las comunicaciones, interacciones registradas.',
+                                 'Para cada fuente, define qué actuación permitirá obtener información pertinente.'],
+                       'html': '<div class="v-icons"><div data-at="0"><span class="i">🗣️</span>Personas</div><div data-at="0"><span class="i">📄</span>Documentos</div><div '
+                               'data-at="0"><span class="i">✉️</span>Comunicaciones</div><div data-at="1"><span class="i">🧾</span>Otros registros</div></div>'},
+                      {'t': 'Secuencia y garantías',
+                       'lines': ['El orden importa: algunas diligencias conviene hacerlas primero para preservar antecedentes.',
+                                 'En una investigación interna, el empleador designa preferentemente a una persona con formación en acoso, género o derechos fundamentales.'],
+                       'html': '<div class="v-steps"><div data-at="0">Preservar registros</div><div data-at="0">Precisar antecedentes</div><div data-at="0">Contrastar '
+                               'versiones</div><div data-at="1">Quien investiga: formación en acoso, género o derechos fundamentales</div></div>'},
+                      {'t': 'La ruta TLS',
+                       'lines': ['Diseña el plan con cinco pasos: hechos, preguntas, fuentes, diligencias y secuencia.',
+                                 'Al final, revisa si tu plan busca esclarecer el hecho o demostrar una conclusión que ya asumiste.'],
+                       'html': '<div class="v-final">Hechos · Preguntas · Fuentes ·<br/><em>Diligencias</em> · Secuencia</div>'}]},
+ 'sorts': {'s03': {'bins': [{'id': 'Acumular', 'title': 'Acumular'}, {'id': 'Investigar', 'title': 'Investigar'}],
+                   'items': [{'t': 'Pedir todos los correos del área “por si sirven”.',
+                              'bin': 'Acumular',
+                              'why': 'No se sabe qué hecho esclarecerían.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Solicitar las convocatorias de las dos reuniones mencionadas.',
+                              'bin': 'Investigar',
+                              'why': 'Responde a un hecho concreto: la exclusión de dos reuniones.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Entrevistar a todo el equipo sin una pauta definida.',
+                              'bin': 'Acumular',
+                              'why': 'Sin pauta ni pregunta, las entrevistas dispersan la investigación.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Definir qué hecho esclarece cada diligencia antes de pedirla.',
+                              'bin': 'Investigar',
+                              'why': 'Conecta cada diligencia con su propósito.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Guardar capturas de las redes sociales personales de la jefatura.',
+                              'bin': 'Acumular',
+                              'why': 'No guarda relación con los hechos denunciados.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'},
+                             {'t': 'Formular las preguntas antes de elegir las fuentes.',
+                              'bin': 'Investigar',
+                              'why': 'Primero la pregunta, después la fuente.',
+                              'hint': 'Revisa qué describe el elemento y en qué categoría encaja mejor.'}]}},
+ 'pairs': {'s07': {'items': [['¿Andrea debía participar en las reuniones?', '<span class="lk-princ">Comparar convocatorias con la nómina del equipo</span>', ''],
+                             ['¿Quién definió a los asistentes?', '<span class="lk-princ">Solicitar información a quien gestiona la agenda</span>', ''],
+                             ['¿Qué se dijo en la reunión de la semana pasada?', '<span class="lk-princ">Entrevistar a quienes asistieron</span>', ''],
+                             ['¿En qué fechas se realizaron las dos reuniones?', '<span class="lk-princ">Revisar el calendario y las actas del área</span>', '']],
+                   'order': [2, 3, 0, 1],
+                   'hint': 'Pregúntate dónde estaría registrada esa información o quién la percibió directamente.'}},
+ 'hotspots': {'s06': [{'t': '1. Personas',
+                       'html': '<p>Denunciante, persona denunciada y testigos pueden aportar relatos sobre hechos percibidos directamente, contexto y circunstancias.</p>'},
+                      {'t': '2. Documentos', 'html': '<p>Actas, procedimientos, registros internos u otros documentos pueden aportar contexto o trazabilidad.</p>'},
+                      {'t': '3. Comunicaciones',
+                       'html': '<p>Correos, mensajes u otras comunicaciones pueden ayudar a reconstruir hechos y secuencias, según su pertinencia y obtención regular.</p>'},
+                      {'t': '4. Registros',
+                       'html': '<p>Convocatorias, calendarios, sistemas u otros registros pueden permitir contrastar hechos específicos, como la participación en '
+                               'reuniones.</p>'}]},
+ 'quiz': [{'q': '¿Cuál es el mejor punto de partida para planificar la investigación de LK-026?',
+           'o': ['Buscar pruebas de que Andrea tiene razón.',
+                 'Citar a todo el equipo de inmediato.',
+                 'Pedir a la jefatura que presente sus descargos.',
+                 'Delimitar los hechos concretos que necesitan esclarecimiento.'],
+           'c': 3,
+           'f': ['Buscar pruebas a favor de una versión convierte la hipótesis en veredicto.',
+                 'Citar a todo el equipo sin una pregunta investigativa es acumular, no investigar.',
+                 'Los descargos son una diligencia; antes hay que saber qué hechos se van a contrastar.',
+                 'El relato se descompone en hechos concretos que puedan investigarse y contrastarse.']},
+          {'q': '¿Cuál es una buena pregunta investigativa sobre la exclusión de las reuniones?',
+           'o': ['¿Qué reuniones fueron, quién definió los asistentes y qué registros existen?',
+                 '¿Por qué la jefatura discriminó a Andrea?',
+                 '¿El equipo cree que la jefatura es mala?',
+                 '¿Andrea suele quejarse de sus jefaturas?'],
+           'c': 0,
+           'f': ['Una buena pregunta abre posibilidades de contraste y no contiene la conclusión.',
+                 'La pregunta ya contiene la conclusión: da por hecho que hubo discriminación.',
+                 'Preguntar por opiniones del equipo no esclarece un hecho concreto.',
+                 'Desplaza el foco hacia la credibilidad de la denunciante en lugar de los hechos.']},
+          {'q': '¿Qué distingue investigar de acumular información?',
+           'o': ['Reunir la mayor cantidad posible de documentos.',
+                 'Que cada diligencia responda una pregunta concreta sobre un hecho.',
+                 'Entrevistar a todas las personas del área.',
+                 'Esperar a tener todos los antecedentes antes de planificar.'],
+           'c': 1,
+           'f': ['Más documentos no significan más claridad si no responden a una pregunta.',
+                 'Si no puedes explicar qué pregunta responde una diligencia, probablemente no está bien diseñada.',
+                 'Entrevistar a todos por defecto es programar diligencias sin propósito.',
+                 'La planificación permite decidir qué antecedentes buscar; no se espera a tenerlos todos.']},
+          {'q': 'En una investigación interna, ¿a quién debe designar preferentemente el empleador?',
+           'o': ['A la jefatura directa de la persona denunciada.',
+                 'A cualquier persona disponible del área.',
+                 'A una persona trabajadora con formación en acoso, género o derechos fundamentales.',
+                 'A un compañero de confianza de la denunciante.'],
+           'c': 2,
+           'f': ['La jefatura directa de la persona denunciada no ofrece garantías de imparcialidad.',
+                 'La ley no se conforma con cualquier persona disponible: pide formación específica.',
+                 'La ley establece que se designe preferentemente a una persona con formación en materias de acoso, género o derechos fundamentales.',
+                 'Una persona de confianza de una de las partes compromete la imparcialidad.']},
+          {'q': '¿Cuál es la ruta TLS de esta lección?',
+           'o': ['Recibe → Registra → Revisa → Resguarda → Deriva.',
+                 'Hechos → Preguntas → Fuentes → Diligencias → Secuencia.',
+                 'Riesgo → Protección → Impacto → Seguimiento.',
+                 'Conducta → Contexto → Sujetos → Efecto.'],
+           'c': 1,
+           'f': ['Esa es la herramienta de recepción y gestión de la denuncia.',
+                 'Hechos, preguntas, fuentes, diligencias y secuencia: la ruta para transformar un relato en un plan.',
+                 'Esa herramienta corresponde a las medidas de resguardo.',
+                 'Esa herramienta sirve para clasificar las conductas.']}]}
+(H / "lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
+css = (H.parent / "tema.css").read_text(encoding="utf-8")
+c = (H / "content.html").read_text(encoding="utf-8")
+c = re.sub(r'<style id="tema-tls">.*?</style>', lambda m: '<style id="tema-tls">\n' + css + '</style>', c, count=1, flags=re.S)
+(H / "content.html").write_text(c, encoding="utf-8")
+propio = (H / "propio.js").read_text(encoding="utf-8") if (H / "propio.js").exists() else ""
+(H / "lesson.js").write_text((H.parent / "comun.js").read_text(encoding="utf-8") + propio, encoding="utf-8")
+print("lesson.json, content.html y lesson.js actualizados")

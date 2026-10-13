@@ -1,0 +1,335 @@
+<style id="tema-tls">
+/* Tema TLS (Tremen Partner) sobre el motor común del curso.
+   Paleta TLS: primario #171697 · turquesa #00A5AB · navy #101044 · amarillo #FFD65C.
+   lesson.py copia este archivo al bloque <style id="tema-tls"> de cada content.html. */
+:root{
+  --bg:#e6eaf2; --bg2:#eef1f6; --surface:#ffffff; --surface2:#f6f7fb; --surface3:#fbfbfe;
+  --ink:#11131a; --ink2:#2b2f45; --muted:#4b5563;
+  --teal:#00A5AB; --teal2:#00A5AB; --teal-ink:#00757a; --navy:#101044; --line:#d9dee8; --line2:#e1e5ee; --mint:#eaf8f8; --mint-line:#9fdcde;
+  --violet:#171697; --violet-soft:#f1f0ff; --amber:#e0a800; --amber-soft:#fff7dc; --amber-ink:#7a5a00;
+  --story-bg:#fffaeb; --story-line:#f3dc93; --callout-bg:#eaf8f8; --callout-line:#9fdcde;
+  --good:#087f5b; --good-soft:#e7f6ef; --good-line:#8fd3b6; --bad:#b42318; --bad-soft:#fdecea; --bad-line:#f0a9a1;
+  --track:#d9dee8; --chip:#eceef6; --on-accent:#ffffff;
+  --shadow:0 10px 26px rgba(16,16,68,.08);
+  --stage:#101044; --stage2:#1d1c7a; --stage-ink:#eef0ff; --stage-muted:#a9b0e6; --stage-bad:#ff9a8f; --stage-amber:#FFD65C;
+  --lk-primary:#171697; --lk-yellow:#FFD65C; --lk-head:#101044;
+  --font:Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}}
+:root[data-theme="dark"]{
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--lk-head)}
+.topbar-row .course{color:var(--lk-primary)}
+.small-btn.primary,.nav-btn.next{background:var(--lk-primary);color:#fff}
+.tab.active{background:var(--lk-primary);border-color:var(--lk-primary);color:#fff}
+.completion .icon{background:linear-gradient(135deg,var(--lk-primary),var(--teal))}
+.photo-frame.wide.lk-hero{aspect-ratio:4/3}
+/* Bloques de contenido TLS */
+.lk-casebar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;background:var(--lk-primary);color:#fff;padding:12px 16px;border-radius:14px;margin-top:6px;font-size:.92rem}
+.lk-casebar strong{color:var(--lk-yellow);letter-spacing:.05em}
+.lk-instr{display:flex;gap:10px;align-items:flex-start;background:var(--mint);border-left:4px solid var(--teal);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:.95rem}
+.lk-instr b{color:var(--lk-head)}
+.lk-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin:16px 0}
+.lk-banner{position:relative;min-height:240px;border-radius:20px;overflow:hidden;background-size:cover;background-position:center;margin:14px 0 18px;box-shadow:var(--shadow)}
+.lk-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,68,.86),rgba(16,16,68,.2) 65%,transparent)}
+.lk-banner .cap{position:absolute;z-index:2;left:24px;bottom:20px;right:24px;max-width:480px;color:#fff}
+.lk-banner .cap h3{color:#fff;margin:0 0 4px;font-size:1.35rem}
+.lk-banner .cap p{margin:0;color:#fff}
+.lk-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.lk-split>*{min-width:0}
+.lk-photo{min-height:300px;border-radius:20px;background-size:cover;background-position:center;box-shadow:var(--shadow)}
+.lk-folder{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:20px;box-shadow:var(--shadow);margin:12px 0}
+.lk-tag{display:inline-block;background:var(--lk-primary);color:#fff;padding:6px 10px;border-radius:8px;font-weight:800;letter-spacing:.05em;font-size:.8rem;margin-bottom:10px}
+.lk-mail{background:var(--surface2);border:1px solid var(--line);border-left:4px solid var(--lk-yellow);border-radius:12px;padding:16px;margin:10px 0;font-style:italic}
+.lk-small{font-size:.86rem;color:var(--muted)}
+.lk-tool{background:#101044;color:#fff;border-radius:18px;padding:20px;margin:12px 0}
+.lk-tool h2,.lk-tool h3{color:#fff;font-size:clamp(1.1rem,2.4vw,1.55rem)}
+.lk-toolflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.lk-toolflow div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-top:3px solid var(--lk-yellow);padding:12px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:.9rem}
+.lk-toolflow small{display:block;font-weight:400;opacity:.88;color:#fff}
+.lk-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:14px 0}
+.lk-flow div{padding:14px 8px;text-align:center;background:var(--lk-primary);color:#fff;border-radius:12px;font-weight:800;font-size:.9rem}
+.lk-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lk-duo>*{min-width:0}.lk-duo .lk-box{margin:0}
+.lk-legal{border-left:4px solid var(--lk-primary);background:var(--surface2);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:.95rem}
+.lk-legal b{color:var(--lk-head)}
+.lk-princ{font-weight:900;color:var(--lk-head)}
+.lk-details{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:12px 16px;margin-top:16px}
+.lk-details summary{cursor:pointer;font-weight:800;color:var(--lk-head)}
+.lk-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.lk-gate{font-size:.85rem;color:var(--muted);font-weight:700;margin:8px 0 0}
+.lk-next{border:1px dashed var(--teal);border-radius:14px;padding:14px 16px;text-align:left;margin:14px 0}
+.lk-next small{display:block;color:var(--teal-ink);font-weight:900;letter-spacing:.08em}
+.lk-next b{color:var(--lk-head)}
+.lk-recap-tools{display:flex;flex-direction:column;gap:6px;text-align:left;margin-top:14px}
+.lk-recap-tools div{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:8px 12px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-size:.9rem}
+.lk-recap-tools div b{color:var(--lk-head);min-width:52px}
+.lk-recap-tools div.now{background:var(--lk-primary);color:#fff;border-color:var(--lk-primary)}
+.lk-recap-tools div.now b{color:var(--lk-yellow)}
+/* Selección múltiple */
+.lk-multi .opt.sel{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-multi .opt.sel .letter{background:var(--lk-primary);color:#fff}
+/* Ordenar */
+.lk-order{list-style:none;padding:0;margin:12px 0;counter-reset:o}
+.lk-order li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;counter-increment:o}
+.lk-order li:before{content:counter(o);flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.lk-order li span{flex:1;font-weight:700;min-width:0}
+.lk-order li button{border:1px solid var(--line);background:var(--surface2);border-radius:8px;width:40px;height:36px;cursor:pointer}
+.lk-order li button:disabled{opacity:.35;cursor:default}
+.lk-order.ok li{border-color:var(--good-line);background:var(--good-soft)}
+/* Completar */
+.lk-cloze{font-size:1.04rem;line-height:2.2}
+.lk-cloze select{border:2px solid var(--line);border-radius:10px;padding:4px 8px;background:var(--surface);color:var(--ink);max-width:100%;font:inherit;font-size:.95rem}
+.lk-cloze select.ok{border-color:var(--good-line);background:var(--good-soft)}
+.lk-cloze select.bad{border-color:var(--bad-line);background:var(--bad-soft)}
+/* Tarjetas para explorar (panel) */
+.lk-rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px}
+.lk-rv{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;cursor:pointer;box-shadow:var(--shadow);position:relative}
+.lk-rv b{color:var(--lk-head);padding-right:18px}
+.lk-rv span{font-size:.88rem;color:var(--muted)}
+.lk-rv:hover{border-color:var(--teal)}
+.lk-rv.active{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-rv.seen:after{content:"✓";position:absolute;top:10px;right:12px;color:var(--good);font-weight:900}
+.lk-rv-panel{margin-top:12px;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:14px;padding:14px 16px;background:var(--surface3)}
+.lk-rv-panel.ok{border-left-color:var(--good)}.lk-rv-panel.bad{border-left-color:var(--bad)}
+.lk-rv-panel h3{margin:0 0 6px;font-size:1.02rem}
+/* Lista de compromisos */
+.lk-chk{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;margin:8px 0;cursor:pointer}
+.lk-chk .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid var(--line);display:grid;place-items:center;font-weight:900}
+.lk-chk.on{border-color:var(--teal);background:var(--mint)}
+.lk-chk.on .bx{background:var(--teal);border-color:var(--teal);color:#fff}
+.lk-chk.on .bx:after{content:"✓"}
+.lk-chk h3{margin:0 0 2px;font-size:1.02rem}
+/* Transferencia */
+.lk-fl{display:block;font-weight:800;margin:14px 0 6px;color:var(--lk-head)}
+.lk-transfer textarea{width:100%;min-height:86px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);color:var(--ink);font:inherit;resize:vertical}
+.lk-cnt{font-size:.75rem;color:var(--muted);text-align:right}
+.lk-model{margin-top:14px}
+/* Clasificar: columnas según cantidad de categorías */
+.bins.bins4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bins.bins5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px){.bins.bins4,.bins.bins5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Puntos de interés sobre foto */
+.hs-stage .hs{background:var(--lk-primary)}
+.hs-stage .hs.seen{background:var(--teal);color:#fff}
+.hs-stage .hs.active{background:var(--lk-yellow);color:#101044}
+@media(max-width:860px){
+  .lk-split,.lk-duo{grid-template-columns:1fr}
+  .lk-photo{min-height:220px}
+  .lk-banner{min-height:210px}
+  .bins.bins4,.bins.bins5{grid-template-columns:1fr}
+  .hs-stage .hs{width:36px;height:36px}
+}
+.tabpane.solo.active{display:block}
+.tabpane.solo ul{padding-left:1.2rem}
+.lk-next p{margin:4px 0 0;max-width:none}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="s00" data-gate-msg="Voltea las 3 tarjetas.">
+<div class="hero-grid"><div><span class="eyebrow">Módulo 1 · Lección 3</span>
+<h1>Recepción y gestión inicial de la denuncia</h1>
+<p class="lead">Tu primera tarea no es resolverla: es recibirla correctamente, dejar trazabilidad y activar el procedimiento que corresponda.</p>
+<div class="lk-casebar"><span>Recibir bien también es investigar bien</span><strong>LK-026 · ETAPA 03</strong></div></div><div class="photo-frame wide lk-hero"><img alt="Imagen de portada de la lección: Recepción y gestión inicial de la denuncia" src="img/lk3_img1.jpg"/></div></div>
+<div class="lk-instr"><span>👆</span><span><b>Para comenzar:</b> toca las tres tarjetas para descubrir qué lograrás en esta lección.</span></div>
+<div data-flip="s00"><div class="task">Tarjetas descubiertas <span class="tick">0 / 3</span></div><div class="flipdeck"><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Recibe</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Recibe</strong> una denuncia escrita o verbal sin convertir la recepción en un interrogatorio.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Deja trazabilidad</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Registra</strong> el ingreso para que cualquier persona pueda reconstruir qué se hizo y por qué.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Activa el procedimiento</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Decide</strong> entre investigación interna o remisión a la Inspección del Trabajo, con reserva y resguardo.</span></div></div></button></div></div>
+</section>
+
+<!-- VIDEO -->
+<section class="slide" data-title="Video: recibir bien la denuncia" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Recibir bien la denuncia</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 4 · LA DENUNCIA ENTRA -->
+<section class="slide" data-title="La denuncia entra" data-audio="p02" data-gate="s02" data-gate-msg="Elige el razonamiento correcto.">
+<span class="eyebrow">Situación inicial</span>
+<h2>09:12 · La denuncia entra al sistema</h2>
+<div class="lk-split">
+<div aria-label="Investigadora revisando un correo en su escritorio" class="lk-photo" role="img" style="background-image:url('img/lk3_img2.jpg')"></div>
+<div class="lk-folder"><span class="lk-tag">EXPEDIENTE LK-026</span><p><strong>Asunto:</strong> Solicitud de denuncia</p><div class="lk-mail">“Necesito denunciar una situación que llevo viviendo hace varios meses con mi jefatura. Ya no sé qué hacer.”</div><p class="lk-small">Desde este momento, cada actuación debe ser clara y trazable.</p></div>
+</div>
+<div class="lk-instr"><span>🧭</span><span><b>¿Qué harías primero?</b> Cada opción explica por qué funciona o no.</span></div>
+<div><div class="options" data-choice="s02" data-correct="B"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Llamar inmediatamente a Andrea y pedirle que pruebe lo ocurrido.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Registrar la recepción y revisar los antecedentes disponibles.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Reenviar el correo a distintas jefaturas para pedir opiniones.</span></button></div><div class="fb"></div><template data-for="s02-A"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">No conviene comenzar interrogando ni pidiendo pruebas. Primero corresponde recibir, registrar y revisar formalmente lo ingresado.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s02-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El primer paso es asegurar una recepción formal y trazable, sin anticipar conclusiones.</span></div></template><template data-for="s02-C"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">La denuncia no debe circular informalmente entre jefaturas o compañeros: vulnera la confidencialidad.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template></div>
+</section>
+
+<!-- 5 · RECIBIR NO ES INVESTIGAR -->
+<section class="slide" data-title="Recibir no es investigar" data-audio="p03" data-gate="s03" data-gate-msg="Abre las 3 secciones.">
+<span class="eyebrow">Exploración</span>
+<h2>Recibir no es investigar todavía</h2>
+<div class="lk-banner" style="background-image:url('img/lk3_img3.jpg')"><div class="cap"><h3>Tres acciones distintas</h3><p>Separarlas protege la calidad del procedimiento.</p></div></div>
+<div class="lk-instr"><span>👆</span><span><b>Abre las tres acciones</b> para ver qué implica cada una.</span></div>
+<div data-acc="s03"><div class="task">Secciones abiertas <span class="tick">0 / 3</span></div><div class="acc"><div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>Recibir</span><span class="tg">＋</span></button><div class="acc-body">Escuchar o incorporar el relato <strong>sin convertir la recepción en un interrogatorio</strong> ni exigir pruebas en ese momento.</div></div><div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>Registrar</span><span class="tg">＋</span></button><div class="acc-body">Dejar constancia del <strong>ingreso, la forma de recepción y los antecedentes entregados</strong>: fecha, canal y documentos.</div></div><div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>Revisar</span><span class="tg">＋</span></button><div class="acc-body">Identificar si existen <strong>vacíos o inconsistencias</strong> que deban complementarse antes de planificar la investigación.</div></div></div></div>
+</section>
+
+<!-- 6 · ESCRITA O VERBAL -->
+<section class="slide" data-title="Escrita o verbal" data-audio="p04" data-gate="s04" data-gate-msg="Revisa las 3 pestañas." data-review="Formas de denuncia">
+<span class="eyebrow">Concepto</span>
+<h2>La denuncia puede ser escrita o verbal</h2>
+<div class="lk-banner" style="background-image:url('img/lk3_img4.jpg')"><div class="cap"><h3>El canal cambia la forma de documentar</h3><p>Pero no elimina el deber de gestionarla.</p></div></div>
+<div class="lk-box">
+<div class="lk-instr"><span>📑</span><span><b>Revisa las tres pestañas.</b></span></div>
+<div data-tabs="s04"><div class="task">Pestañas revisadas <span class="tick">1 / 3</span></div><div class="tabs"><button class="tab" type="button">Denuncia escrita</button><button class="tab" type="button">Denuncia verbal</button><button class="tab" type="button">¿Ante quién?</button></div><div class="tabpane solo"><div><h3>Denuncia escrita</h3><p>Se conserva el documento recibido (correo, carta o formulario) y se incorpora al registro del procedimiento, con fecha y forma de ingreso.</p></div></div><div class="tabpane solo"><div><h3>Denuncia verbal</h3><p>Quien la recibe debe <strong>levantar un acta</strong>, obtener la <strong>firma de la persona denunciante</strong> y <strong>entregarle una copia</strong>.</p></div></div><div class="tabpane solo"><div><h3>¿Ante quién se presenta?</h3><p>La persona afectada puede presentar su denuncia ante la empresa, establecimiento o servicio, o ante la respectiva <strong>Inspección del Trabajo</strong>.</p></div></div></div>
+</div>
+<div class="sources">Fuente: Código del Trabajo, Libro II, Título IV (Ley N.º 21.643); D.S. N.º 21 (2024), Ministerio del Trabajo y Previsión Social.</div>
+</section>
+
+<!-- 7 · RELATO INCOMPLETO -->
+<section class="slide" data-title="Relato incompleto" data-audio="p05" data-gate="s05" data-gate-msg="Resuelve las decisiones del caso.">
+<span class="eyebrow">Caso aplicado</span>
+<h2>Andrea entrega un relato incompleto</h2>
+<p class="lead">El relato identifica a Andrea y a su jefatura, pero algunas fechas y circunstancias aparecen poco precisas.</p>
+<div class="lk-box"><h3>Decisión 1 de 2 · ¿Corresponde desechar la denuncia por estar incompleta?</h3><div class="options" data-choice="s05_1" data-correct="B" data-then="s05_p2"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Sí. Solo pueden recibirse denuncias completamente detalladas.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>No. Se debe permitir que la persona complemente los antecedentes.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>La persona receptora debe completar por su cuenta lo que falte.</span></button></div><div class="fb"></div><template data-for="s05_1-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">La Dirección del Trabajo ha señalado que una denuncia inconsistente debe poder complementarse dentro de un plazo razonable, y que la investigación debe iniciarse con esos antecedentes.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_1-B"><div class="feedback good"><strong>Bien orientado.</strong> <span class="fb-body">Debe permitirse complementar los antecedentes dentro de un plazo razonable, sin omitir la denuncia. Ahora decide cómo pedirlo.</span></div></template><template data-for="s05_1-C"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Completar antecedentes no significa que quien recibe invente lo que falta: eso anticipa conclusiones.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><div class="phase" hidden="" id="s05_p2"><div style="margin-top:18px"><h3>Decisión 2 de 2 · ¿Cómo pides que complemente?</h3><div class="options" data-choice="s05_2" data-correct="B" data-gate="s05"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Le dices que sin fechas exactas no se puede investigar.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Le pides por escrito que precise fechas y circunstancias en un plazo razonable, y avanzas con lo que ya existe.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Preguntas a sus compañeros qué fechas recuerdan ellos.</span></button></div><div class="fb"></div><template data-for="s05_2-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Condicionar la investigación a fechas exactas desincentiva la denuncia y contradice el criterio de permitir complementarla.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_2-B"><div class="feedback good"><strong>Decisión acertada.</strong> <span class="fb-body">Pedir por escrito que precise fechas y circunstancias, con un plazo razonable, deja trazabilidad y permite avanzar con lo disponible.</span></div></template><template data-for="s05_2-C"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Preguntar a compañeros para “completar” el relato antes de iniciar la investigación expone la denuncia y rompe la reserva.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template></div></div></div>
+</section>
+
+<!-- 8 · QUÉ TIENES Y QUÉ FALTA -->
+<section class="slide" data-title="Qué tienes y qué falta" data-audio="p06" data-gate="s06" data-gate-msg="Clasifica todos los elementos.">
+<span class="eyebrow">Aplicación</span>
+<h2>¿Qué información tienes y qué necesitas precisar?</h2>
+<div class="lk-banner" style="background-image:url('img/lk3_img5.jpg')"><div class="cap"><h3>Identificar vacíos es parte de recibir bien</h3><p>Separa lo disponible de lo que requiere precisión.</p></div></div>
+<div class="lk-instr"><span>🗂️</span><span><b>Clasifica cada dato del expediente LK-026</b>: toca una tarjeta y luego la columna que corresponde, o arrástrala.</span></div>
+<div data-sort="s06"><div class="task">Elementos clasificados <span class="tick">0 / 6</span></div><div class="pool"></div><div class="bins bins"></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> Ya sabemos quién denuncia, quién es la persona señalada y qué conductas se mencionan. Faltan temporalidad, circunstancias y fuentes que permitan contrastar los hechos.</div></div>
+</section>
+
+<!-- 9 · REGISTRO Y TRAZABILIDAD -->
+<section class="slide" data-title="Registro y trazabilidad" data-audio="p07" data-gate="s07" data-gate-msg="Ordena los pasos y presiona «Comprobar orden»." data-review="Trazabilidad">
+<span class="eyebrow">Aplicación</span>
+<h2>Registro y trazabilidad</h2>
+<p class="lead">Una investigación defendible necesita que pueda reconstruirse qué se recibió, cuándo y qué se hizo después.</p>
+<div class="lk-box">
+<div class="lk-instr"><span>↕️</span><span><b>Ordena la secuencia de la gestión inicial</b> con las flechas y presiona <b>Comprobar orden</b>.</span></div>
+<div data-hint="No se puede revisar lo que aún no está registrado." data-items='["Ingreso: se recibe la denuncia","Registro: se documenta la recepción","Revisión: se identifican antecedentes y vacíos","Actuación: se define el curso procedimental"]' data-key="s07" data-lk="order" data-okmsg="Trazabilidad no significa acumular papeles: significa que otra persona pueda &lt;strong&gt;reconstruir decisiones y actuaciones&lt;/strong&gt;." data-start="[2,0,3,1]"></div>
+</div>
+</section>
+
+<!-- 10 · CONFIDENCIALIDAD -->
+<section class="slide" data-title="Confidencialidad" data-audio="p08" data-gate="s08" data-gate-msg="Marca las afirmaciones correctas y presiona Revisar." data-review="Confidencialidad">
+<span class="eyebrow">Principio</span>
+<h2>Confidencialidad desde el primer contacto</h2>
+<div class="lk-banner" style="background-image:url('img/lk3_img6.jpg')"><div class="cap"><h3>Un error frecuente</h3><p>Reenviar el relato completo a personas que no necesitan conocerlo “para pedir opinión”.</p></div></div>
+<div class="lk-box">
+<h3>¿Quién debería acceder al relato de Andrea en esta etapa?</h3>
+<div class="lk-instr"><span>☑️</span><span><b>Marca solo a quienes intervienen legítimamente</b> en la gestión o investigación y presiona <b>Revisar</b>.</span></div>
+<div class="lk-multi" data-hint="Pregúntate: ¿esta persona necesita la información para una actuación del procedimiento?" data-key="s08" data-lk="multi" data-okmsg="La información circula solo en función de las actuaciones necesarias y conforme al procedimiento. Compartirla “para pedir opinión” aumenta el riesgo para quienes participan."><div class="options"><button class="opt" data-ok="1" type="button"><span class="letter">1</span><span>Quien recibe y registra la denuncia.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">2</span><span>Los compañeros del área, para conocer el ambiente.</span></button><button class="opt" data-ok="1" type="button"><span class="letter">3</span><span>La persona designada para investigar.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">4</span><span>Otras jefaturas, para pedir su opinión.</span></button><button class="opt" data-ok="1" type="button"><span class="letter">5</span><span>Quien debe decidir las medidas de resguardo (solo lo necesario).</span></button><button class="opt" data-ok="0" type="button"><span class="letter">6</span><span>Un grupo de chat de jefaturas, para avisar del caso.</span></button></div></div>
+</div>
+</section>
+
+<!-- 11 · ¿INTERNA O DERIVACIÓN? -->
+<section class="slide" data-title="¿Interna o derivación?" data-audio="p09" data-gate="s09" data-gate-msg="Completa los espacios y presiona Revisar." data-review="Interna o derivación">
+<span class="eyebrow">Decisión</span>
+<h2>¿Investigación interna o derivación?</h2>
+<p class="lead">Recibida la denuncia, el empleador debe definir el curso procedimental conforme a la normativa aplicable.</p>
+<div class="lk-instr"><span>✍️</span><span><b>Completa la regla</b> eligiendo la opción correcta en cada espacio y presiona <b>Revisar</b>.</span></div>
+<div class="lk-cloze" data-hint="Recuerda el plazo que menciona la narración." data-key="s09" data-lk="cloze" data-okmsg="La decisión entre investigación interna o remisión no elimina otra obligación inmediata: &lt;strong&gt;evaluar y adoptar las medidas de resguardo&lt;/strong&gt; necesarias.">
+<p>Recibida la denuncia, el empleador puede
+    <select data-ok="b"><option value="">elige…</option><option value="a">esperar a que se repitan los hechos</option><option value="b">disponer una investigación interna</option><option value="c">pedir a las partes que lo resuelvan entre ellas</option></select>
+    o
+    <select data-ok="a"><option value="">elige…</option><option value="a">remitir los antecedentes a la Inspección del Trabajo</option><option value="b">archivarla hasta tener pruebas</option><option value="c">enviarla al sindicato</option></select>
+    dentro del plazo de
+    <select data-ok="c"><option value="">elige…</option><option value="a">30 días</option><option value="b">10 días</option><option value="c">3 días</option></select>.
+    En ambos casos debe
+    <select data-ok="a"><option value="">elige…</option><option value="a">adoptar de inmediato las medidas de resguardo necesarias</option><option value="b">informar a todo el equipo</option><option value="c">suspender a la persona denunciada</option></select>.</p>
+</div>
+<div class="sources">Fuente: Código del Trabajo, Libro II, Título IV (Ley N.º 21.643).</div>
+</section>
+
+<!-- 12 · TRES ERRORES -->
+<section class="slide" data-title="Tres errores" data-audio="p10" data-gate="s10" data-gate-msg="Revisa los 3 elementos.">
+<span class="eyebrow">Contraste</span>
+<h2>Tres errores que pueden debilitar el procedimiento</h2>
+<div class="lk-banner" style="background-image:url('img/lk3_img7.jpg')"><div class="cap"><h3>Atajos que reemplazan el análisis</h3><p>La primera gestión debe ser formal, reservada y trazable.</p></div></div>
+<div class="lk-instr"><span>🔎</span><span><b>Abre cada frase</b> y descubre por qué la actuación es problemática.</span></div>
+<div data-key="s10" data-lk="reveal"><div class="task">Elementos revisados <span class="tick">0 / 3</span></div><div class="lk-rv-grid"><button class="lk-rv" data-fb="Problema: anticipa un juicio de credibilidad antes de recopilar y contrastar antecedentes." data-kind="bad" type="button"><b>“Esto no parece tan grave.”</b><span>Descartar por impresión inicial.</span></button><button class="lk-rv" data-fb="Problema: una denuncia inconsistente no debe omitirse; corresponde dar oportunidad razonable para complementarla." data-kind="bad" type="button"><b>“Faltan datos, no la recibamos.”</b><span>Confundir incompletitud con inexistencia.</span></button><button class="lk-rv" data-fb="Problema: rompe la reserva y expande innecesariamente información sensible." data-kind="bad" type="button"><b>“Preguntemos al equipo qué opina.”</b><span>Socializar el relato.</span></button></div><div class="lk-rv-panel" hidden=""></div></div>
+</section>
+
+<!-- 13 · HERRAMIENTA TLS -->
+<section class="slide" data-title="Herramienta TLS" data-audio="p11" data-gate="s11" data-gate-msg="Une todos los elementos." data-review="Herramienta TLS">
+<span class="eyebrow">Herramienta TLS</span>
+<div class="lk-tool"><h2>RECIBE → REGISTRA → REVISA → RESGUARDA → DERIVA</h2>
+<div class="lk-toolflow" style="grid-template-columns:repeat(auto-fit,minmax(110px,1fr))"><div>RECIBE<small>Formaliza el ingreso</small></div><div>REGISTRA<small>Deja trazabilidad</small></div><div>REVISA<small>Identifica lo que falta</small></div><div>RESGUARDA<small>Protege personas e información</small></div><div>DERIVA<small>Activa el procedimiento</small></div></div>
+</div>
+<div class="lk-instr"><span>🔗</span><span><b>Une cada actuación con el paso de la herramienta</b>. Toca una actuación (izquierda) y luego el paso (derecha).</span></div>
+<div data-pairs="s11"><div class="task">Parejas formadas <span class="tick">0 / 5</span></div><div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> Cada paso prepara la investigación que viene después.</div></div>
+</section>
+
+<!-- 14 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+<span class="eyebrow violet">Comprobación</span>
+<div class="qhead"><h2 style="margin-bottom:0">¿Gestionarías bien el ingreso de una denuncia?</h2><div class="qdots" id="qdots"></div></div>
+<p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Cada alternativa explica por qué es correcta o no. Si no lo logras, puedes reintentar.</p>
+<div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 15 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p12" data-gate="s13 pass" data-gate-msg="Completa los campos y compara con la referencia (requiere 80 % en la Comprobación).">
+<span class="eyebrow">Transferencia</span>
+<h2>Gestiona el ingreso del Expediente LK-026</h2>
+<p class="lead">Completa tu primera ficha de actuación. No estás resolviendo el caso: estás dejando preparada una investigación trazable.</p>
+<div class="lk-instr"><span>📝</span><span><b>Escribe una frase breve en cada campo</b> (mínimo 20 caracteres) y compara con la respuesta de referencia.</span></div>
+<div class="lk-box lk-transfer" data-key="s13" data-lk="transfer"><label class="lk-fl">1. ¿Qué dato del relato registrarías de inmediato?</label>
+<textarea placeholder="Ej.: fecha y canal de ingreso…"></textarea>
+<label class="lk-fl">2. ¿Qué información pedirías complementar sin anticipar una conclusión?</label>
+<textarea placeholder="Ej.: fechas aproximadas de…"></textarea>
+<label class="lk-fl">3. ¿Qué riesgo de confidencialidad controlarías desde este momento?</label>
+<textarea placeholder="Ej.: quién tiene acceso al correo…"></textarea><div class="callout lk-model" hidden=""><strong>Respuesta de referencia (una de varias posibles):</strong>
+<ol><li><b>Registro:</b> fecha y hora de ingreso (09:12), canal (correo), identificación de la denunciante y de la persona señalada, y documentos adjuntos.</li>
+<li><b>Complemento:</b> período aproximado de los hechos, fechas de las dos reuniones y personas presentes, sin calificar las conductas.</li>
+<li><b>Confidencialidad:</b> restringir el acceso al correo y al registro a quienes intervienen en la gestión, y evitar reenvíos a jefaturas o al equipo.</li></ol>
+<span class="lk-small">Antes de avanzar: la recepción formal no reemplaza la obligación de evaluar medidas de resguardo inmediatas.</span></div></div>
+</section>
+
+<!-- 16 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p13" data-report>
+<div class="completion">
+<div class="icon">✓</div>
+<span class="eyebrow">Lección completada</span>
+<h2>El expediente ya está formalmente en marcha</h2>
+<div class="lk-recap-tools">
+<div><b>M1L1</b><span>HECHO → ANTECEDENTE → ANÁLISIS → CONCLUSIÓN</span></div>
+<div><b>M1L2</b><span>CONDUCTA → CONTEXTO → SUJETOS → EFECTO</span></div>
+<div class="now"><b>M1L3</b><span>RECIBE → REGISTRA → REVISA → RESGUARDA → DERIVA</span></div>
+</div><div class="lk-next"><small>SIGUIENTE LECCIÓN</small><b>M1L4 · Medidas de resguardo</b><p>La denuncia ya fue recibida. ¿Cómo protegemos a las personas sin anticipar el resultado de la investigación?</p></div>
+<div class="report" style="text-align:left">
+<div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+<div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y actividades acertadas al primer intento</small></div>
+<div class="metric"><div class="big" style="color:var(--good)">Aprobada</div><small>Estado de la lección</small></div>
+</div>
+<div class="callout" style="text-align:left"><strong>Repasa cuando quieras</strong><div class="completion-actions" id="reviewBtns" style="justify-content:flex-start;margin-top:10px"></div></div>
+<div class="sources">Fuentes: Código del Trabajo, Libro II, Título IV (Ley N.º 21.643); D.S. N.º 21 (2024), Ministerio del Trabajo y Previsión Social; criterios de la Dirección del Trabajo sobre denuncias inconsistentes.</div>
+<p class="sources">Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+</div>
+</section>

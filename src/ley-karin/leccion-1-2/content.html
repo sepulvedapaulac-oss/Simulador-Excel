@@ -1,0 +1,331 @@
+<style id="tema-tls">
+/* Tema TLS (Tremen Partner) sobre el motor común del curso.
+   Paleta TLS: primario #171697 · turquesa #00A5AB · navy #101044 · amarillo #FFD65C.
+   lesson.py copia este archivo al bloque <style id="tema-tls"> de cada content.html. */
+:root{
+  --bg:#e6eaf2; --bg2:#eef1f6; --surface:#ffffff; --surface2:#f6f7fb; --surface3:#fbfbfe;
+  --ink:#11131a; --ink2:#2b2f45; --muted:#4b5563;
+  --teal:#00A5AB; --teal2:#00A5AB; --teal-ink:#00757a; --navy:#101044; --line:#d9dee8; --line2:#e1e5ee; --mint:#eaf8f8; --mint-line:#9fdcde;
+  --violet:#171697; --violet-soft:#f1f0ff; --amber:#e0a800; --amber-soft:#fff7dc; --amber-ink:#7a5a00;
+  --story-bg:#fffaeb; --story-line:#f3dc93; --callout-bg:#eaf8f8; --callout-line:#9fdcde;
+  --good:#087f5b; --good-soft:#e7f6ef; --good-line:#8fd3b6; --bad:#b42318; --bad-soft:#fdecea; --bad-line:#f0a9a1;
+  --track:#d9dee8; --chip:#eceef6; --on-accent:#ffffff;
+  --shadow:0 10px 26px rgba(16,16,68,.08);
+  --stage:#101044; --stage2:#1d1c7a; --stage-ink:#eef0ff; --stage-muted:#a9b0e6; --stage-bad:#ff9a8f; --stage-amber:#FFD65C;
+  --lk-primary:#171697; --lk-yellow:#FFD65C; --lk-head:#101044;
+  --font:Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}}
+:root[data-theme="dark"]{
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--lk-head)}
+.topbar-row .course{color:var(--lk-primary)}
+.small-btn.primary,.nav-btn.next{background:var(--lk-primary);color:#fff}
+.tab.active{background:var(--lk-primary);border-color:var(--lk-primary);color:#fff}
+.completion .icon{background:linear-gradient(135deg,var(--lk-primary),var(--teal))}
+.photo-frame.wide.lk-hero{aspect-ratio:4/3}
+/* Bloques de contenido TLS */
+.lk-casebar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;background:var(--lk-primary);color:#fff;padding:12px 16px;border-radius:14px;margin-top:6px;font-size:.92rem}
+.lk-casebar strong{color:var(--lk-yellow);letter-spacing:.05em}
+.lk-instr{display:flex;gap:10px;align-items:flex-start;background:var(--mint);border-left:4px solid var(--teal);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:.95rem}
+.lk-instr b{color:var(--lk-head)}
+.lk-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin:16px 0}
+.lk-banner{position:relative;min-height:240px;border-radius:20px;overflow:hidden;background-size:cover;background-position:center;margin:14px 0 18px;box-shadow:var(--shadow)}
+.lk-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,68,.86),rgba(16,16,68,.2) 65%,transparent)}
+.lk-banner .cap{position:absolute;z-index:2;left:24px;bottom:20px;right:24px;max-width:480px;color:#fff}
+.lk-banner .cap h3{color:#fff;margin:0 0 4px;font-size:1.35rem}
+.lk-banner .cap p{margin:0;color:#fff}
+.lk-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.lk-split>*{min-width:0}
+.lk-photo{min-height:300px;border-radius:20px;background-size:cover;background-position:center;box-shadow:var(--shadow)}
+.lk-folder{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:20px;box-shadow:var(--shadow);margin:12px 0}
+.lk-tag{display:inline-block;background:var(--lk-primary);color:#fff;padding:6px 10px;border-radius:8px;font-weight:800;letter-spacing:.05em;font-size:.8rem;margin-bottom:10px}
+.lk-mail{background:var(--surface2);border:1px solid var(--line);border-left:4px solid var(--lk-yellow);border-radius:12px;padding:16px;margin:10px 0;font-style:italic}
+.lk-small{font-size:.86rem;color:var(--muted)}
+.lk-tool{background:#101044;color:#fff;border-radius:18px;padding:20px;margin:12px 0}
+.lk-tool h2,.lk-tool h3{color:#fff;font-size:clamp(1.1rem,2.4vw,1.55rem)}
+.lk-toolflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.lk-toolflow div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-top:3px solid var(--lk-yellow);padding:12px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:.9rem}
+.lk-toolflow small{display:block;font-weight:400;opacity:.88;color:#fff}
+.lk-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:14px 0}
+.lk-flow div{padding:14px 8px;text-align:center;background:var(--lk-primary);color:#fff;border-radius:12px;font-weight:800;font-size:.9rem}
+.lk-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lk-duo>*{min-width:0}.lk-duo .lk-box{margin:0}
+.lk-legal{border-left:4px solid var(--lk-primary);background:var(--surface2);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:.95rem}
+.lk-legal b{color:var(--lk-head)}
+.lk-princ{font-weight:900;color:var(--lk-head)}
+.lk-details{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:12px 16px;margin-top:16px}
+.lk-details summary{cursor:pointer;font-weight:800;color:var(--lk-head)}
+.lk-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.lk-gate{font-size:.85rem;color:var(--muted);font-weight:700;margin:8px 0 0}
+.lk-next{border:1px dashed var(--teal);border-radius:14px;padding:14px 16px;text-align:left;margin:14px 0}
+.lk-next small{display:block;color:var(--teal-ink);font-weight:900;letter-spacing:.08em}
+.lk-next b{color:var(--lk-head)}
+.lk-recap-tools{display:flex;flex-direction:column;gap:6px;text-align:left;margin-top:14px}
+.lk-recap-tools div{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:8px 12px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-size:.9rem}
+.lk-recap-tools div b{color:var(--lk-head);min-width:52px}
+.lk-recap-tools div.now{background:var(--lk-primary);color:#fff;border-color:var(--lk-primary)}
+.lk-recap-tools div.now b{color:var(--lk-yellow)}
+/* Selección múltiple */
+.lk-multi .opt.sel{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-multi .opt.sel .letter{background:var(--lk-primary);color:#fff}
+/* Ordenar */
+.lk-order{list-style:none;padding:0;margin:12px 0;counter-reset:o}
+.lk-order li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;counter-increment:o}
+.lk-order li:before{content:counter(o);flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.lk-order li span{flex:1;font-weight:700;min-width:0}
+.lk-order li button{border:1px solid var(--line);background:var(--surface2);border-radius:8px;width:40px;height:36px;cursor:pointer}
+.lk-order li button:disabled{opacity:.35;cursor:default}
+.lk-order.ok li{border-color:var(--good-line);background:var(--good-soft)}
+/* Completar */
+.lk-cloze{font-size:1.04rem;line-height:2.2}
+.lk-cloze select{border:2px solid var(--line);border-radius:10px;padding:4px 8px;background:var(--surface);color:var(--ink);max-width:100%;font:inherit;font-size:.95rem}
+.lk-cloze select.ok{border-color:var(--good-line);background:var(--good-soft)}
+.lk-cloze select.bad{border-color:var(--bad-line);background:var(--bad-soft)}
+/* Tarjetas para explorar (panel) */
+.lk-rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px}
+.lk-rv{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;cursor:pointer;box-shadow:var(--shadow);position:relative}
+.lk-rv b{color:var(--lk-head);padding-right:18px}
+.lk-rv span{font-size:.88rem;color:var(--muted)}
+.lk-rv:hover{border-color:var(--teal)}
+.lk-rv.active{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-rv.seen:after{content:"✓";position:absolute;top:10px;right:12px;color:var(--good);font-weight:900}
+.lk-rv-panel{margin-top:12px;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:14px;padding:14px 16px;background:var(--surface3)}
+.lk-rv-panel.ok{border-left-color:var(--good)}.lk-rv-panel.bad{border-left-color:var(--bad)}
+.lk-rv-panel h3{margin:0 0 6px;font-size:1.02rem}
+/* Lista de compromisos */
+.lk-chk{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;margin:8px 0;cursor:pointer}
+.lk-chk .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid var(--line);display:grid;place-items:center;font-weight:900}
+.lk-chk.on{border-color:var(--teal);background:var(--mint)}
+.lk-chk.on .bx{background:var(--teal);border-color:var(--teal);color:#fff}
+.lk-chk.on .bx:after{content:"✓"}
+.lk-chk h3{margin:0 0 2px;font-size:1.02rem}
+/* Transferencia */
+.lk-fl{display:block;font-weight:800;margin:14px 0 6px;color:var(--lk-head)}
+.lk-transfer textarea{width:100%;min-height:86px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);color:var(--ink);font:inherit;resize:vertical}
+.lk-cnt{font-size:.75rem;color:var(--muted);text-align:right}
+.lk-model{margin-top:14px}
+/* Clasificar: columnas según cantidad de categorías */
+.bins.bins4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bins.bins5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px){.bins.bins4,.bins.bins5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Puntos de interés sobre foto */
+.hs-stage .hs{background:var(--lk-primary)}
+.hs-stage .hs.seen{background:var(--teal);color:#fff}
+.hs-stage .hs.active{background:var(--lk-yellow);color:#101044}
+@media(max-width:860px){
+  .lk-split,.lk-duo{grid-template-columns:1fr}
+  .lk-photo{min-height:220px}
+  .lk-banner{min-height:210px}
+  .bins.bins4,.bins.bins5{grid-template-columns:1fr}
+  .hs-stage .hs{width:36px;height:36px}
+}
+.tabpane.solo.active{display:block}
+.tabpane.solo ul{padding-left:1.2rem}
+.lk-next p{margin:4px 0 0;max-width:none}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="s00" data-gate-msg="Voltea las 4 tarjetas.">
+<div class="hero-grid"><div><span class="eyebrow">Módulo 1 · Lección 2</span>
+<h1>¿Es Ley Karin?</h1>
+<p class="lead">Acoso laboral, acoso sexual, violencia en el trabajo y otras situaciones laborales.</p>
+<div class="lk-casebar"><span>Tu caso transversal</span><strong>EXPEDIENTE LK-026</strong></div></div><div class="photo-frame wide lk-hero"><img alt="Imagen de portada de la lección: ¿Es Ley Karin?" src="img/lk2_img1.jpg"/></div></div>
+<div class="lk-instr"><span>👆</span><span><b>Antes de poner una etiqueta, mira cuatro cosas.</b> Toca cada tarjeta para descubrir qué observar.</span></div>
+<div data-flip="s00"><div class="task">Tarjetas descubiertas <span class="tick">0 / 4</span></div><div class="flipdeck"><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Conducta</strong><span>Toca para ver</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>¿Qué ocurrió?</strong> Palabras, acciones, mensajes o decisiones concretas.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Contexto</strong><span>Toca para ver</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>¿Cuándo y dónde?</strong> Circunstancias, relación laboral y antecedentes.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Sujetos</strong><span>Toca para ver</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>¿Quiénes intervienen?</strong> Quién realiza la conducta y quién la recibe.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Efecto</strong><span>Toca para ver</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>¿Qué resultado se describe?</strong> Menoscabo, maltrato, humillación, amenaza o perjuicio.</span></div></div></button></div></div>
+</section>
+
+<!-- VIDEO -->
+<section class="slide" data-title="Video: antes de poner una etiqueta" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Antes de poner una etiqueta</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 4 · TRES SITUACIONES -->
+<section class="slide" data-title="Tres situaciones" data-audio="p02" data-gate="s02" data-gate-msg="Revisa los 3 elementos.">
+<span class="eyebrow">Situación inicial</span>
+<h2>Tres situaciones llegan el mismo día</h2>
+<div class="lk-banner" style="background-image:url('img/lk2_img2.jpg')"><div class="cap"><h3>No todo relato difícil es igual</h3><p>Los tres casos requieren atención, pero no describen necesariamente la misma situación jurídica.</p></div></div>
+<div class="lk-instr"><span>🔎</span><span><b>Abre los tres casos</b> y lee qué deberías observar antes de clasificar cada uno.</span></div>
+<div data-key="s02" data-lk="reveal"><div class="task">Elementos revisados <span class="tick">0 / 3</span></div><div class="lk-rv-grid"><button class="lk-rv" data-fb="Aún no clasifiques. Primero identifica la conducta concreta, el contexto, quién interviene y qué efecto se describe." data-kind="" type="button"><b>Caso A</b><span>Una jefatura desacredita a una analista frente al equipo.</span></button><button class="lk-rv" data-fb="Observa si existen requerimientos de carácter sexual, ausencia de consentimiento y amenaza o perjuicio laboral." data-kind="" type="button"><b>Caso B</b><span>Una persona recibe comentarios de carácter sexual que no desea.</span></button><button class="lk-rv" data-fb="La identidad de quien ejerce la conducta es clave: clientes, proveedores o usuarios son terceros ajenos a la relación laboral." data-kind="" type="button"><b>Caso C</b><span>Un cliente insulta y amenaza a una trabajadora durante la atención.</span></button></div><div class="lk-rv-panel" hidden=""></div></div>
+</section>
+
+<!-- 5 · ETIQUETAR ANTES DE ANALIZAR -->
+<section class="slide" data-title="Etiquetar antes de analizar" data-audio="p03" data-gate="s03" data-gate-msg="Marca las afirmaciones correctas y presiona Revisar.">
+<span class="eyebrow">Exploración</span>
+<h2>El error de etiquetar antes de analizar</h2>
+<p class="lead">Una denuncia activa un deber de actuación, pero el relato inicial no reemplaza el análisis.</p>
+<div class="lk-box">
+<h3>¿Qué necesitas saber antes de clasificar?</h3>
+<div class="lk-instr"><span>☑️</span><span><b>Marca las preguntas investigativas.</b> Deja sin marcar las que son etiquetas o juicios anticipados. Luego presiona <b>Revisar</b>.</span></div>
+<div class="lk-multi" data-hint="Una pregunta investigativa busca hechos; no califica a las personas." data-key="s03" data-lk="multi" data-okmsg="Las cuatro preguntas investigativas apuntan a &lt;strong&gt;conducta, contexto, sujetos y efecto&lt;/strong&gt;. Las otras dos ya contienen un juicio sobre las personas y sesgan la investigación."><div class="options"><button class="opt" data-ok="1" type="button"><span class="letter">1</span><span>¿Qué ocurrió concretamente?</span></button><button class="opt" data-ok="0" type="button"><span class="letter">2</span><span>¿Es una jefatura tóxica?</span></button><button class="opt" data-ok="1" type="button"><span class="letter">3</span><span>¿Cuándo, dónde y en qué circunstancias ocurrió?</span></button><button class="opt" data-ok="1" type="button"><span class="letter">4</span><span>¿Quiénes intervinieron?</span></button><button class="opt" data-ok="0" type="button"><span class="letter">5</span><span>¿Le creo a la persona denunciante?</span></button><button class="opt" data-ok="1" type="button"><span class="letter">6</span><span>¿Qué resultado, menoscabo o amenaza se describe?</span></button></div></div>
+</div>
+</section>
+
+<!-- 6 · ACOSO LABORAL -->
+<section class="slide" data-title="Acoso laboral" data-audio="p04" data-gate="s04" data-gate-msg="Completa los espacios y presiona Revisar." data-review="Acoso laboral">
+<span class="eyebrow">Concepto</span>
+<h2>Acoso laboral: qué elementos observar</h2>
+<p class="lead">La definición legal exige analizar la conducta y su resultado, no solo su frecuencia.</p>
+<div class="lk-instr"><span>✍️</span><span><b>Completa la definición legal</b> eligiendo la opción correcta en cada espacio y presiona <b>Revisar</b>.</span></div>
+<div class="lk-cloze" data-hint="Vuelve a escuchar la narración: la frecuencia no decide el caso." data-key="s04" data-lk="cloze" data-okmsg="La reiteración dejó de ser un requisito indispensable: &lt;strong&gt;una sola conducta&lt;/strong&gt; puede ser jurídicamente relevante si concurren los demás elementos.">
+<p><b>Acoso laboral:</b> toda conducta que constituya agresión u hostigamiento ejercida por
+    <select data-ok="b"><option value="">elige…</option><option value="a">solo la jefatura directa</option><option value="b">el empleador o por uno o más trabajadores</option><option value="c">cualquier persona ajena a la empresa</option></select>,
+    en contra de otro u otros trabajadores, por cualquier medio, ya sea que se manifieste
+    <select data-ok="a"><option value="">elige…</option><option value="a">una sola vez o de manera reiterada</option><option value="b">al menos tres veces</option><option value="c">durante seis meses</option></select>,
+    y que tenga como resultado su
+    <select data-ok="c"><option value="">elige…</option><option value="a">despido</option><option value="b">licencia médica</option><option value="c">menoscabo, maltrato o humillación</option></select>,
+    o bien que amenace o perjudique
+    <select data-ok="a"><option value="">elige…</option><option value="a">su situación laboral o sus oportunidades en el empleo</option><option value="b">su reputación fuera del trabajo</option><option value="c">la productividad del equipo</option></select>.</p>
+</div>
+<div class="sources">Fuente: Código del Trabajo, art. 2, texto modificado por la Ley N.º 21.643.</div>
+</section>
+
+<!-- 7 · OCURRIÓ UNA SOLA VEZ -->
+<section class="slide" data-title="Ocurrió una sola vez" data-audio="p05" data-gate="s05" data-gate-msg="Elige el razonamiento correcto.">
+<span class="eyebrow">Microdecisión</span>
+<h2>“Pero ocurrió una sola vez”</h2>
+<div class="lk-banner" style="background-image:url('img/lk2_img4.jpg')"><div class="cap"><h3>Una descalificación grave</h3><p>Una jefatura descalifica gravemente a una persona frente a todo el equipo. No existen episodios anteriores registrados.</p></div></div>
+<div class="lk-instr"><span>🧭</span><span><b>Elige cómo lo analizarías.</b> Cada opción explica por qué funciona o no.</span></div>
+<div><div class="options" data-choice="s05" data-correct="B"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>No puede ser acoso porque ocurrió una sola vez.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>La frecuencia no permite descartarlo; hay que analizar los demás elementos.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Es automáticamente acoso laboral porque fue grave.</span></button></div><div class="fb"></div><template data-for="s05-A"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">La ley admite que el acoso laboral se manifieste una sola vez o de manera reiterada. Hay que analizar los demás elementos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La frecuencia por sí sola no resuelve la clasificación: deben analizarse conducta, sujetos, contexto y resultado.</span></div></template><template data-for="s05-C"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">Una conducta grave tampoco permite concluir automáticamente sin analizar los elementos de la definición.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template></div>
+</section>
+
+<!-- 8 · ACOSO SEXUAL -->
+<section class="slide" data-title="Acoso sexual" data-audio="p06" data-gate="s06" data-gate-msg="Revisa las 3 pestañas." data-review="Acoso sexual">
+<span class="eyebrow">Concepto</span>
+<h2>Acoso sexual: qué elementos observar</h2>
+<p class="lead">La investigación se centra en los requerimientos de carácter sexual, el consentimiento y su incidencia laboral.</p>
+<div class="lk-box">
+<div class="lk-instr"><span>📑</span><span><b>Revisa los tres elementos</b> tocando cada pestaña.</span></div>
+<div data-tabs="s06"><div class="task">Pestañas revisadas <span class="tick">1 / 3</span></div><div class="tabs"><button class="tab" type="button">1. Conducta</button><button class="tab" type="button">2. Consentimiento</button><button class="tab" type="button">3. Incidencia laboral</button></div><div class="tabpane solo"><div><h3>Requerimiento de carácter sexual</h3><p>Una persona realiza en forma indebida, por cualquier medio, requerimientos de carácter sexual. Puede ser verbal, escrito, gestual, físico o digital.</p><p class="lk-small">Pregunta investigativa: ¿qué se dijo o hizo exactamente, por qué medio y cuándo?</p></div></div><div class="tabpane solo"><div><h3>No consentido</h3><p>La conducta no es consentida por quien la recibe. El análisis se centra en la experiencia de quien la recibe, no en la intención declarada de quien la realiza.</p><p class="lk-small">Pregunta investigativa: ¿cómo reaccionó la persona y qué antecedentes muestran la ausencia de consentimiento?</p></div></div><div class="tabpane solo"><div><h3>Amenaza o perjudica la situación laboral</h3><p>Los requerimientos amenazan o perjudican la situación laboral o las oportunidades en el empleo de quien los recibe.</p><p class="lk-small">Pregunta investigativa: ¿qué efecto tuvo o pudo tener en su trabajo, evaluación, turnos u oportunidades?</p></div></div></div>
+</div>
+<div class="sources">Fuente: Código del Trabajo, art. 2 (Ley N.º 21.643).</div>
+</section>
+
+<!-- 9 · ERA SOLO UNA BROMA -->
+<section class="slide" data-title="Era solo una broma" data-audio="p07" data-gate="s07" data-gate-msg="Resuelve las decisiones del caso.">
+<span class="eyebrow">Caso aplicado</span>
+<h2>“Era solo una broma”</h2>
+<div class="lk-banner" style="background-image:url('img/lk2_img5.jpg')"><div class="cap"><h3>Dos versiones del mismo comentario</h3><p>Una persona recibió comentarios de carácter sexual no deseados. Quien los hizo afirma que bromeaba.</p></div></div>
+<div class="lk-box"><h3>Decisión 1 de 2 · ¿Qué debe hacer quien investiga?</h3><div class="options" data-choice="s07_1" data-correct="B" data-then="s07_p2"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Cerrar el caso porque no existía intención de acosar.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Recopilar antecedentes y analizar los elementos de la definición.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Confirmar inmediatamente acoso sexual.</span></button></div><div class="fb"></div><template data-for="s07_1-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">La explicación de quien realizó la conducta es un antecedente, pero no sustituye el análisis de los elementos legales.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s07_1-B"><div class="feedback good"><strong>Bien orientado.</strong> <span class="fb-body">Hay que precisar la conducta, su carácter sexual, el consentimiento y la eventual amenaza o perjuicio laboral. Ahora decide por dónde empezar.</span></div></template><template data-for="s07_1-C"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">No corresponde concluir solo a partir de la percepción inicial. Debe investigarse.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><div class="phase" hidden="" id="s07_p2"><div style="margin-top:18px"><h3>Decisión 2 de 2 · ¿Qué antecedente buscas primero?</h3><div class="options" data-choice="s07_2" data-correct="C" data-gate="s07"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Pedir a quien bromeó que se disculpe y dar el tema por cerrado.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Preguntar al equipo si la persona suele exagerar.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Precisar los comentarios (qué, cuándo, por qué medio), quiénes los presenciaron y si hubo efectos en su trabajo.</span></button></div><div class="fb"></div><template data-for="s07_2-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Pedir disculpas y cerrar evita investigar: la conducta, el consentimiento y el efecto laboral quedan sin analizar.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s07_2-B"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Preguntar al equipo si la persona “es exagerada” pone en duda a quien denuncia y puede revictimizarla. No aporta hechos.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s07_2-C"><div class="feedback good"><strong>Decisión acertada.</strong> <span class="fb-body">Precisar qué se dijo, cuándo, por qué medio, quiénes estaban presentes y si hubo efectos en su trabajo permite analizar los tres elementos de la definición.</span></div></template></div></div></div>
+</section>
+
+<!-- 10 · VIOLENCIA POR TERCEROS -->
+<section class="slide" data-title="Violencia por terceros" data-audio="p08" data-gate="s08" data-gate-msg="Abre las 3 secciones." data-review="Violencia por terceros">
+<span class="eyebrow">Concepto</span>
+<h2>Violencia en el trabajo ejercida por terceros</h2>
+<p class="lead">Aquí cambia una pregunta decisiva: ¿quién ejerce la conducta?</p>
+<div class="lk-instr"><span>👆</span><span><b>Abre las tres secciones</b> para conocer los elementos de esta categoría.</span></div>
+<div data-acc="s08"><div class="task">Secciones abiertas <span class="tick">0 / 3</span></div><div class="acc"><div class="acc-item"><button class="acc-head" type="button"><span class="ico">1</span><span>¿Quién realiza la conducta?</span><span class="tg">＋</span></button><div class="acc-body">Personas <strong>ajenas a la relación laboral</strong>: clientes, proveedores o usuarios, entre otros. No es la empleadora ni otra persona trabajadora.</div></div><div class="acc-item"><button class="acc-head" type="button"><span class="ico">2</span><span>¿Cuándo ocurre?</span><span class="tg">＋</span></button><div class="acc-body"><strong>Con ocasión de la prestación de servicios</strong>: durante la atención, una visita, un despacho o cualquier tarea propia del trabajo.</div></div><div class="acc-item"><button class="acc-head" type="button"><span class="ico">3</span><span>¿A quién afecta?</span><span class="tg">＋</span></button><div class="acc-body">A las trabajadoras y los trabajadores que reciben la conducta. La empleadora debe prevenir y gestionar estos riesgos aunque quien agrede no sea parte de la empresa.</div></div></div></div>
+<div class="lk-legal"><b>Terceros ajenos a la relación laboral.</b> Conductas que afectan a las trabajadoras y a los trabajadores, con ocasión de la prestación de servicios, por parte de clientes, proveedores o usuarios, entre otros.</div>
+<div class="sources">Fuente: Código del Trabajo, art. 2 (Ley N.º 21.643).</div>
+</section>
+
+<!-- 11 · NO TRABAJA EN LA EMPRESA -->
+<section class="slide" data-title="No trabaja en la empresa" data-audio="p09" data-gate="s09" data-gate-msg="Toca los 4 puntos de la imagen.">
+<span class="eyebrow">Microcaso</span>
+<h2>“Pero no trabaja en la empresa”</h2>
+<p class="lead">Durante una atención, un cliente insulta y amenaza a una trabajadora.</p>
+<div class="lk-instr"><span>📍</span><span><b>Toca los cuatro puntos de la escena</b> para analizarla con la herramienta.</span></div>
+<div data-hotspot="s09"><div class="task">Puntos revisados <span class="tick">0 / 4</span></div><div class="hs-wrap"><div class="hs-stage"><img alt="Un cliente discute con una trabajadora en un mesón de atención" src="img/lk2_img1.jpg"/><button aria-label="Quien realiza la conducta" class="hs" data-k="0" style="left:73%;top:40%" type="button">1</button><button aria-label="Quien la recibe" class="hs" data-k="1" style="left:36%;top:47%" type="button">2</button><button aria-label="El contexto" class="hs" data-k="2" style="left:57%;top:78%" type="button">3</button><button aria-label="Posibles fuentes" class="hs" data-k="3" style="left:21%;top:30%" type="button">4</button></div><div class="hs-panel"><p class="hint">Toca cada punto numerado de la imagen para ver la explicación.</p></div></div></div>
+</section>
+
+<!-- 12 · ¿CONFLICTO LABORAL? -->
+<section class="slide" data-title="¿Conflicto laboral?" data-audio="p10" data-gate="s10" data-gate-msg="Clasifica todos los elementos.">
+<span class="eyebrow">Contraste</span>
+<h2>¿Y si estamos ante un conflicto laboral?</h2>
+<div class="lk-banner" style="background-image:url('img/lk2_img6.jpg')"><div class="cap"><h3>El nombre cotidiano no reemplaza el análisis</h3><p>Un conflicto puede contener conductas que deban investigarse.</p></div></div>
+<div class="lk-instr"><span>🗂️</span><span><b>Clasifica cada frase</b> como etiqueta cotidiana o como conducta concreta que se puede investigar: toca una tarjeta y luego la columna que corresponde, o arrástrala.</span></div>
+<div data-sort="s10"><div class="task">Elementos clasificados <span class="tick">0 / 6</span></div><div class="pool"></div><div class="bins bins"></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> Las etiquetas (“discusión”, “jefatura exigente”, “se llevan mal”) no clasifican nada. La investigación vuelve a la <strong>conducta concreta</strong>: qué ocurrió, quién intervino, en qué contexto y con qué efecto.</div></div>
+</section>
+
+<!-- 13 · HERRAMIENTA TLS -->
+<section class="slide" data-title="Herramienta TLS" data-audio="p11" data-gate="s11" data-gate-msg="Une todos los elementos." data-review="Herramienta TLS">
+<span class="eyebrow">Herramienta TLS</span>
+<div class="lk-tool"><h2>CONDUCTA → CONTEXTO → SUJETOS → EFECTO</h2>
+<div class="lk-toolflow"><div>CONDUCTA<small>¿Qué ocurrió?</small></div><div>CONTEXTO<small>¿En qué circunstancias?</small></div><div>SUJETOS<small>¿Quiénes intervienen?</small></div><div>EFECTO<small>¿Qué resultado se describe?</small></div></div>
+</div>
+<div class="lk-instr"><span>🔗</span><span><b>Une cada fragmento del relato de Andrea con la pregunta de la herramienta que responde.</b> Toca un fragmento (izquierda) y luego la pregunta (derecha).</span></div>
+<div data-pairs="s11"><div class="task">Parejas formadas <span class="tick">0 / 4</span></div><div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> Con las cuatro preguntas ordenas el relato antes de clasificarlo y evitas conclusiones apresuradas.</div></div>
+</section>
+
+<!-- 14 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+<span class="eyebrow violet">Comprobación</span>
+<div class="qhead"><h2 style="margin-bottom:0">¿Sabes qué observar antes de clasificar?</h2><div class="qdots" id="qdots"></div></div>
+<p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Cada alternativa explica por qué es correcta o no. Si no lo logras, puedes reintentar.</p>
+<div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 15 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p12" data-gate="s13 pass" data-gate-msg="Completa los campos y compara con la referencia (requiere 80 % en la Comprobación).">
+<span class="eyebrow">Transferencia</span>
+<h2>Vuelve al Expediente LK-026</h2>
+<div class="lk-folder"><span class="lk-tag">EXPEDIENTE LK-026</span><div class="lk-mail">Andrea señala que su jefatura la desacredita frente al equipo, le dijo que si no soportaba la presión debía buscar otro trabajo y la excluyó de dos reuniones.</div></div>
+<div class="lk-instr"><span>📝</span><span><b>Escribe una frase breve en cada campo</b> (mínimo 20 caracteres) y compara con la respuesta de referencia.</span></div>
+<div class="lk-box lk-transfer" data-key="s13" data-lk="transfer"><label class="lk-fl">1. ¿Qué conducta concreta investigarías primero?</label>
+<textarea placeholder="Ej.: la frase atribuida a la jefatura…"></textarea>
+<label class="lk-fl">2. ¿Qué antecedente necesitas para precisar el contexto?</label>
+<textarea placeholder="Ej.: fecha de la reunión, quiénes estaban…"></textarea>
+<label class="lk-fl">3. ¿Qué elemento de la definición todavía debes contrastar?</label>
+<textarea placeholder="Ej.: el efecto sobre su situación laboral…"></textarea><div class="callout lk-model" hidden=""><strong>Respuesta de referencia (una de varias posibles):</strong>
+<ol><li><b>Conducta:</b> la frase “si no soportas la presión, busca otro trabajo” dicha frente al equipo.</li>
+<li><b>Contexto:</b> fecha y reunión en que ocurrió, quiénes estaban presentes y qué se discutía.</li>
+<li><b>Elemento a contrastar:</b> si la conducta produjo menoscabo, maltrato o humillación, o si amenazó o perjudicó su situación laboral u oportunidades (por ejemplo, la exclusión de reuniones).</li></ol>
+<span class="lk-small">Decisión profesional: con el relato inicial puedes formular hipótesis, pero todavía debes recopilar y contrastar antecedentes antes de una conclusión definitiva.</span></div></div>
+</section>
+
+<!-- 16 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p13" data-report>
+<div class="completion">
+<div class="icon">✓</div>
+<span class="eyebrow">Lección completada</span>
+<h2>Clasificar bien empieza por observar bien</h2>
+<div class="lk-recap-tools">
+<div><b>M1L1</b><span>HECHO → ANTECEDENTE → ANÁLISIS → CONCLUSIÓN</span></div>
+<div class="now"><b>M1L2</b><span>CONDUCTA → CONTEXTO → SUJETOS → EFECTO</span></div>
+</div><div class="lk-next"><small>SIGUIENTE LECCIÓN</small><b>M1L3 · Recepción y gestión inicial de la denuncia</b></div>
+<div class="report" style="text-align:left">
+<div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+<div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y actividades acertadas al primer intento</small></div>
+<div class="metric"><div class="big" style="color:var(--good)">Aprobada</div><small>Estado de la lección</small></div>
+</div>
+<div class="callout" style="text-align:left"><strong>Repasa cuando quieras</strong><div class="completion-actions" id="reviewBtns" style="justify-content:flex-start;margin-top:10px"></div></div>
+<div class="sources">Contenido normativo contrastado con el artículo 2 del Código del Trabajo vigente (Ley N.º 21.643) y orientaciones de la Dirección del Trabajo. Material formativo: la clasificación definitiva de un caso requiere analizar sus antecedentes concretos.</div>
+<p class="sources">Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+</div>
+</section>

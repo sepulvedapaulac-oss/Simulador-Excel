@@ -1,0 +1,335 @@
+<style id="tema-tls">
+/* Tema TLS (Tremen Partner) sobre el motor común del curso.
+   Paleta TLS: primario #171697 · turquesa #00A5AB · navy #101044 · amarillo #FFD65C.
+   lesson.py copia este archivo al bloque <style id="tema-tls"> de cada content.html. */
+:root{
+  --bg:#e6eaf2; --bg2:#eef1f6; --surface:#ffffff; --surface2:#f6f7fb; --surface3:#fbfbfe;
+  --ink:#11131a; --ink2:#2b2f45; --muted:#4b5563;
+  --teal:#00A5AB; --teal2:#00A5AB; --teal-ink:#00757a; --navy:#101044; --line:#d9dee8; --line2:#e1e5ee; --mint:#eaf8f8; --mint-line:#9fdcde;
+  --violet:#171697; --violet-soft:#f1f0ff; --amber:#e0a800; --amber-soft:#fff7dc; --amber-ink:#7a5a00;
+  --story-bg:#fffaeb; --story-line:#f3dc93; --callout-bg:#eaf8f8; --callout-line:#9fdcde;
+  --good:#087f5b; --good-soft:#e7f6ef; --good-line:#8fd3b6; --bad:#b42318; --bad-soft:#fdecea; --bad-line:#f0a9a1;
+  --track:#d9dee8; --chip:#eceef6; --on-accent:#ffffff;
+  --shadow:0 10px 26px rgba(16,16,68,.08);
+  --stage:#101044; --stage2:#1d1c7a; --stage-ink:#eef0ff; --stage-muted:#a9b0e6; --stage-bad:#ff9a8f; --stage-amber:#FFD65C;
+  --lk-primary:#171697; --lk-yellow:#FFD65C; --lk-head:#101044;
+  --font:Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}}
+:root[data-theme="dark"]{
+  --bg:#0a0b1a; --bg2:#0c0d1f; --surface:#16183a; --surface2:#1c1f45; --surface3:#191b3f;
+  --ink:#eceef6; --ink2:#cfd3e6; --muted:#aab1c5;
+  --teal:#2fc4c9; --teal2:#2fc4c9; --teal-ink:#6fe0e3; --navy:#c9ccff; --line:#2c3064; --line2:#30356c; --mint:#0f2f37; --mint-line:#22636a;
+  --violet:#9b99ff; --violet-soft:#212059; --amber:#FFD65C; --amber-soft:#3a3214; --amber-ink:#FFD65C;
+  --story-bg:#2a2614; --story-line:#5c5020; --callout-bg:#0f2f37; --callout-line:#22636a;
+  --good:#4fd1a0; --good-soft:#103329; --good-line:#2a7a5c; --bad:#ff8a80; --bad-soft:#3a1717; --bad-line:#8a3a35;
+  --track:#2c3064; --chip:#24275a; --on-accent:#0a0b1a;
+  --shadow:0 10px 26px rgba(0,0,0,.35); color-scheme:dark;
+  --lk-primary:#6f6cff; --lk-head:#e6e8ff;
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--lk-head)}
+.topbar-row .course{color:var(--lk-primary)}
+.small-btn.primary,.nav-btn.next{background:var(--lk-primary);color:#fff}
+.tab.active{background:var(--lk-primary);border-color:var(--lk-primary);color:#fff}
+.completion .icon{background:linear-gradient(135deg,var(--lk-primary),var(--teal))}
+.photo-frame.wide.lk-hero{aspect-ratio:4/3}
+/* Bloques de contenido TLS */
+.lk-casebar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;background:var(--lk-primary);color:#fff;padding:12px 16px;border-radius:14px;margin-top:6px;font-size:.92rem}
+.lk-casebar strong{color:var(--lk-yellow);letter-spacing:.05em}
+.lk-instr{display:flex;gap:10px;align-items:flex-start;background:var(--mint);border-left:4px solid var(--teal);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:.95rem}
+.lk-instr b{color:var(--lk-head)}
+.lk-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin:16px 0}
+.lk-banner{position:relative;min-height:240px;border-radius:20px;overflow:hidden;background-size:cover;background-position:center;margin:14px 0 18px;box-shadow:var(--shadow)}
+.lk-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,68,.86),rgba(16,16,68,.2) 65%,transparent)}
+.lk-banner .cap{position:absolute;z-index:2;left:24px;bottom:20px;right:24px;max-width:480px;color:#fff}
+.lk-banner .cap h3{color:#fff;margin:0 0 4px;font-size:1.35rem}
+.lk-banner .cap p{margin:0;color:#fff}
+.lk-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.lk-split>*{min-width:0}
+.lk-photo{min-height:300px;border-radius:20px;background-size:cover;background-position:center;box-shadow:var(--shadow)}
+.lk-folder{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:20px;box-shadow:var(--shadow);margin:12px 0}
+.lk-tag{display:inline-block;background:var(--lk-primary);color:#fff;padding:6px 10px;border-radius:8px;font-weight:800;letter-spacing:.05em;font-size:.8rem;margin-bottom:10px}
+.lk-mail{background:var(--surface2);border:1px solid var(--line);border-left:4px solid var(--lk-yellow);border-radius:12px;padding:16px;margin:10px 0;font-style:italic}
+.lk-small{font-size:.86rem;color:var(--muted)}
+.lk-tool{background:#101044;color:#fff;border-radius:18px;padding:20px;margin:12px 0}
+.lk-tool h2,.lk-tool h3{color:#fff;font-size:clamp(1.1rem,2.4vw,1.55rem)}
+.lk-toolflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.lk-toolflow div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-top:3px solid var(--lk-yellow);padding:12px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:.9rem}
+.lk-toolflow small{display:block;font-weight:400;opacity:.88;color:#fff}
+.lk-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:14px 0}
+.lk-flow div{padding:14px 8px;text-align:center;background:var(--lk-primary);color:#fff;border-radius:12px;font-weight:800;font-size:.9rem}
+.lk-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lk-duo>*{min-width:0}.lk-duo .lk-box{margin:0}
+.lk-legal{border-left:4px solid var(--lk-primary);background:var(--surface2);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:.95rem}
+.lk-legal b{color:var(--lk-head)}
+.lk-princ{font-weight:900;color:var(--lk-head)}
+.lk-details{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:12px 16px;margin-top:16px}
+.lk-details summary{cursor:pointer;font-weight:800;color:var(--lk-head)}
+.lk-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.lk-gate{font-size:.85rem;color:var(--muted);font-weight:700;margin:8px 0 0}
+.lk-next{border:1px dashed var(--teal);border-radius:14px;padding:14px 16px;text-align:left;margin:14px 0}
+.lk-next small{display:block;color:var(--teal-ink);font-weight:900;letter-spacing:.08em}
+.lk-next b{color:var(--lk-head)}
+.lk-recap-tools{display:flex;flex-direction:column;gap:6px;text-align:left;margin-top:14px}
+.lk-recap-tools div{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:8px 12px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-size:.9rem}
+.lk-recap-tools div b{color:var(--lk-head);min-width:52px}
+.lk-recap-tools div.now{background:var(--lk-primary);color:#fff;border-color:var(--lk-primary)}
+.lk-recap-tools div.now b{color:var(--lk-yellow)}
+/* Selección múltiple */
+.lk-multi .opt.sel{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-multi .opt.sel .letter{background:var(--lk-primary);color:#fff}
+/* Ordenar */
+.lk-order{list-style:none;padding:0;margin:12px 0;counter-reset:o}
+.lk-order li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;counter-increment:o}
+.lk-order li:before{content:counter(o);flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--chip);font-weight:900;font-size:.85rem}
+.lk-order li span{flex:1;font-weight:700;min-width:0}
+.lk-order li button{border:1px solid var(--line);background:var(--surface2);border-radius:8px;width:40px;height:36px;cursor:pointer}
+.lk-order li button:disabled{opacity:.35;cursor:default}
+.lk-order.ok li{border-color:var(--good-line);background:var(--good-soft)}
+/* Completar */
+.lk-cloze{font-size:1.04rem;line-height:2.2}
+.lk-cloze select{border:2px solid var(--line);border-radius:10px;padding:4px 8px;background:var(--surface);color:var(--ink);max-width:100%;font:inherit;font-size:.95rem}
+.lk-cloze select.ok{border-color:var(--good-line);background:var(--good-soft)}
+.lk-cloze select.bad{border-color:var(--bad-line);background:var(--bad-soft)}
+/* Tarjetas para explorar (panel) */
+.lk-rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px}
+.lk-rv{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;cursor:pointer;box-shadow:var(--shadow);position:relative}
+.lk-rv b{color:var(--lk-head);padding-right:18px}
+.lk-rv span{font-size:.88rem;color:var(--muted)}
+.lk-rv:hover{border-color:var(--teal)}
+.lk-rv.active{border-color:var(--lk-primary);background:var(--violet-soft)}
+.lk-rv.seen:after{content:"✓";position:absolute;top:10px;right:12px;color:var(--good);font-weight:900}
+.lk-rv-panel{margin-top:12px;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:14px;padding:14px 16px;background:var(--surface3)}
+.lk-rv-panel.ok{border-left-color:var(--good)}.lk-rv-panel.bad{border-left-color:var(--bad)}
+.lk-rv-panel h3{margin:0 0 6px;font-size:1.02rem}
+/* Lista de compromisos */
+.lk-chk{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;margin:8px 0;cursor:pointer}
+.lk-chk .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid var(--line);display:grid;place-items:center;font-weight:900}
+.lk-chk.on{border-color:var(--teal);background:var(--mint)}
+.lk-chk.on .bx{background:var(--teal);border-color:var(--teal);color:#fff}
+.lk-chk.on .bx:after{content:"✓"}
+.lk-chk h3{margin:0 0 2px;font-size:1.02rem}
+/* Transferencia */
+.lk-fl{display:block;font-weight:800;margin:14px 0 6px;color:var(--lk-head)}
+.lk-transfer textarea{width:100%;min-height:86px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);color:var(--ink);font:inherit;resize:vertical}
+.lk-cnt{font-size:.75rem;color:var(--muted);text-align:right}
+.lk-model{margin-top:14px}
+/* Clasificar: columnas según cantidad de categorías */
+.bins.bins4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bins.bins5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px){.bins.bins4,.bins.bins5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Puntos de interés sobre foto */
+.hs-stage .hs{background:var(--lk-primary)}
+.hs-stage .hs.seen{background:var(--teal);color:#fff}
+.hs-stage .hs.active{background:var(--lk-yellow);color:#101044}
+@media(max-width:860px){
+  .lk-split,.lk-duo{grid-template-columns:1fr}
+  .lk-photo{min-height:220px}
+  .lk-banner{min-height:210px}
+  .bins.bins4,.bins.bins5{grid-template-columns:1fr}
+  .hs-stage .hs{width:36px;height:36px}
+}
+.tabpane.solo.active{display:block}
+.tabpane.solo ul{padding-left:1.2rem}
+.lk-next p{margin:4px 0 0;max-width:none}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="s00" data-gate-msg="Voltea las 3 tarjetas.">
+<div class="hero-grid"><div><span class="eyebrow">Módulo 1 · Lección 5</span>
+<h1>Decisión y planificación inicial de la investigación</h1>
+<p class="lead">Convierte el relato en un plan investigativo concreto, trazable y ejecutable.</p>
+<div class="lk-casebar"><span>Investigar no es acumular antecedentes</span><strong>LK-026 · ETAPA 05</strong></div></div><div class="photo-frame wide lk-hero"><img alt="Imagen de portada de la lección: Decisión y planificación inicial de la investigación" src="img/lk5_img1.jpg"/></div></div>
+<div class="lk-instr"><span>👆</span><span><b>Para comenzar:</b> toca las tres tarjetas para descubrir qué lograrás en esta lección.</span></div>
+<div data-flip="s00"><div class="task">Tarjetas descubiertas <span class="tick">0 / 3</span></div><div class="flipdeck"><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Delimitar</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Separa</strong> el relato en hechos concretos que puedan ser investigados y contrastados.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Preguntar</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Formula</strong> preguntas investigativas que no contengan la conclusión.</span></div></div></button><button class="flip" type="button"><div class="flip-inner"><div class="face"><strong style="font-family:Georgia,serif;font-size:1.25rem;color:var(--lk-head)">Planificar</strong><span>Toca para ver el objetivo</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><span><strong>Conecta</strong> fuentes, diligencias y una secuencia razonada.</span></div></div></button></div></div>
+</section>
+
+<!-- VIDEO -->
+<section class="slide" data-title="Video: del relato al plan" data-gate="video" data-gate-msg="Reproduce el video hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Video explicativo</span>
+  <h2>Del relato al plan</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 4 · ¿Y AHORA QUÉ? -->
+<section class="slide" data-title="¿Y ahora qué?" data-audio="p02" data-gate="s02" data-gate-msg="Elige el razonamiento correcto.">
+<span class="eyebrow">Situación</span>
+<h2>El expediente está abierto. ¿Y ahora qué?</h2>
+<div class="lk-split">
+<div aria-label="La investigadora de pie en la oficina, revisando el expediente" class="lk-photo" role="img" style="background-image:url('img/lk5_img2.jpg')"></div>
+<div class="lk-folder"><span class="lk-tag">RELATO INICIAL DE ANDREA</span><div class="lk-mail">“Desde hace meses mi jefe me desacredita delante del equipo. La semana pasada me dijo que si no podía soportar la presión debería buscar otro trabajo. También me excluyó de dos reuniones del área.”</div><p class="lk-small">Todavía no sabes cuáles podrán acreditarse ni qué explicación entregarán las demás personas.</p></div>
+</div>
+<div class="lk-instr"><span>🧭</span><span><b>¿Cuál es el mejor punto de partida?</b> Cada opción explica por qué funciona o no.</span></div>
+<div><div class="options" data-choice="s02" data-correct="B"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>Buscar antecedentes que demuestren que Andrea tiene razón.</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>Delimitar los hechos concretos que necesitan esclarecimiento.</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>Citar inmediatamente a todas las personas del equipo.</span></button></div><div class="fb"></div><template data-for="s02-A"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">El objetivo no es confirmar una versión inicial, sino esclarecer hechos mediante antecedentes obtenidos de forma imparcial.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s02-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El relato debe descomponerse en hechos concretos que puedan ser investigados y contrastados.</span></div></template><template data-for="s02-C"><div class="feedback bad"><strong>Revisa el razonamiento.</strong> <span class="fb-body">Entrevistar sin delimitar previamente qué se investiga puede producir una investigación dispersa y poco trazable.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template></div>
+</section>
+
+<!-- 5 · ACUMULAR O INVESTIGAR -->
+<section class="slide" data-title="Acumular o investigar" data-audio="p03" data-gate="s03" data-gate-msg="Clasifica todos los elementos.">
+<span class="eyebrow">Principio</span>
+<h2>Investigar no es acumular información</h2>
+<p class="lead">Una investigación sólida conecta cada diligencia con una pregunta concreta.</p>
+<div class="lk-instr"><span>🗂️</span><span><b>Clasifica cada acción</b> como acumular o investigar: toca una tarjeta y luego la columna que corresponde, o arrástrala.</span></div>
+<div data-sort="s03"><div class="task">Elementos clasificados <span class="tick">0 / 6</span></div><div class="pool"></div><div class="bins bins"></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> <strong>Regla de trabajo:</strong> si no puedes explicar qué pregunta investigativa responde una diligencia, probablemente aún no está bien diseñada.</div></div>
+</section>
+
+<!-- 6 · HECHOS INVESTIGABLES -->
+<section class="slide" data-title="Hechos investigables" data-audio="p04" data-gate="s04" data-gate-msg="Marca las afirmaciones correctas y presiona Revisar." data-review="Hechos investigables">
+<span class="eyebrow">Delimitación</span>
+<h2>Del relato a hechos investigables</h2>
+<p class="lead">No investigues una impresión global como “maltrato”. Separa el relato en acontecimientos susceptibles de contraste.</p>
+<div class="lk-box">
+<div class="lk-instr"><span>☑️</span><span><b>Marca solo los hechos investigables</b> del relato de Andrea y presiona <b>Revisar</b>.</span></div>
+<div class="lk-multi" data-hint="Un hecho investigable ocurre en un momento y lugar, y se puede contrastar con fuentes." data-key="s04" data-lk="multi" data-okmsg="Tres hechos concretos: &lt;strong&gt;desacreditaciones frente al equipo&lt;/strong&gt;, el &lt;strong&gt;comentario sobre buscar otro trabajo&lt;/strong&gt; y la &lt;strong&gt;exclusión de dos reuniones&lt;/strong&gt;. Las impresiones globales no se pueden contrastar."><div class="options"><button class="opt" data-ok="1" type="button"><span class="letter">1</span><span>Supuestas desacreditaciones frente al equipo.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">2</span><span>“Maltrato” en general.</span></button><button class="opt" data-ok="1" type="button"><span class="letter">3</span><span>Comentario atribuido a la jefatura sobre buscar otro trabajo.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">4</span><span>Un ambiente laboral tóxico.</span></button><button class="opt" data-ok="1" type="button"><span class="letter">5</span><span>Exclusión de dos reuniones del área.</span></button><button class="opt" data-ok="0" type="button"><span class="letter">6</span><span>Que la jefatura es una mala persona.</span></button></div></div>
+</div>
+</section>
+
+<!-- 7 · PREGUNTAS INVESTIGATIVAS -->
+<section class="slide" data-title="Preguntas investigativas" data-audio="p05" data-gate="s05" data-gate-msg="Resuelve las decisiones del caso.">
+<span class="eyebrow">Caso aplicado</span>
+<h2>Convierte una afirmación en preguntas investigativas</h2>
+<div class="lk-folder"><span class="lk-tag">HECHO SELECCIONADO</span><p>Andrea afirma que fue excluida de dos reuniones de su área.</p></div>
+<div class="lk-box"><h3>Decisión 1 de 2 · ¿Qué preguntas te sirven para investigar?</h3><div class="options" data-choice="s05_1" data-correct="B" data-then="s05_p2"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>¿Por qué la jefatura decidió discriminar a Andrea?</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>¿Qué reuniones fueron? ¿Andrea debía participar? ¿Quién definió los asistentes? ¿Existen convocatorias o registros?</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>¿El equipo considera que la jefatura trata mal a Andrea?</span></button></div><div class="fb"></div><template data-for="s05_1-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">La pregunta ya presupone una intención discriminatoria. Primero deben establecerse los hechos y su contexto.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_1-B"><div class="feedback good"><strong>Bien orientado.</strong> <span class="fb-body">Estas preguntas permiten establecer hechos, contexto, decisiones y fuentes de contraste sin anticipar una conclusión. Ahora prepara la pregunta para la persona denunciada.</span></div></template><template data-for="s05_1-C"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">La opinión general del equipo no reemplaza el esclarecimiento de los hechos específicos denunciados.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><div class="phase" hidden="" id="s05_p2"><div style="margin-top:18px"><h3>Decisión 2 de 2 · ¿Qué pregunta le harías a la persona denunciada?</h3><div class="options" data-choice="s05_2" data-correct="C" data-gate="s05"><button class="opt" data-opt="A" type="button"><span class="letter">A</span><span>¿Por qué excluyó a Andrea de las reuniones?</span></button><button class="opt" data-opt="B" type="button"><span class="letter">B</span><span>¿Reconoce que discrimina a Andrea?</span></button><button class="opt" data-opt="C" type="button"><span class="letter">C</span><span>¿Cómo se definieron los asistentes a esas dos reuniones?</span></button></div><div class="fb"></div><template data-for="s05_2-A"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">“¿Por qué la excluyó?” da por hecho que la excluyó: es una pregunta que contiene la conclusión.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_2-B"><div class="feedback bad"><strong>Consecuencia:</strong> <span class="fb-body">Pedir que reconozca una discriminación pone al entrevistado a la defensiva y compromete la imparcialidad.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template><template data-for="s05_2-C"><div class="feedback good"><strong>Decisión acertada.</strong> <span class="fb-body">Es una pregunta abierta que permite conocer el criterio usado, sin presuponer la respuesta.</span></div></template></div></div></div>
+</section>
+
+<!-- 8 · DÓNDE ESTÁ LA INFORMACIÓN -->
+<section class="slide" data-title="Dónde está la información" data-audio="p06" data-gate="s06" data-gate-msg="Toca los 4 puntos de la imagen." data-review="Fuentes">
+<span class="eyebrow">Fuentes</span>
+<h2>¿Dónde puede estar la información?</h2>
+<p class="lead">Una misma pregunta puede requerir distintas fuentes.</p>
+<div class="lk-instr"><span>📍</span><span><b>Toca los cuatro puntos de la oficina</b> para descubrir qué podría aportar cada fuente.</span></div>
+<div data-hotspot="s06"><div class="task">Puntos revisados <span class="tick">0 / 4</span></div><div class="hs-wrap"><div class="hs-stage"><img alt="Oficina con personas trabajando, escritorios con documentos y una sala de reuniones" src="img/lk5_img3.jpg"/><button aria-label="Personas" class="hs" data-k="0" style="left:54%;top:46%" type="button">1</button><button aria-label="Documentos" class="hs" data-k="1" style="left:39%;top:67%" type="button">2</button><button aria-label="Comunicaciones" class="hs" data-k="2" style="left:7%;top:55%" type="button">3</button><button aria-label="Registros" class="hs" data-k="3" style="left:82%;top:55%" type="button">4</button></div><div class="hs-panel"><p class="hint">Toca cada punto numerado de la imagen para ver la explicación.</p></div></div></div>
+</section>
+
+<!-- 9 · DE LA FUENTE A LA DILIGENCIA -->
+<section class="slide" data-title="De la fuente a la diligencia" data-audio="p07" data-gate="s07" data-gate-msg="Une todos los elementos.">
+<span class="eyebrow">Diligencias</span>
+<h2>De la fuente a la actuación</h2>
+<p class="lead">Identificar una fuente no basta. Debes decidir qué actuación permitirá obtener información pertinente.</p>
+<div class="lk-instr"><span>🔗</span><span><b>Une cada pregunta investigativa con la diligencia que permite responderla.</b></span></div>
+<div data-pairs="s07"><div class="task">Parejas formadas <span class="tick">0 / 4</span></div><div class="pairs"><div class="pl-col"></div><div class="pr-col"></div></div><div class="fb"></div><div class="callout lk-after" hidden=""><strong>Idea clave:</strong> Cada diligencia tiene un propósito reconocible: responde una pregunta concreta sobre un hecho delimitado.</div></div>
+<p class="lk-small">En el Módulo 2 profundizaremos en cómo ejecutar entrevistas y otras técnicas. Aquí el objetivo es construir el mapa inicial.</p>
+</section>
+
+<!-- 10 · EL ORDEN DEL PLAN -->
+<section class="slide" data-title="El orden del plan" data-audio="p08" data-gate="s08" data-gate-msg="Ordena los pasos y presiona «Comprobar orden»." data-review="Secuencia">
+<span class="eyebrow">Secuencia</span>
+<h2>El orden también forma parte del plan</h2>
+<div class="lk-banner" style="background-image:url('img/lk5_img1.jpg')"><div class="cap"><h3>Algunas diligencias preservan antecedentes</h3><p>Otras dependen de información obtenida previamente.</p></div></div>
+<div class="lk-box">
+<div class="lk-instr"><span>↕️</span><span><b>Ordena una secuencia razonada</b> para investigar las reuniones y presiona <b>Comprobar orden</b>.</span></div>
+<div data-hint="¿Qué antecedente podría perderse si esperas? Eso va primero." data-items='["Preservar y revisar los registros disponibles","Precisar antecedentes con la denunciante","Contrastar las versiones de quienes participaron","Analizar lo obtenido antes de concluir"]' data-key="s08" data-lk="order" data-okmsg="Preservar y revisar registros primero aporta una base objetiva para orientar las diligencias siguientes. Contrastar versiones sin esa base puede desordenar la investigación." data-start="[2,3,1,0]"></div>
+</div>
+</section>
+
+<!-- 11 · QUIÉN CONDUCE -->
+<section class="slide" data-title="Quién conduce" data-audio="p09" data-gate="s09" data-gate-msg="Revisa las 4 pestañas.">
+<span class="eyebrow">Responsable</span>
+<h2>¿Quién debe conducir la investigación?</h2>
+<p class="lead">La planificación también exige revisar si quien investigará puede actuar con imparcialidad y cuenta con condiciones adecuadas.</p>
+<div class="lk-box">
+<div class="lk-instr"><span>📑</span><span><b>Revisa los cuatro principios</b> que debe respetar quien conduce el procedimiento.</span></div>
+<div data-tabs="s09"><div class="task">Pestañas revisadas <span class="tick">1 / 4</span></div><div class="tabs"><button class="tab" type="button">Confidencialidad</button><button class="tab" type="button">Imparcialidad</button><button class="tab" type="button">Celeridad</button><button class="tab" type="button">Perspectiva de género</button></div><div class="tabpane solo"><div><h3>Confidencialidad</h3><p>Resguardar la información del procedimiento: el plan define quién accede a qué antecedentes y para qué.</p></div></div><div class="tabpane solo"><div><h3>Imparcialidad</h3><p>No investigar para confirmar una posición previa. Quien investiga no debe tener vínculos ni intereses que comprometan su neutralidad.</p></div></div><div class="tabpane solo"><div><h3>Celeridad</h3><p>Organizar las diligencias sin demoras injustificadas, dentro de los plazos del procedimiento.</p></div></div><div class="tabpane solo"><div><h3>Perspectiva de género</h3><p>Integrar este principio en el diseño de preguntas, fuentes y diligencias, evitando estereotipos y revictimización.</p></div></div></div>
+</div>
+<div class="lk-legal">Cuando el empleador realiza la investigación interna, debe designar preferentemente a una persona trabajadora con formación en materias de acoso, género o derechos fundamentales.</div>
+</section>
+
+<!-- 12 · TRES ERRORES -->
+<section class="slide" data-title="Tres errores" data-audio="p10" data-gate="s10" data-gate-msg="Revisa los 3 elementos.">
+<span class="eyebrow">Contraste</span>
+<h2>Tres errores antes de comenzar</h2>
+<p class="lead">Un plan deficiente puede condicionar toda la investigación.</p>
+<div class="lk-instr"><span>🔎</span><span><b>Abre cada frase</b> y descubre si es un error o una buena práctica.</span></div>
+<div data-key="s10" data-lk="reveal"><div class="task">Elementos revisados <span class="tick">0 / 3</span></div><div class="lk-rv-grid"><button class="lk-rv" data-fb="Error: parte de una conclusión y organiza la investigación para confirmarla. Eso compromete la imparcialidad." data-kind="bad" type="button"><b>“Veamos cómo demostramos el acoso.”</b><span>Hipótesis convertida en veredicto.</span></button><button class="lk-rv" data-fb="Error: una lista indiscriminada de personas no sustituye la identificación de fuentes pertinentes para cada hecho." data-kind="bad" type="button"><b>“Entrevistemos a todos.”</b><span>Diligencias sin pregunta investigativa.</span></button><button class="lk-rv" data-fb="Correcto: delimitar hechos permite conectar preguntas, fuentes y diligencias de manera trazable." data-kind="ok" type="button"><b>“Separemos primero los hechos.”</b><span>Planificación antes de ejecución.</span></button></div><div class="lk-rv-panel" hidden=""></div></div>
+</section>
+
+<!-- 13 · HERRAMIENTA TLS -->
+<section class="slide" data-title="Herramienta TLS" data-audio="p11" data-gate="s11" data-gate-msg="Completa los espacios y presiona Revisar." data-review="Herramienta TLS">
+<span class="eyebrow">Herramienta TLS</span>
+<div class="lk-tool"><h2>HECHOS → PREGUNTAS → FUENTES → DILIGENCIAS → SECUENCIA</h2></div>
+<div class="lk-instr"><span>✍️</span><span><b>Completa la pregunta guía de cada paso</b> y presiona <b>Revisar</b>.</span></div>
+<div class="lk-cloze" data-hint="Cada paso responde una sola pregunta." data-key="s11" data-lk="cloze" data-okmsg="Con esta ruta transformas un relato en un plan investigativo: &lt;strong&gt;qué esclarecer, qué saber, dónde buscar, qué hacer y en qué orden&lt;/strong&gt;.">
+<p><b>HECHOS:</b> ¿<select data-ok="a"><option value="">elige…</option><option value="a">qué debo esclarecer</option><option value="b">quién tiene la culpa</option><option value="c">qué sanción aplicar</option></select>?</p>
+<p><b>PREGUNTAS:</b> ¿<select data-ok="c"><option value="">elige…</option><option value="a">cómo confirmo la denuncia</option><option value="b">qué opina el equipo</option><option value="c">qué necesito saber</option></select>?</p>
+<p><b>FUENTES:</b> ¿<select data-ok="b"><option value="">elige…</option><option value="a">quién me cae mejor</option><option value="b">dónde puede estar la información</option><option value="c">cuántos testigos hay</option></select>?</p>
+<p><b>DILIGENCIAS:</b> ¿<select data-ok="a"><option value="">elige…</option><option value="a">qué haré para obtenerla</option><option value="b">cuánto tardará el informe</option><option value="c">qué concluiré</option></select>?</p>
+<p><b>SECUENCIA:</b> ¿<select data-ok="b"><option value="">elige…</option><option value="a">a quién culpo primero</option><option value="b">en qué orden conviene actuar</option><option value="c">cuándo cierro el caso</option></select>?</p>
+</div>
+</section>
+
+<!-- 14 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+<span class="eyebrow violet">Comprobación</span>
+<div class="qhead"><h2 style="margin-bottom:0">¿Tu plan investiga o confirma?</h2><div class="qdots" id="qdots"></div></div>
+<p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Cada alternativa explica por qué es correcta o no. Si no lo logras, puedes reintentar.</p>
+<div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 15 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p12" data-gate="s13 pass" data-gate-msg="Completa los campos y compara con la referencia (requiere 80 % en la Comprobación).">
+<span class="eyebrow">Transferencia</span>
+<h2>Construye el primer plan del Expediente LK-026</h2>
+<p class="lead">No necesitas resolver el caso. Debes dejar definido cómo empezarías a investigarlo.</p>
+<div class="lk-instr"><span>📝</span><span><b>Completa los cuatro campos</b> (mínimo 20 caracteres cada uno) y compara con la referencia.</span></div>
+<div class="lk-box lk-transfer" data-key="s13" data-lk="transfer"><label class="lk-fl">Hecho a esclarecer</label>
+<textarea placeholder="Ej.: la exclusión de…"></textarea>
+<label class="lk-fl">Pregunta investigativa</label>
+<textarea placeholder="Ej.: ¿quién definió…?"></textarea>
+<label class="lk-fl">Fuentes posibles</label>
+<textarea placeholder="Ej.: convocatorias, asistentes…"></textarea>
+<label class="lk-fl">Primeras diligencias y orden</label>
+<textarea placeholder="Ej.: 1) solicitar… 2) …"></textarea><div class="callout lk-model" hidden=""><strong>Respuesta de referencia (una de varias posibles):</strong>
+<ol><li><b>Hecho:</b> la exclusión de Andrea de dos reuniones del área.</li>
+<li><b>Pregunta:</b> ¿qué reuniones fueron, debía participar Andrea y quién definió a los asistentes?</li>
+<li><b>Fuentes:</b> convocatorias y calendario del área, nómina del equipo, responsable de la agenda, asistentes.</li>
+<li><b>Diligencias y orden:</b> 1) preservar y revisar convocatorias y calendario; 2) precisar fechas con Andrea; 3) solicitar información a quien gestiona la agenda; 4) contrastar versiones de asistentes y de la jefatura.</li></ol>
+<span class="lk-small">Control de calidad: revisa si tu plan intenta esclarecer el hecho o demostrar una conclusión que ya asumiste.</span></div></div>
+</section>
+
+<!-- 16 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p13" data-report>
+<div class="completion">
+<div class="icon">✓</div>
+<span class="eyebrow">Módulo 1 completado</span>
+<h2>El expediente está listo para investigar</h2>
+<p>Pasaste de una denuncia inicial a un expediente formalizado, resguardado y con una estrategia de investigación.</p>
+<div class="lk-recap-tools">
+<div><b>M1L1</b><span>HECHO → ANTECEDENTE → ANÁLISIS → CONCLUSIÓN</span></div>
+<div><b>M1L2</b><span>CONDUCTA → CONTEXTO → SUJETOS → EFECTO</span></div>
+<div><b>M1L3</b><span>RECIBE → REGISTRA → REVISA → RESGUARDA → DERIVA</span></div>
+<div><b>M1L4</b><span>RIESGO → PROTECCIÓN → IMPACTO → SEGUIMIENTO</span></div>
+<div class="now"><b>M1L5</b><span>HECHOS → PREGUNTAS → FUENTES → DILIGENCIAS → SECUENCIA</span></div>
+</div><div class="lk-next"><small>PRÓXIMA ETAPA</small><b>Misión TLS · Primera respuesta frente a una denuncia</b><p>Integrarás las decisiones del módulo antes de avanzar a la ejecución de la investigación.</p></div>
+<div class="report" style="text-align:left">
+<div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+<div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones y actividades acertadas al primer intento</small></div>
+<div class="metric"><div class="big" style="color:var(--good)">Aprobada</div><small>Estado de la lección</small></div>
+</div>
+<div class="callout" style="text-align:left"><strong>Repasa cuando quieras</strong><div class="completion-actions" id="reviewBtns" style="justify-content:flex-start;margin-top:10px"></div></div>
+<div class="sources">Fuentes: Código del Trabajo, Libro II, Título IV (Ley N.º 21.643); D.S. N.º 21 (2024), Ministerio del Trabajo y Previsión Social.</div>
+<p class="sources">Narración: voz sintética de código abierto (Chatterbox). Los datos, personas y empresa del caso son ficticios.</p>
+</div>
+</section>
