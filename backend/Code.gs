@@ -1,5 +1,5 @@
 /**
- * Backend del Simulador de Nivel Excel (Google Apps Script + Google Sheets)
+ * Backend de la Evaluación Diagnóstica Excel (Google Apps Script + Google Sheets)
  *
  * 1. Cree una hoja de cálculo en Google Drive.
  * 2. Menú Extensiones > Apps Script. Borre el contenido y pegue este archivo.
@@ -85,7 +85,7 @@ function doPost(e) {
 
 function doGet(e) {
   const p = (e && e.parameter) || {};
-  if (p.action !== 'list') return json_({ ok: true, service: 'Simulador Excel', message: 'Backend activo' });
+  if (p.action !== 'list') return json_({ ok: true, service: 'Evaluación Diagnóstica Excel', message: 'Backend activo' });
   if (p.key !== ADMIN_KEY) return json_({ ok: false, error: 'Clave incorrecta' });
   const sh = getSheet_();
   const last = sh.getLastRow();

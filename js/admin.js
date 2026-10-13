@@ -112,7 +112,7 @@
     const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'resultados-simulador-excel.csv';
+    a.download = 'resultados-evaluacion-diagnostica-excel.csv';
     a.click();
   }
 

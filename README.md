@@ -1,4 +1,4 @@
-# Simulador de Nivel Excel (Básico · Intermedio · Avanzado)
+# Evaluación Diagnóstica Excel (Básico · Intermedio · Avanzado)
 
 Plataforma web de **nivelación**: identifica el nivel de Excel de cada alumno para **recomendarle qué curso tomar**, mediante **actividades prácticas en un entorno similar a Microsoft Excel**: cinta de opciones, barra de fórmulas, celdas, hojas, fórmulas en español, gráficos, tablas dinámicas, filtros, escenarios, controles de formulario y macros.
 
