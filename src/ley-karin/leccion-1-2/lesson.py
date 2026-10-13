@@ -41,7 +41,7 @@ L = {'id': 'tls_lk_l12',
                'p11': 'Antes de clasificar, utiliza esta herramienta: conducta, contexto, sujetos y efecto. Conducta: ¿qué ocurrió? Contexto: ¿cuándo, dónde y en qué '
                       'circunstancias? Sujetos: ¿quiénes intervienen? Efecto: ¿qué resultado, menoscabo o amenaza se describe? Cuatro preguntas simples pueden evitar conclusiones '
                       'apresuradas.',
-               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas sobre el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Para continuar necesitas al menos cuatro respuestas correctas. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.'
                        'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
                'p12': 'Volvamos al expediente ele ka cero veintiséis. Andrea relata desacreditaciones frente al equipo, una frase de su jefatura y la exclusión de dos reuniones. '
                       'Todavía no necesitas clasificar definitivamente el caso. Primero elige una conducta concreta, identifica qué contexto falta precisar y determina qué '

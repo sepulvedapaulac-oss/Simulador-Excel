@@ -39,7 +39,7 @@ L = {'id': 'tls_lk_l11',
                'p10': 'Recuerda esta estructura: hecho, antecedente, análisis y conclusión. Primero identifica qué se alega. Luego, qué información existe. Después, analiza qué '
                       'permite sostener esa información. Solo entonces formula una conclusión proporcional. No saltes del relato directamente al resultado: entre ambos existe '
                       'trabajo investigativo.',
-               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas sobre el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Para continuar necesitas al menos cuatro respuestas correctas. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.'
                        'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
                'p11': 'Ahora aplica la lógica al expediente ele ka cero veintiséis. No necesitas resolver el caso. Solo organiza tu pensamiento. Define un hecho concreto que '
                       'investigarías primero, identifica un antecedente que buscarías y escribe una conclusión que todavía no puedes formular. Tus respuestas te ayudarán a '

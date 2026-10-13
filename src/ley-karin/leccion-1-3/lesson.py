@@ -39,7 +39,7 @@ L = {'id': 'tls_lk_l13',
                'p11': 'Utiliza esta secuencia para ordenar la gestión inicial: recibe, registra, revisa, resguarda y deriva. Recibe el relato. Registra su ingreso. Revisa qué '
                       'falta. Resguarda a las personas y la información. Y deriva o activa el curso procedimental que corresponda. Cada paso prepara la investigación que viene '
                       'después.',
-               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas sobre el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Para continuar necesitas al menos cuatro respuestas correctas. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.'
                        'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
                'p12': 'Aplica la secuencia al expediente ele ka cero veintiséis. Registra un dato que conservarías de inmediato. Define qué información pedirías complementar sin '
                       'anticipar una conclusión. Y detecta un riesgo de confidencialidad que controlarías desde ahora. Recuerda que recibir formalmente la denuncia no reemplaza '

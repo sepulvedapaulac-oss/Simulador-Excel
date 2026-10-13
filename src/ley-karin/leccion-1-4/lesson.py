@@ -35,7 +35,7 @@ L = {'id': 'tls_lk_l14',
                       'se utiliza como una declaración anticipada de responsabilidad. Por eso, documenta por qué se adopta la medida y qué riesgo busca controlar.',
                'p11': 'Utiliza esta herramienta TLS: riesgo, protección, impacto y seguimiento. Primero identifica el riesgo que necesitas controlar. Luego define qué medida '
                       'puede reducirlo. Después analiza el impacto que tendrá sobre las personas y el trabajo. Finalmente, revisa si la medida sigue siendo adecuada.',
-               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas sobre el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Para continuar necesitas al menos cuatro respuestas correctas. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.'
                        'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
                'p12': 'Una medida no se adopta y se olvida. Durante la investigación pueden cambiar los antecedentes, las condiciones de trabajo o la eficacia del resguardo. En '
                       'el seguimiento verifica si el riesgo disminuyó, si la medida sigue siendo necesaria, si produjo efectos no previstos y si corresponde mantenerla, ajustarla '

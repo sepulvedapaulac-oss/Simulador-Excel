@@ -37,7 +37,7 @@ L = {'id': 'tls_lk_l15',
                       'hechos.',
                'p11': 'Utiliza esta ruta TLS para diseñar el plan: hechos, preguntas, fuentes, diligencias y secuencia. Hechos: qué debo esclarecer. Preguntas: qué necesito '
                       'saber. Fuentes: dónde puede estar la información. Diligencias: qué haré para obtenerla. Secuencia: en qué orden conviene actuar.',
-               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas basadas en el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué '
+               'quiz': 'Llegó el momento de comprobar lo aprendido. Responde cinco preguntas sobre el expediente ele ka cero veintiséis. Cada respuesta te mostrará por qué es correcta o no. Para continuar necesitas al menos cuatro respuestas correctas. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.'
                        'es correcta o no. Necesitas al menos un ochenta por ciento para continuar. Si no lo logras, revisa la retroalimentación y vuelve a intentarlo.',
                'p12': 'Ahora construye el primer plan del expediente ele ka cero veintiséis. Elige un hecho concreto, formula una pregunta investigativa, identifica posibles '
                       'fuentes y define las primeras diligencias en un orden razonado. Revisa al final si tu plan intenta esclarecer el hecho o demostrar una conclusión que ya '
