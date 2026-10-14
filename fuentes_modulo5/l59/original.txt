@@ -1,0 +1,37 @@
+Lección 5.9
+Legislación Laboral · Módulo 5
+Lección 5.9
+¿Qué ocurre cuando se incumple?
+Corregir el hecho y corregir el sistema
+Situación inicial
+Observa antes de decidir
+Una revisión interna detecta cartas incompletas, finiquitos fuera de plazo y registros inconsistentes. La gerencia pregunta si basta con “ordenar la carpeta”.
+Conceptos clave
+Lo que debes reconocer
+Fiscalización y sanciones
+Los incumplimientos pueden derivar en fiscalización, multas administrativas y otras consecuencias según la materia y gravedad.
+Reclamos y acciones
+La persona trabajadora puede reclamar ante la autoridad administrativa o ejercer acciones judiciales cuando corresponda.
+Costos económicos
+El incumplimiento puede generar pagos, recargos, indemnizaciones, reajustes, intereses u otras consecuencias.
+Mejora correctiva
+Debe regularizarse el caso concreto y corregirse el proceso que permitió el incumplimiento.
+Decisión aplicada
+Selecciona una alternativa
+La empresa corrige un finiquito fuera de plazo, pero no modifica el proceso que generó el atraso. ¿Qué falta?
+Nada, porque el documento ya fue corregido.
+Una acción correctiva sobre el proceso para evitar que el incumplimiento vuelva a ocurrir.
+Solo pedir disculpas.
+Comprobar
+El cumplimiento sostenible requiere corregir el caso y la causa raíz que produjo el incumplimiento.
+Transferencia
+Llévalo al trabajo real
+Identifica qué documento, plazo, pago o evidencia permitiría demostrar que esta situación fue gestionada correctamente.
+Lección completada
+Has finalizado la Lección 5.9
+Ya puedes continuar con la siguiente lección del módulo.
+Anterior
+Siguiente
+[SCRIPT]
+const s=[...document.querySelectorAll('.slide')],c=document.getElementById('count'),b=document.getElementById('prog'),p=document.getElementById('prev'),n=document.getElementById('next');let i=0;function show(x){i=Math.max(0,Math.min(s.length-1,x));s.forEach((e,j)=>e.classList.toggle('active',j===i));c.textContent=`Pantalla ${i+1} de ${s.length}`;b.style.width=`${(i+1)/s.length*100}%`;p.disabled=i===0;n.disabled=i===s.length-1;scrollTo({top:0,behavior:'smooth'})}p.onclick=()=>show(i-1);n.onclick=()=>show(i+1);let sel=null;document.querySelectorAll('.q button').forEach(o=>o.onclick=()=>{sel=o;document.querySelectorAll('.q button').forEach(x=>x.classList.remove('sel'));o.classList.add('sel')});document.getElementById('check').onclick=()=>{const f=document.getElementById('fb');if(!sel){f.className='fb show bad';f.textContent='Selecciona una alternativa.';return}f.className='fb show '+(sel.dataset.ok==='1'?'good':'bad');f.textContent=sel.dataset.ok==='1'?document.getElementById('correct').textContent:'Revisa tu decisión y vuelve a intentarlo.'};show(0);
+[/SCRIPT]

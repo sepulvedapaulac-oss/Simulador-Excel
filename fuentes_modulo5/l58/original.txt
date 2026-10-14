@@ -1,0 +1,37 @@
+Lección 5.8
+Legislación Laboral · Módulo 5
+Lección 5.8
+La evidencia también es cumplimiento
+Si no puede demostrarse, el riesgo aumenta
+Situación inicial
+Observa antes de decidir
+Camila sabe que una decisión fue correcta, pero no encuentra el anexo, la carta, el registro ni el correo que demuestra cómo se tomó.
+Conceptos clave
+Lo que debes reconocer
+Trazabilidad
+Permite reconstruir quién decidió, qué ocurrió, qué norma se aplicó y qué comunicación se realizó.
+Evidencia del ciclo laboral
+Contrato, anexos, registros, liquidaciones, solicitudes, cartas y finiquitos forman una cadena documental.
+Consistencia
+Las fuentes deben ser coherentes entre sí y con la realidad.
+Conservación y acceso
+Los antecedentes deben mantenerse disponibles y ordenados.
+Decisión aplicada
+Selecciona una alternativa
+Una empresa tiene un finiquito correcto, pero no puede exhibir la carta ni los antecedentes que fundamentaron el despido. ¿Qué riesgo existe?
+Ninguno, porque el finiquito reemplaza toda evidencia previa.
+Existe un problema de trazabilidad y prueba del proceso de término.
+Solo falta un documento sin relevancia.
+Comprobar
+El cumplimiento no se demuestra con un único documento. La evidencia debe permitir reconstruir el proceso completo.
+Transferencia
+Llévalo al trabajo real
+Identifica qué documento, plazo, pago o evidencia permitiría demostrar que esta situación fue gestionada correctamente.
+Lección completada
+Has finalizado la Lección 5.8
+Ya puedes continuar con la siguiente lección del módulo.
+Anterior
+Siguiente
+[SCRIPT]
+const s=[...document.querySelectorAll('.slide')],c=document.getElementById('count'),b=document.getElementById('prog'),p=document.getElementById('prev'),n=document.getElementById('next');let i=0;function show(x){i=Math.max(0,Math.min(s.length-1,x));s.forEach((e,j)=>e.classList.toggle('active',j===i));c.textContent=`Pantalla ${i+1} de ${s.length}`;b.style.width=`${(i+1)/s.length*100}%`;p.disabled=i===0;n.disabled=i===s.length-1;scrollTo({top:0,behavior:'smooth'})}p.onclick=()=>show(i-1);n.onclick=()=>show(i+1);let sel=null;document.querySelectorAll('.q button').forEach(o=>o.onclick=()=>{sel=o;document.querySelectorAll('.q button').forEach(x=>x.classList.remove('sel'));o.classList.add('sel')});document.getElementById('check').onclick=()=>{const f=document.getElementById('fb');if(!sel){f.className='fb show bad';f.textContent='Selecciona una alternativa.';return}f.className='fb show '+(sel.dataset.ok==='1'?'good':'bad');f.textContent=sel.dataset.ok==='1'?document.getElementById('correct').textContent:'Revisa tu decisión y vuelve a intentarlo.'};show(0);
+[/SCRIPT]

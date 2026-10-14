@@ -1,0 +1,37 @@
+Lección 5.7
+Legislación Laboral · Módulo 5
+Lección 5.7
+Fiscalización laboral
+Una revisión externa comienza con la evidencia interna
+Situación inicial
+Observa antes de decidir
+Horizonte Servicios recibe una citación de la Inspección del Trabajo. Camila debe reunir contratos, registros y antecedentes de término en poco tiempo.
+Conceptos clave
+Lo que debes reconocer
+Facultad fiscalizadora
+La Dirección del Trabajo fiscaliza el cumplimiento de la legislación laboral y previsional dentro de sus competencias.
+Requerimientos
+Pueden solicitarse contratos, anexos, registros, comprobantes, cartas, finiquitos y otros antecedentes pertinentes.
+Coherencia documental
+Los documentos deben coincidir entre sí y con la realidad.
+Prevención
+Corregir una situación no basta: también debe revisarse la causa del incumplimiento y evitar su repetición.
+Decisión aplicada
+Selecciona una alternativa
+¿Cuál es la mejor preparación para una eventual fiscalización?
+Crear documentos cuando llegue la inspección.
+Mantener cumplimiento real, registros actualizados y evidencia accesible durante toda la relación laboral.
+Guardar únicamente los finiquitos.
+Comprobar
+La fiscalización no debería ser el momento en que la empresa recién construye su evidencia. El cumplimiento debe ser continuo.
+Transferencia
+Llévalo al trabajo real
+Identifica qué documento, plazo, pago o evidencia permitiría demostrar que esta situación fue gestionada correctamente.
+Lección completada
+Has finalizado la Lección 5.7
+Ya puedes continuar con la siguiente lección del módulo.
+Anterior
+Siguiente
+[SCRIPT]
+const s=[...document.querySelectorAll('.slide')],c=document.getElementById('count'),b=document.getElementById('prog'),p=document.getElementById('prev'),n=document.getElementById('next');let i=0;function show(x){i=Math.max(0,Math.min(s.length-1,x));s.forEach((e,j)=>e.classList.toggle('active',j===i));c.textContent=`Pantalla ${i+1} de ${s.length}`;b.style.width=`${(i+1)/s.length*100}%`;p.disabled=i===0;n.disabled=i===s.length-1;scrollTo({top:0,behavior:'smooth'})}p.onclick=()=>show(i-1);n.onclick=()=>show(i+1);let sel=null;document.querySelectorAll('.q button').forEach(o=>o.onclick=()=>{sel=o;document.querySelectorAll('.q button').forEach(x=>x.classList.remove('sel'));o.classList.add('sel')});document.getElementById('check').onclick=()=>{const f=document.getElementById('fb');if(!sel){f.className='fb show bad';f.textContent='Selecciona una alternativa.';return}f.className='fb show '+(sel.dataset.ok==='1'?'good':'bad');f.textContent=sel.dataset.ok==='1'?document.getElementById('correct').textContent:'Revisa tu decisión y vuelve a intentarlo.'};show(0);
+[/SCRIPT]
