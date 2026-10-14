@@ -1,0 +1,421 @@
+<title>Resumen y glosario — Módulo 5</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Carrusel de resumen y glosario (Módulo 5) ---- */
+.app.ev{padding-bottom:170px}
+.topbar-row .count{font-variant-numeric:tabular-nums}
+.slide{min-height:min(560px,calc(100vh - 230px))}
+.slide>*{min-width:0}
+.cover{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+.cover>*{min-width:0}
+.cover h1{margin-top:.7rem}
+.lead{font-size:1.08rem;color:var(--ink2)}
+.cover-art{border-radius:24px;padding:22px;background:linear-gradient(145deg,var(--navy),var(--teal));color:var(--on-accent);display:grid;gap:12px;box-shadow:var(--shadow)}
+:root[data-theme="dark"] .cover-art{color:#06181c}
+.cover-art .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cover-art .kpi{background:color-mix(in srgb,var(--surface) 16%,transparent);border:1px solid color-mix(in srgb,var(--surface) 30%,transparent);border-radius:16px;padding:12px}
+.cover-art .kpi b{display:block;font-size:2rem;line-height:1;font-variant-numeric:tabular-nums}
+.cover-art .kpi span{font-size:.82rem;font-weight:800}
+.cover-art .who{display:flex;gap:10px;align-items:center;font-size:.88rem;font-weight:750}
+.cover-art .who .avatar{background:var(--surface);color:var(--teal-ink)}
+.lmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.lmap button{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--surface2);border-radius:14px;padding:9px 10px;font-size:.82rem;font-weight:800;cursor:pointer;color:var(--ink2)}
+.lmap button b{width:36px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--chip);color:var(--teal-ink);font-size:.8rem}
+.lmap button:hover{border-color:var(--mint-line);background:var(--mint)}
+.lmap button.seen b{background:var(--good-soft);color:var(--good)}
+.keys{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:.82rem;color:var(--muted);font-weight:700}
+.keys kbd{font:inherit;font-weight:900;padding:2px 8px;border-radius:7px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
+/* Tarjeta de lección */
+.lhead{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin:12px 0 6px}
+.lnum{width:74px;height:74px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--teal));color:var(--surface);font-size:1.5rem;font-weight:900;font-variant-numeric:tabular-nums}
+.lhead h2{margin:0}
+.lhead p{margin:.3rem 0 0;color:var(--muted);font-weight:700}
+.lbody{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:start;margin-top:10px}
+.lbody>*{min-width:0}
+.idea{border-radius:18px;padding:14px 18px;background:var(--callout-bg);border:1px solid var(--callout-line);border-left:6px solid var(--teal)}
+.idea small{display:block;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-ink);font-size:.74rem}
+.idea p{margin:.25rem 0 0;font-size:1.04rem;font-weight:700;color:var(--ink)}
+.pts{display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.pts li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line2);border-radius:14px;background:var(--surface2)}
+.pts li i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--mint);color:var(--teal-ink);font-weight:900;font-size:.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:.74rem;font-weight:850;padding:4px 10px;border-radius:999px;background:var(--chip);color:var(--ink2)}
+.tag.t{background:var(--amber-soft);color:var(--amber-ink)}
+.errbox{border:2px dashed var(--bad-line);border-radius:20px;padding:16px;background:var(--surface3)}
+.errbox .lbl{font-size:.74rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--bad)}
+.errbox q{display:block;margin:8px 0 12px;font-size:1.02rem;font-weight:800;color:var(--ink);quotes:"“" "”"}
+.errbox .reveal-btn{width:100%}
+.errbox .fix{margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--good-soft);border:1px solid var(--good-line);animation:rise .35s ease both}
+.errbox .fix b{color:var(--good)}
+/* Ruta de cierre */
+.route{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:20px 0 8px}
+.route::before{content:"";position:absolute;left:8%;right:8%;top:30px;height:4px;border-radius:4px;background:var(--track)}
+.route .bar{position:absolute;left:8%;top:30px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--teal2));width:0;transition:width .35s ease}
+.rnode{position:relative;z-index:1;border:none;background:transparent;cursor:pointer;display:grid;justify-items:center;gap:6px;text-align:center;padding:0;color:var(--ink2)}
+.rnode .c{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:4px solid var(--line);font-size:1.4rem}
+.rnode small{font-weight:900;font-size:.8rem;color:var(--ink2)}
+.rnode.seen .c{border-color:var(--teal2)}
+.rnode.active .c{background:var(--teal);border-color:var(--teal);color:var(--surface)}
+.rpanel{margin-top:12px;border:1px solid var(--line);border-radius:22px;padding:18px;background:var(--surface3);animation:rise .3s ease both}
+.rpanel h3{margin:0 0 6px}
+.rpanel .q{font-weight:800;color:var(--violet);margin:0 0 8px}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rgrid>*{min-width:0}
+.rgrid ul{margin:0;padding-left:18px}
+.rgrid li{margin:4px 0}
+.rlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.rlinks button{border:1px solid var(--mint-line);background:var(--mint);color:var(--teal-ink);border-radius:999px;padding:5px 12px;font-weight:850;font-size:.8rem;cursor:pointer}
+.rnav{display:flex;gap:10px;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+/* Glosario */
+.gtools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.gsearch{flex:1 1 260px;min-width:0;font:inherit;font-weight:700;padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.gfil{display:flex;gap:6px;flex-wrap:wrap}
+.gfil button{border:1px solid var(--line);background:var(--surface2);color:var(--ink2);border-radius:999px;padding:7px 12px;font-weight:850;font-size:.8rem;cursor:pointer}
+.gfil button.on{background:var(--teal);border-color:var(--teal);color:var(--surface)}
+.gstat{font-size:.82rem;font-weight:800;color:var(--muted);margin:0 0 4px}
+.flipdeck.gl{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.flipdeck.gl .face{min-height:150px;padding:14px}
+.flipdeck.gl .face h3{margin:.2rem 0;font-size:1.02rem;color:var(--navy);overflow-wrap:anywhere}
+.flipdeck.gl .face.back{font-size:.88rem;color:var(--ink)}
+.flipdeck.gl .face.back p{margin:0}
+.flipdeck.gl .face .cat{font-size:.68rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-ink)}
+.flipdeck.gl .face .src{font-size:.74rem;font-weight:800;color:var(--muted);margin-top:auto}
+.gempty{padding:16px;border:2px dashed var(--line);border-radius:16px;color:var(--muted);font-weight:800;text-align:center}
+/* Autoevaluación */
+.vf{display:grid;gap:12px;margin-top:12px}
+.vfq{border:1px solid var(--line);border-radius:20px;padding:16px;background:var(--surface3)}
+.vfq .claim{font-weight:800;font-size:1.04rem;margin:0 0 10px}
+.vfq .claim span{color:var(--teal-ink);margin-right:6px}
+.vfq .tf-btns{margin-top:0}
+.vfq .tf-btns button{padding:11px}
+.vfq .tf-btns button:disabled{cursor:default}
+.endbox{margin-top:16px;border-radius:20px;padding:16px 18px;border:1px solid var(--line);background:var(--surface2)}
+.endbox.ok{background:var(--good-soft);border-color:var(--good-line)}
+.endbox.ok strong{color:var(--good)}
+.endbox .rlinks{margin-top:8px}
+/* Navegación inferior con puntos */
+.bottom-nav .dots{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:0 auto 8px;max-width:1400px}
+.dot{width:12px;height:12px;border-radius:50%;border:0;padding:0;background:var(--track);cursor:pointer;transition:transform .2s,background .2s}
+.dot.seen{background:var(--mint-line)}
+.dot.active{background:var(--teal);transform:scale(1.35)}
+.bottom-nav .inner{max-width:980px}
+@media(max-width:900px){.flipdeck.gl{grid-template-columns:repeat(2,minmax(0,1fr))}.lbody,.cover{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .route{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:16px}
+  .route::before,.route .bar{display:none}
+  .rgrid{grid-template-columns:1fr}
+  .lmap{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .slide{min-height:0}
+  .lhead{gap:12px}
+  .lnum{width:52px;height:52px;font-size:1.05rem;border-radius:14px}
+  .lmap{grid-template-columns:1fr 1fr;gap:6px}
+  .lmap button{padding:8px;font-size:.78rem}
+  .flipdeck.gl{grid-template-columns:1fr}
+  .flipdeck.gl .face{min-height:120px}
+  .dot{width:10px;height:10px}
+  .cover-art .kpi b{font-size:1.6rem}
+}
+</style>
+<main class="app ev" id="app">
+<div class="topbar"><div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · RESUMEN Y GLOSARIO</span><span class="count" id="count">Tarjeta 1 de 13</span></div><div class="progress"><span id="prog"></span></div></div>
+
+<!-- 1. Portada -->
+<section class="slide active" data-title="Portada">
+  <div class="cover">
+    <div>
+      <span class="eyebrow">Repaso del Módulo 5</span>
+      <h1>Término de la relación laboral y cumplimiento normativo</h1>
+      <p class="lead">Un contrato no termina con una frase: termina con una <strong>causal legal</strong>, unos <strong>hechos</strong> que la sostienen, una <strong>comunicación</strong> a tiempo, <strong>pagos</strong> completos, un <strong>finiquito</strong> y la <strong>evidencia</strong> que permite demostrarlo todo.</p>
+      <p>En estas tarjetas repasas las nueve lecciones, recorres la ruta de cierre, consultas el glosario y te pones a prueba con tres preguntas rápidas. Elige una lección para ir directo o avanza en orden.</p>
+      <div class="lmap" id="lmap"></div>
+      <div class="keys"><span>Avanza con los botones, los puntos o el teclado:</span><span><kbd>←</kbd> <kbd>→</kbd></span><span><kbd>Inicio</kbd> <kbd>Fin</kbd></span><span>En celular, desliza.</span></div>
+    </div>
+    <div class="cover-art" aria-label="Contenido del repaso">
+      <div class="who"><span class="avatar">C</span><span>Camila, del Equipo de Personas de Horizonte Servicios, preparó este repaso para su equipo.</span></div>
+      <div class="kpis">
+        <div class="kpi"><b>9</b><span>lecciones resumidas</span></div>
+        <div class="kpi"><b>6</b><span>pasos de la ruta de cierre</span></div>
+        <div class="kpi"><b>16</b><span>términos del glosario</span></div>
+        <div class="kpi"><b>3</b><span>preguntas para comprobar</span></div>
+      </div>
+      <div style="font-size:.86rem;font-weight:750">Al revisar todas las tarjetas, el repaso queda registrado como completado.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 a 10. Una tarjeta por lección (se generan desde LESSONS) -->
+<div id="lessonSlides"></div>
+
+<!-- 11. Ruta de cierre -->
+<section class="slide" data-title="Ruta de cierre">
+  <span class="eyebrow violet">Ruta de cierre · Seis pasos</span>
+  <h2>Del motivo real al expediente completo</h2>
+  <p>Todo término bien gestionado recorre estos seis pasos <strong>en este orden</strong>. Haz clic en cada paso para ver qué revisar, qué plazo corre y en qué lección se trató.</p>
+  <div class="route" id="route"><div class="bar" id="rbar"></div></div>
+  <div class="rpanel" id="rpanel" aria-live="polite"></div>
+  <p class="hint" id="rhint">Pasos revisados: 0 de 6</p>
+  <p class="sources">Fuente: Código del Trabajo, arts. 159 a 177, 454 N°1 y 510; Ley 21.361 (finiquito laboral electrónico); DFL N°2 de 1967, art. 31; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 12. Glosario -->
+<section class="slide" data-title="Glosario">
+  <span class="eyebrow amber">Glosario del Módulo 5</span>
+  <h2>Dieciséis términos para hablar con precisión</h2>
+  <p>Busca un término o filtra por tema. Haz clic en una tarjeta para darla vuelta y ver su definición y la lección donde se trabajó.</p>
+  <div class="gtools">
+    <input class="gsearch" id="gq" type="search" placeholder="Buscar: finiquito, aviso, plazo…" aria-label="Buscar en el glosario"/>
+    <div class="gfil" id="gfil"></div>
+  </div>
+  <p class="gstat" id="gstat"></p>
+  <div class="flipdeck gl" id="gdeck"></div>
+  <p class="sources">Fuente: Código del Trabajo, arts. 73, 159 a 177, 476, 506 y 510; Ley 21.361 (finiquito laboral electrónico); DFL N°2 de 1967; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 13. Autoevaluación -->
+<section class="slide" data-title="Autoevaluación">
+  <span class="eyebrow">Comprueba lo aprendido</span>
+  <h2>Tres afirmaciones: ¿verdadero o falso?</h2>
+  <p>Responde cada una. La retroalimentación te explica el porqué y puedes cambiar tu respuesta para comparar. Esta autoevaluación no tiene nota.</p>
+  <div class="vf" id="vf"></div>
+  <div class="endbox" id="endbox" aria-live="polite"></div>
+</section>
+</main>
+
+<nav class="bottom-nav" aria-label="Navegación del carrusel">
+  <div class="dots" id="dots" role="tablist" aria-label="Tarjetas"></div>
+  <div class="inner"><button class="nav-btn prev" id="prev" type="button">← Anterior</button><button class="nav-btn next" id="next" type="button">Siguiente →</button></div>
+</nav>
+
+<script>
+/*{{ENGINE}}*/
+(function(){
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SRC='Fuente: Código del Trabajo, arts. 159 a 177 (y 454 N°1); Ley 19.728 (seguro de cesantía); Ley 21.361 (finiquito electrónico); criterios de la Dirección del Trabajo vigentes a octubre de 2026.';
+/* ---------- Contenido: una tarjeta por lección ---------- */
+const LESSONS=[
+ {n:'5.1',st:'Formas de término',t:'¿Cómo puede terminar una relación laboral?',tema:'Formas de término',sub:'La causal manda sobre todo lo demás.',
+  idea:'El contrato solo termina por una causal legal, elegida según los hechos reales y antes de decidir. Esa causal define la carta, el aviso, los pagos y la evidencia que deberán existir.',
+  pts:['<strong>Art. 159</strong>, causales objetivas: mutuo acuerdo, renuncia, muerte de la persona trabajadora, vencimiento del plazo, conclusión de la obra o servicio, y caso fortuito o fuerza mayor.',
+       '<strong>Art. 160</strong>, causales disciplinarias: conductas graves debidamente comprobadas, inasistencias, abandono, incumplimiento grave, entre otras. No dan indemnización por años de servicio.',
+       '<strong>Art. 161</strong>: necesidades de la empresa y, solo para ciertos cargos, desahucio escrito del empleador.'],
+  tags:['Arts. 159, 160 y 161'],
+  err:'Terminemos el contrato y después vemos qué causal usamos.',
+  fix:'La causal no se “construye” después. Primero se identifican los hechos, luego la causal que corresponde y recién entonces se decide.'},
+ {n:'5.2',st:'Renuncia, acuerdo y plazo',t:'Renuncia, mutuo acuerdo y vencimiento del plazo',tema:'Formas de término',sub:'Tres formas de término, tres lógicas distintas.',
+  idea:'Antes de gestionar, pregunta quién toma la iniciativa, qué documento se necesita y desde qué fecha produce efecto.',
+  pts:['<strong>Renuncia</strong>: decisión unilateral de la persona trabajadora, con aviso de al menos 30 días de anticipación.',
+       'Renuncia, mutuo acuerdo y finiquito constan <strong>por escrito</strong> y, para invocarlos, deben estar firmados por la persona trabajadora y <strong>ratificados ante un ministro de fe</strong> o firmados electrónicamente en el sitio de la Dirección del Trabajo (art. 177).',
+       '<strong>Plazo fijo</strong>: máximo 1 año (2 años para gerentes o personas con título profesional o técnico). Se vuelve indefinido si la persona sigue trabajando después del vencimiento con conocimiento del empleador o con la segunda renovación.'],
+  tags:['Art. 159 N°1, 2 y 4','Art. 177','30 días de aviso'],
+  err:'El plazo vence el viernes, pero que siga unos días más mientras vemos qué hacemos.',
+  fix:'Si la persona sigue prestando servicios después del vencimiento, con conocimiento del empleador, el contrato pasa a ser indefinido. La decisión se toma antes de la fecha.'},
+ {n:'5.3',st:'Necesidades de la empresa',t:'Necesidades de la empresa y otras causales',tema:'Formas de término',sub:'No basta con invocar una frase legal.',
+  idea:'El art. 161 exige hechos objetivos de la organización: racionalización o modernización, bajas en la productividad o cambios en las condiciones del mercado o de la economía.',
+  pts:['No sirve para resolver problemas de desempeño, conducta o relaciones personales: esos hechos se analizan con otras causales y sus propios requisitos.',
+       'No puede invocarse el art. 161 respecto de una persona con <strong>licencia médica</strong>.',
+       'Con <strong>fuero</strong> (maternal, sindical u otro), despedir por art. 159 N°4 o 5 o por art. 160 requiere autorización judicial previa: el desafuero (art. 174).'],
+  tags:['Art. 161','Art. 174'],
+  err:'La jefatura ya no confía en ella; usemos necesidades de la empresa y pagamos la indemnización.',
+  fix:'Pagar una indemnización no convierte en correcta una causal mal fundada. Sin un cambio organizacional objetivo y documentado, el art. 161 no se sostiene.'},
+ {n:'5.4',st:'Comunicar el término',t:'Comunicar correctamente el término',tema:'Comunicación',sub:'La carta explica, no solo nombra una causal.',
+  idea:'La carta indica la causal legal, los hechos en que se funda y el estado de pago de las cotizaciones previsionales, con sus comprobantes.',
+  pts:['Se entrega personalmente o por carta certificada al domicilio del contrato, <strong>dentro de 3 días hábiles</strong> desde la separación (6 días hábiles si es caso fortuito o fuerza mayor), con <strong>copia a la Inspección del Trabajo</strong> en el mismo plazo.',
+       'En el art. 161 se da aviso con <strong>30 días</strong> de anticipación o se paga la indemnización sustitutiva; en ese caso, la carta indica el monto total a pagar.',
+       'Si las cotizaciones no están pagadas íntegramente, el despido no pone término al contrato hasta que se convalida (art. 162 inc. 5).'],
+  tags:['Art. 162','3 días hábiles','Art. 454 N°1'],
+  err:'Basta con escribir «se pone término a su contrato por necesidades de la empresa».',
+  fix:'Citar el artículo no basta: en un juicio, la empresa no puede alegar hechos distintos de los que señaló en la carta (art. 454 N°1). La carta debe contar qué ocurrió.'},
+ {n:'5.5',st:'Indemnizaciones',t:'Indemnizaciones y prestaciones asociadas',tema:'Pagos',sub:'Primero la causal y la antigüedad; después, el cálculo.',
+  idea:'Ninguna indemnización procede “por defecto”: depende de la causal, de la antigüedad y de si se dio o no el aviso previo.',
+  pts:['<strong>Años de servicio</strong> (art. 163): con un año o más y término por art. 161, 30 días de la última remuneración por cada año y fracción superior a seis meses, con límite de 330 días (11 años). Por regla general, se descuenta el aporte del empleador al seguro de cesantía (Ley 19.728).',
+       '<strong>Sustitutiva del aviso previo</strong>: una última remuneración mensual si en el art. 161 no se dio aviso de 30 días. La base de ambas tiene un tope de 90 UF (art. 172).',
+       'Siempre se revisan remuneraciones pendientes, horas extraordinarias, <strong>feriado pendiente y proporcional</strong> (art. 73). Ejemplo: 3 años y 7 meses con $900.000 por art. 161 → 4 × $900.000 = $3.600.000 por años de servicio, antes del descuento del seguro de cesantía.'],
+  tags:['Arts. 163, 172 y 73','Tope 90 UF','Máx. 330 días'],
+  err:'El contrato a plazo venció y lleva más de un año: hay que pagarle años de servicio.',
+  fix:'No proceden indemnizaciones legales por años de servicio en renuncia, mutuo acuerdo (salvo pacto), vencimiento del plazo ni en el art. 160 bien aplicado. Sí se pagan el feriado y lo pendiente.'},
+ {n:'5.6',st:'Finiquito',t:'Finiquito y formalización del cierre',tema:'Cierre y cumplimiento',sub:'La carta comunica; el finiquito cierra.',
+  idea:'El finiquito es un documento distinto de la carta: formaliza el cierre, deja constancia de los pagos y libera a las partes solo respecto de lo que acordaron expresamente.',
+  pts:['El empleador debe otorgarlo y poner su pago a disposición <strong>dentro de 10 días hábiles</strong> desde la separación; el pago se hace al ratificar (art. 177). El plazo obliga al empleador: la persona puede firmar después.',
+       'Por escrito, firmado y <strong>ratificado ante un ministro de fe</strong>, o firmado electrónicamente en el sitio de la Dirección del Trabajo. La vía electrónica es <strong>voluntaria</strong>: la carta indica si será electrónico o presencial y, si la persona lo rechaza, se ofrece el presencial (Ley 21.361).',
+       'La persona puede firmar con <strong>reserva de derechos</strong>: lo reservado no queda cerrado. El pago se hace en un solo acto (art. 63 bis); en cuotas solo si se acuerda, con intereses y reajustes y ratificado ante la Inspección (art. 169 letra a).'],
+  tags:['Art. 177','10 días hábiles','Ley 21.361','Art. 63 bis'],
+  src:'Fuente: Código del Trabajo, arts. 63 bis, 162, 169 letra a) y 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Ord. N°2534 (2021) y Dictamen 824/21.',
+  err:'Ya le enviamos la carta de despido, así que el cierre está listo.',
+  fix:'La carta comunica la decisión; no reemplaza el finiquito. Hay que otorgarlo y poner el pago a disposición dentro de 10 días hábiles. Y un pago en cuotas “de palabra” no sirve: debe pactarse y ratificarse ante la Inspección.'},
+ {n:'5.7',st:'Fiscalización',t:'Fiscalización laboral',tema:'Cierre y cumplimiento',sub:'Una revisión externa empieza con la evidencia interna.',
+  idea:'La Dirección del Trabajo fiscaliza el cumplimiento laboral (art. 476). Sus inspectores son ministros de fe: lo que constatan se presume verdadero, también en un juicio.',
+  pts:['La fiscalización puede ser <strong>en terreno</strong>, a cualquier hora, o por <strong>citación</strong> a la Inspección. Puede pedir contratos, anexos, liquidaciones, registro de asistencia, comprobantes de feriado y de cotizaciones, cartas de término y finiquitos.',
+       'La documentación se mantiene <strong>en el lugar de trabajo</strong> (art. 31 DFL 2), en papel o en un sistema que el fiscalizador pueda consultar allí. Los contratos se registran en el sitio de la DT dentro de 15 días y el término también se registra (Ley 21.327).',
+       'Si la empresa <strong>corrige la infracción dentro de 15 días</strong> desde la notificación de la multa, el monto se rebaja al menos en un 50% (art. 511).'],
+  tags:['Art. 476','DFL 2 de 1967','Ley 21.327','Art. 511'],
+  src:'Fuente: Código del Trabajo, arts. 9 bis, 476, 505-A, 511 y 515; DFL N°2 de 1967 del Ministerio del Trabajo, arts. 23, 24, 28 y 31; Ley 21.327 (modernización de la Dirección del Trabajo).',
+  err:'Cuando llegue la citación, completamos los documentos que falten.',
+  fix:'Crear o “completar” documentos a última hora no demuestra cumplimiento y choca con lo que el inspector constata como ministro de fe. La evidencia se produce cuando ocurre cada hecho y se guarda donde se pueda consultar.'},
+ {n:'5.8',st:'Evidencia',t:'La evidencia también es cumplimiento',tema:'Cierre y cumplimiento',sub:'Si no puede demostrarse, el riesgo aumenta.',
+  idea:'Trazabilidad es poder reconstruir quién decidió, qué ocurrió, qué norma se aplicó y cómo se comunicó, con documentos que coinciden entre sí y con la realidad.',
+  pts:['La cadena del ciclo laboral: contrato escrito <strong>dentro de 15 días</strong> (5 si es por obra o de menos de 30 días) → anexos firmados → registro de asistencia → liquidaciones con su detalle → cotizaciones pagadas → carta con copia a la Inspección → finiquito.',
+       'La carta fija los hechos que la empresa podrá probar después (art. 454 N°1): sin antecedentes que los respalden, la causal es difícil de sostener.',
+       '¿Por qué conservar? Los derechos prescriben en <strong>2 años</strong> desde que se hicieron exigibles y las acciones del contrato en <strong>6 meses</strong> desde el término (art. 510). Mientras esos plazos corran, puede ser necesario probar.'],
+  tags:['Arts. 9, 11, 33 y 54','Art. 454 N°1','Art. 510'],
+  src:'Fuente: Código del Trabajo, arts. 9, 9 bis, 11, 33, 54, 54 bis, 162, 177, 454 N°1 y 510; DFL N°2 de 1967, art. 31.',
+  err:'Tenemos el finiquito firmado; con eso basta.',
+  fix:'El finiquito no cubre lo reservado ni prueba por sí solo los hechos de la causal. Además, los documentos deben calzar: si el contrato dice una jornada, el registro otra y la liquidación paga una tercera, la evidencia se debilita.'},
+ {n:'5.9',st:'Incumplimiento',t:'¿Qué ocurre cuando se incumple?',tema:'Cierre y cumplimiento',sub:'Corregir el caso y corregir el sistema.',
+  idea:'Un incumplimiento puede traer multas, reclamos, demandas y costos adicionales. Se corrige el caso y, como buena práctica, también el proceso que lo causó.',
+  pts:['<strong>Multas</strong> según tamaño de empresa y gravedad (art. 506): pequeña, 1 a 10 UTM; mediana, 2 a 40 UTM; grande, 3 a 60 UTM. Se reclaman ante el juzgado dentro de 15 días hábiles (art. 503); las micro y pequeñas empresas pueden pedir sustituirlas por corrección y capacitación (art. 506 ter).',
+       'La persona puede reclamar ante la Inspección o demandar dentro de <strong>60 días hábiles</strong>. Si el despido se declara injustificado, indebido o improcedente, la indemnización por años de servicio sube 30%, 50%, 80% o hasta 100% (art. 168).',
+       'Lo adeudado se paga con <strong>reajuste e intereses</strong> (arts. 63 y 173), y si no se pagaron las cotizaciones, el despido no produce efecto hasta convalidarlo (art. 162).'],
+  tags:['Art. 506','Art. 168','60 días hábiles','Arts. 63 y 173'],
+  src:'Fuente: Código del Trabajo, arts. 63, 162, 168, 169, 173, 503, 506, 506 ter, 506 quáter y 511; criterios de la Dirección del Trabajo vigentes a octubre de 2026.',
+  err:'Ordenemos la carpeta y listo.',
+  fix:'La fiscalización mira el cumplimiento real, no solo los papeles: hay que pagar y regularizar el caso. Y revisar el proceso (responsables, plazos, controles) evita que se repita; la conducta previa del empleador pesa al fijar la multa (art. 506 quáter).'}
+];
+/* ---------- Ruta de cierre ---------- */
+const ROUTE=[
+ {ic:'⚖️',t:'Causal',q:'¿Qué causal legal corresponde a lo que realmente pasó?',chk:['Identifica la causal antes de decidir el término.','Revisa licencia médica y fuero: cambian lo que se puede hacer.','Descarta usar el art. 161 para problemas de desempeño o de relación.'],pl:'Sin plazo propio, pero va primero: todo lo demás depende de esta elección.',l:[0,1,2]},
+ {ic:'🔎',t:'Hechos',q:'¿Qué hechos concretos y verificables sostienen la causal?',chk:['Reúne antecedentes objetivos: fechas, registros, cambios organizacionales.','Comprueba que los hechos y la causal coincidan.','Sepáralo de opiniones o del “ya no confiamos”.'],pl:'Los hechos que no se reúnan ahora no podrán agregarse después en la carta.',l:[2,7]},
+ {ic:'✉️',t:'Comunicación',q:'¿La carta dice causal, hechos y estado de cotizaciones?',chk:['Carta escrita, entregada personalmente o por carta certificada.','Comprobantes de cotizaciones pagadas hasta el último día del mes anterior.','Copia a la Inspección del Trabajo e indicación de si el finiquito será electrónico o presencial.'],pl:'3 días hábiles desde la separación (6 si es caso fortuito o fuerza mayor). En el art. 161: aviso de 30 días o indemnización sustitutiva.',l:[3]},
+ {ic:'💰',t:'Pagos',q:'¿Qué corresponde pagar según la causal y la antigüedad?',chk:['Años de servicio solo si procede (art. 161 con un año o más).','Sustitutiva del aviso si no hubo aviso de 30 días.','Feriado pendiente y proporcional, remuneraciones y horas extra pendientes.'],pl:'Base con tope de 90 UF; años de servicio con límite de 330 días.',l:[4]},
+ {ic:'📝',t:'Finiquito',q:'¿Está listo, completo y ratificado a tiempo?',chk:['Documento escrito con todos los pagos que correspondan según la causal.','Ratificado ante ministro de fe o firmado en el sitio de la Dirección del Trabajo, si la persona acepta la vía electrónica.','Pago en un solo acto al ratificar; cuotas solo con pacto ratificado ante la Inspección.'],pl:'10 días hábiles desde la separación para otorgarlo y poner el pago a disposición (art. 177). Si la persona firma con reserva de derechos, lo reservado sigue abierto.',l:[5,1]},
+ {ic:'🗂️',t:'Evidencia',q:'¿Podrías demostrar cada paso mañana mismo?',chk:['Expediente con contrato, anexos, antecedentes, carta, comprobantes, cálculo y finiquito.','Documentos coherentes entre sí y con la realidad.','Archivo disponible en el lugar de trabajo o en un sistema que la fiscalización pueda consultar allí.'],pl:'Demanda por despido: 60 días hábiles. Derechos laborales: 2 años; acciones del contrato: 6 meses desde el término (art. 510). La evidencia debe estar lista desde el primer día.',l:[6,7,8]}
+];
+/* ---------- Glosario ---------- */
+const CATS=['Todos','Causales','Comunicación y pagos','Cierre y cumplimiento'];
+const GLOS=[
+ ['Causal de término','Causales','Fundamento legal que permite poner término al contrato (arts. 159, 160 y 161). Se elige según los hechos reales, antes de decidir.','5.1'],
+ ['Renuncia','Causales','Decisión unilateral de la persona trabajadora de terminar el contrato, con aviso de al menos 30 días. Debe constar por escrito y ratificarse.','5.2'],
+ ['Mutuo acuerdo','Causales','Término decidido en conjunto por empleador y persona trabajadora. Por escrito y ratificado; no genera indemnización legal, salvo que se pacte.','5.2'],
+ ['Vencimiento del plazo','Causales','Término del contrato a plazo fijo en la fecha convenida. Si la persona sigue trabajando con conocimiento del empleador, pasa a ser indefinido.','5.2'],
+ ['Necesidades de la empresa','Causales','Causal del art. 161 fundada en hechos objetivos de la organización (racionalización, baja de productividad, cambios del mercado). No aplica a problemas de desempeño.','5.3'],
+ ['Fuero y desafuero','Causales','Protección especial (maternal, sindical u otra). Para despedir por art. 159 N°4 o 5 o por art. 160 se necesita autorización judicial previa (art. 174).','5.3'],
+ ['Carta de término','Comunicación y pagos','Comunicación escrita con la causal, los hechos y el estado de las cotizaciones. Se entrega en 3 días hábiles, con copia a la Inspección del Trabajo.','5.4'],
+ ['Convalidación del despido','Comunicación y pagos','Pago de las cotizaciones adeudadas, comunicado por carta certificada, que permite que el despido produzca efecto (art. 162 inc. 5).','5.4'],
+ ['Indemnización sustitutiva del aviso previo','Comunicación y pagos','Una última remuneración mensual que se paga cuando, en el art. 161, no se dio aviso con 30 días de anticipación.','5.5'],
+ ['Indemnización por años de servicio','Comunicación y pagos','30 días de la última remuneración por año y fracción superior a seis meses, con límite de 330 días y base con tope de 90 UF. Procede en el art. 161 con un año o más.','5.5'],
+ ['Feriado proporcional','Comunicación y pagos','Compensación en dinero de las vacaciones correspondientes a la fracción de año trabajada; se suma al feriado pendiente (art. 73).','5.5'],
+ ['Finiquito','Cierre y cumplimiento','Documento distinto de la carta que formaliza el cierre y los pagos. Se otorga dentro de 10 días hábiles y se ratifica ante ministro de fe (inspector, notario, oficial del Registro Civil, entre otros) o en el sitio de la DT.','5.6'],
+ ['Reserva de derechos','Cierre y cumplimiento','Constancia que la persona deja en el finiquito sobre materias que no acepta. El finiquito no libera a la empresa respecto de lo reservado.','5.6'],
+ ['Fiscalización','Cierre y cumplimiento','Actuación de la Dirección del Trabajo (art. 476), en terreno o por citación, para verificar el cumplimiento. Lo que el inspector constata se presume verdadero.','5.7'],
+ ['Trazabilidad','Cierre y cumplimiento','Capacidad de reconstruir una decisión con evidencia: quién decidió, qué ocurrió, qué norma se aplicó y cómo se comunicó, con documentos que coinciden entre sí.','5.8'],
+ ['Incumplimiento','Cierre y cumplimiento','Inobservancia de una obligación laboral. Puede generar multas según tamaño de empresa y gravedad (art. 506), reclamos, demandas, recargos (art. 168), reajustes e intereses.','5.9']
+];
+/* ---------- Autoevaluación ---------- */
+const VF=[
+ {c:'Si un contrato a plazo fijo vence y la persona trabajó más de un año, corresponde pagarle indemnización por años de servicio.',a:false,
+  ok:'Correcto: es falso. El vencimiento del plazo no genera indemnización legal por años de servicio. Sí deben pagarse el feriado pendiente y proporcional y lo que se adeude.',
+  ko:'Revisa: la indemnización por años de servicio procede en el art. 161 (o si un tribunal declara injustificado el despido), no por vencimiento del plazo. Lo que sí se paga es el feriado y lo pendiente.',l:4},
+ {c:'La carta de despido debe indicar la causal, los hechos en que se funda y el estado de pago de las cotizaciones previsionales.',a:true,
+  ok:'Correcto: es verdadero. Son los tres contenidos del art. 162. Además, en juicio la empresa no puede alegar hechos distintos de los que señaló en la carta.',
+  ko:'Revisa: el art. 162 exige causal, hechos y estado de las cotizaciones (con comprobantes). Una carta que solo cita el artículo deja a la empresa sin hechos que probar.',l:3},
+ {c:'Si la carta de término se envió a tiempo, ya no es necesario otorgar el finiquito.',a:false,
+  ok:'Correcto: es falso. La carta comunica la decisión; el finiquito formaliza el cierre y los pagos, y debe otorgarse dentro de 10 días hábiles.',
+  ko:'Revisa: carta y finiquito cumplen funciones distintas. El finiquito se otorga dentro de 10 días hábiles desde la separación y se ratifica ante ministro de fe o en el sitio de la Dirección del Trabajo.',l:5}
+];
+
+/* ---------- Construcción de las tarjetas de lección ---------- */
+$('#lessonSlides').outerHTML=LESSONS.map((L,i)=>`<section class="slide" data-title="Lección ${L.n}">
+  <span class="eyebrow">Lección ${L.n} · ${esc(L.tema)}</span>
+  <div class="lhead"><div class="lnum">${L.n}</div><div><h2>${esc(L.t)}</h2><p>${esc(L.sub)}</p></div></div>
+  <div class="lbody">
+    <div>
+      <div class="idea"><small>Idea clave</small><p>${esc(L.idea)}</p></div>
+      <ul class="pts">${L.pts.map((p,k)=>`<li><i>${k+1}</i><span>${p}</span></li>`).join('')}</ul>
+      <div class="tags">${L.tags.map(t=>`<span class="tag t">${esc(t)}</span>`).join('')}</div>
+    </div>
+    <div class="errbox">
+      <span class="lbl">Error frecuente</span>
+      <q>${esc(L.err)}</q>
+      <button class="small-btn primary reveal-btn" type="button" data-fix="${i}" aria-expanded="false">¿Qué está mal? Ver lo correcto</button>
+      <div class="fix" hidden><b>Lo correcto:</b> ${esc(L.fix)}</div>
+    </div>
+  </div>
+  <p class="sources">${L.src||SRC}</p>
+</section>`).join('');
+$$('[data-fix]').forEach(b=>b.addEventListener('click',()=>{const f=b.nextElementSibling,open=f.hidden;f.hidden=!open;b.setAttribute('aria-expanded',open);b.textContent=open?'Ocultar explicación':'¿Qué está mal? Ver lo correcto'}));
+
+/* ---------- Carrusel ---------- */
+const slides=$$('.slide'),N=slides.length,seen=new Set();let cur=0,completed=false;
+const lessonIdx=k=>1+k; /* índice de la tarjeta de cada lección */
+$('#dots').innerHTML=slides.map((s,i)=>`<button class="dot" type="button" role="tab" aria-label="Tarjeta ${i+1}: ${esc(s.dataset.title)}" title="${esc(s.dataset.title)}" data-i="${i}"></button>`).join('');
+$('#lmap').innerHTML=LESSONS.map((L,k)=>`<button type="button" data-go="${lessonIdx(k)}" title="${esc(L.t)}"><b>${L.n}</b><span>${esc(L.st)}</span></button>`).join('');
+function go(i,focus){i=Math.max(0,Math.min(N-1,i));cur=i;
+  slides.forEach((s,j)=>{s.classList.toggle('active',j===i);s.setAttribute('aria-hidden',j===i?'false':'true')});
+  seen.add(i);
+  $('#count').textContent=`Tarjeta ${i+1} de ${N}`;$('#prog').style.width=`${(i+1)/N*100}%`;
+  $('#prev').disabled=i===0;$('#next').textContent=i===N-1?'↺ Al inicio':'Siguiente →';
+  $$('.dot').forEach((d,j)=>{d.classList.toggle('active',j===i);d.classList.toggle('seen',seen.has(j));d.setAttribute('aria-selected',j===i)});
+  $$('#lmap button').forEach(b=>b.classList.toggle('seen',seen.has(+b.dataset.go)));
+  renderEnd();save();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(focus){const h=slides[i].querySelector('h1,h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}}
+function save(){if(!SC.ok)return;
+  SC.set('cmi.core.lesson_location',String(cur));SC.set('cmi.suspend_data',JSON.stringify({v:1,s:[...seen]}));
+  if(!completed&&seen.size===N){completed=true;SC.set('cmi.core.lesson_status','completed')}
+  SC.commit()}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){go(+g.dataset.go,true);return}
+  const d=e.target.closest('.dot');if(d)go(+d.dataset.i,true)});
+$('#prev').addEventListener('click',()=>go(cur-1));
+$('#next').addEventListener('click',()=>go(cur===N-1?0:cur+1));
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,select')||e.altKey||e.ctrlKey||e.metaKey)return;
+  const k={ArrowRight:cur+1,ArrowLeft:cur-1,Home:0,End:N-1}[e.key];if(k!==undefined){e.preventDefault();go(k,true)}});
+let tx=null,ty=0;const app=$('#app');
+app.addEventListener('touchstart',e=>{if(e.target.closest('input,.flip'))return tx=null;tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+app.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
+  if(Math.abs(dx)>70&&Math.abs(dy)<45)go(cur+(dx<0?1:-1))},{passive:true});
+
+/* ---------- Ruta de cierre ---------- */
+const rseen=new Set();
+$('#route').insertAdjacentHTML('beforeend',ROUTE.map((r,i)=>`<button class="rnode" type="button" data-r="${i}" aria-label="Paso ${i+1}: ${r.t}"><span class="c" aria-hidden="true">${r.ic}</span><small>${i+1}. ${r.t}</small></button>`).join(''));
+function showR(i){rseen.add(i);const r=ROUTE[i];
+  $$('.rnode').forEach((b,j)=>{b.classList.toggle('active',j===i);b.classList.toggle('seen',rseen.has(j))});
+  $('#rbar').style.width=`${i/(ROUTE.length-1)*84}%`;
+  $('#rpanel').innerHTML=`<h3>Paso ${i+1} de 6 · ${r.t}</h3><p class="q">${esc(r.q)}</p>
+   <div class="rgrid"><div><strong>Qué revisar</strong><ul>${r.chk.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>
+   <div><strong>Plazo o regla clave</strong><p style="margin:.3rem 0 0">${esc(r.pl)}</p>
+   <div class="rlinks">${r.l.map(k=>`<button type="button" data-go="${lessonIdx(k)}">Repasar ${LESSONS[k].n}</button>`).join('')}</div></div></div>
+   <div class="rnav"><button class="small-btn" type="button" data-rs="${i-1}" ${i===0?'disabled':''}>← Paso anterior</button><button class="small-btn primary" type="button" data-rs="${i+1}" ${i===ROUTE.length-1?'disabled':''}>Paso siguiente →</button></div>`;
+  $('#rhint').textContent=rseen.size===ROUTE.length?'Recorriste los seis pasos. El orden importa: si falla la causal, todo lo que sigue queda débil.':`Pasos revisados: ${rseen.size} de 6`}
+$('#route').addEventListener('click',e=>{const b=e.target.closest('.rnode');if(b)showR(+b.dataset.r)});
+$('#rpanel').addEventListener('click',e=>{const b=e.target.closest('[data-rs]');if(b&&!b.disabled)showR(+b.dataset.rs)});
+showR(0);
+
+/* ---------- Glosario ---------- */
+const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+let gcat='Todos';
+$('#gfil').innerHTML=CATS.map(c=>`<button type="button" data-c="${c}" class="${c==='Todos'?'on':''}" aria-pressed="${c==='Todos'}">${c}</button>`).join('');
+$('#gdeck').innerHTML=GLOS.map((g,i)=>`<button class="flip" type="button" data-g="${i}" aria-pressed="false"><span class="flip-inner">
+  <span class="face"><span class="cat">${esc(g[1])}</span><h3>${esc(g[0])}</h3><span class="turn">Toca para ver la definición ↻</span></span>
+  <span class="face back"><span class="cat">${esc(g[0])}</span><p>${esc(g[2])}</p><span class="src">Lección ${g[3]}</span></span></span></button>`).join('')+'<div class="gempty" id="gempty" hidden>No hay términos que coincidan. Prueba con otra palabra o elige «Todos».</div>';
+function gfilter(){const q=norm($('#gq').value.trim());let n=0;
+  $$('#gdeck .flip').forEach(b=>{const g=GLOS[+b.dataset.g],okc=gcat==='Todos'||g[1]===gcat,okq=!q||norm(g[0]+' '+g[2]).includes(q);b.hidden=!(okc&&okq);if(!b.hidden)n++});
+  $('#gempty').hidden=n>0;$('#gstat').textContent=`Mostrando ${n} de ${GLOS.length} términos`}
+$('#gq').addEventListener('input',gfilter);
+$('#gfil').addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(!b)return;gcat=b.dataset.c;$$('#gfil button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});gfilter()});
+$('#gdeck').addEventListener('click',e=>{const b=e.target.closest('.flip');if(!b)return;b.classList.toggle('flipped');b.setAttribute('aria-pressed',b.classList.contains('flipped'))});
+gfilter();
+
+/* ---------- Autoevaluación ---------- */
+const vfAns={};
+$('#vf').innerHTML=VF.map((q,i)=>`<div class="vfq" data-q="${i}"><p class="claim"><span>${i+1}.</span>${esc(q.c)}</p>
+  <div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fbx" aria-live="polite"></div></div>`).join('');
+$('#vf').addEventListener('click',e=>{const b=e.target.closest('[data-v]');if(!b)return;const box=b.closest('.vfq'),i=+box.dataset.q,q=VF[i],v=b.dataset.v==='1',good=v===q.a;
+  vfAns[i]=good;
+  $$('[data-v]',box).forEach(x=>{x.classList.remove('good','bad');x.setAttribute('aria-pressed',x===b)});b.classList.add(good?'good':'bad');
+  $('.fbx',box).innerHTML=`<div class="feedback ${good?'good':'bad'}"><strong>${good?'¡Bien!':'No es así.'}</strong> <span class="fb-body">${esc(good?q.ok:q.ko)}</span>${good?'':` <button class="small-btn" type="button" data-go="${lessonIdx(q.l)}" style="margin-top:8px">Repasar ${LESSONS[q.l].n}</button>`}</div>`;
+  renderEnd()});
+function renderEnd(){const box=$('#endbox');if(!box)return;const pend=slides.map((s,i)=>i).filter(i=>!seen.has(i)&&i!==N-1);
+  const nAns=Object.keys(vfAns).length,nOk=Object.values(vfAns).filter(Boolean).length;
+  const res=nAns===VF.length?`<p style="margin:.4rem 0 0">Autoevaluación: <strong>${nOk} de ${VF.length}</strong> correctas${nOk===VF.length?'. ¡Excelente!':'. Repasa la lección sugerida y vuelve a intentarlo.'}</p>`:'';
+  if(!pend.length){box.className='endbox ok';box.innerHTML=`<strong>✓ Repaso completado.</strong> Revisaste las ${N} tarjetas del Módulo 5. Puedes volver a cualquiera con los puntos de abajo.${res}`}
+  else{box.className='endbox';box.innerHTML=`<strong>Te faltan ${pend.length} ${pend.length===1?'tarjeta':'tarjetas'} por revisar</strong> para completar el repaso:<div class="rlinks">${pend.map(i=>`<button type="button" data-go="${i}">${esc(slides[i].dataset.title)}</button>`).join('')}</div>${res}`}}
+
+/* ---------- Reanudar (SCORM) ---------- */
+let start=0;
+if(SC.ok){try{const d=JSON.parse(SC.get('cmi.suspend_data')||'{}');(d.s||[]).forEach(i=>{if(i>=0&&i<N)seen.add(+i)})}catch(e){}
+  completed=SC.get('cmi.core.lesson_status')==='completed';const l=parseInt(SC.get('cmi.core.lesson_location'),10);if(l>=0&&l<N)start=l}
+go(start);
+})();
+</script>
