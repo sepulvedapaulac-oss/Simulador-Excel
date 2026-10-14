@@ -38,4 +38,23 @@ with sync_playwright() as p:
     print(f'{w}px · etapas {n} · resultado {pct} · estado SCORM {sc.get("cmi.core.lesson_status")} nota {sc.get("cmi.core.score.raw")} · interacciones {sum(1 for k in sc if k.endswith(".id"))} · informe {len(html)//1024} KB · errores JS {errs or "ninguno"} · desborde {"SÍ" if ov else "no"}')
     ok=ok and not errs and not ov and sc.get('cmi.core.lesson_status') in('passed','failed')
   b.close()
+
+# ---- Revisión estática de caminos (todas las etapas alcanzables, mismo máximo en todos los caminos) ----
+import re,subprocess,json as _j
+src=open(f,encoding='utf-8').read();m=re.search(r'const CASO=(\{[\s\S]*?\});\s*const \$=',src)
+if m:
+  C=_j.loads(subprocess.check_output(['node','-e','const C='+m.group(1)+';console.log(JSON.stringify(C))']))
+  N={e['id']:e for e in C['etapas']};start=C.get('inicio') or C['etapas'][0]['id'];paths=[];seen=set()
+  def mx(e):return 0 if e['tipo']=='abierta' else max(o.get('pts',0) for o in e['opciones']) if e['tipo']=='decision' else e.get('pts',0)
+  def walk(i,acc,pts):
+    assert i in N,f'etapa inexistente: {i}';assert i not in acc,f'ciclo en {i}'
+    e=N[i];seen.add(i);acc=acc+[i];pts=pts+mx(e)
+    nx={o.get('siguiente') or e.get('siguiente') for o in e['opciones']} if e['tipo']=='decision' else {e.get('siguiente')}
+    for n in nx:
+      if n:walk(n,acc,pts)
+      else:paths.append((acc,pts))
+  walk(start,[],0);maxs=sorted({p for _,p in paths});lens=sorted({len(a) for a,_ in paths})
+  unreach=[i for i in N if i not in seen]
+  print(f'caminos {len(paths)} · etapas por camino {lens} · máximo por camino {maxs} · sin alcanzar {unreach or "ninguna"}')
+  if len(maxs)>1 or unreach:print('ADVERTENCIA: caminos con distinto máximo o etapas inalcanzables');ok=False
 print('RECORRIDO OK' if ok else 'FALLÓ');sys.exit(0 if ok else 1)
