@@ -1,0 +1,146 @@
+{
+ "categoria": "Legislación laboral/Módulo 2/Evaluación del módulo 2",
+ "puntaje": 2,
+ "preguntas": [
+  {
+   "id": "m2.p1",
+   "tipo": "concepto",
+   "enunciado": "<p>En octubre de 2026, salvo regímenes especiales y exclusiones legales, ¿qué límites rigen para la jornada ordinaria?</p>",
+   "opciones": [
+    {"texto": "40 horas semanales, distribuidas en 4 a 6 días, con un máximo de 10 horas diarias.", "fb": "Las 40 horas y la distribución en 4 días como regla general rigen desde el 26 de abril de 2028. En 2026 el límite general es de 42 horas."},
+    {"texto": "44 horas semanales, distribuidas en 5 o 6 días, sin un máximo diario si se respeta el total semanal.", "fb": "El límite de 44 horas rigió desde abril de 2024 hasta abril de 2026. Además, siempre existe un máximo de 10 horas ordinarias diarias."},
+    {"texto": "42 horas semanales, distribuidas en no menos de 5 ni más de 6 días, con un máximo de 10 horas ordinarias diarias.", "correcta": true, "fb": "Correcto: desde el 26 de abril de 2026 el límite general es de 42 horas, con distribución en 5 o 6 días y tope diario de 10 horas."},
+    {"texto": "42 horas semanales, que pueden distribuirse libremente en la semana siempre que el total mensual no supere 168 horas.", "fb": "El control es semanal y diario, no mensual: la jornada se distribuye en 5 o 6 días y no puede exceder 10 horas ordinarias por día."}
+   ],
+   "fb_correcta": "En octubre de 2026 rige el límite de 42 horas semanales (Ley 21.561), distribuidas en 5 o 6 días y con un máximo de 10 horas ordinarias diarias (art. 28 CT).",
+   "fb_incorrecta": "El límite vigente en octubre de 2026 es de 42 horas semanales, distribuidas en no menos de 5 ni más de 6 días, con un máximo de 10 horas ordinarias diarias.",
+   "fuente": "Código del Trabajo, arts. 22 y 28; Ley 21.561. Lección 2.4."
+  },
+  {
+   "id": "m2.p2",
+   "tipo": "caso",
+   "enunciado": "<p>Nicolás tenía una jornada de 44 horas semanales y un sueldo de <b>$880.000</b>. Al aplicar la rebaja a 42 horas, Finanzas propone ajustar su sueldo en proporción: $880.000 × 42 ÷ 44 = <b>$840.000</b>. ¿Qué debe responder Camila?</p>",
+   "opciones": [
+    {"texto": "Que no corresponde: la aplicación de la reducción de jornada no puede implicar una disminución de remuneraciones, así que Nicolás mantiene sus $880.000.", "correcta": true, "fb": "Correcto: la Ley 21.561 prohíbe que la rebaja de jornada se traduzca en una rebaja del sueldo."},
+    {"texto": "Que el cálculo es correcto, porque Nicolás trabajará menos horas.", "fb": "El cálculo aritmético es correcto, pero la propuesta es ilegal: la reducción de jornada no puede disminuir la remuneración."},
+    {"texto": "Que procede la rebaja solo si Nicolás la acepta por escrito.", "fb": "La protección de la remuneración no depende de una aceptación individual: la reducción legal no puede usarse para bajar sueldos."},
+    {"texto": "Que la rebaja solo puede aplicarse cuando la jornada llegue a 40 horas, en 2028.", "fb": "En ninguna etapa de la reducción gradual se permite rebajar la remuneración por esa causa."}
+   ],
+   "fb_correcta": "La reducción de jornada de la Ley 21.561 no puede implicar disminución de remuneraciones: Nicolás mantiene su sueldo de $880.000.",
+   "fb_incorrecta": "Aunque $880.000 × 42 ÷ 44 da $840.000, la Ley 21.561 prohíbe que la reducción de jornada se traduzca en una disminución de la remuneración.",
+   "fuente": "Ley 21.561. Lección 2.4."
+  },
+  {
+   "id": "m2.p3",
+   "tipo": "caso",
+   "enunciado": "<p>El equipo de Logística de Horizonte Servicios trabajaba <b>44 horas de lunes a sábado</b>. No hubo acuerdo para implementar la rebaja a 42 horas. Según la regla supletoria interpretada por la Dirección del Trabajo, ¿cómo debía aplicarse la rebaja de 120 minutos?</p>",
+   "opciones": [
+    {"texto": "20 minutos menos al término de cada uno de los seis días.", "fb": "6 × 20 minutos suma 120, pero la doctrina vigente no permite fragmentar la rebaja en unidades menores."},
+    {"texto": "Eliminando la jornada del sábado.", "fb": "Eliminar un día completo cambia la distribución semanal y no es la forma de aplicar la rebaja sin acuerdo."},
+    {"texto": "1 hora menos al término de la jornada en dos días distintos.", "fb": "Esa es la regla para jornadas de 5 días. En 6 días la unidad máxima es de 50 minutos diarios."},
+    {"texto": "50 minutos menos al término de la jornada en dos días distintos y 20 minutos en un tercer día.", "correcta": true, "fb": "Correcto: 50 + 50 + 20 = 120 minutos, al término de la jornada y en tres días distintos."}
+   ],
+   "fb_correcta": "En una jornada de 6 días sin acuerdo, la rebaja se aplica al término de la jornada: 50 minutos en dos días y 20 minutos en un tercer día (Dictamen DT N°142/09, ratificado por el N°253/21).",
+   "fb_incorrecta": "Sin acuerdo y con jornada de 6 días, la rebaja de 120 minutos se aplica como 50 + 50 + 20 minutos al término de la jornada, en tres días distintos; no se fragmenta ni se elimina un día.",
+   "fuente": "Ley 21.561, art. 3° transitorio; Ley 21.755, art. 24; Dictámenes DT N°142/09 y N°253/21 de 2026. Lección 2.5."
+  },
+  {
+   "id": "m2.p4",
+   "tipo": "concepto",
+   "enunciado": "<p>Sobre la distribución de la jornada en promedio semanal (art. 22 bis del Código del Trabajo), ¿qué afirmación es correcta?</p>",
+   "opciones": [
+    {"texto": "Basta con publicar los turnos cada lunes, siempre que al final del mes el promedio sea de 42 horas.", "fb": "El calendario de distribución diaria y semanal debe fijarse antes de iniciar el ciclo. Publicar turnos semana a semana es una compensación informal."},
+    {"texto": "Requiere acuerdo y un calendario fijado antes del ciclo, de hasta 4 semanas; ninguna semana puede superar 45 horas ordinarias ni un día 10 horas.", "correcta": true, "fb": "Correcto: esos son los requisitos y límites del sistema de promedios. Además, si la persona está sindicalizada, se requiere el acuerdo previo de su sindicato."},
+    {"texto": "Permite ciclos de hasta 3 meses, sin calendario previo, si la persona trabajadora firma el acuerdo.", "fb": "El ciclo es de hasta 4 semanas y exige un calendario previo, además del acuerdo."},
+    {"texto": "Cualquier persona puede pactar individualmente semanas de hasta 52 horas ordinarias.", "fb": "El tope de 52 horas solo procede por negociación colectiva o pacto con sindicatos, y solo para sus afiliados. La regla general es un máximo de 45 horas en una semana del ciclo."}
+   ],
+   "fb_correcta": "El sistema de promedios exige acuerdo, calendario previo, comunicación con al menos una semana de anticipación y, para personas sindicalizadas, acuerdo sindical; con topes de 45 horas semanales y 10 horas diarias.",
+   "fb_incorrecta": "El promedio semanal no es una compensación informal: requiere acuerdo, calendario fijado antes del ciclo (de hasta 4 semanas) y respetar los topes de 45 horas en una semana y 10 horas diarias.",
+   "fuente": "Código del Trabajo, art. 22 bis; Ley 21.561. Lección 2.5."
+  },
+  {
+   "id": "m2.p5",
+   "tipo": "caso",
+   "enunciado": "<p>Constanza tiene un sueldo base de <b>$1.200.000</b> mensuales y una jornada de <b>42 horas</b> semanales. Este mes trabajó <b>3,5 horas extraordinarias</b> pactadas por escrito, con el recargo legal. Con la fórmula (sueldo ÷ 30 × 28) ÷ (horas semanales × 4) × 1,5, ¿cuánto le corresponde por esas horas?</p>",
+   "opciones": [
+    {"texto": "$23.333", "fb": "Ese monto usa el valor de la hora ordinaria ($6.666,67) sin aplicar el recargo de 50%."},
+    {"texto": "$32.667", "fb": "Ese monto usa 45 horas semanales. En octubre de 2026 la jornada de Constanza es de 42 horas."},
+    {"texto": "$35.000", "correcta": true, "fb": "Correcto: $1.200.000 ÷ 30 × 28 = $1.120.000; ÷ 168 = $6.666,67; × 1,5 = $10.000 por hora extra; × 3,5 = $35.000."},
+    {"texto": "$46.667", "fb": "Ese monto aplica un recargo de 100%. El recargo legal mínimo es de 50%, salvo que se pacte uno mayor."}
+   ],
+   "fb_correcta": "La hora extra de Constanza vale $10.000 ($1.200.000 ÷ 30 × 28 ÷ 168 × 1,5) y 3,5 horas suman $35.000, que se pagan con la remuneración del mismo período.",
+   "fb_incorrecta": "Calcula paso a paso: $1.200.000 ÷ 30 × 28 = $1.120.000; ÷ (42 × 4 = 168) = $6.666,67; × 1,5 = $10.000; × 3,5 horas = $35.000.",
+   "fuente": "Código del Trabajo, art. 32; fórmula de la Dirección del Trabajo para sueldo mensual. Lección 2.6."
+  },
+  {
+   "id": "m2.p6",
+   "tipo": "caso",
+   "enunciado": "<p>Simón no tiene pacto de horas extraordinarias. El jueves, su jefatura le pidió por correo quedarse <b>1 hora y 30 minutos</b> después de su horario para cerrar un informe, y el registro de asistencia muestra esa salida. ¿Qué corresponde?</p>",
+   "opciones": [
+    {"texto": "Pagarlas como horas extraordinarias, con recargo, en la liquidación del período. La falta de pacto escrito es, además, una infracción que debe corregirse.", "correcta": true, "fb": "Correcto: el exceso trabajado con conocimiento del empleador es jornada extraordinaria aunque no exista pacto escrito (art. 32)."},
+    {"texto": "No pagarlas, porque sin pacto escrito no existen horas extraordinarias.", "fb": "La falta de pacto no elimina la obligación de pago: el correo muestra que la jefatura lo sabía y lo pidió."},
+    {"texto": "Compensarlas dejando que Simón salga 1 hora y 30 minutos antes otro día.", "fb": "Salir antes otro día sin pacto escrito no es una compensación válida. La única alternativa al pago es el feriado adicional pactado por escrito."},
+    {"texto": "Pagarlas como horas ordinarias, sin recargo, porque no estaban pactadas.", "fb": "Si son extraordinarias, llevan el recargo mínimo de 50%."}
+   ],
+   "fb_correcta": "Las horas trabajadas sobre la jornada con conocimiento del empleador son extraordinarias aunque no haya pacto escrito: se pagan con recargo de al menos 50% en el mismo período.",
+   "fb_incorrecta": "El correo de la jefatura y el registro acreditan que Simón trabajó con conocimiento del empleador: son horas extraordinarias y se pagan con recargo, aunque falte el pacto (que además es una infracción).",
+   "fuente": "Código del Trabajo, art. 32. Lección 2.6."
+  },
+  {
+   "id": "m2.p7",
+   "tipo": "caso",
+   "enunciado": "<p>Josefina marca su salida en la aplicación de asistencia desde la oficina de un cliente, fuera de su zona habitual. La jefatura propone configurar el sistema para que <b>bloquee</b> las marcaciones hechas fuera de la oficina. ¿Qué debería responder Camila?</p>",
+   "opciones": [
+    {"texto": "Aceptar el bloqueo: así solo quedan registradas las marcaciones hechas en la oficina.", "fb": "Bloquear la marcación deja sin registro un tiempo efectivamente trabajado y debilita la evidencia."},
+    {"texto": "Rechazarlo: la marcación debe registrarse (la ubicación puede quedar como dato) y luego revisarse con los demás antecedentes.", "correcta": true, "fb": "Correcto: registrar la ubicación no significa bloquear la marcación. El registro debe reflejar lo que ocurrió."},
+    {"texto": "Pedir a Josefina que, cuando esté fuera de la oficina, avise su salida por WhatsApp.", "fb": "Un chat no es un registro de asistencia válido según el artículo 33 y la Resolución Exenta N°38 de 2024."},
+    {"texto": "Registrar la salida a la hora del contrato cada vez que marque fuera de la oficina.", "fb": "Ajustar las marcaciones al horario planificado destruye evidencia y puede ser una infracción grave."}
+   ],
+   "fb_correcta": "El registro de asistencia es la evidencia central de las horas trabajadas: una marcación fuera de la zona habitual se registra y se revisa, no se bloquea.",
+   "fb_incorrecta": "El sistema debe dejar constancia de cada marcación. Bloquearla, reemplazarla por un chat o ajustarla al horario del contrato debilita o destruye la evidencia.",
+   "fuente": "Código del Trabajo, art. 33; Resolución Exenta DT N°38 de 26.04.2024. Lección 2.7."
+  },
+  {
+   "id": "m2.p8",
+   "tipo": "caso",
+   "enunciado": "<p>Ignacio Bravo tiene <b>contrato a plazo fijo</b> y una remuneración imponible de <b>$900.000</b>. Su AFP cobra <b>10% + 1% de comisión</b> y está en <b>Fonasa (7%)</b>. Sin considerar impuesto ni otros descuentos, ¿cuánto suman los descuentos legales de su cargo?</p>",
+   "opciones": [
+    {"texto": "$167.400", "fb": "Ese monto agrega 0,6% de Seguro de Cesantía. En contrato a plazo fijo la persona trabajadora no aporta al seguro (0%)."},
+    {"texto": "$189.000", "fb": "Ese monto agrega el 3% del Seguro de Cesantía, que en plazo fijo es de cargo del empleador y no se descuenta."},
+    {"texto": "$193.500", "fb": "Ese monto agrega la cotización de 3,5% de la Ley 21.735, que es de cargo del empleador y no se descuenta del sueldo."},
+    {"texto": "$162.000", "correcta": true, "fb": "Correcto: AFP 11% = $99.000 + salud 7% = $63.000 + Seguro de Cesantía 0% (plazo fijo) = $162.000."}
+   ],
+   "fb_correcta": "En plazo fijo la persona trabajadora no aporta al Seguro de Cesantía: sus descuentos legales son AFP $99.000 + salud $63.000 = $162.000. El 3% de cesantía y el 3,5% de la Ley 21.735 los paga el empleador.",
+   "fb_incorrecta": "Descuentos de cargo de Ignacio: AFP 11% ($99.000) + salud 7% ($63.000) + cesantía 0% en plazo fijo = $162.000. Los aportes del empleador (3% de cesantía y 3,5% de la Ley 21.735) no se descuentan.",
+   "fuente": "Código del Trabajo, art. 58; Ley 19.728; Ley 21.735. Lección 2.8."
+  },
+  {
+   "id": "m2.p9",
+   "tipo": "concepto",
+   "enunciado": "<p>Sobre las multas establecidas en el reglamento interno de la empresa, ¿qué afirmación es correcta?</p>",
+   "opciones": [
+    {"texto": "No pueden exceder de la cuarta parte de la remuneración diaria, y su producto va a los fondos de bienestar de la empresa o de los sindicatos o, a falta de estos, al SENCE.", "correcta": true, "fb": "Correcto: así lo establece el artículo 157 del Código del Trabajo."},
+    {"texto": "Pueden llegar al 15% de la remuneración mensual y sirven para recuperar el valor de un equipo dañado.", "fb": "El 15% es el tope de los descuentos convencionales del art. 58. Las multas tienen tope de 25% de la remuneración diaria y no sirven para recuperar un daño."},
+    {"texto": "Su monto lo fija la jefatura en cada caso y queda a beneficio de la empresa.", "fb": "La multa debe estar en el reglamento interno, con tope de 25% de la remuneración diaria, y su producto no queda para la empresa."},
+    {"texto": "Pueden aplicarse aunque no estén en el reglamento interno, si la persona firma la multa.", "fb": "El art. 58 prohíbe descontar multas que no estén autorizadas en el reglamento interno."}
+   ],
+   "fb_correcta": "Las multas del reglamento interno tienen tope de 25% de la remuneración diaria y su producto va a fondos de bienestar o al SENCE (art. 157): no recuperan el valor de un daño.",
+   "fb_incorrecta": "Una multa solo procede si está en el reglamento interno, no puede exceder de la cuarta parte de la remuneración diaria y su producto va a fondos de bienestar o al SENCE, no a la empresa.",
+   "fuente": "Código del Trabajo, arts. 58 y 157. Lección 2.9."
+  },
+  {
+   "id": "m2.p10",
+   "tipo": "caso",
+   "enunciado": "<p>Rosa tiene una remuneración total de <b>$1.200.000</b>. Autorizó por escrito que le descuenten <b>$200.000</b> este mes por una compra en una tienda en convenio con la empresa. No tiene otros descuentos convencionales. ¿Qué debe hacer Camila?</p>",
+   "opciones": [
+    {"texto": "Descontar los $200.000, porque existe autorización escrita.", "fb": "La autorización escrita es necesaria, pero no permite superar el tope legal de 15% para los pagos de cualquier naturaleza."},
+    {"texto": "Descontar como máximo $180.000 (15% de $1.200.000); los $20.000 restantes no pueden descontarse ese mes.", "correcta": true, "fb": "Correcto: 15% de $1.200.000 = $180.000. El exceso no puede descontarse de la remuneración de ese mes."},
+    {"texto": "Descontar hasta $540.000, porque el tope de los descuentos convencionales es de 45%.", "fb": "El 45% es el tope conjunto de todos los descuentos convencionales. Cada tipo tiene además su propio tope: 15% para los pagos de cualquier naturaleza."},
+    {"texto": "Descontar hasta $360.000, porque el tope es de 30% de la remuneración.", "fb": "El 30% corresponde a los créditos sin interés de la empresa para vivienda o educación pagados directamente a la institución, no a una compra en convenio."}
+   ],
+   "fb_correcta": "Los descuentos para pagos de cualquier naturaleza requieren acuerdo escrito y no pueden exceder el 15% de la remuneración total: en este caso, $180.000.",
+   "fb_incorrecta": "Una compra en convenio es un pago de cualquier naturaleza: con autorización escrita puede descontarse hasta el 15% de la remuneración total, es decir, $180.000 de $1.200.000.",
+   "fuente": "Código del Trabajo, art. 58. Lección 2.9."
+  }
+ ]
+}
