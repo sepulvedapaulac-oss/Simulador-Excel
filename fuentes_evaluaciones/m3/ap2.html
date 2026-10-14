@@ -1,0 +1,102 @@
+<title>Actividad práctica 2 — La vacante de atención a clientes</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'actividad',codigo:'M3_AP2',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 3 · ACTIVIDAD PRÁCTICA 2',
+ eyebrow:'Actividad práctica 2 · Caso ramificado',
+ titulo:'La vacante de atención a clientes',
+ contexto:'<p>Horizonte Servicios necesita contratar a una persona como <b>ejecutivo o ejecutiva de atención a clientes</b>. La jefatura del área le envía a Camila, del Equipo de Personas, un borrador de aviso y le pide "moverse rápido". En este caso acompañarás a Camila desde el aviso hasta las primeras semanas de la persona contratada. <b>Cada decisión cambia el rumbo del caso</b>: un error puede abrir una escena distinta en la que tendrás que corregir el rumbo.</p><p>Usa el <b>expediente</b> (a la derecha en el computador o sobre cada escena en el celular) para revisar los documentos cuando lo necesites.</p>',
+ objetivos:['<b>Distinguir</b> requisitos del cargo de criterios discriminatorios en un proceso de selección.','<b>Describir</b> criterios de evaluación objetivos, pertinentes y trazables.','<b>Analizar</b> una medida de control con el test de proporcionalidad, respetando la vida privada.'],
+ tiempo:'25–30 min',resumen:'5 decisiones · 2 respuestas de desarrollo',
+ expediente:[
+  {titulo:'Borrador del aviso (jefatura)',html:'<p>"Se busca <b>ejecutiva</b> de atención a clientes. Mujer, <b>entre 25 y 35 años</b>, de <b>buena presencia</b>, <b>sin deudas</b> (se pedirá informe comercial). Experiencia en atención telefónica."</p>'},
+  {titulo:'Descripción del cargo',html:'<table><tr><th>Función</th><th>Detalle</th></tr><tr><td>Atender consultas de clientes</td><td>Teléfono, correo y chat</td></tr><tr><td>Registrar casos</td><td>Sistema de clientes de la empresa</td></tr><tr><td>Dinero o valores</td><td><b>No</b> recauda, administra ni custodia fondos</td></tr><tr><td>Requisitos</td><td>1 año de experiencia en atención; manejo de planillas; redacción clara</td></tr></table>'},
+  {titulo:'Resultados de la evaluación final',html:'<table><tr><th>Postulante</th><th>Pauta (de 100)</th></tr><tr><td>Fernanda Muñoz</td><td>88</td></tr><tr><td>Ignacio Vera</td><td>79</td></tr><tr><td>Rocío Lagos</td><td>71</td></tr></table><p>La pauta mide experiencia, prueba de redacción y simulación de llamada.</p>'},
+  {titulo:'Reglas legales clave',html:'<p><b>Art. 2 CT:</b> son discriminación las distinciones, exclusiones o preferencias basadas en motivos como sexo, edad, estado civil, maternidad o apariencia personal, entre otros. No lo son las basadas en las calificaciones exigidas para el empleo. No se puede condicionar la contratación a la ausencia de deudas, salvo gerentes, subgerentes, agentes o apoderados con facultades generales de administración y quienes recauden, administren o custodien fondos o valores.</p><p><b>Art. 194:</b> no se puede condicionar la contratación al embarazo ni exigir certificado o examen para verificarlo.</p><p><b>Art. 5 y 154 bis:</b> el poder de dirección tiene como límite la intimidad, la vida privada y la honra; la empresa guarda reserva de los datos privados. Las medidas de control deben estar en el reglamento interno y ser generales, impersonales e idóneas.</p>'}
+ ],
+ competencias:[
+  {id:'nd',nombre:'Selección sin discriminación',fortaleza:'separas los requisitos del cargo de los criterios prohibidos por el artículo 2.',mejora:'repasa los motivos protegidos, la excepción de las calificaciones y la regla sobre antecedentes económicos.',repasar:'Lección 3.2'},
+  {id:'mf',nombre:'Protección a la maternidad',fortaleza:'aplicas la prohibición de condicionar la contratación al embarazo y el fuero maternal.',mejora:'repasa el artículo 194, el fuero maternal y el desafuero judicial.',repasar:'Lecciones 3.2 y 3.3'},
+  {id:'df',nombre:'Derechos fundamentales y control',fortaleza:'evalúas medidas de control respetando la vida privada y las comunicaciones privadas.',mejora:'repasa los límites del poder de dirección, el test de proporcionalidad y la tutela laboral.',repasar:'Lección 3.1'}
+ ],
+ inicio:'s1',
+ etapas:[
+  {id:'s1',tipo:'decision',titulo:'El borrador del aviso',corto:'Aviso',competencia:'nd',
+   escena:'<p>Revisa el <b>borrador del aviso</b> y la <b>descripción del cargo</b> en el expediente. La jefatura quiere publicarlo hoy.</p>',
+   pregunta:'¿Qué hace Camila con el aviso?',
+   ideal:'reescribirlo solo con requisitos del cargo, quitando sexo, edad, apariencia y la exigencia de no tener deudas.',
+   opciones:[
+    {texto:'Lo reescribe con los requisitos del cargo (experiencia en atención, manejo de planillas, redacción clara) y quita sexo, edad, "buena presencia" y la exigencia de no tener deudas.',pts:2,fb:'Correcto: sexo, edad y apariencia personal son motivos protegidos por el artículo 2, y el cargo no recauda, administra ni custodia fondos, por lo que no se puede condicionar la contratación a no tener deudas.',siguiente:'s2a'},
+    {texto:'Quita "mujer" y el rango de edad, pero mantiene "buena presencia" y "sin deudas", porque son exigencias habituales.',pts:1,fb:'Vas en buena dirección, pero la apariencia personal también es un motivo protegido, y la exigencia de no tener deudas solo procede en cargos de administración general o de manejo de fondos o valores.',siguiente:'s2b'},
+    {texto:'Lo publica tal como está: la jefatura conoce el perfil que necesita.',pts:0,fb:'El aviso condiciona la contratación por sexo, edad y apariencia personal, y por la ausencia de deudas en un cargo que no maneja fondos. El artículo 2 prohíbe esos condicionamientos en las ofertas de trabajo.',siguiente:'s2b'}]},
+  {id:'s2a',tipo:'decision',titulo:'"Al menos pidamos el informe comercial"',corto:'Antecedentes económicos',competencia:'nd',
+   escena:'<p>La jefatura acepta el nuevo aviso, pero insiste: "Al menos pidámosle el informe comercial a quienes lleguen a la etapa final. Nunca se sabe".</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'no pedirlo: el cargo no tiene facultades generales de administración ni recauda, administra o custodia fondos o valores.',
+   opciones:[
+    {texto:'Que se pida solo a las personas finalistas, para no molestar a todas.',pts:0,fb:'Pedirlo a menos personas no cambia el problema: igual se estaría condicionando la contratación a la ausencia de deudas en un cargo que no lo permite.',siguiente:'s3'},
+    {texto:'Que no se pedirá: según la descripción, el cargo no recauda, administra ni custodia fondos o valores, y no tiene facultades generales de administración.',pts:2,fb:'Correcto: la excepción del artículo 2 se limita a esos cargos. Para este cargo, el informe comercial no es un requisito pertinente.',siguiente:'s3'},
+    {texto:'Que no lo pedirá todavía y que antes consultará con Asesoría Legal.',pts:1,fb:'Consultar es prudente, pero la descripción del cargo ya permite responder: no maneja fondos ni tiene facultades generales de administración.',siguiente:'s3'}]},
+  {id:'s2b',tipo:'decision',titulo:'Una postulante pregunta',corto:'Corregir el rumbo',competencia:'nd',
+   escena:'<p>El aviso se publica. Dos días después, una postulante escribe: "El aviso exige <i>buena presencia</i> y no tener deudas. ¿Eso es legal? Cumplo con toda la experiencia que piden".</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'retirar y corregir el aviso, y revisar con criterios objetivos las postulaciones que se descartaron por esos motivos.',
+   opciones:[
+    {texto:'Responder que la empresa es libre de definir el perfil que quiere.',pts:0,fb:'La empresa define los requisitos del cargo, pero no puede condicionar la contratación por motivos del artículo 2 ni por deudas en un cargo que no maneja fondos. La postulante podría reclamar por tutela laboral.',siguiente:'s3'},
+    {texto:'Agradecer la consulta, retirar el aviso, publicarlo corregido y revisar con los requisitos del cargo las postulaciones descartadas por esos criterios.',pts:2,fb:'Bien: corregir el aviso y revisar las postulaciones afectadas repara el error y deja trazabilidad de un proceso objetivo.',siguiente:'s3'},
+    {texto:'Mantener el aviso, pero decirle que en su caso no se considerará el informe comercial.',pts:1,fb:'Resuelve un caso, pero el aviso sigue excluyendo a otras personas por motivos prohibidos. La corrección debe ser para todo el proceso.',siguiente:'s3'}]},
+  {id:'s3',tipo:'abierta',titulo:'La pauta de evaluación',corto:'Describir criterios',verbo:'Describe',competencia:'nd',
+   escena:'<p>Para la etapa final, Camila debe dejar escritos los criterios con que se comparará a las personas postulantes. Usa la <b>descripción del cargo</b>.</p>',
+   consigna:'tres criterios de evaluación para este cargo, indicando cómo se medirá cada uno y por qué es pertinente para las funciones.',minPalabras:40,
+   modelo:'1) Experiencia en atención a clientes: se verifica al menos 1 año con certificados o referencias laborales; es pertinente porque la función principal es atender consultas. 2) Redacción clara: se mide con una prueba escrita de respuesta a un reclamo, con una pauta conocida de antemano; es pertinente porque se atiende por correo y chat. 3) Manejo de planillas y registro de casos: se mide con un ejercicio práctico; es pertinente porque cada caso se registra en el sistema. Los resultados quedan registrados para todas las personas.',
+   criterios:['Cada criterio se vincula a una función real del cargo (pertinente).','Indica cómo se medirá de forma comparable para todas las personas (objetivo).','Deja registro del resultado (trazable) y no incluye motivos del artículo 2.'],siguiente:'s4'},
+  {id:'s4',tipo:'decision',titulo:'La entrevista final',corto:'Embarazo',competencia:'mf',
+   escena:'<p>Fernanda obtiene el mejor puntaje de la pauta (88). En la entrevista final comenta, por iniciativa propia, que tiene cuatro meses de embarazo. Después, la jefatura le dice a Camila: "Mejor contratemos a Ignacio; en unos meses Fernanda se va a ir con prenatal".</p>',
+   pregunta:'¿Qué hace Camila?',
+   ideal:'mantener la decisión basada en la pauta y contratar a Fernanda; el embarazo no puede condicionar la contratación.',
+   opciones:[
+    {texto:'Contratar a Ignacio, explicando que se privilegia la continuidad operacional del área.',pts:0,fb:'Descartar a la mejor evaluada por su embarazo es una exclusión basada en la maternidad (art. 2) y condiciona la contratación al embarazo (art. 194).',siguiente:'s5b'},
+    {texto:'Contratar a Fernanda, pero antes pedirle un certificado médico con la fecha probable de parto "para planificar".',pts:1,fb:'Contratarla es correcto, pero el artículo 194 prohíbe exigir un certificado o examen para verificar el embarazo como parte de la contratación.',siguiente:'s5a'},
+    {texto:'Contratar a Fernanda según la pauta: el embarazo no puede condicionar la contratación, y la empresa se organizará para cubrir los descansos cuando lleguen.',pts:2,fb:'Correcto: la decisión se basa en criterios objetivos. Planificar el reemplazo de los descansos maternales es tarea de la empresa, no un motivo para excluir.',siguiente:'s5a'}]},
+  {id:'s5a',tipo:'decision',titulo:'"Necesidades de la empresa"',corto:'Fuero maternal',competencia:'mf',
+   escena:'<p>Fernanda ingresa a trabajar. Tres meses después, aún embarazada, la jefatura le pide a Camila preparar su carta de despido "por necesidades de la empresa, pagando todas las indemnizaciones".</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'explicar que Fernanda tiene fuero maternal y que para despedirla se requiere autorización judicial previa por causales específicas.',
+   opciones:[
+    {texto:'Que Fernanda tiene fuero maternal desde el embarazo y que, sin autorización judicial previa (desafuero) por causales específicas, el despido sería nulo y procedería su reincorporación.',pts:2,fb:'Correcto: el fuero maternal dura desde el embarazo hasta 1 año después de terminado el postnatal, y el despido sin desafuero es nulo (arts. 174 y 201).',siguiente:'s6'},
+    {texto:'Que es mejor esperar a que termine su postnatal y despedirla entonces.',pts:1,fb:'Reconoces que hay una protección, pero el fuero no termina con el postnatal: se extiende hasta 1 año después de expirado el descanso postnatal.',siguiente:'s6'},
+    {texto:'Que se puede despedir, porque se pagarán todas las indemnizaciones.',pts:0,fb:'Pagar indemnizaciones no reemplaza la autorización judicial previa. Sin desafuero, el despido es nulo y procede la reincorporación.',siguiente:'s6'}]},
+  {id:'s5b',tipo:'decision',titulo:'Fernanda reclama',corto:'Corregir el rumbo',competencia:'mf',
+   escena:'<p>Fernanda se entera de que no fue elegida pese a tener el mejor puntaje. Escribe a Camila: "Creo que me descartaron por mi embarazo. Voy a presentar una denuncia de tutela laboral".</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'revisar la decisión con la pauta objetiva, reconocer el criterio indebido y corregir el proceso.',
+   opciones:[
+    {texto:'Revisar la decisión con la pauta: reconocer que Fernanda fue la mejor evaluada, proponer a la gerencia corregir la decisión y ofrecerle el cargo, dejando registro del proceso.',pts:2,fb:'Bien: la no discriminación también puede reclamarse por tutela laboral. Corregir con base en criterios objetivos repara el daño y reduce el riesgo para la empresa.',siguiente:'s6'},
+    {texto:'Responder que la empresa elige libremente a quién contrata y no tiene que dar explicaciones.',pts:0,fb:'La libertad de elegir tiene como límite la no discriminación. Con la pauta a la vista, la exclusión por embarazo queda en evidencia.',siguiente:'s6'},
+    {texto:'Ofrecerle a Fernanda quedar primera en la lista para una vacante futura, si no presenta la denuncia.',pts:1,fb:'Reconoces que hubo un problema, pero condicionar la reparación a que no reclame no corrige la exclusión ni el proceso.',siguiente:'s6'}]},
+  {id:'s6',tipo:'decision',titulo:'Una filtración de datos',corto:'Medida de control',competencia:'df',
+   escena:'<p>Semanas después, se detecta que datos de clientes se enviaron fuera de la empresa. La jefatura propone revisar los <b>WhatsApp personales</b> de los seis ejecutivos del área "para encontrar al responsable".</p>',
+   pregunta:'¿Qué propone Camila?',
+   ideal:'no revisar comunicaciones privadas; investigar con los registros del sistema corporativo y usar medidas de control generales e impersonales previstas en el reglamento interno.',
+   opciones:[
+    {texto:'Revisar los WhatsApp con autorización escrita de la gerencia, para que quede respaldo.',pts:0,fb:'La autorización de la gerencia no hace legítima la medida: las comunicaciones privadas son inviolables y el empleador no puede revisarlas. Podría dar lugar a una tutela laboral.',siguiente:'s7'},
+    {texto:'No revisar comunicaciones privadas: investigar con los registros de acceso del sistema de clientes de la empresa y reforzar perfiles de acceso, como medida general prevista en el reglamento interno e informada a todo el equipo.',pts:2,fb:'Correcto: la medida es idónea para el fin (proteger datos de clientes), menos invasiva que leer conversaciones privadas, general e impersonal.',siguiente:'s7'},
+    {texto:'Instalar desde mañana una cámara que grabe las pantallas de los seis ejecutivos, avisándoles por correo.',pts:1,fb:'Evita leer comunicaciones privadas, pero es una medida intensa, no prevista en el reglamento interno y adoptada sin evaluar alternativas menos invasivas.',siguiente:'s7'}]},
+  {id:'s7',tipo:'abierta',titulo:'El test de proporcionalidad',corto:'Analizar la medida',verbo:'Analiza',competencia:'df',
+   escena:'<p>La gerencia pide a Camila un análisis escrito antes de aprobar el registro de accesos al sistema de clientes como medida de control permanente.</p>',
+   consigna:'la medida "registro de accesos al sistema de clientes" con los tres pasos del test de proporcionalidad (idoneidad, necesidad y proporcionalidad en sentido estricto) y señala qué condiciones formales debe cumplir.',minPalabras:50,
+   modelo:'Idoneidad: registrar quién accede a cada ficha de clientes sirve para proteger los datos y detectar usos indebidos. Necesidad: es menos invasiva que revisar comunicaciones privadas, porque solo registra el uso de una herramienta de la empresa. Proporcionalidad: el beneficio (proteger datos de clientes) justifica una afectación baja, limitada al sistema corporativo. Condiciones: incorporarla al reglamento interno, aplicarla a todo el equipo de forma general e impersonal, informarla y guardar reserva de la información obtenida.',
+   criterios:['Aplica los tres pasos del test: idónea, necesaria y proporcional.','Compara con una alternativa más invasiva (revisar comunicaciones privadas).','Menciona reglamento interno, carácter general e impersonal y reserva de la información.']}
+ ],
+ cierre:'<b>Idea clave:</b> en selección, decide solo con requisitos objetivos, pertinentes y trazables; el embarazo nunca condiciona una contratación. En control, la vida privada y las comunicaciones privadas son un límite del poder de dirección: busca siempre la medida menos invasiva y déjala en el reglamento interno.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

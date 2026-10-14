@@ -1,0 +1,125 @@
+<title>Laboratorio del módulo 3 — El cierre de fin de año de Personas</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'laboratorio',codigo:'M3_LAB',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 3 · EVALUACIÓN · LABORATORIO',
+ eyebrow:'Evaluación del módulo 3 · Parte 2',
+ titulo:'El cierre de fin de año de Personas',
+ contexto:'<p>Es la primera semana de diciembre en Horizonte Servicios. Camila, del Equipo de Personas, debe cerrar la planilla de ausencias de noviembre, responder solicitudes de feriado para las vacaciones escolares de verano, atender dos situaciones de maternidad y paternidad, y revisar el cumplimiento de la cuota de inclusión antes del reporte de enero.</p><p>Tu tarea es resolver con ella <b>10 tareas</b> usando los documentos del <b>expediente</b> (a la derecha en el computador o sobre cada tarea en el celular). Ábrelos cada vez que una tarea los mencione.</p>',
+ objetivos:['<b>Distinguir</b> feriado, permisos legales y licencias médicas, y calcular días de feriado.','<b>Aplicar</b> las reglas de protección a la maternidad, la paternidad y las personas cuidadoras.','<b>Verificar</b> el cumplimiento de la cuota de inclusión y sus obligaciones de registro.'],
+ comoSeEvalua:'cada tarea se responde una sola vez y verás de inmediato su retroalimentación. Las tareas de clasificar, seleccionar y calcular dan puntaje proporcional a tus aciertos. La respuesta de desarrollo no tiene nota automática: verás una respuesta modelo y criterios para revisar la tuya. Necesitas <strong>80%</strong> de los puntos para aprobar.',
+ tiempo:'25–30 min',resumen:'10 tareas · 21 puntos',
+ expediente:[
+  {titulo:'Correo de la jefatura de Operaciones',html:'<p>"Camila: para cerrar noviembre, <b>descuenta como vacaciones todas las ausencias</b> de la planilla. Y a Martina, que se enfermó en sus vacaciones, mejor <b>págale en dinero</b> los días que no alcanzó a tomar. Así cerramos el año limpio."</p>'},
+  {titulo:'Planilla de ausencias de noviembre',html:'<table><tr><th>Persona</th><th>Motivo</th><th>Días</th></tr><tr><td>Paula Reyes</td><td>Feriado anual solicitado</td><td>5 hábiles</td></tr><tr><td>Andrés Soto</td><td>Nacimiento de su hijo</td><td>5</td></tr><tr><td>Sofía Contreras</td><td>Fallecimiento de su padre</td><td>4 hábiles</td></tr><tr><td>Jorge Pinto</td><td>Licencia médica</td><td>6</td></tr><tr><td>Ignacio Lara</td><td>Acuerdo de unión civil</td><td>5 hábiles</td></tr><tr><td>Elena Díaz (45 años)</td><td>Mamografía preventiva</td><td>medio día</td></tr></table>'},
+  {titulo:'Fichas de personal',html:'<table><tr><th>Persona</th><th>Antecedentes</th></tr><tr><td>Marcela Rojas</td><td>16 años trabajando en Horizonte (siempre en Santiago). Sin empleadores anteriores.</td></tr><tr><td>Luis Vargas</td><td>3 años en la sucursal de Punta Arenas (Región de Magallanes). Sin empleadores anteriores.</td></tr><tr><td>Martina Vidal</td><td>Inició 10 días hábiles de feriado; al tercer día presentó licencia médica por 4 días.</td></tr></table>'},
+  {titulo:'Mensajes de Carolina y Andrés',html:'<p><b>Carolina Ruiz</b> (operaria de bodega): "Camila, te cuento que tengo tres meses de embarazo. En mi puesto levanto cajas y este mes me programaron horas extraordinarias".</p><p><b>Andrés Soto</b> (analista): "Mi pareja me traspasó <b>4 semanas</b> de su postnatal parental, a jornada completa. Volví a trabajar el lunes pasado".</p>'},
+  {titulo:'Solicitudes de feriado para vacaciones de verano',html:'<table><tr><th>Persona</th><th>Situación de cuidado</th><th>Anticipación</th></tr><tr><td>Laura</td><td>Cuidado personal de su hijo de 10 años</td><td>45 días</td></tr><tr><td>Pedro</td><td>Hija de 15 años, sin discapacidad ni dependencia</td><td>40 días</td></tr><tr><td>Ana</td><td>Hijo de 16 años con discapacidad inscrita en el Registro Nacional de la Discapacidad</td><td>40 días</td></tr><tr><td>Rubén</td><td>Cuidado personal de su hija de 8 años</td><td>20 días</td></tr><tr><td>Gabriela</td><td>Cuida a su madre de 70 años con dependencia moderada acreditada</td><td>35 días</td></tr></table>'},
+  {titulo:'Dotación e inclusión',html:'<p>Promedio de personas trabajadoras del año: <b>250</b>.</p><table><tr><th>Persona</th><th>Antecedente</th></tr><tr><td>Raúl</td><td>Calificación y certificación de la COMPIN e inscripción en el Registro Nacional de la Discapacidad</td></tr><tr><td>Verónica</td><td>Solo presenta un certificado de su médico tratante</td></tr></table><p>Mensaje de la gerencia: "No encontramos a quién contratar. Hagamos una donación a una fundación y damos el tema por cerrado".</p>'}
+ ],
+ competencias:[
+  {id:'fe',nombre:'Feriado, permisos y licencias',fortaleza:'distingues cada tipo de ausencia y calculas el feriado con sus reglas.',mejora:'repasa qué se descuenta del feriado, el feriado progresivo y qué pasa con una licencia durante las vacaciones.',repasar:'Lección 3.7'},
+  {id:'mp',nombre:'Maternidad y paternidad',fortaleza:'aplicas los descansos, el traslado y el fuero de madres y padres.',mejora:'repasa los artículos 195, 201 y 202 y el fuero del padre que usa postnatal parental.',repasar:'Lección 3.3'},
+  {id:'cu',nombre:'Personas cuidadoras',fortaleza:'identificas quién tiene derecho al feriado preferente y en qué plazo debe pedirlo.',mejora:'repasa quiénes son beneficiarios del feriado preferente y la anticipación de 30 días.',repasar:'Lecciones 3.4 y 3.5'},
+  {id:'in',nombre:'Inclusión laboral',fortaleza:'calculas la cuota y conoces sus obligaciones de registro y medidas alternativas.',mejora:'repasa el 1%, quiénes cuentan para la cuota, el registro en la Dirección del Trabajo y las medidas alternativas.',repasar:'Lección 3.8'}
+ ],
+ inicio:'t1',
+ etapas:[
+  {id:'t1',tipo:'clasificar',titulo:'La planilla de noviembre',corto:'Clasificar ausencias',competencia:'fe',pts:3,
+   escena:'<p>Abre la <b>planilla de ausencias de noviembre</b> y el <b>correo de la jefatura de Operaciones</b>. Antes de descontar nada, Camila clasifica cada ausencia.</p>',
+   pregunta:'Elige la categoría que corresponde a cada ausencia. Recuerda: solo el <b>feriado</b> se descuenta de las vacaciones; un permiso legal pagado no se descuenta, y una licencia médica se paga con subsidio.',
+   categorias:['Feriado (se descuenta)','Permiso legal pagado','Licencia médica'],
+   items:[
+    {texto:'Paula Reyes · feriado anual solicitado, 5 días hábiles',cat:0,fb:'Es feriado pedido por ella: estos días sí se descuentan de sus vacaciones.'},
+    {texto:'Andrés Soto · nacimiento de su hijo, 5 días',cat:1,fb:'El padre tiene un permiso pagado de 5 días por nacimiento (art. 195), de cargo del empleador.'},
+    {texto:'Sofía Contreras · fallecimiento de su padre, 4 días hábiles',cat:1,fb:'Por fallecimiento del padre, la madre o un hermano o hermana corresponden 4 días hábiles de permiso pagado (art. 66).'},
+    {texto:'Jorge Pinto · licencia médica, 6 días',cat:2,fb:'La licencia suspende la prestación de servicios y la remuneración se reemplaza por subsidio. Nunca se descuenta como vacaciones.'},
+    {texto:'Ignacio Lara · acuerdo de unión civil, 5 días hábiles',cat:1,fb:'Matrimonio o acuerdo de unión civil: 5 días hábiles continuos de permiso pagado, adicionales al feriado (art. 207 bis).'},
+    {texto:'Elena Díaz (45 años) · mamografía preventiva, medio día',cat:1,fb:'Las mujeres mayores de 40 años tienen medio día al año de permiso para la mamografía (art. 66 bis).'}],
+   fb:'Solo el feriado de Paula se descuenta de las vacaciones. "No vino a trabajar" no basta: cada ausencia tiene su origen y su regla.',siguiente:'t2'},
+  {id:'t2',tipo:'numero',titulo:'¿Cuántos días de feriado?',corto:'Calcular feriado',competencia:'fe',pts:2,
+   escena:'<p>Abre las <b>fichas de personal</b>. Marcela y Luis preguntan cuántos días hábiles de feriado anual les corresponden este año.</p>',
+   pregunta:'Escribe el número de días hábiles de feriado anual de cada persona (solo el número).',
+   campos:[{label:'Marcela Rojas (16 años en Horizonte, Santiago)',valor:17,tol:0,unidad:'días hábiles'},{label:'Luis Vargas (3 años, Punta Arenas)',valor:20,tol:0,unidad:'días hábiles'}],
+   solucion:'<b>Marcela: 17 días.</b> La base es de 15 días hábiles. Con 10 años de trabajo se suma 1 día por cada 3 nuevos años con el empleador actual: tiene 6 años nuevos (16 − 10), es decir, 2 días adicionales (art. 68). <b>Luis: 20 días.</b> En la Región de Magallanes el feriado es de 20 días hábiles (art. 67); aún no tiene feriado progresivo.',siguiente:'t3'},
+  {id:'t3',tipo:'multi',titulo:'Carolina informa su embarazo',corto:'Embarazo en bodega',competencia:'mp',pts:3,
+   escena:'<p>Lee el <b>mensaje de Carolina</b> en el expediente.</p>',
+   pregunta:'¿Qué afirmaciones son correctas? Marca todas las que correspondan.',
+   items:[
+    {texto:'Debe ser trasladada a un trabajo que no sea perjudicial para su salud, sin reducción de remuneraciones.',ok:true,fb:'Levantar pesos y hacer horas extraordinarias son trabajos considerados perjudiciales para la embarazada (art. 202).'},
+    {texto:'Puede trasladarse a recepción, pero con el sueldo de ese cargo, que es menor.',ok:false,fb:'El traslado es sin reducción de remuneraciones.'},
+    {texto:'Tiene fuero maternal desde ya, durante el embarazo.',ok:true,fb:'El fuero rige durante el embarazo y hasta 1 año después de expirado el descanso postnatal (art. 201).'},
+    {texto:'Puede acordar con ella que renuncie a parte del prenatal a cambio de un bono.',ok:false,fb:'El prenatal (6 semanas) y el postnatal (12 semanas) son irrenunciables (art. 195).'},
+    {texto:'Debe seguir en su puesto mientras no presente una licencia médica.',ok:false,fb:'El deber de traslado nace por el embarazo y el tipo de trabajo, sin necesidad de licencia.'},
+    {texto:'Tendrá un descanso prenatal de 6 semanas antes del parto, durante el cual se prohíbe el trabajo.',ok:true,fb:'Así lo establece el artículo 195.'}],
+   fb:'Puntaje proporcional: cada afirmación correcta marcada suma y cada incorrecta marcada resta.',siguiente:'t4'},
+  {id:'t4',tipo:'decision',titulo:'El regreso de Andrés',corto:'Fuero del padre',competencia:'mp',
+   escena:'<p>Lee el <b>mensaje de Andrés</b>. Una semana después de su regreso, su jefatura pide a Camila preparar su despido: "Ya volvió; el fuero es cosa de las madres".</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'Andrés tiene fuero por el doble del período que usó (8 semanas), contado desde 10 días antes del inicio del permiso; sigue vigente y sin desafuero judicial el despido sería nulo.',
+   opciones:[
+    {texto:'Que no tiene fuero: el fuero protege solo a la madre.',pts:0,fb:'El padre que usa el postnatal parental tiene fuero por el doble del período que usa, sin exceder 3 meses (art. 201).'},
+    {texto:'Que tuvo fuero solo durante las 4 semanas del permiso, pero que por precaución conviene esperar un mes más.',pts:1,fb:'Reconoces la protección, pero el cálculo es incorrecto: el fuero dura el doble del período usado (8 semanas), desde 10 días antes del inicio del permiso.'},
+    {texto:'Que tiene fuero por 8 semanas (el doble de las 4 que usó), contadas desde 10 días antes del inicio del permiso; sigue vigente y despedirlo exige autorización judicial previa.',pts:2,fb:'Correcto: 10 días antes + 4 semanas de permiso + 1 semana de regreso = aún dentro de las 8 semanas de fuero. Sin desafuero, el despido es nulo (art. 174).'}],
+   siguiente:'t5'},
+  {id:'t5',tipo:'decision',titulo:'Una licencia durante las vacaciones',corto:'Licencia en feriado',competencia:'fe',
+   escena:'<p>Revisa la ficha de <b>Martina Vidal</b> y el <b>correo de la jefatura</b>, que propone pagarle en dinero los días que no alcanzó a tomar.</p>',
+   pregunta:'¿Qué ocurre con el feriado de Martina?',
+   ideal:'el feriado se suspende durante la licencia y Martina retoma después los días pendientes; no se compensa en dinero.',
+   opciones:[
+    {texto:'El feriado se suspende durante la licencia y Martina retoma después los días pendientes.',pts:2,fb:'Correcto: si la licencia sobreviene durante el feriado, este se suspende y se retoma después (criterio de la Dirección del Trabajo). Además, el feriado no se compensa en dinero mientras la relación laboral sigue vigente.'},
+    {texto:'Se le pagan en dinero los días no usados, como propone la jefatura.',pts:0,fb:'El feriado no es compensable en dinero, salvo al término de la relación laboral (art. 73).'},
+    {texto:'Los días se pierden: la licencia empezó cuando ya estaba de vacaciones.',pts:0,fb:'La licencia médica no consume feriado: el feriado se suspende y se retoma después.'}],
+   siguiente:'t6'},
+  {id:'t6',tipo:'clasificar',titulo:'Feriado en vacaciones escolares',corto:'Feriado preferente',competencia:'cu',pts:3,
+   escena:'<p>Abre las <b>solicitudes de feriado para vacaciones de verano</b>. Todas piden usar su feriado en el período de vacaciones escolares definido por el Ministerio de Educación.</p>',
+   pregunta:'Clasifica cada solicitud según el derecho preferente de la Ley 21.645. <i>Pidió fuera de plazo</i> = es beneficiaria, pero no pidió con la anticipación exigida.',
+   categorias:['Tiene derecho preferente','No es beneficiaria','Pidió fuera de plazo'],
+   items:[
+    {texto:'Laura · hijo de 10 años · 45 días de anticipación',cat:0,fb:'Cuidado personal de un niño menor de 14 años y solicitud con más de 30 días.'},
+    {texto:'Pedro · hija de 15 años sin discapacidad ni dependencia · 40 días',cat:1,fb:'La preferencia alcanza a menores de 14 años, o a adolescentes menores de 18 con discapacidad o dependencia severa o moderada.'},
+    {texto:'Ana · hijo de 16 años con discapacidad inscrita · 40 días',cat:0,fb:'Adolescente menor de 18 años con discapacidad acreditada y solicitud a tiempo.'},
+    {texto:'Rubén · hija de 8 años · 20 días',cat:2,fb:'Es beneficiario, pero la solicitud debe hacerse con al menos 30 días de anticipación.'},
+    {texto:'Gabriela · madre de 70 años con dependencia moderada · 35 días',cat:1,fb:'El feriado preferente se refiere al cuidado de niños, niñas y adolescentes. Gabriela sí es persona cuidadora para otras medidas, como solicitar teletrabajo si sus funciones lo permiten.'}],
+   fb:'Separa siempre dos preguntas: ¿la persona está en la situación que protege esta medida? y ¿cumplió el requisito de plazo?',siguiente:'t7'},
+  {id:'t7',tipo:'numero',titulo:'La cuota de inclusión',corto:'Calcular cuota',competencia:'in',pts:2,
+   escena:'<p>Abre <b>Dotación e inclusión</b>. Horizonte Servicios tuvo un promedio de 250 personas trabajadoras este año.</p>',
+   pregunta:'Completa el cálculo con la cuota exigible hoy (solo números).',
+   campos:[{label:'Personas exigidas por la cuota',valor:2,tol:0,unidad:'personas'},{label:'Personas contratadas que cuentan para la cuota',valor:1,tol:0,unidad:'personas'},{label:'Personas que faltan para cumplir',valor:1,tol:0,unidad:'personas'}],
+   solucion:'La cuota exigible hoy es el <b>1%</b> (el 2% de la Ley 21.690 aún no se activa): con 250 personas trabajadoras corresponden <b>2</b>. Solo Raúl cuenta, porque tiene certificación de la COMPIN e inscripción en el Registro Nacional de la Discapacidad; un certificado del médico tratante no basta. Falta <b>1</b> persona.',siguiente:'t8'},
+  {id:'t8',tipo:'ordenar',titulo:'El calendario de cumplimiento',corto:'Ordenar pasos',competencia:'in',pts:2,
+   escena:'<p>Camila arma el procedimiento anual de inclusión para que no se le escape ningún paso.</p>',
+   pregunta:'Asigna a cada paso su posición en el orden lógico de trabajo.',
+   items:[
+    {texto:'Calcular el promedio de personas trabajadoras y la cuota del 1%.',fb:'Primero se sabe cuántas personas exige la cuota.'},
+    {texto:'Verificar que las personas contratadas tengan certificación de la COMPIN e inscripción en el Registro Nacional de la Discapacidad, o pensión de invalidez.',fb:'Solo cuentan quienes acreditan su condición.'},
+    {texto:'Registrar en el sitio de la Dirección del Trabajo cada contrato nuevo dentro de 15 días desde su celebración.',fb:'El registro se hace durante el año, con cada contratación.'},
+    {texto:'En enero, comunicar a la Dirección del Trabajo el cumplimiento anual y, si corresponde, las medidas alternativas.',fb:'La comunicación anual cierra el ciclo.'}],
+   fb:'Calcular, acreditar, registrar cada contrato y comunicar en enero: así el cumplimiento queda trazable.',siguiente:'t9'},
+  {id:'t9',tipo:'decision',titulo:'"Hagamos una donación"',corto:'Medidas alternativas',competencia:'in',
+   escena:'<p>Lee el <b>mensaje de la gerencia</b> en Dotación e inclusión.</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'las medidas alternativas solo proceden por razones fundadas (naturaleza de las funciones o falta de personas interesadas), que deben acreditarse y comunicarse; primero corresponde un proceso de selección accesible.',
+   opciones:[
+    {texto:'Que la donación es equivalente a contratar y se puede elegir libremente entre ambas.',pts:0,fb:'El cumplimiento alternativo es subsidiario: solo procede por razones fundadas y la Dirección del Trabajo puede sancionar si no lo son.'},
+    {texto:'Que primero corresponde un proceso de selección accesible; solo si hay razones fundadas, como falta de personas interesadas, se pueden usar medidas alternativas, documentándolas y comunicándolas en enero.',pts:2,fb:'Correcto: la Ley 21.690 ajustó y endureció las medidas subsidiarias. Las razones deben ser fundadas y quedar respaldadas.'},
+    {texto:'Que se contrate a una empresa de servicios que tenga personas con discapacidad, sin necesidad de justificar nada.',pts:1,fb:'Es una de las medidas alternativas posibles, pero solo procede por razones fundadas que deben acreditarse.'}],
+   siguiente:'t10'},
+  {id:'t10',tipo:'abierta',titulo:'Responder a Operaciones',corto:'Explicar a la jefatura',verbo:'Explica',competencia:'fe',
+   escena:'<p>Vuelve al <b>correo de la jefatura de Operaciones</b>.</p>',
+   consigna:'a la jefatura, en un correo breve, por qué no se pueden descontar todas las ausencias como vacaciones ni pagar en dinero el feriado de Martina, y cómo se registrará cada caso.',minPalabras:50,
+   modelo:'Solo el feriado de Paula se descuenta de sus vacaciones. Los días de Andrés (nacimiento), Sofía (fallecimiento de su padre), Ignacio (unión civil) y Elena (mamografía) son permisos legales pagados, que no se descuentan del feriado. La licencia de Jorge suspende la prestación de servicios y se paga con subsidio: tampoco es feriado. En el caso de Martina, la licencia suspendió su feriado y retomará después los días pendientes; el feriado no se compensa en dinero mientras la relación laboral sigue vigente. Registraremos cada ausencia con su motivo y su respaldo.',
+   criterios:['Distingue feriado, permisos legales y licencia médica.','Explica que la licencia suspende el feriado y que este no se paga en dinero mientras dura la relación.','Indica cómo se registrará cada ausencia con su motivo y respaldo.']}
+ ],
+ cierre:'<b>Idea clave:</b> antes de descontar, calcular o responder, identifica la regla que corresponde a cada situación: feriado, permiso legal, licencia, protección a la maternidad y paternidad, derecho de las personas cuidadoras o cuota de inclusión. Cada una tiene su propio requisito, plazo y respaldo.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

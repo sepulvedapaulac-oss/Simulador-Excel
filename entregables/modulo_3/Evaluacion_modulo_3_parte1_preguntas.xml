@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category"><category><text>$course$/top/Legislación laboral/Módulo 3/Evaluación del módulo 3</text></category><info format="html"><text></text></info></question>
+  <question type="multichoice">
+    <name><text>m3.p1</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La jefatura de Ventas de Horizonte Servicios sospecha que Martín filtra información y le pide a Camila revisar el <b>WhatsApp y el correo personal</b> de Martín, sin avisarle. El reglamento interno no contempla ninguna medida de ese tipo.</p><p>¿Qué debería hacer Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 5, 154 y 154 bis; criterio de la Dirección del Trabajo. Lección 3.1.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p1</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Las comunicaciones privadas son un límite del poder de dirección; cualquier control debe pasar el test de proporcionalidad y estar en el reglamento interno.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa los artículos 5 y 154 del Código del Trabajo: la vida privada y las comunicaciones privadas limitan el poder de dirección.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Autorizar la revisión, porque el poder de dirección permite controlar a cualquier trabajador cuando hay sospechas.]]></text><feedback format="html"><text><![CDATA[El poder de dirección tiene como límite las garantías constitucionales, en especial la intimidad, la vida privada y la honra (art. 5 CT).]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[No autorizarla: las comunicaciones privadas son inviolables; si se requiere control, debe ser una medida general e impersonal, prevista en el reglamento interno y proporcional.]]></text><feedback format="html"><text><![CDATA[Correcto: el empleador no puede revisar comunicaciones privadas, y las medidas de control deben estar en el reglamento interno, ser generales, impersonales e idóneas.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Autorizarla siempre que la revisión la haga solo la jefatura y la información no se comparta.]]></text><feedback format="html"><text><![CDATA[Guardar reserva no corrige el problema: la revisión misma vulnera la inviolabilidad de las comunicaciones privadas.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Autorizarla si Martín firma después un documento aceptando la revisión.]]></text><feedback format="html"><text><![CDATA[Una firma posterior no legitima una revisión de comunicaciones privadas hecha sin cumplir los límites del poder de dirección.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p2</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Cuál es el plazo para presentar una denuncia de tutela laboral por vulneración de derechos fundamentales?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 485 y siguientes. Lección 3.1.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p2</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> El plazo es de 60 días hábiles y puede suspenderse por un reclamo administrativo, con un tope de 90 días hábiles.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> El plazo de la tutela laboral es de 60 días hábiles desde la vulneración o el despido, con suspensión por reclamo ante la Inspección y un máximo de 90 días hábiles.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[30 días corridos desde la vulneración, sin posibilidad de suspensión.]]></text><feedback format="html"><text><![CDATA[El plazo de 30 días corresponde a la investigación interna de la Ley Karin, no a la tutela laboral.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[6 meses desde el término de la relación laboral.]]></text><feedback format="html"><text><![CDATA[La tutela tiene un plazo propio, contado desde la vulneración o el despido.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[90 días hábiles desde la vulneración, en todos los casos.]]></text><feedback format="html"><text><![CDATA[90 días hábiles es el máximo total cuando el plazo se suspende por un reclamo ante la Inspección; el plazo base es de 60 días hábiles.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[60 días hábiles desde la vulneración o el despido; se suspende si se reclama ante la Inspección del Trabajo, sin exceder 90 días hábiles en total.]]></text><feedback format="html"><text><![CDATA[Correcto: ese es el plazo de la tutela laboral.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p3</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Horizonte Servicios busca un <b>encargado o encargada de tesorería</b>, que tendrá a su cargo la recaudación y custodia de los fondos de la empresa. Camila duda si puede pedir un informe de antecedentes comerciales a quienes postulen.</p><p>¿Qué corresponde?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 2. Lección 3.2.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p3</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La exigencia de no tener deudas solo es válida en los cargos que la ley exceptúa, como quienes custodian fondos.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa la regla del artículo 2 sobre antecedentes económicos y sus excepciones para cargos que manejan fondos o valores.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Puede pedirlo, porque la ley exceptúa a quienes tienen a su cargo la recaudación, administración o custodia de fondos o valores.]]></text><feedback format="html"><text><![CDATA[Correcto: la prohibición de condicionar la contratación a la ausencia de deudas tiene esa excepción, junto con gerentes, subgerentes, agentes o apoderados con facultades generales de administración.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[No puede pedirlo en ningún caso, porque la situación socioeconómica es un motivo protegido.]]></text><feedback format="html"><text><![CDATA[La regla general prohíbe condicionar la contratación a no tener deudas, pero la ley exceptúa los cargos que manejan fondos o valores.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Puede pedirlo para cualquier cargo, siempre que lo indique en el aviso.]]></text><feedback format="html"><text><![CDATA[Fuera de las excepciones legales, no se puede condicionar la contratación a la ausencia de obligaciones económicas, aunque se avise.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Solo puede pedirlo después de contratar a la persona.]]></text><feedback format="html"><text><![CDATA[La excepción se refiere al tipo de cargo, no al momento en que se pide el antecedente.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p4</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Según el artículo 62 bis del Código del Trabajo, ¿cuándo una diferencia de remuneraciones entre un hombre y una mujer que prestan un mismo trabajo <b>no</b> se considera arbitraria?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 62 bis. Lección 3.2.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p4</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La igualdad de remuneraciones admite diferencias solo cuando se basan en criterios objetivos.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> El artículo 62 bis solo admite diferencias objetivas fundadas en capacidades, calificaciones, idoneidad, responsabilidad o productividad.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Cuando el hombre fue contratado antes de que existiera la norma.]]></text><feedback format="html"><text><![CDATA[La antigüedad de la contratación no es por sí misma un criterio objetivo de los que menciona la ley.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Cuando la mujer aceptó por escrito un sueldo menor al firmar su contrato.]]></text><feedback format="html"><text><![CDATA[La aceptación de un sueldo menor no transforma en objetiva una diferencia basada en el sexo.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Cuando se funda en criterios objetivos como capacidades, calificaciones, idoneidad, responsabilidad o productividad.]]></text><feedback format="html"><text><![CDATA[Correcto: esas son las diferencias objetivas que la ley no considera arbitrarias.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Cuando la empresa tiene menos de 200 trabajadores.]]></text><feedback format="html"><text><![CDATA[El umbral de 200 trabajadores se refiere al registro de cargos en el reglamento interno, no a la igualdad de remuneraciones, que rige para todas las empresas.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p5</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Diego, analista de Horizonte Servicios, será padre el próximo mes. Su jefatura le sugiere usar días de vacaciones para acompañar el nacimiento.</p><p>¿Qué debería responder Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 195. Lección 3.3.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p5</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> El permiso del padre por nacimiento es de 5 días pagados e irrenunciables.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el artículo 195: permiso pagado de 5 días para el padre, desde el parto o dentro del primer mes.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Que debe usar sus vacaciones, porque el permiso por nacimiento solo existe para la madre.]]></text><feedback format="html"><text><![CDATA[El padre tiene un permiso pagado propio por el nacimiento (art. 195).]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Que tiene un permiso pagado de 5 días por nacimiento, que puede usar desde el parto o distribuir dentro del primer mes, y que no se descuenta de sus vacaciones.]]></text><feedback format="html"><text><![CDATA[Correcto: es un permiso pagado por el empleador e irrenunciable.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que tiene 5 días de permiso, pero sin goce de remuneración.]]></text><feedback format="html"><text><![CDATA[El permiso por nacimiento es pagado y lo paga el empleador.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que puede usar 5 días cuando le acomode durante el año.]]></text><feedback format="html"><text><![CDATA[El permiso se usa desde el parto o distribuido dentro del primer mes desde el nacimiento.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p6</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué establece el derecho de alimentación del artículo 206 del Código del Trabajo?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 206. Lección 3.3.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p6</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> El derecho de alimentación es de al menos 1 hora diaria, para hijos menores de 2 años, y se considera tiempo trabajado.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el artículo 206: al menos 1 hora diaria, hijos menores de 2 años, tiempo considerado trabajado.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Que las madres con hijos menores de 1 año tienen 30 minutos diarios, descontables de la remuneración.]]></text><feedback format="html"><text><![CDATA[La edad, el tiempo y el pago son distintos: hijos menores de 2 años, al menos 1 hora diaria, considerada como trabajada.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que solo puede ejercerse al inicio de la jornada.]]></text><feedback format="html"><text><![CDATA[Puede ejercerse en cualquier momento de la jornada, dividirse o usarse para postergar el inicio o adelantar el término.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que solo existe en empresas obligadas a tener sala cuna.]]></text><feedback format="html"><text><![CDATA[El derecho de alimentación no depende de la obligación de sala cuna.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Que las madres con hijos menores de 2 años disponen de al menos 1 hora diaria para alimentarlos, y ese tiempo se considera trabajado.]]></text><feedback format="html"><text><![CDATA[Correcto: además, puede dividirse o usarse para postergar el inicio o adelantar el término de la jornada.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p7</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Según la Ley 21.561 (40 horas), ¿qué derecho tienen quienes tienen el cuidado personal de niños o niñas <b>menores de 12 años</b>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Ley 21.561. Lección 3.4.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p7</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La banda horaria permite adaptar el inicio y el término de la jornada a las necesidades de cuidado.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> La Ley 21.561 da a quienes cuidan menores de 12 años una banda de hasta 2 horas para anticipar o retrasar hasta 1 hora el inicio y el término de la jornada.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Una banda de hasta 2 horas para anticipar o retrasar hasta 1 hora el inicio de la jornada, y su término en igual medida.]]></text><feedback format="html"><text><![CDATA[Correcto: es la banda horaria para personas cuidadoras de menores de 12 años, en las condiciones legales.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Una reducción de su jornada semanal a 30 horas con la misma remuneración.]]></text><feedback format="html"><text><![CDATA[La ley no establece una reducción de jornada para este grupo, sino una banda para mover el inicio y el término.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Trabajar a distancia de forma obligatoria para el empleador.]]></text><feedback format="html"><text><![CDATA[El trabajo a distancia para personas cuidadoras es una solicitud que el empleador responde en 15 días según la Ley 21.645, y depende de las funciones.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Dos días adicionales de feriado al año.]]></text><feedback format="html"><text><![CDATA[La Ley 21.561 no agrega días de feriado por cuidado de menores de 12 años.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p8</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Héctor cuida, sin recibir pago, a su padre en situación de <b>dependencia severa</b>. Solicita por escrito trabajar a distancia dos días a la semana y adjunta solo un <b>certificado del médico</b> de su padre.</p><p>¿Qué debería hacer Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 152 quáter O bis (Ley 21.645); criterio de la Dirección del Trabajo (2025). Lecciones 3.5 y 3.6.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p8</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Separa dos preguntas: ¿acredita la situación protegida con el antecedente correcto? y ¿sus funciones permiten trabajar a distancia?</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Quien cuida sin remuneración a una persona con dependencia severa o moderada es beneficiario; la dependencia se acredita con el documento del Ministerio de Desarrollo Social y Familia, no con un certificado médico.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Rechazar la solicitud, porque el teletrabajo para cuidadores solo procede si se cuida a un niño menor de 14 años.]]></text><feedback format="html"><text><![CDATA[También son beneficiarias las personas que cuidan, sin remuneración, a alguien con discapacidad o dependencia severa o moderada, sin importar su edad.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Aceptarla de inmediato, porque el certificado médico basta para acreditar la dependencia.]]></text><feedback format="html"><text><![CDATA[Según la Dirección del Trabajo (2025), para la dependencia no basta un certificado médico.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Registrar la fecha de recepción e indicarle que acompañe el documento del Ministerio de Desarrollo Social y Familia que acredita la calidad de persona cuidadora, que se tramita a través del Registro Social de Hogares; luego analizar sus funciones.]]></text><feedback format="html"><text><![CDATA[Correcto: Héctor es potencial beneficiario, pero debe acreditar la situación con el antecedente que corresponde, y la empresa debe analizar si las funciones lo permiten.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Pedirle que demuestre que no hay otro familiar que pueda cuidar a su padre.]]></text><feedback format="html"><text><![CDATA[La ley no exige acreditar que no exista otra persona que pueda cuidar.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p9</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Fallece la cónyuge de Ricardo, administrativo de Horizonte Servicios. Su jefatura propone que se tome "unos días de vacaciones" o, si prefiere seguir trabajando, pagarle el permiso en dinero.</p><p>¿Qué corresponde?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 66. Lección 3.7.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p9</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Los permisos por fallecimiento son pagados, se usan desde el fallecimiento, no se cambian por dinero y, en este caso, dan fuero de un mes.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el artículo 66: por fallecimiento del cónyuge o conviviente civil corresponden 7 días corridos, no compensables en dinero, con fuero de un mes.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[4 días hábiles de permiso pagado, que puede tomar cuando quiera durante el año.]]></text><feedback format="html"><text><![CDATA[Los 4 días hábiles corresponden al fallecimiento del padre, la madre o un hermano o hermana; además, el permiso se usa desde el día del fallecimiento.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que use sus vacaciones, porque el permiso por fallecimiento solo existe por la muerte de un hijo.]]></text><feedback format="html"><text><![CDATA[La ley contempla permisos por fallecimiento de hijo, cónyuge o conviviente civil, hijo en gestación, padre, madre y hermanos.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[7 días corridos de permiso pagado desde el día del fallecimiento, que no son compensables en dinero, y fuero de un mes.]]></text><feedback format="html"><text><![CDATA[Correcto: por fallecimiento del cónyuge o conviviente civil corresponden 7 días corridos, y el permiso da fuero de un mes.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[7 días corridos de permiso pagado, que puede cambiar por dinero si prefiere trabajar.]]></text><feedback format="html"><text><![CDATA[El permiso por fallecimiento no es compensable en dinero.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m3.p10</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Una empresa de servicios cliente de Horizonte tiene un promedio de <b>150 personas trabajadoras</b> y no tiene contratada a ninguna persona con discapacidad ni asignataria de pensión de invalidez.</p><p>¿Qué exige hoy la Ley 21.015?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Ley 21.015; Ley 21.690; Código del Trabajo, arts. 157 bis y 157 ter. Lección 3.8.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m3.p10</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La cuota exigible es del 1% desde 100 trabajadores, junto con el registro de contratos y la comunicación anual.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Empresas con 100 o más trabajadores deben tener al menos el 1% de personas con discapacidad o pensión de invalidez; el 2% aún no se aplica.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Contratar o mantener contratada al menos a 1 persona con discapacidad o asignataria de pensión de invalidez, registrar su contrato en la Dirección del Trabajo dentro de 15 días y comunicar el cumplimiento en enero.]]></text><feedback format="html"><text><![CDATA[Correcto: con 150 trabajadores, el 1% exigible hoy equivale a 1 persona, con las obligaciones de registro y comunicación.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Nada, porque la cuota solo se exige desde 200 trabajadores.]]></text><feedback format="html"><text><![CDATA[La obligación nace desde 100 personas trabajadoras.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Contratar a 3 personas, porque la cuota vigente es el 2%.]]></text><feedback format="html"><text><![CDATA[El 2% de la Ley 21.690 aún no se activa; la cuota exigible sigue siendo el 1%.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Hacer una donación a una fundación, que puede elegir libremente en lugar de contratar.]]></text><feedback format="html"><text><![CDATA[Las medidas alternativas solo proceden por razones fundadas, como la naturaleza de las funciones o la falta de personas interesadas.]]></text></feedback></answer>
+  </question>
+</quiz>
