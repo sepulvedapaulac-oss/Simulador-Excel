@@ -1,0 +1,102 @@
+<title>Actividad práctica 1 — La reestructuración del área de facturación</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'actividad',codigo:'M5_AP1',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 5 · ACTIVIDAD PRÁCTICA 1',
+ eyebrow:'Actividad práctica 1 · Caso ramificado',
+ titulo:'La reestructuración del área de facturación',
+ contexto:'<p>Horizonte Servicios automatizará su facturación y suprimirá cargos del área de facturación manual. La gerencia le pide a Camila "desvincular por necesidades de la empresa" a tres personas, y aprovechar de incluir a alguien con quien "ya no hay confianza". Acompaña a Camila desde la elección de la causal hasta la carta y sus plazos: cada decisión cambia lo que pasa después.</p>',
+ objetivos:['<b>Analizar</b> si los hechos permiten sostener la causal de necesidades de la empresa para cada persona.','<b>Revisar</b> la carta de término: causal, hechos, cotizaciones y monto a pagar.','<b>Explicar</b> a la gerencia los plazos, la copia a la Inspección y los riesgos de una causal mal aplicada.'],
+ tiempo:'25–35 min',resumen:'5 decisiones · 2 respuestas de desarrollo',
+ expediente:[
+  {titulo:'Correo de la gerencia (lunes 5 de octubre)',html:'<p>"Camila: con la facturación automatizada, el área de facturación manual se suprime desde noviembre. Hay que desvincular a <b>Rodrigo Fuentes</b> y a <b>Marcela Soto</b>. Aprovechemos de incluir a <b>Pablo Reyes</b>, de cobranzas: con su jefatura ya no hay confianza. Usa necesidades de la empresa para los tres; es lo más rápido. Rodrigo sale el viernes 16 de octubre: no alcanzamos a darle 30 días de aviso."</p>'},
+  {titulo:'Ficha de las personas mencionadas',html:'<table><tr><th>Persona</th><th>Cargo y área</th><th>Situación</th></tr><tr><td>Rodrigo Fuentes</td><td>Analista de facturación manual (cargo suprimido)</td><td>Contrato indefinido desde marzo de 2019. Activo.</td></tr><tr><td>Marcela Soto</td><td>Asistente de facturación manual (cargo suprimido)</td><td>Contrato indefinido desde 2021. <b>Con licencia médica</b> del 28 de septiembre al 25 de octubre.</td></tr><tr><td>Pablo Reyes</td><td>Analista de cobranzas (su área no cambia)</td><td>Contrato indefinido desde 2020. Sin amonestaciones ni registros de incumplimiento.</td></tr></table>'},
+  {titulo:'Acta de la gerencia general (15 de septiembre)',html:'<p>Se aprueba implementar la facturación electrónica automatizada. A contar del 1 de noviembre se suprimen los cargos de <b>Analista de facturación manual</b> y <b>Asistente de facturación manual</b>, cuyas tareas pasan a ser realizadas por el nuevo sistema.</p>'},
+  {titulo:'Estado de cotizaciones de Rodrigo (sistema de pago previsional)',html:'<table><tr><th>Mes</th><th>Estado</th></tr><tr><td>Julio</td><td>Pagadas</td></tr><tr><td>Agosto</td><td>Pagadas</td></tr><tr><td>Septiembre</td><td><b>Declaradas y no pagadas</b> (error en la transferencia bancaria)</td></tr></table>'},
+  {titulo:'Reglas legales (arts. 161 y 162 del Código del Trabajo)',html:'<p><b>Art. 161:</b> necesidades de la empresa, como la racionalización o modernización, que hagan necesaria la separación. Se funda en hechos objetivos de la organización; no sirve para problemas de desempeño, conducta o relaciones personales. No puede invocarse respecto de personas con licencia médica.</p><p><b>Art. 162:</b> comunicación escrita (personalmente o por carta certificada al domicilio del contrato) con la causal, los hechos y el estado de pago de las cotizaciones devengadas hasta el último día del mes anterior, con comprobantes. Plazo: 3 días hábiles desde la separación; copia a la Inspección del Trabajo en el mismo plazo. En el art. 161, aviso de 30 días o indemnización sustitutiva (la carta indica el monto total a pagar). Si las cotizaciones no están pagadas, el despido no pone término al contrato hasta que se convalide.</p>'}
+ ],
+ competencias:[
+  {id:'causal',nombre:'Elegir la causal según los hechos',fortaleza:'vinculas la causal con hechos objetivos y reconoces cuándo no puede invocarse.',mejora:'repasa los requisitos del art. 161, sus límites (licencia médica, problemas de desempeño o de relación) y la diferencia con las causales del art. 160.',repasar:'Lecciones 5.1 y 5.3'},
+  {id:'carta',nombre:'Redactar la comunicación del término',fortaleza:'sabes qué debe contener la carta para servir como evidencia.',mejora:'repasa las menciones de la carta del art. 162 y por qué en juicio solo pueden alegarse los hechos señalados en ella.',repasar:'Lección 5.4'},
+  {id:'prev',nombre:'Plazos, cotizaciones y Ley Bustos',fortaleza:'aplicas los plazos de comunicación y verificas las cotizaciones antes del despido.',mejora:'repasa el plazo de 3 días hábiles, la copia a la Inspección y el efecto de despedir con cotizaciones impagas.',repasar:'Lección 5.4'}
+ ],
+ inicio:'e1',
+ etapas:[
+  {id:'e1',tipo:'decision',titulo:'¿A quién y por qué causal?',corto:'Elegir la causal',competencia:'causal',
+   escena:'<p>Camila abre el <b>expediente</b>: el correo de la gerencia, la ficha de las tres personas y el acta del 15 de septiembre. La gerencia quiere la nómina hoy.</p>',
+   pregunta:'¿Qué propuesta lleva Camila a la gerencia?',
+   ideal:'aplicar el art. 161 solo a Rodrigo, cuyo cargo se suprime por un hecho objetivo documentado; no incluir a Marcela mientras esté con licencia médica, ni a Pablo, cuya situación no se relaciona con la reestructuración.',
+   opciones:[
+    {texto:'Incluir a los tres por necesidades de la empresa: como se les pagará indemnización, nadie tendrá motivo para reclamar.',pts:0,fb:'El pago no "repara" una causal mal elegida. La causal del art. 161 exige hechos objetivos de la organización: no los hay respecto de Pablo, y no puede invocarse respecto de Marcela mientras esté con licencia médica. Si un tribunal la declara improcedente, la indemnización por años de servicio se recarga en 30%.',siguiente:'e2x'},
+    {texto:'Aplicar el art. 161 solo a Rodrigo, fundado en la supresión de su cargo aprobada en el acta; dejar fuera a Marcela mientras esté con licencia médica y a Pablo, cuya área no cambia.',pts:2,fb:'Correcto: la causal se elige según los hechos reales. La supresión del cargo de Rodrigo es un hecho objetivo y documentado. La licencia médica de Marcela impide invocar el art. 161, y una relación tensa con la jefatura no es una necesidad de la empresa.',siguiente:'e2'},
+    {texto:'Aplicar el art. 161 a Rodrigo y a Marcela, porque ambos cargos se suprimen, y dejar fuera a Pablo.',pts:1,fb:'Bien al excluir a Pablo: su situación no tiene relación con la reestructuración. Pero el art. 161 no puede invocarse respecto de una persona con licencia médica, como Marcela.',siguiente:'e2x'}]},
+  {id:'e2x',tipo:'decision',titulo:'La nómina vuelve con observaciones',corto:'Corregir el rumbo',competencia:'causal',
+   escena:'<p>La abogada externa de Horizonte revisa la nómina antes de que se firme y la devuelve con una nota: <i>"Revisen la situación de Marcela (ver ficha) y la de cualquier persona que no pertenezca al área suprimida. Si un tribunal declara improcedente la causal del art. 161, la indemnización por años de servicio se recarga en 30%."</i></p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'retirar a Marcela mientras dure su licencia y a Pablo, dejando registro de los motivos; si existen problemas con Pablo, se analizan aparte, con sus propios hechos y evidencia.',
+   opciones:[
+    {texto:'Mantener a Marcela, pero entregarle la carta con una fecha de término posterior al fin de su licencia.',pts:0,fb:'Mientras Marcela está con licencia médica no puede invocarse respecto de ella el art. 161. Cambiar la fecha de término en la carta no resuelve ese límite.',siguiente:'e3'},
+    {texto:'Retirar de la nómina a Marcela (mientras esté con licencia) y a Pablo, y dejar por escrito los motivos de cada exclusión; si hay problemas con Pablo, se analizarán aparte con sus propios hechos.',pts:2,fb:'Correcto: corriges el rumbo antes de que el error produzca efectos y dejas respaldo de por qué cada persona queda o no en la nómina.',siguiente:'e3'},
+    {texto:'Retirar a Marcela y a Pablo de la nómina, sin dejar registro de los motivos para no "complicar" a la gerencia.',pts:1,fb:'La decisión de fondo es correcta, pero sin registro no queda evidencia de cómo se aplicó la causal ni de por qué se excluyó a cada persona.',siguiente:'e3'}]},
+  {id:'e2',tipo:'decision',titulo:'La jefatura de Pablo insiste',corto:'Otra causal para Pablo',competencia:'causal',
+   escena:'<p>La jefatura de cobranzas reacciona: <i>"Si no puede ser por necesidades de la empresa, despidámoslo por incumplimiento grave de sus obligaciones (art. 160 N°7). Así además no se le paga indemnización."</i> La ficha de Pablo no registra amonestaciones ni incumplimientos.</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'explicar que una causal se elige según hechos reales y comprobados, y que sin hechos documentados no hay incumplimiento grave; los problemas de desempeño se gestionan y registran antes de cualquier decisión.',
+   opciones:[
+    {texto:'Que aplique el art. 160 N°7: es la causal que no genera indemnización.',pts:0,fb:'Elegir la causal por su costo es "construirla" después de decidir. Sin hechos comprobados no hay incumplimiento grave; si un tribunal declara injustificado un despido por art. 160, la indemnización por años de servicio se recarga en 80%, y hasta 100% si no había motivo plausible.',siguiente:'e3'},
+    {texto:'Que no se puede hacer nada con Pablo, sin más explicación.',pts:1,fb:'Es cierto que hoy no hay causal, pero la respuesta no orienta a la jefatura: si existen problemas de desempeño, deben gestionarse y registrarse con hechos concretos.',siguiente:'e3'},
+    {texto:'Que una causal disciplinaria exige hechos graves y comprobados; hoy no existen. Si hay problemas de desempeño, deben gestionarse y registrarse antes de evaluar cualquier decisión.',pts:2,fb:'Correcto: la causal se elige según los hechos reales y debe poder probarse. Sin registros, invocar el art. 160 expone a la empresa a que el despido se declare injustificado.',siguiente:'e3'}]},
+  {id:'e3',tipo:'abierta',titulo:'¿Los hechos sostienen la causal?',corto:'Analizar los hechos',verbo:'Analiza',
+   escena:'<p>Revisa el <b>acta de la gerencia general</b> y la <b>ficha</b> de Rodrigo en el expediente.</p>',
+   consigna:'si los hechos permiten sostener la causal de necesidades de la empresa respecto de Rodrigo y qué antecedentes conservarías como respaldo de la decisión.',minPalabras:40,
+   modelo:'La causal del art. 161 se funda en hechos objetivos de la organización. Aquí existe un hecho concreto y documentado: el acta del 15 de septiembre aprueba la automatización y suprime el cargo de Analista de facturación manual desde el 1 de noviembre, que es el de Rodrigo. No hay licencia médica que impida invocarla. Conservaría el acta, la descripción del nuevo proceso, el organigrama antes y después, la carta, los comprobantes de cotizaciones y el cálculo del finiquito.',
+   criterios:['Relaciona la causal con un hecho objetivo de la organización (supresión del cargo por modernización).','Verifica que no exista un impedimento (por ejemplo, licencia médica).','Enumera respaldos concretos: acta, nuevo proceso, carta, cotizaciones, cálculo.'],siguiente:'e4'},
+  {id:'e4',tipo:'decision',titulo:'El borrador de la carta',corto:'Revisar la carta',competencia:'carta',
+   escena:'<p>La gerencia envía este borrador para Rodrigo:</p><p style="border:1px dashed var(--line);border-radius:10px;padding:10px 12px;background:var(--surface)"><i>"Santiago, 16 de octubre de 2026. Por medio de la presente comunicamos a usted que se pone término a su contrato de trabajo a contar de esta fecha, por la causal del artículo 161 del Código del Trabajo. Saluda atentamente, Gerencia de Horizonte Servicios."</i></p>',
+   pregunta:'¿Qué hace Camila con el borrador?',
+   ideal:'completarlo con los hechos concretos, el estado de pago de las cotizaciones con sus comprobantes y, como no hubo aviso de 30 días, la indemnización sustitutiva y el monto total a pagar.',
+   opciones:[
+    {texto:'Lo completa: hechos concretos (supresión del cargo por la automatización aprobada en el acta), estado de pago de las cotizaciones con comprobantes y, como no hay aviso de 30 días, el monto total a pagar, incluida la indemnización sustitutiva.',pts:2,fb:'Correcto: la carta debe indicar la causal, los hechos en que se funda y el estado de las cotizaciones; en el art. 161 sin aviso previo, además, el monto total a pagar. En juicio, la empresa no puede alegar hechos distintos de los señalados en la carta (art. 454 N°1).',siguiente:'e5'},
+    {texto:'Agrega solo el estado de pago de las cotizaciones; los hechos "se explican si Rodrigo reclama".',pts:1,fb:'Las cotizaciones son una mención obligatoria, pero la carta también debe explicar los hechos. Si Rodrigo demanda, la empresa no podrá alegar hechos distintos de los que señala la carta.',siguiente:'e5'},
+    {texto:'Lo deja tal cual: citar el artículo 161 es suficiente.',pts:0,fb:'Citar el artículo no basta: la carta debe explicar los hechos, informar las cotizaciones y, sin aviso de 30 días, el monto total a pagar. Las omisiones pueden sancionarse y debilitan la defensa de la empresa en un juicio.',siguiente:'e5'}]},
+  {id:'e5',tipo:'decision',titulo:'Las cotizaciones de septiembre',corto:'Cotizaciones',competencia:'prev',
+   escena:'<p>Al reunir los comprobantes, Camila revisa el <b>estado de cotizaciones</b> del expediente: las de septiembre de Rodrigo figuran <b>declaradas y no pagadas</b> por un error en la transferencia. La gerencia dice: <i>"Despidámoslo igual el viernes y lo pagamos con el finiquito."</i></p>',
+   pregunta:'¿Qué decide Camila?',
+   ideal:'pagar las cotizaciones de septiembre antes del despido y adjuntar los comprobantes a la carta.',
+   opciones:[
+    {texto:'Despedir el viernes como pide la gerencia; las cotizaciones se pagan después, con el finiquito.',pts:0,fb:'Si al momento del despido las cotizaciones no están íntegramente pagadas, el despido no pone término al contrato (art. 162, "Ley Bustos"): la empresa sigue debiendo remuneraciones y cotizaciones hasta convalidarlo.',siguiente:'e6x'},
+    {texto:'Pagar las cotizaciones de septiembre antes del despido y adjuntar los comprobantes a la carta.',pts:2,fb:'Correcto: la carta debe informar el estado de pago de las cotizaciones hasta el último día del mes anterior, con comprobantes. Pagarlas antes evita que el despido quede sin efecto.',siguiente:'e6'},
+    {texto:'Mencionar en la carta que septiembre está "en proceso de pago" y despedir igual el viernes.',pts:1,fb:'Informar la situación es mejor que ocultarla, pero no resuelve el problema: con cotizaciones impagas, el despido no pone término al contrato hasta que se paguen y se comunique por carta certificada.',siguiente:'e6x'}]},
+  {id:'e6',tipo:'decision',titulo:'Entregar la carta a tiempo',corto:'Plazo y copia',competencia:'prev',
+   escena:'<p>Las cotizaciones quedan pagadas y la carta está completa. Rodrigo deja de prestar servicios el viernes 16 de octubre y recibirá la indemnización sustitutiva del aviso previo.</p>',
+   pregunta:'¿Cómo y cuándo se comunica el término?',
+   ideal:'entregar la carta personalmente o enviarla por carta certificada al domicilio del contrato dentro de los 3 días hábiles siguientes a la separación, y enviar copia a la Inspección del Trabajo dentro del mismo plazo.',
+   opciones:[
+    {texto:'Entregarla dentro de 3 días hábiles y enviar la copia a la Inspección al cerrar el mes, junto con el finiquito.',pts:1,fb:'El plazo para Rodrigo es correcto, pero la copia a la Inspección del Trabajo debe enviarse dentro del mismo plazo (puede hacerse electrónicamente en el sitio de la Dirección del Trabajo).',siguiente:'e7'},
+    {texto:'Mandarle una foto de la carta por mensajería dentro de 30 días hábiles.',pts:0,fb:'La carta se entrega personalmente o por carta certificada al domicilio señalado en el contrato, dentro de los 3 días hábiles siguientes a la separación.',siguiente:'e7'},
+    {texto:'Entregarla personalmente (o por carta certificada al domicilio del contrato) dentro de los 3 días hábiles siguientes a la separación, y enviar copia a la Inspección del Trabajo en el mismo plazo.',pts:2,fb:'Correcto: así se cumple el art. 162. La copia a la Inspección puede enviarse electrónicamente por el sitio de la Dirección del Trabajo.',siguiente:'e7'}]},
+  {id:'e6x',tipo:'decision',titulo:'El despido no produjo efecto',corto:'Corregir el rumbo',competencia:'prev',
+   escena:'<p>Dos semanas después, Rodrigo consulta en la Inspección del Trabajo y vuelve con una pregunta: <i>"Me dijeron que, como mis cotizaciones de septiembre no estaban pagadas, mi despido no puso término al contrato. ¿Qué va a pasar?"</i></p>',
+   pregunta:'¿Qué debe hacer Horizonte para corregir el rumbo?',
+   ideal:'pagar las cotizaciones morosas y comunicarlo a Rodrigo por carta certificada (convalidar el despido); hasta entonces, la empresa debe pagar las remuneraciones y cotizaciones del período.',
+   opciones:[
+    {texto:'Pagar las cotizaciones morosas y comunicarlo a Rodrigo por carta certificada; hasta convalidar, la empresa debe las remuneraciones y cotizaciones del período.',pts:2,fb:'Correcto: el despido se convalida pagando las cotizaciones morosas y comunicándolo por carta certificada. El costo de la demora corre por cuenta del empleador.',siguiente:'e7'},
+    {texto:'Pagar las cotizaciones morosas, sin avisarle a Rodrigo.',pts:1,fb:'Pagar es indispensable, pero la convalidación exige además comunicarlo a la persona por carta certificada.',siguiente:'e7'},
+    {texto:'Nada: el despido ya ocurrió y la deuda con la AFP es un asunto aparte.',pts:0,fb:'Mientras no se convalide, el despido no pone término al contrato y la empresa sigue debiendo remuneraciones y cotizaciones.',siguiente:'e7'}]},
+  {id:'e7',tipo:'abierta',titulo:'Explicar la decisión a la gerencia',corto:'Explicar',verbo:'Explica',
+   consigna:'a la gerencia, en un mensaje breve, por qué no se podía usar "necesidades de la empresa" para las tres personas y qué riesgos evita Horizonte al elegir bien la causal, completar la carta y pagar las cotizaciones antes del despido.',minPalabras:50,
+   modelo:'La causal se elige según hechos reales. Solo el cargo de Rodrigo se suprimió por un hecho objetivo; a Marcela no se le puede aplicar el art. 161 mientras está con licencia médica, y una falta de confianza con Pablo no es una necesidad de la empresa. Si un tribunal declara improcedente el art. 161, la indemnización por años de servicio se recarga en 30%, y la persona tiene 60 días hábiles para demandar. Además, en juicio solo podemos alegar los hechos de la carta, y si despedimos con cotizaciones impagas el despido no pone término al contrato hasta convalidarlo.',
+   criterios:['Explica por qué cada persona queda o no dentro de la causal (hecho objetivo, licencia médica, relación personal).','Menciona al menos una consecuencia: recargo de 30%, plazo de 60 días hábiles para demandar o la regla del art. 454 N°1.','Incluye el efecto de despedir con cotizaciones impagas (Ley Bustos).']}
+ ],
+ cierre:'<b>Idea clave:</b> primero los hechos, después la causal. La carta debe explicar esos hechos, informar las cotizaciones pagadas y, en el art. 161 sin aviso, el monto total a pagar; se entrega dentro de 3 días hábiles, con copia a la Inspección.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

@@ -1,6 +1,6 @@
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const clp=n=>'$'+Math.round(n).toLocaleString('es-CL');
-const num=v=>{v=String(v||'').trim();if(!v)return NaN;if(/,\d{1,2}$/.test(v))v=v.replace(/\./g,'').replace(',','.');else v=v.replace(/[^\d.-]/g,'').replace(/\.(?=\d{3}(\D|$))/g,'');return parseFloat(v)};
+const num=v=>{v=String(v||'').replace(/[^\d.,-]/g,'').replace(/[.,]+$/,'');if(!v)return NaN;if(/,\d{1,2}$/.test(v))v=v.replace(/\./g,'').replace(',','.');else v=v.replace(/[^\d.-]/g,'').replace(/\.(?=\d{3}(\D|$))/g,'');return parseFloat(v)};
 const near=(a,b,t=2)=>Math.abs(a-b)<=t;
 
 /* ---------- SCORM 1.2 (solo informa el resultado final) ---------- */

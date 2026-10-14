@@ -1,0 +1,136 @@
+{
+ "categoria": "Legislación laboral/Módulo 5/Evaluación del módulo 5",
+ "puntaje": 2,
+ "preguntas": [
+  {
+   "id": "m5.p1", "tipo": "concepto",
+   "enunciado": "<p>Una jefatura le dice a Camila: \"Terminemos el contrato de esta persona y después vemos qué causal usamos\". ¿Cuál es el criterio correcto para elegir la causal de término?</p>",
+   "opciones": [
+    {"texto": "Elegir la causal que genere menos pagos para la empresa.", "fb": "Elegir la causal por su costo es construirla después de decidir; si los hechos no la sostienen, un tribunal puede declarar el despido injustificado, indebido o improcedente."},
+    {"texto": "Identificar la causal legal según los hechos reales antes de decidir, porque determina la carta, el aviso, los pagos y la evidencia.", "correcta": true, "fb": "Correcto: la causal se elige según los hechos reales, antes de decidir, y define todo el procedimiento posterior."},
+    {"texto": "Definir la causal al preparar el finiquito, porque solo afecta los montos.", "fb": "La causal no solo afecta los montos: también define la comunicación, el aviso y la evidencia necesaria."},
+    {"texto": "Usar siempre necesidades de la empresa, porque sirve para cualquier situación.", "fb": "El art. 161 exige hechos objetivos de la organización; no sirve para problemas de desempeño, conducta o relaciones personales."}
+   ],
+   "fb_correcta": "El contrato solo termina por una causal legal, que se elige según los hechos reales antes de decidir.",
+   "fb_incorrecta": "La causal no se construye después de decidir: se elige según los hechos reales y determina carta, aviso, pagos y evidencia.",
+   "fuente": "Código del Trabajo, arts. 159 a 161."
+  },
+  {
+   "id": "m5.p2", "tipo": "caso",
+   "enunciado": "<p>En octubre, Ignacio, operario de Horizonte Servicios, no se presentó a trabajar el lunes 5, el miércoles 14 y el viernes 23, sin aviso ni causa justificada. Los registros de asistencia lo confirman. ¿Qué causal describe esos hechos?</p>",
+   "opciones": [
+    {"texto": "Necesidades de la empresa (art. 161).", "fb": "El art. 161 se funda en hechos objetivos de la organización, no en la conducta de una persona."},
+    {"texto": "Abandono del trabajo (art. 160 N°4).", "fb": "El abandono es una causal distinta; aquí los hechos son inasistencias en días separados del mismo mes."},
+    {"texto": "No concurrencia sin causa justificada durante un total de tres días en el mes (art. 160 N°3).", "correcta": true, "fb": "Correcto: el art. 160 N°3 incluye la no concurrencia sin causa justificada dos días seguidos, dos lunes en el mes o un total de tres días en el mes."},
+    {"texto": "Vencimiento del plazo convenido (art. 159 N°4).", "fb": "El vencimiento del plazo es una causal objetiva que no se relaciona con inasistencias."}
+   ],
+   "fb_correcta": "Tres inasistencias injustificadas en el mes, debidamente registradas, se enmarcan en el art. 160 N°3.",
+   "fb_incorrecta": "Revisa el art. 160 N°3: dos días seguidos, dos lunes en el mes o un total de tres días en el mes sin causa justificada.",
+   "fuente": "Código del Trabajo, art. 160 N°3."
+  },
+  {
+   "id": "m5.p3", "tipo": "caso",
+   "enunciado": "<p>Diego ha trabajado en Horizonte Servicios con tres contratos a plazo fijo, separados por algunas semanas sin trabajo, y en total ha prestado servicios durante 13 meses dentro de un período de 15 meses. La jefatura quiere terminar el último contrato por vencimiento del plazo. ¿Qué debe advertir Camila?</p>",
+   "opciones": [
+    {"texto": "Que la ley presume que Diego tiene un contrato indefinido, por haber prestado servicios discontinuos en virtud de más de dos contratos a plazo durante 12 meses o más en un período de 15 meses.", "correcta": true, "fb": "Correcto: es la presunción legal de contrato indefinido por contratos a plazo discontinuos."},
+    {"texto": "Que puede terminarse por vencimiento del plazo, porque hubo semanas sin trabajo entre los contratos.", "fb": "La presunción considera precisamente los servicios discontinuos: más de dos contratos a plazo durante 12 meses o más en 15 meses."},
+    {"texto": "Que el contrato solo sería indefinido si Diego tuviera un título profesional.", "fb": "El título profesional o técnico solo amplía la duración máxima del plazo fijo a 2 años; no define si opera la presunción."},
+    {"texto": "Que basta con avisarle con 30 días de anticipación para terminar por vencimiento.", "fb": "El problema no es el aviso, sino que la ley presume que el contrato es indefinido."}
+   ],
+   "fb_correcta": "Más de dos contratos a plazo con servicios discontinuos durante 12 meses o más en 15 meses hacen presumir un contrato indefinido.",
+   "fb_incorrecta": "Revisa las tres situaciones que transforman el plazo fijo en indefinido: continuidad tras el vencimiento, segunda renovación y la presunción por contratos discontinuos.",
+   "fuente": "Código del Trabajo, art. 159 N°4."
+  },
+  {
+   "id": "m5.p4", "tipo": "concepto",
+   "enunciado": "<p>¿Qué se requiere para que el empleador pueda invocar una renuncia o un mutuo acuerdo?</p>",
+   "opciones": [
+    {"texto": "Basta un correo electrónico de la persona trabajadora a su jefatura.", "fb": "Un correo no cumple los requisitos del art. 177: falta la ratificación ante un ministro de fe o la firma electrónica en el sitio de la Dirección del Trabajo."},
+    {"texto": "Que el documento esté firmado ante dos testigos de la empresa.", "fb": "Los testigos de la empresa no son ministros de fe."},
+    {"texto": "Que se pague una indemnización por años de servicio.", "fb": "La renuncia y el mutuo acuerdo no generan indemnización legal por años de servicio, salvo que se pacte en el mutuo acuerdo."},
+    {"texto": "Que conste por escrito, firmado por la persona trabajadora y ratificado ante un ministro de fe, o firmado electrónicamente en el sitio de la Dirección del Trabajo.", "correcta": true, "fb": "Correcto: así lo exige el art. 177; la firma electrónica en el sitio de la Dirección del Trabajo se considera otorgada ante el inspector."}
+   ],
+   "fb_correcta": "Renuncia, mutuo acuerdo y finiquito constan por escrito, firmados y ratificados ante un ministro de fe o firmados electrónicamente en la Dirección del Trabajo.",
+   "fb_incorrecta": "Revisa el art. 177: escrito, firmado por la persona trabajadora y ratificado ante un ministro de fe (o firma electrónica en la DT).",
+   "fuente": "Código del Trabajo, art. 177; Ley 21.361."
+  },
+  {
+   "id": "m5.p5", "tipo": "caso",
+   "enunciado": "<p>Una gerencia pide a Camila despedir a Carolina por necesidades de la empresa porque \"su desempeño ha bajado y ya no confiamos en ella\". No hay reestructuración, cambios de mercado ni supresión de cargos. ¿Qué corresponde?</p>",
+   "opciones": [
+    {"texto": "Aplicar el art. 161, porque la confianza es una necesidad de la empresa.", "fb": "La pérdida de confianza en una persona no es un hecho objetivo de la organización."},
+    {"texto": "No usar el art. 161: debe fundarse en hechos objetivos de la organización, y no sirve para problemas de desempeño o de relación personal.", "correcta": true, "fb": "Correcto: sin hechos objetivos de la organización, la causal sería improcedente y la indemnización por años de servicio se recargaría en 30% si un tribunal así lo declara."},
+    {"texto": "Aplicar el art. 161, siempre que se pague la indemnización por años de servicio.", "fb": "Pagar la indemnización no convierte en procedente una causal sin fundamento."},
+    {"texto": "Aplicar el art. 160 N°7 por incumplimiento grave, aunque no existan registros.", "fb": "Una causal disciplinaria exige hechos graves y debidamente comprobados; sin registros no puede sostenerse."}
+   ],
+   "fb_correcta": "El art. 161 exige hechos objetivos de la organización, como racionalización, modernización o cambios en el mercado.",
+   "fb_incorrecta": "Necesidades de la empresa no es una etiqueta genérica: no sirve para problemas de desempeño, conducta o relaciones personales.",
+   "fuente": "Código del Trabajo, arts. 161 y 168."
+  },
+  {
+   "id": "m5.p6", "tipo": "concepto",
+   "enunciado": "<p>¿Respecto de quiénes procede el desahucio escrito del empleador?</p>",
+   "opciones": [
+    {"texto": "De cualquier persona con contrato indefinido, con 30 días de aviso.", "fb": "El desahucio está limitado a ciertos cargos; no procede para cualquier persona."},
+    {"texto": "De las personas con menos de un año de antigüedad.", "fb": "La antigüedad no define el desahucio; lo define el tipo de cargo."},
+    {"texto": "De gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y trabajadoras/es de casa particular.", "correcta": true, "fb": "Correcto: son los únicos casos en que procede el desahucio escrito del empleador (art. 161)."},
+    {"texto": "De las personas con licencia médica que no pueden reintegrarse.", "fb": "Al contrario: el art. 161 no puede invocarse respecto de personas con licencia médica."}
+   ],
+   "fb_correcta": "El desahucio procede solo para cargos de administración general, de exclusiva confianza y trabajadoras/es de casa particular.",
+   "fb_incorrecta": "Revisa el art. 161: el desahucio está limitado a gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y casa particular.",
+   "fuente": "Código del Trabajo, art. 161."
+  },
+  {
+   "id": "m5.p7", "tipo": "caso",
+   "enunciado": "<p>Horizonte Servicios despide a Gonzalo por necesidades de la empresa el 20 de octubre. Después se descubre que sus cotizaciones previsionales de septiembre no estaban pagadas. ¿Qué efecto tiene esto?</p>",
+   "opciones": [
+    {"texto": "El despido no produce el efecto de poner término al contrato: la empresa debe pagar remuneraciones y cotizaciones hasta convalidarlo, pagando las cotizaciones morosas y comunicándolo por carta certificada.", "correcta": true, "fb": "Correcto: es la regla del art. 162 inciso 5 (\"Ley Bustos\")."},
+    {"texto": "Ninguno: las cotizaciones se pagan después, en el finiquito.", "fb": "Las cotizaciones impagas al momento del despido impiden que este ponga término al contrato hasta convalidarlo."},
+    {"texto": "El despido es válido, pero la empresa paga una multa fija y termina el asunto.", "fb": "El efecto principal es que el despido no pone término al contrato y siguen devengándose remuneraciones y cotizaciones hasta convalidar."},
+    {"texto": "Gonzalo debe pagar las cotizaciones faltantes con su indemnización.", "fb": "La obligación de pagar las cotizaciones es del empleador."}
+   ],
+   "fb_correcta": "Con cotizaciones impagas, el despido no pone término al contrato hasta que el empleador las paga y lo comunica por carta certificada.",
+   "fb_incorrecta": "Revisa la Ley Bustos (art. 162 inc. 5): el despido no produce efecto mientras no se paguen las cotizaciones y se convalide.",
+   "fuente": "Código del Trabajo, art. 162 inc. 5."
+  },
+  {
+   "id": "m5.p8", "tipo": "concepto",
+   "enunciado": "<p>¿Qué debe contener y en qué plazo debe entregarse la comunicación de un despido por necesidades de la empresa, cuando la persona deja de trabajar ese mismo día?</p>",
+   "opciones": [
+    {"texto": "Solo el número del artículo, dentro de 30 días hábiles.", "fb": "Citar el artículo no basta y el plazo es mucho menor: 3 días hábiles."},
+    {"texto": "La causal y los hechos, dentro de 6 días hábiles, sin copia a la Inspección.", "fb": "Los 6 días hábiles son para caso fortuito o fuerza mayor, y la copia a la Inspección siempre se envía."},
+    {"texto": "La causal, los hechos y el estado de las cotizaciones, enviada solo a la Inspección del Trabajo.", "fb": "La carta se entrega a la persona trabajadora; a la Inspección se envía una copia."},
+    {"texto": "La causal, los hechos, el estado de pago de las cotizaciones con comprobantes y, sin aviso de 30 días, el monto total a pagar; dentro de 3 días hábiles, con copia a la Inspección en el mismo plazo.", "correcta": true, "fb": "Correcto: son las menciones y el plazo del art. 162."}
+   ],
+   "fb_correcta": "La carta explica la causal y los hechos, informa las cotizaciones y, en el art. 161 sin aviso, el monto total; se entrega dentro de 3 días hábiles con copia a la Inspección.",
+   "fb_incorrecta": "Revisa el art. 162: menciones de la carta, plazo de 3 días hábiles (6 en caso fortuito) y copia a la Inspección.",
+   "fuente": "Código del Trabajo, art. 162."
+  },
+  {
+   "id": "m5.p9", "tipo": "caso",
+   "enunciado": "<p>Rosa trabajó 4 años y 5 meses en Horizonte Servicios. Es despedida por necesidades de la empresa con 30 días de aviso previo. Su última remuneración mensual es de $900.000 (bajo el tope de 90 UF). ¿Cuánto le corresponde por indemnización por años de servicio?</p>",
+   "opciones": [
+    {"texto": "$4.500.000, porque se redondea a 5 años.", "fb": "Solo la fracción superior a seis meses suma un año; 5 meses no alcanzan."},
+    {"texto": "$4.500.000, sumando la indemnización sustitutiva del aviso previo.", "fb": "Se dio el aviso de 30 días, así que no corresponde la indemnización sustitutiva."},
+    {"texto": "$3.600.000: 4 años × $900.000.", "correcta": true, "fb": "Correcto: 4 años computables (los 5 meses no superan seis meses) × 30 días de remuneración = 4 × $900.000."},
+    {"texto": "$0, porque se dio el aviso de 30 días.", "fb": "El aviso solo reemplaza la indemnización sustitutiva; la indemnización por años de servicio procede igual en el art. 161."}
+   ],
+   "fb_correcta": "Se cuentan los años completos y la fracción superior a seis meses: 4 × $900.000 = $3.600.000.",
+   "fb_incorrecta": "Revisa la regla del art. 163: 30 días por año y fracción superior a seis meses; el aviso previo solo evita la sustitutiva.",
+   "fuente": "Código del Trabajo, arts. 161 y 163."
+  },
+  {
+   "id": "m5.p10", "tipo": "caso",
+   "enunciado": "<p>Un gerente de Horizonte Servicios, con contrato celebrado en 2012 y 14 años de servicio, es despedido por necesidades de la empresa. Su última remuneración mensual equivale a 120 UF. ¿Cuál es su indemnización por años de servicio, expresada en UF?</p>",
+   "opciones": [
+    {"texto": "990 UF: 11 años (límite de 330 días) × 90 UF (tope de la base).", "correcta": true, "fb": "Correcto: se aplican los dos topes: 330 días (11 años) y una base máxima de 90 UF."},
+    {"texto": "1.680 UF: 14 años × 120 UF.", "fb": "No se aplicaron los topes: la base no puede exceder de 90 UF y los años computables, de 11."},
+    {"texto": "1.260 UF: 14 años × 90 UF.", "fb": "Se aplicó el tope de la base, pero no el límite de 330 días (11 años)."},
+    {"texto": "1.320 UF: 11 años × 120 UF.", "fb": "Se aplicó el límite de años, pero no el tope de 90 UF para la base."}
+   ],
+   "fb_correcta": "Con ambos topes: 11 × 90 UF = 990 UF, que se pagan con el valor de la UF del último día del mes anterior al pago.",
+   "fb_incorrecta": "Aplica los dos topes: base de hasta 90 UF (art. 172) y máximo de 330 días, es decir, 11 años (art. 163).",
+   "fuente": "Código del Trabajo, arts. 163 y 172."
+  }
+ ]
+}

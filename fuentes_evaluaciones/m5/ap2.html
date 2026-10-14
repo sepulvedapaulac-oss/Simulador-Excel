@@ -1,0 +1,100 @@
+<title>Actividad práctica 2 — El contrato a plazo de Valentina</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'actividad',codigo:'M5_AP2',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 5 · ACTIVIDAD PRÁCTICA 2',
+ eyebrow:'Actividad práctica 2 · Caso ramificado',
+ titulo:'El contrato a plazo de Valentina',
+ contexto:'<p>Valentina Muñoz trabaja en atención a clientes de Horizonte Servicios con contratos a plazo fijo. Su jefatura quiere "terminarla por vencimiento" a fin de mes y, al mismo tiempo, Valentina recibió una oferta de otro trabajo y quiere irse. Acompaña a Camila a distinguir vencimiento, renuncia y mutuo acuerdo, y a formalizar el cierre: cada decisión cambia el rumbo del caso.</p>',
+ objetivos:['<b>Describir</b> qué distingue la renuncia, el mutuo acuerdo y el vencimiento del plazo.','<b>Analizar</b> cuándo un contrato a plazo fijo se transforma en indefinido.','<b>Explicar</b> cómo se formaliza el término (ratificación) y qué incluye el finiquito.'],
+ tiempo:'25–35 min',resumen:'5 decisiones · 2 respuestas de desarrollo',
+ expediente:[
+  {titulo:'Historial contractual de Valentina',html:'<table><tr><th>Documento</th><th>Vigencia</th></tr><tr><td>Contrato a plazo fijo</td><td>2 de febrero al 30 de abril de 2026</td></tr><tr><td>Primera renovación</td><td>1 de mayo al 31 de julio de 2026</td></tr><tr><td>Segunda renovación</td><td>1 de agosto al 30 de octubre de 2026</td></tr></table><p>Cargo: ejecutiva de atención a clientes. Sin licencias médicas ni fuero.</p>'},
+  {titulo:'Correo de Sergio, jefe de Atención (lunes 19 de octubre)',html:'<p>"Camila: el contrato de Valentina vence el 30 de octubre, así que termina por vencimiento y listo. Igual ella quiere irse, me contó que le ofrecieron otro trabajo. Que firme cualquier papel aquí conmigo y cerramos el tema."</p>'},
+  {titulo:'Mensaje de Valentina',html:'<p>"Hola Camila: me ofrecieron un trabajo que empieza el lunes 16 de noviembre. Me gustaría trabajar hasta el viernes 13 de noviembre. ¿Qué tengo que firmar? No quiero perder lo que me corresponde."</p>'},
+  {titulo:'Reglas legales (arts. 159 y 177 del Código del Trabajo)',html:'<p><b>Renuncia:</b> decisión unilateral de la persona trabajadora, con aviso de 30 días de anticipación a lo menos. <b>Mutuo acuerdo:</b> decisión conjunta; no genera indemnización por años de servicio, salvo que se pacte.</p><p><b>Plazo fijo:</b> se transforma en indefinido si la persona sigue trabajando con conocimiento del empleador después del vencimiento, si hay una <b>segunda renovación</b>, o si presta servicios discontinuos en virtud de más de dos contratos a plazo durante 12 meses o más en un período de 15 meses.</p><p><b>Art. 177:</b> renuncia, mutuo acuerdo y finiquito constan por escrito; para que el empleador pueda invocarlos deben estar firmados por la persona trabajadora y ratificados ante un ministro de fe, o firmados electrónicamente en el sitio de la Dirección del Trabajo. El finiquito se pone a disposición dentro de 10 días hábiles desde la separación y se paga al ratificar.</p>'}
+ ],
+ competencias:[
+  {id:'plazo',nombre:'Plazo fijo y su transformación',fortaleza:'reconoces cuándo un contrato a plazo pasó a ser indefinido y qué causal ya no puede usarse.',mejora:'repasa las tres situaciones que transforman un contrato a plazo fijo en indefinido.',repasar:'Lección 5.2'},
+  {id:'forma',nombre:'Renuncia y mutuo acuerdo',fortaleza:'distingues quién toma la decisión en cada forma de término y cómo se formaliza.',mejora:'repasa la diferencia entre renuncia y mutuo acuerdo y los requisitos del art. 177 (escrito, firmado y ratificado).',repasar:'Lecciones 5.1 y 5.2'},
+  {id:'cierre',nombre:'Finiquito y pagos del cierre',fortaleza:'sabes qué incluye el finiquito, en qué plazo se entrega y cuándo se paga.',mejora:'repasa el plazo de 10 días hábiles, la ratificación y los pagos que se revisan en cualquier término.',repasar:'Lección 5.5'}
+ ],
+ inicio:'e1',
+ etapas:[
+  {id:'e1',tipo:'decision',titulo:'¿Vence realmente el contrato?',corto:'Revisar el plazo',competencia:'plazo',
+   escena:'<p>Camila abre el <b>historial contractual</b> de Valentina. Sergio espera que hoy mismo se le envíe la comunicación de término por vencimiento del plazo.</p>',
+   pregunta:'¿Qué concluye Camila?',
+   ideal:'reconocer que la segunda renovación (1 de agosto) transformó el contrato en indefinido, por lo que no puede terminarse por vencimiento del plazo.',
+   opciones:[
+    {texto:'Que el contrato termina el 30 de octubre, siempre que se le avise con 30 días de anticipación.',pts:1,fb:'Revisaste que el término debe comunicarse, pero el problema es otro: con la segunda renovación el contrato ya es indefinido, y el vencimiento del plazo dejó de ser una causal posible.',siguiente:'e2x'},
+    {texto:'Que el último documento dice 30 de octubre, así que corresponde enviar la comunicación de vencimiento del plazo.',pts:0,fb:'El 1 de agosto hubo una segunda renovación: desde ese momento el contrato se transformó en indefinido y no puede terminarse por vencimiento del plazo.',siguiente:'e2x'},
+    {texto:'Que la segunda renovación (1 de agosto) transformó el contrato en indefinido: no puede terminarse por vencimiento del plazo.',pts:2,fb:'Correcto: una segunda renovación transforma el contrato a plazo fijo en indefinido. La causal del art. 159 N°4 ya no está disponible.',siguiente:'e2'}]},
+  {id:'e2x',tipo:'decision',titulo:'Valentina trae sus contratos',corto:'Corregir el rumbo',competencia:'plazo',
+   escena:'<p>Valentina recibe el aviso de vencimiento y llega con sus tres documentos: <i>"Camila, me renovaron dos veces. Una compañera me dijo que entonces soy indefinida. ¿Me están despidiendo?"</i> Sergio insiste en mantener el aviso.</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'reconocer que el contrato es indefinido, retirar por escrito la comunicación de vencimiento y conversar con Valentina las formas reales de término, ya que ella quiere irse.',
+   opciones:[
+    {texto:'Mantiene el aviso: si Valentina no está de acuerdo, que reclame en la Inspección.',pts:0,fb:'El contrato es indefinido desde la segunda renovación. Mantener una causal que no corresponde expone a la empresa a un reclamo y a que un tribunal declare indebido el término; la persona tiene 60 días hábiles desde la separación para demandar.',siguiente:'e3'},
+    {texto:'Reconoce que el contrato es indefinido, retira por escrito el aviso de vencimiento y conversa con Valentina sobre las formas reales de término, ya que ella quiere irse.',pts:2,fb:'Correcto: corriges el error antes de que produzca efectos y ordenas el cierre según lo que realmente ocurre: Valentina quiere terminar la relación.',siguiente:'e3'},
+    {texto:'Le pide a la abogada que lo revise, sin retirar el aviso mientras tanto.',pts:1,fb:'Consultar está bien, pero la regla es clara (segunda renovación = indefinido) y mantener el aviso prolonga la incertidumbre de Valentina.',siguiente:'e3'}]},
+  {id:'e2',tipo:'decision',titulo:'"Que firme cualquier papel"',corto:'¿Quién decide?',competencia:'forma',
+   escena:'<p>Camila explica a Sergio que el vencimiento no procede. Él responde: <i>"Entonces redáctale una renuncia con fecha de hoy y que la firme. Ella igual se quiere ir."</i></p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'explicar que la renuncia es una decisión unilateral de Valentina y no se redacta por ella; si ambas partes quieren terminar en una fecha acordada, corresponde un mutuo acuerdo por escrito.',
+   opciones:[
+    {texto:'Que la renuncia es una decisión de Valentina, no de la empresa: ella puede renunciar con 30 días de aviso, o ambas partes pueden pactar un mutuo acuerdo con la fecha que convengan.',pts:2,fb:'Correcto: la renuncia es unilateral de la persona trabajadora; el mutuo acuerdo es una decisión conjunta. Ambas deben constar por escrito y ratificarse para que el empleador pueda invocarlas.',siguiente:'e3'},
+    {texto:'Que prepara la renuncia y se la pide firmar hoy, ya que ella quiere irse.',pts:0,fb:'Una renuncia redactada y exigida por el empleador deja de ser una decisión unilateral de la persona trabajadora y puede ser cuestionada.',siguiente:'e3'},
+    {texto:'Que Valentina deberá presentar su renuncia con 30 días de aviso, sin ofrecer otra alternativa.',pts:1,fb:'La renuncia es posible y debe ser decisión de Valentina, pero también existe el mutuo acuerdo, que permite fijar en conjunto la fecha que ella pidió (13 de noviembre).',siguiente:'e3'}]},
+  {id:'e3',tipo:'abierta',titulo:'Tres formas de término, tres lógicas',corto:'Describir',verbo:'Describe',
+   consigna:'para Valentina, en un mensaje breve, las diferencias entre renuncia, mutuo acuerdo y vencimiento del plazo: quién decide, qué aviso o formalidad exige cada una y si generan indemnización por años de servicio.',minPalabras:50,
+   modelo:'En la renuncia decides tú sola y debes avisar con al menos 30 días de anticipación. En el mutuo acuerdo, tú y la empresa deciden juntas la fecha de término. El vencimiento del plazo ocurre al llegar la fecha del contrato, pero en tu caso ya no aplica porque con la segunda renovación tu contrato pasó a ser indefinido. La renuncia y el mutuo acuerdo deben constar por escrito, firmados por ti y ratificados ante un ministro de fe o firmados en el sitio de la Dirección del Trabajo. Ninguna de estas formas genera indemnización por años de servicio, salvo que se pacte en el mutuo acuerdo; sí se pagan lo trabajado y el feriado que corresponda.',
+   criterios:['Distingue quién toma la decisión en cada forma (persona trabajadora, ambas partes, la fecha del contrato).','Menciona el aviso de 30 días de la renuncia y la formalidad escrita y ratificada.','Indica que no generan indemnización por años de servicio, salvo pacto en el mutuo acuerdo.'],siguiente:'e4'},
+  {id:'e4',tipo:'decision',titulo:'Formalizar el mutuo acuerdo',corto:'Ratificación',competencia:'forma',
+   escena:'<p>Valentina y Horizonte acuerdan terminar por <b>mutuo acuerdo</b> el viernes 13 de noviembre. Sergio propone: <i>"Que firme el documento aquí en mi oficina, con dos compañeros como testigos, y listo."</i></p>',
+   pregunta:'¿Cómo debe formalizarse para que Horizonte pueda invocarlo?',
+   ideal:'documento escrito, firmado por Valentina y ratificado ante un ministro de fe (inspector del trabajo, notario, oficial del Registro Civil o secretario municipal, entre otros), o firmado electrónicamente en el sitio de la Dirección del Trabajo.',
+   opciones:[
+    {texto:'Firmado por Valentina ante la jefatura, y ratificado ante un ministro de fe solo si ella lo pide.',pts:1,fb:'La firma por escrito es necesaria, pero la ratificación no es opcional: sin ella, el empleador no puede invocar el mutuo acuerdo.',siguiente:'e5x'},
+    {texto:'Firmado por Valentina ante Sergio y dos compañeros como testigos.',pts:0,fb:'La jefatura y los compañeros no son ministros de fe. El documento debe ratificarse ante un ministro de fe o firmarse electrónicamente en el sitio de la Dirección del Trabajo.',siguiente:'e5x'},
+    {texto:'Por escrito, firmado por Valentina y ratificado ante un ministro de fe (por ejemplo, inspector del trabajo o notario), o firmado electrónicamente en el sitio de la Dirección del Trabajo.',pts:2,fb:'Correcto: así lo exige el art. 177. La firma electrónica en el sitio de la Dirección del Trabajo (Ley 21.361) se considera otorgada ante el inspector.',siguiente:'e5'}]},
+  {id:'e5',tipo:'decision',titulo:'El finiquito de Valentina',corto:'Finiquito',competencia:'cierre',
+   escena:'<p>El mutuo acuerdo quedó bien formalizado. Ahora Camila prepara el finiquito. Sergio pregunta: <i>"¿Cuándo lo entregamos y qué hay que pagarle?"</i></p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'ponerlo a disposición dentro de 10 días hábiles desde la separación, con las remuneraciones pendientes, horas extraordinarias si existen y el feriado proporcional; sin indemnización por años de servicio (no se pactó); el pago se hace al ratificar.',
+   opciones:[
+    {texto:'Dentro de 10 días hábiles desde la separación, con indemnización por años de servicio, porque todo término la genera.',pts:0,fb:'El plazo es correcto, pero el mutuo acuerdo no genera indemnización legal por años de servicio, salvo que se pacte. Además, Valentina tiene menos de un año de servicio.',siguiente:'e6'},
+    {texto:'Dentro de 10 días hábiles desde la separación: remuneraciones pendientes, horas extraordinarias si las hay y feriado proporcional; sin indemnización por años de servicio (no se pactó). Se paga al ratificar.',pts:2,fb:'Correcto: lo trabajado y el feriado se revisan en cualquier término; la indemnización por años de servicio no procede en el mutuo acuerdo salvo pacto.',siguiente:'e6'},
+    {texto:'Con remuneraciones pendientes y feriado proporcional, cuando la empresa tenga el cálculo listo, aunque pase un mes.',pts:1,fb:'El contenido es adecuado, pero el finiquito debe ponerse a disposición dentro de 10 días hábiles desde la separación.',siguiente:'e6'}]},
+  {id:'e5x',tipo:'decision',titulo:'"¿Ese papel vale?"',corto:'Corregir el rumbo',competencia:'cierre',
+   escena:'<p>Una semana después de su último día, Valentina escribe: <i>"Firmé el documento en la oficina de Sergio, pero me dicen que eso no basta. ¿Cuándo me pagan lo que me corresponde?"</i></p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'explicar que el mutuo acuerdo y el finiquito deben ratificarse ante un ministro de fe o firmarse electrónicamente en la Dirección del Trabajo, poner el finiquito a disposición dentro de 10 días hábiles desde la separación y pagarlo al ratificar.',
+   opciones:[
+    {texto:'Le explica que el documento debe ratificarse; pone el finiquito a disposición dentro de 10 días hábiles desde la separación (o por firma electrónica en la DT) y paga al ratificar.',pts:2,fb:'Correcto: con la ratificación (o la firma electrónica en la Dirección del Trabajo) Horizonte puede invocar el término, y el pago se hace en ese momento.',siguiente:'e6'},
+    {texto:'Le responde que el papel firmado basta y que se le pagará cuando haya presupuesto.',pts:0,fb:'Sin ratificación, Horizonte no puede invocar el mutuo acuerdo. Además, el finiquito debe ponerse a disposición dentro de 10 días hábiles desde la separación.',siguiente:'e6'},
+    {texto:'Agenda la ratificación ante notario, pero para dentro de un mes, cuando se cierren las remuneraciones.',pts:1,fb:'Ratificar es lo correcto, pero el finiquito debe estar a disposición dentro de 10 días hábiles desde la separación.',siguiente:'e6'}]},
+  {id:'e6',tipo:'decision',titulo:'El caso de Tomás',corto:'Otro plazo fijo',competencia:'plazo',
+   escena:'<p>Mientras cierra el caso de Valentina, Sergio comenta: <i>"El contrato a plazo de Tomás venció el viernes 30 de octubre, pero lo necesitábamos y trabajó el lunes 2 y el martes 3 de noviembre. Ahora mándale la carta de vencimiento con fecha 30 de octubre."</i></p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'reconocer que, al seguir trabajando con conocimiento del empleador después del vencimiento, el contrato de Tomás se transformó en indefinido; no puede terminarse por vencimiento del plazo.',
+   opciones:[
+    {texto:'Que reconoce que Tomás pasó a ser indefinido, pero se lo informará solo en forma verbal.',pts:1,fb:'La conclusión es correcta, pero conviene dejarlo por escrito (por ejemplo, actualizando el contrato) para que ambas partes tengan certeza.',siguiente:'e7'},
+    {texto:'Que siguió trabajando con conocimiento de la jefatura después del vencimiento: su contrato se transformó en indefinido y ya no puede terminarse por vencimiento del plazo.',pts:2,fb:'Correcto: continuar prestando servicios con conocimiento del empleador después de vencido el plazo transforma el contrato en indefinido. Una carta con fecha anterior no cambia esos hechos.',siguiente:'e7'},
+    {texto:'Que le envía la carta con fecha 30 de octubre y le paga los dos días adicionales.',pts:0,fb:'Una carta con fecha anterior no cambia lo ocurrido: Tomás siguió trabajando con conocimiento del empleador y su contrato es indefinido.',siguiente:'e7'}]},
+  {id:'e7',tipo:'abierta',titulo:'Una regla para los próximos plazos fijos',corto:'Explicar',verbo:'Explica',
+   consigna:'a Sergio qué debe revisar antes de terminar cualquier contrato a plazo fijo por vencimiento, usando lo ocurrido con Valentina y Tomás.',minPalabras:50,
+   modelo:'Antes de usar el vencimiento del plazo hay que revisar tres cosas: si hubo una segunda renovación (como Valentina), si la persona siguió trabajando con nuestro conocimiento después de la fecha de término (como Tomás) y si ha tenido más de dos contratos a plazo con servicios discontinuos durante 12 meses o más en un período de 15 meses. En cualquiera de esos casos el contrato es indefinido y el vencimiento ya no sirve como causal. Además, si alguien quiere irse, la decisión es suya (renuncia) o de ambos (mutuo acuerdo), siempre por escrito y ratificada.',
+   criterios:['Nombra la segunda renovación y la continuidad de servicios después del vencimiento.','Menciona la presunción por contratos discontinuos (más de dos contratos, 12 meses en 15).','Concluye que, en esos casos, el vencimiento del plazo deja de ser una causal posible.']}
+ ],
+ cierre:'<b>Idea clave:</b> antes de terminar un contrato, pregunta quién toma la decisión y revisa su historia. Un plazo fijo renovado dos veces, o que continúa después de vencer, ya es indefinido. Renuncia y mutuo acuerdo se firman y se ratifican; el finiquito se pone a disposición en 10 días hábiles y se paga al ratificar.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

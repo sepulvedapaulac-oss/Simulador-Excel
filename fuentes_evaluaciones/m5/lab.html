@@ -1,0 +1,120 @@
+<title>Laboratorio — El finiquito de Andrés</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'laboratorio',codigo:'M5_LAB',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 5 · EVALUACIÓN · LABORATORIO',
+ eyebrow:'Evaluación del módulo 5 · Parte 2',
+ titulo:'El finiquito de Andrés',
+ contexto:'<p>Horizonte Servicios cerrará su sucursal de Puente Alto por una baja sostenida de clientes. Andrés Vidal, analista contable de esa sucursal, será desvinculado por <b>necesidades de la empresa</b> (art. 161). Camila debe revisar la carta, calcular las indemnizaciones y preparar el finiquito. Usa el <b>expediente</b> (a la derecha en computador, arriba en celular): tiene todos los datos que necesitas.</p>',
+ objetivos:['Distinguir qué indemnizaciones proceden según la causal y la antigüedad.','Calcular la indemnización por años de servicio, la sustitutiva del aviso previo, el feriado proporcional y el total del finiquito.','Aplicar los topes de 330 días y de 90 UF, expresados en UF.','Revisar la carta de término y ordenar los pasos del cierre.'],
+ comoSeEvalua:'el laboratorio tiene 10 tareas. Las tareas de cálculo, clasificación, selección y orden asignan puntaje proporcional a tus aciertos; cada tarea se responde una sola vez y verás de inmediato su retroalimentación. La tarea de desarrollo no tiene nota automática: verás una respuesta modelo y criterios para revisar la tuya. En los cálculos escribe <b>solo el número</b>, sin puntos de miles si prefieres (por ejemplo, 1380000), y usa coma para decimales. Necesitas <strong>80%</strong> de los puntos para aprobar.',
+ tiempo:'25–30 min',resumen:'10 tareas · 21 puntos',
+ expedienteTitulo:'Expediente de Andrés Vidal',
+ expediente:[
+  {titulo:'Ficha de Andrés Vidal',html:'<table><tr><th>Dato</th><th>Valor</th></tr><tr><td>Cargo</td><td>Analista contable, sucursal Puente Alto</td></tr><tr><td>Contrato</td><td>Indefinido, celebrado el 2 de marzo de 2019</td></tr><tr><td>Último día de trabajo (separación)</td><td>Viernes 23 de octubre de 2026</td></tr><tr><td>Última remuneración mensual</td><td>$1.380.000 (bajo el tope de 90 UF, según Remuneraciones)</td></tr><tr><td>Aviso de 30 días</td><td>No se dio</td></tr><tr><td>Licencias médicas o fuero</td><td>No tiene</td></tr></table>'},
+  {titulo:'Informe de Remuneraciones',html:'<table><tr><th>Concepto</th><th>Dato</th></tr><tr><td>Remuneración de octubre devengada y no pagada (1 al 23 de octubre)</td><td>$1.058.000</td></tr><tr><td>Horas extraordinarias pendientes</td><td>No registra</td></tr><tr><td>Feriado pendiente de años anteriores</td><td>0 días (ya usado)</td></tr><tr><td>Feriado proporcional a compensar, según el sistema de vacaciones</td><td>9,5 días</td></tr><tr><td>Valor de un día de feriado</td><td>$46.000</td></tr><tr><td>Cotizaciones hasta septiembre</td><td>Pagadas (comprobantes adjuntos)</td></tr></table><p><small>En este laboratorio no se calcula el descuento del aporte del empleador al seguro de cesantía.</small></p>'},
+  {titulo:'Borrador de carta de término',html:'<p><i>"Santiago, 23 de octubre de 2026. Señor Andrés Vidal: comunicamos a usted que se pone término a su contrato de trabajo a contar de esta fecha, por la causal del artículo 161 del Código del Trabajo, necesidades de la empresa. Atentamente, Horizonte Servicios."</i></p><p><small>Se entregará personalmente el mismo 23 de octubre.</small></p>'},
+  {titulo:'Otras personas con término en octubre',html:'<table><tr><th>Persona</th><th>Causal</th><th>Antigüedad</th></tr><tr><td>Josefa</td><td>Renuncia</td><td>5 años</td></tr><tr><td>Martín</td><td>Vencimiento del plazo</td><td>8 meses</td></tr><tr><td>Fernanda</td><td>Necesidades de la empresa</td><td>10 meses</td></tr><tr><td>Luis</td><td>Mutuo acuerdo con indemnización pactada por escrito</td><td>6 años</td></tr><tr><td>Andrés</td><td>Necesidades de la empresa</td><td>7 años y 7 meses</td></tr></table>'},
+  {titulo:'Caso de la gerenta de Finanzas',html:'<p>Paula Contreras, gerenta de Finanzas, será desvinculada por necesidades de la empresa. Contrato celebrado en marzo de 2013: <b>13 años y 7 meses</b> de servicio. Su última remuneración mensual equivale a <b>140 UF</b>.</p>'},
+  {titulo:'Reglas de cálculo (arts. 161, 162, 163 y 172)',html:'<p><b>Años de servicio (art. 163):</b> procede con un año o más de contrato y término por art. 161. 30 días de la última remuneración mensual por cada año y fracción superior a seis meses; límite de 330 días (11 años).</p><p><b>Sustitutiva del aviso previo:</b> la última remuneración mensual, si en el art. 161 no se dio el aviso de 30 días.</p><p><b>Tope (art. 172):</b> la remuneración que sirve de base no puede exceder de 90 UF.</p><p><b>Siempre se revisan:</b> remuneraciones pendientes, horas extraordinarias, feriado pendiente y proporcional.</p>'}
+ ],
+ competencias:[
+  {id:'proc',nombre:'Qué procede según la causal',fortaleza:'distingues qué indemnizaciones activa cada causal y qué se revisa siempre.',mejora:'repasa cuándo procede la indemnización por años de servicio y qué pagos se revisan en cualquier término.',repasar:'Lección 5.5'},
+  {id:'calc',nombre:'Cálculo de indemnizaciones y finiquito',fortaleza:'calculas correctamente años computables, topes y totales.',mejora:'repasa la regla de la fracción superior a seis meses, el límite de 330 días y el tope de 90 UF.',repasar:'Lección 5.5'},
+  {id:'com',nombre:'Comunicación y cierre del término',fortaleza:'revisas la carta y ordenas los pasos del cierre con sus plazos.',mejora:'repasa las menciones de la carta, los plazos del art. 162, la licencia médica en el art. 161 y el finiquito del art. 177.',repasar:'Lecciones 5.3 y 5.4'}
+ ],
+ inicio:'t1',
+ etapas:[
+  {id:'t1',tipo:'clasificar',titulo:'¿Procede la indemnización por años de servicio?',corto:'Qué procede',competencia:'proc',pts:3,
+   escena:'<p>Antes de calcular, Camila revisa la tabla <b>Otras personas con término en octubre</b> del expediente.</p>',
+   pregunta:'Clasifica a cada persona según si le corresponde indemnización por años de servicio.',
+   categorias:['Procede por ley','No procede','Procede solo por pacto'],
+   items:[
+    {texto:'Josefa — renuncia, 5 años',cat:1,fb:'La renuncia no genera indemnización legal por años de servicio.'},
+    {texto:'Martín — vencimiento del plazo, 8 meses',cat:1,fb:'El vencimiento del plazo no genera indemnización por años de servicio.'},
+    {texto:'Fernanda — necesidades de la empresa, 10 meses',cat:1,fb:'Aunque la causal es el art. 161, la indemnización exige que el contrato haya estado vigente un año o más.'},
+    {texto:'Luis — mutuo acuerdo con indemnización pactada, 6 años',cat:2,fb:'El mutuo acuerdo no genera indemnización legal; aquí se paga porque las partes la pactaron.'},
+    {texto:'Andrés — necesidades de la empresa, 7 años y 7 meses',cat:0,fb:'Art. 161 con más de un año de servicio: procede la indemnización del art. 163.'}],
+   fb:'Primero la causal, después el cálculo: la indemnización legal por años de servicio procede en el art. 161 con un año o más de contrato (o si un tribunal declara el despido injustificado, indebido o improcedente).',siguiente:'t2'},
+  {id:'t2',tipo:'numero',titulo:'Indemnización por años de servicio de Andrés',corto:'Años de servicio',competencia:'calc',pts:3,
+   escena:'<p>Usa la <b>ficha de Andrés</b> y las <b>reglas de cálculo</b> del expediente.</p>',
+   pregunta:'Calcula la indemnización por años de servicio de Andrés.',
+   campos:[
+    {label:'Años de servicio computables',valor:8,tol:0,unidad:'años'},
+    {label:'Días de indemnización',valor:240,tol:0,unidad:'días'},
+    {label:'Monto de la indemnización ($)',valor:11040000,tol:1000,unidad:'$'}],
+   solucion:'Del 2 de marzo de 2019 al 23 de octubre de 2026 hay 7 años, 7 meses y 21 días. La fracción (7 meses) es superior a seis meses, así que se cuentan <b>8 años</b>. 8 × 30 días = <b>240 días</b> (bajo el límite de 330). Como cada 30 días equivalen a una remuneración mensual: 8 × $1.380.000 = <b>$11.040.000</b>. La remuneración está bajo el tope de 90 UF, por lo que no se limita.',siguiente:'t3'},
+  {id:'t3',tipo:'numero',titulo:'Aviso previo y feriado proporcional',corto:'Aviso y feriado',competencia:'calc',pts:2,
+   escena:'<p>Revisa en la ficha si se dio el aviso de 30 días y, en el <b>informe de Remuneraciones</b>, los datos de feriado.</p>',
+   pregunta:'Calcula los dos montos.',
+   campos:[
+    {label:'Indemnización sustitutiva del aviso previo ($)',valor:1380000,tol:1000,unidad:'$'},
+    {label:'Feriado proporcional ($)',valor:437000,tol:1000,unidad:'$'}],
+   solucion:'No se dio el aviso de 30 días, así que corresponde la indemnización sustitutiva, equivalente a la última remuneración mensual: <b>$1.380.000</b>. Feriado proporcional: 9,5 días × $46.000 = <b>$437.000</b>. El feriado se compensa en cualquier causal de término.',siguiente:'t4'},
+  {id:'t4',tipo:'numero',titulo:'Total del finiquito',corto:'Total',competencia:'calc',pts:2,
+   escena:'<p>Suma todos los conceptos que corresponden a Andrés: los que calculaste y los del <b>informe de Remuneraciones</b>.</p>',
+   pregunta:'¿Cuál es el total a pagar en el finiquito de Andrés? (sin considerar el descuento del seguro de cesantía)',
+   campos:[{label:'Total del finiquito ($)',valor:13915000,tol:1000,unidad:'$'}],
+   solucion:'Indemnización por años de servicio $11.040.000 + sustitutiva del aviso previo $1.380.000 + remuneración de octubre pendiente $1.058.000 + feriado proporcional $437.000 = <b>$13.915.000</b>. No hay horas extraordinarias ni feriado pendiente de años anteriores. Recuerda que, como regla general, en el art. 161 el empleador puede descontar de la indemnización por años de servicio el aporte que hizo a la cuenta individual del seguro de cesantía (aquí no se calcula).',siguiente:'t5'},
+  {id:'t5',tipo:'numero',titulo:'Los topes, en UF: la gerenta de Finanzas',corto:'Topes en UF',competencia:'calc',pts:3,
+   escena:'<p>Revisa el <b>caso de la gerenta de Finanzas</b>. Trabaja todo en UF: no necesitas convertir a pesos.</p>',
+   pregunta:'Aplica los dos topes y calcula su indemnización por años de servicio en UF.',
+   campos:[
+    {label:'Base mensual de cálculo (UF)',valor:90,tol:0,unidad:'UF'},
+    {label:'Años computables, con el límite legal',valor:11,tol:0,unidad:'años'},
+    {label:'Indemnización por años de servicio (UF)',valor:990,tol:0,unidad:'UF'}],
+   solucion:'Su remuneración (140 UF) supera el tope, así que la base es <b>90 UF</b> (art. 172). Tiene 13 años y 7 meses (14 años computables), pero el límite es de 330 días, es decir, <b>11 años</b> (contrato posterior al 14 de agosto de 1981). Indemnización: 11 × 90 UF = <b>990 UF</b>, que se convierten a pesos con el valor de la UF del último día del mes anterior al pago.',siguiente:'t6'},
+  {id:'t6',tipo:'multi',titulo:'Revisar la carta de Andrés',corto:'Revisar la carta',competencia:'com',pts:2,
+   escena:'<p>Lee el <b>borrador de carta de término</b> del expediente.</p>',
+   pregunta:'Marca todas las correcciones que necesita la carta.',
+   items:[
+    {texto:'Explicar los hechos: el cierre de la sucursal de Puente Alto por la baja sostenida de clientes y la supresión de su cargo.',ok:true,fb:'En juicio, la empresa no puede alegar hechos distintos de los señalados en la carta.'},
+    {texto:'Informar el estado de pago de las cotizaciones hasta septiembre y adjuntar los comprobantes.',ok:true,fb:'Es una mención obligatoria del art. 162.'},
+    {texto:'Indicar el monto total a pagar, porque no se dio el aviso de 30 días.',ok:true,fb:'En el art. 161 sin aviso previo, la carta indica el monto total a pagar.'},
+    {texto:'Agregar la firma de un notario para que la carta sea válida.',ok:false,fb:'La carta no requiere notario. Lo que se ratifica ante un ministro de fe es el finiquito.'},
+    {texto:'Cambiar la causal a "desahucio", porque Andrés es analista.',ok:false,fb:'El desahucio procede solo para gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y trabajadoras/es de casa particular.'}],
+   fb:'Cada respuesta incorrecta descuenta un acierto.',siguiente:'t7'},
+  {id:'t7',tipo:'decision',titulo:'Otra persona de la sucursal',corto:'Licencia médica',competencia:'com',
+   escena:'<p>La jefatura de la sucursal agrega a la nómina a <b>Carla</b>, asistente administrativa de Puente Alto, cuyo cargo también desaparece con el cierre. Carla está con <b>licencia médica</b> hasta el 5 de noviembre. La jefatura dice: <i>"La decisión ya está tomada; entreguémosle la carta junto con la de Andrés."</i></p>',
+   pregunta:'¿Qué hace Camila?',
+   ideal:'postergar la comunicación a Carla: no puede invocarse el art. 161 respecto de una persona con licencia médica; cuando termine la licencia se revisa su situación, con fechas y cálculos propios.',
+   opciones:[
+    {texto:'Entregarle la carta junto con la de Andrés, como pide la jefatura.',pts:0,fb:'No puede invocarse el art. 161 respecto de una persona con licencia médica.',siguiente:'t8'},
+    {texto:'Cambiar la causal a incumplimiento grave (art. 160 N°7) para no esperar.',pts:0,fb:'La causal se elige según los hechos reales: no hay incumplimiento alguno. Si un tribunal declara injustificado un despido por art. 160, el recargo es de 80%, y hasta 100% sin motivo plausible.',siguiente:'t8'},
+    {texto:'Postergar la comunicación a Carla hasta que termine su licencia y, entonces, revisar su situación con fechas y cálculos propios.',pts:2,fb:'Correcto: mientras dure la licencia médica no puede invocarse el art. 161. Cuando se defina la fecha de separación de Carla, se calculan su remuneración pendiente y su feriado proporcional, y se revisan las cotizaciones del mes anterior.',siguiente:'t8'},
+    {texto:'Postergar la entrega a Carla, sin dejar registro del motivo.',pts:1,fb:'Postergar es correcto, pero conviene dejar registro de por qué cambió la fecha: forma parte de la evidencia del proceso.',siguiente:'t8'}]},
+  {id:'t8',tipo:'ordenar',titulo:'Los pasos del cierre',corto:'Ordenar el cierre',competencia:'com',pts:2,
+   escena:'<p>Camila vuelve al cierre de Andrés. Ordena los pasos para que sea correcto.</p>',
+   pregunta:'Asigna a cada paso su posición (1º = primero).',
+   items:[
+    {texto:'Verificar la causal y los hechos que la sostienen (cierre de la sucursal).',fb:'La causal se define antes de todo lo demás.'},
+    {texto:'Confirmar que las cotizaciones hasta el mes anterior estén pagadas y reunir los comprobantes.',fb:'Sin cotizaciones pagadas, el despido no pone término al contrato.'},
+    {texto:'Entregar la carta (dentro de 3 días hábiles desde la separación) y enviar copia a la Inspección en el mismo plazo.',fb:'Art. 162.'},
+    {texto:'Poner el finiquito a disposición dentro de 10 días hábiles desde la separación.',fb:'Art. 177.'},
+    {texto:'Pagar al ratificar el finiquito ante un ministro de fe o firmarlo electrónicamente en la Dirección del Trabajo.',fb:'El pago se hace al ratificar.'}],
+   fb:'Causal y hechos → cotizaciones → carta y copia → finiquito en 10 días hábiles → ratificación y pago.',siguiente:'t9'},
+  {id:'t9',tipo:'decision',titulo:'"¿Y si no estoy de acuerdo?"',corto:'Si reclama',competencia:'proc',
+   escena:'<p>Al recibir la carta, Andrés pregunta qué puede hacer si considera que la causal no corresponde.</p>',
+   pregunta:'¿Qué información es correcta?',
+   ideal:'puede demandar dentro de 60 días hábiles desde la separación (plazo que se suspende con un reclamo ante la Inspección, con un máximo de 90 días hábiles); si el tribunal declara improcedente el art. 161, la indemnización por años de servicio se recarga en 30%.',
+   opciones:[
+    {texto:'Puede demandar dentro de 60 días hábiles desde la separación (se suspende si reclama en la Inspección, con un máximo de 90 días hábiles); si el tribunal declara improcedente el art. 161, la indemnización por años de servicio se recarga en 30%.',pts:2,fb:'Correcto: así lo establece el art. 168 del Código del Trabajo.',siguiente:'t10'},
+    {texto:'Puede demandar dentro de 60 días hábiles; si gana, el recargo es de 80%.',pts:1,fb:'El plazo es correcto, pero el recargo de 80% corresponde al art. 160 injustificado. Para el art. 161 improcedente es de 30%.',siguiente:'t10'},
+    {texto:'Si firma el finiquito, puede reclamar en cualquier momento, sin plazo.',pts:0,fb:'La demanda tiene un plazo de 60 días hábiles desde la separación (suspendido por un reclamo ante la Inspección, máximo 90 días hábiles).',siguiente:'t10'}]},
+  {id:'t10',tipo:'abierta',titulo:'Explicar el finiquito a Andrés',corto:'Explicar',verbo:'Explica',
+   consigna:'a Andrés, en un mensaje claro y respetuoso, qué conceptos incluye su finiquito, por qué le corresponde cada uno y cuándo y cómo se le pagará.',minPalabras:50,
+   modelo:'Andrés: tu contrato termina por necesidades de la empresa, por el cierre de la sucursal. Como tienes más de un año de servicio, te corresponde indemnización por años de servicio: 7 años y 7 meses se cuentan como 8 años, es decir, 8 remuneraciones mensuales. Como no se te dio aviso con 30 días, recibes además una remuneración mensual como indemnización sustitutiva. También se te pagan los días trabajados de octubre y el feriado proporcional. El finiquito estará a tu disposición dentro de 10 días hábiles desde tu último día, y se paga al ratificarlo ante un ministro de fe o al firmarlo electrónicamente en la Dirección del Trabajo.',
+   criterios:['Relaciona la indemnización por años de servicio con la causal y la antigüedad (fracción superior a seis meses).','Explica la sustitutiva del aviso previo y los pagos que se revisan siempre (remuneración pendiente y feriado).','Indica el plazo de 10 días hábiles y que el pago se hace al ratificar.']}
+ ],
+ cierre:'<b>Idea clave:</b> primero la causal y la antigüedad; después el cálculo. La base nunca supera 90 UF y los años computables no superan 11; lo trabajado y el feriado se pagan en cualquier término.'
+};
+/*{{ENGINE}}*/
+})();
+</script>
