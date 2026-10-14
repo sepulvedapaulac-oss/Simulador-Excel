@@ -1,0 +1,117 @@
+Actividad práctica 1.2 · Construye el diagnóstico
+Legislación Laboral · Módulo 1 · Práctica
+Pantalla 1 de 7
+Actividad práctica 1.2 · Construye el diagnóstico
+De los antecedentes al diagnóstico
+Ahora subirás un nivel: ya no basta con detenerte antes de actuar. Tendrás que 
+filtrar antecedentes, detectar señales de riesgo, elegir fuentes pertinentes y construir un diagnóstico preliminar
+.
+La actividad se evalúa automáticamente y genera una 
+Matriz de diagnóstico preliminar — Caso Valentina
+.
+Meta:
+ transformar información dispersa en un diagnóstico estructurado y accionable.
+Expediente del caso
+“Lo acordamos, pero algo no cuadra”
+Camila recibe antecedentes sobre Valentina, trabajadora de Horizonte Servicios.
+La jefatura necesita que Valentina asuma temporalmente algunas tareas adicionales durante tres semanas.
+Valentina respondió por Teams que “no tiene problema”.
+No se preparó documentación adicional porque el cambio será temporal.
+El procedimiento interno señala que las jefaturas pueden reorganizar tareas cuando sea necesario.
+Una de las nuevas tareas podría requerir capacitación y revisión de condiciones de seguridad.
+Tu misión:
+ decidir qué antecedentes importan y qué diagnóstico preliminar puede construirse.
+Etapa 1 · Filtra los antecedentes
+¿Qué necesitas revisar para analizar el caso?
+Selecciona todos los antecedentes pertinentes. Hay distractores.
+Documento
+Contrato de trabajo
+Permite revisar las condiciones pactadas y las funciones convenidas.
+Comunicación
+Mensaje de Valentina
+Registra que manifestó estar de acuerdo con el cambio.
+Documento interno
+Procedimiento del área
+Describe cómo la organización gestiona la reasignación de tareas.
+Prevención
+Antecedentes de la nueva tarea
+Permiten determinar si existen requisitos, riesgos o capacitación necesaria.
+Marco aplicable
+Normativa laboral pertinente
+Permite revisar límites, requisitos y obligaciones aplicables.
+Dato accesorio
+Antigüedad del supervisor
+El supervisor lleva ocho años en la empresa.
+Dato accesorio
+Resultado mensual del área
+El equipo superó su meta operativa este mes.
+Evaluar selección
+Etapa 2 · Detecta las señales
+¿Qué riesgo hay detrás de cada antecedente?
+Selecciona la interpretación más adecuada.
+“Valentina está de acuerdo”
+Riesgo de asumir que el consentimiento basta
+No existe ningún riesgo
+“Será solo por tres semanas”
+Riesgo de creer que la temporalidad elimina requisitos
+La temporalidad vuelve irrelevante la revisión
+“El procedimiento interno lo permite”
+Riesgo de usar una sola fuente como fundamento suficiente
+El procedimiento interno siempre prevalece
+“No hicimos ningún documento adicional”
+Riesgo de falta de respaldo o formalidad pertinente
+Si el cambio es temporal no importa documentar
+“La tarea podría requerir capacitación”
+Riesgo vinculado a seguridad, preparación y condiciones de la tarea
+La experiencia previa basta para descartar riesgos
+Etapa 3 · Selecciona fuentes
+¿Qué revisarías antes de emitir una recomendación?
+Fuente principal
+Solo el procedimiento interno
+Normativa laboral aplicable y condiciones contractuales
+La práctica habitual del área
+Documento complementario
+Contrato, anexos y antecedentes de la tarea
+La antigüedad del supervisor
+El resultado mensual del equipo
+Si persiste una duda interpretativa
+Revisar criterios administrativos pertinentes o acudir al organismo competente según la materia
+Preguntar únicamente a otra empresa
+Ignorar la duda y ejecutar igual
+Para la nueva tarea
+Revisar condiciones de seguridad, preparación y medidas necesarias
+Confiar solo en la experiencia previa declarada
+Esperar a que ocurra un problema para revisar
+Etapa 4 · Decide
+Con los antecedentes disponibles, ¿qué recomendarías?
+Implementar el cambio porque existe consentimiento.
+Implementarlo porque será temporal y luego documentarlo.
+No ejecutar automáticamente el cambio; completar la revisión de condiciones, límites, riesgos y documentación antes de implementarlo.
+Construir mi diagnóstico
+Resultado
+Matriz de diagnóstico preliminar — Caso Valentina
+0/5
+Resultado pendiente
+Completa las etapas para construir el diagnóstico.
+Hecho relevante
+Modificación temporal de funciones y asignación de nuevas tareas.
+Riesgo principal
+Pendiente de evaluación.
+Derecho / obligación / facultad
+Condiciones de trabajo, facultades de organización, obligaciones recíprocas y deberes de protección.
+Fuentes a revisar
+Pendiente de evaluación.
+Límite o requisito
+Pendiente de evaluación.
+Acción recomendada
+Pendiente de evaluación.
+Evidencia
+Conservar antecedentes, comunicaciones y documentación pertinente de la revisión y decisión.
+Resultado global
+Pendiente de evaluación.
+Idea clave:
+ un diagnóstico preliminar no afirma automáticamente que exista una infracción. Identifica qué debe comprobarse antes de validar o ejecutar una decisión.
+Descargar matriz
+Imprimir / guardar PDF
+↑ Anterior
+Siguiente ↓

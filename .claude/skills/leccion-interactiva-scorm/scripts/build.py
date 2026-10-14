@@ -5,6 +5,7 @@ Uso:
   python3 build.py leccion  fuente.html --title "Lección 1.1 — Título" --id CURSO_M1_L11 --name Leccion_1_1_Titulo --img img/ --aud aud/ --out salida/
   python3 build.py actividad fuente.html --title "Actividad práctica 1 — ..." --id CURSO_M1_AP1 --name Actividad_1 --out salida/
   python3 build.py simulador fuente.html --title "Simulador ..." --id CURSO_M1_SIM --name Simulador --out salida/
+  python3 build.py caso fuente.html --title "Laboratorio ..." --id CURSO_M3_LAB --name Laboratorio_M3 --out salida/   (casos ramificados y laboratorios: const CASO={...})
 
 Marcadores que reemplaza:
   /*{{BASECSS}}*/ /*{{COMPCSS}}*/ /*{{ENGINE}}*/  siempre
@@ -17,12 +18,12 @@ Genera en --out: <name>.html (autocontenido), <name>_SCORM12.zip y <name>.artifa
 import argparse,base64,json,os,re,shutil,subprocess,tempfile,zipfile
 A=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','assets')
 rd=lambda f:open(os.path.join(A,f),encoding='utf-8').read()
-p=argparse.ArgumentParser();p.add_argument('tipo',choices=['leccion','actividad','simulador']);p.add_argument('src')
+p=argparse.ArgumentParser();p.add_argument('tipo',choices=['leccion','actividad','simulador','caso']);p.add_argument('src')
 for k in ('title','id','name','out'):p.add_argument('--'+k,required=True)
 p.add_argument('--img',default='img');p.add_argument('--aud',default='aud');p.add_argument('--pass-pct',default='80')
 a=p.parse_args();os.makedirs(a.out,exist_ok=True)
-comp=rd('comp.css')+rd('comp2.css')+(rd('ev.css') if a.tipo!='leccion' else '')
-eng={'leccion':rd('engine.js'),'actividad':rd('ev_core.js')+rd('ev_tasks.js'),'simulador':rd('ev_core.js')}[a.tipo]
+comp=rd('comp.css')+rd('comp2.css')+(rd('ev.css') if a.tipo!='leccion' else '')+(rd('ev_caso.css') if a.tipo=='caso' else '')
+eng={'leccion':rd('engine.js'),'actividad':rd('ev_core.js')+rd('ev_tasks.js'),'simulador':rd('ev_core.js'),'caso':rd('ev_core.js')+rd('ev_caso.js')}[a.tipo]
 src=open(a.src,encoding='utf-8').read().replace('/*{{BASECSS}}*/',rd('base.css')).replace('/*{{COMPCSS}}*/',comp).replace('/*{{ENGINE}}*/',eng)
 def dur(f):return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',f]))
 aud={};imgs=sorted(set(re.findall(r'\{\{IMG:([\w-]+)\}\}',src)))

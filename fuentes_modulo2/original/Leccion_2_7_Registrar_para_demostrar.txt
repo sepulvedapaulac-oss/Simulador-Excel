@@ -1,0 +1,181 @@
+Lección 2.7 — Registrar para demostrar
+LEGISLACIÓN LABORAL · MÓDULO 2 · LECCIÓN 2.7
+ Narración automática
+Pantalla 1 de 10
+☰ Ruta de la lección · 
+Inicio
+Ruta de la lección
+Avanza completando cada actividad
+Lección 2.7 · Registrar para demostrar
+Cuando hay dos versiones, el registro importa
+Faltan dos días para el cierre de remuneraciones. Camila recibe un reclamo: un trabajador y su jefatura no coinciden en la hora de salida del martes. 
+Haz clic en cada versión.
+MT
+ Matías, analista
+Toca para escuchar su versión
+“El martes salí a las 
+20:10
+. Me quedé terminando el informe que me pidieron.”
+RJ
+ Rocío, jefatura
+Toca para escuchar su versión
+“Su horario termina a las 
+18:00
+. No autoricé horas extra ese día.”
+¿Qué evidencia debería revisar Camila primero para determinar las horas efectivamente trabajadas?
+A
+La palabra de la jefatura, porque es quien supervisa.
+B
+El horario que figura en el contrato.
+C
+El registro de asistencia del día, junto con los antecedentes que lo complementen.
+No basta.
+Una declaración, aunque venga de la jefatura, no reemplaza la evidencia. El punto de partida es el registro de asistencia.
+Intentar de nuevo
+No basta.
+El contrato muestra lo planificado, no lo que efectivamente ocurrió ese día.
+Intentar de nuevo
+Correcto.
+El registro de asistencia es la evidencia central para determinar las horas trabajadas. En esta lección verás por qué, qué sistemas existen y cómo auditarlo.
+Explicación · 1 min 20 s
+El registro de asistencia como evidencia
+Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.
+Capítulo 1
+▶
+Reproducir
+▶ Reproducir
+⏮
+⏭
+0:00
+CC
+🔊 Sonido
+Ver transcripción completa
+Propósito
+¿Para qué existe el registro de asistencia?
+El artículo 33 del Código del Trabajo obliga al empleador a llevar un registro para 
+determinar las horas de trabajo, ordinarias y extraordinarias
+. Abre cada propósito.
+Propósitos revisados 
+0 / 3
+A
+Acreditar la asistencia
+¿La persona estuvo en su puesto?
+＋
+El registro deja constancia de las marcaciones de entrada y salida de cada día. Permite saber quién asistió y en qué horario.
+Ejemplo:
+ si Matías marcó entrada a las 08:31, hay evidencia de que inició su jornada ese día.
+O
+Determinar las horas ordinarias
+¿Se cumplió la jornada pactada?
+＋
+Comparando las marcaciones con la jornada pactada se sabe si la persona trabajó su jornada completa, si hubo atrasos o si hubo salidas anticipadas.
+Ejemplo:
+ 5 días con 8 h 24 min registradas suman las 42 horas semanales pactadas.
+E
+Detectar horas extraordinarias
+¿Hubo exceso sobre lo pactado?
+＋
+El registro permite identificar el tiempo trabajado por sobre la jornada pactada, que debe pagarse como extraordinario si se trabajó con conocimiento del empleador.
+Ejemplo:
+ una salida marcada a las 19:42, cuando el horario termina a las 18:00, es una señal que debe analizarse.
+Referencia: Código del Trabajo, artículo 33.
+Sistemas de registro
+Papel, reloj o electrónico: cada sistema tiene sus reglas
+Selecciona cada sistema para conocerlo.
+Sistemas revisados 
+1 / 3
+📘 Libro de asistencia
+⏱ Reloj control
+📱 Sistema electrónico
+Libro de asistencia
+Es una de las formas tradicionales previstas en el artículo 33. Cada persona anota y firma su hora de entrada y de salida.
+Debe permitir reconstruir la jornada de cada día.
+Las anotaciones deben hacerse al momento de entrar y salir, no después.
+Una enmendadura sin explicación debilita la evidencia.
+Reloj control con tarjetas
+También previsto en el artículo 33. El reloj imprime la hora en una tarjeta individual de cada persona.
+Cada tarjeta corresponde a una persona y a un período.
+Las marcaciones las imprime el reloj, no se escriben a mano.
+Las tarjetas deben conservarse como respaldo.
+Sistema electrónico
+Puede usarse siempre que el sistema cumpla las exigencias de la 
+Resolución Exenta N°38 de 2024
+ de la Dirección del Trabajo.
+Debe dejar constancia de cada marcación y permitir que la persona obtenga su comprobante.
+Las correcciones deben quedar registradas y la marcación original debe conservarse.
+Debe permitir el acceso de la fiscalización a la información.
+Antes de contratar uno, revisa la información que publica la DT sobre sistemas que cumplen la resolución.
+Referencias: Código del Trabajo, art. 33; Resolución Exenta N°38 de 26.04.2024, Dirección del Trabajo.
+Medios tecnológicos
+“Marquemos por WhatsApp y listo”
+Una jefatura propone usar un chat como registro de asistencia. Decide si cada afirmación es 
+verdadera o falsa
+.
+Marcación y ubicación
+Registrar la ubicación no significa bloquear una marcación
+Simula la marcación de salida de Matías desde la aplicación. Sigue los pasos de la derecha.
+Paso 1 · Marcar la salida
+Presiona “Marcar salida” en la aplicación.
+Paso 2 · Fuera de la zona habitual
+Decide cómo debería responder el sistema.
+Paso 3 · Una corrección
+La jefatura pide corregir la hora. Mira qué debe quedar registrado.
+Auditar
+Un martes, tres evidencias
+Camila reúne los antecedentes del martes de Matías. Haz clic en cada hito.
+Evidencias revisadas 
+0 / 3
+18:00
+Contrato
+19:35
+Correo de la jefatura
+19:42
+Marcación de salida
+Selecciona un hito para ver qué demuestra.
+¿Qué debería hacer Camila?
+A
+Revisar la discrepancia, conservar todos los antecedentes y determinar si existió trabajo extraordinario.
+B
+Usar solo el horario del contrato y descartar las demás evidencias.
+C
+Modificar la marcación para que coincida con el horario planificado.
+✕ Consecuencia: se ignora la evidencia
+El contrato muestra lo planificado, no lo ocurrido. Descartar la marcación y el correo deja sin pagar un posible tiempo extraordinario.
+La evidencia del día pesa más que el horario teórico.
+Volver a decidir
+✕ Consecuencia: se altera un registro
+Modificar una marcación para que calce con el horario planificado destruye la evidencia y puede constituir una infracción grave. Las correcciones deben estar justificadas y dejar trazabilidad.
+Nunca ajustes el registro al plan.
+Volver a decidir
+✓ Correcto
+La marcación y el correo indican que Matías trabajó hasta las 19:42 por solicitud de su jefatura. Camila debe conservar los antecedentes y, si se confirma, pagar 1 h 42 min como tiempo extraordinario.
+Evidencia revisada antes del cierre.
+Comprobación
+¿Qué tan claro quedó?
+Cinco preguntas. Necesitas al menos 
+80% (4 de 5)
+ para finalizar la lección. Si no lo logras, puedes reintentar.
+Aplicación en tu organización
+¿Esta práctica fortalece o debilita la evidencia?
+Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna que corresponde.
+Prácticas clasificadas 
+0 / 8
+✓ Fortalece la evidencia
+✕ Debilita la evidencia
+✓
+Lección completada
+¡Felicitaciones! Finalizaste la Lección 2.7
+Ya puedes explicar por qué el registro de asistencia es la evidencia central para determinar las horas ordinarias y extraordinarias, reconocer los sistemas permitidos y auditar una discrepancia.
+—
+Respuestas correctas en la Comprobación
+—
+Decisiones acertadas al primer intento
+Pass
+Estado de la lección
+Navegación libre:
+ desde ahora puedes elegir cualquier tema del panel para repasar.
+Volver al inicio
+Repasar la auditoría
+Fuentes: Código del Trabajo, art. 33; Resolución Exenta N°38 de 26.04.2024, Dirección del Trabajo. Narración generada con ElevenLabs (voz Ninoska).
+← Anterior
+Siguiente →

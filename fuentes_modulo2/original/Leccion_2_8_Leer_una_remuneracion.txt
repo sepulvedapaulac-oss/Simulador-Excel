@@ -1,0 +1,207 @@
+Lección 2.8 — Leer una remuneración
+LEGISLACIÓN LABORAL · MÓDULO 2 · LECCIÓN 2.8
+ Narración automática
+Pantalla 1 de 11
+☰ Ruta de la lección · 
+Inicio
+Ruta de la lección
+Avanza completando cada actividad
+Lección 2.8 · Leer una remuneración
+La etiqueta de una línea no siempre revela su naturaleza
+Camila revisa la liquidación de Diego: sueldo, comisión, colación, movilización y un 
+“bono especial no imponible”
+. Haz clic en la etiqueta del bono para despegarla y ver qué hay detrás.
+Bono especial
+ · $150.000
+Se calcula como el 5% de las ventas del mes. Finalidad: premiar los resultados de Diego.
+NO IMPONIBLE · toca para despegar
+Si un pago aparece con la etiqueta “no imponible”, ¿eso basta para definir su naturaleza?
+A
+Sí. La empresa decide cómo clasificar cada pago.
+B
+No. Hay que revisar por qué se paga: si retribuye el trabajo o si compensa un gasto.
+C
+Sí, siempre que la persona trabajadora esté de acuerdo.
+No basta.
+La clasificación depende de la naturaleza real del pago, no de lo que decida la empresa al nombrarlo.
+Intentar de nuevo
+No basta.
+Un acuerdo no cambia la naturaleza de un pago. Si retribuye el trabajo, es remuneración.
+Intentar de nuevo
+Correcto.
+Lo que define un pago es su causa y finalidad. Este bono premia resultados: retribuye el trabajo. En esta lección aprenderás a leer cada línea con ese criterio.
+Explicación · 1 min 30 s
+¿Cómo se lee una liquidación de sueldo?
+Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.
+Capítulo 1
+▶
+Reproducir
+▶ Reproducir
+⏮
+⏭
+0:00
+CC
+🔊 Sonido
+Ver transcripción completa
+Marco legal
+¿Qué es remuneración?
+Completa la definición del artículo 41 del Código del Trabajo eligiendo la palabra correcta en cada espacio.
+Remuneración son las contraprestaciones en
+elige…
+especie
+dinero
+bonos
+ y las adicionales en 
+elige…
+dinero
+servicios
+especie
+ avaluables en dinero que debe percibir el trabajador del empleador por causa del
+elige…
+convenio colectivo
+contrato de trabajo
+reglamento interno
+.
+Comprobar definición
+¿Por qué estos pagos son remuneración? Toca cada uno.
+Sueldo base
+Comisión por ventas
+Bono por desempeño
+Selecciona un pago.
+Referencia: Código del Trabajo, artículo 41.
+Lo que no es remuneración
+Pagos que compensan un gasto o un riesgo
+El artículo 41 excluye estos conceptos porque no retribuyen el trabajo. Selecciona un concepto a la izquierda y luego su finalidad a la derecha.
+Parejas formadas 
+0 / 5
+Ojo:
+ la exclusión exige que el pago cumpla realmente su finalidad y que el monto sea razonable para ese objeto. Una “colación” muy superior a lo que cuesta almorzar puede encubrir remuneración. También se excluyen las prestaciones familiares legales, las indemnizaciones por término de contrato y las devoluciones de gastos en que se incurra por causa del trabajo.
+La liquidación de Diego
+Etiqueta versus naturaleza real
+Cada línea muestra su etiqueta. Activa el interruptor de cada una para ver su 
+naturaleza real
+.
+Líneas analizadas 
+0 / 5
+Liquidación de remuneraciones · Septiembre 2026
+Diego Fuentes · Contrato indefinido
+Haberes
+Descuentos y aportes
+¿Qué se descuenta y qué paga el empleador?
+Cambia el tipo de contrato, la clasificación del bono y la comisión de la AFP. Observa qué cambia en el sueldo líquido y qué cambia solo en el costo del empleador.
+Indefinido
+Plazo fijo / obra
+Bono = remuneración
+Bono como “no imponible”
+Comisión AFP (ejemplo): 
+1,20%
+Haberes imponibles
+—
+−
+Descuentos legales
+—
+→
+Líquido (+ no imponibles)
+—
+Descuentos de cargo de Diego
+Aportes de cargo del empleador
+No se descuentan del sueldo: son costo de la empresa.
+¿Cuál de estos conceptos NO debe descontarse del sueldo de la persona trabajadora?
+A
+El aporte previsional de 3,5% de cargo del empleador, vigente desde agosto de 2026.
+B
+La cotización legal de salud del 7%.
+C
+El 0,6% del Seguro de Cesantía de una persona con contrato indefinido.
+Revisa.
+La cotización de salud del 7% es de cargo de la persona trabajadora y sí se descuenta.
+Intentar de nuevo
+Revisa.
+En contrato indefinido, la persona trabajadora aporta 0,6% al Seguro de Cesantía y ese monto sí se descuenta.
+Intentar de nuevo
+Correcto.
+El 3,5% (0,1% cuenta individual + 0,9% Compensación por Rentabilidad Protegida + 2,5% SIS y compensación por expectativa de vida) lo financia el empleador y no puede rebajar el sueldo líquido.
+Referencias: Superintendencia de Pensiones; Superintendencia de Salud; AFC Chile; Ley N°21.735 (reforma de pensiones). El ejemplo no incluye impuesto único ni otros descuentos, ni aplica el tope imponible.
+Práctica
+¿Remuneración o pago compensatorio?
+Decide para cada concepto. Intenta lograr la mayor racha de aciertos.
+El caso de Camila
+El bono que cambió de nombre
+Durante años la empresa pagó un 
+bono de productividad
+ mensual. Ahora Finanzas propone llamarlo 
+“asignación especial no imponible”
+. Desliza el comparador hacia la izquierda para ver qué cambia.
+Antes · 2025
+Bono de productividad
+Cálculo:
+ 5% de las ventas del mes.
+Finalidad:
+ premiar resultados.
+Se paga:
+ todos los meses.
+Tratamiento:
+ imponible.
+Propuesta · 2026
+“Asignación especial no imponible”
+Cálculo:
+ 5% de las ventas del mes. 
+(igual)
+Finalidad:
+ premiar resultados. 
+(igual)
+Se paga:
+ todos los meses. 
+(igual)
+Tratamiento:
+ no imponible. 
+(solo cambia esto)
+¿Qué debería hacer Camila?
+A
+Aceptar la nueva etiqueta, porque la empresa puede definir cómo se llama cada concepto.
+B
+Eliminar el bono para evitar problemas.
+C
+Revisar la causa y naturaleza real del pago: si sigue retribuyendo el trabajo, es remuneración imponible.
+✕ Consecuencia: cotizaciones impagas
+Si el pago sigue retribuyendo el trabajo, dejar de cotizar por él genera 
+deudas previsionales
+ y perjudica la pensión y coberturas de las personas. La etiqueta no cambia la naturaleza.
+Solo cambió el nombre.
+Volver a decidir
+✕ Consecuencia: rebaja unilateral
+Un bono pagado de forma permanente puede formar parte de lo pactado. Eliminarlo unilateralmente puede ser una modificación ilegítima de las condiciones de trabajo.
+El problema es la clasificación, no el bono.
+Volver a decidir
+✓ Correcto
+Cálculo, finalidad y periodicidad son idénticos: el pago sigue retribuyendo el trabajo. Camila debe mantenerlo como 
+remuneración imponible
+, cualquiera sea su nombre.
+La naturaleza real manda.
+Comprobación
+¿Qué tan claro quedó?
+Cinco preguntas. Necesitas al menos 
+80% (4 de 5)
+ para finalizar la lección. Si no lo logras, puedes reintentar.
+Aplicación en tu organización
+Detecta los tres errores de esta liquidación
+Revisa cada línea con las preguntas de la lección: ¿por qué se paga?, ¿qué se descuenta a la persona?, ¿qué paga el empleador? Haz clic en las líneas que estén mal.
+Errores encontrados 
+0 / 3
+✓
+Lección completada
+¡Felicitaciones! Finalizaste la Lección 2.8
+Ya puedes leer una liquidación distinguiendo haberes imponibles y no imponibles, descuentos legales de cargo de la persona trabajadora y aportes financiados por el empleador.
+—
+Respuestas correctas en la Comprobación
+—
+Decisiones acertadas al primer intento
+Pass
+Estado de la lección
+Navegación libre:
+ desde ahora puedes elegir cualquier tema del panel para repasar.
+Volver al inicio
+Repasar descuentos y aportes
+Fuentes: Código del Trabajo, art. 41; Ley N°21.735; Superintendencia de Pensiones; Superintendencia de Salud; AFC Chile. Tasas vigentes en 2026. Narración generada con ElevenLabs (voz Ninoska).
+← Anterior
+Siguiente →

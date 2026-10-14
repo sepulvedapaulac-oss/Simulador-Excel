@@ -1,0 +1,661 @@
+Lección 3: Rol de la Dirección del Trabajo y organismos vinculados
+Inicio
+# **Rol de la Dirección del Trabajo y organismos vinculados**
+
+<span color="#f8f0f0">**Objetivo de aprendizaje:** Al finalizar la lección, podrás diferenciar las funciones generales de la Dirección del Trabajo y de otros organismos vinculados al ámbito laboral, identificando a qué institución podría corresponder una consulta, fiscalización, materia de seguridad social o controversia judicial</span>
+Comenzar lección
+## **¿Quién interviene cuando aparece una duda o un incumplimiento laboral?**
+Camila ya sabe que las reglas laborales provienen de distintas fuentes normativas. Ahora surge una pregunta diferente y fundamental en el día a día de Gestión de Personas: 
+
+**¿Qué organismo debe intervenir cuando una situación laboral necesita orientación, fiscalización o una decisión formal?**
+En esta lección aprenderás a distinguir las funciones de la **Dirección del Trabajo**, el **Ministerio del Trabajo y Previsión Social**, los **Tribunales Laborales** y otros organismos vinculados como la **SUSESO**.
+%%Duración estimada: 15 a 20 minutos · Al finalizar podrás identificar qué tipo de intervención necesita una situación antes de decidir a qué institución recurrir.%%
+Siguiente
+Situación inicial
+# **Entonces, ¿a quién le corresponde?**
+Son las 10:15 de la mañana. 
+
+Un trabajador se acerca a Camila porque tiene dudas sobre el registro de su jornada.
+
+Le explica que cree que algunas horas trabajadas no han sido correctamente registradas y le pregunta:
+
+***“¿Tengo que ir al Ministerio, a la Dirección del Trabajo o directamente a un tribunal?”***
+
+Camila se da cuenta de que conocer la legislación no es suficiente: también necesita reconocer **qué organismo tiene competencia para intervenir en cada situación concreta.**
+Elegir siempre el organismo de mayor jerarquía administrativa.
+Identificar primero qué necesita la persona: orientación, fiscalización, seguridad social o resolución judicial.
+Revisa el criterio. La jerarquía institucional no determina por sí sola qué organismo debe intervenir. Primero debes identificar la materia y el tipo de actuación que necesita la situación.
+### ¿Cuál sería un buen criterio para comenzar?
+
+Selecciona la opción que mejor orienta la decisión inicial de Camila.
+Continuar a la línea de tiempo
+Línea de tiempo
+## **De una duda a una acción**
+Una situación laboral puede requerir distintos tipos de intervención institucional. La siguiente secuencia no representa un procedimiento obligatorio para todos los casos: es una forma de visualizar cómo una situación puede evolucionar desde una inquietud inicial hasta una definición formal.
+### 1. Surge una duda
+
+Una persona identifica una situación laboral que necesita revisar (jornada, remuneraciones, contrato, descansos o condiciones de trabajo). *Pregunta orientadora:* ¿Qué ocurrió realmente?
+### 2. Se busca información
+
+La persona consulta información oficial para comprender qué norma o procedimiento podría corresponder. *Pregunta orientadora:* ¿Qué regla se relaciona con esta situación?
+### 3. Puede existir una fiscalización
+
+Cuando existen hechos que podrían constituir un incumplimiento laboral, la Dirección del Trabajo puede ejercer sus facultades de fiscalización dentro de su competencia. *Pregunta orientadora:* ¿Es necesario verificar el cumplimiento de la legislación?
+### 4. Existe una actuación administrativa
+
+Según los antecedentes y el procedimiento aplicable, una actuación administrativa puede determinar cumplimiento, incumplimientos u otras consecuencias previstas por la normativa. *Pregunta orientadora:* ¿Qué resultado produjo la revisión administrativa?
+### 5. Puede existir una controversia judicial
+
+Si existe una controversia que requiere una decisión jurisdiccional y la materia corresponde a la justicia laboral, puede intervenir un Juzgado de Letras del Trabajo (cuestiones derivadas de normas laborales y contratos). *Pregunta orientadora:* ¿Se requiere una sentencia judicial vinculante?
+**Idea clave:** No todos los casos siguen todos estos pasos de manera lineal. Algunas materias tienen procedimientos específicos y otras pueden corresponder directamente a otro organismo especializado.
+Explorar funciones de la DT
+Tarjetas de exploración
+## **¿Qué hace la Dirección del Trabajo?**
+Selecciona cada tarjeta para descubrir las cuatro funciones principales que la legislación chilena entrega a la Dirección del Trabajo.
+La Dirección del Trabajo tiene entre sus funciones principales la **fiscalización de la aplicación de la legislación laboral**. Esto significa que puede verificar el cumplimiento de obligaciones laborales dentro de las atribuciones que la ley le entrega.
+### 1. Fiscalización
+
+¿Qué ocurre cuando es necesario verificar el cumplimiento de la legislación laboral?
+La Dirección del Trabajo puede fijar, mediante **dictámenes**, el sentido y alcance de las leyes del trabajo dentro de su competencia. Un dictamen no es una nueva ley: corresponde a una **interpretación administrativa** oficial de la normativa.
+### 2. Interpretación administrativa
+
+¿Qué ocurre cuando existe una duda sobre el sentido y alcance de una norma laboral?
+**No.** La ley orgánica de la Dirección del Trabajo también contempla actuaciones orientadas a **prevenir y resolver conflictos del trabajo** mediante instancias de mediación y conciliación administrativa.
+### 3. Prevención y resolución de conflictos
+
+¿La función de la DT se limita únicamente a fiscalizar y multar?
+**Sí.** Su normativa orgánica contempla funciones relacionadas con la **supervigilancia del funcionamiento de organismos sindicales** y de conciliación, de acuerdo con las normas que los regulan.
+### 4. Relaciones colectivas
+
+¿Tiene la DT funciones vinculadas con las organizaciones sindicales?
+Comparar vía administrativa y judicial
+Comparativa visual
+## **Vía administrativa y vía judicial no son lo mismo**
+A continuación, explora los cuatro puntos interactivos en la imagen comparativa para comprender las diferencias esenciales entre la gestión administrativa de la Dirección del Trabajo y la instancia jurisdiccional de los Tribunales Laborales.
+**La Dirección del Trabajo** puede **verificar el cumplimiento de la legislación laboral** dentro de sus atribuciones.
+
+*¿Aquí se está resolviendo judicialmente una controversia?* **No.** Se está verificando administrativamente el cumplimiento de la normativa vigente.
+**La Dirección del Trabajo** puede **interpretar administrativamente la legislación laboral** mediante dictámenes dentro de su competencia.
+
+*Idea clave:* Interpretar administrativamente una norma no equivale a dictar una sentencia judicial.
+Los **Juzgados de Letras del Trabajo** conocen las controversias laborales que la ley entrega a su competencia (cuestiones entre trabajador y empleador derivadas de normas y contratos).
+
+*Ejemplo:* Una controversia de derechos discutidos que exige una decisión jurisdiccional.
+**El tribunal** analiza las pruebas y **resuelve judicialmente el asunto** sometido a su conocimiento mediante una sentencia definitiva vinculante.
+
+*Principio rector:* **Fiscalizar no es lo mismo que juzgar.**
+Ver organismos vinculados
+Organismos vinculados
+## **Un sistema con funciones diferentes**
+En Chile, el marco institucional laboral cuenta con distintos órganos especializados. Selecciona cada pestaña para conocer el alcance y la idea práctica de cada institución.
+Dirección del Trabajo
+### Dirección del Trabajo (DT)
+
+La Dirección del Trabajo es un **servicio técnico dependiente del Ministerio del Trabajo y Previsión Social**.
+
+**Funciones principales:**
+
+- Fiscalizar la aplicación de la legislación laboral.
+- Interpretar administrativamente la legislación laboral mediante dictámenes.
+- Divulgar los principios técnicos y sociales de la legislación laboral.
+- Desarrollar actuaciones orientadas a prevenir y resolver conflictos laborales dentro de sus atribuciones.
+
+*Idea práctica:* **DT = Fiscalización, interpretación administrativa y mediación laboral.**
+Ministerio del Trabajo
+### Ministerio del Trabajo y Previsión Social (Mintrab)
+
+El Ministerio del Trabajo y Previsión Social es el **organismo superior encargado de dirigir y coordinar las políticas públicas laborales y previsionales del país**.
+
+Su función no debe confundirse con la fiscalización operativa de cada posible incumplimiento individual ni con la resolución judicial de un litigio.
+
+*Idea práctica:* **Ministerio = Conducción, diseño y rectoría de políticas públicas laborales.**
+Tribunales Laborales
+### Tribunales Laborales (Juzgados de Letras del Trabajo)
+
+Los Juzgados de Letras del Trabajo conocen las materias que la legislación entrega a la **jurisdicción laboral**.
+
+Entre ellas se encuentran las controversias derivadas de la aplicación de normas laborales, contratos individuales y colectivos de trabajo, y materias de tutela laboral.
+
+*Idea práctica:* **Tribunal = Resolución jurisdiccional vinculante de controversias (juzgar y hacer ejecutar lo juzgado).**
+SUSESO
+### Superintendencia de Seguridad Social (SUSESO)
+
+La SUSESO cumple funciones de **regulación, supervigilancia y fiscalización en materias de seguridad social** dentro de su competencia legal.
+
+**Ámbitos de intervención:**
+
+- Prestaciones y beneficios de seguridad social (licencias médicas, subsidios, accidentes del trabajo y enfermedades profesionales).
+- Supervisión de entidades administradoras de seguridad social (Mutualidades, Cajas de Compensación, COMPIN, etc.).
+
+*Idea práctica:* **SUSESO = No toda consulta laboral es exclusivamente de Código del Trabajo; los beneficios y licencias corresponden a seguridad social.**
+Preparar toma de decisiones
+Preparación para el escenario
+## **Tres preguntas llegan al escritorio de Camila**
+Durante la misma semana, tres preguntas llegan al escritorio de Camila
+**Caso A:** Una persona quiere denunciar un posible incumplimiento relacionado con el registro de su jornada laboral.
+**Caso B:** Un equipo directivo necesita comprender cómo se interpreta una regla laboral antes de modificar un procedimiento interno.
+**Caso C:** Un trabajador y la empresa mantienen una controversia jurídica de fondo sobre derechos adquiridos que requiere una decisión judicial.
+## ¿Enviarías los tres casos a la misma institución?
+
+**Respuesta:** **No.** La institución competente depende estrictamente de la materia y del tipo de intervención que cada situación demanda:
+
+- **Caso A (Denuncia / incumplimiento):** Inspección / Fiscalización de la Dirección del Trabajo.
+- **Caso B (Interpretación normativa):** Consulta de dictámenes de la Dirección del Trabajo.
+- **Caso C (Controversia de derechos):** Juzgado de Letras del Trabajo.
+Ingresar al escenario con Camila
+Escenario interactivo
+## **Asesorando a Camila en un caso real**
+Ayuda a Camila a orientar a Diego paso a paso en su situación laboral en Horizonte Servicios. Evalúa cada paso y elige la alternativa más adecuada.
+### Camila te consulta:
+
+“Hola, necesito que me ayudes con un caso. Diego trabaja en Horizonte Servicios y me comenta que durante varias semanas ha trabajado horas adicionales.
+
+Según él, algunas de esas horas no aparecen correctamente en el registro de asistencia y tampoco sabe si fueron pagadas. Tiene capturas de sus registros y quiere saber qué hacer.
+
+**¿Qué le responderías primero?”**
+“Revisemos los antecedentes y evaluemos una consulta o denuncia ante la Dirección del Trabajo, porque podría corresponder una fiscalización.”
+“Debes ir inmediatamente a un tribunal. La Dirección del Trabajo no revisa incumplimientos laborales.”
+“Debes ir al Ministerio del Trabajo, porque ese organismo resuelve directamente estos problemas.”
+### Camila revisa esa opción:
+
+“No necesariamente.
+
+Los tribunales laborales pueden intervenir cuando existe una controversia que requiere una decisión judicial, pero la **Dirección del Trabajo sí posee facultades de fiscalización** sobre el cumplimiento de la legislación laboral.
+
+Antes de enviar el caso directamente a tribunales, conviene identificar qué tipo de actuación se necesita.”
+Intentar nuevamente con otro criterio
+### Camila revisa esa opción:
+
+“Revisemos esa decisión.
+
+El **Ministerio del Trabajo** dirige y coordina las políticas laborales del país, pero eso no significa que tramite directamente cada posible incumplimiento laboral individual.
+
+En un caso que podría requerir fiscalización operativa, la **Dirección del Trabajo** tiene el papel central.”
+### ¡Buen primer paso!
+
+“Ese es un buen primer criterio. La Dirección del Trabajo tiene atribuciones para fiscalizar el cumplimiento de la legislación laboral. Antes de realizar cualquier gestión, conviene revisar los antecedentes que Diego posee y comprender exactamente qué ocurrió.
+
+**Pero el caso continúa:** Supongamos ahora que, después de las gestiones administrativas, continúa existiendo una controversia entre Diego y la empresa sobre los derechos discutidos y se requiere una decisión jurisdiccional vinculante.
+
+**¿Quién puede resolver judicialmente esa controversia laboral?”**
+El Juzgado de Letras del Trabajo competente.
+La Dirección del Trabajo.
+El Ministerio del Trabajo y Previsión Social.
+### Camila precisa la función:
+
+“La Dirección del Trabajo puede fiscalizar e interpretar administrativamente la legislación laboral, pero **no reemplaza la función jurisdiccional de los tribunales**.
+
+Cuando una controversia requiere una sentencia judicial definitiva, corresponde intervenir al tribunal competente.”
+Reevaluar la decisión
+### Camila precisa la función:
+
+“El Ministerio cumple principalmente funciones de dirección y rectoría de las políticas públicas laborales.
+
+No reemplaza a los tribunales en la resolución jurisdiccional de controversias de derechos.”
+### ¡Excelente resolución!
+
+“¡Correcto! Los **Juzgados de Letras del Trabajo** conocen las controversias laborales que la ley entrega a su competencia.
+
+Esto nos permite distinguir con claridad dos funciones esenciales:
+
+1. **La Dirección del Trabajo** puede fiscalizar y mediar administrativamente.
+2. **El Tribunal Laboral** puede juzgar y resolver judicialmente una controversia.
+
+**Conclusión de Camila:** Lo más importante no es memorizar una lista de instituciones, sino preguntarse siempre:
+
+- *¿Qué ocurrió?*
+- *¿Qué tipo de intervención se necesita?*
+- *¿Qué organismo tiene competencia para realizarla?*”
+Completar escenario y continuar
+Ir a la comprobación de aprendizajes
+Comprobación
+## **¿Quién hace qué?**
+Demuestra lo aprendido respondiendo a las siguientes tres preguntas sobre la asignación de funciones entre los organismos laborales.
+Ministerio del Trabajo y Previsión Social.
+Dirección del Trabajo.
+Juzgado de Letras del Trabajo.
+Revisa la opción. La fiscalización operativa de la legislación laboral corresponde a la Dirección del Trabajo dentro de sus atribuciones legales.
+### Pregunta 1
+
+Existe un posible incumplimiento de una obligación laboral en el registro de asistencia y se necesita verificar formalmente lo que está ocurriendo en la empresa.
+
+**¿Qué organismo tiene la función fiscalizadora central en materia laboral?**
+Superintendencia de Seguridad Social (SUSESO).
+Revisa la opción. Los Juzgados de Letras del Trabajo son los órganos jurisdiccionales competentes para conocer y resolver controversias de derechos en materia laboral.
+### Pregunta 2
+
+Existe una controversia jurídica entre un trabajador y su empleador sobre derechos contractuales que requiere una decisión judicial vinculante.
+
+**¿Qué institución puede conocerla y resolverla cuando corresponde a la jurisdicción laboral?**
+Ministerio de Justicia.
+Revisa la opción. SUSESO es el organismo técnico especializado en regular, supervigilar y fiscalizar materias de seguridad social (licencias, subsidios, accidentes y enfermedades profesionales).
+### Pregunta 3
+
+Una consulta se relaciona específicamente con el rechazo de una licencia médica y el pago de subsidios por incapacidad laboral dentro del sistema previsional.
+
+**¿Qué organismo especializado resulta pertinente en este ámbito?**
+Ver herramientas de transferencia
+Transferencia
+## **Antes de derivar un caso, haz tres preguntas**
+Para evitar errores en la gestión cotidiana y derivar con precisión técnica, aplica siempre este esquema de tres preguntas clave:
+Identifica el hecho concreto antes de pensar en una institución:
+
+- ¿Es una simple duda de procedimiento?
+- ¿Existe un posible incumplimiento legal o contractual?
+- ¿Se trata de una materia de seguridad social o licencias?
+- ¿Existe una controversia jurídica de derechos?
+Determina la naturaleza de la actuación requerida:
+
+- **Orientación:** Búsqueda de información o pautas.
+- **Interpretación administrativa:** Consulta de dictámenes vigentes.
+- **Fiscalización:** Verificación inspectiva de cumplimiento.
+- **Supervisión especializada:** Trámites de seguridad social.
+- **Resolución judicial:** Sentencia ante un litigio o demanda.
+Revisa y organiza la evidencia documental pertinente:
+
+- Contrato individual o colectivo de trabajo.
+- Registros de asistencia y control de jornada.
+- Liquidaciones de remuneraciones y comprobantes de pago.
+- Comunicaciones formales y resoluciones previas.
+**Regla de oro profesional:** Primero identifica la necesidad y los hechos. Después identifica la institución competente.
+Ir al cierre de la lección
+Cierre
+## **Camila ya puede distinguir funciones antes de derivar**
+<style>
+  .video-container {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Inter', var(--font-sans);
+    color: #ffffff;
+    overflow: hidden;
+  }
+  .bg-glow {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,0.22) 0%, rgba(15,23,42,0) 70%);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+  }
+  .bg-glow-subtle {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(15,23,42,0) 70%);
+    bottom: -150px;
+    left: -150px;
+    pointer-events: none;
+  }
+</style>
+<style>
+  .s1-wrap {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 90px 120px;
+  }
+  .s1-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .s1-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 50%, rgba(15, 23, 42, 0.25) 100%);
+    z-index: 2;
+  }
+  .s1-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1400px;
+  }
+  .s1-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    background: rgba(37, 99, 235, 0.85);
+    border: 1px solid rgba(147, 197, 253, 0.6);
+    border-radius: 9999px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    width: fit-content;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+  .s1-title {
+    font-size: 74px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 32px;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  }
+  .s1-card {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border-left: 8px solid #38bdf8;
+    border-radius: 16px;
+    padding: 24px 36px;
+    display: inline-block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  .s1-card-text {
+    font-size: 38px;
+    font-weight: 700;
+    color: #38bdf8;
+  }
+</style>
+
+<div class="s1-wrap">
+  <img class="s1-bg-img"
+       data-image-ref="dt-inspection-office"
+       data-prompt="Professional realistic photograph of a modern government labor inspection office in Santiago Chile, inspectors reviewing official workplace compliance documents, authentic corporate atmosphere, shallow depth of field, high quality"
+       data-aspect-ratio="1.78"
+       data-task-ref="dt_inspection_bg"
+       alt="Oficina de fiscalización laboral de la Dirección del Trabajo">
+  <div class="s1-overlay"></div>
+  <div class="s1-content">
+    <div class="s1-badge">VÍA ADMINISTRATIVA</div>
+    <div class="s1-title">Dirección del Trabajo</div>
+    <div class="s1-card" id="s1Card" style="opacity: 0;">
+      <div class="s1-card-text">Fiscalización · Dictámenes · Mediación</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  tl.fromTo('.s1-bg-img', { scale: 1.08 }, { scale: 1.0, duration: sceneDuration || 8, ease: 'none' }, 0);
+  tl.fromTo('.s1-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.2);
+  tl.fromTo('#s1Card', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }, cues['dt'] || 2.5);
+</script>
+Al comenzar, existían dudas sobre qué rol cumplía cada institución laboral. Hoy sabemos que la Dirección del Trabajo fiscaliza y media en conflictos.
+Al
+comenzar,
+existían
+dudas
+sobre
+qué
+rol
+cumplía
+cada
+institución
+laboral.
+Hoy
+sabemos
+que
+la
+Dirección
+del
+Trabajo
+fiscaliza
+media
+en
+conflictos.
+Al comenzar, existían dudas sobre qué rol cumplía cada institución laboral.
+Hoy sabemos que la Dirección del Trabajo fiscaliza y media en conflictos.
+<style>
+  .s2-wrap {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 90px 120px;
+  }
+  .s2-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .s2-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 42, 0.58) 50%, rgba(15, 23, 42, 0.28) 100%);
+    z-index: 2;
+  }
+  .s2-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1500px;
+  }
+  .s2-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    background: rgba(147, 51, 234, 0.85);
+    border: 1px solid rgba(216, 180, 254, 0.6);
+    border-radius: 9999px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    width: fit-content;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+  .s2-title {
+    font-size: 74px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 36px;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  }
+  .s2-grid {
+    display: flex;
+    gap: 32px;
+    max-width: 1300px;
+  }
+  .s2-card {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px 36px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  .s2-card-mintrab {
+    border-top: 6px solid #a855f7;
+  }
+  .s2-card-tribunal {
+    border-top: 6px solid #38bdf8;
+  }
+  .s2-card-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+</style>
+
+<div class="s2-wrap">
+  <img class="s2-bg-img"
+       data-image-ref="labor-courtroom"
+       data-prompt="Professional realistic photograph of a formal Chilean labor court hearing room with judicial wooden bench and Chilean flags, solemn atmosphere, balanced warm ambient light, high quality"
+       data-aspect-ratio="1.78"
+       data-task-ref="courtroom_bg"
+       alt="Sala de audiencia de Juzgado de Letras del Trabajo">
+  <div class="s2-overlay"></div>
+  <div class="s2-content">
+    <div class="s2-badge">ESTRUCTURA INSTITUCIONAL</div>
+    <div class="s2-title">Ministerio y Tribunales</div>
+    <div class="s2-grid" id="s2Grid" style="opacity: 0;">
+      <div class="s2-card s2-card-mintrab">
+        <div class="s2-card-title">Ministerio: Políticas Públicas</div>
+      </div>
+      <div class="s2-card s2-card-tribunal">
+        <div class="s2-card-title">Tribunal: Sentencias Judiciales</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  tl.fromTo('.s2-bg-img', { scale: 1.08 }, { scale: 1.0, duration: sceneDuration || 8, ease: 'none' }, 0);
+  tl.fromTo('.s2-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.2);
+  tl.fromTo('#s2Grid', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, cues['tribunales'] || 2.5);
+</script>
+El Ministerio dirige las políticas laborales, mientras que los Juzgados de Letras del Trabajo resuelven controversias judiciales.
+El
+Ministerio
+dirige
+las
+políticas
+laborales,
+mientras
+los
+Juzgados
+de
+Letras
+resuelven
+controversias
+judiciales.
+El Ministerio dirige las políticas laborales,
+mientras que los Juzgados de Letras del Trabajo resuelven controversias judiciales.
+<style>
+  .s3-wrap {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 90px 120px;
+  }
+  .s3-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .s3-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 78, 59, 0.94) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);
+    z-index: 2;
+  }
+  .s3-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1400px;
+  }
+  .s3-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    background: rgba(16, 185, 129, 0.85);
+    border: 1px solid rgba(110, 231, 183, 0.6);
+    border-radius: 9999px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    width: fit-content;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+  .s3-title {
+    font-size: 74px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 36px;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  }
+  .s3-highlight {
+    background: rgba(6, 78, 59, 0.9);
+    backdrop-filter: blur(12px);
+    border-left: 8px solid #34d399;
+    border-radius: 16px;
+    padding: 24px 36px;
+    display: inline-block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  .s3-highlight-text {
+    font-size: 40px;
+    font-weight: 700;
+    color: #a7f3d0;
+  }
+</style>
+
+<div class="s3-wrap">
+  <img class="s3-bg-img"
+       data-image-ref="social-security-santiago"
+       data-prompt="Professional realistic photograph of a modern healthcare and social security administration desk in Santiago Chile, medical benefit files and professional advisor reviewing claims, clean natural lighting"
+       data-aspect-ratio="1.78"
+       data-task-ref="suseso_bg"
+       alt="Gestión y fiscalización de seguridad social y prestaciones">
+  <div class="s3-overlay"></div>
+  <div class="s3-content">
+    <div class="s3-badge">SEGURIDAD SOCIAL Y SÍNTESIS</div>
+    <div class="s3-title">SUSESO y Criterio Práctico</div>
+    <div class="s3-highlight" id="s3Card" style="opacity: 0;">
+      <div class="s3-highlight-text">Identifica la necesidad antes de derivar</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  tl.fromTo('.s3-bg-img', { scale: 1.08 }, { scale: 1.0, duration: sceneDuration || 8, ease: 'none' }, 0);
+  tl.fromTo('.s3-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.2);
+  tl.fromTo('#s3Card', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }, cues['regla'] || 3.0);
+</script>
+Y en seguridad social, la Superintendencia de Seguridad Social supervisa prestaciones. Recuerda: identifica siempre la necesidad antes de derivar.
+seguridad
+social,
+Superintendencia
+Seguridad
+Social
+supervisa
+prestaciones.
+Recuerda:
+identifica
+siempre
+necesidad
+antes
+derivar.
+Y en seguridad social, la Superintendencia de Seguridad Social supervisa prestaciones.
+Recuerda: identifica siempre la necesidad antes de derivar.
+## Mensaje final para recordar
+
+Antes de preguntarte:
+
+**“¿A quién envío este caso?”**
+
+Pregúntate siempre primero:
+
+***“¿Qué tipo de intervención necesita realmente esta situación?”***
+# <span color="#f8f0f0">¡Felicitaciones!</span>
+
+<span color="#f8f0f0">Has completado la lección. Ahora cuentas con el criterio para identificar a qué organismo acudir según el tipo de situación laboral:</span>
+
+- <span color="#f8f0f0">**Dirección del Trabajo:** Fiscalización del cumplimiento normativo, dictámenes administrativos y mediación.</span>
+- <span color="#f8f0f0">**Ministerio del Trabajo:** Rectoría y conducción de políticas públicas laborales.</span>
+- <span color="#f8f0f0">**Tribunales Laborales:** Resolución jurisdiccional y vinculante de controversias.</span>
+- <span color="#f8f0f0">**SUSESO:** Supervisión y fiscalización en materias de seguridad social y licencias.</span>
+
+**<span color="#f8f0f0">Regla clave: identifica siempre la necesidad antes de derivar. ¡Nos vemos en la siguiente lección!</span>**

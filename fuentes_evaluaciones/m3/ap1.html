@@ -1,0 +1,75 @@
+<title>Actividad práctica 1 — La solicitud de teletrabajo de Daniela</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'actividad',codigo:'M3_AP1',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 3 · ACTIVIDAD PRÁCTICA 1',
+ eyebrow:'Actividad práctica 1 · Caso ramificado',
+ titulo:'La solicitud de teletrabajo de Daniela',
+ contexto:'<p>Daniela, analista de remuneraciones de Horizonte Servicios, envía a Camila un correo: necesita trabajar algunos días desde su casa porque cuida a su hijo de 9 años. Su jefatura cree que "eso es un favor que se evalúa caso a caso". Acompaña a Camila a gestionar la solicitud: cada decisión cambia el rumbo del caso.</p>',
+ objetivos:['<b>Describir</b> la situación protegida y los antecedentes que la acreditan.','<b>Explicar</b> los plazos y las respuestas posibles del empleador.','<b>Analizar</b> si la función permite el trabajo a distancia y cómo dejarlo por escrito.'],
+ tiempo:'25–30 min',resumen:'4 decisiones · 2 respuestas de desarrollo',
+ expediente:[
+  {titulo:'Correo de Daniela (lunes 6 de octubre)',html:'<p>"Camila: desde este mes cuido sola a mi hijo Tomás (9 años). Quisiera trabajar desde mi casa martes y jueves. Las conciliaciones de remuneraciones las hago en el sistema web. Adjunto el certificado de nacimiento de Tomás."</p>'},
+  {titulo:'Descripción del cargo',html:'<table><tr><th>Tarea</th><th>Modalidad</th></tr><tr><td>Conciliar remuneraciones en el sistema web</td><td>Remota posible</td></tr><tr><td>Atender consultas presenciales de trabajadores</td><td>Presencial (lunes y miércoles)</td></tr><tr><td>Reunión de cierre mensual</td><td>Presencial o videollamada</td></tr></table>'},
+  {titulo:'Regla legal (Ley 21.645)',html:'<p>Quien tiene el cuidado personal de un niño o niña <b>menor de 14 años</b> puede solicitar trabajo a distancia o teletrabajo, total o parcial, si la naturaleza de las funciones lo permite. El empleador responde <b>dentro de 15 días</b>: acepta, ofrece una fórmula alternativa o rechaza de forma fundada. Si se acuerda, se firma un <b>anexo</b>.</p>'}
+ ],
+ competencias:[
+  {id:'id',nombre:'Identificar la situación protegida',fortaleza:'reconoces quién es persona cuidadora y qué antecedente lo acredita.',mejora:'repasa quiénes son beneficiarios y qué documentos acreditan el cuidado.',repasar:'Lecciones 3.5 y 3.6'},
+  {id:'pl',nombre:'Plazos y respuestas del empleador',fortaleza:'aplicas el plazo de 15 días y las tres respuestas posibles.',mejora:'repasa el plazo de respuesta y la obligación de fundamentar un rechazo.',repasar:'Lección 3.6'},
+  {id:'fx',nombre:'Formalizar la medida',fortaleza:'sabes dejar la modalidad por escrito con sus menciones.',mejora:'repasa el contenido del anexo y quién asume los costos.',repasar:'Lección 3.6'}
+ ],
+ inicio:'e1',
+ etapas:[
+  {id:'e1',tipo:'decision',titulo:'La primera respuesta',corto:'Primera respuesta',competencia:'id',
+   escena:'<p>La jefatura de Daniela le dice a Camila: "Respóndele que lo vemos a fin de mes; esto es un beneficio voluntario".</p>',
+   pregunta:'¿Qué hace Camila?',
+   ideal:'reconocer que es un derecho a solicitar con plazo legal de respuesta, registrar la fecha de recepción y analizar las funciones.',
+   opciones:[
+    {texto:'Registra la fecha de recepción, confirma que Daniela acredita el cuidado de un menor de 14 años y explica a la jefatura que hay 15 días para responder.',pts:2,fb:'Correcto: la Ley 21.645 convierte la conciliación en un derecho a solicitar y fija 15 días para responder. Registrar la fecha protege a ambas partes.',siguiente:'e2'},
+    {texto:'Le pide a Daniela un certificado médico de su hijo para "comprobar que realmente lo necesita".',pts:0,fb:'El antecedente que acredita el cuidado de un niño menor de 14 años es el certificado de nacimiento (o la resolución judicial de cuidado personal). No se exige justificar una enfermedad.',siguiente:'e1b'},
+    {texto:'Responde a Daniela que lo verán a fin de mes, como pidió la jefatura.',pts:0,fb:'Fin de mes supera el plazo legal: el empleador debe responder dentro de 15 días desde la presentación. Si no responde, Daniela puede recurrir a la Inspección del Trabajo.',siguiente:'e1b'}]},
+  {id:'e1b',tipo:'decision',titulo:'Daniela insiste',corto:'Corregir el rumbo',competencia:'pl',
+   escena:'<p>Pasan 10 días. Daniela escribe molesta: "Nadie me ha respondido y ya entregué todo lo que pide la ley".</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'responder dentro del plazo con una decisión por escrito: aceptar, proponer una alternativa o rechazar fundadamente.',
+   opciones:[
+    {texto:'Le pide disculpas y le asegura que responderán por escrito antes de cumplir los 15 días, analizando sus funciones.',pts:2,fb:'Bien: aún está dentro del plazo. Lo importante es una respuesta escrita y oportuna.',siguiente:'e2'},
+    {texto:'Le explica que, como no hubo respuesta, la solicitud se entiende rechazada.',pts:0,fb:'La ley no establece un rechazo tácito: la respuesta debe darse por escrito y, si es un rechazo, debe ser fundada.',siguiente:'e2'}]},
+  {id:'e2',tipo:'abierta',titulo:'¿Las funciones permiten trabajar a distancia?',corto:'Analizar funciones',verbo:'Analiza',competencia:'pl',
+   escena:'<p>Revisa la <b>descripción del cargo</b> en el expediente.</p>',
+   consigna:'qué tareas de Daniela pueden hacerse a distancia y cuáles no, y qué fórmula le propondrías.',minPalabras:40,
+   modelo:'La conciliación de remuneraciones se hace en un sistema web, por lo que puede hacerse a distancia. La atención presencial ocurre lunes y miércoles, y el cierre mensual admite videollamada. Por eso la solicitud (martes y jueves remotos) es compatible: se puede aceptar tal como viene o ajustar el día del cierre mensual.',
+   criterios:['Distingue tareas remotas y presenciales a partir del cargo.','Relaciona los días pedidos con los días de atención presencial.','Propone una fórmula concreta (aceptar o alternativa).'],siguiente:'e3'},
+  {id:'e3',tipo:'decision',titulo:'La respuesta formal',corto:'Responder',competencia:'pl',
+   escena:'<p>La jefatura acepta que las funciones son compatibles, pero quiere que el cierre mensual siempre sea presencial.</p>',
+   pregunta:'¿Qué respuesta envía Camila?',
+   ideal:'una fórmula alternativa escrita: martes y jueves remotos, salvo el día del cierre mensual.',
+   opciones:[
+    {texto:'Rechazo, porque una parte del trabajo es presencial.',pts:0,fb:'Un rechazo solo procede si la naturaleza de las funciones no permite el trabajo a distancia. Aquí la mayoría de las tareas sí lo permite.',siguiente:'e4'},
+    {texto:'Fórmula alternativa por escrito: martes y jueves remotos, excepto el día del cierre mensual, que será presencial.',pts:2,fb:'Correcto: el empleador puede ofrecer una fórmula alternativa compatible con la operación, respondiendo por escrito dentro del plazo.',siguiente:'e4'},
+    {texto:'Aceptación verbal en el pasillo, sin documentos.',pts:1,fb:'Aceptar es posible, pero sin respuesta escrita ni anexo no queda respaldo de la modalidad ni de sus condiciones.',siguiente:'e4'}]},
+  {id:'e4',tipo:'decision',titulo:'El anexo',corto:'Anexo',competencia:'fx',
+   escena:'<p>Daniela acepta la fórmula. Camila prepara el anexo de contrato.</p>',
+   pregunta:'¿Qué debe incluir el anexo?',
+   ideal:'modalidad, días y lugar, período, mecanismos de supervisión, equipos que entrega la empresa y derecho a desconexión si corresponde.',
+   opciones:[
+    {texto:'Solo la frase "trabajo remoto martes y jueves".',pts:0,fb:'El anexo debe contener las menciones legales del trabajo a distancia: modalidad, lugar, período, supervisión, equipos y desconexión.',siguiente:'e5'},
+    {texto:'Modalidad, días y lugar, período, supervisión, equipos y herramientas a cargo de la empresa y desconexión.',pts:2,fb:'Correcto: esas menciones dan certeza a ambas partes. Los equipos y sus costos de operación son de cargo del empleador.',siguiente:'e5'},
+    {texto:'Que Daniela pagará internet y el computador porque el beneficio es para ella.',pts:0,fb:'Los equipos, herramientas y sus costos de operación y mantención son de cargo del empleador (art. 152 quáter L).',siguiente:'e5'}]},
+  {id:'e5',tipo:'abierta',titulo:'Explicar la decisión a la jefatura',corto:'Explicar',verbo:'Explica',competencia:'fx',
+   consigna:'a la jefatura de Daniela, en un mensaje breve, por qué esta solicitud no es "un favor" y qué riesgos evita la empresa al responder a tiempo y por escrito.',minPalabras:40,
+   modelo:'Desde la Ley 21.645, las personas que cuidan a un niño o niña menor de 14 años tienen derecho a solicitar trabajo a distancia cuando sus funciones lo permiten. La empresa debe responder en 15 días y, si rechaza, fundamentarlo. Responder a tiempo y por escrito evita reclamos ante la Inspección del Trabajo y deja respaldo de la fórmula acordada.',
+   criterios:['Menciona que es un derecho a solicitar, no un beneficio voluntario.','Incluye el plazo de 15 días y la necesidad de fundar un rechazo.','Señala el riesgo de reclamo ante la Inspección y el valor del respaldo escrito.']}
+ ],
+ cierre:'<b>Idea clave:</b> separa siempre dos preguntas: ¿la persona acredita la situación de cuidado? y ¿la medida es compatible con sus funciones? Luego responde por escrito dentro de 15 días.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

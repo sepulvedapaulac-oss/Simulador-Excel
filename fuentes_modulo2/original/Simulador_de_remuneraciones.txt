@@ -1,0 +1,57 @@
+Simulador de remuneraciones 2026
+LEGISLACIÓN LABORAL · MÓDULO 2 · SIMULADOR
+Reglas vigentes en octubre de 2026
+Simulador de remuneraciones
+Calcula y practica una liquidación de sueldo
+Usa la 
+calculadora
+ para ver paso a paso cómo se arma una liquidación, o entra a 
+practicar
+ para resolver casos nuevos y recibir corrección inmediata.
+🧮 Calculadora
+🎯 Practicar con casos
+Jornada y sueldo
+Sueldo base mensual ($)
+Jornada semanal pactada (horas)
+Límite general 2026: 42 h
+Horas extra del mes
+Recargo horas extra (%)
+Mínimo legal: 50%
+Otros haberes
+Comisiones ($)
+Bonos que retribuyen el trabajo ($)
+Colación ($) 
+no imponible
+Movilización ($) 
+no imponible
+Viáticos u otros reembolsos ($) 
+no imponible
+Previsión y contrato
+Tipo de contrato
+Indefinido
+Plazo fijo / obra o faena
+Comisión de la AFP (%)
+Revisa la comisión vigente de cada AFP
+Salud
+Fonasa (7%)
+Isapre (plan pactado)
+Valor del plan Isapre ($)
+Se descuenta el mayor entre el plan y el 7%
+Impuesto único ($) 
+opcional, ingrésalo manualmente
+Descuentos convencionales (requieren acuerdo escrito)
+Crédito sin interés de la empresa para vivienda o educación ($)
+Otros pagos autorizados por escrito ($)
+Existe autorización escrita de la persona trabajadora 
+Cálculo paso a paso
+Aportes de cargo del empleador
+No se descuentan del sueldo: son costo de la empresa.
+Casos resueltos: 0
+Respuestas correctas: 0 de 0
+Casos perfectos: 0
+Caso
+Salud: Fonasa 7%. Recargo de horas extra: 50%. Sin impuesto único, tope imponible ni otros descuentos. Redondea cada monto al peso.
+Comprobar
+Ver solución
+Nuevo caso →
+Base: Código del Trabajo (arts. 32, 41 y 58), Ley N°21.561, Ley N°21.735, Superintendencia de Pensiones, AFC Chile. Herramienta de práctica: no incluye gratificación legal, tope imponible en UF ni cálculo automático del impuesto único. Para una liquidación real, verifica los valores vigentes del mes.
