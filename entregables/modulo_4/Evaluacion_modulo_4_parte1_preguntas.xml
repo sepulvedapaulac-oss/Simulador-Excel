@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category"><category><text>$course$/top/Legislación laboral/Módulo 4/Evaluación del módulo 4</text></category><info format="html"><text></text></info></question>
+  <question type="multichoice">
+    <name><text>m4.p1</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Según el artículo 2 del Código del Trabajo, modificado por la Ley 21.643 (Ley Karin), ¿en qué deben fundarse siempre las relaciones laborales?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 2 (Ley 21.643). Lección 4.1.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p1</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Las relaciones laborales deben fundarse en un trato libre de violencia, compatible con la dignidad y con perspectiva de género (art. 2 CT).</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.1: el art. 2 CT exige un trato libre de violencia, compatible con la dignidad de la persona y con perspectiva de género.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[En la productividad y el cumplimiento de metas, siempre que no haya denuncias.]]></text><feedback format="html"><text><![CDATA[La ley no condiciona el derecho a la ausencia de denuncias ni lo subordina a las metas.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[En un trato libre de violencia, compatible con la dignidad de la persona y con perspectiva de género.]]></text><feedback format="html"><text><![CDATA[Es el principio que incorporó la Ley Karin al artículo 2 del Código del Trabajo.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[En la confianza mutua, que cada equipo define libremente en su reglamento.]]></text><feedback format="html"><text><![CDATA[El trato libre de violencia es una exigencia legal, no una definición que cada equipo pueda establecer a su manera.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[En la obediencia a la jefatura, salvo que exista una conducta reiterada.]]></text><feedback format="html"><text><![CDATA[El deber de trato libre de violencia rige siempre, y el acoso laboral ya no exige reiteración.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p2</text></name>
+    <questiontext format="html"><text><![CDATA[<p>En la sucursal de Horizonte Servicios, un cliente insulta y amenaza a Fernanda, ejecutiva de atención, porque su trámite se demoró. Camila debe registrar la situación. ¿Cómo la clasifica?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 2 (Ley 21.643). Lección 4.2.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p2</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La violencia de terceros incluye conductas de clientes, proveedores o usuarios que afectan a las personas trabajadoras con ocasión de su trabajo.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa quién realiza la conducta: si es un cliente, proveedor o usuario, se trata de violencia en el trabajo ejercida por terceros (lección 4.2).</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Como acoso laboral, porque ocurrió durante la jornada de trabajo.]]></text><feedback format="html"><text><![CDATA[El acoso laboral lo ejerce el empleador o uno o más trabajadores. El cliente es ajeno a la relación laboral.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Como un conflicto laboral que se gestiona entre las partes.]]></text><feedback format="html"><text><![CDATA[Un insulto y una amenaza no son un desacuerdo sobre el trabajo, y el cliente no es parte del equipo.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Como un reclamo de cliente sin relevancia para la Ley Karin.]]></text><feedback format="html"><text><![CDATA[Un reclamo respetuoso no es violencia, pero un insulto y una amenaza sí pueden serlo, y la empresa debe proteger a su trabajadora.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Como violencia en el trabajo ejercida por terceros ajenos a la relación laboral.]]></text><feedback format="html"><text><![CDATA[Son conductas de un cliente que afectan a una trabajadora con ocasión de la prestación de servicios.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p3</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Camila revisa dos medidas para prevenir la violencia de clientes en el mesón de atención. ¿Cuál cumple mejor con el componente "medidas de prevención y control" que exige el art. 211-A?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 211-A (Ley 21.643). Lección 4.3.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p3</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Las medidas del protocolo deben tener objetivos medibles para controlar su eficacia y velar por su mejoramiento continuo.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.3: una medida preventiva necesita responsable, objetivo medible y seguimiento.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Una pauta para atender clientes agresivos, con una jefatura responsable y un registro de incidentes que se revisa periódicamente para ver si los episodios disminuyen.]]></text><feedback format="html"><text><![CDATA[Tiene responsable y un objetivo medible que permite controlar su eficacia y corregirla.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Una circular anual que recuerda que la violencia está prohibida.]]></text><feedback format="html"><text><![CDATA[Informa una prohibición, pero no tiene responsable ni objetivo medible: no se puede saber si funciona.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Revisar el tema solo si alguien presenta una denuncia.]]></text><feedback format="html"><text><![CDATA[La prevención no espera una denuncia: el riesgo se gestiona antes de que haya casos.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Un afiche en la sala de descanso con el texto de la Ley Karin.]]></text><feedback format="html"><text><![CDATA[Puede complementar la información, pero no es una medida de control con objetivos medibles.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p4</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Una auditoría en Horizonte Servicios encuentra el protocolo firmado por la gerencia y un correo masivo con el archivo adjunto. En las entrevistas, la mayoría del personal no sabe dónde denunciar y los riesgos identificados no tienen medidas asociadas. ¿Qué conclusión corresponde?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 211-A (Ley 21.643). Lección 4.4.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p4</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Elaborar el protocolo es solo la primera de tres obligaciones: también hay que ponerlo en conocimiento e implementarlo.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.4: un protocolo firmado demuestra que se redactó, no que funciona.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[La empresa cumple: el protocolo existe, está firmado y se envió a todos.]]></text><feedback format="html"><text><![CDATA[Enviar un archivo no asegura que las personas lo conozcan, y las entrevistas muestran que no lo conocen.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[No existe protocolo y hay que empezar desde cero.]]></text><feedback format="html"><text><![CDATA[El protocolo existe y es una base. El problema es que no se gestiona.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[El protocolo está elaborado, pero no se ha puesto en conocimiento ni implementado: faltan difusión efectiva de los canales, medidas por riesgo y seguimiento.]]></text><feedback format="html"><text><![CDATA[El art. 211-A exige elaborar, poner en conocimiento e implementar el protocolo.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Basta con que un abogado lo reescriba con más detalle jurídico.]]></text><feedback format="html"><text><![CDATA[El problema no es de redacción, sino de implementación.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p5</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Matías, técnico de Horizonte Servicios, llega al Equipo de Personas y dice que quiere denunciar a su jefatura por acoso laboral, pero que no trae nada escrito. ¿Qué debe hacer Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 211-B y ss. (Ley 21.643); D.S. N°21/2024. Lección 4.5.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p5</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La denuncia verbal se registra en un acta firmada por la persona denunciante, que recibe copia.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.5: la denuncia puede ser escrita o verbal; si es verbal, se levanta un acta firmada y se entrega copia.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Pedirle que vuelva con una carta firmada para que la denuncia sea válida.]]></text><feedback format="html"><text><![CDATA[La denuncia puede ser verbal: no se puede exigir una carta formal.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Recibirla en privado y levantar un acta con su relato, que Matías firma, y entregarle una copia.]]></text><feedback format="html"><text><![CDATA[Es lo que exige la ley para la denuncia verbal.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Llamar primero a la jefatura para escuchar su versión antes de registrar la denuncia.]]></text><feedback format="html"><text><![CDATA[Recibir no es investigar: escuchar a ambas partes ocurre en la investigación, y contactar antes a la persona denunciada rompe la confidencialidad.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Escucharlo y decidir en ese momento si los hechos constituyen acoso.]]></text><feedback format="html"><text><![CDATA[En la recepción no se decide si los hechos son verdaderos: eso corresponde a la investigación.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p6</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Una persona presenta una denuncia de acoso laboral ante la empresa. Según las normas <b>vigentes a octubre de 2026</b>, ¿qué es correcto?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 211-B y ss. (Ley 21.643); D.S. N°21/2024. Lección 4.5.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p6</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Recibida la denuncia, la empresa investiga internamente o remite a la Inspección del Trabajo dentro de 3 días hábiles.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.5: investigar o remitir dentro de 3 días hábiles. El nuevo reglamento con control de admisibilidad está en trámite y no se aplica.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[La empresa puede declararla inadmisible y dar 3 días a la persona para complementarla.]]></text><feedback format="html"><text><![CDATA[Ese control de admisibilidad forma parte de un nuevo reglamento en trámite (falta la firma presidencial y la toma de razón de Contraloría): no está vigente.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[La empresa puede iniciar el procedimiento aunque la denuncia sea anónima.]]></text><feedback format="html"><text><![CDATA[La denuncia debe individualizar a la persona denunciante para iniciar el procedimiento.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[La empresa tiene 30 días para decidir si investiga o remite la denuncia.]]></text><feedback format="html"><text><![CDATA[30 días es el plazo para concluir la investigación. Para remitir, el plazo es de 3 días hábiles.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[La empresa dispone una investigación interna o, dentro de 3 días hábiles, remite los antecedentes a la Inspección del Trabajo.]]></text><feedback format="html"><text><![CDATA[Es la regla vigente para una denuncia presentada ante la empresa.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p7</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Carolina denunció a un compañero con quien comparte oficina y turno. La jefatura propone cambiarla a un turno nocturno, sin su bono habitual, "para protegerla". ¿Qué medida de resguardo corresponde?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 211-A a 211-E (Ley 21.643); D.S. N°21/2024. Lección 4.6.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p7</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Las medidas de resguardo se adoptan de inmediato y no pueden ser gravosas para quien denuncia ni sancionar por adelantado.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.6: separar espacios, redistribuir la jornada y derivar a atención psicológica temprana, sin menoscabo para la persona denunciante.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Separar los espacios físicos o ajustar los turnos para que no coincidan, sin afectar su remuneración, y ofrecerle atención psicológica temprana en la mutualidad.]]></text><feedback format="html"><text><![CDATA[Son ejemplos legales de medidas de resguardo que protegen sin perjudicar.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Aceptar el turno nocturno, porque cualquier separación la protege.]]></text><feedback format="html"><text><![CDATA[Una medida de resguardo no puede ser gravosa ni perjudicar a la persona denunciante.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Esperar el resultado de la investigación para no prejuzgar.]]></text><feedback format="html"><text><![CDATA[Las medidas se adoptan de inmediato; proteger no es prejuzgar.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Desvincular al compañero denunciado antes de investigar.]]></text><feedback format="html"><text><![CDATA[Una medida de resguardo no es una sanción anticipada: primero se investiga.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p8</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Durante una investigación interna, la persona denunciada presenta una licencia médica por dos semanas. La jefatura propone "congelar" la investigación hasta que vuelva. ¿Qué responde Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: D.S. N°21/2024; criterio de la Dirección del Trabajo (2025). Lección 4.6.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p8</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La investigación concluye en 30 días hábiles administrativos desde la recepción, y el feriado o la licencia de las partes no lo suspenden.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.6: celeridad, 30 días hábiles administrativos, sin suspensión por licencia o feriado.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Que sí, porque el plazo de 30 días se suspende con la licencia de cualquiera de las partes.]]></text><feedback format="html"><text><![CDATA[La Dirección del Trabajo precisó que el feriado o la licencia de las partes no suspenden el plazo.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que el plazo se convierte en 30 días corridos desde que la persona vuelva.]]></text><feedback format="html"><text><![CDATA[El plazo se cuenta desde la recepción de la denuncia, en días hábiles administrativos.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Que no: la investigación debe concluir en 30 días hábiles desde la recepción de la denuncia, y la licencia no suspende el plazo.]]></text><feedback format="html"><text><![CDATA[Es el criterio de la Dirección del Trabajo: hay que organizar la investigación para cumplirlo.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Que se cierre la investigación sin entrevistar a la persona denunciada.]]></text><feedback format="html"><text><![CDATA[El debido proceso exige oír a ambas partes.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p9</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Concluida una investigación interna, ¿qué ocurre después?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 211-E (Ley 21.643); D.S. N°21/2024. Lección 4.6.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p9</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Informe a la Inspección; pronunciamiento en 30 días; medidas dentro de 15 días, comunicadas a ambas partes.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.6: remitir el informe, 30 días para el pronunciamiento de la DT y 15 días para aplicar y comunicar las medidas.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[El empleador aplica las sanciones de inmediato y archiva el informe.]]></text><feedback format="html"><text><![CDATA[El informe y sus conclusiones deben remitirse a la Inspección del Trabajo.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[El empleador remite el informe a la Inspección del Trabajo, que tiene 30 días para pronunciarse (si no lo hace, valen las conclusiones), y luego tiene 15 días para aplicar y comunicar las medidas o sanciones a ambas partes.]]></text><feedback format="html"><text><![CDATA[Es la secuencia que establece la ley tras una investigación interna.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[La persona denunciante decide qué sanción se aplica.]]></text><feedback format="html"><text><![CDATA[Las medidas o sanciones las dispone el empleador según el reglamento interno.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Las medidas solo se comunican a la persona denunciada, por confidencialidad.]]></text><feedback format="html"><text><![CDATA[Las medidas o sanciones se comunican a la persona denunciante y a la denunciada.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m4.p10</text></name>
+    <questiontext format="html"><text><![CDATA[<p>En el equipo de Cobranzas, Pablo y Daniel discuten fuerte por quién asume un cliente nuevo y ambos elevan la voz; no hay insultos ni amenazas. Una semana después, en una sola reunión, la jefatura humilla a Pablo frente al equipo y le dice que lo despedirá si "vuelve a opinar". ¿Cómo se tratan estas situaciones?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 2 (Ley 21.643). Lección 4.7.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m4.p10</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Un conflicto se gestiona; la humillación o la amenaza a la situación laboral pueden ser acoso aunque ocurran una sola vez.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Repasa la lección 4.7: evita etiquetar cualquier desacuerdo como acoso y minimizar una conducta grave porque ocurrió una sola vez.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Ambas son acoso laboral, porque hubo voces elevadas.]]></text><feedback format="html"><text><![CDATA[La discusión mutua sobre tareas, sin agresión ni hostigamiento, es un conflicto que se gestiona.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Ninguna es acoso: la segunda ocurrió una sola vez.]]></text><feedback format="html"><text><![CDATA[Desde la Ley Karin, una sola conducta puede bastar si cumple los elementos de la definición.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[La discusión es acoso y lo de la jefatura es ejercicio de sus facultades de dirección.]]></text><feedback format="html"><text><![CDATA[Humillar y amenazar con el despido no es una forma legítima de dirigir.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[La discusión es un conflicto que requiere gestión; lo de la jefatura es un posible acoso laboral, aunque haya ocurrido una vez.]]></text><feedback format="html"><text><![CDATA[Hay humillación y amenaza a su situación laboral: se activa el procedimiento.]]></text></feedback></answer>
+  </question>
+</quiz>

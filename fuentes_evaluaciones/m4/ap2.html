@@ -1,0 +1,110 @@
+<title>Actividad práctica 2 — ¿Conflicto o acoso en el equipo de Terreno?</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'actividad',codigo:'M4_AP2',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 4 · ACTIVIDAD PRÁCTICA 2',
+ eyebrow:'Actividad práctica 2 · Caso ramificado',
+ titulo:'¿Conflicto o acoso en el equipo de Terreno?',
+ contexto:'<p>Ignacio, técnico del equipo de Terreno de Horizonte Servicios, escribe a Camila: "Mi supervisor me cambió a la ruta sur sin preguntarme. Esto es acoso". Detrás de ese correo hay más de una situación. Acompaña a Camila a separar hechos de etiquetas, distinguir un conflicto o una decisión de la jefatura de un posible acoso, y conducir la investigación: cada decisión cambia el rumbo del caso.</p>',
+ objetivos:['<b>Analizar</b> cada situación con los elementos de la definición legal de acoso laboral.','<b>Decidir</b> quién investiga y cómo se cumplen los plazos y principios.','<b>Explicar</b> a una jefatura cómo gestionar un conflicto y cuándo activar el procedimiento.'],
+ tiempo:'25–30 min',resumen:'5 decisiones · 2 respuestas de desarrollo',
+ expediente:[
+  {titulo:'Correo de Ignacio (lunes 9:40)',html:'<p>"Camila: Hernán, mi supervisor, me cambió a la ruta sur sin preguntarme. Es más lejos y llego más tarde a mi casa. Esto es acoso."</p>'},
+  {titulo:'Minuta de rotación de rutas del equipo de Terreno',html:'<table><tr><th>Trimestre</th><th>Regla</th></tr><tr><td>Todos</td><td>Las rutas norte, centro y sur rotan cada trimestre entre los 9 técnicos del equipo, según un sorteo informado por escrito al inicio del año.</td></tr><tr><td>Este trimestre</td><td>A Ignacio y a otros dos técnicos les corresponde la ruta sur.</td></tr></table>'},
+  {titulo:'Capturas del chat del equipo (aportadas por Ignacio)',html:'<p>Durante las últimas seis semanas, en el grupo de chat del equipo, dos compañeros publican burlas sobre Ignacio con un apodo que alude a su forma de hablar, y acuerdan "no avisarle" de los cambios de horario de las reuniones. Ignacio pidió en el grupo que pararan; los mensajes continuaron.</p>'},
+  {titulo:'Definición legal de acoso laboral (art. 2 CT)',html:'<p>Toda conducta que constituya <b>agresión u hostigamiento</b> ejercida por el <b>empleador o por uno o más trabajadores</b>, en contra de otro u otros trabajadores, por cualquier medio, ya sea que se manifieste <b>una sola vez o de manera reiterada</b>, y que tenga como resultado su <b>menoscabo, maltrato o humillación</b>, o que amenace o perjudique su situación laboral o sus oportunidades en el empleo.</p><p>Asignar tareas, evaluar el desempeño o corregir con respeto es <b>ejercicio legítimo de la dirección</b>. Un conflicto también requiere gestión.</p>'}
+ ],
+ competencias:[
+  {id:'cla',nombre:'Distinguir conflicto, dirección y acoso',fortaleza:'revisas los hechos con los elementos legales antes de clasificar, sin minimizar ni sobredimensionar.',mejora:'repasa los elementos de la definición de acoso laboral y la diferencia con un conflicto o con las facultades de dirección.',repasar:'Lecciones 4.2 y 4.7'},
+  {id:'inv',nombre:'Investigación justa y oportuna',fortaleza:'aseguras imparcialidad, debido proceso y el plazo de 30 días hábiles.',mejora:'repasa los principios de la investigación, el conflicto de interés y el cómputo del plazo de 30 días hábiles.',repasar:'Lección 4.6'},
+  {id:'cie',nombre:'Cierre y medidas',fortaleza:'conoces lo que sigue al informe: Inspección del Trabajo, 15 días para medidas y comunicación a las partes.',mejora:'repasa el envío del informe a la Inspección, el plazo de 15 días para aplicar medidas y la garantía de indemnidad.',repasar:'Lección 4.6'}
+ ],
+ inicio:'e1',
+ etapas:[
+  {id:'e1',tipo:'decision',titulo:'"Esto es acoso"',corto:'Primer análisis',competencia:'cla',
+   escena:'<p>Camila lee el correo de Ignacio. Revisa en el expediente la <b>minuta de rotación de rutas</b>.</p>',
+   pregunta:'¿Qué hace Camila primero?',
+   ideal:'no etiquetar antes de conocer los hechos: conversar por separado con Ignacio y con Hernán, revisar los antecedentes e informar a Ignacio que siempre puede presentar una denuncia.',
+   opciones:[
+    {texto:'Le dice a la gerencia que es acoso laboral y pide una amonestación escrita para Hernán.',pts:0,fb:'Se etiqueta y se sanciona sin conocer los hechos ni seguir un procedimiento. Una rotación general de rutas, informada por escrito, puede ser ejercicio legítimo de la dirección.',siguiente:'e2b'},
+    {texto:'Responde a Ignacio que cambiar rutas es facultad del supervisor y que no hay nada más que revisar.',pts:0,fb:'Puede que la rotación sea legítima, pero cerrar el tema sin escuchar a Ignacio es minimizar: no se sabe si hay algo más, y él siempre puede denunciar.',siguiente:'e2c'},
+    {texto:'Conversa por separado con Ignacio y con Hernán, revisa la minuta de rotación y le informa a Ignacio que, si lo desea, puede presentar una denuncia.',pts:2,fb:'Correcto: primero se separan los hechos de las etiquetas. Ante la duda, la persona puede denunciar y la empresa debe recibir la denuncia.',siguiente:'e2a'},
+    {texto:'Abre de inmediato una investigación formal contra Hernán, sin conversar antes con nadie.',pts:1,fb:'Si Ignacio presenta una denuncia, debe recibirse y seguir su curso. Pero aquí aún no hay denuncia, y conversar antes permite saber qué ocurre realmente.',siguiente:'e2b'}]},
+  {id:'e2a',tipo:'decision',titulo:'Lo que más le afecta',corto:'Lo que aparece',competencia:'cla',
+   escena:'<p>En la conversación, Ignacio reconoce que la rotación aplica a todo el equipo. Luego agrega: "Lo que de verdad me tiene mal es el chat del equipo". Muestra las capturas (están en el expediente).</p>',
+   pregunta:'¿Cómo clasifica Camila lo que muestran las capturas y qué le dice a Ignacio?',
+   ideal:'reconocer un posible acoso laboral entre pares (hostigamiento con humillación), informarle los canales y su derecho a denunciar por escrito o verbalmente, y resguardar la reserva.',
+   opciones:[
+    {texto:'Es un conflicto entre compañeros: les pedirá que lo resuelvan entre ellos.',pts:0,fb:'Burlas dirigidas contra una misma persona y su exclusión deliberada no son un desacuerdo: son hostigamiento que puede causar humillación. Dejarlo "entre ellos" lo deja sin protección.',siguiente:'e3'},
+    {texto:'Puede ser acoso laboral entre pares: hay hostigamiento dirigido y humillación. Le informa los canales y que puede denunciar por escrito o verbalmente, y que el procedimiento es confidencial.',pts:2,fb:'Correcto: el acoso laboral también puede venir de compañeros. Se informan los canales y el derecho a denunciar, sin prejuzgar el resultado.',siguiente:'e3'},
+    {texto:'Pide al equipo que borre los mensajes y propone una mediación entre Ignacio y los dos compañeros.',pts:1,fb:'Busca frenar la conducta, pero borrar los mensajes elimina antecedentes y una mediación no reemplaza el derecho de Ignacio a denunciar cuando hay hostigamiento.',siguiente:'e3'}]},
+  {id:'e2b',tipo:'decision',titulo:'Hernán reclama',corto:'Corregir el rumbo',competencia:'cla',
+   escena:'<p>Hernán escribe a Camila: "Me están tratando como acosador por aplicar una rotación que es igual para todos y que se informó en enero. Nadie me preguntó nada".</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'reconocer que se actuó sin conocer los hechos: dejar sin efecto lo resuelto sin procedimiento, escuchar a ambas partes y volver a conversar con Ignacio para saber si hay algo más.',
+   opciones:[
+    {texto:'Mantiene lo resuelto: retroceder debilitaría el mensaje al equipo.',pts:0,fb:'Sostener una decisión tomada sin procedimiento es injusto con Hernán y no protege a nadie. Sancionar exige investigar con debido proceso.',siguiente:'e3'},
+    {texto:'Deja sin efecto lo resuelto sin procedimiento, escucha a Hernán, revisa la minuta y vuelve a conversar con Ignacio para saber si hay algo más que lo afecte.',pts:2,fb:'Bien: la rotación general es facultad de dirección, pero puede haber otra situación detrás. Al volver a escuchar a Ignacio aparecen las capturas del chat.',siguiente:'e3'},
+    {texto:'Escucha a Hernán, pero no vuelve a contactar a Ignacio.',pts:1,fb:'Escuchar a Hernán corrige parte del error, pero sin volver a hablar con Ignacio no se sabe qué lo afecta realmente.',siguiente:'e3'}]},
+  {id:'e2c',tipo:'decision',titulo:'Dos semanas después',corto:'Corregir el rumbo',competencia:'cla',
+   escena:'<p>Un compañero cuenta a Camila que Ignacio está con licencia médica y que en el chat del equipo lo siguen ridiculizando. Las capturas llegan al expediente.</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'contactar a Ignacio con respeto, sin presionarlo, reconocer que la respuesta inicial fue insuficiente e informarle su derecho a denunciar y los canales, tratándolo como posible acoso laboral entre pares.',
+   opciones:[
+    {texto:'Espera a que Ignacio vuelva y decida por sí solo si quiere hacer algo.',pts:0,fb:'La empresa tiene un deber de protección: conocida una posible situación de hostigamiento, no puede quedarse esperando.',siguiente:'e3'},
+    {texto:'Envía al equipo un correo general sobre buena convivencia, sin contactar a Ignacio.',pts:1,fb:'Un recordatorio general ayuda a prevenir, pero no atiende la situación concreta ni informa a Ignacio de sus derechos.',siguiente:'e3'},
+    {texto:'Contacta a Ignacio con respeto y sin presionarlo, reconoce que la primera respuesta fue insuficiente y le informa los canales y su derecho a denunciar, porque lo que muestran las capturas puede ser acoso laboral entre pares.',pts:2,fb:'Bien: se corrige el error de minimizar. El acoso laboral también puede ejercerse entre compañeros.',siguiente:'e3'}]},
+  {id:'e3',tipo:'abierta',titulo:'Dos situaciones, dos respuestas',corto:'Analizar',verbo:'Analiza',competencia:'cla',
+   escena:'<p>Revisa en el expediente la <b>minuta de rotación</b>, las <b>capturas del chat</b> y la <b>definición legal</b>.</p>',
+   consigna:'con los elementos de la definición legal, por qué la rotación de rutas y los mensajes del chat deben tratarse de forma distinta.',minPalabras:50,
+   modelo:'La rotación de rutas es una decisión de la jefatura que aplica a los 9 técnicos por sorteo informado por escrito: es ejercicio legítimo de la dirección, aunque a Ignacio le incomode; se puede conversar, pero no hay agresión ni hostigamiento. Los mensajes del chat, en cambio, son conductas de dos compañeros (trabajadores) dirigidas contra Ignacio, por un medio digital, durante semanas, con burlas y exclusión que pueden causarle humillación y menoscabo, incluso después de pedir que pararan: cumplen los elementos de un posible acoso laboral y corresponde activar el procedimiento si denuncia.',
+   criterios:['Identifica la rotación como facultad de dirección (regla general, informada por escrito).','Revisa en el chat quién ejerce la conducta (compañeros) y que hay hostigamiento.','Relaciona la conducta con el efecto: humillación o menoscabo.','Concluye que el chat es un posible acoso laboral que activa el procedimiento, sin prejuzgar el resultado.'],siguiente:'e4'},
+  {id:'e4',tipo:'decision',titulo:'¿Quién investiga?',corto:'Quién investiga',competencia:'inv',
+   escena:'<p>Ignacio presenta una denuncia escrita contra los dos compañeros. La empresa decide investigar internamente. Hernán se ofrece: "Yo investigo. Conozco a todos y ya sé que son bromas".</p>',
+   pregunta:'¿A quién se encarga la investigación?',
+   ideal:'a una persona capacitada y sin conflicto de interés con las partes, que escuche a todos y deje todo por escrito.',
+   opciones:[
+    {texto:'A Hernán, porque conoce al equipo y la investigación será más rápida.',pts:0,fb:'Hernán es jefe de las personas denunciadas y ya tiene una opinión formada ("son bromas"): hay conflicto de interés y se compromete la imparcialidad.',siguiente:'e5b'},
+    {texto:'A una persona del Equipo de Personas capacitada y sin relación con las partes, que oirá a todas y dejará la investigación por escrito.',pts:2,fb:'Correcto: quien investiga debe estar capacitado y sin conflicto de interés. Ambas partes son oídas y pueden aportar pruebas.',siguiente:'e5a'},
+    {texto:'A Camila, pero entrevistando solo a Ignacio, porque las capturas "hablan por sí solas".',pts:1,fb:'Camila puede ser imparcial, pero el debido proceso exige oír a ambas partes y permitirles aportar pruebas antes de concluir.',siguiente:'e5b'}]},
+  {id:'e5a',tipo:'decision',titulo:'Un denunciado sale de vacaciones',corto:'Plazo',competencia:'inv',
+   escena:'<p>Van 10 días hábiles de investigación. Uno de los compañeros denunciados avisa que saldrá de feriado legal por dos semanas a partir del lunes.</p>',
+   pregunta:'¿Qué hace la investigadora?',
+   ideal:'mantener el plazo de 30 días hábiles, que no se suspende por el feriado: adelantar su entrevista antes de que salga y seguir con las demás diligencias.',
+   opciones:[
+    {texto:'Suspende la investigación hasta que vuelva.',pts:0,fb:'El feriado o la licencia de las partes no suspende el plazo: la investigación debe concluir en 30 días hábiles.',siguiente:'e6'},
+    {texto:'Adelanta su entrevista antes de que salga y continúa con las demás diligencias para cumplir los 30 días hábiles.',pts:2,fb:'Correcto: celeridad y debido proceso a la vez. El plazo se cuenta en días hábiles administrativos desde la recepción de la denuncia.',siguiente:'e6'},
+    {texto:'Sigue con las demás entrevistas y deja la suya para cuando vuelva, aunque se pase del plazo.',pts:1,fb:'Avanzar con lo demás está bien, pero el plazo no se extiende por el feriado: hay que organizar la entrevista para cumplirlo.',siguiente:'e6'}]},
+  {id:'e5b',tipo:'decision',titulo:'"No me siento escuchado"',corto:'Corregir el rumbo',competencia:'inv',
+   escena:'<p>A la semana, la gerencia revisa el avance y encuentra dos reclamos: Ignacio siente que "el resultado ya está decidido", y uno de los compañeros denunciados alega que no ha podido dar su versión ni aportar pruebas.</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'encargar la investigación a una persona capacitada y sin conflicto de interés, oír a ambas partes y permitirles aportar pruebas, sin pedir a Ignacio que repita su relato sin necesidad, y cumplir el plazo de 30 días hábiles.',
+   opciones:[
+    {texto:'Mantiene todo igual porque cambiar ahora atrasaría la investigación.',pts:0,fb:'Una investigación sin imparcialidad ni debido proceso (ambas partes oídas y con posibilidad de aportar pruebas) no da conclusiones confiables, aunque sea rápida.',siguiente:'e6'},
+    {texto:'Encarga la investigación a una persona capacitada y sin conflicto de interés, que oye a todas las partes y recibe sus pruebas, sin pedir a Ignacio que repita su relato sin necesidad, dentro de los 30 días hábiles.',pts:2,fb:'Bien: se recupera la imparcialidad y el debido proceso, cuidando la no revictimización y la celeridad.',siguiente:'e6'},
+    {texto:'Agrega una segunda persona para que investigue junto a la primera.',pts:1,fb:'Sumar a alguien no resuelve el problema si quien ya investiga mantiene su conflicto de interés o no oye a ambas partes.',siguiente:'e6'}]},
+  {id:'e6',tipo:'decision',titulo:'El informe está listo',corto:'Después del informe',competencia:'cie',
+   escena:'<p>El informe concluye, con los antecedentes reunidos, que los dos compañeros hostigaron a Ignacio por el chat del equipo.</p>',
+   pregunta:'¿Qué corresponde ahora?',
+   ideal:'remitir el informe y sus conclusiones a la Inspección del Trabajo y, recibido su pronunciamiento (o pasados 30 días sin él), aplicar dentro de 15 días las medidas o sanciones del reglamento interno y comunicarlas a Ignacio y a los denunciados.',
+   opciones:[
+    {texto:'Remitir el informe a la Inspección del Trabajo y, recibido el pronunciamiento (o pasados 30 días sin él), aplicar dentro de 15 días las medidas o sanciones y comunicarlas a Ignacio y a los denunciados.',pts:2,fb:'Correcto: la Dirección del Trabajo tiene 30 días para pronunciarse; si no lo hace, se consideran válidas las conclusiones. Luego corren 15 días para aplicar y comunicar las medidas.',siguiente:'e7'},
+    {texto:'Remitir el informe a la Inspección, pero no informar a Ignacio el resultado "para resguardar la confidencialidad".',pts:1,fb:'Remitir es correcto, pero las medidas o sanciones deben comunicarse tanto a la persona denunciante como a las denunciadas.',siguiente:'e7'},
+    {texto:'Desvincular de inmediato a ambos compañeros y archivar el informe en la carpeta del caso.',pts:0,fb:'El informe de una investigación interna debe remitirse a la Inspección del Trabajo. Además, las sanciones se definen según el reglamento interno y se comunican a las partes.',siguiente:'e7'}]},
+  {id:'e7',tipo:'abierta',titulo:'Una conversación con Hernán',corto:'Explicar',verbo:'Explica',competencia:'cie',
+   consigna:'a Hernán, en un mensaje breve, cómo distinguir en su equipo un conflicto o una decisión de la jefatura de un posible acoso, cómo gestionar un conflicto y por qué no puede haber represalias contra Ignacio ni contra quienes declararon.',minPalabras:50,
+   modelo:'Hernán: asignar rutas por una regla general y corregir con respeto es parte de tu rol y no es acoso. Un conflicto, como una discusión por tareas, también se gestiona: conversación facilitada, mediación interna o reglas de convivencia. Pero si aparecen agresión, hostigamiento o humillación, aunque sea una sola vez y aunque venga de compañeros, se trata como posible acoso y se activa el procedimiento; ante la duda, la persona siempre puede denunciar. Por último, la ley prohíbe represalias contra quien denuncia o declara como testigo: no puede haber cambios que perjudiquen a Ignacio ni a los testigos por haber participado.',
+   criterios:['Reconoce la rotación y la corrección respetuosa como facultades de dirección.','Propone formas de gestionar un conflicto (conversación, mediación, reglas de convivencia).','Indica cuándo se trata como posible acoso (agresión, hostigamiento o humillación; una sola vez puede bastar).','Menciona la prohibición de represalias contra denunciante y testigos.']}
+ ],
+ cierre:'<b>Idea clave:</b> no etiquetes antes de revisar los hechos. Una decisión de la jefatura o un conflicto se gestionan; el hostigamiento o la humillación, aunque vengan de compañeros y ocurran una sola vez, activan el procedimiento con una investigación imparcial que concluye en 30 días hábiles.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

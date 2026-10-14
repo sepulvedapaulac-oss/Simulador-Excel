@@ -1,0 +1,133 @@
+<title>Laboratorio del módulo 4 — Protocolo y denuncia en Horizonte Servicios</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'laboratorio',codigo:'M4_LAB',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 4 · EVALUACIÓN · LABORATORIO',
+ eyebrow:'Evaluación del módulo 4 · Parte 2',
+ titulo:'Protocolo y denuncia en Horizonte Servicios',
+ contexto:'<p>La Gerencia General pide a Camila dos cosas para esta semana: revisar el protocolo de prevención antes del Comité del jueves y gestionar una denuncia escrita que llegó el viernes. Con los documentos del <b>expediente</b> (a la derecha; en el celular, sobre cada tarea), resuelve 10 tareas de aplicación. Cada tarea te dará su retroalimentación; al final verás tu nota, la retroalimentación global y podrás descargar tu informe.</p>',
+ objetivos:['<b>Evaluar</b> si el protocolo cumple el contenido mínimo y si está realmente implementado.','<b>Clasificar</b> situaciones reportadas y proponer medidas preventivas verificables.','<b>Gestionar</b> una denuncia: quién investiga, primeras actuaciones, resguardo y plazos.'],
+ tiempo:'30–40 min',resumen:'10 tareas · 23 puntos',
+ comoSeEvalua:'cada tarea se responde una sola vez y muestra de inmediato su retroalimentación. Las tareas con varios elementos dan puntaje proporcional a tus aciertos. Las dos respuestas de desarrollo no tienen nota automática: verás una respuesta modelo y criterios para revisar la tuya. Necesitas <strong>80%</strong> de los 23 puntos para aprobar.',
+ expediente:[
+  {titulo:'1 · Correo de la Gerencia General (lunes)',html:'<p>"Camila: el jueves el Comité revisa el protocolo de prevención. Necesito saber si cumple lo que exige la ley y qué hay que mejorar. Además, el viernes llegó por correo una denuncia de Antonia Reyes (call center). Te pido gestionarla según corresponda."</p>'},
+  {titulo:'2 · Índice del protocolo (versión 2024)',html:'<table><tr><th>Sección</th><th>Qué dice</th></tr><tr><td>A. Identificación de peligros</td><td>"Se identifican los riesgos de acoso en la empresa." No hay análisis por área ni de quiénes están más expuestos.</td></tr><tr><td>B. Medidas preventivas</td><td>"Circular anual que recuerda que el acoso está prohibido." Sin responsable ni objetivo medible.</td></tr><tr><td>C. Información y capacitación</td><td>Inducción por área sobre los riesgos identificados, las medidas preventivas y los derechos y responsabilidades, con registro de asistencia.</td></tr><tr><td>D. Canales de denuncia</td><td>Correo del Equipo de Personas y atención presencial. No menciona la Inspección del Trabajo ni dónde acceder a atención psicológica temprana.</td></tr><tr><td>E. Privacidad y honra</td><td>Los antecedentes se guardan con acceso restringido y no se comentan casos en reuniones.</td></tr><tr><td>F. Seguimiento</td><td>No existe esta sección.</td></tr><tr><td>G. Procedimiento, resguardo y sanciones</td><td>Incorporados en el Reglamento Interno de Orden, Higiene y Seguridad.</td></tr></table>'},
+  {titulo:'3 · Matriz de riesgos y registro de incidentes · Atención a clientes',html:'<p><b>Matriz:</b> peligro "acoso" · evaluación "bajo: no hay denuncias" · medida "circular anual" · seguimiento "revisar si llega una denuncia".</p><p><b>Registro de incidentes del último trimestre:</b> 7 episodios de gritos, insultos o amenazas de clientes en el mesón, 6 de ellos en el horario de cierre, cuando atiende una sola ejecutiva. En 5 casos la persona afectada fue una ejecutiva joven.</p>'},
+  {titulo:'4 · Situaciones reportadas en el trimestre',html:'<ol><li>Un usuario llama al call center y amenaza a un ejecutivo con "esperarlo a la salida" porque su trámite se demoró.</li><li>La jefatura de Cobranzas redistribuye la cartera de clientes de todo el equipo por cambio de temporada y lo informa por escrito.</li><li>Dos analistas discuten con firmeza sobre quién cierra el informe mensual; ninguno descalifica al otro.</li><li>Un supervisor, en una reunión, se burla de la forma de hablar de un ejecutivo frente al equipo y le dice que "con suerte durará hasta fin de mes".</li><li>Un compañero insiste con comentarios e invitaciones de carácter sexual a una trabajadora que ya le pidió que se detuviera, y le recuerda que él arma los turnos.</li></ol>'},
+  {titulo:'5 · Denuncia de Antonia Reyes (correo, viernes 18:05)',html:'<p>"Yo, Antonia Reyes, ejecutiva del call center, denuncio a Raúl Fuentes, gerente de Operaciones. En las tres últimas reuniones semanales me ha descalificado frente al equipo: me dijo que era incompetente y que no iba a durar en la empresa. Desde entonces no me convoca a la planificación del área. Pueden declarar dos compañeras que estaban presentes. Adjunto la citación a las reuniones."</p><p>Antonia reporta directamente a una coordinadora, que a su vez depende de Raúl Fuentes.</p>'},
+  {titulo:'6 · Reglamento interno: sanciones',html:'<p>Amonestación verbal o escrita; multa de hasta el <b>25% de la remuneración diaria</b> (art. 154 N°10 CT); o término del contrato por causal del art. 160 si corresponde.</p>'},
+  {titulo:'7 · Nota de vigencia (octubre de 2026)',html:'<p>Existe un <b>nuevo reglamento de la Ley Karin en trámite</b> (control de admisibilidad de denuncias, plazo de 3 días para complementar una denuncia, atención temprana). Fue firmado por el ministro, pero le falta la firma presidencial y la toma de razón de Contraloría: <b>no está vigente</b> y no se aplica a este caso.</p>'}
+ ],
+ competencias:[
+  {id:'prot',nombre:'Protocolo: contenido e implementación',fortaleza:'reconoces el contenido mínimo del protocolo y distingues elaborarlo de implementarlo.',mejora:'repasa los cinco componentes del art. 211-A y qué evidencias demuestran que el protocolo se conoce y se aplica.',repasar:'Lecciones 4.3 y 4.4'},
+  {id:'prev',nombre:'Gestión preventiva del riesgo',fortaleza:'gestionas el riesgo antes de que haya denuncias, con medidas medibles y seguimiento.',mejora:'repasa el deber de protección y el ciclo identificar, evaluar, medir, informar y hacer seguimiento.',repasar:'Lecciones 4.1 y 4.3'},
+  {id:'clas',nombre:'Distinguir las conductas',fortaleza:'distingues acoso laboral, acoso sexual, violencia de terceros, conflicto y facultad de dirección.',mejora:'repasa las definiciones del art. 2 y la diferencia entre conflicto y acoso.',repasar:'Lecciones 4.2 y 4.7'},
+  {id:'den',nombre:'Denuncia y procedimiento',fortaleza:'aplicas quién investiga, el orden de las actuaciones y los plazos.',mejora:'repasa cuándo investiga la Inspección del Trabajo y los plazos de 3, 30 y 15 días.',repasar:'Lecciones 4.5 y 4.6'},
+  {id:'res',nombre:'Resguardo y trato a las personas',fortaleza:'eliges medidas que protegen sin perjudicar ni prejuzgar, y comunicas con respeto.',mejora:'repasa los ejemplos legales de medidas de resguardo y el principio de no revictimización.',repasar:'Lección 4.6'}
+ ],
+ inicio:'t1',
+ etapas:[
+  {id:'t1',tipo:'clasificar',titulo:'¿Cumple el contenido mínimo?',corto:'Índice del protocolo',competencia:'prot',pts:3,
+   escena:'<p>Revisa el <b>documento 2</b> (índice del protocolo).</p>',
+   pregunta:'Clasifica cada sección según lo que exige el art. 211-A y el art. 154 N°12 del Código del Trabajo.',
+   categorias:['Cumple','Incompleta o falta'],
+   items:[
+    {texto:'A. Identificación de peligros',cat:1,fb:'Falta evaluar los riesgos psicosociales por área y con perspectiva de género (quiénes están más expuestos).'},
+    {texto:'B. Medidas preventivas',cat:1,fb:'Una circular sin responsable ni objetivo medible no permite controlar su eficacia.'},
+    {texto:'C. Información y capacitación',cat:0,fb:'Informa riesgos, medidas, derechos y responsabilidades, y deja registro.'},
+    {texto:'D. Canales de denuncia',cat:1,fb:'Debe informar también las instituciones públicas para denunciar y para acceder a prestaciones de seguridad social y atención psicológica temprana.'},
+    {texto:'E. Privacidad y honra',cat:0,fb:'Resguarda la privacidad y la honra de las personas involucradas.'},
+    {texto:'F. Seguimiento',cat:1,fb:'El protocolo debe prever mecanismos de seguimiento.'},
+    {texto:'G. Procedimiento, resguardo y sanciones',cat:0,fb:'El art. 154 N°12 exige incorporarlos en el Reglamento Interno.'}],
+   fb:'El contenido mínimo del protocolo es: identificación de peligros y evaluación de riesgos con perspectiva de género, medidas con objetivos medibles, información y capacitación, resguardo de la privacidad y la honra, y seguimiento.',siguiente:'t2'},
+  {id:'t2',tipo:'multi',titulo:'¿Está implementado o solo elaborado?',corto:'Evidencias',competencia:'prot',pts:3,
+   escena:'<p>El Comité preguntará si el protocolo "funciona". La ley exige elaborarlo, ponerlo en conocimiento e implementarlo.</p>',
+   pregunta:'Marca las evidencias que demuestran que el protocolo se conoce y se aplica (no solo que existe).',
+   items:[
+    {texto:'El protocolo firmado por la Gerencia General.',ok:false,fb:'Demuestra que se elaboró, no que se conoce ni que se aplica.'},
+    {texto:'El registro de asistencia a la inducción por área sobre riesgos y canales de denuncia.',ok:true,fb:'Muestra que se informó y capacitó a las personas.'},
+    {texto:'Un correo masivo con el protocolo adjunto, sin ninguna otra acción.',ok:false,fb:'Enviar un archivo no asegura que las personas lo conozcan.'},
+    {texto:'Entrevistas en que el personal sabe dónde y cómo denunciar.',ok:true,fb:'Evidencia que los canales son conocidos.'},
+    {texto:'Los indicadores del registro de incidentes revisados con cada jefatura en las fechas que fija el protocolo.',ok:true,fb:'Demuestra que hay seguimiento y control de eficacia.'},
+    {texto:'Una copia impresa del protocolo guardada en la oficina de Gerencia.',ok:false,fb:'Un documento guardado no llega a las personas.'}],
+   fb:'Un protocolo firmado demuestra que se redactó, no que funciona. La implementación se demuestra con capacitación, canales conocidos y seguimiento.',siguiente:'t3'},
+  {id:'t3',tipo:'decision',titulo:'"Riesgo bajo: no hay denuncias"',corto:'Matriz de riesgos',competencia:'prev',
+   escena:'<p>Revisa el <b>documento 3</b>. La jefatura de Atención a clientes dice: "Si nadie ha denunciado, el riesgo es bajo".</p>',
+   pregunta:'¿Qué propone Camila para la matriz de Atención a clientes?',
+   ideal:'identificar el peligro de violencia de terceros en el cierre, evaluarlo con perspectiva de género y definir una medida con responsable, objetivo medible y fechas de seguimiento.',
+   opciones:[
+    {texto:'Mantener la evaluación "bajo" hasta que llegue la primera denuncia.',pts:0,fb:'La ausencia de denuncias no significa ausencia de riesgo. El registro muestra 7 episodios: el deber de protección es preventivo.'},
+    {texto:'Reenviar la circular anual con un tono más firme.',pts:1,fb:'Informar ayuda como complemento, pero no identifica el peligro ni permite medir si el riesgo baja.'},
+    {texto:'Identificar el peligro de violencia de clientes en el cierre, evaluarlo considerando que afecta sobre todo a ejecutivas jóvenes que atienden solas, y definir una medida con responsable, objetivo medible y revisión periódica.',pts:2,fb:'Correcto: es el ciclo de gestión del riesgo, con perspectiva de género y objetivos medibles que permiten controlar la eficacia.'}],siguiente:'t4'},
+  {id:'t4',tipo:'clasificar',titulo:'Situaciones reportadas',corto:'Clasificar conductas',competencia:'clas',pts:3,
+   escena:'<p>Revisa el <b>documento 4</b>.</p>',
+   pregunta:'Clasifica cada situación según los hechos descritos.',
+   categorias:['Conflicto laboral','Facultad de dirección','Posible acoso laboral','Acoso sexual','Violencia de terceros'],
+   items:[
+    {texto:'1. Un usuario amenaza por teléfono a un ejecutivo con "esperarlo a la salida".',cat:4,fb:'Viene de una persona ajena a la relación laboral, con ocasión del trabajo.'},
+    {texto:'2. La jefatura redistribuye la cartera de todo el equipo y lo informa por escrito.',cat:1,fb:'Asignar tareas con una regla general y respeto es ejercicio legítimo de la dirección.'},
+    {texto:'3. Dos analistas discuten con firmeza sobre quién cierra el informe, sin descalificarse.',cat:0,fb:'Es un desacuerdo sobre el trabajo, sin agresión ni hostigamiento: se gestiona como conflicto.'},
+    {texto:'4. Un supervisor se burla de un ejecutivo frente al equipo y le dice que "con suerte durará hasta fin de mes".',cat:2,fb:'Hay humillación y amenaza a su situación laboral: una sola vez puede bastar.'},
+    {texto:'5. Un compañero insiste con comentarios e invitaciones de carácter sexual que ella ya rechazó, y le recuerda que él arma los turnos.',cat:3,fb:'Requerimientos de carácter sexual no consentidos que amenazan su situación laboral.'}],
+   fb:'Para clasificar se mira quién actúa, qué hizo y qué efecto produjo. No todo lo que incomoda es acoso, y una sola conducta grave puede serlo.',siguiente:'t5'},
+  {id:'t5',tipo:'abierta',titulo:'Plan de mejora para el Comité',corto:'Analizar el protocolo',verbo:'Analiza',competencia:'prev',
+   escena:'<p>Usa tus resultados de las tareas 1 a 3 y los <b>documentos 2 y 3</b>.</p>',
+   consigna:'qué le falta al protocolo para cumplir y funcionar, y propone dos medidas concretas con responsable, objetivo medible y forma de seguimiento.',minPalabras:60,
+   modelo:'El protocolo está elaborado y capacita y resguarda la privacidad, pero no identifica peligros por área ni con perspectiva de género, sus medidas no tienen objetivos medibles, no informa la Inspección del Trabajo ni dónde acceder a atención psicológica temprana, y no tiene seguimiento. Medida 1: pauta de atención de clientes agresivos y nunca una sola ejecutiva en el cierre; responsable: jefatura de Atención a clientes; objetivo: reducir los episodios del registro respecto del trimestre anterior; seguimiento: revisión del registro con Personas en las fechas que fije el protocolo. Medida 2: actualizar y difundir los canales (incluida la Inspección del Trabajo y la mutualidad) en la intranet y en la inducción; responsable: Equipo de Personas; objetivo: que el personal entrevistado sepa dónde denunciar; seguimiento: entrevistas periódicas.',
+   criterios:['Identifica al menos tres brechas (peligros por área y género, objetivos medibles, canales e instituciones, seguimiento).','Propone medidas concretas vinculadas a los riesgos del registro.','Cada medida tiene responsable y objetivo medible.','Define cómo y cuándo se revisa el avance.'],siguiente:'t6'},
+  {id:'t6',tipo:'decision',titulo:'¿Quién investiga la denuncia de Antonia?',corto:'Quién investiga',competencia:'den',
+   escena:'<p>Revisa el <b>documento 5</b>. La gerencia sugiere: "Investiguemos internamente para ser rápidos".</p>',
+   pregunta:'¿Qué corresponde?',
+   ideal:'remitir los antecedentes a la Inspección del Trabajo dentro de 3 días hábiles, porque la persona denunciada es el gerente de Operaciones, que representa al empleador.',
+   opciones:[
+    {texto:'Investigación interna a cargo de la coordinadora de Antonia, que depende de Raúl Fuentes.',pts:0,fb:'La denuncia es contra quien representa al empleador: investiga la Inspección del Trabajo. Además, la coordinadora depende del denunciado, lo que genera conflicto de interés.'},
+    {texto:'Remitir a la Inspección del Trabajo, pero a fin de mes, cuando se hayan reunido más antecedentes.',pts:1,fb:'La vía es correcta, pero el plazo para remitir es de 3 días hábiles desde la recepción.'},
+    {texto:'Remitir los antecedentes a la Inspección del Trabajo dentro de 3 días hábiles, porque el denunciado es un gerente que representa al empleador.',pts:2,fb:'Correcto: si la denuncia es contra el empleador o quien lo representa, investiga la Inspección del Trabajo.'}],siguiente:'t7'},
+  {id:'t7',tipo:'clasificar',titulo:'El orden de las actuaciones',corto:'Ordenar actuaciones',competencia:'den',pts:3,
+   escena:'<p>La denuncia de Antonia llegó <b>por escrito</b>, así que no requiere acta. Las actuaciones de Camila están desordenadas.</p>',
+   pregunta:'Asigna a cada actuación el lugar que le corresponde en la secuencia (1º es la primera).',
+   categorias:['1º','2º','3º','4º','5º'],
+   items:[
+    {texto:'Remitir los antecedentes a la Inspección del Trabajo.',cat:3,fb:'Dentro de 3 días hábiles desde la recepción.'},
+    {texto:'Registrar la denuncia y su fecha de recepción.',cat:0,fb:'Desde la recepción se cuentan los plazos.'},
+    {texto:'Aplicar las medidas o sanciones que correspondan y comunicarlas a Antonia y al denunciado.',cat:4,fb:'Dentro de 15 días desde que se reciben las conclusiones.'},
+    {texto:'Informar a Antonia el procedimiento y adoptar de inmediato medidas de resguardo.',cat:2,fb:'Se hace al recibir la denuncia, sin esperar la investigación.'},
+    {texto:'Verificar que la denuncia identifica a Antonia y describe los hechos, y constatar que el denunciado representa al empleador.',cat:1,fb:'Permite saber quién investiga.'}],
+   fb:'Recibir y registrar → verificar la denuncia y quién investiga → informar y resguardar de inmediato → remitir dentro de 3 días hábiles → aplicar y comunicar las medidas dentro de 15 días.',siguiente:'t8'},
+  {id:'t8',tipo:'multi',titulo:'Medidas de resguardo para Antonia',corto:'Resguardo',competencia:'res',pts:3,
+   escena:'<p>Antonia sigue trabajando en el call center y participa en reuniones que dirige el denunciado.</p>',
+   pregunta:'Marca las medidas de resguardo adecuadas.',
+   items:[
+    {texto:'Que la información de planificación le llegue a través de su coordinadora y no asista a las reuniones que dirige el denunciado, sin perder su cargo ni su remuneración.',ok:true,fb:'Separa espacios y redistribuye la jornada sin perjudicarla.'},
+    {texto:'Trasladarla a un puesto de menor remuneración "para alejarla del conflicto".',ok:false,fb:'Es gravoso: le produce menoscabo por haber denunciado.'},
+    {texto:'Derivarla a atención psicológica temprana a través de la mutualidad o el ISL.',ok:true,fb:'Es una medida que contempla la ley.'},
+    {texto:'Pedirle que use sus vacaciones mientras se investiga.',ok:false,fb:'Le traslada el costo de la denuncia.'},
+    {texto:'Informar al equipo del call center sobre la denuncia "para que estén atentos".',ok:false,fb:'Vulnera la confidencialidad y puede revictimizarla.'},
+    {texto:'Reorganizar los horarios para que no coincida con el denunciado en espacios comunes, sin cambiar sus condiciones.',ok:true,fb:'Redistribuir el tiempo de jornada protege sin perjudicar.'}],
+   fb:'Las medidas se adoptan de inmediato, según la gravedad, la seguridad y las condiciones de trabajo, y no pueden ser gravosas para quien denuncia.',siguiente:'t9'},
+  {id:'t9',tipo:'numero',titulo:'Plazos y tope de la multa',corto:'Plazos y multa',competencia:'den',pts:4,
+   escena:'<p>Revisa los <b>documentos 6 y 7</b>. Responde solo con números.</p>',
+   pregunta:'Completa los plazos que rigen hoy y calcula el tope de la multa.',
+   campos:[
+    {label:'Días hábiles que tiene la empresa para remitir la denuncia a la Inspección del Trabajo',valor:3,tol:0,unidad:'días'},
+    {label:'Días hábiles en que debe concluir la investigación',valor:30,tol:0,unidad:'días'},
+    {label:'Días que tiene el empleador para aplicar y comunicar las medidas o sanciones, desde que recibe las conclusiones',valor:15,tol:0,unidad:'días'},
+    {label:'Multa máxima, en pesos, para una persona con remuneración diaria de $48.000',valor:12000,tol:0,unidad:'$'}],
+   solucion:'Remitir: <b>3 días hábiles</b>. Investigación: <b>30 días hábiles</b> (administrativos, desde la recepción; el feriado o la licencia no lo suspenden). Medidas: <b>15 días</b> desde la recepción del informe o pronunciamiento. Multa máxima: 25% × $48.000 = <b>$12.000</b>. El plazo de 3 días para complementar una denuncia pertenece al reglamento en trámite y no está vigente.',siguiente:'t10'},
+  {id:'t10',tipo:'abierta',titulo:'Respuesta a Antonia',corto:'Explicar a Antonia',verbo:'Explica',competencia:'res',
+   consigna:'a Antonia, en un correo breve y respetuoso, que su denuncia fue recibida, quién la investigará y por qué, qué medidas de resguardo se adoptaron y qué derechos tiene durante el procedimiento.',minPalabras:50,
+   modelo:'Antonia: recibimos tu denuncia el viernes y quedó registrada. Como se refiere a un gerente que representa a la empresa, remitiremos los antecedentes a la Inspección del Trabajo dentro de 3 días hábiles; la investigación debe concluir en 30 días hábiles y podrás aportar antecedentes, como el testimonio de tus compañeras. Desde hoy recibirás la planificación a través de tu coordinadora, sin asistir a las reuniones que dirige el denunciado y sin cambios en tu cargo ni en tu remuneración, y puedes acceder a atención psicológica temprana en la mutualidad. El procedimiento es confidencial y no se permiten represalias por denunciar.',
+   criterios:['Confirma la recepción con un tono respetuoso, sin juicios sobre los hechos.','Explica que investiga la Inspección del Trabajo porque el denunciado representa al empleador.','Describe las medidas de resguardo sin perjuicio para ella y la atención psicológica temprana.','Menciona la confidencialidad y la prohibición de represalias.']}
+ ],
+ cierre:'<b>Idea clave:</b> un protocolo cumple cuando se elabora, se da a conocer y se implementa con medidas medibles y seguimiento. Ante una denuncia: registrar, verificar quién investiga, informar y proteger de inmediato, y cumplir los plazos de 3, 30 y 15 días.'
+};
+/*{{ENGINE}}*/
+})();
+</script>

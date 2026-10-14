@@ -1,0 +1,103 @@
+<title>Actividad práctica 1 — Sofía pide hablar con Personas</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev caso" id="app"></main>
+<script>
+(function(){
+const PASS_PCT=80;
+const CASO={
+ tipo:'actividad',codigo:'M4_AP1',
+ curso:'LEGISLACIÓN LABORAL · MÓDULO 4 · ACTIVIDAD PRÁCTICA 1',
+ eyebrow:'Actividad práctica 1 · Caso ramificado',
+ titulo:'Sofía pide hablar con Personas',
+ contexto:'<p>Sofía, asistente administrativa de Horizonte Servicios, se acerca al Equipo de Personas. Quiere denunciar una situación que vive con un coordinador de otra área, pero no trae nada escrito y no sabe cómo empezar. Acompaña a Camila desde la recepción de la denuncia hasta las primeras semanas del procedimiento: cada decisión cambia el rumbo del caso.</p>',
+ objetivos:['<b>Describir</b> qué debe quedar registrado en el acta de una denuncia verbal.','<b>Elegir</b> medidas de resguardo que protejan sin perjudicar ni prejuzgar.','<b>Explicar</b> a la persona denunciante cómo sigue el procedimiento y qué plazos corren.'],
+ tiempo:'25–30 min',resumen:'5 decisiones · 2 respuestas de desarrollo',
+ expediente:[
+  {titulo:'Mensaje de Sofía por el chat interno (martes, 9:10)',html:'<p>"Hola, Camila. ¿Podemos conversar hoy en privado? Necesito contarte algo que me está pasando con una persona de Logística y no sé cómo hacerlo por escrito."</p>'},
+  {titulo:'Ficha de puestos de las personas involucradas',html:'<table><tr><th>Persona</th><th>Cargo y área</th><th>Lugar de trabajo</th></tr><tr><td>Sofía</td><td>Asistente administrativa · Administración</td><td>Piso 3, planta abierta</td></tr><tr><td>Gonzalo</td><td>Coordinador · Logística (no tiene cargo gerencial ni representa al empleador)</td><td>Piso 3, planta abierta</td></tr></table><p>Ambos asisten a la reunión semanal de coordinación de los lunes. Sofía no depende de Gonzalo.</p>'},
+  {titulo:'Extracto del protocolo de Horizonte Servicios',html:'<ul><li>Canales de denuncia: presencial en el Equipo de Personas o por correo. También se puede denunciar directamente en la Inspección del Trabajo.</li><li>Investigación interna: a cargo de una persona capacitada y sin conflicto de interés con las partes.</li><li>Atención psicológica temprana: a través de la mutualidad de la empresa (organismo administrador de la Ley 16.744).</li></ul>'},
+  {titulo:'Reglas legales clave (Ley 21.643, Ley Karin)',html:'<ul><li>La denuncia puede ser <b>escrita o verbal</b>, ante la empresa o la Inspección del Trabajo. Si es verbal, se levanta un <b>acta</b> que firma la persona denunciante y se le entrega <b>copia</b>.</li><li>La denuncia debe <b>individualizar a la persona denunciante</b> y describir los hechos.</li><li>Al recibirla, la empresa <b>informa el procedimiento</b> y adopta <b>de inmediato medidas de resguardo</b>, que no pueden perjudicar a la persona denunciante.</li><li>La empresa investiga internamente o, <b>dentro de 3 días hábiles</b>, remite los antecedentes a la Inspección del Trabajo.</li><li>La investigación concluye en <b>30 días hábiles</b> y es confidencial. No se permiten represalias contra quien denuncia o declara.</li></ul>'}
+ ],
+ competencias:[
+  {id:'rec',nombre:'Recibir la denuncia',fortaleza:'recibes la denuncia con trato digno, en privado y dejando un acta firmada con copia.',mejora:'repasa las formas de denunciar, el acta de la denuncia verbal y la individualización de la persona denunciante.',repasar:'Lección 4.5'},
+  {id:'res',nombre:'Medidas de resguardo',fortaleza:'eliges medidas inmediatas que protegen sin perjudicar a quien denuncia ni sancionar por adelantado.',mejora:'repasa los ejemplos legales de medidas de resguardo y la regla de que no pueden ser gravosas para la persona denunciante.',repasar:'Lección 4.6'},
+  {id:'pro',nombre:'Procedimiento y principios',fortaleza:'aplicas los plazos y los principios de confidencialidad, imparcialidad e indemnidad.',mejora:'repasa el plazo de 3 días hábiles para investigar o remitir, la confidencialidad y la garantía de indemnidad.',repasar:'Lecciones 4.5 y 4.6'}
+ ],
+ inicio:'e1',
+ etapas:[
+  {id:'e1',tipo:'decision',titulo:'"No sé cómo escribirlo"',corto:'Recepción',competencia:'rec',
+   escena:'<p>Sofía llega al Equipo de Personas. Con voz baja cuenta que, desde hace un mes, Gonzalo le envía mensajes con comentarios de carácter sexual por el chat interno y por teléfono. Ella le pidió que se detuviera y él siguió; además, le dijo que "conoce a quienes evalúan" su desempeño. Sofía dice: "Quiero denunciar, pero no sé cómo escribirlo".</p><p>Una jefatura que está cerca le comenta a Camila: "Mejor que lo mande por correo, así queda formal".</p>',
+   pregunta:'¿Qué hace Camila?',
+   ideal:'recibir la denuncia verbal en un lugar privado, escuchar sin juzgar, levantar un acta con el relato de Sofía, leérsela, pedirle que la firme y entregarle una copia.',
+   opciones:[
+    {texto:'Le pide que lo envíe por correo cuando pueda ordenar sus ideas, para que la denuncia quede "formal".',pts:0,fb:'La denuncia puede presentarse verbalmente: no se puede exigir un escrito. Postergarla deja a Sofía sin recibir y retrasa las medidas de resguardo que la empresa le debe.',siguiente:'e2b'},
+    {texto:'La invita a una sala privada, la escucha sin juzgar y levanta un acta con su relato; se la lee, Sofía la firma y recibe una copia.',pts:2,fb:'Correcto: la denuncia verbal se registra en un acta que firma la persona denunciante, quien recibe copia. El trato digno y en privado es parte del procedimiento.',siguiente:'e2a'},
+    {texto:'Antes de registrar nada, llama a Gonzalo para escuchar "las dos versiones".',pts:0,fb:'Recibir no es investigar. Contactar a la persona denunciada antes de recibir la denuncia rompe la confidencialidad y puede exponer a Sofía. Ambas partes se escuchan después, en la investigación.',siguiente:'e2b'},
+    {texto:'La escucha en su escritorio y anota lo principal en su cuaderno, sin acta ni firma.',pts:1,fb:'Escuchar está bien, pero sin un lugar privado y sin acta firmada con copia, la denuncia no queda registrada como exige la ley y Sofía no tiene respaldo.',siguiente:'e2b'}]},
+  {id:'e2a',tipo:'decision',titulo:'"¿Puede ser anónima?"',corto:'Identificación',competencia:'rec',
+   escena:'<p>Mientras revisan el acta, Sofía duda: "¿Puedo hacerla anónima? No quiero que todo el piso se entere".</p>',
+   pregunta:'¿Qué le responde Camila?',
+   ideal:'explicar con respeto que la denuncia debe identificarla para iniciar el procedimiento, y que el procedimiento es confidencial y la protege frente a represalias.',
+   opciones:[
+    {texto:'"Sí, borramos tu nombre del acta y empezamos igual la investigación."',pts:0,fb:'La denuncia debe individualizar a la persona denunciante: una denuncia anónima no permite iniciar el procedimiento. Prometerlo genera una expectativa que no se puede cumplir.',siguiente:'e3'},
+    {texto:'"Tu nombre tiene que estar en el acta", sin más explicación.',pts:1,fb:'Es cierto que debe identificarse, pero sin explicarle cómo se protegerá su información, Sofía puede desistir por temor.',siguiente:'e3'},
+    {texto:'Le explica que la denuncia debe identificarla, pero que el procedimiento es confidencial: solo conocerán los antecedentes quienes participen en la investigación, y no se permiten represalias por denunciar.',pts:2,fb:'Correcto: individualizar a la persona denunciante es un requisito, y la confidencialidad y la garantía de indemnidad son las que la protegen.',siguiente:'e3'}]},
+  {id:'e2b',tipo:'decision',titulo:'Sofía vuelve al día siguiente',corto:'Corregir el rumbo',competencia:'rec',
+   escena:'<p>Al día siguiente, Sofía vuelve. Dice que se sintió poco escuchada y que está pensando en ir directamente a la Inspección del Trabajo.</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'reconocer el error, recibir en ese momento la denuncia verbal en privado con acta firmada y copia, e informarle el procedimiento, incluida la posibilidad de acudir a la Inspección del Trabajo.',
+   opciones:[
+    {texto:'Le dice que, si va a la Inspección, la empresa ya no puede hacer nada por ella.',pts:0,fb:'Sofía tiene derecho a denunciar en la Inspección del Trabajo, y la empresa mantiene su deber de protegerla. Desalentarla es un nuevo obstáculo.',siguiente:'e3'},
+    {texto:'Se disculpa, la recibe en una sala privada, levanta el acta con su relato, Sofía la firma y recibe copia, y le informa cómo sigue el procedimiento, incluida la opción de acudir a la Inspección del Trabajo.',pts:2,fb:'Bien: corregir a tiempo permite registrar la denuncia como exige la ley y recuperar la confianza de Sofía.',siguiente:'e3'},
+    {texto:'La recibe y toma notas detalladas, pero sin pedirle firma ni entregarle copia.',pts:1,fb:'Avanza, pero el acta debe firmarla la persona denunciante y ella debe recibir una copia.',siguiente:'e3'}]},
+  {id:'e3',tipo:'abierta',titulo:'El acta de la denuncia verbal',corto:'Describir el acta',verbo:'Describe',competencia:'rec',
+   escena:'<p>El acta de Sofía quedará en el expediente del procedimiento. Revisa en el expediente la <b>ficha de puestos</b> y las <b>reglas legales clave</b>.</p>',
+   consigna:'qué contenido debe tener el acta de la denuncia de Sofía y qué pasos de forma deben cumplirse al cerrarla.',minPalabras:40,
+   modelo:'El acta individualiza a Sofía (nombre, RUT, cargo y área) y describe los hechos con sus palabras: los mensajes de carácter sexual por chat y teléfono, desde cuándo, que pidió que se detuvieran y la referencia a su evaluación, sin opiniones de quien la recibe. Individualiza en lo posible a Gonzalo y anota los antecedentes que puede aportar (capturas de los mensajes). Registra que se le informó el procedimiento y las medidas de resguardo adoptadas. Se le lee el acta, Sofía la firma y recibe una copia.',
+   criterios:['Individualiza a la persona denunciante y, en lo posible, a la persona denunciada.','Describe los hechos con las palabras de Sofía, sin juicios de quien recibe.','Menciona antecedentes que puede aportar (por ejemplo, los mensajes).','Incluye la firma de Sofía, la copia y el registro de la información entregada y del resguardo.'],siguiente:'e4'},
+  {id:'e4',tipo:'decision',titulo:'Las medidas de resguardo',corto:'Resguardo',competencia:'res',
+   escena:'<p>Sofía y Gonzalo trabajan en la misma planta abierta del piso 3 y coinciden en la reunión de coordinación de los lunes. La jefatura de Administración propone: "Para que esté tranquila, mandémosla a la sucursal de Puente Alto con media jornada mientras se investiga".</p>',
+   pregunta:'¿Qué medidas adopta la empresa de inmediato?',
+   ideal:'separar los espacios de trabajo y redistribuir la jornada para que no coincidan, sin cambiar el cargo ni la remuneración de ninguna de las dos personas, y derivar a Sofía a atención psicológica temprana en la mutualidad.',
+   opciones:[
+    {texto:'Acepta la propuesta: traslado de Sofía a Puente Alto con media jornada.',pts:0,fb:'Una medida de resguardo no puede ser gravosa ni perjudicial para la persona denunciante. Reducir su jornada y alejarla de su puesto le traslada el costo de haber denunciado.',siguiente:'e5b'},
+    {texto:'Ubica sus puestos en pisos distintos y organiza la reunión de los lunes para que no coincidan, sin cambiar el cargo ni la remuneración de nadie, y deriva a Sofía a atención psicológica temprana en la mutualidad.',pts:2,fb:'Correcto: separar espacios, redistribuir la jornada y derivar a atención psicológica temprana son ejemplos legales de medidas que protegen sin perjudicar y sin sancionar por adelantado.',siguiente:'e5a'},
+    {texto:'Solo le ofrece la derivación psicológica y deja todo lo demás igual.',pts:1,fb:'La derivación es una buena medida, pero Sofía sigue compartiendo espacio y reuniones con la persona denunciada. Hay que considerar la seguridad de las personas y las condiciones de trabajo.',siguiente:'e5b'},
+    {texto:'No adopta medidas hasta que termine la investigación, "para no prejuzgar".',pts:0,fb:'Las medidas de resguardo se adoptan de inmediato al recibir la denuncia. Proteger no es prejuzgar: no son una sanción para la persona denunciada.',siguiente:'e5b'}]},
+  {id:'e5a',tipo:'decision',titulo:'¿Investigar o remitir?',corto:'Investigar o remitir',competencia:'pro',
+   escena:'<p>Con las medidas en marcha, la gerencia le escribe a Camila: "Decidamos a fin de mes si investigamos nosotros o si lo mandamos a la Inspección del Trabajo".</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'decidir dentro de 3 días hábiles: disponer la investigación interna con una persona capacitada y sin conflicto de interés, o remitir los antecedentes a la Inspección del Trabajo, e informarlo a Sofía.',
+   opciones:[
+    {texto:'Que se decida dentro de 3 días hábiles: investigación interna con una persona capacitada y sin conflicto de interés, o remisión a la Inspección del Trabajo, informándolo a Sofía.',pts:2,fb:'Correcto: la empresa dispone la investigación interna o, dentro de 3 días hábiles, remite los antecedentes a la Inspección del Trabajo. Gonzalo no representa al empleador, así que ambas vías son posibles.',siguiente:'e6'},
+    {texto:'Que se decida a tiempo, encargando la investigación a la jefatura directa de Sofía porque "la conoce bien".',pts:1,fb:'Decidir a tiempo es correcto, pero quien investiga no debe tener conflicto de interés con las partes. Una jefatura cercana a una de ellas compromete la imparcialidad.',siguiente:'e6'},
+    {texto:'Que está bien esperar a fin de mes para juntar más antecedentes.',pts:0,fb:'El plazo para remitir a la Inspección es de 3 días hábiles. Esperar a fin de mes lo incumple y atrasa la investigación, que debe concluir en 30 días hábiles.',siguiente:'e6'}]},
+  {id:'e5b',tipo:'decision',titulo:'"Siento que denunciar no me sirvió"',corto:'Corregir el rumbo',competencia:'res',
+   escena:'<p>Unos días después, Sofía pide hablar con Camila. Le dice, con angustia, que la situación actual la tiene muy afectada y que siente que denunciar no le sirvió.</p>',
+   pregunta:'¿Cómo corrige Camila el rumbo?',
+   ideal:'revisar de inmediato las medidas: dejar sin efecto todo cambio que la perjudique, separar espacios y redistribuir la jornada sin afectar cargo ni remuneración, y ofrecer atención psicológica temprana.',
+   opciones:[
+    {texto:'Le sugiere tomar sus vacaciones mientras dura la investigación.',pts:0,fb:'Usar su feriado le traslada el costo de la denuncia: pierde días de descanso por haber denunciado. Es una medida gravosa.',siguiente:'e6'},
+    {texto:'Revisa las medidas de inmediato: deja sin efecto cualquier cambio que la perjudique, separa los espacios y la reunión de los lunes sin afectar cargo ni remuneración, y le ofrece atención psicológica temprana en la mutualidad.',pts:2,fb:'Bien: las medidas deben proteger a Sofía sin causarle menoscabo, considerando la gravedad, la seguridad y las condiciones de trabajo.',siguiente:'e6'},
+    {texto:'Le ofrece hablar con la mutualidad y le pide paciencia con lo demás.',pts:1,fb:'La atención psicológica temprana ayuda, pero no corrige el problema de fondo: Sofía necesita medidas que la separen de la situación sin perjudicarla.',siguiente:'e6'}]},
+  {id:'e6',tipo:'decision',titulo:'Preguntas en la reunión de jefaturas',corto:'Confidencialidad',competencia:'pro',
+   escena:'<p>Una semana después, en la reunión de jefaturas, alguien le pregunta a Camila: "¿Es cierto que Sofía denunció a Gonzalo? Cuéntanos qué pasó, así frenamos los rumores".</p>',
+   pregunta:'¿Qué responde Camila?',
+   ideal:'no entregar información del caso, recordar que el procedimiento es confidencial y protege la privacidad y la honra de todas las personas, y que no se permiten represalias contra quien denuncia o declara.',
+   opciones:[
+    {texto:'Cuenta un resumen breve de los hechos para que las jefaturas "estén atentas".',pts:0,fb:'Vulnera la confidencialidad y puede revictimizar a Sofía y exponer a Gonzalo antes de que exista una conclusión. Solo conocen el caso quienes participan en la investigación.',siguiente:'e7'},
+    {texto:'Confirma que hay una denuncia y quiénes son las partes, pero sin detalles.',pts:1,fb:'Aunque no da detalles, revelar quiénes son las partes ya expone su privacidad y su honra.',siguiente:'e7'},
+    {texto:'No entrega información: explica que todo procedimiento es confidencial, que se resguarda la privacidad y la honra de todas las personas involucradas y que no se permiten represalias contra quien denuncia o declara.',pts:2,fb:'Correcto: confidencialidad, no revictimización y garantía de indemnidad son parte del procedimiento.',siguiente:'e7'}]},
+  {id:'e7',tipo:'abierta',titulo:'Explicarle a Sofía cómo sigue',corto:'Explicar a Sofía',verbo:'Explica',competencia:'pro',
+   consigna:'a Sofía, en un mensaje breve, respetuoso y sin juicios, cómo sigue el procedimiento: quién investiga, qué plazos corren, qué derechos tiene y qué apoyo puede recibir.',minPalabras:50,
+   modelo:'Sofía: gracias por confiar en nosotros. Tu denuncia quedó registrada en un acta que firmaste y de la que tienes copia. La investigará una persona capacitada y sin conflicto de interés (o la Inspección del Trabajo, si se remite dentro de 3 días hábiles). La investigación debe terminar en 30 días hábiles; ambas partes serán oídas y podrás aportar antecedentes, como los mensajes. Todo es confidencial y no se permiten represalias por denunciar. El informe se envía a la Inspección del Trabajo y, después, la empresa tiene 15 días para aplicar medidas y comunicarlas. Mientras tanto, se mantienen las medidas de resguardo y puedes recibir atención psicológica temprana en la mutualidad.',
+   criterios:['Usa un tono respetuoso, sin juicios ni preguntas que la hagan repetir su relato.','Indica quién investiga y el plazo de 30 días hábiles.','Menciona la confidencialidad y la prohibición de represalias.','Señala las medidas de resguardo y la atención psicológica temprana.','Explica el envío del informe a la Inspección y el plazo de 15 días para las medidas.']}
+ ],
+ cierre:'<b>Idea clave:</b> recibir no es investigar ni resolver. Se recibe con trato digno (por escrito o verbalmente, con acta firmada y copia), se informa el procedimiento, se protege de inmediato sin perjudicar a quien denuncia ni sancionar por adelantado, y se decide dentro de 3 días hábiles quién investiga.'
+};
+/*{{ENGINE}}*/
+})();
+</script>
