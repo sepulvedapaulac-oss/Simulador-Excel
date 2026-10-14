@@ -1,0 +1,374 @@
+<title>Lección 5.8 — La evidencia también es cumplimiento</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.folder-list{display:grid;gap:6px;margin:0;padding:0;list-style:none;font-size:.92rem}
+.folder-list li{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start}
+.folder-list .mk{font-weight:900}
+.folder-list .ok .mk{color:var(--good)}.folder-list .ko .mk{color:var(--bad)}
+.folder-list .ko span:last-child{color:var(--ink2)}
+.label-line .fh{font-weight:900;color:var(--ink);margin:0 0 8px;font-size:.95rem}
+.label-line{min-height:190px}
+.hs-panel .tagk{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:4px}
+.tiles.chain{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tiles.chain .tile{font-size:1rem;flex-direction:column;line-height:1.25}
+.tiles.chain .tile .stg{display:block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+.tiles.chain .tile.open{background:var(--good-soft);color:var(--ink);border:2px solid var(--good-line)}
+.stagebar{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.stagebar span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:850;background:var(--surface);color:var(--ink2)}
+.exp-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid var(--line2)}
+.exp-row>span:first-child{min-width:0}
+.exp-row .swl{display:flex;gap:8px;align-items:center}
+.exp-row .swl small{font-weight:850;min-width:74px;text-align:right}
+.exp-row.on .sw{background:var(--teal)}.exp-row.on .sw::after{left:26px}
+.exp-row .why{grid-column:1/-1;display:none;padding:10px 12px;border-radius:12px;font-size:.9rem}
+.exp-row.good .why{display:block;background:var(--good-soft);border:1px solid var(--good-line)}
+.exp-row.bad .why{display:block;background:var(--bad-soft);border:1px solid var(--bad-line)}
+.exp-row .src{display:block;font-size:.84rem;color:var(--muted);margin-top:2px}
+.case-head{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.own{width:100%;min-height:90px;font:inherit;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);resize:vertical;box-sizing:border-box}
+.yn-item .yn button{color:var(--ink)}
+@media(max-width:860px){.case-head{grid-template-columns:1fr}}
+@media(max-width:600px){.tiles.chain{grid-template-columns:repeat(2,minmax(0,1fr))}.exp-row{grid-template-columns:1fr}.exp-row .swl{justify-content:flex-start}.exp-row .swl small{text-align:left}.seltable td{display:block;width:auto!important;border-bottom:none}.seltable tr{display:block;border-bottom:1px solid var(--line2)}.yn-item{grid-template-columns:1fr}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.8</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:17" data-gate="hook" data-gate-msg="Despega la etiqueta de la carpeta y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.8 · La evidencia también es cumplimiento</span>
+      <h1 class="reveal">Si no puede demostrarse, el riesgo aumenta</h1>
+      <p class="lead reveal">En marzo, <strong>Horizonte Servicios</strong> cambió a Javiera, ejecutiva de atención, del turno de mañana al de tarde. Ella misma lo pidió y la jefatura aceptó. Hoy, Javiera reclama ante la Inspección del Trabajo que el cambio nunca se acordó, y la Inspección cita a la empresa con documentos. <strong>Haz clic en la etiqueta de la carpeta para despegarla</strong> y ver qué contiene realmente.</p>
+      <div class="label-line reveal">
+        <p class="fh">Expediente de Javiera Rojas · Ejecutiva de atención</p>
+        <ul class="folder-list">
+          <li class="ok"><span class="mk">✓</span><span>Contrato de trabajo firmado (2024), turno de mañana</span></li>
+          <li class="ko"><span class="mk">✕</span><span>Anexo del cambio de turno: no aparece</span></li>
+          <li class="ko"><span class="mk">✕</span><span>Carta de Javiera pidiendo el cambio: no aparece</span></li>
+          <li class="ko"><span class="mk">✕</span><span>Correo de la jefatura aprobándolo: no aparece</span></li>
+          <li class="ko"><span class="mk">✕</span><span>Registro de asistencia de marzo: no está en la carpeta</span></li>
+        </ul>
+        <button class="sticker" type="button" id="sticker">EXPEDIENTE COMPLETO ✓ · toca para despegar</button>
+      </div>
+    </div>
+    <div class="photo-frame reveal" style="aspect-ratio:3/2"><img alt="Camila, del Equipo de Personas, revisa con preocupación una carpeta abierta frente a un archivador con carpetas" src="{{IMG:i58_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:14px">Camila sabe que el cambio fue correcto. ¿Qué debería hacer la empresa ante la citación?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Explicar que la decisión fue correcta: si fue bien tomada, no hace falta demostrarla.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Reunir los respaldos que sí existen, reconocer lo que falta y corregir el proceso para que no vuelva a ocurrir.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Presentar solo el contrato y esperar a que la Inspección diga qué falta para recién entonces buscarlo.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la palabra de la empresa contra la de Javiera</div><div class="branch-body"><div><p>Una decisión correcta que <strong>no puede demostrarse</strong> deja a la empresa sin respaldo. Ante un reclamo o una fiscalización, lo que cuenta son los antecedentes que permiten reconstruir qué se acordó, cuándo y con quién.</p></div><div><p class="hint">Cumplir también es poder demostrarlo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el contrato contradice lo que se hizo</div><div class="branch-body"><div><p>El contrato dice <strong>turno de mañana</strong>, pero Javiera trabaja de tarde. Presentarlo solo deja el cambio sin explicar. La fiscalización puede revisar <strong>toda</strong> la documentación laboral, y la evidencia se ordena antes, no cuando alguien la pide.</p></div><div><p class="hint">Los documentos deben ser coherentes entre sí y con la realidad.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La empresa presenta lo que <strong>sí existe</strong> (por ejemplo, registros y liquidaciones que muestran el turno de tarde), explica con transparencia lo que falta y <strong>corrige el proceso</strong>: cada cambio del contrato se firma en un anexo.</p></div><div><p class="hint">En esta lección aprenderás a armar esa cadena de evidencia.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 20 s</span>
+  <h2>¿Por qué la evidencia también es cumplimiento?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · CUATRO CLAVES -->
+<section class="slide" data-title="Cuatro claves" data-audio="p03" data-dur="0:15" data-gate="hs" data-gate-msg="Explora los cuatro puntos de la imagen.">
+  <span class="eyebrow">Lección 5.8 · Qué hace que la evidencia sirva</span>
+  <h2>Cuatro preguntas que toda evidencia debe responder</h2>
+  <p><strong>Haz clic en cada número</strong> de la imagen para conocer una clave de la evidencia laboral. Al terminar, piensa cuál de ellas falló en la carpeta de Javiera.</p>
+  <div class="task" id="hsTask">Claves exploradas <span class="tick" id="hsTick">0 / 4</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Oficina del Equipo de Personas: Camila compara dos documentos sobre el escritorio, al fondo un estante con archivadores y a la derecha un colega consulta una carpeta digital en su notebook" src="{{IMG:i58_claves}}"/>
+      <button class="hs" type="button" style="left:38%;top:74%" data-hs="0" aria-label="Clave 1">1</button>
+      <button class="hs" type="button" style="left:22%;top:52%" data-hs="1" aria-label="Clave 2">2</button>
+      <button class="hs" type="button" style="left:56%;top:26%" data-hs="2" aria-label="Clave 3">3</button>
+      <button class="hs" type="button" style="left:80%;top:56%" data-hs="3" aria-label="Clave 4">4</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 9, 11, 33 y 54; DFL N°2 de 1967 del Ministerio del Trabajo, art. 31.</p>
+</section>
+
+<!-- 4 · CADENA DOCUMENTAL -->
+<section class="slide" data-title="Cadena documental" data-audio="p04" data-dur="0:15" data-gate="tiles" data-gate-msg="Descubre las siete fichas de la cadena documental.">
+  <span class="eyebrow violet">Lección 5.8 · La cadena documental del ciclo laboral</span>
+  <h2>Del primer día al cierre: siete eslabones</h2>
+  <p>No existe una norma única sobre “evidencia”: la trazabilidad se apoya en documentos que la ley exige que existan, se entreguen o se conserven. <strong>Toca cada ficha</strong> para descubrir el documento, cuándo aparece y qué regla lo exige.</p>
+  <div class="stagebar"><span>1–2 · Al inicio y cuando algo cambia</span><span>3–5 · Durante la relación</span><span>6–7 · En el cierre</span></div>
+  <div class="task" id="tlTask">Fichas descubiertas <span class="tick" id="tlTick">0 / 7</span></div>
+  <div class="tiles chain" id="tiles"></div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Toca una ficha para ver el detalle.</p></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 9, 9 bis, 11, 33, 54, 54 bis, 162 y 177.</p>
+</section>
+
+<!-- 5 · QUÉ DEMUESTRA CADA DOCUMENTO -->
+<section class="slide" data-title="Qué demuestra cada uno" data-audio="p05" data-dur="0:14" data-gate="pairs" data-gate-msg="Une los seis documentos con lo que permiten demostrar.">
+  <span class="eyebrow amber">Lección 5.8 · Qué demuestra cada documento</span>
+  <h2>Cada documento prueba algo distinto</h2>
+  <div class="grid-2">
+    <div><p>Ningún documento lo demuestra todo. <strong>Selecciona un documento a la izquierda y luego lo que permite demostrar</strong> a la derecha.</p>
+      <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 6</span></div></div>
+    <div class="photo-frame wide"><img alt="Manos de una persona del Equipo de Personas ordenan documentos en una carpeta con separadores de colores sobre un escritorio" src="{{IMG:i58_carpeta}}"/></div>
+  </div>
+  <div class="pairs"><div id="pl"></div><div id="pr"></div></div>
+  <div class="fb" id="prFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 9, 11, 33, 54, 54 bis, 162, 177 y 454 N°1.</p>
+</section>
+
+<!-- 6 · EL EXPEDIENTE DE JAVIERA -->
+<section class="slide" data-title="El expediente" data-audio="p06" data-dur="0:16" data-gate="tog" data-gate-msg="Marca qué respaldos faltan en el expediente y presiona “Revisar expediente”.">
+  <span class="eyebrow">El caso de Camila · Lo que existe y lo que falta</span>
+  <h2>“Expediente completo”: ¿de verdad?</h2>
+  <p>Camila buscó en el archivo, en el correo y en los sistemas. Todos los interruptores parten en <strong>Disponible</strong>, como decía la etiqueta. <strong>Apaga el interruptor de cada respaldo que falta o que no sirve como evidencia</strong> y presiona <strong>Revisar expediente</strong>.</p>
+  <div class="task" id="tgTask">Expediente revisado <span class="tick" id="tgTick">0 / 7</span></div>
+  <div class="slip" id="expList"><div class="slip-h"><span>Expediente · Javiera Rojas</span><span>Cambio a turno de tarde · marzo 2026</span></div></div>
+  <button class="small-btn primary" type="button" id="tgCheck" style="margin-top:12px">Revisar expediente</button>
+  <div class="fb" id="tgFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 9, 9 bis, 11, 33, 54 y 54 bis.</p>
+</section>
+
+<!-- 7 · PLAZOS -->
+<section class="slide" data-title="Plazos" data-audio="p07" data-dur="0:16" data-gate="tbl" data-gate-msg="Elige el plazo correcto en las siete filas y presiona Comprobar.">
+  <span class="eyebrow amber">Lección 5.8 · Plazos que hacen necesaria la evidencia</span>
+  <h2>¿Cuánto tiempo hay… y por qué guardar?</h2>
+  <p><strong>Elige el plazo de cada fila</strong> y presiona <strong>Comprobar</strong>. Las filas incorrectas se marcan en rojo para que las corrijas. Ojo: no confundas la prescripción con el plazo para demandar por despido.</p>
+  <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+  <div class="story" style="margin-top:12px"><strong>Para recordar:</strong> más que memorizar un número de años de archivo, recuerda la razón práctica para conservar los documentos laborales: la prescripción: mientras esos plazos estén abiertos, la empresa puede necesitar probar lo que hizo.</div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 9, 9 bis, 168 y 510.</p>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-dur="0:15" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · Ante la Inspección</span>
+  <h2>Una solución rápida… ¿o un problema mayor?</h2>
+  <div class="case-head">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">JA</span> Jefatura de Atención</div>
+      <div class="bubble"><span class="who">Jefatura</span>Camila, simple: hagamos hoy el anexo con fecha de marzo, que Javiera lo firme y listo. Así la carpeta queda completa para la Inspección.</div>
+    </div>
+    <div class="photo-frame"><img alt="Camila y una jefatura conversan en una sala de reuniones frente a un notebook y una carpeta abierta" src="{{IMG:i58_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué propone Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Bien. Si el cambio fue real, fechar el anexo en marzo solo refleja lo que pasó.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Pidamos a Javiera que retire el reclamo; así no habrá que mostrar nada.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Presentemos lo que existe: registro de asistencia, liquidaciones y cotizaciones. Expliquemos lo que falta y, desde ahora, dejemos el turno actual en un anexo con la fecha real, firmado por ambas partes.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: evidencia construida después</div><div class="branch-body"><div><p>Un anexo con fecha falsa <strong>no refleja</strong> cuándo se firmó. Además de no servir, contradice la realidad que el inspector puede constatar como ministro de fe y debilita todos los demás respaldos.</p></div><div><p class="hint">La fecha de un documento es parte de la evidencia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el problema de fondo sigue ahí</div><div class="branch-body"><div><p>Reclamar ante la Inspección es un derecho de la persona trabajadora, y presionarla no corrige nada: la empresa sigue sin poder demostrar el acuerdo, y el próximo cambio de turno tendría el mismo vacío.</p></div><div><p class="hint">Responde con evidencia y corrige el proceso.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Se presenta la evidencia <strong>real</strong> y se corrige hacia adelante: las modificaciones del contrato se consignan por escrito y se firman por ambas partes en un anexo (art. 11), con su fecha verdadera.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Mientras ordena el archivo,</strong> Camila revisa otro expediente: Matías fue despedido hace seis semanas por incumplimiento grave de sus obligaciones (art. 160 N°7). Hay un finiquito ratificado, con <strong>reserva de derechos</strong>. La carta de despido solo cita el artículo, sin describir hechos, y no hay antecedentes que los respalden.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué riesgo existe?</h3>
+    <div class="options" data-choice="caso2" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Un problema de trazabilidad y prueba: el finiquito no cubre lo reservado y, en juicio, la empresa no puede alegar hechos distintos de los de la carta.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Ninguno: el finiquito ratificado reemplaza toda la evidencia previa.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Solo falta un documento sin relevancia; basta con archivar el finiquito.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: confianza en un solo documento</div><div class="branch-body"><div><p>El poder liberatorio del finiquito <strong>no alcanza a lo reservado</strong>. Y el finiquito no prueba por sí solo los hechos que fundan la causal: si Matías demanda, la empresa tendrá que demostrarlos.</p></div><div><p class="hint">Revisa qué cubre y qué no cubre el finiquito.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la causal queda sin respaldo</div><div class="branch-body"><div><p>La carta es central: debe indicar la causal <strong>y los hechos</strong> en que se funda. En juicio, el empleador no puede alegar hechos distintos de los señalados en ella (art. 454 N°1). Sin hechos ni antecedentes, la causal es difícil de probar.</p></div><div><p class="hint">¿Qué hechos podría probar la empresa?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El cumplimiento <strong>no se demuestra con un único documento</strong>. La evidencia debe permitir reconstruir el proceso completo: hechos, causal, carta con copia a la Inspección, pagos y finiquito.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 11, 160, 162, 177 y 454 N°1; DFL N°2 de 1967, art. 23.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:14" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:15" data-gate="yn model pass" data-gate-msg="Responde el checklist, revisa la respuesta modelo (y aprueba la Comprobación).">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>“¿Puedo cambiar mi horario?”</h2>
+  <div class="story">En tu organización, una persona trabajadora pide pasar a otro horario y su jefatura está de acuerdo. Tú debes asegurar que el cambio quede bien respaldado.</div>
+  <p style="margin-top:12px"><strong>Responde Sí o No</strong> en cada pregunta. Si te equivocas, lee la pista y vuelve a elegir.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el cambio se consigna por escrito en un <b>anexo firmado por ambas partes</b> (art. 11), con la fecha real. Se guarda la <b>solicitud escrita</b> y la respuesta de la empresa; el <b>registro de asistencia</b> refleja el nuevo horario desde que rige y las <b>liquidaciones</b> pagan según lo pactado. Todo debe ser coherente y estar disponible en el lugar de trabajo; y se conserva mientras sigan abiertos los plazos de prescripción, también después del finiquito.</div>
+  <label for="ownCase" class="hint" style="display:block;margin-top:14px"><strong>Opcional:</strong> anota un proceso de tu trabajo que hoy no deja evidencia suficiente y qué documento, plazo o registro lo respaldaría.</label>
+  <textarea id="ownCase" class="own" placeholder="Ej.: los cambios de turno se acuerdan por chat; desde ahora, anexo firmado y registro actualizado."></textarea>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:14" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.8</h2>
+    <p>Ya puedes reconocer la cadena documental del ciclo laboral, qué demuestra cada documento, detectar los respaldos que faltan y explicar por qué la evidencia debe conservarse mientras corren los plazos de prescripción.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> el cumplimiento no se demuestra con un único documento. La evidencia debe permitir reconstruir el proceso completo: quién decidió, qué ocurrió, qué norma se aplicó y qué se comunicó. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar la cadena documental</button><button class="small-btn primary" type="button" data-goto="6">Repasar los plazos</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 9, 9 bis, 11, 33, 54, 54 bis, 162, 168, 177, 454 N°1 y 510; DFL N°2 de 1967, arts. 23 y 31; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l58';
+const FIRST_KEYS=['hook','tog','tbl','caso1','caso2'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Decidir bien no basta',lines:['Una decisión correcta que no puede demostrarse sigue siendo un riesgo.','La trazabilidad permite reconstruir quién decidió, qué ocurrió, qué norma se aplicó y qué se comunicó.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem">Decisión correcta + sin respaldo = riesgo</div><div class="v-icons" data-at="1"><div><span class="i">👤</span>¿Quién decidió?</div><div><span class="i">📌</span>¿Qué ocurrió?</div><div><span class="i">⚖️</span>¿Qué norma?</div><div><span class="i">✉️</span>¿Qué se comunicó?</div></div>`},
+ {t:'Una cadena documental',lines:['No existe una norma única sobre evidencia.','La ley exige que ciertos documentos existan, se entreguen o se conserven, y juntos forman una cadena que acompaña todo el ciclo laboral.'],
+  html:`<div class="v-steps"><div>Existir</div><div data-at="1">Entregarse</div><div data-at="1">Conservarse</div></div><div class="note" data-at="1">Juntos forman una cadena documental</div>`},
+ {t:'El inicio',lines:['El contrato se escritura dentro de 15 días; 5 si es por obra o dura menos de 30 días.','Cada cambio posterior se firma en un anexo.'],
+  html:`<div class="v-bars"><div><span style="width:160px">Contrato general</span><i style="width:50%"></i>15 días</div><div><span style="width:160px">Obra o menos de 30 días</span><i style="width:17%;background:var(--stage-amber)"></i>5 días</div></div><div class="note" data-at="1">Cada modificación: anexo firmado por ambas partes</div>`},
+ {t:'Durante la relación',lines:['El registro de asistencia muestra las horas trabajadas.','La liquidación explica cuánto se pagó y cómo se calculó, y los comprobantes acreditan el pago de las cotizaciones.'],
+  html:`<div class="v-log"><div><span>Registro de asistencia</span><span>horas trabajadas</span></div><div data-at="1"><span>Liquidación</span><span>monto y cálculo</span></div><div data-at="1"><span>Cotizaciones</span><span>comprobante de pago</span></div></div>`},
+ {t:'El cierre',lines:['La carta de término indica la causal y los hechos, con copia a la Inspección.','En juicio, la empresa no puede alegar hechos distintos de los señalados en la carta.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Causal legal</span><span class="on">Hechos</span><span class="on">Copia a la Inspección</span></div><div class="note" data-at="1">En juicio: solo los hechos de la carta</div>`},
+ {t:'Coherencia',lines:['Los documentos deben coincidir entre sí y con la realidad.','Si el contrato dice un turno, el registro otro y la liquidación paga un tercero, la evidencia se debilita.'],
+  html:`<div class="v-log"><div><span>Contrato</span><span>Turno A</span></div><div class="bad" data-at="1"><span>Registro de asistencia</span><span>Turno B</span></div><div class="bad" data-at="1"><span>Liquidación</span><span>Turno C</span></div></div>`},
+ {t:'¿Hasta cuándo importa?',lines:['Los derechos laborales prescriben en 2 años desde que se hicieron exigibles, y las acciones de los contratos, en 6 meses desde el término.','Mientras esos plazos corran, puedes necesitar probar.'],
+  html:`<div class="v-bars"><div><span style="width:160px">Derechos</span><i style="width:60%"></i>2 años</div><div><span style="width:160px">Acciones, desde el término</span><i style="width:15%;background:var(--stage-amber)"></i>6 meses</div></div><div class="v-final" data-at="1" style="font-size:1.3rem;margin-top:10px">Cumplir es también <em>poder demostrarlo</em></div>`}
+]};
+const Q=[
+ {q:'¿Qué permite la trazabilidad de un proceso laboral?',o:['Guardar solo el último documento firmado.','Reconstruir quién decidió, qué ocurrió, qué norma se aplicó y qué se comunicó.','Reemplazar los documentos por la memoria de la jefatura.'],c:1,f:'La trazabilidad permite reconstruir el proceso completo. Un solo documento o el recuerdo de alguien no basta.'},
+ {q:'Una empresa contrata a una persona para una obra determinada. ¿Dentro de qué plazo debe escriturarse el contrato?',o:['15 días.','30 días.','60 días hábiles.','5 días.'],c:3,f:'La regla general es 15 días desde la incorporación, pero en contratos por obra, trabajo o servicio determinado, o de duración inferior a 30 días, el plazo es de 5 días (art. 9).'},
+ {q:'Se acuerda cambiar el turno de una persona trabajadora. ¿Cómo debe quedar respaldado?',o:['Por escrito, firmado por ambas partes, al dorso del contrato o en un anexo.','Basta un acuerdo verbal si ambas partes están conformes.','Con un aviso publicado en el diario mural.'],c:0,f:'Las modificaciones del contrato se consignan por escrito y se firman por las partes al dorso de los ejemplares o en un documento anexo (art. 11).'},
+ {q:'Una empresa tiene un finiquito ratificado con reserva de derechos, pero no puede exhibir la carta de despido ni los antecedentes de la causal. ¿Qué ocurre?',o:['Nada: el finiquito reemplaza toda la evidencia previa.','Nada, siempre que el finiquito se haya ratificado ante notario.','Hay un problema de trazabilidad y prueba: el finiquito no cubre lo reservado ni prueba por sí solo los hechos de la causal.','Solo hay que pedir una copia del finiquito a la Inspección.'],c:2,f:'El poder liberatorio no alcanza a lo reservado, y en juicio la empresa no puede alegar hechos distintos de los de la carta (art. 454 N°1). Sin carta ni antecedentes, la causal es difícil de probar.'},
+ {q:'¿Cuál es la razón práctica para conservar la documentación laboral después del término?',o:['El plazo de 60 días hábiles para demandar por despido es el único que importa.','La prescripción: los derechos prescriben en 2 años desde que se hicieron exigibles y las acciones de los actos y contratos, en 6 meses desde el término de los servicios.','No hay razón: con el finiquito firmado se pueden eliminar.'],c:1,f:'Mientras los plazos del art. 510 estén abiertos, la empresa puede necesitar probar lo que hizo. Los 60 días hábiles son el plazo para demandar por despido injustificado (art. 168), que es otro distinto.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: etiqueta de la carpeta ---------- */
+$('#sticker').addEventListener('click',e=>{const st=e.currentTarget;st.classList.add('peeled');setTimeout(()=>{st.hidden=true;const q=$('#hookQ');q.hidden=false;q.scrollIntoView({behavior:'smooth',block:'start'})},650)});
+
+/* ---------- Hotspots: cuatro claves ---------- */
+const HS=[
+ ['Trazabilidad','¿Se puede reconstruir el proceso?','La evidencia permite reconstruir <b>quién decidió, qué ocurrió, qué norma se aplicó y qué se comunicó</b>. Una firma con fecha real, un correo o una solicitud escrita son eslabones de esa reconstrucción.'],
+ ['Consistencia','¿Los documentos coinciden?','Las fuentes deben ser <b>coherentes entre sí y con la realidad</b>. Si el contrato dice turno de mañana, el registro de asistencia muestra turno de tarde y nadie firmó un anexo, la evidencia se contradice.'],
+ ['Conservación','¿Sigue existiendo cuando se necesita?','Los antecedentes deben <b>mantenerse ordenados y disponibles</b>. La razón práctica es la prescripción (art. 510): mientras los plazos estén abiertos, la empresa puede necesitar probar lo que hizo.'],
+ ['Acceso','¿Se puede mostrar en el lugar de trabajo?','El empleador debe mantener la documentación laboral en el establecimiento o faena donde se trabaja (art. 31 DFL N°2). Los sistemas electrónicos se aceptan si el fiscalizador puede <b>consultarlos directamente</b> allí; el registro de asistencia no puede centralizarse.']];
+const tHs=tracker('hs',4,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<span class="tagk">${HS[k][1]}</span><h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][2]}</p>`;tHs(k)}));
+
+/* ---------- Fichas: cadena documental ---------- */
+const TILES=[
+ ['📝','Contrato escrito','Al inicio','Debe escriturarse dentro de <b>15 días</b> desde la incorporación (<b>5 días</b> si es por obra, trabajo o servicio determinado o dura menos de 30 días). Si no se escritura, hay multa de 1 a 5 UTM y se presume que son estipulaciones del contrato las que declare la persona trabajadora. Además, se registra en el sitio de la DT dentro de 15 días (arts. 9 y 9 bis).'],
+ ['📎','Anexos','Cuando algo cambia','Toda modificación del contrato se consigna <b>por escrito y firmada por ambas partes</b>, al dorso del contrato o en un anexo. La remuneración debe actualizarse en el contrato al menos una vez al año (art. 11).'],
+ ['⏱️','Registro de asistencia','Durante la relación','Libro de asistencia o reloj control (los sistemas electrónicos deben cumplir las condiciones de la DT). Sirve para controlar la asistencia y <b>determinar las horas de trabajo</b> (art. 33).'],
+ ['🧾','Liquidaciones','Durante la relación','Con cada pago se entrega un comprobante con el monto, <b>la forma en que se determinó</b> y las deducciones. Si hay comisiones o bonos, se adjunta un anexo con su cálculo (arts. 54 y 54 bis).'],
+ ['🏦','Cotizaciones','Durante la relación','Los comprobantes de pago de cotizaciones previsionales se adjuntan a la carta de término. Si no están pagadas al despedir, el despido no pone término al contrato (art. 162).'],
+ ['✉️','Carta de término','En el cierre','Indica la <b>causal y los hechos</b>, y el estado de pago de las cotizaciones, con copia a la Inspección del Trabajo. En juicio, no se pueden alegar hechos distintos de los de la carta (arts. 162 y 454 N°1).'],
+ ['🤝','Finiquito','En el cierre','Por escrito, firmado y ratificado ante un ministro de fe o firmado electrónicamente en el sitio de la DT (art. 177). Su poder liberatorio <b>no alcanza a lo que se reservó</b>.']];
+$('#tiles').innerHTML=TILES.map((t,i)=>`<button class="tile" type="button" data-i="${i}" aria-label="Descubrir ficha ${i+1}">${i+1}</button>`).join('');
+const tTl=tracker('tiles',7,'#tlTick','#tlTask');
+$$('.tile').forEach(b=>b.addEventListener('click',()=>{const t=TILES[+b.dataset.i];b.classList.add('open');b.innerHTML=`<span><span class="stg">${t[2]}</span><span style="font-size:1.5rem">${t[0]}</span><br/>${t[1]}</span>`;$('#tlPanel').innerHTML=`<h3 style="margin-top:0">${t[0]} ${t[1]} <small class="hint">· ${t[2]}</small></h3><p>${t[3]}</p>`;tTl(b.dataset.i)}));
+
+/* ---------- Parejas: qué demuestra cada documento ---------- */
+const PAIRS=[['Contrato escrito','Las condiciones pactadas desde el inicio: funciones, jornada y remuneración'],['Anexo firmado','Que un cambio en las condiciones fue acordado por ambas partes'],['Registro de asistencia','La asistencia y las horas efectivamente trabajadas'],['Liquidación de remuneraciones','Cuánto se pagó, cómo se calculó y qué se descontó'],['Carta de término','La causal invocada y los hechos en que se funda'],['Finiquito ratificado','Los pagos y acuerdos del cierre, salvo lo que se reservó']];
+const PH=['Piensa en el documento que se firma el primer día.','Piensa en qué documento deja constancia de un cambio.','Piensa en qué documento controla las horas.','Piensa en el comprobante que acompaña cada pago.','Piensa en cómo se comunica el término.','Piensa en el documento que formaliza el cierre.'];
+const rOrder=[3,5,0,4,2,1];let selL=null,pDone=0;
+$('#pl').innerHTML=PAIRS.map((p,i)=>`<button class="pl" type="button" data-i="${i}">${p[0]}</button>`).join('');
+$('#pr').innerHTML=rOrder.map(i=>`<button class="pr" type="button" data-i="${i}">${PAIRS[i][1]}</button>`).join('');
+$$('.pl').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;selL=b.dataset.i;$$('.pl').forEach(x=>x.classList.toggle('sel',x===b))}));
+$$('.pr').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;if(selL==null){feedback($('#prFb'),false,'Primero elige un documento.','Selecciona un documento de la columna izquierda.');return}
+  if(b.dataset.i===selL){b.classList.add('done');const l=$(`.pl[data-i="${selL}"]`);l.classList.add('done');l.classList.remove('sel');l.textContent='✓ '+l.textContent;pDone++;
+    $('#prTick').textContent=`${pDone} / 6`;feedback($('#prFb'),true,'Pareja correcta.',`${PAIRS[+selL][0]}: ${PAIRS[+selL][1].charAt(0).toLowerCase()+PAIRS[+selL][1].slice(1)}.`);selL=null;if(pDone===6){$('#prTask').classList.add('ok');done('pairs')}}
+  else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');feedback($('#prFb'),false,'No es lo que demuestra ese documento.',PH[+selL])}}));
+
+/* ---------- Interruptores: el expediente de Javiera ---------- */
+const EXP=[
+ ['Contrato de trabajo (2024)','Firmado por ambas partes y registrado en el sitio de la DT. Dice “turno de mañana”.',1,'Disponible: es el punto de partida de la cadena. Por sí solo muestra el turno original, no el cambio.'],
+ ['Anexo de cambio a turno de tarde','Se encontró un borrador en una carpeta compartida, sin firmas.',0,'Falta: un borrador sin firmas no acredita el acuerdo. La modificación debe constar por escrito y firmada por ambas partes (art. 11).'],
+ ['Carta de Javiera pidiendo el cambio','Camila recuerda haberla recibido en papel; no está en el archivo.',0,'Falta: lo que se recuerda no es evidencia. Las solicitudes escritas deben archivarse en el expediente.'],
+ ['Correo de la jefatura aprobando el cambio','La jefatura dice que lo envió, pero no aparece en el correo de la empresa.',0,'Falta: si no puede exhibirse, no sirve como respaldo.'],
+ ['Registro de asistencia, marzo a septiembre','Exportado del reloj control: marca turno de tarde desde marzo.',1,'Disponible: muestra en qué horario trabajó Javiera realmente (art. 33). Es evidencia de que el cambio ocurrió.'],
+ ['Liquidaciones, marzo a septiembre','Entregadas y firmadas; el pago es coherente con el turno de tarde.',1,'Disponible: son consistentes con el registro de asistencia (art. 54).'],
+ ['Comprobantes de cotizaciones','Pagadas mes a mes.',1,'Disponible: acreditan el pago de las cotizaciones previsionales.']];
+$('#expList').insertAdjacentHTML('beforeend',EXP.map((e,i)=>`<div class="exp-row on" data-i="${i}"><span><b>${e[0]}</b><span class="src">${e[1]}</span></span><span class="swl"><small>Disponible</small><button class="sw" type="button" aria-label="Disponible o falta: ${e[0]}"></button></span><div class="why"></div></div>`).join(''));
+let tgFirst=true,tgDone=false;
+$$('#expList .exp-row').forEach(r=>$('.sw',r).addEventListener('click',()=>{if(tgDone)return;r.classList.toggle('on');r.classList.remove('good','bad');$('small',r).textContent=r.classList.contains('on')?'Disponible':'Falta'}));
+$('#tgCheck').addEventListener('click',()=>{if(tgDone)return;let ok=0;
+  $$('#expList .exp-row').forEach(r=>{const e=EXP[+r.dataset.i],v=r.classList.contains('on')?1:0,g=v===e[2];r.classList.remove('good','bad');r.classList.add(g?'good':'bad');
+    $('.why',r).innerHTML=g?e[3]:'Revisa: ¿este respaldo puede exhibirse y acredita lo que dice?';if(g)ok++});
+  $('#tgTick').textContent=`${ok} / 7`;
+  if(ok===7){tgDone=true;S.first.tog=tgFirst;$('#tgTask').classList.add('ok');feedback($('#tgFb'),true,'Expediente revisado.','Faltan tres respaldos: el anexo firmado, la carta de solicitud y el correo de aprobación. Pero el registro de asistencia y las liquidaciones muestran, de forma coherente, que el cambio sí ocurrió.');done('tog')}
+  else{tgFirst=false;feedback($('#tgFb'),false,`${ok} de 7 correctas.`,'Corrige las filas en rojo con el interruptor y vuelve a presionar “Revisar expediente”.')}});
+
+/* ---------- Tabla con selectores: plazos ---------- */
+const PL=['5 días','15 días','60 días hábiles','6 meses','2 años'];
+const ROWS=[
+ ['Escriturar un contrato indefinido, desde la incorporación',1,'15 días es la regla general (art. 9). Si no se escritura, multa de 1 a 5 UTM y presunción a favor de lo que declare la persona trabajadora.'],
+ ['Escriturar un contrato por obra, trabajo o servicio determinado',0,'5 días: el plazo se acorta para contratos por obra o servicio determinado (art. 9).'],
+ ['Escriturar un contrato que durará menos de 30 días',0,'5 días: también se aplica a contratos de duración inferior a 30 días (art. 9).'],
+ ['Registrar el contrato en el sitio electrónico de la DT',1,'15 días desde su celebración (art. 9 bis).'],
+ ['Prescripción de los derechos regidos por el Código, desde que se hicieron exigibles',4,'2 años (art. 510).'],
+ ['Prescripción de las acciones de los actos y contratos, desde el término de los servicios',3,'6 meses (art. 510). Es un plazo de prescripción, no el plazo para demandar por despido.'],
+ ['Demandar por despido injustificado, desde la separación',2,'60 días hábiles (art. 168): es otro plazo, distinto de la prescripción del art. 510.']];
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td><b>${r[0]}</b><span class="why" hidden></span></td><td style="width:190px"><select aria-label="Plazo: ${r[0]}"><option value="">Elige…</option>${PL.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
+let tblFirst=true;
+$('#tblCheck').addEventListener('click',()=>{let ok=0;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[1];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent=r[2];if(g)ok++});
+  if(ok===7){S.first.tbl=tblFirst;feedback($('#tblFb'),true,'¡Todo correcto!','Siete de siete plazos bien elegidos. Los plazos de prescripción explican por qué la evidencia debe seguir disponible después del término.');done('tbl')}
+  else{tblFirst=false;feedback($('#tblFb'),false,`${ok} de 7 correctas.`,'Corrige las filas en rojo (o sin respuesta) y vuelve a comprobar. Recuerda: 60 días hábiles es para demandar por despido, no la prescripción.')}});
+
+/* ---------- Transferencia: checklist con respuesta modelo ---------- */
+const YN=[['¿Basta con que la jefatura y la persona estén de acuerdo de palabra?',0,'No. La modificación debe consignarse por escrito y firmarse por ambas partes (art. 11).','Piensa: ¿cómo demostrarías ese acuerdo dentro de un año?'],
+ ['¿El cambio debe quedar en un anexo firmado por ambas partes, con la fecha real?',1,'Sí. El anexo es el eslabón que explica por qué cambian los demás documentos.','Piensa en qué documento deja constancia de un cambio.'],
+ ['¿El registro de asistencia debe reflejar el nuevo horario desde que comienza a regir?',1,'Sí. Así el registro es coherente con el anexo y con la liquidación.','Piensa en la consistencia entre documentos.'],
+ ['¿Conviene archivar la solicitud escrita de la persona y la respuesta de la empresa?',1,'Sí. Permiten reconstruir quién pidió, quién decidió y qué se comunicó.','Piensa en la trazabilidad: ¿quién decidió y qué se comunicó?'],
+ ['¿Puedes eliminar estos respaldos apenas la persona firme su finiquito?',0,'No. El finiquito no cubre lo reservado y los plazos de prescripción del art. 510 pueden seguir abiertos.','Piensa en los plazos de prescripción.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('locked'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>x.classList.remove('good','bad'));
+  if(ok){it.classList.add('locked');b.classList.add('good');$$('.yn button',it).forEach(x=>x.disabled=true);$('.exp',it).innerHTML=`<span style="color:var(--good);font-weight:800">✓</span> ${y[2]}`;ynN++;if(ynN===YN.length){done('yn');$('#modelBtn').disabled=false}}
+  else{b.classList.add('bad');$('.exp',it).innerHTML=`<span style="color:var(--bad);font-weight:800">✕</span> ${y[3]} Vuelve a elegir.`}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>

@@ -1,0 +1,415 @@
+<title>Lección 5.7 — Fiscalización laboral</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.phone.chat{min-height:460px;max-width:320px}
+.phone .chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #d7e2e6;font-weight:900;color:#173f4e;font-size:.9rem}
+.phone .chat-h .av{width:30px;height:30px;border-radius:50%;background:#173f4e;color:#fff;display:grid;place-items:center;font-size:.72rem;flex:none}
+.phone .chat-h small{display:block;font-weight:700;color:#5f7180;font-size:.7rem}
+.phone .cmsg{background:#fff;border:1px solid #c9d6dc;border-radius:14px 14px 14px 4px;padding:9px 12px;font-size:.86rem;max-width:88%;align-self:flex-start;animation:rise .35s ease both;color:#172431}
+.phone .cmsg.me{background:#d8f3ef;border-color:#a9dbd7;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.phone .cmsg time{display:block;font-size:.66rem;color:#5f7180;text-align:right;margin-top:2px}
+.phone .dots{display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid #c9d6dc;width:max-content}
+.phone .dots span{width:7px;height:7px;border-radius:50%;background:#5f7180;animation:blink 1s infinite}
+.phone .dots span:nth-child(2){animation-delay:.2s}.phone .dots span:nth-child(3){animation-delay:.4s}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-radius:16px;padding:12px;font-size:.86rem;color:#172431;animation:rise .35s ease both}
+.phone .notif small{display:block;color:#5f7180;font-weight:700;margin-top:2px}
+.phone .cit{font-size:.82rem;line-height:1.45}
+.phone .cit b{color:#173f4e}
+.phone .cit ul{margin:4px 0 0;padding-left:1.05rem}
+.phone .pin{font-size:.76rem;background:#fff6e0;border:1px solid #f0d58c;border-radius:12px;padding:6px 10px;color:#5b4300}
+.phone .grow{flex:1}
+.acc-q{margin-top:6px}
+.bins.three{grid-template-columns:repeat(3,1fr)}
+.bins.three .bin{min-height:150px}
+.bins.three .bin p{margin:0;font-size:.8rem;color:var(--muted)}
+.bins.three .bin.b0 h3{color:var(--bad)}
+.bins.three .bin.b1 h3{color:var(--teal-ink)}
+.bins.three .bin.b2 h3{color:var(--violet)}
+.photo-frame.banner{aspect-ratio:2/1;max-height:320px;width:100%;margin:12px 0 4px}
+.evnode small{max-width:160px}
+.evnode .t{font-size:1.05rem}
+.casebox{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.casebox div{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--surface);font-size:.86rem}
+.casebox b{display:block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.case-head{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.order li>span:nth-child(2){min-width:0}
+.yn-item>span:first-child{min-width:0}
+@media(max-width:860px){.hook-grid,.case-head{grid-template-columns:1fr}.bins.three{grid-template-columns:1fr}.casebox{grid-template-columns:1fr}.photo-frame.banner{aspect-ratio:3/2}}
+@media(max-width:600px){.yn-item{grid-template-columns:1fr}.order li{grid-template-columns:30px 1fr;}.order li .mv{grid-column:1/-1;justify-content:flex-end}.tf-claim{font-size:1rem}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.7</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:17" data-gate="hook" data-gate-msg="Abre la notificación, lee el mensaje de Gerencia y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.7 · Fiscalización laboral</span>
+      <h1 class="reveal">Una revisión externa comienza con la evidencia interna</h1>
+      <p class="lead reveal">Es lunes por la mañana en <strong>Horizonte Servicios</strong>. A Camila, del Equipo de Personas, le llega una notificación de la <strong>Inspección del Trabajo</strong>. <strong>Presiona “Abrir notificación” en el celular.</strong></p>
+      <div class="callout reveal" style="margin-top:10px"><strong>Meta de aprendizaje:</strong> reconocer las facultades de la fiscalización laboral y preparar a la empresa con cumplimiento real, documentos coherentes y evidencia accesible en el lugar de trabajo.</div>
+      <div class="photo-frame reveal"><img alt="Camila, de pie junto a una ventana de la oficina, revisa en su celular una notificación mientras sostiene una carpeta archivadora" src="{{IMG:i57_hero}}"/></div>
+    </div>
+    <div class="phone chat reveal" id="phone"></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería responder Camila a la Gerencia?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí. Hay que llegar con la carpeta completa: hagamos hoy los contratos que faltan y fechémoslos en su día de ingreso.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“No. Reunamos los documentos reales, revisemos que coincidan entre sí y con lo que ocurrió, y corrijamos lo que falte con su fecha real.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“No vayamos: si no presentamos documentos, la Inspección no tiene nada que revisar.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: evidencia construida que contradice la realidad</div><div class="branch-body"><div><p>Crear o “completar” documentos cuando llega la citación <strong>no sirve</strong>: la fiscalización mira lo que realmente ocurrió, y los inspectores son <strong>ministros de fe</strong> cuyos hechos constatados tienen presunción legal de veracidad. Un documento con fecha falsa queda en contradicción con esa realidad.</p></div><div><p class="hint">La evidencia se construye durante la relación laboral, no la víspera.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>La mejor preparación es el <strong>cumplimiento real</strong>: documentos que existen, que coinciden entre sí y con los hechos, y que están accesibles. Si algo falta o no cuadra, se corrige con su <strong>fecha real</strong> y se deja constancia de lo que se hizo.</p></div><div><p class="hint">En esta lección verás qué puede revisar la Inspección y cómo prepararte.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el problema no desaparece</div><div class="branch-body"><div><p>Una citación es un requerimiento formal. No presentarse no borra las obligaciones: la Inspección puede, además, <strong>visitar el lugar de trabajo a cualquier hora</strong> y constatar directamente lo que ocurre. Las infracciones detectadas pueden sancionarse con multa.</p></div><div><p class="hint">Evitar la revisión no es una estrategia de cumplimiento.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 25 s</span>
+  <h2>¿Cómo funciona una fiscalización laboral?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · FACULTADES -->
+<section class="slide" data-title="Facultades" data-audio="p03" data-dur="0:16" data-gate="acc susp" data-gate-msg="Abre las seis facultades y responde la pregunta sobre la suspensión de labores.">
+  <span class="eyebrow">Lección 5.7 · Facultades de la fiscalización</span>
+  <h2>Qué puede hacer la Inspección del Trabajo</h2>
+  <p><strong>Abre cada facultad</strong> para conocer qué dice la norma y cómo se vería en Horizonte Servicios. Cuando las hayas abierto todas, aparecerá una pregunta.</p>
+  <div class="task" id="accTask">Facultades revisadas <span class="tick" id="accTick">0 / 6</span></div>
+  <div class="acc" id="acc">
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">🏛️</span><span>Quién fiscaliza<span class="sub">La Dirección del Trabajo y otros servicios en sus materias</span></span><span class="tg">＋</span></button><div class="acc-body">La fiscalización del cumplimiento de la legislación laboral y su interpretación corresponden a la <b>Dirección del Trabajo</b> (art. 476 del Código del Trabajo), sin perjuicio de las facultades de otros servicios en sus propias materias, como la SUSESO o la autoridad sanitaria. El DFL N°2 de 1967 fija la organización y funciones de la DT.<div class="example"><b>En Horizonte:</b> la Inspección del Trabajo revisa contratos, jornada y remuneraciones de la sucursal.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">🪪</span><span>Inspectores ministros de fe<span class="sub">¿Qué valor tiene lo que constatan?</span></span><span class="tg">＋</span></button><div class="acc-body">Los inspectores son <b>ministros de fe</b> en las actuaciones que realizan en el ejercicio de sus funciones. Los hechos que constatan tienen <b>presunción legal de veracidad</b>, también como prueba en juicio (art. 23 DFL N°2).<div class="example"><b>En Horizonte:</b> si el acta dice que tres personas trabajaban sin registrar su ingreso, ese hecho se presume verdadero mientras no se pruebe lo contrario.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">🚪</span><span>Visitas y citaciones<span class="sub">En terreno, a cualquier hora, o en la Inspección</span></span><span class="tg">＋</span></button><div class="acc-body">Una fiscalización puede hacerse <b>en terreno</b>, visitando el lugar de trabajo, o mediante una <b>citación</b> del empleador a la Inspección para revisar documentos. Los inspectores pueden visitar los lugares de trabajo <b>a cualquier hora del día o de la noche</b> (art. 24 DFL N°2).<div class="example"><b>En Horizonte:</b> una visita al turno de noche de la sucursal es tan válida como una citación a las 10:00.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">📂</span><span>Requerimiento de documentos<span class="sub">En papel o en formato digital</span></span><span class="tg">＋</span></button><div class="acc-body">Puede requerirse <b>toda la documentación laboral y previsional</b> que deriva de las relaciones de trabajo, en papel o digital: contratos y anexos, liquidaciones de remuneraciones, registro de asistencia, comprobantes de feriado, comprobantes de pago de cotizaciones, cartas de término y finiquitos.<div class="example"><b>En Horizonte:</b> la citación pide liquidaciones de julio a septiembre y el registro de asistencia del mismo período.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">⛔</span><span>Suspensión de labores<span class="sub">Solo ante peligro inminente</span></span><span class="tg">＋</span></button><div class="acc-body">El inspector puede ordenar la <b>suspensión inmediata</b> de labores que, a su juicio, constituyan <b>peligro inminente para la salud o la vida</b> de quienes trabajan (art. 28 DFL N°2). No es una sanción por cualquier infracción documental.<div class="example"><b>En Horizonte:</b> una faena de mantención con riesgo grave e inmediato podría suspenderse; una liquidación faltante, no.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">📣</span><span>Origen y reglas del procedimiento<span class="sub">Denuncias y Manual de Fiscalización</span></span><span class="tg">＋</span></button><div class="acc-body">Cualquier persona trabajadora, o su sindicato, puede <b>denunciar</b> un incumplimiento ante la Inspección del Trabajo, lo que puede originar una fiscalización. La Ley 21.327 exige un <b>Manual del Procedimiento de Fiscalización</b> que contemple los derechos y deberes de quienes intervienen (art. 505-A).<div class="example"><b>En Horizonte:</b> una denuncia por horas extraordinarias impagas puede terminar en una citación como la que recibió Camila.</div></div></div>
+  </div>
+  <div class="phase acc-q" id="suspQ" hidden>
+    <h3 style="margin-top:18px">Durante una visita, ¿en cuál de estas situaciones el inspector puede ordenar la suspensión inmediata de labores?</h3>
+    <div class="options" data-choice="susp" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Falta una liquidación de remuneraciones en la carpeta de la sucursal.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La empresa pidió postergar la citación para la semana siguiente.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>En una faena de mantención, un andamio en mal estado pone en peligro inminente la vida de quienes trabajan sobre él.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="susp-A"><div class="branch bad"><div class="branch-head">✕ No corresponde</div><div class="branch-body"><div><p>Un documento faltante puede ser una infracción y dar lugar a una multa, pero <strong>no es causa de suspensión de labores</strong>. La suspensión se reserva para el peligro inminente para la salud o la vida.</p></div><div><p class="hint">Piensa en qué protege la suspensión.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="susp-B"><div class="branch bad"><div class="branch-head">✕ No corresponde</div><div class="branch-body"><div><p>Pedir postergar una citación es un trámite, no un riesgo para las personas. La suspensión inmediata de labores procede ante un <strong>peligro inminente</strong> para la salud o la vida (art. 28 DFL N°2).</p></div><div><p class="hint">La suspensión no castiga trámites.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="susp-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El inspector puede suspender de inmediato las labores que, a su juicio, constituyan <strong>peligro inminente para la salud o la vida</strong> de quienes trabajan. Es una medida de protección, no una sanción documental.</p></div><div><p class="hint">Facultades revisadas.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 476 y 505-A; DFL N°2 de 1967 del Ministerio del Trabajo, arts. 23, 24 y 28; Ley 21.327 (modernización de la Dirección del Trabajo).</p>
+</section>
+
+<!-- 4 · DÓNDE ESTÁN LOS DOCUMENTOS -->
+<section class="slide" data-title="Dónde están los documentos" data-audio="p04" data-dur="0:17" data-gate="bins" data-gate-msg="Clasifica los ocho documentos en su columna.">
+  <span class="eyebrow amber">Lección 5.7 · Documentación en el lugar de trabajo</span>
+  <h2>La visita llega a la sucursal, no a la casa matriz</h2>
+  <div class="photo-frame banner"><img alt="En la sala de archivo de una sucursal, una persona inspectora del trabajo revisa una carpeta mientras la encargada le muestra un archivador; al fondo, un libro de asistencia y un reloj control" src="{{IMG:i57_archivo}}"/></div>
+  <div class="story" style="margin-top:10px"><strong>El caso:</strong> Horizonte Servicios tiene su casa matriz en Santiago y una sucursal en Rancagua. Camila revisa dónde está cada documento del personal de la sucursal.</div>
+  <p style="margin-top:12px"><strong>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna</strong> que indica dónde debe estar ese documento.</p>
+  <div class="task" id="binTask">Documentos clasificados <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins three">
+    <div class="bin b0" data-b="0" role="button" tabindex="0"><h3>📍 Siempre en el lugar de trabajo</h3><p>No puede centralizarse</p></div>
+    <div class="bin b1" data-b="1" role="button" tabindex="0"><h3>🗂️ En el lugar de trabajo o centralizado</h3><p>Centralizar requiere autorización de la DT</p></div>
+    <div class="bin b2" data-b="2" role="button" tabindex="0"><h3>💻 Registrado en el sitio de la DT</h3><p>Obligación de la Ley 21.327</p></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <p class="sources">Referencias: DFL N°2 de 1967, art. 31; Código del Trabajo, art. 9 bis; Ley 21.327 (modernización de la Dirección del Trabajo).</p>
+</section>
+
+<!-- 5 · COHERENCIA DOCUMENTAL -->
+<section class="slide" data-title="Coherencia documental" data-audio="p05" data-dur="0:15" data-gate="ev aud" data-gate-msg="Revisa los tres documentos y toma la decisión.">
+  <span class="eyebrow violet">Lección 5.7 · Coherencia documental</span>
+  <h2>Tres documentos, una misma persona</h2>
+  <div class="grid-2">
+    <div>
+      <p>Para la citación, Camila revisa los antecedentes de septiembre de <strong>Tomás Rivas</strong>, ejecutivo de atención de la sucursal. Los documentos deben coincidir <strong>entre sí y con la realidad</strong>. <strong>Haz clic en cada documento</strong> para ver qué demuestra.</p>
+      <div class="task" id="evTask">Documentos revisados <span class="tick" id="evTick">0 / 3</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Manos de Camila comparan con un lápiz un contrato, una planilla de asistencia y una liquidación de sueldo dispuestos sobre una mesa" src="{{IMG:i57_auditoria}}"/></div>
+  </div>
+  <div class="evline" id="evline">
+    <button class="evnode" type="button" data-k="0"><span class="t">18:00</span><small>Contrato de trabajo</small></button>
+    <button class="evnode" type="button" data-k="1"><span class="t">19:30</span><small>Registro de asistencia de septiembre</small></button>
+    <button class="evnode" type="button" data-k="2"><span class="t">0 h</span><small>Liquidación de septiembre</small></button>
+  </div>
+  <div class="dpanel" id="evPanel"><p class="hint">Selecciona un documento para ver qué demuestra.</p></div>
+  <div class="phase" id="audQ" hidden>
+    <h3 style="margin-top:18px">Los documentos no coinciden. ¿Qué debería hacer Camila antes de la citación?</h3>
+    <div class="options" data-choice="aud" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Analizar la diferencia: si hubo trabajo extraordinario, calcularlo y pagarlo, documentar la corrección con su fecha real y presentar los documentos tal como son.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Ajustar las marcaciones del registro para que coincidan con el horario del contrato.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Presentar solo el contrato y la liquidación, y dejar el registro de asistencia fuera de la carpeta.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="aud-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se altera la evidencia</div><div class="branch-body"><div><p>Modificar las marcaciones para que calcen con el contrato <strong>destruye la evidencia</strong> de lo que ocurrió y deja sin pagar un posible tiempo extraordinario. La realidad no cambia porque cambie el papel.</p></div><div><p class="hint">Se corrige el incumplimiento, no el registro.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: falta un documento exigible</div><div class="branch-body"><div><p>La Inspección puede requerir <strong>toda la documentación laboral</strong>, incluido el registro de asistencia, y este debe estar en el lugar de trabajo. Ocultarlo no resuelve la diferencia y agrega un nuevo incumplimiento.</p></div><div><p class="hint">Los documentos se presentan completos y tal como son.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El contrato muestra lo pactado; el registro, lo que se trabajó; la liquidación, lo que se pagó. Si las tres no coinciden, se <strong>corrige el incumplimiento</strong> (por ejemplo, pagando las horas extraordinarias que correspondan) y se documenta con su fecha real.</p></div><div><p class="hint">Coherencia: documentos que coinciden entre sí y con la realidad.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: DFL N°2 de 1967, arts. 23 y 31; Código del Trabajo, art. 476; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 6 · PREPARAR LA CITACIÓN -->
+<section class="slide" data-title="Preparar la citación" data-audio="p06" data-dur="0:15" data-gate="order" data-gate-msg="Ordena los seis pasos correctamente y presiona Comprobar orden.">
+  <span class="eyebrow">Lección 5.7 · Preparar la respuesta a una citación</span>
+  <h2>Del aviso a la reunión: ¿en qué orden?</h2>
+  <p>Camila arma su plan para los días previos a la citación. <strong>Usa las flechas ↑ ↓ para ordenar los seis pasos</strong> y luego presiona <strong>Comprobar orden</strong>.</p>
+  <div class="callout" style="margin-top:8px"><strong>Ojo:</strong> este orden es una buena práctica de gestión, no un procedimiento fijado por la ley. Lo que sí exige la ley es que los documentos existan, sean reales y estén accesibles.</div>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <p class="sources">Referencias: DFL N°2 de 1967, art. 31; Código del Trabajo, arts. 476 y 511.</p>
+</section>
+
+<!-- 7 · MITOS -->
+<section class="slide" data-title="Mitos" data-audio="p07" data-dur="0:15" data-gate="tf" data-gate-msg="Responde las seis afirmaciones.">
+  <span class="eyebrow amber">Lección 5.7 · Mitos sobre la fiscalización</span>
+  <h2>“Si nos multan, ya no hay nada que hacer”</h2>
+  <p>En la oficina circulan varias ideas sobre la fiscalización. <strong>Decide si cada afirmación es verdadera o falsa</strong> y lee la explicación.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 506 ter y 511; DFL N°2 de 1967, arts. 23, 24, 28 y 31.</p>
+</section>
+
+<!-- 8 · CASO: LA VISITA -->
+<section class="slide" data-title="Caso: la visita" data-audio="p08" data-dur="0:14" data-gate="caso" data-gate-msg="Resuelve las dos decisiones sobre la visita a la sucursal.">
+  <span class="eyebrow amber">El caso de Camila · Una visita en el turno de noche</span>
+  <h2>21:15: la inspectora está en la puerta</h2>
+  <div class="case-head">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">ST</span> Supervisor de turno, sucursal Rancagua</div>
+      <div class="bubble"><span class="who">Supervisor</span>Camila, llegó una inspectora del trabajo a la sucursal. Le dije que volviera mañana en horario de oficina, porque la carpeta está en Santiago. ¿Está bien?</div>
+    </div>
+    <div class="photo-frame"><img alt="De noche, en la recepción de una sucursal, una inspectora del trabajo muestra su credencial a un supervisor de turno junto al mesón" src="{{IMG:i57_visita}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué responde Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Bien hecho: a esta hora no corresponde fiscalizar.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Pídele que espere afuera; mañana alguien de Santiago lleva todos los documentos.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Atiéndela ahora: puede visitar a cualquier hora. Muéstrale lo que debe estar en la sucursal, como el registro de asistencia, y avísame qué constata.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se impide una fiscalización válida</div><div class="branch-body"><div><p>Los inspectores pueden visitar los lugares de trabajo <strong>a cualquier hora del día o de la noche</strong> (art. 24 DFL N°2). El turno de noche también se fiscaliza.</p></div><div><p class="hint">El horario de oficina no limita la visita.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la documentación no está donde debe</div><div class="branch-body"><div><p>La documentación debe mantenerse <strong>en el lugar de trabajo</strong> (art. 31 DFL N°2). Solo puede centralizarse con autorización de la DT, y el <strong>registro de asistencia nunca</strong> se centraliza.</p></div><div><p class="hint">¿Qué debe estar en la sucursal esta misma noche?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La visita es válida a cualquier hora, y la sucursal debe tener a mano su documentación, al menos el <strong>registro de asistencia</strong>, que no puede centralizarse.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Al día siguiente:</strong> el acta de la inspectora deja constancia de que, esa noche, <strong>tres personas trabajaban sin que el registro de asistencia mostrara su ingreso</strong>. La Gerencia sugiere responder que “es solo la versión de la inspectora”.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué valor tiene lo que constató la inspectora?</h3>
+    <div class="options" data-choice="caso2c" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Ninguno, si la empresa presenta después un registro con las marcaciones completas.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Tiene presunción legal de veracidad, porque la inspectora es ministra de fe. Conviene corregir el registro desde ya y revisar por qué falló.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Es una opinión que la empresa puede ignorar mientras no llegue una multa.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un registro posterior contradice lo constatado</div><div class="branch-body"><div><p>Un registro “completado” después de la visita no borra lo que la inspectora constató como <strong>ministra de fe</strong>. Al contrario, deja en evidencia que los documentos no reflejan la realidad.</p></div><div><p class="hint">Lo constatado se presume verdadero.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se deja pasar el momento de corregir</div><div class="branch-body"><div><p>No es una opinión: los hechos constatados tienen <strong>presunción legal de veracidad</strong>, también en juicio. Esperar la multa solo retrasa la corrección.</p></div><div><p class="hint">Corregir a tiempo sí importa.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Lo constatado se presume verdadero (art. 23 DFL N°2). Lo que corresponde es <strong>corregir</strong>: que desde hoy todas las personas registren su asistencia y revisar la causa del problema. Si se cursa una multa y la infracción se corrige dentro de <strong>15 días</strong> desde la notificación, el monto se rebaja al menos en un <strong>50%</strong> (art. 511).</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: DFL N°2 de 1967, arts. 23, 24 y 31; Código del Trabajo, art. 511.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:14" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:15" data-gate="yn model pass" data-gate-msg="Responde las cinco preguntas y revisa la respuesta modelo (y aprueba la Comprobación).">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Esta sucursal pasaría una visita hoy?</h2>
+  <div class="story" style="margin-top:6px"><strong>El caso:</strong> en la sucursal Temuco de una empresa de servicios, toda la documentación del personal se guarda en la casa matriz de Santiago, <strong>incluido el libro de asistencia</strong>. El sistema de remuneraciones solo puede consultarse desde Santiago y la empresa no tiene autorización de centralización.</div>
+  <p style="margin-top:12px"><strong>Responde Sí o No</strong> en cada pregunta y lee la explicación. Luego revisa la respuesta modelo.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la sucursal <b>no pasaría</b> una visita. El <b>registro de asistencia</b> debe volver a la sucursal, porque no puede centralizarse. Para mantener los demás documentos en Santiago se necesita <b>autorización de la DT</b>; mientras tanto, deben estar en la sucursal o en un <b>sistema electrónico consultable directamente allí</b>. Además, hay que verificar que cada contrato esté <b>registrado en el sitio de la DT dentro de 15 días</b>. Lo que falte se regulariza con su fecha real, nunca con fechas antiguas.<br/><br/><strong>Ahora piensa en tu lugar de trabajo:</strong> si mañana llegara una visita, ¿qué documento, registro o pago te permitiría demostrar que cumples? ¿Está disponible allí mismo?</div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: DFL N°2 de 1967, art. 31; Código del Trabajo, arts. 9 bis y 515; Ley 21.327.</p>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:15" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.7</h2>
+    <p>Ya reconoces quién fiscaliza y con qué facultades, dónde debe estar la documentación, cómo detectar incoherencias entre documentos y por qué corregir a tiempo cambia el resultado de una fiscalización.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la fiscalización no es el momento en que la empresa recién construye su evidencia. El cumplimiento es continuo: documentos reales, coherentes y disponibles en el lugar de trabajo durante toda la relación laboral. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar las facultades</button><button class="small-btn primary" type="button" data-goto="4">Repasar la coherencia documental</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 9 bis, 476, 505-A, 511 y 515; DFL N°2 de 1967 del Ministerio del Trabajo, arts. 23, 24, 28 y 31; Ley 21.327 (modernización de la Dirección del Trabajo); criterios de la Dirección del Trabajo vigentes a octubre de 2026. Narración generada con síntesis de voz.</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l57';
+const FIRST_KEYS=['hook','susp','aud','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Quién fiscaliza',lines:['La Dirección del Trabajo fiscaliza el cumplimiento de la legislación laboral, según el artículo 476 del Código del Trabajo.','Otros servicios, como la autoridad sanitaria, fiscalizan en sus propias materias.'],
+  html:`<div class="v-icons"><div><span class="i">🏛️</span>Dirección del Trabajo<br/><small>Art. 476</small></div><div data-at="1" class="dim"><span class="i">🩺</span>Otros servicios<br/><small>en sus materias</small></div></div>`},
+ {t:'Ministros de fe',lines:['Los inspectores son ministros de fe en el ejercicio de sus funciones.','Los hechos que constatan tienen presunción legal de veracidad, y también sirven como prueba en un juicio.'],
+  html:`<div class="v-icons"><div><span class="i">🪪</span>Ministro de fe</div></div><div class="note" data-at="1">Lo constatado se presume verdadero · también en juicio</div>`},
+ {t:'En terreno o con citación',lines:['Una fiscalización puede ser una visita al lugar de trabajo, a cualquier hora del día o de la noche,','o una citación a la Inspección para revisar documentos.'],
+  html:`<div class="v-icons"><div><span class="i">🌙</span>Visita en terreno<br/><small>a cualquier hora</small></div><div data-at="1" class="dim"><span class="i">📅</span>Citación<br/><small>revisión de documentos</small></div></div>`},
+ {t:'Qué se revisa',lines:['Pueden pedir toda la documentación laboral y previsional, en papel o en formato digital:','contratos y anexos, liquidaciones, registro de asistencia, feriados, cotizaciones, cartas de término y finiquitos.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem;text-align:center">Papel o digital</div><div class="v-chk" data-at="1"><span class="on">Contratos y anexos</span><span class="on">Liquidaciones</span><span class="on">Registro de asistencia</span><span class="on">Feriados</span><span class="on">Cotizaciones</span><span class="on">Cartas de término</span><span class="on">Finiquitos</span></div>`},
+ {t:'Dónde deben estar',lines:['La documentación debe estar en el lugar de trabajo.','La Dirección del Trabajo puede autorizar su centralización, salvo el registro de asistencia, y un sistema electrónico sirve si se consulta allí mismo.'],
+  html:`<div class="v-icons"><div><span class="i">📍</span>En el lugar de trabajo</div><div data-at="1" class="dim"><span class="i">🗂️</span>Centralizar: con autorización</div><div data-at="1" class="dim"><span class="i">⏱️</span>Asistencia: siempre en el lugar</div></div>`},
+ {t:'Registro electrónico',lines:['Con la Ley 21.327, los contratos se registran en el sitio de la Dirección del Trabajo dentro de 15 días.','También se registra el término, con su fecha y causal.'],
+  html:`<div class="v-steps"><div class="on">Contrato registrado · 15 días</div><div data-at="1">Término registrado · fecha y causal</div></div>`},
+ {t:'Si hay infracción',lines:['Si se detecta una infracción, puede cursarse una multa.','Si la empresa la corrige dentro de 15 días desde la notificación, la multa se rebaja al menos en un 50%.'],
+  html:`<div class="v-icons"><div><span class="i">🧾</span>Multa</div></div><div class="v-big fadein" data-at="1">−50%</div><div class="note" data-at="1">al menos, si se corrige dentro de 15 días desde la notificación</div>`}
+]};
+const Q=[
+ {q:'¿Qué organismo fiscaliza el cumplimiento de la legislación laboral en Chile?',o:['Solo los juzgados del trabajo, cuando hay una demanda.','La propia empresa, mediante auditorías internas.','La Dirección del Trabajo, sin perjuicio de las facultades de otros servicios en sus materias.'],c:2,f:'El art. 476 del Código del Trabajo entrega la fiscalización a la Dirección del Trabajo. Los tribunales resuelven conflictos y las auditorías internas ayudan, pero no fiscalizan. Otros servicios, como la autoridad sanitaria, actúan en sus propias materias.'},
+ {q:'Una inspectora constata en terreno que tres personas trabajan sin registrar su ingreso. ¿Qué valor tiene ese hecho?',o:['Tiene presunción legal de veracidad, también como prueba en juicio, porque los inspectores son ministros de fe.','Es una opinión que la empresa puede descartar.','Solo vale si el empleador firma el acta.'],c:0,f:'Los inspectores son ministros de fe y los hechos que constatan se presumen verdaderos (art. 23 DFL N°2). No depende de la firma del empleador ni es una simple opinión.'},
+ {q:'La DT autorizó a una empresa a centralizar su documentación en la casa matriz. ¿Qué documento debe seguir en cada lugar de trabajo?',o:['Los contratos de trabajo.','Las liquidaciones de remuneraciones.','Los comprobantes de feriado.','El registro de asistencia.'],c:3,f:'La autorización de centralización no incluye el registro de asistencia, que debe estar en el lugar de trabajo. Contratos, liquidaciones y comprobantes sí pueden centralizarse con autorización, o mantenerse en un sistema consultable desde el lugar de trabajo.'},
+ {q:'Una empresa recibe una multa y corrige la infracción 10 días después de la notificación. ¿Qué ocurre con el monto?',o:['Nada: la multa se mantiene íntegra.','Se rebaja al menos en un 50% (art. 511).','Se anula por completo.','Aumenta, porque se reconoció la infracción.'],c:1,f:'Si el empleador corrige la infracción dentro de los 15 días siguientes a la notificación, la multa se rebaja al menos en un 50% (art. 511). No se anula ni aumenta por corregir.'},
+ {q:'¿Cuándo puede un inspector ordenar la suspensión inmediata de labores?',o:['Cuando falta cualquier documento laboral en la carpeta.','Cuando la empresa no asiste a una citación.','Cuando las labores constituyen, a su juicio, peligro inminente para la salud o la vida de quienes trabajan.'],c:2,f:'La suspensión inmediata procede ante un peligro inminente para la salud o la vida (art. 28 DFL N°2). Un documento faltante o una inasistencia son infracciones que pueden multarse, pero no justifican suspender labores.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: notificación en el celular ---------- */
+const phone=$('#phone');
+const phBar=`<div class="bar"><span>09:05</span><span>📶 🔋</span></div>`;
+phone.innerHTML=phBar+`<div class="grow"></div><div class="notif">📩 <b>Nueva notificación</b><small>Inspección del Trabajo · Citación a fiscalización</small></div><button class="pbtn" type="button" id="openCit">Abrir notificación</button>`;
+function addMsg(html){$('.grow',phone).insertAdjacentHTML('beforebegin',html)}
+$('#openCit').addEventListener('click',()=>{
+  phone.innerHTML=phBar+`<div class="appt">Citación a fiscalización</div><div class="card cit"><b>Empresa:</b> Horizonte Servicios<br/><b>Fecha:</b> jueves 22 de octubre, 10:00<br/><b>Lugar:</b> Inspección del Trabajo<br/><b>Debe presentar</b> (julio a septiembre):<ul><li>Contratos y anexos</li><li>Liquidaciones de remuneraciones</li><li>Registro de asistencia</li><li>Comprobantes de cotizaciones</li><li>Cartas de término y finiquitos</li></ul></div><div class="grow"></div><button class="pbtn alt" type="button" id="openChat">💬 Ver mensaje de Gerencia (1)</button>`;
+  $('#openChat').addEventListener('click',()=>{
+    phone.innerHTML=phBar+`<div class="chat-h"><span class="av">GR</span><span>Gerencia<small>en línea</small></span></div><div class="pin">📎 Citación: jueves 22/10, 10:00</div><div class="grow"></div>`;
+    addMsg('<div class="dots" id="dts"><span></span><span></span><span></span></div>');
+    setTimeout(()=>{$('#dts').remove();addMsg('<div class="cmsg">Camila, vi la citación 😬 Faltan dos contratos firmados y el registro de la sucursal no cuadra con las liquidaciones.<time>09:07</time></div>');
+      setTimeout(()=>{addMsg('<div class="cmsg">¿Los armamos hoy y les ponemos la fecha de ingreso? Así llegamos con todo ordenado.<time>09:08</time></div>');
+        $('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)},700)},900)})});
+$('[data-choice=hook] [data-opt=B]').addEventListener('click',()=>{if($('.grow',phone)&&!$('#reply',phone))addMsg('<div class="cmsg me" id="reply">Mejor no. Llevemos lo real, revisemos que cuadre y corrijamos lo que falte con su fecha verdadera 📋<time>09:10</time></div>')});
+
+/* ---------- Facultades ---------- */
+const tAcc=tracker('acc',6,'#accTick','#accTask');
+$$('#acc .acc-item').forEach((it,k)=>it.querySelector('.acc-head').addEventListener('click',()=>{it.classList.toggle('open');it.classList.add('seen');tAcc(k);
+  if(S.done.has('acc')&&$('#suspQ').hidden){$('#suspQ').hidden=false;setTimeout(()=>$('#suspQ').scrollIntoView({behavior:'smooth',block:'start'}),200)}}));
+
+/* ---------- Dónde están los documentos ---------- */
+const CARDS=[
+ ['Registro de asistencia de la sucursal',0,'Debe estar siempre en el lugar de trabajo: la autorización de centralización no incluye el registro de asistencia.'],
+ ['Libro de asistencia del turno de noche',0,'Es parte del registro de asistencia, por lo que también debe estar en la sucursal, disponible para una visita a cualquier hora.'],
+ ['Contratos de trabajo y anexos firmados',1,'Deben estar en el lugar de trabajo, salvo que la DT autorice centralizarlos. También sirve un sistema electrónico consultable directamente allí.'],
+ ['Liquidaciones de remuneraciones',1,'En el lugar de trabajo o centralizadas con autorización de la DT, o en un sistema que el fiscalizador pueda consultar en la sucursal.'],
+ ['Comprobantes de feriado',1,'Son documentación laboral: en el lugar de trabajo o centralizados con autorización.'],
+ ['Comprobantes de pago de cotizaciones',1,'Documentación previsional que puede requerirse; se mantiene en el lugar de trabajo o centralizada con autorización.'],
+ ['Registro del contrato en el sitio de la DT (15 días)',2,'La Ley 21.327 obliga a registrar cada contrato en el sitio electrónico de la DT dentro de 15 días desde su celebración (art. 9 bis).'],
+ ['Registro del término: fecha y causal',2,'El término de la relación laboral también se registra en el sitio de la DT, dentro de los plazos de los arts. 162 y 163 bis.']];
+const corder=[2,6,0,4,7,3,1,5];let selC=null,placedN=0;
+$('#pool').innerHTML=corder.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+const BH=['Pregúntate: ¿es el registro de asistencia, que nunca se centraliza?','Pregúntate: ¿es documentación laboral que podría centralizarse con autorización?','Pregúntate: ¿es un registro electrónico que exige la Ley 21.327?'];
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',CARDS[c][2]);
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,'No corresponde.',BH[CARDS[c][1]])}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+
+/* ---------- Coherencia documental ---------- */
+const EV=[['Contrato de trabajo','Jornada pactada de lunes a viernes, de <b>9:00 a 18:00</b>, con sueldo base de $900.000. Demuestra <b>lo pactado</b>, no lo que ocurrió cada día.'],
+ ['Registro de asistencia de septiembre','Muestra <b>12 días con salida cerca de las 19:30</b>, varios con un correo de la jefatura pidiendo cerrar la caja antes de irse. Es la evidencia del <b>tiempo efectivamente trabajado</b>.'],
+ ['Liquidación de septiembre','Paga el sueldo base de $900.000 y <b>0 horas extraordinarias</b>. No coincide con el registro: si ese tiempo fue trabajo extraordinario, no se pagó.']];
+const tEv=tracker('ev',3,'#evTick','#evTask');
+$$('#evline .evnode').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#evline .evnode').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#evPanel').innerHTML=`<h3 style="margin-top:0">${EV[k][0]}</h3><p>${EV[k][1]}</p>`;tEv(k);
+  if(S.done.has('ev')&&$('#audQ').hidden){$('#audQ').hidden=false}}));
+
+/* ---------- Preparar la citación ---------- */
+const ORDER=['Leer la citación: qué documentos, qué período, qué fecha y dónde.','Reunir los documentos reales desde donde se guardan: sucursal, sistema electrónico o casa matriz autorizada.','Cruzar la coherencia entre contrato, registro de asistencia y liquidación de cada persona.','Corregir los incumplimientos detectados (por ejemplo, pagar diferencias) y documentar la corrección con su fecha real.','Asistir a la citación con los documentos tal como son y anotar lo que se constate o se requiera.','Revisar la causa del problema para que no se repita: responsables, plazos y controles.'];
+let cur=[2,0,4,1,5,3],orderFirst=true;
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){S.first.order=orderFirst;feedback($('#orderFb'),true,'Secuencia correcta.','Primero se entiende qué se pide; luego se reúne lo real, se revisa su coherencia y se corrige lo que no cumple. Se asiste con los documentos tal como son y, al final, se ataca la causa para que el problema no vuelva.');done('order')}
+  else{orderFirst=false;feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 6 pasos están en su lugar (en verde). Pista: no se puede corregir lo que aún no se ha revisado, y no se revisa lo que aún no se ha reunido.`)}});
+
+/* ---------- Mitos: verdadero o falso ---------- */
+const TF=[
+ ['Los inspectores del trabajo solo pueden visitar la empresa en horario de oficina.',false,'Pueden visitar los lugares de trabajo a cualquier hora del día o de la noche (art. 24 DFL N°2).'],
+ ['Lo que un inspector constata en una visita tiene presunción legal de veracidad.',true,'Los inspectores son ministros de fe, y los hechos que constatan se presumen verdaderos, también como prueba en juicio (art. 23 DFL N°2).'],
+ ['Si la empresa corrige la infracción dentro de los 15 días siguientes a la notificación de la multa, el monto se rebaja al menos en un 50%.',true,'Así lo dispone el art. 511 del Código del Trabajo. Además, la micro y pequeña empresa puede pedir sustituir la multa por corrección y capacitación (art. 506 ter).'],
+ ['Toda la documentación, incluido el registro de asistencia, puede guardarse solo en la casa matriz aunque no haya autorización de la DT.',false,'La documentación debe estar en el lugar de trabajo. Centralizarla requiere autorización de la DT, y esa autorización no incluye el registro de asistencia (art. 31 DFL N°2).'],
+ ['El inspector puede suspender las labores de una sucursal porque falta un contrato firmado.',false,'La suspensión inmediata procede ante labores que constituyan peligro inminente para la salud o la vida (art. 28 DFL N°2). Un documento faltante puede multarse, pero no justifica suspender.'],
+ ['Una persona trabajadora puede denunciar un incumplimiento ante la Inspección del Trabajo, y eso puede originar una fiscalización.',true,'Cualquier persona trabajadora, o su sindicato, puede presentar una denuncia ante la Inspección del Trabajo.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">La fiscalización tiene reglas: visitas a cualquier hora, hechos que se presumen verdaderos, documentos en el lugar de trabajo y una multa que se rebaja si se corrige a tiempo.</span>${n===TF.length?'':'<div style="margin-top:10px"><button class="small-btn retry" type="button" id="tfAgain">Intentar de nuevo</button></div>'}</div>`;
+    if(!('tf' in S.first))S.first.tf=n===TF.length;done('tf');const ag=$('#tfAgain');if(ag)ag.addEventListener('click',()=>{tfi=0;tfAns.length=0;tfRender()});return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Transferencia: lista Sí/No ---------- */
+const YN=[['¿El libro de asistencia puede quedarse solo en la casa matriz?',0,'No. El registro de asistencia debe estar en el lugar de trabajo; ni siquiera una autorización de centralización lo incluye.'],
+ ['¿Los contratos y liquidaciones pueden guardarse solo en Santiago sin autorización de la DT?',0,'No. Para centralizarlos se necesita autorización de la DT; sin ella, deben estar en la sucursal.'],
+ ['¿Serviría un sistema electrónico si el fiscalizador pudiera consultarlo directamente en la sucursal?',1,'Sí. La DT acepta sistemas electrónicos siempre que puedan consultarse directamente en el lugar de trabajo.'],
+ ['¿Cada contrato nuevo debe registrarse en el sitio de la DT dentro de 15 días desde su celebración?',1,'Sí. Es una obligación introducida por la Ley 21.327 (art. 9 bis del Código del Trabajo).'],
+ ['¿Conviene completar hoy los documentos faltantes con fechas antiguas, por si llega una citación?',0,'No. Lo que falte se regulariza con su fecha real; un documento con fecha falsa contradice lo que el inspector constata como ministro de fe.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓':'✕'}</span> ${y[2]}`;ynN++;if(ynN===YN.length){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>

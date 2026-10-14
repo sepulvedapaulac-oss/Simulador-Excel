@@ -1,0 +1,379 @@
+<title>Lección 5.6 — Finiquito y formalización del cierre</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.mailer{border:1px solid var(--line);border-radius:22px;background:var(--surface3);overflow:hidden;box-shadow:var(--shadow)}
+.mailer-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 16px;background:var(--navy);color:var(--surface);font-weight:900;font-size:.9rem}
+.mailer-h small{font-weight:750;color:inherit;opacity:.85}
+.mailer .inbox{margin:0;padding:12px}
+.mailer .msg{grid-template-columns:38px minmax(0,1fr) auto}
+.mailer .msg>span{min-width:0}
+.mailer .msg .subj{display:block;font-weight:850;font-size:.92rem;color:var(--ink)}
+.mailer .msg .full{font-weight:650;font-size:.94rem;line-height:1.5}
+.mailer .msg .full p{margin:0 0 6px}
+.mailer .msg .avatar{width:34px;height:34px;font-size:.72rem}
+.mailer .task{margin:0 12px 12px}
+.tl-axis{display:flex;justify-content:space-between;gap:6px;font-size:.78rem;font-weight:800;color:var(--muted);margin-bottom:8px}
+.dayline.tl{height:96px}
+.dayline.tl .dseg{font-size:.8rem;line-height:1.2}
+.dseg.lim{background:var(--navy);color:var(--surface)}
+.dpanel .who{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--ink2);margin-bottom:6px}
+.hs-panel .tag{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:4px}
+.flipdeck.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+.flipdeck.four .face{min-height:200px}
+.order-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+.order-grid>*{min-width:0}
+.order-grid .photo-frame{aspect-ratio:2/1;margin-top:14px}
+.case-head{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.notes{width:100%;min-height:90px;font:inherit;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);margin-top:8px;resize:vertical}
+.model-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
+.model-grid div{border:1px solid var(--callout-line);border-radius:14px;padding:10px 12px;background:var(--surface)}
+.model-grid b{display:block;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:2px}
+@media(max-width:860px){.hook-grid,.order-grid,.case-head{grid-template-columns:1fr}.flipdeck.four{grid-template-columns:1fr}.dayline.tl{height:auto}.model-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.mailer .msg{grid-template-columns:34px minmax(0,1fr)}.mailer .msg .badge{grid-column:2;justify-self:start}.tl-axis span:nth-child(2){display:none}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.6</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:18" data-gate="hook" data-gate-msg="Abre los tres correos de la bandeja y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.6 · Finiquito y formalización del cierre</span>
+      <h1 class="reveal">La carta se entregó. ¿Ya está todo cerrado?</h1>
+      <p class="lead reveal">Tomás, operario de bodega de <strong>Horizonte Servicios</strong>, dejó de trabajar en la empresa hace ocho días hábiles. Nadie ha preparado su finiquito. Esta mañana, Camila, del Equipo de Personas, encuentra tres correos sobre el tema. <strong>Haz clic en cada correo para leerlo.</strong></p>
+      <div class="callout reveal" style="margin-top:10px"><strong>Meta de aprendizaje:</strong> formalizar correctamente el cierre de la relación laboral mediante el finiquito, dentro de plazo y con sus pagos, ratificación y reservas.</div>
+      <div class="photo-frame reveal"><img alt="Camila, en una oficina abierta, lee un correo en su notebook mientras sostiene una carta impresa" src="{{IMG:i56_hero}}"/></div>
+    </div>
+    <div class="mailer reveal">
+      <div class="mailer-h"><span>📥 Bandeja de entrada · Camila</span><small>Equipo de Personas</small></div>
+      <div class="inbox" id="inbox">
+        <button class="msg" type="button" data-m="0"><span class="avatar mgr">JO</span><span><span class="from">Jefatura de Operaciones</span><span class="subj">Cierre de Tomás</span><span class="preview">Camila, la carta de despido de Tomás ya se entregó…</span><span class="full"><p>Camila, la carta de despido de Tomás se entregó a tiempo y se envió copia a la Inspección del Trabajo.</p><p>Con eso el tema <b>quedó cerrado</b>, ¿cierto? No veo para qué hacer más papeles.</p></span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-m="1"><span class="avatar">TR</span><span><span class="from">Tomás Rivas</span><span class="subj">¿Cuándo me pagan?</span><span class="preview">Hola, Camila. Todavía no sé qué tengo que firmar…</span><span class="full"><p>Hola, Camila. Todavía no sé <b>qué tengo que firmar</b> ni cuándo me pagan lo que me corresponde por mis días trabajados y mis vacaciones.</p><p>¿Me puedes orientar? Gracias.</p></span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-m="2"><span class="avatar">CO</span><span><span class="from">Contabilidad</span><span class="subj">Pago pendiente de Tomás</span><span class="preview">Tenemos listo el cálculo de días trabajados y feriado…</span><span class="full"><p>Tenemos listo el cálculo de días trabajados y feriado de Tomás.</p><p>¿Le <b>transferimos y listo</b>, o hay que esperar algún documento?</p></span></span><span class="badge">Nuevo</span></button>
+      </div>
+      <div class="task" id="mailTask">Correos leídos <span class="tick" id="mailTick">0 / 3</span></div>
+    </div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué le responde Camila a la jefatura? ¿La carta de término reemplaza el finiquito?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sí. La carta y su copia a la Inspección prueban el término; basta con transferirle a Tomás lo que se le debe.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No. La carta comunica la decisión y la causal; el cierre se formaliza con un finiquito escrito, firmado y ratificado, y el plazo para otorgarlo ya está corriendo.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Solo se necesita finiquito si la causal fue necesidades de la empresa, porque ahí hay indemnizaciones.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un cierre sin formalizar</div><div class="branch-body"><div><p>La carta de término <strong>no reemplaza al finiquito</strong>. Si se transfiere sin finiquito, no queda constancia de qué se pagó ni de qué acordaron las partes, y la empresa no tiene un documento con poder liberatorio que pueda invocar.</p></div><div><p class="hint">Son dos documentos con funciones distintas.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se deja sin finiquito a quien sí lo necesita</div><div class="branch-body"><div><p>El finiquito se otorga <strong>en cualquier causal</strong>: aunque no haya indemnización, siempre hay pagos que formalizar, como los días trabajados y el feriado de Tomás.</p></div><div><p class="hint">El finiquito no depende de que haya indemnizaciones.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>La carta <strong>comunica</strong> el término; el finiquito <strong>formaliza</strong> el cierre, deja constancia de los pagos y acuerdos, y debe otorgarse dentro de <strong>10 días hábiles</strong> desde la separación. A Tomás le quedan pocos días.</p></div><div><p class="hint">En esta lección aprenderás a cerrar bien su proceso.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Qué hace el finiquito que la carta no hace?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · EL PLAZO -->
+<section class="slide" data-title="El plazo" data-audio="p03" data-dur="0:18" data-gate="tl" data-gate-msg="Selecciona los cinco momentos de la línea para conocer quién debe actuar en cada uno.">
+  <span class="eyebrow">Lección 5.6 · El plazo del finiquito</span>
+  <h2>Desde la separación, el reloj corre para la empresa</h2>
+  <p>Esta es la secuencia del cierre de Tomás. <strong>Haz clic en cada momento</strong> de la línea para ver qué ocurre, quién debe actuar y qué pasa si la firma llega después.</p>
+  <div class="task" id="tlTask">Momentos revisados <span class="tick" id="tlTick">0 / 5</span></div>
+  <div class="tl-axis"><span>Día 0</span><span>Día hábil 10</span><span>Después del plazo</span></div>
+  <div class="dayline tl" id="tline">
+    <button class="dseg col" type="button" style="flex:1.3" data-k="0">Separación<small>Día 0</small></button>
+    <button class="dseg ord" type="button" style="flex:3" data-k="1">Preparar el finiquito<small>Días hábiles 1 a 10</small></button>
+    <button class="dseg lim" type="button" style="flex:1.6" data-k="2">Ratificación y pago<small>Pago al ratificar</small></button>
+    <button class="dseg ext" type="button" style="flex:1.8" data-k="3">¿Firma después?<small>Después del plazo</small></button>
+    <button class="dseg ext" type="button" style="flex:1.6" data-k="4">Reclamo<small>Si la empresa no cumple</small></button>
+  </div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Selecciona un momento de la línea para ver la explicación.</p></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 162 y 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Ord. N°2534 (2021).</p>
+</section>
+
+<!-- 4 · LAS PARTES DEL FINIQUITO -->
+<section class="slide" data-title="Partes del finiquito" data-audio="p04" data-dur="0:16" data-gate="hs" data-gate-msg="Explora los cinco puntos del documento.">
+  <span class="eyebrow violet">Lección 5.6 · Qué contiene un finiquito</span>
+  <h2>Un documento, cinco partes que importan</h2>
+  <p>Sobre la mesa está el borrador del finiquito de Tomás. <strong>Haz clic en cada número</strong> para revisar qué debe contener esa parte y por qué.</p>
+  <div class="task" id="hsTask">Partes revisadas <span class="tick" id="hsTick">0 / 5</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Vista superior de un finiquito impreso sobre una mesa de madera, con bloques de texto, una tabla de montos, un recuadro para observaciones, líneas de firma, un lápiz y un timbre" src="{{IMG:i56_finiquito}}"/>
+      <button class="hs" type="button" style="left:38%;top:17%" data-hs="0" aria-label="Punto 1">1</button>
+      <button class="hs" type="button" style="left:62%;top:33%" data-hs="1" aria-label="Punto 2">2</button>
+      <button class="hs" type="button" style="left:40%;top:52%" data-hs="2" aria-label="Punto 3">3</button>
+      <button class="hs" type="button" style="left:62%;top:69%" data-hs="3" aria-label="Punto 4">4</button>
+      <button class="hs" type="button" style="left:42%;top:84%" data-hs="4" aria-label="Punto 5">5</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número de la imagen para ver la explicación.</p></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 63 bis, 162 y 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Dictamen 824/21.</p>
+</section>
+
+<!-- 5 · REGLAS QUE PROTEGEN EL CIERRE -->
+<section class="slide" data-title="Reglas del cierre" data-audio="p05" data-dur="0:16" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Lección 5.6 · Reglas que protegen a ambas partes</span>
+  <h2>Lo que el finiquito cierra… y lo que no</h2>
+  <p>Firmar un finiquito tiene efectos. <strong>Toca cada tarjeta</strong> para voltearla y conocer la regla que hay detrás.</p>
+  <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck four">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">✍️</div><strong>Reserva de derechos</strong><span>¿Qué puede hacer Tomás si no está de acuerdo con una parte?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Firmar dejando constancia</strong><span>La persona trabajadora puede formular <b>reserva</b> sobre las materias que no acepta y dejar constancia de que se reserva el derecho a <b>accionar judicialmente</b> por ellas. Firmar no la obliga a aceptarlo todo.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔒</div><strong>Poder liberatorio</strong><span>¿Qué queda “cerrado” al ratificar?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Solo lo acordado expresamente</strong><span>El finiquito firmado y ratificado libera respecto de <b>lo que las partes acordaron</b>. No alcanza a lo reservado. Ratificar significa aprobar todas las estipulaciones que <b>no</b> fueron objeto de reserva.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💻</div><strong>Finiquito electrónico</strong><span>¿La empresa puede exigir la vía electrónica?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Es voluntario</strong><span>La carta de término debe indicar si el finiquito será <b>electrónico o presencial</b> e informar que aceptar la vía electrónica es <b>voluntario</b>. Si la persona la rechaza, la empresa no puede volver a proponerla por esa vía y debe ofrecer el finiquito presencial.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧾</div><strong>Pago en cuotas</strong><span>¿Se puede pagar el finiquito en partes?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Solo con un pacto ratificado</strong><span>La regla es pagar <b>todo en un solo acto</b>. Solo si las partes lo acuerdan puede fraccionarse, con <b>intereses y reajustes</b> y un pacto <b>ratificado ante la Inspección del Trabajo</b>. Si se incumple, se hace exigible el total.</span></div></div></button>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 63 bis, 169 letra a) y 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Dictamen 824/21.</p>
+</section>
+
+<!-- 6 · FINIQUITO ELECTRÓNICO -->
+<section class="slide" data-title="Finiquito electrónico" data-audio="p06" data-dur="0:18" data-gate="order" data-gate-msg="Ordena correctamente los cinco pasos del finiquito electrónico.">
+  <span class="eyebrow amber">Lección 5.6 · La vía electrónica, de principio a fin</span>
+  <h2>¿En qué orden avanza un finiquito electrónico?</h2>
+  <div class="order-grid">
+    <div>
+      <p>Horizonte Servicios ofrecerá a Tomás el finiquito en el sitio de la Dirección del Trabajo. <strong>Usa las flechas</strong> para ordenar los pasos de arriba hacia abajo y presiona <strong>Comprobar orden</strong>.</p>
+      <ol class="order" id="order"></ol>
+      <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+      <div class="fb" id="orderFb"></div>
+    </div>
+    <div><div class="photo-frame"><img alt="Un hombre revisa con calma un documento en su notebook, sentado a la mesa de su casa, junto a una taza y una carpeta" src="{{IMG:i56_electronico}}"/></div></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 162 y 177; Ley 21.361 (finiquito laboral electrónico).</p>
+</section>
+
+<!-- 7 · MITOS -->
+<section class="slide" data-title="Mitos del cierre" data-audio="p07" data-dur="0:15" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow violet">Lección 5.6 · Creencias frecuentes sobre el finiquito</span>
+  <h2>“Si no firma a tiempo, pierde todo”: ¿mito o regla?</h2>
+  <p>En los pasillos se escuchan muchas ideas sobre el finiquito. <strong>Decide si cada afirmación es verdadera o falsa</strong> y lee la explicación.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 162 y 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Ord. N°2534 (2021).</p>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-dur="0:15" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · La reunión con Tomás</span>
+  <h2>El finiquito está listo, pero hay dos dudas</h2>
+  <div class="case-head">
+    <div class="chat">
+      <div class="persona"><span class="avatar">TR</span> Tomás Rivas</div>
+      <div class="bubble"><span class="who">Tomás</span>Revisé el finiquito y estoy de acuerdo con casi todo. Pero creo que faltan horas extra de agosto. ¿Igual tengo que firmar?</div>
+    </div>
+    <div class="photo-frame"><img alt="Camila conversa con Tomás en una sala de reuniones pequeña; él señala una línea de un documento impreso" src="{{IMG:i56_reunion}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué le responde Camila a Tomás?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Si no estás de acuerdo con todo, no podemos pagarte nada hasta que lo aceptes.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Firma tranquilo; si después encuentras algo, podrás reclamar lo que quieras igual.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Puedes firmar y ratificar dejando reserva de derechos sobre las horas extra. Esa materia no quedará cerrada por el finiquito.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se retiene un pago que corresponde</div><div class="branch-body"><div><p>La empresa debe poner el pago a disposición dentro del plazo. Tomás no está obligado a aceptarlo todo: puede <strong>firmar con reserva</strong> sobre lo que no acepta. Condicionar el pago a su conformidad total no corresponde.</p></div><div><p class="hint">Existe una forma de firmar sin renunciar a reclamar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: Tomás recibe una orientación equivocada</div><div class="branch-body"><div><p>Ratificar significa <strong>aprobar todo lo que no fue objeto de reserva</strong>. Si Tomás firma sin reservar las horas extra, el finiquito tiene poder liberatorio sobre lo acordado y le será más difícil reclamarlas después.</p></div><div><p class="hint">¿Qué debe hacer Tomás con la materia en que no está de acuerdo?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La reserva de derechos permite cerrar lo acordado y dejar abierta la materia en discusión. El poder liberatorio <strong>no alcanza a lo reservado</strong>, y Tomás conserva su derecho a accionar judicialmente por ello.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Media hora después:</strong> Contabilidad escribe a Camila: “Para cuidar la caja de este mes, paguémosle a Tomás en tres cuotas. Se lo avisamos por WhatsApp”.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué responde Camila a Contabilidad?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Solo si Tomás lo acepta: las cuotas deben incluir intereses y reajustes y el pacto debe ratificarse ante la Inspección del Trabajo. Si no, se paga todo en un solo acto.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Basta con avisarle: la forma de pago la decide la empresa.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Acordémoslo de palabra; si una cuota se atrasa, solo se debe esa cuota.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un fraccionamiento sin acuerdo</div><div class="branch-body"><div><p>La regla es pagar <strong>todo en un solo acto</strong> al extender el finiquito. Fraccionar el pago solo es posible si <strong>ambas partes lo acuerdan</strong>; la empresa no puede imponerlo con un aviso.</p></div><div><p class="hint">¿Quién debe estar de acuerdo con las cuotas?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un pacto sin respaldo y un riesgo mayor</div><div class="branch-body"><div><p>El pacto de cuotas debe incluir <strong>intereses y reajustes</strong> y <strong>ratificarse ante la Inspección del Trabajo</strong>. Además, el simple incumplimiento hace exigible <strong>de inmediato el total</strong> de la deuda y se sanciona con multa administrativa.</p></div><div><p class="hint">Un acuerdo de palabra no cumple esas condiciones.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Pago en un solo acto como regla; cuotas <strong>solo con acuerdo</strong>, intereses y reajustes, y pacto <strong>ratificado ante la Inspección del Trabajo</strong>. Así el cierre de Tomás queda formalizado y demostrable.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 63 bis, 169 letra a) y 177; Ley 21.361; Dirección del Trabajo, Dictamen 824/21.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:14" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:15" data-gate="yn model pass" data-gate-msg="Responde las cinco preguntas del checklist y revisa la respuesta modelo (y aprueba la Comprobación).">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Podrías demostrar que el cierre se hizo bien?</h2>
+  <div class="story" style="margin-top:6px"><strong>Imagina</strong> que, meses después, alguien pregunta cómo se cerró la relación laboral de Tomás en tu organización. Solo cuenta lo que puedas <strong>demostrar</strong> con documentos, fechas y pagos.</div>
+  <p style="margin-top:12px"><strong>Responde Sí o No</strong> a cada pregunta del checklist y lee la explicación.</p>
+  <div class="yn-list" id="ynList"></div>
+  <label for="notes" class="hint" style="display:block;margin-top:12px">Opcional: anota qué documento, plazo, pago o evidencia revisarías en tu organización.</label>
+  <textarea class="notes" id="notes" placeholder="Ejemplo: revisaría la fecha en que pusimos el finiquito a disposición…"></textarea>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el cierre de Tomás queda demostrado con estas cuatro evidencias.
+    <div class="model-grid">
+      <div><b>Documento</b>Finiquito escrito, distinto de la carta de término, firmado por Tomás y ratificado ante un ministro de fe o firmado electrónicamente en el sitio de la Dirección del Trabajo.</div>
+      <div><b>Plazo</b>Registro de la fecha de separación y de la fecha en que el finiquito y su pago se pusieron a disposición, dentro de 10 días hábiles.</div>
+      <div><b>Pago</b>Comprobante del pago hecho al ratificar, en un solo acto; o, si se pactaron cuotas, el pacto con intereses y reajustes ratificado ante la Inspección del Trabajo.</div>
+      <div><b>Evidencia</b>Reservas de derechos consignadas por escrito (por ejemplo, sobre las horas extra) y la carta de término que informó si el finiquito sería electrónico o presencial.</div>
+    </div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:17" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.6</h2>
+    <p>Ya puedes distinguir la carta de término del finiquito, otorgarlo dentro de 10 días hábiles, reconocer sus partes, la ratificación, la reserva de derechos, la vía electrónica voluntaria y las condiciones del pago en cuotas.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> la carta comunica el término; el finiquito lo cierra. Otórgalo a tiempo, págalo al ratificar y respeta las reservas. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar el plazo</button><button class="small-btn primary" type="button" data-goto="4">Repasar reserva y poder liberatorio</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 63 bis, 162, 169 letra a) y 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Ord. N°2534 (2021) y Dictamen 824/21; criterios vigentes a octubre de 2026. Narración generada con síntesis de voz Kokoro (voz Dora, español latino).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l56';
+const FIRST_KEYS=['hook','order','tf','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Dos documentos',lines:['La carta de término comunica la decisión, la causal y los hechos.','El finiquito es otro documento: formaliza el cierre y deja constancia de los pagos y acuerdos.'],
+  html:`<div class="v-icons"><div><span class="i">✉️</span>Carta de término<small>Comunica</small></div><div data-at="1" class="dim"><span class="i">📄</span>Finiquito<small>Formaliza el cierre</small></div></div>`},
+ {t:'El plazo',lines:['El empleador debe otorgar el finiquito y poner su pago a disposición dentro de 10 días hábiles desde la separación.','El pago se hace al ratificar.'],
+  html:`<div class="v-big">10</div><div class="v-sub">días hábiles desde la separación</div><div class="v-steps" style="margin-top:12px"><div data-at="1">Pago al ratificar</div></div>`},
+ {t:'Ratificación',lines:['Para invocarlo, el finiquito debe constar por escrito, firmado por la persona trabajadora','y ratificado ante un ministro de fe, como un inspector del trabajo, un notario o un oficial del Registro Civil.'],
+  html:`<div class="v-icons"><div><span class="i">✍️</span>Por escrito y firmado</div><div data-at="1" class="dim"><span class="i">🏛️</span>Inspector del trabajo</div><div data-at="1" class="dim"><span class="i">📜</span>Notario</div><div data-at="1" class="dim"><span class="i">🪪</span>Registro Civil</div></div>`},
+ {t:'Vía electrónica',lines:['También puede firmarse electrónicamente en el sitio de la Dirección del Trabajo.','Es voluntario: la persona puede aceptarlo, aceptarlo con reserva de derechos o rechazarlo; entonces se le ofrece el finiquito presencial.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem">💻 Finiquito electrónico · Ley 21.361</div><div class="v-chk" data-at="1"><span class="on">Aceptar</span><span class="on">Aceptar con reserva</span><span class="on">Rechazar → presencial</span></div>`},
+ {t:'Reserva de derechos',lines:['El finiquito ratificado tiene poder liberatorio sobre lo que las partes acordaron.','No alcanza a las materias sobre las que la persona formuló reserva de derechos: sobre ellas puede accionar judicialmente.'],
+  html:`<div class="v-bars"><div><span style="width:150px">Lo acordado</span><i style="width:60%"></i>🔒 Cerrado</div><div data-at="1" class="fadein"><span style="width:150px">Lo reservado</span><i style="width:25%;background:var(--stage-amber)"></i>Abierto</div></div>`},
+ {t:'Un solo pago',lines:['La regla es pagar todo en un solo acto. Solo si ambas partes lo acuerdan, puede pagarse en cuotas,','con intereses y reajustes, y con un pacto ratificado ante la Inspección del Trabajo.'],
+  html:`<div class="v-icons"><div><span class="i">💵</span>Un solo acto</div><div data-at="1" class="dim"><span class="i">🤝</span>Cuotas pactadas</div><div data-at="1" class="dim"><span class="i">📈</span>Intereses y reajustes</div><div data-at="1" class="dim"><span class="i">🏛️</span>Ratificado en la Inspección</div></div>`},
+ {t:'Si firma después',lines:['El plazo de 10 días hábiles obliga al empleador, no a la persona trabajadora: ella puede firmar después y exigir su pago.','Si no se cumple, puede reclamar ante la Inspección del Trabajo.'],
+  html:`<div class="v-steps"><div>Plazo: obligación del empleador</div><div data-at="0">La persona puede firmar después</div><div data-at="1">Reclamo ante la Inspección del Trabajo</div></div>`}
+]};
+const Q=[
+ {q:'¿Qué diferencia la carta de término del finiquito?',o:['Son el mismo documento con distinto nombre.','La carta comunica la decisión y la causal; el finiquito formaliza el cierre y deja constancia de los pagos y acuerdos.','La carta solo se usa en las renuncias y el finiquito solo en los despidos.'],c:1,f:'Cumplen funciones distintas: la carta (art. 162) comunica el término; el finiquito (art. 177) lo formaliza y tiene poder liberatorio sobre lo acordado. La carta no reemplaza al finiquito.'},
+ {q:'¿Dentro de qué plazo debe el empleador otorgar el finiquito y poner su pago a disposición?',o:['3 días hábiles desde la separación.','30 días corridos desde la separación.','Cuando la persona trabajadora lo solicite.','10 días hábiles desde la separación.'],c:3,f:'El art. 177 fija 10 días hábiles contados desde la separación. Los 3 días hábiles corresponden a la carta de término, que es otro documento.'},
+ {q:'Una persona ratifica su finiquito con reserva de derechos sobre el feriado. ¿Qué efecto tiene la reserva?',o:['El poder liberatorio no alcanza al feriado: puede accionar judicialmente por esa materia.','Ninguno: una vez que firma, el finiquito cierra todo.','Anula el finiquito completo y hay que hacer uno nuevo.'],c:0,f:'El finiquito libera respecto de lo que las partes acordaron. Lo reservado queda fuera de su poder liberatorio, y la persona conserva su derecho a accionar judicialmente.'},
+ {q:'La empresa propone el finiquito electrónico y la persona trabajadora lo rechaza. ¿Qué corresponde?',o:['Volver a proponerlo por vía electrónica hasta que lo acepte.','Pagar por transferencia sin firmar ningún documento.','Ofrecer el finiquito presencial dentro de los 10 días hábiles o, si ya vencieron, dentro de 3 días hábiles desde el rechazo.','Nada: al rechazarlo, la persona renuncia a su pago.'],c:2,f:'La vía electrónica es voluntaria. Si la persona la rechaza, la empresa no puede volver a proponerla por esa vía y debe ofrecer el finiquito presencial en esos plazos.'},
+ {q:'La empresa quiere pagar el finiquito en cuotas. ¿Qué se requiere?',o:['Basta con informarlo por correo o mensaje.','Acuerdo de las partes, cuotas con intereses y reajustes, y un pacto ratificado ante la Inspección del Trabajo.','Nada especial: el pago en cuotas es la regla general.'],c:1,f:'La regla es pagar en un solo acto (art. 63 bis). Solo con acuerdo puede fraccionarse, con intereses y reajustes y ratificación ante la Inspección (art. 169 letra a). Si se incumple, se hace exigible el total.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: bandeja de correo ---------- */
+const tMail=tracker('mail',3,'#mailTick','#mailTask');
+$$('#inbox .msg').forEach(m=>m.addEventListener('click',()=>{m.classList.add('read');$('.badge',m).textContent='Leído';tMail(m.dataset.m);
+  if($$('#inbox .msg.read').length===3&&$('#hookQ').hidden){$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)}}));
+
+/* ---------- Línea de tiempo del plazo ---------- */
+const TL=[
+ ['Separación','Empresa','La relación laboral de Tomás termina. Desde este día se cuentan los plazos. La carta de término ya comunicó la causal y los hechos, y debe indicar si el finiquito será <b>electrónico o presencial</b>, informando que la vía electrónica es voluntaria.'],
+ ['Preparar el finiquito','Empresa','Camila calcula los pagos (días trabajados, feriado y lo que corresponda según la causal) y redacta el finiquito. La empresa debe <b>otorgarlo y poner su pago a disposición</b> de Tomás dentro de <b>10 días hábiles</b> contados desde la separación.'],
+ ['Ratificación y pago','Ambas partes','Tomás firma y ratifica ante un <b>ministro de fe</b> (inspector del trabajo, notario, oficial del Registro Civil o secretario municipal, entre otros) o firma electrónicamente en el sitio de la Dirección del Trabajo. <b>El pago se hace al ratificar.</b>'],
+ ['¿Y si Tomás firma después?','Persona trabajadora','El plazo de 10 días hábiles <b>obliga al empleador, no a la persona trabajadora</b>. Tomás puede firmar o ratificar después y exigir su pago mientras la acción no se declare prescrita judicialmente. Que firme tarde no libera a la empresa de pagar.'],
+ ['Si la empresa no cumple','Persona trabajadora','Si el finiquito no se otorga o el pago no se pone a disposición, Tomás puede <b>reclamar ante la Inspección del Trabajo</b>, que cita a ambas partes a un comparendo de conciliación. No cumplir es una infracción que puede sancionarse con multa administrativa.']];
+const tTl=tracker('tl',5,'#tlTick','#tlTask');
+$$('#tline .dseg').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#tline .dseg').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#tlPanel').innerHTML=`<span class="who">Debe actuar: ${TL[k][1]}</span><h3 style="margin-top:0">${k+1}. ${TL[k][0]}</h3><p>${TL[k][2]}</p>`;tTl(k)}));
+
+/* ---------- Partes del finiquito ---------- */
+const HS=[['Individualización','Partes, cargo y fechas','Identifica a la empresa y a la persona trabajadora, el cargo y las fechas de inicio y término de la relación. Permite saber desde cuándo corren los <b>10 días hábiles</b>.'],
+ ['Causal de término','La misma de la carta','Indica la causal legal invocada, que debe coincidir con la de la carta de término. El finiquito no cambia ni “mejora” la causal: deja constancia de ella.'],
+ ['Detalle de pagos','Montos y conceptos','Desglosa cada concepto: remuneraciones pendientes, feriado y, si proceden, indemnizaciones. La regla es pagar <b>todo en un solo acto</b> al ratificar; las cuotas solo con pacto ratificado ante la Inspección del Trabajo.'],
+ ['Reserva de derechos','Lo que no se acepta','Espacio para que la persona deje constancia de las materias que <b>no acepta</b> y de que se reserva el derecho a accionar judicialmente. El poder liberatorio del finiquito no alcanza a lo reservado.'],
+ ['Firma y ratificación','Ministro de fe o vía electrónica','Firma de la persona trabajadora y ratificación ante un ministro de fe, o firma electrónica en el sitio de la Dirección del Trabajo. Sin ella, el empleador <b>no puede invocar</b> el finiquito.']];
+const tHs=tracker('hs',5,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<span class="tag">${HS[k][1]}</span><h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][2]}</p>`;tHs(k)}));
+
+/* ---------- Tarjetas ---------- */
+const tFc=tracker('cards',4,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+
+/* ---------- Ordenar pasos: finiquito electrónico ---------- */
+const ORDER=['La carta de término informa que el finiquito será electrónico y que aceptar esa vía es voluntario.','La empresa prepara el finiquito y lo pone a disposición, con su pago, dentro de 10 días hábiles desde la separación.','Tomás revisa la propuesta en el sitio de la Dirección del Trabajo.','Tomás decide: acepta, acepta con reserva de derechos o rechaza.','Si acepta, firma electrónicamente y se paga; si rechaza, la empresa le ofrece el finiquito presencial.'];
+let cur=[2,4,0,3,1],orderFirst=true;
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li data-k="${k}" class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){if(!('order' in S.first))S.first.order=orderFirst;feedback($('#orderFb'),true,'Secuencia correcta.','Primero se informa la modalidad en la carta; luego la empresa pone el finiquito a disposición dentro del plazo; la persona revisa, decide libremente y, solo si acepta, firma electrónicamente y recibe el pago.');done('order')}
+  else{orderFirst=false;feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Pista: todo parte con lo que informa la carta, y la decisión de la persona va antes de la firma.`)}});
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Si la carta de término se envió con copia a la Inspección del Trabajo, ya no se necesita finiquito.',false,'La carta comunica el término; el finiquito es otro documento que formaliza el cierre y deja constancia de los pagos y acuerdos.'],
+ ['Si la persona trabajadora no firma dentro de los 10 días hábiles, pierde su derecho al pago.',false,'El plazo obliga al empleador. La persona puede firmar o ratificar después y exigir el pago mientras la acción no se declare prescrita judicialmente.'],
+ ['Un finiquito firmado, pero sin ratificar ante ministro de fe ni firmar electrónicamente en el sitio de la DT, no puede ser invocado por el empleador.',true,'Para invocarlo, el art. 177 exige que esté firmado por la persona y ratificado ante un ministro de fe, o firmado electrónicamente en el sitio de la Dirección del Trabajo.'],
+ ['La empresa puede exigir que el finiquito se firme por vía electrónica.',false,'La vía electrónica es voluntaria para la persona trabajadora: puede aceptarla, aceptarla con reserva de derechos o rechazarla.'],
+ ['Si la persona rechaza el finiquito electrónico, la empresa no puede volver a proponérselo por esa vía.',true,'Tras el rechazo, la empresa debe ofrecer el finiquito presencial dentro de los 10 días hábiles o, si ya vencieron, dentro de 3 días hábiles desde el rechazo.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length,all=n===TF.length;
+    box.innerHTML=prog+`<div class="feedback ${all?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">${all?'Distingues bien las reglas del finiquito de las creencias frecuentes.':'Para avanzar necesitas las cinco correctas. Revisa las explicaciones y vuelve a intentarlo.'}</span>${all?'':'<div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfRetry">Intentar de nuevo</button></div>'}</div>`;
+    if(!('tf' in S.first))S.first.tf=all;
+    if(all)done('tf');else $('#tfRetry').addEventListener('click',()=>{tfi=0;tfAns.length=0;tfRender()});return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Checklist con respuesta modelo ---------- */
+const YN=[['¿Basta la copia de la carta de término para demostrar que el cierre quedó formalizado?',0,'No. La carta comunica el término; la formalización del cierre queda en el finiquito.'],
+ ['¿Debe existir un finiquito escrito, firmado por Tomás y ratificado ante un ministro de fe o firmado electrónicamente en el sitio de la DT?',1,'Sí. Sin firma y ratificación, el empleador no puede invocar el finiquito.'],
+ ['¿Conviene registrar la fecha en que el finiquito y su pago se pusieron a disposición?',1,'Sí. Es la forma de demostrar que se cumplió el plazo de 10 días hábiles desde la separación.'],
+ ['Si Tomás firma después del día hábil 10, ¿la empresa queda liberada de pagarle?',0,'No. El plazo obliga al empleador; Tomás puede firmar después y exigir su pago.'],
+ ['¿Un pago en cuotas acordado por WhatsApp sirve como respaldo suficiente?',0,'No. Las cuotas requieren acuerdo, intereses y reajustes, y un pacto ratificado ante la Inspección del Trabajo.']];
+$('#ynList').innerHTML=YN.map((y,i)=>`<div class="yn-item" data-i="${i}"><span><b>${i+1}.</b> ${y[0]}</span><span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span><div class="exp"></div></div>`).join('');
+let ynN=0;
+$$('#ynList .yn-item').forEach(it=>$$('.yn button',it).forEach(b=>b.addEventListener('click',()=>{if(it.classList.contains('answered'))return;const y=YN[+it.dataset.i],ok=+b.dataset.a===y[1];
+  it.classList.add('answered');$$('.yn button',it).forEach(x=>{x.disabled=true;if(+x.dataset.a===y[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+  $('.exp',it).innerHTML=`<span style="color:${ok?'var(--good)':'var(--bad)'};font-weight:800">${ok?'✓ Correcto.':'✕ Revisa.'}</span> ${y[2]}`;ynN++;if(ynN===YN.length){done('yn');$('#modelBtn').disabled=false}})));
+$('#modelBtn').addEventListener('click',()=>{$('#model').hidden=false;done('model')});
+/*{{TAIL}}*/
+})();
+</script>

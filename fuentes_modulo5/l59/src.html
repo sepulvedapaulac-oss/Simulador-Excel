@@ -1,0 +1,417 @@
+<title>Lección 5.9 — ¿Qué ocurre cuando se incumple?</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.hook-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.hook-grid>*{min-width:0}
+.hook-grid .photo-frame{margin-top:14px;aspect-ratio:3/2}
+.phone.chat{min-height:460px;max-width:320px}
+.phone .chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #d7e2e6;font-weight:900;color:#173f4e;font-size:.9rem}
+.phone .chat-h .av{width:30px;height:30px;border-radius:50%;background:#173f4e;color:#fff;display:grid;place-items:center;font-size:.72rem;flex:none}
+.phone .chat-h small{display:block;font-weight:700;color:#5f7180;font-size:.7rem}
+.phone .cmsg{background:#fff;border:1px solid #c9d6dc;border-radius:14px 14px 14px 4px;padding:9px 12px;font-size:.86rem;max-width:88%;align-self:flex-start;animation:rise .35s ease both;color:#172431}
+.phone .cmsg.me{background:#d8f3ef;border-color:#a9dbd7;border-radius:14px 14px 4px 14px;align-self:flex-end}
+.phone .cmsg time{display:block;font-size:.66rem;color:#5f7180;text-align:right;margin-top:2px}
+.phone .dots{display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid #c9d6dc;width:max-content}
+.phone .dots span{width:7px;height:7px;border-radius:50%;background:#5f7180;animation:blink 1s infinite}
+.phone .dots span:nth-child(2){animation-delay:.2s}.phone .dots span:nth-child(3){animation-delay:.4s}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-radius:16px;padding:12px;font-size:.86rem;color:#172431}
+.phone .grow{flex:1}
+.sizes{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+.sizes button{border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:850;font-size:.88rem;cursor:pointer}
+.sizes button.seen{border-color:var(--teal)}
+.sizes button.active{background:var(--navy);border-color:var(--navy);color:var(--surface)}
+.simhead{font-size:.8rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.sim-box .srow output{font-weight:900;color:var(--teal-ink);text-align:right}
+.capbar.utm{margin:18px 0 34px}
+.capbar.utm .scale{position:absolute;top:100%;font-size:.68rem;font-weight:800;color:var(--muted);margin-top:4px}
+.capbar.utm .mark{border-left-color:var(--navy)}
+.capbar.utm .mark span{color:var(--navy);top:auto;bottom:100%;margin:0 0 2px;left:-18px}
+.crit{margin-top:12px}
+.photo-frame.banner{aspect-ratio:2/1;max-height:300px;width:100%;margin:12px 0 4px}
+.cmp.tall{min-height:300px}
+.cmp .in p{margin:0;line-height:1.55}
+.cmp .in i{color:var(--muted);font-style:normal;font-size:.85em}
+.case-head{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:center;margin-top:10px}
+.case-head>*{min-width:0}
+.case-head .photo-frame{aspect-ratio:3/2}
+.qf .btns button{min-width:160px}
+.plan-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
+.plan-grid>*{min-width:0}
+@media(max-width:860px){.hook-grid,.case-head,.plan-grid{grid-template-columns:1fr}.photo-frame.banner{aspect-ratio:3/2}.cmp.tall{min-height:340px}}
+@media(max-width:600px){.order li{gap:8px;padding:10px}.order li .mv{flex-direction:column}.qf .btns button{min-width:0;width:100%}.cmp.tall{min-height:380px}.capbox .srow{grid-template-columns:1fr 90px}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 5 · LECCIÓN 5.9</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 11</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:16" data-gate="hook" data-gate-msg="Abre el mensaje de la gerencia y responde la pregunta inicial.">
+  <div class="hook-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 5.9 · ¿Qué ocurre cuando se incumple?</span>
+      <h1 class="reveal">Ordenar la carpeta no es corregir</h1>
+      <p class="lead reveal">En <strong>Horizonte Servicios</strong>, una revisión interna detectó cartas de término incompletas, finiquitos fuera de plazo y registros de asistencia inconsistentes. La gerencia le escribe a Camila, del Equipo de Personas. <strong>Presiona “Abrir mensaje” para leerlo.</strong></p>
+      <div class="callout reveal" style="margin-top:10px"><strong>Meta de aprendizaje:</strong> reconocer las consecuencias de un incumplimiento laboral (multas, reclamos, demandas y costos económicos) y distinguir entre corregir el caso y corregir el proceso que lo produjo.</div>
+      <div class="photo-frame reveal"><img alt="Camila, en una mesa con carpetas de personal abiertas, revisa documentos mientras su celular muestra un mensaje nuevo" src="{{IMG:i59_hero}}"/></div>
+    </div>
+    <div class="phone chat reveal" id="phone"></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería responder Camila?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Sí: con la carpeta completa y ordenada, una fiscalización no tendría nada que observar.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“No basta: hay que regularizar cada caso (pagos, plazos y documentos) y corregir el proceso que produjo los errores.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Ordenémosla y, si llega una multa, la reclamamos: así no pagamos nada.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el incumplimiento sigue ahí</div><div class="branch-body"><div><p>La fiscalización mira el <strong>cumplimiento real</strong>: si el finiquito se otorgó a tiempo, si se pagó y si los registros coinciden. Completar papeles después no cambia lo que ocurrió y contradice lo que el inspector constata como ministro de fe.</p></div><div><p class="hint">Una carpeta ordenada no paga lo que se debe.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un costo que sigue creciendo</div><div class="branch-body"><div><p>Reclamar una multa es un derecho (dentro de 15 días hábiles, ante el juzgado del trabajo), pero <strong>no corrige nada</strong>: lo adeudado a las personas sigue pendiente y suma reajustes e intereses. Además, si la empresa reclama la multa, ya no puede pedir sustituirla.</p></div><div><p class="hint">Reclamar no reemplaza a corregir.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena respuesta</div><div class="branch-body"><div><p>Primero se <strong>regulariza cada caso</strong>: lo que se debe se paga y los documentos pendientes se completan con información real. Después se corrige el <strong>proceso</strong> que permitió el error, para que no se repita.</p></div><div><p class="hint">En esta lección verás qué puede pasar si no se hace.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los siete capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 20 s</span>
+  <h2>¿Qué puede pasar cuando se incumple?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · MULTAS -->
+<section class="slide" data-title="Multas" data-audio="p03" data-dur="0:17" data-gate="sim" data-gate-msg="Explora los tres tamaños de empresa, la corrección dentro de 15 días y una sustitución que proceda.">
+  <span class="eyebrow">Lección 5.9 · Multas administrativas</span>
+  <h2>¿Cuánto puede costar una multa?</h2>
+  <p>Las infracciones que no tienen una sanción especial se multan según el <strong>tamaño de la empresa</strong> (art. 506). <strong>Elige un tamaño</strong>, mueve la barra dentro del rango legal y <strong>activa las dos opciones</strong> de abajo para ver cuándo procede cada una.</p>
+  <div class="task" id="simTask">Situaciones exploradas: tres tamaños, corrección y una sustitución que proceda <span class="tick" id="simTick">0 / 5</span></div>
+  <div class="sim">
+    <div class="sim-box">
+      <p class="simhead">Tamaño de la empresa</p>
+      <div class="sizes" id="sizes">
+        <button type="button" data-s="peq">Pequeña empresa</button>
+        <button type="button" data-s="med">Mediana empresa</button>
+        <button type="button" data-s="gra">Gran empresa</button>
+      </div>
+      <div class="srow" style="grid-template-columns:1fr 90px"><label for="simM">Multa cursada en el ejemplo</label><output id="simMo">—</output></div>
+      <input id="simM" type="range" min="1" max="60" step="1" value="5" style="width:100%;accent-color:var(--teal)" disabled/>
+      <div class="capbar utm" id="simBar"></div>
+      <label class="switch">Corrige la infracción dentro de 15 días desde la notificación <input type="checkbox" id="simCo"/></label>
+      <label class="switch">Pide sustituir la multa (art. 506 ter) <input type="checkbox" id="simSu"/></label>
+    </div>
+    <div class="sim-box"><div class="verdict ko" id="simV">Elige un tamaño de empresa</div><div class="checks" id="simChecks"><p class="hint">Elige un tamaño a la izquierda para ver el rango y las opciones.</p></div></div>
+  </div>
+  <div class="story crit"><strong>¿Cómo se fija el monto dentro del rango?</strong> Con criterios objetivos (art. 506 quáter): la naturaleza de la infracción, la afectación de derechos, el número de personas afectadas y la conducta del empleador, incluidas sanciones previas. La ley fija los rangos más bajos para las empresas de menor tamaño; las multas especiales del Código siguen sus propias reglas.</div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 506, 506 ter, 506 quáter y 511; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Montos expresados en UTM.</p>
+</section>
+
+<!-- 4 · PLAZOS DE LA MULTA -->
+<section class="slide" data-title="Después de la multa" data-audio="p04" data-dur="0:14" data-gate="pairs" data-gate-msg="Une las cinco acciones con su plazo o condición.">
+  <span class="eyebrow violet">Lección 5.9 · Después de la notificación</span>
+  <h2>Corregir, reclamar o sustituir: cada uno tiene su regla</h2>
+  <p>Una multa notificada abre varias alternativas, y cada una tiene un plazo o una condición distinta. <strong>Selecciona una acción a la izquierda y luego su plazo o condición a la derecha.</strong></p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 5</span></div>
+  <div class="pairs"><div id="pl"></div><div id="pr"></div></div>
+  <div class="fb" id="prFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 503, 506 ter y 511.</p>
+</section>
+
+<!-- 5 · OTRAS CONSECUENCIAS -->
+<section class="slide" data-title="Otras consecuencias" data-audio="p05" data-dur="0:16" data-gate="tree" data-gate-msg="Recorre el árbol con los cuatro casos.">
+  <span class="eyebrow">Lección 5.9 · Otras consecuencias</span>
+  <h2>Más allá de la multa: ¿qué puede seguir?</h2>
+  <div class="photo-frame banner"><img alt="Camila y un analista revisan carpetas de personal en una sala de archivo, comparando cada documento con la información de un notebook" src="{{IMG:i59_carpetas}}"/></div>
+  <p>La revisión interna de Horizonte Servicios encontró cuatro casos. <strong>Elige un caso y responde Sí o No</strong> a cada pregunta, una a la vez. Al final verás la consecuencia principal. Si te equivocas, verás una pista.</p>
+  <div class="task" id="trTask">Casos recorridos <span class="tick" id="trTick">0 / 4</span></div>
+  <div class="ex-tabs" id="exTabs"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <div class="story"><strong>Ojo:</strong> estas vías no se excluyen. Un mismo incumplimiento puede terminar en un reclamo, luego en una demanda y, además, en una multa si se fiscaliza.</div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 162 (inciso quinto), 168, 506 y 511; criterios de la Dirección del Trabajo vigentes a octubre de 2026.</p>
+</section>
+
+<!-- 6 · COSTOS -->
+<section class="slide" data-title="Costos económicos" data-audio="p06" data-dur="0:15" data-gate="qf" data-gate-msg="Clasifica los ocho costos.">
+  <span class="eyebrow amber">Lección 5.9 · Costos económicos</span>
+  <h2>Lo que se suma a la deuda</h2>
+  <p>Además de la multa, un incumplimiento puede costar mucho más. <strong>Clasifica cada costo</strong> en una de las tres categorías y lee la explicación. Intenta lograr la mayor racha de aciertos.</p>
+  <div class="qf" id="qf"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 63 (reajustes e intereses de sumas adeudadas), 162, 168, 169 letra a) y 173 (reajuste e intereses de indemnizaciones).</p>
+</section>
+
+<!-- 7 · CASO Y PROCESO -->
+<section class="slide" data-title="Caso y proceso" data-audio="p07" data-dur="0:14" data-gate="cmp pick" data-gate-msg="Desliza el comparador hasta el final y marca las acciones que corrigen el proceso.">
+  <span class="eyebrow">Lección 5.9 · Mejora correctiva</span>
+  <h2>Corregir el caso o corregir también el proceso</h2>
+  <p>El finiquito de Tomás quedó fuera de plazo. Hay dos maneras de responder. <strong>Desliza el comparador hacia la izquierda</strong> para ver la segunda.</p>
+  <div class="cmp tall" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in"><span class="eyebrow">Opción 1 · Solo el caso</span><h3>Se rehace el finiquito de Tomás</h3><p><b>Qué se hace:</b> se otorga el finiquito, se paga con reajustes e intereses y se archiva.<br/><b>Quién vigila el plazo:</b> nadie en particular.<br/><b>Control:</b> ninguno.<br/><b>Tres meses después:</b> otro finiquito vuelve a quedar fuera de plazo.</p></div></div>
+    <div class="side after"><div class="in"><span class="eyebrow amber">Opción 2 · Caso y proceso</span><h3>Se corrige el finiquito y la forma de trabajar</h3><p><b>Qué se hace:</b> lo mismo con el caso de Tomás. <i>(igual)</i><br/><b>Quién vigila el plazo:</b> una persona responsable, con alerta antes de los 10 días hábiles.<br/><b>Control:</b> lista de verificación y revisión mensual.<br/><b>Tres meses después:</b> los finiquitos salen a tiempo y queda evidencia.</p></div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador entre corregir solo el caso y corregir el caso y el proceso"/>
+  <div class="phase" id="pickQ" hidden>
+    <div class="story" style="margin-top:14px"><strong>Buena práctica, no una norma:</strong> la ley no exige un “análisis de causa raíz”, pero sí considera la conducta del empleador, incluidas sanciones previas, al fijar el monto de una multa (art. 506 quáter). Repetir el error tiene costo.</div>
+    <h3 style="margin-top:14px">¿Cuáles de estas acciones corrigen el <u>proceso</u>? Marca todas las que correspondan y presiona Comprobar.</h3>
+    <div class="chips2" id="chips"></div>
+    <button class="small-btn primary" type="button" id="pickCheck" style="margin-top:12px">Comprobar</button>
+    <div class="fb" id="pickFb"></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 177 y 506 quáter. La revisión de causa raíz es una práctica de gestión recomendada, no una obligación legal específica.</p>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-dur="0:15" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila · La multa llegó</span>
+  <h2>La gerencia pide decidir hoy</h2>
+  <div class="case-head">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">GG</span> Gerencia General</div>
+      <div class="bubble"><span class="who">Gerencia</span>Camila, la Inspección nos notificó ayer una multa por los finiquitos fuera de plazo. Somos una mediana empresa. ¿Qué hacemos?</div>
+    </div>
+    <div class="photo-frame"><img alt="En una sala de reuniones, Camila expone frente al gerente general y a la gerenta de finanzas, con una carpeta abierta sobre la mesa" src="{{IMG:i59_gerencia}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué propone Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Reclamemos la multa en el juzgado y, mientras tanto, no cambiemos nada.”</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Pidamos sustituir la multa por una capacitación de la Dirección del Trabajo.”</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Corrijamos ya: otorgar y pagar los finiquitos, con reajustes e intereses, dentro de 15 días desde la notificación. Así la multa se rebaja a lo menos en 50%.”</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la deuda sigue creciendo</div><div class="branch-body"><div><p>Reclamar es posible (15 días hábiles ante el juzgado del trabajo), pero si la infracción existió, el reclamo no la borra. Las personas siguen sin sus pagos, que suman <strong>reajustes e intereses</strong>, y se pierde la rebaja por corregir a tiempo.</p></div><div><p class="hint">¿Qué ocurre si se corrige dentro de 15 días?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una solicitud que no procede</div><div class="branch-body"><div><p>La sustitución del art. 506 ter es solo para <strong>micro y pequeñas empresas</strong>. Horizonte Servicios es una mediana empresa, así que esa vía no está disponible.</p></div><div><p class="hint">Revisa el tamaño de la empresa.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Corregir la infracción dentro de <strong>15 días desde la notificación</strong> rebaja la multa a lo menos en 50% (art. 511) y, sobre todo, paga a las personas lo que se les debe.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Un hallazgo más:</strong> uno de los finiquitos atrasados es el de Ignacio, despedido en marzo. Al revisar, Camila descubre que ese mes sus cotizaciones previsionales no estaban pagadas. La gerencia responde: “A Ignacio ya le mandamos la carta en marzo; ese contrato terminó”.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué le explica Camila a la gerencia?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“Con cotizaciones impagas, el despido no puso término al contrato. Hay que pagar las cotizaciones morosas, comunicarlo por carta certificada y pagar remuneraciones y cotizaciones hasta convalidarlo.”</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“Es cierto: la carta con la causal basta para terminar el contrato.”</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“Paguemos las cotizaciones sin avisarle; así nadie tiene que enterarse.”</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un costo que se acumula</div><div class="branch-body"><div><p>Si al despedir no están pagadas íntegramente las cotizaciones, el despido <strong>no produce el efecto de terminar el contrato</strong> (art. 162, “Ley Bustos”). Mientras no se convalide, se siguen debiendo remuneraciones y cotizaciones.</p></div><div><p class="hint">La carta no reemplaza el pago de las cotizaciones.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la convalidación queda incompleta</div><div class="branch-body"><div><p>Para convalidar el despido hay que pagar las cotizaciones morosas <strong>y comunicarlo por carta certificada</strong>. Hacerlo en silencio no cumple la ley ni respeta a la persona.</p></div><div><p class="hint">¿Qué exige la convalidación además del pago?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Se pagan las cotizaciones morosas, se comunica por carta certificada y se pagan las remuneraciones y cotizaciones del período intermedio. Después, Camila revisará por qué nadie verificó las cotizaciones antes de despedir: esa es la <strong>causa raíz</strong>.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 162, 173, 503, 506, 506 ter y 511.</p>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:14" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-dur="0:16" data-gate="order pass" data-gate-msg="Ordena los cinco pasos del plan de mejora (y aprueba la Comprobación).">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Tu plan de mejora, paso a paso</h2>
+  <div class="plan-grid">
+    <div><p>Piensa en un incumplimiento que podría ocurrir en tu organización: un finiquito atrasado, una carta incompleta o registros que no coinciden. <strong>Usa las flechas para ordenar los cinco pasos</strong> del plan de mejora, de arriba hacia abajo, y presiona <strong>Comprobar orden</strong>.</p></div>
+    <div class="photo-frame wide"><img alt="Camila dibuja en una pizarra un diagrama de proceso con cajas y flechas, mientras dos colegas del Equipo de Personas toman notas" src="{{IMG:i59_plan}}"/></div>
+  </div>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-dur="0:16" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 5.9</h2>
+    <p>Ya puedes reconocer qué ocurre cuando se incumple: multas según el tamaño de la empresa, reclamos y demandas, recargos, reajustes e intereses, y la nulidad del despido con cotizaciones impagas. Y sabes que se corrige el caso y también el proceso.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Idea final:</strong> ante un incumplimiento, no basta con ordenar la carpeta. Paga y regulariza el caso a tiempo, y luego corrige el proceso que lo produjo para que no vuelva a ocurrir. <br/><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar las multas</button><button class="small-btn primary" type="button" data-goto="4">Repasar otras consecuencias</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 63, 162, 168, 169, 173, 503, 506, 506 ter, 506 quáter y 511; criterios de la Dirección del Trabajo vigentes a octubre de 2026. Casos y personas ficticios.</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l59';
+const FIRST_KEYS=['hook','qf','pick','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'No basta ordenar',lines:['Cuando se incumple una norma laboral, ordenar la carpeta no basta.','La fiscalización mira el cumplimiento real: lo que se pagó, cuándo y con qué respaldo.'],
+  html:`<div class="v-icons"><div><span class="i">📁</span>Carpeta ordenada</div><div class="fadein" data-at="1"><span class="i">💵</span>¿Se pagó?</div><div class="fadein" data-at="1"><span class="i">📅</span>¿Cuándo?</div><div class="fadein" data-at="1"><span class="i">🧾</span>¿Con qué respaldo?</div></div>`},
+ {t:'Multas según el tamaño',lines:['Las infracciones sin sanción especial se multan según el tamaño de la empresa: pequeña, de 1 a 10 UTM; mediana, de 2 a 40; grande, de 3 a 60 UTM.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem;margin-bottom:12px">Art. 506 · rango de la multa</div><div class="v-bars"><div><span style="width:110px">Pequeña</span><i style="width:15%"></i>1 a 10 UTM</div><div><span style="width:110px">Mediana</span><i style="width:42%"></i>2 a 40 UTM</div><div><span style="width:110px">Grande</span><i style="width:62%;background:var(--stage-amber)"></i>3 a 60 UTM</div></div>`},
+ {t:'Corregir a tiempo',lines:['Si la infracción se corrige dentro de 15 días desde la notificación, la multa se rebaja a lo menos en 50%.','La micro y pequeña empresa puede pedir sustituirla por corrección y capacitación.'],
+  html:`<div class="v-big">−50%</div><div class="v-sub">a lo menos, si se corrige dentro de 15 días desde la notificación</div><div class="note" data-at="1">Micro y pequeña empresa: puede pedir sustituirla por corrección y capacitación</div>`},
+ {t:'Reclamo y conciliación',lines:['La persona trabajadora puede reclamar ante la Inspección del Trabajo, que cita a un comparendo de conciliación.','Si no hay acuerdo, puede demandar ante el juzgado.'],
+  html:`<div class="v-steps"><div data-at="0">Reclamo ante la Inspección del Trabajo</div><div data-at="0">Comparendo de conciliación</div><div data-at="1">Sin acuerdo: demanda ante el juzgado</div></div>`},
+ {t:'Recargos e intereses',lines:['En juicio, los costos crecen: recargos del artículo 168 sobre la indemnización, de 30 a 100% según la causal,','y reajustes e intereses desde que la deuda se hizo exigible.'],
+  html:`<div class="v-icons"><div><span class="i">⚖️</span>Recargo art. 168<br/>de 30% a 100%</div><div class="fadein" data-at="1"><span class="i">📈</span>Reajustes (IPC)<br/>e intereses</div></div>`},
+ {t:'Cotizaciones impagas',lines:['Si al despedir no están pagadas las cotizaciones, el despido no pone término al contrato:','se deben remuneraciones y cotizaciones hasta convalidarlo, pagando las cotizaciones morosas.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem">Despido con cotizaciones impagas</div><div class="v-final" style="margin-top:10px">El contrato <em>no termina</em></div><div class="note" data-at="1">Se deben remuneraciones y cotizaciones hasta convalidar el despido</div>`},
+ {t:'Caso y proceso',lines:['Por eso se corrigen dos cosas: el caso, pagando y regularizando, y el proceso que lo produjo,','con responsables, plazos y controles para que no se repita.'],
+  html:`<div class="v-steps"><div data-at="0">Corregir el caso: pagar y regularizar</div><div data-at="0">Corregir el proceso que lo produjo</div><div data-at="1">Responsables · plazos · controles</div></div>`}
+]};
+const Q=[
+ {q:'Una mediana empresa comete una infracción sin sanción especial. ¿En qué rango puede fijarse la multa (art. 506)?',o:['De 1 a 10 UTM.','De 2 a 40 UTM.','De 3 a 60 UTM.'],c:1,f:'El art. 506 fija los rangos según el tamaño: pequeña empresa, de 1 a 10 UTM; mediana, de 2 a 40 UTM; grande, de 3 a 60 UTM.'},
+ {q:'Una empresa corrige la infracción 10 días después de que se le notificó la multa. ¿Qué ocurre con la multa?',o:['Nada: la multa se mantiene igual.','Queda sin efecto de forma automática.','Solo se rebaja si la empresa es grande.','Se rebaja a lo menos en 50%.'],c:3,f:'Si el empleador corrige la infracción dentro de los 15 días siguientes a la notificación, la multa se rebaja a lo menos en 50% (art. 511), cualquiera sea el tamaño de la empresa.'},
+ {q:'Al despedir a una persona, la empresa no tenía pagadas sus cotizaciones previsionales. ¿Qué consecuencia tiene?',o:['El despido no pone término al contrato: se deben remuneraciones y cotizaciones hasta convalidarlo.','Ninguna, si la carta indica la causal.','Solo una multa, sin efectos para la persona trabajadora.'],c:0,f:'Por el art. 162 (“Ley Bustos”), el despido no produce el efecto de terminar el contrato hasta que se convalide pagando las cotizaciones morosas y comunicándolo por carta certificada.'},
+ {q:'Una gran empresa pide sustituir su multa por un programa de capacitación de la Dirección del Trabajo (art. 506 ter). ¿Procede?',o:['Sí, siempre que lo pida dentro de 30 días.','Sí, pero solo si antes reclamó la multa en el juzgado.','No: la sustitución es solo para micro y pequeñas empresas.','Sí, una vez al año.'],c:2,f:'La sustitución del art. 506 ter es para la micro y pequeña empresa, dentro de 30 días desde la notificación, una vez al año por la misma infracción y solo si no reclamó la multa.'},
+ {q:'Un finiquito se entregó fuera de plazo. La empresa lo corrigió y pagó, pero no cambió el proceso que causó el atraso. ¿Qué falta para un cumplimiento sostenible?',o:['Nada: el documento ya fue corregido.','Corregir el proceso que causó el atraso: responsables, plazos y controles.','Solo pedir disculpas a la persona.'],c:1,f:'Corregir el caso es necesario, pero no evita que se repita. Revisar la causa raíz es una buena práctica de gestión, y la reiteración pesa al fijar una multa (art. 506 quáter).'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: chat en el celular ---------- */
+const phone=$('#phone');
+const phHead=`<div class="bar"><span>09:40</span><span>📶 🔋</span></div><div class="chat-h"><span class="av">GG</span><span>Gerencia General<small>en línea</small></span></div>`;
+phone.innerHTML=phHead+`<div class="grow"></div><div class="notif">💬 <b>1 mensaje nuevo</b> de Gerencia General</div><button class="pbtn" type="button" id="showMsg">Abrir mensaje</button>`;
+function addMsg(html){const g=$('.grow',phone);g.insertAdjacentHTML('beforebegin',html)}
+$('#showMsg').addEventListener('click',()=>{$('#showMsg').remove();$('.notif',phone).remove();
+  addMsg('<div class="dots" id="dts"><span></span><span></span><span></span></div>');
+  setTimeout(()=>{$('#dts').remove();addMsg('<div class="cmsg">Camila, leí el informe de la revisión interna 📁<time>09:40</time></div>');
+    setTimeout(()=>{addMsg('<div class="cmsg">Cartas de término incompletas, dos finiquitos fuera de plazo y registros de asistencia que no cuadran.<time>09:41</time></div>');
+      setTimeout(()=>{addMsg('<div class="cmsg">¿Basta con ordenar la carpeta antes de que llegue una fiscalización? 🙏<time>09:41</time></div>');$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),250)},700)},700)},900)});
+$('[data-choice=hook] [data-opt=B]').addEventListener('click',()=>{if(!$('#reply',phone))addMsg('<div class="cmsg me" id="reply">Ordenar no basta: primero pagamos y regularizamos cada caso, y después corregimos el proceso. Te preparo un plan hoy 📋<time>09:44</time></div>')});
+
+/* ---------- Simulador: rango de la multa ---------- */
+const SZ={peq:['Pequeña empresa',1,10],med:['Mediana empresa',2,40],gra:['Gran empresa',3,60]};
+let sz=null;const tSim=tracker('sim',5,'#simTick','#simTask');
+const fu=n=>String(n).replace('.',',');
+function simEval(){
+  const co=$('#simCo').checked,su=$('#simSu').checked;
+  if(!sz){$('#simMo').textContent='—';return}
+  const [nm,mn,mx]=SZ[sz],m=+$('#simM').value;$('#simMo').textContent=m+' UTM';
+  $('#simBar').innerHTML=`<div class="seg" style="left:${mn/60*100}%;width:${(mx-mn)/60*100}%;background:var(--teal2)">${mn}–${mx}</div><div class="mark" style="left:${m/60*100}%"><span>${m} UTM</span></div><span class="scale" style="left:0">0</span><span class="scale" style="right:0">60 UTM</span>`;
+  const R=[['ok','Rango legal (art. 506)',`${nm}: de ${mn} a ${mx} UTM. En el ejemplo, la multa cursada es de <strong>${m} UTM</strong>.`]];
+  R.push(co?['ok','Corrige dentro de 15 días',`La multa se rebaja a lo menos en 50% (art. 511): pagaría <strong>como máximo ${fu(m/2)} UTM</strong>. Y, lo más importante, la infracción queda corregida.`]
+    :['ko','Sin corrección oportuna',`Se mantiene la multa de ${m} UTM y el incumplimiento sigue pendiente.`]);
+  if(!su)R.push(['wa','Sustitución (art. 506 ter)','Actívala para ver si procede según el tamaño de la empresa.']);
+  else if(sz==='peq')R.push(['ok','Sustitución: puede pedirse',`Dentro de 30 días desde la notificación y si no reclamó la multa: corregir las infracciones y asistir a un programa de capacitación de la Dirección del Trabajo (máximo dos semanas). Procede una vez al año por la misma infracción.`]);
+  else R.push(['ko','Sustitución: no procede',`El art. 506 ter es solo para micro y pequeñas empresas. Una ${nm.toLowerCase()} puede, en cambio, corregir dentro de 15 días para obtener la rebaja.`]);
+  $('#simChecks').innerHTML=R.map(r=>`<div class="checkrow ${r[0]}"><span>${r[0]==='ok'?'✓':r[0]==='ko'?'✕':'↻'}</span><span><b>${r[1]}</b><span class="d">${r[2]}</span></span></div>`).join('');
+  const v=$('#simV'),good=co||(su&&sz==='peq');v.className='verdict '+(good?'ok':'ko');
+  v.textContent=`${nm}: ${m} UTM`+(su&&sz==='peq'?' · puede pedir sustituirla':co?` · con corrección, máximo ${fu(m/2)} UTM`:' · sin rebaja');
+  if(co)tSim('corr');if(su&&sz==='peq')tSim('sust')}
+$$('#sizes button').forEach(b=>b.addEventListener('click',()=>{sz=b.dataset.s;const [,mn,mx]=SZ[sz],r=$('#simM');r.disabled=false;r.min=mn;r.max=mx;r.value=Math.round((mn+mx)/2);
+  $$('#sizes button').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');tSim(sz);simEval()}));
+['#simM','#simCo','#simSu'].forEach(s=>$(s).addEventListener('input',simEval));simEval();
+
+/* ---------- Parejas: plazos tras la notificación ---------- */
+const PAIRS=[
+ ['Corregir la infracción para rebajar la multa','Dentro de 15 días desde la notificación','Art. 511: corregir a tiempo rebaja la multa, a lo menos, a la mitad.'],
+ ['Reclamar la multa ante el juzgado del trabajo','Dentro de 15 días hábiles desde la notificación','Art. 503: el reclamo judicial tiene un plazo de 15 días hábiles.'],
+ ['Pedir sustituir la multa por corrección y capacitación (micro o pequeña empresa)','Dentro de 30 días desde la notificación, si no se reclamó la multa','Art. 506 ter: la sustitución se pide dentro de 30 días y solo si la empresa no reclamó la multa.'],
+ ['Pedir reconsideración administrativa al Director del Trabajo','Solo si la multa no se reclamó judicialmente','Art. 511: la reconsideración administrativa procede si no se reclamó ante el juzgado.'],
+ ['Volver a pedir la sustitución por la misma infracción','Como máximo una vez al año','Art. 506 ter: la sustitución procede una vez al año por la misma infracción.']];
+const rOrder=[3,0,4,1,2];let selL=null,pDone=0;
+$('#pl').innerHTML=PAIRS.map((p,i)=>`<button class="pl" type="button" data-i="${i}">${p[0]}</button>`).join('');
+$('#pr').innerHTML=rOrder.map(i=>`<button class="pr" type="button" data-i="${i}">${PAIRS[i][1]}</button>`).join('');
+$$('.pl').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;selL=b.dataset.i;$$('.pl').forEach(x=>x.classList.toggle('sel',x===b))}));
+$$('.pr').forEach(b=>b.addEventListener('click',()=>{if(b.classList.contains('done'))return;if(selL==null){feedback($('#prFb'),false,'Primero elige una acción.','Selecciona una acción de la columna izquierda.');return}
+  if(b.dataset.i===selL){b.classList.add('done');const l=$(`.pl[data-i="${selL}"]`);l.classList.add('done');l.classList.remove('sel');l.textContent='✓ '+l.textContent;
+    feedback($('#prFb'),true,'Pareja correcta.',PAIRS[+selL][2]);pDone++;selL=null;$('#prTick').textContent=`${pDone} / 5`;if(pDone===5){$('#prTask').classList.add('ok');done('pairs')}}
+  else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');feedback($('#prFb'),false,'No corresponde.','Distingue bien: corregir cuenta 15 días; reclamar ante el juzgado, 15 días hábiles; la sustitución, 30 días y sin reclamo previo.')}}));
+
+/* ---------- Árbol: qué puede seguir ---------- */
+const NODES=['¿Se despidió con cotizaciones previsionales impagas?','¿La persona demanda ante el juzgado del trabajo por su despido?','¿La persona reclama ante la Inspección del Trabajo?','¿Un inspector constata la infracción en una fiscalización?'];
+const EXS=[
+ {n:'Ignacio fue despedido en marzo. Ese mes, la empresa no había pagado sus cotizaciones previsionales.',path:[1],res:'nul'},
+ {n:'A Valentina la despidieron por necesidades de la empresa (art. 161), pero el motivo real era un conflicto con su jefatura. Presenta una demanda dentro de 60 días hábiles.',path:[0,1],res:'dem'},
+ {n:'Tomás no recibió su finiquito dentro de 10 días hábiles desde la separación y acude a la Inspección del Trabajo. Sus cotizaciones están pagadas.',path:[0,0,1],res:'rec'},
+ {n:'En una visita, un inspector constata que el registro de asistencia no coincide con las horas pagadas. Nadie ha reclamado.',path:[0,0,0,1],res:'mul'}];
+const RES={nul:['good','Nulidad del despido (art. 162, “Ley Bustos”)','El despido no pone término al contrato: la empresa debe pagar remuneraciones y cotizaciones hasta convalidarlo, pagando las cotizaciones morosas y comunicándolo por carta certificada.'],
+ dem:['good','Demanda con recargos (art. 168)','Si el tribunal declara improcedente el art. 161, la indemnización por años de servicio aumenta en 30%, con reajustes e intereses. El plazo para demandar es de 60 días hábiles desde la separación.'],
+ rec:['good','Reclamo y comparendo de conciliación','La Inspección cita a la empresa a un comparendo de conciliación. Si no hay acuerdo, la persona puede demandar ante el juzgado.'],
+ mul:['good','Multa administrativa (art. 506)','Se fija según el tamaño de la empresa y la gravedad. Si se corrige dentro de 15 días desde la notificación, se rebaja a lo menos en 50% (art. 511).']};
+const HINT=[['Relee el caso: ¿estaban pagadas las cotizaciones al despedir?','Relee el caso: no se menciona un problema de cotizaciones.'],['Relee el caso: ¿la persona presentó una demanda?','Relee el caso: no hay una demanda ante el juzgado.'],['Relee el caso: ¿adónde acudió la persona?','Relee el caso: nadie ha reclamado ante la Inspección.'],['Relee el caso: ¿quién detectó la infracción?','Relee el caso.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Caso ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Caso ${ex+1}:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 4`;if(solved.size===4){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Ronda rápida: costos ---------- */
+const CAT=['📈 Reajustes e intereses','⚖️ Recargo o incremento','💵 Pago adeudado'];
+const QF=[
+ ['Aumento según el IPC de una remuneración que se pagó meses después',0,'Las remuneraciones y otras sumas adeudadas se reajustan según el IPC desde que se hicieron exigibles (art. 63).'],
+ ['30% adicional sobre la indemnización por años de servicio, porque el tribunal declaró improcedente el art. 161',1,'Es el recargo del art. 168 cuando el art. 161 se declara improcedente.'],
+ ['Indemnización sustitutiva del aviso previo que no se pagó en un despido por art. 161',2,'Es un pago que se debía desde el término; si se paga tarde, además se reajusta y genera intereses.'],
+ ['Interés máximo para operaciones reajustables sobre una indemnización, desde el término del contrato',0,'Las indemnizaciones se reajustan según el IPC y devengan ese interés desde el término del contrato (art. 173).'],
+ ['Incremento de hasta 150% de las indemnizaciones por incumplir un pacto de pago en cuotas',1,'Art. 169 letra a): además, el incumplimiento hace exigible de inmediato el total de la deuda.'],
+ ['Remuneraciones y cotizaciones que se siguen debiendo hasta convalidar un despido con cotizaciones impagas',2,'Por el art. 162 (“Ley Bustos”), mientras no se convalide, el despido no pone término al contrato.'],
+ ['Hasta 100% adicional por invocar el art. 160 sin motivo plausible',1,'Es el recargo máximo del art. 168.'],
+ ['Feriado proporcional que no se incluyó en el finiquito',2,'Es un pago que procede en cualquier término; si se paga tarde, además se reajusta.']];
+let qfi=0,streak=0,best=0,qfOk=0;
+function qfRender(){const box=$('#qf');
+  if(qfi>=QF.length){box.innerHTML=`<span class="streak">🏆 Mejor racha: ${best}</span><h3>${qfOk} de ${QF.length} correctas</h3><p>${qfOk===QF.length?'¡Excelente criterio!':'Recuerda: los reajustes e intereses actualizan lo adeudado; los recargos e incrementos aumentan lo que se debe cuando un tribunal declara injustificado el despido o se incumple un pacto de cuotas; y el pago adeudado es lo que siempre se debió pagar.'}</p>`;S.first.qf=qfOk===QF.length;done('qf');return}
+  const c=QF[qfi];box.innerHTML=`<span class="streak">🔥 Racha: ${streak}</span><p class="hint" style="margin-top:10px">Costo ${qfi+1} de ${QF.length}</p><div class="concept">${c[0]}</div><div class="btns">${CAT.map((t,i)=>`<button type="button" data-v="${i}">${t}</button>`).join('')}</div><div class="fb"></div>`;
+  $$('.btns button',box).forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.v===c[1];if(ok){streak++;qfOk++;best=Math.max(best,streak)}else streak=0;
+    $$('.btns button',box).forEach(x=>{x.disabled=true;if(+x.dataset.v===c[1])x.style.borderColor='var(--good-line)';else if(x===b)x.style.borderColor='var(--bad-line)'});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'No.'} Es ${CAT[c[1]].slice(2).toLowerCase()}.</strong> <span class="fb-body">${c[2]}</span></div>`;
+    setTimeout(()=>{qfi++;qfRender()},1600)}))}
+qfRender();
+
+/* ---------- Comparador + acciones de proceso ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');$('#pickQ').hidden=false;setTimeout(()=>$('#pickQ').scrollIntoView({behavior:'smooth',block:'start'}),200)}}});
+const CH=[['Rehacer la carta de término incompleta',0],['Asignar una persona responsable y una alerta para el plazo de 10 días hábiles del finiquito',1],['Pagar el finiquito atrasado con reajustes e intereses',0],['Usar una lista de verificación de la carta: causal, hechos y estado de las cotizaciones',1],['Revisar cada mes que contrato, registro de asistencia y liquidación coincidan',1]];
+$('#chips').innerHTML=CH.map((c,i)=>`<button class="chip2" type="button" data-i="${i}" aria-pressed="false">${c[0]}</button>`).join('');
+$$('#chips .chip2').forEach(b=>b.addEventListener('click',()=>{if(S.done.has('pick'))return;const on=b.classList.toggle('on');b.setAttribute('aria-pressed',on)}));
+$('#pickCheck').addEventListener('click',()=>{const sel=$$('#chips .chip2').map(b=>b.classList.contains('on')?1:0),ok=sel.every((v,i)=>v===CH[i][1]);
+  if(!('pick' in S.first))S.first.pick=ok;
+  if(ok){feedback($('#pickFb'),true,'Correcto.','Responsable con alerta, lista de verificación y revisión mensual cambian la forma de trabajar. Rehacer la carta y pagar el finiquito corrigen el caso: son necesarios, pero no evitan que se repita.');done('pick');$('#pickCheck').disabled=true}
+  else{const miss=CH.filter((c,i)=>c[1]&&!sel[i]).length,extra=CH.filter((c,i)=>!c[1]&&sel[i]).length;
+    feedback($('#pickFb'),false,'Aún no.',(extra?'Marcaste acciones que corrigen solo el caso: resuelven lo que ya pasó, pero no cambian el proceso. ':'')+(miss?`Te falta${miss>1?'n':''} ${miss} ${miss>1?'acciones':'acción'} de proceso: busca responsables, plazos y controles.`:''))}});
+
+/* ---------- Ordenar pasos: plan de mejora ---------- */
+const ORDER=['Identificar cada incumplimiento: a quién afecta, qué se debe y desde cuándo.','Regularizar el caso: pagar lo adeudado con reajustes e intereses y completar los documentos pendientes con fechas e información reales.','Buscar la causa raíz: qué paso del proceso falló y por qué.','Ajustar el proceso: responsables, plazos y controles (por ejemplo, una alerta antes de los 10 días hábiles del finiquito).','Verificar después de un tiempo que el error no se repite y guardar la evidencia.'];
+let cur=[3,0,4,2,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Plan bien ordenado.','Primero se dimensiona y se regulariza el caso, porque hay personas esperando sus pagos. Luego se busca la causa raíz, se ajusta el proceso y se verifica que funcione.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Pista: primero el caso, después el proceso, y al final la verificación.`)});
+/*{{TAIL}}*/
+})();
+</script>

@@ -17,23 +17,9 @@
   </question>
   <question type="multichoice">
     <name><text>m5.p2</text></name>
-    <questiontext format="html"><text><![CDATA[<p>En octubre, Ignacio, operario de Horizonte Servicios, no se presentó a trabajar el lunes 5, el miércoles 14 y el viernes 23, sin aviso ni causa justificada. Los registros de asistencia lo confirman. ¿Qué causal describe esos hechos?</p>]]></text></questiontext>
-    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 160 N°3.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p2</idnumber>
-    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
-    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Tres inasistencias injustificadas en el mes, debidamente registradas, se enmarcan en el art. 160 N°3.</p>]]></text></correctfeedback>
-    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
-    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el art. 160 N°3: dos días seguidos, dos lunes en el mes o un total de tres días en el mes sin causa justificada.</p>]]></text></incorrectfeedback>
-    <answer fraction="0" format="html"><text><![CDATA[Necesidades de la empresa (art. 161).]]></text><feedback format="html"><text><![CDATA[El art. 161 se funda en hechos objetivos de la organización, no en la conducta de una persona.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[Abandono del trabajo (art. 160 N°4).]]></text><feedback format="html"><text><![CDATA[El abandono es una causal distinta; aquí los hechos son inasistencias en días separados del mismo mes.]]></text></feedback></answer>
-    <answer fraction="100" format="html"><text><![CDATA[No concurrencia sin causa justificada durante un total de tres días en el mes (art. 160 N°3).]]></text><feedback format="html"><text><![CDATA[Correcto: el art. 160 N°3 incluye la no concurrencia sin causa justificada dos días seguidos, dos lunes en el mes o un total de tres días en el mes.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[Vencimiento del plazo convenido (art. 159 N°4).]]></text><feedback format="html"><text><![CDATA[El vencimiento del plazo es una causal objetiva que no se relaciona con inasistencias.]]></text></feedback></answer>
-  </question>
-  <question type="multichoice">
-    <name><text>m5.p3</text></name>
     <questiontext format="html"><text><![CDATA[<p>Diego ha trabajado en Horizonte Servicios con tres contratos a plazo fijo, separados por algunas semanas sin trabajo, y en total ha prestado servicios durante 13 meses dentro de un período de 15 meses. La jefatura quiere terminar el último contrato por vencimiento del plazo. ¿Qué debe advertir Camila?</p>]]></text></questiontext>
     <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 159 N°4.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p3</idnumber>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p2</idnumber>
     <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
     <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Más de dos contratos a plazo con servicios discontinuos durante 12 meses o más en 15 meses hacen presumir un contrato indefinido.</p>]]></text></correctfeedback>
     <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
@@ -44,24 +30,10 @@
     <answer fraction="0" format="html"><text><![CDATA[Que basta con avisarle con 30 días de anticipación para terminar por vencimiento.]]></text><feedback format="html"><text><![CDATA[El problema no es el aviso, sino que la ley presume que el contrato es indefinido.]]></text></feedback></answer>
   </question>
   <question type="multichoice">
-    <name><text>m5.p4</text></name>
-    <questiontext format="html"><text><![CDATA[<p>¿Qué se requiere para que el empleador pueda invocar una renuncia o un mutuo acuerdo?</p>]]></text></questiontext>
-    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 177; Ley 21.361.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p4</idnumber>
-    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
-    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Renuncia, mutuo acuerdo y finiquito constan por escrito, firmados y ratificados ante un ministro de fe o firmados electrónicamente en la Dirección del Trabajo.</p>]]></text></correctfeedback>
-    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
-    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el art. 177: escrito, firmado por la persona trabajadora y ratificado ante un ministro de fe (o firma electrónica en la DT).</p>]]></text></incorrectfeedback>
-    <answer fraction="0" format="html"><text><![CDATA[Basta un correo electrónico de la persona trabajadora a su jefatura.]]></text><feedback format="html"><text><![CDATA[Un correo no cumple los requisitos del art. 177: falta la ratificación ante un ministro de fe o la firma electrónica en el sitio de la Dirección del Trabajo.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[Que el documento esté firmado ante dos testigos de la empresa.]]></text><feedback format="html"><text><![CDATA[Los testigos de la empresa no son ministros de fe.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[Que se pague una indemnización por años de servicio.]]></text><feedback format="html"><text><![CDATA[La renuncia y el mutuo acuerdo no generan indemnización legal por años de servicio, salvo que se pacte en el mutuo acuerdo.]]></text></feedback></answer>
-    <answer fraction="100" format="html"><text><![CDATA[Que conste por escrito, firmado por la persona trabajadora y ratificado ante un ministro de fe, o firmado electrónicamente en el sitio de la Dirección del Trabajo.]]></text><feedback format="html"><text><![CDATA[Correcto: así lo exige el art. 177; la firma electrónica en el sitio de la Dirección del Trabajo se considera otorgada ante el inspector.]]></text></feedback></answer>
-  </question>
-  <question type="multichoice">
-    <name><text>m5.p5</text></name>
+    <name><text>m5.p3</text></name>
     <questiontext format="html"><text><![CDATA[<p>Una gerencia pide a Camila despedir a Carolina por necesidades de la empresa porque "su desempeño ha bajado y ya no confiamos en ella". No hay reestructuración, cambios de mercado ni supresión de cargos. ¿Qué corresponde?</p>]]></text></questiontext>
     <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 161 y 168.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p5</idnumber>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p3</idnumber>
     <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
     <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> El art. 161 exige hechos objetivos de la organización, como racionalización, modernización o cambios en el mercado.</p>]]></text></correctfeedback>
     <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
@@ -72,38 +44,24 @@
     <answer fraction="0" format="html"><text><![CDATA[Aplicar el art. 160 N°7 por incumplimiento grave, aunque no existan registros.]]></text><feedback format="html"><text><![CDATA[Una causal disciplinaria exige hechos graves y debidamente comprobados; sin registros no puede sostenerse.]]></text></feedback></answer>
   </question>
   <question type="multichoice">
-    <name><text>m5.p6</text></name>
-    <questiontext format="html"><text><![CDATA[<p>¿Respecto de quiénes procede el desahucio escrito del empleador?</p>]]></text></questiontext>
-    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 161.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p6</idnumber>
-    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
-    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> El desahucio procede solo para cargos de administración general, de exclusiva confianza y trabajadoras/es de casa particular.</p>]]></text></correctfeedback>
-    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
-    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el art. 161: el desahucio está limitado a gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y casa particular.</p>]]></text></incorrectfeedback>
-    <answer fraction="0" format="html"><text><![CDATA[De cualquier persona con contrato indefinido, con 30 días de aviso.]]></text><feedback format="html"><text><![CDATA[El desahucio está limitado a ciertos cargos; no procede para cualquier persona.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[De las personas con menos de un año de antigüedad.]]></text><feedback format="html"><text><![CDATA[La antigüedad no define el desahucio; lo define el tipo de cargo.]]></text></feedback></answer>
-    <answer fraction="100" format="html"><text><![CDATA[De gerentes, subgerentes, agentes o apoderados con facultades generales de administración, cargos de exclusiva confianza y trabajadoras/es de casa particular.]]></text><feedback format="html"><text><![CDATA[Correcto: son los únicos casos en que procede el desahucio escrito del empleador (art. 161).]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[De las personas con licencia médica que no pueden reintegrarse.]]></text><feedback format="html"><text><![CDATA[Al contrario: el art. 161 no puede invocarse respecto de personas con licencia médica.]]></text></feedback></answer>
-  </question>
-  <question type="multichoice">
-    <name><text>m5.p7</text></name>
+    <name><text>m5.p4</text></name>
     <questiontext format="html"><text><![CDATA[<p>Horizonte Servicios despide a Gonzalo por necesidades de la empresa el 20 de octubre. Después se descubre que sus cotizaciones previsionales de septiembre no estaban pagadas. ¿Qué efecto tiene esto?</p>]]></text></questiontext>
     <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 162 inc. 5.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p7</idnumber>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p4</idnumber>
     <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
     <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Con cotizaciones impagas, el despido no pone término al contrato hasta que el empleador las paga y lo comunica por carta certificada.</p>]]></text></correctfeedback>
     <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
     <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa la Ley Bustos (art. 162 inc. 5): el despido no produce efecto mientras no se paguen las cotizaciones y se convalide.</p>]]></text></incorrectfeedback>
-    <answer fraction="100" format="html"><text><![CDATA[El despido no produce el efecto de poner término al contrato: la empresa debe pagar remuneraciones y cotizaciones hasta convalidarlo, pagando las cotizaciones morosas y comunicándolo por carta certificada.]]></text><feedback format="html"><text><![CDATA[Correcto: es la regla del art. 162 inciso 5 ("Ley Bustos").]]></text></feedback></answer>
     <answer fraction="0" format="html"><text><![CDATA[Ninguno: las cotizaciones se pagan después, en el finiquito.]]></text><feedback format="html"><text><![CDATA[Las cotizaciones impagas al momento del despido impiden que este ponga término al contrato hasta convalidarlo.]]></text></feedback></answer>
     <answer fraction="0" format="html"><text><![CDATA[El despido es válido, pero la empresa paga una multa fija y termina el asunto.]]></text><feedback format="html"><text><![CDATA[El efecto principal es que el despido no pone término al contrato y siguen devengándose remuneraciones y cotizaciones hasta convalidar.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[El despido no produce el efecto de poner término al contrato: la empresa debe pagar remuneraciones y cotizaciones hasta convalidarlo, pagando las cotizaciones morosas y comunicándolo por carta certificada.]]></text><feedback format="html"><text><![CDATA[Correcto: es la regla del art. 162 inciso 5 ("Ley Bustos").]]></text></feedback></answer>
     <answer fraction="0" format="html"><text><![CDATA[Gonzalo debe pagar las cotizaciones faltantes con su indemnización.]]></text><feedback format="html"><text><![CDATA[La obligación de pagar las cotizaciones es del empleador.]]></text></feedback></answer>
   </question>
   <question type="multichoice">
-    <name><text>m5.p8</text></name>
+    <name><text>m5.p5</text></name>
     <questiontext format="html"><text><![CDATA[<p>¿Qué debe contener y en qué plazo debe entregarse la comunicación de un despido por necesidades de la empresa, cuando la persona deja de trabajar ese mismo día?</p>]]></text></questiontext>
     <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 162.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p8</idnumber>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p5</idnumber>
     <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
     <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La carta explica la causal y los hechos, informa las cotizaciones y, en el art. 161 sin aviso, el monto total; se entrega dentro de 3 días hábiles con copia a la Inspección.</p>]]></text></correctfeedback>
     <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
@@ -114,10 +72,10 @@
     <answer fraction="100" format="html"><text><![CDATA[La causal, los hechos, el estado de pago de las cotizaciones con comprobantes y, sin aviso de 30 días, el monto total a pagar; dentro de 3 días hábiles, con copia a la Inspección en el mismo plazo.]]></text><feedback format="html"><text><![CDATA[Correcto: son las menciones y el plazo del art. 162.]]></text></feedback></answer>
   </question>
   <question type="multichoice">
-    <name><text>m5.p9</text></name>
+    <name><text>m5.p6</text></name>
     <questiontext format="html"><text><![CDATA[<p>Rosa trabajó 4 años y 5 meses en Horizonte Servicios. Es despedida por necesidades de la empresa con 30 días de aviso previo. Su última remuneración mensual es de $900.000 (bajo el tope de 90 UF). ¿Cuánto le corresponde por indemnización por años de servicio?</p>]]></text></questiontext>
     <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 161 y 163.</small></p>]]></text></generalfeedback>
-    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p9</idnumber>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p6</idnumber>
     <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
     <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Se cuentan los años completos y la fracción superior a seis meses: 4 × $900.000 = $3.600.000.</p>]]></text></correctfeedback>
     <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
@@ -128,17 +86,59 @@
     <answer fraction="0" format="html"><text><![CDATA[$0, porque se dio el aviso de 30 días.]]></text><feedback format="html"><text><![CDATA[El aviso solo reemplaza la indemnización sustitutiva; la indemnización por años de servicio procede igual en el art. 161.]]></text></feedback></answer>
   </question>
   <question type="multichoice">
+    <name><text>m5.p7</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Horizonte Servicios despidió a Felipe por necesidades de la empresa. La carta de término indicó que el finiquito se otorgaría en forma electrónica y que aceptar esa vía era voluntario. Cuatro días hábiles después de su separación, Felipe <b>rechaza</b> la propuesta de finiquito electrónico. ¿Qué corresponde?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 177; Ley 21.361 (finiquito laboral electrónico); Dirección del Trabajo, Ord. N°2534 (2021).</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p7</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> La vía electrónica es voluntaria: si la persona la rechaza, el empleador ofrece el finiquito presencial dentro del plazo legal.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa el finiquito electrónico (Ley 21.361): se puede aceptar, aceptar con reserva o rechazar; si se rechaza, corresponde el finiquito presencial. El plazo de 10 días hábiles obliga al empleador.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Volver a enviarle la propuesta electrónica hasta que la acepte, porque es la vía que eligió la empresa.]]></text><feedback format="html"><text><![CDATA[Si la persona rechaza la propuesta electrónica, el empleador no puede volver a proponerla por esa vía (Ley 21.361).]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Dar por cerrado el término: la carta de despido ya comunicó la causal y el monto, así que el finiquito no es indispensable.]]></text><feedback format="html"><text><![CDATA[La carta comunica la decisión y la causal; el finiquito es otro documento, que formaliza el cierre y los pagos. La carta no lo reemplaza.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Esperar: si Felipe no firma dentro de los 10 días hábiles, pierde el derecho a recibir el pago.]]></text><feedback format="html"><text><![CDATA[El plazo de 10 días hábiles obliga al empleador, no a la persona trabajadora: Felipe puede firmar después y exigir el pago.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Ofrecerle el finiquito presencial, para ratificarlo ante un ministro de fe, dentro de los 10 días hábiles desde la separación, con el pago a su disposición.]]></text><feedback format="html"><text><![CDATA[Correcto: ante el rechazo, el empleador debe ofrecer el finiquito presencial dentro de los 10 días hábiles (o, si ya vencieron, dentro de 3 días hábiles desde el rechazo). El pago se hace al ratificar.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m5.p8</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La Inspección del Trabajo cita a Horizonte Servicios para revisar, en cinco días, la documentación laboral de su sucursal de Maipú. El supervisor de la sucursal propone: <i>"Completemos ahora los registros de asistencia que faltan y firmemos los anexos pendientes con fecha de marzo, para que la carpeta llegue impecable"</i>. ¿Qué debe hacer Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, art. 476; DFL N°2 de 1967, arts. 23 y 31.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p8</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Ante una citación se presenta la documentación real, revisada para que sea coherente; nunca se construyen documentos.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa la lección 5.7: la Dirección del Trabajo puede requerir toda la documentación laboral, que debe estar en el lugar de trabajo y reflejar la realidad.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Aceptar la propuesta: lo importante es que la carpeta llegue completa a la Inspección.]]></text><feedback format="html"><text><![CDATA[Construir o "completar" documentos cuando llega la citación no sirve: contradice la realidad que el inspector constata como ministro de fe, y sus constataciones tienen presunción legal de veracidad.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Responder que la documentación está en la casa matriz, en un sistema al que no se puede acceder desde Maipú, y que por eso no puede exhibirse.]]></text><feedback format="html"><text><![CDATA[El empleador debe mantener la documentación en el lugar de trabajo (art. 31 DFL 2). Centralizarla requiere autorización de la Dirección del Trabajo, y los sistemas electrónicos sirven si el fiscalizador puede consultarlos en el lugar.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Reunir los documentos reales (contratos y anexos, liquidaciones, registro de asistencia, comprobantes de cotizaciones, cartas y finiquitos), revisar que coincidan entre sí y, si falta algo, reconocerlo y regularizarlo con su fecha real.]]></text><feedback format="html"><text><![CDATA[Correcto: la fiscalización mira el cumplimiento real. Revisar la coherencia antes de la citación permite detectar y corregir problemas sin fabricar evidencia.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Llevar solo los finiquitos, porque son los documentos que cierran cada relación laboral.]]></text><feedback format="html"><text><![CDATA[La Inspección puede requerir toda la documentación laboral y previsional (contratos, anexos, liquidaciones, registros, comprobantes, cartas y finiquitos), no solo los finiquitos.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
+    <name><text>m5.p9</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Por qué conviene conservar ordenada la cadena documental de una relación laboral (contrato, anexos, registros, liquidaciones, carta de término y finiquito) incluso después de ratificado el finiquito?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 162, 177, 454 N°1 y 510.</small></p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p9</idnumber>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> El cumplimiento no se demuestra con un único documento: la cadena documental permite reconstruir quién decidió, qué ocurrió y qué se comunicó.</p>]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa la lección 5.8: el finiquito no reemplaza la evidencia previa y la prescripción (art. 510) es la razón práctica para conservarla.</p>]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Porque mientras estén abiertos los plazos de prescripción la empresa puede necesitar probar lo que hizo, y el finiquito no cubre las materias reservadas ni prueba por sí solo los hechos de la causal.]]></text><feedback format="html"><text><![CDATA[Correcto: los derechos prescriben en 2 años desde que se hicieron exigibles y las acciones de los actos y contratos, en 6 meses desde la terminación (art. 510). La evidencia permite reconstruir el proceso completo.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[No conviene: una vez ratificado, el finiquito reemplaza toda la evidencia anterior.]]></text><feedback format="html"><text><![CDATA[El poder liberatorio no alcanza a lo que la persona se reservó, y el finiquito no demuestra los hechos en que se fundó la causal de la carta.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Basta con conservar el contrato: los demás documentos pueden reconstruirse si alguien los pide.]]></text><feedback format="html"><text><![CDATA[Reconstruir documentos después no sirve como evidencia y puede contradecir la realidad. Cada documento de la cadena prueba algo distinto.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Porque el Código del Trabajo obliga a conservar todos los documentos laborales durante 10 años.]]></text><feedback format="html"><text><![CDATA[No uses un número de años como regla general de conservación. La razón práctica para conservar es la prescripción (art. 510): mientras los plazos estén abiertos, la empresa puede necesitar probar lo que hizo.]]></text></feedback></answer>
+  </question>
+  <question type="multichoice">
     <name><text>m5.p10</text></name>
-    <questiontext format="html"><text><![CDATA[<p>Un gerente de Horizonte Servicios, con contrato celebrado en 2012 y 14 años de servicio, es despedido por necesidades de la empresa. Su última remuneración mensual equivale a 120 UF. ¿Cuál es su indemnización por años de servicio, expresada en UF?</p>]]></text></questiontext>
-    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 163 y 172.</small></p>]]></text></generalfeedback>
+    <questiontext format="html"><text><![CDATA[<p>La Inspección del Trabajo notifica a Horizonte Servicios (mediana empresa) una multa por no haber otorgado tres finiquitos dentro de los 10 días hábiles. La gerencia propone "ordenar la carpeta" y pagar la multa. ¿Qué recomienda Camila?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><small>Fuente: Código del Trabajo, arts. 63, 173, 503, 506, 506 ter, 506 quáter y 511.</small></p>]]></text></generalfeedback>
     <defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden><idnumber>m5.p10</idnumber>
     <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
-    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Con ambos topes: 11 × 90 UF = 990 UF, que se pagan con el valor de la UF del último día del mes anterior al pago.</p>]]></text></correctfeedback>
+    <correctfeedback format="html"><text><![CDATA[<p><b>¡Correcto!</b> Se corrige el caso (con rebaja de la multa si es dentro de 15 días) y la causa raíz, para que el incumplimiento no vuelva a ocurrir.</p>]]></text></correctfeedback>
     <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
-    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Aplica los dos topes: base de hasta 90 UF (art. 172) y máximo de 330 días, es decir, 11 años (art. 163).</p>]]></text></incorrectfeedback>
-    <answer fraction="100" format="html"><text><![CDATA[990 UF: 11 años (límite de 330 días) × 90 UF (tope de la base).]]></text><feedback format="html"><text><![CDATA[Correcto: se aplican los dos topes: 330 días (11 años) y una base máxima de 90 UF.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[1.680 UF: 14 años × 120 UF.]]></text><feedback format="html"><text><![CDATA[No se aplicaron los topes: la base no puede exceder de 90 UF y los años computables, de 11.]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[1.260 UF: 14 años × 90 UF.]]></text><feedback format="html"><text><![CDATA[Se aplicó el tope de la base, pero no el límite de 330 días (11 años).]]></text></feedback></answer>
-    <answer fraction="0" format="html"><text><![CDATA[1.320 UF: 11 años × 120 UF.]]></text><feedback format="html"><text><![CDATA[Se aplicó el límite de años, pero no el tope de 90 UF para la base.]]></text></feedback></answer>
+    <incorrectfeedback format="html"><text><![CDATA[<p><b>Incorrecto.</b> Revisa la lección 5.9: corregir dentro de 15 días rebaja la multa al menos en 50%; la sustitución es para micro y pequeñas empresas, y se corrige tanto el caso como el proceso.</p>]]></text></incorrectfeedback>
+    <answer fraction="0" format="html"><text><![CDATA[Ordenar la carpeta y archivar el tema: con los documentos en orden, el problema no se repetirá.]]></text><feedback format="html"><text><![CDATA["Ordenar la carpeta" sin pagar ni corregir no resuelve nada: la fiscalización mira el cumplimiento real, y si no se corrige el proceso el incumplimiento vuelve a ocurrir.]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Reclamar la multa ante la Inspección dentro de 60 días hábiles, que es el plazo general laboral.]]></text><feedback format="html"><text><![CDATA[La multa se reclama ante el juzgado del trabajo dentro de 15 días hábiles desde su notificación (art. 503). Los 60 días hábiles son el plazo para demandar por despido (art. 168).]]></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[Pedir que la multa se sustituya por una capacitación, porque cualquier empresa puede hacerlo una vez al año.]]></text><feedback format="html"><text><![CDATA[La sustitución por capacitación y corrección (art. 506 ter) es para micro y pequeñas empresas; Horizonte es una mediana empresa.]]></text></feedback></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Corregir dentro de 15 días desde la notificación (otorgar y pagar los finiquitos pendientes, con reajustes e intereses si corresponden), lo que rebaja la multa al menos en 50%, y revisar el proceso que causó el atraso: responsables, plazos y controles.]]></text><feedback format="html"><text><![CDATA[Correcto: corregir dentro de 15 días rebaja la multa a lo menos en 50% (art. 511). Corregir la causa evita que se repita, y la conducta del empleador pesa al fijar futuras multas (art. 506 quáter).]]></text></feedback></answer>
   </question>
 </quiz>
