@@ -52,6 +52,8 @@ Ver la lista completa en `references/estandares.md`. Las esenciales:
 - Actividad: partir de `templates/ejemplos/actividad_1.html` o `actividad_2.html`. Cada `.etask` lleva `data-pts`, `data-title`, `data-lesson`; se califica con `grade(id, obtenido, máximo, explicación)` o, para opción múltiple, con `data-auto="mc"`. Una respuesta por tarea, corrección explicada, resultado por tarea con la lección a repasar y nuevo intento.
 - Simulador: partir de `templates/ejemplos/simulador.html` (pestañas Calculadora / Practicar, casos aleatorios con corrección y solución paso a paso). Declarar en pantalla lo que el simulador **no** calcula.
 - Construir con `build.py actividad ...` o `build.py simulador ...`.
+- **Caso ramificado o laboratorio de evaluación** (sin voz): fuente con `const CASO={...}` (ver `fuentes_evaluaciones/INSTRUCCIONES.md` y los ejemplos de `fuentes_evaluaciones/`), motor `assets/ev_caso.js`. Etapas `decision` (con `siguiente` por opción = ramificación), `abierta` (describir/explicar/analizar con respuesta modelo y criterios), `multi`, `clasificar`, `numero`, `ordenar`. Al final: nota, retroalimentación global por competencia, informe descargable/imprimible y `cmi.interactions`. Construir con `build.py caso ...`; probar con `scripts/test_caso.py` (recorre y revisa todos los caminos).
+- **Preguntas para el banco de Moodle**: `scripts/xml_quiz.py preguntas.json salida/Nombre` genera Moodle XML (id en el nombre, p. ej. `m2.p1`, puntaje por pregunta, retroalimentación por opción y para correcta/incorrecta) y una vista previa HTML.
 
 ## Cómo pedírmelo
 

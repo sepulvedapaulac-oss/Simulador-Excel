@@ -906,7 +906,10 @@ function body(e){
   if(e.tipo==='abierta')return `<p class="ask"><span class="verbo">${esc(e.verbo||'Explica')}</span> ${e.consigna}</p><textarea id="ta" placeholder="Escribe tu respuesta aquí…"></textarea><div class="wc" id="wc">Mínimo ${e.minPalabras||40} palabras · 0 escritas</div>`;
   if(e.tipo==='multi')return `<p class="ask">${e.pregunta}</p><div class="chkgrid">${e.items.map((it,i)=>`<label><input type="checkbox" value="${i}"/> <span>${it.texto}</span></label>`).join('')}</div>`;
   if(e.tipo==='clasificar')return `<p class="ask">${e.pregunta}</p>${e.items.map((it,i)=>`<div class="rowsel"><span>${it.texto}</span><select data-i="${i}"><option value="">Elige…</option>${e.categorias.map((c,k)=>`<option value="${k}">${esc(c)}</option>`).join('')}</select><div class="why" hidden></div></div>`).join('')}`;
-  if(e.tipo==='ordenar')return `<p class="ask">${e.pregunta}</p>${e.items.map((it,i)=>`<div class="rowsel"><span>${it.texto}</span><select data-i="${i}"><option value="">Posición…</option>${e.items.map((_,k)=>`<option value="${k}">${k+1}º</option>`).join('')}</select><div class="why" hidden></div></div>`).join('')}`;
+  if(e.tipo==='ordenar'){const ord=e.items.map((_,i)=>i);for(let k=ord.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[ord[k],ord[j]]=[ord[j],ord[k]]}
+    if(ord.every((v,i)=>v===i))ord.reverse();
+    return `<p class="ask">${e.pregunta}</p>${ord.map(i=>e.items[i]).map((it,n)=>`<div class="rowsel"><span>${it.texto}</span><select data-i="${ord[n]}">`+e.items.map((_,k)=>`<option value="${k}">${k+1}º</option>`).join('').replace(/^/,'<option value="">Posición…</option>')+`</select><div class="why" hidden></div></div>`).join('')}`}
+  if(false)return `<p class="ask">${e.pregunta}</p>${e.items.map((it,i)=>`<div class="rowsel"><span>${it.texto}</span><select data-i="${i}"><option value="">Posición…</option>${e.items.map((_,k)=>`<option value="${k}">${k+1}º</option>`).join('')}</select><div class="why" hidden></div></div>`).join('')}`;
   if(e.tipo==='numero')return `<p class="ask">${e.pregunta}</p>${e.campos.map((c,i)=>`<div class="rowsel"><span>${c.label}</span><input inputmode="decimal" data-i="${i}" placeholder="${esc(c.unidad||'')}"/></div>`).join('')}`;
   return ''}
 function wire(e){const nd=$('#nd'),send=$('#send');
@@ -934,7 +937,7 @@ function evaluate(e){const nd=$('#nd'),m=maxOf(e);let pts=0,ans='',det='';
     det=e.items.map((it,i)=>`${it.ok?'✔':'✘'} ${it.texto}${it.fb?': '+it.fb:''}`).join('<br/>');
     fb(pts>=m?'good':pts>0?'warn':'bad',`<strong>${fmt(pts)} de ${fmt(m)} puntos.</strong> <span class="fb-body">${e.fb?e.fb+'<br/>':''}${det}</span>`);ST.res[e.id]={pts,max:m,ans,fb:(e.fb||'')+' '+det}}
   else if(['clasificar','ordenar'].includes(e.tipo)){let ok=0;const ss=$$('select',nd),parts=[];
-    ss.forEach((s,i)=>{const it=e.items[i],good=e.tipo==='ordenar'?+s.value===i:+s.value===it.cat;s.disabled=true;s.classList.add(good?'good':'bad');if(good)ok++;
+    ss.forEach(s=>{const i=+s.dataset.i,it=e.items[i],good=e.tipo==='ordenar'?+s.value===i:+s.value===it.cat;s.disabled=true;s.classList.add(good?'good':'bad');if(good)ok++;
       const w=s.parentElement.querySelector('.why');const right=e.tipo==='ordenar'?`${i+1}º`:e.categorias[it.cat];w.hidden=false;w.innerHTML=`${good?'✔':'✘ Correcto: <b>'+esc(right)+'</b>.'} ${it.fb||''}`;
       parts.push(`${it.texto.replace(/<[^>]+>/g,'')} → ${e.tipo==='ordenar'?(+s.value+1)+'º':e.categorias[+s.value]}`)});
     pts=m*ok/e.items.length;ans=parts.join(' | ');fb(pts>=m?'good':pts>0?'warn':'bad',`<strong>${ok} de ${e.items.length} correctas · ${fmt(pts)} de ${fmt(m)} puntos.</strong> <span class="fb-body">${e.fb||''}</span>`);
