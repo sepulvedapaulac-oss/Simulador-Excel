@@ -144,18 +144,20 @@ Va justo después del cuestionario de cada módulo. **Nombre:** Evaluación rami
 
 > **Evaluación final del curso · Parte 1: Cuestionario**
 >
-> Luego de haber recorrido los cuatro módulos del curso (fundamentos de IA, revisión y validación de remuneraciones, análisis de datos y reportes, y automatización y productividad), llegó el momento de **evaluar de manera integral tu proceso de aprendizaje**.
+> El presente instrumento tiene como finalidad medir los conocimientos teóricos adquiridos durante el proceso de aprendizaje en el curso. Para esto tendrás **1 (una) hora cronológica** a fin de que puedas responder todas las preguntas que se presentan.
 >
-> Esta evaluación final te permitirá demostrar la competencia del curso: **analizar procedimientos de gestión de remuneraciones con inteligencia artificial según criterios de protección de información salarial**. Tiene dos partes: este cuestionario y un caso práctico integrador.
+> A continuación, se presenta una serie de **20 preguntas de selección múltiple** que consideran contenidos de cada uno de los módulos, cinco por módulo, identificadas como M1.P1 a M4.P5. Lee detenidamente cada una de las situaciones que se presentan y selecciona la alternativa correcta. Cada pregunta tiene cuatro alternativas y una sola respuesta correcta.
 >
-> **Antes de comenzar**
-> - Son **20 preguntas de selección múltiple**, cinco por módulo, identificadas como M1.P1 a M4.P5.
-> - Cada pregunta tiene cuatro alternativas y una sola respuesta correcta.
-> - Tienes **1 intento** y **40 minutos**. Al terminar el tiempo, el intento se envía automáticamente.
-> - Al enviar verás tu resultado y la explicación de cada alternativa.
-> - Esta parte equivale al **35 % de tu nota final** y **debes aprobarla** (70 %).
+> **Criterios de evaluación**
 >
-> Cuando termines, continúa con la **Parte 2: caso práctico integrador**.
+> - **Módulo 1:** Identifica herramientas de inteligencia artificial en la gestión de remuneraciones según criterios de uso responsable de información salarial.
+> - **Módulo 2:** Describe procedimientos de revisión de remuneraciones con inteligencia artificial según protocolos de validación de resultados.
+> - **Módulo 3:** Interpreta variaciones mensuales de remuneraciones en reportes con inteligencia artificial según indicadores de gestión.
+> - **Módulo 4:** Analiza flujos de trabajo de remuneraciones con inteligencia artificial según criterios de control de calidad.
+>
+> Cada pregunta vale 1 punto. La nota máxima es **7,0 con 20 puntos** y la nota mínima aprobatoria es **4,0 con 14 puntos**.
+>
+> Tienes **1 intento**. Al terminar el tiempo, el intento se envía automáticamente. Esta parte equivale al **35 % de tu nota final** y debes aprobarla. Cuando termines, continúa con la **Parte 2: caso práctico integrador**.
 
 ---
 
@@ -201,8 +203,8 @@ Va justo después del cuestionario de cada módulo. **Nombre:** Evaluación rami
 
 | Sección | Ajuste |
 |---|---|
-| Temporalización | Límite de tiempo: 40 minutos. Cuando el tiempo termina: el intento se envía automáticamente. |
-| Calificación | Intentos permitidos: 1. Calificación para aprobar: 70 %. Peso en el libro de calificaciones: 35 %. |
+| Temporalización | Límite de tiempo: 60 minutos. Cuando el tiempo termina: el intento se envía automáticamente. |
+| Calificación | Intentos permitidos: 1. Calificación máxima: 20 (1 punto por pregunta). Calificación para aprobar: 14 (70 %, nota 4,0). Peso en el libro de calificaciones: 35 %. |
 | Esquema | Página nueva: cada pregunta. |
 | Comportamiento de las preguntas | Ordenar al azar las respuestas: Sí. Comportamiento: **Retroalimentación diferida**. |
 | Opciones de revisión | «Inmediatamente después del intento»: el intento, si fue correcta, puntos, retroalimentación específica y respuesta correcta. |
