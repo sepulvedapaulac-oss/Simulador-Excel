@@ -19,7 +19,7 @@ rep = [
  ('<div class="fe-part"><b>Parte 1 · 20 preguntas</b>Cinco preguntas de selección múltiple por módulo, identificadas como M1.P1, M1.P2… hasta M4.P5. Al responder cada una verás si es correcta o incorrecta, con su explicación. Cada pregunta se responde una sola vez.</div>',
   '<div class="fe-part"><b>Lo que harás</b>Actuarás como Camila en el cierre de noviembre de AndesCorp. Cada tarea corresponde a un aprendizaje esperado del curso (AE1 a AE4) y recibes retroalimentación al confirmarla.</div>'),
  ('<b>Parte 2 · Laboratorio de análisis</b>', '<b>Cuatro tareas</b>'),
- ('Parte 1 (50 %) + Parte 2 (50 %). Apruebas con <b>70 %</b>.', 'Promedio de las cuatro tareas. Apruebas con <b>70 %</b>. Esta parte equivale al 30 % de la nota final del curso.'),
+ ('Parte 1 (50 %) + Parte 2 (50 %). Apruebas con <b>70 %</b>.', 'Promedio de las cuatro tareas. Apruebas con <b>70 %</b>. Esta parte equivale al 35 % de la nota final del curso y debes aprobarla.'),
  ('<span class="lab-badge">Parte 2 de 2 · Laboratorio de análisis</span>', '<span class="lab-badge">Parte 2 · Caso práctico integrador</span>'),
 ]
 for a, b in rep:

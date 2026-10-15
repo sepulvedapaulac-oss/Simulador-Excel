@@ -112,15 +112,16 @@ Todas las lecciones incluyen, además: video integrado, comprobación breve, tra
 
 Cada módulo incluye además: **1 video Moodle en MP4** (1080p, presentación y síntesis del módulo, con la voz del curso, sin música y con subtítulos `.vtt`), **resumen carrusel** y **glosario carrusel**.
 
-## 7. Evaluación (propuesta de ponderación en Moodle)
+## 7. Evaluación (ponderación definida por la autora, octubre 2026)
 
-Cada módulo pesa 25 %.
+| Componente | Peso |
+|---|---:|
+| Laboratorios A y B (2,5 % por módulo; 1,25 % cada laboratorio) | 10 % |
+| Evaluación de cada módulo (5 % c/u): M1 = cuestionario; M2–M4 = cuestionario 2,5 % + evaluación ramificada 2,5 % | 20 % |
+| Evaluación final · Parte 1 (cuestionario XML de 20 preguntas) | 35 % |
+| Evaluación final · Parte 2 (SCORM caso práctico integrador) | 35 % |
 
-| Componente | Módulo 1 | Módulos 2–4 |
-|---|---:|---:|
-| Cuestionario XML (10 preguntas) | 50 % | 30 % |
-| Laboratorios A + B | 50 % | 30 % |
-| Evaluación final ramificada (SCORM) | — | 40 % |
+Aprobación: aprobar la evaluación de cada módulo y las dos partes de la evaluación final (70 % cada una), y nota final ponderada ≥ 4,0 (escala 1,0–7,0). El caso Mindsmith es práctica sin nota. Nota: la planilla SENCE original declaraba 4 × 10 % + 60 % con evaluaciones de módulo formativas; hay que actualizarla.
 
 ## 8. Pendientes técnicos
 

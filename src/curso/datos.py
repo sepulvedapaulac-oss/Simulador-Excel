@@ -56,9 +56,16 @@ MODULOS = [
 ]
 
 # Evaluación (planilla SENCE)
-PONDERACION = [("Actividades prácticas del Módulo 1 (laboratorios)", 10), ("Actividades prácticas del Módulo 2 (laboratorios)", 10),
-               ("Actividades prácticas del Módulo 3 (laboratorios)", 10), ("Actividades prácticas del Módulo 4 (laboratorios)", 10),
-               ("Evaluación final · Parte 1: cuestionario de selección múltiple", 30),
-               ("Evaluación final · Parte 2: caso práctico integrador (laboratorio de análisis)", 30)]
+# Ponderación definida por la autora: laboratorios 10 %, evaluaciones de módulo 20 %, evaluación final 70 %.
+# Evaluación de cada módulo: M1 = cuestionario; M2–M4 = cuestionario 50 % + evaluación ramificada 50 %.
+PONDERACION = [("Laboratorios A y B de los cuatro módulos (2,5 % por módulo)", "10"),
+               ("Evaluación del Módulo 1: cuestionario", "5"),
+               ("Evaluación del Módulo 2: cuestionario (2,5 %) y evaluación ramificada (2,5 %)", "5"),
+               ("Evaluación del Módulo 3: cuestionario (2,5 %) y evaluación ramificada (2,5 %)", "5"),
+               ("Evaluación del Módulo 4: cuestionario (2,5 %) y evaluación ramificada (2,5 %)", "5"),
+               ("Evaluación final · Parte 1: cuestionario de 20 preguntas", "35"),
+               ("Evaluación final · Parte 2: caso práctico integrador", "35")]
+APROBACION = ("Para aprobar el curso debes aprobar la evaluación de cada módulo y las dos partes de la evaluación final, "
+              "y obtener 4,0 o más en la nota final ponderada.")
 ESCALA = "Escala de 1,0 a 7,0. Nota mínima de aprobación: 4,0 en la nota final ponderada."
 ADMIN = "Completar el 100 % de los módulos del curso en la plataforma."

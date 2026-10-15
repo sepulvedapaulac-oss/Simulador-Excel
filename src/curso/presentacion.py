@@ -18,14 +18,14 @@ def hb(rows):
 def modulo(m):
     p, a, e = m["dist"]
     lecc = "".join(f"<li>Lección {l}</li>" for l in m["lecciones"])
-    extra = f'<li><b>Evaluación ramificada:</b> «{m["ramificada"]}» (formativa)</li>' if m["ramificada"] else ""
+    extra = f'<li><b>Evaluación ramificada:</b> «{m["ramificada"]}» (2,5 % de la nota)</li>' if m["ramificada"] else ""
     return {"kicker": f"Módulo {m['n']} · {m['horas']} horas", "title": m["titulo"],
             "body": f'<div class="ae"><small>Aprendizaje esperado {m["ae"]}</small>{m["aprendizaje"]}</div>'
                     f'<p><b>Cómo lo lograrás:</b> {m["como"]}</p><ul class="points">{lecc}</ul>'
                     f'<table class="mini"><tbody><tr><td>🧪 Laboratorios</td><td>{m["labs"][0].split(" · ")[1]} · {m["labs"][1].split(" · ")[1]}</td></tr>'
                     f'<tr><td>📄 PDF</td><td>{m["pdf"][0]} · {m["pdf"][1]}</td></tr>'
                     f'<tr><td>⏱ Horas</td><td>{p} h plataforma · {a} h trabajo autónomo · {e} h evaluación</td></tr></tbody></table>'
-                    f'<ul class="points"><li><b>Además:</b> video de bienvenida, resumen y glosario interactivos, caso de análisis y cuestionario de 10 preguntas (formativo)</li>{extra}</ul>',
+                    f'<ul class="points"><li><b>Además:</b> video de bienvenida, resumen y glosario interactivos, caso de análisis (práctica) y cuestionario de 10 preguntas (evaluación del módulo)</li>{extra}</ul>',
             "img": m["img"], "alt": m["alt"],
             "key": f"Criterio de evaluación: {m['criterio']}"}
 
@@ -68,18 +68,17 @@ PRESENTACION = [
  {"kicker": "Recorrido de cada módulo", "title": "El orden sugerido dentro de un módulo",
   "body": '<ol class="steps"><li><b>Video de bienvenida</b> del módulo</li><li><b>Lecciones x.1 y x.2</b> y el primer PDF de apoyo</li><li><b>Laboratorio A</b>: practicas lo aprendido</li>'
           '<li><b>Lecciones x.3 y x.4</b> y el segundo PDF</li><li><b>Laboratorio B</b>: aplicas en un caso más completo</li><li><b>Resumen y glosario</b> interactivos para repasar</li>'
-          '<li><b>Caso de análisis</b> y <b>cuestionario</b> del módulo (formativos)</li><li><b>Evaluación ramificada</b> (módulos 2 a 4, formativa)</li></ol>',
-  "key": "Completa el 100 % de los módulos: es requisito para aprobar el curso."},
+          '<li><b>Caso de análisis</b> para practicar</li><li><b>Evaluación del módulo</b>: cuestionario y, en los módulos 2 a 4, evaluación ramificada. Debes aprobarla para avanzar.</li></ol>',
+  "key": "Debes aprobar la evaluación de cada módulo y completar el 100 % de los módulos."},
  {"kicker": "Formato de evaluación", "title": "Cómo se calcula tu nota final",
   "body": '<table class="mini"><thead><tr><th>Componente</th><th>Peso</th></tr></thead><tbody>' +
           "".join(f'<tr><td>{n}</td><td class="n">{p} %</td></tr>' for n, p in PONDERACION) +
           '<tr class="tot"><td>Total</td><td class="n">100 %</td></tr></tbody></table>',
-  "points": [ESCALA, "Las actividades prácticas de cada módulo se evalúan con una rúbrica de evaluación práctica.",
-             "El cuestionario, el caso de análisis y la evaluación ramificada de cada módulo son formativos: no se ponderan."],
+  "points": [ESCALA, APROBACION, "En los módulos 2, 3 y 4, la evaluación del módulo combina el cuestionario y la evaluación ramificada en partes iguales."],
   "key": f"Requisito administrativo: {ADMIN[0].lower() + ADMIN[1:]}"},
  {"kicker": "Instrumentos de evaluación", "title": "Qué se evalúa en cada etapa",
   "body": '<table class="mini"><thead><tr><th>Etapa</th><th>Instrumento</th></tr></thead><tbody>' +
-          "".join(f'<tr><td>Módulo {m["n"]} ({m["ae"]})</td><td>{m["labs"][0].split(" · ")[1]} y {m["labs"][1].split(" · ")[1].lower()}, con rúbrica de evaluación práctica.</td></tr>' for m in MODULOS) +
+          "".join(f'<tr><td>Módulo {m["n"]} ({m["ae"]})</td><td>Laboratorios: {m["labs"][0].split(" · ")[1].lower()} y {m["labs"][1].split(" · ")[1].lower()}. Evaluación: cuestionario de 10 preguntas{" y evaluación ramificada «" + m["ramificada"] + "»" if m["ramificada"] else ""}.</td></tr>' for m in MODULOS) +
           '<tr><td>Evaluación final · Parte 1</td><td>Cuestionario de 20 preguntas de selección múltiple (M1.P1 a M4.P5), con calificación automática.</td></tr>'
           '<tr><td>Evaluación final · Parte 2</td><td>Caso práctico integrador con una tarea por aprendizaje esperado, evaluado con rúbrica de caso práctico.</td></tr></tbody></table>',
   "key": "Al terminar la evaluación final descargas un PDF con tus resultados."},

@@ -4,14 +4,16 @@ Textos listos para pegar en **General → Descripción** de cada actividad, en e
 
 | Orden | Actividad en Moodle | Tipo | Archivo | Peso |
 |---|---|---|---|---|
-| 1 | Evaluación Módulo 1 | Cuestionario | `Cuestionario_Modulo1_Moodle.xml` | Formativa |
-| 2 | Evaluación Módulo 2 | Cuestionario | `Cuestionario_Modulo2_Moodle.xml` | Formativa |
-| 3 | Evaluación Módulo 3 | Cuestionario | `Cuestionario_Modulo3_Moodle.xml` | Formativa |
-| 4 | Evaluación Módulo 4 | Cuestionario | `Cuestionario_Modulo4_Moodle.xml` | Formativa |
-| 5 | Evaluación final · Parte 1 | Cuestionario | `Evaluacion_final_curso_Parte1_Moodle.xml` | 30 % |
-| 6 | Evaluación final · Parte 2 | Paquete SCORM | `Evaluacion_final_Parte2_caso_practico_SCORM12.zip` | 30 % |
+| 1 | Evaluación Módulo 1 | Cuestionario | `Cuestionario_Modulo1_Moodle.xml` | 5 % |
+| 2 | Evaluación Módulo 2 | Cuestionario + evaluación ramificada (SCORM) | `Cuestionario_Modulo2_Moodle.xml` + `Evaluacion_final_Modulo_2_Cierre_bajo_revision_SCORM12.zip` | 2,5 % + 2,5 % |
+| 3 | Evaluación Módulo 3 | Cuestionario + evaluación ramificada (SCORM) | `Cuestionario_Modulo3_Moodle.xml` + `Evaluacion_final_Modulo_3_La_gerencia_necesita_respuestas_SCORM12.zip` | 2,5 % + 2,5 % |
+| 4 | Evaluación Módulo 4 | Cuestionario + evaluación ramificada (SCORM) | `Cuestionario_Modulo4_Moodle.xml` + `Evaluacion_final_Modulo_4_Modernizando_el_cierre_SCORM12.zip` | 2,5 % + 2,5 % |
+| 5 | Evaluación final · Parte 1 | Cuestionario | `Evaluacion_final_curso_Parte1_Moodle.xml` | 35 % |
+| 6 | Evaluación final · Parte 2 | Paquete SCORM | `Evaluacion_final_Parte2_caso_practico_SCORM12.zip` | 35 % |
 
-Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por módulo).
+Los laboratorios A y B completan el 10 % restante (2,5 % por módulo; 1,25 % cada laboratorio).
+
+**Condición de aprobación:** el participante debe **aprobar la evaluación de cada módulo** y **las dos partes de la evaluación final**, y obtener 4,0 o más en la nota final ponderada (escala de 1,0 a 7,0). En Moodle, configúralo en *Finalización del curso*: marca como requisito cada evaluación con la condición «Obtener calificación de aprobado».
 
 ---
 
@@ -32,7 +34,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 > - Cada pregunta tiene cuatro alternativas y una sola respuesta correcta.
 > - Al responder verás si acertaste y la explicación de cada alternativa.
 > - Tienes **2 intentos** y se considera tu mejor resultado.
-> - Es una evaluación **formativa**: te ayuda a reconocer qué dominas y qué repasar, y no se pondera en la nota final.
+> - Equivale al **5 % de tu nota final** y **debes aprobarla** (70 %) para aprobar el curso.
 > - Tiempo estimado: 20 minutos.
 >
 > ¡Confía en lo que aprendiste y responde con calma!
@@ -55,7 +57,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 > - Son **10 preguntas de selección múltiple** sobre el cierre de remuneraciones de AndesCorp.
 > - Al responder verás si acertaste y la explicación de cada alternativa.
 > - Tienes **2 intentos** y se considera tu mejor resultado.
-> - Es una evaluación **formativa**: no se pondera en la nota final.
+> - Junto con la evaluación ramificada del módulo, equivale al **5 % de tu nota final** (2,5 % cada una) y **debes aprobarla** (70 %) para aprobar el curso.
 > - Tiempo estimado: 20 minutos.
 >
 > Recuerda: la IA señala, pero eres tú quien verifica con evidencia.
@@ -78,7 +80,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 > - Son **10 preguntas de selección múltiple** sobre los reportes que Camila prepara para la gerencia.
 > - Al responder verás si acertaste y la explicación de cada alternativa.
 > - Tienes **2 intentos** y se considera tu mejor resultado.
-> - Es una evaluación **formativa**: no se pondera en la nota final.
+> - Junto con la evaluación ramificada del módulo, equivale al **5 % de tu nota final** (2,5 % cada una) y **debes aprobarla** (70 %) para aprobar el curso.
 > - Tiempo estimado: 20 minutos.
 >
 > Ten a mano una calculadora: algunas preguntas piden interpretar cifras.
@@ -101,10 +103,36 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 > - Son **10 preguntas de selección múltiple** sobre la modernización del cierre en AndesCorp.
 > - Al responder verás si acertaste y la explicación de cada alternativa.
 > - Tienes **2 intentos** y se considera tu mejor resultado.
-> - Es una evaluación **formativa**: no se pondera en la nota final.
+> - Junto con la evaluación ramificada del módulo, equivale al **5 % de tu nota final** (2,5 % cada una) y **debes aprobarla** (70 %) para aprobar el curso.
 > - Tiempo estimado: 20 minutos.
 >
-> Con este módulo completas el recorrido del curso. A continuación te espera la evaluación final.
+> Con este módulo completas el recorrido del curso. A continuación te esperan la evaluación ramificada del módulo y la evaluación final.
+
+---
+
+## Evaluación ramificada de los módulos 2, 3 y 4 (SCORM)
+
+Va justo después del cuestionario de cada módulo. **Nombre:** Evaluación ramificada Módulo N.
+
+**Descripción** (cambia el número y el título del caso):
+
+> **Evaluación ramificada del Módulo N · «[título del caso]»**
+>
+> Luego de haber respondido el cuestionario del módulo, llegó el momento de **demostrar tu criterio en un caso que se ramifica según tus decisiones**. Acompañarás a Camila en una situación del cierre de AndesCorp: cada decisión tiene consecuencias y define el camino que sigue el caso.
+>
+> **Antes de comenzar**
+> - Son 7 u 8 decisiones con tres alternativas cada una, con retroalimentación en cada paso.
+> - Junto con el cuestionario del módulo equivale al **5 % de tu nota final** (2,5 % cada uno) y **debes aprobarla** (70 %).
+> - Puedes reintentar el caso; se considera tu mejor resultado.
+> - Tiempo estimado: 25 minutos.
+
+| Módulo | Título del caso | Archivo |
+|---|---|---|
+| 2 | Cierre de remuneraciones bajo revisión | `Evaluacion_final_Modulo_2_Cierre_bajo_revision_SCORM12.zip` |
+| 3 | La gerencia necesita respuestas | `Evaluacion_final_Modulo_3_La_gerencia_necesita_respuestas_SCORM12.zip` |
+| 4 | Modernizando el cierre mensual | `Evaluacion_final_Modulo_4_Modernizando_el_cierre_SCORM12.zip` |
+
+**Configuración (SCORM):** subir el zip tal cual · Método de calificación: calificación más alta · Intentos: sin límite · Completitud: «aprobado» · Peso: 2,5 %.
 
 ---
 
@@ -125,7 +153,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 > - Cada pregunta tiene cuatro alternativas y una sola respuesta correcta.
 > - Tienes **1 intento** y **40 minutos**. Al terminar el tiempo, el intento se envía automáticamente.
 > - Al enviar verás tu resultado y la explicación de cada alternativa.
-> - Esta parte equivale al **30 % de tu nota final**.
+> - Esta parte equivale al **35 % de tu nota final** y **debes aprobarla** (70 %).
 >
 > Cuando termines, continúa con la **Parte 2: caso práctico integrador**.
 
@@ -150,7 +178,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 > - Completa primero la Parte 1.
 > - Reserva unos 60 minutos. Si sales, tu avance queda guardado y puedes continuar donde quedaste.
 > - Al terminar podrás **descargar un PDF con tus resultados**.
-> - Esta parte equivale al **30 % de tu nota final**.
+> - Esta parte equivale al **35 % de tu nota final** y **debes aprobarla** (70 %).
 >
 > Escala de 1,0 a 7,0. Nota mínima de aprobación del curso: 4,0 en la nota final ponderada.
 
@@ -163,7 +191,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 | Sección | Ajuste |
 |---|---|
 | Temporalización | Sin fecha de cierre (curso asincrónico). Límite de tiempo desactivado, o 30 minutos si quieres un límite. |
-| Calificación | Intentos permitidos: 2. Método: calificación más alta. Calificación para aprobar: 70 %. En el libro de calificaciones, peso 0 (formativa). |
+| Calificación | Intentos permitidos: 2. Método: calificación más alta. Calificación para aprobar: 70 %. Peso en el libro de calificaciones: 5 % en el Módulo 1; 2,5 % en los módulos 2 a 4 (el otro 2,5 % es la evaluación ramificada). |
 | Esquema | Página nueva: cada pregunta. |
 | Comportamiento de las preguntas | Ordenar al azar las respuestas: Sí. Comportamiento: **Retroalimentación inmediata**. |
 | Opciones de revisión | Marcar todo (intento, si fue correcta, puntos, retroalimentación específica y general, respuesta correcta). |
@@ -174,7 +202,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 | Sección | Ajuste |
 |---|---|
 | Temporalización | Límite de tiempo: 40 minutos. Cuando el tiempo termina: el intento se envía automáticamente. |
-| Calificación | Intentos permitidos: 1. Calificación para aprobar: 70 %. Peso en el libro de calificaciones: 30 %. |
+| Calificación | Intentos permitidos: 1. Calificación para aprobar: 70 %. Peso en el libro de calificaciones: 35 %. |
 | Esquema | Página nueva: cada pregunta. |
 | Comportamiento de las preguntas | Ordenar al azar las respuestas: Sí. Comportamiento: **Retroalimentación diferida**. |
 | Opciones de revisión | «Inmediatamente después del intento»: el intento, si fue correcta, puntos, retroalimentación específica y respuesta correcta. |
@@ -185,7 +213,7 @@ Los laboratorios A y B de cada módulo completan el 40 % restante (10 % por mód
 | Sección | Ajuste |
 |---|---|
 | Paquete | Subir `Evaluacion_final_Parte2_caso_practico_SCORM12.zip` tal cual. |
-| Calificación | Método: calificación más alta. Calificación máxima: 100. Peso en el libro de calificaciones: 30 %. |
+| Calificación | Método: calificación más alta. Calificación máxima: 100. Peso en el libro de calificaciones: 35 %. |
 | Intentos | 1 (el avance se guarda si el participante sale). |
 | Completitud | «Estado requerido: aprobado» y «Calificación requerida». |
 | Restricción de acceso (opcional) | Disponible cuando se complete «Evaluación final · Parte 1». |
