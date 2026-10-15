@@ -1,0 +1,127 @@
+<style>
+/* Evaluación diagnóstica · componentes propios (usan los tokens del curso) */
+.dg-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+@media(max-width:700px){.dg-fields{grid-template-columns:1fr}}
+.dg-fields input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:600}
+.dg-err{color:var(--bad);font-weight:800;min-height:1.4em;margin:8px 0 0}
+.dg-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+@media(max-width:860px){.dg-steps{grid-template-columns:1fr}}
+.dg-step{border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface2)}
+.dg-step b{display:block;font-size:1.02rem;margin-bottom:4px;color:var(--navy)}
+.dg-step .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--teal);color:var(--on-accent);font-weight:900;font-size:.8rem;margin-right:6px}
+.dg-auto{display:grid;gap:12px;margin-top:12px}
+.dg-ai{border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface)}
+.dg-ai .ae{font-size:.78rem;font-weight:900;letter-spacing:.04em;color:var(--teal-ink);text-transform:uppercase}
+.dg-ai p{margin:.3rem 0 .7rem;font-weight:700;max-width:none}
+.dg-lv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media(max-width:700px){.dg-lv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dg-lv button{border:2px solid var(--line2);background:var(--surface2);border-radius:14px;padding:9px 8px;font:inherit;font-size:.86rem;font-weight:800;color:var(--ink);cursor:pointer;text-align:center;line-height:1.25}
+.dg-lv button i{display:block;font-style:normal;font-size:1.05rem;color:var(--teal)}
+.dg-lv button.on{border-color:var(--teal);background:var(--mint);color:var(--teal-ink)}
+.dg-lv button:focus-visible{outline:3px solid var(--teal2);outline-offset:2px}
+.dg-dots{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0 12px}
+.dg-dots button{width:16px;height:16px;border-radius:5px;background:var(--track);border:0;padding:0;cursor:pointer}
+.dg-dots button.a{background:var(--teal2)}
+.dg-dots button.now{background:var(--teal);box-shadow:0 0 0 3px color-mix(in srgb,var(--teal2) 35%,transparent)}
+.dg-q{border:1px solid var(--line);border-radius:20px;padding:16px 18px;background:var(--surface3)}
+.dg-q h3{margin:.6rem 0 .8rem}
+.dg-qhead{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.84rem;font-weight:800;color:var(--muted)}
+.dg-id{padding:4px 10px;border-radius:999px;background:var(--navy);color:#fff;font-weight:900;letter-spacing:.03em}
+.dg-n{margin-left:auto;font-variant-numeric:tabular-nums}
+.opt.sel{border-color:var(--teal);background:var(--mint);color:var(--teal-ink)}
+.opt.sel .letter{background:var(--teal);color:var(--on-accent)}
+.dg-nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-top:8px}
+.dg-map{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start;margin-top:12px}
+@media(max-width:900px){.dg-map{grid-template-columns:1fr}}
+.dg-radar{border:1px solid var(--line);border-radius:22px;background:var(--surface);padding:10px}
+.dg-radar svg{width:100%;height:auto;display:block}
+.dg-radar .grid{fill:none;stroke:var(--line);stroke-width:1}
+.dg-radar .axis{stroke:var(--line);stroke-width:1}
+.dg-radar .res{fill:color-mix(in srgb,var(--teal2) 32%,transparent);stroke:var(--teal);stroke-width:3}
+.dg-radar .per{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-dasharray:7 5}
+.dg-radar .dot{fill:var(--teal)}
+.dg-radar .pdot{fill:var(--amber)}
+.dg-radar text{fill:var(--ink);font:800 15px var(--font)}
+.dg-radar text.v{fill:var(--muted);font:700 11px var(--font)}
+.dg-leg{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;font-size:.84rem;font-weight:800;color:var(--muted);margin:4px 0 2px}
+.dg-leg i{display:inline-block;width:22px;height:0;border-top:4px solid var(--teal);vertical-align:middle;margin-right:6px}
+.dg-leg i.p{border-top:3px dashed var(--amber)}
+.dg-ae{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface);margin-bottom:10px}
+.dg-ae .top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.dg-ae .top .pill{margin-left:auto}
+.dg-ae p{margin:.35rem 0 0;font-size:.9rem;max-width:none}
+.dg-bars{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 8px;align-items:center;font-size:.8rem;font-weight:800;color:var(--muted);margin-top:8px}
+.dg-bar{display:block;height:9px;border-radius:999px;background:var(--track);overflow:hidden}
+.dg-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.dg-bar.p span{background:var(--amber)}
+.dg-grid{display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));gap:6px;margin-top:10px;font-size:.82rem}
+.dg-grid .h{font-weight:900;color:var(--muted);text-align:center;align-self:end}
+.dg-grid .r{font-weight:900;color:var(--navy);align-self:center;padding-right:4px}
+.dg-grid .c{border-radius:10px;padding:8px 4px;text-align:center;font-weight:900;border:1px solid}
+.dg-grid .c.ok{background:var(--good-soft);border-color:var(--good-line);color:var(--good)}
+.dg-grid .c.no{background:var(--bad-soft);border-color:var(--bad-line);color:var(--bad)}
+.dg-grid .sm{display:none}
+@media(max-width:700px){.dg-grid{gap:4px;font-size:.74rem}.dg-grid .lg{display:none}.dg-grid .sm{display:inline}.dg-radar text{font-size:30px}.dg-radar text.v{display:none}}
+.dg-route{margin:8px 0 0;padding-left:20px}
+.dg-route li{margin:4px 0}
+.dg-rev{border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-top:10px;background:var(--surface)}
+.dg-rev.ok{border-color:var(--good-line)}.dg-rev.no{border-color:var(--bad-line)}
+.dg-rev h4{margin:.3rem 0 .4rem;font-size:.98rem}
+.dg-rev p{margin:.25rem 0;font-size:.9rem;max-width:none}
+.dg-rev .tag{font-size:.78rem;font-weight:900;color:var(--muted)}
+.dg-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+@media(max-width:700px){.dg-sum{grid-template-columns:1fr}}
+.dg-sum div{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface2);font-size:.86rem;font-weight:800;color:var(--muted)}
+.dg-sum b{display:block;font-size:1.5rem;color:var(--ink);font-variant-numeric:tabular-nums}
+details.dg-det{margin-top:14px}
+details.dg-det summary{cursor:pointer;font-weight:900;color:var(--teal-ink)}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Antes de comenzar" data-gate="start" data-gate-msg="Escribe tu nombre y apellido y presiona “Comenzar el diagnóstico”.">
+  <div class="hero-grid">
+    <div>
+      <span class="lab-badge">Evaluación diagnóstica · sin nota</span>
+      <h1>¿Desde dónde partes?</h1>
+      <p class="lead">Este diagnóstico explora lo que ya sabes sobre los cuatro módulos del curso <strong>Inteligencia Artificial aplicada a la Gestión de Remuneraciones</strong>. No tiene nota y no afecta tu calificación final.</p>
+    </div>
+    <div class="photo-frame wide"><img src="img/i11_reunion.jpg" alt="Equipo de remuneraciones conversando alrededor de una mesa con computadores"/></div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Competencia del curso</strong>
+    <p style="margin:6px 0 0" id="dgComp"></p></div>
+  <div class="dg-steps">
+    <div class="dg-step"><b><span class="n">1</span>Autoevaluación</b>Indicas cómo te percibes hoy en cada uno de los cuatro aprendizajes esperados.</div>
+    <div class="dg-step"><b><span class="n">2</span>20 situaciones</b>Cinco preguntas por módulo, basadas en el caso de Camila en AndesCorp. Puedes cambiar tus respuestas antes de terminar.</div>
+    <div class="dg-step"><b><span class="n">3</span>Mapa de competencias</b>Ves tu radar, tu nivel por aprendizaje esperado y tu ruta sugerida, y descargas el PDF con todas tus respuestas.</div>
+  </div>
+  <div class="dg-fields">
+    <label class="field">Nombre *<input id="dgFirst" autocomplete="given-name" maxlength="40" placeholder="Tu nombre"/></label>
+    <label class="field">Apellido *<input id="dgLast" autocomplete="family-name" maxlength="40" placeholder="Tu apellido"/></label>
+  </div>
+  <p class="dg-err" id="dgErr" role="alert"></p>
+  <button class="small-btn primary" type="button" id="dgStart">Comenzar el diagnóstico →</button>
+  <p class="hint" style="margin-top:10px">Tiempo estimado: 20 minutos. Si sales, tu avance queda guardado en Moodle.</p>
+</section>
+
+<!-- 2 · AUTOEVALUACIÓN -->
+<section class="slide" data-title="Autoevaluación" data-gate="auto" data-gate-msg="Elige un nivel en los cuatro aprendizajes esperados.">
+  <span class="lab-badge">Paso 1 de 3 · Autoevaluación</span>
+  <h2>¿Cómo te percibes hoy?</h2>
+  <p>Para cada aprendizaje esperado, elige la opción que mejor describe tu experiencia actual. No hay respuestas correctas: es tu punto de partida.</p>
+  <div class="dg-auto" id="dgAuto"></div>
+</section>
+
+<!-- 3 · PREGUNTAS -->
+<section class="slide" data-title="20 situaciones" data-gate="q" data-gate-msg="Responde las 20 preguntas y presiona “Ver mi mapa de competencias”.">
+  <span class="lab-badge">Paso 2 de 3 · Situaciones por módulo</span>
+  <h2>Elige la mejor decisión en cada situación</h2>
+  <p class="hint">Las respuestas y su explicación se muestran al final, en tu mapa de competencias.</p>
+  <div id="dgQ" aria-live="polite"></div>
+</section>
+
+<!-- 4 · MAPA DE COMPETENCIAS -->
+<section class="slide" data-title="Mapa de competencias" data-report>
+  <span class="lab-badge">Paso 3 de 3 · Resultados</span>
+  <h2>Tu mapa de competencias</h2>
+  <div id="dgReport"></div>
+</section>

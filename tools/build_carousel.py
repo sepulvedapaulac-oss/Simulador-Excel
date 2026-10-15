@@ -79,6 +79,28 @@ h1{font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.15;margin:.6rem 0 .2rem;te
 .ex b{color:var(--teal-ink)}
 .empty{background:var(--surface);border:1px dashed var(--line);border-radius:28px;padding:40px;text-align:center;color:var(--muted)}
 @media(max-width:560px){.card,.flip .inner{min-height:480px}.nav button.arrow{min-width:0;padding:10px 18px}.nav .lbl{display:none}.dots{display:none}.top .course{flex:1 1 60%}}
+/* Presentación del curso: elementos dentro de las tarjetas */
+.cols>div{min-width:0}
+.tw{overflow-x:auto;max-width:100%}
+.mini{width:100%;border-collapse:collapse;font-size:.9rem;margin:4px 0 12px}
+.mini th{background:var(--navy);color:#fff;text-align:left;padding:7px 10px;font-size:.8rem}
+.mini td{padding:7px 10px;border-top:1px solid var(--line2);vertical-align:top}
+.mini td.n{text-align:right;font-weight:850;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mini tr.tot td{font-weight:900;border-top:2px solid var(--teal)}
+.hb{display:grid;gap:10px;margin:6px 0 12px}
+.hb div{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr) auto;gap:10px;align-items:center;font-size:.92rem}
+.hb i{display:block;height:14px;border-radius:999px;background:var(--track);overflow:hidden}
+.hb i b{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.hb strong{font-variant-numeric:tabular-nums}
+.ae{background:var(--mint);border:1px solid var(--mint-line);border-radius:16px;padding:10px 14px;margin:2px 0 12px;font-weight:700;color:var(--teal-ink)}
+.ae small{display:block;font-weight:850;letter-spacing:.04em;text-transform:uppercase;font-size:.72rem;margin-bottom:2px}
+.steps{list-style:none;counter-reset:s;margin:4px 0 12px;padding:0;display:grid;gap:8px}
+.steps li{counter-increment:s;background:var(--surface2);border:1px solid var(--line2);border-radius:14px;padding:9px 12px 9px 46px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:10px;top:8px;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;font-size:.8rem;display:grid;place-items:center}
+.tri{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));margin:4px 0 12px}
+.tri div{background:var(--surface2);border:1px solid var(--line2);border-radius:16px;padding:12px 14px}
+.tri b{display:block;color:var(--navy);margin-bottom:4px}
+@media(max-width:560px){.hb div{grid-template-columns:1fr auto}.hb i{grid-column:1/-1;grid-row:2}.mini{font-size:.84rem}.mini th,.mini td{padding:6px 7px}}
 @media(prefers-reduced-motion:reduce){.track,.flip .inner{transition:none}}
 """
 
@@ -133,13 +155,13 @@ render();
 """
 
 
-def page(title, module, body, extra_js=""):
+def page(title, module, body, extra_js="", course="IA aplicada a la gestión de remuneraciones"):
     return f"""<!doctype html>
 <html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>{html.escape(title)}</title>
 <style>{tokens()}{CSS}</style></head>
 <body><main class="wrap">
-<div class="top"><span class="course">IA aplicada a la gestión de remuneraciones</span><button class="theme" id="theme" type="button">☾ Oscuro</button></div>
+<div class="top"><span class="course">{html.escape(course)}</span><button class="theme" id="theme" type="button">☾ Oscuro</button></div>
 {body}
 <div class="nav"><button class="arrow" id="prev" type="button" aria-label="Anterior">←<span class="lbl"> Anterior</span></button><div class="dots"></div><button class="arrow" id="next" type="button" aria-label="Siguiente"><span class="lbl">Siguiente </span>→</button></div>
 <div class="count"></div>
@@ -154,14 +176,26 @@ def img_uri(name):
     return "data:image/jpeg;base64," + base64.b64encode(p.read_bytes()).decode()
 
 
-def resumen(d):
+def cards_html(lista):
     cards = []
-    for s in d["RESUMEN"]:
+    for s in lista:
         img = f'<img src="{img_uri(s["img"])}" alt="{html.escape(s.get("alt", ""))}"/>' if s.get("img") else ""
         pts = "".join(f"<li>{p}</li>" for p in s.get("points", []))
         cards.append(f"""<article class="card"><span class="kicker">{s['kicker']}</span><h2>{s['title']}</h2>
 <div class="cols{' has-img' if img else ''}"><div><p>{s.get('body', '')}</p>{f'<ul class="points">{pts}</ul>' if pts else ''}</div>{img}</div>
 {f'<div class="key"><b>Idea clave:</b> {s["key"]}</div>' if s.get('key') else ''}</article>""")
+    return "".join(cards)
+
+
+def presentacion(d):
+    body = f"""<h1>{html.escape(d['TITLE'])}</h1>
+<p class="sub">{html.escape(d['SUB'])}</p><div class="bar"><span></span></div>
+<div class="viewport"><div class="track">{cards_html(d['PRESENTACION'])}</div></div>"""
+    return page(d["TITLE"], d["FOOT"], body)
+
+
+def resumen(d):
+    cards = [cards_html(d["RESUMEN"])]
     body = f"""<h1>Resumen del {html.escape(d['MODULE'].split(' · ')[0])}</h1>
 <p class="sub">{html.escape(d['MODULE'])}</p><div class="bar"><span></span></div>
 <div class="viewport"><div class="track">{''.join(cards)}</div></div>"""
@@ -183,6 +217,11 @@ def main(src):
     d = runpy.run_path(str(src))
     out = ROOT / "dist" / src.parent.relative_to(ROOT / "src")
     out.mkdir(parents=True, exist_ok=True)
+    if "PRESENTACION" in d:
+        f = out / d["FILE"]
+        f.write_text(presentacion(d), encoding="utf-8")
+        print(f"OK {f.relative_to(ROOT)} · {f.stat().st_size // 1024} KB")
+        return
     for name, fn in (("Resumen", resumen), ("Glosario", glosario)):
         f = out / f"{name}_{d['SLUG']}.html"
         f.write_text(fn(d), encoding="utf-8")

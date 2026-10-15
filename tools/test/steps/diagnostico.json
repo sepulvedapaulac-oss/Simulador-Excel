@@ -1,0 +1,4 @@
+{"#dgStart":[["eval","(()=>{const f=document.getElementById('dgFirst'),l=document.getElementById('dgLast');f.value='Valentina';f.dispatchEvent(new Event('input'));l.value='Rojas Pérez';l.dispatchEvent(new Event('input'))})()"],["click","#dgStart"]],
+"#dgAuto":[["eval","(()=>{[2,1,1,0].forEach((j,k)=>document.querySelector('#dgAuto button[data-k=\"'+k+'\"][data-j=\"'+j+'\"]').click())})()"]],
+"#dgQ":[["eval","(async()=>{const P=window.LESSON.dg.P;const wrong=[3,6,7,11,12,15,17,18];for(let i=0;i<P.length;i++){document.querySelectorAll('#dgQ .dg-dots button')[i].click();await new Promise(r=>setTimeout(r,20));const j=wrong.includes(i)?(P[i].c+1)%4:P[i].c;document.querySelector('#dgQ .opt[data-j=\"'+j+'\"]').click();await new Promise(r=>setTimeout(r,320))}document.getElementById('dgFin').click()})()"]]
+}

@@ -190,11 +190,11 @@ def build(src: Path, engine: str):
     if not any((out / "img").iterdir()):
         (out / "img").rmdir()
 
-    lesson = {k: v for k, v in meta.items() if k not in ("narration", "title", "course_label", "ident", "zip_name")}
+    lesson = {k: v for k, v in meta.items() if k not in ("narration", "title", "course_label", "ident", "zip_name", "badge")}
     lesson["audio"] = audio
     lesson["music"] = music
     autonarr = ('<label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label>'
-                if voice else ('<span class="autonarr">🧪 Laboratorio práctico</span>' if meta.get("lab") else '<span class="autonarr" title="Esta lección no tiene narración">🔇 Lección sin narración</span>'))
+                if voice else (f'<span class="autonarr">{meta["badge"]}</span>' if meta.get("badge") else '<span class="autonarr">🧪 Laboratorio práctico</span>' if meta.get("lab") else '<span class="autonarr" title="Esta lección no tiene narración">🔇 Lección sin narración</span>'))
     page = TEMPLATE.format(
         title_full=html.escape(meta["title"]), course_label=meta["course_label"], autonarr=autonarr,
         css=(TOOLS / "base.css").read_text(encoding="utf-8"), content=content,
