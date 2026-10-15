@@ -169,20 +169,27 @@ Va justo después del cuestionario de cada módulo. **Nombre:** Evaluación rami
 
 > **Evaluación final del curso · Parte 2: Caso práctico integrador**
 >
-> Luego de haber demostrado lo que sabes en el cuestionario, llegó el momento de **aplicarlo en un caso real de trabajo**. Te pondrás en el lugar de Camila durante el cierre de noviembre de AndesCorp y resolverás cuatro tareas, una por cada aprendizaje esperado del curso:
+> El presente instrumento tiene como finalidad evaluar la aplicación práctica de los conocimientos adquiridos durante el proceso de aprendizaje en el curso. Para esto dispondrás de aproximadamente **1 (una) hora cronológica** a fin de que puedas resolver todas las tareas que se presentan.
 >
-> 1. **Datos e instrucción (AE1):** decidir qué datos compartir con la IA y elegir la instrucción adecuada.
-> 2. **Alertas de la IA (AE2):** decidir si cada alerta se corrige, se investiga o se descarta, según la evidencia.
-> 3. **Variación en Excel (AE3):** calcular la variación por área en el simulador de Excel e interpretar el resultado.
-> 4. **Propuesta de mejora (AE4):** proponer una mejora del cierre con control humano y un indicador de éxito.
+> A continuación, se presenta un caso práctico integrador: te pondrás en el lugar de Camila, analista de remuneraciones de AndesCorp, durante el cierre de noviembre. El caso contiene **cuatro tareas, una por cada módulo del curso**. Lee detenidamente cada situación, revisa los datos y la evidencia disponibles, y toma tus decisiones con criterio. Al confirmar cada tarea recibirás retroalimentación.
 >
-> **Antes de comenzar**
-> - Completa primero la Parte 1.
-> - Reserva unos 60 minutos. Si sales, tu avance queda guardado y puedes continuar donde quedaste.
-> - Al terminar podrás **descargar un PDF con tus resultados**.
-> - Esta parte equivale al **35 % de tu nota final** y **debes aprobarla** (70 %).
+> | Tarea | Qué debes hacer | Puntaje |
+> |---|---|---|
+> | **Tarea 1 · Datos e instrucción para la IA** (Módulo 1) | Clasificar 10 columnas de una planilla según si se pueden compartir con la IA y elegir la instrucción (prompt) más adecuada. | 25 puntos |
+> | **Tarea 2 · Alertas de la IA** (Módulo 2) | Decidir si cada una de las 6 alertas que generó la IA se corrige, se investiga o se descarta, según la evidencia. | 25 puntos |
+> | **Tarea 3 · Variación en Excel** (Módulo 3) | Calcular en el simulador de Excel la variación absoluta y porcentual por área, y elegir la conclusión correcta para la gerencia. | 25 puntos |
+> | **Tarea 4 · Propuesta de mejora** (Módulo 4) | Proponer una mejora del cierre (problema, herramienta, control humano e indicador de éxito) y redactar una recomendación breve para la gerencia. | 25 puntos |
 >
-> Escala de 1,0 a 7,0. Nota mínima de aprobación del curso: 4,0 en la nota final ponderada.
+> **Criterios de evaluación**
+>
+> - **Módulo 1 (Tarea 1):** Identifica herramientas de inteligencia artificial en la gestión de remuneraciones según criterios de uso responsable de información salarial.
+> - **Módulo 2 (Tarea 2):** Describe procedimientos de revisión de remuneraciones con inteligencia artificial según protocolos de validación de resultados.
+> - **Módulo 3 (Tarea 3):** Interpreta variaciones mensuales de remuneraciones en reportes con inteligencia artificial según indicadores de gestión.
+> - **Módulo 4 (Tarea 4):** Analiza flujos de trabajo de remuneraciones con inteligencia artificial según criterios de control de calidad.
+>
+> La nota máxima es **7,0 con 100 puntos** y la nota mínima aprobatoria es **4,0 con 70 puntos**.
+>
+> Completa primero la Parte 1. Si sales de la actividad, tu avance queda guardado y puedes continuar donde quedaste. Al terminar podrás **descargar un PDF con tus resultados**. Esta parte equivale al **35 % de tu nota final** y debes aprobarla.
 
 ---
 
