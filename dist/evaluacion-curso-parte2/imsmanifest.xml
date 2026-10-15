@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="IAREM_EVAL_CURSO_P2" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+  <organizations default="ORG-IAREM_EVAL_CURSO_P2"><organization identifier="ORG-IAREM_EVAL_CURSO_P2"><title>Evaluación final · Parte 2: Caso práctico integrador — IA aplicada a la Gestión de Remuneraciones</title>
+    <item identifier="ITEM-IAREM_EVAL_CURSO_P2" identifierref="RES-IAREM_EVAL_CURSO_P2" isvisible="true"><title>Evaluación final · Parte 2: Caso práctico integrador — IA aplicada a la Gestión de Remuneraciones</title><adlcp:masteryscore>70</adlcp:masteryscore></item></organization></organizations>
+  <resources><resource identifier="RES-IAREM_EVAL_CURSO_P2" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="img/i43_hero.jpg"/>
+      <file href="img/i44_hero.jpg"/>
+      <file href="index.html"/>
+  </resource></resources>
+</manifest>

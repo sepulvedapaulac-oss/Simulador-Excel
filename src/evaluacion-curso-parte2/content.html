@@ -1,0 +1,157 @@
+<style>
+/* Evaluación final del curso · componentes propios (usan los tokens del curso) */
+.fe-dots{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0 12px}
+.fe-dots i{width:14px;height:14px;border-radius:5px;background:var(--track)}
+.fe-dots i.now{background:var(--teal);box-shadow:0 0 0 3px color-mix(in srgb,var(--teal2) 35%,transparent)}
+.fe-dots i.g{background:var(--good)}.fe-dots i.b{background:var(--bad)}
+.fe-q{border:1px solid var(--line);border-radius:20px;padding:16px 18px;background:var(--surface3)}
+.fe-q h3{margin:.6rem 0 .8rem}
+.fe-qhead{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.84rem;font-weight:800;color:var(--muted)}
+.fe-id{padding:4px 10px;border-radius:999px;background:var(--navy);color:#fff;font-weight:900;letter-spacing:.03em}
+.fe-n{margin-left:auto;font-variant-numeric:tabular-nums}
+.fe-sum{border:1px solid var(--good-line);background:var(--good-soft);border-radius:20px;padding:16px 18px}
+.fe-sum h3{margin-top:0}
+.fe-mods{display:grid;gap:8px;margin:10px 0}
+.fe-mods div,.fe-mrow{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto;gap:10px;align-items:center;font-size:.9rem}
+.fe-mrow{margin:6px 0}
+.fe-bar{display:block;height:10px;border-radius:999px;background:var(--track);overflow:hidden}
+.fe-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.fe-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+@media(max-width:860px){.fe-cols{grid-template-columns:1fr}}
+.fe-col{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:9px 12px;background:var(--surface)}
+.fe-col small{grid-column:1/-1;font-size:.82rem;color:var(--ink2)}
+.fe-col.ok{border-color:var(--good-line);background:var(--good-soft)}.fe-col.no{border-color:var(--bad-line);background:var(--bad-soft)}
+.fe-tg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fe-tg button{all:unset;cursor:pointer;padding:6px 10px;font-size:.82rem;font-weight:800;color:var(--muted)}
+.fe-tg button.on{background:var(--teal);color:#fff}
+.fe-tg button:focus-visible{outline:3px solid var(--teal2);outline-offset:-3px}
+.fe-tg button:disabled{cursor:default}
+.fe-al{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
+.fe-al th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;font-size:.8rem}
+.fe-al td{padding:8px 10px;border-top:1px solid var(--line2);vertical-align:top}
+.fe-al td:nth-child(4){width:200px}
+.fe-al select{width:100%;padding:7px 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.fe-al small{display:block;margin-top:6px;font-size:.8rem;color:var(--ink2)}
+.fe-al tr.ok td{background:var(--good-soft)}.fe-al tr.no td{background:var(--bad-soft)}
+.tblwrap{overflow-x:auto}
+@media(max-width:700px){.fe-al{min-width:0}.fe-al thead{display:none}.fe-al tr{display:block;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}.fe-al td{display:block;border:0;padding:6px 12px}.fe-al td:first-child{font-weight:900;padding-top:10px}.fe-al td:nth-child(3)::before{content:"Evidencia: ";font-weight:800}.fe-al td:nth-child(4){width:auto;padding-bottom:12px}}
+.fe-dq{display:grid;gap:12px;margin-top:10px}
+.fe-dq .field{font-size:.9rem;color:var(--ink)}
+.fe-dq .field small{font-weight:600;color:var(--muted)}
+.fe-dq select,.fe-dq textarea{width:100%;padding:9px 10px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:600}
+.fe-dq small.okc{color:var(--good)}.fe-dq small.noc{color:var(--bad)}
+.ev-outcome{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:14px;padding:18px;border-radius:22px;border:1px solid var(--line)}
+.ev-outcome.clean{background:var(--good-soft);border-color:var(--good-line)}
+.ev-outcome.inc{background:var(--bad-soft);border-color:var(--bad-line)}
+.ev-ring{width:112px;height:112px;border-radius:50%;display:grid;place-items:center}
+.ev-ring span{width:86px;height:86px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:1.5rem;font-weight:900;font-variant-numeric:tabular-nums}
+.ev-outcome h3{margin:.1rem 0 .4rem;font-size:1.3rem}
+.ev-outcome p{margin:.2rem 0;max-width:none}
+.ev-comp{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--surface);margin-top:10px}
+.ev-comp .top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ev-comp .top .pill{margin-left:auto}
+.ev-comp p{margin:.3rem 0 0;font-size:.92rem;max-width:none}
+.fe-parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+@media(max-width:860px){.fe-parts{grid-template-columns:1fr}.ev-outcome{grid-template-columns:1fr;justify-items:start}.fe-mods div,.fe-mrow{grid-template-columns:1fr auto}.fe-mods .fe-bar,.fe-mrow .fe-bar{grid-column:1/-1;grid-row:2}}
+.fe-part{border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface2)}
+.fe-part b{display:block;font-size:1.05rem;margin-bottom:4px}
+</style>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Instrucciones" data-gate="start" data-gate-msg="Presiona “Comenzar la evaluación”.">
+  <div class="hero-grid">
+    <div>
+      <span class="lab-badge">Evaluación final del curso · Parte 2</span>
+      <h1>Caso práctico integrador</h1>
+      <p class="lead">Esta evaluación cierra el curso <strong>Inteligencia Artificial aplicada a la Gestión de Remuneraciones</strong>. Ya respondiste la Parte 1 (cuestionario). Esta Parte 2 es un caso práctico que integra los cuatro módulos y, al terminar, podrás <strong>descargar un PDF con tus resultados</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img src="img/i44_hero.jpg" alt="Analista presentando a dos jefaturas un plan con una línea de tiempo proyectada en una pantalla"/></div>
+  </div>
+  <div class="fe-parts">
+    <div class="fe-part"><b>Lo que harás</b>Actuarás como Camila en el cierre de noviembre de AndesCorp. Cada tarea corresponde a un aprendizaje esperado del curso (AE1 a AE4) y recibes retroalimentación al confirmarla.</div>
+    <div class="fe-part"><b>Cuatro tareas</b>Un caso de cierre de AndesCorp con cuatro tareas, una por módulo: preparar datos e instrucción, decidir sobre alertas de la IA, analizar la variación en el simulador de Excel y proponer una mejora con control humano.</div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Cómo se calcula tu nota</strong>
+    <p style="margin:6px 0 0">Promedio de las cuatro tareas. Apruebas con <b>70 %</b>. Esta parte equivale al 30 % de la nota final del curso. Tus respuestas quedan registradas en Moodle; si sales, puedes continuar donde quedaste.</p></div>
+  <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar la evaluación →</button>
+</section>
+
+<!-- 3 · PARTE 2: EL CASO -->
+<section class="slide" data-title="Parte 2: el caso">
+  <span class="lab-badge">Parte 2 · Caso práctico integrador</span>
+  <h2>El cierre de noviembre en AndesCorp</h2>
+  <div class="grid-2">
+    <div>
+      <p>Es el primer día hábil de diciembre. El costo de remuneraciones de noviembre bajó respecto de octubre y la gerencia quiere entender por qué. Al mismo tiempo, el asistente de IA dejó seis alertas sobre la nómina y Rodrigo quiere una propuesta para que los errores de carga no se repitan.</p>
+      <div class="ev-facts" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0">
+        <div class="fe-part"><b>422</b>personas en la nómina</div>
+        <div class="fe-part"><b>6</b>alertas de la IA por revisar</div>
+        <div class="fe-part"><b>5</b>áreas para analizar</div>
+        <div class="fe-part"><b>4</b>tareas, una por módulo</div>
+      </div>
+    </div>
+    <div class="photo-frame"><img src="img/i43_hero.jpg" alt="Equipo de tres personas revisando un diagrama de flujo proyectado en una sala de reuniones"/></div>
+  </div>
+  <div class="callout"><strong>Tus cuatro tareas</strong>
+    <ul class="elem-list" style="margin-top:8px">
+      <li><b>Tarea 1 · Módulo 1:</b> elegir qué datos entregar a la IA y con qué instrucción.</li>
+      <li><b>Tarea 2 · Módulo 2:</b> decidir qué hacer con cada alerta de la IA según la evidencia.</li>
+      <li><b>Tarea 3 · Módulo 3:</b> calcular la variación por área en el simulador de Excel y elegir la conclusión para la gerencia.</li>
+      <li><b>Tarea 4 · Módulo 4:</b> proponer una mejora con control humano y escribir tu recomendación.</li>
+    </ul>
+    <p style="margin:8px 0 0">Las tareas 1, 2 y 4 se responden una sola vez: revisa bien antes de confirmar.</p>
+  </div>
+</section>
+
+<!-- 4 · TAREA 1 -->
+<section class="slide" data-title="Tarea 1: datos e instrucción" data-gate="ta" data-gate-msg="Clasifica las diez columnas, elige la instrucción y confirma la tarea 1.">
+  <span class="lab-badge">Tarea 1 · Módulo 1</span>
+  <h2>¿Qué datos entregas a la IA y con qué instrucción?</h2>
+  <p>Para analizar la variación del costo por área, Camila tiene la exportación del sistema con estas diez columnas. Marca cuáles <b>incluir</b> y cuáles <b>excluir</b> de la tabla que recibirá el asistente corporativo.</p>
+  <div id="taRoot"></div>
+</section>
+
+<!-- 5 · TAREA 2 -->
+<section class="slide" data-title="Tarea 2: alertas de la IA" data-gate="tb" data-gate-msg="Decide qué hacer con las seis alertas y confirma la tarea 2.">
+  <span class="lab-badge">Tarea 2 · Módulo 2</span>
+  <h2>¿Corregir, investigar o descartar?</h2>
+  <p>El asistente revisó la nómina de noviembre y dejó seis alertas. Camila ya reunió la evidencia de cada una. Decide qué corresponde: <b>corregir</b> (error confirmado), <b>investigar</b> (falta información) o <b>descartar</b> (la evidencia lo respalda).</p>
+  <div id="tbRoot"></div>
+</section>
+
+<!-- 6 · TAREA 3 -->
+<section class="slide" data-title="Tarea 3: variación en Excel" data-gate="tc" data-gate-msg="Completa las columnas D y E en el simulador y elige la conclusión.">
+  <span class="lab-badge">Tarea 3 · Módulo 3</span>
+  <h2>Analiza la variación de noviembre</h2>
+  <div class="grid-2">
+    <div>
+      <p>Costo por área en <b>miles de pesos</b>, base cuadrada con el sistema. La fila 7 tiene los totales.</p>
+      <ol class="elem-list" style="list-style:none">
+        <li><b>1.</b> En <b>D2</b>: variación absoluta, noviembre menos octubre. Rellena hasta la fila 7.</li>
+        <li><b>2.</b> En <b>E2</b>: variación porcentual redondeada a un decimal, por ejemplo <code>=REDONDEAR(D2/B2*100;1)</code>. Rellena hasta la fila 7.</li>
+        <li><b>3.</b> Presiona <b>Revisar mis cálculos</b> y luego elige la conclusión.</li>
+      </ol>
+    </div>
+    <div class="story" style="margin-top:0"><strong>Contexto:</strong> en octubre se pagó el bono anual de cumplimiento, que no se repite en noviembre. Operaciones informó un pedido especial de fin de año en Planta.</div>
+  </div>
+  <div id="hojaFE"></div>
+  <div class="hj-tools"><button class="small-btn" type="button" id="fillBtn">⤓ Rellenar hacia abajo (hasta la fila 7)</button><button class="small-btn primary" type="button" id="checkBtn">Revisar mis cálculos</button></div>
+  <div id="tcOut"></div>
+  <div id="tcConcl"></div>
+</section>
+
+<!-- 7 · TAREA 4 -->
+<section class="slide" data-title="Tarea 4: propuesta de mejora" data-gate="td" data-gate-msg="Completa la propuesta, escribe tu recomendación y confirma la tarea 4.">
+  <span class="lab-badge">Tarea 4 · Módulo 4</span>
+  <h2>Propón una mejora con control humano</h2>
+  <p>Este mes aparecieron otra vez un bono y un anticipo duplicados en la carga de novedades. Rodrigo te pide una propuesta concreta para que no se repita. Elige cada elemento y escribe tu recomendación para la gerencia.</p>
+  <div id="tdRoot"></div>
+</section>
+
+<!-- 8 · RESULTADOS -->
+<section class="slide" data-title="Resultados" data-report>
+  <span class="lab-badge">Resultados de la evaluación final</span>
+  <h2>Tu resultado en la evaluación final del curso</h2>
+  <div id="feReport"></div>
+  <p class="sources">Evaluación con caso simulado y datos ficticios. Ningún dato sale de tu navegador: el PDF se genera en tu equipo.</p>
+</section>

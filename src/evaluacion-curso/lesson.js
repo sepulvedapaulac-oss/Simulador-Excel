@@ -4,7 +4,7 @@
    Al terminar se descarga un PDF con los resultados (generado en el navegador, sin conexión).
    Nota = 50 % Parte 1 + 50 % Parte 2. Aprobación: 70 %. */
 (function(){
-const L0=window.LESSON,P=L0.p1;
+const L0=window.LESSON,P=L0.p1,SOLO=!!L0.soloP2; /* SOLO: versión con solo la Parte 2 (la Parte 1 va como cuestionario Moodle XML) */
 let api=null,S=null,hoja=null;
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -46,7 +46,7 @@ function taskScores(st){
   const c=Math.round(st.c.chk/2*60+(st.c.cc===CONCL_OK?40:0));
   const d=st.d.ok?Math.round(st.d.v.filter((v,i)=>v===DQ[i].c).length/DQ.length*100):0;
   return [a,b,c,d]}
-function totals(st){const p1=Math.round(p1Score(st)/P.length*100),t=taskScores(st),p2=Math.round(t.reduce((x,y)=>x+y,0)/4);return {p1,p2,t,fin:Math.round(p1*0.5+p2*0.5)}}
+function totals(st){const p1=P.length?Math.round(p1Score(st)/P.length*100):0,t=taskScores(st),p2=Math.round(t.reduce((x,y)=>x+y,0)/4);return SOLO?{p1:0,p2,t,fin:p2}:{p1,p2,t,fin:Math.round(p1*0.5+p2*0.5)}}
 
 /* ---------- Parte 1 ---------- */
 let qi=0;
@@ -124,14 +124,15 @@ const COMPTXT=[['Proteges los datos y das instrucciones completas a la IA.','Rep
  ['Calculas, verificas y comunicas las variaciones con honestidad.','Repasa la variación porcentual, los gráficos honestos y la diferencia entre hecho e hipótesis (lecciones 3.2 a 3.4).'],
  ['Propones automatizaciones acotadas, con control humano y medición.','Repasa la priorización, el control humano y la línea base (lecciones 4.1 a 4.4).']];
 const TASKN=['Tarea 1 · Datos e instrucción (M1)','Tarea 2 · Alertas de la IA (M2)','Tarea 3 · Variación en Excel (M3)','Tarea 4 · Propuesta de mejora (M4)'];
-function comps(st){const t=taskScores(st);return [0,1,2,3].map(m=>Math.round((p1Mod(st,m)/5*100+t[m])/2))}
+function comps(st){const t=taskScores(st);if(SOLO)return t;return [0,1,2,3].map(m=>Math.round((p1Mod(st,m)/5*100+t[m])/2))}
 function studentName(){try{let w=window,n=0;while(w&&!w.API&&w.parent&&w.parent!==w&&n<10){w=w.parent;n++}if(w&&w.API){const v=String(w.API.LMSGetValue('cmi.core.student_name')||'');if(v){const p=v.split(',');return p.length===2?(p[1].trim()+' '+p[0].trim()):v}}}catch(e){}return ''}
+function p1Block(st){return `<div><h3>Parte 1 por módulo</h3>${MOD.map((m,k)=>`<div class="fe-mrow"><span>${m}</span><span class="fe-bar"><span style="width:${p1Mod(st,k)/5*100}%"></span></span><b>${p1Mod(st,k)}/5</b></div>`).join('')}</div>
+   `}
 function report(){const st=ST(),el=$('#feReport');if(!el)return;const T=totals(st),pass=T.fin>=70,C=comps(st),col=pass?'var(--good)':'var(--bad)';
   if(!st.n)st.n=studentName();
   el.innerHTML=`<div class="ev-outcome ${pass?'clean':'inc'}"><div class="ev-ring" style="background:conic-gradient(${col} ${T.fin*3.6}deg,var(--track) 0)"><span>${T.fin}%</span></div>
-    <div><h3>${pass?'Aprobado':'No aprobado'} · Nota final ${T.fin} %</h3><p>Parte 1 (preguntas): <b>${T.p1} %</b> · Parte 2 (laboratorio de análisis): <b>${T.p2} %</b>. La nota final pondera ambas partes en 50 % y se aprueba con 70 %.</p></div></div>
-   <div class="grid-2" style="margin-top:14px"><div><h3>Parte 1 por módulo</h3>${MOD.map((m,k)=>`<div class="fe-mrow"><span>${m}</span><span class="fe-bar"><span style="width:${p1Mod(st,k)/5*100}%"></span></span><b>${p1Mod(st,k)}/5</b></div>`).join('')}</div>
-   <div><h3>Parte 2 por tarea</h3>${TASKN.map((n,k)=>`<div class="fe-mrow"><span>${n}</span><span class="fe-bar"><span style="width:${T.t[k]}%"></span></span><b>${T.t[k]}%</b></div>`).join('')}</div></div>
+    <div><h3>${pass?'Aprobado':'No aprobado'} · ${SOLO?'Parte 2':'Nota final'} ${T.fin} %</h3><p>${SOLO?`Caso práctico integrador: cuatro tareas, una por módulo. Se aprueba con 70 %.`:`Parte 1 (preguntas): <b>${T.p1} %</b> · Parte 2 (laboratorio de análisis): <b>${T.p2} %</b>. La nota final pondera ambas partes en 50 % y se aprueba con 70 %.`}</p></div></div>
+   <div class="grid-2" style="margin-top:14px">${SOLO?'':p1Block(st)}<div><h3>Parte 2 por tarea</h3>${TASKN.map((n,k)=>`<div class="fe-mrow"><span>${n}</span><span class="fe-bar"><span style="width:${T.t[k]}%"></span></span><b>${T.t[k]}%</b></div>`).join('')}</div></div>
    <h3 style="margin-top:16px">Retroalimentación por competencia</h3>
    ${C.map((p,k)=>{const l=LV(p);return `<div class="ev-comp"><div class="top"><b>${MOD[k]}</b><span class="pill ${l[1]}">${l[0]} · ${p}%</span></div><p>${p>=85?COMPTXT[k][0]:COMPTXT[k][1]}</p></div>`}).join('')}
    <div class="callout" style="margin-top:14px"><strong>Descarga tus resultados</strong>
@@ -183,22 +184,25 @@ function downloadPDF(st){const T=totals(st),C=comps(st),pass=T.fin>=70,d=new Dat
   const bytes=buildPDF(doc=>{const M=doc.M,W=doc.W;
     doc.rect(0,842-118,W,118,'#123b4a');doc.rect(0,842-122,W,4,'#159aa3');
     doc.text(M,842-44,'IA APLICADA A LA GESTIÓN DE REMUNERACIONES',9,true,'#7fd8d0');
-    doc.text(M,842-72,'Resultados de la evaluación final del curso',20,true,'#ffffff');
-    doc.text(M,842-94,'Parte 1: preguntas por módulo · Parte 2: laboratorio de análisis integrador',10,false,'#d7ecee');
+    doc.text(M,842-72,SOLO?'Resultados · Evaluación final, Parte 2':'Resultados de la evaluación final del curso',20,true,'#ffffff');
+    doc.text(M,842-94,SOLO?'Caso práctico integrador: una tarea por módulo':'Parte 1: preguntas por módulo · Parte 2: laboratorio de análisis integrador',10,false,'#d7ecee');
     doc.y=842-150;
     doc.text(M,doc.y,'Participante:',10,true);{const ls=wrap(st.n||'(sin nombre)',10,false,W-2*M-80);ls.forEach((l,i)=>{if(i)doc.gap(13);doc.text(M+80,doc.y,l,10)})}doc.gap(16);
     doc.text(M,doc.y,'Fecha:',10,true);doc.text(M+80,doc.y,fecha,10);doc.gap(26);
     const bx=doc.y-62;doc.rect(M,bx,W-2*M,70,pass?'#e6f5ec':'#fdecee');
-    doc.text(M+16,bx+42,(pass?'APROBADO':'NO APROBADO')+' · Nota final '+T.fin+' %',16,true,pass?'#1d7a46':'#b3263e');
-    doc.text(M+16,bx+20,'Parte 1: '+T.p1+' %  ·  Parte 2: '+T.p2+' %  ·  Ponderación 50 % / 50 %  ·  Aprobación con 70 %',10,false,'#172431');
+    doc.text(M+16,bx+42,(pass?'APROBADO':'NO APROBADO')+(SOLO?' · Parte 2: ':' · Nota final ')+T.fin+' %',16,true,pass?'#1d7a46':'#b3263e');
+    doc.text(M+16,bx+20,SOLO?'Caso práctico integrador  ·  Aprobación con 70 %':'Parte 1: '+T.p1+' %  ·  Parte 2: '+T.p2+' %  ·  Ponderación 50 % / 50 %  ·  Aprobación con 70 %',10,false,'#172431');
     doc.y=bx-24;
     doc.text(M,doc.y,'Resumen por módulo',13,true,'#123b4a');doc.gap(10);
+    if(SOLO){doc.table([{t:'Módulo',w:220},{t:'Tarea de la Parte 2',w:170},{t:'Competencia',w:109}],
+      [0,1,2,3].map(k=>[MOD[k],TASKN[k].split(' · ')[1].replace(/ \(M\d\)/,'')+': '+T.t[k]+' %',LV(C[k])[0]+' · '+C[k]+' %']))}else{
     doc.table([{t:'Módulo',w:200},{t:'Parte 1',w:70},{t:'Tarea de la Parte 2',w:130},{t:'Competencia',w:99}],
       [0,1,2,3].map(k=>[MOD[k],p1Mod(st,k)+' de 5',TASKN[k].split(' · ')[1].replace(/ \(M\d\)/,'')+': '+T.t[k]+' %',LV(C[k])[0]+' · '+C[k]+' %']));
     doc.gap(18);doc.need(30);doc.text(M,doc.y,'Parte 1 · Preguntas de selección múltiple',13,true,'#123b4a');doc.gap(10);
     doc.table([{t:'ID',w:44},{t:'Tema',w:190},{t:'Tu respuesta',w:70},{t:'Correcta',w:60},{t:'Resultado',w:135}],
       P.map((q,i)=>{const a=st.p1[i];return [q.id,q.tema,a>=0?L4[a]:'—',L4[q.c],a===q.c?'Correcta':'Incorrecta']}),{color:(r,c)=>c===4?(st.p1[r]===P[r].c?'#1d7a46':'#b3263e'):null});
-    doc.gap(24);doc.need(40);doc.text(M,doc.y,'Parte 2 · Laboratorio de análisis integrador',13,true,'#123b4a');doc.gap(4);
+    }
+    doc.gap(24);doc.need(40);doc.text(M,doc.y,SOLO?'Detalle por tarea':'Parte 2 · Laboratorio de análisis integrador',13,true,'#123b4a');doc.gap(4);
     const ta=st.a,tb=st.b,tc=st.c,td=st.d;
     const rowsB=ALERTS.map((r,i)=>[String(i+1),r.a,tb.d[i]>=0?ACC[tb.d[i]]:'—',ACC[r.c]]);
     doc.para('Tarea 1 · Datos e instrucción para la IA (Módulo 1): '+T.t[0]+' %',10.5,true);
@@ -214,7 +218,7 @@ function downloadPDF(st){const T=totals(st),C=comps(st),pass=T.fin>=70,d=new Dat
     C.forEach((p,k)=>{doc.para(MOD[k]+' · '+LV(p)[0]+' ('+p+' %)',10,true);doc.para(p>=85?COMPTXT[k][0]:COMPTXT[k][1],9.5)});
     doc.gap(14);doc.para('Evaluación con caso simulado y datos ficticios. Documento generado automáticamente al finalizar la evaluación.',8,false,'#5f7180')});
   const blob=new Blob([bytes],{type:'application/pdf'}),url=URL.createObjectURL(blob),a=document.createElement('a');
-  a.href=url;a.download='Resultados_evaluacion_final_'+((st.n||'participante').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9]+/g,'_').replace(/^_|_$/g,'')||'participante')+'.pdf';
+  a.href=url;a.download=(SOLO?'Resultados_evaluacion_final_Parte2_':'Resultados_evaluacion_final_')+((st.n||'participante').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9]+/g,'_').replace(/^_|_$/g,'')||'participante')+'.pdf';
   document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(url)},4000);window.__lastPdf=bytes}
 
 /* ---------- Integración con el motor ---------- */

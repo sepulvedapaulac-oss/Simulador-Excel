@@ -1,0 +1,13 @@
+{
+ "id": "ia_rem_eval_curso_p2",
+ "ident": "IAREM_EVAL_CURSO_P2",
+ "zip_name": "Evaluacion_final_Parte2_caso_practico",
+ "title": "Evaluación final · Parte 2: Caso práctico integrador — IA aplicada a la Gestión de Remuneraciones",
+ "course_label": "IA EN REMUNERACIONES · EVALUACIÓN FINAL · PARTE 2",
+ "voice": false,
+ "pass": 0.7,
+ "lab": true,
+ "hoja": true,
+ "p1": [],
+ "soloP2": true
+}
