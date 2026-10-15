@@ -1,0 +1,93 @@
+<section id="intro" class="card">
+ <span class="eyebrow">Laboratorio de práctica</span>
+ <h2>Ordena, comparte y protege la nube de Empanadas Doña María</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/maria_avatar.jpg" alt="María, dueña de Empanadas Doña María" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Ya creé las carpetas en la nube, pero llegaron archivos nuevos, la contadora necesita acceso y quiero estar segura de que nadie tenga más permisos de los necesarios. ¿Me ayudas a dejarlo bien?”<br><b>— María, Empanadas Doña María</b></div>
+ </div>
+ <p>Trabajarás sobre una <b>recreación simplificada</b> de la carpeta compartida del negocio. Aplica lo visto en la <b>Lección 1.3</b>: estructura, convención de nombres <b>AAAA-MM_Contenido_Detalle</b>, permisos justos y seguridad básica.</p>
+ <div class="steps"><div><b>6 tareas</b>Cada una vale entre 10 y 25 puntos. Tienes una respuesta por tarea.</div><div><b>Corrección explicada</b>Después de responder verás qué estuvo bien y por qué.</div><div><b>Apruebas con 80</b>Si no llegas, revisa la lección indicada y haz un nuevo intento.</div></div>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar el laboratorio →</button>
+</section>
+
+<section class="etask card" data-id="t1" data-pts="20" data-auto="match" data-title="Ubicar archivos nuevos" data-lesson="Lección 1.3 · Estructura de carpetas">
+ <h2>Ubica cada archivo nuevo en su carpeta</h2>
+ <p>Llegaron cinco archivos a “Descargas”. Elige la carpeta principal correcta para cada uno.</p>
+ <div class="mock"><div class="bar">📁 Empanadas Doña María · carpetas: 01 Administración · 02 Ventas · 03 Proveedores · 04 Marketing</div>
+ <div style="padding:6px 14px">
+  <div class="mrow"><span>📄 2026-10_Boleta_GasLicuado.pdf</span><select data-ans="03"><option value="01">01 Administración</option><option value="02">02 Ventas</option><option value="03">03 Proveedores</option><option value="04">04 Marketing</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>📊 2026-10_Pedidos_Colegios.xlsx</span><select data-ans="02"><option value="01">01 Administración</option><option value="02">02 Ventas</option><option value="03">03 Proveedores</option><option value="04">04 Marketing</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>📄 2026-03_Permiso_Municipal.pdf</span><select data-ans="01"><option value="01">01 Administración</option><option value="02">02 Ventas</option><option value="03">03 Proveedores</option><option value="04">04 Marketing</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>🖼️ 2026-09_Afiche_FiestasPatrias.png</span><select data-ans="04"><option value="01">01 Administración</option><option value="02">02 Ventas</option><option value="03">03 Proveedores</option><option value="04">04 Marketing</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>📊 2026-10_Cotizaciones_Clientes.xlsx</span><select data-ans="02"><option value="01">01 Administración</option><option value="02">02 Ventas</option><option value="03">03 Proveedores</option><option value="04">04 Marketing</option></select><span class="mk"></span></div>
+ </div></div>
+ <div class="why"><h4>Por qué</h4>La boleta de gas es un gasto con un proveedor (03). Pedidos y cotizaciones a clientes son ventas (02). El permiso municipal es un documento legal del negocio (01). El afiche es material de difusión (04). Una estructura de 3 a 5 carpetas que todo el equipo entiende evita archivos “perdidos”.</div>
+</section>
+
+<section class="etask card" data-id="t2" data-pts="15" data-auto="multi" data-title="Convención de nombres" data-lesson="Lección 1.3 · Convención de nombres">
+ <h2>¿Qué nombres cumplen la convención?</h2>
+ <p>La regla del negocio es <b>AAAA-MM_Contenido_Detalle.ext</b>. Marca <b>todos</b> los nombres que la cumplen.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> 2026-11_ListaPrecios_Cafeterias.xlsx</label>
+  <label class="opt"><input type="checkbox"> Lista precios FINAL definitiva.xlsx</label>
+  <label class="opt" data-ok><input type="checkbox"> 2026-10_Factura_HarinasSur.pdf</label>
+  <label class="opt"><input type="checkbox"> 10-2026_Factura_Envases.pdf</label>
+  <label class="opt" data-ok><input type="checkbox"> 2026-12_Campaña_Navidad_Instagram.png</label>
+  <label class="opt"><input type="checkbox"> receta nueva (copia 2).docx</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Los nombres correctos parten con año y mes (AAAA-MM), así se ordenan solos de forma cronológica, y luego dicen qué contienen. “10-2026” invierte el orden y rompe el ordenamiento; “FINAL”, “definitiva” o “copia 2” no indican cuál es la versión vigente. Cada acierto suma y cada marca errónea descuenta.</div>
+</section>
+
+<section class="etask card" data-id="t3" data-pts="20" data-auto="hot" data-title="Revisión de accesos" data-lesson="Lección 1.3 · Permisos y seguridad básica">
+ <h2>Encuentra los riesgos en la configuración de “02 Ventas”</h2>
+ <p>Haz clic en <b>cada elemento que represente un riesgo</b> (pueden ser varios) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar">🔒 Compartir “02 Ventas” · Panel recreado</div>
+  <div style="padding:10px">
+   <button class="hs">👤 María (correo del negocio) · Propietaria</button>
+   <button class="hs" data-ok>👤 Pedro (correo personal) · Puede editar — <i>dejó de trabajar en septiembre</i></button>
+   <button class="hs">👤 Carlos, vendedor (correo del negocio) · Puede editar</button>
+   <button class="hs">👤 Patricia, contadora externa · Puede comentar</button>
+   <button class="hs" data-ok>🔗 Acceso general: Cualquier persona con el enlace · Puede editar</button>
+   <button class="hs" data-ok>📄 Archivo “claves_banco_y_correo.txt” guardado en la carpeta</button>
+   <button class="hs" data-ok>🛡️ Cuenta del negocio: verificación en dos pasos desactivada</button>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Son riesgos: el acceso de editor de alguien que ya no trabaja en el negocio, un enlace que cualquiera puede abrir y editar, contraseñas guardadas en un archivo dentro de una carpeta compartida y la falta de verificación en dos pasos. Los permisos de María, Carlos (actualiza ventas) y Patricia (revisa y sugiere) corresponden a sus tareas. Cada riesgo encontrado suma; marcar algo correcto como riesgo descuenta.</div>
+</section>
+
+<section class="etask card" data-id="t4" data-pts="15" data-auto="mc" data-title="Permiso justo" data-lesson="Lección 1.3 · Compartir con el permiso justo">
+ <h2>La contadora pide la planilla de ventas del mes</h2>
+ <p>Patricia necesita <b>revisar</b> la planilla “2026-10_Ventas_Mensuales.xlsx” para preparar los impuestos y dejar observaciones, pero no debe cambiar las cifras. ¿Cómo la comparte María?</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="t4"> Agregarla como persona específica con <b>Puede comentar</b> y acceso general <b>Restringido</b>.</label>
+  <label class="opt"><input type="radio" name="t4"> Enviar el enlace con <b>Cualquier persona con el enlace · Puede editar</b> para que no tenga problemas al abrirlo.</label>
+  <label class="opt"><input type="radio" name="t4"> Descargar la planilla y enviarla por WhatsApp para no darle acceso a la nube.</label>
+  <label class="opt"><input type="radio" name="t4"> Agregarla con <b>Puede editar</b>, porque es una profesional de confianza.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>“Comentar” permite revisar y sugerir sin modificar, y el acceso restringido asegura que solo ella pueda abrirlo. Un enlace abierto con edición expone la información; enviar una copia por WhatsApp crea versiones paralelas que se desactualizan; y la confianza no reemplaza al permiso justo.</div>
+</section>
+
+<section class="etask card" data-id="t5" data-pts="20" data-auto="order" data-title="Salida segura de un trabajador" data-lesson="Lección 1.3 · Caso: salida de un trabajador">
+ <h2>Ordena los pasos para la salida de Javiera</h2>
+ <p>Javiera, que llevaba las redes del negocio, termina su contrato el viernes. Ordena las acciones de la primera a la última.</p>
+ <ol class="ord">
+  <li data-pos="1">Pedirle que mueva a la carpeta del negocio los archivos que tenga en su cuenta personal.</li>
+  <li data-pos="2">Retirar su acceso a las carpetas compartidas y a las cuentas del negocio.</li>
+  <li data-pos="3">Cambiar las contraseñas que ella conocía, empezando por el correo del negocio.</li>
+  <li data-pos="4">Revisar que la verificación en dos pasos esté activa con un teléfono del negocio.</li>
+  <li data-pos="5">Confirmar con el equipo que todo sigue accesible y registrar el cambio.</li>
+ </ol>
+ <div class="why"><h4>Por qué</h4>Primero se rescata la información (si se retira el acceso antes, los archivos en cuentas personales quedan fuera). Luego se cortan los accesos, se cambian las claves conocidas y se asegura la verificación en dos pasos. Al final se confirma que el trabajo del equipo sigue funcionando.</div>
+</section>
+
+<section class="etask card" data-id="t6" data-pts="10" data-auto="mc" data-title="Respuesta ante un incidente" data-lesson="Lección 1.3 · Seguridad básica">
+ <h2>Le roban el teléfono a María</h2>
+ <p>El teléfono tenía la sesión abierta del correo del negocio y de la nube. ¿Qué debe hacer primero?</p>
+ <div class="opts">
+  <label class="opt"><input type="radio" name="t6"> Esperar unos días por si el teléfono aparece.</label>
+  <label class="opt" data-ok><input type="radio" name="t6"> Desde otro equipo, cerrar las sesiones abiertas y cambiar la contraseña de la cuenta del negocio.</label>
+  <label class="opt"><input type="radio" name="t6"> Borrar la carpeta compartida para que nadie vea la información.</label>
+  <label class="opt"><input type="radio" name="t6"> Crear una cuenta nueva y empezar de cero con los archivos.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Google y Microsoft permiten revisar los dispositivos conectados, cerrar sesiones a distancia y cambiar la contraseña. Así se corta el acceso sin perder información, que sigue a salvo en la nube. Borrar carpetas o empezar de cero no resuelve el acceso del teléfono y hace perder trabajo.</div>
+</section>

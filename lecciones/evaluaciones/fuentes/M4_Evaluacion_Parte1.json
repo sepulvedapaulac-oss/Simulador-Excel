@@ -1,0 +1,196 @@
+{
+  "categoria": "Herramientas Digitales PYMES/Módulo 4/Evaluación Parte 1",
+  "puntaje": 2,
+  "preguntas": [
+    {
+      "id": "M4.P1",
+      "tema": "4.1 · Qué aporta un CRM",
+      "q": "Marcela tiene clientes de Casa Nativa repartidos entre chats de WhatsApp, una planilla desactualizada y una libreta del taller. Para saber qué compró alguien debe buscar entre cientos de mensajes. ¿Qué le aportaría principalmente un CRM?",
+      "o": [
+        "Más seguidores en Instagram, porque publicaría con mayor frecuencia y su marca sería más visible.",
+        "Un respaldo automático de todos sus chats completos, para revisarlos cuando surja una duda.",
+        "Un solo lugar con los datos de cada cliente, su historial y la próxima acción a realizar.",
+        "Una herramienta para diseñar promociones y enviarlas a toda la base al mismo tiempo."
+      ],
+      "c": 2,
+      "f": [
+        "Un CRM gestiona la relación con quienes ya son clientes; no es una herramienta para ganar seguidores.",
+        "Guardar chats completos no ordena la información: el CRM registra lo útil para decidir, no todo.",
+        "Un CRM centraliza, da contexto con el historial y facilita la acción al definir el siguiente paso con cada persona.",
+        "Enviar lo mismo a todos es justamente lo que un CRM ayuda a evitar al permitir segmentar."
+      ],
+      "g": "Un CRM centraliza, da contexto y facilita la acción: datos con propósito, no acumulación."
+    },
+    {
+      "id": "M4.P2",
+      "tema": "4.1 · Registro mínimo de clientes",
+      "q": "Marcela armará una planilla compartida como primer registro de clientes. ¿Qué conjunto de columnas le conviene más para empezar?",
+      "o": [
+        "Contacto, canal preferido, consentimiento, última compra, intereses y próxima acción con fecha.",
+        "Nombre, RUT, fecha de cumpleaños, dirección completa, estado de salud y una copia íntegra de cada conversación.",
+        "Nombre, teléfono y número de cuenta bancaria, para agilizar devoluciones y pagos futuros.",
+        "Solo nombre y teléfono, porque más columnas hacen la planilla difícil de mantener al día."
+      ],
+      "c": 0,
+      "f": [
+        "Son los campos mínimos útiles: permiten contactar con permiso, recordar el historial, segmentar y hacer seguimiento.",
+        "Acumula datos sensibles o que no usará y omite lo que sí ayuda a vender, como la última compra y la próxima acción.",
+        "Los datos bancarios no son necesarios para la relación comercial y exponen información delicada sin propósito.",
+        "Con solo contacto no sabría qué compró cada persona ni cuándo volver a escribirle; falta lo que permite actuar."
+      ],
+      "g": "Registra solo lo que ayuda a decidir o actuar, y pide consentimiento para enviar novedades."
+    },
+    {
+      "id": "M4.P3",
+      "tema": "4.1 · Segmentación",
+      "q": "Ignacio cotizó un set de cojines de lino hace diez días por WhatsApp y todavía no compra. Nunca le ha comprado a Casa Nativa. ¿En qué segmento está y qué acción corresponde?",
+      "o": [
+        "Cliente nuevo: preguntarle cómo le fue con su primera compra y facilitarle la siguiente.",
+        "Cliente inactivo: enviarle un descuento fuerte para reactivarlo cuanto antes.",
+        "Cliente recurrente: avisarle primero de las novedades de la colección de lino.",
+        "Interesado sin compra: hacer seguimiento a su cotización, sin presionar."
+      ],
+      "c": 3,
+      "f": [
+        "Un cliente nuevo ya hizo su primera compra; Ignacio solo cotizó, así que no hay compra que acompañar.",
+        "Inactivo es quien compró antes y dejó de hacerlo; Ignacio aún no ha comprado y su consulta es reciente.",
+        "Recurrente es quien ha comprado varias veces; tratarlo así ignora que todavía no concreta su primera compra.",
+        "Cotizó y no ha comprado: el paso pertinente es retomar la cotización con información útil y sin presionar."
+      ],
+      "g": "Nuevos, recurrentes, inactivos e interesados sin compra necesitan mensajes distintos."
+    },
+    {
+      "id": "M4.P4",
+      "tema": "4.1 · Fidelización y protección de datos",
+      "q": "Una clienta frecuente le escribe a Marcela: “Me encantan sus productos, pero prefiero no recibir más novedades por WhatsApp”. ¿Qué debería hacer Marcela en su registro?",
+      "o": [
+        "Mantenerla en la lista de difusión, porque es una buena clienta y podría cambiar de opinión.",
+        "Registrar que no da consentimiento para novedades y dejar de enviárselas desde ahora.",
+        "Borrar de inmediato toda su ficha, incluido el historial de compras y garantías vigentes.",
+        "Pasarla a la lista de correo electrónico para seguir enviándole las mismas promociones."
+      ],
+      "c": 1,
+      "f": [
+        "Seguir escribiéndole ignora su decisión y daña la confianza que se buscaba construir.",
+        "Respetar lo que pidió y dejarlo registrado evita errores futuros; fidelizar también es saber cuándo no contactar.",
+        "Ella pidió no recibir novedades, no eliminar sus datos; borrar todo sin que lo pida puede afectar su postventa.",
+        "Cambiar de canal no respeta su decisión: dejó claro que no quiere recibir novedades."
+      ],
+      "g": "Pide consentimiento, guarda solo lo necesario y respeta si alguien pide no ser contactado o que se eliminen sus datos."
+    },
+    {
+      "id": "M4.P5",
+      "tema": "4.2 · KPI: pregunta, indicador y decisión",
+      "q": "Marcela quiere saber si su campaña de la colección Living está funcionando. ¿Cuál de estas formulaciones corresponde a un KPI útil?",
+      "o": [
+        "Costo por venta semanal de la campaña; si sube dos semanas seguidas, cambiar el anuncio.",
+        "Cantidad de “me gusta” del anuncio, revisada todos los días para ver si la gente lo nota.",
+        "Todas las métricas que muestran Instagram y Google Analytics, para no perder nada.",
+        "Número de seguidores nuevos del mes, comparado con el de la competencia más cercana."
+      ],
+      "c": 0,
+      "f": [
+        "Responde la pregunta del negocio con un dato ligado a ventas y anticipa una decisión concreta.",
+        "Los “me gusta” pueden ser una métrica de vanidad: no dicen si la campaña vende.",
+        "Mirar todo sin prioridad genera ruido y no lleva a ninguna decisión.",
+        "Los seguidores no miden si la campaña genera ventas y la comparación no lleva a una acción clara."
+      ],
+      "g": "Un KPI es un indicador con propósito: pregunta → indicador → decisión."
+    },
+    {
+      "id": "M4.P6",
+      "tema": "4.2 · Eventos clave en GA4",
+      "q": "En la tienda en línea de Casa Nativa, muchas ventas empiezan cuando alguien toca el botón “Escríbenos por WhatsApp”. Ese clic ya se registra como evento en Google Analytics 4. ¿Qué conviene hacer para medirlo como una acción importante?",
+      "o": [
+        "Contar a mano los chats de WhatsApp cada viernes y anotarlos aparte del sitio web.",
+        "Revisar solo el número de sesiones, porque más visitas implican más mensajes.",
+        "Marcar ese evento como evento clave para verlo en los informes por canal.",
+        "Crear una cuenta nueva de Analytics dedicada solo a medir los clics en WhatsApp."
+      ],
+      "c": 2,
+      "f": [
+        "Contar aparte pierde la conexión con el canal de origen y con lo que hizo la persona en el sitio.",
+        "Las sesiones no indican cuántas personas dieron el paso importante; más tráfico no asegura más contactos.",
+        "En GA4 tú decides qué eventos son clave (antes llamados conversiones); así aparecen en los informes por canal.",
+        "No hace falta otra cuenta: basta con marcar el evento existente como clave en la misma propiedad."
+      ],
+      "g": "Los eventos clave registran las acciones que importan al negocio: compras, clics a WhatsApp o formularios."
+    },
+    {
+      "id": "M4.P7",
+      "tema": "4.2 · Grupo de canales predeterminado en GA4",
+      "q": "Marcela envía un boletín mensual por correo, pero en el informe de adquisición de tráfico, agrupado por el grupo de canales predeterminado, esas visitas no aparecen en el canal “Correo electrónico”. Sus enlaces usan la etiqueta utm_medium=boletin. ¿Qué conviene corregir?",
+      "o": [
+        "Dejar de enviar el boletín, porque no aparece en los informes y no se puede medir.",
+        "Crear un canal nuevo por cada boletín que envíe, con un nombre distinto cada mes.",
+        "Sumar a mano las visitas del canal “Directo”, porque ahí siempre llega el correo.",
+        "Etiquetar los enlaces con utm_medium=email para que GA4 los asigne a ese canal."
+      ],
+      "c": 3,
+      "f": [
+        "El problema es de etiquetado, no del boletín: abandonarlo elimina un canal sin saber si funciona.",
+        "Multiplicar canales dificulta comparar en el tiempo; el grupo predeterminado ya tiene un canal para correo.",
+        "No hay garantía de que esas visitas estén en Directo, y sumarlas a mano mezcla tráfico de otros orígenes.",
+        "El grupo de canales predeterminado clasifica según reglas de fuente y medio; un medio “email” lo ubica en Correo electrónico."
+      ],
+      "g": "Etiquetas UTM consistentes permiten que GA4 clasifique bien el tráfico y comparar canales con justicia."
+    },
+    {
+      "id": "M4.P8",
+      "tema": "4.2 · Panel en Looker Studio",
+      "q": "Marcela quiere un panel semanal que reúna datos de Google Analytics 4 y su planilla de ventas en Google Sheets, y que su ayudante pueda consultar. ¿Qué propuesta es la más adecuada?",
+      "o": [
+        "Un informe en Looker Studio con veinte gráficos de todas las métricas, revisado cuando haya tiempo.",
+        "Un informe en Looker Studio con ambas fuentes, tres indicadores clave y revisión cada lunes.",
+        "Capturas de pantalla de cada plataforma pegadas en un documento que se actualiza a mano.",
+        "Una cuenta de administrador de GA4 para la ayudante, para que revise todo por su cuenta."
+      ],
+      "c": 1,
+      "f": [
+        "Demasiadas métricas y sin frecuencia fija generan ruido y decisiones tardías.",
+        "Looker Studio conecta GA4 y Google Sheets como fuentes; pocos indicadores con revisión fija convierten datos en decisiones.",
+        "Las capturas quedan desactualizadas y consumen tiempo; un panel conectado se actualiza con las fuentes.",
+        "Dar acceso total no ordena qué mirar y entrega más permisos de los necesarios para consultar."
+      ],
+      "g": "Un buen panel responde pocas preguntas importantes, con revisión periódica y una acción asociada."
+    },
+    {
+      "id": "M4.P9",
+      "tema": "4.3 · Priorizar por impacto y esfuerzo",
+      "q": "Marcela estima que automatizar las cinco preguntas frecuentes en WhatsApp Business le tomaría una tarde y le ahorraría cerca de una hora diaria de respuestas repetidas. ¿Cómo debería ubicar esta acción en su plan?",
+      "o": [
+        "Alto impacto y bajo esfuerzo: priorizarla primero.",
+        "Alto impacto y alto esfuerzo: dividirla en etapas.",
+        "Bajo impacto y bajo esfuerzo: hacerla si no distrae.",
+        "Bajo impacto y alto esfuerzo: postergarla."
+      ],
+      "c": 0,
+      "f": [
+        "Libera tiempo todos los días con poco trabajo inicial: es candidata natural para empezar.",
+        "Una tarde de trabajo no es un esfuerzo alto que requiera planificarse por etapas.",
+        "Ahorrar una hora diaria es un impacto relevante para un equipo de dos personas.",
+        "Ni el impacto es bajo ni el esfuerzo es alto según los datos que estimó Marcela."
+      ],
+      "g": "Alto impacto y bajo esfuerzo va primero; alto esfuerzo se planifica por etapas; bajo impacto y alto esfuerzo se posterga."
+    },
+    {
+      "id": "M4.P10",
+      "tema": "4.3 · Acción con responsable, plazo e indicador",
+      "q": "Marcela redacta la prioridad 2 de su Plan de Acción Digital para atender el problema “respondemos a mano las mismas preguntas todo el día”. ¿Qué versión está mejor formulada?",
+      "o": [
+        "Mejorar la atención por WhatsApp. Responsable: todo el equipo. Plazo: durante este año. Indicador: que los clientes estén más felices.",
+        "Automatizar todo WhatsApp con un chatbot avanzado. Responsable: una agencia externa. Plazo: mañana. Indicador: ninguno aún.",
+        "Responder más rápido. Responsable: quien esté libre. Plazo: cuando se pueda. Indicador: menos estrés.",
+        "Respuestas rápidas para 5 preguntas. Responsable: Marcela. Plazo: 2 semanas. Indicador: preguntas repetidas/semana."
+      ],
+      "c": 3,
+      "f": [
+        "La acción es vaga, el responsable difuso, el plazo amplio y el indicador no se puede verificar.",
+        "El alcance es desproporcionado para el equipo, el plazo no es realista y no define cómo medir.",
+        "Sin responsable ni plazo concretos nadie se hace cargo, y “menos estrés” no es verificable.",
+        "Tiene acción concreta, una persona a cargo, un plazo realista y un indicador que se puede contar."
+      ],
+      "g": "Problema → acción → responsable → plazo → indicador verificable."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+<style>
+.adlist{display:grid;gap:12px;margin-top:12px}
+.adbox{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.adbox h3{margin:0;font-size:1rem;color:var(--navy)}
+.adbox .numgrid{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:8px}
+.rule{background:var(--mint);border:1px solid var(--mint-line);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.94rem}
+.fmk{font-size:.84rem;font-weight:700}
+.fmk.ok{color:var(--good)}.fmk.ko{color:var(--bad)}
+.mock table.data{margin:0;font-size:.88rem}
+.mock .tablewrap{padding:10px}
+@media(max-width:640px){table.stack,table.stack tbody{display:block}table.stack tr:first-child{display:none}table.stack tr{display:block;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--surface)}
+table.stack td{display:flex;justify-content:space-between;gap:10px;border:0;border-bottom:1px dashed var(--line);padding:6px 10px;text-align:right}table.stack td:last-child{border-bottom:0}
+table.stack td::before{content:attr(data-l);font-weight:600;color:var(--muted);text-align:left}table.stack td.h{display:block;text-align:left;background:var(--surface2)}table.stack td.h::before{content:none}}
+</style>
+<section id="intro" class="card">
+ <span class="eyebrow">Simulador de práctica</span>
+ <h2>¿Qué anuncio de Casa Nativa merece tu presupuesto?</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Tengo un presupuesto chico y varios anuncios funcionando. No quiero mirar solo los ‘me gusta’: necesito saber cuánto me cuesta cada resultado y si de verdad gano plata.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Practica lo que viste en la lección <b>3.3 Invertir en publicidad sin perder el control</b> y en el video <b>Estructura de una campaña digital</b>: leer el panel de anuncios, calcular <b>CTR</b>, <b>CPC</b> y <b>costo por resultado</b>, y decidir con evidencia si mantener, escalar o pausar.</p>
+ <div class="steps"><div><b>Calculadora</b>Estima clics, ventas y resultado de una campaña antes de invertir.</div><div><b>Practicar</b>Resuelve casos aleatorios: comparar anuncios, repartir un presupuesto diario y ver si una campaña es rentable.</div><div><b>Completar</b>Resuelve al menos 3 casos. Tu nota es el % de casos correctos.</div></div>
+ <button class="btn" data-start>Abrir el simulador →</button>
+</section>
+
+<section id="sim" hidden>
+ <div class="tabs"><button class="tab on" data-pane="pPract">🎯 Practicar</button><button class="tab" data-pane="pCalc">🧮 Calculadora</button><button class="tab" data-pane="pForm">📐 Fórmulas</button></div>
+ <div id="pPract" class="pane on card">
+  <p id="simCount" class="counter"></p>
+  <div id="simCase"></div>
+  <div class="row-btns"><button class="btn" id="simCheck">Revisar mi respuesta</button><button class="btn ghost" id="simNext" hidden>Nuevo caso →</button><span class="muted" id="simMsg"></span></div>
+ </div>
+ <div id="pCalc" class="pane card">
+  <h2>Calculadora de campaña con presupuesto acotado</h2>
+  <p class="muted">Estima qué puedes esperar antes de invertir. Usa el CPC y la tasa de conversión de tus campañas anteriores o un supuesto prudente.</p>
+  <div class="numgrid">
+   <label>Presupuesto total de la campaña<span class="hint">Ej.: $10.000 diarios × 7 días</span><span class="unit"><span>$</span><input type="number" id="cB" value="70000" min="0" step="1000"></span></label>
+   <label>CPC estimado (costo por clic)<span class="unit"><span>$</span><input type="number" id="cK" value="350" min="0" step="10"></span></label>
+   <label>Tasa de conversión de clic a venta<span class="unit"><input type="number" id="cR" value="2.5" min="0" max="100" step="0.1"><span>%</span></span></label>
+   <label>Margen por venta<span class="hint">Precio − costo del producto − despacho − comisiones</span><span class="unit"><span>$</span><input type="number" id="cM" value="9000" min="0" step="500"></span></label>
+  </div>
+  <div class="kpi" id="cOut"></div>
+  <div class="note"><b>Lo que esta calculadora no considera:</b> que el CPC y la conversión cambian cuando subes el presupuesto (escalar suele encarecer cada resultado), el periodo de aprendizaje de la plataforma, impuestos (IVA), devoluciones, ventas que ocurren días después del clic o por otro canal, ni el valor de un cliente que vuelve a comprar. Es una estimación para decidir un máximo, no una promesa de resultados.</div>
+ </div>
+ <div id="pForm" class="pane card">
+  <h2>Fórmulas y reglas de redondeo</h2>
+  <div class="tablewrap"><table class="data">
+   <tr><th>Indicador</th><th>Fórmula</th><th>Qué te dice</th></tr>
+   <tr><td><b>CTR</b> (porcentaje de clics)</td><td>clics ÷ impresiones × 100</td><td>Si el anuncio llama la atención de quienes lo ven.</td></tr>
+   <tr><td><b>CPC</b> (costo por clic)</td><td>importe gastado ÷ clics</td><td>Cuánto pagas por cada visita o interés.</td></tr>
+   <tr><td><b>Costo por resultado</b></td><td>importe gastado ÷ resultados</td><td>Eficiencia frente al objetivo (conversación, venta…).</td></tr>
+   <tr><td><b>Resultado de la campaña</b></td><td>ventas × margen por venta − importe gastado</td><td>Si la campaña gana o pierde dinero.</td></tr>
+   <tr><td><b>Costo máximo por venta</b></td><td>= margen por venta</td><td>Sobre ese costo, cada venta pierde dinero.</td></tr>
+  </table></div>
+  <p class="muted">Redondeo: porcentajes a <b>1 decimal</b> (se acepta ±0,1 punto); CPC al peso (±$2); costos por resultado y resultados al peso (±$5). Puedes escribir 2,5 o 2.5 en los porcentajes y 12.500 o 12500 en los montos.</p>
+  <div class="note"><b>Este simulador no considera:</b> atribución entre canales (una venta puede empezar en Instagram y cerrarse en Google), ventas posteriores del mismo cliente, el efecto de la frecuencia, IVA ni costos fijos del negocio. Con pocos resultados (2 o 3 ventas) la muestra es chica: en la vida real conviene esperar más datos antes de una decisión definitiva. Las decisiones siguen la regla que se indica en cada caso.</div>
+ </div>
+</section>
+
+<script data-sim>
+(function(){
+const $=s=>document.querySelector(s),r=(a,b,s=1)=>a+s*Math.floor(Math.random()*((b-a)/s+1)),pick=a=>a[r(0,a.length-1)];
+const f=n=>(n<0?'−$':'$')+Math.abs(Math.round(n)).toLocaleString('es-CL'),nn=n=>Math.round(n).toLocaleString('es-CL'),pc=(x,d=1)=>x.toFixed(d).replace('.',',')+'%';
+const AD=[['Video Reels','lámparas de cerámica'],['Carrusel','cojines de lino'],['Foto fija','mantas de lana'],['Historia con oferta','canastos tejidos'],['Video corto','set de velas aromáticas'],['Carrusel','jarrones de greda'],['Foto de ambiente','living pequeño decorado']];
+const OBJ=[{k:'wa',obj:'Interacción · conversaciones por WhatsApp',res:'conversaciones',uno:'conversación',rate:[180,450]},{k:'vt',obj:'Ventas · compras en la tienda en línea',res:'ventas',uno:'venta',rate:[12,45]}];
+const DEC={escalar:'Escalar (subir presupuesto)',mantener:'Mantener',pausar:'Pausar'};
+/* ---- utilidades de campos ---- */
+function inp(id,label,pre,post,hint,neg){return `<label>${label}${hint?`<span class="hint">${hint}</span>`:''}<span class="unit">${pre?`<span>${pre}</span>`:''}<input type="text" ${neg?'':'inputmode="decimal"'} id="${id}" autocomplete="off">${post?`<span>${post}</span>`:''}</span></label>`}
+function sel(id,label,opts){return `<label>${label}<select id="${id}"><option value="">Elige…</option>${opts.map(([v,t])=>`<option value="${v}">${t}</option>`).join('')}</select></label>`}
+function parse(raw,kind){let s=String(raw).trim().replace(/[$%\s]/g,'').replace(/[−–]/g,'-');if(!s)return NaN;
+ if(kind==='pct'){s=s.includes(',')?s.replace(/\./g,'').replace(',','.'):s}else s=s.replace(/\./g,'').replace(',','.');
+ return /^-?\d+(\.\d+)?$/.test(s)?+s:NaN}
+function show(x){return x.kind==='pct'?pc(x.ans):x.kind==='int'?nn(x.ans):f(x.ans)}
+function mark(el,node,ok,txt){node.style.borderColor=ok?'var(--good-line)':'var(--bad-line)';const lab=node.closest('label');lab.insertAdjacentHTML('beforeend',`<span class="fmk ${ok?'ok':'ko'}">${ok?'✔ Correcto':'✘ Correcto: '+txt}</span>`)}
+function grade(c,el){const F=c.fields,vals=[];
+ for(const x of F){const node=el.querySelector('#'+x.id);if(x.kind==='sel'){if(!node.value)return null;vals.push(node.value)}else{const v=parse(node.value,x.kind);if(isNaN(v))return null;vals.push(v)}}
+ let all=true;F.forEach((x,i)=>{const node=el.querySelector('#'+x.id);let ok;
+  if(x.kind==='sel')ok=vals[i]===x.ans;else ok=Math.abs(vals[i]-x.ans)<=x.tol+1e-9;
+  if(!ok)all=false;mark(el,node,ok,x.kind==='sel'?node.querySelector(`option[value="${x.ans}"]`).textContent:show(x))});return all}
+function fill(c,el){c.fields.forEach(x=>{const node=el.querySelector('#'+x.id);node.value=x.kind==='sel'?x.ans:x.kind==='pct'?x.ans.toFixed(1):x.kind==='int'?Math.round(x.ans):Math.round(x.ans)})}
+/* ---- generación de anuncios ---- */
+function mkAd(o,letter,name,src){for(let t=0;t<200;t++){const google=src==='g';
+  const imp=google?r(1800,9000):r(6000,42000),ctr=google?r(30,85)/10:r(6,32)/10,clics=Math.round(imp*ctr/100),cpc=google?r(250,700):r(150,620),gasto=Math.round(clics*cpc/10)*10;
+  const res=Math.round(clics*r(o.rate[0],o.rate[1])/1000);
+  if(res<2||res>=clics||gasto<12000||gasto>95000)continue;
+  return {letter,name,imp,clics,gasto,res,ctr:clics/imp*100,cpc:gasto/clics,cpr:gasto/res}}return null}
+function mkAds(o,n){for(let t=0;t<500;t++){const names=[...AD].sort(()=>Math.random()-.5).slice(0,n);
+  const ads=names.map((nm,i)=>mkAd(o,'ABC'[i],`${nm[0]} · ${nm[1]}`,'m'));if(ads.some(a=>!a))continue;
+  const s=ads.map(a=>a.cpr).sort((a,b)=>a-b);let okk=true;for(let i=1;i<s.length;i++)if(s[i]/s[i-1]<1.15)okk=false;
+  if(okk)return ads}return null}
+function adTable(ads,o,dias){return `<div class="mock"><div class="bar">📊 Administrador de anuncios (recreación) · últimos ${dias} días · Objetivo: ${o.obj}</div><div class="tablewrap"><table class="data stack">
+ <tr><th>Anuncio</th><th class="n">Impresiones</th><th class="n">Clics en el enlace</th><th class="n">Importe gastado</th><th class="n">Resultados (${o.res})</th></tr>
+ ${ads.map(a=>`<tr><td class="h"><b>${a.letter}</b> · ${a.name}</td><td class="n" data-l="Impresiones">${nn(a.imp)}</td><td class="n" data-l="Clics en el enlace">${nn(a.clics)}</td><td class="n" data-l="Importe gastado">${f(a.gasto)}</td><td class="n" data-l="Resultados (${o.res})">${nn(a.res)}</td></tr>`).join('')}</table></div></div>`}
+const RND='<p class="muted">Porcentajes con 1 decimal (±0,1 punto); CPC al peso (±$2); costos y resultados al peso (±$5).</p>';
+/* ---- tipos de caso ---- */
+const TYPES={
+ comparar(){const o=pick(OBJ),n=r(2,3);let ads,meta;
+  for(let t=0;t<300;t++){ads=mkAds(o,n);if(!ads)continue;const s=ads.map(a=>a.cpr).sort((a,b)=>a-b),k=r(0,n-2);
+   meta=Math.round(Math.sqrt(s[k]*s[k+1])/100)*100;if(ads.every(a=>Math.abs(a.cpr-meta)/meta>=.06))break;meta=null}
+  const best=ads.filter(a=>a.cpr<=meta).sort((a,b)=>a.cpr-b.cpr)[0];
+  ads.forEach(a=>a.dec=a.cpr>meta?'pausar':a===best?'escalar':'mantener');
+  const fields=[];ads.forEach(a=>{const L=a.letter;fields.push({id:'ctr'+L,kind:'pct',ans:a.ctr,tol:.1},{id:'cpc'+L,kind:'money',ans:a.cpc,tol:2},{id:'cpr'+L,kind:'money',ans:a.cpr,tol:5},{id:'dec'+L,kind:'sel',ans:a.dec})});
+  return {tipo:'comparar',o,ads,meta,fields}},
+ repartir(){const o=pick(OBJ);let ads,D,best;
+  for(let t=0;t<300;t++){ads=mkAds(o,3);if(!ads)continue;best=[...ads].sort((a,b)=>a.cpr-b.cpr)[0];
+   const gas=ads.reduce((x,y)=>x+y.gasto,0);D=Math.max(Math.ceil(best.cpr*r(2,5)/1000)*1000,Math.ceil(gas/7/1000)*1000);if(D>=5000&&D<=40000)break;ads=null}
+  const exp=D/best.cpr,fields=ads.map(a=>({id:'cpr'+a.letter,kind:'money',ans:a.cpr,tol:5}));
+  fields.push({id:'best',kind:'sel',ans:best.letter},{id:'exp',kind:'int',ans:exp,tol:1-1e-6});
+  return {tipo:'repartir',o,ads,D,best,exp,fields}},
+ rentable(){const google=Math.random()<.4,prod=pick(AD.slice(0,6))[1],want=Math.random()<.5;let a,m,net;
+  for(let t=0;t<500;t++){a=mkAd({rate:[10,50]},'A','',google?'g':'m');if(!a)continue;m=r(4000,16000,500);net=a.res*m-a.gasto;
+   if((net>0)===want&&Math.abs(net)>=Math.max(3000,a.gasto*.05))break;a=null}
+  const fields=[{id:'ctr',kind:'pct',ans:a.ctr,tol:.1},{id:'cpc',kind:'money',ans:a.cpc,tol:2},{id:'cpv',kind:'money',ans:a.cpr,tol:5},{id:'net',kind:'money',ans:net,tol:5},{id:'rent',kind:'sel',ans:net>0?'si':'no'}];
+  return {tipo:'rentable',google,prod,a,m,net,fields}}};
+let cola=[];
+window.SIM={min:3,
+ gen(){if(!cola.length)cola=Object.keys(TYPES).sort(()=>Math.random()-.5);return TYPES[cola.shift()]()},
+ render(c,el){
+  if(c.tipo==='comparar'){el.innerHTML=`<span class="eyebrow">Caso · Comparar anuncios</span><h2>¿Qué anuncio escalar, mantener o pausar?</h2>
+   <p>Marcela lleva 7 días con ${c.ads.length} anuncios en la misma campaña de Meta Ads. Su meta es un <b>costo por ${c.o.uno} de ${f(c.meta)} o menos</b>.</p>${adTable(c.ads,c.o,7)}
+   <div class="rule"><b>Regla de decisión de Marcela:</b> si el costo por resultado supera la meta, se <b>pausa</b>. Entre los que cumplen la meta, el de <b>menor costo por resultado se escala</b> y los demás se <b>mantienen</b>.</div>
+   <div class="adlist">${c.ads.map(a=>`<div class="adbox"><h3>Anuncio ${a.letter} · ${a.name}</h3><div class="numgrid">${inp('ctr'+a.letter,'CTR','','%')}${inp('cpc'+a.letter,'CPC','$','')}${inp('cpr'+a.letter,'Costo por '+c.o.uno,'$','')}${sel('dec'+a.letter,'Decisión',Object.entries(DEC))}</div></div>`).join('')}</div>${RND}`}
+  else if(c.tipo==='repartir'){el.innerHTML=`<span class="eyebrow">Caso · Presupuesto diario fijo</span><h2>¿Dónde poner ${f(c.D)} diarios?</h2>
+   <p>Marcela no puede gastar más de <b>${f(c.D)} al día</b>. Hasta ahora repartió el dinero entre tres anuncios. Estos son los resultados de los últimos 7 días:</p>${adTable(c.ads,c.o,7)}
+   <div class="rule"><b>Regla:</b> concentra todo el presupuesto diario en el anuncio con <b>menor costo por ${c.o.uno}</b> y pausa los otros dos. Supón que su costo por resultado se mantiene.</div>
+   <div class="numgrid">${c.ads.map(a=>inp('cpr'+a.letter,`Costo por ${c.o.uno} · Anuncio ${a.letter}`,'$','')).join('')}</div>
+   <div class="numgrid">${sel('best','¿En qué anuncio concentras el presupuesto?',c.ads.map(a=>[a.letter,'Anuncio '+a.letter]))}${inp('exp',`¿Cuántas ${c.o.res} al día puedes esperar?`,'','',`Presupuesto diario ÷ costo por ${c.o.uno}. Número entero.`)}</div>${RND}`}
+  else{const a=c.a;el.innerHTML=`<span class="eyebrow">Caso · ¿Es rentable?</span><h2>Campaña de ventas de ${c.prod}</h2>
+   <p>Marcela hizo una campaña de ${c.google?'<b>búsqueda en Google Ads</b> para quienes ya buscan':'<b>ventas en Meta Ads</b> para'} ${c.prod}. Cada venta le deja un <b>margen de ${f(c.m)}</b> (precio menos costo del producto, despacho y comisión de la pasarela), antes de pagar publicidad.</p>
+   <div class="mock"><div class="bar">📊 ${c.google?'Google Ads':'Administrador de anuncios'} (recreación) · campaña terminada · 14 días</div><div class="tablewrap"><table class="data stack">
+   <tr><th class="n">Impresiones</th><th class="n">Clics</th><th class="n">${c.google?'Costo':'Importe gastado'}</th><th class="n">${c.google?'Conversiones (compras)':'Resultados (compras)'}</th></tr>
+   <tr><td class="n" data-l="Impresiones">${nn(a.imp)}</td><td class="n" data-l="Clics">${nn(a.clics)}</td><td class="n" data-l="${c.google?'Costo':'Importe gastado'}">${f(a.gasto)}</td><td class="n" data-l="Compras">${nn(a.res)}</td></tr></table></div></div>
+   <div class="numgrid">${inp('ctr','CTR','','%')}${inp('cpc','CPC','$','')}${inp('cpv','Costo por venta','$','')}${inp('net','Resultado de la campaña','$','','Ventas × margen − inversión. Si pierde, usa el signo −.',true)}${sel('rent','¿La campaña es rentable?',[['si','Sí, gana dinero'],['no','No, pierde dinero']])}</div>${RND}`}},
+ check(c,el){const ok=grade(c,el);if(ok===null)return null;let sol;
+  if(c.tipo==='comparar'){sol=`<ol>${c.ads.map(a=>`<li><b>Anuncio ${a.letter}:</b> CTR = ${nn(a.clics)} ÷ ${nn(a.imp)} × 100 = <b>${pc(a.ctr)}</b>; CPC = ${f(a.gasto)} ÷ ${nn(a.clics)} = <b>${f(a.cpc)}</b>; costo por ${c.o.uno} = ${f(a.gasto)} ÷ ${a.res} = <b>${f(a.cpr)}</b> → ${a.cpr>c.meta?'supera':'cumple'} la meta de ${f(c.meta)} → <b>${DEC[a.dec]}</b>.</li>`).join('')}</ol>
+   <p>Fíjate: el anuncio con mejor CTR o el clic más barato no siempre es el que logra más ${c.o.res} por peso. Decide con el indicador que responde a tu objetivo: el <b>costo por resultado</b>. Al escalar, sube el presupuesto de a poco (por ejemplo, 20% cada pocos días) y vuelve a medir.</p>`}
+  else if(c.tipo==='repartir'){const tot=c.ads.reduce((s,a)=>s+a.res,0),gas=c.ads.reduce((s,a)=>s+a.gasto,0);
+   sol=`<ol>${c.ads.map(a=>`<li>Anuncio ${a.letter}: ${f(a.gasto)} ÷ ${a.res} = <b>${f(a.cpr)}</b> por ${c.o.uno}.</li>`).join('')}
+   <li>El menor costo es el del <b>Anuncio ${c.best.letter}</b>.</li><li>${f(c.D)} ÷ ${f(c.best.cpr)} = ${c.exp.toFixed(2).replace('.',',')} → unas <b>${Math.floor(c.exp)} ${c.o.res} al día</b> (se acepta ${Math.floor(c.exp)} o ${Math.ceil(c.exp)}).</li></ol>
+   <p>Antes, con ${f(gas)} en 7 días, obtuvo ${tot} ${c.o.res}: en promedio ${f(gas/tot)} por ${c.o.uno}. Concentrar mejora la eficiencia, pero al subir el presupuesto el costo por resultado suele aumentar: revisa al tercer día y ajusta con evidencia.</p>`}
+  else{const a=c.a;sol=`<ol><li>CTR = ${nn(a.clics)} ÷ ${nn(a.imp)} × 100 = <b>${pc(a.ctr)}</b>.</li><li>CPC = ${f(a.gasto)} ÷ ${nn(a.clics)} = <b>${f(a.cpc)}</b>.</li>
+   <li>Costo por venta = ${f(a.gasto)} ÷ ${a.res} = <b>${f(a.cpr)}</b>.</li><li>Resultado = ${a.res} × ${f(c.m)} − ${f(a.gasto)} = ${f(a.res*c.m)} − ${f(a.gasto)} = <b>${f(c.net)}</b>.</li>
+   <li>${c.net>0?`<b>Es rentable:</b> cada venta costó ${f(a.cpr)} en publicidad, menos que el margen de ${f(c.m)}.`:`<b>No es rentable:</b> cada venta costó ${f(a.cpr)} en publicidad, más que el margen de ${f(c.m)}. Antes de seguir, revisa audiencia, anuncio o página de producto, o detén la campaña.`}</li></ol>
+   <p>Regla rápida: el <b>costo máximo por venta</b> que puedes pagar es tu margen por venta (${f(c.m)}). Un CTR alto no basta si los clics no terminan en compras.</p>`}
+  return {ok,sol}},
+ solve(c,el){fill(c,el)},
+ calc(){const ids=['cB','cK','cR','cM'],upd=()=>{const g=id=>Math.max(0,+document.getElementById(id).value||0);
+   const B=g('cB'),K=g('cK'),R=Math.min(100,g('cR')),M=g('cM'),clics=K>0?Math.floor(B/K):0,v=clics*R/100,cpv=v>0?B/v:null,net=v*M-B,cpcMax=M*R/100;
+   $('#cOut').innerHTML=`<div><small>Clics esperados</small><b>${nn(clics)}</b><small>presupuesto ÷ CPC</small></div>
+    <div><small>Ventas esperadas</small><b>${v.toFixed(1).replace('.',',')}</b><small>clics × tasa de conversión</small></div>
+    <div><small>Costo por venta</small><b>${cpv===null?'—':f(cpv)}</b><small>${cpv===null?'sin ventas esperadas':'presupuesto ÷ ventas'}</small></div>
+    <div><small>Resultado estimado</small><b style="color:${net>=0?'var(--good)':'var(--bad)'}">${f(net)}</b><small>ventas × margen − presupuesto</small></div>
+    <div><small>CPC máximo para no perder</small><b>${f(cpcMax)}</b><small>margen × tasa de conversión</small></div>`};
+  ids.forEach(i=>document.getElementById(i).addEventListener('input',upd));upd()}};
+})();
+</script>

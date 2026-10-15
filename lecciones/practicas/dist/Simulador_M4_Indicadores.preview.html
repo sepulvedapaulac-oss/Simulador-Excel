@@ -1,0 +1,357 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Simulador de indicadores: lee tus datos y decide</title><style>:root{--bg:#dbe3e6;--surface:#fff;--surface2:#f7fafb;--ink:#172431;--ink2:#28404e;--muted:#5f7180;--teal:#0f7a82;--teal-ink:#0b666d;--navy:#173f4e;--line:#c9d6dc;--mint:#eaf7f6;--mint-line:#a9dbd7;--amber:#c97d0e;--amber-soft:#fff2dc;--good:#166534;--good-soft:#edf9ef;--good-line:#8dcf9d;--bad:#9e1c40;--bad-soft:#fff0f4;--bad-line:#efb1c3;--story:#fff8ed;--story-line:#eed4aa;--shadow:0 6px 22px rgba(23,63,78,.10)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e171c;--surface:#15222a;--surface2:#1a2a33;--ink:#e6eef2;--ink2:#cddbe2;--muted:#9fb2bd;--teal:#3cc4c0;--teal-ink:#6fdcd6;--navy:#a9d6e2;--line:#2c4350;--mint:#143238;--mint-line:#2f6b6b;--amber:#f0b04e;--amber-soft:#3a2c14;--good:#7ddc96;--good-soft:#173322;--good-line:#2f7a46;--bad:#ff8fae;--bad-soft:#3a1a25;--bad-line:#7a2f48;--story:#2d2618;--story-line:#5c4b2a;--shadow:0 6px 22px rgba(0,0,0,.4)}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.app{max-width:980px;margin:0 auto;padding:16px 16px 80px}
+.top{background:var(--navy);color:#fff;border-radius:18px;padding:18px 22px;box-shadow:var(--shadow)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .top{background:#10303a}}
+.top .course{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-weight:700}
+.top h1{margin:6px 0 8px;font-size:1.55rem;line-height:1.2}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 12px;font-size:.84rem;font-weight:600}
+.prog{height:8px;border-radius:8px;background:rgba(255,255,255,.18);margin-top:14px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:#2bc2b1;transition:width .4s}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px;box-shadow:var(--shadow)}
+.card h2{margin:0 0 8px;font-size:1.22rem;color:var(--navy);line-height:1.3}
+.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink)}
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:center}
+.story img{width:100%;border-radius:14px;display:block;aspect-ratio:16/10;object-fit:cover}
+@media(max-width:760px){.story{grid-template-columns:1fr}}
+.quote{background:var(--story);border:1px solid var(--story-line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.steps div{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.92rem}
+.steps b{display:block;color:var(--teal-ink)}
+@media(max-width:640px){.steps{grid-template-columns:1fr}}
+.btn{appearance:none;border:0;border-radius:12px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--teal);color:#fff;min-height:44px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--teal-ink);border:2px solid var(--teal)}
+.btn:focus-visible,.opt:focus-within,select:focus-visible,input:focus-visible{outline:3px solid #2bc2b1;outline-offset:2px}
+.row-btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.muted{color:var(--muted);font-size:.92rem}
+.etask{display:none}.etask.on{display:block}
+.thead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.pts{background:var(--mint);border:1px solid var(--mint-line);color:var(--teal-ink);border-radius:999px;padding:3px 12px;font-weight:800;font-size:.86rem;white-space:nowrap}
+.opts{display:grid;gap:10px;margin-top:12px}
+.opt{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:2px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer}
+.opt input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--teal)}
+.opt.sel{border-color:var(--teal)}
+.opt.ok{border-color:var(--good-line);background:var(--good-soft)}.opt.ko{border-color:var(--bad-line);background:var(--bad-soft)}
+.opt .mk{margin-left:auto;font-weight:800}
+.mrow{display:grid;grid-template-columns:1fr minmax(180px,260px) 28px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.mrow:last-child{border-bottom:0}
+@media(max-width:640px){.mrow{grid-template-columns:1fr 28px}.mrow select{grid-column:1/2}}
+select,input[type=text],input[type=number],textarea{font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:9px 10px;min-height:44px;width:100%}
+.mk.ok{color:var(--good)}.mk.ko{color:var(--bad)}
+.ord{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.ord li{display:flex;align-items:center;gap:10px;background:var(--surface2);border:2px solid var(--line);border-radius:12px;padding:8px 10px}
+.ord li .n{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.ord li .t{flex:1}
+.ord li button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.ord li.ok{border-color:var(--good-line);background:var(--good-soft)}.ord li.ko{border-color:var(--bad-line);background:var(--bad-soft)}
+.why{display:none;margin-top:14px;border-radius:12px;padding:12px 14px;background:var(--mint);border:1px solid var(--mint-line)}
+.why.show{display:block}
+.why h4{margin:0 0 4px;color:var(--teal-ink)}
+.numgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.numgrid label{display:grid;gap:6px;font-weight:600;font-size:.94rem}
+.numgrid .hint{font-weight:400;color:var(--muted);font-size:.84rem}
+.unit{display:flex;align-items:center;gap:8px}.unit span{color:var(--muted);font-weight:700}
+table.data{width:100%;border-collapse:collapse;margin-top:10px;font-size:.93rem}
+table.data th,table.data td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+table.data th{background:var(--surface2);color:var(--navy)}
+table.data td.n,table.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+.mock{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface2);margin-top:12px}
+.mock .bar{background:var(--navy);color:#fff;padding:8px 12px;font-size:.86rem;font-weight:700}
+.hs{position:relative;display:block;width:100%;text-align:left;border:2px dashed transparent;border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 10px;cursor:pointer}
+.hs:hover{border-color:var(--mint-line)}
+.hs.sel{border-color:var(--amber);background:var(--amber-soft)}
+.hs.ok{border-color:var(--good-line);background:var(--good-soft)}.hs.ko{border-color:var(--bad-line);background:var(--bad-soft)}.hs.miss{border-color:var(--bad);border-style:solid}
+.result{text-align:center}
+.score{font-size:3rem;font-weight:900;color:var(--teal-ink);line-height:1}
+.badge{display:inline-block;border-radius:999px;padding:6px 14px;font-weight:800;margin-top:8px}
+.badge.ok{background:var(--good-soft);color:var(--good);border:1px solid var(--good-line)}.badge.ko{background:var(--bad-soft);color:var(--bad);border:1px solid var(--bad-line)}
+.rlist{display:grid;gap:8px;margin-top:14px;text-align:left}
+.ritem{display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.ritem small{display:block;color:var(--muted)}
+.ritem b.full{color:var(--good)}.ritem b.part{color:var(--amber)}.ritem b.zero{color:var(--bad)}
+.tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.tab{appearance:none;border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;min-height:44px}
+.tab.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pane{display:none}.pane.on{display:block}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.kpi div{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi small{display:block;color:var(--muted);font-weight:600}.kpi b{font-size:1.25rem;color:var(--navy)}
+.note{background:var(--amber-soft);border:1px solid var(--amber);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.93rem}
+.sol{margin-top:12px;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.sol ol{margin:6px 0 0;padding-left:20px}
+.counter{font-weight:800;color:var(--teal-ink)}
+.foot{margin-top:18px;color:var(--muted);font-size:.84rem;text-align:center}
+.sr{position:absolute;left:-9999px}
+.mrow small{grid-column:1/-1;margin-top:-4px}
+.mrow>span:first-child,.opt,.hs,.ord li .t{overflow-wrap:anywhere;min-width:0}
+.opt>*{min-width:0}
+.hs.ok,.hs.ko{border-style:solid}
+</style></head><body><main class="app">
+<header class="top"><div class="course">Herramientas Digitales para el Crecimiento de PYMES · Módulo 4: Gestión de Clientes (CRM) y Análisis de Datos</div>
+<h1>Simulador de indicadores: lee tus datos y decide</h1><div class="chips"><span class="chip">🧪 Simulador de práctica</span><span class="chip">Completa 3 casos</span><span class="chip">Nota = % de aciertos</span></div><div class="prog"><i></i></div></header>
+<style>
+.rule{background:var(--mint);border:1px solid var(--mint-line);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.94rem}
+.fmk{font-size:.84rem;font-weight:700}
+.fmk.ok{color:var(--good)}.fmk.ko{color:var(--bad)}
+.mock table.data{margin:0;font-size:.88rem}
+.mock .tablewrap{padding:10px}
+.mock .sub{padding:8px 12px 0;font-size:.84rem;color:var(--muted)}
+table.data tr.tot td{font-weight:800;background:var(--surface2)}
+table.data small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
+.twin{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.twin{grid-template-columns:1fr}
+ table.stack,table.stack tbody{display:block}table.stack tr:first-child{display:none}table.stack tr{display:block;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--surface)}
+ table.stack td{display:flex;justify-content:space-between;gap:10px;border:0;border-bottom:1px dashed var(--line);padding:6px 10px;text-align:right}table.stack td:last-child{border-bottom:0}
+ table.stack td::before{content:attr(data-l);font-weight:600;color:var(--muted);text-align:left}table.stack td.h{display:block;text-align:left;background:var(--surface2)}table.stack td.h::before{content:none}}
+.crm{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:12px}
+.crm div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.crm small{display:block;color:var(--muted);font-weight:600}.crm b{font-size:1.2rem;color:var(--navy)}
+fieldset.rad{border:0;padding:0;margin:14px 0 0;min-width:0}fieldset.rad legend{font-weight:600;font-size:.94rem;padding:0}
+.warn{color:var(--bad);font-weight:700;font-size:.9rem;margin-top:8px}
+</style>
+<section id="intro" class="card">
+ <span class="eyebrow">Simulador de práctica</span>
+ <h2>Lee los datos de Casa Nativa y decide qué hacer</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="data:image/jpeg;base64,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" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Google Analytics me muestra sesiones y eventos, y el CRM me dice quiénes compran. Pero ¿qué canal funciona mejor y dónde está la oportunidad? Quiero tres números claros y una decisión.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Practica lo que viste en la lección <b>4.2 Usa tus datos para decidir</b>: leer el informe de <b>Adquisición de tráfico</b> de Google Analytics 4 y los datos del CRM, calcular <b>tasa de conversión</b>, <b>ticket promedio</b> y <b>tasa de recompra</b>, y elegir la acción con mejor oportunidad.</p>
+ <div class="steps"><div><b>Calculadora</b>Ingresa tus propios datos y obtén los indicadores clave.</div><div><b>Practicar</b>Resuelve casos aleatorios con tablas recreadas de GA4 y del CRM.</div><div><b>Completar</b>Resuelve al menos 3 casos. Tu nota es el % de casos correctos.</div></div>
+ <button class="btn" data-start>Abrir el simulador →</button>
+</section>
+
+<section id="sim" hidden>
+ <div class="tabs"><button class="tab on" data-pane="pPract">🎯 Practicar</button><button class="tab" data-pane="pCalc">🧮 Calculadora de KPI</button></div>
+ <div id="pPract" class="pane on card">
+  <p id="simCount" class="counter"></p>
+  <div id="simCase"></div>
+  <div class="row-btns"><button class="btn" id="simCheck">Revisar mi respuesta</button><button class="btn ghost" id="simNext" hidden>Nuevo caso →</button><span class="muted" id="simMsg"></span></div>
+ </div>
+ <div id="pCalc" class="pane card">
+  <h2>Calculadora de indicadores clave</h2>
+  <p class="muted">Usa el mismo periodo en todas las fuentes (por ejemplo, los últimos 90 días en GA4 y en el CRM).</p>
+  <div class="numgrid">
+   <label>Sesiones<span class="hint">GA4 · Adquisición de tráfico</span><input type="number" id="kS" value="4200" min="0"></label>
+   <label>Compras<span class="hint">GA4 · evento clave purchase</span><input type="number" id="kC" value="63" min="0"></label>
+   <label>Ingresos totales<span class="unit"><span>$</span><input type="number" id="kI" value="1612000" min="0" step="1000"></span></label>
+   <label>Clientes que compraron<span class="hint">CRM · personas distintas</span><input type="number" id="kK" value="54" min="0"></label>
+   <label>Clientes que recompraron<span class="hint">CRM · 2 o más compras en el periodo</span><input type="number" id="kR" value="9" min="0"></label>
+  </div>
+  <div class="kpi" id="kOut"></div>
+  <div id="kWarn"></div>
+  <div class="tablewrap" style="margin-top:12px"><table class="data">
+   <tr><th>Indicador</th><th>Fórmula</th><th>Pregunta que responde</th></tr>
+   <tr><td><b>Tasa de conversión</b></td><td>compras ÷ sesiones × 100</td><td>¿Cuántas visitas terminan en compra?</td></tr>
+   <tr><td><b>Ticket promedio</b></td><td>ingresos ÷ compras</td><td>¿Cuánto gasta cada compra, en promedio?</td></tr>
+   <tr><td><b>Tasa de recompra</b></td><td>clientes que recompraron ÷ clientes × 100</td><td>¿Los clientes vuelven?</td></tr>
+   <tr><td><b>Ingreso por sesión</b></td><td>ingresos ÷ sesiones</td><td>¿Cuánto vale, en promedio, cada visita?</td></tr>
+  </table></div>
+  <p class="muted">Redondeo en los casos: tasa de conversión con <b>2 decimales</b> (±0,05 puntos); tasa de recompra con 1 decimal (±0,1 punto); montos al peso (±$5). Puedes escribir 1,25 o 1.25.</p>
+  <div class="note"><b>Lo que este simulador no considera:</b> que GA4 y el CRM cuentan distinto (GA4 no registra a quien rechaza las cookies, y una persona puede tener varias sesiones o dispositivos), la atribución entre canales (una compra puede empezar en Instagram y cerrarse por búsqueda), ventas fuera del sitio (WhatsApp, tienda física), devoluciones, costos y márgenes. Las decisiones siguen la regla indicada en cada caso.</div>
+ </div>
+</section>
+
+
+
+<div id="result" hidden></div>
+<p class="foot">Casos y empresas ficticios con fines educativos · Las pantallas de plataformas son recreaciones simplificadas.</p>
+</main><script>
+(function(){
+const $=s=>document.querySelector(s),r=(a,b,s=1)=>a+s*Math.floor(Math.random()*((b-a)/s+1)),pick=a=>a[r(0,a.length-1)],shuf=a=>[...a].sort(()=>Math.random()-.5);
+const f=n=>(n<0?'−$':'$')+Math.abs(Math.round(n)).toLocaleString('es-CL'),nn=n=>Math.round(n).toLocaleString('es-CL'),pc=(x,d=1)=>x.toFixed(d).replace('.',',')+'%';
+const CH=[['Organic Social','redes sociales sin pago'],['Paid Social','anuncios en redes sociales'],['Organic Search','Google sin pago'],['Direct','escriben la dirección o un enlace guardado'],['Email','correos y boletines'],['Referral','enlaces desde otros sitios'],['Paid Search','anuncios en buscadores']];
+const PRICE=[12990,15990,18990,22990,24990,29990,34990,39990,45990];
+/* ---- utilidades de campos ---- */
+function inp(id,label,pre,post,hint){return `<label>${label}${hint?`<span class="hint">${hint}</span>`:''}<span class="unit">${pre?`<span>${pre}</span>`:''}<input type="text" inputmode="decimal" id="${id}" autocomplete="off">${post?`<span>${post}</span>`:''}</span></label>`}
+function sel(id,label,opts){return `<label>${label}<select id="${id}"><option value="">Elige…</option>${opts.map(([v,t])=>`<option value="${v}">${t}</option>`).join('')}</select></label>`}
+function parse(raw,kind){let s=String(raw).trim().replace(/[$%\s]/g,'').replace(/[−–]/g,'-');if(!s)return NaN;
+ if(kind==='pct'){s=s.includes(',')?s.replace(/\./g,'').replace(',','.'):s}else s=s.replace(/\./g,'').replace(',','.');
+ return /^-?\d+(\.\d+)?$/.test(s)?+s:NaN}
+function rad(id,label,opts){return `<fieldset class="rad" id="${id}"><legend>${label}</legend><div class="opts">${shuf(opts).map(([v,t])=>`<label class="opt"><input type="radio" name="${id}" value="${v}"><span>${t}</span></label>`).join('')}</div></fieldset>`}
+function show(x){return x.kind==='pct'?pc(x.ans,x.d||1):x.kind==='int'?nn(x.ans):f(x.ans)}
+function mark(node,ok,txt){node.style.borderColor=ok?'var(--good-line)':'var(--bad-line)';node.closest('label').insertAdjacentHTML('beforeend',`<span class="fmk ${ok?'ok':'ko'}">${ok?'✔ Correcto':'✘ Correcto: '+txt}</span>`)}
+function grade(c,el){const F=c.fields,vals=[];
+ for(const x of F){const node=el.querySelector('#'+x.id);if(x.kind==='radio'){const ch=node.querySelector('input:checked');if(!ch)return null;vals.push(ch.value)}else if(x.kind==='sel'){if(!node.value)return null;vals.push(node.value)}else{const v=parse(node.value,x.kind);if(isNaN(v))return null;vals.push(v)}}
+ let all=true;F.forEach((x,i)=>{const node=el.querySelector('#'+x.id);if(x.kind==='radio'){const ok=vals[i]===x.ans;if(!ok)all=false;node.querySelectorAll('.opt').forEach(o=>{const v=o.querySelector('input').value;if(v===x.ans)o.classList.add('ok');else if(v===vals[i])o.classList.add('ko')});return}const ok=x.kind==='sel'?vals[i]===x.ans:Math.abs(vals[i]-x.ans)<=x.tol+1e-9;
+  if(!ok)all=false;mark(node,ok,x.kind==='sel'?node.querySelector(`option[value="${x.ans}"]`).textContent:show(x))});return all}
+function fill(c,el){c.fields.forEach(x=>{if(x.kind==='radio'){el.querySelector(`#${x.id} input[value="${x.ans}"]`).checked=true;return}el.querySelector('#'+x.id).value=x.kind==='sel'?x.ans:x.kind==='pct'?x.ans.toFixed(x.d||1):Math.round(x.ans)})}
+/* ---- datos tipo GA4 ---- */
+function canal(ch,ses,rate){const compras=Math.max(1,Math.round(ses*rate/100)),otros=Math.round(ses*r(5,25)/1000);let ing=0;
+ for(let i=0;i<compras;i++){ing+=pick(PRICE);if(Math.random()<.25)ing+=pick(PRICE.slice(0,4))}
+ return {name:ch[0],hint:ch[1],ses,compras,ev:compras+otros,ing,conv:compras/ses*100,ticket:ing/compras}}
+function total(rows){const t={name:'Total',ses:0,compras:0,ev:0,ing:0};rows.forEach(x=>{t.ses+=x.ses;t.compras+=x.compras;t.ev+=x.ev;t.ing+=x.ing});t.conv=t.compras/t.ses*100;t.ticket=t.ing/t.compras;return t}
+function ga4(rows,t,dias){return `<div class="mock"><div class="bar">📈 Google Analytics 4 (recreación) · Informes › Adquisición › Adquisición de tráfico · últimos ${dias} días</div>
+ <p class="sub">Dimensión: <b>Grupo de canales predeterminado de la sesión</b> · Compras = evento clave <i>purchase</i></p><div class="tablewrap"><table class="data stack">
+ <tr><th>Grupo de canales predeterminado de la sesión</th><th class="n">Sesiones</th><th class="n">Eventos clave</th><th class="n">Compras</th><th class="n">Ingresos totales</th></tr>
+ <tr class="tot"><td class="h">Total</td><td class="n" data-l="Sesiones">${nn(t.ses)}</td><td class="n" data-l="Eventos clave">${nn(t.ev)}</td><td class="n" data-l="Compras">${nn(t.compras)}</td><td class="n" data-l="Ingresos totales">${f(t.ing)}</td></tr>
+ ${rows.map(x=>`<tr><td class="h"><b>${x.name}</b><small>${x.hint}</small></td><td class="n" data-l="Sesiones">${nn(x.ses)}</td><td class="n" data-l="Eventos clave">${nn(x.ev)}</td><td class="n" data-l="Compras">${nn(x.compras)}</td><td class="n" data-l="Ingresos totales">${f(x.ing)}</td></tr>`).join('')}
+ </table></div><p class="sub" style="padding-bottom:10px">Eventos clave incluye compras, clics a WhatsApp y formularios de contacto.</p></div>`}
+const RND='<p class="muted">Tasa de conversión con 2 decimales (±0,05 puntos); tasa de recompra con 1 decimal (±0,1 punto); montos al peso (±$5); compras en número entero (±1).</p>';
+const TYPES={
+ canales(){let rows,focus,best;
+  for(let t=0;t<500;t++){rows=shuf(CH).slice(0,5).map(ch=>canal(ch,r(180,3200),r(30,420)/100));
+   focus=shuf(rows).slice(0,3);const s=[...focus].sort((a,b)=>b.conv-a.conv);best=s[0];
+   if(best.conv-s[1].conv>=.4&&best.compras>=3&&rows.every(x=>x.compras<x.ev&&x.ev<x.ses))break;rows=null}
+  const fields=focus.map((x,i)=>({id:'cv'+i,kind:'pct',d:2,ans:x.conv,tol:.05}));
+  fields.push({id:'best',kind:'sel',ans:best.name},{id:'tk',kind:'money',ans:best.ticket,tol:5});
+  return {tipo:'canales',rows,t:total(rows),focus,best,fields}},
+ trafico(){let rows,big,t;
+  for(let i=0;i<500;i++){const bc=pick(CH.filter(x=>/Social|Referral/.test(x[0]))),ch=[bc,...shuf(CH.filter(x=>x!==bc)).slice(0,4)];big=canal(ch[0],r(1800,4500),r(25,80)/100);
+   const others=ch.slice(1).map(c=>canal(c,r(200,1400),r(140,400)/100));rows=shuf([big,...others]);t=total(rows);
+   const add=big.ses*t.conv/100-big.compras;
+   if(rows.every(x=>x.ses<big.ses||x===big)&&big.conv<=t.conv-.3&&add>=2&&rows.every(x=>x.compras<x.ev&&x.ev<x.ses)){big.add=add;break}rows=null}
+  const fields=[{id:'cvT',kind:'pct',d:2,ans:t.conv,tol:.05},{id:'cvB',kind:'pct',d:2,ans:big.conv,tol:.05},{id:'add',kind:'int',ans:big.add,tol:1-1e-6},{id:'acc',kind:'radio',ans:'land'}];
+  return {tipo:'trafico',rows,t,big,fields}},
+ recompra(){let rows,t,K,R,meta,rate;
+  for(let i=0;i<500;i++){rows=shuf(CH).slice(0,4).map(ch=>canal(ch,r(400,2600),r(80,320)/100));t=total(rows);if(t.compras<40)continue;
+   const rr=r(8,40)/100;K=Math.round(t.compras/(1+rr+r(0,15)/100));R=Math.max(1,Math.round(K*rr));meta=r(4,7)*5;rate=R/K*100;
+   if(K+R<=t.compras&&R<K&&Math.abs(rate-meta)>=2&&rows.every(x=>x.compras<x.ev&&x.ev<x.ses))break;rows=null}
+  const below=rate<meta,fields=[{id:'rc',kind:'pct',d:1,ans:rate,tol:.1},{id:'tk',kind:'money',ans:t.ticket,tol:5},{id:'cv',kind:'pct',d:2,ans:t.conv,tol:.05},{id:'acc',kind:'radio',ans:below?'fide':'capt'}];
+  return {tipo:'recompra',rows,t,K,R,meta,rate,below,fields}}};
+let cola=[];
+window.SIM={min:3,
+ gen(){if(!cola.length)cola=shuf(Object.keys(TYPES));return TYPES[cola.shift()]()},
+ render(c,el){
+  if(c.tipo==='canales'){el.innerHTML=`<span class="eyebrow">Caso · Comparar canales</span><h2>¿Dónde poner el próximo peso?</h2>
+   <p>Marcela puede reforzar <b>uno</b> de estos tres canales: <b>${c.focus.map(x=>x.name).join('</b>, <b>')}</b>. Revisó el informe de los últimos 90 días:</p>${ga4(c.rows,c.t,90)}
+   <div class="rule"><b>Regla de Marcela:</b> reforzará el canal que <b>mejor convierte sus sesiones en compras</b> (mayor tasa de conversión), no el que trae más visitas.</div>
+   <div class="numgrid">${c.focus.map((x,i)=>inp('cv'+i,'Tasa de conversión · '+x.name,'','%','compras ÷ sesiones × 100')).join('')}</div>
+   <div class="numgrid">${sel('best','¿Qué canal refuerza?',c.focus.map(x=>[x.name,x.name]))}${inp('tk','Ticket promedio de ese canal','$','','ingresos ÷ compras')}</div>${RND}`}
+  else if(c.tipo==='trafico'){el.innerHTML=`<span class="eyebrow">Caso · Mucho tráfico, poca venta</span><h2>¿Dónde está la oportunidad?</h2>
+   <p>Un canal trae muchas visitas a la tienda en línea, pero Marcela siente que vende poco. Este es el informe de los últimos 30 días:</p>${ga4(c.rows,c.t,30)}
+   <div class="numgrid">${inp('cvT','Tasa de conversión del sitio (Total)','','%')}${inp('cvB',`Tasa de conversión de ${c.big.name}`,'','%','El canal con más sesiones')}
+   ${inp('add',`¿Cuántas compras más tendría ${c.big.name} si alcanzara la tasa del sitio?`,'','','sesiones del canal × tasa del sitio ÷ 100 − compras actuales')}</div>
+   <div>${rad('acc','¿Qué acción tiene la mejor oportunidad?',[['dup',`Duplicar la inversión para traer aún más sesiones de ${c.big.name}`],['land',`Revisar la página de llegada y la oferta que ve el tráfico de ${c.big.name}`],['stop',`Dejar de usar ${c.big.name} de inmediato`],['ses','Seguir mirando solo las sesiones: si suben, el negocio va bien']])}</div>${RND}`}
+  else{el.innerHTML=`<span class="eyebrow">Caso · Clientes que vuelven</span><h2>¿Fidelizar o atraer clientes nuevos?</h2>
+   <p>Marcela cruzó dos fuentes del <b>mismo periodo (últimos 90 días)</b>: el informe de GA4 de su tienda en línea y su CRM. Su meta es una <b>tasa de recompra de al menos ${c.meta}%</b>.</p>
+   ${ga4(c.rows,c.t,90)}
+   <div class="mock"><div class="bar">👥 CRM de Casa Nativa (recreación) · Clientes de la tienda en línea · últimos 90 días</div><div class="crm">
+    <div><small>Clientes que compraron</small><b>${nn(c.K)}</b><small>personas distintas</small></div><div><small>Clientes que recompraron</small><b>${nn(c.R)}</b><small>2 o más compras en el periodo</small></div><div><small>Meta de recompra</small><b>${c.meta}%</b></div></div></div>
+   <div class="rule"><b>Regla:</b> si la tasa de recompra está <b>bajo la meta</b>, la mejor oportunidad está en los clientes actuales. Si la cumple, conviene mantener la fidelización y enfocar el esfuerzo en atraer clientes nuevos.</div>
+   <div class="numgrid">${inp('rc','Tasa de recompra','','%','recompraron ÷ clientes × 100')}${inp('tk','Ticket promedio del sitio','$','','ingresos ÷ compras (Total)')}${inp('cv','Tasa de conversión del sitio','','%','compras ÷ sesiones × 100 (Total)')}</div>
+   <div>${rad('acc','¿Qué acción eliges?',[['fide','Crear una acción para clientes actuales: correo o WhatsApp con una oferta para la segunda compra'],['capt','Mantener la fidelización como está y enfocar el esfuerzo en atraer clientes nuevos'],['precio','Bajar todos los precios para subir el ticket promedio'],['crm','Dejar de registrar clientes en el CRM: GA4 ya tiene los datos']])}</div>${RND}`}},
+ check(c,el){const ok=grade(c,el);if(ok===null)return null;let sol;
+  if(c.tipo==='canales'){sol=`<ol>${c.focus.map(x=>`<li><b>${x.name}:</b> ${x.compras} ÷ ${nn(x.ses)} × 100 = <b>${pc(x.conv,2)}</b></li>`).join('')}
+   <li>La mayor tasa es la de <b>${c.best.name}</b> → es el canal a reforzar.</li><li>Ticket promedio de ${c.best.name}: ${f(c.best.ing)} ÷ ${c.best.compras} = <b>${f(c.best.ticket)}</b>.</li></ol>
+   <p>El canal con más sesiones no siempre es el que más vende: compara canales por eventos clave y compras, no solo por visitas. Al reforzar un canal, revisa en unas semanas si su tasa se mantiene.</p>`}
+  else if(c.tipo==='trafico'){const b=c.big;sol=`<ol><li>Sitio: ${nn(c.t.compras)} ÷ ${nn(c.t.ses)} × 100 = <b>${pc(c.t.conv,2)}</b>.</li><li>${b.name}: ${b.compras} ÷ ${nn(b.ses)} × 100 = <b>${pc(b.conv,2)}</b>, bajo el promedio del sitio.</li>
+   <li>Si llegara a la tasa del sitio: ${nn(b.ses)} × ${pc(c.t.conv,2)} = ${(b.ses*c.t.conv/100).toFixed(1).replace('.',',')} compras − ${b.compras} actuales = <b>${b.add.toFixed(1).replace('.',',')}</b> → unas ${Math.round(b.add)} compras más (se acepta ${Math.floor(b.add)} o ${Math.ceil(b.add)}).</li>
+   <li>La mejor oportunidad es <b>revisar la página de llegada y la oferta</b> para ese tráfico: ya llega, pero no compra. Traer más sesiones que no convierten solo aumenta el gasto, y cortar el canal elimina visitas que podrían convertir.</li></ol>`}
+  else{sol=`<ol><li>Tasa de recompra = ${c.R} ÷ ${c.K} × 100 = <b>${pc(c.rate)}</b> (meta: ${c.meta}%).</li><li>Ticket promedio = ${f(c.t.ing)} ÷ ${c.t.compras} = <b>${f(c.t.ticket)}</b>.</li>
+   <li>Tasa de conversión = ${c.t.compras} ÷ ${nn(c.t.ses)} × 100 = <b>${pc(c.t.conv,2)}</b>.</li>
+   <li>${c.below?`La recompra está <b>bajo la meta</b>: la oportunidad está en los ${nn(c.K-c.R)} clientes que compraron una sola vez. Una acción para la segunda compra (correo o WhatsApp, con permiso) suele costar menos que conseguir clientes nuevos.`:`La recompra <b>cumple la meta</b>: los clientes vuelven. Mantén lo que funciona y enfoca el esfuerzo en atraer clientes nuevos por el canal que mejor convierte.`}</li></ol>
+   <p>Bajar todos los precios reduce el ticket promedio en vez de subirlo, y sin CRM no sabrías quién vuelve a comprar: GA4 mide visitas y eventos, no personas con nombre.</p>`}
+  return {ok,sol}},
+ solve(c,el){fill(c,el)},
+ calc(){const ids=['kS','kC','kI','kK','kR'],upd=()=>{const g=id=>Math.max(0,+document.getElementById(id).value||0);
+   const S=g('kS'),C=g('kC'),I=g('kI'),K=g('kK'),R=g('kR'),w=[];
+   if(C>S)w.push('Hay más compras que sesiones: revisa que ambos datos sean del mismo periodo.');
+   if(R>K)w.push('No puede haber más clientes que recompran que clientes en total.');
+   if(K>C)w.push('Hay más clientes que compras: revisa el periodo o si el CRM incluye ventas fuera del sitio.');
+   $('#kOut').innerHTML=`<div><small>Tasa de conversión</small><b>${S?pc(C/S*100,2):'—'}</b><small>compras ÷ sesiones</small></div>
+    <div><small>Ticket promedio</small><b>${C?f(I/C):'—'}</b><small>ingresos ÷ compras</small></div>
+    <div><small>Tasa de recompra</small><b>${K?pc(R/K*100):'—'}</b><small>recompraron ÷ clientes</small></div>
+    <div><small>Ingreso por sesión</small><b>${S?f(I/S):'—'}</b><small>ingresos ÷ sesiones</small></div>`;
+   $('#kWarn').innerHTML=w.map(x=>`<p class="warn">⚠ ${x}</p>`).join('')};
+  ids.forEach(i=>document.getElementById(i).addEventListener('input',upd));upd()}};
+})();
+</script><script>window.ACT={"id": "PYMES_M4_S2", "tipo": "simulador", "pass": 80};</script>
+<script>/* Motor de actividades prácticas y simuladores · SCORM 1.2
+   ACT (window.ACT): {id, tipo:'actividad'|'simulador', pass:80}
+   Actividad: secciones .etask[data-id][data-pts][data-title][data-lesson][data-auto=mc|multi|match|order|num|hot]
+   Simulador: window.SIM={min:3, gen(), render(caso, el), check(caso, el) -> {ok, sol}} */
+(function(){
+const A=window.ACT||{},$=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const PASS=A.pass||80;
+/* ---------- SCORM 1.2 ---------- */
+function findAPI(w){let n=0;while(w&&n<12){if(w.API)return w.API;if(w.parent===w)break;w=w.parent;n++}return null}
+let api=findAPI(window);if(!api&&window.opener)api=findAPI(window.opener);
+const SC={ok:false,t0:Date.now(),get(k){try{return this.ok?String(api.LMSGetValue(k)):''}catch(e){return ''}},set(k,v){try{if(this.ok)api.LMSSetValue(k,String(v))}catch(e){}},commit(){try{if(this.ok)api.LMSCommit('')}catch(e){}}};
+if(api){try{SC.ok=String(api.LMSInitialize(''))==='true'}catch(e){}}
+const store={get(){try{return JSON.parse(SC.ok?SC.get('cmi.suspend_data')||'{}':localStorage.getItem('act_'+A.id)||'{}')}catch(e){return {}}},
+ set(d){const s=JSON.stringify(d);if(SC.ok)SC.set('cmi.suspend_data',s);else try{localStorage.setItem('act_'+A.id,s)}catch(e){}}};
+let D=store.get();D.v=1;D.best=D.best||0;D.tries=D.tries||0;
+if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(!st||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');SC.commit()}
+function report(score,status,keep=true){D.best=keep?Math.max(D.best,score):score;store.set(D);
+ SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',D.best);if(status)SC.set('cmi.core.lesson_status',status);SC.commit()}
+let fin=false;function finish(){if(fin||!SC.ok)return;fin=true;const s=Math.round((Date.now()-SC.t0)/1000),p=n=>String(n).padStart(2,'0');
+ SC.set('cmi.core.session_time',`${String(Math.floor(s/3600)).padStart(4,'0')}:${p(Math.floor(s/60)%60)}:${p(s%60)}.00`);SC.set('cmi.core.exit','suspend');SC.commit();try{api.LMSFinish('')}catch(e){}}
+addEventListener('pagehide',finish);addEventListener('beforeunload',finish);
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const prog=v=>{const b=$('.prog i');if(b)b.style.width=v+'%'};
+
+/* ---------- Actividad evaluada ---------- */
+if(A.tipo!=='simulador'){
+ const T=$$('.etask'),R={};let cur=-1;
+ const total=T.reduce((s,t)=>s+(+t.dataset.pts),0);
+ T.forEach((t,i)=>{const h=t.querySelector('h2');
+  const head=document.createElement('div');head.className='thead';head.innerHTML=`<span class="eyebrow">Tarea ${i+1} de ${T.length}</span><span class="pts">${t.dataset.pts} pts</span>`;t.prepend(head);
+  if(t.dataset.auto==='mc'||t.dataset.auto==='multi'){const o=t.querySelector('.opts');if(o&&!o.hasAttribute('data-fixed'))shuffle([...o.children]).forEach(c=>o.appendChild(c));
+   $$('.opt',t).forEach(op=>{const inp=op.querySelector('input');inp.addEventListener('change',()=>{$$('.opt',t).forEach(x=>x.classList.toggle('sel',x.querySelector('input').checked))})})}
+  if(t.dataset.auto==='order'){const ol=t.querySelector('.ord');shuffle([...ol.children]).forEach(c=>ol.appendChild(c));
+   [...ol.children].forEach(li=>{li.innerHTML=`<span class="n"></span><span class="t">${li.innerHTML}</span><button type="button" aria-label="Subir">↑</button><button type="button" aria-label="Bajar">↓</button>`;
+    const [up,dn]=li.querySelectorAll('button');up.onclick=()=>{if(li.previousElementSibling)ol.insertBefore(li,li.previousElementSibling);num(ol)};dn.onclick=()=>{if(li.nextElementSibling)ol.insertBefore(li.nextElementSibling,li);num(ol)}});num(ol)}
+  if(t.dataset.auto==='match')$$('select',t).forEach(s=>{if(!s.querySelector('option[value=""]'))s.insertAdjacentHTML('afterbegin','<option value="" selected>Elige…</option>');s.value=''});
+  if(t.dataset.auto==='hot')$$('.hs',t).forEach(b=>{b.type='button';b.onclick=()=>{if(!t.dataset.answered){b.classList.toggle('sel');b.setAttribute('aria-pressed',b.classList.contains('sel'))}}});
+  const bar=document.createElement('div');bar.className='row-btns';bar.innerHTML=`<button class="btn" data-respond>Responder</button><button class="btn ghost" data-next hidden>${i===T.length-1?'Ver resultado':'Siguiente tarea →'}</button><span class="muted" data-msg></span>`;
+  const why=t.querySelector('.why');t.insertBefore(bar,why);
+  bar.querySelector("[data-respond]").onclick=()=>answer(t,i);bar.querySelector('[data-next]').onclick=()=>show(i+1)});
+ function num(ol){[...ol.children].forEach((li,k)=>li.querySelector('.n').textContent=k+1)}
+ function show(i){cur=i;$('#intro').hidden=true;T.forEach((t,k)=>t.classList.toggle('on',k===i));$('#result').hidden=i<T.length;if(i>=T.length)result();prog(Math.round(Math.min(i,T.length)/T.length*100));scrollTo({top:0,behavior:'smooth'})}
+ function answer(t,i){const tp=t.dataset.auto,pts=+t.dataset.pts,msg=t.querySelector('[data-msg]');let frac=0;
+  if(tp==='mc'){const s=t.querySelector('.opt input:checked');if(!s){msg.textContent='Elige una alternativa.';return}
+   $$('.opt',t).forEach(o=>{const ok=o.hasAttribute('data-ok');if(ok)o.classList.add('ok');else if(o.querySelector('input').checked)o.classList.add('ko')});frac=s.closest('.opt').hasAttribute('data-ok')?1:0}
+  else if(tp==='multi'||tp==='hot'){const items=tp==='multi'?$$('.opt',t):$$('.hs',t),sel=x=>tp==='multi'?x.querySelector('input').checked:x.classList.contains('sel');
+   if(!items.some(sel)){msg.textContent='Selecciona al menos una opción.';return}
+   const good=items.filter(x=>x.hasAttribute('data-ok'));let hit=0,bad=0;
+   items.forEach(x=>{const ok=x.hasAttribute('data-ok'),s=sel(x);if(ok&&s){hit++;x.classList.add('ok')}else if(!ok&&s){bad++;x.classList.add('ko')}else if(ok&&!s)x.classList.add(tp==='hot'?'miss':'ok')});
+   frac=Math.max(0,(hit-bad)/good.length)}
+  else if(tp==='match'){const ss=$$('select',t);if(ss.some(s=>!s.value)){msg.textContent='Completa todas las filas.';return}
+   let ok=0;ss.forEach(s=>{const r=s.value===s.dataset.ans,mk=s.closest('.mrow').querySelector('.mk');if(r)ok++;if(mk){mk.textContent=r?'✔':'✘';mk.className='mk '+(r?'ok':'ko')}
+    if(!r){const o=[...s.options].find(o=>o.value===s.dataset.ans);s.insertAdjacentHTML('afterend',`<small class="muted">Correcto: ${o?o.textContent:''}</small>`)}});frac=ok/ss.length}
+  else if(tp==='order'){const li=[...t.querySelectorAll('.ord li')];let ok=0;li.forEach((l,k)=>{const r=+l.dataset.pos===k+1;if(r)ok++;l.classList.add(r?'ok':'ko')});frac=ok/li.length}
+  else if(tp==='num'){const ins=$$('input[data-ans]',t);if(ins.some(x=>x.value.trim()==='')){msg.textContent='Completa todos los campos.';return}
+   let ok=0;ins.forEach(x=>{const raw=x.value.trim().replace(/[$\s]/g,''),v=parseFloat(raw.includes(',')||/^\d{1,3}(\.\d{3})+$/.test(raw)?raw.replace(/\./g,'').replace(',','.'):raw),a=+x.dataset.ans,tol=+(x.dataset.tol||0);const r=Math.abs(v-a)<=tol+1e-9;if(r)ok++;
+    x.style.borderColor=r?'var(--good-line)':'var(--bad-line)';x.insertAdjacentHTML('afterend',`<small class="${r?'mk ok':'mk ko'}">${r?'✔ Correcto':'✘ Correcto: '+(x.dataset.show||a)}</small>`)});frac=ok/ins.length}
+  const got=Math.round(pts*frac*10)/10;R[t.dataset.id]=got;t.dataset.answered=1;
+  $$('input,select,.ord button',t).forEach(x=>x.disabled=true);
+  t.querySelector("[data-respond]").hidden=true;t.querySelector('[data-next]').hidden=false;
+  msg.innerHTML=`<b>${got} de ${pts} pts</b>`;t.querySelector('.why').classList.add('show')}
+ function result(){const sc=Math.round(Object.values(R).reduce((a,b)=>a+b,0)/total*100),ok=sc>=PASS;D.tries++;
+  report(sc,ok?'passed':(D.best>=PASS?'passed':'failed'));
+  $('#result').innerHTML=`<div class="card result"><span class="eyebrow">Resultado</span><div class="score">${sc}<small style="font-size:1.2rem">/100</small></div>
+   <span class="badge ${ok?'ok':'ko'}">${ok?'Aprobada · lograste el 80% o más':'Aún no apruebas · necesitas 80 puntos'}</span>
+   <p class="muted">Intento ${D.tries} · Mejor nota registrada: <b>${D.best}</b>/100</p>
+   <div class="rlist">${T.map(t=>{const g=R[t.dataset.id]||0,p=+t.dataset.pts,c=g>=p?'full':g>0?'part':'zero';
+    return `<div class="ritem"><div><b>${t.dataset.title}</b>${g<p?`<small>Repasa: ${t.dataset.lesson}</small>`:'<small>Logrado</small>'}</div><b class="${c}">${g}/${p}</b></div>`}).join('')}</div>
+   <div class="row-btns" style="justify-content:center"><button class="btn" onclick="location.reload()">Nuevo intento</button></div></div>`}
+ $('[data-start]').onclick=()=>show(0);
+ if(D.best)$('#intro .muted.best')&&($('#intro .muted.best').textContent=`Mejor nota registrada: ${D.best}/100 (${D.tries} intento${D.tries===1?'':'s'}).`);
+}
+
+/* ---------- Simulador ---------- */
+else{
+ const S=window.SIM,MIN=S.min||3;D.n=D.n||0;D.ok=D.ok||0;
+ $$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('on',x===b));$$('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.pane))});
+ let caso=null,checked=false;
+ const box=$('#simCase'),cnt=()=>{$('#simCount').innerHTML=`Casos resueltos: <b>${D.n}</b> · Correctos: <b>${D.ok}</b>${D.n?` · Nota: <b>${Math.round(D.ok/D.n*100)}</b>/100`:''}${D.n<MIN?` · Te faltan <b>${MIN-D.n}</b> para completar`:' · ✔ Simulador completado'}`;prog(Math.min(100,Math.round(D.n/MIN*100)))};
+ function nuevo(){caso=S.gen();window.__caso=caso;checked=false;box.innerHTML='';S.render(caso,box);$('#simCheck').hidden=false;$('#simNext').hidden=true;$('#simMsg').textContent=''}
+ $('#simCheck').onclick=()=>{if(checked)return;const r=S.check(caso,box);if(r===null){$('#simMsg').textContent='Completa tu respuesta antes de revisar.';return}
+  checked=true;D.n++;if(r.ok)D.ok++;const sc=Math.round(D.ok/D.n*100);
+  box.insertAdjacentHTML('beforeend',`<div class="why show" style="${r.ok?'':'background:var(--bad-soft);border-color:var(--bad-line)'}"><h4>${r.ok?'✔ ¡Bien resuelto!':'✘ Revisa la solución'}</h4>${r.sol}</div>`);
+  $$('input,select,button.hs',box).forEach(x=>x.disabled=true);
+  report(sc,D.n>=MIN?'completed':null,false);
+  $('#simCheck').hidden=true;$('#simNext').hidden=false;cnt()};
+ $('#simNext').onclick=nuevo;
+ $('[data-start]').onclick=()=>{$('#intro').hidden=true;$('#sim').hidden=false;nuevo();cnt()};
+ if(S.calc)S.calc();cnt();
+}
+})();
+</script></body></html>

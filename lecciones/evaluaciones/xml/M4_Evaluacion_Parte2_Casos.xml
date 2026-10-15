@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/top/Herramientas Digitales PYMES/Módulo 4/Evaluación Parte 2 – Casos</text></category><info format="html"><text></text></info></question>
+<question type="multichoice">
+<name><text>M4.P11</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>A Casa Nativa llegó la colección infantil de primavera y Marcela quiere enviar un mensaje de reactivación a sus clientes <strong>inactivos</strong>. En su registro, un cliente es inactivo si su última compra fue hace <strong>más de 120 días</strong>.</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Cliente</th><th>N.º de compras</th><th>Días desde la última compra</th><th>Cotización abierta</th><th>Acepta novedades</th></tr><tr><td>Valentina</td><td>3</td><td>45</td><td>No</td><td>Sí</td></tr><tr><td>Rodrigo</td><td>1</td><td>20</td><td>No</td><td>Sí</td></tr><tr><td>Camila</td><td>2</td><td>150</td><td>No</td><td>Sí</td></tr><tr><td>Ignacio</td><td>0</td><td>—</td><td>Sí (hace 8 días)</td><td>Sí</td></tr><tr><td>Fernanda</td><td>4</td><td>200</td><td>No</td><td>No</td></tr></table></div><p>¿A quién debería enviar Marcela el mensaje de reactivación?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Segmentar es aplicar criterios claros sobre el registro, incluido el consentimiento para recibir comunicaciones.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P11</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Camila (150 días) y Fernanda (200 días) son inactivas, pero solo Camila acepta novedades; el registro de consentimiento manda.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>A Camila y a Fernanda, porque ambas superan los 120 días sin comprar.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Fernanda cumple el criterio de inactividad, pero no dio consentimiento para novedades: escribirle no respeta su decisión.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Solo a Camila: Fernanda está inactiva, pero no acepta recibir novedades.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Camila (150 días) y Fernanda (200 días) son inactivas, pero solo Camila acepta novedades; el registro de consentimiento manda.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>A Fernanda y a Valentina, porque son las que más veces han comprado.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Valentina compró hace 45 días: es recurrente, no inactiva, y Fernanda no acepta novedades.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>A los cinco clientes, con el mismo mensaje, para no perder ninguna venta.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un mismo mensaje para todos ignora la segmentación: Ignacio necesita seguimiento a su cotización y Rodrigo acompañamiento.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P12</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Resumen del último trimestre de Casa Nativa, obtenido de su registro de clientes:</p><ul><li>Ventas totales: <strong>$3.300.000</strong></li><li>Pedidos: <strong>110</strong></li><li>Clientes distintos que compraron: <strong>80</strong></li><li>Clientes que compraron dos o más veces en el trimestre: <strong>20</strong></li></ul></div><p>¿Cuáles son el ticket promedio por pedido y la tasa de recompra del trimestre?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Ticket promedio = ventas ÷ pedidos. Tasa de recompra = clientes con 2+ compras ÷ clientes que compraron × 100.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P12</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Ticket: $3.300.000 ÷ 110 pedidos = $30.000. Recompra: 20 ÷ 80 clientes × 100 = 25%.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ticket promedio de $41.250 y tasa de recompra de 25%.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. $41.250 resulta de dividir las ventas por clientes ($3.300.000 ÷ 80), no por pedidos; la recompra sí está bien.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ticket promedio de $30.000 y tasa de recompra de 18%.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El ticket está bien calculado, pero 18% divide los clientes que recompraron por los pedidos (20 ÷ 110), no por los clientes.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ticket promedio de $41.250 y tasa de recompra de 18%.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ambos cálculos usan el denominador equivocado: el ticket se divide por pedidos y la recompra por clientes.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Ticket promedio de $30.000 y tasa de recompra de 25%.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Ticket: $3.300.000 ÷ 110 pedidos = $30.000. Recompra: 20 ÷ 80 clientes × 100 = 25%.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P13</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Informe de adquisición de tráfico de la tienda en línea de Casa Nativa (último mes, grupo de canales predeterminado). La tasa la calculó Marcela como compras ÷ sesiones.</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Canal</th><th>Sesiones</th><th>Compras (evento clave)</th><th>Tasa</th></tr><tr><td>Social orgánico</td><td>2.400</td><td>24</td><td>1,0%</td></tr><tr><td>Social de pago</td><td>1.200</td><td>18</td><td>1,5%</td></tr><tr><td>Búsqueda orgánica</td><td>900</td><td>27</td><td>3,0%</td></tr><tr><td>Directo</td><td>600</td><td>15</td><td>2,5%</td></tr><tr><td>Correo electrónico</td><td>300</td><td>12</td><td>4,0%</td></tr><tr><td><strong>Total</strong></td><td>5.400</td><td>96</td><td>1,8%</td></tr></table></div><p>Marcela quiere mejorar un solo canal este mes. ¿Qué lectura de la tabla es correcta?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Compara canales por eventos clave y tasa, no solo por sesiones; el volumen y la tasa juntos muestran dónde mejorar.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P13</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> 2.400 ÷ 5.400 ≈ 44% de las sesiones; pasar de 1% a 2% sobre 2.400 sesiones son 24 compras más: es el canal con más margen de mejora.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Social orgánico trae el 44% de las sesiones y convierte al 1%; llegar al 2% sumaría unas 24 compras.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. 2.400 ÷ 5.400 ≈ 44% de las sesiones; pasar de 1% a 2% sobre 2.400 sesiones son 24 compras más: es el canal con más margen de mejora.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Social orgánico es el mejor canal del mes, porque genera la mayor cantidad de sesiones y también de compras.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Tiene más sesiones, pero no más compras: Búsqueda orgánica logra 27 con menos de la mitad del tráfico.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Búsqueda orgánica convierte apenas al 0,3% de sus sesiones, así que conviene dejar de trabajarla.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. 27 ÷ 900 × 100 = 3%, no 0,3%: es uno de los canales que mejor convierte.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Correo electrónico genera más compras que cualquier otro canal gracias a su tasa de 4%.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Tiene la mejor tasa, pero solo 12 compras: una tasa alta sobre pocas sesiones no equivale a más ventas.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P14</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>En octubre, Casa Nativa invirtió en dos campañas para vender la colección Living:</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Campaña</th><th>Inversión</th><th>Sesiones</th><th>Compras</th></tr><tr><td>Meta Ads</td><td>$90.000</td><td>1.800</td><td>18</td></tr><tr><td>Google Ads</td><td>$60.000</td><td>600</td><td>15</td></tr></table></div><p>Si el objetivo es vender, ¿qué análisis es correcto?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Tasa de conversión = compras ÷ sesiones × 100. Costo por venta = inversión ÷ compras. Elige el indicador según el objetivo.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P14</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Meta: 18 ÷ 1.800 = 1% y $90.000 ÷ 18 = $5.000. Google: 15 ÷ 600 = 2,5% y $60.000 ÷ 15 = $4.000. Google vende más barato.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Meta: 1% y $5.000 por compra; Google: 2,5% y $4.000. Meta es más eficiente, porque trae el triple de sesiones.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los cálculos están bien, pero la conclusión no: más sesiones no implica más eficiencia si el objetivo es vender.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Meta: 10% y $500 por compra; Google: 25% y $400. Ambas campañas son igual de eficientes para vender.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los porcentajes y costos están mal calculados: 18 ÷ 1.800 × 100 = 1% y $90.000 ÷ 18 = $5.000.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Meta: 1% y $5.000 por compra; Google: 2,5% y $4.000. Para vender, Google es la más eficiente.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Meta: 18 ÷ 1.800 = 1% y $90.000 ÷ 18 = $5.000. Google: 15 ÷ 600 = 2,5% y $60.000 ÷ 15 = $4.000. Google vende más barato.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Google cuesta $100 por sesión y Meta $50, así que Meta es la más eficiente para vender.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El costo por sesión está bien calculado, pero mide tráfico, no ventas; el indicador del objetivo es el costo por compra.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P15</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>En octubre Marcela invirtió $80.000 en anuncios de Instagram. Los anuncios llevan a la tienda con un enlace simple, <strong>sin parámetros UTM</strong>. En GA4 (grupo de canales predeterminado) ve esto:</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Canal</th><th>Sesiones septiembre</th><th>Sesiones octubre</th></tr><tr><td>Social orgánico</td><td>1.200</td><td>2.400</td></tr><tr><td>Social de pago</td><td>0</td><td>0</td></tr><tr><td>Búsqueda orgánica</td><td>850</td><td>900</td></tr></table><p>Marcela concluye: “Mis publicaciones orgánicas duplicaron las visitas”.</p></div><p>¿Qué interpretación y qué paso son los más adecuados?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>El grupo de canales predeterminado clasifica el tráfico según la fuente y el medio; sin etiquetas consistentes, las comparaciones engañan.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P15</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Sin UTM, el clic desde un anuncio de Instagram llega como tráfico social sin señal de pago; con utm_source=instagram y utm_medium=paid_social se clasifica como Social de pago.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>La conclusión es correcta: los anuncios no generaron visitas, porque Social de pago marca cero sesiones en ambos meses.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Cero en Social de pago no prueba que los anuncios no trajeran visitas: sin etiquetas, GA4 no tiene cómo reconocerlas como pagadas.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Las visitas de los anuncios probablemente se cuentan como orgánicas; hay que etiquetarlos con UTM.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Sin UTM, el clic desde un anuncio de Instagram llega como tráfico social sin señal de pago; con utm_source=instagram y utm_medium=paid_social se clasifica como Social de pago.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>GA4 no puede distinguir anuncios de publicaciones, así que debe comparar solo el total de sesiones del sitio.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. GA4 sí los distingue cuando la fuente y el medio están bien etiquetados; mirar solo el total impide evaluar cada canal.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Conviene detener los anuncios, porque el informe demuestra que no aportan visitas a la tienda.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Detener los anuncios sería decidir con un dato mal clasificado: primero hay que medir bien.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P16</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Panel semanal de Casa Nativa en Looker Studio (fuentes: GA4 y planilla de ventas):</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Indicador</th><th>Semana 1</th><th>Semana 2</th></tr><tr><td>Sesiones</td><td>2.000</td><td>2.600</td></tr><tr><td>Compras</td><td>40</td><td>36</td></tr><tr><td>Tasa de conversión</td><td>2,0%</td><td>¿?</td></tr></table></div><p>¿Qué lectura y qué primer paso son los más adecuados?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Un panel sirve cuando el dato lleva a una pregunta: ¿qué cambió? Primero se diagnostica, después se actúa.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P16</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> 36 ÷ 2.600 × 100 ≈ 1,4%. Más visitas con menos compras sugiere tráfico de menor calidad: el informe de adquisición muestra su origen.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Las sesiones subieron 30%, pero la tasa bajó a cerca de 1,4%; revisar qué canal trajo las visitas nuevas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. 36 ÷ 2.600 × 100 ≈ 1,4%. Más visitas con menos compras sugiere tráfico de menor calidad: el informe de adquisición muestra su origen.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Las sesiones subieron 30%, así que la semana fue mejor que la anterior y conviene mantener todo tal como está.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más sesiones no es mejor resultado si el objetivo es vender: las compras bajaron 10%.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>La tasa bajó a 0,36%; hay que rediseñar todo el sitio web de inmediato para recuperar ventas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El cálculo es incorrecto (36 ÷ 2.600 × 100 ≈ 1,4%) y rediseñar todo sin diagnóstico rara vez resuelve.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Las compras bajaron solo 4 unidades, una variación tan menor que no amerita revisar nada.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Bajar de 40 a 36 compras es una caída de 10% con 30% más de tráfico: es una señal que conviene diagnosticar.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P17</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Marcela y su ayudante de media jornada disponen de unas <strong>40 horas</strong> para proyectos nuevos en los próximos 90 días. Estas son sus ideas:</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Acción</th><th>Impacto esperado</th><th>Esfuerzo estimado</th></tr><tr><td>1. Registrar clientes y próximas acciones en una planilla compartida</td><td>Alto</td><td>8 h</td></tr><tr><td>2. Respuestas automáticas para 5 preguntas frecuentes</td><td>Alto</td><td>6 h</td></tr><tr><td>3. Panel semanal en Looker Studio con 3 indicadores</td><td>Alto</td><td>10 h</td></tr><tr><td>4. Desarrollar una app propia</td><td>Medio</td><td>300 h</td></tr><tr><td>5. Videos diarios en una nueva red social</td><td>Bajo</td><td>60 h</td></tr><tr><td>6. Cambiar la portada de Facebook</td><td>Bajo</td><td>1 h</td></tr></table></div><p>¿Qué combinación de tres prioridades es la más adecuada para el plan?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Prioriza alto impacto y bajo esfuerzo, respeta la capacidad real del equipo y deja el resto en “puede esperar”.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P17</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> 8 + 6 + 10 = 24 horas, dentro de las 40 disponibles, y las tres son de alto impacto con bajo esfuerzo relativo.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Acciones 4, 1 y 2: la app es la idea más ambiciosa y las otras dos la complementan.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Solo la app exige 300 horas, más de siete veces la capacidad disponible: corresponde postergarla.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Acciones 5, 6 y 2: suman visibilidad en redes y además ahorran tiempo de atención.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Suman 67 horas, más de las disponibles, y dos de ellas son de bajo impacto.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Las seis acciones a la vez, repartidas entre ambas personas para avanzar en todo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Suman más de 380 horas para un equipo con 40 disponibles: el resultado sería todo empezado y nada terminado.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Acciones 1, 2 y 3: suman 24 horas y las tres tienen alto impacto.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. 8 + 6 + 10 = 24 horas, dentro de las 40 disponibles, y las tres son de alto impacto con bajo esfuerzo relativo.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P18</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Plan de Acción Digital de Casa Nativa · próximos 90 días</p><ul><li><strong>Prioridad 1:</strong> registrar cada cotización con su próxima acción. Responsable: Marcela. Plazo: 2 semanas. Indicador: 100% de las cotizaciones con próxima acción y fecha al 30 de noviembre.</li><li><strong>Prioridad 2:</strong> respuestas automáticas para preguntas frecuentes. Responsable: ayudante. Plazo: 6 semanas. Indicador: bajar de 40 a 15 las preguntas repetidas respondidas a mano por semana.</li><li><strong>Prioridad 3:</strong> mejorar Instagram. Responsable: Marcela. Plazo: 8 semanas. Indicador: que la marca se vea más profesional y tenga más presencia.</li></ul></div><p>¿Qué problema tiene el plan y cómo conviene corregirlo?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Un buen indicador se puede verificar, tiene un punto de partida o meta, y está ligado al problema que se quiere resolver.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P18</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> “Verse más profesional” no se puede verificar; un número ligado al objetivo, como consultas por semana, sí lo permite.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>La prioridad 1 es imposible de medir; debería cambiar su indicador por “trabajar más ordenados”.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El indicador de la prioridad 1 sí se puede verificar; “trabajar más ordenados” lo volvería impreciso.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>La prioridad 2 tiene un plazo excesivo; debería quedar terminada mañana, sin indicador.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Seis semanas es un plazo realista, y quitar el indicador impediría saber si funcionó.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>El indicador de la prioridad 3 no es verificable; podría medir consultas semanales desde Instagram.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. “Verse más profesional” no se puede verificar; un número ligado al objetivo, como consultas por semana, sí lo permite.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>El plan está completo y bien formulado; solo le faltaría agregar otras cinco prioridades para el mismo trimestre.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Agregar prioridades a un equipo de dos personas haría el plan insostenible; y la prioridad 3 sigue sin indicador medible.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P19</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Antes de usar su registro de clientes, Marcela cerró <strong>10 ventas de 40 cotizaciones</strong> en un mes. Un mes después de registrar cada cotización con su próxima acción, cerró <strong>18 ventas de 45 cotizaciones</strong>.</p></div><p>¿Cómo cambió la tasa de cierre de cotizaciones?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Las tasas permiten comparar períodos de distinto tamaño; distingue puntos porcentuales de variación relativa.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P19</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Antes: 10 ÷ 40 × 100 = 25%. Después: 18 ÷ 45 × 100 = 40%. La diferencia es de 15 puntos porcentuales.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Subió 8 puntos porcentuales, porque se cerraron ocho ventas más que el mes anterior.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ocho ventas más es una diferencia absoluta, no una tasa: hay que dividir por las cotizaciones de cada mes.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Subió 15 puntos porcentuales: pasó de 25% a 40% de las cotizaciones cerradas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Antes: 10 ÷ 40 × 100 = 25%. Después: 18 ÷ 45 × 100 = 40%. La diferencia es de 15 puntos porcentuales.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Subió 60 puntos porcentuales: pasó de 10% a 70% de las cotizaciones cerradas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. 60% es el aumento relativo (15 ÷ 25), no la diferencia en puntos, y las tasas de 10% y 70% no corresponden a los datos.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>No se puede comparar, porque el segundo mes hubo más cotizaciones que el primero.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Justamente la tasa permite comparar meses con distinto número de cotizaciones.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M4.P20</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Eventos de GA4 para la página de la lámpara infantil:</p><table border="1" cellpadding="4" style="border-collapse:collapse"><tr><th>Evento</th><th>Mes anterior</th><th>Este mes</th></tr><tr><td>Vistas de la página</td><td>1.000</td><td>1.200</td></tr><tr><td>Agregar al carrito (add_to_cart)</td><td>80</td><td>96</td></tr><tr><td>Iniciar pago (begin_checkout)</td><td>50</td><td>60</td></tr><tr><td>Compra (purchase)</td><td>30</td><td>12</td></tr></table></div><p>¿Dónde debería concentrar Marcela su revisión?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Calcula la tasa entre cada etapa del recorrido para encontrar dónde se pierden las personas antes de actuar.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M4.P20</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Las demás tasas se mantienen (8% agrega al carrito; 62,5% inicia el pago), pero las compras cayeron de 30 ÷ 50 = 60% a 12 ÷ 60 = 20%.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>En el paso de pago y despacho: de quienes inician el pago, comprar bajó de 60% a 20%.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Las demás tasas se mantienen (8% agrega al carrito; 62,5% inicia el pago), pero las compras cayeron de 30 ÷ 50 = 60% a 12 ÷ 60 = 20%.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En la ficha del producto: la proporción que agrega al carrito cayó a la mitad este mes.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La proporción que agrega al carrito se mantiene en 8% (80 ÷ 1.000 y 96 ÷ 1.200).</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En atraer más tráfico, porque las vistas de la página son la etapa más débil del recorrido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Las vistas subieron de 1.000 a 1.200: el problema aparece después, al pagar.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En ninguna: las vistas, el carrito y el inicio de pago crecieron 20%, así que todo va bien.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Las etapas previas crecieron, pero las compras cayeron de 30 a 12: algo falla en el paso final.</p>]]></text></feedback></answer>
+</question>
+</quiz>

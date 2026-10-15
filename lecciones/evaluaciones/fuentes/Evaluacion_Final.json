@@ -1,0 +1,391 @@
+{
+  "categoria": "Herramientas Digitales PYMES/Evaluación final",
+  "puntaje": 2,
+  "preguntas": [
+    {
+      "id": "EF.P1",
+      "tema": "M1 · Diagnóstico y medición de una mejora",
+      "q": "En Empanadas Doña María se perdían pedidos que llegaban por WhatsApp. María creó una planilla compartida donde se registran todos. ¿Cómo sabrá si la mejora funcionó?",
+      "o": [
+        "Comparando los pedidos perdidos en el mes anterior y en el posterior al cambio.",
+        "Preguntando al equipo, al final de la semana, si se siente más ordenado que antes.",
+        "Revisando si aumentaron los seguidores de la cuenta de Instagram del negocio en el mes.",
+        "Contando cuántas columnas y pestañas nuevas se agregaron a la planilla de pedidos."
+      ],
+      "c": 0,
+      "f": [
+        "Un indicador medido antes y después, ligado a la brecha que se quiso cerrar, muestra si la mejora tuvo efecto.",
+        "La percepción del equipo es útil, pero no mide si los pedidos perdidos realmente disminuyeron.",
+        "Los seguidores no tienen relación con el registro de pedidos: el indicador debe responder al problema.",
+        "Más columnas no indican que se pierdan menos pedidos; miden el tamaño de la planilla, no el resultado."
+      ],
+      "g": "Hecho → brecha → mejora pequeña → revisión con un indicador ligado al problema."
+    },
+    {
+      "id": "EF.P2",
+      "tema": "M1 · Necesidad antes que herramienta",
+      "q": "Las entregas de empanadas a cafeterías se cruzan o se olvidan, y María coordina todo por mensajes sueltos. ¿Qué solución responde mejor a esa necesidad?",
+      "o": [
+        "Un documento de Word con las fechas del mes, enviado por correo cada lunes.",
+        "Una planilla distinta para cada repartidor, guardada en su propio computador.",
+        "Un calendario compartido con cada entrega, su fecha y su responsable.",
+        "Más recordatorios por chat el día anterior de cada entrega programada."
+      ],
+      "c": 2,
+      "f": [
+        "Un documento enviado por correo genera copias que quedan desactualizadas ante cualquier cambio.",
+        "Planillas separadas impiden ver el conjunto de entregas y crean versiones distintas.",
+        "Un calendario común hace visible quién hace qué y cuándo, y reduce los mensajes de coordinación.",
+        "Más mensajes suman ruido al mismo canal donde hoy se pierden las fechas."
+      ],
+      "g": "Necesidad → criterio de uso → herramienta: coordinar fechas se resuelve con un calendario compartido."
+    },
+    {
+      "id": "EF.P3",
+      "tema": "M1 · Organización de archivos en la nube",
+      "q": "María recibió en octubre de 2026 una cotización de envases de un proveedor. Su equipo usa la convención AAAA-MM_Contenido_Detalle y cuatro carpetas: Administración, Ventas, Proveedores y Marketing. ¿Cómo debería guardarla?",
+      "o": [
+        "“Cotizacion FINAL envases (2).pdf”, en la carpeta Ventas.",
+        "“Documento escaneado octubre.pdf”, en la carpeta personal de María.",
+        "“Envases_cotizacion_nueva_definitiva.pdf”, en Administración.",
+        "“2026-10_Cotizacion_Envases.pdf”, en la carpeta Proveedores."
+      ],
+      "c": 3,
+      "f": [
+        "“FINAL” y “(2)” son justamente lo que la convención evita, y la carpeta no corresponde a un documento de proveedor.",
+        "Un nombre genérico obliga a abrir el archivo, y una carpeta personal impide que el equipo lo encuentre.",
+        "Sin año y mes al inicio no se ordena cronológicamente, y “nueva definitiva” pierde sentido con el tiempo.",
+        "Sigue la convención (año-mes, contenido, detalle) y queda en la carpeta que el equipo asocia a proveedores."
+      ],
+      "g": "Un buen nombre se entiende sin abrir el archivo y una estructura de 3 a 5 carpetas facilita encontrarlo."
+    },
+    {
+      "id": "EF.P4",
+      "tema": "M1 · Permisos al compartir",
+      "q": "La contadora externa de María debe revisar el presupuesto anual y sugerir cambios, pero la decisión final es de María. ¿Qué acceso corresponde darle en Drive u OneDrive?",
+      "o": [
+        "Puede editar, con un enlace abierto para cualquier persona que lo reciba.",
+        "Puede comentar, compartido solo con ella (acceso restringido).",
+        "Puede ver, con un enlace público para que lo abra desde cualquier lugar.",
+        "Propietaria del archivo, para que lo administre sin depender de María."
+      ],
+      "c": 1,
+      "f": [
+        "Editar le permite cambiar el contenido directamente, y un enlace abierto expone el presupuesto a terceros.",
+        "Comentar le permite sugerir sin modificar, y el acceso restringido limita el archivo a quien lo necesita.",
+        "Solo ver no le permite dejar sugerencias, y un enlace público expone información sensible.",
+        "Transferir la propiedad entrega el control de un archivo del negocio a una persona externa."
+      ],
+      "g": "El permiso debe corresponder a la tarea: ver para consultar, comentar para sugerir, editar para mantener."
+    },
+    {
+      "id": "EF.P5",
+      "tema": "M1 · Seguridad y continuidad",
+      "caso": "Pedro deja hoy Empanadas Doña María. Tenía edición en la carpeta de Ventas, algunos archivos de pedidos en su cuenta personal y conocía la contraseña del correo del negocio, que comparte todo el equipo.",
+      "q": "¿Qué conjunto de medidas protege mejor la información y la continuidad del negocio?",
+      "o": [
+        "Mantener sus accesos por si vuelve más adelante y pedirle formalmente que no comparta la contraseña con nadie.",
+        "Eliminar la carpeta de Ventas completa y crear una nueva contraseña única para que la use todo el equipo.",
+        "Retirar sus accesos, pasar sus archivos al negocio y usar cuentas individuales con verificación en dos pasos.",
+        "Cambiar la contraseña del correo y enviarla al resto del equipo por WhatsApp."
+      ],
+      "c": 2,
+      "f": [
+        "Conservar accesos innecesarios y confiar en una promesa no protege la información del negocio.",
+        "Borrar la carpeta elimina información que el equipo necesita y mantiene el problema de la contraseña compartida.",
+        "Acceso necesario y no más, información en cuentas del negocio y cuentas individuales con un segundo factor.",
+        "La clave seguiría siendo compartida y quedaría expuesta en el chat; el problema se repetiría con cada salida."
+      ],
+      "g": "Retira accesos que no se necesitan, deja la información en cuentas del negocio y activa la verificación en dos pasos."
+    },
+    {
+      "id": "EF.P6",
+      "tema": "M2 · Perfil comercial de WhatsApp Business",
+      "q": "Cada noche llegan a Casa Nativa cinco o seis consultas por WhatsApp que nadie ve hasta el mediodía siguiente, y algunos clientes terminan comprando en otra tienda. ¿Qué debería configurar Marcela?",
+      "o": [
+        "Una notificación en su celular para responder personalmente a cualquier hora de la noche.",
+        "Un aviso en el perfil pidiendo a los clientes que llamen por teléfono en horario laboral.",
+        "Un mensaje de bienvenida genérico que diga “Gracias por escribir, te responderemos”.",
+        "Un mensaje fuera de horario con la hora de respuesta y el catálogo, más etiquetas."
+      ],
+      "c": 3,
+      "f": [
+        "Responder de madrugada no es sostenible y termina bajando la calidad de la atención.",
+        "Obligar a llamar agrega fricción: muchos clientes prefieren escribir y se perderían más ventas.",
+        "No indica cuándo se responderá ni ofrece un siguiente paso, así que la expectativa sigue abierta.",
+        "Confirma la recepción, ordena la expectativa, deja disponible el catálogo y permite atender primero esas conversaciones."
+      ],
+      "g": "Un canal comercial informa, orienta y facilita el siguiente paso aunque nadie esté conectado."
+    },
+    {
+      "id": "EF.P7",
+      "tema": "M2 · Tienda propia y marketplace",
+      "q": "Después de seis meses vendiendo en un marketplace, Casa Nativa tiene ventas recurrentes y clientes que buscan la marca por su nombre. Marcela quiere más control de la experiencia y de la relación con sus clientes. ¿Qué le conviene?",
+      "o": [
+        "Evaluar una tienda propia sin cerrar el marketplace, sincronizando stock y precios.",
+        "Seguir vendiendo solo en el marketplace, porque ya funciona bien y no exige ningún cambio.",
+        "Cerrar el marketplace de inmediato y trasladar todas las ventas a una tienda nueva.",
+        "Abrir tres marketplaces más, para tener más alcance sin tener que configurar nada."
+      ],
+      "c": 0,
+      "f": [
+        "La tienda propia aumenta el control de marca y datos, sin abandonar el canal que ya vende.",
+        "Depender de un solo canal limita el control y expone a cambios de reglas o comisiones ajenas.",
+        "Cerrar el canal que vende elimina ingresos cuando la tienda nueva todavía no tiene tráfico estable.",
+        "Más marketplaces suman reglas ajenas y operación, pero no entregan el control que Marcela busca."
+      ],
+      "g": "La decisión de canal cambia con la etapa del negocio: validar primero, ganar control después."
+    },
+    {
+      "id": "EF.P8",
+      "tema": "M2 · Costo total de una pasarela de pago",
+      "caso": "Casa Nativa vende $2.000.000 al mes en línea (dato del caso). La pasarela X cobra 2,9% de comisión, pero Marcela debe revisar cada pago a mano: unas 6 horas al mes. La pasarela Y cobra 3,5%, se integra con la tienda y confirma los pedidos sola. Marcela valora su hora de trabajo en $5.000.",
+      "q": "Considerando el costo total mensual, ¿qué conclusión es correcta?",
+      "o": [
+        "X es más conveniente: cuesta $58.000 frente a $70.000 de Y.",
+        "Y es más conveniente: cuesta $70.000 frente a $88.000 de X.",
+        "Ambas cuestan lo mismo si se consideran las horas de trabajo.",
+        "X es más conveniente: cuesta $28.000 frente a $35.000 de Y."
+      ],
+      "c": 1,
+      "f": [
+        "Compara solo comisiones: a X le faltan las 6 horas de revisión manual (6 × $5.000 = $30.000).",
+        "X: 2,9% de $2.000.000 = $58.000 + $30.000 de trabajo manual = $88.000. Y: 3,5% = $70.000, sin revisión manual.",
+        "Las cifras no coinciden: X suma $88.000 y Y $70.000 al mes.",
+        "Los porcentajes están mal aplicados: 2,9% de $2.000.000 es $58.000, no $28.000."
+      ],
+      "g": "Compara pasarelas por costo total, integración, confianza, plazos y soporte, no solo por la comisión."
+    },
+    {
+      "id": "EF.P9",
+      "tema": "M2 · Momentos críticos de la logística",
+      "q": "Una clienta recibió su pedido de Casa Nativa, pero en la caja faltaba uno de los dos cojines que compró. ¿En qué momento crítico debió prevenirse este error?",
+      "o": [
+        "En el pago confirmado, registrando bien la transacción del pedido.",
+        "En el seguimiento, enviando el código del envío.",
+        "En la preparación, armando el pedido con un estándar claro.",
+        "En la postventa, con un mensaje de agradecimiento."
+      ],
+      "c": 2,
+      "f": [
+        "El pago pudo estar bien registrado; el error ocurrió al armar la caja.",
+        "El seguimiento informa dónde va el pedido, pero no revisa su contenido.",
+        "Una lista de verificación al preparar asegura que salga todo lo comprado antes del despacho.",
+        "La postventa ayuda a resolver el problema, pero llega tarde para prevenirlo."
+      ],
+      "g": "Pago confirmado → pedido validado → preparación → despacho → seguimiento → entrega y postventa."
+    },
+    {
+      "id": "EF.P10",
+      "tema": "M2 · Comunicar un atraso",
+      "q": "Un pedido de Casa Nativa se atrasará 24 horas por un problema en la ruta del transportista. ¿Qué mensaje debería enviar Marcela?",
+      "o": [
+        "Ninguno: es mejor esperar a que la clienta pregunte, para no preocuparla antes de tiempo con malas noticias.",
+        "“El transportista se atrasó; llámalos a este número si necesitas más información.”",
+        "“Tu pedido ya salió y llegará cuando llegue. Gracias por tu paciencia.”",
+        "“Tu pedido se retrasará 24 h; llegará el viernes. Si prefieres, retíralo en el taller.”"
+      ],
+      "c": 3,
+      "f": [
+        "Callar convierte un atraso tolerable en incertidumbre y desconfianza.",
+        "Traslada el problema a la clienta: la responsabilidad de informar es de la tienda.",
+        "No entrega información concreta y transmite desinterés por la experiencia de la clienta.",
+        "Informa a tiempo, da una nueva fecha y ofrece una alternativa: la clienta sabe qué esperar."
+      ],
+      "g": "Una entrega tardía con comunicación clara se tolera; una entrega incierta genera desconfianza."
+    },
+    {
+      "id": "EF.P11",
+      "tema": "M3 · Audiencia y contenido orgánico",
+      "q": "Tras una publicación sobre livings pequeños, la mayoría de los mensajes que recibe Casa Nativa preguntan “¿qué tamaño tiene?” y “¿cómo se ve en un mueble pequeño?”. ¿Qué debería hacer Marcela?",
+      "o": [
+        "Publicar un descuento del 10% para que esas personas se decidan rápido.",
+        "Crear contenido con medidas y productos en contexto, y sumarlas al catálogo.",
+        "Volver a publicar para todo el mundo, porque la publicación ya generó consultas.",
+        "Responder cada mensaje por separado y no cambiar nada del contenido ni del catálogo."
+      ],
+      "c": 1,
+      "f": [
+        "El descuento no despeja la duda que frena la compra: el tamaño y cómo combinarlo.",
+        "Las dudas frecuentes son la mejor pista para el próximo contenido y para mejorar la información visible.",
+        "Abrir la audiencia vuelve el mensaje genérico; la información útil está en las preguntas que llegaron.",
+        "Responder uno a uno consume tiempo y las mismas dudas seguirán llegando."
+      ],
+      "g": "Primero reduce la duda de tu audiencia prioritaria; después activa. Las preguntas repetidas son contenido."
+    },
+    {
+      "id": "EF.P12",
+      "tema": "M3 · Diseño accesible en Canva",
+      "q": "En una pieza de Canva para Instagram, Marcela marcó los productos agotados solo con un círculo gris. ¿Qué cambio mejora la accesibilidad?",
+      "o": [
+        "Escribir “Agotado” junto a un ícono, además del color.",
+        "Cambiar el círculo gris por uno rojo, más llamativo.",
+        "Reducir el tamaño de los precios para dar espacio al círculo.",
+        "Usar una tipografía distinta solo para los productos agotados."
+      ],
+      "c": 0,
+      "f": [
+        "Un estado importante debe expresarse también con texto o ícono, no depender solo del color.",
+        "Sigue dependiendo solo del color, lo que excluye a quienes no distinguen bien los colores.",
+        "Achicar los precios dificulta la lectura en el celular y no resuelve el problema del estado.",
+        "Cambiar la fuente no comunica el estado con claridad y rompe la consistencia visual."
+      ],
+      "g": "Contraste, tamaño legible, lenguaje claro y no depender solo del color."
+    },
+    {
+      "id": "EF.P13",
+      "tema": "M3 · Meta Ads o Google Ads según la intención",
+      "q": "Una persona escribe “regalo para casa nueva hecho a mano” en un buscador la víspera de una visita. ¿Qué tipo de anuncio le permite a Casa Nativa aprovechar mejor esa intención?",
+      "o": [
+        "Un anuncio de descubrimiento en el feed de Instagram, para que conozca la marca.",
+        "Una publicación orgánica en Facebook, programada para la mañana siguiente.",
+        "Un anuncio de video en historias, dirigido a personas que siguen cuentas de decoración.",
+        "Un anuncio de búsqueda en Google Ads, asociado a palabras clave de regalos."
+      ],
+      "c": 3,
+      "f": [
+        "Los anuncios de descubrimiento generan interés en quien aún no busca; esta persona ya está buscando.",
+        "Una publicación orgánica no aparece en los resultados del buscador ni llega a tiempo para esa búsqueda.",
+        "Llega a quien navega por redes, no a quien expresa su necesidad en un buscador en ese momento.",
+        "Cuando la persona ya busca una solución, el anuncio de búsqueda captura esa intención."
+      ],
+      "g": "Aún no busca: generar interés (p. ej., Meta Ads). Ya busca: capturar la búsqueda (p. ej., Google Ads)."
+    },
+    {
+      "id": "EF.P14",
+      "tema": "M3 · Controlar un presupuesto acotado",
+      "caso": "Meta de la campaña: 20 conversaciones por WhatsApp en 7 días con $70.000 (costo por conversación de referencia: $3.500). Regla acordada: si al tercer día el costo por conversación supera $7.000, cambiar una sola variable. Al tercer día, Marcela gastó $30.000 y obtuvo 4 conversaciones. El anuncio tiene buen alcance, pero pocas personas escriben.",
+      "q": "¿Qué debería hacer Marcela?",
+      "o": [
+        "Duplicar el presupuesto diario para compensar los días que quedan de campaña.",
+        "Cambiar el anuncio, la audiencia y el objetivo al mismo tiempo para mejorar rápido.",
+        "Ajustar solo el mensaje del anuncio, porque el costo ($7.500) superó la regla.",
+        "Mantener todo igual, porque el costo todavía está por debajo de $10.000 por conversación."
+      ],
+      "c": 2,
+      "f": [
+        "Aumentar la inversión sin corregir amplifica una campaña que hoy es ineficiente.",
+        "Cambiar todo a la vez impide saber qué produjo el resultado.",
+        "$30.000 ÷ 4 = $7.500, sobre el límite de $7.000; con buen alcance y pocas conversaciones, la variable a probar es el mensaje.",
+        "La regla acordada era $7.000, no $10.000: ignorarla deja de controlar el presupuesto."
+      ],
+      "g": "Objetivo → máximo → empezar acotado → medir → ajustar una variable a la vez."
+    },
+    {
+      "id": "EF.P15",
+      "tema": "M3 · Automatización con trato humano",
+      "q": "A las 20:47 una clienta escribe: “Mi pedido llegó con el jarrón quebrado y era para un regalo mañana”. ¿Qué debería hacer el chatbot de Casa Nativa?",
+      "o": [
+        "Reconocer el caso, avisar que lo atenderá una persona con prioridad y traspasar el contexto.",
+        "Enviar automáticamente la política de cambios y cerrar la conversación con un agradecimiento.",
+        "Pedirle que vuelva a escribir mañana en horario de atención para revisar su situación.",
+        "Ofrecerle el menú de opciones de despacho y medios de pago para que elija una."
+      ],
+      "c": 0,
+      "f": [
+        "Hay urgencia y emoción: el bot reconoce el límite, deriva y entrega el contexto para que no repita todo.",
+        "Una respuesta rígida ignora la urgencia y la emoción; probablemente termine en una mala reseña.",
+        "Obliga a repetir el problema y, mañana, ya será tarde para el regalo.",
+        "El menú no corresponde a su problema y la hace sentir que nadie la escucha."
+      ],
+      "g": "Automatiza lo predecible; cuando la respuesta depende del contexto o de la emoción, gana la intervención humana."
+    },
+    {
+      "id": "EF.P16",
+      "tema": "M4 · CRM y fidelización",
+      "q": "Valentina compró tres veces productos para la pieza de su hija. Marcela le avisó de la colección infantil y ella respondió que le gusta una lámpara, pero comprará a fin de mes. ¿Qué debería registrar Marcela en su CRM?",
+      "o": [
+        "Nada por ahora: si de verdad quiere la lámpara, volverá a escribir por su cuenta.",
+        "Interés en la lámpara y una próxima acción con fecha: escribirle a fin de mes.",
+        "Una copia completa de la conversación, para releerla cuando tenga tiempo.",
+        "Su inclusión en una lista que reciba promociones todos los días hasta que compre."
+      ],
+      "c": 1,
+      "f": [
+        "Sin registro, el seguimiento depende de la memoria y la oportunidad se olvida.",
+        "El resultado y la próxima acción con fecha convierten la información en un seguimiento oportuno.",
+        "Guardar chats completos no es registrar lo útil: falta definir qué hacer y cuándo.",
+        "Fidelizar no es bombardear: los mensajes diarios cansan y terminan bloqueados."
+      ],
+      "g": "Registrar → segmentar → aportar valor → próxima acción → aprender del resultado."
+    },
+    {
+      "id": "EF.P17",
+      "tema": "M4 · GA4 integrado con la estrategia de canales",
+      "q": "Marcela quiere saber qué canal genera más contactos por WhatsApp desde su tienda en línea: Instagram, Google o su boletín. ¿Qué combinación le permite responderlo en Google Analytics 4?",
+      "o": [
+        "Revisar cuántas sesiones trae cada canal, porque más visitas siempre equivalen a más contactos por WhatsApp.",
+        "Contar los “me gusta” de cada publicación y compararlos con las sesiones del sitio.",
+        "Mirar el informe de páginas y pantallas para ver cuál producto recibe más vistas.",
+        "Marcar el clic a WhatsApp como evento clave y compararlo por canal de adquisición."
+      ],
+      "c": 3,
+      "f": [
+        "Las sesiones miden tráfico, no contactos; un canal con muchas visitas puede generar pocos mensajes.",
+        "Los “me gusta” no se registran en GA4 y no miden contactos desde la tienda.",
+        "Ese informe muestra qué contenidos interesan, pero no desde qué canal llegaron quienes escribieron.",
+        "El evento clave mide la acción importante y el informe de adquisición la reparte por canal de origen."
+      ],
+      "g": "Define qué acción importa (evento clave) y compárala por canal, no solo por cantidad de sesiones."
+    },
+    {
+      "id": "EF.P18",
+      "tema": "M4 · Calcular la tasa de conversión",
+      "caso": "Marcela solo puede mantener una de dos campañas. Campaña A: 2.000 visitas y 16 ventas. Campaña B: 800 visitas y 20 ventas. Su objetivo es vender.",
+      "q": "¿Qué campaña debería mantener y por qué?",
+      "o": [
+        "La A, porque trae más del doble de visitas y eso asegura más ventas futuras.",
+        "La A, porque su tasa de conversión de 8% supera a la de B.",
+        "La B, porque convierte el 2,5% de sus visitas frente al 0,8% de la A.",
+        "Ninguna, porque con distinta cantidad de visitas no se pueden comparar."
+      ],
+      "c": 2,
+      "f": [
+        "Más visitas no implican más ventas: la A vendió menos que la B con más del doble de tráfico.",
+        "La tasa de la A es 16 ÷ 2.000 × 100 = 0,8%, no 8%.",
+        "A: 16 ÷ 2.000 × 100 = 0,8%. B: 20 ÷ 800 × 100 = 2,5%. Si el objetivo es vender, B es más eficiente.",
+        "La tasa de conversión permite justamente comparar campañas con distinto volumen de visitas."
+      ],
+      "g": "Tasa de conversión = ventas ÷ visitas × 100. Mira el indicador del objetivo, no solo el tráfico."
+    },
+    {
+      "id": "EF.P19",
+      "tema": "M4 · Plan de Acción Digital integrador",
+      "q": "Marcela y su ayudante de media jornada arman su plan de 90 días. Su principal dolor es que pierden ventas por no hacer seguimiento a cotizaciones y responden a mano las mismas preguntas. ¿Qué plan es más adecuado?",
+      "o": [
+        "Tres prioridades (registro de clientes, respuestas rápidas y panel semanal), con responsable, plazo e indicador.",
+        "Nueve prioridades, una por cada tema del curso, para aprovechar todo lo aprendido de una sola vez en el trimestre.",
+        "Abrir una nueva red social y desarrollar una app propia, porque son las ideas con más visibilidad para la marca.",
+        "Contratar una agencia para que haga todo el plan, sin que Marcela participe en las decisiones."
+      ],
+      "c": 0,
+      "f": [
+        "Ataca los problemas detectados con pocas acciones sostenibles, cada una medible y con una persona a cargo.",
+        "Demasiadas prioridades para dos personas dejan todo a medias: el plan debe ser realista.",
+        "No atacan los problemas detectados y exigen alto esfuerzo; corresponden a “puede esperar”.",
+        "Una agencia puede ayudar, pero sin la participación de Marcela el plan no refleja sus necesidades ni deja capacidades instaladas."
+      ],
+      "g": "Un buen plan es priorizado, realista y medible: alrededor de tres prioridades por trimestre."
+    },
+    {
+      "id": "EF.P20",
+      "tema": "M4 · Reformular una prioridad mal definida",
+      "caso": "Un borrador del plan dice: “Prioridad 1: mejorar las redes sociales. Responsable: todos. Plazo: este año. Indicador: que nos vaya mejor”. El problema real es que llegan consultas por Instagram que no se convierten en ventas.",
+      "q": "¿Qué versión corrige mejor esta prioridad?",
+      "o": [
+        "Mejorar mucho las redes. Responsable: todo el equipo. Plazo: lo antes posible. Indicador: más seguidores.",
+        "Registrar cada consulta de Instagram y su próxima acción. Responsable: Marcela. Plazo: 2 semanas. Indicador: % con seguimiento.",
+        "Publicar todos los días en Instagram y TikTok. Responsable: la ayudante. Plazo: durante este año. Indicador: más “me gusta”.",
+        "Rediseñar el logo y la paleta de colores. Responsable: una agencia externa. Plazo: 6 meses. Indicador: que la marca se vea mejor."
+      ],
+      "c": 1,
+      "f": [
+        "Mantiene una acción vaga, sin responsable claro, y mide seguidores en lugar del problema de conversión.",
+        "Ataca el problema detectado con una acción concreta, una responsable, un plazo realista y un indicador verificable.",
+        "Agrega trabajo sin resolver la falta de seguimiento y mide una métrica de vanidad.",
+        "No se relaciona con las consultas que no se convierten y su indicador no se puede verificar."
+      ],
+      "g": "Problema → acción → responsable → plazo → indicador verificable, ligado al problema."
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+ "categoria": "Herramientas Digitales PYMES/Módulo 2/Evaluación Parte 1",
+ "puntaje": 2,
+ "preguntas": [
+  {
+   "id": "M2.P1",
+   "tema": "2.1 Perfil comercial: identidad",
+   "q": "Marcela está completando la descripción del perfil de empresa de Casa Nativa en WhatsApp Business. ¿Qué texto cumple mejor la función de identidad de un perfil comercial?",
+   "o": [
+    "¡Los mejores productos del mundo para tu hogar y tu familia! Escríbenos por DM 💬",
+    "Casa Nativa: calidad, amor y diseño artesanal en cada detalle de tu hogar ✨",
+    "Decoración hecha a mano: cerámica, textiles y cestería. Envíos a todo Chile.",
+    "Tienda de cosas lindas para tu casa, para regalar y para regalarte 🎁"
+   ],
+   "c": 2,
+   "f": [
+    "Es una frase general que no dice qué se vende; el cliente debe preguntar para saber si encontró lo que busca.",
+    "Transmite un tono, pero no permite saber en segundos qué productos ofrece ni a dónde despacha.",
+    "Dice en pocas palabras qué vende y una condición clave de compra, por lo que el cliente se ubica de inmediato.",
+    "“Cosas lindas” es vago: no indica el tipo de producto ni condiciones básicas como la cobertura de envío."
+   ],
+   "g": "La identidad de un perfil comercial se entiende en segundos: nombre claro, imagen coherente y una descripción concreta de lo que se ofrece."
+  },
+  {
+   "id": "M2.P2",
+   "tema": "2.1 Perfil comercial: información esencial",
+   "q": "Marcela revisó los mensajes de la semana: 22 preguntaban el horario, 18 los medios de pago, 15 si envía a regiones y 9 el precio de un cojín. ¿Qué conclusión y acción corresponden?",
+   "o": [
+    "Al perfil le falta información esencial: publicar horario, pagos, cobertura y catálogo con precios.",
+    "Hay mucho interés en la marca: conviene publicar más historias para atraer todavía más consultas.",
+    "Los clientes prefieren conversar: conviene contratar a alguien que responda todos los mensajes del día.",
+    "Los precios generan dudas: conviene bajarlos para que los clientes dejen de preguntar por ellos."
+   ],
+   "c": 0,
+   "f": [
+    "Si el cliente debe preguntar datos básicos para avanzar, el perfil aún puede optimizarse; publicarlos reduce la fricción.",
+    "Atraer más tráfico hacia un perfil que no informa multiplica las mismas preguntas repetidas.",
+    "Más personas respondiendo lo mismo es un costo que se evita mostrando la información en el perfil.",
+    "Preguntar el precio no indica que sea alto: indica que no está visible en el catálogo."
+   ],
+   "g": "Regla práctica: si el cliente necesita preguntar datos básicos (horario, pagos, despacho, precios) para avanzar, el perfil todavía puede mejorar."
+  },
+  {
+   "id": "M2.P3",
+   "tema": "2.1 Atención eficiente fuera de horario",
+   "q": "Cada noche llegan a Casa Nativa 5 o 6 consultas que nadie ve hasta el mediodía siguiente, y dos clientes terminaron comprando en otra tienda. Marcela atiende de lunes a sábado desde las 10:00. ¿Qué configuración de WhatsApp Business conviene?",
+   "o": [
+    "Responder ella misma desde el celular a cualquier hora, incluso de madrugada, para no perder ventas.",
+    "Activar solo el mensaje de bienvenida, porque se envía cada vez que un cliente escribe al negocio.",
+    "Pedir en el perfil que los clientes llamen por teléfono en horario de atención, en lugar de escribir.",
+    "Programar un mensaje de ausencia con horario y catálogo, y etiquetar esos chats para priorizarlos."
+   ],
+   "c": 3,
+   "f": [
+    "No es sostenible: la calidad de la atención baja cuando el canal depende de que alguien esté siempre conectado.",
+    "El mensaje de bienvenida se envía en el primer contacto o tras un tiempo sin conversar, no informa cuándo se responderá.",
+    "Obligar a llamar agrega un paso para clientes que prefieren escribir y aumenta las ventas perdidas.",
+    "El cliente sabe que su mensaje llegó y cuándo tendrá respuesta, puede revisar el catálogo y Marcela prioriza esos chats."
+   ],
+   "g": "Mensaje de ausencia, respuestas rápidas y etiquetas permiten una atención rápida y ordenada sin depender de estar conectada todo el día."
+  },
+  {
+   "id": "M2.P4",
+   "tema": "2.2 Elegir canal: primera etapa",
+   "q": "Marcela quiere vender en línea sus 25 productos. Tiene presupuesto limitado, una ayudante media jornada, casi no tiene tráfico propio y aún no sabe cuáles productos se venden más. ¿Qué estrategia es más adecuada para empezar?",
+   "o": [
+    "Invertir todo el presupuesto en una tienda propia con diseño a medida desde el primer día.",
+    "Publicar sus productos más atractivos en un marketplace y medir qué se vende en unos meses.",
+    "Abrir una tienda propia y tres marketplaces a la vez, para no perder ninguna venta posible.",
+    "Esperar hasta reunir un presupuesto mayor antes de vender en cualquier canal en línea."
+   ],
+   "c": 1,
+   "f": [
+    "Sin tráfico propio, la tienda tendría pocas visitas y consumiría todo el presupuesto antes de validar la demanda.",
+    "Aprovecha el tráfico que ya existe en la plataforma, es operable con su equipo y entrega datos para decidir.",
+    "Con una ayudante media jornada, cuatro catálogos, pagos y despachos generan errores y desgaste.",
+    "No vender retrasa el aprendizaje comercial: qué productos se venden, a qué precio y a quién."
+   ],
+   "g": "No hay un canal mejor para todas las PYMES: se decide por control, velocidad, alcance y capacidad operativa según la etapa del negocio."
+  },
+  {
+   "id": "M2.P5",
+   "tema": "2.2 Decidir por etapas: multicanal",
+   "q": "Seis meses después, Casa Nativa tiene ventas recurrentes en el marketplace, muchos clientes buscan la marca por su nombre y Marcela quiere hacer campañas propias y conocer mejor a sus clientes. ¿Qué paso es más coherente?",
+   "o": [
+    "Cerrar el marketplace de inmediato y mover a todos sus clientes a una tienda propia nueva.",
+    "Seguir vendiendo solo en el marketplace, ya que es el canal que le dio sus primeras ventas.",
+    "Abrir cuentas en dos marketplaces más, para depender menos de las reglas de uno solo.",
+    "Evaluar una tienda propia y mantener el marketplace, cuidando stock y precios en ambos."
+   ],
+   "c": 3,
+   "f": [
+    "Elimina una fuente de ventas que funciona justo cuando la tienda propia aún no tiene tráfico estable.",
+    "Depender de un solo canal ajeno limita el control de la marca y de los datos, y aumenta la vulnerabilidad ante cambios de reglas.",
+    "Más marketplaces amplían el alcance, pero no le dan control de la marca ni de la relación con sus clientes.",
+    "La tienda propia aporta control de marca y relación con clientes, y el marketplace sigue aportando ventas y alcance."
+   ],
+   "g": "Muchas PYMES validan la demanda en un marketplace y, cuando la marca ya es buscada, suman una tienda propia en una estrategia multicanal."
+  },
+  {
+   "id": "M2.P6",
+   "tema": "2.2 Costos completos de cada canal",
+   "q": "Una amiga le dice a Marcela: “En el marketplace pagas comisión por cada venta; en una tienda propia solo pagas el plan mensual de la plataforma”. ¿Qué le falta considerar para comparar bien?",
+   "o": [
+    "La comisión de la pasarela y el marketing para atraer visitas, más despacho, empaque y atención.",
+    "Nada: el plan mensual es el único costo de una tienda propia, así que siempre será más barata.",
+    "Solo el costo del dominio web, que es lo único que se agrega al plan mensual de la tienda propia.",
+    "Que en la tienda propia también se paga una comisión al marketplace por cada venta realizada."
+   ],
+   "c": 0,
+   "f": [
+    "La tienda propia suma plataforma, medios de pago y marketing, y en ambos canales hay despacho, empaque y también atención al cliente.",
+    "Ignora los medios de pago, la publicidad para generar visitas y los costos operativos que existen en ambos canales.",
+    "El dominio es un costo menor; los medios de pago y el marketing para atraer visitas suelen pesar mucho más.",
+    "La tienda propia no paga comisión a un marketplace; su costo variable principal es la comisión de la pasarela."
+   ],
+   "g": "Compara costos completos, no solo una tarifa: comisiones y cargos en marketplace; plataforma, pagos y marketing en tienda propia; despacho, empaque y atención en ambos."
+  },
+  {
+   "id": "M2.P7",
+   "tema": "2.3 Criterios para elegir pasarela de pago",
+   "q": "Marcela compra materiales a sus artesanas cada semana y su caja es ajustada. Está comparando pasarelas de pago con comisiones parecidas. ¿Qué criterio debe revisar con especial atención en su situación?",
+   "o": [
+    "La integración con su tienda, para que los pedidos se confirmen automáticamente.",
+    "El soporte ante contracargos, cuando un cliente desconoce un cobro en su tarjeta.",
+    "Los plazos de abono, es decir, cuándo llega el dinero de cada venta a su cuenta.",
+    "La variedad de billeteras digitales disponibles para los clientes al momento de pagar."
+   ],
+   "c": 2,
+   "f": [
+    "Es un criterio importante para reducir trabajo manual, pero no responde a su problema de caja.",
+    "Es un criterio relevante para resolver errores y reclamos, pero no define cuándo dispone del dinero.",
+    "Si paga a sus artesanas cada semana, un abono lento puede dejarla sin caja aunque venda bien.",
+    "Ofrecer medios que usa su público ayuda a vender, pero no cambia la fecha en que recibe el dinero."
+   ],
+   "g": "Una pasarela se evalúa por costo total, confianza, integración, medios, plazos de abono y soporte; el peso de cada criterio depende de la situación del negocio."
+  },
+  {
+   "id": "M2.P8",
+   "tema": "2.3 Pago confirmado antes de preparar",
+   "q": "Una clienta escribe: “Ya transferí, te mando el pantallazo”. El pedido aparece como pendiente de pago y la ayudante pregunta si lo prepara. ¿Qué corresponde hacer?",
+   "o": [
+    "Prepararlo y despacharlo de inmediato, porque el pantallazo demuestra que el pago se hizo.",
+    "Revisar en la cuenta que el monto llegó y asociarlo al pedido antes de empezar a prepararlo.",
+    "Anular el pedido y pedirle a la clienta que vuelva a comprar usando otro medio de pago.",
+    "Pedirle a la clienta que transfiera otra vez, por si la primera transferencia no se registró."
+   ],
+   "c": 1,
+   "f": [
+    "Un pantallazo no es una confirmación válida: el pago podría no haberse completado o corresponder a otra operación.",
+    "Con un pago pendiente no se prepara ni despacha hasta verificar en el registro que el dinero está asociado a ese pedido.",
+    "Anular sin revisar castiga a una clienta que probablemente sí pagó y deteriora la confianza.",
+    "Pedir un segundo pago sin verificar puede generar un cobro duplicado y un reclamo."
+   ],
+   "g": "Un pago puede quedar aprobado, rechazado o pendiente; solo con una confirmación válida asociada al pedido se pasa a preparación."
+  },
+  {
+   "id": "M2.P9",
+   "tema": "2.3 Seis momentos críticos",
+   "q": "Un paquete de Casa Nativa volvió al taller porque la dirección no tenía número de departamento. El cliente la había escrito así en el formulario. ¿En qué momento crítico se debió prevenir este problema?",
+   "o": [
+    "En el pedido validado, comprobando que dirección y datos del cliente estén completos.",
+    "En la preparación, revisando con una lista que todos los productos estén en la caja.",
+    "En el despacho, eligiendo un transportista con mejor cobertura en la zona del cliente.",
+    "En el seguimiento, enviando al cliente el código para que vea dónde está su pedido."
+   ],
+   "c": 0,
+   "f": [
+    "Validar stock, dirección y datos antes de preparar evita despachos fallidos y costos de reenvío.",
+    "La preparación controla el contenido de la caja, no si los datos de entrega están completos.",
+    "Ningún transportista puede entregar en una dirección incompleta; el error se arrastra desde antes.",
+    "El seguimiento informa dónde va el pedido, pero no corrige una dirección incompleta."
+   ],
+   "g": "Los seis momentos críticos son pago confirmado, pedido validado, preparación, despacho, seguimiento y entrega con postventa."
+  },
+  {
+   "id": "M2.P10",
+   "tema": "2.3 Entrega y postventa",
+   "q": "Un cliente recibe un jarrón quebrado y escribe molesto por WhatsApp. ¿Cuál es la mejor respuesta de Casa Nativa en la etapa de entrega y postventa?",
+   "o": [
+    "Explicarle que el daño ocurrió en el traslado y enviarle el número del transportista para que reclame.",
+    "Disculparse, pedir una foto y ofrecer reposición o devolución con un plazo concreto de solución.",
+    "Decirle que se revisará el caso y responderle cuando el transportista confirme qué pasó con el envío.",
+    "Ofrecerle un 50% de descuento en su próxima compra para compensar el jarrón que llegó quebrado."
+   ],
+   "c": 1,
+   "f": [
+    "Para el cliente el responsable es Casa Nativa; derivarlo al transportista lo deja solo con el problema.",
+    "Resuelve la necesidad del cliente con opciones y plazos claros; luego conviene revisar el embalaje para prevenir nuevos quiebres.",
+    "Una respuesta sin fecha genera incertidumbre; el cliente necesita saber qué pasará y cuándo.",
+    "El descuento no resuelve el producto dañado que ya pagó y lo obliga a comprar de nuevo para compensarlo."
+   ],
+   "g": "La postventa necesita una ruta clara para resolver problemas: responder rápido, ofrecer opciones con plazos y aprender del error."
+  }
+ ]
+}

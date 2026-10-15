@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="PYMES_M1_S2" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+<metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+<organizations default="ORG-PYMES_M1_S2"><organization identifier="ORG-PYMES_M1_S2"><title>Simulador: elige la herramienta de Microsoft 365 adecuada</title>
+<item identifier="ITEM-PYMES_M1_S2" identifierref="RES-PYMES_M1_S2" isvisible="true"><title>Simulador: elige la herramienta de Microsoft 365 adecuada</title></item></organization></organizations>
+<resources><resource identifier="RES-PYMES_M1_S2" type="webcontent" adlcp:scormtype="sco" href="index.html">
+<file href="index.html"/><file href="img/maria_avatar.jpg"/>
+</resource></resources></manifest>

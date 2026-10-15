@@ -1,0 +1,133 @@
+<style>
+.wa{max-width:460px;margin:0 auto;background:var(--surface);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.wa-head{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 12px 6px;text-align:center}
+.wa-name{font-weight:800;font-size:1.15rem}
+.wa-sub{color:var(--muted);font-size:.86rem}
+.wa .hs{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:start;border-bottom:1px solid var(--line);border-radius:10px;padding:10px 10px}
+.wa .hs .ic{font-size:1.25rem;line-height:1.3;text-align:center}
+.wa .hs small{display:block;color:var(--muted);font-size:.8rem;font-weight:600}
+.wa .hs.photo{grid-template-columns:72px 1fr;align-items:center}
+.wa .ph{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:2rem;background:linear-gradient(160deg,#8ecae6,#f4d58d);border:3px solid var(--line)}
+.wa .off{color:var(--bad);font-weight:700}
+.wa .lnk{color:#0b6aa8;text-decoration:underline;overflow-wrap:anywhere}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .wa .lnk{color:#7cc4f2}}
+.chat{display:grid;gap:6px;margin-top:10px}
+.bub{background:var(--good-soft);border:1px solid var(--good-line);border-radius:12px 12px 12px 2px;padding:8px 12px;max-width:520px;font-size:.95rem}
+.bub small{display:block;color:var(--muted);font-size:.78rem}
+.order{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.order .ocard{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.order .st{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:800}
+.st.ap{background:var(--good-soft);color:var(--good);border:1px solid var(--good-line)}
+.st.pe{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber)}
+</style>
+
+<section id="intro" class="card">
+ <span class="eyebrow">Laboratorio de práctica</span>
+ <h2>Audita y mejora el perfil comercial y el flujo de pedidos de Casa Nativa</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Mi sobrina me ayudó a crear el perfil de WhatsApp Business hace un año y nunca más lo revisé. Siguen llegando las mismas preguntas, algunos pedidos se me enredan y ahora quiero vender también fuera del marketplace. ¿Me ayudas a ordenarlo?”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Trabajarás sobre una <b>recreación simplificada</b> del perfil de empresa de Casa Nativa y de sus pedidos. Aplica lo visto en las lecciones <b>2.1 Presencia digital y canal comercial</b>, <b>2.2 ¿Tienda propia o marketplace?</b> y <b>2.3 Del pago a la entrega</b>.</p>
+ <p class="muted">La aplicación WhatsApp Business es gratuita para atender clientes desde el teléfono. Las funciones de esta actividad (perfil de empresa, catálogo, mensajes de bienvenida y de ausencia, respuestas rápidas y etiquetas) están en sus herramientas para la empresa; los nombres exactos de los menús pueden variar entre versiones.</p>
+ <div class="steps"><div><b>6 tareas</b>Cada una vale entre 15 y 20 puntos. Tienes una respuesta por tarea.</div><div><b>Corrección explicada</b>Después de responder verás qué estuvo bien y por qué.</div><div><b>Apruebas con 80</b>Si no llegas, revisa la lección indicada y haz un nuevo intento.</div></div>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar el laboratorio →</button>
+</section>
+
+<section class="etask card" data-id="t1" data-pts="20" data-auto="hot" data-title="Auditoría del perfil de empresa" data-lesson="Lección 2.1 · Identidad, información y acción">
+ <h2>Encuentra los problemas del perfil de empresa</h2>
+ <p>Así ve un cliente nuevo el perfil de Casa Nativa. Haz clic en <b>cada elemento que esté mal configurado o que obligue al cliente a preguntar</b> (pueden ser varios) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar">📱 Perfil de empresa · Casa Nativa · Recreación simplificada</div>
+  <div class="wa">
+   <div class="wa-head"><div class="wa-name">Casa Nativa</div><div class="wa-sub">Cuenta de empresa · +56 9 0000 0000</div></div>
+   <button class="hs photo" data-ok><span class="ph" aria-hidden="true">🏖️</span><span><small>Foto de perfil</small>Selfie de Marcela en la playa, con lentes de sol</span></button>
+   <button class="hs"><span class="ic">🏷️</span><span><small>Categoría</small>Tienda de artículos para el hogar</span></button>
+   <button class="hs" data-ok><span class="ic">📝</span><span><small>Descripción</small>¡Los mejores productos del mundo! 🌟✨ Escríbenos</span></button>
+   <button class="hs" data-ok><span class="ic">🕘</span><span><small>Horario de atención</small><span class="off">No configurado</span></span></button>
+   <button class="hs"><span class="ic">📍</span><span><small>Dirección y cobertura</small>Taller en Ñuñoa, Santiago · Envíos a todo Chile</span></button>
+   <button class="hs"><span class="ic">✉️</span><span><small>Correo</small>contacto@casanativa.cl</span></button>
+   <button class="hs" data-ok><span class="ic">🌐</span><span><small>Sitio web</small><span class="lnk">casanativa.cl/tienda-2024-antigua</span> · al abrirlo aparece “Página no encontrada”</span></button>
+   <button class="hs" data-ok><span class="ic">🛍️</span><span><small>Catálogo</small><span class="off">Aún no hay productos en el catálogo</span></span></button>
+   <button class="hs"><span class="ic">👋</span><span><small>Mensaje de bienvenida</small>“¡Hola! Gracias por escribir a Casa Nativa 🌿 Revisa el catálogo y cuéntanos qué producto te interesa.”</span></button>
+   <button class="hs" data-ok><span class="ic">🌙</span><span><small>Mensaje de ausencia</small><span class="off">Desactivado</span> · el 40% de las consultas llega después de las 20:00</span></button>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Un perfil comercial responde antes de que el cliente pregunte. Fallan: la <b>selfie personal</b> (no transmite identidad de marca; conviene el logo o una foto de los productos), la <b>descripción genérica</b> (no dice qué vende: “Decoración hecha a mano: cerámica, textiles y cestería”), el <b>horario sin configurar</b>, el <b>enlace roto</b> (lleva a una página que no existe), el <b>catálogo vacío</b> (obliga a enviar fotos una por una) y el <b>mensaje de ausencia desactivado</b>, justo cuando muchas consultas llegan de noche. La categoría, la cobertura, el correo y el mensaje de bienvenida están bien: informan y orientan al siguiente paso. Cada problema encontrado suma; marcar algo correcto descuenta.</div>
+</section>
+
+<section class="etask card" data-id="t2" data-pts="20" data-auto="match" data-title="Mensajes automáticos y herramientas" data-lesson="Lección 2.1 · Atención eficiente">
+ <h2>¿Qué herramienta resuelve cada situación?</h2>
+ <p>Para cada situación del día a día de Casa Nativa, elige la herramienta de WhatsApp Business que mejor la resuelve.</p>
+ <div class="mock"><div class="bar">⚙️ Herramientas para la empresa · Casa Nativa</div>
+ <div style="padding:6px 14px">
+  <div class="mrow"><span>Una persona escribe por primera vez un martes a las 11:00 y Marcela está empacando un pedido.</span><select data-ans="bie"><option value="bie">👋 Mensaje de bienvenida</option><option value="aus">🌙 Mensaje de ausencia</option><option value="rap">⚡ Respuesta rápida</option><option value="eti">🏷️ Etiqueta</option><option value="cat">🛍️ Catálogo</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Llega una consulta el sábado a las 22:40 y nadie la verá hasta el lunes.</span><select data-ans="aus"><option value="bie">👋 Mensaje de bienvenida</option><option value="aus">🌙 Mensaje de ausencia</option><option value="rap">⚡ Respuesta rápida</option><option value="eti">🏷️ Etiqueta</option><option value="cat">🛍️ Catálogo</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Ocho veces al día preguntan cuánto cuesta y cuánto demora el despacho a regiones.</span><select data-ans="rap"><option value="bie">👋 Mensaje de bienvenida</option><option value="aus">🌙 Mensaje de ausencia</option><option value="rap">⚡ Respuesta rápida</option><option value="eti">🏷️ Etiqueta</option><option value="cat">🛍️ Catálogo</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Marcela envió tres cotizaciones a una empresa y no quiere olvidar hacer seguimiento el viernes.</span><select data-ans="eti"><option value="bie">👋 Mensaje de bienvenida</option><option value="aus">🌙 Mensaje de ausencia</option><option value="rap">⚡ Respuesta rápida</option><option value="eti">🏷️ Etiqueta</option><option value="cat">🛍️ Catálogo</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Un cliente pide ver todos los modelos de cojines con sus precios y medidas.</span><select data-ans="cat"><option value="bie">👋 Mensaje de bienvenida</option><option value="aus">🌙 Mensaje de ausencia</option><option value="rap">⚡ Respuesta rápida</option><option value="eti">🏷️ Etiqueta</option><option value="cat">🛍️ Catálogo</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Hay doce conversaciones con pago pendiente mezcladas con consultas nuevas.</span><select data-ans="eti"><option value="bie">👋 Mensaje de bienvenida</option><option value="aus">🌙 Mensaje de ausencia</option><option value="rap">⚡ Respuesta rápida</option><option value="eti">🏷️ Etiqueta</option><option value="cat">🛍️ Catálogo</option></select><span class="mk"></span></div>
+ </div></div>
+ <div class="why"><h4>Por qué</h4>El <b>mensaje de bienvenida</b> se envía solo cuando alguien escribe por primera vez (o tras 14 días sin conversar) y orienta el siguiente paso. El <b>mensaje de ausencia</b> se programa fuera del horario de atención para que el cliente sepa que su mensaje llegó y cuándo tendrá respuesta. Las <b>respuestas rápidas</b> (se llaman escribiendo “/” en el chat) sirven para preguntas que se repiten, como el despacho. Las <b>etiquetas</b> ordenan conversaciones por estado (“cotización enviada”, “pago pendiente”) para no perder seguimientos. El <b>catálogo</b> muestra productos, precios y detalles sin enviar fotos sueltas.</div>
+</section>
+
+<section class="etask card" data-id="t3" data-pts="15" data-auto="order" data-title="Flujo del pedido" data-lesson="Lección 2.3 · Seis momentos críticos">
+ <h2>Ordena el recorrido del pedido CN-1120</h2>
+ <p>Francisca compra un cesto y dos velas en la tienda en línea de Casa Nativa. Ordena lo que debe ocurrir, desde la compra hasta la postventa.</p>
+ <ol class="ord">
+  <li data-pos="1">Francisca revisa el carrito: productos, cantidades, despacho y total antes de pagar.</li>
+  <li data-pos="2">La pasarela informa “pago aprobado” y el pedido pasa de pendiente a pagado; Francisca recibe la confirmación con su número de pedido.</li>
+  <li data-pos="3">Marcela valida el pedido: stock disponible, dirección completa y teléfono de contacto.</li>
+  <li data-pos="4">La ayudante arma la caja con la lista de verificación del pedido.</li>
+  <li data-pos="5">Se entrega al transportista y se envía a Francisca el código de seguimiento con la fecha estimada.</li>
+  <li data-pos="6">Se confirma la recepción y se le recuerda que puede escribir si algo llegó mal.</li>
+ </ol>
+ <div class="why"><h4>Por qué</h4>La venta digital no termina con el pago. Primero el cliente debe ver el total real (incluido el despacho) para evitar sorpresas; luego el <b>pago confirmado</b> se asocia al pedido y se avisa al cliente; después se <b>valida</b> (stock y dirección) antes de gastar tiempo en <b>preparar</b>; el <b>despacho</b> va acompañado de seguimiento; y la <b>postventa</b> deja una ruta clara para resolver problemas.</div>
+</section>
+
+<section class="etask card" data-id="t4" data-pts="15" data-auto="mc" data-title="Pago pendiente o confirmado" data-lesson="Lección 2.3 · Pago confirmado">
+ <h2>Dos pedidos, dos estados de pago</h2>
+ <p>Es lunes a las 9:00. La ayudante pregunta qué pedidos puede preparar hoy. Esto es lo que muestra el panel de pedidos:</p>
+ <div class="order">
+  <div class="ocard"><b>Pedido CN-1121</b> · Tomás<br>2 cojines de lino · $37.980<br>Pasarela: <span class="st ap">✔ Pago aprobado</span></div>
+  <div class="ocard"><b>Pedido CN-1122</b> · Sofía<br>1 jarrón de greda · $19.490<br>Transferencia: <span class="st pe">⏳ Pendiente</span><br><small class="muted">Sofía envió por chat una captura de pantalla de la transferencia, pero el abono no aparece en la cuenta del negocio.</small></div>
+ </div>
+ <p><b>¿Qué debe hacer Marcela?</b></p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="t4"> Preparar CN-1121; dejar CN-1122 con la etiqueta “pago pendiente”, verificar el abono en el registro de la cuenta y avisarle a Sofía que su pedido se prepara apenas se confirme.</label>
+  <label class="opt"><input type="radio" name="t4"> Preparar y despachar ambos pedidos hoy mismo, porque la captura de pantalla que envió Sofía demuestra que la transferencia se hizo.</label>
+  <label class="opt"><input type="radio" name="t4"> Preparar solo CN-1121 y anular CN-1122 de inmediato, pidiéndole a Sofía que vuelva a comprar con tarjeta en la tienda.</label>
+  <label class="opt"><input type="radio" name="t4"> No preparar ninguno de los dos hasta fin de mes, cuando Marcela revise todos los pagos y transferencias juntos.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Un pago aprobado permite avanzar. Un pago pendiente <b>no se prepara ni se despacha</b> hasta tener una confirmación válida: una captura de pantalla no basta, hay que revisar el registro de la transacción y asociarlo al pedido correcto. Mientras tanto, se le informa al cliente para que no quede con la duda. Anular sin verificar daña la confianza, y esperar a fin de mes retrasa pedidos ya pagados.</div>
+</section>
+
+<section class="etask card" data-id="t5" data-pts="15" data-auto="num" data-title="Total a cobrar y fecha de entrega" data-lesson="Lección 2.3 · Carrito y comunicación con el cliente">
+ <h2>Calcula el cobro y la fecha que informarás</h2>
+ <p>Ignacio, de Concepción, pide por WhatsApp <b>2 cojines de lino a $18.990 c/u</b> y <b>1 jarrón de greda a $14.990</b>. Condiciones de Casa Nativa:</p>
+ <div class="tablewrap"><table class="data">
+  <tr><th>Condición</th><th>Detalle</th></tr>
+  <tr><td>Despacho a regiones</td><td>$4.500 · gratis en compras desde $60.000</td></tr>
+  <tr><td>Preparación</td><td>Se despacha el día hábil siguiente al pago confirmado</td></tr>
+  <tr><td>Transportista a Concepción</td><td>Entrega 2 días hábiles después del despacho (no reparte sábado ni domingo)</td></tr>
+ </table></div>
+ <p>El pago de Ignacio se confirma el <b>jueves 22 de octubre</b>.</p>
+ <div class="numgrid">
+  <label>Total a cobrar a Ignacio (con despacho)<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="57470" data-tol="1" data-show="$57.470"></span></label>
+  <label>Día de octubre de la entrega estimada<span class="hint">Escribe solo el número del día</span><input type="text" inputmode="decimal" data-ans="27" data-tol="0" data-show="27 (martes 27 de octubre)"></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Productos: 2 × $18.990 + $14.990 = <b>$52.970</b>. No alcanza los $60.000, así que se suma el despacho: $52.970 + $4.500 = <b>$57.470</b>. Fechas: pago confirmado el jueves 22 → despacho el viernes 23 → dos días hábiles después (lunes 26 y martes 27) → llega el <b>martes 27</b>. Informar el total real antes de pagar y una fecha concreta evita reclamos. Dato útil para Marcela: si Ignacio sumara $7.030 más en productos, el despacho sería gratis.</div>
+</section>
+
+<section class="etask card" data-id="t6" data-pts="15" data-auto="multi" data-title="Estrategia de canales" data-lesson="Lección 2.2 · Decidir por etapas">
+ <h2>Casa Nativa crece: ¿qué conviene ahora?</h2>
+ <p>Han pasado ocho meses. Casa Nativa vende bien en un marketplace, cada semana más personas buscan la marca por su nombre en redes y WhatsApp, y Marcela quiere más control sobre la relación con sus clientes. Trabaja con una ayudante media jornada. Marca <b>todas</b> las acciones adecuadas para esta etapa.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> Evaluar una tienda propia y mantener el marketplace mientras la tienda consigue tráfico estable.</label>
+  <label class="opt" data-ok><input type="checkbox"> Mantener stock y precios sincronizados entre los canales para no vender productos agotados.</label>
+  <label class="opt" data-ok><input type="checkbox"> Usar WhatsApp Business con catálogo actualizado y etiquetas para atender consultas y postventa de ambos canales.</label>
+  <label class="opt"><input type="checkbox"> Cerrar el marketplace de inmediato para que todos compren en la tienda propia.</label>
+  <label class="opt"><input type="checkbox"> Abrir tres marketplaces más esta semana para no perder ninguna venta.</label>
+  <label class="opt"><input type="checkbox"> Responder personalmente todas las consultas a cualquier hora, incluso de madrugada.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Cuando la marca ya tiene demanda propia, una tienda propia aumenta el control y fortalece la relación con los clientes, <b>sin abandonar</b> el canal que ya vende (estrategia multicanal). Para operar dos canales con poco equipo hay que sincronizar stock y precios y ordenar la atención con las herramientas de WhatsApp Business. Cerrar el marketplace elimina ventas antes de tiempo, sumar canales que no se pueden operar genera errores, y atender a toda hora no es sostenible. Cada acierto suma y cada marca errónea descuenta.</div>
+</section>

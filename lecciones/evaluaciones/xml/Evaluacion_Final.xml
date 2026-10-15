@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/top/Herramientas Digitales PYMES/Evaluación final</text></category><info format="html"><text></text></info></question>
+<question type="multichoice">
+<name><text>EF.P1</text></name>
+<questiontext format="html"><text><![CDATA[<p>En Empanadas Doña María se perdían pedidos que llegaban por WhatsApp. María creó una planilla compartida donde se registran todos. ¿Cómo sabrá si la mejora funcionó?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Hecho → brecha → mejora pequeña → revisión con un indicador ligado al problema.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P1</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Un indicador medido antes y después, ligado a la brecha que se quiso cerrar, muestra si la mejora tuvo efecto.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Comparando los pedidos perdidos en el mes anterior y en el posterior al cambio.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Un indicador medido antes y después, ligado a la brecha que se quiso cerrar, muestra si la mejora tuvo efecto.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Preguntando al equipo, al final de la semana, si se siente más ordenado que antes.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La percepción del equipo es útil, pero no mide si los pedidos perdidos realmente disminuyeron.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Revisando si aumentaron los seguidores de la cuenta de Instagram del negocio en el mes.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los seguidores no tienen relación con el registro de pedidos: el indicador debe responder al problema.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Contando cuántas columnas y pestañas nuevas se agregaron a la planilla de pedidos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más columnas no indican que se pierdan menos pedidos; miden el tamaño de la planilla, no el resultado.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P2</text></name>
+<questiontext format="html"><text><![CDATA[<p>Las entregas de empanadas a cafeterías se cruzan o se olvidan, y María coordina todo por mensajes sueltos. ¿Qué solución responde mejor a esa necesidad?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Necesidad → criterio de uso → herramienta: coordinar fechas se resuelve con un calendario compartido.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P2</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Un calendario común hace visible quién hace qué y cuándo, y reduce los mensajes de coordinación.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Un documento de Word con las fechas del mes, enviado por correo cada lunes.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un documento enviado por correo genera copias que quedan desactualizadas ante cualquier cambio.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Una planilla distinta para cada repartidor, guardada en su propio computador.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Planillas separadas impiden ver el conjunto de entregas y crean versiones distintas.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Un calendario compartido con cada entrega, su fecha y su responsable.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Un calendario común hace visible quién hace qué y cuándo, y reduce los mensajes de coordinación.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Más recordatorios por chat el día anterior de cada entrega programada.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más mensajes suman ruido al mismo canal donde hoy se pierden las fechas.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P3</text></name>
+<questiontext format="html"><text><![CDATA[<p>María recibió en octubre de 2026 una cotización de envases de un proveedor. Su equipo usa la convención AAAA-MM_Contenido_Detalle y cuatro carpetas: Administración, Ventas, Proveedores y Marketing. ¿Cómo debería guardarla?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Un buen nombre se entiende sin abrir el archivo y una estructura de 3 a 5 carpetas facilita encontrarlo.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P3</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Sigue la convención (año-mes, contenido, detalle) y queda en la carpeta que el equipo asocia a proveedores.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>“Cotizacion FINAL envases (2).pdf”, en la carpeta Ventas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. “FINAL” y “(2)” son justamente lo que la convención evita, y la carpeta no corresponde a un documento de proveedor.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>“Documento escaneado octubre.pdf”, en la carpeta personal de María.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un nombre genérico obliga a abrir el archivo, y una carpeta personal impide que el equipo lo encuentre.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>“Envases_cotizacion_nueva_definitiva.pdf”, en Administración.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Sin año y mes al inicio no se ordena cronológicamente, y “nueva definitiva” pierde sentido con el tiempo.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>“2026-10_Cotizacion_Envases.pdf”, en la carpeta Proveedores.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Sigue la convención (año-mes, contenido, detalle) y queda en la carpeta que el equipo asocia a proveedores.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P4</text></name>
+<questiontext format="html"><text><![CDATA[<p>La contadora externa de María debe revisar el presupuesto anual y sugerir cambios, pero la decisión final es de María. ¿Qué acceso corresponde darle en Drive u OneDrive?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>El permiso debe corresponder a la tarea: ver para consultar, comentar para sugerir, editar para mantener.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P4</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Comentar le permite sugerir sin modificar, y el acceso restringido limita el archivo a quien lo necesita.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Puede editar, con un enlace abierto para cualquier persona que lo reciba.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Editar le permite cambiar el contenido directamente, y un enlace abierto expone el presupuesto a terceros.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Puede comentar, compartido solo con ella (acceso restringido).</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Comentar le permite sugerir sin modificar, y el acceso restringido limita el archivo a quien lo necesita.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Puede ver, con un enlace público para que lo abra desde cualquier lugar.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Solo ver no le permite dejar sugerencias, y un enlace público expone información sensible.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Propietaria del archivo, para que lo administre sin depender de María.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Transferir la propiedad entrega el control de un archivo del negocio a una persona externa.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P5</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Pedro deja hoy Empanadas Doña María. Tenía edición en la carpeta de Ventas, algunos archivos de pedidos en su cuenta personal y conocía la contraseña del correo del negocio, que comparte todo el equipo.</p></div><p>¿Qué conjunto de medidas protege mejor la información y la continuidad del negocio?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Retira accesos que no se necesitan, deja la información en cuentas del negocio y activa la verificación en dos pasos.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P5</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Acceso necesario y no más, información en cuentas del negocio y cuentas individuales con un segundo factor.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Mantener sus accesos por si vuelve más adelante y pedirle formalmente que no comparta la contraseña con nadie.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Conservar accesos innecesarios y confiar en una promesa no protege la información del negocio.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Eliminar la carpeta de Ventas completa y crear una nueva contraseña única para que la use todo el equipo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Borrar la carpeta elimina información que el equipo necesita y mantiene el problema de la contraseña compartida.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Retirar sus accesos, pasar sus archivos al negocio y usar cuentas individuales con verificación en dos pasos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Acceso necesario y no más, información en cuentas del negocio y cuentas individuales con un segundo factor.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cambiar la contraseña del correo y enviarla al resto del equipo por WhatsApp.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La clave seguiría siendo compartida y quedaría expuesta en el chat; el problema se repetiría con cada salida.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P6</text></name>
+<questiontext format="html"><text><![CDATA[<p>Cada noche llegan a Casa Nativa cinco o seis consultas por WhatsApp que nadie ve hasta el mediodía siguiente, y algunos clientes terminan comprando en otra tienda. ¿Qué debería configurar Marcela?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Un canal comercial informa, orienta y facilita el siguiente paso aunque nadie esté conectado.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P6</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Confirma la recepción, ordena la expectativa, deja disponible el catálogo y permite atender primero esas conversaciones.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Una notificación en su celular para responder personalmente a cualquier hora de la noche.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Responder de madrugada no es sostenible y termina bajando la calidad de la atención.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Un aviso en el perfil pidiendo a los clientes que llamen por teléfono en horario laboral.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Obligar a llamar agrega fricción: muchos clientes prefieren escribir y se perderían más ventas.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Un mensaje de bienvenida genérico que diga “Gracias por escribir, te responderemos”.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No indica cuándo se responderá ni ofrece un siguiente paso, así que la expectativa sigue abierta.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Un mensaje fuera de horario con la hora de respuesta y el catálogo, más etiquetas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Confirma la recepción, ordena la expectativa, deja disponible el catálogo y permite atender primero esas conversaciones.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P7</text></name>
+<questiontext format="html"><text><![CDATA[<p>Después de seis meses vendiendo en un marketplace, Casa Nativa tiene ventas recurrentes y clientes que buscan la marca por su nombre. Marcela quiere más control de la experiencia y de la relación con sus clientes. ¿Qué le conviene?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>La decisión de canal cambia con la etapa del negocio: validar primero, ganar control después.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P7</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> La tienda propia aumenta el control de marca y datos, sin abandonar el canal que ya vende.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Evaluar una tienda propia sin cerrar el marketplace, sincronizando stock y precios.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. La tienda propia aumenta el control de marca y datos, sin abandonar el canal que ya vende.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Seguir vendiendo solo en el marketplace, porque ya funciona bien y no exige ningún cambio.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Depender de un solo canal limita el control y expone a cambios de reglas o comisiones ajenas.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cerrar el marketplace de inmediato y trasladar todas las ventas a una tienda nueva.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Cerrar el canal que vende elimina ingresos cuando la tienda nueva todavía no tiene tráfico estable.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Abrir tres marketplaces más, para tener más alcance sin tener que configurar nada.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más marketplaces suman reglas ajenas y operación, pero no entregan el control que Marcela busca.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P8</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Casa Nativa vende $2.000.000 al mes en línea (dato del caso). La pasarela X cobra 2,9% de comisión, pero Marcela debe revisar cada pago a mano: unas 6 horas al mes. La pasarela Y cobra 3,5%, se integra con la tienda y confirma los pedidos sola. Marcela valora su hora de trabajo en $5.000.</p></div><p>Considerando el costo total mensual, ¿qué conclusión es correcta?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Compara pasarelas por costo total, integración, confianza, plazos y soporte, no solo por la comisión.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P8</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> X: 2,9% de $2.000.000 = $58.000 + $30.000 de trabajo manual = $88.000. Y: 3,5% = $70.000, sin revisión manual.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>X es más conveniente: cuesta $58.000 frente a $70.000 de Y.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Compara solo comisiones: a X le faltan las 6 horas de revisión manual (6 × $5.000 = $30.000).</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Y es más conveniente: cuesta $70.000 frente a $88.000 de X.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. X: 2,9% de $2.000.000 = $58.000 + $30.000 de trabajo manual = $88.000. Y: 3,5% = $70.000, sin revisión manual.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ambas cuestan lo mismo si se consideran las horas de trabajo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Las cifras no coinciden: X suma $88.000 y Y $70.000 al mes.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>X es más conveniente: cuesta $28.000 frente a $35.000 de Y.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los porcentajes están mal aplicados: 2,9% de $2.000.000 es $58.000, no $28.000.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P9</text></name>
+<questiontext format="html"><text><![CDATA[<p>Una clienta recibió su pedido de Casa Nativa, pero en la caja faltaba uno de los dos cojines que compró. ¿En qué momento crítico debió prevenirse este error?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Pago confirmado → pedido validado → preparación → despacho → seguimiento → entrega y postventa.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P9</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Una lista de verificación al preparar asegura que salga todo lo comprado antes del despacho.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>En el pago confirmado, registrando bien la transacción del pedido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El pago pudo estar bien registrado; el error ocurrió al armar la caja.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En el seguimiento, enviando el código del envío.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El seguimiento informa dónde va el pedido, pero no revisa su contenido.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>En la preparación, armando el pedido con un estándar claro.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Una lista de verificación al preparar asegura que salga todo lo comprado antes del despacho.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En la postventa, con un mensaje de agradecimiento.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La postventa ayuda a resolver el problema, pero llega tarde para prevenirlo.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P10</text></name>
+<questiontext format="html"><text><![CDATA[<p>Un pedido de Casa Nativa se atrasará 24 horas por un problema en la ruta del transportista. ¿Qué mensaje debería enviar Marcela?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Una entrega tardía con comunicación clara se tolera; una entrega incierta genera desconfianza.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P10</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Informa a tiempo, da una nueva fecha y ofrece una alternativa: la clienta sabe qué esperar.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ninguno: es mejor esperar a que la clienta pregunte, para no preocuparla antes de tiempo con malas noticias.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Callar convierte un atraso tolerable en incertidumbre y desconfianza.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>“El transportista se atrasó; llámalos a este número si necesitas más información.”</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Traslada el problema a la clienta: la responsabilidad de informar es de la tienda.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>“Tu pedido ya salió y llegará cuando llegue. Gracias por tu paciencia.”</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No entrega información concreta y transmite desinterés por la experiencia de la clienta.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>“Tu pedido se retrasará 24 h; llegará el viernes. Si prefieres, retíralo en el taller.”</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Informa a tiempo, da una nueva fecha y ofrece una alternativa: la clienta sabe qué esperar.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P11</text></name>
+<questiontext format="html"><text><![CDATA[<p>Tras una publicación sobre livings pequeños, la mayoría de los mensajes que recibe Casa Nativa preguntan “¿qué tamaño tiene?” y “¿cómo se ve en un mueble pequeño?”. ¿Qué debería hacer Marcela?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Primero reduce la duda de tu audiencia prioritaria; después activa. Las preguntas repetidas son contenido.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P11</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Las dudas frecuentes son la mejor pista para el próximo contenido y para mejorar la información visible.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Publicar un descuento del 10% para que esas personas se decidan rápido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El descuento no despeja la duda que frena la compra: el tamaño y cómo combinarlo.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Crear contenido con medidas y productos en contexto, y sumarlas al catálogo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Las dudas frecuentes son la mejor pista para el próximo contenido y para mejorar la información visible.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Volver a publicar para todo el mundo, porque la publicación ya generó consultas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Abrir la audiencia vuelve el mensaje genérico; la información útil está en las preguntas que llegaron.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Responder cada mensaje por separado y no cambiar nada del contenido ni del catálogo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Responder uno a uno consume tiempo y las mismas dudas seguirán llegando.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P12</text></name>
+<questiontext format="html"><text><![CDATA[<p>En una pieza de Canva para Instagram, Marcela marcó los productos agotados solo con un círculo gris. ¿Qué cambio mejora la accesibilidad?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Contraste, tamaño legible, lenguaje claro y no depender solo del color.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P12</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Un estado importante debe expresarse también con texto o ícono, no depender solo del color.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Escribir “Agotado” junto a un ícono, además del color.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Un estado importante debe expresarse también con texto o ícono, no depender solo del color.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cambiar el círculo gris por uno rojo, más llamativo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Sigue dependiendo solo del color, lo que excluye a quienes no distinguen bien los colores.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Reducir el tamaño de los precios para dar espacio al círculo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Achicar los precios dificulta la lectura en el celular y no resuelve el problema del estado.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Usar una tipografía distinta solo para los productos agotados.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Cambiar la fuente no comunica el estado con claridad y rompe la consistencia visual.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P13</text></name>
+<questiontext format="html"><text><![CDATA[<p>Una persona escribe “regalo para casa nueva hecho a mano” en un buscador la víspera de una visita. ¿Qué tipo de anuncio le permite a Casa Nativa aprovechar mejor esa intención?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Aún no busca: generar interés (p. ej., Meta Ads). Ya busca: capturar la búsqueda (p. ej., Google Ads).</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P13</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Cuando la persona ya busca una solución, el anuncio de búsqueda captura esa intención.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Un anuncio de descubrimiento en el feed de Instagram, para que conozca la marca.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los anuncios de descubrimiento generan interés en quien aún no busca; esta persona ya está buscando.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Una publicación orgánica en Facebook, programada para la mañana siguiente.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Una publicación orgánica no aparece en los resultados del buscador ni llega a tiempo para esa búsqueda.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Un anuncio de video en historias, dirigido a personas que siguen cuentas de decoración.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Llega a quien navega por redes, no a quien expresa su necesidad en un buscador en ese momento.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Un anuncio de búsqueda en Google Ads, asociado a palabras clave de regalos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Cuando la persona ya busca una solución, el anuncio de búsqueda captura esa intención.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P14</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Meta de la campaña: 20 conversaciones por WhatsApp en 7 días con $70.000 (costo por conversación de referencia: $3.500). Regla acordada: si al tercer día el costo por conversación supera $7.000, cambiar una sola variable. Al tercer día, Marcela gastó $30.000 y obtuvo 4 conversaciones. El anuncio tiene buen alcance, pero pocas personas escriben.</p></div><p>¿Qué debería hacer Marcela?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Objetivo → máximo → empezar acotado → medir → ajustar una variable a la vez.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P14</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> $30.000 ÷ 4 = $7.500, sobre el límite de $7.000; con buen alcance y pocas conversaciones, la variable a probar es el mensaje.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Duplicar el presupuesto diario para compensar los días que quedan de campaña.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Aumentar la inversión sin corregir amplifica una campaña que hoy es ineficiente.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cambiar el anuncio, la audiencia y el objetivo al mismo tiempo para mejorar rápido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Cambiar todo a la vez impide saber qué produjo el resultado.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Ajustar solo el mensaje del anuncio, porque el costo ($7.500) superó la regla.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. $30.000 ÷ 4 = $7.500, sobre el límite de $7.000; con buen alcance y pocas conversaciones, la variable a probar es el mensaje.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Mantener todo igual, porque el costo todavía está por debajo de $10.000 por conversación.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La regla acordada era $7.000, no $10.000: ignorarla deja de controlar el presupuesto.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P15</text></name>
+<questiontext format="html"><text><![CDATA[<p>A las 20:47 una clienta escribe: “Mi pedido llegó con el jarrón quebrado y era para un regalo mañana”. ¿Qué debería hacer el chatbot de Casa Nativa?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Automatiza lo predecible; cuando la respuesta depende del contexto o de la emoción, gana la intervención humana.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P15</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Hay urgencia y emoción: el bot reconoce el límite, deriva y entrega el contexto para que no repita todo.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Reconocer el caso, avisar que lo atenderá una persona con prioridad y traspasar el contexto.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Hay urgencia y emoción: el bot reconoce el límite, deriva y entrega el contexto para que no repita todo.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Enviar automáticamente la política de cambios y cerrar la conversación con un agradecimiento.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Una respuesta rígida ignora la urgencia y la emoción; probablemente termine en una mala reseña.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Pedirle que vuelva a escribir mañana en horario de atención para revisar su situación.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Obliga a repetir el problema y, mañana, ya será tarde para el regalo.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ofrecerle el menú de opciones de despacho y medios de pago para que elija una.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El menú no corresponde a su problema y la hace sentir que nadie la escucha.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P16</text></name>
+<questiontext format="html"><text><![CDATA[<p>Valentina compró tres veces productos para la pieza de su hija. Marcela le avisó de la colección infantil y ella respondió que le gusta una lámpara, pero comprará a fin de mes. ¿Qué debería registrar Marcela en su CRM?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Registrar → segmentar → aportar valor → próxima acción → aprender del resultado.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P16</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> El resultado y la próxima acción con fecha convierten la información en un seguimiento oportuno.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Nada por ahora: si de verdad quiere la lámpara, volverá a escribir por su cuenta.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Sin registro, el seguimiento depende de la memoria y la oportunidad se olvida.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Interés en la lámpara y una próxima acción con fecha: escribirle a fin de mes.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. El resultado y la próxima acción con fecha convierten la información en un seguimiento oportuno.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Una copia completa de la conversación, para releerla cuando tenga tiempo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Guardar chats completos no es registrar lo útil: falta definir qué hacer y cuándo.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Su inclusión en una lista que reciba promociones todos los días hasta que compre.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Fidelizar no es bombardear: los mensajes diarios cansan y terminan bloqueados.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P17</text></name>
+<questiontext format="html"><text><![CDATA[<p>Marcela quiere saber qué canal genera más contactos por WhatsApp desde su tienda en línea: Instagram, Google o su boletín. ¿Qué combinación le permite responderlo en Google Analytics 4?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Define qué acción importa (evento clave) y compárala por canal, no solo por cantidad de sesiones.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P17</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> El evento clave mide la acción importante y el informe de adquisición la reparte por canal de origen.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Revisar cuántas sesiones trae cada canal, porque más visitas siempre equivalen a más contactos por WhatsApp.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Las sesiones miden tráfico, no contactos; un canal con muchas visitas puede generar pocos mensajes.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Contar los “me gusta” de cada publicación y compararlos con las sesiones del sitio.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los “me gusta” no se registran en GA4 y no miden contactos desde la tienda.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Mirar el informe de páginas y pantallas para ver cuál producto recibe más vistas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ese informe muestra qué contenidos interesan, pero no desde qué canal llegaron quienes escribieron.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Marcar el clic a WhatsApp como evento clave y compararlo por canal de adquisición.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. El evento clave mide la acción importante y el informe de adquisición la reparte por canal de origen.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P18</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Marcela solo puede mantener una de dos campañas. Campaña A: 2.000 visitas y 16 ventas. Campaña B: 800 visitas y 20 ventas. Su objetivo es vender.</p></div><p>¿Qué campaña debería mantener y por qué?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Tasa de conversión = ventas ÷ visitas × 100. Mira el indicador del objetivo, no solo el tráfico.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P18</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> A: 16 ÷ 2.000 × 100 = 0,8%. B: 20 ÷ 800 × 100 = 2,5%. Si el objetivo es vender, B es más eficiente.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>La A, porque trae más del doble de visitas y eso asegura más ventas futuras.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más visitas no implican más ventas: la A vendió menos que la B con más del doble de tráfico.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>La A, porque su tasa de conversión de 8% supera a la de B.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La tasa de la A es 16 ÷ 2.000 × 100 = 0,8%, no 8%.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>La B, porque convierte el 2,5% de sus visitas frente al 0,8% de la A.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. A: 16 ÷ 2.000 × 100 = 0,8%. B: 20 ÷ 800 × 100 = 2,5%. Si el objetivo es vender, B es más eficiente.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ninguna, porque con distinta cantidad de visitas no se pueden comparar.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La tasa de conversión permite justamente comparar campañas con distinto volumen de visitas.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P19</text></name>
+<questiontext format="html"><text><![CDATA[<p>Marcela y su ayudante de media jornada arman su plan de 90 días. Su principal dolor es que pierden ventas por no hacer seguimiento a cotizaciones y responden a mano las mismas preguntas. ¿Qué plan es más adecuado?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Un buen plan es priorizado, realista y medible: alrededor de tres prioridades por trimestre.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P19</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Ataca los problemas detectados con pocas acciones sostenibles, cada una medible y con una persona a cargo.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Tres prioridades (registro de clientes, respuestas rápidas y panel semanal), con responsable, plazo e indicador.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Ataca los problemas detectados con pocas acciones sostenibles, cada una medible y con una persona a cargo.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Nueve prioridades, una por cada tema del curso, para aprovechar todo lo aprendido de una sola vez en el trimestre.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Demasiadas prioridades para dos personas dejan todo a medias: el plan debe ser realista.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Abrir una nueva red social y desarrollar una app propia, porque son las ideas con más visibilidad para la marca.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No atacan los problemas detectados y exigen alto esfuerzo; corresponden a “puede esperar”.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Contratar una agencia para que haga todo el plan, sin que Marcela participe en las decisiones.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Una agencia puede ayudar, pero sin la participación de Marcela el plan no refleja sus necesidades ni deja capacidades instaladas.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>EF.P20</text></name>
+<questiontext format="html"><text><![CDATA[<div style="background:#f4fbfb;border-left:4px solid #0f7a82;padding:10px 14px;margin-bottom:10px"><p><strong>Caso</strong></p><p>Un borrador del plan dice: “Prioridad 1: mejorar las redes sociales. Responsable: todos. Plazo: este año. Indicador: que nos vaya mejor”. El problema real es que llegan consultas por Instagram que no se convierten en ventas.</p></div><p>¿Qué versión corrige mejor esta prioridad?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Problema → acción → responsable → plazo → indicador verificable, ligado al problema.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>EF.P20</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Ataca el problema detectado con una acción concreta, una responsable, un plazo realista y un indicador verificable.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Mejorar mucho las redes. Responsable: todo el equipo. Plazo: lo antes posible. Indicador: más seguidores.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Mantiene una acción vaga, sin responsable claro, y mide seguidores en lugar del problema de conversión.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Registrar cada consulta de Instagram y su próxima acción. Responsable: Marcela. Plazo: 2 semanas. Indicador: % con seguimiento.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Ataca el problema detectado con una acción concreta, una responsable, un plazo realista y un indicador verificable.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Publicar todos los días en Instagram y TikTok. Responsable: la ayudante. Plazo: durante este año. Indicador: más “me gusta”.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Agrega trabajo sin resolver la falta de seguimiento y mide una métrica de vanidad.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Rediseñar el logo y la paleta de colores. Responsable: una agencia externa. Plazo: 6 meses. Indicador: que la marca se vea mejor.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No se relaciona con las consultas que no se convierten y su indicador no se puede verificar.</p>]]></text></feedback></answer>
+</question>
+</quiz>
