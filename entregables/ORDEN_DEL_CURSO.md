@@ -1,5 +1,7 @@
 # Orden recomendado del curso en Moodle — Legislación Laboral
 
+**Antes del Módulo 1:** Evaluación diagnóstica (SCORM sin nota, `evaluacion_diagnostica/`).
+
 Cada módulo sigue la misma secuencia: **aprender → consultar → practicar → repasar → evaluar**.
 
 | # | Recurso | Tipo en Moodle |

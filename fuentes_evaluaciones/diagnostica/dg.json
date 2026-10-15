@@ -1,0 +1,503 @@
+{
+ "CURSO": "Legislación Laboral",
+ "COMP": "Aplicar principios y disposiciones fundamentales de la legislación laboral chilena para analizar situaciones de contratación, jornada, derechos laborales, relaciones de trabajo y término del contrato, identificando obligaciones, riesgos de incumplimiento y acciones apropiadas de acuerdo con el contexto laboral.",
+ "HORAS": 0,
+ "NIV": [
+  "Nunca lo he hecho",
+  "Lo hago con ayuda",
+  "Lo hago con autonomía",
+  "Podría enseñarlo"
+ ],
+ "AUTO": [
+  "Identifico qué derecho, obligación o fuente legal está en juego en una situación laboral y reconozco cuándo un acuerdo entre las partes no basta para cumplir la ley.",
+  "Reviso una distribución de jornada, un pacto de horas extraordinarias, un registro de asistencia o un descuento y detecto si respeta los límites legales.",
+  "Reconozco cuándo un requisito o una decisión puede ser discriminatoria y respondo solicitudes de permisos, cuidados o conciliación dentro de los plazos legales.",
+  "Distingo un conflicto laboral de una posible situación de acoso o violencia y sé qué pasos seguir cuando recibo una denuncia.",
+  "Verifico la causal, la carta de término, los pagos y el finiquito antes de dar por cerrada una relación laboral."
+ ],
+ "AE": [
+  {
+   "ae": "AE1",
+   "mod": "Módulo 1 · Fundamentos de la legislación laboral chilena",
+   "corto": "Principios, fuentes y obligaciones",
+   "sh": "Fundamentos",
+   "txt": "Reconocer los principios, fuentes, actores y obligaciones fundamentales que regulan una relación laboral y utilizarlos para interpretar situaciones laborales básicas.",
+   "lecc": {
+    "1.1": "1.1 ¿Por qué existe el Derecho Laboral?",
+    "1.2": "1.2 ¿De dónde provienen las reglas laborales?",
+    "1.3": "1.3 ¿Quién fiscaliza y orienta?",
+    "1.4": "1.4 Dos partes, derechos y obligaciones",
+    "1.5": "1.5 Derechos que no pueden simplemente dejarse sin efecto",
+    "1.6": "1.6 Caso aplicado: decisiones cotidianas que pueden generar incumplimientos"
+   }
+  },
+  {
+   "ae": "AE2",
+   "mod": "Módulo 2 · Contratación, jornada de trabajo y remuneraciones",
+   "corto": "Jornada, registros y remuneraciones",
+   "sh": "Contrato y jornada",
+   "txt": "Analizar condiciones contractuales, jornadas, registros, remuneraciones y modificaciones laborales, identificando requisitos y posibles desviaciones en situaciones de trabajo.",
+   "lecc": {
+    "2.4": "2.4 Organizar el tiempo de trabajo",
+    "2.5": "2.5 Ley de 40 Horas en la práctica",
+    "2.6": "2.6 Cuando la jornada se extiende",
+    "2.7": "2.7 Registrar para demostrar",
+    "2.8": "2.8 Leer una remuneración",
+    "2.9": "2.9 ¿Qué puede descontarse?"
+   }
+  },
+  {
+   "ae": "AE3",
+   "mod": "Módulo 3 · Derechos laborales, conciliación y corresponsabilidad",
+   "corto": "Igualdad, familia, permisos e inclusión",
+   "sh": "Derechos y cuidados",
+   "txt": "Identificar derechos laborales asociados a igualdad, protección familiar, cuidados, permisos, conciliación e inclusión, y seleccionar cursos de acción apropiados frente a situaciones laborales concretas.",
+   "lecc": {
+    "3.1": "3.1 Derechos fundamentales dentro de la empresa",
+    "3.2": "3.2 Igualdad de trato y no discriminación",
+    "3.3": "3.3 Maternidad, paternidad y protección familiar",
+    "3.4": "3.4 Conciliar trabajo y vida personal",
+    "3.5": "3.5 Personas que ejercen labores de cuidado",
+    "3.6": "3.6 Gestionar solicitudes vinculadas a responsabilidades familiares",
+    "3.7": "3.7 Feriado, permisos y licencias",
+    "3.8": "3.8 Inclusión laboral"
+   }
+  },
+  {
+   "ae": "AE4",
+   "mod": "Módulo 4 · Prevención del acoso, violencia y gestión de relaciones laborales",
+   "corto": "Acoso, violencia y relaciones laborales",
+   "sh": "Acoso y violencia",
+   "txt": "Diferenciar conflictos laborales de situaciones vinculadas con acoso o violencia laboral y reconocer las medidas preventivas, de resguardo y gestión que corresponden en cada caso.",
+   "lecc": {
+    "4.1": "4.1 El derecho a trabajar en un entorno seguro",
+    "4.2": "4.2 Distinguir acoso laboral, acoso sexual y violencia",
+    "4.3": "4.3 Prevenir antes de reaccionar",
+    "4.4": "4.4 El protocolo como herramienta de gestión",
+    "4.5": "4.5 ¿Qué ocurre cuando se presenta una denuncia?",
+    "4.6": "4.6 Investigación y medidas de resguardo",
+    "4.7": "4.7 Conflicto no es lo mismo que acoso"
+   }
+  },
+  {
+   "ae": "AE5",
+   "mod": "Módulo 5 · Término de la relación laboral y cumplimiento normativo",
+   "corto": "Término del contrato y cumplimiento",
+   "sh": "Término y cumplimiento",
+   "txt": "Analizar situaciones de término de contrato y verificar los principales requisitos documentales y de cumplimiento asociados al cierre de una relación laboral.",
+   "lecc": {
+    "5.1": "5.1 ¿Cómo puede terminar una relación laboral?",
+    "5.2": "5.2 Renuncia, acuerdo y vencimiento",
+    "5.3": "5.3 Necesidades de la empresa y otras causales",
+    "5.4": "5.4 Comunicar correctamente el término",
+    "5.5": "5.5 Indemnizaciones y prestaciones asociadas",
+    "5.6": "5.6 Finiquito y formalización del cierre",
+    "5.7": "5.7 Fiscalización laboral",
+    "5.8": "5.8 La evidencia también es cumplimiento",
+    "5.9": "5.9 ¿Qué ocurre cuando se incumple?"
+   }
+  }
+ ],
+ "P": [
+  {
+   "id": "D1.1",
+   "ae": 0,
+   "lec": "1.1",
+   "tema": "Primacía de la realidad",
+   "q": "Horizonte Servicios contrató a Ignacio «a honorarios». En la práctica, cumple un horario fijo, recibe instrucciones diarias de una jefatura y trabaja con los equipos de la empresa. La gerencia le dice a Camila que no existe relación laboral porque así lo indica el documento firmado. ¿Qué criterio debería aplicar Camila?",
+   "o": [
+    "El documento firmado define la relación: si dice «honorarios», no hay contrato de trabajo, aunque Ignacio cumpla horario.",
+    "Importa cómo se presta el servicio en la práctica: si hay dependencia y subordinación, se presume un contrato de trabajo.",
+    "Solo existiría un contrato de trabajo si Ignacio presenta un reclamo y la Inspección del Trabajo lo reconoce.",
+    "Existiría relación laboral solo si Ignacio trabajara la jornada completa de 42 horas semanales en la empresa."
+   ],
+   "c": 1,
+   "f": [
+    "El nombre del documento no decide la relación. Por el principio de primacía de la realidad, importa lo que ocurre en la práctica: prestar servicios bajo dependencia y subordinación hace presumir un contrato de trabajo (art. 8 CT).",
+    "Correcto: por la primacía de la realidad, lo que define el vínculo son los hechos. Horario fijo, instrucciones diarias y equipos de la empresa son señales de dependencia y subordinación, que hacen presumir un contrato de trabajo (arts. 7 y 8 CT).",
+    "La relación laboral existe por los hechos, no porque alguien reclame. El Derecho Laboral no interviene solo cuando hay conflicto: sus reglas se aplican desde que se presta el servicio en esas condiciones.",
+    "El contrato de trabajo no depende de la cantidad de horas: depende de que se presten servicios personales bajo dependencia y subordinación a cambio de una remuneración (art. 7 CT)."
+   ]
+  },
+  {
+   "id": "D1.2",
+   "ae": 0,
+   "lec": "1.2",
+   "tema": "Manual interno y ley",
+   "q": "El manual interno de una sucursal de Horizonte Servicios permite, desde hace años, cambiar a una persona a funciones muy distintas de las de su contrato, sin su acuerdo escrito, «cuando la operación lo requiera». La jefatura dice: «Siempre lo hemos hecho así y nadie ha reclamado». ¿Qué debería concluir Camila?",
+   "o": [
+    "El manual prevalece, porque es el documento más específico y fue pensado para la operación de la sucursal.",
+    "La práctica es válida, porque se ha aplicado durante años y nadie ha reclamado formalmente por ella.",
+    "Debe seguir aplicándose el manual hasta obtener un dictamen de la Dirección del Trabajo sobre el tema.",
+    "El manual está subordinado a la ley y al contrato: cambiar a funciones no similares requiere acuerdo escrito."
+   ],
+   "c": 3,
+   "f": [
+    "Ser más específico no le da más fuerza: el manual o reglamento interno organiza procesos, pero está subordinado a la ley y a los contratos. Si contradice el Código del Trabajo, no puede aplicarse en ese punto.",
+    "La costumbre no vuelve legal una práctica. Que nadie haya reclamado no deroga la ley ni suprime derechos; el paso del tiempo solo acumula riesgo de incumplimiento.",
+    "No hace falta un dictamen para aplicar una regla legal clara; los dictámenes sirven cuando hay una duda interpretativa. Mientras tanto, seguir aplicando una práctica contraria a la ley mantiene el incumplimiento.",
+    "Correcto: las fuentes no tienen la misma función y el manual interno se subordina a la ley y al contrato. La empresa solo puede cambiar unilateralmente a labores similares, sin menoscabo; fuera de eso se requiere acuerdo escrito (arts. 11 y 12 CT)."
+   ]
+  },
+  {
+   "id": "D1.3",
+   "ae": 0,
+   "lec": "1.4",
+   "tema": "Deber de protección",
+   "q": "En la bodega de Horizonte Servicios, una transpaleta tiene una falla visible en el freno. Para no atrasar un despacho, la jefatura propone que Lucía la siga usando hasta el final del turno si firma un documento en que declara conocer el riesgo. ¿Qué corresponde?",
+   "o": [
+    "Detener el uso del equipo, revisar la falla y aplicar medidas preventivas antes de continuar.",
+    "Permitir el uso si Lucía firma el documento, porque así asume de manera voluntaria el riesgo.",
+    "Permitir el uso solo hasta el final del turno, porque se trata de una situación excepcional.",
+    "Dejar que Lucía decida si lo usa, porque ella conoce el equipo mejor que la jefatura."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: la empresa debe tomar todas las medidas necesarias para proteger eficazmente la vida y salud de las personas trabajadoras (art. 184 CT). La urgencia operativa no justifica exponer a alguien a una condición insegura visible.",
+    "Una firma no traslada la responsabilidad de seguridad a la persona trabajadora. El deber de protección es de la empresa (art. 184 CT) y una declaración de «conozco los riesgos» no reemplaza las medidas preventivas.",
+    "Limitar el uso a «solo por esta vez» no elimina el riesgo: la falla sigue ahí. Priorizar la continuidad de la operación sobre la protección de la vida y salud es una de las trampas típicas de la urgencia operativa.",
+    "La seguridad no se deja a la decisión individual. La empresa debe adoptar las medidas preventivas; además, la persona tiene derecho a interrumpir sus labores ante un riesgo grave e inminente, sin perjuicio para ella (art. 184 bis CT)."
+   ]
+  },
+  {
+   "id": "D1.4",
+   "ae": 0,
+   "lec": "1.5",
+   "tema": "Irrenunciabilidad de derechos",
+   "q": "Martina, analista de Horizonte Servicios con dos años en la empresa, propone a Camila no tomar sus vacaciones este año y que se las paguen en dinero. Está dispuesta a firmar un documento que diga que lo pide de manera voluntaria. ¿Qué debería responder Camila?",
+   "o": [
+    "Aceptar, porque la firma voluntaria demuestra que la propuesta nació de Martina y no hubo presión.",
+    "Aceptar, siempre que la jefatura también esté de acuerdo y todo quede por escrito en un anexo.",
+    "No aceptar: el feriado es un derecho irrenunciable y no se paga en dinero mientras dure el contrato.",
+    "Aceptar solo la mitad de los días, para equilibrar su descanso con el dinero que necesita."
+   ],
+   "c": 2,
+   "f": [
+    "La voluntad de la persona no vuelve disponible un derecho legal mínimo. Los derechos de las leyes laborales son irrenunciables mientras subsista el contrato (art. 5 CT), aunque haya una firma «voluntaria».",
+    "Que ambas partes estén de acuerdo y lo escriban no basta: el acuerdo opera dentro de los límites legales. Un pacto que elimina un derecho irrenunciable no produce efecto (art. 5 CT).",
+    "Correcto: los derechos legales son irrenunciables mientras subsista el contrato (art. 5 CT), y el feriado solo se compensa en dinero cuando termina la relación laboral (art. 73 CT).",
+    "Reducir el problema a la mitad no lo resuelve: renunciar a parte del feriado sigue afectando un derecho irrenunciable. La pregunta clave es si la ley permite disponer de ese derecho, y aquí no lo permite."
+   ]
+  },
+  {
+   "id": "D2.1",
+   "ae": 1,
+   "lec": "2.5",
+   "tema": "Distribución en cuatro días",
+   "q": "Un equipo de Horizonte Servicios con jornada de 42 horas semanales propone trabajar de lunes a jueves, 10,5 horas diarias, para tener los viernes libres. Todas las personas del equipo están de acuerdo. ¿Qué debería responder Camila?",
+   "o": [
+    "Aprobarlo, porque el total semanal se mantiene en 42 horas, que es el límite vigente en 2026.",
+    "Aprobarlo, porque el acuerdo de todas las personas del equipo permite superar el límite diario.",
+    "No aprobarlo: supera las 10 horas diarias, y los 4 días solo proceden con 40 horas o menos.",
+    "Aprobarlo como piloto por tres meses y revisar después, con el equipo, si conviene mantenerlo."
+   ],
+   "c": 2,
+   "f": [
+    "Que «el total cuadre» no basta. Cumplir el total semanal no autoriza jornadas ordinarias de más de 10 horas diarias (art. 28 CT).",
+    "El acuerdo opera dentro de los límites legales: el máximo de 10 horas ordinarias diarias rige aunque todo el equipo esté de acuerdo.",
+    "Correcto: 10,5 horas diarias superan el máximo de 10 horas ordinarias (art. 28 CT). En 2026, distribuir en 4 días solo procede para jornadas de 40 horas o menos (4 × 10 h = 40 h cumple; 4 × 10,5 h = 42 h no cumple).",
+    "Un período de prueba no vuelve legal una distribución que excede el máximo diario: el límite de 10 horas ordinarias rige desde el primer día."
+   ]
+  },
+  {
+   "id": "D2.2",
+   "ae": 1,
+   "lec": "2.6",
+   "tema": "Compensar horas extraordinarias",
+   "q": "Joaquín, de Soporte, trabajó 2 horas extraordinarias el lunes, con pacto escrito vigente. Su jefatura le propone, de palabra, que en vez de pagárselas salga 2 horas antes el viernes. ¿Qué corresponde?",
+   "o": [
+    "Pagarlas con recargo; la única alternativa es compensarlas con feriado adicional, por acuerdo escrito.",
+    "Aceptar la propuesta, porque el tiempo que se devuelve es exactamente el mismo que se trabajó.",
+    "Aceptar la propuesta, siempre que Joaquín la confirme después por correo electrónico a su jefatura.",
+    "Pagarlas sin recargo, porque se trabajaron dentro de un pacto escrito acordado por ambas partes."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: las horas extraordinarias se pagan con un recargo mínimo de 50% junto con la remuneración del período. La ley solo permite, como alternativa, compensarlas por acuerdo escrito con días adicionales de feriado (hasta 5 días hábiles al año).",
+    "«Salir antes otro día» no es una compensación válida. Además, cada hora extraordinaria vale más que una hora ordinaria: en la compensación con feriado equivale a 1,5 horas.",
+    "Ponerlo por escrito después no cambia el fondo: la única compensación alternativa al pago es con días adicionales de feriado (art. 32 CT). Devolver horas en otro día no está prevista.",
+    "El pacto permite trabajar horas extraordinarias, pero no elimina el recargo: se pagan con al menos 50% sobre el sueldo convenido para la jornada ordinaria."
+   ]
+  },
+  {
+   "id": "D2.3",
+   "ae": 1,
+   "lec": "2.7",
+   "tema": "Corregir marcaciones",
+   "q": "El registro de asistencia muestra que Fernanda marcó su salida a las 19:20, aunque su horario termina a las 18:00. La jefatura pide «ajustar» la marcación a las 18:00 para que coincida con el horario del contrato. ¿Qué debería hacer Camila?",
+   "o": [
+    "Ajustarla, porque el contrato es la evidencia principal de la jornada que Fernanda debe cumplir.",
+    "Ajustarla si la jefatura firma una declaración de que Fernanda no trabajó hasta esa hora.",
+    "Eliminar la marcación del sistema y pedir a Fernanda que la vuelva a registrar correctamente.",
+    "No ajustarla: verificar qué ocurrió y corregir solo si hay error, con justificación y trazabilidad."
+   ],
+   "c": 3,
+   "f": [
+    "El contrato muestra lo planificado, no lo ocurrido. El registro de asistencia es la evidencia central para determinar las horas trabajadas (art. 33 CT).",
+    "La declaración de una jefatura no reemplaza la evidencia del registro. Si Fernanda trabajó después de su horario con conocimiento de la empresa, esas horas son extraordinarias y deben pagarse.",
+    "Eliminar una marcación destruye evidencia. Los sistemas de registro deben conservar la marcación original y dejar trazabilidad de toda corrección (Res. Ex. DT N°38 de 2024).",
+    "Correcto: corregir una marcación para que calce con lo planificado destruye evidencia. Si hay un error real, la corrección debe estar justificada y conservar la marcación original; si Fernanda trabajó, se pagan horas extraordinarias."
+   ]
+  },
+  {
+   "id": "D2.4",
+   "ae": 1,
+   "lec": "2.9",
+   "tema": "Descuentos por daños",
+   "q": "A Benjamín, de Terreno, se le cayó y se rompió un notebook de la empresa. La jefatura quiere descontarle el valor completo del equipo en su próxima liquidación, sin consultarle. ¿Qué corresponde?",
+   "o": [
+    "Descontarlo completo, porque el equipo pertenece a la empresa y el daño lo causó Benjamín.",
+    "No descontarlo por su cuenta: requiere acuerdo escrito y un tope de 15% de la remuneración.",
+    "Aplicarle una multa del reglamento interno equivalente al valor total del equipo dañado.",
+    "Descontarlo en varias cuotas mensuales, sin consultarle, para que no afecte tanto su sueldo."
+   ],
+   "c": 1,
+   "f": [
+    "Ser dueña del equipo no autoriza a la empresa a descontar por su cuenta. Un descuento de este tipo es convencional: requiere acuerdo escrito y respetar el tope del 15% de la remuneración total (art. 58 CT).",
+    "Correcto: los descuentos convencionales requieren acuerdo escrito y, en conjunto para pagos de cualquier naturaleza, no pueden superar el 15% de la remuneración total (art. 58 CT). Sin acuerdo, la empresa no puede descontarlo de forma automática.",
+    "Las multas del reglamento interno no sirven para recuperar un daño: no pueden exceder del 25% de la remuneración diaria y su producto va a fondos de bienestar o, a falta de estos, al SENCE (art. 157 CT).",
+    "Dividirlo en cuotas no corrige el problema de fondo: sin acuerdo escrito el descuento no procede, y cada descuento convencional debe respetar el tope del 15% de la remuneración total."
+   ]
+  },
+  {
+   "id": "D3.1",
+   "ae": 2,
+   "lec": "3.2",
+   "tema": "Requisitos en una oferta de empleo",
+   "q": "Para un cargo de atención de público, una jefatura de Horizonte Servicios redacta este aviso: «Buscamos persona de 25 a 35 años y de buena presencia». Camila lo revisa antes de publicarlo. ¿Qué debería hacer?",
+   "o": [
+    "Publicarlo tal como está, porque una empresa privada puede elegir libremente el perfil.",
+    "Publicarlo y, solo si alguien reclama, retirar el requisito de edad del aviso.",
+    "Mantener el rango de edad y quitar «buena presencia», porque la edad es un dato objetivo.",
+    "Quitar ambos requisitos y describir las calificaciones que el cargo exige."
+   ],
+   "c": 3,
+   "f": [
+    "La libertad para elegir tiene límites: ningún empleador puede condicionar la contratación en ofertas de empleo por motivos como la edad o la apariencia personal (art. 2 CT).",
+    "Esperar un reclamo deja publicada una exigencia discriminatoria. La revisión debe hacerse antes de publicar, porque el aviso mismo ya condiciona el acceso al empleo.",
+    "Que la edad sea un dato fácil de medir no la vuelve una calificación del cargo. La edad es uno de los motivos de discriminación que menciona el art. 2 CT.",
+    "Correcto: la edad y la apariencia personal son motivos de discriminación (art. 2 CT). Solo son válidas las distinciones basadas en las calificaciones exigidas para el empleo, como experiencia en atención o conocimientos específicos."
+   ]
+  },
+  {
+   "id": "D3.2",
+   "ae": 2,
+   "lec": "3.3",
+   "tema": "Embarazo y promoción",
+   "q": "Antonia fue seleccionada para asumir una jefatura de área. Antes de confirmar la promoción, la gerencia pide a Camila solicitarle un certificado que acredite que no está embarazada, «para planificar bien el equipo». ¿Qué debería responder Camila?",
+   "o": [
+    "Pedirlo, siempre que la información se mantenga en reserva dentro del Equipo de Personas.",
+    "No pedirlo: no se puede condicionar una promoción al embarazo ni exigir certificados.",
+    "Pedirlo solo si Antonia acepta entregarlo de manera voluntaria y lo autoriza por escrito.",
+    "Postergar la promoción hasta que Antonia informe cuáles son sus planes familiares."
+   ],
+   "c": 1,
+   "f": [
+    "Guardar reserva no corrige el problema: la exigencia misma está prohibida. Ninguna empresa puede exigir un certificado o examen para verificar si una persona está o no embarazada (art. 194 CT).",
+    "Correcto: la ley prohíbe condicionar la contratación, permanencia, renovación o promoción a la existencia o ausencia de embarazo, y exigir certificados o exámenes para verificarlo (art. 194 CT).",
+    "La voluntariedad aparente no valida la exigencia: en una relación con desigualdad de poder, pedirlo «voluntariamente» sigue condicionando la promoción. La prohibición del art. 194 CT no admite esa salida.",
+    "Postergar la promoción por ese motivo también es condicionarla al embarazo, y puede constituir discriminación por maternidad (art. 2 CT). La decisión debe basarse en las calificaciones para el cargo."
+   ]
+  },
+  {
+   "id": "D3.3",
+   "ae": 2,
+   "lec": "3.6",
+   "tema": "Responder una solicitud de teletrabajo",
+   "q": "Gabriel tiene el cuidado personal de su hija de 9 años. Presenta por escrito, con el certificado de nacimiento, una solicitud para teletrabajar dos días a la semana. Su jefatura dice: «No respondamos; si nadie más en el área teletrabaja, no corresponde». ¿Qué debería hacer Camila?",
+   "o": [
+    "No responder, porque el teletrabajo es un beneficio que la empresa otorga si lo estima conveniente.",
+    "Rechazarla de palabra, explicando que nadie más del área trabaja a distancia hoy.",
+    "Responder en 15 días: aceptar, ofrecer otra fórmula o rechazar si las funciones no lo permiten.",
+    "Aceptarla de inmediato, porque toda solicitud de una persona cuidadora debe aprobarse siempre."
+   ],
+   "c": 2,
+   "f": [
+    "Para quien tiene el cuidado personal de un niño o niña menor de 14 años, no es un favor: la empresa está obligada a responder la solicitud dentro de 15 días (Ley 21.645). Si no responde, la persona puede recurrir a la Inspección del Trabajo.",
+    "Que nadie más teletrabaje no es un fundamento válido. Si la empresa rechaza, debe hacerlo de forma fundada, demostrando que la naturaleza de las funciones no permite el trabajo a distancia.",
+    "Correcto: la empresa debe responder dentro de 15 días y puede aceptar, ofrecer una fórmula alternativa o rechazar. Si rechaza, debe fundamentar que la naturaleza de las funciones no permite el trabajo a distancia.",
+    "La ley no obliga a aprobar todo de forma automática: la empresa analiza si las funciones lo permiten y puede proponer una fórmula alternativa. Lo que no puede hacer es ignorar la solicitud o rechazarla sin fundamento."
+   ]
+  },
+  {
+   "id": "D3.4",
+   "ae": 2,
+   "lec": "3.7",
+   "tema": "Licencia durante el feriado",
+   "q": "Durante su feriado, Daniela se enferma y presenta una licencia médica por cuatro días. En la planilla, esos cuatro días quedaron registrados como vacaciones ya usadas. ¿Qué debería hacer Camila?",
+   "o": [
+    "Corregir el registro: la licencia suspende el feriado y esos días se retoman después.",
+    "Mantener el registro, porque el feriado ya había comenzado cuando llegó la licencia.",
+    "Mantener el registro y descontar los días de licencia del próximo período de feriado.",
+    "Pagarle en dinero los cuatro días de feriado que no alcanzó a disfrutar por la licencia."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: según el criterio de la Dirección del Trabajo, si una licencia médica sobreviene durante el feriado, este se suspende y se retoma después. Una licencia nunca se descuenta como vacaciones.",
+    "Que el feriado haya comenzado no cambia el criterio: la licencia médica suspende el feriado y los días cubiertos por ella no se consideran vacaciones usadas.",
+    "Descontar una licencia médica de un feriado futuro la trata como vacaciones, y eso no corresponde. El feriado tiene como fin el descanso; la licencia, la recuperación de la salud.",
+    "El feriado no se compensa en dinero mientras dure la relación laboral, salvo al término del contrato (art. 73 CT). Lo que corresponde es que Daniela retome esos días después."
+   ]
+  },
+  {
+   "id": "D4.1",
+   "ae": 3,
+   "lec": "4.1",
+   "tema": "Prevenir sin esperar denuncias",
+   "q": "En el área de Atención Telefónica de Horizonte Servicios hay alta rotación, gritos frecuentes y varias licencias por estrés. Nadie ha presentado una denuncia. La gerencia dice: «Mientras no haya denuncias, no tenemos que hacer nada». ¿Qué debería plantear Camila?",
+   "o": [
+    "La empresa debe proteger la salud, incluidos los riesgos psicosociales: hay que evaluar y prevenir.",
+    "Esperar una denuncia formal, porque sin ella la empresa no tiene una base clara para intervenir.",
+    "Pedir a cada persona que firme que conoce los canales de denuncia y dar el tema por cerrado.",
+    "Derivar a todo el equipo a apoyo psicológico, sin revisar cómo se organiza el trabajo del área."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: el deber de protección incluye los riesgos psicosociales (art. 184 CT), y el protocolo de prevención exige identificar y evaluar esos riesgos y adoptar medidas (art. 211-A CT). La prevención no espera una denuncia.",
+    "La prevención no depende de una denuncia. Las señales del área (rotación, gritos, licencias por estrés) son motivo suficiente para evaluar el riesgo y adoptar medidas.",
+    "Informar los canales es necesario, pero no basta: el protocolo exige identificar riesgos, adoptar medidas con objetivos medibles y hacer seguimiento. Una firma no controla el riesgo.",
+    "El apoyo a las personas puede ayudar, pero no reemplaza identificar y controlar las causas del riesgo en la forma en que se organiza el trabajo."
+   ]
+  },
+  {
+   "id": "D4.2",
+   "ae": 3,
+   "lec": "4.2",
+   "tema": "Una sola conducta",
+   "q": "En una reunión de equipo, Renata, compañera de trabajo de Óscar, proyecta una imagen que se burla de su aspecto físico y varias personas se ríen. Óscar se retira humillado. Es la primera vez que ocurre. Alguien comenta: «No es acoso: fue una sola vez y no lo hizo una jefatura». ¿Cómo debería analizarlo Camila?",
+   "o": [
+    "Coincidir con el comentario, porque el acoso laboral exige conductas que se repitan en el tiempo.",
+    "Coincidir con el comentario, porque el acoso laboral solo lo puede ejercer una jefatura sobre su equipo.",
+    "Revisar los elementos legales: una agresión que humilla puede ser acoso aunque ocurra una vez.",
+    "Tratarlo como una broma entre colegas y pedir al equipo, en general, que no vuelva a ocurrir."
+   ],
+   "c": 2,
+   "f": [
+    "Desde la Ley Karin, el acoso laboral puede manifestarse una sola vez o de manera reiterada (art. 2 CT). Descartar algo grave porque «fue solo una vez» es uno de los errores frecuentes.",
+    "El acoso laboral puede ejercerlo el empleador o una o más personas trabajadoras contra otras (art. 2 CT). No se requiere una relación de jerarquía.",
+    "Correcto: se revisan los elementos legales: si hay agresión u hostigamiento y si produce menoscabo, maltrato o humillación. Una sola conducta puede bastar, y puede venir de un par (art. 2 CT, Ley 21.643).",
+    "Llamarlo «broma» minimiza una conducta que humilló a una persona frente a su equipo. Corresponde analizarla como posible acoso laboral y no cerrarla con una advertencia general."
+   ]
+  },
+  {
+   "id": "D4.3",
+   "ae": 3,
+   "lec": "4.5",
+   "tema": "Recibir una denuncia",
+   "q": "Valentina presenta por escrito una denuncia por acoso laboral contra un compañero de su área. La jefatura propone reunirlos a ambos «para aclarar las cosas» y, según cómo resulte la conversación, decidir si la denuncia sigue adelante. ¿Qué debería hacer Camila?",
+   "o": [
+    "Organizar la reunión, porque un acuerdo entre ambas personas puede cerrar el tema rápido.",
+    "Informar el procedimiento, adoptar resguardos e investigar o remitir a la Inspección en 3 días.",
+    "Archivar la denuncia si, en la reunión, el compañero niega los hechos que Valentina denunció.",
+    "Esperar a ver si la situación se repite antes de iniciar cualquier gestión formal del caso."
+   ],
+   "c": 1,
+   "f": [
+    "Recibir una denuncia no es resolverla. Reunir a las partes para «aclarar» puede revictimizar a Valentina y deja la decisión en manos de una conversación, no de un procedimiento con debido proceso.",
+    "Correcto: al recibir la denuncia, la empresa informa a quien denuncia sobre el procedimiento, adopta de inmediato medidas de resguardo y dispone una investigación interna o remite los antecedentes a la Inspección del Trabajo dentro de 3 días hábiles.",
+    "Que la persona denunciada niegue los hechos no cierra el caso: precisamente para eso existe la investigación, en la que ambas partes son oídas y pueden aportar pruebas.",
+    "Esperar deja a Valentina sin protección. La ley exige actuar desde la recepción: informar el procedimiento, adoptar medidas de resguardo e investigar o remitir."
+   ]
+  },
+  {
+   "id": "D4.4",
+   "ae": 3,
+   "lec": "4.7",
+   "tema": "Conflicto o acoso",
+   "q": "Cristóbal y Paula, del área de Proyectos, discrepan sobre cómo priorizar un encargo. Las reuniones se han vuelto tensas, pero no hay insultos, burlas, amenazas ni humillaciones. Paula le pregunta a Camila si esto es acoso laboral. ¿Qué debería responder Camila?",
+   "o": [
+    "Que sí es acoso laboral, porque cualquier tensión repetida entre colegas lo es por definición.",
+    "Que no corresponde hacer nada, porque los desacuerdos de trabajo son normales entre colegas.",
+    "Que la jefatura debe sancionar a ambas personas para terminar con la tensión en el área.",
+    "Que parece un conflicto que debe gestionarse; si surge hostigamiento, sería posible acoso."
+   ],
+   "c": 3,
+   "f": [
+    "Etiquetar como acoso cualquier diferencia laboral es un error frecuente. Para clasificar se revisan los elementos legales, como la agresión u hostigamiento y el menoscabo o humillación.",
+    "Un conflicto no es acoso, pero tampoco se ignora: requiere gestión, por ejemplo, una conversación facilitada, una mediación interna o reglas de convivencia.",
+    "Sancionar sin una conducta que lo justifique no resuelve el conflicto. Las sanciones se aplican tras un procedimiento; un desacuerdo laboral se gestiona con herramientas de diálogo.",
+    "Correcto: por lo descrito, es un conflicto que requiere gestión (conversación facilitada, mediación, apoyo de la jefatura). Si aparecen agresión, hostigamiento o humillación, se activa el procedimiento; y Paula siempre puede denunciar."
+   ]
+  },
+  {
+   "id": "D5.1",
+   "ae": 4,
+   "lec": "5.2",
+   "tema": "Renuncia verbal",
+   "q": "Tras una discusión, Vicente le dice a su jefatura: «¡Renuncio!» y se retira de la oficina. La jefatura quiere darlo de baja ese mismo día, sin más trámites. ¿Qué debería considerar Camila?",
+   "o": [
+    "Que la renuncia verbal basta, porque la decisión de irse corresponde a la persona trabajadora.",
+    "Que basta un correo de la jefatura que deje constancia de lo que Vicente dijo en la discusión.",
+    "Que la renuncia debe constar por escrito, firmada y ratificada ante un ministro de fe.",
+    "Que la renuncia se entiende hecha si Vicente no vuelve a trabajar durante una semana."
+   ],
+   "c": 2,
+   "f": [
+    "La renuncia es una decisión de la persona, pero para que la empresa pueda invocarla debe constar por escrito, firmada y ratificada ante un ministro de fe (art. 177 CT). Una frase dicha en una discusión no la acredita.",
+    "Un correo de la jefatura es una declaración de la empresa, no de Vicente. La renuncia debe estar firmada por la persona trabajadora y ratificada ante un ministro de fe o firmada electrónicamente en el sitio de la DT.",
+    "Correcto: la renuncia debe constar por escrito y, para que la empresa pueda invocarla, estar firmada por la persona trabajadora y ratificada ante un ministro de fe o firmada electrónicamente en el sitio de la Dirección del Trabajo (art. 177 CT).",
+    "La renuncia no se deduce de una ausencia. Si Vicente no vuelve, esa inasistencia se analiza con la causal que corresponda y sus propios requisitos; no se transforma en renuncia."
+   ]
+  },
+  {
+   "id": "D5.2",
+   "ae": 4,
+   "lec": "5.4",
+   "tema": "Carta de término",
+   "q": "Horizonte Servicios despedirá a Rodrigo por incumplimiento grave de las obligaciones del contrato. La jefatura redacta una carta que solo dice: «Se pone término a su contrato por el art. 160 N°7». ¿Qué le falta a la carta?",
+   "o": [
+    "Nada: citar el artículo exacto del Código basta para comunicar la causal del despido.",
+    "Solo la firma de un ministro de fe, para que el despido produzca efecto legal.",
+    "Una cláusula en la que Rodrigo declare que renuncia a reclamar por el despido.",
+    "Los hechos que fundan la causal y el estado de pago de las cotizaciones."
+   ],
+   "c": 3,
+   "f": [
+    "Citar el artículo no basta: la carta debe explicar los hechos en que se funda la causal (art. 162 CT). En un juicio, la empresa no puede alegar hechos distintos de los señalados en la carta.",
+    "La carta no se ratifica ante un ministro de fe; eso corresponde a la renuncia, al mutuo acuerdo o al finiquito. La carta se entrega personalmente o por carta certificada, con copia a la Inspección del Trabajo.",
+    "Una cláusula así no tiene efecto: los derechos laborales son irrenunciables mientras subsiste el contrato, y la carta solo comunica la decisión de la empresa.",
+    "Correcto: la carta debe indicar la causal, los hechos en que se funda y el estado de pago de las cotizaciones previsionales, adjuntando los comprobantes (art. 162 CT). Sin hechos, la causal es difícil de sostener en un juicio."
+   ]
+  },
+  {
+   "id": "D5.3",
+   "ae": 4,
+   "lec": "5.5",
+   "tema": "Pagos al renunciar",
+   "q": "Elena renuncia después de seis años en Horizonte Servicios y pregunta qué recibirá. Una jefatura le asegura que tendrá «su indemnización por años de servicio». ¿Qué debería aclarar Camila?",
+   "o": [
+    "Que la renuncia no genera esa indemnización, pero se revisan pagos y feriado pendientes.",
+    "Que le corresponden 30 días de remuneración por cada año trabajado, porque superó el año de servicio.",
+    "Que no le corresponde ningún pago, porque fue ella quien decidió terminar la relación.",
+    "Que la indemnización procede solo si dio aviso con 30 días de anticipación a la empresa."
+   ],
+   "c": 0,
+   "f": [
+    "Correcto: la renuncia no genera indemnización legal por años de servicio. Aun así, siempre se revisan remuneraciones pendientes, horas extraordinarias, feriado pendiente y feriado proporcional.",
+    "Los 30 días por año de servicio proceden, por ejemplo, en el despido por necesidades de la empresa (art. 163 CT), no en la renuncia. Prometerlos genera expectativas y errores en el cierre.",
+    "Renunciar no elimina todos los pagos: deben pagarse las remuneraciones pendientes y el feriado pendiente o proporcional (art. 73 CT).",
+    "El aviso de 30 días es un deber de quien renuncia, pero no genera una indemnización por años de servicio. Esa indemnización no procede en la renuncia."
+   ]
+  },
+  {
+   "id": "D5.4",
+   "ae": 4,
+   "lec": "5.6",
+   "tema": "Carta y finiquito",
+   "q": "Horizonte Servicios entregó a Julián su carta de despido por necesidades de la empresa. Tres semanas después, nadie ha preparado su finiquito, porque la jefatura cree que «la carta ya cerró todo». ¿Qué debería advertir Camila?",
+   "o": [
+    "Que no hay problema, porque la carta de despido cumple la misma función que el finiquito.",
+    "Que la carta comunica el término, pero el finiquito debía otorgarse en 10 días hábiles.",
+    "Que el finiquito es opcional y solo debe hacerse si Julián lo solicita a la empresa.",
+    "Que el plazo para el finiquito comienza recién cuando Julián lo pide por escrito."
+   ],
+   "c": 1,
+   "f": [
+    "La carta comunica la decisión y la causal; el finiquito es otro documento que formaliza el cierre y deja constancia de los pagos. La carta no reemplaza al finiquito.",
+    "Correcto: el finiquito debe otorgarse y su pago ponerse a disposición dentro de 10 días hábiles desde la separación (art. 177 CT). Tres semanas después, el plazo ya venció y Julián puede reclamar ante la Inspección del Trabajo.",
+    "El finiquito no es opcional: otorgarlo es una obligación de la empresa, y su incumplimiento es una infracción que puede sancionarse con multa.",
+    "El plazo de 10 días hábiles se cuenta desde la separación y obliga a la empresa, no depende de una solicitud de la persona trabajadora."
+   ]
+  }
+ ]
+}
