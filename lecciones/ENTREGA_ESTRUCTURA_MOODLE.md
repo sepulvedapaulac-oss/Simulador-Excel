@@ -1,6 +1,6 @@
 # Componentes faltantes para completar la estructura del curso en Moodle
 
-Curso: **Herramientas Digitales para el Crecimiento de PYMES** (20 h, asincrónico).
+Curso: **Herramientas Digitales para el Crecimiento de PYMES** (30 h, asincrónico).
 
 ## Qué se agregó por módulo
 
