@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="PYMES_M2_L21" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+  <organizations default="ORG-PYMES_M2_L21"><organization identifier="ORG-PYMES_M2_L21"><title>Lección 2.1 — Convierte tu presencia digital en un canal comercial</title>
+    <item identifier="ITEM-PYMES_M2_L21" identifierref="RES-PYMES_M2_L21" isvisible="true"><title>Lección 2.1 — Convierte tu presencia digital en un canal comercial</title><adlcp:masteryscore>80</adlcp:masteryscore></item></organization></organizations>
+  <resources><resource identifier="RES-PYMES_M2_L21" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="audio/p01.mp3"/>
+      <file href="audio/p03.mp3"/>
+      <file href="audio/p04.mp3"/>
+      <file href="audio/p05.mp3"/>
+      <file href="audio/p06.mp3"/>
+      <file href="audio/p07.mp3"/>
+      <file href="audio/p08.mp3"/>
+      <file href="audio/p10.mp3"/>
+      <file href="audio/p11.mp3"/>
+      <file href="audio/quiz.mp3"/>
+      <file href="audio/video_1.mp3"/>
+      <file href="audio/video_2.mp3"/>
+      <file href="audio/video_3.mp3"/>
+      <file href="audio/video_4.mp3"/>
+      <file href="audio/video_5.mp3"/>
+      <file href="img/m4_catalogo.jpg"/>
+      <file href="img/m4_cliente.jpg"/>
+      <file href="img/m4_consultas.jpg"/>
+      <file href="img/m4_hero.jpg"/>
+      <file href="img/m4_perfil.jpg"/>
+      <file href="img/marcela_avatar.jpg"/>
+      <file href="index.html"/>
+  </resource></resources>
+</manifest>

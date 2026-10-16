@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/top/Herramientas Digitales PYMES/Módulo 1/Evaluación</text></category><info format="html"><text></text></info></question>
+<question type="multichoice">
+<name><text>M1.P1</text></name>
+<questiontext format="html"><text><![CDATA[<p>María vende empanadas por Instagram, donde tiene 3.000 seguidores, y recibe pedidos por WhatsApp. Los pedidos de cafeterías se anotan en el celular de una vendedora o en un cuaderno, y la semana pasada se perdieron dos. Un amigo le dice que su negocio “ya es digital”. ¿Qué diagnóstico es más preciso?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>La madurez digital es el grado en que la tecnología apoya los procesos y decisiones del negocio, no la cantidad de canales o aplicaciones.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P1</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Usa herramientas digitales, pero el registro de pedidos no está en un lugar común y depende del celular de una persona.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Tiene una madurez digital alta, porque la mayoría de sus ventas ya llegan por canales en línea.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Vender por canales en línea es presencia, no madurez: los pedidos perdidos muestran que la información no está organizada.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Tiene presencia digital, pero sus pedidos siguen dispersos y dependen de una sola persona.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Usa herramientas digitales, pero el registro de pedidos no está en un lugar común y depende del celular de una persona.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Su madurez es baja solo en marketing, porque aún le faltan seguidores para vender más.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El problema no está en la cantidad de seguidores, sino en cómo se registran y gestionan los pedidos que ya llegan.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Su problema es de equipamiento: el equipo necesita celulares y computadores más modernos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Con los mismos equipos se puede ordenar el registro de pedidos; la brecha es de proceso, no de dispositivos.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P2</text></name>
+<questiontext format="html"><text><![CDATA[<p>Cuando Rosa, la vendedora que toma los pedidos de cafeterías, sale de vacaciones, nadie sabe qué cafetería pidió qué ni cuándo entregar. ¿Qué señal de avance atacaría directamente esta brecha?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Las cuatro dimensiones son información, clientes, operación y decisiones con datos. Si una tarea se detiene cuando alguien falta, la brecha está en la operación.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P2</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> La pregunta clave es qué pasa cuando una persona no está: el avance es que las tareas tengan pasos conocidos y registro compartido.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Revisar cada lunes cuántas empanadas se vendieron de cada sabor para planificar la producción.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Usar datos para decidir es una señal de avance valiosa, pero no resuelve que el proceso de pedidos dependa de Rosa.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Responder en menos de una hora los mensajes directos de Instagram con un horario definido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Mejora la atención en Instagram, pero los pedidos de cafeterías seguirían guardados solo en la memoria y el celular de Rosa.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Renombrar las fotos de los productos con fecha y contenido para encontrarlas más rápido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ordena archivos de marketing, pero no cambia que nadie más conozca los pedidos pendientes.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Que los pedidos tengan pasos conocidos y un registro común que no dependa de una persona.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. La pregunta clave es qué pasa cuando una persona no está: el avance es que las tareas tengan pasos conocidos y registro compartido.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P3</text></name>
+<questiontext format="html"><text><![CDATA[<p>María ya identificó la brecha: “no existe un registro único de pedidos”. ¿Qué combinación de próximo paso y revisión es más coherente con la ruta hecho → brecha → próximo paso → revisión?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>El primer paso no es comprar tecnología: es elegir una brecha concreta, convertirla en una mejora pequeña y medirla con un indicador antes y después.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P3</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Es una mejora pequeña y realizable que ataca la brecha, con un indicador ligado al problema que se quiere resolver.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Crear una planilla compartida de pedidos y contar los pedidos perdidos al mes, antes y después.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Es una mejora pequeña y realizable que ataca la brecha, con un indicador ligado al problema que se quiere resolver.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Contratar un sistema que automatice ventas, inventario y despacho, y medir cuántos módulos se usan.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Automatizar antes de ordenar el registro traslada el desorden a una herramienta más cara, y el indicador no mide pedidos perdidos.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Abrir una cuenta en otra red social para vender más y contar los nuevos seguidores del mes.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un nuevo canal suma consultas a un proceso aún desordenado, y los seguidores no dicen nada sobre el registro de pedidos.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Pedir a cada vendedora un cuaderno propio y preguntar al equipo si “se siente” más ordenado.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más cuadernos multiplican los registros dispersos, y una impresión del equipo no permite saber si bajaron los errores.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P4</text></name>
+<questiontext format="html"><text><![CDATA[<p>Dos vendedoras registran los pedidos en un Excel y la encargada administrativa pide cada mañana una copia actualizada para revisarlos. María usa Microsoft 365. ¿Qué configuración resuelve mejor esta necesidad?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Crear y compartir en un espacio común permite que varias personas trabajen sobre una sola versión, con permisos según lo que cada una necesita.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P4</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Una versión común en la nube, con el permiso según la tarea, elimina las copias diarias y permite revisar en cualquier momento.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Enviar el Excel por Outlook cada mañana a la encargada, con los cambios del día anterior.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Cada envío crea una copia nueva; en pocos días habrá varias versiones en distintas bandejas y nadie sabrá cuál es la vigente.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Crear un chat en Teams donde cada vendedora suba su propia versión de la planilla al cerrar el día.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Teams sirve para la coordinación rápida, pero subir versiones separadas mantiene el problema de las copias.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Guardar una sola planilla en OneDrive: edición para quienes registran, lectura para la encargada.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Una versión común en la nube, con el permiso según la tarea, elimina las copias diarias y permite revisar en cualquier momento.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Imprimir la planilla al cierre del día y archivarla en una carpeta para que la encargada la revise.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El papel no permite trabajar sobre una versión común ni revisar los cambios en el momento en que ocurren.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P5</text></name>
+<questiontext format="html"><text><![CDATA[<p>En una llamada, el proveedor Harinas del Sur acordó con María mantener el precio del saco de harina durante los próximos tres meses. ¿Dónde debería quedar registrado este acuerdo según el ecosistema de trabajo del negocio?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Cada canal tiene su función: correo para lo formal, chat para coordinar rápido y reuniones para conversar y decidir.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P5</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> El correo es el canal para lo formal: deja constancia del acuerdo en una cuenta del negocio que otras personas pueden consultar.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>En un correo de la cuenta del negocio que confirme el acuerdo por escrito.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. El correo es el canal para lo formal: deja constancia del acuerdo en una cuenta del negocio que otras personas pueden consultar.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En un mensaje de voz de WhatsApp al proveedor, para que quede grabado.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un audio es difícil de buscar y queda en un chat personal; no sirve como registro formal del acuerdo.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En el chat de Teams del equipo, para que todas las personas se enteren.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El chat del equipo es para coordinación rápida; puede usarse para avisar, pero no reemplaza la confirmación formal al proveedor.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En una nota del cuaderno de María, junto a los teléfonos de los proveedores.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Una nota en papel depende de María y no deja constancia compartida con el proveedor ni con el equipo.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P6</text></name>
+<questiontext format="html"><text><![CDATA[<p>Javier, de ventas, propone sumar tres aplicaciones nuevas “para estar al día”: un gestor de proyectos, otra nube de archivos y una app de notas. Nadie ha definido quién las usará ni para qué. ¿Qué criterio debería aplicar María?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Primero la necesidad, después la herramienta. Un ecosistema es un conjunto de herramientas conectadas con acuerdos comunes de uso.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P6</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Una herramienta sin necesidad, responsable y criterio de uso agrega complejidad; con esos tres elementos, aporta.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Instalar las tres, porque mientras más herramientas tenga el equipo, más digital será el negocio.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Sumar aplicaciones sin acuerdos aumenta la dispersión: más lugares donde buscar la información.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Probar las tres a la vez durante un mes y quedarse con la que más le guste a cada persona.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Si cada persona elige su herramienta, la información vuelve a repartirse; los acuerdos deben ser comunes.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Rechazar cualquier aplicación nueva, porque el equipo ya tiene suficientes herramientas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No se trata de cerrarse a herramientas nuevas, sino de incorporarlas cuando resuelven una necesidad clara.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Sumar solo la que responda a una necesidad concreta, con un responsable y un criterio de uso.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Una herramienta sin necesidad, responsable y criterio de uso agrega complejidad; con esos tres elementos, aporta.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P7</text></name>
+<questiontext format="html"><text><![CDATA[<p>María recibe en octubre de 2026 la cotización de envases de un proveedor y debe guardarla en la nube. Su estructura tiene las carpetas 01 Administración, 02 Ventas, 03 Proveedores y 04 Marketing. ¿Qué nombre y ubicación siguen la convención AAAA-MM_Contenido_Detalle?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Una estructura de pocas carpetas principales y la convención AAAA-MM_Contenido_Detalle permiten reconocer el archivo vigente sin abrirlo.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P7</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> El nombre indica fecha, contenido y detalle, y la cotización queda donde el equipo buscará la información de proveedores.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>2026-10_Cotizacion_Envases.pdf, en la carpeta 02 Ventas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El nombre es correcto, pero una cotización de un proveedor no corresponde a la carpeta de Ventas, que es para clientes y pedidos.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>2026-10_Cotizacion_Envases.pdf, en la carpeta 03 Proveedores.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. El nombre indica fecha, contenido y detalle, y la cotización queda donde el equipo buscará la información de proveedores.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cotizacion envases FINAL.pdf, en la carpeta 03 Proveedores.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La carpeta es correcta, pero “FINAL” sin fecha es justamente lo que genera versiones confusas.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Envases_nueva_definitiva.pdf, en la carpeta 01 Administración.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. “nueva” y “definitiva” no indican fecha ni contenido, y la carpeta de Administración no es la de proveedores.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P8</text></name>
+<questiontext format="html"><text><![CDATA[<p>María compartirá el archivo 2026-10_ListaPrecios_Proveedores.xlsx. Harinas del Sur solo debe consultarlo; Carlos, el vendedor, actualiza los precios; y Patricia, la contadora externa, revisa y sugiere cambios. ¿Qué configuración es la adecuada?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Compartir no significa dar acceso total: ver, comentar o editar según la tarea y, ante la duda, enlace restringido.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P8</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Cada persona recibe el acceso que su tarea requiere y el enlace solo funciona para quienes fueron agregados.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Harinas del Sur: editar · Carlos: editar · Patricia: editar · enlace: cualquiera con el enlace.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Dar edición a todos y abrir el enlace a cualquiera expone los precios a cambios accidentales y a personas no autorizadas.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Harinas del Sur: ver · Carlos: editar · Patricia: editar · enlace: cualquiera con el enlace.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Los permisos de Harinas del Sur y Carlos son correctos, pero Patricia solo sugiere, y un enlace abierto puede llegar a terceros.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Harinas del Sur: ver · Carlos: editar · Patricia: comentar · enlace: restringido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Cada persona recibe el acceso que su tarea requiere y el enlace solo funciona para quienes fueron agregados.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Harinas del Sur: comentar · Carlos: ver · Patricia: editar · enlace: restringido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Carlos no podría actualizar los precios y Patricia podría modificarlos aunque su rol es revisar y sugerir.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P9</text></name>
+<questiontext format="html"><text><![CDATA[<p>Pedro, que manejaba los pedidos en línea, termina hoy su trabajo. Tiene edición en la carpeta Ventas, guarda algunos archivos de pedidos en su cuenta personal y creó enlaces abiertos a dos planillas. ¿Qué debería hacer María?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Cuando alguien deja de necesitar la información se retiran sus accesos, y los archivos quedan siempre en cuentas del negocio.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P9</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Protege la información y asegura la continuidad: los archivos quedan en el negocio y no quedan accesos ni enlaces sin control.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Retirar sus accesos, trasladar sus archivos a cuentas del negocio y revisar los enlaces que creó.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Protege la información y asegura la continuidad: los archivos quedan en el negocio y no quedan accesos ni enlaces sin control.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Mantener sus accesos por un tiempo, porque Pedro es de confianza y podría ayudar si surge una duda.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No es un tema de desconfianza sino de higiene de accesos: quien ya no necesita la información no debería conservarla.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Eliminar la carpeta Ventas completa y crearla de nuevo, para asegurarse de que nadie más tenga acceso.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Borrar la carpeta elimina pedidos y listas que el equipo necesita; el problema son los accesos, no la carpeta.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cambiar su permiso a “ver” en la carpeta Ventas, para que pueda consultar pedidos si lo necesita.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Pedro ya no necesita consultar la información comercial, y sus archivos personales y enlaces abiertos seguirían sin resolverse.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M1.P10</text></name>
+<questiontext format="html"><text><![CDATA[<p>La encargada recibe un aviso de inicio de sesión desde otra ciudad en el correo del negocio. Cinco personas entran a ese correo con la misma contraseña, que además se usa en la cuenta de Instagram. ¿Qué plan protege mejor al negocio?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Contraseñas robustas y únicas, una cuenta por persona y verificación en dos pasos son la base para proteger las cuentas del negocio.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M1.P10</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Una cuenta por persona evita compartir credenciales y la verificación en dos pasos bloquea el ingreso aunque una clave se filtre.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cambiar la contraseña del correo y enviarla al grupo de WhatsApp del equipo para que todos sigan entrando.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La clave sigue compartida y queda expuesta en el chat; cada vez que alguien se vaya habrá que cambiarla otra vez.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Crear cuentas individuales, con contraseñas robustas y distintas, y activar la verificación en dos pasos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Una cuenta por persona evita compartir credenciales y la verificación en dos pasos bloquea el ingreso aunque una clave se filtre.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cambiar la contraseña por una más larga y usarla en todas las cuentas del negocio para no olvidarla.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Repetir la misma contraseña en varias cuentas hace que una sola filtración abra todas las demás.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Anotar una contraseña nueva en un papel junto al computador para que solo el equipo del local la vea.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un papel a la vista expone la cuenta a cualquiera que pase por el local y mantiene la clave compartida.</p>]]></text></feedback></answer>
+</question>
+</quiz>

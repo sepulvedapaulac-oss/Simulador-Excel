@@ -1,0 +1,226 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa los tres mensajes y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 1.1 · ¿Qué tan digital es tu PYME?</span>
+      <h1 class="reveal">Tener redes sociales no es estar digitalizada</h1>
+      <p class="lead reveal">María, dueña de <strong>Empanadas Doña María</strong>, siente que “lo digital ya está resuelto”. Esta mañana recibió tres mensajes. <strong>Haz clic en cada uno</strong> para leerlo.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">CA</span><span><span class="from">Cafetería Aroma · WhatsApp</span><span class="preview">Hola María, ¿y mi pedido de ayer?…</span><span class="full">“¿Y mi pedido de 40 empanadas? Lo confirmé ayer por WhatsApp y nadie llegó.” El pedido quedó anotado solo en el celular de una vendedora.</span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">JP</span><span><span class="from">Javier · Ventas</span><span class="preview">¿Cuál lista de precios uso?…</span><span class="full">“Tengo tres listas de precios en el computador. ¿Cuál es la vigente?” Ayer se cobró un precio antiguo a un cliente.</span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">IG</span><span><span class="from">Instagram · Mensaje directo</span><span class="preview">¿Hacen despacho los sábados?…</span><span class="full">Una clienta pregunta por despachos. La consulta lleva dos días sin respuesta porque nadie revisa los mensajes con un horario definido.</span></span><span class="badge">Nuevo</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Dueña de una tienda de empanadas revisa su celular junto a un cuaderno de pedidos escritos a mano" src="img/l1_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué describe mejor la situación de María?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Su PYME tiene alta madurez digital porque vende por Instagram y WhatsApp.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Usa herramientas digitales, pero la información y los procesos siguen dispersos.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La madurez digital depende solo de vender por internet, así que no hay nada que mejorar.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: el problema sigue oculto.</strong> <span class="fb-body">Tener canales digitales es presencia, no madurez. Los tres mensajes muestran pedidos perdidos, precios desactualizados y consultas sin respuesta.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se pierden más ventas.</strong> <span class="fb-body">Vender por internet es solo una dimensión. Si los pedidos no se registran en un lugar común, el negocio puede vender en línea y aun así perder clientes.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">María usa tecnología, pero sus procesos no están integrados. En esta lección verás qué es la madurez digital, cómo reconocer sus señales y por dónde empezar a mejorar.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Madurez digital: mucho más que tener aplicaciones</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · DIMENSIONES -->
+<section class="slide" data-title="Cuatro dimensiones" data-audio="p03" data-gate="hs" data-gate-msg="Explora los cuatro puntos de la imagen.">
+  <span class="eyebrow">Dónde se nota la madurez digital</span>
+  <h2>Cuatro dimensiones para mirar un negocio</h2>
+  <p>La madurez digital no se ve en las aplicaciones, sino en cómo trabaja el equipo. <strong>Haz clic en cada número</strong> sobre la imagen del equipo de María.</p>
+  <div class="task" id="hsTask">Dimensiones exploradas <span class="tick" id="hsTick">0 / 4</span></div>
+  <div class="hs-wrap" data-gate="hs" data-tick="hsTick" data-task="hsTask">
+    <div class="hs-stage"><img alt="Equipo de cocina revisa un proceso en un computador portátil sobre una mesa de acero" src="img/l1_equipo.jpg"/>
+      <button class="hs" type="button" style="left:44%;top:72%" aria-label="Punto 1" data-t="📁 Gestión de la información" data-d="La información clave (recetas, proveedores, costos) está <b>organizada y disponible</b> para quien la necesita, sin depender de una sola persona.">1</button>
+      <button class="hs" type="button" style="left:70%;top:30%" aria-label="Punto 2" data-t="🧾 Relación con clientes" data-d="Los canales digitales permiten <b>registrar pedidos y hacer seguimiento</b> a cada cliente desde un lugar común, no desde chats personales.">2</button>
+      <button class="hs" type="button" style="left:25%;top:30%" aria-label="Punto 3" data-t="🔁 Operación diaria" data-d="Las tareas repetitivas tienen <b>pasos claros, responsables y herramientas</b> que reducen errores, por ejemplo, una planilla de producción compartida.">3</button>
+      <button class="hs" type="button" style="left:86%;top:74%" aria-label="Punto 4" data-t="📊 Decisiones con datos" data-d="Se registran datos básicos (ventas, mermas, consultas) y <b>se revisan con regularidad</b> para decidir qué producir, corregir o priorizar.">4</button>
+    </div>
+    <div class="hs-panel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <div class="sources">Referencia: OCDE (2021), <i>The Digital Transformation of SMEs</i>.</div>
+</section>
+
+<!-- 4 · PREGUNTAS CLAVE -->
+<section class="slide" data-title="Preguntas clave" data-audio="p04" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Preguntas de diagnóstico</span>
+  <div class="grid-2">
+    <div>
+      <h2>Cuatro preguntas para mirar tu negocio</h2>
+      <p>Cada pregunta revela una señal de avance. <strong>Toca cada tarjeta para voltearla.</strong></p>
+      <div class="task" id="fcTask">Preguntas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Escritorio desordenado con notas adhesivas, boletas y un celular" src="img/l1_caos.jpg"/></div>
+  </div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📁</div><strong>Información</strong><span>¿Dónde se guardan los documentos importantes?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Señal de avance</strong><span>Hay una estructura común de carpetas y las personas autorizadas encuentran la versión vigente sin preguntar.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧾</div><strong>Clientes</strong><span>¿Cómo se registran consultas, compras y seguimiento?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Señal de avance</strong><span>Los datos esenciales de cada cliente están centralizados y sirven para responder y hacer seguimiento.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🔁</div><strong>Procesos</strong><span>¿Qué pasa cuando una persona no está disponible?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Señal de avance</strong><span>Las tareas importantes tienen pasos conocidos y no dependen solo de la memoria de alguien.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📊</div><strong>Datos</strong><span>¿Se usan los números del negocio para decidir?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Señal de avance</strong><span>Ventas y consultas se revisan periódicamente para definir qué mantener, corregir o priorizar.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 5 · ALERTA O AVANCE -->
+<section class="slide" data-title="Alerta o avance" data-audio="p05" data-gate="cls" data-gate-msg="Ubica las seis situaciones en la columna correcta.">
+  <span class="eyebrow amber">Señales del negocio</span>
+  <h2>¿Señal de alerta o señal de avance?</h2>
+  <p><strong>Selecciona una situación</strong> y luego la columna donde corresponde. También puedes arrastrarla.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Situaciones clasificadas <span class="tick" id="clTick">0 / 6</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="a" data-fb="Varias versiones generan errores de precio." data-no="¿Tener tres versiones ayuda o confunde?">Hay tres listas de precios y nadie sabe cuál es la vigente.</button>
+      <button class="cardx" type="button" data-cat="b" data-fb="Un registro común permite hacer seguimiento." data-no="Un registro común de pedidos es un avance.">Los pedidos se anotan en una planilla compartida.</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="La operación depende de una sola persona." data-no="Si solo una persona sabe hacerlo, el negocio está expuesto.">Solo María sabe cómo hacer el pedido al proveedor.</button>
+      <button class="cardx" type="button" data-cat="b" data-fb="Los datos se usan para decidir." data-no="Revisar ventas para planificar es una señal de avance.">Cada lunes se revisan las ventas para planificar la producción.</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="La información queda en un dispositivo personal." data-no="Guardar todo en un celular personal pone en riesgo la información.">Las facturas de proveedores están solo en el celular de María.</button>
+      <button class="cardx" type="button" data-cat="b" data-fb="El equipo accede a lo que necesita sin depender de otra persona." data-no="Acceder sin pedirlo por mensaje es un avance.">El equipo consulta las recetas sin pedirlas por mensaje.</button>
+    </div>
+    <div class="bins">
+      <div class="bin bad-bin" data-cat="a" role="button" tabindex="0"><h3>⚠️ Señal de alerta</h3></div>
+      <div class="bin good-bin" data-cat="b" role="button" tabindex="0"><h3>✅ Señal de avance</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · AUTODIAGNÓSTICO -->
+<section class="slide" data-title="Autodiagnóstico" data-audio="p06" data-gate="diag" data-gate-msg="Revisa las cinco afirmaciones y presiona «Ver mi resultado».">
+  <span class="eyebrow violet">Tu negocio hoy</span>
+  <div class="grid-2">
+    <div>
+      <h2>Haz un autodiagnóstico rápido</h2>
+      <p><strong>Activa cada afirmación que hoy se cumple</strong> en tu negocio (o en uno que conozcas). No buscamos una nota perfecta, sino una fotografía útil para priorizar.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="Manos sostienen una tableta con un gráfico de ventas junto a una caja registradora" src="img/l1_datos.jpg"/></div>
+  </div>
+  <div class="toggles" data-gate="diag" data-meter="diagBar" data-res="diagRes" data-btn="diagBtn">
+    <div class="toggle-row" data-area="Organización de archivos"><span>Los archivos importantes están en una estructura de carpetas conocida por el equipo.</span><button class="sw" type="button" role="switch" aria-checked="false" aria-label="Se cumple"></button><div class="nat">Señal de avance en <b>gestión de la información</b>.</div></div>
+    <div class="toggle-row" data-area="Canal comercial digital"><span>Hay al menos un canal digital comercial con información actualizada y forma clara de contacto.</span><button class="sw" type="button" role="switch" aria-checked="false" aria-label="Se cumple"></button><div class="nat">Señal de avance en <b>relación con clientes</b>.</div></div>
+    <div class="toggle-row" data-area="Acceso y continuidad"><span>Las personas autorizadas acceden a los documentos sin depender del dispositivo de otra persona.</span><button class="sw" type="button" role="switch" aria-checked="false" aria-label="Se cumple"></button><div class="nat">Señal de avance en <b>operación</b>.</div></div>
+    <div class="toggle-row" data-area="Registro de clientes y ventas"><span>Se registra información básica de clientes o ventas de forma sistemática.</span><button class="sw" type="button" role="switch" aria-checked="false" aria-label="Se cumple"></button><div class="nat">Señal de avance en <b>clientes y datos</b>.</div></div>
+    <div class="toggle-row" data-area="Uso de datos para decidir"><span>Se revisan algunos datos para decidir qué mantener, corregir o priorizar.</span><button class="sw" type="button" role="switch" aria-checked="false" aria-label="Se cumple"></button><div class="nat">Señal de avance en <b>decisiones</b>.</div></div>
+  </div>
+  <div class="diag-meter" aria-hidden="true"><span id="diagBar"></span></div>
+  <button class="small-btn primary" type="button" id="diagBtn">Ver mi resultado</button>
+  <div id="diagRes" aria-live="polite"></div>
+</section>
+
+<!-- 7 · RUTA PARA PRIORIZAR -->
+<section class="slide" data-title="Ruta para priorizar" data-audio="p07" data-gate="ord" data-gate-msg="Ordena los cuatro pasos y presiona Comprobar.">
+  <span class="eyebrow">De la brecha a la mejora</span>
+  <h2>¿En qué orden se convierte un diagnóstico en acción?</h2>
+  <p>Usa las flechas <strong>↑ ↓</strong> para ordenar los pasos de primero a último y luego presiona <strong>Comprobar</strong>.</p>
+  <div class="order-box" data-gate="ord" data-ok="Primero se observa el hecho, luego se describe la brecha, se define una mejora pequeña y, al final, se revisa si funcionó." data-no="Pista: no se puede definir una mejora sin entender antes qué falla y por qué.">
+    <ul class="order">
+      <li data-p="3"><b>Próximo paso:</b> formular una mejora pequeña y realizable.</li>
+      <li data-p="1"><b>Hecho:</b> identificar una situación que hoy genera errores o pérdida de tiempo.</li>
+      <li data-p="4"><b>Revisión:</b> comprobar después de unas semanas si la mejora funcionó.</li>
+      <li data-p="2"><b>Brecha:</b> describir qué falta (organización, acceso, registro o uso de datos).</li>
+    </ul>
+    <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+    <div class="fb"></div>
+  </div>
+  <div class="callout"><strong>Ejemplo:</strong> “Los pedidos llegan por WhatsApp y se olvidan” (hecho) → “No existe un registro único de pedidos” (brecha) → “Crear una planilla compartida” (próximo paso) → “Contar los pedidos perdidos en un mes” (revisión).</div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de María</span>
+  <h2>“Quiero ordenar esto, pero no sé por dónde partir”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/maria_avatar.jpg" alt=""/> María · Empanadas Doña María</div>
+      <div class="bubble"><span class="who">María</span>Esta semana se perdieron dos pedidos y le cobramos un precio antiguo a un cliente. Un proveedor me ofreció un sistema que “automatiza todo”. ¿Lo compro?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="María organiza su trabajo en un computador portátil con archivadores rotulados detrás" src="img/l1_orden.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué debería priorizar María?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Abrir una cuenta en otra red social para vender más.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Comprar el sistema que automatiza todo.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Ordenar los archivos y acordar un único lugar donde se registran los pedidos.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más mensajes, mismo desorden</div><div class="branch-body"><div><p>Llegan más consultas, pero siguen perdiéndose pedidos. Un nuevo canal suma presión sobre un proceso que aún no está ordenado.</p></div><div><p class="hint">Primero ordena lo que ya existe.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: automatizar el desorden</div><div class="branch-body"><div><p>El sistema queda a medio configurar porque nadie tiene claro qué datos registrar ni quién lo hace. Automatizar un proceso desordenado lo hace más rápido, no mejor.</p></div><div><p class="hint">La herramienta llega después del acuerdo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Un registro único de pedidos y archivos ordenados atacan la causa de los errores y preparan el terreno para digitalizar otras áreas.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Dos semanas después:</strong> todos los pedidos se registran en una planilla compartida. María quiere saber si el cambio valió la pena.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Cómo sabrá María si la mejora funcionó?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Comparando cuántos pedidos se perdieron antes y después del cambio.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Preguntando al equipo si “se siente” más ordenado.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Revisando si aumentaron los seguidores en redes sociales.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una impresión, no una medición</div><div class="branch-body"><div><p>La opinión del equipo es útil, pero no permite saber si los errores realmente disminuyeron.</p></div><div><p class="hint">Mide lo que quisiste cambiar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un indicador que no corresponde</div><div class="branch-body"><div><p>Más seguidores no dicen nada sobre el registro de pedidos. El indicador debe relacionarse con la brecha que se quiso cerrar.</p></div><div><p class="hint">¿Qué problema querías resolver?</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Un indicador simple, medido antes y después (pedidos perdidos, errores de precio), muestra si la mejora tuvo efecto y cierra el ciclo de diagnóstico.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Un plan de mejora para revisar</h2>
+  <div class="story">Una PYME de tu rubro detecta que <b>los pedidos se pierden entre WhatsApp y un cuaderno</b>. Su dueño propone dos acciones: <b>(1)</b> contratar de inmediato un sistema que automatice ventas, inventario y despacho, y <b>(2)</b> crear una planilla compartida de pedidos y revisar cada lunes cuántos se perdieron.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la acción 1 <b>no conviene como primer paso</b>: automatizar sin haber ordenado el registro de pedidos traslada el desorden a una herramienta más cara y compleja. La acción 2 <b>sí conviene</b>: ataca la brecha concreta (no hay registro único), es pequeña, realizable y tiene un indicador simple para revisar si funcionó. Cuando el registro esté estable, se puede evaluar una herramienta más completa.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 1.1</h2>
+    <p>Ya puedes reconocer las señales de madurez digital de una PYME, diagnosticar su punto de partida en cuatro dimensiones y convertir una brecha en una mejora concreta.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 1.2</b> verás cómo un ecosistema de productividad conecta comunicación, documentos y coordinación.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar las dimensiones</button><button class="small-btn primary" type="button" data-goto="6">Repasar la ruta para priorizar</button></div>
+    <div class="sources">Fuentes: OCDE (2021), <i>The Digital Transformation of SMEs</i>; OCDE (2019), <i>OECD SME and Entrepreneurship Outlook 2019</i>. Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

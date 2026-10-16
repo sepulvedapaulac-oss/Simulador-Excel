@@ -1,0 +1,16 @@
+{"audio":{
+"p01":"Bienvenida a la lección tres punto dos: Una marca reconocible y accesible. Casa Nativa cambia de estilo en cada publicación. Revisa las tres últimas publicaciones y luego responde qué efecto puede generar.",
+"p03":"Un sistema visual se basa en pocas decisiones bien repetidas. Toca cada tarjeta para voltearla y descubre qué definir en color, tipografía, imagen y tono.",
+"p04":"Una buena pieza guía la mirada. Revisa las cuatro pestañas para conocer los niveles de jerarquía: mensaje principal, apoyo, acción y espacio.",
+"p05":"Un diseño atractivo también debe poder leerse. Clasifica cada práctica: ¿facilita la lectura o la dificulta? Selecciona una tarjeta y luego la columna que corresponde.",
+"p06":"Completa cada principio de accesibilidad eligiendo la opción correcta en los espacios, y luego presiona comprobar.",
+"p07":"Ahora arma la mini guía visual de Casa Nativa. Elige la mejor opción para colores, tipografías, imágenes y regla de claridad, y luego presiona guardar.",
+"p08":"Volvamos con Marcela. Casa Nativa anunciará una promoción. Ayúdala a elegir el diseño y luego a corregir un detalle que una clienta le hizo notar.",
+"p11":"¡Felicitaciones! Completaste la lección tres punto dos. Ya puedes definir un sistema visual simple, ordenar la jerarquía de una pieza y revisar su accesibilidad antes de publicar. En la siguiente lección verás cómo invertir en publicidad sin perder el control."},
+"video":[
+{"t":"Reconocer antes de leer","img":"m8_hero","lines":["Una identidad consistente ayuda a que una pyme sea reconocida.","El objetivo es que una persona reconozca la marca incluso antes de leer su nombre."],"keys":[["Consistencia genera reconocimiento",0],["Cambiar de estilo confunde",1],["Reconocer antes de leer",1]]},
+{"t":"Pocas decisiones, bien repetidas","img":"m8_paleta","lines":["Un sistema visual simple define una paleta acotada, pocas tipografías y un estilo de imagen coherente.","Por ejemplo: dos o tres colores, una tipografía para títulos y otra para textos."],"keys":[["Paleta de 2 o 3 colores",0],["1 tipografía de títulos y 1 de textos",1],["Estilo de imagen coherente",1]]},
+{"t":"Jerarquía visual","img":"m8_celular","lines":["La mirada necesita saber por dónde empezar.","Primero el mensaje principal, luego los datos de apoyo y después la acción. El espacio vacío también ordena."],"keys":[["1 · Mensaje principal",0],["2 · Apoyo y 3 · Acción",1],["4 · El espacio también organiza",1]]},
+{"t":"Accesibilidad","img":"m8_lectura","lines":["Un diseño atractivo también debe poder leerse, en distintas condiciones y dispositivos.","Cuida el contraste, usa tamaños legibles, escribe frases claras y no dependas solo del color para comunicar algo importante."],"keys":[["Contraste suficiente",0],["Tamaño legible en celular",1],["No depender solo del color",1]]},
+{"t":"Revisa antes de publicar","img":"m8_foto","lines":["Antes de publicar, haz una revisión rápida.","¿Se entiende la idea en pocos segundos? ¿Se lee bien en el celular? ¿Se parece a la marca? ¿La acción está clara?"],"keys":[["Idea clara en segundos",0],["Legible y con contraste",1],["Coherente y con acción visible",1]]}
+]}

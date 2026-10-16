@@ -1,0 +1,242 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa los tres mensajes y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.1 · Presencia digital y canal comercial</span>
+      <h1 class="reveal">Muchas consultas, pocas ventas</h1>
+      <p class="lead reveal">Marcela, dueña de <strong>Casa Nativa</strong>, vende decoración hecha a mano. Publica en redes sociales y responde todo de forma manual. Hoy recibió tres mensajes. <strong>Haz clic en cada uno</strong> para leerlo.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">CP</span><span><span class="from">Carolina · WhatsApp</span><span class="preview">Hola, ¿a qué hora abren?…</span><span class="full">“Hola, ¿a qué hora abren? ¿Y hacen envíos a regiones?” Es la cuarta vez esta semana que alguien pregunta lo mismo.</span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">IG</span><span><span class="from">Instagram · Mensaje directo</span><span class="preview">¿Qué medios de pago aceptan?…</span><span class="full">“Me encantó el cojín de lino. ¿Qué medios de pago aceptan? ¿Hay stock?” La consulta llegó a las 23:10 y nadie respondió hasta el día siguiente.</span></span><span class="badge">Nuevo</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">RM</span><span><span class="from">Rodrigo · WhatsApp</span><span class="preview">¿Tienen catálogo?…</span><span class="full">“¿Tienen un catálogo con precios? No encontré los productos en su perfil.” Marcela envía fotos sueltas una por una.</span></span><span class="badge">Nuevo</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Dueña de una tienda de decoración artesanal revisa su celular lleno de mensajes en su taller" src="img/m4_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Cuál parece ser el principal problema de Casa Nativa?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Publica con poca frecuencia en redes sociales.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Su canal digital no está configurado para orientar la compra.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Sus precios son demasiado altos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: más mensajes, mismo problema.</strong> <span class="fb-body">Publicar más atrae más consultas, pero no resuelve la falta de información ni el orden en la atención.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: se ataca el síntoma equivocado.</strong> <span class="fb-body">El precio puede influir, pero los mensajes muestran un problema de configuración y de flujo de atención: los clientes no encuentran horarios, pagos ni catálogo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Un perfil comercial debe reducir la fricción: informar, orientar y facilitar el siguiente paso del cliente. En esta lección verás cómo lograrlo.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>De “estar en internet” a facilitar una compra</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · TRES PILARES -->
+<section class="slide" data-title="Tres pilares" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Idea clave</span>
+  <div class="grid-2">
+    <div>
+      <h2>Un perfil comercial responde antes de que el cliente pregunte</h2>
+      <p>Identidad, información y acción. <strong>Toca cada tarjeta para voltearla.</strong></p>
+      <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Manos sostienen un celular con un perfil comercial ordenado con fotos de productos de decoración" src="img/m4_perfil.jpg"/></div>
+  </div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🏷️</div><strong>Identidad</strong><span>¿Quién eres y qué vendes?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Se entiende en segundos</strong><span>Nombre comercial claro, imagen coherente y una descripción comprensible: “Decoración hecha a mano: cerámica, textiles y cestería”.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">ℹ️</div><strong>Información</strong><span>¿Qué necesita saber el cliente?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Datos visibles</strong><span>Horario de atención, ubicación o zona de cobertura, medios de contacto, medios de pago y condiciones básicas de despacho.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">👉</div><strong>Acción</strong><span>¿Cuál es el siguiente paso?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Una ruta clara</strong><span>Consultar, pedir, reservar, cotizar o comprar. Un catálogo actualizado y un enlace directo de contacto muestran el camino.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📏</div><strong>Regla práctica</strong><span>¿Cómo saber si falta algo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mira las preguntas</strong><span>Si el cliente necesita preguntar datos básicos para avanzar, el perfil todavía puede optimizarse.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · INFORMACIÓN O ATENCIÓN -->
+<section class="slide" data-title="Qué configurar" data-audio="p04" data-gate="cls" data-gate-msg="Ubica los ocho elementos en su columna.">
+  <span class="eyebrow amber">Aplicación</span>
+  <h2>¿Qué conviene configurar en un perfil comercial?</h2>
+  <p><strong>Selecciona un elemento</strong> y luego la columna donde corresponde. También puedes arrastrarlo.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Elementos ubicados <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="i" data-fb="El horario es un dato que el cliente necesita para decidir cuándo escribir o visitar." data-no="¿Es un dato para el cliente o una herramienta para responder más rápido?">🕘 Horario de atención</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="Las respuestas rápidas aceleran la atención de preguntas frecuentes." data-no="Es una herramienta para quien atiende, no un dato del perfil.">⚡ Respuestas rápidas</button>
+      <button class="cardx" type="button" data-cat="i" data-fb="El catálogo muestra qué vendes sin que el cliente tenga que pedir fotos." data-no="El catálogo es información esencial del negocio.">🛍️ Catálogo o productos destacados</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="El saludo automático orienta al cliente desde el primer mensaje." data-no="Es un mensaje automático que ordena la conversación.">👋 Mensaje de bienvenida</button>
+      <button class="cardx" type="button" data-cat="i" data-fb="Saber cómo pagar elimina una de las preguntas más repetidas." data-no="Los medios de pago son información que el cliente necesita antes de comprar.">💳 Medios de pago</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="Las etiquetas permiten clasificar conversaciones: nuevo pedido, pagado, por despachar." data-no="Las etiquetas sirven para gestionar conversaciones, no las ve el cliente.">🏷️ Etiquetas de conversaciones</button>
+      <button class="cardx" type="button" data-cat="i" data-fb="La cobertura responde “¿llegan a mi comuna?” antes de que pregunten." data-no="La zona de despacho es información esencial para decidir la compra.">🚚 Cobertura o despacho</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="El mensaje fuera de horario evita que un cliente quede sin respuesta durante la noche." data-no="Es un mensaje automático para cuando nadie puede responder.">🌙 Mensaje fuera de horario</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="i" role="button" tabindex="0"><h3>ℹ️ Información esencial</h3></div>
+      <div class="bin" data-cat="a" role="button" tabindex="0"><h3>⚡ Atención eficiente</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 5 · SIMULADOR DE PERFIL -->
+<section class="slide" data-title="Configura el perfil" data-audio="p05" data-gate="sim" data-gate-msg="Configura los cuatro campos y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Configura el perfil comercial de Casa Nativa</h2>
+  <p>Elige la mejor opción para cada campo y luego presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="campo(s)" data-miss-t="Faltan campos." data-miss-b="Completa todos los campos del perfil antes de guardar." data-ok="El perfil explica qué vende Casa Nativa, cuándo atiende y qué hacer para comprar, incluso fuera de horario.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Perfil de empresa · Casa Nativa</div>
+        <table class="seltable stack">
+          <tr data-ans="b" data-ok="Dice qué vende, cómo se hace y hasta dónde llega." data-no="La descripción debe decir qué vendes en pocas palabras; los superlativos no informan."><td><b>Descripción</b><small>Lo primero que lee un cliente nuevo</small><span class="why"></span></td><td><select aria-label="Descripción"><option value="">Elegir…</option><option value="a">Casa Nativa 🌿</option><option value="b">Decoración hecha a mano: cerámica, textiles y cestería. Envíos a todo Chile.</option><option value="c">¡Los mejores productos del mundo!</option></select></td></tr>
+          <tr data-ans="a" data-ok="Un horario concreto ordena las expectativas." data-no="“Siempre disponibles” crea una expectativa que no se puede cumplir; sin horario el cliente no sabe cuándo esperar respuesta."><td><b>Horario</b><small>Cuándo se responde</small><span class="why"></span></td><td><select aria-label="Horario"><option value="">Elegir…</option><option value="a">Lun a vie 10:00–19:00 · sáb 10:00–14:00</option><option value="b">Siempre disponibles</option><option value="c">(sin horario)</option></select></td></tr>
+          <tr data-ans="c" data-ok="Saluda, orienta y entrega el siguiente paso." data-no="El saludo debe orientar: dónde ver el catálogo y cómo avanzar."><td><b>Mensaje de bienvenida</b><small>Primer mensaje automático</small><span class="why"></span></td><td><select aria-label="Mensaje de bienvenida"><option value="">Elegir…</option><option value="a">Hola.</option><option value="b">Gracias por escribir, te responderemos.</option><option value="c">¡Hola! Revisa nuestro catálogo aquí 👉 y cuéntanos qué producto te interesa.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Indica cuándo se responderá y deja el catálogo disponible." data-no="Fuera de horario conviene informar cuándo responderás y ofrecer algo útil mientras tanto."><td><b>Mensaje fuera de horario</b><small>Consultas de noche o fin de semana</small><span class="why"></span></td><td><select aria-label="Mensaje fuera de horario"><option value="">Elegir…</option><option value="a">(sin mensaje)</option><option value="b">Gracias por escribir. Respondemos de lun a sáb desde las 10:00. Mientras tanto, revisa el catálogo 👉</option><option value="c">Estamos cerrados.</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela fotografía un jarrón de cerámica para su catálogo digital" src="img/m4_catalogo.jpg"/></div>
+  </div>
+  <div class="sources">Referencia: Centro de ayuda de WhatsApp Business (perfil de empresa, catálogo, mensajes de bienvenida y de ausencia, respuestas rápidas y etiquetas).</div>
+</section>
+
+<!-- 6 · PREGUNTA Y RESPUESTA -->
+<section class="slide" data-title="Preguntas frecuentes" data-audio="p06" data-gate="pairs" data-gate-msg="Une las cinco preguntas con su solución.">
+  <span class="eyebrow violet">Responder antes de que pregunten</span>
+  <h2>¿Qué elemento del perfil responde cada pregunta?</h2>
+  <p><strong>Selecciona una pregunta</strong> a la izquierda y luego el <strong>elemento del perfil</strong> que la responde.</p>
+  <div class="task" id="prTask">Parejas unidas <span class="tick" id="prTick">0 / 5</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa qué dato o herramienta evita que el cliente tenga que escribir esa pregunta.">
+    <div>
+      <button class="pl" type="button" data-k="hor">“¿A qué hora atienden?”</button>
+      <button class="pl" type="button" data-k="cat">“¿Qué productos tienen y cuánto cuestan?”</button>
+      <button class="pl" type="button" data-k="pag">“¿Cómo puedo pagar?”</button>
+      <button class="pl" type="button" data-k="noc">“Escribo a las 23:00… ¿alguien me leerá?”</button>
+      <button class="pl" type="button" data-k="lnk">“Vi su publicación, ¿dónde les escribo?”</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="pag" data-fb="Una respuesta rápida con los medios de pago se envía en segundos y siempre igual.">Respuesta rápida con medios de pago</button>
+      <button class="pr" type="button" data-k="lnk" data-fb="Un enlace directo lleva desde la publicación a la conversación sin pasos extra.">Enlace directo de contacto en la publicación</button>
+      <button class="pr" type="button" data-k="hor" data-fb="El horario visible en el perfil responde esta pregunta sin escribir.">Horario visible en el perfil</button>
+      <button class="pr" type="button" data-k="noc" data-fb="El mensaje fuera de horario confirma que se recibió y cuándo se responderá.">Mensaje automático fuera de horario</button>
+      <button class="pr" type="button" data-k="cat" data-fb="El catálogo actualizado muestra productos y precios.">Catálogo actualizado con precios</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+</section>
+
+<!-- 7 · EMBUDO -->
+<section class="slide" data-title="Embudo comercial" data-audio="p07" data-gate="ord" data-gate-msg="Ordena las cinco etapas y presiona Comprobar.">
+  <span class="eyebrow">Proceso</span>
+  <div class="grid-2">
+    <div>
+      <h2>Convierte el perfil en un pequeño embudo comercial</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar las etapas de primera a última y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Atraer, informar, orientar, responder y cerrar: cada etapa reduce una duda y acerca al cliente a la compra." data-no="Pista: el cliente primero llega, luego busca datos, después necesita saber qué hacer y, al final, recibe instrucciones para pagar y recibir.">
+        <ul class="order">
+          <li data-p="3"><b>Orientar:</b> el canal le indica qué hacer: consultar, cotizar, reservar o comprar.</li>
+          <li data-p="5"><b>Cerrar:</b> recibe instrucciones claras sobre pago, entrega o siguiente paso.</li>
+          <li data-p="1"><b>Atraer:</b> llega desde una publicación, una recomendación o una búsqueda.</li>
+          <li data-p="4"><b>Responder:</b> la atención es rápida, consistente y fácil de gestionar.</li>
+          <li data-p="2"><b>Informar:</b> encuentra datos básicos sin tener que preguntar todo.</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Cliente revisa productos de decoración en su celular desde el sofá" src="img/m4_cliente.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>“Paso el día respondiendo lo mismo”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Respondo horarios, pagos y despachos diez veces al día. Algunas conversaciones se me pierden y otras llegan de noche. Tengo una hora libre esta semana: ¿en qué la invierto?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela responde mensajes en su celular y su portátil rodeada de notas adhesivas" src="img/m4_consultas.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué combinación tendría mayor impacto inmediato?</h3>
+  <div class="options" data-choice="caso1" data-correct="A" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Catálogo actualizado + respuestas rápidas + horario visible.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Cambiar solo el logo y la foto de perfil.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Publicar historias cada hora.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se ve mejor, funciona igual</div><div class="branch-body"><div><p>El perfil luce más ordenado, pero los clientes siguen preguntando horarios y pagos. Cambiar la imagen no resuelve el problema operativo.</p></div><div><p class="hint">Ataca las preguntas que más se repiten.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más tráfico, más saturación</div><div class="branch-body"><div><p>Llegan más mensajes con las mismas preguntas y Marcela tiene aún menos tiempo. Publicar más no reemplaza estructurar el canal.</p></div><div><p class="hint">Primero ordena el canal, después atrae más.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Un catálogo claro, respuestas rápidas y horarios visibles reducen la fricción y aceleran la atención. Las preguntas repetidas disminuyen desde la primera semana.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Una semana después:</strong> las preguntas repetidas bajaron, pero cada noche llegan 5 o 6 consultas que nadie ve hasta el mediodía siguiente. Dos clientes compraron en otra tienda.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debería hacer Marcela?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Responder personalmente a cualquier hora, incluso de madrugada.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Dejar de atender por mensajes y pedir que llamen por teléfono.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Activar un mensaje fuera de horario con el horario de respuesta y el enlace al catálogo, y etiquetar esas conversaciones para atenderlas primero.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: no es sostenible</div><div class="branch-body"><div><p>Marcela responde rápido durante unos días, pero se agota y la calidad de la atención baja. Un canal comercial debe funcionar sin depender de que alguien esté siempre conectado.</p></div><div><p class="hint">Usa las herramientas del perfil.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: más fricción</div><div class="branch-body"><div><p>Muchos clientes prefieren escribir. Obligarlos a llamar agrega un paso y se pierden más ventas.</p></div><div><p class="hint">Facilita el siguiente paso, no lo compliques.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El cliente sabe que su mensaje llegó y cuándo recibirá respuesta, puede revisar el catálogo de inmediato y Marcela parte cada mañana por esas conversaciones etiquetadas.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Audita un canal comercial</h2>
+  <div class="story">El perfil de una PYME de tu rubro solo tiene el logo y la frase <b>“escríbenos por DM”</b>. Su dueña propone dos acciones: <b>(1)</b> publicar tres veces al día para “aparecer más”, y <b>(2)</b> agregar una descripción clara, horario, catálogo con precios, medios de pago y un mensaje fuera de horario.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la acción 1 <b>no conviene como primer paso</b>: aumenta el tráfico hacia un perfil que todavía no informa ni orienta, por lo que se multiplican las preguntas repetidas. La acción 2 <b>sí conviene</b>: cubre identidad, información y acción, y deja una ruta clara incluso fuera de horario. Para auditar tu propio canal pregúntate: ¿una persona nueva entiende qué vendo?, ¿sabe cuándo y cómo contactarme?, ¿encuentra lo necesario para decidir?, ¿existe un siguiente paso claro?, ¿tengo respuestas preparadas para las preguntas frecuentes? Elige una mejora y aplícala antes de la siguiente lección.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.1</h2>
+    <p>Ya puedes transformar un perfil digital en un canal comercial que informa, orienta y facilita la compra, con una atención más rápida y ordenada.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 2.2</b> decidirás entre una tienda propia y un marketplace.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar los tres pilares</button><button class="small-btn primary" type="button" data-goto="4">Repasar la configuración del perfil</button></div>
+    <div class="sources">Fuentes: Centro de ayuda de WhatsApp Business; Meta Business, guía de perfiles de empresa en Instagram. Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

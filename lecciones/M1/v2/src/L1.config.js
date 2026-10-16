@@ -1,0 +1,15 @@
+L.first=['hook','cls','ord','caso1','caso2c'];
+L.Q=[
+ {q:'¿Qué afirmación describe mejor la madurez digital de una PYME?',o:['La cantidad de plataformas que la empresa paga.','El grado en que las herramientas digitales apoyan sus procesos y decisiones.','Tener una tienda en línea, aunque los procesos internos sigan siendo manuales.','Que todo el equipo tenga un celular moderno.'],c:1,f:'La madurez digital se observa en cómo la tecnología apoya el trabajo diario y las decisiones, no en cuántas herramientas se pagan.'},
+ {q:'“Solo una persona sabe hacer el pedido al proveedor.” ¿Qué indica esta situación?',o:['Un nivel avanzado de especialización.','Que el negocio necesita otra red social.','Que la dimensión de clientes está resuelta.','Una señal de alerta: el proceso depende de una sola persona.'],c:3,f:'Si un proceso depende de la memoria de una persona, el negocio se detiene cuando esa persona falta. Es una alerta en la dimensión de operación.'},
+ {q:'¿Cuál de estas NO es una de las cuatro dimensiones revisadas en la lección?',o:['La decoración del local.','La gestión de la información.','La relación con los clientes.','El uso de datos para decidir.'],c:0,f:'Las cuatro dimensiones son gestión de la información, clientes, operación y decisiones con datos.'},
+ {q:'Después de identificar un hecho que genera errores, ¿cuál es el siguiente paso?',o:['Comprar la herramienta más completa del mercado.','Esperar a que el problema se repita.','Describir la brecha: qué falta para que el proceso funcione.','Medir los resultados de la mejora.'],c:2,f:'La secuencia es hecho → brecha → mejora pequeña → revisión. Sin entender la brecha no se puede elegir bien la mejora.'},
+ {q:'María pierde pedidos y tiene archivos dispersos. ¿Cuál es la mejor primera mejora?',o:['Abrir una nueva red social.','Ordenar los archivos y acordar un registro común de pedidos.','Automatizar todos los procesos a la vez.','Pedir a cada persona que guarde sus propias copias.'],c:1,f:'Ordenar la información y acordar un registro común ataca la causa del problema con una mejora pequeña y sostenible.'}
+];
+L.YN=[
+ ['¿Contratar un sistema que automatiza todo es el mejor primer paso si los pedidos aún no tienen un registro único?',0,'No. Automatizar un proceso desordenado lo hace más caro y complejo, pero no lo ordena.'],
+ ['¿Crear una planilla compartida de pedidos ataca la brecha detectada?',1,'Sí. La brecha es que no existe un registro único; la planilla la resuelve directamente.'],
+ ['¿Revisar cada lunes cuántos pedidos se perdieron permite saber si la mejora funcionó?',1,'Sí. Es un indicador simple, ligado a la brecha y fácil de medir antes y después.'],
+ ['¿La madurez digital del negocio aumenta solo por sumar más canales de venta?',0,'No. Más canales sin procesos ordenados pueden aumentar los errores.'],
+ ['¿Conviene evaluar herramientas más completas cuando el registro de pedidos ya funciona de forma estable?',1,'Sí. Con un proceso claro, es más fácil elegir y aprovechar una herramienta más avanzada.']
+];

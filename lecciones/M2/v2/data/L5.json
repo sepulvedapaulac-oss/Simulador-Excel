@@ -1,0 +1,18 @@
+{"audio":{
+"p01":"Bienvenida a la lección dos punto dos: ¿Tienda propia o marketplace? Marcela quiere comenzar a vender en línea con Casa Nativa. No existe un canal mejor para todas las pymes. Revisa los tres datos de su situación y luego responde qué debería hacer antes de decidir.",
+"p03":"Para elegir un canal de venta conviene mirar cuatro criterios: control, velocidad, alcance y capacidad operativa. Toca cada tarjeta para voltearla y descubre la pregunta que debes hacerte.",
+"p04":"Compara ambos canales. Lee cada característica y ubícala en tienda propia o en marketplace. Selecciona una tarjeta y luego la columna que corresponde.",
+"p05":"Revisa algunas ideas frecuentes sobre los canales de venta. Decide si cada afirmación es verdadera o falsa y lee la explicación antes de avanzar.",
+"p06":"Este árbol simple de decisión te ayuda a ordenar la elección. Haz clic en cada pregunta para ver qué camino sugiere según la situación de tu pyme.",
+"p07":"Los costos de cada canal son distintos. Completa cada frase eligiendo la opción correcta en los espacios y luego presiona comprobar.",
+"p08":"Volvamos con Marcela. Su situación cambia con el tiempo y su decisión también. Ayúdala a elegir un canal hoy y a revisar esa elección seis meses después.",
+"quiz":"Llegó el momento de comprobar lo aprendido. Responde cinco preguntas. Necesitas al menos ochenta por ciento, es decir, cuatro de cinco, para finalizar la lección. Si no lo logras, puedes reintentar.",
+"p10":"Lleva lo aprendido a tu negocio. Lee la situación, responde cada pregunta del checklist con sí o no, y luego revisa la respuesta modelo.",
+"p11":"¡Felicitaciones! Completaste la lección dos punto dos. Ya puedes comparar una tienda propia y un marketplace según control, velocidad, alcance y capacidad operativa. En la siguiente lección verás qué ocurre después de la venta: del pago a la entrega."},
+"video":[
+{"t":"No hay un canal mejor","img":"m5_hero","lines":["No existe un canal de venta que sea el mejor para todas las pymes.","La decisión depende del control que necesitas, tus recursos, tu tipo de producto, tu capacidad operativa y el alcance que buscas."],"keys":[["No hay una respuesta única",0],["Depende de recursos y producto",1],["Control, capacidad y alcance",1]]},
+{"t":"Marketplace","img":"m5_marketplace","lines":["Un marketplace concentra compradores que ya están buscando productos.","Suele permitir comenzar más rápido, pero cobra comisiones y define sus propias reglas sobre la marca y los datos del cliente."],"keys":[["Tráfico existente",0],["Puesta en marcha más rápida",1],["Comisiones y reglas de la plataforma",1]]},
+{"t":"Tienda propia","img":"m5_tienda","lines":["Una tienda propia te da mayor control de la marca, la experiencia y la relación con tus clientes.","A cambio, requiere configuración y debes generar tú mismo el tráfico que llega a ella."],"keys":[["Control de marca y datos",0],["Requiere configuración",1],["Debes atraer el tráfico",1]]},
+{"t":"Costos reales","img":"m5_marca","lines":["Compara costos completos, no solo una tarifa.","En tienda propia pagas plataforma, medios de pago y marketing. En marketplace pagas comisiones y cargos. En ambos, despacho, empaque y atención."],"keys":[["Tienda: plataforma, pagos y marketing",1],["Marketplace: comisiones y cargos",1],["Ambos: despacho y atención",1]]},
+{"t":"Decidir por etapas","img":"m5_crecer","lines":["La decisión puede cambiar con el tiempo.","Muchas pymes validan la demanda en un marketplace y, cuando su marca ya es buscada, suman una tienda propia en una estrategia multicanal."],"keys":[["Validar demanda primero",1],["Sumar tienda cuando la marca crece",1],["Multicanal sin perder control",1]]}
+]}

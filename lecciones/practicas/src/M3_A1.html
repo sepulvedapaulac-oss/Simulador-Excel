@@ -1,0 +1,144 @@
+<style>
+.cv{display:grid;grid-template-columns:150px 1fr;min-height:100%}
+.cv-side{background:#22303a;color:#dfe8ee;padding:12px 10px;font-size:.82rem;display:grid;align-content:start;gap:8px}
+.cv-side span{display:block;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.07)}
+.cv-stage{padding:14px;background:#e9edf0;display:grid;place-items:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cv-stage{background:#1b262d}}
+.post{width:100%;max-width:440px;background:#F3EBDD;color:#3E2A1F;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.18);padding:10px;display:grid;gap:4px}
+.post .hs{color:#3E2A1F;padding:6px 8px}
+.post .hs.sel,.post .hs.ok,.post .hs.ko{color:#3E2A1F}
+.post .meta{display:block;font:600 .74rem/1.3 Inter,system-ui,sans-serif;color:#4b5a66;background:rgba(255,255,255,.75);border-radius:6px;padding:2px 6px;margin-top:4px}
+.p-logo{font:700 1rem/1.2 Georgia,serif;letter-spacing:.04em;color:#B5543A}
+.p-title{font-size:1.7rem;line-height:1.1;font-weight:800}
+.p-title .f1{font-family:Impact,"Arial Black",sans-serif;color:#d1372b}.p-title .f2{font-family:"Brush Script MT","Comic Sans MS",cursive;font-weight:400;color:#7a3fa0}.p-title .f3{font-family:"Courier New",monospace;color:#1d6fb8}
+.p-sub{color:#C9B79A;font-size:1.05rem;font-weight:600}
+.p-img{display:grid;place-items:center;height:110px;border-radius:8px;background:linear-gradient(180deg,#e8d7bd,#d9c2a0);font-size:3.6rem}
+.p-stk{font-size:1.15rem;letter-spacing:.2em;overflow-wrap:anywhere}
+.p-prod{display:flex;flex-wrap:wrap;gap:6px 14px;font-weight:700;font-size:.95rem}
+.p-prod i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.p-price{font-size:1.6rem;font-weight:900;color:#3E2A1F}
+.p-tiny{font-size:7px;line-height:1.2;color:#6f5a49}
+.p-foot{font:700 .95rem/1.2 Georgia,serif;color:#556B2F}
+.p-pal{display:flex;gap:6px;align-items:center;font-size:.85rem}
+.p-pal i{width:22px;height:22px;border-radius:6px;border:1px solid rgba(0,0,0,.15);display:inline-block}
+@media(max-width:640px){.cv{grid-template-columns:1fr}.cv-side{grid-template-columns:repeat(3,1fr);font-size:.76rem}.cv-stage{padding:8px}.post{padding:6px}}
+.swatch{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid rgba(0,0,0,.2);vertical-align:-2px;margin-right:4px}
+.alt-img{display:flex;gap:12px;align-items:center;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:10px}
+.alt-img .pic{flex:none;width:90px;height:90px;border-radius:10px;background:linear-gradient(180deg,#e8d7bd,#a87b55);display:grid;place-items:center;font-size:2.6rem}
+.formula{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:10px;font-size:.95rem}
+</style>
+
+<section id="intro" class="card">
+ <span class="eyebrow">Laboratorio de práctica</span>
+ <h2>Diseña una publicación clara y accesible para Casa Nativa</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Armé la publicación de la oferta de primavera en Canva y me encanta, pero una clienta me dijo que no se lee nada en el celular. Además quiero ordenar qué publico cada semana. ¿Me ayudas a revisarla antes de subirla?”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Trabajarás sobre una <b>recreación simplificada</b> de un editor de diseño tipo Canva. Aplica lo visto en las lecciones <b>3.1 Hablarle a la audiencia correcta</b> y <b>3.2 Una marca reconocible y accesible</b>.</p>
+ <p class="muted">Canva se puede usar gratis (plantillas, fotos, tipografías y descargas). Sus planes de pago, como Canva Pro y Canva Negocios, suman recursos prémium, kit de marca completo y cambio de tamaño con un clic. Todo lo que se pide en este laboratorio se puede hacer con el plan gratuito.</p>
+ <div class="steps"><div><b>7 tareas</b>Cada una vale entre 10 y 20 puntos. Tienes una respuesta por tarea.</div><div><b>Corrección explicada</b>Después de responder verás qué estuvo bien y por qué.</div><div><b>Apruebas con 80</b>Si no llegas, revisa la lección indicada y haz un nuevo intento.</div></div>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar el laboratorio →</button>
+</section>
+
+<section class="etask card" data-id="t1" data-pts="20" data-auto="hot" data-title="Revisión de la pieza" data-lesson="Lección 3.2 · Jerarquía y accesibilidad">
+ <h2>Encuentra los problemas de la publicación</h2>
+ <p>Este es el borrador de Marcela (publicación cuadrada de 1080 × 1080 px). Bajo cada elemento verás lo que muestra el panel de propiedades. Haz clic en <b>cada elemento que dificulte entender o leer la pieza</b> (pueden ser varios) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar">🎨 Editor de diseño · “Oferta primavera” · Recreación simplificada</div>
+  <div class="cv">
+   <div class="cv-side" aria-hidden="true"><span>🧩 Plantillas</span><span>🔤 Texto</span><span>🖼️ Fotos</span><span>✨ Elementos</span><span>🎨 Marca</span><span>⬆️ Subidos</span></div>
+   <div class="cv-stage"><div class="post">
+    <button class="hs"><span class="p-logo">CASA NATIVA</span><span class="meta">Logo · misma ubicación en todas las piezas</span></button>
+    <button class="hs" data-ok><span class="p-title"><span class="f1">¡¡SÚPER</span> <span class="f2">OFERTA de</span> <span class="f3">PRIMAVERA!!</span></span><span class="meta">Titular · 3 tipografías distintas + la del logo</span></button>
+    <button class="hs" data-ok><span class="p-sub">Jarrones y cojines hechos a mano con 20% de descuento</span><span class="meta">Texto <span class="swatch" style="background:#C9B79A"></span>#C9B79A sobre fondo <span class="swatch" style="background:#F3EBDD"></span>#F3EBDD</span></button>
+    <button class="hs"><span class="p-img" aria-hidden="true">🏺</span><span class="meta">Foto del jarrón con luz natural y fondo simple</span></button>
+    <button class="hs" data-ok><span class="p-stk">✨⭐🌸🎉💥🌟🦋🌼🎈</span><span class="meta">9 stickers y 3 marcos alrededor de la foto, sin márgenes libres</span></button>
+    <button class="hs" data-ok><span class="p-prod"><span><i style="background:#d1372b"></i>Jarrón M</span><span><i style="background:#9a9a9a"></i>Cojín lino</span><span><i style="background:#d1372b"></i>Cesto</span><span><i style="background:#9a9a9a"></i>Manta</span></span><span class="meta">Punto rojo = con descuento · punto gris = agotado (sin texto)</span></button>
+    <button class="hs"><span class="p-price">Desde $9.990</span><span class="meta">Café oscuro sobre lino · tamaño 90</span></button>
+    <button class="hs" data-ok><span class="p-tiny">Válido del 2 al 8 de noviembre de 2026 o hasta agotar stock. Despacho a regiones $4.500. Cambios dentro de 10 días. Atención lun–vie 10:00–19:00.</span><span class="meta">Condiciones · tamaño 10 en el lienzo de 1080 px (en el celular se ve de unos 3 px)</span></button>
+    <button class="hs" data-ok><span class="p-foot">Casa Nativa · Primavera 2026</span><span class="meta">Última línea de la pieza</span></button>
+    <button class="hs"><span class="p-pal"><i style="background:#B5543A"></i><i style="background:#556B2F"></i><i style="background:#F3EBDD"></i> Paleta de marca</span><span class="meta">Terracota, verde oliva y lino (kit de marca)</span></button>
+   </div></div>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Dificultan la lectura: <b>tres tipografías</b> en el titular (la marca pierde reconocimiento y la mirada no sabe dónde empezar), el <b>texto beige sobre lino</b> (contraste de 1,6:1, casi invisible), el <b>exceso de stickers y marcos</b> que amontona la pieza, los estados <b>indicados solo con color</b> (quien no distingue rojo y gris no sabe qué está agotado: agrega “-20%” y “Agotado”), las <b>condiciones en letra diminuta</b> que no se leen en el celular (mejor llevarlas a la descripción) y el cierre <b>sin llamada a la acción</b> (falta, por ejemplo, “Escríbenos por WhatsApp para reservar”). El logo, la foto simple, el precio con buen contraste y la paleta de marca están bien. Cada problema encontrado suma; marcar algo correcto descuenta.</div>
+</section>
+
+<section class="etask card" data-id="t2" data-pts="15" data-auto="num" data-title="Cálculo de contraste" data-lesson="Lección 3.2 · Contraste">
+ <h2>Calcula el contraste de dos textos</h2>
+ <p>Marcela quiere comprobar dos combinaciones de su paleta. Un verificador de contraste usa la luminancia relativa de cada color (0 = negro, 1 = blanco) y esta fórmula:</p>
+ <div class="formula"><b>Contraste = (L<sub>más clara</sub> + 0,05) ÷ (L<sub>más oscura</sub> + 0,05)</b><br>
+  <span class="swatch" style="background:#F3EBDD"></span>Fondo lino: L = 0,84 · <span class="swatch" style="background:#6B7A3A"></span>Verde oliva: L = 0,17 · <span class="swatch" style="background:#3E2A1F"></span>Café oscuro: L = 0,03</div>
+ <div class="numgrid">
+  <label>Contraste de verde oliva sobre lino<span class="hint">Solo el primer número de la razón “x:1”, con un decimal. Ej.: 2,5</span><input type="text" inputmode="decimal" data-ans="4.05" data-tol="0.06" data-show="4,0 (4,0:1)"></label>
+  <label>Contraste de café oscuro sobre lino<span class="hint">Solo el primer número de la razón “x:1”, con un decimal</span><input type="text" inputmode="decimal" data-ans="11.1" data-tol="0.1" data-show="11,1 (11,1:1)"></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Verde oliva: (0,84 + 0,05) ÷ (0,17 + 0,05) = 0,89 ÷ 0,22 ≈ <b>4,0:1</b>. Café oscuro: (0,84 + 0,05) ÷ (0,03 + 0,05) = 0,89 ÷ 0,08 ≈ <b>11,1:1</b>. Mientras mayor el número, más se distingue el texto del fondo (el máximo es 21:1, negro sobre blanco). No necesitas calcularlo a mano: hay verificadores de contraste gratuitos en línea donde pegas los dos colores en código hexadecimal.</div>
+</section>
+
+<section class="etask card" data-id="t3" data-pts="15" data-auto="mc" data-title="Aplicar el criterio de contraste" data-lesson="Lección 3.2 · Accesibilidad">
+ <h2>¿Puede usar el verde oliva para este texto?</h2>
+ <p>Con los resultados anteriores (oliva sobre lino ≈ 4,0:1), Marcela quiere escribir en verde oliva la línea <b>“Despacho gratis en Santiago sobre $40.000”</b> en tamaño de texto normal. La pauta de accesibilidad WCAG (nivel AA) pide al menos <b>4,5:1 para texto normal</b> y <b>3:1 para texto grande</b> (unos 24 px, o 19 px en negrita). ¿Qué debería hacer?</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="t3"> Escribir esa línea en café oscuro (11,1:1) y reservar el verde oliva para titulares grandes o detalles decorativos.</label>
+  <label class="opt"><input type="radio" name="t3"> Mantener el verde oliva, porque 4,0:1 supera el mínimo de 3:1 que pide la pauta.</label>
+  <label class="opt"><input type="radio" name="t3"> Cambiar la línea a beige claro para que combine mejor con el fondo lino.</label>
+  <label class="opt"><input type="radio" name="t3"> Mantener el verde oliva y achicar la letra para que el texto ocupe menos espacio.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>4,0:1 no alcanza el 4,5:1 que se exige para texto normal; el 3:1 solo aplica a texto grande. El café oscuro supera ampliamente el mínimo y es parte de la paleta, así que la marca se mantiene. El verde oliva sí puede usarse en un titular grande (4,0 ≥ 3). Un beige claro bajaría aún más el contraste, y achicar la letra empeora la lectura.</div>
+</section>
+
+<section class="etask card" data-id="t4" data-pts="15" data-auto="match" data-title="Audiencia y contenido" data-lesson="Lección 3.1 · Funciones del contenido">
+ <h2>¿Qué contenido le sirve a cada persona?</h2>
+ <p>Para cada persona de la audiencia de Casa Nativa, elige la función del contenido y el formato que mejor responde a lo que necesita.</p>
+ <div style="padding:2px 0">
+  <div class="mrow"><span>Camila arrienda su primer departamento, no sabe qué tamaño de jarrón elegir para su mesa de centro.</span><select data-ans="edu"><option value="edu">Educar · carrusel paso a paso</option><option value="ins">Inspirar · reel de ambiente</option><option value="con">Confianza · testimonios</option><option value="act">Activar · oferta y acción clara</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Andrés sigue la cuenta hace meses y busca ideas para renovar su terraza este verano.</span><select data-ans="ins"><option value="edu">Educar · carrusel paso a paso</option><option value="ins">Inspirar · reel de ambiente</option><option value="con">Confianza · testimonios</option><option value="act">Activar · oferta y acción clara</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Paula duda de que los cojines sean realmente hechos a mano y de que lleguen bien por envío.</span><select data-ans="con"><option value="edu">Educar · carrusel paso a paso</option><option value="ins">Inspirar · reel de ambiente</option><option value="con">Confianza · testimonios</option><option value="act">Activar · oferta y acción clara</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Rosa ya guardó tres publicaciones de la manta de lana y está esperando el momento para comprarla.</span><select data-ans="act"><option value="edu">Educar · carrusel paso a paso</option><option value="ins">Inspirar · reel de ambiente</option><option value="con">Confianza · testimonios</option><option value="act">Activar · oferta y acción clara</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Jorge compró una manta de lana y pregunta cómo lavarla sin que se deforme.</span><select data-ans="edu"><option value="edu">Educar · carrusel paso a paso</option><option value="ins">Inspirar · reel de ambiente</option><option value="con">Confianza · testimonios</option><option value="act">Activar · oferta y acción clara</option></select><span class="mk"></span></div>
+ </div>
+ <div class="why"><h4>Por qué</h4>El contenido se elige según la necesidad o la duda de la persona. Quien no sabe cómo elegir o cuidar un producto necesita <b>educar</b> (un carrusel paso a paso se guarda y se consulta). Quien busca ideas necesita <b>inspirar</b>. Quien desconfía de la calidad o del envío necesita <b>generar confianza</b> con procesos reales y opiniones de clientas. Quien ya decidió necesita <b>activar</b>: una razón para hacerlo ahora y una acción clara.</div>
+</section>
+
+<section class="etask card" data-id="t5" data-pts="15" data-auto="order" data-title="Pasos para publicar" data-lesson="Lección 3.1 y 3.2 · Del objetivo a la medición">
+ <h2>Ordena el proceso de la próxima publicación</h2>
+ <p>Marcela preparará una publicación sobre la nueva colección de cestos. Ordena los pasos del primero al último.</p>
+ <ol class="ord">
+  <li data-pos="1">Definir el objetivo: que personas que decoran espacios pequeños consulten por los cestos medianos.</li>
+  <li data-pos="2">Escribir el mensaje principal y la llamada a la acción: “Ordena sin recargar · Escríbenos por WhatsApp”.</li>
+  <li data-pos="3">Diseñar en Canva con la paleta, las dos tipografías de la marca y una foto protagonista.</li>
+  <li data-pos="4">Revisar accesibilidad: contraste, tamaño legible en el celular, estados con texto y texto alternativo.</li>
+  <li data-pos="5">Publicar en el día y horario planificados en el calendario.</li>
+  <li data-pos="6">Medir guardados, consultas y ventas, y ajustar la siguiente publicación.</li>
+ </ol>
+ <div class="why"><h4>Por qué</h4>Sin un <b>objetivo</b> no sabes qué decir ni qué medir. El <b>mensaje</b> se define antes del diseño para que el diseño lo sirva (y no al revés). La <b>revisión de accesibilidad</b> va después de diseñar y antes de publicar, cuando todavía se puede corregir. Y <b>medir</b> cierra el ciclo: lo que aprendes alimenta la próxima pieza.</div>
+</section>
+
+<section class="etask card" data-id="t6" data-pts="10" data-auto="mc" data-title="Texto alternativo" data-lesson="Lección 3.2 · Accesibilidad">
+ <h2>Elige el mejor texto alternativo</h2>
+ <p>Marcela publicará esta foto en su perfil y en su tienda. El texto alternativo lo leen los lectores de pantalla de personas con baja visión. ¿Cuál es el mejor?</p>
+ <div class="alt-img"><div class="pic" aria-hidden="true">🏺</div><div class="muted">Foto: jarrón de greda color terracota de 30 cm con ramas de eucalipto, sobre un arrimo de madera junto a un sofá gris.</div></div>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="t6"> “Jarrón de greda terracota de 30 cm con ramas de eucalipto, sobre un arrimo de madera junto a un sofá gris.”</label>
+  <label class="opt"><input type="radio" name="t6"> “jarron_final_v3_OK.jpg”</label>
+  <label class="opt"><input type="radio" name="t6"> “Jarrón decoración artesanía hecho a mano Chile oferta barato comprar jarrones online envío gratis.”</label>
+  <label class="opt"><input type="radio" name="t6"> “Imagen de nuestro hermoso producto estrella 😍”</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Un buen texto alternativo describe lo que muestra la imagen y lo que importa para entenderla (producto, color, tamaño y contexto) en una o dos frases. El nombre del archivo no describe nada, la lista de palabras clave es ilegible al escucharla y “producto estrella” no dice qué es.</div>
+</section>
+
+<section class="etask card" data-id="t7" data-pts="10" data-auto="multi" data-title="Calendario de contenidos" data-lesson="Lección 3.1 · Estrategia de contenidos">
+ <h2>Arma el calendario de noviembre</h2>
+ <p>Marcela tiene unas 3 horas a la semana para redes. Quiere más consultas de personas que decoran espacios pequeños y vender su colección de Navidad desde fines de noviembre. Marca <b>todas</b> las decisiones adecuadas.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> Publicar 3 veces por semana, una frecuencia que puede sostener todo el mes.</label>
+  <label class="opt" data-ok><input type="checkbox"> Combinar en el mes contenidos que educan, inspiran, generan confianza y activan.</label>
+  <label class="opt" data-ok><input type="checkbox"> Crear 2 o 3 plantillas con la paleta y las tipografías de la marca para reutilizarlas.</label>
+  <label class="opt" data-ok><input type="checkbox"> Dejar las publicaciones que activan (oferta y llamada a la acción) para la última semana, antes de Navidad.</label>
+  <label class="opt"><input type="checkbox"> Publicar una promoción todos los días para mantener la atención.</label>
+  <label class="opt"><input type="checkbox"> Decidir cada mañana qué publicar, según el ánimo del día.</label>
+  <label class="opt"><input type="checkbox"> Cambiar los colores y tipografías en cada publicación para que el perfil no se vea repetido.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Un calendario útil es <b>sostenible</b> (una frecuencia que se puede cumplir), <b>variado</b> en funciones (no solo promociones), <b>consistente</b> con la marca (plantillas reutilizables) y <b>ordenado</b> según el objetivo: primero reducir dudas e inspirar, después activar cerca de la fecha clave. Promociones diarias desgastan, improvisar impide planificar y cambiar de estilo en cada pieza dificulta que reconozcan la marca. Cada acierto suma y cada marca errónea descuenta.</div>
+</section>

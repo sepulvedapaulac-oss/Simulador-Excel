@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Diseña un flujo simple de atención automática</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Inter,Arial,sans-serif;color:#1f2a30}
+#bg{position:absolute;inset:0;background:linear-gradient(135deg,#123b3a 0%,#1d5c58 50%,#5a3a22 100%)}
+#note{position:absolute;left:40px;top:18px;font-size:19px;color:rgba(255,255,255,.88);background:rgba(0,0,0,.25);padding:7px 16px;border-radius:18px;z-index:5}
+#sc{position:absolute;inset:0}
+/* lienzo del flujo */
+.cv{position:absolute;left:40px;top:66px;width:1280px;height:880px;border-radius:18px;background:#f7f5f1;background-image:radial-gradient(#d9d3c7 1.4px,transparent 1.4px);background-size:26px 26px;box-shadow:0 30px 60px rgba(0,0,0,.35);overflow:hidden}
+.cvh{height:52px;background:#fff;border-bottom:1px solid #e6e1d8;display:flex;align-items:center;gap:12px;padding:0 20px;font-size:17px;font-weight:700;color:#3a2a20}
+.cvh span{font-weight:500;color:#8a7b6c;font-size:15px}
+.nd{position:absolute;background:#fff;border:2px solid #d8d0c3;border-radius:14px;padding:12px 14px;font-size:17px;line-height:1.3;box-shadow:0 3px 8px rgba(0,0,0,.06);transition:none}
+.nd small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;color:#8a7b6c;margin-bottom:4px}
+.nd.act{border-color:#1f7a6d;box-shadow:0 0 0 5px rgba(31,122,109,.18)}
+.nd.hum{background:#fff4e8;border-color:#B5573B}.nd.hum.act{box-shadow:0 0 0 5px rgba(181,87,59,.22)}
+.nd.exc{background:#fdecec;border-color:#d64545}
+.nd.opt{text-align:center;font-weight:700;background:#eaf5f2;border-color:#9cc9bf}
+svg.ln{position:absolute;inset:0;pointer-events:none}
+/* teléfono */
+.phone{position:absolute;left:1390px;top:80px;width:430px;height:860px;border-radius:54px;background:#111;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.scr{width:100%;height:100%;border-radius:42px;background:#efe9e1;overflow:hidden;position:relative}
+.ch{position:absolute;left:0;right:0;top:0;height:104px;background:#1f5c55;color:#fff;display:flex;align-items:flex-end;gap:12px;padding:0 18px 14px}
+.ch .av{width:44px;height:44px;border-radius:50%;background:#F3EBDD;border:2px solid #B5573B;display:grid;place-items:center;color:#B5573B;font-weight:800;font-size:15px}
+.ch b{font-size:19px}.ch small{display:block;font-size:13px;opacity:.85;font-weight:500}
+.msgs{position:absolute;left:0;right:0;top:104px;bottom:72px;padding:14px 12px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;overflow:hidden}
+.b{max-width:84%;padding:10px 13px;border-radius:14px;font-size:16px;line-height:1.35;box-shadow:0 1px 1px rgba(0,0,0,.1);position:relative}
+.b.bot{background:#fff;align-self:flex-start;border-top-left-radius:4px}
+.b.usr{background:#d7f0e6;align-self:flex-end;border-top-right-radius:4px}
+.b.agt{background:#fff4e8;align-self:flex-start;border:1.5px solid #e9c2a8;border-top-left-radius:4px}
+.b .tg{display:block;font-size:11px;font-weight:700;color:#1f7a6d;margin-bottom:3px;letter-spacing:.04em}
+.b.agt .tg{color:#B5573B}
+.qr{display:flex;flex-direction:column;gap:6px;align-self:flex-start;width:84%}
+.qr span{background:#fff;border:1.5px solid #1f7a6d;color:#1f7a6d;border-radius:18px;padding:8px 12px;text-align:center;font-weight:700;font-size:15px}
+.qr span.on{background:#1f7a6d;color:#fff}
+.inp{position:absolute;left:12px;right:12px;bottom:14px;height:46px;border-radius:23px;background:#fff;display:flex;align-items:center;padding:0 16px;font-size:15px;color:#8a8d91}
+/* tarjetas */
+.cardw{position:absolute;background:#fff;border-radius:24px;padding:28px 34px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.cardw h3{font-size:36px;margin-bottom:10px}.cardw p{font-size:25px;line-height:1.35;color:#3c4a55}
+.chk{display:grid;gap:24px;width:1250px;margin:0 auto}
+.ci{font-size:42px;font-weight:700;padding:26px 32px;border-radius:20px;background:rgba(255,255,255,.12);display:flex;gap:24px;align-items:center;color:#fff}
+.box{width:58px;height:58px;border-radius:14px;border:4px solid #9fe0d0;display:grid;place-items:center;font-size:38px;color:#123b3a;flex:none}.box.on{background:#9fe0d0}
+.ci small{margin-left:auto;font-size:26px;font-weight:600;opacity:.8}
+.step{position:absolute;width:300px;height:200px;border-radius:24px;background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.25);color:#fff;text-align:center;padding:26px 16px}
+.step.on{background:#fff;color:#123b3a;border-color:#ffd60a}.step .ic{font-size:58px}.step b{display:block;font-size:30px;margin-top:10px}
+/* destacado, cursor y subtítulos */
+#hl{position:absolute;border:5px solid #ffd60a;border-radius:12px;box-shadow:0 0 0 4000px rgba(5,15,15,.32);z-index:80;display:none}
+#hlLabel{position:absolute;background:#ffd60a;color:#1a1a1a;font-weight:800;font-size:23px;padding:8px 18px;border-radius:22px;z-index:81;display:none;white-space:nowrap}
+#cursor{position:absolute;z-index:100;width:0;height:0}
+#cursor .halo{position:absolute;left:-26px;top:-26px;width:52px;height:52px;border-radius:50%;background:rgba(255,214,10,.45);border:3px solid rgba(255,190,0,.9)}
+#ripple{position:absolute;z-index:99;border:5px solid #ffbe00;border-radius:50%;display:none}
+#sub{position:absolute;left:150px;right:150px;bottom:22px;text-align:center;z-index:120}
+#sub span{display:inline-block;background:rgba(8,18,18,.9);color:#fff;font-size:33px;font-weight:600;line-height:1.35;padding:12px 28px;border-radius:16px}
+#sub span:empty{display:none}
+</style></head>
+<body>
+<div id="bg"></div>
+<div id="note">Simulación con fines educativos · Casa Nativa es una empresa ficticia</div>
+<section id="sc"></section>
+<div id="hl"></div><div id="hlLabel"></div><div id="ripple"></div>
+<div id="cursor"><div class="halo"></div></div>
+<div id="sub"><span></span></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),ease=t=>t*t*(3-2*t),seg=(f,a,b)=>clamp((f-a)/(b-a),0,1);
+const typed=(s,f,a,b)=>s.slice(0,Math.round(s.length*seg(f,a,b)));
+/* nodos del flujo (coordenadas dentro del lienzo) */
+const N={
+ st:{x:520,y:72,w:240,h:56,c:'',t:'💬 El cliente escribe',s:'INICIO'},
+ gr:{x:380,y:160,w:520,h:84,c:'',t:'¡Hola! Soy el asistente de Casa Nativa. ¿En qué podemos ayudarte?',s:'SALUDO · RESPUESTA AUTOMÁTICA'},
+ o1:{x:30,y:290,w:270,h:56,c:'opt',t:'1 · Productos'},o2:{x:340,y:290,w:270,h:56,c:'opt',t:'2 · Medios de pago'},o3:{x:650,y:290,w:270,h:56,c:'opt',t:'3 · Despachos'},o4:{x:960,y:290,w:290,h:56,c:'opt',t:'4 · Hablar con una persona'},
+ r1:{x:30,y:390,w:270,h:96,c:'',t:'Catálogo + “¿te ayudamos a elegir?”',s:'RESPUESTA'},r2:{x:340,y:390,w:270,h:96,c:'',t:'Tarjeta, transferencia o pago en tienda',s:'RESPUESTA'},r3:{x:650,y:390,w:270,h:96,c:'',t:'Cobertura + plazos + condiciones',s:'RESPUESTA'},
+ dc:{x:30,y:540,w:890,h:70,c:'',t:'¿Necesitas algo más?  →  Volver al menú · Hablar con alguien · Finalizar',s:'NUEVA DECISIÓN'},
+ ex:{x:30,y:680,w:560,h:86,c:'exc',t:'“Mi pedido llegó quebrado y lo necesito mañana”',s:'CASO DE EXCEPCIÓN · NO ES CONSULTA ESTÁNDAR'},
+ hu:{x:960,y:390,w:290,h:220,c:'hum',t:'🙋 Atención humana<br><span style="font-size:15px;color:#6b5a4c">Recibe el contexto: pedido, problema y urgencia</span>',s:'DERIVACIÓN'}};
+const E=[['st','gr'],['gr','o1'],['gr','o2'],['gr','o3'],['gr','o4'],['o1','r1'],['o2','r2'],['o3','r3'],['o4','hu'],['r1','dc'],['r2','dc'],['r3','dc'],['dc','hu'],['ex','hu']];
+function canvas(vis,act={},op={},title='Flujo de atención · Casa Nativa'){const V=new Set(vis);
+ const ln=E.filter(e=>V.has(e[0])&&V.has(e[1])).map(([a,b])=>{const A=N[a],B=N[b];let x1=A.x+A.w/2,y1=A.y+A.h,x2=B.x+B.w/2,y2=B.y;
+   if(b==='hu'&&(a==='dc'||a==='ex')){x1=A.x+A.w;y1=A.y+A.h/2;x2=B.x;y2=a==='ex'?B.y+B.h-20:B.y+B.h/2+30}
+   const on=act[a]&&act[b];const my=(y1+y2)/2;const d=(a==='dc'||a==='ex')&&b==='hu'?`M${x1},${y1} C${x1+60},${y1} ${x2-60},${y2} ${x2},${y2}`:`M${x1},${y1} C${x1},${my} ${x2},${my} ${x2},${y2}`;
+   return `<path d="${d}" fill="none" stroke="${on?(b==='hu'?'#B5573B':'#1f7a6d'):'#c4bbad'}" stroke-width="${on?5:3}" ${on?'':'stroke-dasharray="0"'} marker-end="url(#ar${on?1:0})" opacity="${op[b]??1}"/>`}).join('');
+ return `<div class="cv"><div class="cvh">🧭 ${title}<span>· 4 opciones · salida a una persona</span></div><div style="position:absolute;inset:52px 0 0 0">
+ <svg class="ln" viewBox="0 0 1280 828" width="1280" height="828"><defs><marker id="ar0" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c4bbad"/></marker><marker id="ar1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1f7a6d"/></marker></defs>${ln}</svg>
+ ${vis.map(k=>{const n=N[k];return `<div class="nd ${n.c} ${act[k]?'act':''}" id="n_${k}" style="left:${n.x}px;top:${n.y}px;width:${n.w}px;min-height:${n.h}px;opacity:${op[k]??1}">${n.s?`<small>${n.s}</small>`:''}${n.t}</div>`}).join('')}</div></div>`}
+/* conversación */
+function phone(items,typing=''){return `<div class="phone"><div class="scr"><div class="ch"><span class="av">CN</span><div><b>Casa Nativa</b><small>Respuestas automáticas · equipo de 10:00 a 19:00</small></div></div><div class="msgs">${items.join('')}</div><div class="inp">${typing||'Escribe un mensaje'}</div></div></div>`}
+const bot=(t,id='',tag='Asistente automático')=>`<div class="b bot" ${id?`id="${id}"`:''}><span class="tg">${tag}</span>${t}</div>`;
+const usr=(t,id='')=>`<div class="b usr" ${id?`id="${id}"`:''}>${t}</div>`;
+const agt=(t,id='')=>`<div class="b agt" ${id?`id="${id}"`:''}><span class="tg">Marcela · Casa Nativa</span>${t}</div>`;
+const qr=(opts,on=-1,id='')=>`<div class="qr" ${id?`id="${id}"`:''}>${opts.map((o,i)=>`<span class="${i===on?'on':''}" id="${id}${i}">${o}</span>`).join('')}</div>`;
+const GREET='¡Hola! Soy el asistente automático de Casa Nativa 🌿 Elige una opción para ayudarte:';
+const MENU=['🛍️ Productos','💳 Medios de pago','🚚 Despachos','🙋 Hablar con una persona'];
+const vis=(f,list)=>list.filter(x=>f>=x[1]).map(x=>x[0]);
+/* utilidades */
+let CUR={x:1600,y:700};
+function pos(sel,dx=.5,dy=.5){const e=$(sel);if(!e)return CUR;const r=e.getBoundingClientRect();return {x:r.left+r.width*dx,y:r.top+r.height*dy}}
+function tap(f,T,t0,sel){const p=pos(sel);const show=f>=t0-.08&&f<t0+.1;const c=$('#cursor');c.style.display=show?'block':'none';c.style.left=p.x+'px';c.style.top=p.y+'px';
+  const r=$('#ripple');const dt=(f-t0)*T;if(dt>=0&&dt<.45){const s=20+dt*150;r.style.display='block';r.style.width=r.style.height=s+'px';r.style.left=(p.x-s/2)+'px';r.style.top=(p.y-s/2)+'px';r.style.opacity=1-dt/.45}}
+function noCur(){$('#cursor').style.display='none';$('#ripple').style.display='none'}
+function hl(sel,label,pad=8){const h=$('#hl'),l=$('#hlLabel');const e=sel&&$(sel);if(!e){h.style.display=l.style.display='none';return}
+  const r=e.getBoundingClientRect();h.style.display='block';h.style.left=(r.left-pad)+'px';h.style.top=(r.top-pad)+'px';h.style.width=(r.width+2*pad)+'px';h.style.height=(r.height+2*pad)+'px';
+  if(label){l.style.display='block';l.textContent=label;const lw=l.offsetWidth;let x=r.left-pad,y=r.top-pad-52;if(y<70)y=r.bottom+pad+10;if(x+lw>1890)x=1890-lw;l.style.left=x+'px';l.style.top=y+'px'}else l.style.display='none'}
+const pick=(f,arr)=>{let r=null;for(const a of arr)if(f>=a[0]&&f<a[1])r=a;return r};
+function sub(t){$('#sub span').textContent=t||''}
+const SC={};
+/* 1 · consultas repetitivas */
+SC[1]=(f,T)=>{const t=1-seg(f,.3,.36);const Q=['¿A qué hora abren?','¿Hacen despacho a regiones?','¿Aceptan transferencia?','¿Tienen stock del jarrón grande?','¿Dónde están ubicados?','¿Cuánto demora el envío?','¿Puedo pagar con tarjeta?','¿Abren el sábado?','¿Cuánto cuesta el despacho?','¿Hay cojines en verde?'];
+  $('#sc').innerHTML=`<div style="position:absolute;inset:0;background:url(img/m10_hero.jpg) center/cover;opacity:${t}"></div><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,59,58,.96),rgba(18,59,58,.75) 60%,rgba(18,59,58,.3));opacity:${t}"></div>
+  <div style="position:absolute;left:120px;top:330px;width:1050px;color:#fff;opacity:${t}"><div style="font-size:26px;font-weight:700;color:#9fe0d0;margin-bottom:14px">FLUJO DE DECISIONES · SIMULACIÓN DE CONVERSACIÓN</div><div style="font-size:76px;font-weight:800;line-height:1.06">Diseña un flujo simple de atención automática</div></div>
+  ${Q.map((q,i)=>{const a=seg(f,.36+i*.05,.39+i*.05);return `<div class="b usr" style="position:absolute;left:${120+(i%3)*560+(i>5?120:0)}px;top:${130+Math.floor(i/3)*190+(i%2)*40}px;font-size:28px;padding:16px 22px;opacity:${a};transform:scale(${.8+.2*a})">${q}<span style="display:block;font-size:16px;color:#5f6b72;margin-top:4px">${['×9','×7','×12','×5','×6','×8','×10','×4','×7','×3'][i]} hoy</span></div>`}).join('')}`;
+  hl(null);noCur()};
+/* 2 · mapa de decisiones */
+SC[2]=(f,T)=>{const S=[['💬','Consulta',.06],['🔎','Identificar necesidad',.16],['💡','Responder',.26],['⚖️','¿Resolver o derivar?',.36]];
+  const tr=seg(f,.66,.68);
+  $('#sc').innerHTML=`<div style="position:absolute;left:0;right:0;top:110px;text-align:center;color:#fff;font-size:50px;font-weight:800;opacity:${1-tr}">Un pequeño mapa de decisiones</div>
+  <div style="opacity:${1-tr}">${S.map((s,i)=>`<div class="step ${f>=s[2]?'on':''}" style="left:${110+i*440}px;top:330px"><div class="ic">${s[0]}</div><b>${s[1]}</b></div>${i<3?`<div style="position:absolute;left:${110+i*440+312}px;top:395px;color:#ffd60a;font-size:56px;font-weight:800">→</div>`:''}`).join('')}
+  <div class="cardw" style="left:1070px;top:600px;width:300px;padding:18px 22px;opacity:${seg(f,.44,.48)};text-align:center"><b style="font-size:26px;color:#1f7a6d">✓ Resuelve</b></div><div class="cardw" style="left:1400px;top:600px;width:300px;padding:18px 22px;opacity:${seg(f,.5,.54)};text-align:center"><b style="font-size:26px;color:#B5573B">🙋 Deriva a una persona</b></div></div>
+  <div style="opacity:${tr}">${canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3','hu'],{o4:1,hu:1},{},'Un árbol de decisiones')}</div>`;
+  hl(f>=.82&&f<1?'#n_hu':null,'Siempre una rama hacia una persona');noCur()};
+/* 3 · mensaje inicial */
+SC[3]=(f,T)=>{const v=vis(f,[['st',0],['gr',.04],['o1',.1],['o2',.12],['o3',.14],['o4',.16]]);
+  const items=f<.06?[]:[bot(GREET,'mg'),qr(MENU,-1,'mq')];
+  $('#sc').innerHTML=canvas(v,{gr:1,o1:1,o2:1,o3:1,o4:1})+phone(items)+
+   `<div class="cardw" id="bad" style="left:560px;top:520px;width:740px;padding:22px 28px;opacity:${seg(f,.4,.44)*(1-seg(f,.6,.64))};border:4px solid #d64545"><b style="font-size:24px;color:#d64545">✕ Menú demasiado largo</b><div style="font-size:18px;color:#5f6b72;margin-top:8px;line-height:1.5">1 Catálogo · 2 Ofertas · 3 Precios · 4 Pagos · 5 Transferencias · 6 Despachos Santiago · 7 Despachos regiones · 8 Cambios · 9 Devoluciones · 10 Horarios · 11 Ubicación · 12 Otro…</div></div>`;
+  const h=pick(f,[[.18,.4,'#mq','Pocas opciones y muy claras'],[.66,1,'#mg','Tono de marca y aviso de respuesta automática']]);hl(h?h[2]:null,h?h[3]:'');noCur()};
+/* 4 · despachos */
+SC[4]=(f,T)=>{const sel=f>=.14;const ans='🚚 Despachamos a todo Chile.<br>• Santiago: 2 a 3 días hábiles, gratis sobre $40.000.<br>• Regiones: 3 a 6 días hábiles.<br>Te enviamos el código de seguimiento al despachar.';
+  const items=[bot(GREET),qr(MENU,sel?2:-1,'mq')].concat(sel?[usr('🚚 Despachos')]:[]).concat(f>=.22?[bot(ans,'ans')]:[]);
+  $('#sc').innerHTML=canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3'],sel?{gr:1,o3:1,r3:1}:{gr:1},{})+phone(items);
+  tap(f,T,.12,'#mq2');
+  const h=pick(f,[[.3,.55,'#ans','Cobertura, plazos y condiciones'],[.6,1,'#n_r3','Repetitiva y predecible → se automatiza']]);hl(h?h[2]:null,h?h[3]:'')};
+/* 5 · medios de pago */
+SC[5]=(f,T)=>{const sel=f>=.14;const ans='💳 Puedes pagar con:<br>• Tarjeta de débito o crédito<br>• Transferencia bancaria<br>• Pago en tienda (Ñuñoa)';
+  const items=[bot('¿Necesitas algo más?'),qr(['📋 Volver al menú','🙋 Hablar con alguien','✅ Finalizar'],sel?0:-1,'nq')].concat(sel?[usr('📋 Volver al menú'),qr(MENU,f>=.3?1:-1,'mq')]:[]).concat(f>=.38?[bot(ans,'ans')]:[]);
+  $('#sc').innerHTML=canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3'],f>=.3?{gr:1,o2:1,r2:1}:{gr:1},{})+phone(items);
+  if(f<.24)tap(f,T,.12,'#nq0');else tap(f,T,.3,'#mq1');
+  const h=pick(f,[[.44,.62,'#ans','Sin intervención humana'],[.66,1,'#ans','Si cambian, actualiza de inmediato']]);hl(h?h[2]:null,h?h[3]:'')};
+/* 6 · nueva decisión */
+SC[6]=(f,T)=>{const p=f>=.42;let items;
+  if(!p)items=[bot('💳 Puedes pagar con tarjeta, transferencia o en tienda.'),bot('¿Necesitas algo más?','dq'),qr(['📋 Volver al menú','🙋 Hablar con alguien','✅ Finalizar'],-1,'nq')];
+  else items=[usr('🛍️ Productos'),bot(`<div style="display:flex;gap:8px;margin-bottom:6px"><span style="width:84px;height:64px;border-radius:8px;background:url(img/m7_living.jpg) center/cover"></span><span style="font-size:14px">Colección Living<br><b>Ver catálogo →</b></span></div>¿Quieres que alguien del equipo te ayude a elegir?`,'cat'),qr(['🙋 Sí, por favor','No, gracias'],f>=.72?0:-1,'yq')].concat(f>=.76?[bot('¡Perfecto! Te comunicamos con Marcela. Ya le dejamos tu consulta sobre la Colección Living.','pass')]:[]);
+  $('#sc').innerHTML=canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3','dc','hu'],p?{gr:1,o1:1,r1:1,dc:f>=.6,hu:f>=.74}:{r2:1,dc:1},{})+phone(items);
+  if(p)tap(f,T,.7,'#yq0');else noCur();
+  const h=pick(f,[[.06,.24,'#dq','También ayuda a avanzar'],[.24,.4,'#n_dc','Nueva decisión: sin callejones sin salida'],[.5,.68,'#cat','Productos → ¿te ayudamos a elegir?'],[.8,1,'#n_hu','Pasa al equipo']]);hl(h?h[2]:null,h?h[3]:'')};
+/* 7 · caso complejo */
+SC[7]=(f,T)=>{const items=[bot(GREET),qr(MENU,-1,'mq')].concat(f>=.1?[usr(`<span style="display:block;height:110px;border-radius:8px;background:url(img/m10_quebrado.jpg) center/cover;margin-bottom:6px"></span>${typed('Mi pedido #CN-1052 llegó quebrado y lo necesito mañana 😞',f,.12,.3)}`,'um')]:[]);
+  $('#sc').innerHTML=canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3','dc','ex'],{ex:f>=.4},{ex:seg(f,.36,.4)})+phone(items);
+  const h=pick(f,[[.34,.6,'#um','Dañado · molestia · urgencia'],[.62,1,'#n_ex','El flujo reconoce su límite']]);hl(h?h[2]:null,h?h[3]:'');noCur()};
+/* 8 · derivación con contexto */
+SC[8]=(f,T)=>{const card=`<div class="cardw" id="ctx" style="left:560px;top:430px;width:720px;padding:22px 28px;opacity:${seg(f,.36,.42)}"><div style="display:flex;gap:18px;align-items:center"><span style="width:110px;height:110px;border-radius:14px;background:url(img/m10_humano.jpg) center/cover;flex:none"></span><div><div style="font-size:15px;font-weight:700;color:#B5573B;letter-spacing:.06em">NUEVA DERIVACIÓN · PRIORIDAD ALTA</div><div style="font-size:22px;font-weight:800">Para: Marcela</div></div></div>
+   <div style="font-size:21px;line-height:1.6;margin-top:12px">📦 Pedido <b>#CN-1052</b><br>💔 Jarrón quebrado <span style="color:#8a7b6c">(foto adjunta)</span><br>⏰ Lo necesita <b>mañana</b> · regalo<br>🤖 El asistente ya informó la derivación</div></div>`;
+  $('#sc').innerHTML=canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3','dc','ex','hu'],{ex:1,hu:f>=.12},{})+phone([usr('<span style="display:block;height:110px;border-radius:8px;background:url(img/m10_quebrado.jpg) center/cover;margin-bottom:6px"></span>Mi pedido #CN-1052 llegó quebrado y lo necesito mañana 😞')])+card;
+  const h=pick(f,[[.14,.34,'#n_hu','Derivar a una persona'],[.46,1,'#ctx','El equipo recibe el contexto']]);hl(h?h[2]:null,h?h[3]:'');noCur()};
+/* 9 · mensaje de derivación */
+SC[9]=(f,T)=>{const items=[usr('Mi pedido #CN-1052 llegó quebrado y lo necesito mañana 😞')].concat(f>=.04?[bot('Entendemos 💛. Vamos a derivar tu consulta a una persona de nuestro equipo para ayudarte mejor. Te escribiremos hoy antes de las 19:00.','dm')]:[]).concat(f>=.86?[agt('Hola, soy Marcela. Lamento mucho lo ocurrido. Te envío un jarrón nuevo mañana a primera hora 🙏','am')]:[]);
+  $('#sc').innerHTML=canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3','dc','ex','hu'],{ex:1,hu:1},{})+phone(items)+
+   `<div class="cardw" id="bad" style="left:560px;top:450px;width:720px;padding:22px 28px;border:4px solid #d64545;opacity:${seg(f,.5,.54)*(1-seg(f,.84,.88))}"><b style="font-size:24px;color:#d64545">✕ Evita</b><div style="font-size:23px;margin-top:10px;line-height:1.7">“Opción no válida.”<br>“Escriba nuevamente en horario de atención.”</div></div>`;
+  const h=pick(f,[[.08,.48,'#dm','Puente, no barrera'],[.68,.84,'#dm','Fuera de horario: indica cuándo'],[.88,1,'#am','La persona continúa con contexto']]);hl(h?h[2]:null,h?h[3]:'');noCur()};
+/* 10 · flujo completo */
+SC[10]=(f,T)=>{const order=[['st',.02],['gr',.08],['o1',.16],['o2',.16],['o3',.16],['o4',.16],['r1',.28],['r2',.28],['r3',.28],['dc',.4],['hu',.52]];const act={};for(const o of order)if(f>=o[1])act[o[0]]=1;
+  $('#sc').innerHTML=`<div style="position:absolute;left:0;top:0;width:1920px;height:1080px">${canvas(['st','gr','o1','o2','o3','o4','r1','r2','r3','dc','hu'],act,{}).replace('class="cv"','class="cv" style="left:320px;width:1280px"')}</div>
+  <div style="position:absolute;left:30px;top:120px;display:grid;gap:14px">${[['Saludo',.08],['Opciones',.16],['Respuesta',.28],['Nueva decisión',.4],['Salida a una persona',.52]].map(x=>`<div class="pill" style="position:relative;background:#fff;border-radius:20px;padding:10px 16px;font-size:20px;font-weight:700;width:270px;opacity:${seg(f,x[1],x[1]+.04)}">✓ ${x[0]}</div>`).join('')}</div>
+  <div class="cardw" style="right:30px;top:520px;width:270px;padding:18px 20px;opacity:${seg(f,.68,.72)}"><b style="font-size:24px;color:#1f7a6d">Más simple = más fácil de mantener</b></div>`;
+  hl(null);noCur()};
+/* 11 · checklist */
+SC[11]=(f,T)=>{const it=[['Respuestas actualizadas','Precios, plazos y pagos'],['Opciones fáciles de entender','Pocas y claras'],['Salida hacia una persona','Siempre disponible'],['Tono coherente con la marca','Cercano y claro']];
+  $('#sc').innerHTML=`<div style="position:absolute;left:0;right:0;top:90px;text-align:center;color:#fff;font-size:52px;font-weight:800">Antes de implementar un flujo</div><div style="position:absolute;left:0;right:0;top:210px"><div class="chk">${it.map((x,i)=>{const on=f>=.12+i*.13;return `<div class="ci" style="opacity:${seg(f,.06+i*.13,.1+i*.13)}"><span class="box ${on?'on':''}">${on?'✓':''}</span>${x[0]}<small>${x[1]}</small></div>`}).join('')}</div></div>
+  <div style="position:absolute;left:0;right:0;top:830px;text-align:center;color:#ffd60a;font-size:30px;font-weight:700;opacity:${seg(f,.72,.76)}">🔁 Revisa cuando cambien precios, plazos o pagos · 🧪 Pruébalo como cliente</div>`;
+  hl(null);noCur()};
+/* 12 · automatizar todo vs automatizar bien */
+SC[12]=(f,T)=>{const C=[['😠','Automatizar todo','#d64545',['Reclamos con respuestas rígidas','Clientes frustrados','Excepciones sin salida'],.04],['🤝','Automatizar bien','#1f7a6d',['Preguntas frecuentes al instante','Salida a una persona','El equipo llega a tiempo a lo importante'],.3]];
+  $('#sc').innerHTML=`<div style="position:absolute;left:0;right:0;top:90px;text-align:center;color:#fff;font-size:50px;font-weight:800">Automatizar bien no es automatizar todo</div>${C.map((c,i)=>`<div class="cardw" style="left:${150+i*830}px;top:210px;width:790px;height:590px;border-top:14px solid ${c[2]};opacity:${seg(f,c[4],c[4]+.05)}"><div style="font-size:80px">${c[0]}</div><h3 style="color:${c[2]};font-size:44px;margin:10px 0 18px">${c[1]}</h3>${c[3].map((x,j)=>`<p style="font-size:30px;padding:10px 0;opacity:${seg(f,c[4]+.08+j*.06,c[4]+.11+j*.06)}">${i?'✓':'✕'} ${x}</p>`).join('')}</div>`).join('')}`;
+  hl(null);noCur()};
+/* 13 · final */
+SC[13]=(f,T)=>{$('#sc').innerHTML=`<div style="position:absolute;inset:0;background:url(img/m10_hero.jpg) center/cover"></div><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,59,58,.96),rgba(18,59,58,.85) 55%,rgba(18,59,58,.35))"></div>
+  <div style="position:absolute;left:120px;top:250px;width:1100px;color:#fff;opacity:${seg(f,.03,.1)}"><div style="font-size:72px;font-weight:800;line-height:1.1">Menos tiempo en respuestas repetidas.<br><span style="color:#9fe0d0">Más tiempo en conversaciones importantes.</span></div>
+  <div style="font-size:32px;margin-top:34px;opacity:${seg(f,.5,.56)}">Empieza con una sola consulta frecuente, revisa si funciona y suma la siguiente.</div></div>`;
+  hl(null);noCur()};
+window.R=function(k,f,T,subtitle){$('#note').style.display=[3,4,5,6,7,8,9,10].includes(k)?'block':'none';SC[k](f,T);sub(subtitle)};
+</script>
+</body></html>

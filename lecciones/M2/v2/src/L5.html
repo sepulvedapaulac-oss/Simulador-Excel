@@ -1,0 +1,218 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa los tres datos del caso y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.2 · Caso de decisión</span>
+      <h1 class="reveal">¿Tienda propia o marketplace?</h1>
+      <p class="lead reveal">Marcela quiere comenzar a vender en línea con <strong>Casa Nativa</strong>. Elegir canal es elegir una estrategia. <strong>Haz clic en cada nota</strong> para conocer su situación.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">🛍️</span><span><span class="from">Nota 1 · Productos</span><span class="preview">25 productos estables…</span><span class="full">Vende 25 productos de decoración estables: jarrones de cerámica, cojines de lino, cestos y velas. Aún no sabe cuáles tienen más demanda.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">💰</span><span><span class="from">Nota 2 · Recursos</span><span class="preview">Presupuesto limitado…</span><span class="full">Tiene un presupuesto limitado, trabaja con una ayudante media jornada y quiere empezar a vender rápido.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🌿</span><span><span class="from">Nota 3 · Objetivo</span><span class="preview">Construir su marca…</span><span class="full">Le interesa llegar a nuevos clientes, pero también quiere construir su propia marca a largo plazo.</span></span><span class="badge">Dato</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela compara opciones en su portátil y un cuaderno en su taller de decoración" src="img/m5_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debería hacer Marcela antes de decidir?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Elegir el canal que usan las marcas más conocidas.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Analizar control, velocidad, alcance y capacidad operativa según su situación.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Abrir una tienda propia y tres marketplaces al mismo tiempo para no perder ninguna venta.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: una decisión prestada.</strong> <span class="fb-body">Lo que funciona para una marca grande puede no servir a una PYME con 25 productos y poco presupuesto. No existe un canal “mejor” para todas.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: más canales de los que puede operar.</strong> <span class="fb-body">Con una ayudante media jornada, gestionar cuatro catálogos, pagos y despachos genera errores y desgaste.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La decisión depende del nivel de control que necesita, sus recursos, el tipo de producto, su capacidad operativa y el alcance que busca. En esta lección aprenderás tomando decisiones.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Elegir canal es elegir una estrategia</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · CRITERIOS -->
+<section class="slide" data-title="Cuatro criterios" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Antes de decidir</span>
+  <h2>Cuatro criterios para elegir canal</h2>
+  <p>Cada criterio es una pregunta que debes responder sobre tu PYME. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Criterios revisados <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🎛️</div><strong>Control</strong><span>¿Cuánto necesito decidir yo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Marca, experiencia y datos</strong><span>Quién define el diseño, las reglas comerciales y el acceso a la información de los clientes.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⏱️</div><strong>Velocidad</strong><span>¿Qué tan rápido necesito vender?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Tiempo y complejidad</strong><span>Cuánto toma configurar el canal y comenzar a recibir pedidos.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📣</div><strong>Alcance</strong><span>¿Quién verá mis productos?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Tráfico y clientes</strong><span>Si el canal ya concentra compradores o si tendrás que atraerlos tú.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧰</div><strong>Capacidad</strong><span>¿Qué puedo operar bien?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Catálogo, pagos y despacho</strong><span>El canal correcto es el que tu equipo puede gestionar de forma sostenible.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · COMPARACIÓN -->
+<section class="slide" data-title="Comparación" data-audio="p04" data-gate="cls" data-gate-msg="Ubica las ocho características en su canal.">
+  <span class="eyebrow amber">Comparación</span>
+  <h2>Tienda propia vs. marketplace</h2>
+  <p><strong>Selecciona una característica</strong> y luego el canal al que corresponde. También puedes arrastrarla.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Características ubicadas <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="t" data-fb="En tu propia tienda decides el diseño, los textos y la experiencia." data-no="¿Dónde tienes más libertad para definir la marca?">Alto control de la marca</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="La plataforma ya concentra compradores buscando productos." data-no="¿Qué canal ya tiene visitantes antes de que tú llegues?">Tráfico inicial de la plataforma</button>
+      <button class="cardx" type="button" data-cat="t" data-fb="Una tienda propia requiere elegir plataforma, configurar pagos, despacho y diseño." data-no="¿Qué canal exige más configuración propia?">Requiere configuración inicial</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="El modelo de cobro habitual del marketplace son comisiones y cargos por venta." data-no="¿Dónde pagas un porcentaje por cada venta a la plataforma?">Comisiones y cargos por venta</button>
+      <button class="cardx" type="button" data-cat="t" data-fb="Con tienda propia tienes mayor control de los datos de tus clientes." data-no="¿Dónde los datos del cliente dependen menos de reglas de terceros?">Mayor control de los datos del cliente</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="Publicar en un marketplace suele ser más rápido que montar una tienda." data-no="¿Qué canal permite publicar productos más rápido?">Puesta en marcha más rápida</button>
+      <button class="cardx" type="button" data-cat="t" data-fb="Sin la vitrina de una plataforma, debes atraer visitas con marketing propio." data-no="¿En qué canal tú debes generar las visitas?">Debes generar tu propio tráfico</button>
+      <button class="cardx" type="button" data-cat="m" data-fb="Las reglas de publicación, comisiones y datos dependen de la plataforma." data-no="¿En qué canal las reglas las define otra empresa?">Reglas definidas por la plataforma</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="t" role="button" tabindex="0"><h3>🏠 Tienda propia</h3></div>
+      <div class="bin" data-cat="m" role="button" tabindex="0"><h3>🏬 Marketplace</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 5 · VERDADERO O FALSO -->
+<section class="slide" data-title="Ideas frecuentes" data-audio="p05" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow">Mitos y realidades</span>
+  <div class="grid-2">
+    <div>
+      <h2>¿Verdadero o falso?</h2>
+      <p>Hay muchas ideas sobre los canales de venta en línea. Decide si cada afirmación es <strong>verdadera o falsa</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="Cajas listas para despacho de pedidos de un marketplace en el taller" src="img/m5_marketplace.jpg"/></div>
+  </div>
+  <div class="tf" id="tf">
+    <div class="tf-prog"></div>
+    <div class="tf-claim"></div>
+    <div class="tf-btns"><button type="button" data-a="1">✓ Verdadero</button><button type="button" data-a="0">✕ Falso</button></div>
+    <div class="tf-exp"></div>
+  </div>
+</section>
+
+<!-- 6 · ÁRBOL DE DECISIÓN -->
+<section class="slide" data-title="Árbol de decisión" data-audio="p06" data-gate="ev" data-gate-msg="Revisa las cuatro preguntas del árbol.">
+  <span class="eyebrow violet">Herramienta</span>
+  <h2>Árbol simple de decisión</h2>
+  <p>Responde cada pregunta pensando en tu PYME. <strong>Haz clic en cada paso</strong> para ver qué camino sugiere.</p>
+  <div class="task" id="evTask">Preguntas revisadas <span class="tick" id="evTick">0 / 4</span></div>
+  <div class="evline four" data-gate="ev" data-panel="evPanel" data-tick="evTick" data-task="evTask">
+    <button class="evnode" type="button" data-t="1 · ¿Necesitas comenzar rápido y aprovechar tráfico existente?" data-d="Si la respuesta es sí, un <b>marketplace</b> puede ser una buena puerta de entrada para validar qué productos se venden, sin invertir primero en atraer visitas."><span class="t">1</span><small>Rapidez</small></button>
+    <button class="evnode" type="button" data-t="2 · ¿Tu marca ya tiene demanda propia?" data-d="Si los clientes ya buscan tu marca por su nombre, una <b>tienda propia</b> te ayuda a capturar mejor esa relación y a personalizar la experiencia."><span class="t">2</span><small>Demanda</small></button>
+    <button class="evnode" type="button" data-t="3 · ¿Tienes capacidad para gestionar catálogo, pagos, despacho y marketing?" data-d="Si la respuesta es no, <b>comienza de forma más simple</b>. Un canal que no puedes operar bien daña la experiencia del cliente."><span class="t">3</span><small>Capacidad</small></button>
+    <button class="evnode" type="button" data-t="4 · ¿Puedes operar más de un canal sin perder control?" data-d="Si la respuesta es sí, una <b>estrategia multicanal</b> puede combinar el alcance del marketplace con la autonomía de la tienda propia. Mantén stock y precios sincronizados."><span class="t">4</span><small>Multicanal</small></button>
+  </div>
+  <div class="dpanel" id="evPanel"><p class="hint">Selecciona una pregunta para ver el camino sugerido.</p></div>
+</section>
+
+<!-- 7 · COSTOS -->
+<section class="slide" data-title="Costos reales" data-audio="p07" data-gate="cloze" data-gate-msg="Completa las cuatro frases y presiona Comprobar.">
+  <span class="eyebrow amber">Costos</span>
+  <div class="grid-2">
+    <div>
+      <h2>Compara costos completos, no solo una tarifa</h2>
+      <p><strong>Completa cada frase</strong> eligiendo la opción correcta y luego presiona <strong>Comprobar</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="Portátil con una tienda en línea de decoración artesanal" src="img/m5_tienda.jpg"/></div>
+  </div>
+  <div class="cloze-box" data-gate="cloze" data-ok="Cada canal tiene costos distintos, pero ambos comparten costos operativos. Compara el costo total por venta, no solo la comisión." data-no="Revisa los espacios marcados en rojo: piensa quién cobra y por qué en cada canal.">
+    <div class="cloze"><b>🏬 Marketplace:</b> el costo principal son <select data-ans="b" aria-label="Costo marketplace"><option value="">…</option><option value="a">la plataforma y el marketing propio</option><option value="b">las comisiones y cargos de la plataforma</option><option value="c">ningún costo</option></select>.</div>
+    <div class="cloze"><b>🏠 Tienda propia:</b> pagas <select data-ans="a" aria-label="Costo tienda"><option value="">…</option><option value="a">plataforma, medios de pago y marketing</option><option value="b">solo el dominio web</option><option value="c">una comisión al marketplace</option></select>.</div>
+    <div class="cloze"><b>📦 En ambos canales:</b> debes considerar <select data-ans="c" aria-label="Costos comunes"><option value="">…</option><option value="a">solo el precio del producto</option><option value="b">el costo de los seguidores</option><option value="c">despacho, empaque y atención al cliente</option></select>.</div>
+    <div class="cloze"><b>📣 Tráfico:</b> en una tienda propia el tráfico inicial <select data-ans="b" aria-label="Tráfico"><option value="">…</option><option value="a">llega automáticamente</option><option value="b">debes generarlo tú</option><option value="c">lo entrega la pasarela de pago</option></select>.</div>
+    <button class="small-btn primary ccheck" type="button" style="margin-top:12px">Comprobar</button>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Una decisión que cambia con el tiempo</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Tengo poco presupuesto, todavía no tengo tráfico propio y necesito saber qué productos se venden más. ¿Por dónde parto?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela revisa opciones en su portátil" src="img/m5_hero.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · Marcela necesita comenzar a vender rápido</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Crear solo una tienda propia desde el primer día.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Comenzar con un marketplace para validar ventas.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Esperar hasta tener un presupuesto mayor.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una tienda sin visitas</div><div class="branch-body"><div><p>La tienda queda lista en un mes, pero casi nadie llega a ella. Una tienda propia puede convenir más adelante; hoy exige atraer tráfico y configurar muchos elementos.</p></div><div><p class="hint">Primero valida la demanda.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: meses sin aprender</div><div class="branch-body"><div><p>No vender en línea retrasa el aprendizaje comercial que Marcela necesita: qué productos se venden, a qué precio y a quién.</p></div><div><p class="hint">Empieza simple, pero empieza.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Un marketplace facilita una entrada rápida y permite validar la demanda aprovechando tráfico existente. En pocas semanas Marcela sabe cuáles son sus productos estrella.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Seis meses después:</strong> Casa Nativa tiene ventas recurrentes, clientes que buscan la marca por su nombre y una base de seguidores activa. Marcela quiere campañas propias, una experiencia más personalizada y mayor control de la relación con sus clientes.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debería hacer ahora?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Evaluar una tienda propia y mantener una estrategia multicanal.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Vender únicamente en el marketplace para siempre.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Cerrar el marketplace de inmediato.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: depender de reglas ajenas</div><div class="branch-body"><div><p>Depender de un solo canal limita el control y aumenta la vulnerabilidad ante cambios de reglas o comisiones.</p></div><div><p class="hint">Su marca ya tiene demanda propia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde una fuente de ventas</div><div class="branch-body"><div><p>Cerrar el canal que ya funciona elimina ventas sin necesidad, justo cuando la tienda propia todavía no tiene tráfico estable.</p></div><div><p class="hint">Sumar no siempre exige restar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>En esta etapa una tienda propia fortalece la marca y aumenta el control comercial, sin abandonar el canal que ya vende. La clave es poder operar ambos sin perder control de stock y precios.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Decide para una PYME real</h2>
+  <div class="story">Una PYME de tu rubro vende <b>40 productos</b>, trabaja con <b>dos personas</b> y casi no tiene seguidores. Su dueño propone: <b>(1)</b> invertir todo su presupuesto en una tienda propia con diseño a medida, o <b>(2)</b> publicar sus 10 productos más vendidos en un marketplace, medir durante tres meses y luego evaluar una tienda propia.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la propuesta 1 <b>no conviene hoy</b>: sin tráfico propio, la tienda tendría pocas visitas y consumiría todo el presupuesto. La propuesta 2 <b>sí conviene</b>: aprovecha el tráfico existente, se puede operar con dos personas y entrega datos para decidir. Cuando la marca tenga demanda propia, una tienda puede sumarse en una estrategia multicanal. Para tu propia PYME pregúntate: ¿necesito alcance rápido o control de marca?, ¿tengo capacidad para gestionar una tienda?, ¿mis clientes ya buscan mi marca?, ¿qué costos y comisiones puedo sostener?, ¿conviene un canal único o una combinación? La decisión correcta es la que tu PYME puede operar de forma sostenible.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.2</h2>
+    <p>Ya puedes comparar una tienda propia y un marketplace según control, velocidad, alcance y capacidad operativa, y decidir por etapas.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 2.3</b> verás qué ocurre después de la venta: del pago a la entrega.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar la comparación</button><button class="small-btn primary" type="button" data-goto="5">Repasar el árbol de decisión</button></div>
+    <div class="sources">Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

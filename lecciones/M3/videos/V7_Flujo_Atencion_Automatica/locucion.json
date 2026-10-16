@@ -1,0 +1,80 @@
+[
+{
+"id": "f01",
+"sc": 1,
+"escena": "Consultas repetitivas",
+"txt": "En el módulo anterior aprendimos a configurar un canal comercial. Ahora daremos un paso más: organizaremos algunas consultas frecuentes en un flujo automático de atención. Horarios, pagos, despachos y stock: las mismas preguntas llegan una y otra vez."
+},
+{
+"id": "f02",
+"sc": 2,
+"escena": "Diagrama básico",
+"txt": "Un flujo automático funciona como un pequeño mapa de decisiones. El cliente inicia una conversación, el sistema identifica qué necesita, entrega una respuesta y decide si puede resolver la consulta o debe derivarla a una persona. Piensa en él como un árbol: cada rama responde a una necesidad distinta, y siempre debe existir una rama que lleve a una persona."
+},
+{
+"id": "f03",
+"sc": 3,
+"escena": "Mensaje inicial con opciones",
+"txt": "El primer paso es ofrecer pocas opciones y muy claras. Por ejemplo: productos, medios de pago, despachos o hablar con una persona. Evita menús demasiado largos o difíciles de entender. Cuatro opciones suelen ser suficientes. Escribe el saludo con el tono de tu marca y deja claro que se trata de una respuesta automática. Por ejemplo: hola, soy el asistente de Casa Nativa; elige una opción para ayudarte."
+},
+{
+"id": "f04",
+"sc": 4,
+"escena": "Opción Despachos",
+"txt": "Si el cliente selecciona despachos, el flujo puede entregar información básica: zonas de cobertura, plazos y condiciones generales. Por ejemplo: despachamos a todo Chile; en Santiago llega en dos a tres días hábiles y es gratis sobre cuarenta mil pesos. Esa es una consulta repetitiva y predecible, por lo que puede automatizarse."
+},
+{
+"id": "f05",
+"sc": 5,
+"escena": "Opción Medios de pago",
+"txt": "Lo mismo ocurre con los medios de pago. El sistema puede informar las alternativas disponibles sin necesidad de intervención humana: tarjeta de débito o crédito, transferencia o pago en tienda. Eso sí, si cambian los medios de pago, actualiza esta respuesta de inmediato."
+},
+{
+"id": "f06",
+"sc": 6,
+"escena": "Siguiente decisión",
+"txt": "Una buena automatización no entrega solo información: también ayuda a avanzar. Después de responder, puede preguntar si la persona necesita algo más o si desea hablar con alguien del equipo. Así nadie queda atrapado en un callejón sin salida. Por ejemplo, si eligió productos, el flujo muestra el catálogo y pregunta: ¿quieres que alguien te ayude a elegir? Si responde que sí, la conversación pasa al equipo; si no, puede volver al menú o finalizar."
+},
+{
+"id": "f07",
+"sc": 7,
+"escena": "Caso complejo: producto dañado",
+"txt": "Pero no todo debe automatizarse. Si una persona escribe que recibió un producto dañado, que está molesta o que necesita una excepción, el flujo debe reconocer su límite. Por ejemplo: mi pedido llegó quebrado y lo necesito mañana."
+},
+{
+"id": "f08",
+"sc": 8,
+"escena": "Derivación a persona con contexto",
+"txt": "En ese momento, la mejor decisión es derivar la conversación a una persona. Idealmente, el equipo debería recibir también el contexto para que el cliente no tenga que explicar todo nuevamente: el número de pedido, qué ocurrió y cuál es la urgencia."
+},
+{
+"id": "f09",
+"sc": 9,
+"escena": "Mensaje de derivación correcto",
+"txt": "Un mensaje podría decir: entendemos. Vamos a derivar tu consulta a una persona de nuestro equipo para ayudarte mejor. La automatización sirve como puente, no como barrera. Evita respuestas como opción no válida o escriba nuevamente en horario de atención. Y si la derivación ocurre fuera de horario, indica cuándo responderá alguien."
+},
+{
+"id": "f10",
+"sc": 10,
+"escena": "Flujo completo",
+"txt": "Observa el flujo completo: saludo, opciones, respuesta, nueva decisión y salida hacia atención humana. Mientras más simple sea, más fácil será usarlo y mantenerlo actualizado. Cuatro opciones, una respuesta breve en cada una y una salida hacia una persona en cualquier momento."
+},
+{
+"id": "f11",
+"sc": 11,
+"escena": "Checklist",
+"txt": "Antes de implementar un flujo, revisa cuatro puntos: que las respuestas estén actualizadas, que las opciones sean fáciles de entender, que exista una salida hacia una persona y que el tono sea coherente con la marca. Revisa el flujo cada vez que cambien tus precios, plazos o medios de pago, y pruébalo como si fueras cliente."
+},
+{
+"id": "f12",
+"sc": 12,
+"escena": "Automatizar todo vs. automatizar bien",
+"txt": "Automatizar bien no significa automatizar todo. Significa resolver lo repetitivo de forma eficiente y reservar la atención humana para situaciones donde realmente agrega valor. Si automatizas todo, los reclamos chocan con respuestas rígidas y los clientes se frustran. Si automatizas bien, las preguntas frecuentes se resuelven al instante y tu equipo llega a tiempo a los casos que importan."
+},
+{
+"id": "f13",
+"sc": 13,
+"escena": "Pantalla final",
+"txt": "La meta es simple: menos tiempo en respuestas repetidas y más tiempo en conversaciones importantes. Empieza con una sola consulta frecuente, revisa si funciona y luego suma la siguiente."
+}
+]

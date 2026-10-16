@@ -1,0 +1,141 @@
+<section id="intro" class="card">
+ <span class="eyebrow">Laboratorio de práctica</span>
+ <h2>Organiza y segmenta la base de clientes de Casa Nativa</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Ya pasé mis contactos al CRM, pero las fichas quedaron desordenadas y no sé a quién escribirle primero. Quiero una base limpia, segmentada y con próximas acciones claras, sin guardar datos que no corresponde.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Trabajarás sobre una <b>recreación simplificada</b> de un CRM con <b>contactos ficticios</b>. Aplica lo visto en la <b>Lección 4.1 De contactos dispersos a clientes que vuelven</b> y en el video <b>Del contacto al seguimiento: recorrido práctico por un CRM</b>: datos con propósito, segmentos, próxima acción, filtros y consentimiento.</p>
+ <div class="steps"><div><b>6 tareas</b>Cada una vale entre 15 y 20 puntos. Tienes una respuesta por tarea.</div><div><b>Corrección explicada</b>Después de responder verás qué estuvo bien y por qué.</div><div><b>Apruebas con 80</b>Si no llegas, revisa la lección indicada y haz un nuevo intento.</div></div>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar el laboratorio →</button>
+</section>
+
+<style>
+.crm .bar{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 10px;padding:10px}
+.ficha .hs small{display:block;color:var(--muted);font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.fhead{display:flex;gap:12px;align-items:center;padding:12px 14px 0}
+.fhead .ava{width:44px;height:44px;border-radius:50%;background:#00a4bd;color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.fhead small{display:block;color:var(--muted)}
+.tag{display:inline-block;padding:2px 9px;border-radius:10px;font-size:.8rem;font-weight:700;background:var(--mint);color:var(--teal-ink);border:1px solid var(--mint-line)}
+.ref{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.93rem}
+.ref ul{margin:4px 0 0;padding-left:20px}
+.fbox{padding:12px 14px;display:grid;gap:8px}
+.fbox .cond{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fbox .cond span{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:.88rem}
+.opt code{font:inherit;font-size:.92rem}
+@media(max-width:640px){table.data.segt{font-size:.8rem}table.data.segt th,table.data.segt td{padding:6px 5px}}
+.opt .lg{display:inline-block;font-weight:800;color:var(--amber);padding:0 3px}
+</style>
+
+<section class="etask card" data-id="t1" data-pts="20" data-auto="hot" data-title="Ficha con datos innecesarios o riesgosos" data-lesson="Lección 4.1 · ¿Qué información conviene guardar?">
+ <h2>Revisa la ficha de Rocío: ¿qué campos sobran o son un riesgo?</h2>
+ <p>Alguien del equipo creó esta ficha después de una venta en la feria. Haz clic en <b>cada campo que no debería registrarse</b> (por innecesario o por riesgoso) y luego presiona Responder.</p>
+ <div class="mock crm"><div class="bar"><span>👥 CRM · Contactos › Rocío Valdés</span><span>Recreación con datos ficticios</span></div>
+  <div class="fhead"><span class="ava">RV</span><div><b>Rocío Valdés</b><small>Etapa: Cliente · Propietaria: Marcela</small></div></div>
+  <div class="ficha">
+   <button class="hs"><small>Correo</small>rocio.valdes@ejemplo.cl</button>
+   <button class="hs" data-ok><small>RUT y fecha de nacimiento</small>“por si acaso”</button>
+   <button class="hs"><small>Teléfono</small>+56 9 0000 0231</button>
+   <button class="hs"><small>Canal preferido</small>WhatsApp</button>
+   <button class="hs" data-ok><small>Datos de la tarjeta</small>N.º y vencimiento de la tarjeta con que pagó</button>
+   <button class="hs"><small>Consentimiento para novedades</small>Sí · 4 oct 2026 · formulario de la feria</button>
+   <button class="hs" data-ok><small>Salud</small>“Está embarazada, comprará cosas para la guagua”</button>
+   <button class="hs"><small>Interés principal</small>Textiles</button>
+   <button class="hs"><small>Última compra</small>4 oct 2026 · Manta de lana</button>
+   <button class="hs" data-ok><small>Nota</small>Copia completa del chat, con fotos de su casa y datos de su vecina</button>
+   <button class="hs"><small>Próxima acción</small>Tarea: viernes 16 oct · enviar fotos de cojines a juego</button>
+   <button class="hs" data-ok><small>Clave</small>Contraseña de su cuenta en la tienda en línea</button>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Un CRM útil guarda <b>lo que ayuda a decidir o actuar</b>: datos de contacto, canal preferido, consentimiento, compras, intereses y próxima acción. Sobran el RUT y la fecha de nacimiento sin un uso concreto, y son un riesgo los datos de pago y las contraseñas (los maneja la pasarela, nunca el CRM), los datos de salud (son datos sensibles) y las copias completas de chats con información de terceros. Basta una nota breve: “Busca textiles para la pieza de un bebé”. Cada riesgo encontrado suma; marcar un campo útil descuenta.</div>
+</section>
+
+<section class="etask card" data-id="t2" data-pts="20" data-auto="match" data-title="Clasificar contactos en segmentos" data-lesson="Lección 4.1 · Segmentación">
+ <h2>Asigna el segmento de cada contacto</h2>
+ <p>Hoy es <b>15 de octubre de 2026</b>. Usa las reglas de Casa Nativa y los datos de compra exportados del CRM.</p>
+ <div class="ref"><b>Reglas de segmentación</b><ul>
+  <li><b>Nuevo:</b> una sola compra, hecha en los últimos 60 días.</li>
+  <li><b>Recurrente:</b> 2 o más compras y la última hace 6 meses o menos.</li>
+  <li><b>Inactivo:</b> ya compró, pero su última compra fue hace más de 6 meses.</li>
+  <li><b>Interesado:</b> no ha comprado, pero consultó o cotizó.</li></ul></div>
+ <div class="mock crm"><div class="bar"><span>👥 CRM · Contactos · Vista “Por clasificar”</span><span>6 registros</span></div>
+ <div class="tablewrap"><table class="data segt" style="margin:0"><tr><th>Contacto</th><th class="n">Compras</th><th>Última compra</th><th>Última actividad</th></tr>
+  <tr><td>Ignacio Bravo</td><td class="n">1</td><td>28 sep 2026</td><td>Compró un cojín de lino</td></tr>
+  <tr><td>Paula Contreras</td><td class="n">4</td><td>2 oct 2026</td><td>Preguntó por velas aromáticas</td></tr>
+  <tr><td>Sebastián Ortiz</td><td class="n">3</td><td>10 feb 2026</td><td>Sin actividad desde febrero</td></tr>
+  <tr><td>Camila Reyes</td><td class="n">0</td><td>—</td><td>Cotizó 2 lámparas el 5 oct</td></tr>
+  <tr><td>Gabriel Torres</td><td class="n">1</td><td>20 ene 2026</td><td>Compró un jarrón de greda</td></tr>
+  <tr><td>Antonia Vera</td><td class="n">2</td><td>15 ago 2026</td><td>Compró un canasto tejido</td></tr></table></div>
+ <div style="padding:6px 14px">
+  <div class="mrow"><span>Ignacio Bravo</span><select data-ans="nuevo"><option value="nuevo">Nuevo</option><option value="rec">Recurrente</option><option value="ina">Inactivo</option><option value="int">Interesado</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Paula Contreras</span><select data-ans="rec"><option value="nuevo">Nuevo</option><option value="rec">Recurrente</option><option value="ina">Inactivo</option><option value="int">Interesado</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Sebastián Ortiz</span><select data-ans="ina"><option value="nuevo">Nuevo</option><option value="rec">Recurrente</option><option value="ina">Inactivo</option><option value="int">Interesado</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Camila Reyes</span><select data-ans="int"><option value="nuevo">Nuevo</option><option value="rec">Recurrente</option><option value="ina">Inactivo</option><option value="int">Interesado</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Gabriel Torres</span><select data-ans="ina"><option value="nuevo">Nuevo</option><option value="rec">Recurrente</option><option value="ina">Inactivo</option><option value="int">Interesado</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Antonia Vera</span><select data-ans="rec"><option value="nuevo">Nuevo</option><option value="rec">Recurrente</option><option value="ina">Inactivo</option><option value="int">Interesado</option></select><span class="mk"></span></div>
+ </div></div>
+ <div class="why"><h4>Por qué</h4>Ignacio compró una vez hace 17 días: <b>nuevo</b>. Paula (4 compras, la última este mes) y Antonia (2 compras, la última hace 2 meses) son <b>recurrentes</b>. Sebastián compró 3 veces, pero su última compra fue hace 8 meses: aunque fue un buen cliente, hoy está <b>inactivo</b>; lo mismo Gabriel, con una compra hace casi 9 meses. Camila no ha comprado pero cotizó: <b>interesada</b>. El segmento depende de la combinación de cantidad y fecha, no de un solo dato.</div>
+</section>
+
+<section class="etask card" data-id="t3" data-pts="15" data-auto="match" data-title="Próxima acción por segmento" data-lesson="Lección 4.1 · No todos los clientes necesitan el mismo mensaje">
+ <h2>Elige la próxima acción para cada segmento</h2>
+ <p>Marcela crea una tarea por segmento. Elige la acción más pertinente para cada uno (una de las opciones no corresponde a ninguno).</p>
+ <div class="ref"><b>Acciones posibles</b><ul style="list-style:none;padding-left:0">
+  <li><b>A</b> · A los 15 días, preguntar si llegó bien y cómo le resultó el producto.</li>
+  <li><b>B</b> · Avisarle antes que al resto de la novedad de su categoría favorita.</li>
+  <li><b>C</b> · Responder dudas de la cotización y ofrecer una fecha para ver el producto en el taller.</li>
+  <li><b>D</b> · Enviar una novedad relacionada con lo que compró y preguntar si le interesa.</li>
+  <li><b>E</b> · Sumarlo a la promoción diaria que recibe toda la base.</li></ul></div>
+ <div class="mock crm"><div class="bar"><span>☑ CRM · Tareas · Nueva tarea por segmento</span></div>
+ <div style="padding:6px 14px">
+  <div class="mrow"><span>🆕 Nuevo · Ignacio (cojín de lino)</span><select data-ans="a"><option value="a">A · Preguntar cómo le fue</option><option value="b">B · Avisarle primero</option><option value="c">C · Seguir la cotización</option><option value="d">D · Novedad ligada</option><option value="e">E · Promoción diaria</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>🔁 Recurrente · Paula (velas)</span><select data-ans="b"><option value="a">A · Preguntar cómo le fue</option><option value="b">B · Avisarle primero</option><option value="c">C · Seguir la cotización</option><option value="d">D · Novedad ligada</option><option value="e">E · Promoción diaria</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>💤 Inactivo · Sebastián (sin compras desde febrero)</span><select data-ans="d"><option value="a">A · Preguntar cómo le fue</option><option value="b">B · Avisarle primero</option><option value="c">C · Seguir la cotización</option><option value="d">D · Novedad ligada</option><option value="e">E · Promoción diaria</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>💡 Interesado · Camila (cotizó lámparas)</span><select data-ans="c"><option value="a">A · Preguntar cómo le fue</option><option value="b">B · Avisarle primero</option><option value="c">C · Seguir la cotización</option><option value="d">D · Novedad ligada</option><option value="e">E · Promoción diaria</option></select><span class="mk"></span></div>
+ </div></div>
+ <div class="why"><h4>Por qué</h4>Al cliente nuevo se lo acompaña después de su primera compra; al recurrente se le reconoce la preferencia avisándole primero; al inactivo se lo reactiva con algo relacionado con lo que ya compró; y al interesado se le hace seguimiento a la cotización sin presionar. La promoción diaria a toda la base no fideliza: cansa y hace que dejen de leer los mensajes.</div>
+</section>
+
+<section class="etask card" data-id="t4" data-pts="15" data-auto="order" data-title="El ciclo del CRM" data-lesson="Lección 4.1 · Registro y fidelización (ciclo del CRM)">
+ <h2>Ordena el ciclo del CRM con el caso de Camila</h2>
+ <p>Camila consultó por lámparas en la feria. Ordena lo que hace Marcela, del primer al último paso.</p>
+ <ol class="ord">
+  <li data-pos="1">Crear la ficha de Camila con sus datos mínimos y su consentimiento para recibir novedades.</li>
+  <li data-pos="2">Anotar en el historial que cotizó dos lámparas de cerámica para su living.</li>
+  <li data-pos="3">Incluirla en el segmento “Interesados · Iluminación”.</li>
+  <li data-pos="4">Crear una tarea: escribirle el jueves con fotos de las lámparas disponibles.</li>
+  <li data-pos="5">Registrar que respondió que comprará en noviembre y ajustar la próxima acción.</li>
+ </ol>
+ <div class="why"><h4>Por qué</h4>Es el ciclo de cinco pasos: <b>registrar</b> (ficha mínima), <b>mantener contexto</b> (historial), <b>segmentar</b>, <b>definir una próxima acción</b> con fecha y <b>aprender del resultado</b>, que alimenta la siguiente interacción. Sin registro no hay a quién segmentar, y sin resultado registrado el seguimiento vuelve a depender de la memoria.</div>
+</section>
+
+<section class="etask card" data-id="t5" data-pts="15" data-auto="mc" data-title="Filtro avanzado" data-lesson="Lección 4.1 · Filtros y segmentos (video del CRM)">
+ <h2>Arma el filtro para avisar de la colección de textiles</h2>
+ <p>Llega la colección de mantas y cojines. Marcela quiere escribir <b>solo</b> a clientes recurrentes interesados en textiles que <b>aceptaron recibir novedades</b>. ¿Qué filtro avanzado debe guardar como vista?</p>
+ <div class="mock crm"><div class="bar"><span>☷ CRM · Contactos · Filtros avanzados</span><span>Propiedades disponibles</span></div>
+  <div class="fbox"><div class="cond"><span>Tipo de cliente</span><span>Interés principal</span><span>Consentimiento para novedades</span><span>Última compra</span><span>Canal preferido</span></div>
+  <small class="muted">“Y” exige que se cumplan todas las condiciones; “O” basta con que se cumpla una.</small></div></div>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="t5"> <span>Tipo de cliente = Recurrente <span class="lg">Y</span> Interés principal = Textiles <span class="lg">Y</span> Consentimiento para novedades = Sí</span></label>
+  <label class="opt"><input type="radio" name="t5"> <span>Tipo de cliente = Recurrente <span class="lg">O</span> Interés principal = Textiles</span></label>
+  <label class="opt"><input type="radio" name="t5"> <span>Interés principal = Textiles</span></label>
+  <label class="opt"><input type="radio" name="t5"> <span>Tipo de cliente = Recurrente <span class="lg">Y</span> Interés principal = Textiles</span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Las tres condiciones deben cumplirse a la vez, por eso se unen con <b>Y</b>. Con <b>O</b> el grupo crece y recibe el mensaje gente a quien no le interesa; filtrar solo por interés suma inactivos e interesados sin compra; y omitir el consentimiento incluye a personas que no autorizaron recibir novedades. Al guardarlo como vista, Marcela lo vuelve a usar sin configurarlo de nuevo.</div>
+</section>
+
+<section class="etask card" data-id="t6" data-pts="15" data-auto="multi" data-title="Consentimiento y datos mínimos" data-lesson="Lección 4.1 · Cuida los datos personales">
+ <h2>¿Qué prácticas cuidan los datos de los clientes?</h2>
+ <p>Marcela quiere que su base cumpla con la nueva ley chilena de protección de datos personales (Ley 21.719), que refuerza el consentimiento y el uso responsable de los datos. Marca <b>todas</b> las prácticas correctas.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> Pedir permiso explícito antes de enviar novedades y registrar en la ficha la fecha y el medio en que se dio.</label>
+  <label class="opt" data-ok><input type="checkbox"> Incluir en cada mensaje una forma simple de dejar de recibir novedades y respetarla.</label>
+  <label class="opt" data-ok><input type="checkbox"> Actualizar o eliminar los datos de una persona cuando lo solicite.</label>
+  <label class="opt" data-ok><input type="checkbox"> Registrar solo los campos que se usarán para atender, segmentar o hacer seguimiento.</label>
+  <label class="opt"><input type="checkbox"> Importar los números de un grupo de WhatsApp de la feria y enviarles promociones.</label>
+  <label class="opt"><input type="checkbox"> Marcar “Sí” en el consentimiento de todos los contactos importados para ahorrar tiempo.</label>
+  <label class="opt"><input type="checkbox"> Compartir la planilla de clientes con una tienda amiga para hacer una promoción conjunta.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>El consentimiento debe ser real y quedar registrado, la persona puede retirarlo en cualquier momento y tiene derecho a pedir que se corrijan o eliminen sus datos. Guardar solo lo necesario reduce el riesgo si hay una filtración. Estar en un grupo de WhatsApp no es autorizar promociones, marcar consentimientos “por defecto” los vuelve falsos y entregar la base a otra empresa requiere una autorización que los clientes no dieron. Cada acierto suma y cada marca errónea descuenta.</div>
+</section>

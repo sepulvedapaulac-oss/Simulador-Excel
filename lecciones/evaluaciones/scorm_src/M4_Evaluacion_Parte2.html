@@ -1,0 +1,237 @@
+<section id="intro" class="card">
+ <span class="eyebrow">Evaluación · Parte 2</span>
+ <h2>Analiza los datos de Casa Nativa y decide con Marcela</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Ya tengo mi registro de clientes, GA4 en la tienda y un panel semanal. Ahora necesito leer bien esos números: a quién escribirle, qué canal mejorar, dónde se pierden las ventas y qué dejar en mi plan de 90 días.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Resolverás <b>10 casos</b> del Módulo 4 con <b>datos y pantallas recreadas</b> (CRM con contactos ficticios, informes de GA4, un panel de Looker Studio y el Plan de Acción Digital). Cada caso exige analizar, calcular o priorizar.</p>
+ <div class="steps"><div><b>10 preguntas · 20 pts</b>Cada pregunta vale 2 puntos. Las de varias partes dan puntaje parcial.</div><div><b>Apruebas con 60%</b>Necesitas 12 de 20 puntos. Tienes una respuesta por pregunta.</div><div><b>Corrección al final</b>Tus respuestas se registran sin mostrar si son correctas; al terminar verás el puntaje y podrás revisar la retroalimentación.</div></div>
+ <p class="muted">En los cálculos, escribe solo el número (por ejemplo <b>30000</b> o <b>30.000</b>; <b>2,5</b> con coma decimal). Cada pregunta indica cómo redondear y la tolerancia aceptada.</p>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar la evaluación →</button>
+</section>
+
+<style>
+.crm .bar,.ga .bar{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ref{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.93rem}
+.ref ul{margin:4px 0 0;padding-left:20px}
+.mock table.data{margin:0;background:var(--surface)}
+.mock .sub{padding:8px 12px;font-size:.84rem;color:var(--muted);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 14px}
+.mock .sub b{color:var(--ink2)}
+table.data td small{display:block;color:var(--muted);font-size:.8rem}
+table.data tr.tot td{font-weight:800;background:var(--surface2)}
+.plan{padding:10px;display:grid;gap:10px}
+.plan .pr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 6px}
+.plan .pr h5{margin:2px 8px 4px;font-size:.95rem;color:var(--navy)}
+.plan .hs small,.fun .hs small{display:block;color:var(--muted);font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.fun{padding:10px;display:grid;gap:4px}
+.ord li .t small{display:block;color:var(--muted)}
+.mrow{grid-template-columns:1fr minmax(200px,350px) 28px}
+@media(max-width:640px){.mrow{grid-template-columns:1fr 28px}}
+@media(max-width:640px){table.data.sm{font-size:.8rem}table.data.sm th,table.data.sm td{padding:6px 5px}}
+</style>
+
+<!-- P11 · match -->
+<section class="etask card" data-id="M4.P11" data-pts="2" data-auto="match" data-title="M4.P11 · Segmentar antes de reactivar" data-lesson="Lección 4.1 · Segmentación y consentimiento">
+ <h2>¿A quién le escribe Marcela para reactivar?</h2>
+ <p>Llegó la colección infantil de primavera y Marcela quiere enviar un mensaje de <b>reactivación</b> a sus clientes <b>inactivos</b>. Antes, clasifica a cada contacto de su CRM con estas reglas:</p>
+ <div class="ref"><b>Reglas de Casa Nativa</b><ul>
+  <li><b>Prospecto:</b> no ha comprado, pero tiene una cotización abierta.</li>
+  <li><b>Nuevo:</b> una sola compra, hecha hace 120 días o menos.</li>
+  <li><b>Recurrente:</b> 2 o más compras y la última hace 120 días o menos.</li>
+  <li><b>Inactivo:</b> ya compró, pero su última compra fue hace <b>más de 120 días</b>. Solo se le envían novedades si <b>aceptó recibirlas</b>.</li></ul></div>
+ <div class="mock crm"><div class="bar"><span>👥 CRM · Contactos · Vista “Campaña primavera”</span><span>Recreación · datos ficticios</span></div>
+ <div class="tablewrap"><table class="data sm"><tr><th>Contacto</th><th class="n">Compras</th><th class="n">Días sin comprar</th><th>Cotización abierta</th><th>Acepta novedades</th></tr>
+  <tr><td>Valentina Rojas<small>valentina.rojas@ejemplo.cl · +56 9 0000 1101</small></td><td class="n">3</td><td class="n">45</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Rodrigo Muñoz<small>rodrigo.munoz@ejemplo.cl · +56 9 0000 1102</small></td><td class="n">1</td><td class="n">20</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Camila Soto<small>camila.soto@ejemplo.cl · +56 9 0000 1103</small></td><td class="n">2</td><td class="n">150</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Ignacio Fuentes<small>ignacio.fuentes@ejemplo.cl · +56 9 0000 1104</small></td><td class="n">0</td><td class="n">—</td><td>Sí (hace 8 días)</td><td>Sí</td></tr>
+  <tr><td>Fernanda Díaz<small>fernanda.diaz@ejemplo.cl · +56 9 0000 1105</small></td><td class="n">4</td><td class="n">200</td><td>No</td><td>No</td></tr>
+  <tr><td>Josefa Pérez<small>josefa.perez@ejemplo.cl · +56 9 0000 1106</small></td><td class="n">1</td><td class="n">125</td><td>No</td><td>Sí</td></tr>
+ </table></div>
+ <div style="padding:6px 14px">
+  <div class="mrow"><span>Valentina Rojas</span><select data-ans="rec"><option value="pro">Prospecto · seguir la cotización</option><option value="nue">Nuevo · acompañar</option><option value="rec">Recurrente · no reactivar</option><option value="rea">Inactivo · reactivar</option><option value="no">Inactivo · sin consentimiento: no enviar</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Rodrigo Muñoz</span><select data-ans="nue"><option value="pro">Prospecto · seguir la cotización</option><option value="nue">Nuevo · acompañar</option><option value="rec">Recurrente · no reactivar</option><option value="rea">Inactivo · reactivar</option><option value="no">Inactivo · sin consentimiento: no enviar</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Camila Soto</span><select data-ans="rea"><option value="pro">Prospecto · seguir la cotización</option><option value="nue">Nuevo · acompañar</option><option value="rec">Recurrente · no reactivar</option><option value="rea">Inactivo · reactivar</option><option value="no">Inactivo · sin consentimiento: no enviar</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Ignacio Fuentes</span><select data-ans="pro"><option value="pro">Prospecto · seguir la cotización</option><option value="nue">Nuevo · acompañar</option><option value="rec">Recurrente · no reactivar</option><option value="rea">Inactivo · reactivar</option><option value="no">Inactivo · sin consentimiento: no enviar</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Fernanda Díaz</span><select data-ans="no"><option value="pro">Prospecto · seguir la cotización</option><option value="nue">Nuevo · acompañar</option><option value="rec">Recurrente · no reactivar</option><option value="rea">Inactivo · reactivar</option><option value="no">Inactivo · sin consentimiento: no enviar</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Josefa Pérez</span><select data-ans="rea"><option value="pro">Prospecto · seguir la cotización</option><option value="nue">Nuevo · acompañar</option><option value="rec">Recurrente · no reactivar</option><option value="rea">Inactivo · reactivar</option><option value="no">Inactivo · sin consentimiento: no enviar</option></select><span class="mk"></span></div>
+ </div></div>
+ <div class="why"><h4>Por qué</h4>La reactivación va solo a <b>Camila</b> (150 días) y <b>Josefa</b> (125 días): ambas superan los 120 días y aceptan novedades. <b>Fernanda</b> también está inactiva (200 días), pero <b>no aceptó</b> recibir novedades: el registro de consentimiento manda, aunque sea la que más ha comprado. Valentina (3 compras, hace 45 días) es <b>recurrente</b>, Rodrigo (1 compra, hace 20 días) es <b>nuevo</b> e Ignacio no ha comprado pero tiene una cotización abierta: necesita <b>seguimiento</b>, no reactivación. Error típico: segmentar solo por la cantidad de compras (Josefa tiene una sola, pero hace 125 días) o enviar el mismo mensaje a todos.</div>
+</section>
+
+<!-- P12 · num -->
+<section class="etask card" data-id="M4.P12" data-pts="2" data-auto="num" data-title="M4.P12 · Ticket promedio y tasa de recompra" data-lesson="Lección 4.2 · Indicadores del registro de clientes">
+ <h2>Calcula el ticket promedio y la tasa de recompra del trimestre</h2>
+ <p>Marcela exportó este resumen del último trimestre desde su registro de clientes:</p>
+ <div class="kpi"><div><small>Ventas totales</small><b>$3.300.000</b></div><div><small>Pedidos</small><b>110</b></div><div><small>Clientes distintos que compraron</small><b>80</b></div><div><small>Clientes con 2 o más compras</small><b>20</b></div></div>
+ <div class="numgrid">
+  <label>Ticket promedio por pedido ($)<span class="hint">En pesos, sin decimales. Tolerancia ±$1.</span><input type="text" inputmode="decimal" data-ans="30000" data-tol="1" data-show="$30.000"></label>
+  <label>Tasa de recompra (%)<span class="hint">En %, con hasta un decimal. Tolerancia ±0,5.</span><input type="text" inputmode="decimal" data-ans="25" data-tol="0.5" data-show="25%"></label>
+ </div>
+ <div class="why"><h4>Por qué</h4><b>Ticket promedio</b> = ventas ÷ pedidos = $3.300.000 ÷ 110 = <b>$30.000</b>. <b>Tasa de recompra</b> = clientes con 2 o más compras ÷ clientes que compraron × 100 = 20 ÷ 80 × 100 = <b>25%</b>. Errores típicos: dividir las ventas por clientes ($41.250, que es el gasto promedio por cliente, no por pedido) o dividir la recompra por pedidos (20 ÷ 110 ≈ 18%). Cada indicador tiene su denominador.</div>
+</section>
+
+<!-- P13 · mc -->
+<section class="etask card" data-id="M4.P13" data-pts="2" data-auto="mc" data-title="M4.P13 · Leer la adquisición de tráfico en GA4" data-lesson="Lección 4.2 · Informe de adquisición en GA4">
+ <h2>¿Qué canal conviene mejorar este mes?</h2>
+ <p>Informe de la tienda en línea de Casa Nativa del último mes. La columna “Tasa” la calculó Marcela como <b>compras ÷ sesiones × 100</b>. Quiere mejorar <b>un solo canal</b>.</p>
+ <div class="mock ga"><div class="bar"><span>📈 Google Analytics 4 · Informes › Adquisición › Adquisición de tráfico</span><span>Recreación</span></div>
+  <div class="sub"><span>Dimensión: <b>Grupo de canales predeterminado de la sesión</b></span><span>Evento clave: <b>purchase</b></span><span>Último mes</span></div>
+  <div class="tablewrap"><table class="data sm"><tr><th>Grupo de canales predeterminado de la sesión</th><th class="n">Sesiones</th><th class="n">Eventos clave (purchase)</th><th class="n">Tasa (cálculo de Marcela)</th></tr>
+   <tr><td>Social orgánico</td><td class="n">2.400</td><td class="n">24</td><td class="n">1,0%</td></tr>
+   <tr><td>Social de pago</td><td class="n">1.200</td><td class="n">18</td><td class="n">1,5%</td></tr>
+   <tr><td>Búsqueda orgánica</td><td class="n">900</td><td class="n">27</td><td class="n">3,0%</td></tr>
+   <tr><td>Directo</td><td class="n">600</td><td class="n">15</td><td class="n">2,5%</td></tr>
+   <tr><td>Correo electrónico</td><td class="n">300</td><td class="n">12</td><td class="n">4,0%</td></tr>
+   <tr class="tot"><td>Total</td><td class="n">5.400</td><td class="n">96</td><td class="n">1,8%</td></tr>
+  </table></div></div>
+ <p><b>¿Qué lectura de la tabla es correcta?</b></p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="p13"> Social orgánico trae el 44% de las sesiones y convierte al 1%; llegar al 2% sumaría unas 24 compras al mes.</label>
+  <label class="opt"><input type="radio" name="p13"> Social orgánico es el mejor canal del mes, porque genera la mayor cantidad de sesiones y también de compras.</label>
+  <label class="opt"><input type="radio" name="p13"> Búsqueda orgánica convierte apenas al 0,3% de sus sesiones, así que conviene dejar de trabajarla.</label>
+  <label class="opt"><input type="radio" name="p13"> Correo electrónico genera más compras que cualquier otro canal gracias a su tasa de 4%.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Social orgánico concentra 2.400 ÷ 5.400 ≈ <b>44%</b> de las sesiones, pero convierte al 1%: pasar al 2% sobre 2.400 sesiones serían 48 compras, es decir, <b>24 más</b>. Es el canal con más margen de mejora. No es “el mejor”: tiene más sesiones, pero menos compras que Búsqueda orgánica (27 con menos de la mitad del tráfico). Búsqueda orgánica convierte al 27 ÷ 900 × 100 = 3%, no 0,3%. Correo electrónico tiene la mejor tasa, pero solo 12 compras: una tasa alta sobre pocas sesiones no equivale a más ventas. Compara canales con volumen y tasa juntos.</div>
+</section>
+
+<!-- P14 · num -->
+<section class="etask card" data-id="M4.P14" data-pts="2" data-auto="num" data-title="M4.P14 · Tasa de conversión y costo por venta" data-lesson="Lección 4.2 · Tasa de conversión y costo por venta">
+ <h2>Compara las dos campañas de la colección Living</h2>
+ <p>En octubre, Casa Nativa invirtió en dos campañas cuyo objetivo era <b>vender</b>. Calcula la tasa de conversión (compras ÷ sesiones × 100) y el costo por compra (inversión ÷ compras) de cada una.</p>
+ <div class="tablewrap"><table class="data"><tr><th>Campaña</th><th class="n">Inversión</th><th class="n">Sesiones</th><th class="n">Compras</th></tr>
+  <tr><td>Meta Ads</td><td class="n">$90.000</td><td class="n">1.800</td><td class="n">18</td></tr>
+  <tr><td>Google Ads</td><td class="n">$60.000</td><td class="n">600</td><td class="n">15</td></tr></table></div>
+ <div class="numgrid">
+  <label>Meta Ads · tasa de conversión (%)<span class="hint">En %, con hasta un decimal. Tolerancia ±0,1.</span><input type="text" inputmode="decimal" data-ans="1" data-tol="0.1" data-show="1%"></label>
+  <label>Google Ads · tasa de conversión (%)<span class="hint">En %, con hasta un decimal. Tolerancia ±0,1.</span><input type="text" inputmode="decimal" data-ans="2.5" data-tol="0.1" data-show="2,5%"></label>
+  <label>Meta Ads · costo por compra ($)<span class="hint">En pesos, sin decimales. Tolerancia ±$1.</span><input type="text" inputmode="decimal" data-ans="5000" data-tol="1" data-show="$5.000"></label>
+  <label>Google Ads · costo por compra ($)<span class="hint">En pesos, sin decimales. Tolerancia ±$1.</span><input type="text" inputmode="decimal" data-ans="4000" data-tol="1" data-show="$4.000"></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Meta: 18 ÷ 1.800 × 100 = <b>1%</b> y $90.000 ÷ 18 = <b>$5.000</b> por compra. Google: 15 ÷ 600 × 100 = <b>2,5%</b> y $60.000 ÷ 15 = <b>$4.000</b> por compra. Si el objetivo es vender, <b>Google Ads es la más eficiente</b>: convierte más y cada venta cuesta menos, aunque Meta trajo el triple de sesiones. Errores típicos: olvidar multiplicar por 100 (o hacerlo dos veces y obtener 10% y 25%), o comparar el costo por sesión ($50 en Meta y $100 en Google), que mide tráfico y no ventas.</div>
+</section>
+
+<!-- P15 · mc -->
+<section class="etask card" data-id="M4.P15" data-pts="2" data-auto="mc" data-title="M4.P15 · Canales y etiquetas UTM" data-lesson="Lección 4.2 · Grupo de canales y etiquetas UTM">
+ <h2>¿Las publicaciones orgánicas duplicaron las visitas?</h2>
+ <p>En octubre Marcela invirtió <b>$80.000</b> en anuncios de Instagram. Los anuncios llevan a la tienda con un enlace simple, <b>sin parámetros UTM</b>. En GA4 ve esto:</p>
+ <div class="mock ga"><div class="bar"><span>📈 Google Analytics 4 · Informes › Adquisición › Adquisición de tráfico</span><span>Recreación</span></div>
+  <div class="sub"><span>Dimensión: <b>Grupo de canales predeterminado de la sesión</b></span><span>Comparación: septiembre vs. octubre</span></div>
+  <div class="tablewrap"><table class="data sm"><tr><th>Grupo de canales predeterminado de la sesión</th><th class="n">Sesiones septiembre</th><th class="n">Sesiones octubre</th></tr>
+   <tr><td>Social orgánico</td><td class="n">1.200</td><td class="n">2.400</td></tr>
+   <tr><td>Social de pago</td><td class="n">0</td><td class="n">0</td></tr>
+   <tr><td>Búsqueda orgánica</td><td class="n">850</td><td class="n">900</td></tr>
+  </table></div></div>
+ <p>Marcela concluye: <i>“Mis publicaciones orgánicas duplicaron las visitas”</i>. <b>¿Qué interpretación y qué paso son los más adecuados?</b></p>
+ <div class="opts">
+  <label class="opt"><input type="radio" name="p15"> La conclusión es correcta: los anuncios no generaron visitas, porque Social de pago marca cero sesiones en ambos meses.</label>
+  <label class="opt" data-ok><input type="radio" name="p15"> Las visitas de los anuncios probablemente se cuentan como orgánicas; hay que etiquetar los enlaces con UTM.</label>
+  <label class="opt"><input type="radio" name="p15"> GA4 no puede distinguir anuncios de publicaciones, así que debe comparar solo el total de sesiones del sitio.</label>
+  <label class="opt"><input type="radio" name="p15"> Conviene detener los anuncios, porque el informe demuestra que no aportan visitas a la tienda.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Sin UTM, el clic desde un anuncio de Instagram llega como tráfico desde Instagram sin ninguna señal de pago, y el grupo de canales predeterminado lo clasifica como <b>Social orgánico</b>. Por eso el aumento de 1.200 a 2.400 sesiones coincide con el mes de los anuncios. Con <code>utm_source=instagram</code> y <code>utm_medium=paid_social</code>, esas sesiones se clasifican como <b>Social de pago</b>. Error típico: leer el cero de Social de pago como prueba de que los anuncios no funcionaron y detenerlos; GA4 sí distingue los canales cuando la fuente y el medio están bien etiquetados. Primero hay que medir bien, después decidir.</div>
+</section>
+
+<!-- P16 · multi -->
+<section class="etask card" data-id="M4.P16" data-pts="2" data-auto="multi" data-title="M4.P16 · Interpretar el panel antes de actuar" data-lesson="Lección 4.2 · Paneles en Looker Studio">
+ <h2>Lee el panel semanal antes de actuar</h2>
+ <p>Panel semanal de Casa Nativa en Looker Studio (fuentes: GA4 y planilla de ventas). La tasa de conversión es compras ÷ sesiones × 100.</p>
+ <div class="mock ga"><div class="bar"><span>📊 Looker Studio · Panel semanal Casa Nativa</span><span>Recreación</span></div>
+  <div class="tablewrap"><table class="data sm"><tr><th>Indicador</th><th class="n">Semana 1</th><th class="n">Semana 2</th></tr>
+   <tr><td>Sesiones</td><td class="n">2.000</td><td class="n">2.600</td></tr>
+   <tr><td>Compras</td><td class="n">40</td><td class="n">36</td></tr>
+   <tr><td>Tasa de conversión</td><td class="n">2,0%</td><td class="n">¿?</td></tr>
+  </table></div></div>
+ <p>Marca <b>todas</b> las afirmaciones correctas. Cada acierto suma y cada marca errónea descuenta.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> Las sesiones subieron 30% respecto de la semana 1.</label>
+  <label class="opt" data-ok><input type="checkbox"> La tasa de conversión de la semana 2 bajó a cerca de 1,4%.</label>
+  <label class="opt" data-ok><input type="checkbox"> El primer paso es revisar en el informe de adquisición qué canal trajo las visitas nuevas.</label>
+  <label class="opt"><input type="checkbox"> La tasa bajó a 0,36%; hay que rediseñar todo el sitio web de inmediato.</label>
+  <label class="opt"><input type="checkbox"> Como las sesiones subieron, la semana 2 fue mejor y conviene mantener todo tal como está.</label>
+  <label class="opt"><input type="checkbox"> Las compras bajaron solo 4 unidades, una variación menor que no amerita revisar nada.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Sesiones: (2.600 − 2.000) ÷ 2.000 × 100 = <b>+30%</b>. Tasa de la semana 2: 36 ÷ 2.600 × 100 ≈ <b>1,4%</b> (no 0,36%, que es olvidar multiplicar por 100 o dividir mal). Más visitas con menos compras (40 → 36, una caída de 10%) sugiere tráfico de menor calidad, y el informe de adquisición muestra de dónde vino. Error típico: celebrar el aumento de sesiones cuando el objetivo es vender, o saltar a un rediseño completo sin diagnóstico. Un panel sirve cuando el dato lleva a una pregunta: ¿qué cambió?</div>
+</section>
+
+<!-- P17 · order -->
+<section class="etask card" data-id="M4.P17" data-pts="2" data-auto="order" data-title="M4.P17 · Priorizar el plan de 90 días" data-lesson="Lección 4.3 · Impacto y esfuerzo">
+ <h2>Ordena las ideas del plan de 90 días</h2>
+ <p>Marcela y su ayudante de media jornada tienen unas <b>40 horas</b> para proyectos nuevos en los próximos 90 días. Ordena las seis ideas de la <b>primera a la última</b> en prioridad, con este criterio de impacto y esfuerzo:</p>
+ <div class="ref"><b>Criterio</b><ul>
+  <li>1.º Alto impacto · bajo esfuerzo (que cabe en las 40 h).</li>
+  <li>2.º Bajo impacto · bajo esfuerzo (ajustes rápidos).</li>
+  <li>3.º Impacto alto o medio, pero con un esfuerzo que supera las 40 h.</li>
+  <li>4.º Bajo impacto · alto esfuerzo.</li>
+  <li>Dentro de un mismo grupo, primero la de <b>menor esfuerzo</b>.</li></ul></div>
+ <ol class="ord">
+  <li data-pos="1">Respuestas automáticas para 5 preguntas frecuentes <small>Impacto alto · 6 h</small></li>
+  <li data-pos="2">Registrar clientes y próximas acciones en una planilla compartida <small>Impacto alto · 8 h</small></li>
+  <li data-pos="3">Panel semanal en Looker Studio con 3 indicadores <small>Impacto alto · 10 h</small></li>
+  <li data-pos="4">Cambiar la portada de Facebook <small>Impacto bajo · 1 h</small></li>
+  <li data-pos="5">Desarrollar una app propia <small>Impacto medio · 300 h</small></li>
+  <li data-pos="6">Videos diarios en una nueva red social <small>Impacto bajo · 60 h</small></li>
+ </ol>
+ <div class="why"><h4>Por qué</h4>Las tres de alto impacto y bajo esfuerzo van primero, de menor a mayor esfuerzo: respuestas automáticas (6 h), registro de clientes (8 h) y panel semanal (10 h). Juntas suman 6 + 8 + 10 = <b>24 horas</b>, dentro de las 40 disponibles: son las tres prioridades del plan. La portada de Facebook (1 h) es un ajuste rápido de bajo impacto. La app (300 h, más de siete veces la capacidad) y los videos diarios (60 h, bajo impacto) quedan en “puede esperar”. Error típico: partir por la idea más ambiciosa o intentar todo a la vez (más de 380 h para un equipo con 40): el resultado es todo empezado y nada terminado.</div>
+</section>
+
+<!-- P18 · hot -->
+<section class="etask card" data-id="M4.P18" data-pts="2" data-auto="hot" data-title="M4.P18 · Detectar un indicador mal formulado" data-lesson="Lección 4.3 · Responsables, plazos e indicadores">
+ <h2>Revisa el Plan de Acción Digital de Casa Nativa</h2>
+ <p>Un buen plan tiene, para cada prioridad, un responsable, un plazo realista y un <b>indicador verificable</b>. Haz clic en <b>cada elemento mal formulado</b> (puede haber uno o más) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar">🗂️ Plan de Acción Digital · Casa Nativa · próximos 90 días</div>
+  <div class="plan">
+   <div class="pr"><h5>Prioridad 1 · Registrar cada cotización con su próxima acción</h5>
+    <button class="hs"><small>Responsable</small>Marcela</button>
+    <button class="hs"><small>Plazo</small>2 semanas</button>
+    <button class="hs"><small>Indicador</small>100% de las cotizaciones con próxima acción y fecha al 30 de noviembre</button></div>
+   <div class="pr"><h5>Prioridad 2 · Respuestas automáticas para preguntas frecuentes</h5>
+    <button class="hs"><small>Responsable</small>Ayudante</button>
+    <button class="hs"><small>Plazo</small>6 semanas</button>
+    <button class="hs"><small>Indicador</small>Bajar de 40 a 15 las preguntas repetidas respondidas a mano por semana</button></div>
+   <div class="pr"><h5>Prioridad 3 · Mejorar Instagram</h5>
+    <button class="hs"><small>Responsable</small>Marcela</button>
+    <button class="hs"><small>Plazo</small>8 semanas</button>
+    <button class="hs" data-ok><small>Indicador</small>Que la marca se vea más profesional y tenga más presencia</button></div>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>El único elemento mal formulado es el <b>indicador de la prioridad 3</b>: “verse más profesional” no se puede verificar. Se corrige con un número ligado al objetivo, por ejemplo, las consultas semanales que llegan desde Instagram (punto de partida y meta). Los indicadores de las prioridades 1 y 2 sí son verificables (100% de cotizaciones con fecha; de 40 a 15 preguntas por semana) y sus plazos de 2 y 6 semanas son realistas. Error típico: marcar plazos o responsables que están bien, o creer que al plan le faltan más prioridades: para un equipo de dos personas, tres prioridades bien definidas son suficientes. Cada elemento correcto suma; marcar uno que está bien descuenta.</div>
+</section>
+
+<!-- P19 · num -->
+<section class="etask card" data-id="M4.P19" data-pts="2" data-auto="num" data-title="M4.P19 · Medir el efecto del seguimiento" data-lesson="Lección 4.1 · Registro y seguimiento de cotizaciones">
+ <h2>¿Cuánto mejoró la tasa de cierre de cotizaciones?</h2>
+ <p>Antes de usar su registro de clientes, Marcela cerró <b>10 ventas de 40 cotizaciones</b> en un mes. Un mes después de registrar cada cotización con su próxima acción, cerró <b>18 ventas de 45 cotizaciones</b>.</p>
+ <div class="kpi"><div><small>Mes anterior</small><b>10 de 40</b></div><div><small>Mes con registro</small><b>18 de 45</b></div></div>
+ <div class="numgrid">
+  <label>Tasa de cierre del mes anterior (%)<span class="hint">En %, con hasta un decimal. Tolerancia ±0,5.</span><input type="text" inputmode="decimal" data-ans="25" data-tol="0.5" data-show="25%"></label>
+  <label>Tasa de cierre del mes con registro (%)<span class="hint">En %, con hasta un decimal. Tolerancia ±0,5.</span><input type="text" inputmode="decimal" data-ans="40" data-tol="0.5" data-show="40%"></label>
+  <label>Diferencia en puntos porcentuales (pp)<span class="hint">Tasa nueva − tasa anterior. Tolerancia ±0,5.</span><input type="text" inputmode="decimal" data-ans="15" data-tol="0.5" data-show="15 puntos porcentuales"></label>
+  <label>Variación relativa de la tasa (%)<span class="hint">Diferencia ÷ tasa anterior × 100, en %. Tolerancia ±1.</span><input type="text" inputmode="decimal" data-ans="60" data-tol="1" data-show="60%"></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Antes: 10 ÷ 40 × 100 = <b>25%</b>. Después: 18 ÷ 45 × 100 = <b>40%</b>. La diferencia es 40 − 25 = <b>15 puntos porcentuales</b>, y la variación relativa es 15 ÷ 25 × 100 = <b>60%</b>. Errores típicos: decir que subió “8 puntos” porque se cerraron 8 ventas más (eso es una diferencia absoluta de ventas, no de tasas), o confundir los 15 puntos porcentuales con el 60% de aumento relativo. Las tasas permiten comparar meses con distinto número de cotizaciones.</div>
+</section>
+
+<!-- P20 · hot -->
+<section class="etask card" data-id="M4.P20" data-pts="2" data-auto="hot" data-title="M4.P20 · Encontrar la etapa que falla" data-lesson="Lección 4.2 · Eventos y recorrido de compra en GA4">
+ <h2>¿En qué paso del recorrido se pierden las ventas?</h2>
+ <p>Eventos de GA4 para la página de la <b>lámpara infantil</b>. Calcula la proporción que avanza de un evento al siguiente en cada mes.</p>
+ <div class="mock ga"><div class="bar"><span>📈 Google Analytics 4 · Explorar › Exploración libre · Recuento de eventos</span><span>Recreación</span></div>
+  <div class="sub"><span>Página: <b>/lampara-infantil</b></span><span>Mes anterior vs. este mes</span></div>
+  <div class="tablewrap"><table class="data sm"><tr><th>Evento</th><th class="n">Mes anterior</th><th class="n">Este mes</th></tr>
+   <tr><td>Vistas de la página (page_view)</td><td class="n">1.000</td><td class="n">1.200</td></tr>
+   <tr><td>Agregar al carrito (add_to_cart)</td><td class="n">80</td><td class="n">96</td></tr>
+   <tr><td>Iniciar pago (begin_checkout)</td><td class="n">50</td><td class="n">60</td></tr>
+   <tr><td>Compra (purchase) · evento clave</td><td class="n">30</td><td class="n">12</td></tr>
+  </table></div></div>
+ <p>Haz clic en <b>cada paso donde el recorrido empeoró</b> (puede haber uno o más) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar">🔎 Pasos del recorrido</div>
+  <div class="fun">
+   <button class="hs"><small>Atraer tráfico</small>Llegar a la página del producto (page_view)</button>
+   <button class="hs"><small>Ficha del producto</small>De ver la página a agregar al carrito (page_view → add_to_cart)</button>
+   <button class="hs"><small>Carrito</small>De agregar al carrito a iniciar el pago (add_to_cart → begin_checkout)</button>
+   <button class="hs" data-ok><small>Pago y despacho</small>De iniciar el pago a comprar (begin_checkout → purchase)</button>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Las vistas subieron de 1.000 a 1.200 y las primeras tasas se mantienen: agrega al carrito el 8% (80 ÷ 1.000 y 96 ÷ 1.200) e inicia el pago el 62,5% (50 ÷ 80 y 60 ÷ 96). En cambio, de quienes inician el pago, compra el 60% el mes anterior (30 ÷ 50) y solo el <b>20%</b> este mes (12 ÷ 60). La revisión debe concentrarse en el <b>paso de pago y despacho</b> (medios de pago, costo o plazo de envío, errores del formulario). Error típico: pedir más tráfico o cambiar la ficha del producto, o creer que todo va bien porque las primeras etapas crecieron 20%. Calcula la tasa entre cada etapa antes de actuar.</div>
+</section>

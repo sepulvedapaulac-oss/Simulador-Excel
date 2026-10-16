@@ -1,0 +1,378 @@
+<title>Checklist de Madurez Digital</title>
+<style>
+:root{
+  --bg:#f4f6fb;--card:#ffffff;--ink:#1d2433;--muted:#5b6475;--line:#dfe4ee;
+  --brand:#1f4e9c;--brand-ink:#ffffff;--brand-soft:#e7eefb;--accent:#e8862a;
+  --s0:#d64545;--s1:#e8862a;--s2:#2f8fd8;--s3:#2a9d63;--focus:#1f4e9c55;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11151d;--card:#1a2030;--ink:#e8ecf4;--muted:#a3adc2;--line:#2c3446;
+    --brand:#7aa7ff;--brand-ink:#0d1220;--brand-soft:#1f2a44;--accent:#f0a050;
+    --s0:#ff7a7a;--s1:#f0a050;--s2:#62b4f0;--s3:#56c98f;--focus:#7aa7ff66;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11151d;--card:#1a2030;--ink:#e8ecf4;--muted:#a3adc2;--line:#2c3446;
+  --brand:#7aa7ff;--brand-ink:#0d1220;--brand-soft:#1f2a44;--accent:#f0a050;
+  --s0:#ff7a7a;--s1:#f0a050;--s2:#62b4f0;--s3:#56c98f;--focus:#7aa7ff66;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 120px}
+header.hero{background:var(--brand);color:var(--brand-ink);border-radius:16px;padding:24px 22px;margin-bottom:18px}
+.hero small{text-transform:uppercase;letter-spacing:.08em;font-weight:600;opacity:.85}
+.hero h1{margin:4px 0 8px;font-size:1.7rem;line-height:1.2}
+.hero p{margin:0;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+.card h2{margin:0 0 10px;font-size:1.1rem}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--muted);font-weight:600}
+input[type=text],input[type=date],textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%}
+textarea{min-height:64px;resize:vertical}
+input:focus,textarea:focus,button:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
+.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0;padding:0;list-style:none}
+.legend li{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.88rem;display:flex;gap:8px;align-items:flex-start}
+.legend b{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:50%;color:#fff;font-size:.9rem}
+.sec-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.sec-head h2{margin:0}
+.sec-num{color:var(--brand);font-weight:800;margin-right:6px}
+.pill{background:var(--brand-soft);color:var(--brand);font-weight:700;border-radius:999px;padding:4px 12px;font-size:.9rem;white-space:nowrap}
+.item{display:grid;grid-template-columns:1fr auto;gap:10px 16px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.item p{margin:0}
+.item .n{color:var(--muted);font-weight:700;margin-right:4px}
+.opts{display:flex;gap:6px}
+.opts button{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:700 1rem system-ui,sans-serif;cursor:pointer;transition:transform .08s}
+.opts button:hover{border-color:var(--brand)}
+.opts button:active{transform:scale(.95)}
+.opts button[aria-pressed=true][data-v="0"]{background:var(--s0);border-color:var(--s0);color:#fff}
+.opts button[aria-pressed=true][data-v="1"]{background:var(--s1);border-color:var(--s1);color:#fff}
+.opts button[aria-pressed=true][data-v="2"]{background:var(--s2);border-color:var(--s2);color:#fff}
+.opts button[aria-pressed=true][data-v="3"]{background:var(--s3);border-color:var(--s3);color:#fff}
+.result{border:2px solid var(--brand)}
+.score-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.big{font-size:2.6rem;font-weight:800;line-height:1;color:var(--brand)}
+.big span{font-size:1.1rem;color:var(--muted);font-weight:600}
+.stage{font-size:1.25rem;font-weight:800}
+.stage-desc{margin:6px 0 0;color:var(--muted)}
+.bands{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:16px 0 6px}
+.band{border:1px solid var(--line);border-radius:10px;padding:8px;font-size:.8rem;color:var(--muted);text-align:center}
+.band b{display:block;color:var(--ink);font-size:.88rem}
+.band.on{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.band.on b{color:var(--brand-ink)}
+.bars{display:grid;gap:8px;margin-top:14px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) 140px 54px;gap:10px;align-items:center;font-size:.88rem}
+.bar .track{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar .fill{height:100%;background:var(--brand);border-radius:6px;transition:width .25s}
+.bar .lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .v{text-align:right;font-weight:700}
+.prio{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prio .full{grid-column:1/-1}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.closing{background:var(--brand-soft);border-left:5px solid var(--accent);border-radius:12px;padding:16px 18px;font-weight:600}
+.dock{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -6px 20px #0000001a;z-index:5}
+.dock .in{max-width:860px;margin:0 auto;padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.dock .stat{font-size:.9rem;color:var(--muted)}
+.dock .stat b{color:var(--ink)}
+.btns{display:flex;gap:8px}
+.btn{font:700 .95rem system-ui,sans-serif;border-radius:10px;padding:10px 16px;border:1.5px solid var(--brand);cursor:pointer;background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{background:transparent;color:var(--brand)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+#msg{font-size:.85rem;margin-top:4px;color:var(--muted);min-height:1.2em}
+@media (max-width:640px){
+  .fields,.prio{grid-template-columns:1fr}
+  .legend,.bands{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:1fr}
+  .opts{justify-content:flex-start}
+  .bar{grid-template-columns:minmax(0,1fr) 90px 48px}
+  .hero h1{font-size:1.4rem}
+  .dock .in{flex-wrap:wrap}
+  .btns{width:100%}.btns .btn{flex:1}
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <small>Herramientas Digitales para el Crecimiento de PYMES · Módulo 1</small>
+    <h1>Checklist de Madurez Digital para PYMES</h1>
+    <p>Ayudar a cada participante a identificar, de manera simple y aplicada, el nivel actual de digitalización de su negocio y detectar oportunidades concretas de mejora.</p>
+  </header>
+
+  <section class="card">
+    <h2>Datos del participante</h2>
+    <div class="fields">
+      <label class="f">Nombre<input type="text" id="p_nombre" autocomplete="name"></label>
+      <label class="f">Negocio / PYME<input type="text" id="p_negocio" autocomplete="organization"></label>
+      <label class="f">Fecha<input type="date" id="p_fecha"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Instrucciones</h2>
+    <p style="margin:0 0 10px">Lee cada afirmación y marca la opción que mejor represente la situación actual de tu negocio.</p>
+    <ul class="legend">
+      <li><b style="background:var(--s0)">0</b>No lo hacemos</li>
+      <li><b style="background:var(--s1)">1</b>Lo hacemos de forma ocasional o informal</li>
+      <li><b style="background:var(--s2)">2</b>Lo hacemos de forma habitual, pero aún puede mejorar</li>
+      <li><b style="background:var(--s3)">3</b>Lo hacemos de manera sistemática y controlada</li>
+    </ul>
+  </section>
+
+  <div id="sections"></div>
+
+  <section class="card result" id="resultado">
+    <h2>Cálculo orientativo</h2>
+    <div class="score-row">
+      <div class="big" id="r_total">0<span> / 78</span></div>
+      <div style="flex:1;min-width:220px">
+        <div class="stage" id="r_stage">—</div>
+        <p class="stage-desc" id="r_desc"></p>
+      </div>
+    </div>
+    <div class="bands" id="bands"></div>
+    <div class="bars" id="bars"></div>
+    <p class="note">El checklist tiene 26 afirmaciones con puntaje máximo 3 cada una, por lo que el total posible es 78. El último tramo se extiende hasta 78.</p>
+  </section>
+
+  <section class="card">
+    <h2>Mi prioridad de mejora</h2>
+    <div class="prio">
+      <label class="f full">La práctica digital que mejor realizamos hoy<textarea id="q1"></textarea></label>
+      <label class="f full">La principal dificultad que detectamos<textarea id="q2"></textarea></label>
+      <label class="f full">Una mejora concreta que podemos implementar esta semana<textarea id="q3"></textarea></label>
+      <label class="f">Persona responsable<input type="text" id="q4"></label>
+      <label class="f">Fecha objetivo<input type="date" id="q5"></label>
+      <label class="f full">Cómo sabremos que mejoró<textarea id="q6"></textarea></label>
+    </div>
+  </section>
+
+  <div class="closing">La madurez digital no depende de utilizar muchas aplicaciones. Depende de que las herramientas ayuden al negocio a trabajar de forma más ordenada, segura y eficiente.</div>
+</div>
+
+<div class="dock">
+  <div class="in">
+    <div>
+      <div class="stat">Respondidas <b id="d_ans">0/26</b> · Puntaje <b id="d_tot">0/78</b> · <b id="d_stage">—</b></div>
+      <div id="msg" role="status" aria-live="polite"></div>
+    </div>
+    <div class="btns">
+      <button class="btn ghost" id="b_reset" type="button">Reiniciar</button>
+      <button class="btn" id="b_pdf" type="button" hidden>Descargar resultado en PDF</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const SECTIONS=[
+ {t:"Organización y gestión de la información",i:[
+  "Los documentos importantes del negocio están almacenados de manera ordenada.",
+  "Existe una estructura clara de carpetas para encontrar archivos con rapidez.",
+  "Los archivos tienen nombres comprensibles y consistentes.",
+  "Evitamos depender de un único computador o teléfono para guardar información crítica.",
+  "Sabemos cuál es la versión vigente de los documentos importantes."]},
+ {t:"Trabajo en la nube y colaboración",i:[
+  "Utilizamos herramientas en la nube para acceder a documentos desde distintos dispositivos.",
+  "Compartimos archivos mediante enlaces o permisos, evitando enviar múltiples copias.",
+  "Sabemos diferenciar entre permisos de lectura y edición.",
+  "Las personas del equipo pueden colaborar sobre un mismo documento cuando corresponde.",
+  "Revisamos periódicamente quién tiene acceso a carpetas o documentos compartidos."]},
+ {t:"Productividad digital",i:[
+  "Utilizamos herramientas digitales para organizar tareas, documentos o comunicaciones.",
+  "Las herramientas que usamos responden a necesidades reales del negocio.",
+  "Evitamos duplicar información en distintas aplicaciones sin necesidad.",
+  "El equipo conoce las herramientas principales que debe utilizar para su trabajo.",
+  "Tenemos criterios básicos para decidir cuándo incorporar una nueva herramienta."]},
+ {t:"Seguridad digital básica",i:[
+  "Cada persona utiliza su propia cuenta de acceso.",
+  "Evitamos compartir contraseñas.",
+  "Utilizamos contraseñas robustas y diferentes para cuentas importantes.",
+  "Activamos la verificación en dos pasos cuando está disponible.",
+  "Revisamos los permisos antes de compartir información sensible.",
+  "Contamos con una forma de recuperar archivos o versiones anteriores cuando es necesario."]},
+ {t:"Presencia y gestión digital del negocio",i:[
+  "La información digital del negocio se mantiene actualizada.",
+  "Los canales digitales de atención tienen responsables definidos.",
+  "Registramos información básica de clientes, ventas o consultas.",
+  "Utilizamos datos o métricas simples para tomar decisiones.",
+  "Identificamos tareas repetitivas que podrían simplificarse con herramientas digitales."]}
+];
+const STAGES=[
+ {min:0,max:20,n:"Etapa inicial",d:"La PYME utiliza herramientas digitales de manera aislada o informal. Prioriza ordenar la información, definir una estructura básica de carpetas y fortalecer la seguridad de las cuentas."},
+ {min:21,max:40,n:"Etapa en desarrollo",d:"Ya existen prácticas digitales útiles, pero todavía dependen de hábitos individuales. Conviene estandarizar herramientas, permisos, nombres de archivos y responsabilidades."},
+ {min:41,max:60,n:"Etapa funcional",d:"La PYME utiliza herramientas digitales de manera habitual. El siguiente paso es integrar procesos, reducir duplicidades y utilizar mejor la información para tomar decisiones."},
+ {min:61,max:78,n:"Etapa consolidada",d:"La PYME cuenta con prácticas digitales sistemáticas. El foco debe estar en optimizar, automatizar y medir resultados sin perder control ni seguridad."}
+];
+const LEG=["No lo hacemos","Ocasional o informal","Habitual, puede mejorar","Sistemática y controlada"];
+const NITEMS=SECTIONS.reduce((a,s)=>a+s.i.length,0), MAX=NITEMS*3;
+const TXT=["p_nombre","p_negocio","p_fecha","q1","q2","q3","q4","q5","q6"];
+const KEY="checklist-madurez-v1";
+let ans={};
+const $=id=>document.getElementById(id);
+
+/* build sections */
+const host=$("sections");
+SECTIONS.forEach((s,si)=>{
+  const c=document.createElement("section");c.className="card";
+  const h=document.createElement("div");h.className="sec-head";
+  const h2=document.createElement("h2");h2.innerHTML=`<span class="sec-num">${si+1}.</span>`;h2.append(s.t);
+  const p=document.createElement("span");p.className="pill";p.id="sub"+si;
+  h.append(h2,p);c.append(h);
+  s.i.forEach((txt,ii)=>{
+    const k=si+"_"+ii, row=document.createElement("div");row.className="item";
+    const q=document.createElement("p");q.innerHTML=`<span class="n">${si+1}.${ii+1}</span>`;q.append(txt);
+    const o=document.createElement("div");o.className="opts";o.setAttribute("role","group");o.setAttribute("aria-label","Puntaje para: "+txt);
+    for(let v=0;v<4;v++){
+      const b=document.createElement("button");b.type="button";b.textContent=v;b.dataset.v=v;b.dataset.k=k;
+      b.title=v+" = "+LEG[v];b.setAttribute("aria-pressed","false");
+      b.onclick=()=>{ans[k]=(ans[k]===v?undefined:v);if(ans[k]===undefined)delete ans[k];render();save();};
+      o.append(b);
+    }
+    row.append(q,o);c.append(row);
+  });
+  host.append(c);
+});
+$("bands").innerHTML=STAGES.map((s,i)=>`<div class="band" id="band${i}"><b>${s.n}</b>${s.min} a ${s.max}</div>`).join("");
+$("bars").innerHTML=SECTIONS.map((s,i)=>`<div class="bar"><span class="lbl">${i+1}. ${s.t}</span><span class="track"><span class="fill" id="fill${i}" style="width:0"></span></span><span class="v" id="bv${i}"></span></div>`).join("");
+
+function calc(){
+  const subs=SECTIONS.map((s,si)=>s.i.reduce((a,_,ii)=>a+(ans[si+"_"+ii]||0),0));
+  const total=subs.reduce((a,b)=>a+b,0), answered=Object.keys(ans).length;
+  const stage=STAGES.find(s=>total>=s.min&&total<=s.max);
+  return {subs,total,answered,stage};
+}
+function render(){
+  document.querySelectorAll(".opts button").forEach(b=>b.setAttribute("aria-pressed",String(ans[b.dataset.k]===+b.dataset.v)));
+  const r=calc();
+  SECTIONS.forEach((s,i)=>{
+    const m=s.i.length*3;
+    $("sub"+i).textContent=`Subtotal: ${r.subs[i]} / ${m}`;
+    $("fill"+i).style.width=(r.subs[i]/m*100)+"%";
+    $("bv"+i).textContent=`${r.subs[i]}/${m}`;
+  });
+  const done=r.answered===NITEMS;
+  $("r_total").innerHTML=`${r.total}<span> / ${MAX}</span>`;
+  $("r_stage").textContent=done?r.stage.n:`${r.stage.n} (parcial: faltan ${NITEMS-r.answered})`;
+  $("r_desc").textContent=r.stage.d;
+  STAGES.forEach((s,i)=>$("band"+i).classList.toggle("on",s===r.stage));
+  $("d_ans").textContent=`${r.answered}/${NITEMS}`;
+  $("d_tot").textContent=`${r.total}/${MAX}`;
+  $("d_stage").textContent=r.stage.n;
+}
+function save(){try{const t={};TXT.forEach(id=>t[id]=$(id).value);localStorage.setItem(KEY,JSON.stringify({ans,t}));}catch(e){}}
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||"null");if(d){ans=d.ans||{};TXT.forEach(id=>{if(d.t&&d.t[id]!=null)$(id).value=d.t[id];});}}catch(e){}}
+TXT.forEach(id=>$(id).addEventListener("input",save));
+$("b_reset").onclick=()=>{if(!confirm("¿Borrar todas las respuestas?"))return;ans={};TXT.forEach(id=>$(id).value="");$("p_fecha").value=today();save();render();};
+function today(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function fdate(v){if(!v)return"";const[y,m,d]=v.split("-");return `${d}-${m}-${y}`;}
+load();if(!$("p_fecha").value)$("p_fecha").value=today();render();
+
+/* ---------- PDF ---------- */
+function buildPDF(){
+  const {jsPDF}=window.jspdf;
+  const doc=new jsPDF({unit:"mm",format:"a4"});
+  const W=210,M=16,CW=W-2*M,BLUE=[31,78,156],GREY=[91,100,117],COL=[[214,69,69],[232,134,42],[47,143,216],[42,157,99]];
+  let y=0;
+  const r=calc();
+  const need=h=>{if(y+h>282){doc.addPage();y=18;}};
+  const para=(t,size,color,style,indent)=>{doc.setFont("helvetica",style||"normal");doc.setFontSize(size);doc.setTextColor(...(color||[29,36,51]));
+    const lines=doc.splitTextToSize(t,CW-(indent||0));const lh=size*0.42;need(lines.length*lh);doc.text(lines,M+(indent||0),y+lh*0.8);y+=lines.length*lh;};
+  // header
+  doc.setFillColor(...BLUE);doc.rect(0,0,W,34,"F");
+  doc.setTextColor(255);doc.setFont("helvetica","normal");doc.setFontSize(8.5);
+  doc.text("HERRAMIENTAS DIGITALES PARA EL CRECIMIENTO DE PYMES · MÓDULO 1",M,11);
+  doc.setFont("helvetica","bold");doc.setFontSize(18);doc.text("Checklist de Madurez Digital para PYMES",M,21);
+  doc.setFont("helvetica","normal");doc.setFontSize(10);doc.text("Informe de resultados",M,28);
+  y=42;
+  // participant
+  const info=[["Nombre",$("p_nombre").value||"—"],["Negocio",$("p_negocio").value||"—"],["Fecha",fdate($("p_fecha").value)||"—"]];
+  doc.setFontSize(10);
+  info.forEach(([k,v],i)=>{const x=M+i*(CW/3);doc.setFont("helvetica","bold");doc.setTextColor(...GREY);doc.text(k.toUpperCase(),x,y);
+    doc.setFont("helvetica","normal");doc.setTextColor(29,36,51);doc.text(doc.splitTextToSize(v,CW/3-4)[0],x,y+5.5);});
+  y+=13;
+  // result box
+  doc.setDrawColor(...BLUE);doc.setLineWidth(0.6);doc.roundedRect(M,y,CW,38,3,3);
+  doc.setTextColor(...BLUE);doc.setFont("helvetica","bold");doc.setFontSize(30);doc.text(String(r.total),M+7,y+17);
+  const tw=doc.getTextWidth(String(r.total));doc.setFontSize(12);doc.setTextColor(...GREY);doc.text(" / "+MAX,M+7+tw,y+17);
+  doc.setFontSize(8.5);doc.text(`Respondidas: ${r.answered} de ${NITEMS}`,M+7,y+24);
+  doc.setTextColor(29,36,51);doc.setFontSize(14);doc.text(r.stage.n+(r.answered<NITEMS?" (resultado parcial)":""),M+52,y+11);
+  doc.setFont("helvetica","normal");doc.setFontSize(9.5);doc.setTextColor(...GREY);
+  doc.text(doc.splitTextToSize(r.stage.d,CW-58),M+52,y+17.5);
+  // bands
+  const bw=(CW-14)/4;
+  STAGES.forEach((s,i)=>{const x=M+7+i*bw,on=s===r.stage;
+    if(on){doc.setFillColor(...BLUE);doc.rect(x,y+28.5,bw-2,6,"F");doc.setTextColor(255);}else{doc.setFillColor(231,238,251);doc.rect(x,y+28.5,bw-2,6,"F");doc.setTextColor(...GREY);}
+    doc.setFontSize(7.5);doc.setFont("helvetica",on?"bold":"normal");doc.text(`${s.n} · ${s.min}-${s.max}`,x+(bw-2)/2,y+32.6,{align:"center"});});
+  y+=46;
+  // section summary bars
+  doc.setFont("helvetica","bold");doc.setFontSize(12);doc.setTextColor(...BLUE);doc.text("Resultado por sección",M,y);y+=6;
+  SECTIONS.forEach((s,i)=>{const m=s.i.length*3,pct=r.subs[i]/m;
+    doc.setFont("helvetica","normal");doc.setFontSize(9.5);doc.setTextColor(29,36,51);doc.text(`${i+1}. ${s.t}`,M,y+3.2);
+    doc.setFillColor(223,228,238);doc.rect(M+98,y,62,4,"F");doc.setFillColor(...BLUE);if(pct>0)doc.rect(M+98,y,62*pct,4,"F");
+    doc.setFont("helvetica","bold");doc.text(`${r.subs[i]} / ${m}`,M+CW,y+3.2,{align:"right"});y+=7.5;});
+  y+=4;
+  // detail per section
+  doc.setFont("helvetica","bold");doc.setFontSize(12);doc.setTextColor(...BLUE);need(10);doc.text("Detalle de respuestas",M,y);y+=3;
+  doc.setFont("helvetica","normal");doc.setFontSize(8);doc.setTextColor(...GREY);
+  y+=3;doc.text("0 = No lo hacemos · 1 = Ocasional o informal · 2 = Habitual, puede mejorar · 3 = Sistemática y controlada",M,y);y+=4;
+  SECTIONS.forEach((s,si)=>{
+    need(16);
+    doc.setFillColor(231,238,251);doc.rect(M,y,CW,7,"F");
+    doc.setFont("helvetica","bold");doc.setFontSize(9.5);doc.setTextColor(...BLUE);
+    doc.text(`${si+1}. ${s.t.toUpperCase()}`,M+2,y+4.8);doc.text(`Subtotal: ${r.subs[si]} / ${s.i.length*3}`,M+CW-2,y+4.8,{align:"right"});y+=8.5;
+    s.i.forEach((t,ii)=>{
+      const v=ans[si+"_"+ii];doc.setFont("helvetica","normal");doc.setFontSize(9);
+      const lines=doc.splitTextToSize(`${si+1}.${ii+1}  ${t}`,CW-22),h=Math.max(lines.length*3.9,5)+2.2;need(h);
+      doc.setTextColor(29,36,51);doc.text(lines,M+2,y+3.5);
+      const cx=M+CW-8;
+      if(v===undefined){doc.setDrawColor(190);doc.setLineWidth(0.3);doc.circle(cx,y+2.4,2.8);doc.setTextColor(150);doc.setFontSize(7);doc.text("s/r",cx,y+3.4,{align:"center"});}
+      else{doc.setFillColor(...COL[v]);doc.circle(cx,y+2.4,2.9,"F");doc.setTextColor(255);doc.setFont("helvetica","bold");doc.setFontSize(9);doc.text(String(v),cx,y+3.6,{align:"center"});}
+      y+=h;doc.setDrawColor(223,228,238);doc.setLineWidth(0.2);doc.line(M,y-0.8,M+CW,y-0.8);
+    });
+    y+=3;
+  });
+  // priority
+  need(24);y+=6;
+  doc.setFont("helvetica","bold");doc.setFontSize(12);doc.setTextColor(...BLUE);doc.text("Mi prioridad de mejora",M,y);y+=4;
+  const P=[["La práctica digital que mejor realizamos hoy","q1"],["La principal dificultad que detectamos","q2"],["Una mejora concreta que podemos implementar esta semana","q3"],["Persona responsable","q4"],["Fecha objetivo","q5"],["Cómo sabremos que mejoró","q6"]];
+  P.forEach(([l,id])=>{let v=$(id).value.trim();if(id==="q5")v=fdate(v);
+    need(12);doc.setFont("helvetica","bold");doc.setFontSize(9);doc.setTextColor(...GREY);doc.text(l,M,y+3);y+=4.5;
+    para(v||"—",10,[29,36,51],"normal",0);y+=3;});
+  // closing
+  need(20);y+=2;
+  doc.setFont("helvetica","bolditalic");doc.setFontSize(10);
+  const cl=doc.splitTextToSize("La madurez digital no depende de utilizar muchas aplicaciones. Depende de que las herramientas ayuden al negocio a trabajar de forma más ordenada, segura y eficiente.",CW-10);
+  const ch=cl.length*4.4+7;doc.setFillColor(231,238,251);doc.rect(M,y,CW,ch,"F");doc.setFillColor(232,134,42);doc.rect(M,y,1.6,ch,"F");
+  doc.setTextColor(...BLUE);doc.text(cl,M+6,y+6);y+=ch;
+  // footer
+  const n=doc.getNumberOfPages();
+  for(let i=1;i<=n;i++){doc.setPage(i);doc.setFont("helvetica","normal");doc.setFontSize(7.5);doc.setTextColor(150);
+    doc.text("Checklist de Madurez Digital para PYMES · Cálculo orientativo (máximo 78 puntos)",M,292);doc.text(`Página ${i} de ${n}`,W-M,292,{align:"right"});}
+  return doc;
+}
+window.__buildPDF=buildPDF;
+
+(async()=>{
+  let dl=null;
+  try{dl=window.claude&&window.claude.use?await window.claude.use("downloads"):null;}catch(e){dl=null;}
+  if(!dl)return;
+  const btn=$("b_pdf");btn.hidden=false;
+  btn.onclick=async()=>{
+    const msg=$("msg");
+    if(!window.jspdf){msg.textContent="No se pudo cargar el generador de PDF. Recarga la página.";return;}
+    const r=calc();
+    if(r.answered<NITEMS&&!confirm(`Faltan ${NITEMS-r.answered} afirmaciones por responder. ¿Descargar igual el resultado parcial?`))return;
+    btn.disabled=true;msg.textContent="Preparando PDF…";
+    try{
+      const blob=buildPDF().output("blob");
+      const base=($("p_negocio").value||"").trim().replace(/[^\p{L}\p{N}]+/gu,"_").replace(/^_|_$/g,"");
+      await dl.save({filename:`Checklist_Madurez_Digital${base?"_"+base:""}.pdf`,data:blob});
+      msg.textContent="PDF descargado.";
+    }catch(e){
+      const c=e&&e.code;
+      msg.textContent=c==="declined"?"Descarga cancelada.":c==="rate_limited"?"Hay una descarga pendiente; inténtalo en unos segundos.":"No fue posible descargar el PDF en esta vista.";
+      if(c==="unavailable"||c==="not_granted"||c==="capability_disabled"||c==="capability_removed")btn.hidden=true;
+    }finally{btn.disabled=false;}
+  };
+})();
+</script>

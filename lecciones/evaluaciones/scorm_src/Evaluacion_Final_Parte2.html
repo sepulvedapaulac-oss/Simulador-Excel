@@ -1,0 +1,380 @@
+<style>
+.exp{background:var(--story);border:1px solid var(--story-line);border-left:5px solid var(--amber);border-radius:12px;padding:10px 14px;margin:12px 0}
+.exp .lbl{display:block;font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin-bottom:2px}
+.exp p{margin:4px 0}
+.ask{font-weight:600;margin-top:14px}
+.tl{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.tl li{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:.9rem}
+.tl li b{display:block;color:var(--teal-ink);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+.tl li small{color:var(--muted)}
+.ref{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.93rem}
+.ref ul{margin:4px 0 0;padding-left:20px}
+.mock .bar{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tree{padding:8px 14px 0;font-size:.9rem;color:var(--muted)}
+.hs small.lyr{display:block;color:var(--muted);font-size:.76rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.grp{padding:4px 10px 10px}
+.grp h5{margin:10px 4px 4px;font-size:.8rem;color:var(--navy);letter-spacing:.05em;text-transform:uppercase}
+.wa{background:var(--surface)}
+.wa .whead{display:flex;gap:12px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line)}
+.wa .ava{width:46px;height:46px;border-radius:50%;background:#B5543A;color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.wa dl{margin:0;padding:6px 14px 12px;display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:6px 12px;font-size:.92rem}
+.wa dt{color:var(--muted);font-weight:700}
+.wa dd{margin:0;overflow-wrap:anywhere}
+.wa .warn{color:var(--bad);font-weight:700}
+@media(max-width:560px){.wa dl{grid-template-columns:1fr}.wa dd{margin-bottom:6px}}
+.cv-stage{padding:14px;display:flex;justify-content:center;background:#e9e4dc}
+.post{width:100%;max-width:460px;background:#F3EBDD;color:#3E2A1F;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.18);padding:10px;display:grid;gap:4px}
+.post .hs{color:#3E2A1F;padding:6px 8px;border-width:3px}
+.post .hs.sel,.post .hs.ok,.post .hs.ko,.post .hs.miss{color:#3E2A1F}
+.post .meta{display:block;font:600 .74rem/1.3 Inter,system-ui,sans-serif;color:#3f4c57;background:rgba(255,255,255,.8);border-radius:6px;padding:2px 6px;margin-top:4px}
+.p-title{display:block;font:800 1.6rem/1.1 Georgia,serif;color:#D8C7A8}
+.p-sub{display:block;font:italic 600 1.05rem/1.3 Georgia,serif;color:#B5543A}
+.p-photo{display:flex;align-items:flex-end;justify-content:center;gap:8px;height:120px;border-radius:6px;background:linear-gradient(180deg,#e8dcc8,#d5c4a6);font-size:3rem}
+.p-busy{display:block;position:relative;height:86px;border-radius:6px;background:repeating-linear-gradient(45deg,#7d6a55 0 8px,#b8a07e 8px 14px,#4f6b3a 14px 20px,#c99b6a 20px 27px);overflow:hidden}
+.p-busy span{position:absolute;inset:auto 8px 10px 8px;font:700 1.05rem/1.2 Inter,system-ui,sans-serif;color:#f5efe6}
+.p-dim{display:block;font:700 .98rem/1.35 Inter,system-ui,sans-serif;color:#3E2A1F}
+.p-av{display:flex;flex-wrap:wrap;gap:6px 14px;font:600 .92rem/1.3 Inter,system-ui,sans-serif}
+.p-av i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.p-cta{display:block;background:#556B2F;color:#fff;border-radius:8px;padding:8px 10px;font:700 .95rem/1.3 Inter,system-ui,sans-serif;text-align:center}
+.p-pal i{display:inline-block;width:16px;height:16px;border-radius:4px;margin-right:4px;vertical-align:-3px;border:1px solid rgba(0,0,0,.15)}
+.chat{padding:10px 12px;display:grid;gap:6px;background:var(--surface)}
+.chat .m{max-width:88%;border-radius:12px;padding:7px 11px;font-size:.92rem;overflow-wrap:anywhere}
+.chat .bot{background:var(--surface2);border:1px solid var(--line);justify-self:start}
+.chat .usr{background:var(--mint);border:1px solid var(--mint-line);justify-self:end}
+.chat .m small{display:block;color:var(--muted);font-size:.74rem}
+.chat .sys{justify-self:center;font-size:.8rem;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;padding:10px}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.88rem}
+.pcard h5{margin:0 0 6px;font-size:.95rem;color:var(--navy)}
+.pcard dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px}
+.pcard dt{color:var(--muted);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em;padding-top:2px}
+.pcard dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:420px){.pcard dl{grid-template-columns:1fr}.pcard dd{margin-bottom:4px}}
+@media(max-width:640px){table.data.sm{font-size:.82rem}table.data.sm th,table.data.sm td{padding:6px 6px}}
+.why ul{margin:6px 0 0;padding-left:20px}
+</style>
+
+<section id="intro" class="card">
+ <span class="eyebrow">Evaluación final · Parte 2</span>
+ <h2>Caso integrador: un año digitalizando Casa Nativa</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Hace un año sentía que lo digital ya estaba resuelto porque vendía por Instagram. Guardé todo lo que hicimos en un expediente: el diagnóstico, la nube, WhatsApp, la tienda, las campañas, los clientes y los datos. Ahora necesito convertirlo en un plan para los próximos 90 días.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p><b>Casa Nativa</b> vende decoración hecha a mano (cerámica, textiles y cestería): 25 productos, Marcela como dueña, <b>Sofía</b> como ayudante de media jornada y un grupo de artesanas proveedoras. En estas 10 preguntas recorrerás su año de digitalización, de noviembre de 2025 a octubre de 2026, como un solo caso. Cada etapa deja evidencia que usarás más adelante, y la última pregunta las integra en el <b>Plan de Acción Digital</b>.</p>
+ <h3 style="margin:14px 0 0;font-size:1.02rem;color:var(--navy)">📁 Expediente del caso</h3>
+ <p class="muted" style="margin:2px 0 0">En cada pregunta verás el extracto del expediente que necesitas, con sus datos. Todo es ficticio y las pantallas son recreaciones simplificadas.</p>
+ <ol class="tl">
+  <li><b>Hoja 1 · nov 2025</b>Diagnóstico de madurez digital <small>(Módulo 1)</small></li>
+  <li><b>Hoja 2 · mar 2026</b>Carpeta compartida, permisos y seguridad <small>(Módulo 1)</small></li>
+  <li><b>Hoja 3 · abr 2026</b>Perfil de WhatsApp Business y registro de consultas <small>(Módulo 2)</small></li>
+  <li><b>Hoja 4 · may 2026</b>Costos de canal: marketplace o tienda propia <small>(Módulo 2)</small></li>
+  <li><b>Hoja 5 · jun 2026</b>Incidente del pedido #CN-1187: pago y despacho <small>(Módulo 2)</small></li>
+  <li><b>Hoja 6 · jul 2026</b>Cliente ideal y pieza de Canva <small>(Módulo 3)</small></li>
+  <li><b>Hoja 7 · ago 2026</b>Campaña pagada y flujo del chatbot <small>(Módulo 3)</small></li>
+  <li><b>Hoja 8 · oct 2026</b>Base de clientes en el CRM <small>(Módulo 4)</small></li>
+  <li><b>Hoja 9 · oct 2026</b>Adquisición de tráfico en GA4 (septiembre) <small>(Módulo 4)</small></li>
+  <li><b>Hoja 10 · oct 2026</b>Borrador del plan de 90 días <small>(Módulo 4)</small></li>
+ </ol>
+ <div class="steps"><div><b>10 preguntas · 20 puntos</b>Cada pregunta vale 2 puntos. Algunas dan puntaje parcial por cada fila o elemento correcto.</div><div><b>Apruebas con 60%</b>Necesitas 12 de 20 puntos. Tienes un envío por intento.</div><div><b>Corrección al final</b>Tus respuestas se registran sin corrección. Al terminar verás tu puntaje y podrás revisar cada pregunta con su explicación.</div></div>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar la evaluación →</button>
+</section>
+
+<!-- ============ M1 ============ -->
+<section class="etask card" data-id="EF.P21" data-pts="2" data-auto="match" data-title="EF.P21 · Diagnóstico de madurez digital" data-lesson="Lección 1.1 · ¿Qué tan digital es tu PYME?">
+ <h2>Etapa 1 · ¿Qué revela cada hallazgo del diagnóstico?</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 1 · noviembre 2025</span>
+  <p>Marcela anotó durante una semana lo que pasaba en el taller antes de comprar cualquier herramienta. Estos son sus hallazgos (H1 a H5).</p></div>
+ <p>Asocia cada hallazgo con la <b>dimensión de madurez digital</b> que revela. Si un hallazgo no indica madurez, elige la última opción.</p>
+ <div class="mock"><div class="bar"><span>📝 Diagnóstico de Casa Nativa · semana del 10 al 16 de noviembre de 2025</span></div>
+ <div style="padding:6px 14px">
+  <div class="mrow"><span><b>H1.</b> Sofía cobró un precio antiguo porque la lista de precios vigente estaba solo en el celular de Marcela y ella usaba una foto de hace tres meses.</span><select data-ans="info"><option value="info">Gestión de la información</option><option value="cli">Relación con clientes</option><option value="proc">Procesos y operación</option><option value="dat">Uso de datos para decidir</option><option value="pres">No indica madurez: es solo presencia</option></select><span class="mk"></span></div>
+  <div class="mrow"><span><b>H2.</b> Las cotizaciones se anotan en una libreta; nadie sabe a quién hay que volver a escribir y esa semana se enfriaron cuatro.</span><select data-ans="cli"><option value="info">Gestión de la información</option><option value="cli">Relación con clientes</option><option value="proc">Procesos y operación</option><option value="dat">Uso de datos para decidir</option><option value="pres">No indica madurez: es solo presencia</option></select><span class="mk"></span></div>
+  <div class="mrow"><span><b>H3.</b> El sábado Marcela estuvo en la feria y no salió ningún despacho: solo ella sabe cómo confirmar un pago y armar un pedido.</span><select data-ans="proc"><option value="info">Gestión de la información</option><option value="cli">Relación con clientes</option><option value="proc">Procesos y operación</option><option value="dat">Uso de datos para decidir</option><option value="pres">No indica madurez: es solo presencia</option></select><span class="mk"></span></div>
+  <div class="mrow"><span><b>H4.</b> Se decide qué encargar a las artesanas “según lo que parece que se vende más”; nunca se han contado las ventas por producto ni por canal.</span><select data-ans="dat"><option value="info">Gestión de la información</option><option value="cli">Relación con clientes</option><option value="proc">Procesos y operación</option><option value="dat">Uso de datos para decidir</option><option value="pres">No indica madurez: es solo presencia</option></select><span class="mk"></span></div>
+  <div class="mrow"><span><b>H5.</b> La cuenta de Instagram tiene 4.800 seguidores y publica todos los días, por eso Marcela pensaba que “lo digital ya estaba resuelto”.</span><select data-ans="pres"><option value="info">Gestión de la información</option><option value="cli">Relación con clientes</option><option value="proc">Procesos y operación</option><option value="dat">Uso de datos para decidir</option><option value="pres">No indica madurez: es solo presencia</option></select><span class="mk"></span></div>
+ </div></div>
+ <div class="why"><h4>Por qué</h4>La madurez digital se observa en cómo trabaja el negocio, no en cuántas aplicaciones o seguidores tiene.<ul>
+  <li><b>H1 · Información:</b> el problema es dónde está la versión vigente y quién puede acceder a ella.</li>
+  <li><b>H2 · Clientes:</b> no existe un registro común de consultas y seguimiento. Este hallazgo reaparece en el CRM (Hoja 8) y en el plan (Hoja 10).</li>
+  <li><b>H3 · Procesos:</b> la operación depende de la memoria de una persona y no de pasos conocidos.</li>
+  <li><b>H4 · Datos:</b> hay números disponibles, pero no se usan para decidir.</li>
+  <li><b>H5 · Presencia:</b> tener seguidores y publicar es presencia digital, no madurez. No dice nada sobre información, clientes, procesos ni datos.</li></ul>
+  <b>Error típico:</b> clasificar H5 como “Relación con clientes” porque Instagram sirve para contactar clientes, o H3 como “Información”. En H3 lo que falta es un procedimiento que otra persona pueda seguir.</div>
+</section>
+
+<section class="etask card" data-id="EF.P22" data-pts="2" data-auto="hot" data-title="EF.P22 · Nube: permisos y seguridad" data-lesson="Lección 1.3 · Organiza y protege tus archivos en la nube">
+ <h2>Etapa 2 · Auditoría de la carpeta compartida</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 2 · marzo 2026</span>
+  <p>Para resolver H1 y H3, Marcela llevó los archivos a una carpeta común en la nube. Las reglas que acordó con su equipo son: <b>nombres AAAA-MM_Contenido_Detalle</b>, <b>permiso según la tarea</b>, <b>enlaces restringidos</b>, <b>cuentas individuales</b> y <b>verificación en dos pasos</b>. Tomás, que llevaba las redes, dejó de trabajar en febrero.</p></div>
+ <p>Haz clic en <b>cada elemento que sea un riesgo o que incumpla las reglas</b> (son varios) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar"><span>☁️ Casa Nativa · Carpeta compartida · Detalles y accesos</span><span>Recreación simplificada</span></div>
+  <div class="tree">📁 01 Administración · 📁 02 Ventas y clientes · 📁 03 Proveedores y artesanas · 📁 04 Marketing</div>
+  <div class="grp">
+   <h5>Accesos</h5>
+   <button class="hs"><small class="lyr">02 Ventas y clientes</small>👤 Sofía, ayudante (sofia@ejemplo.cl, cuenta del negocio) · <b>Puede editar</b>: registra pedidos y pagos</button>
+   <button class="hs" data-ok><small class="lyr">02 Ventas y clientes</small>👤 Tomás (tomas.redes@ejemplo.cl, correo personal) · <b>Puede editar</b></button>
+   <button class="hs" data-ok><small class="lyr">02 Ventas y clientes · enlace</small>🔗 Acceso general: <b>Cualquier persona con el enlace · Lector</b>. El enlace se envió al grupo de WhatsApp de las artesanas.</button>
+   <button class="hs"><small class="lyr">01 Administración</small>👤 Paula Rivas, contadora externa · <b>Puede comentar</b>: revisa y deja observaciones</button>
+   <button class="hs" data-ok><small class="lyr">03 Proveedores y artesanas</small>👤 Taller Greda Lonquén, proveedora · <b>Puede editar</b> toda la carpeta, incluidas las listas de precios de las demás artesanas</button>
+   <h5>Archivos</h5>
+   <button class="hs"><small class="lyr">04 Marketing</small>🖼️ 2026-03_Fotos_ColeccionOtoño.zip</button>
+   <button class="hs" data-ok><small class="lyr">02 Ventas y clientes</small>📊 pedidos marzo FINAL (2).xlsx</button>
+   <button class="hs" data-ok><small class="lyr">01 Administración</small>📄 claves_tienda_banco_correo.docx</button>
+   <h5>Seguridad de la cuenta</h5>
+   <button class="hs"><small class="lyr">Cuenta casanativa@ejemplo.cl</small>🛡️ Verificación en dos pasos <b>activada</b> con el teléfono del negocio</button>
+   <button class="hs" data-ok><small class="lyr">Panel de la tienda en línea</small>🔑 Marcela y Sofía entran con el <b>mismo usuario y contraseña</b></button>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Hay seis problemas:<ul>
+  <li>Tomás conserva la edición con su correo personal aunque ya no trabaja en el negocio.</li>
+  <li>El enlace abierto, aunque sea de solo lectura, expone datos de clientes a cualquiera que lo reciba o lo reenvíe.</li>
+  <li>La proveedora tiene más permiso del que su tarea requiere: le bastaría ver su propia lista.</li>
+  <li>“FINAL (2)” rompe la convención y no permite reconocer la versión vigente.</li>
+  <li>Hay contraseñas guardadas en un documento compartido.</li>
+  <li>Marcela y Sofía comparten la misma cuenta: no se sabe quién hizo qué y no se puede retirar el acceso a una sola persona.</li></ul>
+  En cambio, Sofía edita porque registra pedidos, la contadora solo comenta, el archivo de fotos cumple la convención y la verificación en dos pasos está activa. <b>Error típico:</b> pensar que un enlace “solo lector” no es un riesgo o dar por bueno un permiso por confianza. El permiso se ajusta a la tarea, no a la confianza. Cada acierto suma y cada elemento correcto marcado como riesgo descuenta.</div>
+</section>
+
+<!-- ============ M2 ============ -->
+<section class="etask card" data-id="EF.P23" data-pts="2" data-auto="multi" data-title="EF.P23 · Perfil comercial de WhatsApp Business" data-lesson="Lección 2.1 · Presencia digital y canal comercial">
+ <h2>Etapa 3 · Dos horas para mejorar el perfil comercial</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 3 · abril 2026</span>
+  <p>Con la nube ordenada, Marcela cuenta las consultas de WhatsApp durante cuatro semanas: <b>220 en total</b>, y <b>68</b> llegaron fuera del horario de atención. Así está hoy su perfil.</p></div>
+ <div class="tablewrap"><table class="data sm"><tr><th>Tema de la consulta</th><th class="n">Consultas</th><th class="n">% del total</th></tr>
+  <tr><td>Precio y disponibilidad de un producto</td><td class="n">71</td><td class="n">32%</td></tr>
+  <tr><td>Despacho a regiones y su costo</td><td class="n">52</td><td class="n">24%</td></tr>
+  <tr><td>Horario y dirección del taller</td><td class="n">46</td><td class="n">21%</td></tr>
+  <tr><td>Medios de pago</td><td class="n">38</td><td class="n">17%</td></tr>
+  <tr><td>Pedido personalizado</td><td class="n">9</td><td class="n">4%</td></tr>
+  <tr><td>Reclamo por un pedido</td><td class="n">4</td><td class="n">2%</td></tr>
+ </table></div>
+ <div class="mock wa"><div class="bar"><span>💬 WhatsApp Business · Perfil de empresa</span><span>Recreación simplificada</span></div>
+  <div class="whead"><span class="ava">CN</span><div><b>Casa Nativa</b><br><small class="muted">Cuenta de empresa · +56 9 0000 1200</small></div></div>
+  <dl>
+   <dt>Descripción</dt><dd>“¡Los productos más lindos! 💖”</dd>
+   <dt>Horario</dt><dd class="warn">Sin completar</dd>
+   <dt>Catálogo</dt><dd>6 de 25 productos · <span class="warn">sin precios</span></dd>
+   <dt>Bienvenida</dt><dd class="warn">Desactivado</dd>
+   <dt>Fuera de horario</dt><dd>“Estamos cerrados.”</dd>
+   <dt>Respuestas rápidas</dt><dd class="warn">Ninguna</dd>
+  </dl></div>
+ <p class="ask">Marcela tiene dos horas esta semana. Marca <b>todas</b> las configuraciones que atacan directamente las consultas que más se repiten.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> Completar el catálogo con los 25 productos, cada uno con precio y disponibilidad.</label>
+  <label class="opt" data-ok><input type="checkbox"> Crear respuestas rápidas para medios de pago y para despacho a regiones con sus costos.</label>
+  <label class="opt" data-ok><input type="checkbox"> Publicar el horario y la dirección, y cambiar la descripción por qué vende y a dónde despacha.</label>
+  <label class="opt" data-ok><input type="checkbox"> Cambiar el mensaje fuera de horario por uno que indique cuándo responden y enlace al catálogo.</label>
+  <label class="opt"><input type="checkbox"> Configurar una respuesta automática para los reclamos que envíe la política de cambios y cierre el chat.</label>
+  <label class="opt"><input type="checkbox"> Renovar el logo y la foto de perfil para que el perfil se vea más profesional.</label>
+  <label class="opt"><input type="checkbox"> Activar una bienvenida que pida llamar por teléfono para cotizar cualquier producto.</label>
+  <label class="opt"><input type="checkbox"> Publicar estados cada hora con fotos de productos para aumentar el alcance.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Las cuatro configuraciones correctas responden a lo que el registro muestra: precio y disponibilidad (71) se resuelven con el catálogo, pagos y despacho (38 + 52) con respuestas rápidas, horario y dirección (46) con el perfil completo, y las 68 consultas nocturnas con un mensaje fuera de horario útil. En conjunto cubren 207 de 220 consultas, el <b>94%</b>. Los reclamos son pocos y necesitan a una persona: cerrarlos automáticamente daña la relación. El logo no reduce consultas, pedir una llamada agrega fricción y publicar más atrae más mensajes sin resolver los que ya llegan. <b>Error típico:</b> atacar lo visible (imagen, alcance) en vez de lo que el cliente necesita saber para avanzar. Cada acierto suma y cada marca errónea descuenta.</div>
+</section>
+
+<section class="etask card" data-id="EF.P24" data-pts="2" data-auto="num" data-title="EF.P24 · Costos de canal y punto de equilibrio" data-lesson="Lección 2.2 · ¿Tienda propia o marketplace?">
+ <h2>Etapa 4 · ¿Conviene abrir la tienda propia?</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 4 · mayo 2026</span>
+  <p>Casa Nativa vende desde hace seis meses en un marketplace, que le sirvió para validar sus productos estrella. Ahora muchos clientes buscan la marca por su nombre y Marcela evalúa sumar una tienda propia. Reunió estos datos por pedido promedio. El cliente paga el despacho en ambos canales.</p></div>
+ <div class="tablewrap"><table class="data sm"><tr><th>Concepto</th><th>Marketplace</th><th>Tienda propia</th></tr>
+  <tr><td>Precio promedio por pedido</td><td>$28.000</td><td>$28.000</td></tr>
+  <tr><td>Costo de producto + empaque</td><td>$14.000</td><td>$14.000</td></tr>
+  <tr><td>Cobro por cada venta</td><td>Comisión 16% del precio + cargo fijo $700</td><td>Pasarela de pago 3,5% del precio</td></tr>
+  <tr><td>Costos mensuales fijos</td><td>$0</td><td>Plan de la plataforma $25.000 + pauta mínima para atraer visitas $60.000</td></tr>
+ </table></div>
+ <p class="ask">Calcula con los datos del expediente. Escribe solo números, sin decimales en pesos (tolerancia ±$1).</p>
+ <div class="numgrid">
+  <label>1. Margen por pedido en el marketplace<span class="hint">Precio − costo − comisión − cargo fijo</span><span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="8820" data-tol="1" data-show="$8.820"></span></label>
+  <label>2. Margen por pedido en la tienda propia<span class="hint">Antes de descontar los costos mensuales fijos</span><span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="13020" data-tol="1" data-show="$13.020"></span></label>
+  <label>3. Pedidos al mes desde los cuales la tienda propia deja más ganancia<span class="hint">Número entero de pedidos (los mismos pedidos en uno u otro canal)</span><span class="unit"><input type="text" inputmode="decimal" data-ans="21" data-tol="0" data-show="21 pedidos"><span>pedidos</span></span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4><ul>
+  <li><b>Marketplace:</b> 28.000 − 14.000 − 4.480 (16%) − 700 = <b>$8.820</b> por pedido.</li>
+  <li><b>Tienda propia:</b> 28.000 − 14.000 − 980 (3,5%) = <b>$13.020</b> por pedido, pero con $85.000 de costos fijos al mes.</li>
+  <li><b>Equilibrio:</b> cada pedido en la tienda deja $4.200 más (13.020 − 8.820). Los costos fijos se cubren con 85.000 ÷ 4.200 = 20,2, es decir, desde <b>21 pedidos</b>. Con 21 pedidos, la tienda deja $188.420 y el marketplace $185.220; con 20 todavía gana el marketplace ($176.400 contra $175.400).</li></ul>
+  Por eso la decisión fue <b>multicanal</b>: mantener el marketplace por su alcance y abrir la tienda para quienes ya buscan la marca. <b>Error típico:</b> comparar solo la tarifa por venta (“la tienda cobra 3,5% y el marketplace 16%”) sin considerar los costos fijos, o redondear 20,2 hacia abajo.</div>
+</section>
+
+<section class="etask card" data-id="EF.P25" data-pts="2" data-auto="order" data-title="EF.P25 · Pago, preparación y despacho" data-lesson="Lección 2.3 · Pasarelas, logística y experiencia">
+ <h2>Etapa 5 · Un procedimiento para que no se repita el pedido #CN-1187</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 5 · junio 2026</span>
+  <p>Con la tienda propia funcionando, un mismo pedido acumuló cinco fallas:</p>
+  <ul style="margin:4px 0 0;padding-left:20px">
+   <li>Sofía armó el pedido con un pantallazo de transferencia; el dinero llegó dos días después y mientras tanto se usó el último cojín que otro cliente ya había pagado.</li>
+   <li>La dirección no tenía número de departamento y el paquete volvió al taller.</li>
+   <li>En el reenvío faltó uno de los dos cojines.</li>
+   <li>El despacho se atrasó dos días y nadie avisó a la clienta.</li>
+   <li>La clienta reclamó por Instagram y nadie sabía quién debía responder.</li>
+  </ul></div>
+ <p>Ordena los pasos del nuevo procedimiento para cada pedido, del primero al último.</p>
+ <ol class="ord">
+  <li data-pos="1">Preparar solo los pedidos con estado <b>Pagado</b> confirmado por la pasarela o en la cuenta, no por un pantallazo.</li>
+  <li data-pos="2">Validar stock y dirección completa (calle, número, departamento y comuna) antes de armar.</li>
+  <li data-pos="3">Armar la caja con la lista del pedido a la vista y una foto del contenido antes de cerrarla.</li>
+  <li data-pos="4">Entregar al transportista y registrar en el pedido la fecha y el código de seguimiento.</li>
+  <li data-pos="5">Enviar el código de seguimiento a la clienta y avisar de inmediato cualquier atraso con una nueva fecha.</li>
+  <li data-pos="6">Confirmar la recepción y ofrecer una vía clara, con responsable, para cambios y reclamos.</li>
+ </ol>
+ <div class="why"><h4>Por qué</h4>Cada paso corresponde a uno de los seis momentos críticos de la venta (pago confirmado → pedido validado → preparación → despacho → seguimiento → entrega y postventa) y previene una de las fallas del expediente:<ul>
+  <li>Confirmar el pago evita comprometer stock con un pantallazo.</li>
+  <li>Validar la dirección evita el paquete devuelto.</li>
+  <li>La lista y la foto evitan el cojín faltante.</li>
+  <li>El código y el aviso oportuno ordenan la expectativa ante un atraso.</li>
+  <li>La postventa con responsable evita reclamos sin dueño.</li></ul>
+  <b>Error típico:</b> validar o preparar antes de confirmar el pago (“para ganar tiempo”) o dejar el aviso de atraso para cuando el cliente pregunte. Cada paso en su lugar suma una parte del puntaje.</div>
+</section>
+
+<!-- ============ M3 ============ -->
+<section class="etask card" data-id="EF.P26" data-pts="2" data-auto="hot" data-title="EF.P26 · Audiencia y diseño accesible" data-lesson="Lecciones 3.1 y 3.2 · Audiencia y marca accesible">
+ <h2>Etapa 6 · Revisa la pieza antes de publicarla</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 6 · julio 2026</span>
+  <p><b>Cliente ideal:</b> Daniela, 34 años, está renovando el living de un departamento pequeño. Teme comprar objetos demasiado grandes o difíciles de combinar y decide con fotos en contexto y medidas, y ve casi todo desde el celular.</p>
+  <p><b>Kit de marca:</b> terracota, lino y verde oliva; una tipografía para títulos y otra para textos; un solo mensaje y una acción visible.</p></div>
+ <p>Esta es la pieza de Canva que abrirá la campaña de agosto. Haz clic en <b>cada elemento que no sirve a Daniela o dificulta la lectura</b> (son varios) y luego presiona Responder.</p>
+ <div class="mock"><div class="bar"><span>🎨 Editor de diseño · “Living pequeño” · 1080 × 1350 px</span><span>Recreación simplificada</span></div>
+  <div class="cv-stage"><div class="post">
+   <button class="hs" data-ok><span class="p-title">Ideas para tu living pequeño</span><span class="meta">Titular · texto #D8C7A8 sobre fondo lino #F3EBDD</span></button>
+   <button class="hs" data-ok><span class="p-sub">¡Feliz lunes! Llénate de buena energía ✨</span><span class="meta">Bajada · única frase bajo el titular</span></button>
+   <button class="hs"><span class="p-photo" aria-hidden="true">🛋️🏺🪴</span><span class="meta">Foto · Jarrón M junto a un sofá de dos cuerpos, luz natural, fondo simple</span></button>
+   <button class="hs"><span class="p-dim">Jarrón M · 24 cm de alto · ideal para mesas de 40 a 60 cm</span><span class="meta">Medidas · café oscuro sobre lino, tamaño legible en el celular</span></button>
+   <button class="hs" data-ok><span class="p-av"><span><i style="background:#2e8b57"></i>Cojín lino</span><span><i style="background:#d1372b"></i>Manta</span><span><i style="background:#d1372b"></i>Cesto</span></span><span class="meta">Disponibilidad · punto verde = hay stock, punto rojo = agotado (sin texto)</span></button>
+   <button class="hs" data-ok><span class="p-busy"><span>Hecho a mano en Pomaire</span></span><span class="meta">Texto claro sobre una foto de la feria con decenas de objetos</span></button>
+   <button class="hs"><span class="p-cta">Escríbenos por WhatsApp y te ayudamos a elegir el tamaño</span><span class="meta">Llamado a la acción · blanco sobre verde oliva</span></button>
+   <button class="hs"><span class="p-pal"><i style="background:#B5543A"></i><i style="background:#F3EBDD"></i><i style="background:#556B2F"></i> Paleta y 2 tipografías del kit</span><span class="meta">Elementos de marca · iguales en todas las piezas</span></button>
+  </div></div></div>
+ <div class="why"><h4>Por qué</h4>Hay cuatro problemas:<ul>
+  <li><b>Titular:</b> beige sobre lino tiene muy poco contraste y el mensaje principal no se lee.</li>
+  <li><b>Bajada:</b> “¡Feliz lunes!” es contenido genérico que no responde la duda de Daniela (tamaño y combinación).</li>
+  <li><b>Disponibilidad:</b> se indica solo con color. Quien no distingue rojo de verde no sabe qué está agotado; hay que agregar el texto “Agotado”.</li>
+  <li><b>Texto sobre la foto de la feria:</b> se pierde entre tantos objetos.</li></ul>
+  La foto en contexto, las medidas, el llamado a WhatsApp y los elementos del kit son justo lo que Daniela necesita para decidir. <b>Error típico:</b> marcar la foto o el llamado a la acción por “recargados” y no ver que el problema es de contraste, de color como único código y de relevancia del mensaje. Cada acierto suma y cada elemento correcto marcado descuenta.</div>
+</section>
+
+<section class="etask card" data-id="EF.P27" data-pts="2" data-auto="mc" data-title="EF.P27 · Campaña pagada y automatización" data-lesson="Lecciones 3.3 y 3.4 · Publicidad con control y automatización">
+ <h2>Etapa 7 · La campaña funcionó… ¿y las ventas?</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 7 · agosto 2026</span>
+  <p>Campaña en Meta Ads con objetivo <b>mensajes a WhatsApp</b>: $10.000 diarios por 7 días (tope $70.000). Meta: al menos 20 conversaciones a <b>$3.500 o menos</b> por conversación. Las conversaciones las recibe primero el chatbot de Casa Nativa.</p></div>
+ <div class="tablewrap"><table class="data sm"><tr><th>Anuncio</th><th class="n">Inversión</th><th class="n">Conversaciones</th><th class="n">Ventas</th></tr>
+  <tr><td>A · Video del taller</td><td class="n">$35.000</td><td class="n">14</td><td class="n">2</td></tr>
+  <tr><td>B · Foto del living con medidas</td><td class="n">$35.000</td><td class="n">16</td><td class="n">2</td></tr>
+  <tr><td><b>Total</b></td><td class="n"><b>$70.000</b></td><td class="n"><b>30</b></td><td class="n"><b>4</b></td></tr>
+ </table></div>
+ <div class="mock"><div class="bar"><span>🤖 Flujo del chatbot · conversación típica de la campaña (21:40)</span><span>Recreación</span></div>
+  <div class="chat">
+   <div class="m bot"><small>Asistente automático de Casa Nativa</small>¡Hola! Elige una opción: 1) Despacho 2) Medios de pago</div>
+   <div class="m usr">¿Qué jarrón me conviene para un arrimo de 50 cm? Lo quiero con el cojín de lino</div>
+   <div class="m bot">Opción no válida. Elige 1 o 2.</div>
+   <div class="m usr">Quiero hablar con alguien</div>
+   <div class="m bot">Opción no válida. Elige 1 o 2.</div>
+   <div class="sys">— La clienta no vuelve a escribir —</div>
+  </div></div>
+ <div class="kpi"><div><small>Conversaciones fuera de horario</small><b>19 de 30</b></div><div><small>Preguntas de asesoría (tamaño, combinación)</small><b>17 de 30</b></div><div><small>Abandonos tras “Opción no válida”</small><b>12 de 30</b></div></div>
+ <p class="ask">¿Qué diagnóstico y qué decisión son los más coherentes con la evidencia?</p>
+ <div class="opts">
+  <label class="opt"><input type="radio" name="p27"> La campaña fracasó: 4 ventas con $70.000 es muy poco. Conviene detenerla y mover ese presupuesto a Google Ads, donde la gente ya busca comprar.</label>
+  <label class="opt" data-ok><input type="radio" name="p27"> La campaña cumplió su meta (30 conversaciones a unos $2.333); la fuga está en el bot. Hay que sumar “Hablar con una persona” y derivar con contexto.</label>
+  <label class="opt"><input type="radio" name="p27"> El anuncio B logra conversaciones más baratas, así que conviene duplicar ya su presupuesto; el bot está bien porque responde siempre al instante.</label>
+  <label class="opt"><input type="radio" name="p27"> Conviene un agente de IA que se presente como “Marcela” y atienda las 24 horas, para que nadie note que conversa con un bot.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>El indicador de la campaña era el <b>costo por conversación</b>: 70.000 ÷ 30 = $2.333, bajo la meta de $3.500, con 30 conversaciones frente a las 20 buscadas. La campaña cumplió. Las ventas se pierden después: 17 de 30 personas hicieron preguntas de asesoría que el bot no sabe derivar y 12 abandonaron tras dos “Opción no válida”. Lo que corresponde es agregar la salida a una persona y derivar con el contexto de la pregunta, avisando el horario de respuesta. Detener la campaña la juzga con un indicador que no era su objetivo. Duplicar el presupuesto amplifica la fuga antes de corregirla. Presentar un bot como si fuera Marcela engaña a la clienta. <b>Error típico:</b> culpar al anuncio por un problema que ocurre en la atención posterior.</div>
+</section>
+
+<!-- ============ M4 ============ -->
+<section class="etask card" data-id="EF.P28" data-pts="2" data-auto="match" data-title="EF.P28 · Segmentación de la base en el CRM" data-lesson="Lección 4.1 · De contactos dispersos a clientes que vuelven">
+ <h2>Etapa 8 · ¿Qué mensaje recibe cada contacto?</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 8 · 15 de octubre de 2026</span>
+  <p>Para resolver H2, las cotizaciones y compras ya se registran en un CRM gratuito. Llegó la colección de primavera y Marcela quiere usar la base sin enviar el mismo mensaje a todos.</p></div>
+ <div class="ref"><b>Reglas de Casa Nativa</b><ul>
+  <li><b>Nuevo:</b> una sola compra, hecha en los últimos 60 días.</li>
+  <li><b>Recurrente:</b> 2 o más compras y la última hace 6 meses o menos.</li>
+  <li><b>Inactivo:</b> ya compró, pero su última compra fue hace más de 6 meses.</li>
+  <li><b>Interesado:</b> no ha comprado, pero consultó o cotizó.</li>
+  <li>Sin consentimiento vigente para novedades, <b>no se envían novedades</b>, cualquiera sea el segmento.</li></ul></div>
+ <div class="mock"><div class="bar"><span>👥 CRM · Contactos · Vista “Campaña primavera”</span><span>Datos ficticios</span></div>
+ <div class="tablewrap"><table class="data sm" style="margin:0"><tr><th>Contacto</th><th class="n">Compras</th><th>Última compra</th><th>Novedades</th></tr>
+  <tr><td>Antonia Fuentes<br><small class="muted">antonia.f@ejemplo.cl</small></td><td class="n">3</td><td>22 sep 2026</td><td>Sí (feria, mar 2026)</td></tr>
+  <tr><td>Tomás Herrera<br><small class="muted">+56 9 0000 4471</small></td><td class="n">0</td><td>— · cotizó set de cojines el 2 oct</td><td>Sí (WhatsApp)</td></tr>
+  <tr><td>Carolina Soto<br><small class="muted">carolina.s@ejemplo.cl</small></td><td class="n">2</td><td>12 feb 2026</td><td>Sí (tienda en línea)</td></tr>
+  <tr><td>Javiera Molina<br><small class="muted">+56 9 0000 3815</small></td><td class="n">1</td><td>30 sep 2026</td><td>Sí (tienda en línea)</td></tr>
+  <tr><td>Rodrigo Pinto<br><small class="muted">rodrigo.p@ejemplo.cl</small></td><td class="n">4</td><td>1 oct 2026</td><td>Pidió no recibir más (5 oct)</td></tr>
+  <tr><td>Francisca Lagos<br><small class="muted">+56 9 0000 2290</small></td><td class="n">1</td><td>3 mar 2026</td><td>Sí (WhatsApp)</td></tr>
+ </table></div></div>
+ <p class="ask">Elige la acción que corresponde a cada contacto.</p>
+ <div style="padding:0 2px">
+  <div class="mrow"><span>Antonia Fuentes</span><select data-ans="rec"><option value="nue">Agradecer la compra y facilitar la segunda</option><option value="rec">Avisarle primero de la colección, según lo que ya compró</option><option value="ina">Reactivar con una novedad ligada a su compra anterior</option><option value="int">Seguimiento a su cotización, sin presionar</option><option value="no">No enviar novedades</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Tomás Herrera</span><select data-ans="int"><option value="nue">Agradecer la compra y facilitar la segunda</option><option value="rec">Avisarle primero de la colección, según lo que ya compró</option><option value="ina">Reactivar con una novedad ligada a su compra anterior</option><option value="int">Seguimiento a su cotización, sin presionar</option><option value="no">No enviar novedades</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Carolina Soto</span><select data-ans="ina"><option value="nue">Agradecer la compra y facilitar la segunda</option><option value="rec">Avisarle primero de la colección, según lo que ya compró</option><option value="ina">Reactivar con una novedad ligada a su compra anterior</option><option value="int">Seguimiento a su cotización, sin presionar</option><option value="no">No enviar novedades</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Javiera Molina</span><select data-ans="nue"><option value="nue">Agradecer la compra y facilitar la segunda</option><option value="rec">Avisarle primero de la colección, según lo que ya compró</option><option value="ina">Reactivar con una novedad ligada a su compra anterior</option><option value="int">Seguimiento a su cotización, sin presionar</option><option value="no">No enviar novedades</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Rodrigo Pinto</span><select data-ans="no"><option value="nue">Agradecer la compra y facilitar la segunda</option><option value="rec">Avisarle primero de la colección, según lo que ya compró</option><option value="ina">Reactivar con una novedad ligada a su compra anterior</option><option value="int">Seguimiento a su cotización, sin presionar</option><option value="no">No enviar novedades</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Francisca Lagos</span><select data-ans="ina"><option value="nue">Agradecer la compra y facilitar la segunda</option><option value="rec">Avisarle primero de la colección, según lo que ya compró</option><option value="ina">Reactivar con una novedad ligada a su compra anterior</option><option value="int">Seguimiento a su cotización, sin presionar</option><option value="no">No enviar novedades</option></select><span class="mk"></span></div>
+ </div>
+ <div class="why"><h4>Por qué</h4><ul>
+  <li><b>Antonia</b> es recurrente: 3 compras, la última hace menos de un mes.</li>
+  <li><b>Tomás</b> es interesado: cotizó, pero no ha comprado.</li>
+  <li><b>Carolina</b> es inactiva: su última compra fue hace 8 meses.</li>
+  <li><b>Javiera</b> es nueva: una compra hace 15 días.</li>
+  <li><b>Rodrigo</b>, aunque es el mejor cliente, pidió no recibir novedades: el consentimiento manda sobre el segmento.</li>
+  <li><b>Francisca</b> tiene una sola compra, pero de hace más de 7 meses: es inactiva, no nueva.</li></ul>
+  <b>Error típico:</b> clasificar por número de compras sin mirar la fecha (Francisca como “nueva”) o incluir a Rodrigo porque compra seguido. Cada fila correcta suma una parte del puntaje.</div>
+</section>
+
+<section class="etask card" data-id="EF.P29" data-pts="2" data-auto="num" data-title="EF.P29 · Leer la adquisición de tráfico en GA4" data-lesson="Lección 4.2 · Usa tus datos para decidir">
+ <h2>Etapa 9 · ¿Qué canal convierte de verdad?</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 9 · octubre 2026 (datos de septiembre)</span>
+  <p>La tienda propia tiene Google Analytics 4 con la compra (<i>purchase</i>) marcada como <b>evento clave</b>. Las campañas en Meta siguieron activas en septiembre con una inversión de <b>$210.000</b>.</p></div>
+ <div class="mock"><div class="bar"><span>📈 GA4 · Informes › Adquisición › Adquisición de tráfico · 1–30 sep 2026</span><span>Grupo de canales predeterminado</span></div>
+ <div class="tablewrap"><table class="data sm" style="margin:0"><tr><th>Grupo de canales</th><th class="n">Sesiones</th><th class="n">Eventos clave (purchase)</th><th class="n">Ingresos</th></tr>
+  <tr><td>Organic Social</td><td class="n">4.200</td><td class="n">42</td><td class="n">$1.176.000</td></tr>
+  <tr><td>Paid Social</td><td class="n">2.500</td><td class="n">35</td><td class="n">$945.000</td></tr>
+  <tr><td>Organic Search</td><td class="n">1.300</td><td class="n">39</td><td class="n">$1.170.000</td></tr>
+  <tr><td>Direct</td><td class="n">900</td><td class="n">27</td><td class="n">$783.000</td></tr>
+  <tr><td>Unassigned</td><td class="n">700</td><td class="n">7</td><td class="n">$196.000</td></tr>
+  <tr><td>Email</td><td class="n">400</td><td class="n">18</td><td class="n">$540.000</td></tr>
+ </table></div></div>
+ <p class="ask">Tasa de conversión = eventos clave ÷ sesiones × 100. Responde con un decimal en los porcentajes (tolerancia ±0,05) y en pesos enteros en el costo (tolerancia ±$1).</p>
+ <div class="numgrid">
+  <label>1. Tasa de conversión del canal con más sesiones<span class="unit"><input type="text" inputmode="decimal" data-ans="1" data-tol="0.05" data-show="1,0%"><span>%</span></span></label>
+  <label>2. La tasa de conversión más alta entre los seis canales<span class="unit"><input type="text" inputmode="decimal" data-ans="4.5" data-tol="0.05" data-show="4,5% (Email)"><span>%</span></span></label>
+  <label>3. Costo por venta de Paid Social<span class="hint">Inversión en Meta ÷ compras de ese canal</span><span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="6000" data-tol="1" data-show="$6.000"></span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4><ul>
+  <li><b>Organic Social</b> trae más sesiones (4.200), pero convierte 42 ÷ 4.200 = <b>1,0%</b>.</li>
+  <li>Las tasas de los demás canales son: Paid Social 1,4%, Organic Search 3,0%, Direct 3,0%, Unassigned 1,0% y <b>Email 18 ÷ 400 = 4,5%</b>, la más alta. Los mensajes a la base de clientes convierten más que cualquier otro canal, lo que refuerza el valor del CRM (Hoja 8).</li>
+  <li><b>Paid Social</b> cuesta 210.000 ÷ 35 = <b>$6.000</b> por venta, con ingresos de $945.000 (4,5 veces la inversión).</li></ul>
+  Organic Search convierte el triple que Organic Social con menos visitas, una señal para el plan. <b>Error típico:</b> elegir el mejor canal por sesiones, o dividir sesiones ÷ ventas (invertir la fórmula).</div>
+</section>
+
+<section class="etask card" data-id="EF.P30" data-pts="2" data-auto="match" data-title="EF.P30 · Plan de Acción Digital de 90 días" data-lesson="Lección 4.3 · Construye tu plan de acción digital">
+ <h2>Etapa 10 · Elige y ordena las 3 prioridades del plan</h2>
+ <div class="exp"><span class="lbl">📁 Expediente · Hoja 10 · borrador del plan · octubre 2026</span>
+  <p>Marcela y Sofía escribieron seis tarjetas candidatas para los próximos 90 días. El plan admite <b>solo tres prioridades</b>.</p></div>
+ <div class="ref"><b>Criterios del plan (Lección 4.3)</b><ul>
+  <li>Entra solo lo que tiene <b>alto impacto</b> según la evidencia del expediente y está bien formulado: problema, acción, responsable, plazo e indicador medible.</li>
+  <li>Prioridad 1: alto impacto y bajo esfuerzo. Luego, las de alto impacto ordenadas de <b>menor a mayor esfuerzo</b>.</li>
+  <li>Lo que ya funciona se mantiene; lo de bajo impacto o mal formulado no entra en estos 90 días.</li></ul></div>
+ <div class="mock"><div class="bar"><span>🗺️ Plan de Acción Digital · Casa Nativa · tarjetas candidatas</span><span>Borrador</span></div>
+ <div class="cards">
+  <div class="pcard"><h5>Tarjeta A · Bot con salida a una persona</h5><dl><dt>Problema</dt><dd>12 de 30 conversaciones de la campaña se abandonaron en el bot (Hoja 7).</dd><dt>Acción</dt><dd>Agregar “Hablar con una persona” y derivar las consultas de asesoría con su contexto.</dd><dt>Responsable</dt><dd>Marcela</dd><dt>Plazo</dt><dd>Esta semana (una tarde de trabajo)</dd><dt>Indicador</dt><dd>Abandonos en el bot bajo 10% y ventas por conversación.</dd></dl></div>
+  <div class="pcard"><h5>Tarjeta B · Seguimiento de cotizaciones</h5><dl><dt>Problema</dt><dd>Cotizaciones sin seguimiento (H2); la base convierte 4,5% por correo (Hojas 8 y 9).</dd><dt>Acción</dt><dd>Registrar la próxima acción con fecha en cada cotización y enviar novedades segmentadas con consentimiento.</dd><dt>Responsable</dt><dd>Sofía</dd><dt>Plazo</dt><dd>Dos semanas; revisión cada lunes</dd><dt>Indicador</dt><dd>100% de cotizaciones con próxima acción; tasa de cierre de cotizaciones.</dd></dl></div>
+  <div class="pcard"><h5>Tarjeta C · Búsqueda orgánica</h5><dl><dt>Problema</dt><dd>Organic Search convierte 3,0% con solo 1.300 sesiones (Hoja 9).</dd><dt>Acción</dt><dd>Mejorar fichas de producto (medidas, fotos en contexto) y el perfil de empresa en Google, por etapas.</dd><dt>Responsable</dt><dd>Marcela</dd><dt>Plazo</dt><dd>90 días, una colección por mes</dd><dt>Indicador</dt><dd>Sesiones y compras de Organic Search en GA4.</dd></dl></div>
+  <div class="pcard"><h5>Tarjeta D · Nueva red social</h5><dl><dt>Problema</dt><dd>“Tenemos pocos seguidores.”</dd><dt>Acción</dt><dd>Abrir una cuenta en una red de videos y publicar a diario.</dd><dt>Responsable</dt><dd>El equipo</dd><dt>Plazo</dt><dd>Cuando haya tiempo</dd><dt>Indicador</dt><dd>Seguidores nuevos.</dd></dl></div>
+  <div class="pcard"><h5>Tarjeta E · Reordenar la nube</h5><dl><dt>Problema</dt><dd>“Podríamos tener otra estructura.”</dd><dt>Acción</dt><dd>Rehacer desde cero las cuatro carpetas compartidas, que hoy funcionan.</dd><dt>Responsable</dt><dd>Sofía</dd><dt>Plazo</dt><dd>Un mes</dd><dt>Indicador</dt><dd>Carpetas nuevas creadas.</dd></dl></div>
+  <div class="pcard"><h5>Tarjeta F · Más pauta</h5><dl><dt>Problema</dt><dd>“Queremos más alcance.”</dd><dt>Acción</dt><dd>Duplicar a $140.000 la pauta en Meta antes de corregir el bot.</dd><dt>Responsable</dt><dd>Marcela</dd><dt>Plazo</dt><dd>Próxima semana</dd><dt>Indicador</dt><dd>Impresiones y alcance.</dd></dl></div>
+ </div></div>
+ <p class="ask">Asigna a cada tarjeta su lugar en el plan.</p>
+ <div style="padding:0 2px">
+  <div class="mrow"><span>Tarjeta A · Bot con salida a una persona</span><select data-ans="p1"><option value="p1">Prioridad 1</option><option value="p2">Prioridad 2</option><option value="p3">Prioridad 3</option><option value="no">No entra en los 90 días</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Tarjeta B · Seguimiento de cotizaciones</span><select data-ans="p2"><option value="p1">Prioridad 1</option><option value="p2">Prioridad 2</option><option value="p3">Prioridad 3</option><option value="no">No entra en los 90 días</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Tarjeta C · Búsqueda orgánica</span><select data-ans="p3"><option value="p1">Prioridad 1</option><option value="p2">Prioridad 2</option><option value="p3">Prioridad 3</option><option value="no">No entra en los 90 días</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Tarjeta D · Nueva red social</span><select data-ans="no"><option value="p1">Prioridad 1</option><option value="p2">Prioridad 2</option><option value="p3">Prioridad 3</option><option value="no">No entra en los 90 días</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Tarjeta E · Reordenar la nube</span><select data-ans="no"><option value="p1">Prioridad 1</option><option value="p2">Prioridad 2</option><option value="p3">Prioridad 3</option><option value="no">No entra en los 90 días</option></select><span class="mk"></span></div>
+  <div class="mrow"><span>Tarjeta F · Más pauta</span><select data-ans="no"><option value="p1">Prioridad 1</option><option value="p2">Prioridad 2</option><option value="p3">Prioridad 3</option><option value="no">No entra en los 90 días</option></select><span class="mk"></span></div>
+ </div>
+ <div class="why"><h4>Por qué</h4>A, B y C atacan pérdidas de ventas demostradas en el expediente y están completas.<ul>
+  <li><b>A es la prioridad 1:</b> la fuga del bot (Hoja 7) es inmediata y se corrige en una tarde.</li>
+  <li><b>B es la prioridad 2:</b> resuelve el hallazgo H2, presente desde el diagnóstico, y aprovecha el canal que mejor convierte (Email, 4,5%). Requiere dos semanas y una rutina semanal.</li>
+  <li><b>C es la prioridad 3:</b> la búsqueda orgánica convierte bien, pero mejorarla es trabajo por etapas durante los 90 días.</li>
+  <li><b>No entran:</b> D tiene un problema sin evidencia, un responsable difuso, un plazo vago y una métrica de vanidad. E rehace algo que ya funciona (Hoja 2). F mide impresiones y amplifica la fuga antes de cerrarla.</li></ul>
+  <b>Error típico:</b> priorizar por entusiasmo o visibilidad (nueva red, más pauta) en lugar de por impacto en ventas y esfuerzo, o poner C antes que A por su potencial sin considerar el esfuerzo. Cada tarjeta bien ubicada suma una parte del puntaje.</div>
+</section>

@@ -1,0 +1,196 @@
+{
+  "categoria": "Herramientas Digitales PYMES/Módulo 3/Evaluación Parte 1",
+  "puntaje": 2,
+  "preguntas": [
+    {
+      "id": "M3.P1",
+      "tema": "3.1 Audiencia prioritaria y cliente ideal",
+      "q": "Marcela publica casi a diario en Instagram, pero recibe pocas consultas. Hoy define su audiencia como «mujeres de 25 a 55 años que usan Instagram». ¿Qué redefinición le sirve más para decidir qué contenido crear para Casa Nativa?",
+      "o": [
+        "Hombres y mujeres de 18 a 65 años de todo Chile, para no dejar a ningún cliente fuera.",
+        "Quienes renuevan un departamento pequeño, sin experiencia, y dudan del tamaño.",
+        "Las personas que dieron «me gusta» a alguna publicación durante el último mes.",
+        "Mujeres de 30 a 40 años de Santiago, con ingresos altos y con casa propia."
+      ],
+      "c": 1,
+      "f": [
+        "Ampliar el rango hace el mensaje todavía más genérico; segmentar no es excluir, es priorizar a quién hablarle primero.",
+        "Describe contexto, necesidad y barrera concreta (tamaño y combinación), lo que se traduce directamente en ideas de contenido útiles.",
+        "Un «me gusta» indica una interacción, pero no dice en qué situación está la persona, qué necesita ni qué la hace dudar.",
+        "Agrega datos demográficos más precisos, pero sigue sin decir qué quiere resolver la persona ni qué la frena al comprar."
+      ],
+      "g": "Una audiencia útil responde quién es (contexto y etapa de compra), qué necesita (problemas, dudas, barreras) y cómo decide (qué le da confianza). Los datos demográficos solos no orientan el contenido."
+    },
+    {
+      "id": "M3.P2",
+      "tema": "3.1 Contenido orgánico según las dudas de la audiencia",
+      "q": "Tres semanas después de publicar «3 ideas para un living pequeño», la mayoría de los mensajes que recibe Marcela preguntan «¿qué medida tiene?» y «¿cómo se ve en un mueble pequeño?». ¿Qué publicación conviene planificar a continuación?",
+      "o": [
+        "Un video del taller esmaltando jarrones, para dar confianza en el proceso.",
+        "Una frase inspiradora sobre el hogar, para sumar alcance y nuevos seguidores.",
+        "Una promoción de 10% por 24 horas, para activar compras ese mismo fin de semana.",
+        "Un carrusel con medidas y fotos de cada jarrón sobre muebles pequeños."
+      ],
+      "c": 3,
+      "f": [
+        "Mostrar el proceso genera confianza, pero no responde la duda que hoy frena la compra: el tamaño y cómo se ve en contexto.",
+        "Una frase genérica puede sumar alcance, pero no resuelve ninguna duda concreta de la audiencia ni genera consultas.",
+        "El descuento activa, pero si la persona aún no sabe qué tamaño elegir, la barrera sigue ahí; primero se reduce la duda.",
+        "Convierte las preguntas repetidas en contenido que educa: responde una vez, para todos, la barrera que frena la decisión."
+      ],
+      "g": "Las preguntas frecuentes de la audiencia son la mejor fuente de ideas de contenido. Educar (reducir dudas) suele ir antes de activar (invitar a comprar)."
+    },
+    {
+      "id": "M3.P3",
+      "tema": "3.2 Sistema visual en Canva",
+      "q": "Las últimas publicaciones de Casa Nativa usan tonos pastel un día, naranja intenso otro y hasta cuatro tipografías por pieza. Marcela quiere que la reconozcan antes de leer su nombre. ¿Qué decisión debería tomar en Canva?",
+      "o": [
+        "Fijar terracota, lino y oliva, y dos fuentes (títulos y textos) en todo.",
+        "Probar una plantilla distinta cada semana para que el feed se vea más variado.",
+        "Usar los colores de tendencia de cada temporada con una fuente manuscrita.",
+        "Alternar cinco tipografías para diferenciar productos, ofertas y frases del día."
+      ],
+      "c": 0,
+      "f": [
+        "Pocas decisiones bien repetidas (paleta acotada y una fuente para títulos y otra para textos) generan reconocimiento.",
+        "Cambiar de plantilla cada semana hace que cada pieza parezca de una marca distinta y debilita el reconocimiento.",
+        "Las tendencias cambian cada temporada y una manuscrita muy decorada suele leerse mal en textos pequeños del celular.",
+        "Muchas tipografías generan ruido visual; la coherencia se logra repitiendo pocas familias con jerarquía clara."
+      ],
+      "g": "Un sistema visual simple define 2 o 3 colores, 1 tipografía para títulos y 1 para textos, un estilo de imagen coherente y un tono reconocible, y los repite en todas las piezas."
+    },
+    {
+      "id": "M3.P4",
+      "tema": "3.2 Canva: plan gratuito y planes de pago",
+      "q": "Marcela cree que debe contratar un plan de pago de Canva para lograr publicaciones coherentes con su marca. Con lo visto en el módulo, ¿qué le recomendarías?",
+      "o": [
+        "Contratarlo, porque con la cuenta gratuita no se pueden descargar los diseños.",
+        "Contratarlo, porque en el plan gratuito no se pueden cambiar colores ni tipografías.",
+        "Partir gratis: puede fijar paleta y fuentes y reutilizar un diseño base propio.",
+        "Partir gratis, porque los planes de pago solo agregan más fotos de stock."
+      ],
+      "c": 2,
+      "f": [
+        "Con una cuenta gratuita se pueden crear y descargar diseños; los recursos de pago se reconocen por el ícono de corona.",
+        "Las plantillas gratuitas permiten editar colores, textos y tipografías; eso es justamente lo que da coherencia.",
+        "La coherencia depende de pocas decisiones bien repetidas, y todo eso se puede hacer con el plan gratuito.",
+        "Los planes de pago también suman herramientas como el kit de marca completo, quitar fondos o cambiar el tamaño con un clic."
+      ],
+      "g": "Canva se puede usar gratis para crear piezas claras y coherentes. Los planes de pago (como Pro o Negocios) agregan recursos prémium y herramientas que ahorran tiempo, pero no son requisito para tener una marca consistente."
+    },
+    {
+      "id": "M3.P5",
+      "tema": "3.2 Accesibilidad: no depender solo del color",
+      "q": "En una pieza de Casa Nativa, los productos disponibles se marcan con un punto verde y los agotados con un punto rojo. Una clienta comenta que no distingue esos colores. ¿Qué ajuste resuelve mejor el problema?",
+      "o": [
+        "Usar un rojo más intenso para que el punto de agotado resalte más.",
+        "Dejarlo igual, porque la mayoría de las personas sí distingue los colores.",
+        "Agregar las palabras «Disponible» y «Agotado» junto al color de cada punto.",
+        "Cambiar el verde y el rojo por azul y naranja, sin agregar ningún texto ni ícono."
+      ],
+      "c": 2,
+      "f": [
+        "Un rojo más intenso no ayuda a quien no distingue ese color: el estado se sigue comunicando solo con color.",
+        "Accesible significa que funcione para más personas, no solo para la mayoría; quien no distingue el color podría comprar algo agotado.",
+        "Expresar el estado también con texto (o ícono o forma) hace la información comprensible sin depender de percibir el color.",
+        "Otra combinación de colores puede ayudar a algunas personas, pero la información sigue dependiendo únicamente del color."
+      ],
+      "g": "Un estado importante (descuento, agotado, disponible) debe expresarse también con texto, íconos o forma, además del color."
+    },
+    {
+      "id": "M3.P6",
+      "tema": "3.3 Meta Ads: objetivo de la campaña",
+      "q": "Marcela quiere que su campaña en Meta Ads genere conversaciones por WhatsApp sobre la nueva colección. Al crear la campaña, ¿qué objetivo y configuración se ajustan mejor a lo que busca?",
+      "o": [
+        "Interacción, con WhatsApp como destino de los mensajes del anuncio.",
+        "Reconocimiento, para que la mayor cantidad de personas vea la colección.",
+        "Promoción de la app, porque WhatsApp es una aplicación del celular.",
+        "Tráfico, llevando a las personas a ver el perfil de Instagram de la tienda."
+      ],
+      "c": 0,
+      "f": [
+        "El objetivo de interacción permite optimizar para conversaciones y elegir WhatsApp como destino, que es el resultado que Marcela busca.",
+        "Reconocimiento optimiza para que muchas personas vean el anuncio y lo recuerden, no para que inicien una conversación.",
+        "Ese objetivo sirve para que instalen o usen una app propia de la empresa; Casa Nativa no promociona una aplicación.",
+        "Tráfico optimiza visitas a un destino, pero una visita al perfil no garantiza que la persona escriba por WhatsApp."
+      ],
+      "g": "En Meta Ads el objetivo se elige en el nivel de campaña (Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app o Ventas); la audiencia, ubicaciones, presupuesto y calendario van en el conjunto de anuncios."
+    },
+    {
+      "id": "M3.P7",
+      "tema": "3.3 Google Ads: campaña de búsqueda",
+      "q": "Marcela nota que en diciembre muchas personas buscan en Google «regalo para casa nueva». Decide crear una campaña de búsqueda con un anuncio de búsqueda adaptable. ¿Cómo conviene armar el grupo de anuncios?",
+      "o": [
+        "Un grupo con todo el catálogo y un anuncio con un único título genérico.",
+        "Un anuncio con los 15 títulos permitidos repitiendo la misma frase.",
+        "Palabras de todo el rubro hogar, sin revisar después en qué búsquedas aparece el anuncio.",
+        "Palabras afines a regalos de casa nueva, títulos variados y revisar búsquedas."
+      ],
+      "c": 3,
+      "f": [
+        "Mezclar todo el catálogo dispersa la intención y un solo título le quita a Google opciones para combinar el mensaje más pertinente.",
+        "Admite hasta 15 títulos y 4 descripciones, pero repetir la misma frase anula la ventaja de que Google combine mensajes distintos.",
+        "Palabras demasiado amplias atraen búsquedas poco relacionadas, y como la plataforma amplía coincidencias, hay que revisar los términos.",
+        "Un grupo temático, títulos distintos (hasta 15) y la revisión de los términos de búsqueda alinean el anuncio con la intención real."
+      ],
+      "g": "En una campaña de búsqueda, cada grupo reúne palabras clave relacionadas y anuncios que responden a esas búsquedas. El anuncio adaptable admite hasta 15 títulos y 4 descripciones que Google combina, por lo que conviene que sean variados."
+    },
+    {
+      "id": "M3.P8",
+      "tema": "3.3 Presupuesto acotado y regla de ajuste",
+      "q": "Marcela invierte $10.000 diarios durante 7 días para lograr 20 conversaciones (meta: $3.500 por conversación). Definió una regla: si el costo supera $7.000, cambiar una sola variable. Al cuarto día gastó $40.000 y obtuvo 5 conversaciones. ¿Qué debe hacer?",
+      "o": [
+        "Duplicar el presupuesto diario para llegar a las 20 conversaciones a tiempo.",
+        "Aplicar la regla: cambiar solo el mensaje del anuncio y volver a medir.",
+        "Cambiar al mismo tiempo audiencia, imagen, texto y objetivo de la campaña.",
+        "Esperar hasta el día 7 sin tocar nada, porque el costo aún no es relevante."
+      ],
+      "c": 1,
+      "f": [
+        "El costo por conversación es $8.000; más dinero con el mismo anuncio solo traería conversaciones caras y agotaría el máximo.",
+        "$40.000 ÷ 5 = $8.000 por conversación, sobre el límite de $7.000; cambiar una variable permite saber qué produjo la mejora.",
+        "Si cambia todo a la vez no sabrá qué funcionó, y la plataforma pierde lo que había aprendido en esos días.",
+        "La regla se definió justamente para actuar con evidencia; esperar sin cambios gasta el resto del presupuesto con el mismo problema."
+      ],
+      "g": "Un presupuesto pequeño necesita reglas: máximo definido, inicio acotado, medición del resultado buscado y ajustes de una variable a la vez (detener, corregir o aumentar)."
+    },
+    {
+      "id": "M3.P9",
+      "tema": "3.4 Qué automatizar y qué derivar",
+      "q": "Cada día Marcela recibe: «¿a qué hora abren el sábado?», «¿aceptan transferencia?», «¿despachan a regiones?», «me llegó otro color y estoy molesta» y «¿me hacen precio por 30 centros de mesa?». ¿Cómo debería organizar su primera automatización?",
+      "o": [
+        "Automatizar horarios, pagos y despacho; derivar el reclamo y el pedido especial.",
+        "Responder el reclamo de color enviando de forma automática la política de cambios.",
+        "Dejar que el bot cotice los 30 centros de mesa con un precio por volumen fijo.",
+        "Automatizar todo con un agente que cierre el chat cuando no entienda la consulta."
+      ],
+      "c": 0,
+      "f": [
+        "Las consultas estables y repetidas se automatizan; los reclamos y las negociaciones requieren criterio y empatía humana.",
+        "Una respuesta automática a una clienta molesta suele empeorar la situación: el reclamo necesita contexto y empatía.",
+        "Un pedido especial implica negociar plazos, cantidades y precio; es una excepción que conviene revisar una persona.",
+        "Cerrar la conversación cuando el bot no entiende deja al cliente sin salida; siempre debe existir la opción de hablar con una persona."
+      ],
+      "g": "Automatiza lo repetitivo (horarios, pagos, despacho, estado básico de pedido) y humaniza lo importante (reclamos, excepciones, negociaciones y situaciones sensibles)."
+    },
+    {
+      "id": "M3.P10",
+      "tema": "3.4 Agentes de IA en WhatsApp Business",
+      "q": "Marcela ve que WhatsApp Business ofrece un agente de inteligencia artificial que responde en nombre de la empresa y piensa activarlo esta semana. ¿Qué debería revisar antes de hacerlo?",
+      "o": [
+        "Nada en especial, porque funciona igual que sus mensajes de bienvenida y ausencia.",
+        "Qué nombre de persona usará, para que los clientes crean que habla con alguien real.",
+        "Sus condiciones vigentes, su costo según uso y cuándo deriva a una persona.",
+        "Que pueda negociar precios y resolver reclamos por su cuenta, sin intervención humana."
+      ],
+      "c": 2,
+      "f": [
+        "No es equivalente: puede tener costo según uso y reemplazar los mensajes de bienvenida y ausencia que ya tiene configurados.",
+        "Fingir ser una persona daña la confianza; debe quedar claro cuándo responde una automatización.",
+        "Las condiciones y el costo pueden cambiar, y definir la salida hacia una persona evita que los casos importantes queden sin atender.",
+        "Las negociaciones y los reclamos requieren criterio humano; el agente debe saber cuándo transferir la conversación."
+      ],
+      "g": "Antes de activar un agente de IA conviene revisar sus condiciones vigentes y costo, qué funciones reemplaza, cómo se presenta (transparencia) y en qué casos transfiere a una persona."
+    }
+  ]
+}

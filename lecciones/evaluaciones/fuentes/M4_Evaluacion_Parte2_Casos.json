@@ -1,0 +1,206 @@
+{
+  "categoria": "Herramientas Digitales PYMES/Módulo 4/Evaluación Parte 2 – Casos",
+  "puntaje": 2,
+  "preguntas": [
+    {
+      "id": "M4.P11",
+      "tema": "4.1 · Segmentar una base de clientes",
+      "caso_html": "<p>A Casa Nativa llegó la colección infantil de primavera y Marcela quiere enviar un mensaje de reactivación a sus clientes <strong>inactivos</strong>. En su registro, un cliente es inactivo si su última compra fue hace <strong>más de 120 días</strong>.</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Cliente</th><th>N.º de compras</th><th>Días desde la última compra</th><th>Cotización abierta</th><th>Acepta novedades</th></tr><tr><td>Valentina</td><td>3</td><td>45</td><td>No</td><td>Sí</td></tr><tr><td>Rodrigo</td><td>1</td><td>20</td><td>No</td><td>Sí</td></tr><tr><td>Camila</td><td>2</td><td>150</td><td>No</td><td>Sí</td></tr><tr><td>Ignacio</td><td>0</td><td>—</td><td>Sí (hace 8 días)</td><td>Sí</td></tr><tr><td>Fernanda</td><td>4</td><td>200</td><td>No</td><td>No</td></tr></table>",
+      "q": "¿A quién debería enviar Marcela el mensaje de reactivación?",
+      "o": [
+        "A Camila y a Fernanda, porque ambas superan los 120 días sin comprar.",
+        "Solo a Camila: Fernanda está inactiva, pero no acepta recibir novedades.",
+        "A Fernanda y a Valentina, porque son las que más veces han comprado.",
+        "A los cinco clientes, con el mismo mensaje, para no perder ninguna venta."
+      ],
+      "c": 1,
+      "f": [
+        "Fernanda cumple el criterio de inactividad, pero no dio consentimiento para novedades: escribirle no respeta su decisión.",
+        "Camila (150 días) y Fernanda (200 días) son inactivas, pero solo Camila acepta novedades; el registro de consentimiento manda.",
+        "Valentina compró hace 45 días: es recurrente, no inactiva, y Fernanda no acepta novedades.",
+        "Un mismo mensaje para todos ignora la segmentación: Ignacio necesita seguimiento a su cotización y Rodrigo acompañamiento."
+      ],
+      "g": "Segmentar es aplicar criterios claros sobre el registro, incluido el consentimiento para recibir comunicaciones."
+    },
+    {
+      "id": "M4.P12",
+      "tema": "4.1–4.2 · Ticket promedio y tasa de recompra",
+      "caso_html": "<p>Resumen del último trimestre de Casa Nativa, obtenido de su registro de clientes:</p><ul><li>Ventas totales: <strong>$3.300.000</strong></li><li>Pedidos: <strong>110</strong></li><li>Clientes distintos que compraron: <strong>80</strong></li><li>Clientes que compraron dos o más veces en el trimestre: <strong>20</strong></li></ul>",
+      "q": "¿Cuáles son el ticket promedio por pedido y la tasa de recompra del trimestre?",
+      "o": [
+        "Ticket promedio de $41.250 y tasa de recompra de 25%.",
+        "Ticket promedio de $30.000 y tasa de recompra de 18%.",
+        "Ticket promedio de $41.250 y tasa de recompra de 18%.",
+        "Ticket promedio de $30.000 y tasa de recompra de 25%."
+      ],
+      "c": 3,
+      "f": [
+        "$41.250 resulta de dividir las ventas por clientes ($3.300.000 ÷ 80), no por pedidos; la recompra sí está bien.",
+        "El ticket está bien calculado, pero 18% divide los clientes que recompraron por los pedidos (20 ÷ 110), no por los clientes.",
+        "Ambos cálculos usan el denominador equivocado: el ticket se divide por pedidos y la recompra por clientes.",
+        "Ticket: $3.300.000 ÷ 110 pedidos = $30.000. Recompra: 20 ÷ 80 clientes × 100 = 25%."
+      ],
+      "g": "Ticket promedio = ventas ÷ pedidos. Tasa de recompra = clientes con 2+ compras ÷ clientes que compraron × 100."
+    },
+    {
+      "id": "M4.P13",
+      "tema": "4.2 · Leer la adquisición de tráfico en GA4",
+      "caso_html": "<p>Informe de adquisición de tráfico de la tienda en línea de Casa Nativa (último mes, grupo de canales predeterminado). La tasa la calculó Marcela como compras ÷ sesiones.</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Canal</th><th>Sesiones</th><th>Compras (evento clave)</th><th>Tasa</th></tr><tr><td>Social orgánico</td><td>2.400</td><td>24</td><td>1,0%</td></tr><tr><td>Social de pago</td><td>1.200</td><td>18</td><td>1,5%</td></tr><tr><td>Búsqueda orgánica</td><td>900</td><td>27</td><td>3,0%</td></tr><tr><td>Directo</td><td>600</td><td>15</td><td>2,5%</td></tr><tr><td>Correo electrónico</td><td>300</td><td>12</td><td>4,0%</td></tr><tr><td><strong>Total</strong></td><td>5.400</td><td>96</td><td>1,8%</td></tr></table>",
+      "q": "Marcela quiere mejorar un solo canal este mes. ¿Qué lectura de la tabla es correcta?",
+      "o": [
+        "Social orgánico trae el 44% de las sesiones y convierte al 1%; llegar al 2% sumaría unas 24 compras.",
+        "Social orgánico es el mejor canal del mes, porque genera la mayor cantidad de sesiones y también de compras.",
+        "Búsqueda orgánica convierte apenas al 0,3% de sus sesiones, así que conviene dejar de trabajarla.",
+        "Correo electrónico genera más compras que cualquier otro canal gracias a su tasa de 4%."
+      ],
+      "c": 0,
+      "f": [
+        "2.400 ÷ 5.400 ≈ 44% de las sesiones; pasar de 1% a 2% sobre 2.400 sesiones son 24 compras más: es el canal con más margen de mejora.",
+        "Tiene más sesiones, pero no más compras: Búsqueda orgánica logra 27 con menos de la mitad del tráfico.",
+        "27 ÷ 900 × 100 = 3%, no 0,3%: es uno de los canales que mejor convierte.",
+        "Tiene la mejor tasa, pero solo 12 compras: una tasa alta sobre pocas sesiones no equivale a más ventas."
+      ],
+      "g": "Compara canales por eventos clave y tasa, no solo por sesiones; el volumen y la tasa juntos muestran dónde mejorar."
+    },
+    {
+      "id": "M4.P14",
+      "tema": "4.2 · Tasa de conversión y costo por venta",
+      "caso_html": "<p>En octubre, Casa Nativa invirtió en dos campañas para vender la colección Living:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Campaña</th><th>Inversión</th><th>Sesiones</th><th>Compras</th></tr><tr><td>Meta Ads</td><td>$90.000</td><td>1.800</td><td>18</td></tr><tr><td>Google Ads</td><td>$60.000</td><td>600</td><td>15</td></tr></table>",
+      "q": "Si el objetivo es vender, ¿qué análisis es correcto?",
+      "o": [
+        "Meta: 1% y $5.000 por compra; Google: 2,5% y $4.000. Meta es más eficiente, porque trae el triple de sesiones.",
+        "Meta: 10% y $500 por compra; Google: 25% y $400. Ambas campañas son igual de eficientes para vender.",
+        "Meta: 1% y $5.000 por compra; Google: 2,5% y $4.000. Para vender, Google es la más eficiente.",
+        "Google cuesta $100 por sesión y Meta $50, así que Meta es la más eficiente para vender."
+      ],
+      "c": 2,
+      "f": [
+        "Los cálculos están bien, pero la conclusión no: más sesiones no implica más eficiencia si el objetivo es vender.",
+        "Los porcentajes y costos están mal calculados: 18 ÷ 1.800 × 100 = 1% y $90.000 ÷ 18 = $5.000.",
+        "Meta: 18 ÷ 1.800 = 1% y $90.000 ÷ 18 = $5.000. Google: 15 ÷ 600 = 2,5% y $60.000 ÷ 15 = $4.000. Google vende más barato.",
+        "El costo por sesión está bien calculado, pero mide tráfico, no ventas; el indicador del objetivo es el costo por compra."
+      ],
+      "g": "Tasa de conversión = compras ÷ sesiones × 100. Costo por venta = inversión ÷ compras. Elige el indicador según el objetivo."
+    },
+    {
+      "id": "M4.P15",
+      "tema": "4.2 · Grupo de canales predeterminado y etiquetas UTM",
+      "caso_html": "<p>En octubre Marcela invirtió $80.000 en anuncios de Instagram. Los anuncios llevan a la tienda con un enlace simple, <strong>sin parámetros UTM</strong>. En GA4 (grupo de canales predeterminado) ve esto:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Canal</th><th>Sesiones septiembre</th><th>Sesiones octubre</th></tr><tr><td>Social orgánico</td><td>1.200</td><td>2.400</td></tr><tr><td>Social de pago</td><td>0</td><td>0</td></tr><tr><td>Búsqueda orgánica</td><td>850</td><td>900</td></tr></table><p>Marcela concluye: “Mis publicaciones orgánicas duplicaron las visitas”.</p>",
+      "q": "¿Qué interpretación y qué paso son los más adecuados?",
+      "o": [
+        "La conclusión es correcta: los anuncios no generaron visitas, porque Social de pago marca cero sesiones en ambos meses.",
+        "Las visitas de los anuncios probablemente se cuentan como orgánicas; hay que etiquetarlos con UTM.",
+        "GA4 no puede distinguir anuncios de publicaciones, así que debe comparar solo el total de sesiones del sitio.",
+        "Conviene detener los anuncios, porque el informe demuestra que no aportan visitas a la tienda."
+      ],
+      "c": 1,
+      "f": [
+        "Cero en Social de pago no prueba que los anuncios no trajeran visitas: sin etiquetas, GA4 no tiene cómo reconocerlas como pagadas.",
+        "Sin UTM, el clic desde un anuncio de Instagram llega como tráfico social sin señal de pago; con utm_source=instagram y utm_medium=paid_social se clasifica como Social de pago.",
+        "GA4 sí los distingue cuando la fuente y el medio están bien etiquetados; mirar solo el total impide evaluar cada canal.",
+        "Detener los anuncios sería decidir con un dato mal clasificado: primero hay que medir bien."
+      ],
+      "g": "El grupo de canales predeterminado clasifica el tráfico según la fuente y el medio; sin etiquetas consistentes, las comparaciones engañan."
+    },
+    {
+      "id": "M4.P16",
+      "tema": "4.2 · Interpretar el panel antes de actuar",
+      "caso_html": "<p>Panel semanal de Casa Nativa en Looker Studio (fuentes: GA4 y planilla de ventas):</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Indicador</th><th>Semana 1</th><th>Semana 2</th></tr><tr><td>Sesiones</td><td>2.000</td><td>2.600</td></tr><tr><td>Compras</td><td>40</td><td>36</td></tr><tr><td>Tasa de conversión</td><td>2,0%</td><td>¿?</td></tr></table>",
+      "q": "¿Qué lectura y qué primer paso son los más adecuados?",
+      "o": [
+        "Las sesiones subieron 30%, pero la tasa bajó a cerca de 1,4%; revisar qué canal trajo las visitas nuevas.",
+        "Las sesiones subieron 30%, así que la semana fue mejor que la anterior y conviene mantener todo tal como está.",
+        "La tasa bajó a 0,36%; hay que rediseñar todo el sitio web de inmediato para recuperar ventas.",
+        "Las compras bajaron solo 4 unidades, una variación tan menor que no amerita revisar nada."
+      ],
+      "c": 0,
+      "f": [
+        "36 ÷ 2.600 × 100 ≈ 1,4%. Más visitas con menos compras sugiere tráfico de menor calidad: el informe de adquisición muestra su origen.",
+        "Más sesiones no es mejor resultado si el objetivo es vender: las compras bajaron 10%.",
+        "El cálculo es incorrecto (36 ÷ 2.600 × 100 ≈ 1,4%) y rediseñar todo sin diagnóstico rara vez resuelve.",
+        "Bajar de 40 a 36 compras es una caída de 10% con 30% más de tráfico: es una señal que conviene diagnosticar."
+      ],
+      "g": "Un panel sirve cuando el dato lleva a una pregunta: ¿qué cambió? Primero se diagnostica, después se actúa."
+    },
+    {
+      "id": "M4.P17",
+      "tema": "4.3 · Priorizar un plan de 90 días",
+      "caso_html": "<p>Marcela y su ayudante de media jornada disponen de unas <strong>40 horas</strong> para proyectos nuevos en los próximos 90 días. Estas son sus ideas:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Acción</th><th>Impacto esperado</th><th>Esfuerzo estimado</th></tr><tr><td>1. Registrar clientes y próximas acciones en una planilla compartida</td><td>Alto</td><td>8 h</td></tr><tr><td>2. Respuestas automáticas para 5 preguntas frecuentes</td><td>Alto</td><td>6 h</td></tr><tr><td>3. Panel semanal en Looker Studio con 3 indicadores</td><td>Alto</td><td>10 h</td></tr><tr><td>4. Desarrollar una app propia</td><td>Medio</td><td>300 h</td></tr><tr><td>5. Videos diarios en una nueva red social</td><td>Bajo</td><td>60 h</td></tr><tr><td>6. Cambiar la portada de Facebook</td><td>Bajo</td><td>1 h</td></tr></table>",
+      "q": "¿Qué combinación de tres prioridades es la más adecuada para el plan?",
+      "o": [
+        "Acciones 4, 1 y 2: la app es la idea más ambiciosa y las otras dos la complementan.",
+        "Acciones 5, 6 y 2: suman visibilidad en redes y además ahorran tiempo de atención.",
+        "Las seis acciones a la vez, repartidas entre ambas personas para avanzar en todo.",
+        "Acciones 1, 2 y 3: suman 24 horas y las tres tienen alto impacto."
+      ],
+      "c": 3,
+      "f": [
+        "Solo la app exige 300 horas, más de siete veces la capacidad disponible: corresponde postergarla.",
+        "Suman 67 horas, más de las disponibles, y dos de ellas son de bajo impacto.",
+        "Suman más de 380 horas para un equipo con 40 disponibles: el resultado sería todo empezado y nada terminado.",
+        "8 + 6 + 10 = 24 horas, dentro de las 40 disponibles, y las tres son de alto impacto con bajo esfuerzo relativo."
+      ],
+      "g": "Prioriza alto impacto y bajo esfuerzo, respeta la capacidad real del equipo y deja el resto en “puede esperar”."
+    },
+    {
+      "id": "M4.P18",
+      "tema": "4.3 · Detectar un indicador mal formulado",
+      "caso_html": "<p>Plan de Acción Digital de Casa Nativa · próximos 90 días</p><ul><li><strong>Prioridad 1:</strong> registrar cada cotización con su próxima acción. Responsable: Marcela. Plazo: 2 semanas. Indicador: 100% de las cotizaciones con próxima acción y fecha al 30 de noviembre.</li><li><strong>Prioridad 2:</strong> respuestas automáticas para preguntas frecuentes. Responsable: ayudante. Plazo: 6 semanas. Indicador: bajar de 40 a 15 las preguntas repetidas respondidas a mano por semana.</li><li><strong>Prioridad 3:</strong> mejorar Instagram. Responsable: Marcela. Plazo: 8 semanas. Indicador: que la marca se vea más profesional y tenga más presencia.</li></ul>",
+      "q": "¿Qué problema tiene el plan y cómo conviene corregirlo?",
+      "o": [
+        "La prioridad 1 es imposible de medir; debería cambiar su indicador por “trabajar más ordenados”.",
+        "La prioridad 2 tiene un plazo excesivo; debería quedar terminada mañana, sin indicador.",
+        "El indicador de la prioridad 3 no es verificable; podría medir consultas semanales desde Instagram.",
+        "El plan está completo y bien formulado; solo le faltaría agregar otras cinco prioridades para el mismo trimestre."
+      ],
+      "c": 2,
+      "f": [
+        "El indicador de la prioridad 1 sí se puede verificar; “trabajar más ordenados” lo volvería impreciso.",
+        "Seis semanas es un plazo realista, y quitar el indicador impediría saber si funcionó.",
+        "“Verse más profesional” no se puede verificar; un número ligado al objetivo, como consultas por semana, sí lo permite.",
+        "Agregar prioridades a un equipo de dos personas haría el plan insostenible; y la prioridad 3 sigue sin indicador medible."
+      ],
+      "g": "Un buen indicador se puede verificar, tiene un punto de partida o meta, y está ligado al problema que se quiere resolver."
+    },
+    {
+      "id": "M4.P19",
+      "tema": "4.1–4.3 · Medir el efecto del seguimiento",
+      "caso_html": "<p>Antes de usar su registro de clientes, Marcela cerró <strong>10 ventas de 40 cotizaciones</strong> en un mes. Un mes después de registrar cada cotización con su próxima acción, cerró <strong>18 ventas de 45 cotizaciones</strong>.</p>",
+      "q": "¿Cómo cambió la tasa de cierre de cotizaciones?",
+      "o": [
+        "Subió 8 puntos porcentuales, porque se cerraron ocho ventas más que el mes anterior.",
+        "Subió 15 puntos porcentuales: pasó de 25% a 40% de las cotizaciones cerradas.",
+        "Subió 60 puntos porcentuales: pasó de 10% a 70% de las cotizaciones cerradas.",
+        "No se puede comparar, porque el segundo mes hubo más cotizaciones que el primero."
+      ],
+      "c": 1,
+      "f": [
+        "Ocho ventas más es una diferencia absoluta, no una tasa: hay que dividir por las cotizaciones de cada mes.",
+        "Antes: 10 ÷ 40 × 100 = 25%. Después: 18 ÷ 45 × 100 = 40%. La diferencia es de 15 puntos porcentuales.",
+        "60% es el aumento relativo (15 ÷ 25), no la diferencia en puntos, y las tasas de 10% y 70% no corresponden a los datos.",
+        "Justamente la tasa permite comparar meses con distinto número de cotizaciones."
+      ],
+      "g": "Las tasas permiten comparar períodos de distinto tamaño; distingue puntos porcentuales de variación relativa."
+    },
+    {
+      "id": "M4.P20",
+      "tema": "4.2 · Encontrar la etapa que falla en el recorrido",
+      "caso_html": "<p>Eventos de GA4 para la página de la lámpara infantil:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Evento</th><th>Mes anterior</th><th>Este mes</th></tr><tr><td>Vistas de la página</td><td>1.000</td><td>1.200</td></tr><tr><td>Agregar al carrito (add_to_cart)</td><td>80</td><td>96</td></tr><tr><td>Iniciar pago (begin_checkout)</td><td>50</td><td>60</td></tr><tr><td>Compra (purchase)</td><td>30</td><td>12</td></tr></table>",
+      "q": "¿Dónde debería concentrar Marcela su revisión?",
+      "o": [
+        "En el paso de pago y despacho: de quienes inician el pago, comprar bajó de 60% a 20%.",
+        "En la ficha del producto: la proporción que agrega al carrito cayó a la mitad este mes.",
+        "En atraer más tráfico, porque las vistas de la página son la etapa más débil del recorrido.",
+        "En ninguna: las vistas, el carrito y el inicio de pago crecieron 20%, así que todo va bien."
+      ],
+      "c": 0,
+      "f": [
+        "Las demás tasas se mantienen (8% agrega al carrito; 62,5% inicia el pago), pero las compras cayeron de 30 ÷ 50 = 60% a 12 ÷ 60 = 20%.",
+        "La proporción que agrega al carrito se mantiene en 8% (80 ÷ 1.000 y 96 ÷ 1.200).",
+        "Las vistas subieron de 1.000 a 1.200: el problema aparece después, al pagar.",
+        "Las etapas previas crecieron, pero las compras cayeron de 30 a 12: algo falla en el paso final."
+      ],
+      "g": "Calcula la tasa entre cada etapa del recorrido para encontrar dónde se pierden las personas antes de actuar."
+    }
+  ]
+}

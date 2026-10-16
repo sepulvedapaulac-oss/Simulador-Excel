@@ -1,0 +1,80 @@
+[
+{
+"id": "e01",
+"sc": 1,
+"escena": "Campaña sin configuración vs. esquema ordenado",
+"txt": "Invertir en publicidad digital no consiste simplemente en poner dinero en una plataforma. Una campaña necesita una estructura: un objetivo, una audiencia, un presupuesto, un mensaje y una forma de medir resultados. En este video veremos cómo se organiza ese proceso."
+},
+{
+"id": "e02",
+"sc": 2,
+"escena": "Objetivo → Audiencia → Presupuesto → Anuncio → Resultado",
+"txt": "Podemos pensar una campaña como una cadena de decisiones. Primero definimos qué queremos conseguir. Después elegimos a quién queremos llegar, cuánto podemos invertir, qué mensaje mostraremos y qué indicador utilizaremos para evaluar el resultado."
+},
+{
+"id": "e03",
+"sc": 3,
+"escena": "Meta Ads · niveles y objetivos",
+"txt": "En Meta Ads, una campaña se organiza en tres niveles. En la campaña eliges el objetivo: reconocimiento, tráfico, interacción, clientes potenciales, promoción de la app o ventas. En el conjunto de anuncios defines la audiencia, las ubicaciones, el presupuesto y el calendario. Y en el anuncio, la imagen y el texto. Por ejemplo, para conseguir conversaciones por WhatsApp puedes elegir el objetivo de interacción y definir WhatsApp como destino."
+},
+{
+"id": "e04",
+"sc": 4,
+"escena": "Audiencia en Meta",
+"txt": "La audiencia debe tener relación con el objetivo del negocio. No siempre conviene intentar llegar a la mayor cantidad de personas. Hoy Meta usa por defecto la audiencia Advantage+, que toma tus indicaciones como sugerencias; la ubicación y la edad mínima sí funcionan como límites. Por eso, un anuncio que le habla claramente a una audiencia pertinente puede generar mejores resultados que uno pensado para todo el mundo."
+},
+{
+"id": "e05",
+"sc": 5,
+"escena": "Presupuesto diario o total",
+"txt": "Después definimos el presupuesto. Para un negocio que está empezando, lo importante es establecer un máximo antes de comenzar. Puedes trabajar con un presupuesto diario o con un presupuesto total, pero siempre debes saber cuánto estás dispuesto a invertir y durante cuánto tiempo. Por ejemplo, diez mil pesos diarios durante siete días equivalen a un máximo de setenta mil pesos."
+},
+{
+"id": "e06",
+"sc": 6,
+"escena": "Anuncio: imagen, texto, título, botón",
+"txt": "El anuncio combina elementos visuales y texto. El mensaje debe conectar con una necesidad concreta de la audiencia y contener una llamada a la acción clara, como consultar, visitar, reservar o comprar. Antes de publicar, revisa la vista previa: el mismo anuncio puede verse en el feed, en las historias o en los reels, y debe entenderse en todos esos formatos."
+},
+{
+"id": "e07",
+"sc": 7,
+"escena": "Google Ads · campaña de búsqueda",
+"txt": "En Google Ads, la lógica puede ser distinta. En una campaña de búsqueda trabajamos con personas que ya están buscando una solución. La campaña se organiza en grupos de anuncios, y cada grupo reúne palabras clave relacionadas y anuncios que responden a esas búsquedas."
+},
+{
+"id": "e08",
+"sc": 8,
+"escena": "Búsqueda “decoración living pequeño” y anuncio",
+"txt": "Por ejemplo, si una persona busca decoración para living pequeño, existe una intención concreta. Una campaña de búsqueda puede permitir que Casa Nativa aparezca cuando esa necesidad ya está presente. El anuncio combina varios títulos y descripciones, y Google muestra la combinación más adecuada. Como la plataforma también usa inteligencia artificial para ampliar las búsquedas relacionadas, conviene revisar en qué términos aparece tu anuncio."
+},
+{
+"id": "e09",
+"sc": 9,
+"escena": "Comparativa Meta / Google",
+"txt": "En términos simples, Meta puede ser especialmente útil para generar descubrimiento e interés, mientras que Google puede ser útil cuando la persona ya expresa una intención de búsqueda. No son excluyentes: cumplen funciones diferentes dentro de una estrategia. De hecho, una misma persona puede descubrir Casa Nativa en Instagram y, días después, buscarla en Google."
+},
+{
+"id": "e10",
+"sc": 10,
+"escena": "Panel de métricas",
+"txt": "Una campaña no termina cuando se publica. Debemos revisar los resultados. El indicador principal depende del objetivo: puede ser alcance, clics, conversaciones, registros, ventas o costo por resultado. En Meta encontrarás columnas como resultados, alcance, impresiones, costo por resultado e importe gastado. En Google, clics, impresiones, conversiones y costo. Elige uno como principal y no te distraigas con el resto."
+},
+{
+"id": "e11",
+"sc": 11,
+"escena": "Ejemplo Casa Nativa",
+"txt": "Supongamos que Casa Nativa invierte setenta mil pesos durante una semana para generar conversaciones por WhatsApp. Si el objetivo es obtener veinte consultas calificadas, el indicador principal será cuántas conversaciones genera la campaña y cuánto cuesta cada una. Con veinte conversaciones, cada una costaría tres mil quinientos pesos."
+},
+{
+"id": "e12",
+"sc": 12,
+"escena": "Mantener, ajustar, detener",
+"txt": "Con esos datos podemos decidir. Si el costo es razonable y las consultas son relevantes, podemos mantener o aumentar la inversión. Si los resultados son bajos, debemos revisar audiencia, mensaje o creatividad antes de gastar más. Y si después de ajustar no mejora, conviene detener la campaña."
+},
+{
+"id": "e13",
+"sc": 13,
+"escena": "Checklist final",
+"txt": "Antes de lanzar una campaña, confirma cinco elementos: objetivo claro, audiencia definida, presupuesto máximo, mensaje coherente e indicador principal. Esa estructura permite invertir con mayor control."
+}
+]

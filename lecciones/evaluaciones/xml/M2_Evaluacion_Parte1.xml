@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/top/Herramientas Digitales PYMES/Módulo 2/Evaluación Parte 1</text></category><info format="html"><text></text></info></question>
+<question type="multichoice">
+<name><text>M2.P1</text></name>
+<questiontext format="html"><text><![CDATA[<p>Marcela está completando la descripción del perfil de empresa de Casa Nativa en WhatsApp Business. ¿Qué texto cumple mejor la función de identidad de un perfil comercial?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>La identidad de un perfil comercial se entiende en segundos: nombre claro, imagen coherente y una descripción concreta de lo que se ofrece.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P1</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Dice en pocas palabras qué vende y una condición clave de compra, por lo que el cliente se ubica de inmediato.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>¡Los mejores productos del mundo para tu hogar y tu familia! Escríbenos por DM 💬</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Es una frase general que no dice qué se vende; el cliente debe preguntar para saber si encontró lo que busca.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Casa Nativa: calidad, amor y diseño artesanal en cada detalle de tu hogar ✨</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Transmite un tono, pero no permite saber en segundos qué productos ofrece ni a dónde despacha.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Decoración hecha a mano: cerámica, textiles y cestería. Envíos a todo Chile.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Dice en pocas palabras qué vende y una condición clave de compra, por lo que el cliente se ubica de inmediato.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Tienda de cosas lindas para tu casa, para regalar y para regalarte 🎁</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. “Cosas lindas” es vago: no indica el tipo de producto ni condiciones básicas como la cobertura de envío.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P2</text></name>
+<questiontext format="html"><text><![CDATA[<p>Marcela revisó los mensajes de la semana: 22 preguntaban el horario, 18 los medios de pago, 15 si envía a regiones y 9 el precio de un cojín. ¿Qué conclusión y acción corresponden?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Regla práctica: si el cliente necesita preguntar datos básicos (horario, pagos, despacho, precios) para avanzar, el perfil todavía puede mejorar.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P2</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Si el cliente debe preguntar datos básicos para avanzar, el perfil aún puede optimizarse; publicarlos reduce la fricción.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>Al perfil le falta información esencial: publicar horario, pagos, cobertura y catálogo con precios.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Si el cliente debe preguntar datos básicos para avanzar, el perfil aún puede optimizarse; publicarlos reduce la fricción.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Hay mucho interés en la marca: conviene publicar más historias para atraer todavía más consultas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Atraer más tráfico hacia un perfil que no informa multiplica las mismas preguntas repetidas.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Los clientes prefieren conversar: conviene contratar a alguien que responda todos los mensajes del día.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más personas respondiendo lo mismo es un costo que se evita mostrando la información en el perfil.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Los precios generan dudas: conviene bajarlos para que los clientes dejen de preguntar por ellos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Preguntar el precio no indica que sea alto: indica que no está visible en el catálogo.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P3</text></name>
+<questiontext format="html"><text><![CDATA[<p>Cada noche llegan a Casa Nativa 5 o 6 consultas que nadie ve hasta el mediodía siguiente, y dos clientes terminaron comprando en otra tienda. Marcela atiende de lunes a sábado desde las 10:00. ¿Qué configuración de WhatsApp Business conviene?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Mensaje de ausencia, respuestas rápidas y etiquetas permiten una atención rápida y ordenada sin depender de estar conectada todo el día.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P3</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> El cliente sabe que su mensaje llegó y cuándo tendrá respuesta, puede revisar el catálogo y Marcela prioriza esos chats.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Responder ella misma desde el celular a cualquier hora, incluso de madrugada, para no perder ventas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No es sostenible: la calidad de la atención baja cuando el canal depende de que alguien esté siempre conectado.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Activar solo el mensaje de bienvenida, porque se envía cada vez que un cliente escribe al negocio.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El mensaje de bienvenida se envía en el primer contacto o tras un tiempo sin conversar, no informa cuándo se responderá.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Pedir en el perfil que los clientes llamen por teléfono en horario de atención, en lugar de escribir.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Obligar a llamar agrega un paso para clientes que prefieren escribir y aumenta las ventas perdidas.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Programar un mensaje de ausencia con horario y catálogo, y etiquetar esos chats para priorizarlos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. El cliente sabe que su mensaje llegó y cuándo tendrá respuesta, puede revisar el catálogo y Marcela prioriza esos chats.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P4</text></name>
+<questiontext format="html"><text><![CDATA[<p>Marcela quiere vender en línea sus 25 productos. Tiene presupuesto limitado, una ayudante media jornada, casi no tiene tráfico propio y aún no sabe cuáles productos se venden más. ¿Qué estrategia es más adecuada para empezar?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>No hay un canal mejor para todas las PYMES: se decide por control, velocidad, alcance y capacidad operativa según la etapa del negocio.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P4</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Aprovecha el tráfico que ya existe en la plataforma, es operable con su equipo y entrega datos para decidir.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Invertir todo el presupuesto en una tienda propia con diseño a medida desde el primer día.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Sin tráfico propio, la tienda tendría pocas visitas y consumiría todo el presupuesto antes de validar la demanda.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Publicar sus productos más atractivos en un marketplace y medir qué se vende en unos meses.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Aprovecha el tráfico que ya existe en la plataforma, es operable con su equipo y entrega datos para decidir.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Abrir una tienda propia y tres marketplaces a la vez, para no perder ninguna venta posible.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Con una ayudante media jornada, cuatro catálogos, pagos y despachos generan errores y desgaste.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Esperar hasta reunir un presupuesto mayor antes de vender en cualquier canal en línea.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. No vender retrasa el aprendizaje comercial: qué productos se venden, a qué precio y a quién.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P5</text></name>
+<questiontext format="html"><text><![CDATA[<p>Seis meses después, Casa Nativa tiene ventas recurrentes en el marketplace, muchos clientes buscan la marca por su nombre y Marcela quiere hacer campañas propias y conocer mejor a sus clientes. ¿Qué paso es más coherente?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Muchas PYMES validan la demanda en un marketplace y, cuando la marca ya es buscada, suman una tienda propia en una estrategia multicanal.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P5</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> La tienda propia aporta control de marca y relación con clientes, y el marketplace sigue aportando ventas y alcance.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Cerrar el marketplace de inmediato y mover a todos sus clientes a una tienda propia nueva.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Elimina una fuente de ventas que funciona justo cuando la tienda propia aún no tiene tráfico estable.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Seguir vendiendo solo en el marketplace, ya que es el canal que le dio sus primeras ventas.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Depender de un solo canal ajeno limita el control de la marca y de los datos, y aumenta la vulnerabilidad ante cambios de reglas.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Abrir cuentas en dos marketplaces más, para depender menos de las reglas de uno solo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Más marketplaces amplían el alcance, pero no le dan control de la marca ni de la relación con sus clientes.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Evaluar una tienda propia y mantener el marketplace, cuidando stock y precios en ambos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. La tienda propia aporta control de marca y relación con clientes, y el marketplace sigue aportando ventas y alcance.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P6</text></name>
+<questiontext format="html"><text><![CDATA[<p>Una amiga le dice a Marcela: “En el marketplace pagas comisión por cada venta; en una tienda propia solo pagas el plan mensual de la plataforma”. ¿Qué le falta considerar para comparar bien?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Compara costos completos, no solo una tarifa: comisiones y cargos en marketplace; plataforma, pagos y marketing en tienda propia; despacho, empaque y atención en ambos.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P6</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> La tienda propia suma plataforma, medios de pago y marketing, y en ambos canales hay despacho, empaque y también atención al cliente.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>La comisión de la pasarela y el marketing para atraer visitas, más despacho, empaque y atención.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. La tienda propia suma plataforma, medios de pago y marketing, y en ambos canales hay despacho, empaque y también atención al cliente.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Nada: el plan mensual es el único costo de una tienda propia, así que siempre será más barata.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ignora los medios de pago, la publicidad para generar visitas y los costos operativos que existen en ambos canales.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Solo el costo del dominio web, que es lo único que se agrega al plan mensual de la tienda propia.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El dominio es un costo menor; los medios de pago y el marketing para atraer visitas suelen pesar mucho más.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Que en la tienda propia también se paga una comisión al marketplace por cada venta realizada.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La tienda propia no paga comisión a un marketplace; su costo variable principal es la comisión de la pasarela.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P7</text></name>
+<questiontext format="html"><text><![CDATA[<p>Marcela compra materiales a sus artesanas cada semana y su caja es ajustada. Está comparando pasarelas de pago con comisiones parecidas. ¿Qué criterio debe revisar con especial atención en su situación?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Una pasarela se evalúa por costo total, confianza, integración, medios, plazos de abono y soporte; el peso de cada criterio depende de la situación del negocio.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P7</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Si paga a sus artesanas cada semana, un abono lento puede dejarla sin caja aunque venda bien.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>La integración con su tienda, para que los pedidos se confirmen automáticamente.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Es un criterio importante para reducir trabajo manual, pero no responde a su problema de caja.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>El soporte ante contracargos, cuando un cliente desconoce un cobro en su tarjeta.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Es un criterio relevante para resolver errores y reclamos, pero no define cuándo dispone del dinero.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Los plazos de abono, es decir, cuándo llega el dinero de cada venta a su cuenta.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Si paga a sus artesanas cada semana, un abono lento puede dejarla sin caja aunque venda bien.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>La variedad de billeteras digitales disponibles para los clientes al momento de pagar.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ofrecer medios que usa su público ayuda a vender, pero no cambia la fecha en que recibe el dinero.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P8</text></name>
+<questiontext format="html"><text><![CDATA[<p>Una clienta escribe: “Ya transferí, te mando el pantallazo”. El pedido aparece como pendiente de pago y la ayudante pregunta si lo prepara. ¿Qué corresponde hacer?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Un pago puede quedar aprobado, rechazado o pendiente; solo con una confirmación válida asociada al pedido se pasa a preparación.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P8</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Con un pago pendiente no se prepara ni despacha hasta verificar en el registro que el dinero está asociado a ese pedido.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Prepararlo y despacharlo de inmediato, porque el pantallazo demuestra que el pago se hizo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Un pantallazo no es una confirmación válida: el pago podría no haberse completado o corresponder a otra operación.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Revisar en la cuenta que el monto llegó y asociarlo al pedido antes de empezar a prepararlo.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Con un pago pendiente no se prepara ni despacha hasta verificar en el registro que el dinero está asociado a ese pedido.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Anular el pedido y pedirle a la clienta que vuelva a comprar usando otro medio de pago.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Anular sin revisar castiga a una clienta que probablemente sí pagó y deteriora la confianza.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Pedirle a la clienta que transfiera otra vez, por si la primera transferencia no se registró.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Pedir un segundo pago sin verificar puede generar un cobro duplicado y un reclamo.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P9</text></name>
+<questiontext format="html"><text><![CDATA[<p>Un paquete de Casa Nativa volvió al taller porque la dirección no tenía número de departamento. El cliente la había escrito así en el formulario. ¿En qué momento crítico se debió prevenir este problema?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>Los seis momentos críticos son pago confirmado, pedido validado, preparación, despacho, seguimiento y entrega con postventa.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P9</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Validar stock, dirección y datos antes de preparar evita despachos fallidos y costos de reenvío.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="100" format="html"><text><![CDATA[<p>En el pedido validado, comprobando que dirección y datos del cliente estén completos.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Validar stock, dirección y datos antes de preparar evita despachos fallidos y costos de reenvío.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En la preparación, revisando con una lista que todos los productos estén en la caja.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. La preparación controla el contenido de la caja, no si los datos de entrega están completos.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En el despacho, eligiendo un transportista con mejor cobertura en la zona del cliente.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Ningún transportista puede entregar en una dirección incompleta; el error se arrastra desde antes.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>En el seguimiento, enviando al cliente el código para que vea dónde está su pedido.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El seguimiento informa dónde va el pedido, pero no corrige una dirección incompleta.</p>]]></text></feedback></answer>
+</question>
+<question type="multichoice">
+<name><text>M2.P10</text></name>
+<questiontext format="html"><text><![CDATA[<p>Un cliente recibe un jarrón quebrado y escribe molesto por WhatsApp. ¿Cuál es la mejor respuesta de Casa Nativa en la etapa de entrega y postventa?</p>]]></text></questiontext>
+<generalfeedback format="html"><text><![CDATA[<p>La postventa necesita una ruta clara para resolver problemas: responder rápido, ofrecer opciones con plazos y aprender del error.</p>]]></text></generalfeedback>
+<defaultgrade>2</defaultgrade><penalty>0</penalty><hidden>0</hidden>
+<idnumber>M2.P10</idnumber>
+<single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering><showstandardinstruction>0</showstandardinstruction>
+<correctfeedback format="html"><text><![CDATA[<p><strong>✔ Respuesta correcta.</strong></p>]]></text></correctfeedback>
+<partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+<incorrectfeedback format="html"><text><![CDATA[<p><strong>✘ Respuesta incorrecta.</strong> Resuelve la necesidad del cliente con opciones y plazos claros; luego conviene revisar el embalaje para prevenir nuevos quiebres.</p>]]></text></incorrectfeedback>
+<shownumcorrect/>
+<answer fraction="0" format="html"><text><![CDATA[<p>Explicarle que el daño ocurrió en el traslado y enviarle el número del transportista para que reclame.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Para el cliente el responsable es Casa Nativa; derivarlo al transportista lo deja solo con el problema.</p>]]></text></feedback></answer>
+<answer fraction="100" format="html"><text><![CDATA[<p>Disculparse, pedir una foto y ofrecer reposición o devolución con un plazo concreto de solución.</p>]]></text><feedback format="html"><text><![CDATA[<p>✔ Correcto. Resuelve la necesidad del cliente con opciones y plazos claros; luego conviene revisar el embalaje para prevenir nuevos quiebres.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Decirle que se revisará el caso y responderle cuando el transportista confirme qué pasó con el envío.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. Una respuesta sin fecha genera incertidumbre; el cliente necesita saber qué pasará y cuándo.</p>]]></text></feedback></answer>
+<answer fraction="0" format="html"><text><![CDATA[<p>Ofrecerle un 50% de descuento en su próxima compra para compensar el jarrón que llegó quebrado.</p>]]></text><feedback format="html"><text><![CDATA[<p>✘ Incorrecto. El descuento no resuelve el producto dañado que ya pagó y lo obliga a comprar de nuevo para compensarlo.</p>]]></text></feedback></answer>
+</question>
+</quiz>

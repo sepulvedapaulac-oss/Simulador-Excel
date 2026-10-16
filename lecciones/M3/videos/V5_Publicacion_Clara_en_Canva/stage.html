@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Video 5 · Diseña una publicación clara y coherente en Canva</title>
+<style>
+@font-face{font-family:'Playfair Display';font-weight:600;src:url(fonts/playfair-display-latin-600-normal.woff2)}
+@font-face{font-family:'Playfair Display';font-weight:700;src:url(fonts/playfair-display-latin-700-normal.woff2)}
+@font-face{font-family:Montserrat;font-weight:400;src:url(fonts/montserrat-latin-400-normal.woff2)}
+@font-face{font-family:Montserrat;font-weight:500;src:url(fonts/montserrat-latin-500-normal.woff2)}
+@font-face{font-family:Montserrat;font-weight:600;src:url(fonts/montserrat-latin-600-normal.woff2)}
+@font-face{font-family:Montserrat;font-weight:700;src:url(fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:Pacifico;src:url(fonts/pacifico-latin-400-normal.woff2)}
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}
+@font-face{font-family:Lobster;src:url(fonts/lobster-latin-400-normal.woff2)}
+@font-face{font-family:'Bebas Neue';src:url(fonts/bebas-neue-latin-400-normal.woff2)}
+@font-face{font-family:'Dancing Script';src:url(fonts/dancing-script-latin-400-normal.woff2)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Inter,Arial,sans-serif;color:#1f2a30}
+#bg{position:absolute;inset:0;background:linear-gradient(135deg,#2b1f3d 0%,#3b2a5c 45%,#0f5e66 100%)}
+#note{position:absolute;left:40px;top:18px;font-size:19px;color:rgba(255,255,255,.88);background:rgba(0,0,0,.25);padding:7px 16px;border-radius:18px;z-index:5}
+#sc{position:absolute;inset:0}
+/* editor */
+.ed{position:absolute;left:40px;top:62px;width:1840px;height:884px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.tb{position:absolute;left:0;right:0;top:0;height:56px;background:linear-gradient(90deg,#1fb7c4 0%,#6a4fe0 55%,#7d2ae8 100%);display:flex;align-items:center;gap:6px;padding:0 18px;color:#fff;font-size:17px;font-weight:600}
+.tb .it{padding:8px 14px;border-radius:8px}
+.tb .ttl{position:absolute;left:50%;transform:translateX(-50%);font-weight:500;opacity:.95}
+.tb .sh{margin-left:auto;background:#fff;color:#4b2bb8;padding:9px 20px;border-radius:9px;font-weight:700}
+.tb .av{width:36px;height:36px;border-radius:50%;background:#ffd2a8;color:#7a3d12;display:grid;place-items:center;font-weight:800;margin-left:12px}
+.rail{position:absolute;left:0;top:56px;bottom:0;width:78px;background:#fff;border-right:1px solid #e6e7eb;padding-top:10px}
+.rail div{height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#3c4043}
+.rail div b{width:40px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:20px}
+.rail div.on b{background:#efe9fd}.rail div.on{color:#6a2fe0;font-weight:700}
+.pnl{position:absolute;left:78px;top:56px;bottom:0;width:350px;background:#fff;border-right:1px solid #e6e7eb;padding:20px 18px;overflow:hidden}
+.pnl h4{font-size:15px;font-weight:700;margin:18px 0 10px;color:#202124}
+.pnl .srch{height:44px;border:1.5px solid #cfd2d8;border-radius:9px;display:flex;align-items:center;padding:0 14px;color:#6b7280;font-size:16px}
+.sw{display:inline-block;width:48px;height:48px;border-radius:9px;margin:0 8px 8px 0;border:1px solid rgba(0,0,0,.08);vertical-align:top}
+.sw.ring{outline:3px solid #8b3dff;outline-offset:2px}
+.wa{position:absolute;top:56px;right:0;bottom:0;background:#ebecf0}
+.ctx{position:absolute;left:0;right:0;top:0;height:54px;background:#fff;border-bottom:1px solid #e3e4e8;display:flex;align-items:center;gap:10px;padding:0 18px;font-size:15px;color:#2b2f33}
+.ctx .bx{border:1.5px solid #d6d8dc;border-radius:8px;padding:7px 12px;display:flex;align-items:center;gap:8px;background:#fff}
+.ctx .ic{padding:7px 10px;border-radius:7px;font-weight:700}
+.ctx .sep{width:1px;height:28px;background:#e0e2e6}
+.ctx .cw{width:26px;height:26px;border-radius:6px;border:1px solid rgba(0,0,0,.15)}
+.bb{position:absolute;left:0;right:0;bottom:0;height:42px;background:#fff;border-top:1px solid #e3e4e8;display:flex;align-items:center;gap:16px;padding:0 20px;font-size:14px;color:#5f6368}
+.bb .zs{width:160px;height:4px;background:#d4d6db;border-radius:2px;position:relative}
+.bb .zs i{position:absolute;top:-6px;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid #8b3dff}
+.pg{position:absolute;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.dz{position:absolute;left:0;top:0;width:600px;height:600px;transform-origin:0 0;overflow:hidden}
+.el{position:absolute}
+.sel{outline:2px solid #8b3dff;outline-offset:1px}
+.hd{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;border:1.5px solid #9aa0a6;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.pgl{position:absolute;font-size:14px;color:#5f6368;font-weight:600}
+/* home */
+.home{position:absolute;left:40px;top:62px;width:1840px;height:884px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.hero{height:330px;background:linear-gradient(120deg,#1fb7c4,#6a4fe0 60%,#7d2ae8);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;gap:26px}
+.hero h1{font-size:46px;font-weight:800}
+.hs{width:900px;height:62px;background:#fff;border-radius:12px;color:#202124;display:flex;align-items:center;gap:14px;padding:0 22px;font-size:22px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.dd{position:absolute;left:470px;top:300px;width:900px;background:#fff;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.22);padding:10px 0;font-size:19px}
+.dd div{display:flex;align-items:center;gap:16px;padding:14px 24px}.dd div small{margin-left:auto;color:#80868b;font-size:16px}
+.dd div.on{background:#f1ecfe}
+.dd .th{width:42px;height:42px;border-radius:8px;background:#e8e2fb;display:grid;place-items:center}
+.tpl{display:inline-block;width:146px;height:146px;border-radius:10px;margin:0 10px 10px 0;overflow:hidden;position:relative;vertical-align:top}
+/* tarjetas */
+.cards{position:absolute;left:110px;right:110px;top:130px;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.card{background:#fff;border-radius:26px;padding:40px 44px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.card h3{font-size:44px;font-weight:800;margin-bottom:8px}.card .tag{display:inline-block;font-size:20px;font-weight:700;padding:6px 16px;border-radius:16px;margin-bottom:22px}
+.card li{list-style:none;font-size:29px;line-height:1.3;padding:11px 0;display:flex;gap:16px}
+.cap{position:absolute;color:#fff;font-weight:800}
+.chk{display:grid;gap:22px;width:1250px;margin:0 auto}
+.ci{font-size:42px;font-weight:700;padding:24px 32px;border-radius:20px;background:rgba(255,255,255,.12);display:flex;gap:24px;align-items:center;color:#fff}
+.box{width:58px;height:58px;border-radius:14px;border:4px solid #c7b4ff;display:grid;place-items:center;font-size:38px;color:#2b1f3d;flex:none}.box.on{background:#c7b4ff}
+.ci small{margin-left:auto;font-size:26px;font-weight:600;opacity:.8}
+.lbl{position:absolute;font-size:30px;font-weight:800;color:#fff;background:rgba(0,0,0,.35);padding:8px 22px;border-radius:24px}
+.pill{position:absolute;background:#fff;color:#1f2a30;font-size:24px;font-weight:700;padding:10px 20px;border-radius:24px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+/* teléfono */
+.phone{position:absolute;width:400px;height:800px;border-radius:52px;background:#111;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.phone .scr{width:100%;height:100%;border-radius:40px;background:#fff;overflow:hidden;position:relative}
+/* destacado, cursor y subtítulos */
+#hl{position:absolute;border:5px solid #ffd60a;border-radius:12px;box-shadow:0 0 0 4000px rgba(10,5,25,.35);z-index:80;display:none}
+#hlLabel{position:absolute;background:#ffd60a;color:#1a1a1a;font-weight:800;font-size:23px;padding:8px 18px;border-radius:22px;z-index:81;display:none;white-space:nowrap}
+#cursor{position:absolute;z-index:100;width:0;height:0}
+#cursor .halo{position:absolute;left:-28px;top:-28px;width:56px;height:56px;border-radius:50%;background:rgba(255,214,10,.45);border:3px solid rgba(255,190,0,.9)}
+#cursor svg{position:absolute;left:-3px;top:-2px;width:30px;height:40px}
+#ripple{position:absolute;z-index:99;border:5px solid #ffbe00;border-radius:50%;display:none}
+#sub{position:absolute;left:150px;right:150px;bottom:22px;text-align:center;z-index:120}
+#sub span{display:inline-block;background:rgba(12,8,24,.9);color:#fff;font-size:33px;font-weight:600;line-height:1.35;padding:12px 28px;border-radius:16px}
+#sub span:empty{display:none}
+</style></head>
+<body>
+<div id="bg"></div>
+<div id="note">Recreación del editor de Canva con fines educativos · Casa Nativa es una empresa ficticia</div>
+<section id="sc"></section>
+<div id="hl"></div><div id="hlLabel"></div><div id="ripple"></div>
+<div id="cursor"><div class="halo"></div><svg viewBox="0 0 30 40"><path d="M2 2 L2 32 L10 25 L15 37 L20 35 L15 23 L26 23 Z" fill="#fff" stroke="#111" stroke-width="2.4" stroke-linejoin="round"/></svg></div>
+<div id="sub"><span></span></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),ease=t=>t*t*(3-2*t),seg=(f,a,b)=>clamp((f-a)/(b-a),0,1);
+const typed=(s,f,a,b)=>s.slice(0,Math.round(s.length*seg(f,a,b)));
+const lerp=(a,b,t)=>a+(b-a)*t;
+/* marca */
+const C={ter:'#B5573B',oli:'#6B7A4B',lin:'#F3EBDD',caf:'#3A2A20',bei:'#E4D6C1'};
+const TITLE='3 ideas para renovar tu living',SUBT='Detalles simples que cambian el ambiente.',CTA='Conoce la colección en nuestro catálogo →';
+const PH={x:36,y:64,w:528,h:300};
+/* contraste WCAG */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function ratio(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const fr=r=>r.toFixed(1).replace('.',',')+' : 1';
+/* pieza */
+function handles(w,h){return [[0,0],[w/2,0],[w,0],[0,h/2],[w,h/2],[0,h],[w/2,h],[w,h]].map(p=>`<span class="hd" style="left:${p[0]-6}px;top:${p[1]-6}px"></span>`).join('')}
+function post(o={}){const sel=o.sel||'';let h=`<div class="el" style="inset:0;background:${o.bg||'#fff'}"></div>`;
+  if(o.logo)h+=`<div class="el" id="e_logo" style="left:36px;top:26px;font:600 12px Montserrat;letter-spacing:.32em;color:${C.oli}"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${C.ter};margin-right:8px"></span>CASA NATIVA</div>`;
+  if(o.photo){const p=o.photo;h+=`<div class="el ${sel==='photo'?'sel':''}" id="e_photo" style="left:${p.x}px;top:${p.y}px;width:${p.w}px;height:${p.h}px;border-radius:${p.r??14}px;background:url(img/m7_living_hd.jpg) ${p.pos||'50% 55%'}/cover">${sel==='photo'?handles(p.w,p.h):''}</div>`}
+  if(o.title!=null){const t=o.title;h+=`<div class="el ${sel==='title'?'sel':''}" id="e_title" style="left:${36+(o.tdx||0)}px;top:384px;width:528px;font:700 ${t.size||38}px/${t.lh||1.12} '${t.font||'Playfair Display'}';color:${t.col||C.caf}">${t.t}${t.caret?'<span style="border-left:2px solid #8b3dff;margin-left:1px"></span>':''}${sel==='title'?handles(528,Math.round((t.size||38)*1.2)):''}</div>`}
+  if(o.sub!=null)h+=`<div class="el ${sel==='sub'?'sel':''}" id="e_sub" style="left:36px;top:442px;width:528px;font:500 17px/1.3 Montserrat;color:#5a4a3e">${o.sub}${sel==='sub'?handles(528,24):''}</div>`;
+  if(o.cta!=null)h+=`<div class="el ${sel==='cta'?'sel':''}" id="e_cta" style="left:36px;top:494px;height:46px;padding:0 22px;border-radius:23px;background:${C.ter};color:#fff;font:700 16px/46px Montserrat;transform:scale(${o.ctaS??1});transform-origin:0 50%;white-space:nowrap">${o.cta}</div>`;
+  if(o.extra)h+=o.extra;return h}
+const FINAL=(x={})=>post(Object.assign({bg:C.lin,logo:1,photo:PH,title:{t:TITLE},sub:SUBT,cta:CTA},x));
+function busy(){return `<div class="el" style="inset:0;background:url(img/m7_hero.jpg) center/cover"></div><div class="el" style="inset:0;background:linear-gradient(160deg,rgba(255,0,140,.35),rgba(0,200,255,.25))"></div>
+ <div class="el" style="left:18px;top:14px;font:44px/1 Anton;color:#ffe600;text-shadow:3px 3px 0 #e6007e;transform:rotate(-4deg)">¡¡SÚPER MEGA OFERTA!!</div>
+ <div class="el" style="left:30px;top:80px;font:34px Pacifico;color:#ff7ac8">Decoración para tu hogar</div>
+ <div class="el" style="right:20px;top:150px;width:150px;height:150px;border-radius:50%;background:#ff2d2d;color:#fff;display:grid;place-items:center;font:48px Anton;transform:rotate(12deg)">-30%</div>
+ <div class="el" style="left:24px;top:170px;width:390px;font:22px Lobster;color:#7cff4f;text-shadow:1px 1px 0 #000">Cojines, jarrones, cestos, velas, lámparas y mucho más!!!</div>
+ <div class="el" style="left:24px;top:260px;width:400px;font:600 12px/1.35 Montserrat;color:#f2f2f2">Envíos a todo Chile · Paga con tarjeta, transferencia o efectivo · Precios válidos hasta agotar stock · Síguenos en redes · Comparte esta publicación · Etiqueta a 3 amigas · Consulta por mayor · Horario de lunes a sábado de 10:00 a 19:00 · Retiro en tienda · Pregunta por colores disponibles</div>
+ <div class="el" style="left:24px;top:400px;font:46px 'Bebas Neue';color:#00e5ff;letter-spacing:.04em">¡NO TE LO PIERDAS!</div>
+ <div class="el" style="left:24px;top:455px;font:30px 'Dancing Script';color:#ffd84d">casa nativa ♥ ♥ ♥</div>
+ <div class="el" style="left:24px;top:520px;font:600 11px Montserrat;color:#ddd">*Condiciones en tienda. Imágenes referenciales. No acumulable con otras promociones.</div>`}
+function promo(fixed,sel){const ok=fixed;return `<div class="el" style="inset:0;background:${C.lin}"></div>
+ <div class="el" style="left:36px;top:26px;font:600 12px Montserrat;letter-spacing:.32em;color:${C.oli}"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${C.ter};margin-right:8px"></span>CASA NATIVA</div>
+ <div class="el" style="left:36px;top:64px;width:528px;height:300px;border-radius:14px;background:url(img/m8_foto_hd.jpg) 50% 60%/cover"></div>
+ <div class="el" style="left:36px;top:384px;font:700 38px 'Playfair Display';color:${C.caf}">Jarrones de terracota</div>
+ <div class="el" id="e_prices" style="left:36px;top:446px;display:flex;align-items:baseline;gap:22px;font-family:Montserrat">
+   <div>${ok?'<div style="font:600 13px Montserrat;color:#6b5a4c">Antes</div>':''}<span style="font:600 26px Montserrat;color:${ok?'#8a7a6c':C.caf};${ok?'text-decoration:line-through;text-decoration-thickness:2px':''}">$18.990</span></div>
+   <div>${ok?'<div style="font:700 13px Montserrat;color:'+C.ter+'">Ahora</div>':''}<span style="font:700 34px Montserrat;color:${C.ter}">$14.990</span></div></div>
+ ${ok?`<div class="el" id="e_badge" style="left:430px;top:398px;width:128px;height:128px;border-radius:50%;background:${C.ter};color:#fff;display:grid;place-items:center;text-align:center;font:700 30px/1 Montserrat;transform:scale(${sel??1})"><div>−20%<div style="font:600 13px Montserrat;margin-top:6px">🏷️ OFERTA</div></div></div>`:''}
+ <div class="el" style="left:36px;top:528px;height:42px;padding:0 20px;border-radius:21px;background:${C.oli};color:#fff;font:700 15px/42px Montserrat">Escríbenos por WhatsApp →</div>`}
+/* editor */
+const RAIL=[['🗂️','Diseño'],['✳️','Elementos'],['T','Texto'],['🏷️','Marca'],['☁️','Subidos'],['🛠️','Herramientas'],['📁','Proyectos'],['⊞','Apps']];
+function ctxBar(k,o={}){if(k==='text')return `<div class="bx" id="c_font" style="width:230px">${o.font||'Playfair Display'}<span style="margin-left:auto">▾</span></div><div class="bx" id="c_size">− <b style="width:38px;text-align:center">${o.size||38}</b> +</div><div class="ic" id="c_color" style="display:flex;flex-direction:column;align-items:center;line-height:1">A<span style="width:22px;height:5px;background:${o.col||C.caf};margin-top:2px;border:1px solid rgba(0,0,0,.15)"></span></div><span class="ic">B</span><span class="ic" style="font-style:italic">I</span><span class="ic" style="text-decoration:underline">U</span><span class="ic">aA</span><div class="sep"></div><span class="ic">≡</span><span class="ic">☰</span><span class="ic">↕</span><div class="sep"></div><span class="ic" style="font-weight:600">Efectos</span><span class="ic" style="font-weight:600">Animar</span><span class="ic" id="c_pos" style="font-weight:600">Posición</span>`;
+  if(k==='img')return `<span class="ic" style="font-weight:600">Editar</span><div class="sep"></div><span class="ic" id="c_crop" style="font-weight:600">✂ Recortar</span><span class="ic" style="font-weight:600">Voltear</span><div class="sep"></div><span class="ic" style="font-weight:600">Animar</span><span class="ic" style="font-weight:600">Posición</span>`;
+  if(k==='bg')return `<div class="cw" id="c_bg" style="background:${o.col||'#fff'}"></div><span style="color:#5f6368">Color de fondo</span><div class="sep"></div><span class="ic" style="font-weight:600">Animar</span><span class="ic" style="font-weight:600">Posición</span>`;
+  return `<span style="color:#80868b">Selecciona un elemento para editarlo</span>`}
+function editor(o){const pw=o.panel?350:0,waL=78+pw,waW=1840-waL,S=o.S||600,availH=884-56-54-42,top=54+(availH-S)/2,left=(waW-S)/2;
+  return `<div class="ed"><div class="tb"><span class="it">☰ Archivo</span><span class="it">Redimensionar</span><span class="it">✎ Edición</span><span class="it">↶ ↷</span><span class="ttl">${o.title||'Casa Nativa · Publicación living'}</span><span class="sh">Compartir</span><span class="av">MC</span></div>
+  <div class="rail">${RAIL.map((r,i)=>`<div class="${o.rail===i?'on':''}" id="r${i}"><b>${r[0]}</b>${r[1]}</div>`).join('')}</div>
+  ${o.panel?`<div class="pnl">${o.panel}</div>`:''}
+  <div class="wa" style="left:${waL}px"><div class="ctx">${ctxBar(o.ctx,o.cx||{})}</div>
+   ${o.label?`<div class="pgl" style="left:${left}px;top:${top-26}px">${o.label}</div>`:''}
+   <div class="pg" id="page" style="left:${left}px;top:${top}px;width:${S}px;height:${S}px"><div class="dz" style="transform:scale(${S/600})">${o.page}</div></div>
+   ${o.wextra||''}
+   <div class="bb"><span>📝 Notas</span><span style="margin-left:auto">${o.pages||'Página 1 de 1'}</span><div class="zs"><i style="left:${(o.zoom||56)/100*150}px"></i></div><b id="zoomv">${Math.round(o.zoom||56)}%</b><span>⛶</span></div></div></div>`}
+const PAL=(ring)=>`<h4 style="margin-top:4px">Paleta de Casa Nativa</h4><div>${[['ter','Terracota'],['oli','Verde oliva'],['lin','Lino'],['caf','Café']].map(([k,n])=>`<span class="sw ${ring===k?'ring':''}" id="sw_${k}" title="${n}" style="background:${C[k]}"></span>`).join('')}</div>`;
+const DEF=`<h4>Colores predeterminados</h4><div>${['#000000','#545454','#737373','#a6a6a6','#d9d9d9','#ffffff','#ff3131','#ff5757','#ff66c4','#cb6ce6','#8c52ff','#5e17eb','#0097b2','#0cc0df','#5ce1e6','#38b6ff','#5170ff','#004aad','#00bf63','#7ed957','#c1ff72','#ffde59','#ffbd59','#ff914d'].map(c=>`<span class="sw" style="background:${c};width:44px;height:44px"></span>`).join('')}</div>`;
+const COLORP=(ring)=>`<div class="srch">🔍 Prueba con “azul” o “#00c4cc”</div>${PAL(ring)}${DEF}`;
+const UPL=`<div class="srch">🔍 Buscar en tus archivos</div><div style="margin:14px 0;background:#8b3dff;color:#fff;border-radius:9px;text-align:center;padding:12px;font-weight:700">Subir archivos</div><h4>Imágenes</h4><div>${['m7_living','m8_foto','m8_paleta','m7_contenido','m8_celular','m9_whatsapp'].map(n=>`<span class="tpl" id="up_${n}" style="width:150px;height:110px;background:url(img/${n}.jpg) center/cover"></span>`).join('')}</div>`;
+const TXTP=`<div class="srch">🔍 Buscar fuentes y combinaciones</div><div style="margin:14px 0;background:#8b3dff;color:#fff;border-radius:9px;text-align:center;padding:12px;font-weight:700">T Añadir un cuadro de texto</div><h4>Estilos de texto predeterminados</h4>
+ <div id="t_title" style="border:1.5px solid #dadce0;border-radius:9px;padding:14px;font:800 26px Inter;margin-bottom:10px">Añadir un título</div><div id="t_sub" style="border:1.5px solid #dadce0;border-radius:9px;padding:14px;font:600 19px Inter;margin-bottom:10px">Añadir un subtítulo</div><div style="border:1.5px solid #dadce0;border-radius:9px;padding:14px;font:400 15px Inter">Añadir un poco de texto de párrafo</div>`;
+const FONTS=[['Pacifico','Pacifico'],['Anton','Anton'],['Lobster','Lobster'],['Bebas Neue','Bebas Neue'],['Dancing Script','Dancing Script'],['Playfair Display','Playfair Display'],['Montserrat','Montserrat']];
+const FONTP=(hov)=>`<div class="srch">🔍 Buscar fuentes</div><h4>Fuentes del documento</h4><div id="docfonts" style="border-radius:9px;background:#f6f3fe;padding:4px 10px">${['Playfair Display','Montserrat'].map(n=>`<div style="padding:10px 4px;font:600 21px '${n}'">${n}</div>`).join('')}</div><h4>Populares</h4>${FONTS.map(([n])=>`<div id="f_${n.replace(/ /g,'')}" style="padding:9px 10px;border-radius:8px;font:400 22px '${n}';${hov===n?'background:#efe9fd':''}">${n}</div>`).join('')}`;
+const DESIGNP=`<div class="srch">🔍 Buscar plantillas</div><h4>Plantillas · Publicación de Instagram</h4><div id="tpls">${[['#f3ebdd','#b5573b'],['#1f3b4d','#f2c14e'],['#fde2e4','#e5989b'],['#e9f5db','#718355'],['#fff','#222'],['#f8edeb','#9d6b53']].map(([a,b],i)=>`<span class="tpl" style="background:${a}"><span style="position:absolute;left:14px;top:${18+i%2*10}px;width:90px;height:12px;background:${b};border-radius:3px"></span><span style="position:absolute;left:14px;top:46px;width:118px;height:62px;border-radius:6px;background:url(img/${['m7_living','m8_foto','m8_paleta','m7_contenido','m8_celular','m9_whatsapp'][i]}.jpg) center/cover"></span><span style="position:absolute;left:14px;bottom:14px;width:60px;height:8px;background:${b};border-radius:3px;opacity:.7"></span>${i%3===1?'<span style="position:absolute;right:6px;top:6px;font-size:15px">👑</span>':''}</span>`).join('')}</div>`;
+/* utilidades */
+let CUR={x:1100,y:600};const PC={};
+function pos(sel,dx=.5,dy=.5){const e=typeof sel==='string'?$(sel):sel;const key=sel+'|'+dx+'|'+dy;if(!e)return PC[key]||CUR;const r=e.getBoundingClientRect();return PC[key]={x:r.left+r.width*dx,y:r.top+r.height*dy}}
+function path(f,keys){let p=null;for(let i=0;i<keys.length;i++){if(f>=keys[i][0])p=i}
+  const Pk=k=>{const s=keys[k][1];return typeof s==='object'&&s&&'x' in s?s:pos(s,keys[k][2]??.5,keys[k][3]??.5)};
+  if(p===null)return Pk(0);if(p===keys.length-1)return Pk(p);
+  const a=Pk(p),b=Pk(p+1),t0=keys[p][0],t1=keys[p+1][0],m=t0+(t1-t0)*.35;if(f<m)return a;const e=ease(seg(f,m,t1));return {x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e}}
+function cursor(p,vis=true,clicks=[],f=0,T=1){CUR=p;const c=$('#cursor');c.style.display=vis?'block':'none';c.style.left=p.x+'px';c.style.top=p.y+'px';
+  const r=$('#ripple');r.style.display='none';for(const k of clicks){const dt=(f-k)*T;if(dt>=0&&dt<.45){const s=20+dt*160;r.style.display='block';r.style.width=r.style.height=s+'px';r.style.left=(p.x-s/2)+'px';r.style.top=(p.y-s/2)+'px';r.style.opacity=1-dt/.45}}}
+function hl(sel,label,pad=8){const h=$('#hl'),l=$('#hlLabel');const e=sel&&(typeof sel==='string'?$(sel):sel);if(!e){h.style.display=l.style.display='none';return}
+  const r=e.getBoundingClientRect();h.style.display='block';h.style.left=(r.left-pad)+'px';h.style.top=(r.top-pad)+'px';h.style.width=(r.width+2*pad)+'px';h.style.height=(r.height+2*pad)+'px';
+  if(label){l.style.display='block';l.textContent=label;const lw=l.offsetWidth;let x=r.left-pad,y=r.top-pad-52;if(y<70)y=r.bottom+pad+10;if(x+lw>1890)x=1890-lw;l.style.left=x+'px';l.style.top=y+'px'}else l.style.display='none'}
+function sub(t){$('#sub span').textContent=t||''}
+const SC={};
+/* 1 · antes y después + título */
+SC[1]=(f,T)=>{const a=seg(f,.02,.08),b=seg(f,.34,.42),t=seg(f,.66,.74);
+  $('#sc').innerHTML=`<div style="position:absolute;left:${lerp(660,250,ease(b))}px;top:150px;width:600px;height:600px;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45);opacity:${a}"><div class="dz">${busy()}</div></div>
+  <div style="position:absolute;left:1070px;top:150px;width:600px;height:600px;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45);opacity:${b};background:#fff"><div class="dz">${FINAL()}</div></div>
+  ${['Muchos colores','4 tipografías','Demasiado texto'].map((s,i)=>`<div class="pill" style="left:${lerp(1290,900,ease(b))+0}px;top:${230+i*90}px;opacity:${seg(f,.12+i*.05,.15+i*.05)*(1-b)};background:#ffe1e1;color:#9b1c1c">✕ ${s}</div>`).join('')}
+  <div class="lbl" style="left:${lerp(660,250,ease(b))}px;top:780px;opacity:${b}">Antes</div><div class="lbl" style="left:1070px;top:780px;opacity:${b}">Después</div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,31,61,.97) 0%,rgba(43,31,61,.9) 55%,rgba(43,31,61,.55));opacity:${t}"></div>
+  <div style="position:absolute;left:120px;top:300px;width:1000px;color:#fff;opacity:${t}"><div style="font-size:26px;font-weight:700;color:#c7b4ff;margin-bottom:14px">VIDEO 5 · LECCIÓN 3.2</div><div style="font-size:70px;font-weight:800;line-height:1.08">Diseña una publicación clara y coherente en Canva</div><div style="font-size:32px;margin-top:22px;opacity:.9">Identidad visual · jerarquía · contraste · llamada a la acción</div></div>
+  <div style="position:absolute;left:1260px;top:230px;width:520px;height:520px;border-radius:14px;overflow:hidden;opacity:${t};box-shadow:0 24px 50px rgba(0,0,0,.45)"><div class="dz" style="transform:scale(${520/600})">${FINAL()}</div></div>`;
+  hl(null);cursor(CUR,false)};
+/* 2 · gratis y de pago */
+SC[2]=(f,T)=>{const G=[['✅','Plantillas y diseños gratuitos'],['✅','Fotos, elementos y tipografías'],['✅','Descarga en PNG, JPG o PDF'],['✅','Todo lo necesario para este video']],P=[['👑','Plantillas y recursos prémium'],['🎨','Kit de marca completo'],['✂️','Quitar fondos y cambiar tamaño con un clic'],['☁️','Más almacenamiento y herramientas de IA']];
+  $('#sc').innerHTML=`<div class="cap" style="left:110px;top:44px;font-size:46px">Canva: ¿gratis o de pago?</div><div class="cards">
+   <div class="card" style="opacity:${seg(f,.04,.1)}"><span class="tag" style="background:#dff6e8;color:#14713f">Plan gratuito</span><h3>Canva Gratis</h3><ul>${G.map((g,i)=>`<li style="opacity:${seg(f,.1+i*.06,.14+i*.06)}"><span>${g[0]}</span>${g[1]}</li>`).join('')}</ul></div>
+   <div class="card" style="opacity:${seg(f,.4,.46)}"><span class="tag" style="background:#efe7ff;color:#5b21b6">Planes de pago</span><h3>Canva Pro · Negocios</h3><ul>${P.map((g,i)=>`<li style="opacity:${seg(f,.46+i*.07,.5+i*.07)}"><span>${g[0]}</span>${g[1]}</li>`).join('')}</ul></div></div>
+   <div class="pill" style="left:110px;top:800px;opacity:${seg(f,.76,.8)}">👑 La corona indica un recurso de pago</div>
+   <div class="pill" style="left:640px;top:800px;opacity:${seg(f,.86,.9)};background:#c7b4ff">Este video usa solo funciones gratuitas</div>
+   <div style="position:absolute;right:110px;top:810px;color:rgba(255,255,255,.8);font-size:19px;opacity:${seg(f,.8,.85)}">Precios y beneficios vigentes en canva.com</div>`;
+  hl(null);cursor(CUR,false)};
+/* 3 · crear diseño */
+SC[3]=(f,T)=>{if(f<.42){const q=typed('Publicación de Instagram',f,.06,.2),dd=f>=.22;
+   $('#sc').innerHTML=`<div class="home"><div class="hero"><h1>¿Qué vas a diseñar hoy?</h1><div class="hs" id="hs">🔍 ${q||'<span style="color:#80868b">Busca entre millones de plantillas</span>'}</div></div>
+   <div style="padding:40px 70px;display:flex;gap:40px;font-size:18px;color:#3c4043">${['Para ti','Presentaciones','Redes sociales','Video','Impresos','Documentos','Sitios web'].map((s,i)=>`<div style="text-align:center"><div style="width:84px;height:84px;border-radius:50%;background:${['#e8e2fb','#ffe7d6','#ffdbe8','#d6f0ff','#e1f5e1','#e3ecff','#fff2cc'][i]};margin:0 auto 10px"></div>${s}</div>`).join('')}</div>
+   ${dd?`<div class="dd"><div class="on" id="o_sq"><span class="th">▢</span>Publicación de Instagram (cuadrada)<small>1080 × 1080 px</small></div><div><span class="th">▯</span>Publicación de Instagram (vertical)<small>1080 × 1350 px</small></div><div><span class="th">▮</span>Historia de Instagram<small>1080 × 1920 px</small></div></div>`:''}</div>`;
+   hl(f>=.3&&f<.4?'#o_sq':null,'Formato cuadrado');const p=path(f,[[0,{x:1300,y:700}],[.03,'#hs',.3,.5],[.24,'#hs',.3,.5],[.3,'#o_sq',.4,.5]]);cursor(p,true,[.05,.38],f,T);return}
+  $('#sc').innerHTML=editor({rail:0,panel:DESIGNP,ctx:'none',page:post({}),label:'Página 1 · 1080 × 1080 px',title:'Diseño sin título · Publicación de Instagram'});
+  hl(f>=.5&&f<.72?'#tpls':f>=.74?'#page':null,f<.73?'Desde una plantilla':'O desde un diseño en blanco');cursor(pos('#page',.5,.5),f>=.74,[],f,T)};
+/* 4 · color */
+SC[4]=(f,T)=>{const open=f>=.18,bg=f>=.74?C.lin:'#fff';
+  $('#sc').innerHTML=editor({rail:open?-1:0,panel:open?COLORP(f>=.74?'lin':''):'',ctx:f>=.08?'bg':'none',cx:{col:bg},page:post({bg}),label:'Página 1'});
+  const H=[['#sw_ter','Principal · terracota',.3,.48],['#sw_oli','Apoyo · verde oliva',.48,.62],['#sw_lin','Fondo neutro · lino',.62,.74]];let h=null;for(const x of H)if(f>=x[2]&&f<x[3])h=x;
+  hl(h?h[0]:f>=.8?'#page':null,h?h[1]:'Paleta acotada y consistente');
+  const p=path(f,[[0,{x:1300,y:400}],[.03,'#page',.3,.3],[.1,'#c_bg'],[.2,'#sw_ter'],[.48,'#sw_oli'],[.62,'#sw_lin'],[.86,{x:1500,y:700}]]);cursor(p,true,[.07,.15,.73],f,T)};
+/* 5 · fotografía */
+SC[5]=(f,T)=>{const in_=f>=.24,k=ease(seg(f,.36,.58)),ph={x:lerp(0,PH.x,k),y:lerp(0,PH.y,k),w:lerp(600,PH.w,k),h:lerp(600,PH.h,k),r:lerp(0,14,k)};
+  $('#sc').innerHTML=editor({rail:4,panel:UPL,ctx:in_?'img':'bg',cx:{col:C.lin},page:post({bg:C.lin,photo:in_?ph:null,sel:in_&&f<.92?'photo':''}),label:'Página 1'});
+  hl(f>=.62&&f<.8?'#e_photo':null,'Imagen protagonista');
+  if(f>=.8){const pg=$('#page').getBoundingClientRect(),s=pg.width/600;const d=document.createElement('div');d.style.cssText=`position:absolute;left:${pg.left+36*s}px;top:${pg.top+378*s}px;width:${528*s}px;height:${186*s}px`;document.body.appendChild(d);d.id='free';hl('#free','Espacio libre para el mensaje',4)}
+  const p=path(f,[[0,{x:1300,y:500}],[.04,'#up_m7_living'],[.12,'#up_m7_living'],[.2,'#page',.5,.45],[.3,'#page',.98,.98],[.36,'#page',.98,.98],[.58,'#e_photo',1,1],[.66,'#e_photo',1,1],[.75,{x:1650,y:560}]]);cursor(p,true,[.12,.36],f,T);
+  if(f>=.12&&f<.24){const g=document.createElement('div');g.id='free';g.style.cssText=`position:absolute;left:${p.x-75}px;top:${p.y-55}px;width:150px;height:110px;border-radius:8px;background:url(img/m7_living.jpg) center/cover;opacity:.85;z-index:90;box-shadow:0 8px 20px rgba(0,0,0,.3)`;document.body.appendChild(g)}};
+/* 6 · titular */
+SC[6]=(f,T)=>{const on=f>=.12,t=f<.2?'Añade un título':typed(TITLE,f,.2,.42)||'',sel=on;
+  $('#sc').innerHTML=editor({rail:2,panel:TXTP,ctx:on?'text':'img',cx:{size:38},page:post({bg:C.lin,logo:f>=.12,photo:PH,title:on?{t,caret:f>=.2&&f<.45}:null,sel:sel?'title':''}),label:'Página 1'});
+  hl(f>=.5&&f<.72?'#e_title':f>=.74?'#c_size':null,f<.73?'1 · Mensaje principal':'Tamaño legible en el celular');
+  const p=path(f,[[0,{x:1300,y:500}],[.03,'#t_title'],[.18,'#e_title',.3,.5],[.46,'#e_title',.8,.9],[.74,'#c_size',.5,.5]]);cursor(p,true,[.1],f,T)};
+/* 7 · texto secundario */
+SC[7]=(f,T)=>{const on=f>=.12,s=f<.18?'Añade un subtítulo':typed(SUBT,f,.18,.38);
+  const bad=seg(f,.66,.7);
+  $('#sc').innerHTML=editor({rail:2,panel:TXTP,ctx:'text',cx:{font:'Montserrat',size:17},page:post({bg:C.lin,logo:1,photo:PH,title:{t:TITLE},sub:on?s:null,sel:on?'sub':''}),label:'Página 1',
+   wextra:`<div id="bad" style="position:absolute;right:40px;top:140px;width:300px;height:300px;background:${C.lin};border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.18);opacity:${bad};padding:18px;overflow:hidden;font:500 11.5px/1.35 Montserrat;color:#5a4a3e"><div style="font:700 18px 'Playfair Display';color:${C.caf};margin-bottom:6px">3 ideas para renovar tu living</div>Renovar tu living no tiene por qué ser caro ni difícil. En Casa Nativa creemos que los pequeños detalles hacen la diferencia y por eso hemos preparado estas ideas que puedes aplicar este fin de semana. Primero, elige una paleta de colores. Segundo, suma texturas naturales como el lino o el ratán. Tercero, agrega piezas hechas a mano que cuenten una historia. Además, recuerda que tenemos despacho a todo Chile y que puedes pagar con tarjeta o transferencia, y no olvides seguirnos para más ideas…<div style="position:absolute;inset:0;display:grid;place-items:center;font-size:120px;color:rgba(200,30,30,.75)">✕</div></div>`});
+  hl(f>=.42&&f<.64?'#e_sub':f>=.7?'#bad':null,f<.66?'2 · Apoyo, más pequeño':'Evita una página llena de texto');
+  const p=path(f,[[0,{x:1300,y:500}],[.03,'#t_sub'],[.16,'#e_sub',.4,.5],[.4,'#e_sub',.9,.9],[.68,{x:1600,y:620}]]);cursor(p,true,[.1],f,T)};
+/* 8 · tipografías */
+SC[8]=(f,T)=>{const seq=[[.18,'Pacifico'],[.28,'Anton'],[.38,'Lobster'],[.5,'Playfair Display']];let fn='Playfair Display',hov='';for(const s of seq)if(f>=s[0]){fn=s[1];hov=s[1]}
+  const open=f>=.08;
+  $('#sc').innerHTML=editor({rail:-1,panel:open?FONTP(hov):TXTP,ctx:'text',cx:{font:fn},page:post({bg:C.lin,logo:1,photo:PH,title:{t:TITLE,font:fn,size:fn==='Anton'?40:fn==='Pacifico'?34:38},sub:SUBT,sel:'title'}),label:'Página 1'});
+  hl(f>=.38&&f<.5?'#e_title':f>=.6?'#docfonts':null,f<.5?'✕ Cambiar de fuente confunde':'Máximo 2: títulos y textos');
+  const p=path(f,[[0,{x:1300,y:500}],[.03,'#c_font'],[.14,'#f_Pacifico'],[.26,'#f_Anton'],[.36,'#f_Lobster'],[.48,'#f_PlayfairDisplay'],[.6,'#docfonts',.8,.3]]);cursor(p,true,[.07,.5],f,T)};
+/* 9 · contraste */
+SC[9]=(f,T)=>{const fixed=f>=.56,col=f<.06?C.caf:fixed?C.caf:C.bei,open=f>=.44;
+  const r=ratio(col,C.lin);
+  $('#sc').innerHTML=editor({rail:-1,panel:open?COLORP(fixed?'caf':''):'',ctx:'text',cx:{col},page:post({bg:C.lin,logo:1,photo:PH,title:{t:TITLE,col},sub:SUBT,sel:'title'}),label:'Página 1',
+   wextra:`<div style="position:absolute;right:30px;top:90px;width:300px;background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.16);padding:18px 20px;opacity:${seg(f,.1,.14)}"><div style="font-size:14px;color:#5f6368;font-weight:600">Relación de contraste</div><div style="font-size:42px;font-weight:800;color:${r>=4.5?'#14713f':'#b42318'}">${fr(r)}</div><div style="font-size:15px;color:#3c4043;margin-top:4px">${r>=4.5?'✓ Se lee con claridad':'✕ Texto difícil de leer'}</div><div style="font-size:12.5px;color:#80868b;margin-top:10px;line-height:1.35">Referencia WCAG: al menos 4,5 : 1 para texto normal y 3 : 1 para texto grande.</div></div>`});
+  hl(f>=.12&&f<.4?'#e_title':f>=.62&&f<.95?'#e_title':null,f<.5?'Contraste bajo: beige sobre lino':'Contraste alto: café sobre lino ✓');
+  const p=path(f,[[0,{x:1300,y:500}],[.05,'#e_title',.5,.5],[.4,'#c_color'],[.5,'#sw_caf'],[.64,{x:1650,y:600}]]);cursor(p,true,[.43,.55],f,T)};
+/* 10 · no depender solo del color */
+SC[10]=(f,T)=>{const fx=f>=.5;
+  $('#sc').innerHTML=editor({rail:1,panel:`<div class="srch">🔍 Buscar elementos</div><h4>Formas</h4><div>${['50%','8px','0'].map(r=>`<span class="sw" style="width:90px;height:90px;border-radius:${r};background:${C.ter}"></span>`).join('')}</div><h4>Gráficos</h4><div style="font-size:42px;letter-spacing:12px">🏷️ ★ ✓ ➜</div>`,ctx:'none',page:promo(fx,ease(seg(f,.5,.58))),label:'Página 2 · Promoción',pages:'Página 2 de 2'});
+  hl(f>=.14&&f<.46?'#e_prices':f>=.62?'#page':null,f<.48?'✕ Solo el color indica la oferta':'✓ Color + texto + forma');
+  const p=path(f,[[0,{x:1300,y:500}],[.1,'#e_prices',.7,.5],[.44,'#r1'],[.5,'#page',.82,.75],[.62,{x:1650,y:620}]]);cursor(p,true,[.48,.53],f,T)};
+/* 11 · llamada a la acción */
+SC[11]=(f,T)=>{const on=f>=.42,ex=['Escríbenos por WhatsApp','Reserva tu pedido','Compra aquí',CTA];
+  $('#sc').innerHTML=editor({rail:2,panel:`${TXTP}<h4>Ejemplos de llamada a la acción</h4>${ex.map((e,i)=>`<div id="ex${i}" style="opacity:${seg(f,.08+i*.07,.12+i*.07)};margin-bottom:8px;padding:10px 14px;border-radius:20px;background:${i===3?C.ter:'#f1f3f4'};color:${i===3?'#fff':'#3c4043'};font:600 15px Montserrat">${e}</div>`).join('')}`,ctx:on?'text':'none',cx:{font:'Montserrat',size:16,col:'#ffffff'},page:post({bg:C.lin,logo:1,photo:PH,title:{t:TITLE},sub:SUBT,cta:on?typed(CTA,f,.45,.6)||' ':null,ctaS:ease(seg(f,.42,.46)),sel:on&&f<.9?'cta':''}),label:'Página 1',pages:'Página 1 de 2'});
+  hl(f>=.65&&f<.95?'#e_cta':f>=.32&&f<.42?'#ex3':null,f<.5?'Elegimos esta':'3 · Acción visible');
+  const p=path(f,[[0,{x:1300,y:500}],[.32,'#ex3'],[.42,'#page',.4,.86],[.64,{x:1650,y:620}]]);cursor(p,true,[.4],f,T)};
+/* 12 · alineación y márgenes */
+SC[12]=(f,T)=>{const dx=f<.1?0:f<.24?18*Math.sin(seg(f,.1,.24)*Math.PI):0,g=f>=.18&&f<.48;
+  const guides=g?`<div class="el" style="left:36px;top:0;width:0;height:600px;border-left:1.5px solid #ff2fa6"></div><div class="el" style="left:300px;top:0;width:0;height:600px;border-left:1.5px dashed #ff2fa6"></div><div class="el" style="left:0;top:384px;width:36px;height:0;border-top:1.5px solid #ff2fa6"></div><div class="el" style="left:4px;top:366px;font:700 12px Inter;color:#ff2fa6">36</div>`:'';
+  const mg=seg(f,.5,.56)*(f<.9?1:1);
+  const margins=`<div class="el" id="mg" style="inset:0;border:36px solid rgba(139,61,255,${.18*mg});pointer-events:none"></div>`;
+  $('#sc').innerHTML=editor({rail:-1,panel:'',ctx:'text',page:FINAL({sel:f<.48?'title':'',tdx:dx,extra:guides+margins}),label:'Página 1',pages:'Página 1 de 2'});
+  hl(f>=.2&&f<.46?'#e_title':f>=.56&&f<.76?'#mg':f>=.78?'#page':null,f<.48?'Las guías te ayudan a alinear':f<.77?'Márgenes suficientes':'Diseño ordenado',4);
+  const p=path(f,[[0,{x:1300,y:500}],[.05,'#e_title',.4,.4],[.46,'#e_title',.4,.4],[.5,{x:1600,y:640}]]);cursor(p,f<.5,[.06],f,T)};
+/* 13 · vista pequeña */
+SC[13]=(f,T)=>{const k=ease(seg(f,.05,.28)),S=lerp(600,170,k),z=lerp(56,16,k),ph=seg(f,.32,.38);
+  const phoneH=`<div class="phone" id="ph" style="left:1360px;top:120px;opacity:${ph}"><div class="scr"><div style="height:46px"></div><div style="display:flex;align-items:center;gap:10px;padding:8px 14px;font:700 15px Inter"><span style="width:34px;height:34px;border-radius:50%;background:${C.lin};border:2px solid ${C.ter};display:grid;place-items:center;font-size:12px;color:${C.ter}">CN</span>casanativa<span style="margin-left:auto">⋯</span></div>
+   <div id="fp" style="width:372px;height:372px;position:relative;overflow:hidden"><div class="dz" style="transform:scale(${372/600})">${FINAL()}</div></div><div style="padding:10px 14px;font-size:22px">♡ 💬 ➤<span style="float:right">🔖</span></div><div style="padding:0 14px;font:600 14px Inter">128 Me gusta</div><div style="padding:4px 14px;font:14px Inter;color:#333"><b>casanativa</b> Detalles simples que cambian el ambiente ✨</div>
+   <div style="margin:14px;height:160px;border-radius:8px;background:linear-gradient(135deg,#ddd,#f3f3f3)"></div></div></div>`;
+  const ck=[['Titular legible',.46],['Llamada a la acción visible',.6],['La imagen conserva su sentido',.74]];
+  $('#sc').innerHTML=editor({rail:-1,panel:'',ctx:'none',S,zoom:z,page:FINAL(),label:'',pages:'Página 1 de 2',wextra:`<div style="position:absolute;left:60px;top:120px;display:grid;gap:16px">${ck.map(c=>`<div style="opacity:${seg(f,c[1],c[1]+.04)};background:#fff;border-radius:14px;padding:16px 22px;font-size:26px;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.12)"><span style="color:#14713f">✓</span> ${c[0]}</div>`).join('')}</div>`})+phoneH;
+  hl(f>=.1&&f<.3?'#zoomv':f>=.42&&f<.9?'#fp':null,f<.35?'Reduce el zoom':'Así se verá en el celular',f<.35?8:4);cursor(pos('#zoomv'),f<.32,[],f,T)};
+/* 14 · antes y después */
+SC[14]=(f,T)=>{const B=['Colores de la marca','Jerarquía clara','Mensaje y acción en segundos'];
+  $('#sc').innerHTML=`<div style="position:absolute;left:150px;top:130px;width:560px;height:560px;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)"><div class="dz" style="transform:scale(${560/600})">${busy()}</div></div>
+  <div style="position:absolute;left:800px;top:130px;width:560px;height:560px;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45);opacity:${seg(f,.06,.14)}"><div class="dz" style="transform:scale(${560/600})">${FINAL()}</div></div>
+  <div class="lbl" style="left:150px;top:720px">Antes</div><div class="lbl" style="left:800px;top:720px;background:#5b21b6">Después</div>
+  <div style="position:absolute;left:1420px;top:200px;display:grid;gap:24px">${B.map((b,i)=>`<div style="opacity:${seg(f,.3+i*.15,.34+i*.15)};color:#fff;font-size:32px;font-weight:700;display:flex;gap:14px;width:420px"><span style="color:#7ee2a8">✓</span>${b}</div>`).join('')}</div>`;
+  hl(null);cursor(CUR,false)};
+/* 15 · checklist */
+SC[15]=(f,T)=>{const it=[['Mensaje claro','¿Se entiende en segundos?'],['Buen contraste','Texto vs. fondo'],['Tipografía legible','Máximo 2 fuentes'],['Identidad consistente','Colores de la marca'],['Llamada a la acción visible','¿Qué hago después?']];
+  $('#sc').innerHTML=`<div style="position:absolute;left:0;right:0;top:80px;text-align:center;color:#fff;font-size:52px;font-weight:800">Antes de publicar, revisa</div><div style="position:absolute;left:0;right:0;top:190px"><div class="chk">${it.map((x,i)=>{const on=f>=.16+i*.14;return `<div class="ci" style="opacity:${seg(f,.1+i*.14,.14+i*.14)}"><span class="box ${on?'on':''}">${on?'✓':''}</span>${x[0]}<small>${x[1]}</small></div>`}).join('')}</div></div>`;
+  hl(null);cursor(CUR,false)};
+/* 16 · cierre */
+SC[16]=(f,T)=>{$('#sc').innerHTML=`<div style="position:absolute;inset:0;background:url(img/m8_paleta.jpg) center/cover"></div><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,31,61,.96),rgba(43,31,61,.85) 55%,rgba(43,31,61,.4))"></div>
+  <div style="position:absolute;left:120px;top:260px;width:980px;color:#fff;opacity:${seg(f,.03,.12)}"><div style="font-size:26px;font-weight:700;color:#c7b4ff;margin-bottom:16px">CANVA GRATIS ES SUFICIENTE PARA EMPEZAR</div><div style="font-size:74px;font-weight:800;line-height:1.08">Pocas decisiones,<br>bien repetidas.</div><div style="font-size:32px;margin-top:24px;opacity:.9">Una marca reconocible y publicaciones fáciles de entender.</div></div>
+  <div style="position:absolute;left:1240px;top:220px;width:540px;height:540px;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45);opacity:${seg(f,.2,.3)}"><div class="dz" style="transform:scale(${540/600})">${FINAL()}</div></div>`;
+  hl(null);cursor(CUR,false)};
+window.R=function(k,f,T,subtitle){$('#free')?.remove();$('#note').style.display=k>=3&&k<=13?'block':'none';SC[k](f,T);sub(subtitle)};
+</script>
+</body></html>

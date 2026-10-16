@@ -1,0 +1,164 @@
+<style>
+.rule{background:var(--mint);border:1px solid var(--mint-line);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.94rem}
+.fmk{font-size:.84rem;font-weight:700}
+.fmk.ok{color:var(--good)}.fmk.ko{color:var(--bad)}
+.mock table.data{margin:0;font-size:.88rem}
+.mock .tablewrap{padding:10px}
+.mock .sub{padding:8px 12px 0;font-size:.84rem;color:var(--muted)}
+table.data tr.tot td{font-weight:800;background:var(--surface2)}
+table.data small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
+.twin{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.twin{grid-template-columns:1fr}
+ table.stack,table.stack tbody{display:block}table.stack tr:first-child{display:none}table.stack tr{display:block;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--surface)}
+ table.stack td{display:flex;justify-content:space-between;gap:10px;border:0;border-bottom:1px dashed var(--line);padding:6px 10px;text-align:right}table.stack td:last-child{border-bottom:0}
+ table.stack td::before{content:attr(data-l);font-weight:600;color:var(--muted);text-align:left}table.stack td.h{display:block;text-align:left;background:var(--surface2)}table.stack td.h::before{content:none}}
+.crm{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:12px}
+.crm div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.crm small{display:block;color:var(--muted);font-weight:600}.crm b{font-size:1.2rem;color:var(--navy)}
+fieldset.rad{border:0;padding:0;margin:14px 0 0;min-width:0}fieldset.rad legend{font-weight:600;font-size:.94rem;padding:0}
+.warn{color:var(--bad);font-weight:700;font-size:.9rem;margin-top:8px}
+</style>
+<section id="intro" class="card">
+ <span class="eyebrow">Simulador de práctica</span>
+ <h2>Lee los datos de Casa Nativa y decide qué hacer</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Google Analytics me muestra sesiones y eventos, y el CRM me dice quiénes compran. Pero ¿qué canal funciona mejor y dónde está la oportunidad? Quiero tres números claros y una decisión.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Practica lo que viste en la lección <b>4.2 Usa tus datos para decidir</b>: leer el informe de <b>Adquisición de tráfico</b> de Google Analytics 4 y los datos del CRM, calcular <b>tasa de conversión</b>, <b>ticket promedio</b> y <b>tasa de recompra</b>, y elegir la acción con mejor oportunidad.</p>
+ <div class="steps"><div><b>Calculadora</b>Ingresa tus propios datos y obtén los indicadores clave.</div><div><b>Practicar</b>Resuelve casos aleatorios con tablas recreadas de GA4 y del CRM.</div><div><b>Completar</b>Resuelve al menos 3 casos. Tu nota es el % de casos correctos.</div></div>
+ <button class="btn" data-start>Abrir el simulador →</button>
+</section>
+
+<section id="sim" hidden>
+ <div class="tabs"><button class="tab on" data-pane="pPract">🎯 Practicar</button><button class="tab" data-pane="pCalc">🧮 Calculadora de KPI</button></div>
+ <div id="pPract" class="pane on card">
+  <p id="simCount" class="counter"></p>
+  <div id="simCase"></div>
+  <div class="row-btns"><button class="btn" id="simCheck">Revisar mi respuesta</button><button class="btn ghost" id="simNext" hidden>Nuevo caso →</button><span class="muted" id="simMsg"></span></div>
+ </div>
+ <div id="pCalc" class="pane card">
+  <h2>Calculadora de indicadores clave</h2>
+  <p class="muted">Usa el mismo periodo en todas las fuentes (por ejemplo, los últimos 90 días en GA4 y en el CRM).</p>
+  <div class="numgrid">
+   <label>Sesiones<span class="hint">GA4 · Adquisición de tráfico</span><input type="number" id="kS" value="4200" min="0"></label>
+   <label>Compras<span class="hint">GA4 · evento clave purchase</span><input type="number" id="kC" value="63" min="0"></label>
+   <label>Ingresos totales<span class="unit"><span>$</span><input type="number" id="kI" value="1612000" min="0" step="1000"></span></label>
+   <label>Clientes que compraron<span class="hint">CRM · personas distintas</span><input type="number" id="kK" value="54" min="0"></label>
+   <label>Clientes que recompraron<span class="hint">CRM · 2 o más compras en el periodo</span><input type="number" id="kR" value="9" min="0"></label>
+  </div>
+  <div class="kpi" id="kOut"></div>
+  <div id="kWarn"></div>
+  <div class="tablewrap" style="margin-top:12px"><table class="data">
+   <tr><th>Indicador</th><th>Fórmula</th><th>Pregunta que responde</th></tr>
+   <tr><td><b>Tasa de conversión</b></td><td>compras ÷ sesiones × 100</td><td>¿Cuántas visitas terminan en compra?</td></tr>
+   <tr><td><b>Ticket promedio</b></td><td>ingresos ÷ compras</td><td>¿Cuánto gasta cada compra, en promedio?</td></tr>
+   <tr><td><b>Tasa de recompra</b></td><td>clientes que recompraron ÷ clientes × 100</td><td>¿Los clientes vuelven?</td></tr>
+   <tr><td><b>Ingreso por sesión</b></td><td>ingresos ÷ sesiones</td><td>¿Cuánto vale, en promedio, cada visita?</td></tr>
+  </table></div>
+  <p class="muted">Redondeo en los casos: tasa de conversión con <b>2 decimales</b> (±0,05 puntos); tasa de recompra con 1 decimal (±0,1 punto); montos al peso (±$5). Puedes escribir 1,25 o 1.25.</p>
+  <div class="note"><b>Lo que este simulador no considera:</b> que GA4 y el CRM cuentan distinto (GA4 no registra a quien rechaza las cookies, y una persona puede tener varias sesiones o dispositivos), la atribución entre canales (una compra puede empezar en Instagram y cerrarse por búsqueda), ventas fuera del sitio (WhatsApp, tienda física), devoluciones, costos y márgenes. Las decisiones siguen la regla indicada en cada caso.</div>
+ </div>
+</section>
+
+<script data-sim>
+(function(){
+const $=s=>document.querySelector(s),r=(a,b,s=1)=>a+s*Math.floor(Math.random()*((b-a)/s+1)),pick=a=>a[r(0,a.length-1)],shuf=a=>[...a].sort(()=>Math.random()-.5);
+const f=n=>(n<0?'−$':'$')+Math.abs(Math.round(n)).toLocaleString('es-CL'),nn=n=>Math.round(n).toLocaleString('es-CL'),pc=(x,d=1)=>x.toFixed(d).replace('.',',')+'%';
+const CH=[['Organic Social','redes sociales sin pago'],['Paid Social','anuncios en redes sociales'],['Organic Search','Google sin pago'],['Direct','escriben la dirección o un enlace guardado'],['Email','correos y boletines'],['Referral','enlaces desde otros sitios'],['Paid Search','anuncios en buscadores']];
+const PRICE=[12990,15990,18990,22990,24990,29990,34990,39990,45990];
+/* ---- utilidades de campos ---- */
+function inp(id,label,pre,post,hint){return `<label>${label}${hint?`<span class="hint">${hint}</span>`:''}<span class="unit">${pre?`<span>${pre}</span>`:''}<input type="text" inputmode="decimal" id="${id}" autocomplete="off">${post?`<span>${post}</span>`:''}</span></label>`}
+function sel(id,label,opts){return `<label>${label}<select id="${id}"><option value="">Elige…</option>${opts.map(([v,t])=>`<option value="${v}">${t}</option>`).join('')}</select></label>`}
+function parse(raw,kind){let s=String(raw).trim().replace(/[$%\s]/g,'').replace(/[−–]/g,'-');if(!s)return NaN;
+ if(kind==='pct'){s=s.includes(',')?s.replace(/\./g,'').replace(',','.'):s}else s=s.replace(/\./g,'').replace(',','.');
+ return /^-?\d+(\.\d+)?$/.test(s)?+s:NaN}
+function rad(id,label,opts){return `<fieldset class="rad" id="${id}"><legend>${label}</legend><div class="opts">${shuf(opts).map(([v,t])=>`<label class="opt"><input type="radio" name="${id}" value="${v}"><span>${t}</span></label>`).join('')}</div></fieldset>`}
+function show(x){return x.kind==='pct'?pc(x.ans,x.d||1):x.kind==='int'?nn(x.ans):f(x.ans)}
+function mark(node,ok,txt){node.style.borderColor=ok?'var(--good-line)':'var(--bad-line)';node.closest('label').insertAdjacentHTML('beforeend',`<span class="fmk ${ok?'ok':'ko'}">${ok?'✔ Correcto':'✘ Correcto: '+txt}</span>`)}
+function grade(c,el){const F=c.fields,vals=[];
+ for(const x of F){const node=el.querySelector('#'+x.id);if(x.kind==='radio'){const ch=node.querySelector('input:checked');if(!ch)return null;vals.push(ch.value)}else if(x.kind==='sel'){if(!node.value)return null;vals.push(node.value)}else{const v=parse(node.value,x.kind);if(isNaN(v))return null;vals.push(v)}}
+ let all=true;F.forEach((x,i)=>{const node=el.querySelector('#'+x.id);if(x.kind==='radio'){const ok=vals[i]===x.ans;if(!ok)all=false;node.querySelectorAll('.opt').forEach(o=>{const v=o.querySelector('input').value;if(v===x.ans)o.classList.add('ok');else if(v===vals[i])o.classList.add('ko')});return}const ok=x.kind==='sel'?vals[i]===x.ans:Math.abs(vals[i]-x.ans)<=x.tol+1e-9;
+  if(!ok)all=false;mark(node,ok,x.kind==='sel'?node.querySelector(`option[value="${x.ans}"]`).textContent:show(x))});return all}
+function fill(c,el){c.fields.forEach(x=>{if(x.kind==='radio'){el.querySelector(`#${x.id} input[value="${x.ans}"]`).checked=true;return}el.querySelector('#'+x.id).value=x.kind==='sel'?x.ans:x.kind==='pct'?x.ans.toFixed(x.d||1):Math.round(x.ans)})}
+/* ---- datos tipo GA4 ---- */
+function canal(ch,ses,rate){const compras=Math.max(1,Math.round(ses*rate/100)),otros=Math.round(ses*r(5,25)/1000);let ing=0;
+ for(let i=0;i<compras;i++){ing+=pick(PRICE);if(Math.random()<.25)ing+=pick(PRICE.slice(0,4))}
+ return {name:ch[0],hint:ch[1],ses,compras,ev:compras+otros,ing,conv:compras/ses*100,ticket:ing/compras}}
+function total(rows){const t={name:'Total',ses:0,compras:0,ev:0,ing:0};rows.forEach(x=>{t.ses+=x.ses;t.compras+=x.compras;t.ev+=x.ev;t.ing+=x.ing});t.conv=t.compras/t.ses*100;t.ticket=t.ing/t.compras;return t}
+function ga4(rows,t,dias){return `<div class="mock"><div class="bar">📈 Google Analytics 4 (recreación) · Informes › Adquisición › Adquisición de tráfico · últimos ${dias} días</div>
+ <p class="sub">Dimensión: <b>Grupo de canales predeterminado de la sesión</b> · Compras = evento clave <i>purchase</i></p><div class="tablewrap"><table class="data stack">
+ <tr><th>Grupo de canales predeterminado de la sesión</th><th class="n">Sesiones</th><th class="n">Eventos clave</th><th class="n">Compras</th><th class="n">Ingresos totales</th></tr>
+ <tr class="tot"><td class="h">Total</td><td class="n" data-l="Sesiones">${nn(t.ses)}</td><td class="n" data-l="Eventos clave">${nn(t.ev)}</td><td class="n" data-l="Compras">${nn(t.compras)}</td><td class="n" data-l="Ingresos totales">${f(t.ing)}</td></tr>
+ ${rows.map(x=>`<tr><td class="h"><b>${x.name}</b><small>${x.hint}</small></td><td class="n" data-l="Sesiones">${nn(x.ses)}</td><td class="n" data-l="Eventos clave">${nn(x.ev)}</td><td class="n" data-l="Compras">${nn(x.compras)}</td><td class="n" data-l="Ingresos totales">${f(x.ing)}</td></tr>`).join('')}
+ </table></div><p class="sub" style="padding-bottom:10px">Eventos clave incluye compras, clics a WhatsApp y formularios de contacto.</p></div>`}
+const RND='<p class="muted">Tasa de conversión con 2 decimales (±0,05 puntos); tasa de recompra con 1 decimal (±0,1 punto); montos al peso (±$5); compras en número entero (±1).</p>';
+const TYPES={
+ canales(){let rows,focus,best;
+  for(let t=0;t<500;t++){rows=shuf(CH).slice(0,5).map(ch=>canal(ch,r(180,3200),r(30,420)/100));
+   focus=shuf(rows).slice(0,3);const s=[...focus].sort((a,b)=>b.conv-a.conv);best=s[0];
+   if(best.conv-s[1].conv>=.4&&best.compras>=3&&rows.every(x=>x.compras<x.ev&&x.ev<x.ses))break;rows=null}
+  const fields=focus.map((x,i)=>({id:'cv'+i,kind:'pct',d:2,ans:x.conv,tol:.05}));
+  fields.push({id:'best',kind:'sel',ans:best.name},{id:'tk',kind:'money',ans:best.ticket,tol:5});
+  return {tipo:'canales',rows,t:total(rows),focus,best,fields}},
+ trafico(){let rows,big,t;
+  for(let i=0;i<500;i++){const bc=pick(CH.filter(x=>/Social|Referral/.test(x[0]))),ch=[bc,...shuf(CH.filter(x=>x!==bc)).slice(0,4)];big=canal(ch[0],r(1800,4500),r(25,80)/100);
+   const others=ch.slice(1).map(c=>canal(c,r(200,1400),r(140,400)/100));rows=shuf([big,...others]);t=total(rows);
+   const add=big.ses*t.conv/100-big.compras;
+   if(rows.every(x=>x.ses<big.ses||x===big)&&big.conv<=t.conv-.3&&add>=2&&rows.every(x=>x.compras<x.ev&&x.ev<x.ses)){big.add=add;break}rows=null}
+  const fields=[{id:'cvT',kind:'pct',d:2,ans:t.conv,tol:.05},{id:'cvB',kind:'pct',d:2,ans:big.conv,tol:.05},{id:'add',kind:'int',ans:big.add,tol:1-1e-6},{id:'acc',kind:'radio',ans:'land'}];
+  return {tipo:'trafico',rows,t,big,fields}},
+ recompra(){let rows,t,K,R,meta,rate;
+  for(let i=0;i<500;i++){rows=shuf(CH).slice(0,4).map(ch=>canal(ch,r(400,2600),r(80,320)/100));t=total(rows);if(t.compras<40)continue;
+   const rr=r(8,40)/100;K=Math.round(t.compras/(1+rr+r(0,15)/100));R=Math.max(1,Math.round(K*rr));meta=r(4,7)*5;rate=R/K*100;
+   if(K+R<=t.compras&&R<K&&Math.abs(rate-meta)>=2&&rows.every(x=>x.compras<x.ev&&x.ev<x.ses))break;rows=null}
+  const below=rate<meta,fields=[{id:'rc',kind:'pct',d:1,ans:rate,tol:.1},{id:'tk',kind:'money',ans:t.ticket,tol:5},{id:'cv',kind:'pct',d:2,ans:t.conv,tol:.05},{id:'acc',kind:'radio',ans:below?'fide':'capt'}];
+  return {tipo:'recompra',rows,t,K,R,meta,rate,below,fields}}};
+let cola=[];
+window.SIM={min:3,
+ gen(){if(!cola.length)cola=shuf(Object.keys(TYPES));return TYPES[cola.shift()]()},
+ render(c,el){
+  if(c.tipo==='canales'){el.innerHTML=`<span class="eyebrow">Caso · Comparar canales</span><h2>¿Dónde poner el próximo peso?</h2>
+   <p>Marcela puede reforzar <b>uno</b> de estos tres canales: <b>${c.focus.map(x=>x.name).join('</b>, <b>')}</b>. Revisó el informe de los últimos 90 días:</p>${ga4(c.rows,c.t,90)}
+   <div class="rule"><b>Regla de Marcela:</b> reforzará el canal que <b>mejor convierte sus sesiones en compras</b> (mayor tasa de conversión), no el que trae más visitas.</div>
+   <div class="numgrid">${c.focus.map((x,i)=>inp('cv'+i,'Tasa de conversión · '+x.name,'','%','compras ÷ sesiones × 100')).join('')}</div>
+   <div class="numgrid">${sel('best','¿Qué canal refuerza?',c.focus.map(x=>[x.name,x.name]))}${inp('tk','Ticket promedio de ese canal','$','','ingresos ÷ compras')}</div>${RND}`}
+  else if(c.tipo==='trafico'){el.innerHTML=`<span class="eyebrow">Caso · Mucho tráfico, poca venta</span><h2>¿Dónde está la oportunidad?</h2>
+   <p>Un canal trae muchas visitas a la tienda en línea, pero Marcela siente que vende poco. Este es el informe de los últimos 30 días:</p>${ga4(c.rows,c.t,30)}
+   <div class="numgrid">${inp('cvT','Tasa de conversión del sitio (Total)','','%')}${inp('cvB',`Tasa de conversión de ${c.big.name}`,'','%','El canal con más sesiones')}
+   ${inp('add',`¿Cuántas compras más tendría ${c.big.name} si alcanzara la tasa del sitio?`,'','','sesiones del canal × tasa del sitio ÷ 100 − compras actuales')}</div>
+   <div>${rad('acc','¿Qué acción tiene la mejor oportunidad?',[['dup',`Duplicar la inversión para traer aún más sesiones de ${c.big.name}`],['land',`Revisar la página de llegada y la oferta que ve el tráfico de ${c.big.name}`],['stop',`Dejar de usar ${c.big.name} de inmediato`],['ses','Seguir mirando solo las sesiones: si suben, el negocio va bien']])}</div>${RND}`}
+  else{el.innerHTML=`<span class="eyebrow">Caso · Clientes que vuelven</span><h2>¿Fidelizar o atraer clientes nuevos?</h2>
+   <p>Marcela cruzó dos fuentes del <b>mismo periodo (últimos 90 días)</b>: el informe de GA4 de su tienda en línea y su CRM. Su meta es una <b>tasa de recompra de al menos ${c.meta}%</b>.</p>
+   ${ga4(c.rows,c.t,90)}
+   <div class="mock"><div class="bar">👥 CRM de Casa Nativa (recreación) · Clientes de la tienda en línea · últimos 90 días</div><div class="crm">
+    <div><small>Clientes que compraron</small><b>${nn(c.K)}</b><small>personas distintas</small></div><div><small>Clientes que recompraron</small><b>${nn(c.R)}</b><small>2 o más compras en el periodo</small></div><div><small>Meta de recompra</small><b>${c.meta}%</b></div></div></div>
+   <div class="rule"><b>Regla:</b> si la tasa de recompra está <b>bajo la meta</b>, la mejor oportunidad está en los clientes actuales. Si la cumple, conviene mantener la fidelización y enfocar el esfuerzo en atraer clientes nuevos.</div>
+   <div class="numgrid">${inp('rc','Tasa de recompra','','%','recompraron ÷ clientes × 100')}${inp('tk','Ticket promedio del sitio','$','','ingresos ÷ compras (Total)')}${inp('cv','Tasa de conversión del sitio','','%','compras ÷ sesiones × 100 (Total)')}</div>
+   <div>${rad('acc','¿Qué acción eliges?',[['fide','Crear una acción para clientes actuales: correo o WhatsApp con una oferta para la segunda compra'],['capt','Mantener la fidelización como está y enfocar el esfuerzo en atraer clientes nuevos'],['precio','Bajar todos los precios para subir el ticket promedio'],['crm','Dejar de registrar clientes en el CRM: GA4 ya tiene los datos']])}</div>${RND}`}},
+ check(c,el){const ok=grade(c,el);if(ok===null)return null;let sol;
+  if(c.tipo==='canales'){sol=`<ol>${c.focus.map(x=>`<li><b>${x.name}:</b> ${x.compras} ÷ ${nn(x.ses)} × 100 = <b>${pc(x.conv,2)}</b></li>`).join('')}
+   <li>La mayor tasa es la de <b>${c.best.name}</b> → es el canal a reforzar.</li><li>Ticket promedio de ${c.best.name}: ${f(c.best.ing)} ÷ ${c.best.compras} = <b>${f(c.best.ticket)}</b>.</li></ol>
+   <p>El canal con más sesiones no siempre es el que más vende: compara canales por eventos clave y compras, no solo por visitas. Al reforzar un canal, revisa en unas semanas si su tasa se mantiene.</p>`}
+  else if(c.tipo==='trafico'){const b=c.big;sol=`<ol><li>Sitio: ${nn(c.t.compras)} ÷ ${nn(c.t.ses)} × 100 = <b>${pc(c.t.conv,2)}</b>.</li><li>${b.name}: ${b.compras} ÷ ${nn(b.ses)} × 100 = <b>${pc(b.conv,2)}</b>, bajo el promedio del sitio.</li>
+   <li>Si llegara a la tasa del sitio: ${nn(b.ses)} × ${pc(c.t.conv,2)} = ${(b.ses*c.t.conv/100).toFixed(1).replace('.',',')} compras − ${b.compras} actuales = <b>${b.add.toFixed(1).replace('.',',')}</b> → unas ${Math.round(b.add)} compras más (se acepta ${Math.floor(b.add)} o ${Math.ceil(b.add)}).</li>
+   <li>La mejor oportunidad es <b>revisar la página de llegada y la oferta</b> para ese tráfico: ya llega, pero no compra. Traer más sesiones que no convierten solo aumenta el gasto, y cortar el canal elimina visitas que podrían convertir.</li></ol>`}
+  else{sol=`<ol><li>Tasa de recompra = ${c.R} ÷ ${c.K} × 100 = <b>${pc(c.rate)}</b> (meta: ${c.meta}%).</li><li>Ticket promedio = ${f(c.t.ing)} ÷ ${c.t.compras} = <b>${f(c.t.ticket)}</b>.</li>
+   <li>Tasa de conversión = ${c.t.compras} ÷ ${nn(c.t.ses)} × 100 = <b>${pc(c.t.conv,2)}</b>.</li>
+   <li>${c.below?`La recompra está <b>bajo la meta</b>: la oportunidad está en los ${nn(c.K-c.R)} clientes que compraron una sola vez. Una acción para la segunda compra (correo o WhatsApp, con permiso) suele costar menos que conseguir clientes nuevos.`:`La recompra <b>cumple la meta</b>: los clientes vuelven. Mantén lo que funciona y enfoca el esfuerzo en atraer clientes nuevos por el canal que mejor convierte.`}</li></ol>
+   <p>Bajar todos los precios reduce el ticket promedio en vez de subirlo, y sin CRM no sabrías quién vuelve a comprar: GA4 mide visitas y eventos, no personas con nombre.</p>`}
+  return {ok,sol}},
+ solve(c,el){fill(c,el)},
+ calc(){const ids=['kS','kC','kI','kK','kR'],upd=()=>{const g=id=>Math.max(0,+document.getElementById(id).value||0);
+   const S=g('kS'),C=g('kC'),I=g('kI'),K=g('kK'),R=g('kR'),w=[];
+   if(C>S)w.push('Hay más compras que sesiones: revisa que ambos datos sean del mismo periodo.');
+   if(R>K)w.push('No puede haber más clientes que recompran que clientes en total.');
+   if(K>C)w.push('Hay más clientes que compras: revisa el periodo o si el CRM incluye ventas fuera del sitio.');
+   $('#kOut').innerHTML=`<div><small>Tasa de conversión</small><b>${S?pc(C/S*100,2):'—'}</b><small>compras ÷ sesiones</small></div>
+    <div><small>Ticket promedio</small><b>${C?f(I/C):'—'}</b><small>ingresos ÷ compras</small></div>
+    <div><small>Tasa de recompra</small><b>${K?pc(R/K*100):'—'}</b><small>recompraron ÷ clientes</small></div>
+    <div><small>Ingreso por sesión</small><b>${S?f(I/S):'—'}</b><small>ingresos ÷ sesiones</small></div>`;
+   $('#kWarn').innerHTML=w.map(x=>`<p class="warn">⚠ ${x}</p>`).join('')};
+  ids.forEach(i=>document.getElementById(i).addEventListener('input',upd));upd()}};
+})();
+</script>

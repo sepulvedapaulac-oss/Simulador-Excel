@@ -1,0 +1,169 @@
+<section id="intro" class="card">
+ <span class="eyebrow">Simulador de práctica</span>
+ <h2>¿Qué herramienta de Microsoft 365 usa María para cada necesidad?</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/maria_avatar.jpg" alt="María, dueña de Empanadas Doña María" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Tenemos Microsoft 365 en el negocio, pero cada vez que aparece algo nuevo dudo: ¿lo hago en Excel, en Teams, por correo…? Quiero que el equipo sepa qué usar para cada cosa.”<br><b>— María, Empanadas Doña María</b></div>
+ </div>
+ <p>Practica lo visto en la <b>Lección 1.2 Tu ecosistema de trabajo digital</b> y en el video <b>Recorrido por Microsoft 365</b>: primero la necesidad, después la herramienta. En cada caso eliges la aplicación principal y, cuando corresponde, un detalle de uso (permiso, formato o canal).</p>
+ <div class="steps"><div><b>Mapa de herramientas</b>Consulta qué resuelve cada aplicación y de qué plan depende.</div><div><b>Practicar</b>Resuelve necesidades aleatorias del negocio y revisa por qué.</div><div><b>Completar</b>Resuelve al menos 3 casos. Tu nota es el % de casos correctos.</div></div>
+ <button class="btn" data-start>Abrir el simulador →</button>
+</section>
+
+<section id="sim" hidden>
+ <div class="tabs"><button class="tab on" data-pane="pPract">🎯 Practicar</button><button class="tab" data-pane="pCalc">🗺️ Mapa de herramientas</button></div>
+ <div id="pPract" class="pane on card">
+  <p id="simCount" class="counter"></p>
+  <div id="simCase"></div>
+  <div class="row-btns"><button class="btn" id="simCheck">Revisar mi respuesta</button><button class="btn ghost" id="simNext" hidden>Nuevo caso →</button><span class="muted" id="simMsg"></span></div>
+ </div>
+ <div id="pCalc" class="pane card">
+  <h2>Mapa de herramientas: necesidad → aplicación</h2>
+  <p class="muted">Escribe una necesidad (por ejemplo “encuesta”, “reunión” o “permisos”) para filtrar la tabla.</p>
+  <label class="mapsearch"><span class="sr">Buscar necesidad</span><input type="text" id="mapQ" placeholder="🔍 Buscar necesidad o aplicación…"></label>
+  <div class="tablewrap"><table class="data maptable" id="mapT"><thead><tr><th>Necesidad</th><th>Aplicación</th><th>Ejemplo en el negocio</th><th>Disponibilidad</th></tr></thead><tbody></tbody></table></div>
+  <p class="muted" id="mapN"></p>
+  <div class="note"><b>Sobre los planes:</b> las aplicaciones incluidas dependen del plan de Microsoft 365 contratado y Microsoft las actualiza con frecuencia. Como referencia, en los planes para empresas <b>Business Basic</b> trae las versiones web y móviles de Word, Excel, PowerPoint y Outlook, además de correo, OneDrive, SharePoint y Teams; <b>Business Standard</b> agrega las aplicaciones de escritorio. En algunos países también se venden versiones sin Teams. Forms, Planner, To Do y Bookings suelen venir en los planes Business, pero el administrador puede activarlas o desactivarlas. Revisa tu plan en el centro de administración de Microsoft 365 antes de definir los acuerdos del equipo.</div>
+  <div class="note"><b>Lo que este simulador no considera:</b> precios, licencias por persona, Copilot u otros complementos pagados, ni equivalentes de otras plataformas (en Google Workspace: Gmail, Drive, Documentos, Hojas de cálculo, Presentaciones, Calendar, Meet, Chat y Formularios).</div>
+ </div>
+</section>
+
+<style>
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}
+.tools .opt{position:relative;align-items:center;padding:10px 12px;overflow-wrap:normal;word-break:normal}
+.tools .opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.tools .opt.sel{background:var(--mint)}
+.tools .opt b{display:block;line-height:1.2}
+@media(max-width:640px){.tools{grid-template-columns:1fr 1fr;gap:8px}.tools .opt{padding:9px 10px;gap:8px}.tools .opt b{font-size:.95rem}}
+.tools .opt small{display:block;color:var(--muted);font-size:.8rem;line-height:1.25}
+.tools .ic{font-size:1.4rem;flex:none}
+.need{display:flex;gap:12px;align-items:flex-start;background:var(--story);border:1px solid var(--story-line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.need .who{font-size:1.6rem;flex:none}
+.need small{display:block;color:var(--muted);margin-top:4px}
+.q2{margin-top:14px;display:grid;gap:6px;font-weight:600}
+.qlab{font-weight:700;margin:14px 0 0}
+.mapsearch{display:block;margin-top:8px}
+.maptable td:nth-child(2){white-space:nowrap;font-weight:700}
+.maptable td:nth-child(4){font-size:.86rem;color:var(--muted)}
+@media(max-width:640px){
+ .maptable thead{display:none}
+ .maptable,.maptable tbody,.maptable tr,.maptable td{display:block;width:100%}
+ .maptable tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+ .maptable td{border:0;border-bottom:1px dashed var(--line)}
+ .maptable td:last-child{border-bottom:0}
+ .maptable td:nth-child(2){white-space:normal;background:var(--surface2)}
+}
+</style>
+
+<script data-sim>
+(function(){
+const pick=a=>a[Math.floor(Math.random()*a.length)],shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* Aplicaciones */
+const T={
+ word:{n:'Word',i:'📝',d:'Documentos y textos'},
+ excel:{n:'Excel',i:'📊',d:'Planillas y cálculos'},
+ ppt:{n:'PowerPoint',i:'📽️',d:'Presentaciones'},
+ outlook:{n:'Outlook',i:'📧',d:'Correo y calendario'},
+ teams:{n:'Teams',i:'👥',d:'Chat, canales y reuniones'},
+ onedrive:{n:'OneDrive',i:'☁️',d:'Archivos en la nube'},
+ sharepoint:{n:'SharePoint',i:'🏢',d:'Sitio y biblioteca del equipo'},
+ forms:{n:'Forms',i:'📋',d:'Encuestas y formularios'},
+ planner:{n:'Planner',i:'🗂️',d:'Tareas del equipo'},
+ todo:{n:'To Do',i:'✅',d:'Lista de tareas personal'},
+ bookings:{n:'Bookings',i:'🗓️',d:'Reservas de horas'}};
+const NOMBRES=['Carlos','Javiera','Pedro','Rosa','Luis','Camila'],PROV=['Harinas del Sur','Carnes Don Lucho','Envases Biobío','Lácteos Los Ríos'],
+ CAFE=['Café Las Lomas','Cafetería Altamira','Café del Puerto','Café Brisa'],MES=['octubre','noviembre','diciembre','marzo'],
+ COLE=['Colegio San Andrés','Colegio Los Aromos','Liceo Bicentenario'],EVT=['Fiestas Patrias','Navidad','el aniversario del local','la feria costumbrista'];
+/* Banco de necesidades: cada una genera texto, herramienta correcta, distractores plausibles y (opcional) una segunda decisión */
+const BANK=[
+ ()=>{const a=pick(NOMBRES),b=pick(NOMBRES.filter(x=>x!==a)),c=pick(COLE);return {who:'📦',txt:`${a} y ${b} registran a la vez los pedidos de ${c}. Hoy se envían la planilla por correo y ya hay tres versiones distintas.`,
+  tool:'excel',dis:['word','outlook','onedrive','todo'],why:'Una sola planilla de Excel guardada en la nube permite que varias personas la editen al mismo tiempo (coautoría). Se acaban las copias que viajan por correo y todos ven la versión vigente.',
+  q:{t:'La encargada administrativa solo debe revisar los pedidos, sin cambiar cifras. ¿Qué permiso le da María?',o:[['ver','Puede ver'],['editar','Puede editar'],['copia','Ninguno: le envía una copia cada mañana']],a:'ver',why:'Quien solo revisa recibe <b>Puede ver</b>; la edición queda para quienes registran. Enviar copias diarias vuelve a crear versiones paralelas.'}}},
+ ()=>{const p=pick(PROV);return {who:'🤝',txt:`María necesita conversar con ${p} sobre la nueva lista de precios. Están en otra ciudad y quieren ver la planilla en pantalla mientras conversan.`,
+  tool:'teams',dis:['outlook','excel','sharepoint','forms'],why:'Teams permite hacer videollamadas con personas externas, compartir la pantalla y chatear durante la reunión. La planilla se muestra en vivo y la decisión se toma conversando.',
+  q:{t:'¿Cómo conviene invitar al proveedor?',o:[['inv','Enviar una invitación desde el calendario con el enlace de la reunión de Teams'],['wsp','Mandarle por WhatsApp “conéctate a las 10”'],['canal','Agregarlo como miembro permanente del equipo interno de Teams']],a:'inv',why:'La invitación del calendario deja fecha, hora y enlace registrados para ambas partes. Agregar a un externo como miembro permanente le daría acceso a conversaciones internas que no necesita.'}}},
+ ()=>{const e=pick(EVT);return {who:'⭐',txt:`Después de ${e}, María quiere saber qué tan satisfechos quedaron los clientes con las empanadas y el tiempo de entrega. Piensa dejar un código QR en el mostrador.`,
+  tool:'forms',dis:['excel','word','teams','bookings'],why:'Forms crea encuestas en línea que se responden desde el celular (por enlace o código QR) y resume las respuestas automáticamente; además se pueden abrir en Excel para analizarlas.',
+  q:{t:'¿Qué datos conviene pedir en la encuesta?',o:[['min','Solo lo necesario: nota, comentarios y, de forma opcional, un correo si quiere respuesta'],['todo','Nombre completo, RUT, dirección y teléfono de cada cliente'],['nada','Ninguna pregunta cerrada, solo un campo de texto libre']],a:'min',why:'Pedir solo lo necesario facilita que respondan y cuida los datos personales. Preguntas cerradas (nota de 1 a 5) permiten comparar resultados; el texto libre complementa.'}}},
+ ()=>{const m=pick(MES);return {who:'🧾',txt:`Patricia, la contadora externa, necesita revisar cada mes las facturas de compra para preparar los impuestos de ${m}. Hoy se las mandan una por una por WhatsApp.`,
+  tool:'onedrive',dis:['outlook','teams','word','todo'],why:'Compartir la carpeta de facturas desde OneDrive deja todo en un solo lugar que Patricia consulta cuando lo necesita, sin pedir archivos por mensaje.',
+  q:{t:'¿Cómo comparte María la carpeta?',o:[['ver','Con Patricia como persona específica y permiso Puede ver'],['link','Con “Cualquier persona con el enlace” y Puede editar'],['adj','Adjuntando todos los PDF en un correo cada mes']],a:'ver',why:'Personas específicas + <b>Puede ver</b> es el permiso justo: Patricia revisa sin modificar y nadie más puede abrir el enlace. Un enlace abierto con edición expone la información.'}}},
+ ()=>{const c=pick(CAFE);return {who:'☕',txt:`${c} podría comprar empanadas de cóctel todas las semanas. María tiene 15 minutos para mostrar fotos, variedades y precios en una reunión con la dueña.`,
+  tool:'ppt',dis:['word','excel','forms','sharepoint'],why:'PowerPoint organiza la propuesta en diapositivas visuales (fotos, variedades, precios y condiciones), ideal para presentar en poco tiempo.',
+  q:{t:'Después de la reunión, ¿en qué formato le envía la propuesta?',o:[['pdf','En PDF (o un enlace de solo lectura), para que la vea igual en cualquier equipo'],['edit','El archivo editable, por si quiere cambiar los precios'],['foto','Fotos de la pantalla por WhatsApp']],a:'pdf',why:'Un PDF o un enlace de solo lectura se ve igual en cualquier dispositivo y evita que se modifiquen precios por error. El archivo editable queda en la nube del negocio.'}}},
+ ()=>{const e=pick(EVT);return {who:'🗂️',txt:`Para ${e} hay que comprar insumos, reforzar turnos, preparar 2.000 empanadas y coordinar repartos. Cada persona tiene tareas distintas con fechas límite.`,
+  tool:'planner',dis:['todo','excel','outlook','word'],why:'Planner organiza las tareas del equipo en un tablero: cada tarea con responsable, fecha y estado, y todos ven el avance. To Do, en cambio, es para la lista personal.',
+  q:{t:'¿Qué debe tener cada tarea como mínimo?',o:[['resp','Un responsable y una fecha de vencimiento'],['col','Un color distinto por tarea'],['todos','Asignarla a todo el equipo para que nadie se olvide']],a:'resp',why:'Responsable y fecha hacen visible quién hace qué y cuándo. Una tarea asignada a todos termina siendo de nadie.'}}},
+ ()=>{const p=pick(PROV);return {who:'✉️',txt:`María acordó con ${p} un cambio en el día de entrega y quiere dejarlo confirmado por escrito, con copia a la encargada administrativa.`,
+  tool:'outlook',dis:['teams','word','todo','forms'],why:'El correo de Outlook es el canal formal: deja registro de lo acordado con proveedores y clientes, con fecha y copia a quienes corresponda.',
+  q:{t:'¿Desde qué cuenta lo envía?',o:[['neg','Desde la cuenta de correo del negocio'],['per','Desde su correo personal, que revisa más seguido'],['wsp','Por WhatsApp, porque es más rápido']],a:'neg',why:'Desde la cuenta del negocio el acuerdo queda en la información de la empresa y sigue disponible aunque alguien falte. Un correo personal o un chat no dejan ese respaldo.'}}},
+ ()=>{const c=pick(CAFE);return {who:'📅',txt:`Desde el próximo mes hay entregas fijas los martes y viernes a ${c}. Las fechas se anotan en un cuaderno y ya se cruzaron dos entregas.`,
+  tool:'outlook',dis:['planner','excel','teams','todo'],why:'El calendario de Outlook hace visibles las entregas y reuniones para el equipo; un evento periódico evita anotarlas a mano cada semana.',
+  q:{t:'¿Cómo deja María las entregas en el calendario?',o:[['rec','Como evento periódico, invitando al repartidor responsable y con recordatorio'],['cuad','Sigue en el cuaderno, pero con letra más clara'],['priv','En su calendario privado sin invitar a nadie']],a:'rec',why:'Un evento que se repite, con responsable invitado y recordatorio, hace visible quién entrega y cuándo. Un calendario privado no le sirve al resto del equipo.'}}},
+ ()=>{const a=pick(NOMBRES);return {who:'💬',txt:`Durante el día cambian pedidos, faltan insumos o alguien pide cubrir un turno. ${a} pregunta dónde avisarlo para que lo vea todo el equipo.`,
+  tool:'teams',dis:['outlook','sharepoint','todo','forms'],why:'El chat y los canales de Teams son para la coordinación rápida del día a día; los avisos quedan visibles para el equipo y no se pierden en chats personales.',
+  q:{t:'¿Dónde publica el aviso?',o:[['canal','En el canal del equipo (por ejemplo, “Pedidos del día”)'],['priv','En un chat privado con quien esté de turno'],['mail','En un correo formal a cada persona']],a:'canal',why:'El canal del equipo deja el aviso a la vista de todos los involucrados. El correo formal es lento para algo del día a día y un chat privado deja fuera al resto.'}}},
+ ()=>{const a=pick(NOMBRES);return {who:'📘',txt:`Llegan dos ayudantes nuevos. María quiere dejar por escrito el procedimiento de higiene y armado de empanadas, y que ${a} sugiera mejoras.`,
+  tool:'word',dis:['ppt','excel','forms','planner'],why:'Word sirve para redactar procedimientos y documentos del negocio. Guardado en la nube, el equipo lo consulta y puede comentarlo.',
+  q:{t:`¿Cómo hace ${a} sus sugerencias?`,o:[['com','Con comentarios y @menciones, sin cambiar el texto original'],['copia','Descargando una copia y mandándola corregida'],['borra','Borrando lo que no le gusta y escribiendo encima']],a:'com',why:'Los comentarios con @mención avisan a una persona específica y proponen cambios sin modificar el original; María decide qué aceptar.'}}},
+ ()=>({who:'🏢',txt:'María quiere un espacio común del equipo con el manual de higiene, los protocolos y los turnos vigentes, que todos los trabajadores puedan consultar aunque ella o la administradora cambien de cargo.',
+  tool:'sharepoint',dis:['onedrive','teams','word','todo'],why:'SharePoint guarda los documentos del equipo en un sitio y biblioteca comunes que no dependen de la cuenta de una persona. OneDrive está pensado para los archivos de trabajo de cada usuario. (Los archivos de un equipo de Teams también se guardan en SharePoint.)',
+  q:{t:'¿Qué permisos conviene?',o:[['lec','Lectura para todo el equipo y edición solo para quienes mantienen los documentos'],['todos','Edición para todos, así cualquiera actualiza'],['abierto','Un enlace público para que no tengan que iniciar sesión']],a:'lec',why:'El permiso justo protege los documentos vigentes: todos los leen y solo responsables definidos los cambian. Un enlace público expone información interna.'}}),
+ ()=>({who:'📌',txt:'María anota pendientes propios en papelitos: renovar el permiso municipal, llamar al técnico del horno y pagar la patente. Nadie más necesita verlos.',
+  tool:'todo',dis:['planner','outlook','excel','teams'],why:'To Do es una lista de tareas personal, con fechas y recordatorios, en el computador y el celular. Planner es para tareas compartidas con el equipo; aquí no hace falta.',q:null}),
+ ()=>({who:'🧮',txt:'María quiere saber cuánto le cuesta producir una empanada de pino (masa, relleno, gas y envase) y cuánto le queda al venderla a distintos precios.',
+  tool:'excel',dis:['word','ppt','forms','planner'],why:'Excel calcula costos y márgenes con fórmulas; al cambiar un precio o un insumo, el resultado se actualiza solo.',
+  q:{t:'¿Cómo arma la planilla?',o:[['form','Con los costos en celdas y fórmulas que calculen el total y el margen'],['calc','Calculando con la calculadora del celular y escribiendo solo los resultados'],['texto','Escribiendo los costos en un párrafo dentro de la planilla']],a:'form',why:'Con fórmulas, si sube la harina basta cambiar una celda y todo se recalcula. Los resultados escritos a mano quedan desactualizados.'}}),
+ ()=>({who:'💾',txt:'El computador de la caja guarda en el Escritorio las listas de precios y los reportes. María teme perderlo todo si el equipo se descompone.',
+  tool:'onedrive',dis:['sharepoint','outlook','teams','excel'],why:'OneDrive puede respaldar automáticamente carpetas importantes del computador, como Escritorio y Documentos. Si el equipo falla, los archivos siguen en la nube.',q:null}),
+ ()=>{const c=pick(COLE);return {who:'🗓️',txt:`Los apoderados de ${c} quieren reservar un horario para retirar pedidos grandes y María recibe decenas de mensajes preguntando “¿a qué hora puedo pasar?”.`,
+  tool:'bookings',dis:['forms','outlook','teams','planner'],why:'Bookings publica una página de reservas: cada persona elige un horario disponible, recibe confirmación y la reserva aparece en el calendario. Está disponible en los planes Business, aunque el administrador puede tener que activarlo.',
+  q:{t:'¿Qué configura primero en la página de reservas?',o:[['hor','Los horarios disponibles y la duración de cada retiro'],['todo','Todos los días de 0 a 24 h, para no perder clientes'],['sin','Nada: que escriban por WhatsApp y ella confirma']],a:'hor',why:'Definir horarios reales y la duración evita que se acumulen retiros a la misma hora. Abrir todo el día genera reservas imposibles de cumplir.'}}}
+];
+let last=-1;
+function gen(){let k;do{k=Math.floor(Math.random()*BANK.length)}while(k===last);last=k;const c=BANK[k]();
+ const extra=Object.keys(T).filter(x=>x!==c.tool&&!c.dis.includes(x));
+ c.opts=shuf([c.tool,...shuf(c.dis).slice(0,3),...shuf(extra).slice(0,2)]);
+ if(c.q)c.q.o=shuf(c.q.o);return c}
+function render(c,el){
+ el.innerHTML=`<span class="eyebrow">Necesidad del negocio</span><h2>¿Qué usa María?</h2>
+ <div class="need"><span class="who" aria-hidden="true">${c.who}</span><div>${esc(c.txt)}<small>Empanadas Doña María · cuenta Microsoft 365 del negocio</small></div></div>
+ <p class="qlab">1. Herramienta principal</p>
+ <div class="tools" role="radiogroup" aria-label="Herramienta principal">${c.opts.map(k=>`<label class="opt"><input type="radio" name="simTool" value="${k}"><span class="ic" aria-hidden="true">${T[k].i}</span><span><b>${T[k].n}</b><small>${T[k].d}</small></span></label>`).join('')}</div>
+ ${c.q?`<label class="q2"><span class="qlab" style="margin:6px 0 0">2. ${esc(c.q.t)}</span><select id="simSec"><option value="">Elige…</option>${c.q.o.map(([v,t])=>`<option value="${v}">${esc(t)}</option>`).join('')}</select></label>`:'<p class="muted">En este caso basta con elegir la herramienta.</p>'}`;
+ el.querySelectorAll('.tools input').forEach(i=>i.addEventListener('change',()=>el.querySelectorAll('.tools .opt').forEach(o=>o.classList.toggle('sel',o.querySelector('input').checked))))}
+function check(c,el){const s=el.querySelector('.tools input:checked'),sec=el.querySelector('#simSec');
+ if(!s||(sec&&!sec.value))return null;
+ const okT=s.value===c.tool,okQ=!c.q||sec.value===c.q.a;
+ el.querySelectorAll('.tools .opt').forEach(o=>{const v=o.querySelector('input').value;if(v===c.tool)o.classList.add('ok');else if(o.querySelector('input').checked)o.classList.add('ko')});
+ const ch=T[s.value],qa=c.q?c.q.o.find(o=>o[0]===c.q.a)[1]:'';
+ return {ok:okT&&okQ,sol:`<ol>
+  <li><b>Herramienta: ${T[c.tool].i} ${T[c.tool].n}</b> ${okT?'✔':`(elegiste ${ch.n} ✘)`}. ${c.why}</li>
+  ${c.q?`<li><b>${esc(c.q.t)}</b> ${okQ?'✔':'✘'} Lo adecuado: <b>${esc(qa)}</b>. ${c.q.why}</li>`:''}
+  <li>Recuerda: primero la necesidad, después la herramienta. Revisa en la pestaña <b>Mapa de herramientas</b> si tu plan incluye esta aplicación.</li></ol>`}}
+function solve(c,el){const i=el.querySelector(`.tools input[value="${c.tool}"]`);i.checked=true;i.dispatchEvent(new Event('change'));const sec=el.querySelector('#simSec');if(sec)sec.value=c.q.a}
+/* Mapa de referencia */
+const MAP=[
+ ['Correo formal con clientes y proveedores','outlook','Confirmar por escrito un cambio de entrega con un proveedor','Todos los planes Business (web y móvil en Basic; escritorio desde Standard)'],
+ ['Agenda común de entregas y reuniones','outlook','Entregas fijas a cafeterías como evento periódico con responsable','Todos los planes Business'],
+ ['Coordinación rápida del equipo (chat y canales)','teams','Avisar en el canal “Pedidos del día” que falta queso','Incluido en planes Business con Teams; en algunos países se vende aparte'],
+ ['Reunión en línea y compartir pantalla','teams','Revisar precios con un proveedor de otra ciudad','Incluido en planes Business con Teams; en algunos países se vende aparte'],
+ ['Planilla compartida, registros y cálculos','excel','Pedidos de colegios editados por dos personas a la vez; costo por empanada','Web y móvil en Basic; escritorio desde Standard'],
+ ['Redactar documentos y procedimientos','word','Procedimiento de higiene comentado por el equipo','Web y móvil en Basic; escritorio desde Standard'],
+ ['Presentar una propuesta','ppt','Propuesta de empanadas de cóctel para una cafetería','Web y móvil en Basic; escritorio desde Standard'],
+ ['Guardar, respaldar y compartir archivos con permisos','onedrive','Carpeta de facturas para la contadora con Puede ver; respaldo del Escritorio','Todos los planes Business'],
+ ['Espacio común de documentos del equipo','sharepoint','Manual, protocolos y turnos vigentes en un sitio del equipo','Todos los planes Business'],
+ ['Encuestas y formularios','forms','Encuesta de satisfacción con código QR en el mostrador','Suele venir en los planes Business; el administrador puede desactivarlo'],
+ ['Tareas del equipo con responsable y fecha','planner','Tablero de preparación para Fiestas Patrias','Suele venir en los planes Business (funciones avanzadas requieren licencias adicionales)'],
+ ['Lista de pendientes personal','todo','Recordar renovar el permiso municipal','Suele venir en los planes Business'],
+ ['Reservas de horario por clientes','bookings','Horarios de retiro de pedidos grandes','Suele venir en los planes Business; el administrador puede tener que activarlo']];
+window.SIM={min:3,gen,render,check,solve,
+ calc(){const tb=document.querySelector('#mapT tbody'),q=document.getElementById('mapQ'),n=document.getElementById('mapN');
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const draw=()=>{const v=norm(q.value.trim());const rows=MAP.filter(r=>!v||norm(r[0]+' '+T[r[1]].n+' '+r[2]).includes(v));
+   tb.innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${T[r[1]].i} ${T[r[1]].n}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')||'<tr><td colspan="4">Sin resultados. Prueba con otra palabra.</td></tr>';
+   n.textContent=`${rows.length} de ${MAP.length} necesidades`};
+  q.addEventListener('input',draw);draw()}};
+})();
+</script>

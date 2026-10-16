@@ -1,0 +1,221 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las tres notas del caso y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.1 · Caso de decisión</span>
+      <h1 class="reveal">Hablarle a la audiencia correcta</h1>
+      <p class="lead reveal">Publicar más no siempre significa comunicar mejor. <strong>Casa Nativa</strong> publica seguido, pero recibe pocas consultas. <strong>Haz clic en cada nota</strong> para conocer la situación de Marcela.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">📱</span><span><span class="from">Nota 1 · Publicaciones</span><span class="preview">Publica casi todos los días…</span><span class="full">Publica productos, frases inspiradoras y promociones casi todos los días, sin un orden definido.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">💬</span><span><span class="from">Nota 2 · Resultados</span><span class="preview">Pocas consultas…</span><span class="full">Las publicaciones reciben algunos “me gusta”, pero muy pocas personas escriben para consultar o comprar.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">🎯</span><span><span class="from">Nota 3 · Audiencia</span><span class="preview">“A cualquiera que…”</span><span class="full">Cuando le preguntan a quién quiere llegar, Marcela responde: “a cualquiera que quiera decorar su casa”.</span></span><span class="badge">Dato</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela revisa las redes de Casa Nativa en su celular mientras toma notas en su taller" src="img/m7_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Cuál es el principal problema?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Publica muy poco.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No ha definido a quién quiere atraer y qué necesita esa persona.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Necesita abrir más redes sociales.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>Consecuencia: más de lo mismo.</strong> <span class="fb-body">Marcela ya publica casi todos los días. El problema no es la cantidad de publicaciones, sino que el mensaje no está diseñado para una audiencia concreta.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: el mismo mensaje en más lugares.</strong> <span class="fb-body">Abrir más redes no resuelve una estrategia que todavía no define a quién quiere hablarle; solo multiplica el trabajo.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Sin una audiencia prioritaria, el contenido tiende a ser genérico y menos relevante. En esta lección aprenderás a definirla y a convertirla en contenidos útiles.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Menos mensajes genéricos, más relevancia</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+<!-- 3 · AUDIENCIA -->
+<section class="slide" data-title="Qué es una audiencia" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Audiencia</span>
+  <h2>Una audiencia útil ayuda a decidir qué decir</h2>
+  <p>Tres preguntas definen a quién le hablas y una idea las ordena. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧭</div><strong>Quién</strong><span>¿Quién es la persona?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Contexto y etapa de compra</strong><span>Su situación, sus hábitos y qué tan cerca está de comprar.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧩</div><strong>Qué necesita</strong><span>¿Qué quiere resolver?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Problemas, deseos, dudas y barreras</strong><span>Lo que busca conseguir y lo que la hace dudar antes de comprar.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">⚖️</div><strong>Cómo decide</strong><span>¿Qué la convence?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Información y confianza</strong><span>Qué información busca y qué aumenta su confianza: fotos reales, medidas, opiniones.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🎯</div><strong>Idea clave</strong><span>¿Segmentar es excluir?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Segmentar es priorizar</strong><span>No dejas de venderle a nadie: eliges a quién hablarle primero para comunicar con mayor pertinencia.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · CLIENTE IDEAL -->
+<section class="slide" data-title="Cliente ideal" data-audio="p04" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Cliente ideal</span>
+  <h2>Construye un perfil que te ayude a crear contenido</h2>
+  <p>Cada pestaña es una pregunta y su respuesta para <strong>Daniela, 34 años</strong>, la clienta que Marcela quiere atraer. <strong>Revisa las cuatro.</strong></p>
+  <div class="task" id="tbTask">Piezas revisadas <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">Contexto</button><button class="tab" type="button" role="tab">Necesidades</button><button class="tab" type="button" role="tab">Barreras</button><button class="tab" type="button" role="tab">Contenido</button></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Mujer de 34 años en el living pequeño de su departamento, mirando su celular" src="img/m7_daniela.jpg"/></div><div><h3 style="margin-top:0">¿En qué situación está?</h3><p><b>Pregunta:</b> ¿en qué situación está la persona y qué tan familiarizada está con tu categoría?</p><p><b>Daniela:</b> está renovando el living de un departamento pequeño. No es experta en decoración y compra pocas veces al año.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Living pequeño decorado con un jarrón, cojines de lino y un cesto" src="img/m7_living.jpg"/></div><div><h3 style="margin-top:0">¿Qué quiere lograr?</h3><p><b>Pregunta:</b> ¿qué quiere resolver o conseguir realmente?</p><p><b>Daniela:</b> un espacio acogedor y ordenado, que se vea más amplio y no recargado.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Mujer mide el espacio de su living con una huincha" src="img/m7_daniela.jpg"/></div><div><h3 style="margin-top:0">¿Qué la hace dudar?</h3><p><b>Pregunta:</b> ¿qué la frena: precio, confianza, tamaño, uso, despacho o falta de información?</p><p><b>Daniela:</b> teme comprar objetos demasiado grandes o difíciles de combinar con lo que ya tiene.</p></div></div>
+    <div class="tabpane"><div class="photo-frame wide"><img alt="Marcela fotografía un jarrón y un cojín para sus redes" src="img/m7_contenido.jpg"/></div><div><h3 style="margin-top:0">¿Qué la ayudaría a decidir?</h3><p><b>Pregunta:</b> ¿qué contenido reduce sus dudas: ejemplos, comparaciones, consejos, testimonios o preguntas frecuentes?</p><p><b>Daniela:</b> ideas para espacios pequeños, comparaciones de tamaño, combinaciones simples y fotos de los productos en contexto.</p></div></div>
+  </div>
+</section>
+
+<!-- 5 · CLASIFICAR CONTENIDO -->
+<section class="slide" data-title="¿Le sirve a Daniela?" data-audio="p05" data-gate="cls" data-gate-msg="Clasifica las ocho ideas de publicación.">
+  <span class="eyebrow amber">Relevancia</span>
+  <h2>¿Le sirve a Daniela o es contenido genérico?</h2>
+  <p><strong>Selecciona una idea de publicación</strong> y luego la columna a la que corresponde. También puedes arrastrarla.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Ideas clasificadas <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="u" data-fb="Responde su duda principal: cómo decorar sin recargar un espacio pequeño." data-no="¿Responde alguna de las dudas de Daniela?">“3 ideas para un living pequeño sin recargarlo”</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Es un saludo genérico: no responde ninguna necesidad identificada." data-no="¿Qué duda de Daniela resuelve este mensaje?">“¡Feliz lunes! Comienza la semana con energía”</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="Las medidas en contexto reducen su miedo a comprar algo demasiado grande." data-no="Daniela teme equivocarse con el tamaño: ¿esto la ayuda?">Jarrón junto a un sofá, con sus medidas a la vista</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Una frase decorativa no ayuda a decidir qué comprar ni cómo usarlo." data-no="¿Le da información útil para decidir?">Frase inspiradora sobre fondo de color</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="Las combinaciones simples atacan su barrera: no saber combinar." data-no="¿Esto ayuda a quien no sabe combinar colores?">“Cómo combinar cojines de lino con un sofá gris”</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="El descuento puede ayudar, pero no resuelve las dudas que frenan su decisión." data-no="¿Un descuento resuelve sus dudas sobre tamaño y combinación?">“10% de descuento solo hoy” sin más información</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="Un testimonio de alguien en su misma situación genera confianza." data-no="¿Una experiencia similar a la suya la ayudaría a confiar?">Clienta muestra cómo quedó su departamento pequeño</button>
+      <button class="cardx" type="button" data-cat="g" data-fb="Una foto del catálogo completo sin contexto no ayuda a imaginar el producto en su espacio." data-no="¿Esto la ayuda a imaginar el producto en un espacio pequeño?">Foto de todo el catálogo, sin contexto de uso</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="u" role="button" tabindex="0"><h3>✅ Le sirve a Daniela</h3></div>
+      <div class="bin" data-cat="g" role="button" tabindex="0"><h3>📢 Genérico</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+</section>
+
+<!-- 6 · FUNCIONES DEL CONTENIDO -->
+<section class="slide" data-title="Funciones del contenido" data-audio="p06" data-gate="pairs" data-gate-msg="Une las cuatro funciones con su ejemplo.">
+  <span class="eyebrow">Estrategia</span>
+  <h2>Cuatro funciones del contenido</h2>
+  <p><strong>Selecciona una función</strong> a la izquierda y luego el ejemplo de Casa Nativa que le corresponde.</p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 4</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa qué busca provocar esa publicación en Daniela: entender, imaginar, confiar o actuar.">
+    <div>
+      <button class="pl" type="button" data-k="edu"><b>Educar</b> · explica y reduce dudas</button>
+      <button class="pl" type="button" data-k="ins"><b>Inspirar</b> · muestra posibilidades</button>
+      <button class="pl" type="button" data-k="con"><b>Generar confianza</b> · enseña procesos y resultados</button>
+      <button class="pl" type="button" data-k="act"><b>Activar</b> · invita a actuar</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="con" data-fb="Mostrar cómo se hace un producto y quién está detrás genera confianza.">Video del taller: así se tornea y esmalta cada jarrón</button>
+      <button class="pr" type="button" data-k="act" data-fb="Una invitación clara a consultar activa el siguiente paso.">“Escríbenos por WhatsApp y te ayudamos a elegir el tamaño”</button>
+      <button class="pr" type="button" data-k="edu" data-fb="Una guía práctica resuelve una duda concreta.">Guía: cómo elegir el tamaño de un jarrón según tu mueble</button>
+      <button class="pr" type="button" data-k="ins" data-fb="Un ambiente decorado ayuda a imaginar el producto en casa.">Living pequeño ambientado con piezas de Casa Nativa</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+</section>
+
+<!-- 7 · VERDADERO O FALSO -->
+<section class="slide" data-title="Ideas frecuentes" data-audio="p07" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow">Mitos y realidades</span>
+  <div class="grid-2">
+    <div>
+      <h2>¿Verdadero o falso?</h2>
+      <p>Hay muchas ideas sobre audiencias y contenidos. Decide si cada afirmación es <strong>verdadera o falsa</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela fotografía productos para crear contenido" src="img/m7_contenido.jpg"/></div>
+  </div>
+  <div class="tf" id="tf">
+    <div class="tf-prog"></div>
+    <div class="tf-claim"></div>
+    <div class="tf-btns"><button type="button" data-a="1">✓ Verdadero</button><button type="button" data-a="0">✕ Falso</button></div>
+    <div class="tf-exp"></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>De “personas que decoran” a una audiencia accionable</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Ya tengo claro que quiero hablarle a personas como Daniela, que decoran departamentos pequeños. Esta semana tengo espacio para una sola publicación destacada. ¿Cuál hago?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Daniela observa su living pequeño mientras revisa su celular" src="img/m7_daniela.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué contenido es más relevante para Daniela?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>“¡Feliz lunes! Comienza la semana con energía”.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>“3 ideas para decorar un living pequeño sin recargarlo”.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>“10% de descuento solo hoy”.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un saludo que nadie recuerda</div><div class="branch-body"><div><p>La publicación recibe algunos “me gusta” y ninguna consulta. Es genérica y no responde a una necesidad identificada.</p></div><div><p class="hint">Piensa en la duda principal de Daniela.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un descuento que no despeja dudas</div><div class="branch-body"><div><p>Algunas personas preguntan por el precio, pero Daniela sigue sin saber qué tamaño elegir ni cómo combinarlo. El descuento puede ayudar, pero no resuelve lo que frena su decisión.</p></div><div><p class="hint">Primero reduce la duda, después activa.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La publicación responde a una necesidad concreta y ayuda a imaginar una solución. Se guarda y se comparte más que las anteriores, y llegan consultas nuevas.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Tres semanas después:</strong> la mayoría de los mensajes que llegan por esa publicación preguntan lo mismo: <em>“¿Qué tamaño tiene?”</em> y <em>“¿Cómo se ve en un mueble pequeño?”</em>.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debería hacer Marcela con esa información?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Crear contenido que muestre medidas y productos en contexto, y sumar esa información al catálogo.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Volver a publicar para todo el mundo, porque ya consiguió consultas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Responder cada mensaje por separado y no cambiar nada más.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se pierde lo aprendido</div><div class="branch-body"><div><p>Las consultas bajan otra vez. Las preguntas de la audiencia eran la mejor pista para el próximo contenido y quedaron sin aprovechar.</p></div><div><p class="hint">Las preguntas repetidas son ideas de contenido.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la misma duda, una y otra vez</div><div class="branch-body"><div><p>Marcela pasa horas respondiendo lo mismo y muchas personas se van sin preguntar. La duda sigue sin resolverse donde el cliente la busca.</p></div><div><p class="hint">Responde una vez, para todos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Las dudas frecuentes de la audiencia se convierten en contenido que educa y en información visible en el catálogo. El perfil del cliente ideal se ajusta con datos reales.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Define tu audiencia prioritaria</h2>
+  <div class="story">Una PYME de tu rubro definió así su audiencia: <b>“mujeres de 25 a 60 años que usan redes sociales”</b>. Publica a diario contenido variado y obtiene pocas consultas. Su dueña propone tres contenidos para el próximo mes: un saludo semanal, una promoción y una frase motivacional.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la definición es demasiado amplia: dice quién es por edad, pero no en qué situación está, qué quiere resolver ni qué la hace dudar. Los tres contenidos propuestos son genéricos. Una versión accionable sería: <i>“personas que están armando o renovando su primera casa, con poco espacio y poca experiencia en decoración, que dudan del tamaño y de cómo combinar”</i>, con contenidos como una guía de medidas, una comparación de tamaños y un testimonio en contexto. Para tu PYME completa: <b>mi audiencia prioritaria es…</b>, <b>quiere lograr o resolver…</b>, <b>sus principales dudas son…</b>, <b>una barrera frecuente es…</b> y <b>tres contenidos útiles serían…</b></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.1</h2>
+    <p>Ya puedes definir una audiencia prioritaria, construir un cliente ideal y convertirlo en contenidos que educan, inspiran, generan confianza y activan.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 3.2</b> verás cómo construir una marca reconocible y accesible.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar el cliente ideal</button><button class="small-btn primary" type="button" data-goto="5">Repasar las funciones del contenido</button></div>
+    <div class="sources">Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

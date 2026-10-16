@@ -1,0 +1,27 @@
+
+(function(){
+const root=document.documentElement,tb=document.getElementById('theme');
+const setT=t=>{root.dataset.theme=t;tb.textContent=t==='dark'?'☀︎ Claro':'☾ Oscuro';try{localStorage.setItem('car-theme',t)}catch(e){}};
+let saved=null;try{saved=localStorage.getItem('car-theme')}catch(e){}
+setT(saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+tb.onclick=()=>setT(root.dataset.theme==='dark'?'light':'dark');
+const track=document.querySelector('.track'),prev=document.getElementById('prev'),next=document.getElementById('next'),dots=document.querySelector('.dots'),count=document.querySelector('.count'),bar=document.querySelector('.bar span');
+let items=[],i=0;
+window.Carousel={refresh(list){items=list;i=0;draw(true)},get index(){return i}};
+function draw(rebuild){
+  if(rebuild){dots.innerHTML=items.map((_,k)=>`<button type="button" aria-label="Ir a la tarjeta ${k+1}"></button>`).join('');[...dots.children].forEach((b,k)=>b.onclick=()=>go(k))}
+  track.style.transform=`translateX(-${i*100}%)`;
+  [...dots.children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  items.forEach((el,k)=>{el.setAttribute('aria-hidden',k!==i);el.inert=k!==i});
+  prev.disabled=i===0;next.disabled=i>=items.length-1;
+  count.textContent=items.length?`${i+1} de ${items.length}`:'';
+  bar.style.width=items.length?((i+1)/items.length*100)+'%':'0';
+}
+function go(k){if(k<0||k>=items.length)return;i=k;draw();document.querySelectorAll('.flip.turned').forEach(f=>f.classList.remove('turned'))}
+prev.onclick=()=>go(i-1);next.onclick=()=>go(i+1);
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1)});
+let x0=null,y0=null;const vp=document.querySelector('.viewport');
+vp.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+vp.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(i+(dx<0?1:-1));x0=null},{passive:true});
+window.Carousel.refresh([...track.children]);
+})();

@@ -1,0 +1,18 @@
+{"audio":{
+"p01":"Bienvenida a la lección uno punto dos: tu ecosistema de trabajo digital. El equipo de María usa correo, WhatsApp, archivos en distintos computadores y documentos sueltos. Revisa cada herramienta que usan hoy y luego decide qué debería resolver María primero.",
+"p03":"Un ecosistema de productividad cumple cuatro funciones: comunicar, crear, compartir y coordinar. Abre cada una para ver qué aporta y un ejemplo en el negocio de María.",
+"p04":"Microsoft 365 es un ejemplo de ecosistema. Las aplicaciones disponibles dependen del plan, pero la lógica se repite en otras suites, como Google Workspace. Selecciona una aplicación y luego la necesidad que resuelve.",
+"p05":"No empieces por la herramienta: empieza por la necesidad. Revisa cuatro necesidades frecuentes en una pyme, el síntoma que las delata y la solución que conviene.",
+"p06":"Cuatro acuerdos evitan el caos digital: lugar, nombre, acceso y continuidad. Completa cada acuerdo eligiendo la opción correcta y luego presiona comprobar.",
+"p07":"Un ecosistema no se instala en un día. Recorre este plan de cuatro semanas que María puede seguir para adoptar las herramientas sin abrumar a su equipo.",
+"p08":"Caso aplicado. María quiere que dos personas actualicen la planilla de pedidos y que la encargada administrativa pueda revisarla sin pedir una copia cada día. Ayúdala a tomar dos decisiones.",
+"quiz":"Comprueba lo aprendido. Responde cinco preguntas. Necesitas al menos ochenta por ciento, es decir, cuatro de cinco, para finalizar la lección. Si no lo logras, puedes reintentar.",
+"p10":"Ahora piensa en tu propio equipo. Lee la propuesta, responde cada pregunta del checklist con sí o no, y luego revisa la respuesta modelo.",
+"p11":"¡Felicitaciones! Completaste la lección uno punto dos. Un buen ecosistema reduce la fricción: cada persona sabe dónde comunicar, crear, guardar y coordinar. En la siguiente lección aplicarás esta lógica a la organización de archivos, los permisos y la seguridad en la nube."},
+"video":[
+{"t":"Qué es un ecosistema","img":"l2_hero","lines":["Un ecosistema de productividad es un conjunto de herramientas conectadas.","El equipo las usa con acuerdos comunes para comunicar, crear, compartir y coordinar."],"keys":[["Herramientas conectadas",0],["Acuerdos comunes de uso",1],["Un lugar para cada cosa",1]]},
+{"t":"Comunicar","img":"l2_reunion","lines":["Para comunicar, cada canal tiene su función.","Correo para lo formal, chat para la coordinación rápida y reuniones en línea cuando hay que conversar y decidir."],"keys":[["Correo: lo formal",1],["Chat: coordinación rápida",1],["Reuniones: conversar y decidir",1]]},
+{"t":"Crear y compartir","img":"l2_planilla","lines":["Documentos, hojas de cálculo y presentaciones se guardan en un espacio común.","Así varias personas pueden revisarlos y actualizarlos sin enviarse copias."],"keys":[["Una versión común",0],["Edición colaborativa",1],["Permisos según la tarea",1]]},
+{"t":"Coordinar","img":"l2_agenda","lines":["Para coordinar, los calendarios y las tareas compartidas hacen visible quién hace qué y cuándo.","Así el trabajo no depende de mensajes sueltos."],"keys":[["Calendario compartido",0],["Tareas con responsable",0],["Fechas visibles para todos",1]]},
+{"t":"Regla de oro","img":"l2_admin","lines":["La regla de oro es simple: primero la necesidad, después la herramienta.","Si una herramienta no tiene una necesidad, un responsable y un criterio de uso claro, probablemente agregará complejidad."],"keys":[["Necesidad concreta",1],["Responsable definido",1],["Criterio de uso claro",1]]}
+]}

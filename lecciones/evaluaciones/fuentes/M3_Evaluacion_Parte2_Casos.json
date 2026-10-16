@@ -1,0 +1,206 @@
+{
+  "categoria": "Herramientas Digitales PYMES/Módulo 3/Evaluación Parte 2 – Casos",
+  "puntaje": 2,
+  "preguntas": [
+    {
+      "id": "M3.P11",
+      "tema": "3.1 Diagnóstico de un calendario de contenidos",
+      "caso_html": "<p>Marcela revisa la última semana de publicaciones orgánicas de Casa Nativa en Instagram. Su audiencia prioritaria son personas que decoran departamentos pequeños.</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Día</th><th>Publicación</th><th>Alcance</th><th>Guardados</th><th>Consultas por mensaje</th></tr><tr><td>Lun</td><td>«¡Feliz lunes! Comienza con energía»</td><td>1.200</td><td>4</td><td>0</td></tr><tr><td>Mar</td><td>«10% solo hoy», sin más información</td><td>1.500</td><td>6</td><td>3</td></tr><tr><td>Mié</td><td>Carrusel: cómo elegir el tamaño de un jarrón según tu mueble</td><td>1.100</td><td>85</td><td>14</td></tr><tr><td>Jue</td><td>Frase inspiradora sobre fondo de color</td><td>1.300</td><td>3</td><td>0</td></tr><tr><td>Vie</td><td>Foto de todo el catálogo, sin contexto de uso</td><td>900</td><td>2</td><td>1</td></tr><tr><td>Sáb</td><td>Living pequeño ambientado con piezas de la tienda</td><td>1.000</td><td>40</td><td>9</td></tr><tr><td>Dom</td><td>Clienta muestra cómo quedó su departamento pequeño</td><td>950</td><td>30</td><td>6</td></tr></table><p>Total de la semana: 33 consultas.</p>",
+      "q": "Con estos datos, ¿qué ajuste debería hacer Marcela en su calendario de las próximas semanas?",
+      "o": [
+        "Publicar dos veces al día frases y saludos, ya que son las piezas con más alcance.",
+        "Repetir la promoción del martes todos los días, porque es la de mayor alcance.",
+        "Reemplazar saludos y frases por guías, ambientes y testimonios útiles.",
+        "Eliminar el testimonio y el living ambientado, que tienen de los alcances más bajos."
+      ],
+      "c": 2,
+      "f": [
+        "Lunes y jueves suman 2.500 de alcance pero 0 consultas: más alcance genérico no se traduce en conversaciones.",
+        "La promoción alcanzó a 1.500 personas pero generó solo 3 consultas; sin resolver dudas, activar rinde poco.",
+        "Miércoles, sábado y domingo (educar, inspirar en contexto y dar confianza) generan 29 de 33 consultas (88%) y la mayoría de los guardados.",
+        "Esas piezas tienen menos alcance, pero generan 15 consultas entre ambas; el alcance no es el indicador que importa aquí."
+      ],
+      "g": "El rendimiento de un contenido orgánico se evalúa por el resultado buscado (guardados, consultas), no solo por el alcance. Las piezas útiles para la audiencia prioritaria (educar, inspirar con contexto, generar confianza) preparan el terreno para activar."
+    },
+    {
+      "id": "M3.P12",
+      "tema": "3.1 Ajustar el cliente ideal con datos reales",
+      "caso_html": "<p>Marcela clasificó los 50 mensajes directos que recibió el último mes según la duda principal de cada persona:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Duda principal</th><th>Mensajes</th></tr><tr><td>Medidas / tamaño del producto</td><td>22</td></tr><tr><td>Cómo combinarlo con lo que ya tiene</td><td>12</td></tr><tr><td>Despacho a regiones</td><td>9</td></tr><tr><td>Precio</td><td>7</td></tr><tr><td><strong>Total</strong></td><td><strong>50</strong></td></tr></table>",
+      "q": "¿Qué conclusión y acción son más coherentes con estos datos?",
+      "o": [
+        "Tamaño y combinación frenan al 68%: crear guías de medidas y fotos en contexto para el catálogo.",
+        "La barrera principal es el precio: lanzar un descuento de 15% en toda la colección para cerrar más ventas.",
+        "La barrera principal es el despacho: cambiar la audiencia prioritaria a clientes de regiones desde ahora.",
+        "Las dudas son demasiado variadas: seguir respondiendo cada mensaje por separado y no cambiar el contenido."
+      ],
+      "c": 0,
+      "f": [
+        "22 + 12 = 34 de 50 mensajes (68%) apuntan a tamaño y combinación; resolverlo en contenido y catálogo responde una vez, para todos.",
+        "El precio aparece en 7 de 50 mensajes (14%); un descuento no despeja la duda que más frena la decisión.",
+        "El despacho representa 9 de 50 (18%); es una duda a responder (por ejemplo, en preguntas frecuentes), no un motivo para cambiar de audiencia.",
+        "Dos categorías concentran más de dos tercios de los mensajes; responder uno por uno mantiene la duda donde el cliente la busca."
+      ],
+      "g": "Las preguntas reales de la audiencia sirven para ajustar el perfil del cliente ideal (sus barreras) y para decidir qué contenido educa mejor."
+    },
+    {
+      "id": "M3.P13",
+      "tema": "3.2 Revisión de accesibilidad de una pieza",
+      "caso_html": "<p>Antes de publicar una promoción hecha en Canva, Marcela revisa cada elemento con un verificador de contraste.</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Elemento</th><th>Color y fondo</th><th>Tamaño</th><th>Contraste</th></tr><tr><td>Titular «Nueva colección de jarrones»</td><td>Café #4A3426 sobre lino #F3EDE2</td><td>48 px</td><td>10,0:1</td></tr><tr><td>Precio rebajado «$11.990»</td><td>Beige #D9C7A7 sobre lino #F3EDE2</td><td>28 px negrita</td><td>1,4:1</td></tr><tr><td>Condiciones «Despacho gratis en Santiago sobre $40.000»</td><td>Blanco sobre una foto con muchos objetos</td><td>10 px</td><td>Varía entre 1,2:1 y 3,1:1</td></tr><tr><td>Productos agotados</td><td>Punto gris, sin texto</td><td>—</td><td>—</td></tr><tr><td>Acción «Escríbenos por WhatsApp»</td><td>Café #4A3426 sobre lino #F3EDE2</td><td>20 px</td><td>10,0:1</td></tr></table><p>Referencia (pautas WCAG, nivel AA): texto normal, al menos 4,5:1; texto grande (desde 24 px, o desde unos 19 px en negrita), al menos 3:1.</p>",
+      "q": "¿Qué elementos debe corregir Marcela antes de publicar?",
+      "o": [
+        "Solo el titular, porque es el elemento más grande y el primero que se ve.",
+        "Solo las condiciones, porque el precio en negrita ya cuenta como texto grande y cumple.",
+        "El titular y la acción, porque el café oscuro se ve pesado sobre el fondo lino.",
+        "El precio, las condiciones y el estado agotado; el titular y la acción cumplen."
+      ],
+      "c": 3,
+      "f": [
+        "El titular tiene 10,0:1 y supera con holgura el mínimo; los problemas están en otros elementos.",
+        "Aunque el precio sea texto grande (mínimo 3:1), su contraste de 1,4:1 no alcanza; además, el agotado depende solo del color.",
+        "Ambos tienen 10,0:1 y son legibles; cambiarlos por gusto no resuelve ninguno de los problemas reales de lectura.",
+        "El precio no llega a 3:1, las condiciones son diminutas y con contraste variable bajo 4,5:1, y el agotado depende solo del color."
+      ],
+      "g": "Una revisión de accesibilidad mira contraste según el tamaño del texto, tamaño legible en el celular, fondos que no compitan con el texto y estados que no dependan solo del color."
+    },
+    {
+      "id": "M3.P14",
+      "tema": "3.2 Jerarquía y checklist antes de publicar",
+      "caso_html": "<p>Marcela tiene tres versiones de la promoción «20% en jarrones este fin de semana» y las revisa con su checklist de cinco puntos:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Criterio</th><th>Versión 1</th><th>Versión 2</th><th>Versión 3</th></tr><tr><td>Mensaje principal claro</td><td>Sí</td><td>Sí</td><td>No (tres mensajes del mismo tamaño)</td></tr><tr><td>Contraste suficiente</td><td>Sí</td><td>No (amarillo sobre blanco)</td><td>Sí</td></tr><tr><td>Tipografía legible</td><td>Sí (2 fuentes de la marca)</td><td>No (4 fuentes)</td><td>Sí</td></tr><tr><td>Identidad consistente</td><td>Sí</td><td>No (colores ajenos a la marca)</td><td>Sí</td></tr><tr><td>Acción visible</td><td>No («link en bio» en 10 px)</td><td>Sí</td><td>No (sin acción)</td></tr></table><p>Debe publicar hoy y tiene tiempo para un solo ajuste.</p>",
+      "q": "¿Qué versión debería publicar y con qué ajuste?",
+      "o": [
+        "La versión 2, cambiando solo la tipografía, porque su foto es la más llamativa.",
+        "La versión 1, agrandando la acción para que se lea bien desde el celular.",
+        "La versión 3, tal como está, porque al tener tres mensajes informa más cosas.",
+        "La versión 2, sin cambios, porque los colores intensos atraen más miradas."
+      ],
+      "c": 1,
+      "f": [
+        "La versión 2 falla en tres criterios (contraste, tipografía e identidad); un solo ajuste no alcanza para dejarla lista.",
+        "Cumple cuatro de cinco criterios y su único problema se resuelve con un ajuste: una acción clara y legible en el celular.",
+        "Tres mensajes del mismo tamaño hacen que nada destaque, y sin acción la persona no sabe qué hacer después.",
+        "Llamar la atención no basta: con amarillo sobre blanco y colores ajenos, la pieza se lee mal y no se asocia a la marca."
+      ],
+      "g": "Antes de publicar revisa: mensaje claro, buen contraste, tipografía legible, identidad consistente y llamada a la acción visible. Prioriza la versión que cumple más criterios y corrige lo que falta."
+    },
+    {
+      "id": "M3.P15",
+      "tema": "3.2 Contraste según el tamaño del texto",
+      "caso_html": "<p>Marcela quiere usar el color terracota de su marca (#B85C38) sobre el fondo lino (#F3EDE2) en dos elementos de una pieza para Instagram:</p><ul><li>Titular «Ideas para tu living», de 32 px en negrita.</li><li>Texto de condiciones de despacho, de 14 px.</li></ul><p>El verificador de contraste indica <strong>3,9:1</strong> para terracota sobre lino y <strong>10,0:1</strong> para café #4A3426 sobre lino.</p><p>Referencia (pautas WCAG, nivel AA): texto normal, al menos 4,5:1; texto grande (desde 24 px, o desde unos 19 px en negrita), al menos 3:1.</p>",
+      "q": "¿Qué decisión mantiene la identidad de la marca y la legibilidad?",
+      "o": [
+        "Terracota en el titular, que cumple como texto grande, y café en el texto de 14 px.",
+        "Terracota en ambos elementos, porque 3,9:1 supera el mínimo de 3:1 para cualquier texto.",
+        "Café en ambos elementos, porque la terracota no cumple ningún mínimo de contraste.",
+        "Terracota en ambos, subiendo las condiciones a 16 px para que alcancen el mínimo."
+      ],
+      "c": 0,
+      "f": [
+        "El titular de 32 px es texto grande y 3,9:1 supera 3:1; el texto de 14 px necesita 4,5:1 y el café (10,0:1) lo cumple.",
+        "El mínimo de 3:1 aplica solo a texto grande; para el texto de 14 px se exige 4,5:1 y 3,9:1 no alcanza.",
+        "Es legible, pero renuncia sin necesidad al color de marca: el titular en terracota ya cumple como texto grande.",
+        "A 16 px el texto sigue siendo normal (bajo 24 px sin negrita), así que necesita 4,5:1 y la terracota no llega."
+      ],
+      "g": "El contraste mínimo depende del tamaño: el texto grande admite 3:1 y el texto normal requiere 4,5:1. Los colores de marca se pueden reservar para los elementos donde cumplen."
+    },
+    {
+      "id": "M3.P16",
+      "tema": "3.3 Redistribuir presupuesto según resultados",
+      "caso_html": "<p>Marcela invirtió $90.000 en una semana para generar conversaciones por WhatsApp, con una meta de <strong>$3.500 o menos por conversación</strong>. Resultados:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Campaña / conjunto</th><th>Gastado</th><th>Impresiones</th><th>Clics</th><th>CTR</th><th>CPC</th><th>Conversaciones</th><th>Costo por conversación</th></tr><tr><td>A · Meta, reel del taller</td><td>$30.000</td><td>40.000</td><td>600</td><td>1,5%</td><td>$50</td><td>6</td><td>$5.000</td></tr><tr><td>B · Meta, carrusel de tamaños</td><td>$30.000</td><td>25.000</td><td>500</td><td>2,0%</td><td>$60</td><td>15</td><td>$2.000</td></tr><tr><td>C · Google, búsqueda «jarrón de cerámica artesanal»</td><td>$30.000</td><td>6.000</td><td>480</td><td>8,0%</td><td>$62,5</td><td>12</td><td>$2.500</td></tr></table><p>La próxima semana tendrá nuevamente $90.000.</p>",
+      "q": "¿Cómo debería distribuir el presupuesto de la próxima semana?",
+      "o": [
+        "Pasar todo a A, porque logra más impresiones y así más personas conocen la marca.",
+        "Pasar todo a C, porque su CTR de 8% demuestra que es la opción más eficiente.",
+        "Mantener el mismo reparto, porque las tres gastaron igual y todas generaron consultas.",
+        "Reducir o pausar A y repartir ese monto entre B y C, que cumplen la meta de costo."
+      ],
+      "c": 3,
+      "f": [
+        "Las impresiones miden exposición, pero el objetivo eran conversaciones y A es la única que supera la meta ($5.000).",
+        "El CTR alto muestra interés, pero C cuesta $2.500 por conversación, más que B ($2.000); además, una búsqueda puntual tiene volumen limitado.",
+        "Gastar lo mismo no significa rendir lo mismo: A cuesta $5.000 por conversación y B, $2.000.",
+        "B ($2.000) y C ($2.500) están bajo la meta de $3.500, mientras A ($5.000) la supera; mover presupuesto según evidencia es la regla."
+      ],
+      "g": "El indicador principal depende del objetivo. Si el objetivo son conversaciones, se compara el costo por conversación con la meta; CTR, CPC e impresiones ayudan a diagnosticar, pero no definen por sí solos dónde invertir."
+    },
+    {
+      "id": "M3.P17",
+      "tema": "3.3 Costo por resultado y retorno",
+      "caso_html": "<p>Resultado de una campaña de una semana de Casa Nativa:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Dato</th><th>Valor</th></tr><tr><td>Importe gastado</td><td>$70.000</td></tr><tr><td>Conversaciones por WhatsApp</td><td>18</td></tr><tr><td>Ventas cerradas desde esas conversaciones</td><td>6</td></tr><tr><td>Ticket promedio por venta</td><td>$24.000</td></tr><tr><td>Margen bruto de Casa Nativa (antes de publicidad)</td><td>50% del precio de venta</td></tr></table>",
+      "q": "¿Qué análisis de la campaña es correcto?",
+      "o": [
+        "Cada venta costó $3.889 y las ventas suman $144.000: es muy rentable y conviene duplicar el gasto.",
+        "Cada venta costó $11.667 y, como las ventas duplican el gasto, la campaña dejó $74.000 de ganancia.",
+        "Cada venta costó ≈ $11.667 y deja $12.000 de margen: casi no hay ganancia; conviene optimizar.",
+        "Cada conversación costó $3.889, sobre la meta habitual: hay que detenerla sin mirar las ventas."
+      ],
+      "c": 2,
+      "f": [
+        "$3.889 es el costo por conversación ($70.000 ÷ 18), no por venta; y $144.000 en ventas no considera el costo de los productos.",
+        "$144.000 − $70.000 = $74.000 compara ventas con gasto, pero ignora que la mitad del precio es costo del producto.",
+        "$70.000 ÷ 6 ≈ $11.667 por venta; el margen es $72.000 (50% de $144.000), así que la campaña deja solo unos $2.000.",
+        "La campaña sí generó ventas; antes de detenerla conviene analizar dónde se pierde (de 18 conversaciones, solo 6 compraron)."
+      ],
+      "g": "El costo por resultado mide eficiencia y el retorno compara el valor generado con lo invertido. Para saber si una campaña deja ganancia, hay que comparar la inversión con el margen, no solo con las ventas."
+    },
+    {
+      "id": "M3.P18",
+      "tema": "3.3 Términos de búsqueda en Google Ads",
+      "caso_html": "<p>Informe de términos de búsqueda del grupo de anuncios «Decoración living pequeño» (campaña de búsqueda de Casa Nativa), última semana:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Término de búsqueda</th><th>Clics</th><th>Costo</th><th>Conversiones</th></tr><tr><td>decoración living pequeño</td><td>120</td><td>$9.600</td><td>6</td></tr><tr><td>jarrones de cerámica artesanal</td><td>80</td><td>$6.400</td><td>5</td></tr><tr><td>living pequeño ideas gratis</td><td>150</td><td>$10.500</td><td>0</td></tr><tr><td>ikea living</td><td>60</td><td>$4.800</td><td>0</td></tr><tr><td>cojines de lino</td><td>40</td><td>$3.200</td><td>3</td></tr><tr><td><strong>Total</strong></td><td><strong>450</strong></td><td><strong>$34.500</strong></td><td><strong>14</strong></td></tr></table>",
+      "q": "¿Cuál es la mejor acción para mejorar el grupo de anuncios?",
+      "o": [
+        "Aumentar el presupuesto, porque «ideas gratis» es el término con más clics del grupo.",
+        "Excluir «gratis» e «ikea» como palabras negativas: suman $15.300 sin conversiones.",
+        "Pausar todo el grupo, porque el costo promedio por conversión supera los $2.000.",
+        "Dejar un único título en el anuncio para que Google no amplíe las búsquedas."
+      ],
+      "c": 1,
+      "f": [
+        "Ese término trae clics de personas que buscan ideas sin intención de compra: 150 clics y $10.500 sin ninguna conversión.",
+        "$10.500 + $4.800 = $15.300 (44% del gasto) sin conversiones; excluirlos concentra el presupuesto en los términos que sí convierten.",
+        "El promedio ($34.500 ÷ 14 ≈ $2.464) esconde que tres términos convierten bien; pausar todo elimina también lo que funciona.",
+        "Los títulos no controlan en qué búsquedas aparece el anuncio; además, reducirlos a uno quita opciones para combinar (admite hasta 15)."
+      ],
+      "g": "Como la plataforma amplía las coincidencias de búsqueda, conviene revisar periódicamente los términos reales y excluir con palabras clave negativas los que gastan sin relación con la intención de compra."
+    },
+    {
+      "id": "M3.P19",
+      "tema": "3.4 Flujo de chatbot que no deriva",
+      "caso_html": "<p>Conversación real con el bot de WhatsApp de Casa Nativa (martes, 20:47):</p><ul><li><strong>Clienta:</strong> Hola, mi pedido #CN-1052 llegó con el jarrón quebrado 😞 Era para un regalo mañana.</li><li><strong>Bot:</strong> Hola, soy Sofía 🙂 Elige: 1) Productos 2) Despacho 3) Medios de pago.</li><li><strong>Clienta:</strong> No es eso, el jarrón llegó roto.</li><li><strong>Bot:</strong> Opción no válida. Elige 1, 2 o 3.</li><li><strong>Clienta:</strong> persona</li><li><strong>Bot:</strong> Opción no válida. Elige 1, 2 o 3.</li></ul><p>Configuración actual: menú de 3 opciones, sin opción para hablar con una persona, sin palabras clave de derivación y sin aviso interno al equipo.</p>",
+      "q": "¿Qué cambio corrige la causa principal de esta falla?",
+      "o": [
+        "Sumar la opción «4) Cambios y devoluciones» que envíe la política y cierre el chat.",
+        "Reescribir el mensaje de error con un emoji para que suene más cálido y amable.",
+        "Apagar el bot fuera de horario para que la clienta vuelva a escribir a las 10:00.",
+        "Sumar «hablar con una persona» y derivar casos como «roto» con aviso y contexto."
+      ],
+      "c": 3,
+      "f": [
+        "Enviar la política y cerrar es una respuesta rígida para un caso urgente y emocional; sigue sin haber salida hacia una persona.",
+        "Un tono más amable ayuda, pero la clienta seguiría atrapada en el mismo menú sin forma de llegar al equipo.",
+        "Obligarla a escribir de nuevo la hace repetir el problema y, con el regalo para mañana, la respuesta llegaría tarde.",
+        "Da una salida humana en todo momento y entrega al equipo el pedido, el problema y la urgencia para que la clienta no repita todo."
+      ],
+      "g": "Un flujo básico saluda dejando claro que es automático, ofrece opciones que incluyen hablar con una persona, responde lo predecible y, cuando la consulta no encaja, reconoce su límite y deriva conservando el contexto."
+    },
+    {
+      "id": "M3.P20",
+      "tema": "3.4 Evaluar y mejorar una automatización",
+      "caso_html": "<p>Marcela evalúa su flujo automático después de cuatro semanas:</p><table border=\"1\" cellpadding=\"4\" style=\"border-collapse:collapse\"><tr><th>Indicador</th><th>Resultado</th></tr><tr><td>Preguntas frecuentes recibidas (horarios, pagos, despacho)</td><td>95</td></tr><tr><td>Preguntas frecuentes resueltas por el bot sin ayuda</td><td>80</td></tr><tr><td>Conversaciones derivadas a Marcela</td><td>30</td></tr><tr><td>Derivaciones que llegaron sin datos y obligaron a volver a preguntar</td><td>12</td></tr><tr><td>Clientes molestos porque el bot dice «despacho gratis sobre $30.000» (desde este mes es sobre $40.000)</td><td>6</td></tr></table>",
+      "q": "¿Qué dos ajustes debería priorizar?",
+      "o": [
+        "Actualizar la respuesta de despacho y que cada aviso interno incluya pedido, problema y urgencia.",
+        "Automatizar también las 30 derivaciones, para que el bot resuelva todo sin intervención de Marcela.",
+        "Desactivar el bot, porque 15 preguntas frecuentes todavía no se resolvieron de forma automática.",
+        "Agregar diez opciones nuevas al menú para cubrir cada tipo de caso que hoy se deriva a Marcela."
+      ],
+      "c": 0,
+      "f": [
+        "La información desactualizada ya genera molestias y 12 de 30 derivaciones (40%) llegan sin contexto; ambos ajustes atacan las fallas medidas.",
+        "Las derivaciones suelen ser reclamos o excepciones que requieren criterio humano; automatizarlas empeoraría la atención.",
+        "El bot resolvió 80 de 95 preguntas frecuentes (84%); el problema está en datos desactualizados y derivaciones, no en el bot completo.",
+        "Un menú largo es difícil de usar y mantener; cuatro opciones claras con salida a una persona suelen ser suficientes."
+      ],
+      "g": "Una automatización se revisa con datos: respuestas actualizadas cada vez que cambian precios, plazos o medios de pago, derivaciones con contexto y un menú simple. Empieza con lo repetitivo y mejora lo que los indicadores muestran."
+    }
+  ]
+}

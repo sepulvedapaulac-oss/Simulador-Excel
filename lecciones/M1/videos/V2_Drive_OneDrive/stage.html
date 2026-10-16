@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Video 2 · Drive y OneDrive</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Inter,"Segoe UI",Arial,sans-serif;background:#dfe7ea;color:#1f2a30}
+#bg{position:absolute;inset:0;background:linear-gradient(135deg,#123b4a,#0f7780)}
+.scene{position:absolute;inset:0;display:none}
+.scene.on{display:block}
+/* ventana de navegador */
+.win{position:absolute;left:80px;top:26px;width:1760px;height:860px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.chrome{height:46px;background:#eef1f3;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid #d9dee2}
+.chrome i{width:13px;height:13px;border-radius:50%;background:#c9d1d6;display:inline-block}
+.chrome .url{margin-left:18px;flex:0 0 640px;height:30px;border-radius:15px;background:#fff;border:1px solid #d5dbe0;display:flex;align-items:center;padding:0 14px;font-size:15px;color:#5a6a73}
+.chrome .tag{margin-left:auto;background:#123b4a;color:#fff;font-weight:700;font-size:15px;padding:6px 14px;border-radius:14px}
+.app{position:absolute;top:34px;left:0;right:0;bottom:0;zoom:1.35}
+/* ---------- Drive (recreación) ---------- */
+.dv{background:#f8fafd;font-size:16px}
+.dv .hd{height:68px;display:flex;align-items:center;padding:0 22px;gap:18px}
+.dv .logo{display:flex;align-items:center;gap:10px;font-size:23px;color:#444;width:236px}
+.tri{width:34px;height:30px;position:relative}
+.tri b{position:absolute;width:0;height:0}
+.tri:before{content:"";position:absolute;left:0;top:0;border-left:17px solid transparent;border-right:17px solid transparent;border-bottom:30px solid #fbbc04}
+.tri:after{content:"";position:absolute;left:8px;top:14px;width:18px;height:16px;background:#1a73e8;clip-path:polygon(0 100%,100% 100%,50% 0)}
+.dv .search{flex:0 0 600px;height:48px;border-radius:24px;background:#e9eef6;display:flex;align-items:center;padding:0 20px;gap:12px;color:#5f6368;font-size:17px}
+.dv .search.focus{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.av{width:38px;height:38px;border-radius:50%;background:#0f7780;color:#fff;display:grid;place-items:center;font-weight:700;margin-left:auto}
+.dv .side{position:absolute;top:68px;left:0;width:256px;bottom:0;padding:8px 12px}
+.dv .new{display:inline-flex;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:16px 22px;font-size:16px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.3);margin:4px 0 14px 6px}
+.dv .new span{font-size:26px;line-height:16px;color:#1f1f1f}
+.dv .nav div{padding:9px 18px;border-radius:18px;font-size:15px;color:#1f1f1f;display:flex;gap:14px;align-items:center}
+.dv .nav div.sel{background:#c2e7ff;font-weight:600}
+.dv .stor{margin:14px 18px;font-size:13px;color:#5f6368}.dv .stor i{display:block;height:4px;background:#e0e0e0;border-radius:2px;margin-bottom:6px}.dv .stor i b{display:block;height:100%;width:14%;background:#1a73e8;border-radius:2px}
+.dv .main{position:absolute;top:68px;left:262px;right:16px;bottom:16px;background:#fff;border-radius:16px;padding:18px 26px;overflow:hidden}
+.dv .crumb{font-size:24px;color:#1f1f1f;margin-bottom:14px;display:flex;gap:8px;align-items:center}
+.dv .crumb s{text-decoration:none;color:#5f6368}
+.chips{display:flex;gap:10px;margin-bottom:18px}
+.chips span{border:1px solid #747775;border-radius:8px;padding:6px 14px;font-size:14px;color:#444}
+.chips span.hl{background:#e8f0fe;border-color:#1a73e8;color:#174ea6}
+.dv h4{font-size:15px;font-weight:600;color:#1f1f1f;margin:6px 0 12px}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:18px}
+.fold{background:#f0f4f9;border-radius:12px;padding:15px 16px;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:#1f1f1f;transition:none}
+.fold .fi{width:24px;height:18px;background:#5f6368;border-radius:2px 2px 3px 3px;position:relative;flex:none}
+.fold .fi:before{content:"";position:absolute;left:0;top:-4px;width:11px;height:5px;background:#5f6368;border-radius:2px 2px 0 0}
+.fold.sel{background:#c2e7ff}
+.flist{width:100%;border-collapse:collapse;font-size:15px}
+.flist th{text-align:left;font-weight:600;color:#444;padding:10px 12px;border-bottom:1px solid #dadce0;font-size:14px}
+.flist td{padding:12px;border-bottom:1px solid #eceff1}
+.flist tr.sel td{background:#c2e7ff}
+.flist tr.bad td:first-child{color:#c5221f;font-weight:700}
+.flist tr.good td{background:#e6f4ea}
+.ic{display:inline-block;width:20px;height:22px;border-radius:3px;margin-right:12px;vertical-align:-5px}
+.ic.doc{background:#4285f4}.ic.xls{background:#0f9d58}.ic.pdf{background:#ea4335}.ic.fol{background:#5f6368;height:16px;vertical-align:-2px}
+.ic.w{background:#185abd}.ic.x{background:#107c41}
+/* menús y diálogos */
+.menu{position:absolute;background:#fff;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.28);padding:8px 0;font-size:15px;min-width:290px;z-index:40}
+.menu div{padding:11px 22px;display:flex;gap:14px;align-items:center}
+.menu div.hov{background:#e8eaed}
+.menu hr{border:0;border-top:1px solid #e3e3e3;margin:6px 0}
+.dlg{position:absolute;background:#fff;border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.35);padding:26px 28px;z-index:30}
+.dlg h3{font-size:24px;font-weight:500;margin-bottom:18px;color:#1f1f1f}
+.inp{border:2px solid #0b57d0;border-radius:6px;padding:12px 14px;font-size:17px;min-height:50px}
+.btns{display:flex;justify-content:flex-end;gap:16px;margin-top:22px;font-size:15px;font-weight:600;color:#0b57d0}
+.btns span{padding:10px 18px;border-radius:20px}
+.btns span.pri{background:#0b57d0;color:#fff}
+.caret{display:inline-block;width:2px;height:20px;background:#1f1f1f;vertical-align:-3px;margin-left:1px}
+.share .row{display:flex;align-items:center;gap:12px;margin:10px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#e8f0fe;border-radius:16px;padding:6px 12px;font-size:15px}
+.role{margin-left:auto;border:1px solid #747775;border-radius:8px;padding:8px 14px;font-size:15px;min-width:150px;display:flex;justify-content:space-between;gap:10px}
+.opt2{padding:12px 20px}
+.opt2 b{display:block;font-size:16px}.opt2 small{color:#5f6368;font-size:13px}
+.opt2.hl{background:#e6f4ea;outline:3px solid #34a853;outline-offset:-3px;border-radius:6px}
+.opt2.warn{background:#fce8e6;outline:3px solid #ea4335;outline-offset:-3px;border-radius:6px}
+.lock{width:40px;height:40px;border-radius:50%;background:#e6f4ea;display:grid;place-items:center;font-size:20px}
+.lock.open{background:#fce8e6}
+/* ---------- OneDrive (recreación) ---------- */
+.od{background:#fff;font-size:16px}
+.od .hd{height:52px;background:#0f6cbd;display:flex;align-items:center;padding:0 18px;gap:16px;color:#fff}
+.od .hd .nm{font-size:18px;font-weight:600}
+.od .search{flex:0 0 520px;margin-left:60px;height:34px;border-radius:6px;background:#fff;color:#616161;display:flex;align-items:center;padding:0 14px;gap:10px;font-size:15px}
+.od .search.focus{outline:2px solid #fff;box-shadow:0 0 0 4px rgba(255,255,255,.4)}
+.od .side{position:absolute;top:52px;left:0;width:240px;bottom:0;background:#f5f5f5;padding:16px 12px}
+.od .add{background:#0f6cbd;color:#fff;font-weight:600;border-radius:6px;padding:10px 16px;display:inline-block;margin-bottom:16px;font-size:15px}
+.od .nav div{padding:9px 12px;border-radius:6px;font-size:15px;display:flex;gap:12px}
+.od .nav div.sel{background:#e0e0e0;font-weight:600}
+.od .main{position:absolute;top:52px;left:240px;right:0;bottom:0;padding:22px 30px}
+.od h2{font-size:24px;font-weight:600;margin-bottom:16px}
+.od .tb{display:flex;gap:18px;font-size:14px;color:#424242;margin-bottom:12px;border-bottom:1px solid #e0e0e0;padding-bottom:12px}
+.od .flist td{padding:13px 12px}
+.od .flist tr.sel td{background:#ebf3fc}
+.res b{background:#fff4ce}
+/* documento colaborativo */
+.doc{position:absolute;inset:0;background:#f8fafd}
+.doc .page{position:absolute;left:120px;top:80px;width:720px;bottom:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2);padding:60px 80px;font-size:18px;line-height:1.7}
+.doc .page h1{font-size:30px;margin-bottom:18px}
+.cur2{display:inline-block;width:2px;height:24px;vertical-align:-5px;position:relative}
+.cur2 em{position:absolute;top:-22px;left:0;font-style:normal;font-size:12px;color:#fff;padding:1px 6px;border-radius:4px;white-space:nowrap}
+.vpanel{position:absolute;right:0;top:60px;bottom:0;width:390px;background:#fff;border-left:1px solid #dadce0;padding:22px}
+.vpanel h3{font-size:20px;font-weight:500;margin-bottom:16px}
+.ver{padding:12px 14px;border-radius:8px;margin-bottom:6px}
+.ver b{display:block;font-size:15px}.ver small{color:#5f6368;font-size:13px}
+.ver.sel{background:#e8f0fe}
+/* seguridad */
+.acct{position:absolute;inset:0;background:#fff;padding:30px 80px}
+.acct h2{font-size:30px;font-weight:500;margin-bottom:8px}
+.acct p.s{color:#5f6368;margin-bottom:26px}
+.card{border:1px solid #dadce0;border-radius:12px;overflow:hidden;width:860px}
+.card .it{display:flex;align-items:center;gap:18px;padding:20px 24px;border-top:1px solid #eceff1;font-size:17px}
+.card .it:first-child{border-top:0}
+.card .it span{margin-left:auto;color:#5f6368}
+.card .it.ok span{color:#188038;font-weight:700}
+/* gráficos propios del curso */
+.panel{position:absolute;inset:0;padding:60px 90px;color:#fff}
+.panel h2{font-size:52px;font-weight:800;margin-bottom:36px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.col{border-radius:24px;padding:30px 34px;min-height:560px}
+.col.ev{background:rgba(234,67,53,.16);border:3px solid #ff8a80}
+.col.pr{background:rgba(52,168,83,.18);border:3px solid #81c995}
+.col h3{font-size:40px;margin-bottom:24px}
+.li{font-size:30px;font-weight:600;padding:18px 22px;border-radius:16px;background:rgba(255,255,255,.12);margin-bottom:16px;display:flex;gap:16px;align-items:center;opacity:0;transform:translateY(16px)}
+.li.on{opacity:1;transform:none;transition:none}
+.chk{display:grid;gap:22px;max-width:1300px;margin:30px auto 0}
+.chk .li{font-size:40px;padding:26px 30px}
+.box{width:52px;height:52px;border-radius:12px;border:4px solid #8fe4df;display:grid;place-items:center;font-size:36px;color:#123b4a;flex:none}
+.box.on{background:#8fe4df}
+.sec3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+.sec3 .li{flex-direction:column;align-items:flex-start;font-size:30px;padding:34px;min-height:300px}
+.sec3 .li big{font-size:72px}
+/* intro */
+.fly{position:absolute;background:#fff;border-radius:12px;padding:16px 22px;font-size:28px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.3);display:flex;gap:12px;align-items:center;white-space:nowrap}
+.src{position:absolute;font-size:22px;color:#fff;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:8px}
+.src big{font-size:70px}
+.cloud{position:absolute;left:560px;top:150px;width:800px;height:520px;border-radius:260px;background:rgba(255,255,255,.95);box-shadow:0 30px 60px rgba(0,0,0,.3);padding:120px 90px 60px}
+.cloud .fgrid{grid-template-columns:repeat(3,1fr)}.cloud .fold{font-size:24px;padding:20px}
+.title{position:absolute;left:0;right:0;text-align:center;color:#fff;font-weight:800;font-size:64px}
+/* cierre */
+.photo{position:absolute;inset:0;background:url(l1_orden.jpg) center/cover}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,59,74,.92) 0%,rgba(18,59,74,.75) 45%,rgba(18,59,74,.1) 100%)}
+.cta{position:absolute;left:110px;top:220px;width:820px;color:#fff;z-index:2}
+.cta h2{font-size:60px;font-weight:800;line-height:1.1;margin-bottom:24px}
+.cta p{font-size:30px;line-height:1.4;margin-bottom:40px}
+.btn{display:inline-block;background:#8fe4df;color:#123b4a;font-size:36px;font-weight:800;padding:22px 44px;border-radius:40px}
+/* destacados, cursor y subtítulos */
+#hl{position:absolute;border:6px solid #8fe4df;border-radius:16px;box-shadow:0 0 0 4000px rgba(10,30,38,.38);z-index:80;display:none}
+#hlLabel{position:absolute;background:#0f7780;color:#fff;font-weight:700;font-size:24px;padding:8px 18px;border-radius:24px;z-index:81;display:none;white-space:nowrap}
+#cursor{position:absolute;z-index:100;width:0;height:0}
+#cursor .halo{position:absolute;left:-30px;top:-30px;width:60px;height:60px;border-radius:50%;background:rgba(255,213,0,.45);border:3px solid rgba(255,190,0,.9)}
+#cursor svg{position:absolute;left:-3px;top:-2px;width:30px;height:40px}
+#ripple{position:absolute;z-index:99;border:5px solid #ffbe00;border-radius:50%;display:none}
+#sub{position:absolute;left:160px;right:160px;bottom:28px;text-align:center;z-index:120}
+#sub span{display:inline-block;background:rgba(8,22,28,.88);color:#fff;font-size:36px;font-weight:600;line-height:1.35;padding:14px 30px;border-radius:16px}
+#sub span:empty{display:none}
+#chip{position:absolute;right:100px;top:40px;z-index:110}
+</style></head>
+<body>
+<div id="bg"></div>
+
+<!-- 1 · Intro -->
+<section class="scene" id="s1">
+  <div class="src" style="left:160px;top:130px"><big>💻</big>Computador</div>
+  <div class="src" style="left:1620px;top:130px"><big>📱</big>Teléfono</div>
+  <div class="src" style="left:160px;top:640px"><big>✉️</big>Correo</div>
+  <div class="src" style="left:1600px;top:640px"><big>💬</big>Mensajería</div>
+  <div class="fly" data-x="420" data-y="210" data-r="-6"><span class="ic doc"></span>documento1.docx</div>
+  <div class="fly" data-x="1150" data-y="170" data-r="5"><span class="ic xls"></span>final.xlsx</div>
+  <div class="fly" data-x="760" data-y="330" data-r="-3"><span class="ic xls"></span>final2.xlsx</div>
+  <div class="fly" data-x="1240" data-y="470" data-r="7"><span class="ic xls"></span>final definitivo.xlsx</div>
+  <div class="fly" data-x="420" data-y="520" data-r="4"><span class="ic pdf"></span>copia de final (1).pdf</div>
+  <div class="fly" data-x="820" data-y="640" data-r="-5"><span class="ic doc"></span>versión nueva.docx</div>
+  <div class="fly" data-x="560" data-y="420" data-r="-8"><span class="ic doc"></span>documento1 (2).docx</div>
+  <div class="cloud" id="cloud"><div class="fgrid"><div class="fold"><i class="fi"></i>Administración</div><div class="fold"><i class="fi"></i>Clientes</div><div class="fold"><i class="fi"></i>Ventas</div><div class="fold"><i class="fi"></i>Marketing</div><div class="fold"><i class="fi"></i>Proveedores</div></div></div>
+  <div class="title" id="s1t" style="top:720px">Organiza y protege tus archivos en la nube</div>
+</section>
+
+<!-- 2 · Drive y OneDrive -->
+<section class="scene" id="s2">
+  <div class="win" id="s2a"><div class="chrome"><i></i><i></i><i></i><div class="url">drive.google.com/drive/my-drive</div><div class="tag">Google Drive</div></div>
+    <div class="app dv" data-drive="home"></div></div>
+  <div class="win" id="s2b"><div class="chrome"><i></i><i></i><i></i><div class="url">onedrive.live.com</div><div class="tag">OneDrive</div></div>
+    <div class="app od" data-od="mis"></div></div>
+</section>
+
+<!-- 3 · Crear estructura -->
+<section class="scene" id="s3"><div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">drive.google.com/drive/my-drive</div><div class="tag">Google Drive</div></div><div class="app dv" id="s3app"></div></div></section>
+<!-- 4 · Renombrar -->
+<section class="scene" id="s4"><div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">drive.google.com/drive/folders/ventas</div><div class="tag">Google Drive</div></div><div class="app dv" id="s4app"></div></div></section>
+<!-- 5 · Buscar -->
+<section class="scene" id="s5"><div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">onedrive.live.com/?view=search</div><div class="tag">OneDrive</div></div><div class="app od" id="s5app"></div></div></section>
+<!-- 6 · Compartir: permisos -->
+<section class="scene" id="s6"><div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">drive.google.com/drive/folders/mi-pyme</div><div class="tag" id="s6tag">Google Drive</div></div><div class="app" id="s6app"></div></div></section>
+<!-- 7 · Enlace restringido -->
+<section class="scene" id="s7"><div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">drive.google.com/drive/folders/mi-pyme</div><div class="tag">Google Drive</div></div><div class="app dv" id="s7app"></div></div></section>
+<!-- 8 · Colaboración e historial -->
+<section class="scene" id="s8"><div class="win"><div class="chrome"><i></i><i></i><i></i><div class="url">docs.google.com/document/procedimiento-pedidos</div><div class="tag">Documento compartido</div></div><div class="app" id="s8app"></div></div></section>
+<!-- 9 · Seguridad -->
+<section class="scene" id="s9"><div class="win" id="s9win"><div class="chrome"><i></i><i></i><i></i><div class="url">myaccount.google.com/security</div><div class="tag">Cuenta · Seguridad</div></div><div class="app" id="s9app"></div></div>
+  <div class="panel" id="s9g"><h2>Tres hábitos de seguridad</h2><div class="sec3"><div class="li"><big>🔑</big>Contraseñas robustas y diferentes</div><div class="li"><big>📱</big>Verificación en dos pasos</div><div class="li"><big>👥</big>Revisar quién tiene acceso</div></div></div></section>
+<!-- 10 · Evita / Prefiere -->
+<section class="scene" id="s10"><div class="panel"><h2>Buenas prácticas</h2><div class="cols">
+  <div class="col ev"><h3>✕ Evita</h3><div class="li">💻 Guardar todo solo en un computador o teléfono</div><div class="li">🔑 Compartir contraseñas entre varias personas</div><div class="li">✏️ Dar permisos de edición sin necesidad</div></div>
+  <div class="col pr"><h3>✓ Prefiere</h3><div class="li">☁️ Archivos centralizados en la nube</div><div class="li">📁 Carpetas ordenadas</div><div class="li">👥 Accesos según responsabilidades</div></div></div></div></section>
+<!-- 11 · Checklist -->
+<section class="scene" id="s11"><div class="panel"><h2 style="text-align:center">Cuatro acciones para recordar</h2><div class="chk">
+  <div class="li"><span class="box"></span>Organiza tus carpetas</div><div class="li"><span class="box"></span>Utiliza nombres claros</div><div class="li"><span class="box"></span>Entrega solo los permisos necesarios</div><div class="li"><span class="box"></span>Protege el acceso a tus cuentas</div></div></div></section>
+<!-- 12 · Ahora aplícalo -->
+<section class="scene" id="s12"><div class="photo"></div><div class="cta"><h2>¿Cómo guardas hoy los archivos de tu PYME?</h2><p>Identifica una mejora que puedas realizar hoy y aplícala antes de la siguiente actividad.</p><span class="btn" id="go">Ahora aplícalo →</span></div></section>
+
+<div id="hl"></div><div id="hlLabel"></div><div id="ripple"></div>
+<div id="cursor"><div class="halo"></div><svg viewBox="0 0 30 40"><path d="M2 2 L2 32 L10 25 L15 37 L20 35 L15 23 L26 23 Z" fill="#fff" stroke="#111" stroke-width="2.4" stroke-linejoin="round"/></svg></div>
+<div id="sub"><span></span></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),ease=t=>t*t*(3-2*t),seg=(f,a,b)=>clamp((f-a)/(b-a),0,1);
+function typed(s,f,a,b){const n=Math.round(s.length*seg(f,a,b));return s.slice(0,n)}
+
+/* ---------- plantillas de interfaz ---------- */
+const DNAV=(sel)=>`<div class="nav">${['🏠 Página principal','🗂️ Mi unidad','💻 Computadoras','👥 Compartido conmigo','🕘 Recientes','⭐ Destacados','🚫 Spam','🗑️ Papelera','☁️ Almacenamiento'].map(x=>`<div class="${x.includes(sel)?'sel':''}">${x}</div>`).join('')}</div><div class="stor"><i><b></b></i>2,1 GB de 15 GB usados</div>`;
+function drive({crumb='Mi unidad',folders=[],files=[],search='Buscar en Drive',focus=false,sel='Mi unidad',chips=true}){
+  return `<div class="hd"><div class="logo"><div class="tri"></div>Drive</div><div class="search ${focus?'focus':''}" id="dsearch">🔍 <span>${search}</span></div><div class="av">M</div></div>
+  <div class="side"><div class="new" id="dnew"><span>+</span>Nuevo</div>${DNAV(sel)}</div>
+  <div class="main" id="dmain"><div class="crumb">${crumb}</div>${chips?'<div class="chips"><span>Tipo ▾</span><span>Personas ▾</span><span>Modificado ▾</span><span>Fuente ▾</span></div>':''}
+  ${folders.length?`<h4>Carpetas</h4><div class="fgrid" id="dfolders">${folders.map(f=>`<div class="fold ${f.c||''}" ${f.id?`id="${f.id}"`:''} style="${f.st||''}"><i class="fi"></i>${f.n}</div>`).join('')}</div>`:''}
+  ${files.length?`<h4>Archivos</h4><table class="flist"><tr><th>Nombre</th><th>Propietario</th><th>Última modificación</th><th>Tamaño</th></tr>${files.map(f=>`<tr class="${f.c||''}" ${f.id?`id="${f.id}"`:''}><td><span class="ic ${f.t}"></span>${f.n}</td><td>yo</td><td>${f.d||'12 sept 2026'}</td><td>${f.s||'48 KB'}</td></tr>`).join('')}</table>`:''}
+  ${!folders.length&&!files.length?'<div style="text-align:center;color:#5f6368;margin-top:140px;font-size:20px">📂<br><br>Arrastra archivos aquí o usa el botón «Nuevo»</div>':''}</div>`}
+function onedrive({title='Mis archivos',rows=[],search='Buscar',focus=false,sel='Mis archivos',extra=''}){
+  return `<div class="hd"><span style="font-size:20px">⋮⋮⋮</span><span class="nm">OneDrive</span><div class="search ${focus?'focus':''}" id="osearch">🔍 <span>${search}</span></div><div class="av" style="background:#fff;color:#0f6cbd">M</div></div>
+  <div class="side"><div class="add">＋ Agregar nuevo</div><div class="nav">${['🏠 Inicio','📁 Mis archivos','👥 Compartido','⭐ Favoritos','🗑️ Papelera de reciclaje'].map(x=>`<div class="${x.includes(sel)?'sel':''}">${x}</div>`).join('')}</div></div>
+  <div class="main" id="omain"><h2>${title}</h2>${extra}<div class="tb"><span>＋ Nuevo</span><span>⤒ Cargar</span><span>↗ Compartir</span><span>🔗 Copiar vínculo</span><span style="margin-left:auto">Ordenar ▾</span></div>
+  <table class="flist"><tr><th>Nombre</th><th>Modificado</th><th>Tamaño del archivo</th><th>Uso compartido</th></tr>${rows.map(r=>`<tr class="${r.c||''}"><td><span class="ic ${r.t}"></span>${r.n}</td><td>${r.d||'Hace 2 días'}</td><td>${r.s||'—'}</td><td>${r.sh||'Privado'}</td></tr>`).join('')}</table></div>`}
+const PYME=['Administración','Clientes','Ventas','Marketing','Proveedores'];
+
+/* ---------- utilidades de cursor, destacado y subtítulos ---------- */
+let CUR={x:960,y:540};const PC={};
+function pos(sel,dx=.5,dy=.5){const e=typeof sel==='string'?$(sel):sel;const key=sel+'|'+dx+'|'+dy;if(!e)return PC[key]||CUR;const r=e.getBoundingClientRect();return PC[key]={x:r.left+r.width*dx,y:r.top+r.height*dy}}
+function path(f,keys){ // keys: [[f,sel|{x,y},dx,dy]]
+  let p=null;for(let i=0;i<keys.length;i++){if(f>=keys[i][0])p=i}
+  const P=k=>{const s=keys[k][1];return typeof s==='object'&&s&&'x' in s?s:pos(s,keys[k][2]??.5,keys[k][3]??.5)};
+  if(p===null)return P(0);if(p===keys.length-1)return P(p);
+  const a=P(p),b=P(p+1),hold=keys[p][4]??0.35,t0=keys[p][0],t1=keys[p+1][0],m=t0+(t1-t0)*hold;
+  if(f<m)return a;const e=ease(seg(f,m,t1));return {x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e}}
+function cursor(p,visible=true,clicks=[],f=0,T=1){CUR=p;const c=$('#cursor');c.style.display=visible?'block':'none';c.style.left=p.x+'px';c.style.top=p.y+'px';
+  const r=$('#ripple');r.style.display='none';for(const k of clicks){const dt=(f-k)*T;if(dt>=0&&dt<.45){const s=20+dt*160;r.style.display='block';r.style.width=r.style.height=s+'px';r.style.left=(p.x-s/2)+'px';r.style.top=(p.y-s/2)+'px';r.style.opacity=1-dt/.45}}}
+function hl(sel,label,pad=10){const h=$('#hl'),l=$('#hlLabel');if(!sel){h.style.display=l.style.display='none';return}
+  const e=typeof sel==='string'?$(sel):sel;const r=e.getBoundingClientRect();h.style.display='block';h.style.left=(r.left-pad)+'px';h.style.top=(r.top-pad)+'px';h.style.width=(r.width+2*pad)+'px';h.style.height=(r.height+2*pad)+'px';
+  if(label){l.style.display='block';l.textContent=label;const lw=l.offsetWidth;let x=r.left-pad,y=r.top-pad-54;if(y<60)y=r.bottom+pad+10;if(x+lw>1880)x=1880-lw;l.style.left=x+'px';l.style.top=y+'px'}else l.style.display='none'}
+const Z=1.35;function loc(app,p){const r=app.getBoundingClientRect();return {x:(p.x-r.left)/Z,y:(p.y-r.top)/Z}}
+function sub(t){$('#sub span').textContent=t||''}
+
+/* ---------- escenas: cada una recibe f (0–1), T (segundos) ---------- */
+const SC={};
+SC[1]=(f,T)=>{const conv=seg(f,.5,.72);
+  $$('#s1 .fly').forEach((e,i)=>{const x=+e.dataset.x,y=+e.dataset.y,r=+e.dataset.r,j=Math.sin(f*T*2+i)*6,a=seg(f,.02+i*.03,.08+i*.03);
+    const cx=960-130,cy=420;e.style.left=(x+(cx-x)*ease(conv))+'px';e.style.top=(y+j+(cy-y)*ease(conv))+'px';e.style.transform=`rotate(${r*(1-conv)}deg) scale(${1-.6*conv})`;e.style.opacity=a*(1-seg(f,.68,.74))});
+  $$('#s1 .src').forEach(e=>e.style.opacity=1-seg(f,.55,.7));
+  const c=$('#cloud');c.style.opacity=seg(f,.68,.76);c.style.transform=`scale(${.85+.15*ease(seg(f,.68,.8))})`;
+  $('#s1t').style.opacity=seg(f,.8,.88);cursor(CUR,false);hl(null)};
+SC[2]=(f,T)=>{$('#s2a .app').innerHTML=drive({folders:[{n:'Mi PYME'},{n:'Fotos'},{n:'Varios'}],files:[{n:'Cotización_Cliente_LosRobles_2026-10.docx',t:'doc'},{n:'Ventas_Septiembre_2026.xlsx',t:'xls'},{n:'Contrato_Arriendo_Local.pdf',t:'pdf'}]});$('#s2b .app').innerHTML=onedrive({rows:[...PYME.map(n=>({n,t:'fol'})),{n:'Lista_Precios_2026-10.xlsx',t:'x',s:'42 KB'}]});const b=seg(f,.48,.54);$('#s2a').style.opacity=1-b;$('#s2b').style.opacity=b;
+  if(f<.5)hl(f>.12&&f<.46?'#s2a .main':null,'Archivos y carpetas en Google Drive');else hl(f>.58&&f<.95?'#s2b .main':null,'Archivos y carpetas en OneDrive');cursor(CUR,false)};
+SC[3]=(f,T)=>{const app=$('#s3app');const made=f>=.33,inside=f>=.42;
+  const sub5=PYME.filter((n,i)=>f>=.5+i*.06).map((n,i)=>({n,st:''}));
+  app.innerHTML=inside?drive({crumb:'Mi unidad <s>›</s> Mi PYME',folders:sub5}):drive({folders:[...(made?[{n:'Mi PYME',id:'fpyme',c:f>.36?'sel':''}]:[]),{n:'Fotos personales'},{n:'Varios'}],files:[{n:'documento1.docx',t:'doc'},{n:'final2.xlsx',t:'xls'}]});
+  if(f>=.08&&f<.2&&!inside){const p=pos('#dnew');app.insertAdjacentHTML('beforeend',`<div class="menu" style="left:30px;top:150px"><div class="${f>.15?'hov':''}" id="mnew">📁 Nueva carpeta</div><hr><div>⤒ Subir archivo</div><div>⤒ Subir carpeta</div><hr><div>📄 Documentos de Google</div><div>📊 Hojas de cálculo de Google</div></div>`)}
+  if(f>=.2&&f<.33)app.insertAdjacentHTML('beforeend',`<div class="dlg" style="left:392px;top:170px;width:520px"><h3>Nueva carpeta</h3><div class="inp">${typed('Mi PYME',f,.22,.28)}<span class="caret"></span></div><div class="btns"><span>Cancelar</span><span class="pri" id="bcrear">Crear</span></div></div>`);
+  const k=[[0,{x:1100,y:600}],[.08,'#dnew'],[.16,'#mnew',.3],[.28,'#bcrear'],[.36,'#fpyme',.3],[.5,'#dnew'],[.9,'#dnew']];
+  const p=path(f,k);cursor(p,true,[.12,.18,.31,.38,.39],f,T);
+  hl(f>.82?'#dfolders':null,'Estructura base de la PYME');};
+SC[4]=(f,T)=>{const app=$('#s4app');const n1=f<.57?'documento1.docx':'Cotización_Cliente_LosRobles_2026-10.docx',n2=f<.84?'final2.xlsx':'Ventas_Septiembre_2026.xlsx';
+  const vague=f>.06&&f<.28;
+  app.innerHTML=drive({crumb:'Mi unidad <s>›</s> Mi PYME <s>›</s> Ventas',files:[{n:n1,t:'doc',id:'r1',c:(vague?'bad':'')+(f>.3&&f<.57?' sel':'')+(f>=.57&&f<.66?' good':'')},{n:'final.xlsx',t:'xls',c:vague?'bad':''},{n:n2,t:'xls',id:'r2',c:(vague?'bad':'')+(f>.66&&f<.84?' sel':'')+(f>=.84?' good':'')},{n:'versión nueva.pdf',t:'pdf',c:vague?'bad':''}]});
+  const ren=(a,b,id,name,ta,tb)=>{if(f>=a&&f<b){const q=loc(app,pos('#'+id,.12,.5));app.insertAdjacentHTML('beforeend',`<div class="menu" style="left:${q.x+10}px;top:${q.y+10}px"><div>↗ Abrir con</div><div>⬇ Descargar</div><div class="${f>a+.04?'hov':''}" id="mren">✏️ Cambiar nombre</div><hr><div>👥 Compartir</div><div>🗂️ Organizar</div><div>🗑️ Mover a la papelera</div></div>`)}
+    if(f>=b&&f<tb+.02)app.insertAdjacentHTML('beforeend',`<div class="dlg" style="left:292px;top:170px;width:720px"><h3>Cambiar nombre</h3><div class="inp">${typed(name,f,ta,tb)}<span class="caret"></span></div><div class="btns"><span>Cancelar</span><span class="pri" id="bok">Aceptar</span></div></div>`)};
+  ren(.3,.36,'r1','Cotización_Cliente_LosRobles_2026-10',.38,.53);ren(.66,.7,'r2','Ventas_Septiembre_2026',.71,.81);
+  const k=[[0,{x:1200,y:650}],[.28,'#r1',.12],[.34,'#mren',.3],[.52,'#bok'],[.62,'#r2',.12],[.69,'#mren',.3],[.82,'#bok'],[1,{x:1400,y:700}]];
+  cursor(path(f,k),true,[.3,.36,.55,.66,.7,.83],f,T);
+  hl(vague?'#dmain table':(f>.9?'#dmain table':null),vague?'Nombres que no dicen nada':'Tipo · cliente · período');};
+SC[5]=(f,T)=>{const app=$('#s5app');const q=typed('ventas',f,.1,.2),res=f>=.24;
+  const rows=res?[{n:'<b>Ventas</b>',t:'fol',d:'Hace 1 h'},{n:'<b>Ventas</b>_Septiembre_2026.xlsx',t:'x',s:'38 KB'},{n:'<b>Ventas</b>_Agosto_2026.xlsx',t:'x',s:'35 KB'},{n:'Informe_<b>Ventas</b>_T3_2026.docx',t:'w',s:'120 KB'},{n:'Metas_<b>ventas</b>_2027.xlsx',t:'x',s:'22 KB'}]:[{n:'Administración',t:'fol'},{n:'Clientes',t:'fol'},{n:'Ventas',t:'fol'},{n:'Marketing',t:'fol'},{n:'Proveedores',t:'fol'}];
+  const filt=`<div class="chips" id="ofilt"><span class="${f>.62?'hl':''}" id="ftipo">Tipo de archivo ▾</span><span>Modificado ▾</span><span>Personas ▾</span><span>Ubicación ▾</span></div>`;
+  app.innerHTML=onedrive({title:res?'Resultados de «ventas»':'Mis archivos',rows,search:f>.08?(q||'')+'<span class="caret"></span>':'Buscar',focus:f>.08,extra:res?filt:''});
+  $$('#omain .flist').forEach(t=>t.classList.add('res'));
+  if(f>.7&&f<.92){const q=loc(app,pos('#ftipo',.2,1));app.insertAdjacentHTML('beforeend',`<div class="menu" style="left:${q.x}px;top:${q.y+6}px"><div>📄 Documentos</div><div class="hov">📊 Hojas de cálculo</div><div>📕 PDF</div><div>📁 Carpetas</div></div>`)}
+  const k=[[0,{x:1300,y:600}],[.06,'#osearch',.2],[.4,'#osearch',.3],[.62,'#ftipo'],[.95,'#ftipo']];
+  cursor(path(f,k),true,[.08,.66],f,T);
+  hl(f>.26&&f<.6?'#omain .flist':(f>.6&&f<.7?'#ofilt':null),f<.6?'Todos los archivos con «ventas» en el nombre':'Filtros');};
+SC[6]=(f,T)=>{const app=$('#s6app');const od=f>=.86;$('#s6tag').textContent=od?'OneDrive':'Google Drive';
+  if(!od){app.className='app dv';app.innerHTML=drive({crumb:'Mi unidad <s>›</s> Mi PYME',folders:PYME.map(n=>({n,id:n==='Clientes'?'fcli':'',c:n==='Clientes'&&f>.06?'sel':''}))});
+    if(f>=.08&&f<.16){const r=loc(app,pos('#fcli',.5,.6));app.insertAdjacentHTML('beforeend',`<div class="menu" style="left:${r.x}px;top:${r.y}px"><div>↗ Abrir</div><div>⬇ Descargar</div><div>✏️ Cambiar nombre</div><hr><div class="${f>.12?'hov':''}" id="mshare">👥 Compartir</div><div>🗂️ Organizar</div></div>`)}
+    if(f>=.16){const role=f<.8?'Editor':'Lector',open=f>=.4&&f<.82;
+      app.insertAdjacentHTML('beforeend',`<div class="dlg share" style="left:262px;top:30px;width:780px"><h3>Compartir “Clientes”</h3><div class="inp" style="border-color:#747775">${f>=.22?`<span class="pill">🧑 ${typed('contabilidad@empanadasdonamaria.cl',f,.22,.32)}</span>`:'Agrega personas, grupos y eventos de calendario'}</div>
+      <div class="row" style="margin-top:18px"><b style="font-size:16px">Personas con acceso</b></div><div class="row"><div class="av" style="margin:0">M</div><div>María (tú)<br><small style="color:#5f6368">maria@empanadasdonamaria.cl</small></div><div class="role" style="border:0">Propietario</div></div>
+      <div class="row"><div class="av" style="margin:0;background:#a142f4">C</div><div>Contabilidad<br><small style="color:#5f6368">contabilidad@empanadasdonamaria.cl</small></div><div class="role" id="role">${role} <span>▾</span></div></div>
+      <div class="btns"><span>🔗 Copiar vínculo</span><span class="pri">Enviar</span></div></div>`);
+      if(open){const r=loc(app,pos('#role',1,1));app.insertAdjacentHTML('beforeend',`<div class="menu" style="left:${r.x-380}px;top:${r.y+6}px;min-width:380px"><div class="opt2 ${f>.45&&f<.62?'hl':''}" id="oLector"><span><b>Lector</b><small>Puede ver, pero no modificar</small></span></div><div class="opt2"><span><b>Comentador</b><small>Puede ver y comentar</small></span></div><div class="opt2 ${f>.62&&f<.8?'warn':''}" id="oEditor"><span><b>Editor</b><small>Puede organizar, agregar y editar</small></span></div></div>`)}}
+    const k=[[0,{x:1300,y:600}],[.05,'#fcli'],[.1,'#mshare',.3],[.2,{x:900,y:300}],[.36,'#role'],[.46,'#oLector',.2],[.62,'#oEditor',.2],[.76,'#oLector',.2],[.85,'#oLector',.2]];
+    cursor(path(f,k),true,[.07,.15,.4,.79],f,T);
+    hl(f>.45&&f<.62?'#oLector':(f>.62&&f<.78?'#oEditor':null),f<.62?'Solo necesita consultar → Lector':'Edición solo si debe modificar');}
+  else{app.className='app od';app.innerHTML=onedrive({rows:PYME.map(n=>({n,t:'fol',c:n==='Clientes'?'sel':''}))});
+    app.insertAdjacentHTML('beforeend',`<div class="dlg" style="left:332px;top:40px;width:640px;border-radius:12px"><h3>Compartir “Clientes”</h3><div class="inp" style="border-color:#c7c7c7">contabilidad@empanadasdonamaria.cl</div><div class="row" style="display:flex;gap:10px;margin-top:16px;align-items:center">Permiso:<div class="role" id="odrole">Puede ver ▾</div></div><div class="menu" style="position:relative;margin-top:10px;box-shadow:none;border:1px solid #e0e0e0"><div class="opt2 hl" id="odver"><span><b>Puede ver</b><small>No puede hacer cambios</small></span></div><div class="opt2"><span><b>Puede editar</b><small>Puede hacer cambios</small></span></div></div><div class="btns"><span class="pri" style="background:#0f6cbd">Enviar</span></div></div>`);
+    cursor(pos('#odver',.3),true,[],f,T);hl('#odver','En OneDrive: «Puede ver» o «Puede editar»')}};
+SC[7]=(f,T)=>{const app=$('#s7app');app.innerHTML=drive({crumb:'Mi unidad <s>›</s> Mi PYME',folders:PYME.map(n=>({n,c:n==='Clientes'?'sel':''}))});
+  const restricted=f<.2||f>=.86,open=f>=.16&&f<.86;
+  app.insertAdjacentHTML('beforeend',`<div class="dlg share" style="left:262px;top:40px;width:780px"><h3>Compartir “Clientes”</h3><div class="row"><div class="av" style="margin:0">M</div><div>María (tú)</div><div class="role" style="border:0">Propietario</div></div><div class="row"><div class="av" style="margin:0;background:#a142f4">C</div><div>Contabilidad</div><div class="role" style="border:0">Lector</div></div>
+    <div class="row" style="margin-top:18px"><b style="font-size:16px">Acceso general</b></div><div class="row" id="gen"><div class="lock">🔒</div><div><div class="role" id="genbtn" style="margin:0;min-width:240px;border:0;padding:0;font-weight:600">Restringido ▾</div><small style="color:#5f6368">Solo las personas con acceso pueden abrirlo con el vínculo</small></div></div>
+    <div class="btns"><span>🔗 Copiar vínculo</span><span class="pri">Listo</span></div></div>`);
+  if(open){const r=loc(app,pos('#genbtn',0,1));app.insertAdjacentHTML('beforeend',`<div class="menu" style="left:${r.x}px;top:${r.y+6}px;min-width:520px"><div class="opt2 ${f>.3?'hl':''}" id="oRes"><span><b>🔒 Restringido</b><small>Solo las personas que agregaste pueden abrirlo</small></span></div><div class="opt2 ${f>.5&&f<.78?'warn':''}" id="oAny"><span><b>🌐 Cualquier persona que tenga el vínculo</b><small>Cualquiera en internet que reciba el vínculo podrá abrirlo</small></span></div></div>`)}
+  const k=[[0,{x:1300,y:650}],[.12,'#genbtn',.4],[.3,'#oRes',.2],[.52,'#oAny',.2],[.78,'#oRes',.2],[.9,'#oRes',.2]];
+  cursor(path(f,k),true,[.16,.84],f,T);
+  hl(f>.3&&f<.5?'#oRes':(f>.5&&f<.78?'#oAny':(f>=.86?'#gen':null)),f<.5?'Recomendado para información interna':(f<.78?'Riesgo: el vínculo puede reenviarse':'Acceso restringido'));};
+SC[8]=(f,T)=>{const app=$('#s8app');const p=['Procedimiento de pedidos','1. Registrar cada pedido en la planilla compartida «Pedidos_2026».','2. Confirmar fecha de entrega con el cliente por correo.','3. Actualizar el estado del pedido al despacharlo.'];
+  const a=typed(' Indicar si el pago fue por transferencia.',f,.08,.3),b=typed(' Adjuntar la guía de despacho.',f,.14,.36);
+  app.innerHTML=`<div class="doc"><div style="height:60px;display:flex;align-items:center;gap:16px;padding:0 24px;background:#fff;border-bottom:1px solid #dadce0"><b style="font-size:20px">Procedimiento_Pedidos</b><span style="color:#5f6368"><span id="mfile">Archivo</span>&nbsp;&nbsp;Editar&nbsp;&nbsp;Ver&nbsp;&nbsp;Insertar</span><span id="mhist" style="color:#0b57d0;font-weight:700;opacity:${f>.4&&f<.58?1:0}">🕘 Historial de versiones</span><span style="margin-left:auto;display:flex;gap:6px"><span class="av" style="width:34px;height:34px;background:#e8710a">J</span><span class="av" style="width:34px;height:34px;background:#a142f4;margin:0">C</span><span class="av" style="width:34px;height:34px;margin:0">M</span></span><span class="btns" style="margin:0"><span class="pri">Compartir</span></span></div>
+  <div class="page" id="page"><h1>${p[0]}</h1><p>${p[1]}<span style="background:#fde7d4">${a}</span><span class="cur2" style="background:#e8710a"><em style="background:#e8710a">Javier</em></span></p><p>${p[2]}</p><p>${p[3]}<span style="background:#efe2fb">${b}</span><span class="cur2" style="background:#a142f4"><em style="background:#a142f4">Carla</em></span></p></div>
+  ${f>=.55?`<div class="vpanel" id="vp"><h3>Historial de versiones</h3><div class="ver sel"><b>Versión actual</b><small>Hoy, 10:42 · Javier, Carla</small></div><div class="ver" id="v2"><b>Ayer, 18:05</b><small>María</small></div><div class="ver"><b>12 sept, 09:30</b><small>Carla</small></div><div class="ver"><b>10 sept, 16:12</b><small>María</small></div><div class="btns" style="justify-content:flex-start"><span class="pri" id="rest">Restaurar esta versión</span></div></div>`:''}</div>`;
+  const k=[[0,{x:1500,y:700}],[.38,'#mfile'],[.5,'#mhist'],[.62,'#v2'],[.8,'#rest'],[1,'#rest']];
+  cursor(path(f,k),f>.36,[.44,.53,.66],f,T);
+  hl(f<.38&&f>.06?'#page':(f>.62?'#vp':null),f<.38?'Varias personas editan el mismo archivo':'Consultar o recuperar versiones anteriores');};
+SC[9]=(f,T)=>{const g=seg(f,.3,.36);$('#s9win').style.opacity=1-g;$('#s9g').style.opacity=g;
+  $('#s9app').innerHTML=`<div class="acct"><h2>Seguridad</h2><p class="s">Configuración y recomendaciones para proteger tu cuenta</p><div class="card"><div class="it">🔑 Contraseña<span>Último cambio: 3 sept 2026</span></div><div class="it ok" id="tsv">📱 Verificación en 2 pasos<span>✓ Activada</span></div><div class="it">💻 Tus dispositivos<span>3 sesiones</span></div><div class="it">🕘 Actividad de seguridad reciente<span>Sin alertas</span></div></div></div>`;
+  $$('#s9g .li').forEach((e,i)=>e.classList.toggle('on',f>=[.36,.55,.74][i]));
+  cursor(path(f,[[0,{x:1400,y:700}],[.08,'#tsv',.4],[.3,'#tsv',.4]]),f<.3,[],f,T);hl(f>.1&&f<.3?'#tsv':null,'Activa la verificación en dos pasos');};
+SC[10]=(f,T)=>{const L=$$('#s10 .li');[.04,.2,.37,.57,.7,.82].forEach((a,i)=>L[i].classList.toggle('on',f>=a));cursor(CUR,false);hl(null)};
+SC[11]=(f,T)=>{const L=$$('#s11 .li');[.06,.16,.27,.42].forEach((a,i)=>{L[i].classList.toggle('on',f>=a);$('.box',L[i]).classList.toggle('on',f>=a+.04);$('.box',L[i]).textContent=f>=a+.04?'✓':''});cursor(CUR,false);hl(null)};
+SC[12]=(f,T)=>{const b=$('#go');b.style.transform=`scale(${1+.04*Math.sin(f*T*4)})`;cursor(path(f,[[0,{x:1500,y:800}],[.55,'#go',.5,.6],[1,'#go',.5,.6]]),f>.4,[.82],f,T);hl(null)};
+
+window.R=function(k,f,T,subtitle){$$('.scene').forEach((s,i)=>s.classList.toggle('on',i===k-1));$('#bg').style.display='block';SC[k](f,T);sub(subtitle)};
+</script></body></html>

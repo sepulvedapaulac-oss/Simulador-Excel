@@ -1,0 +1,66 @@
+<section id="intro" class="card">
+ <span class="eyebrow">Simulador de práctica</span>
+ <h2>¿Cuánto le queda a Casa Nativa por cada venta?</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Un cojín se vende al mismo precio en mi tienda en línea y en el marketplace, pero no me queda lo mismo. Quiero calcularlo bien antes de decidir dónde poner más esfuerzo.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Practica el cálculo que viste en las lecciones <b>2.2 ¿Tienda propia o marketplace?</b> y <b>2.3 Del pago a la entrega</b>: precio, costo del producto, comisiones, cobro de la pasarela y despacho.</p>
+ <div class="steps"><div><b>Calculadora</b>Ingresa tus propios datos y compara los dos canales.</div><div><b>Practicar</b>Resuelve casos aleatorios y revisa la solución paso a paso.</div><div><b>Completar</b>Resuelve al menos 3 casos. Tu nota es el % de casos correctos.</div></div>
+ <button class="btn" data-start>Abrir el simulador →</button>
+</section>
+
+<section id="sim" hidden>
+ <div class="tabs"><button class="tab on" data-pane="pPract">🎯 Practicar</button><button class="tab" data-pane="pCalc">🧮 Calculadora</button></div>
+ <div id="pPract" class="pane on card">
+  <p id="simCount" class="counter"></p>
+  <div id="simCase"></div>
+  <div class="row-btns"><button class="btn" id="simCheck">Revisar mi respuesta</button><button class="btn ghost" id="simNext" hidden>Nuevo caso →</button><span class="muted" id="simMsg"></span></div>
+ </div>
+ <div id="pCalc" class="pane card">
+  <h2>Calculadora de margen por canal</h2>
+  <p class="muted">Usa los datos reales de tus proveedores. Los porcentajes y cargos cambian según el plan contratado.</p>
+  <div class="numgrid">
+   <label>Precio de venta<span class="unit"><span>$</span><input type="number" id="cP" value="24000" min="0"></span></label>
+   <label>Costo del producto (incluye empaque)<span class="unit"><span>$</span><input type="number" id="cC" value="10000" min="0"></span></label>
+   <label>Comisión del marketplace<span class="unit"><input type="number" id="cM" value="13" step="0.1" min="0"><span>%</span></span></label>
+   <label>Cargo fijo del marketplace por venta<span class="unit"><span>$</span><input type="number" id="cF" value="700" min="0"></span></label>
+   <label>Cobro de la pasarela (tienda propia)<span class="unit"><input type="number" id="cG" value="3.5" step="0.1" min="0"><span>%</span></span></label>
+   <label>Despacho que paga Casa Nativa<span class="hint">Marketplace / tienda propia</span><span class="unit"><span>$</span><input type="number" id="cE1" value="2500" min="0"><span>/</span><input type="number" id="cE2" value="3000" min="0"></span></label>
+  </div>
+  <div class="kpi" id="cOut"></div>
+  <div class="note"><b>Lo que esta calculadora no considera:</b> impuestos (IVA y otros), planes mensuales de la tienda o del marketplace, publicidad, devoluciones y el tiempo que demora cada canal en depositar el dinero. Revísalos antes de decidir.</div>
+ </div>
+</section>
+
+<script data-sim>
+(function(){
+const $=s=>document.querySelector(s),f=n=>'$'+Math.round(n).toLocaleString('es-CL'),r=(a,b,s=1)=>a+s*Math.floor(Math.random()*((b-a)/s+1));
+const PROD=['cojín de lino','lámpara de cerámica','canasto tejido','set de velas aromáticas','manta de lana','jarrón de greda','móvil de fieltro'];
+function calc(c){const mk=c.p-c.c-c.p*c.m/100-c.fi-c.e1,tp=c.p-c.c-c.p*c.g/100-c.e2;return {mk,tp,com:c.p*c.m/100,pas:c.p*c.g/100}}
+window.SIM={min:3,
+ gen(){const p=r(12000,45000,500),c={prod:PROD[r(0,PROD.length-1)],p,c:Math.round(p*r(35,55)/100/100)*100,m:r(10,18),fi:r(0,1000,100),g:[2.9,3.2,3.5,3.9][r(0,3)],e1:r(0,3500,500),e2:r(2000,4500,500)};return c},
+ render(c,el){el.innerHTML=`<span class="eyebrow">Caso</span><h2>Venta de un ${c.prod}</h2>
+  <div class="tablewrap"><table class="data"><tr><th>Dato</th><th class="n">Marketplace</th><th class="n">Tienda propia</th></tr>
+  <tr><td>Precio de venta</td><td class="n">${f(c.p)}</td><td class="n">${f(c.p)}</td></tr>
+  <tr><td>Costo del producto y empaque</td><td class="n">${f(c.c)}</td><td class="n">${f(c.c)}</td></tr>
+  <tr><td>Comisión por venta</td><td class="n">${c.m}% + ${f(c.fi)} fijo</td><td class="n">—</td></tr>
+  <tr><td>Cobro de la pasarela de pago</td><td class="n">— (incluido)</td><td class="n">${String(c.g).replace('.',',')}%</td></tr>
+  <tr><td>Despacho que paga Casa Nativa</td><td class="n">${f(c.e1)}</td><td class="n">${f(c.e2)}</td></tr></table></div>
+  <div class="numgrid"><label>¿Cuánto le queda en el marketplace?<span class="unit"><span>$</span><input type="text" inputmode="numeric" id="aM"></span></label>
+  <label>¿Cuánto le queda en la tienda propia?<span class="unit"><span>$</span><input type="text" inputmode="numeric" id="aT"></span></label>
+  <label>¿Qué canal deja más por unidad?<select id="aC"><option value="">Elige…</option><option value="mk">Marketplace</option><option value="tp">Tienda propia</option></select></label></div>
+  <p class="muted">Redondea al peso. Se acepta una diferencia de hasta $5.</p>`},
+ check(c,el){const v=id=>{const x=el.querySelector(id).value.replace(/[$.\s]/g,'').replace(',','.');return x===''?NaN:+x};
+  const aM=v('#aM'),aT=v('#aT'),aC=el.querySelector('#aC').value;if(isNaN(aM)||isNaN(aT)||!aC)return null;
+  const k=calc(c),best=k.mk>k.tp?'mk':'tp',ok=Math.abs(aM-k.mk)<=5&&Math.abs(aT-k.tp)<=5&&aC===best;
+  return {ok,sol:`<ol><li><b>Marketplace:</b> ${f(c.p)} − ${f(c.c)} − comisión ${c.m}% (${f(k.com)}) − cargo fijo ${f(c.fi)} − despacho ${f(c.e1)} = <b>${f(k.mk)}</b></li>
+   <li><b>Tienda propia:</b> ${f(c.p)} − ${f(c.c)} − pasarela ${String(c.g).replace('.',',')}% (${f(k.pas)}) − despacho ${f(c.e2)} = <b>${f(k.tp)}</b></li>
+   <li>Deja más la <b>${best==='mk'?'venta en el marketplace':'tienda propia'}</b>, por ${f(Math.abs(k.mk-k.tp))} por unidad. Recuerda: el marketplace aporta visitas que la tienda propia debe conseguir con su propio esfuerzo.</li></ol>`}},
+ solve(c,el){const k=calc(c);el.querySelector('#aM').value=Math.round(k.mk);el.querySelector('#aT').value=Math.round(k.tp);el.querySelector('#aC').value=k.mk>k.tp?'mk':'tp'},
+ calc(){const ids=['cP','cC','cM','cF','cG','cE1','cE2'],upd=()=>{const g=id=>+document.getElementById(id).value||0;
+   const c={p:g('cP'),c:g('cC'),m:g('cM'),fi:g('cF'),g:g('cG'),e1:g('cE1'),e2:g('cE2')},k=calc(c);
+   $('#cOut').innerHTML=`<div><small>Queda en marketplace</small><b>${f(k.mk)}</b><small>${c.p?Math.round(k.mk/c.p*100):0}% del precio</small></div><div><small>Queda en tienda propia</small><b>${f(k.tp)}</b><small>${c.p?Math.round(k.tp/c.p*100):0}% del precio</small></div><div><small>Diferencia por unidad</small><b>${f(Math.abs(k.mk-k.tp))}</b><small>a favor de ${k.mk>k.tp?'marketplace':'tienda propia'}</small></div>`};
+  ids.forEach(i=>document.getElementById(i).addEventListener('input',upd));upd()}};
+})();
+</script>

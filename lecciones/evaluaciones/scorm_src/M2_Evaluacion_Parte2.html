@@ -1,0 +1,256 @@
+<style>
+.wa{max-width:460px;margin:0 auto;background:var(--surface);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.wa-head{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 12px 6px;text-align:center}
+.wa-name{font-weight:800;font-size:1.15rem}
+.wa-sub{color:var(--muted);font-size:.86rem}
+.wa .hs{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:start;border-bottom:1px solid var(--line);border-radius:10px;padding:10px}
+.wa .hs .ic{font-size:1.25rem;line-height:1.3;text-align:center}
+.wa .hs small{display:block;color:var(--muted);font-size:.8rem;font-weight:600}
+.wa .off{color:var(--bad);font-weight:700}
+.chat{display:grid;gap:8px;padding:12px;max-width:560px;margin:0 auto}
+.bub{border-radius:12px;padding:8px 12px;max-width:85%;font-size:.95rem;border:1px solid var(--line);background:var(--surface)}
+.bub.me{justify-self:end;background:var(--good-soft);border-color:var(--good-line);border-radius:12px 12px 2px 12px}
+.bub.cl{justify-self:start;border-radius:12px 12px 12px 2px}
+.bub small{display:block;color:var(--muted);font-size:.78rem;font-weight:600}
+.sysmsg{justify-self:center;font-size:.82rem;color:var(--muted);background:var(--surface2);border:1px dashed var(--line);border-radius:999px;padding:3px 12px;text-align:center}
+.tl{list-style:none;margin:0;padding:12px 14px;display:grid;gap:10px}
+.tl li{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.94rem}
+.tl li b{color:var(--navy)}
+@media(max-width:520px){.tl li{grid-template-columns:1fr;gap:2px}}
+.st{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:800;white-space:nowrap}
+.st.ap{background:var(--good-soft);color:var(--good);border:1px solid var(--good-line)}
+.st.pe{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber)}
+.st.re{background:var(--bad-soft);color:var(--bad);border:1px solid var(--bad-line)}
+.mock .tablewrap{padding:4px 12px 12px}
+.mock table.data{background:var(--surface)}
+.funnel{display:grid;gap:6px;padding:12px 14px}
+.funnel div{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--mint);border:1px solid var(--mint-line);border-radius:10px;padding:8px 12px;font-size:.94rem}
+.funnel div:nth-child(2){margin:0 6%}.funnel div:nth-child(3){margin:0 12%}
+.nw{white-space:nowrap}
+.funnel b{color:var(--navy);white-space:nowrap}
+.mrow>span:first-child small{display:block;color:var(--muted)}
+</style>
+
+<section id="intro" class="card">
+ <span class="eyebrow">Evaluación del Módulo 2 · Parte 2</span>
+ <h2>Analiza los casos de Casa Nativa y toma decisiones con datos</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/marcela_avatar.jpg" alt="Marcela, dueña de Casa Nativa" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Ya tengo WhatsApp Business, vendo en un marketplace y estoy pensando en abrir mi tienda propia. Ahora necesito decidir con números: cuánto me queda por venta, qué pasarela me conviene, cómo despacho y qué hago cuando algo sale mal.”<br><b>— Marcela, Casa Nativa</b></div>
+ </div>
+ <p>Esta parte evalúa todo el <b>Módulo 2</b>: perfil comercial en WhatsApp Business (Lección 2.1), tienda propia o marketplace (Lección 2.2) y pagos, logística y envíos (Lección 2.3). Cada pregunta es un <b>caso</b> con datos concretos que debes analizar, calcular o priorizar. Las tarifas, comisiones y plazos son <b>datos ficticios del caso</b>; las pantallas son recreaciones simplificadas.</p>
+ <div class="steps"><div><b>10 preguntas</b>Cada una vale 2 puntos: 20 puntos en total. Algunas dan puntaje parcial.</div><div><b>Un solo envío</b>Tu respuesta queda registrada al presionar Responder. La corrección y la retroalimentación se ven al final.</div><div><b>Apruebas con 60%</b>Es decir, 12 de 20 puntos. Ten a mano una calculadora para los cálculos.</div></div>
+ <p class="muted best"></p>
+ <button class="btn" data-start>Comenzar la evaluación →</button>
+</section>
+
+<!-- P11 · num -->
+<section class="etask card" data-id="M2.P11" data-pts="2" data-auto="num" data-title="M2.P11 · Margen por unidad en cada canal" data-lesson="Lección 2.2 · Tienda propia o marketplace: costos por canal">
+ <h2>¿Cuánto le queda a Marcela por cada cojín vendido?</h2>
+ <p>Marcela compara cuánto le queda por cada <b>cojín de lino</b> vendido en cada canal. Para simplificar, no consideres impuestos. El despacho lo paga el comprador en ambos canales.</p>
+ <div class="tablewrap"><table class="data">
+  <tr><th>Concepto</th><th>Marketplace</th><th>Tienda propia</th></tr>
+  <tr><td>Precio de venta</td><td class="n">$24.000</td><td class="n">$24.000</td></tr>
+  <tr><td>Costo de producción</td><td class="n">$9.500</td><td class="n">$9.500</td></tr>
+  <tr><td>Empaque</td><td class="n">$500</td><td class="n">$500</td></tr>
+  <tr><td>Comisión por venta</td><td>15% del precio + cargo fijo de $700</td><td>Pasarela de pago: 3,5% del precio</td></tr>
+ </table></div>
+ <p>Calcula el <b>margen por unidad</b> (precio menos todos los costos por unidad) en cada canal. Escribe montos en pesos, sin decimales; se acepta una diferencia de <span class="nw">±$1</span>.</p>
+ <div class="numgrid">
+  <label>Margen por unidad en el marketplace<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="9700" data-tol="1" data-show="$9.700"></span></label>
+  <label>Margen por unidad en la tienda propia<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="13160" data-tol="1" data-show="$13.160"></span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4><b>Marketplace:</b> $24.000 − $9.500 − $500 − $3.600 (15% de $24.000) − $700 = <b>$9.700</b>. <b>Tienda propia:</b> $24.000 − $9.500 − $500 − $840 (3,5% de $24.000) = <b>$13.160</b>. Errores típicos: olvidar el empaque (da $10.200 y $13.660), olvidar el cargo fijo de $700 del marketplace ($10.400) u omitir la comisión de la pasarela en la tienda ($14.000). Para comparar canales se descuentan <b>todos</b> los costos por unidad; la tienda deja más por venta, pero aún faltan sus costos fijos y de marketing (ver la pregunta siguiente).</div>
+</section>
+
+<!-- P12 · num -->
+<section class="etask card" data-id="M2.P12" data-pts="2" data-auto="num" data-title="M2.P12 · Punto de equilibrio entre canales" data-lesson="Lección 2.2 · Tienda propia o marketplace: decidir con números">
+ <h2>¿Desde cuántas ventas conviene la tienda propia?</h2>
+ <p>Marcela evalúa sumar una tienda propia. Datos del caso (ficticios, sin impuestos):</p>
+ <div class="kpi">
+  <div><small>Precio promedio</small><b>$20.000</b></div>
+  <div><small>Producción + empaque</small><b>$8.000</b></div>
+  <div><small>Ventas actuales</small><b>30 al mes</b></div>
+ </div>
+ <div class="tablewrap"><table class="data">
+  <tr><th>Canal</th><th>Costo por venta</th><th>Costos fijos mensuales</th></tr>
+  <tr><td>Marketplace</td><td>Comisión de 16%</td><td>Sin costo mensual</td></tr>
+  <tr><td>Tienda propia</td><td>Pasarela de 3%</td><td>Plan de la plataforma $30.000 + publicidad $90.000</td></tr>
+ </table></div>
+ <p>Supón que vendería la misma cantidad en cualquiera de los dos canales. Responde en pesos (<span class="nw">±$1</span>) y en número entero de ventas (sin tolerancia).</p>
+ <div class="numgrid">
+  <label>Ganancia mensual con 30 ventas en el marketplace<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="264000" data-tol="1" data-show="$264.000"></span></label>
+  <label>Ganancia mensual con 30 ventas en la tienda propia<span class="hint">Descuenta los costos fijos</span><span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="222000" data-tol="1" data-show="$222.000"></span></label>
+  <label>Ventas mensuales mínimas para que la tienda propia gane más que el marketplace<span class="unit"><input type="text" inputmode="decimal" data-ans="47" data-tol="0" data-show="47 ventas"><span>ventas</span></span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Margen por unidad: marketplace $20.000 − $3.200 − $8.000 = <b>$8.800</b>; tienda $20.000 − $600 − $8.000 = <b>$11.400</b>. Con 30 ventas: marketplace 30 × $8.800 = <b>$264.000</b>; tienda 30 × $11.400 − $120.000 = <b>$222.000</b>, así que hoy conviene el marketplace. La tienda gana $2.600 más por unidad, y necesita cubrir $120.000 de costos fijos: $120.000 ÷ $2.600 ≈ 46,2 → desde <b>47 ventas</b> la supera (con 46 todavía queda $400 abajo). Errores típicos: dividir los costos fijos por el margen del marketplace (≈14) o por el margen de la tienda (≈11): eso solo indica cuándo la tienda cubre sus costos fijos, no cuándo supera al marketplace. El cálculo informa la decisión, junto con el control de marca y de datos de clientes.</div>
+</section>
+
+<!-- P13 · mc -->
+<section class="etask card" data-id="M2.P13" data-pts="2" data-auto="mc" data-title="M2.P13 · Elegir pasarela por costo total y plazos" data-lesson="Lección 2.3 · Pasarelas de pago">
+ <h2>¿Qué pasarela de pago le conviene a Casa Nativa?</h2>
+ <p>Casa Nativa vende unos <b>60 pedidos al mes</b> con un ticket promedio de $30.000 (ventas de <b>$1.800.000</b> al mes). Marcela paga a sus artesanas <b>cada semana</b> y valora su tiempo en <b>$6.000 por hora</b>. Estas son las condiciones que le ofrecen (datos ficticios del caso):</p>
+ <div class="mock"><div class="bar">💳 Comparador de pasarelas de pago · Recreación simplificada</div>
+  <div class="tablewrap"><table class="data">
+   <tr><th></th><th>Pasarela 1</th><th>Pasarela 2</th><th>Pasarela 3</th></tr>
+   <tr><td>Comisión</td><td>2,5%</td><td>3,2%</td><td>2,9% + $150 por transacción</td></tr>
+   <tr><td>Integración con la tienda</td><td>No: confirmación manual (6 horas al mes de conciliación)</td><td>Sí: confirma pedidos automáticamente</td><td>Sí: confirma pedidos automáticamente</td></tr>
+   <tr><td>Plazo de abono</td><td>15 días hábiles</td><td>Día hábil siguiente</td><td>30 días</td></tr>
+  </table></div></div>
+ <p>Considerando el <b>costo total mensual</b> (comisiones, cargos y horas de conciliación) y la <b>situación de caja</b> de Marcela, ¿qué pasarela conviene?</p>
+ <div class="opts">
+  <label class="opt"><input type="radio" name="p13"> La Pasarela 1, porque tiene la comisión más baja: $45.000 al mes en total.</label>
+  <label class="opt" data-ok><input type="radio" name="p13"> La Pasarela 2: su costo total es $57.600 al mes y abona al día hábil siguiente.</label>
+  <label class="opt"><input type="radio" name="p13"> La Pasarela 3, porque su costo total de $52.200 al mes es el menor de las tres.</label>
+  <label class="opt"><input type="radio" name="p13"> La Pasarela 3, porque su costo total de $61.200 es menor que el de las otras dos.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Costo total mensual: <b>Pasarela 1</b> = 2,5% × $1.800.000 = $45.000 + 6 h × $6.000 = $36.000 → <b>$81.000</b>, y abona en 15 días hábiles. <b>Pasarela 2</b> = 3,2% × $1.800.000 = <b>$57.600</b>, sin trabajo manual y con abono al día hábil siguiente. <b>Pasarela 3</b> = 2,9% × $1.800.000 = $52.200 + 60 × $150 = $9.000 → <b>$61.200</b>, y abona a 30 días. La Pasarela 2 es la más barata en costo total y su abono rápido protege la caja para pagar cada semana. Errores típicos: mirar solo la comisión (Pasarela 1) u olvidar el cargo fijo por transacción (los $52.200 de la Pasarela 3). La comisión más baja no siempre es la opción más barata.</div>
+</section>
+
+<!-- P14 · hot -->
+<section class="etask card" data-id="M2.P14" data-pts="2" data-auto="hot" data-title="M2.P14 · Diagnóstico del perfil de WhatsApp Business" data-lesson="Lección 2.1 · Identidad, información y acción">
+ <h2>Diagnostica el perfil de WhatsApp Business de Casa Nativa</h2>
+ <p>Métricas de la última semana del canal:</p>
+ <div class="kpi">
+  <div><small>Conversaciones nuevas</small><b>64</b></div>
+  <div><small>Preguntaban horario, pagos, despacho o precios</small><b>41</b></div>
+  <div><small>Llegaron entre 21:00 y 9:00</small><b>9</b></div>
+  <div><small>Sin respuesta antes de 24 horas</small><b>4</b></div>
+ </div>
+ <p>Marcela tiene <b>dos horas</b> esta semana para mejorar el canal. Haz clic en <b>cada elemento del perfil que explica los problemas de las métricas</b> y debe corregirse primero (pueden ser varios). Luego presiona Responder.</p>
+ <div class="mock"><div class="bar">📱 Perfil de empresa · Recreación simplificada</div>
+  <div class="wa">
+   <div class="wa-head"><div class="wa-name">Marce 🌸</div><div class="wa-sub">Cuenta de empresa · +56 9 0000 0000</div></div>
+   <button class="hs"><span class="ic">🖼️</span><span><small>Foto de perfil</small>Logo de Casa Nativa sobre fondo claro</span></button>
+   <button class="hs" data-ok><span class="ic">📝</span><span><small>Nombre y descripción</small>“Marce 🌸” · “Lo mejor para ti ✨✨”</span></button>
+   <button class="hs"><span class="ic">🏷️</span><span><small>Categoría</small>Artículos para el hogar</span></button>
+   <button class="hs" data-ok><span class="ic">🕘</span><span><small>Horario y cobertura de despacho</small><span class="off">No informados</span></span></button>
+   <button class="hs" data-ok><span class="ic">🛍️</span><span><small>Catálogo</small>3 productos sin precio · actualizado hace 8 meses · 2 agotados</span></button>
+   <button class="hs" data-ok><span class="ic">🌙</span><span><small>Mensaje de ausencia</small><span class="off">Desactivado</span></span></button>
+   <button class="hs" data-ok><span class="ic">⚡</span><span><small>Respuestas rápidas y etiquetas</small><span class="off">No se usan</span></span></button>
+   <button class="hs"><span class="ic">✉️</span><span><small>Correo</small>contacto@casanativa.cl</span></button>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>41 de 64 conversaciones (64%, casi dos de cada tres) eran preguntas básicas que el perfil debería responder solo: por eso fallan el <b>nombre y la descripción</b> (no dicen qué vende Casa Nativa), el <b>horario y la cobertura</b> sin informar, el <b>catálogo</b> sin precios y desactualizado, y la falta de <b>respuestas rápidas y etiquetas</b> para las preguntas que se repiten. Las 9 consultas nocturnas (4 sin respuesta en 24 horas) se resuelven activando el <b>mensaje de ausencia</b>, sin que Marcela tenga que responder de noche. La foto (logo), la categoría y el correo están bien. Error típico: pensar que el problema es atraer más tráfico o cambiar la imagen; más conversaciones hacia un perfil que no informa solo multiplican las preguntas repetidas. Cada elemento correcto suma; marcar uno que está bien descuenta.</div>
+</section>
+
+<!-- P15 · multi -->
+<section class="etask card" data-id="M2.P15" data-pts="2" data-auto="multi" data-title="M2.P15 · Incidente logístico y comunicación" data-lesson="Lección 2.3 · Seguimiento y comunicación de envíos">
+ <h2>El pedido #214 no llegó el día prometido</h2>
+ <p>La tienda de Casa Nativa prometía: <b>“llega el miércoles”</b>. Este es el historial del pedido:</p>
+ <div class="mock"><div class="bar">📦 Panel de pedidos · Pedido #214 · Recreación simplificada</div>
+  <ol class="tl">
+   <li><b>Lunes 11:40</b><span>Pago aprobado <span class="st ap">✔ Pagado</span> · confirmación automática enviada al cliente.</span></li>
+   <li><b>Martes 16:00</b><span>Pedido entregado al transportista. <i>No se envió código de seguimiento al cliente.</i></span></li>
+   <li><b>Miércoles 10:00</b><span>El transportista avisa a Marcela que el pedido se atrasará <b>48 horas</b> por un problema en la ruta. <i>Nadie le informa al cliente.</i></span></li>
+   <li><b>Jueves 9:00</b><span>El cliente escribe: “Me dijeron que llegaba ayer. ¿Dónde está mi pedido?”</span></li>
+  </ol></div>
+ <p>Marca <b>todas</b> las afirmaciones correctas sobre dónde falló el proceso y qué debe hacer Marcela ahora.</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="checkbox"> Falló el despacho del martes: debía enviarse al cliente el código de seguimiento.</label>
+  <label class="opt" data-ok><input type="checkbox"> Falló la comunicación del miércoles: el atraso ya se sabía y no se avisó.</label>
+  <label class="opt"><input type="checkbox"> Falló la confirmación del pago del lunes, que debió revisarse a mano.</label>
+  <label class="opt" data-ok><input type="checkbox"> Ahora: disculparse y dar una nueva fecha concreta de entrega, el viernes.</label>
+  <label class="opt" data-ok><input type="checkbox"> Ahora: enviar el código de seguimiento y ofrecer alternativas si ya no le sirve.</label>
+  <label class="opt"><input type="checkbox"> Ahora: darle el teléfono del transportista para que reclame directamente allí.</label>
+  <label class="opt"><input type="checkbox"> Ahora: esperar a que el pedido se entregue y recién entonces responderle.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>El pago y la preparación funcionaron: el lunes se aprobó y confirmó, y el martes el pedido salió a tiempo. Fallaron dos momentos de comunicación: el <b>martes</b> no se envió el código de seguimiento y el <b>miércoles</b> el atraso conocido no se informó. Ahora corresponde una respuesta proactiva: disculpa, <b>nueva fecha concreta</b> (la entrega era el miércoles y se atrasa 48 horas → <b>viernes</b>), el código de seguimiento y opciones (por ejemplo, cambio o devolución si ya no le sirve). Para el cliente el responsable es Casa Nativa: derivarlo al transportista lo deja solo con el problema, y esperar convierte un atraso tolerable en desconfianza. Cada acierto suma y cada marca errónea descuenta.</div>
+</section>
+
+<!-- P16 · num -->
+<section class="etask card" data-id="M2.P16" data-pts="2" data-auto="num" data-title="M2.P16 · Precio con comisión del marketplace" data-lesson="Lección 2.2 · Comisiones y precio por canal">
+ <h2>¿A qué precio debe publicar el jarrón en el marketplace?</h2>
+ <p>Marcela quiere que cada jarrón vendido en el marketplace le deje el mismo margen que en su tienda: <b>$10.000 por unidad</b>.</p>
+ <div class="kpi">
+  <div><small>Costo del jarrón (producción y empaque)</small><b>$12.000</b></div>
+  <div><small>Comisión del marketplace</small><b>15% del precio + $600</b></div>
+  <div><small>Margen buscado por unidad</small><b>$10.000</b></div>
+ </div>
+ <p class="muted">La comisión es un dato ficticio del caso y se cobra sobre el precio de venta final. Para simplificar, no consideres impuestos ni despacho.</p>
+ <div class="numgrid">
+  <label>Precio de venta mínimo<span class="hint">En pesos, sin decimales. Se acepta entre $26.588 y $26.600.</span><span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="26594" data-tol="6" data-show="$26.589 (≈ $26.590)"></span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4>La comisión se calcula sobre el precio final P: P − 0,15 × P − $600 − $12.000 = $10.000 → 0,85 × P = $22.600 → P = $22.600 ÷ 0,85 ≈ <b>$26.588,2</b>, es decir, unos <b>$26.590</b>. Comprobación: 15% de $26.590 = $3.988,5; $26.590 − $3.988,5 − $600 − $12.000 ≈ $10.001. Errores típicos: sumar 15% encima de $22.600 ($25.990, le quedarían unos $9.490), olvidar el cargo fijo ($25.300) o publicar solo costo + margen + cargo ($22.600, le quedarían $6.610). Cuando la comisión es un porcentaje del precio final, se divide (costos + margen) por (1 − comisión).</div>
+</section>
+
+<!-- P17 · num -->
+<section class="etask card" data-id="M2.P17" data-pts="2" data-auto="num" data-title="M2.P17 · Elegir opción logística por costo total" data-lesson="Lección 2.3 · Logística y envíos">
+ <h2>¿Mensajería local o courier?</h2>
+ <p>Casa Nativa despacha unos <b>40 pedidos al mes</b> en la Región Metropolitana, principalmente jarrones de cerámica con un valor promedio de <b>$35.000</b>. El mes pasado, con la mensajería local, se quebraron <b>2 jarrones</b> que Marcela tuvo que reponer. Opciones (datos ficticios del caso):</p>
+ <div class="tablewrap"><table class="data">
+  <tr><th></th><th>Mensajería local (actual)</th><th>Courier</th></tr>
+  <tr><td>Costo por envío</td><td class="n">$3.200</td><td class="n">$3.900</td></tr>
+  <tr><td>Plazo</td><td>24 horas</td><td>48 horas</td></tr>
+  <tr><td>Seguimiento</td><td>No</td><td>Sí, con código en línea</td></tr>
+  <tr><td>Cobertura por daño</td><td>No</td><td>Hasta $50.000 por envío</td></tr>
+ </table></div>
+ <p>Supón que el próximo mes se repiten los 2 quiebres. Calcula el <b>costo total mensual</b> de cada opción (tarifas + reposiciones que paga Marcela) y cuánto ahorraría con la más conveniente. Montos en pesos (<span class="nw">±$1</span>).</p>
+ <div class="numgrid">
+  <label>Costo total mensual con mensajería local<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="198000" data-tol="1" data-show="$198.000"></span></label>
+  <label>Costo total mensual con courier<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="156000" data-tol="1" data-show="$156.000"></span></label>
+  <label>Ahorro mensual de la opción más conveniente<span class="unit"><span>$</span><input type="text" inputmode="decimal" data-ans="42000" data-tol="1" data-show="$42.000"></span></label>
+ </div>
+ <div class="why"><h4>Por qué</h4><b>Mensajería local:</b> 40 × $3.200 = $128.000 + 2 reposiciones × $35.000 = $70.000 → <b>$198.000</b>. <b>Courier:</b> 40 × $3.900 = <b>$156.000</b>, con los daños cubiertos (cada jarrón vale $35.000, menos que el tope de $50.000). El courier cuesta $28.000 más en tarifas, pero evita perder $70.000: ahorra <b>$42.000</b> al mes y además suma seguimiento, que reduce las consultas de “¿dónde está mi pedido?”. Error típico: comparar solo la tarifa por envío. En logística se compara el costo total (tarifa, pérdidas y reposiciones) y la experiencia del cliente (plazo y seguimiento); el plazo de 48 horas debe informarse con claridad.</div>
+</section>
+
+<!-- P18 · match -->
+<section class="etask card" data-id="M2.P18" data-pts="2" data-auto="match" data-title="M2.P18 · Estados de pago y preparación" data-lesson="Lección 2.3 · Pago confirmado">
+ <h2>¿Qué hace la ayudante con cada pedido?</h2>
+ <p>Es martes a las 10:00. La ayudante quiere preparar los tres pedidos para el despacho de la tarde. Elige la instrucción correcta para cada uno.</p>
+ <div class="mock"><div class="bar">🧾 Panel de pedidos de la tienda · Recreación simplificada</div>
+  <div style="padding:6px 14px">
+   <div class="mrow"><span><b>#301</b> · $29.990 · <span class="st ap">✔ Aprobado</span><small>Datos completos</small></span><select data-ans="prep"><option value="prep">Preparar para despacho hoy</option><option value="ver">Verificar el abono primero</option><option value="rei">Pedir que reintente el pago</option><option value="anu">Anular sin contactar</option></select><span class="mk"></span></div>
+   <div class="mrow"><span><b>#302</b> · $45.980 · <span class="st pe">⏳ Pendiente (transferencia)</span><small>La clienta envió un pantallazo; el movimiento aún no aparece asociado al pedido</small></span><select data-ans="ver"><option value="prep">Preparar para despacho hoy</option><option value="ver">Verificar el abono primero</option><option value="rei">Pedir que reintente el pago</option><option value="anu">Anular sin contactar</option></select><span class="mk"></span></div>
+   <div class="mrow"><span><b>#303</b> · $18.990 · <span class="st re">✘ Rechazado</span><small>Tarjeta rechazada; el cliente no ha sido contactado</small></span><select data-ans="rei"><option value="prep">Preparar para despacho hoy</option><option value="ver">Verificar el abono primero</option><option value="rei">Pedir que reintente el pago</option><option value="anu">Anular sin contactar</option></select><span class="mk"></span></div>
+  </div></div>
+ <div class="why"><h4>Por qué</h4>Un pago puede quedar <b>aprobado</b>, <b>pendiente</b> o <b>rechazado</b>, y cada estado pide una acción distinta. El <b>#301</b> está aprobado y con datos completos: avanza a preparación. En el <b>#302</b> un pantallazo no es una confirmación válida: se revisa el registro de la cuenta y se asocia el abono al pedido antes de prepararlo (anularlo castigaría a una clienta que probablemente pagó). El <b>#303</b> fue rechazado: hay que avisar al cliente para que reintente el pago; anular sin contactarlo pierde una venta que quizá quiere completar. Error típico: preparar todo porque “los clientes ya mostraron intención de compra”, lo que arriesga productos y dinero.</div>
+</section>
+
+<!-- P19 · mc -->
+<section class="etask card" data-id="M2.P19" data-pts="2" data-auto="mc" data-title="M2.P19 · Dependencia de un marketplace" data-lesson="Lección 2.2 · Decidir por etapas">
+ <h2>El marketplace sube su comisión</h2>
+ <p>Situación de Casa Nativa después de un año vendiendo <b>solo</b> en un marketplace (datos ficticios del caso):</p>
+ <div class="mock"><div class="bar">🏪 Panel de vendedor del marketplace · Recreación simplificada</div>
+  <div class="kpi" style="padding:0 12px 12px">
+   <div><small>Ventas del mes</small><b>$3.000.000</b></div>
+   <div><small>Comisión desde el próximo mes</small><b>13% → 17%</b></div>
+   <div><small>Compradores que buscan “Casa Nativa”</small><b>35%</b></div>
+   <div><small>Correo de los compradores</small><b>No disponible</b></div>
+  </div></div>
+ <p>Además, Marcela tiene <b>4.800 seguidores activos</b> en Instagram. ¿Qué decisión es más coherente con los datos?</p>
+ <div class="opts">
+  <label class="opt" data-ok><input type="radio" name="p19"> Sumar una tienda propia sin dejar el marketplace: el alza le cuesta $120.000 al mes y su marca ya es muy buscada.</label>
+  <label class="opt"><input type="radio" name="p19"> Cerrar el marketplace este mismo mes, porque con el alza las comisiones pasarán a costarle $510.000 adicionales al mes.</label>
+  <label class="opt"><input type="radio" name="p19"> Mantener solo el marketplace, porque el alza de la comisión representa apenas unos $12.000 adicionales al mes.</label>
+  <label class="opt"><input type="radio" name="p19"> Abrir cuentas en dos marketplaces más para compensar los $120.000 del alza, sin invertir todavía en su propia marca.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>El alza es de 4 puntos porcentuales: 4% × $3.000.000 = <b>$120.000 al mes</b> (la comisión total pasa de $390.000 a $510.000). Que el 35% busque la marca por su nombre y que el marketplace no comparta los correos justifican sumar una tienda propia para ganar control de marca y de datos, <b>sin perder</b> las ventas que hoy funcionan (estrategia multicanal). Errores típicos: confundir la comisión total ($510.000) con el aumento, calcular mal el alza ($12.000), cerrar de golpe un canal que vende o sumar más marketplaces, que no dan acceso a los datos de los clientes ni control de la marca.</div>
+</section>
+
+<!-- P20 · mc -->
+<section class="etask card" data-id="M2.P20" data-pts="2" data-auto="mc" data-title="M2.P20 · Embudo comercial: dónde se pierden las ventas" data-lesson="Lección 2.1 · Canal comercial y embudo">
+ <h2>¿Dónde se pierden las ventas que llegan desde Instagram?</h2>
+ <p>Conversación típica que llega desde Instagram a WhatsApp Business:</p>
+ <div class="mock"><div class="bar">💬 WhatsApp Business · Chat con cliente · Recreación simplificada</div>
+  <div class="chat">
+   <div class="bub cl"><small>Cliente · lunes 20:47</small>Hola, vi el cojín de lino en su Instagram, ¿cuánto sale?</div>
+   <div class="bub me"><small>Casa Nativa · martes 12:30</small>Hola! Sale $19.990.</div>
+   <div class="bub cl"><small>Cliente · martes 12:41</small>¿Hacen envíos a Concepción? ¿Cómo pago?</div>
+   <div class="bub me"><small>Casa Nativa · martes 18:10</small>Sí, por transferencia. Te mando los datos.</div>
+   <div class="sysmsg">El cliente no vuelve a responder</div>
+  </div></div>
+ <p>Resultados del mes de las conversaciones que llegan desde Instagram:</p>
+ <div class="funnel">
+  <div><span>Consultas iniciadas</span><b>50</b></div>
+  <div><span>Recibieron precio, envío y pago</span><b>14</b></div>
+  <div><span>Compraron</span><b>6</b></div>
+ </div>
+ <p>Según el embudo <b>atraer → informar → orientar → responder → cerrar</b>, ¿dónde está la principal pérdida y qué mejora corresponde?</p>
+ <div class="opts">
+  <label class="opt"><input type="radio" name="p20"> En atraer: con solo 50 consultas al mes, Marcela necesita publicar más para generar más conversaciones.</label>
+  <label class="opt"><input type="radio" name="p20"> En cerrar: de 14 personas informadas solo compran 6, así que conviene ofrecer un 20% de descuento.</label>
+  <label class="opt" data-ok><input type="radio" name="p20"> En informar y responder: 36 de 50 no reciben datos; catálogo, respuestas rápidas y mensaje de ausencia.</label>
+  <label class="opt"><input type="radio" name="p20"> En cerrar: conviene sumar más medios de pago, aunque no estén integrados, para que el cliente elija.</label>
+ </div>
+ <div class="why"><h4>Por qué</h4>Solo 14 de 50 (28%) recibieron precio y condiciones: <b>36 de 50 (72%)</b> se pierden antes de informarse. El chat muestra por qué: la primera respuesta tardó casi 16 horas (de 20:47 a 12:30), la segunda más de 5 horas, y nunca se informó el costo ni el plazo del envío. En cambio, de los 14 informados compraron 6 (43%), la etapa que mejor convierte. La mejora es informar y responder mejor: catálogo con precios, respuestas rápidas con envío y pago, y mensaje de ausencia para la noche. Errores típicos: atraer más tráfico (agrava la saturación), dar descuentos (reduce margen sin tocar la mayor fuga) o sumar medios de pago no integrados (más trabajo manual). Se mide cada etapa y se ataca la mayor fuga.</div>
+</section>

@@ -1,0 +1,230 @@
+<style>.tabpane.wideshot{grid-template-columns:1.6fr 1fr}@media(max-width:860px){.tabpane.wideshot{grid-template-columns:1fr}}</style>
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa las tres notas del caso y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 4.1 · Caso de decisión</span>
+      <h1 class="reveal">De contactos dispersos a clientes que vuelven</h1>
+      <p class="lead reveal">Un CRM no es solo una base de datos: es una forma de ordenar la relación con tus clientes. <strong>Haz clic en cada nota</strong> para ver cómo guarda Marcela hoy su información.</p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">💬</span><span><span class="from">Nota 1 · WhatsApp</span><span class="preview">Contactos en los chats…</span><span class="full">Muchos clientes solo existen como chats de WhatsApp. Para saber qué compró alguien, Marcela debe buscar entre cientos de mensajes.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">📒</span><span><span class="from">Nota 2 · Planilla y libreta</span><span class="preview">Datos incompletos…</span><span class="full">Algunos clientes están en una planilla desactualizada y otros, anotados en una libreta del taller.</span></span><span class="badge">Dato</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">❓</span><span><span class="from">Nota 3 · Seguimiento</span><span class="preview">¿Cuándo volver a escribir?…</span><span class="full">Sabe que varias personas ya compraron antes, pero no tiene claro qué adquirieron ni cuándo convendría volver a contactarlas.</span></span><span class="badge">Dato</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela rodeada de notas, libreta y celular buscando los datos de una clienta" src="img/m11_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Cuál es el principal problema?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>No existe un registro central y útil de clientes.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Publica poco en redes sociales.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Sus precios son muy altos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: más contactos, el mismo desorden.</strong> <span class="fb-body">Publicar más puede atraer nuevos clientes, pero no resuelve la falta de organización de la información de quienes ya compraron.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: un diagnóstico equivocado.</strong> <span class="fb-body">El problema descrito no es de precios, sino de gestión de clientes: no sabe quién compró ni cuándo volver a contactar.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La información dispersa dificulta hacer seguimiento, segmentar y construir relaciones de largo plazo. En esta lección aprenderás a ordenarla.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>De contactos dispersos a clientes que vuelven</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+
+<!-- 3 · QUÉ APORTA UN CRM -->
+<section class="slide" data-title="Qué aporta un CRM" data-audio="p03" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow">Concepto</span>
+  <h2>¿Qué aporta un CRM?</h2>
+  <p>CRM significa gestión de la relación con clientes. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Tarjetas revisadas <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🗂️</div><strong>Centraliza</strong><span>¿Dónde está todo?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Un solo lugar</strong><span>Reúne los datos relevantes de cada cliente, sin buscar en chats ni libretas.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧾</div><strong>Da contexto</strong><span>¿Qué pasó antes?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Historial visible</strong><span>Compras, cotizaciones, consultas y problemas anteriores, a la vista.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">✅</div><strong>Facilita la acción</strong><span>¿Qué hago ahora?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Próximos pasos</strong><span>Tareas, segmentos y oportunidades de fidelización con fecha.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">💡</div><strong>Idea clave</strong><span>¿Más datos es mejor?</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Datos con propósito</strong><span>Un CRM útil no acumula por acumular: registra lo que ayuda a decidir.</span></div></div></button>
+  </div>
+</section>
+
+<!-- 4 · QUÉ REGISTRAR -->
+<section class="slide" data-title="Qué registrar" data-audio="p04" data-gate="cls" data-gate-msg="Clasifica los ocho datos.">
+  <span class="eyebrow amber">Registro</span>
+  <h2>¿Qué información conviene guardar?</h2>
+  <p><strong>Selecciona un dato</strong> y luego la columna que corresponde. También puedes arrastrarlo.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Datos clasificados <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="u" data-fb="Es lo básico para mantener la relación." data-no="¿Puedes contactar a alguien sin esto?">Nombre y teléfono o correo</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="Saber dónde prefiere hablar mejora la respuesta." data-no="¿Ayuda a contactar mejor al cliente?">Canal preferido de contacto</button>
+      <button class="cardx" type="button" data-cat="n" data-fb="No aporta a la relación comercial y es un dato sensible." data-no="¿Necesitas saber esto para venderle decoración?">Estado de salud del cliente</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="El historial permite personalizar y no repetir preguntas." data-no="¿Ayuda a saber qué ofrecer después?">Compras y consultas anteriores</button>
+      <button class="cardx" type="button" data-cat="n" data-fb="Guardar todo el chat no es necesario: registra lo relevante." data-no="¿Hace falta guardar cada mensaje?">Copia completa de todos sus chats</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="Los intereses permiten enviar novedades pertinentes." data-no="¿Sirve para personalizar futuras acciones?">Productos o temas de interés</button>
+      <button class="cardx" type="button" data-cat="n" data-fb="Pedir datos que no usas genera desconfianza y riesgo." data-no="¿Para qué usarías este dato?">Número de cuenta bancaria del cliente</button>
+      <button class="cardx" type="button" data-cat="u" data-fb="La próxima acción convierte el registro en seguimiento." data-no="¿Qué te recuerda contactar a tiempo?">Próxima acción y fecha</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="u" role="button" tabindex="0"><h3>✅ Útil para la relación</h3></div>
+      <div class="bin" data-cat="n" role="button" tabindex="0"><h3>🚫 Mejor no registrar</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Cuida los datos personales:</strong> pide consentimiento para enviar novedades, guarda solo lo necesario y elimina los datos si la persona lo pide. Chile cuenta con una nueva ley de protección de datos personales (Ley 21.719).</div>
+</section>
+
+<!-- 5 · ASÍ SE VE -->
+<section class="slide" data-title="Así se ve un CRM" data-audio="p05" data-gate="tabs" data-gate-msg="Revisa las cuatro pestañas.">
+  <span class="eyebrow violet">Herramientas</span>
+  <h2>Así se ve un registro ordenado</h2>
+  <p>Capturas recreadas de un CRM y de una planilla. <strong>Revisa las cuatro pestañas.</strong></p>
+  <div class="task" id="tbTask">Vistas revisadas <span class="tick" id="tbTick">0 / 4</span></div>
+  <div class="tabset" data-gate="tabs" data-tick="tbTick" data-task="tbTask">
+    <div class="tabs" role="tablist"><button class="tab" type="button" role="tab">Ficha del cliente</button><button class="tab" type="button" role="tab">Segmentos</button><button class="tab" type="button" role="tab">Próximas acciones</button><button class="tab" type="button" role="tab">Empieza con una planilla</button></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Ficha de cliente en un CRM con datos, historial de compras y próxima acción" src="img/crm_ficha.jpg"/></div><div><h3 style="margin-top:0">Todo sobre una persona, en un solo lugar</h3><p>Datos de contacto, canal preferido, consentimiento, historial de compras y consultas, intereses y <b>próxima acción con fecha</b>.</p></div></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Lista de contactos de un CRM filtrada por segmentos" src="img/crm_lista.jpg"/></div><div><h3 style="margin-top:0">Grupos que necesitan mensajes distintos</h3><p>Nuevos, recurrentes, inactivos e interesados sin compra. Un filtro muestra a quién escribir y con qué propósito.</p></div></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Lista de tareas de seguimiento en un CRM" src="img/crm_tareas.jpg"/></div><div><h3 style="margin-top:0">El seguimiento no depende de la memoria</h3><p>Cada tarea tiene contacto, canal y fecha. Al completarla, se <b>registra el resultado</b> para la próxima interacción.</p></div></div>
+    <div class="tabpane wideshot"><div class="photo-frame wide"><img alt="Planilla compartida con columnas de clientes, segmento y próxima acción" src="img/crm_planilla.jpg"/></div><div><h3 style="margin-top:0">No necesitas un sistema complejo</h3><p>Una planilla compartida (Google Sheets o Excel) con las mismas columnas es un buen comienzo. Muchos CRM también tienen versiones gratuitas. Lo importante es <b>mantenerla actualizada</b>.</p></div></div>
+  </div>
+</section>
+
+<!-- 6 · SEGMENTOS -->
+<section class="slide" data-title="Segmentación" data-audio="p06" data-gate="pairs" data-gate-msg="Une los cuatro segmentos con su acción.">
+  <span class="eyebrow">Segmentación</span>
+  <h2>No todos los clientes necesitan el mismo mensaje</h2>
+  <p><strong>Selecciona un segmento</strong> a la izquierda y luego la acción más pertinente.</p>
+  <div class="task" id="prTask">Parejas formadas <span class="tick" id="prTick">0 / 4</span></div>
+  <div class="pairs" data-gate="pairs" data-tick="prTick" data-task="prTask" data-fb="prFb" data-no="Piensa en qué etapa de la relación está esa persona y qué necesita ahora.">
+    <div>
+      <button class="pl" type="button" data-k="new"><b>Cliente nuevo</b> · primera compra reciente</button>
+      <button class="pl" type="button" data-k="rec"><b>Cliente recurrente</b> · ha comprado varias veces</button>
+      <button class="pl" type="button" data-k="ina"><b>Cliente inactivo</b> · no compra hace meses</button>
+      <button class="pl" type="button" data-k="int"><b>Interesado sin compra</b> · cotizó o consultó</button>
+    </div>
+    <div>
+      <button class="pr" type="button" data-k="ina" data-fb="Un contenido o una novedad pertinente puede reactivar la relación.">Reactivar con una novedad relacionada con lo que compró</button>
+      <button class="pr" type="button" data-k="new" data-fb="Confirmar la experiencia genera confianza y facilita la segunda compra.">Preguntar cómo le fue y facilitar la próxima compra</button>
+      <button class="pr" type="button" data-k="int" data-fb="Un seguimiento útil, sin presionar, resuelve la duda que lo frenó.">Hacer seguimiento a la cotización sin presionar</button>
+      <button class="pr" type="button" data-k="rec" data-fb="Reconocer su preferencia fortalece la relación.">Reconocer su preferencia y avisarle primero de lo nuevo</button>
+    </div>
+  </div>
+  <div id="prFb"></div>
+</section>
+
+<!-- 7 · CICLO DE FIDELIZACIÓN -->
+<section class="slide" data-title="Ciclo de fidelización" data-audio="p07" data-gate="ord" data-gate-msg="Ordena los cinco pasos y presiona Comprobar.">
+  <span class="eyebrow">Fidelización</span>
+  <div class="grid-2">
+    <div>
+      <h2>Fidelizar no es bombardear con promociones</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar los pasos de primero a último y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Registrar, segmentar, hacer seguimiento, aportar valor y aprender: cada contacto mejora el siguiente." data-no="Pista: no puedes segmentar sin datos, ni aprender de un contacto que aún no hiciste.">
+        <ul class="order">
+          <li data-p="3"><b>Haz seguimiento:</b> define una próxima acción concreta.</li>
+          <li data-p="5"><b>Aprende:</b> registra el resultado para mejorar la siguiente interacción.</li>
+          <li data-p="1"><b>Registra:</b> conserva la información mínima útil y actualizada.</li>
+          <li data-p="4"><b>Aporta valor:</b> contacta con información pertinente, no solo descuentos.</li>
+          <li data-p="2"><b>Segmenta:</b> agrupa según comportamiento o necesidad.</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Marcela registra datos de clientes en su portátil con calma" src="img/m11_registro.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>Fidelizar a una clienta que ya conoce la marca</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/marcela_avatar.jpg" alt=""/> Marcela · Casa Nativa</div>
+      <div class="bubble"><span class="who">Marcela</span>Valentina compró tres veces productos para la pieza de su hija. Hace dos meses que no compra y acaba de llegar la colección infantil de primavera. ¿Qué le envío?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Clienta en la pieza infantil que está decorando lee un mensaje en su celular" src="img/m11_clienta.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué acción es más pertinente?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviar el mismo mensaje promocional que recibe toda la base.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Enviar la novedad de decoración infantil con un mensaje personalizado.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>No volver a contactarla porque ya compró.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un mensaje más entre muchos</div><div class="branch-body"><div><p>Valentina recibe una promoción de velas que no le interesa. Un mensaje genérico aprovecha poco lo que ya sabes de ella.</p></div><div><p class="hint">Usa su historial.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una relación que se enfría</div><div class="branch-body"><div><p>No contactarla desperdicia una relación comercial que ya existe. Otra tienda le ofrecerá lo que busca.</p></div><div><p class="hint">Volver a contactar con valor no es molestar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>“¡Hola, Valentina! Llegó la colección infantil de primavera en tonos pastel; pensé en la pieza de tu hija 🌿”. El contacto usa información relevante y aporta valor.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Al día siguiente:</strong> Valentina responde que le encantó la lámpara, pero que prefiere esperar a fin de mes para comprarla.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debería registrar Marcela?</h3>
+    <div class="options" data-choice="caso2c" data-correct="A" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>El resultado (interesada en la lámpara) y una próxima acción: escribirle a fin de mes.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Nada: si quiere comprar, volverá a escribir.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Agregarla a una lista que recibe promociones todos los días.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la oportunidad se olvida</div><div class="branch-body"><div><p>Fin de mes llega y nadie recuerda la conversación. Sin registro, el seguimiento depende de la memoria.</p></div><div><p class="hint">Registra el resultado.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: de clienta fiel a mensajes bloqueados</div><div class="branch-body"><div><p>Recibir promociones diarias cansa. Fidelizar no es bombardear: Valentina deja de leer los mensajes.</p></div><div><p class="hint">Un contacto pertinente, en el momento justo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Con el resultado y la próxima acción registrados, Marcela escribe a fin de mes con la lámpara reservada. La información se convierte en una acción relevante.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Diseña tu registro mínimo de clientes</h2>
+  <div class="story">Una tienda de tu rubro quiere ordenar sus clientes. Su dueño propone una planilla con <b>25 columnas</b>, incluida la fecha de cumpleaños, el RUT y una copia de cada conversación. No incluye columnas para la <b>última compra</b> ni para la <b>próxima acción</b>, y planea enviar la misma promoción semanal a todos.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> el registro acumula datos que no usará y omite los que sí ayudan a vender. Un registro mínimo útil tiene: <b>nombre y contacto</b>, <b>canal preferido</b>, <b>consentimiento</b>, <b>última compra y productos</b>, <b>intereses</b>, <b>segmento</b> y <b>próxima acción con fecha</b>. En vez de una promoción igual para todos, conviene enviar mensajes distintos a nuevos, recurrentes, inactivos e interesados. Para tu negocio define: los campos mínimos, los segmentos que te servirían, un dato que hoy no registras, la próxima acción que empezarás a registrar y una acción de fidelización para probar.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 4.1</h2>
+    <p>Ya puedes definir qué información registrar, segmentar a tus clientes y planificar acciones de seguimiento que aporten valor.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar. En la <b>Lección 4.2</b> aprenderás a usar tus datos para decidir.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="4">Repasar el CRM</button><button class="small-btn primary" type="button" data-goto="5">Repasar los segmentos</button></div>
+    <div class="sources">Imágenes generadas con IA y capturas recreadas con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>

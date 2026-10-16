@@ -1,0 +1,57 @@
+/* ---- Agregados Módulo 1 PYMES: video compacto ampliable, temas clave, utilidades ---- */
+.vwrap{display:grid;gap:14px;max-width:560px}
+.player.compact{max-width:560px;width:100%}
+.player.compact .stage{aspect-ratio:560/300;padding:0;place-items:stretch}
+.player.compact .stage .scene{max-width:none;height:100%;position:relative}
+.v-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.72);animation:kb 16s ease-out both}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12) translate(-1.5%,-1%)}}
+.v-title{position:absolute;left:14px;right:14px;bottom:12px;color:#fff;font-weight:900;font-size:clamp(1.05rem,2.6vw,1.45rem);line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.player.compact .stage .tag{z-index:2;color:#eaf7f6;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.player.compact .caption{min-height:3.6em;font-size:.95rem}
+.player.compact .ctrl{padding:7px 10px;font-size:.8rem}
+.player.compact .vtrack{min-width:60px}
+.player:fullscreen,.player.big{max-width:none;width:100%;height:100%;border-radius:0;display:flex;flex-direction:column;justify-content:center;background:var(--stage)}
+.player.big{position:fixed;inset:0;z-index:100}
+.player:fullscreen .stage,.player.big .stage{aspect-ratio:auto;flex:1;min-height:0}
+.player:fullscreen .v-title,.player.big .v-title{font-size:clamp(1.6rem,3.6vw,2.6rem);left:28px;bottom:24px}
+.player:fullscreen .caption,.player.big .caption{font-size:1.25rem}
+.vkeys{border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface3)}
+.vkeys h3{margin:0 0 4px;font-size:1rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.vkeys h3 small{color:var(--muted);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.vkeys ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.vkeys li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:center;font-weight:750;opacity:.35;transition:opacity .4s}
+.vkeys li.on{opacity:1}
+.vkeys li::before{content:"✓";width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--chip);color:var(--muted);font-weight:900;font-size:.8rem}
+.vkeys li.on::before{background:var(--mint);color:var(--teal-ink)}
+.v-layout{display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:22px;align-items:start}
+.v-layout>*{min-width:0}
+.v-aside{display:grid;gap:12px}
+@media(max-width:1100px){.v-layout{grid-template-columns:1fr}}
+.photo-frame.wide img{aspect-ratio:16/9}
+.evline.four{grid-template-columns:repeat(4,1fr)}
+.bins.four{grid-template-columns:1fr 1fr}
+.bin .cardx{font-size:.84rem;overflow-wrap:anywhere}
+.cloze+.cloze{margin-top:10px}
+.diag-meter{height:14px;border-radius:999px;background:var(--track);overflow:hidden;margin:12px 0}
+.diag-meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amber),var(--teal));transition:width .35s}
+.toggles{border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden;margin-top:12px}
+.toggles .toggle-row:first-child{border-top:none}
+.simui{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface)}
+.simui .simtop{display:flex;gap:8px;align-items:center;padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--line);font-weight:850;font-size:.88rem;overflow-wrap:anywhere}
+.simui .simtop i{width:10px;height:10px;border-radius:50%;background:var(--track);flex:none}
+.simui .seltable{margin:0}
+.simui .seltable small{display:block;color:var(--muted);font-weight:600}
+.tf .tf-claim{min-height:auto}
+.tf-exp{margin-top:10px}
+@media(max-width:860px){.evline.four{grid-template-columns:1fr}.bins.four{grid-template-columns:1fr}}
+.tile .back{display:none}.tile.open .front{display:none}.tile.open .back{display:block}
+.tile .front{display:grid;gap:6px;justify-items:center;font-size:1rem;line-height:1.2}.tile .front .i{font-size:2rem}
+.tiles.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:860px){.tiles.three{grid-template-columns:1fr}}
+.seltable select{min-width:10.5rem}
+/* Simulador con opciones largas: fila apilada y texto completo de la opción elegida */
+.seltable.stack td{display:block;border-bottom:0;padding:8px 12px}
+.seltable.stack tr{display:block;border-bottom:1px solid var(--line2)}
+.seltable.stack select{min-width:0;font-weight:700}
+.seltable .selfull{font-size:.86rem;color:var(--ink2);margin-top:6px;line-height:1.4;padding:6px 10px;border-left:3px solid var(--teal);background:var(--surface2,transparent);border-radius:6px}
+.seltable .selfull:empty{display:none}

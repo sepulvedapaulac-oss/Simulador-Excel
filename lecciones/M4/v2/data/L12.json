@@ -1,0 +1,124 @@
+{
+"audio": {
+"p01": "Bienvenida a la lección cuatro punto dos: Usa tus datos para decidir. Casa Nativa tiene muchos números, pero no sabe qué significan. Revisa las tres notas sobre los datos que mira Marcela y luego responde qué debería hacer primero.",
+"p03": "Un KPI es un indicador con propósito. Toca cada tarjeta para voltearla y descubre la cadena que lo define: pregunta, indicador y decisión.",
+"p04": "Cada objetivo se mide con un indicador distinto. Une cada objetivo del negocio con el indicador que mejor lo refleja. Selecciona un objetivo a la izquierda y luego su indicador a la derecha.",
+"p05": "Google Analytics te ayuda a entender el recorrido de las personas en tu sitio. Revisa las cuatro pestañas: adquisición, interacción, eventos clave y comparación.",
+"p06": "Compara dos campañas con un cálculo simple. Completa cada frase eligiendo la opción correcta y luego presiona comprobar.",
+"p07": "Ahora arma el panel mínimo de Casa Nativa. Elige la mejor opción para cada fila y luego presiona guardar.",
+"p08": "Volvamos con Marcela. Debe decidir qué campaña conviene mantener y qué hacer cuando, una semana después, las ventas bajan.",
+"p11": "¡Felicitaciones! Completaste la lección cuatro punto dos. Ya puedes conectar tus indicadores con preguntas del negocio, leer los informes básicos de Google Analytics y armar un panel mínimo para decidir. En la última lección construirás tu plan de acción digital."
+},
+"video": [
+{
+"t": "Muchos números, poca claridad",
+"img": "m12_hero",
+"lines": [
+"Visitas, clics, seguidores, sesiones y ventas: cada plataforma muestra cifras distintas.",
+"Los datos no sirven por estar en un panel. Sirven cuando ayudan a responder una pregunta del negocio."
+],
+"keys": [
+[
+"Cifras en cada plataforma",
+0
+],
+[
+"Ruido sin criterio",
+1
+],
+[
+"Partir por una pregunta",
+1
+]
+]
+},
+{
+"t": "Pregunta, indicador, decisión",
+"img": "m12_panel",
+"lines": [
+"Un KPI es un indicador con propósito: responde una pregunta y anticipa una decisión.",
+"Por ejemplo: ¿está funcionando mi campaña? Miro el costo por resultado y decido mantener, ajustar o detener."
+],
+"keys": [
+[
+"Pregunta",
+0
+],
+[
+"Indicador",
+1
+],
+[
+"Decisión",
+1
+]
+]
+},
+{
+"t": "Adquisición en Google Analytics",
+"img": "ga4_adq",
+"lines": [
+"En Google Analytics 4, el informe de adquisición de tráfico muestra desde dónde llegan las personas: redes sociales, búsqueda, tráfico directo o anuncios.",
+"Así puedes comparar qué canal trae visitas que realmente interactúan."
+],
+"keys": [
+[
+"¿Desde dónde llegan?",
+0
+],
+[
+"Canales comparables",
+1
+],
+[
+"Sesiones con interacción",
+1
+]
+]
+},
+{
+"t": "Interacción y eventos clave",
+"img": "ga4_eventos",
+"lines": [
+"El informe de páginas muestra qué contenidos consultan las personas.",
+"Y los eventos clave, que antes se llamaban conversiones, registran las acciones importantes: una compra, un clic a WhatsApp o una cotización."
+],
+"keys": [
+[
+"Páginas más vistas",
+0
+],
+[
+"Eventos clave",
+1
+],
+[
+"Acciones que importan",
+1
+]
+]
+},
+{
+"t": "Un panel mínimo",
+"img": "looker_panel",
+"lines": [
+"Un buen panel responde pocas preguntas importantes: qué está pasando, por qué importa y qué haremos.",
+"Tres indicadores, revisados cada semana, valen más que veinte métricas que nadie usa."
+],
+"keys": [
+[
+"Pocas métricas",
+0
+],
+[
+"Revisión periódica",
+1
+],
+[
+"Una acción asociada",
+1
+]
+]
+}
+]
+}

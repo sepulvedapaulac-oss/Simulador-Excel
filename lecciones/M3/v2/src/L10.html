@@ -1,0 +1,232 @@
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-gate="hook" data-gate-msg="Revisa los tres mensajes y responde la pregunta.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.4 · Caso de decisión</span>
+      <h1 class="reveal">Automatizar sin perder el trato humano</h1>
+      <p class="lead reveal">Automatiza lo repetitivo, humaniza lo importante. Marcela responde las mismas cinco preguntas todos los días: horarios, pagos, despacho, stock y ubicación. <strong>Haz clic en cada mensaje.</strong></p>
+      <div class="inbox reveal" data-reveal="hookQ" data-cls="read">
+        <button class="msg" type="button" data-ri><span class="avatar">🕘</span><span><span class="from">Cliente · 09:12</span><span class="preview">“¿A qué hora abren?”</span><span class="full">“Hola, ¿a qué hora abren el sábado? ¿Y dónde están ubicados?” — la tercera vez esta mañana.</span></span><span class="badge">Repetida</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">💳</span><span><span class="from">Cliente · 11:40</span><span class="preview">“¿Aceptan transferencia?”</span><span class="full">“¿Aceptan transferencia? ¿Hacen despacho a regiones?” — las mismas preguntas de todos los días.</span></span><span class="badge">Repetida</span></button>
+        <button class="msg" type="button" data-ri><span class="avatar">⏳</span><span><span class="from">Cliente · 12:05</span><span class="preview">Una consulta compleja…</span><span class="full">“Quiero encargar 30 centros de mesa para un matrimonio, ¿podemos conversar?” — Marcela la ve tres horas después.</span></span><span class="badge">Compleja</span></button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Marcela trabaja tranquila con su celular y portátil en el taller" src="img/m10_hero.jpg"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:16px">¿Qué debería automatizar primero?</h3>
+    <div class="options" data-choice="hook" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Preguntas frecuentes con respuestas estables.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Todos los reclamos de clientes.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Todas las negociaciones de precio.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-B"><div class="feedback bad"><strong>Consecuencia: clientes molestos hablando con un robot.</strong> <span class="fb-body">Un reclamo requiere contexto, criterio y empatía. Una respuesta automática puede empeorar la situación.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback bad"><strong>Consecuencia: acuerdos sin criterio.</strong> <span class="fb-body">Las negociaciones especiales, como el pedido de 30 centros de mesa, suelen requerir revisión humana.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-A"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Las preguntas repetitivas y predecibles son un buen punto de partida. Así Marcela gana tiempo para las conversaciones que requieren criterio y empatía.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre los cinco capítulos.">
+  <span class="eyebrow violet">Explicación · {{VMIN}} min</span>
+  <h2>Automatiza lo repetitivo, humaniza lo importante</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz, puedes saltar entre capítulos y usar <strong>Ampliar</strong> para verlo en grande.</p>
+  <div class="vwrap">
+    <div class="player compact" id="player">
+      <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+        <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+      <div class="caption" id="caption"></div>
+      <div class="controls">
+        <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+        <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+        <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+        <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+        <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button><button class="ctrl" id="vBig" type="button" aria-pressed="false">⤢ Ampliar</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </div>
+    <div class="vkeys" aria-live="polite"><h3><span id="vkTitle"></span><small>Temas clave</small></h3><ul id="vkList"></ul></div>
+    <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  </div>
+</section>
+
+
+<!-- 3 · QUÉ AUTOMATIZAR -->
+<section class="slide" data-title="¿Automatizar o derivar?" data-audio="p03" data-gate="cls" data-gate-msg="Clasifica las ocho consultas.">
+  <span class="eyebrow amber">Criterio</span>
+  <h2>¿Qué conviene automatizar?</h2>
+  <p><strong>Selecciona una consulta</strong> y luego la columna que corresponde. También puedes arrastrarla.</p>
+  <div class="classify" data-gate="cls" data-tick="clTick" data-task="clTask">
+    <div class="task" id="clTask">Consultas clasificadas <span class="tick" id="clTick">0 / 8</span></div>
+    <div class="pool">
+      <button class="cardx" type="button" data-cat="a" data-fb="El horario es una respuesta estable: ideal para automatizar." data-no="¿La respuesta cambia según la persona?">“¿A qué hora atienden el sábado?”</button>
+      <button class="cardx" type="button" data-cat="h" data-fb="Un reclamo requiere contexto, criterio y empatía." data-no="¿Una respuesta estándar resolvería la molestia de esta persona?">“Me llegó otro color y estoy molesta”</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="Los medios de pago son información repetitiva y estable." data-no="¿La respuesta es la misma para todos?">“¿Qué medios de pago aceptan?”</button>
+      <button class="cardx" type="button" data-cat="h" data-fb="Un descuento especial es una negociación: requiere revisión humana." data-no="¿Puede decidirlo una automatización?">“¿Me hacen precio por 30 unidades?”</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="El estado básico del pedido puede consultarse automáticamente." data-no="¿Es un dato que el sistema puede entregar?">“¿En qué estado va mi pedido #CN-1045?”</button>
+      <button class="cardx" type="button" data-cat="h" data-fb="Una excepción depende del contexto: mejor una persona." data-no="¿Hay una regla fija para este caso?">“¿Pueden entregarlo hoy a otra dirección?”</button>
+      <button class="cardx" type="button" data-cat="a" data-fb="La ubicación y cómo llegar es información estable." data-no="¿La respuesta cambia de una persona a otra?">“¿Dónde queda el taller?”</button>
+      <button class="cardx" type="button" data-cat="h" data-fb="Una situación sensible requiere empatía y criterio." data-no="¿Hay emoción o urgencia en esta consulta?">“Era un regalo para mi mamá que está enferma…”</button>
+    </div>
+    <div class="bins">
+      <div class="bin" data-cat="a" role="button" tabindex="0"><h3>🤖 Se puede automatizar</h3></div>
+      <div class="bin" data-cat="h" role="button" tabindex="0"><h3>🙋 Derivar a una persona</h3></div>
+    </div>
+    <div class="fb"></div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Regla útil:</strong> si la respuesta depende mucho del contexto o de cómo se siente el cliente, la intervención humana gana importancia.</div>
+</section>
+
+<!-- 4 · FLUJO -->
+<section class="slide" data-title="Flujo básico" data-audio="p04" data-gate="ord" data-gate-msg="Ordena los cinco pasos y presiona Comprobar.">
+  <span class="eyebrow">Flujo básico</span>
+  <div class="grid-2">
+    <div>
+      <h2>Un chatbot simple puede orientar sin fingir ser humano</h2>
+      <p>Usa las flechas <strong>↑ ↓</strong> para ordenar los pasos de primero a último y presiona <strong>Comprobar</strong>.</p>
+      <div class="order-box" data-gate="ord" data-ok="Saludar y explicar, ofrecer opciones, responder lo predecible, reconocer el límite y derivar conservando el contexto: el cliente siempre sabe qué puede hacer y nunca queda atrapado." data-no="Pista: primero el cliente debe saber qué puede hacer el bot; derivar y conservar el contexto ocurre cuando la consulta no encaja.">
+        <ul class="order">
+          <li data-p="3"><b>Responde lo predecible:</b> entrega información breve y actualizada.</li>
+          <li data-p="5"><b>Conserva el contexto:</b> quien recibe la conversación sabe qué preguntó el cliente.</li>
+          <li data-p="1"><b>Saluda y explica:</b> indica claramente qué puede hacer.</li>
+          <li data-p="4"><b>Reconoce el límite:</b> si la consulta no encaja, deriva.</li>
+          <li data-p="2"><b>Ofrece opciones:</b> productos, despachos, pagos o hablar con una persona.</li>
+        </ul>
+        <button class="small-btn primary ocheck" type="button">Comprobar orden</button>
+        <div class="fb"></div>
+      </div>
+    </div>
+    <div class="photo-frame wide"><img alt="Flujo de atención armado con notas adhesivas en la pared del taller" src="img/m10_flujo.jpg"/></div>
+  </div>
+</section>
+
+<!-- 5 · TONO -->
+<section class="slide" data-title="Tono" data-audio="p05" data-gate="cards" data-gate-msg="Voltea las cuatro tarjetas.">
+  <span class="eyebrow violet">Tono</span>
+  <h2>Automatizado no significa frío</h2>
+  <p>Al frente, un mensaje que conviene evitar; al reverso, una versión con el tono de Casa Nativa. <strong>Toca cada tarjeta para voltearla.</strong></p>
+  <div class="task" id="fcTask">Mensajes mejorados <span class="tick" id="fcTick">0 / 4</span></div>
+  <div class="flipdeck" style="grid-template-columns:repeat(4,1fr)" data-gate="cards" data-tick="fcTick" data-task="fcTask">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🧊</div><strong>Saludo</strong><span>“Solicitud recibida. Espere.”</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mejor así</strong><span>“¡Gracias por escribir a Casa Nativa! Puedo ayudarte con despacho o medios de pago. Si necesitas otra cosa, te derivamos con una persona.”</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🤖</div><strong>Opción no válida</strong><span>“Error. Opción incorrecta.”</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mejor así</strong><span>“No logré entenderte 😊. Elige una opción o escribe ‘persona’ para hablar con nuestro equipo.”</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🌙</div><strong>Fuera de horario</strong><span>“Estamos cerrados.”</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mejor así</strong><span>“Ahora estamos fuera de horario. Te respondemos mañana desde las 10:00. Mientras, revisa nuestro catálogo aquí.”</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🎭</div><strong>Fingir ser persona</strong><span>“Hola, soy Sofía 🙂” (pero es un bot)</span><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Mejor así</strong><span>“Hola, soy el asistente automático de Casa Nativa. Si prefieres, te comunico con una persona del equipo.”</span></div></div></button>
+  </div>
+</section>
+
+<!-- 6 · VERDADERO O FALSO -->
+<section class="slide" data-title="Ideas frecuentes" data-audio="p06" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow">Mitos y realidades</span>
+  <div class="grid-2">
+    <div>
+      <h2>¿Verdadero o falso?</h2>
+      <p>Revisa algunas ideas sobre automatización y agentes de inteligencia artificial. Decide si cada afirmación es <strong>verdadera o falsa</strong>.</p>
+    </div>
+    <div class="photo-frame wide"><img alt="Celular con un chat amable y botones de opciones" src="img/m10_chat.jpg"/></div>
+  </div>
+  <div class="tf" id="tf">
+    <div class="tf-prog"></div>
+    <div class="tf-claim"></div>
+    <div class="tf-btns"><button type="button" data-a="1">✓ Verdadero</button><button type="button" data-a="0">✕ Falso</button></div>
+    <div class="tf-exp"></div>
+  </div>
+</section>
+
+<!-- 7 · CONFIGURAR FLUJO -->
+<section class="slide" data-title="Configura el flujo" data-audio="p07" data-gate="sim" data-gate-msg="Configura los cuatro mensajes y presiona Guardar.">
+  <span class="eyebrow amber">Práctica guiada</span>
+  <h2>Configura las respuestas automáticas de Casa Nativa</h2>
+  <p>Elige el mejor mensaje para cada momento del flujo y luego presiona <strong>Guardar</strong>.</p>
+  <div class="sim">
+    <div class="simbox" data-gate="sim" data-unit="mensaje(s)" data-miss-t="Faltan mensajes." data-miss-b="Elige un mensaje para cada momento antes de guardar." data-ok="El flujo saluda con transparencia, responde lo predecible con datos actualizados y deriva a una persona con el contexto cuando hace falta.">
+      <div class="simui">
+        <div class="simtop"><i></i><i></i><i></i>Respuestas automáticas · Casa Nativa</div>
+        <table class="seltable stack">
+          <tr data-ans="c" data-ok="Explica qué puede hacer, ofrece opciones y deja clara la salida a una persona." data-no="El saludo debe explicar qué puede hacer y ofrecer hablar con una persona."><td><b>Bienvenida</b><small>Primer mensaje del cliente</small><span class="why"></span></td><td><select aria-label="Bienvenida"><option value="">Elegir…</option><option value="a">Solicitud recibida. Espere.</option><option value="b">Hola, soy Sofía 🙂 ¿en qué te ayudo? (sin aclarar que es automático)</option><option value="c">¡Hola! Soy el asistente de Casa Nativa. Elige: 1) Despacho 2) Medios de pago 3) Hablar con una persona.</option></select></td></tr>
+          <tr data-ans="a" data-ok="Información breve, concreta y actualizada." data-no="La respuesta debe ser breve y entregar el dato que el cliente necesita."><td><b>Despacho</b><small>Opción 1</small><span class="why"></span></td><td><select aria-label="Despacho"><option value="">Elegir…</option><option value="a">Despachamos a todo Chile en 2 a 5 días hábiles. En Santiago, gratis sobre $40.000. ¿Te ayudo con algo más?</option><option value="b">Revisa nuestras políticas en la web.</option><option value="c">Depende.</option></select></td></tr>
+          <tr data-ans="b" data-ok="Reconoce el límite y deriva sin que el cliente tenga que repetir." data-no="Si la consulta no encaja, la automatización debe derivar, no insistir ni cerrar."><td><b>Consulta que no encaja</b><small>El bot no tiene respuesta</small><span class="why"></span></td><td><select aria-label="Consulta que no encaja"><option value="">Elegir…</option><option value="a">Opción no válida. Elige 1, 2 o 3.</option><option value="b">Esta consulta la responde mejor una persona. Ya le dejé tu mensaje y te escribirá hoy antes de las 18:00.</option><option value="c">No puedo ayudarte. Conversación cerrada.</option></select></td></tr>
+          <tr data-ans="c" data-ok="Quien atiende recibe lo que el cliente ya contó." data-no="Al derivar se debe conservar el contexto para que el cliente no repita todo."><td><b>Aviso interno</b><small>Lo que recibe la persona del equipo</small><span class="why"></span></td><td><select aria-label="Aviso interno"><option value="">Elegir…</option><option value="a">“Nueva conversación.”</option><option value="b">(sin aviso: el equipo revisa el chat cuando puede)</option><option value="c">“Cliente pregunta por pedido especial de 30 unidades para el 15/11. Ya eligió opción 3. Prioridad: media.”</option></select></td></tr>
+        </table>
+        <div style="padding:12px 14px"><button class="small-btn primary scheck" type="button">Guardar</button></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Celular con un chat que ofrece opciones rápidas" src="img/m10_chat.jpg"/></div>
+  </div>
+</section>
+
+<!-- 8 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p08" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Marcela</span>
+  <h2>“Mi pedido llegó quebrado y era para un regalo mañana”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><img class="avatar" style="object-fit:cover" src="img/m10_clienta.jpg" alt=""/> Clienta · 20:47</div>
+      <div class="bubble"><span class="who">Clienta</span>Hola, mi pedido #CN-1052 llegó con el jarrón quebrado 😞. Era para un regalo de cumpleaños mañana. ¿Qué puedo hacer?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Caja de despacho abierta con un jarrón de terracota quebrado" src="img/m10_quebrado.jpg"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué debería hacer la automatización?</h3>
+  <div class="options" data-choice="caso1" data-correct="B" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviar automáticamente la política de cambios y cerrar la conversación.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Responder que se derivará a una persona y priorizar la atención.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Pedirle que escriba nuevamente en horario laboral.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una respuesta correcta, pero fría</div><div class="branch-body"><div><p>La clienta recibe un texto largo de políticas a las 20:47 con un regalo para mañana. Una respuesta rígida ignora la urgencia y la emoción del caso. Deja una mala reseña.</p></div><div><p class="hint">Hay urgencia y emoción: gana lo humano.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el problema crece mientras espera</div><div class="branch-body"><div><p>Pedirle que vuelva a escribir obliga a la clienta a repetir el problema, y mañana ya será tarde para el regalo.</p></div><div><p class="hint">La automatización puede reconocer el caso y derivar.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>La automatización reconoce el caso: “Lamentamos mucho lo ocurrido. Ya avisamos a Marcela para que te escriba con prioridad”. La clienta sabe que alguien se hará cargo.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Diez minutos después:</strong> Marcela recibe el aviso en su celular. Para resolver bien, necesita saber qué pasó sin pedirle a la clienta que repita todo.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué información debería incluir el aviso interno?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Solo “Tienes un mensaje nuevo”.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Nada: Marcela puede preguntarle todo de nuevo a la clienta.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Número de pedido, problema (jarrón quebrado), foto si la envió, urgencia (regalo mañana) y lo que ya respondió el bot.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: Marcela empieza de cero</div><div class="branch-body"><div><p>Sin contexto, Marcela no sabe que es urgente y lo atiende como cualquier mensaje. Pierde tiempo leyendo y preguntando.</p></div><div><p class="hint">Conserva el contexto.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: la clienta repite su problema</div><div class="branch-body"><div><p>Contar dos veces un problema molesto aumenta la frustración. Una buena automatización evita que el cliente repita información.</p></div><div><p class="hint">Que el cliente no repita.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Con el contexto completo, Marcela escribe en minutos: ofrece reponer el jarrón y enviarlo por courier exprés mañana temprano. La automatización hizo lo repetitivo; Marcela, lo importante.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 9 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+
+<!-- 10 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p10" data-gate="yn model pass" data-gate-msg="Responde el checklist y revisa la respuesta modelo.">
+  <span class="eyebrow violet">Aplicación en tu negocio</span>
+  <h2>Diseña tu primera automatización útil</h2>
+  <div class="story">Una PYME de tu rubro configuró su primera automatización: un mensaje de bienvenida <b>“Hola, soy Camila”</b> (es un bot), un menú con <b>despacho y medios de pago</b> pero <b>sin opción de hablar con una persona</b>, y respuestas con los <b>precios del año pasado</b>. Los reclamos reciben automáticamente la política de devoluciones.</div>
+  <p style="margin-top:12px">Responde cada pregunta del checklist con <strong>Sí</strong> o <strong>No</strong>.</p>
+  <div class="yn-list" id="ynList"></div>
+  <button class="small-btn primary" type="button" id="modelBtn" style="margin-top:12px" disabled>Ver respuesta modelo</button>
+  <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> la automatización ahorra tiempo en lo repetitivo, pero debe corregir cuatro puntos: <b>aclarar que es un asistente automático</b>, <b>agregar la opción “hablar con una persona”</b>, <b>actualizar los precios</b> y <b>derivar los reclamos</b> en vez de responderlos con la política. Para tu PYME completa: <b>pregunta repetitiva</b> (por ejemplo, medios de pago), <b>respuesta base</b> breve y actualizada, <b>cuándo derivar</b> (reclamos, excepciones, urgencias), <b>qué contexto conservar</b> (pedido, problema, urgencia) y <b>cómo sabrás si funciona</b> (menos preguntas repetidas, tiempo de respuesta, comentarios de clientes). Si usas un agente de IA de WhatsApp Business, revisa antes sus condiciones vigentes y su costo según uso.</div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 11 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p11" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.4 y el Módulo 3</h2>
+    <p>Ya puedes decidir qué automatizar, diseñar un flujo simple con salida a una persona y cuidar el tono de tu marca. Automatiza lo repetitivo; humaniza lo importante.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar qué automatizar</button><button class="small-btn primary" type="button" data-goto="6">Repasar el flujo</button></div>
+    <div class="sources">Imágenes generadas con IA con fines ilustrativos. Narración generada con ElevenLabs (voz Ninoska). Condiciones del agente de IA de WhatsApp Business según el Centro de ayuda de WhatsApp (octubre de 2026); pueden cambiar.</div>
+  </div>
+</section>

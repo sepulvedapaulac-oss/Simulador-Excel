@@ -1,0 +1,376 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Simulador: elige la herramienta de Microsoft 365 adecuada</title><style>:root{--bg:#dbe3e6;--surface:#fff;--surface2:#f7fafb;--ink:#172431;--ink2:#28404e;--muted:#5f7180;--teal:#0f7a82;--teal-ink:#0b666d;--navy:#173f4e;--line:#c9d6dc;--mint:#eaf7f6;--mint-line:#a9dbd7;--amber:#c97d0e;--amber-soft:#fff2dc;--good:#166534;--good-soft:#edf9ef;--good-line:#8dcf9d;--bad:#9e1c40;--bad-soft:#fff0f4;--bad-line:#efb1c3;--story:#fff8ed;--story-line:#eed4aa;--shadow:0 6px 22px rgba(23,63,78,.10)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e171c;--surface:#15222a;--surface2:#1a2a33;--ink:#e6eef2;--ink2:#cddbe2;--muted:#9fb2bd;--teal:#3cc4c0;--teal-ink:#6fdcd6;--navy:#a9d6e2;--line:#2c4350;--mint:#143238;--mint-line:#2f6b6b;--amber:#f0b04e;--amber-soft:#3a2c14;--good:#7ddc96;--good-soft:#173322;--good-line:#2f7a46;--bad:#ff8fae;--bad-soft:#3a1a25;--bad-line:#7a2f48;--story:#2d2618;--story-line:#5c4b2a;--shadow:0 6px 22px rgba(0,0,0,.4)}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.app{max-width:980px;margin:0 auto;padding:16px 16px 80px}
+.top{background:var(--navy);color:#fff;border-radius:18px;padding:18px 22px;box-shadow:var(--shadow)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .top{background:#10303a}}
+.top .course{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-weight:700}
+.top h1{margin:6px 0 8px;font-size:1.55rem;line-height:1.2}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 12px;font-size:.84rem;font-weight:600}
+.prog{height:8px;border-radius:8px;background:rgba(255,255,255,.18);margin-top:14px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:#2bc2b1;transition:width .4s}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px;box-shadow:var(--shadow)}
+.card h2{margin:0 0 8px;font-size:1.22rem;color:var(--navy);line-height:1.3}
+.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink)}
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:center}
+.story img{width:100%;border-radius:14px;display:block;aspect-ratio:16/10;object-fit:cover}
+@media(max-width:760px){.story{grid-template-columns:1fr}}
+.quote{background:var(--story);border:1px solid var(--story-line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.steps div{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.92rem}
+.steps b{display:block;color:var(--teal-ink)}
+@media(max-width:640px){.steps{grid-template-columns:1fr}}
+.btn{appearance:none;border:0;border-radius:12px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--teal);color:#fff;min-height:44px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--teal-ink);border:2px solid var(--teal)}
+.btn:focus-visible,.opt:focus-within,select:focus-visible,input:focus-visible{outline:3px solid #2bc2b1;outline-offset:2px}
+.row-btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.muted{color:var(--muted);font-size:.92rem}
+.etask{display:none}.etask.on{display:block}
+.thead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.pts{background:var(--mint);border:1px solid var(--mint-line);color:var(--teal-ink);border-radius:999px;padding:3px 12px;font-weight:800;font-size:.86rem;white-space:nowrap}
+.opts{display:grid;gap:10px;margin-top:12px}
+.opt{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:2px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer}
+.opt input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--teal)}
+.opt.sel{border-color:var(--teal)}
+.opt.ok{border-color:var(--good-line);background:var(--good-soft)}.opt.ko{border-color:var(--bad-line);background:var(--bad-soft)}
+.opt .mk{margin-left:auto;font-weight:800}
+.mrow{display:grid;grid-template-columns:1fr minmax(180px,260px) 28px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.mrow:last-child{border-bottom:0}
+@media(max-width:640px){.mrow{grid-template-columns:1fr 28px}.mrow select{grid-column:1/2}}
+select,input[type=text],input[type=number],textarea{font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:9px 10px;min-height:44px;width:100%}
+.mk.ok{color:var(--good)}.mk.ko{color:var(--bad)}
+.ord{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.ord li{display:flex;align-items:center;gap:10px;background:var(--surface2);border:2px solid var(--line);border-radius:12px;padding:8px 10px}
+.ord li .n{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.ord li .t{flex:1}
+.ord li button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.ord li.ok{border-color:var(--good-line);background:var(--good-soft)}.ord li.ko{border-color:var(--bad-line);background:var(--bad-soft)}
+.why{display:none;margin-top:14px;border-radius:12px;padding:12px 14px;background:var(--mint);border:1px solid var(--mint-line)}
+.why.show{display:block}
+.why h4{margin:0 0 4px;color:var(--teal-ink)}
+.numgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.numgrid label{display:grid;gap:6px;font-weight:600;font-size:.94rem}
+.numgrid .hint{font-weight:400;color:var(--muted);font-size:.84rem}
+.unit{display:flex;align-items:center;gap:8px}.unit span{color:var(--muted);font-weight:700}
+table.data{width:100%;border-collapse:collapse;margin-top:10px;font-size:.93rem}
+table.data th,table.data td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+table.data th{background:var(--surface2);color:var(--navy)}
+table.data td.n,table.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+.mock{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface2);margin-top:12px}
+.mock .bar{background:var(--navy);color:#fff;padding:8px 12px;font-size:.86rem;font-weight:700}
+.hs{position:relative;display:block;width:100%;text-align:left;border:2px dashed transparent;border-radius:10px;background:transparent;color:inherit;font:inherit;padding:8px 10px;cursor:pointer}
+.hs:hover{border-color:var(--mint-line)}
+.hs.sel{border-color:var(--amber);background:var(--amber-soft)}
+.hs.ok{border-color:var(--good-line);background:var(--good-soft)}.hs.ko{border-color:var(--bad-line);background:var(--bad-soft)}.hs.miss{border-color:var(--bad);border-style:solid}
+.result{text-align:center}
+.score{font-size:3rem;font-weight:900;color:var(--teal-ink);line-height:1}
+.badge{display:inline-block;border-radius:999px;padding:6px 14px;font-weight:800;margin-top:8px}
+.badge.ok{background:var(--good-soft);color:var(--good);border:1px solid var(--good-line)}.badge.ko{background:var(--bad-soft);color:var(--bad);border:1px solid var(--bad-line)}
+.rlist{display:grid;gap:8px;margin-top:14px;text-align:left}
+.ritem{display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.ritem small{display:block;color:var(--muted)}
+.ritem b.full{color:var(--good)}.ritem b.part{color:var(--amber)}.ritem b.zero{color:var(--bad)}
+.tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.tab{appearance:none;border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;min-height:44px}
+.tab.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pane{display:none}.pane.on{display:block}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.kpi div{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi small{display:block;color:var(--muted);font-weight:600}.kpi b{font-size:1.25rem;color:var(--navy)}
+.note{background:var(--amber-soft);border:1px solid var(--amber);border-radius:12px;padding:10px 14px;margin-top:12px;font-size:.93rem}
+.sol{margin-top:12px;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.sol ol{margin:6px 0 0;padding-left:20px}
+.counter{font-weight:800;color:var(--teal-ink)}
+.foot{margin-top:18px;color:var(--muted);font-size:.84rem;text-align:center}
+.sr{position:absolute;left:-9999px}
+.mrow small{grid-column:1/-1;margin-top:-4px}
+.mrow>span:first-child,.opt,.hs,.ord li .t{overflow-wrap:anywhere;min-width:0}
+.opt>*{min-width:0}
+.hs.ok,.hs.ko{border-style:solid}
+
+/* modo evaluación: la corrección se oculta hasta la revisión final */
+body.evalmode:not(.review) .etask :is(.opt,.hs,.ord li):is(.ok,.ko,.miss){border-color:var(--line);background:var(--surface2);border-style:solid}
+body.evalmode:not(.review) .etask .opt.sel:is(.ok,.ko){border-color:var(--teal);background:var(--surface2)}
+body.evalmode:not(.review) .etask .hs.sel:is(.ok,.ko){border-color:var(--amber);background:var(--amber-soft)}
+body.evalmode:not(.review) .etask .hs:not(.sel):is(.ok,.miss){border-color:transparent;background:transparent}
+body.evalmode:not(.review) .etask :is(.mk,small.mk,.mrow small){display:none}
+body.evalmode:not(.review) .etask input[data-ans]{border-color:var(--line)!important}
+body.review .etask{margin-top:16px}
+</style></head><body><main class="app">
+<header class="top"><div class="course">Herramientas Digitales para el Crecimiento de PYMES · Módulo 1: Fundamentos de la Digitalización y Productividad en la Nube</div>
+<h1>Simulador: elige la herramienta de Microsoft 365 adecuada</h1><div class="chips"><span class="chip">🧪 Simulador de práctica</span><span class="chip">Completa 3 casos</span><span class="chip">Nota = % de aciertos</span></div><div class="prog"><i></i></div></header>
+<section id="intro" class="card">
+ <span class="eyebrow">Simulador de práctica</span>
+ <h2>¿Qué herramienta de Microsoft 365 usa María para cada necesidad?</h2>
+ <div style="display:flex;gap:14px;align-items:flex-start;margin-top:8px">
+  <img src="img/maria_avatar.jpg" alt="María, dueña de Empanadas Doña María" style="width:72px;height:72px;border-radius:50%;flex:none;border:3px solid var(--mint-line)">
+  <div class="quote">“Tenemos Microsoft 365 en el negocio, pero cada vez que aparece algo nuevo dudo: ¿lo hago en Excel, en Teams, por correo…? Quiero que el equipo sepa qué usar para cada cosa.”<br><b>— María, Empanadas Doña María</b></div>
+ </div>
+ <p>Practica lo visto en la <b>Lección 1.2 Tu ecosistema de trabajo digital</b> y en el video <b>Recorrido por Microsoft 365</b>: primero la necesidad, después la herramienta. En cada caso eliges la aplicación principal y, cuando corresponde, un detalle de uso (permiso, formato o canal).</p>
+ <div class="steps"><div><b>Mapa de herramientas</b>Consulta qué resuelve cada aplicación y de qué plan depende.</div><div><b>Practicar</b>Resuelve necesidades aleatorias del negocio y revisa por qué.</div><div><b>Completar</b>Resuelve al menos 3 casos. Tu nota es el % de casos correctos.</div></div>
+ <button class="btn" data-start>Abrir el simulador →</button>
+</section>
+
+<section id="sim" hidden>
+ <div class="tabs"><button class="tab on" data-pane="pPract">🎯 Practicar</button><button class="tab" data-pane="pCalc">🗺️ Mapa de herramientas</button></div>
+ <div id="pPract" class="pane on card">
+  <p id="simCount" class="counter"></p>
+  <div id="simCase"></div>
+  <div class="row-btns"><button class="btn" id="simCheck">Revisar mi respuesta</button><button class="btn ghost" id="simNext" hidden>Nuevo caso →</button><span class="muted" id="simMsg"></span></div>
+ </div>
+ <div id="pCalc" class="pane card">
+  <h2>Mapa de herramientas: necesidad → aplicación</h2>
+  <p class="muted">Escribe una necesidad (por ejemplo “encuesta”, “reunión” o “permisos”) para filtrar la tabla.</p>
+  <label class="mapsearch"><span class="sr">Buscar necesidad</span><input type="text" id="mapQ" placeholder="🔍 Buscar necesidad o aplicación…"></label>
+  <div class="tablewrap"><table class="data maptable" id="mapT"><thead><tr><th>Necesidad</th><th>Aplicación</th><th>Ejemplo en el negocio</th><th>Disponibilidad</th></tr></thead><tbody></tbody></table></div>
+  <p class="muted" id="mapN"></p>
+  <div class="note"><b>Sobre los planes:</b> las aplicaciones incluidas dependen del plan de Microsoft 365 contratado y Microsoft las actualiza con frecuencia. Como referencia, en los planes para empresas <b>Business Basic</b> trae las versiones web y móviles de Word, Excel, PowerPoint y Outlook, además de correo, OneDrive, SharePoint y Teams; <b>Business Standard</b> agrega las aplicaciones de escritorio. En algunos países también se venden versiones sin Teams. Forms, Planner, To Do y Bookings suelen venir en los planes Business, pero el administrador puede activarlas o desactivarlas. Revisa tu plan en el centro de administración de Microsoft 365 antes de definir los acuerdos del equipo.</div>
+  <div class="note"><b>Lo que este simulador no considera:</b> precios, licencias por persona, Copilot u otros complementos pagados, ni equivalentes de otras plataformas (en Google Workspace: Gmail, Drive, Documentos, Hojas de cálculo, Presentaciones, Calendar, Meet, Chat y Formularios).</div>
+ </div>
+</section>
+
+<style>
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}
+.tools .opt{position:relative;align-items:center;padding:10px 12px;overflow-wrap:normal;word-break:normal}
+.tools .opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.tools .opt.sel{background:var(--mint)}
+.tools .opt b{display:block;line-height:1.2}
+@media(max-width:640px){.tools{grid-template-columns:1fr 1fr;gap:8px}.tools .opt{padding:9px 10px;gap:8px}.tools .opt b{font-size:.95rem}}
+.tools .opt small{display:block;color:var(--muted);font-size:.8rem;line-height:1.25}
+.tools .ic{font-size:1.4rem;flex:none}
+.need{display:flex;gap:12px;align-items:flex-start;background:var(--story);border:1px solid var(--story-line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.need .who{font-size:1.6rem;flex:none}
+.need small{display:block;color:var(--muted);margin-top:4px}
+.q2{margin-top:14px;display:grid;gap:6px;font-weight:600}
+.qlab{font-weight:700;margin:14px 0 0}
+.mapsearch{display:block;margin-top:8px}
+.maptable td:nth-child(2){white-space:nowrap;font-weight:700}
+.maptable td:nth-child(4){font-size:.86rem;color:var(--muted)}
+@media(max-width:640px){
+ .maptable thead{display:none}
+ .maptable,.maptable tbody,.maptable tr,.maptable td{display:block;width:100%}
+ .maptable tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+ .maptable td{border:0;border-bottom:1px dashed var(--line)}
+ .maptable td:last-child{border-bottom:0}
+ .maptable td:nth-child(2){white-space:normal;background:var(--surface2)}
+}
+</style>
+
+
+
+<div id="result" hidden></div>
+<p class="foot">Casos y empresas ficticios con fines educativos · Las pantallas de plataformas son recreaciones simplificadas.</p>
+</main><script>
+(function(){
+const pick=a=>a[Math.floor(Math.random()*a.length)],shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* Aplicaciones */
+const T={
+ word:{n:'Word',i:'📝',d:'Documentos y textos'},
+ excel:{n:'Excel',i:'📊',d:'Planillas y cálculos'},
+ ppt:{n:'PowerPoint',i:'📽️',d:'Presentaciones'},
+ outlook:{n:'Outlook',i:'📧',d:'Correo y calendario'},
+ teams:{n:'Teams',i:'👥',d:'Chat, canales y reuniones'},
+ onedrive:{n:'OneDrive',i:'☁️',d:'Archivos en la nube'},
+ sharepoint:{n:'SharePoint',i:'🏢',d:'Sitio y biblioteca del equipo'},
+ forms:{n:'Forms',i:'📋',d:'Encuestas y formularios'},
+ planner:{n:'Planner',i:'🗂️',d:'Tareas del equipo'},
+ todo:{n:'To Do',i:'✅',d:'Lista de tareas personal'},
+ bookings:{n:'Bookings',i:'🗓️',d:'Reservas de horas'}};
+const NOMBRES=['Carlos','Javiera','Pedro','Rosa','Luis','Camila'],PROV=['Harinas del Sur','Carnes Don Lucho','Envases Biobío','Lácteos Los Ríos'],
+ CAFE=['Café Las Lomas','Cafetería Altamira','Café del Puerto','Café Brisa'],MES=['octubre','noviembre','diciembre','marzo'],
+ COLE=['Colegio San Andrés','Colegio Los Aromos','Liceo Bicentenario'],EVT=['Fiestas Patrias','Navidad','el aniversario del local','la feria costumbrista'];
+/* Banco de necesidades: cada una genera texto, herramienta correcta, distractores plausibles y (opcional) una segunda decisión */
+const BANK=[
+ ()=>{const a=pick(NOMBRES),b=pick(NOMBRES.filter(x=>x!==a)),c=pick(COLE);return {who:'📦',txt:`${a} y ${b} registran a la vez los pedidos de ${c}. Hoy se envían la planilla por correo y ya hay tres versiones distintas.`,
+  tool:'excel',dis:['word','outlook','onedrive','todo'],why:'Una sola planilla de Excel guardada en la nube permite que varias personas la editen al mismo tiempo (coautoría). Se acaban las copias que viajan por correo y todos ven la versión vigente.',
+  q:{t:'La encargada administrativa solo debe revisar los pedidos, sin cambiar cifras. ¿Qué permiso le da María?',o:[['ver','Puede ver'],['editar','Puede editar'],['copia','Ninguno: le envía una copia cada mañana']],a:'ver',why:'Quien solo revisa recibe <b>Puede ver</b>; la edición queda para quienes registran. Enviar copias diarias vuelve a crear versiones paralelas.'}}},
+ ()=>{const p=pick(PROV);return {who:'🤝',txt:`María necesita conversar con ${p} sobre la nueva lista de precios. Están en otra ciudad y quieren ver la planilla en pantalla mientras conversan.`,
+  tool:'teams',dis:['outlook','excel','sharepoint','forms'],why:'Teams permite hacer videollamadas con personas externas, compartir la pantalla y chatear durante la reunión. La planilla se muestra en vivo y la decisión se toma conversando.',
+  q:{t:'¿Cómo conviene invitar al proveedor?',o:[['inv','Enviar una invitación desde el calendario con el enlace de la reunión de Teams'],['wsp','Mandarle por WhatsApp “conéctate a las 10”'],['canal','Agregarlo como miembro permanente del equipo interno de Teams']],a:'inv',why:'La invitación del calendario deja fecha, hora y enlace registrados para ambas partes. Agregar a un externo como miembro permanente le daría acceso a conversaciones internas que no necesita.'}}},
+ ()=>{const e=pick(EVT);return {who:'⭐',txt:`Después de ${e}, María quiere saber qué tan satisfechos quedaron los clientes con las empanadas y el tiempo de entrega. Piensa dejar un código QR en el mostrador.`,
+  tool:'forms',dis:['excel','word','teams','bookings'],why:'Forms crea encuestas en línea que se responden desde el celular (por enlace o código QR) y resume las respuestas automáticamente; además se pueden abrir en Excel para analizarlas.',
+  q:{t:'¿Qué datos conviene pedir en la encuesta?',o:[['min','Solo lo necesario: nota, comentarios y, de forma opcional, un correo si quiere respuesta'],['todo','Nombre completo, RUT, dirección y teléfono de cada cliente'],['nada','Ninguna pregunta cerrada, solo un campo de texto libre']],a:'min',why:'Pedir solo lo necesario facilita que respondan y cuida los datos personales. Preguntas cerradas (nota de 1 a 5) permiten comparar resultados; el texto libre complementa.'}}},
+ ()=>{const m=pick(MES);return {who:'🧾',txt:`Patricia, la contadora externa, necesita revisar cada mes las facturas de compra para preparar los impuestos de ${m}. Hoy se las mandan una por una por WhatsApp.`,
+  tool:'onedrive',dis:['outlook','teams','word','todo'],why:'Compartir la carpeta de facturas desde OneDrive deja todo en un solo lugar que Patricia consulta cuando lo necesita, sin pedir archivos por mensaje.',
+  q:{t:'¿Cómo comparte María la carpeta?',o:[['ver','Con Patricia como persona específica y permiso Puede ver'],['link','Con “Cualquier persona con el enlace” y Puede editar'],['adj','Adjuntando todos los PDF en un correo cada mes']],a:'ver',why:'Personas específicas + <b>Puede ver</b> es el permiso justo: Patricia revisa sin modificar y nadie más puede abrir el enlace. Un enlace abierto con edición expone la información.'}}},
+ ()=>{const c=pick(CAFE);return {who:'☕',txt:`${c} podría comprar empanadas de cóctel todas las semanas. María tiene 15 minutos para mostrar fotos, variedades y precios en una reunión con la dueña.`,
+  tool:'ppt',dis:['word','excel','forms','sharepoint'],why:'PowerPoint organiza la propuesta en diapositivas visuales (fotos, variedades, precios y condiciones), ideal para presentar en poco tiempo.',
+  q:{t:'Después de la reunión, ¿en qué formato le envía la propuesta?',o:[['pdf','En PDF (o un enlace de solo lectura), para que la vea igual en cualquier equipo'],['edit','El archivo editable, por si quiere cambiar los precios'],['foto','Fotos de la pantalla por WhatsApp']],a:'pdf',why:'Un PDF o un enlace de solo lectura se ve igual en cualquier dispositivo y evita que se modifiquen precios por error. El archivo editable queda en la nube del negocio.'}}},
+ ()=>{const e=pick(EVT);return {who:'🗂️',txt:`Para ${e} hay que comprar insumos, reforzar turnos, preparar 2.000 empanadas y coordinar repartos. Cada persona tiene tareas distintas con fechas límite.`,
+  tool:'planner',dis:['todo','excel','outlook','word'],why:'Planner organiza las tareas del equipo en un tablero: cada tarea con responsable, fecha y estado, y todos ven el avance. To Do, en cambio, es para la lista personal.',
+  q:{t:'¿Qué debe tener cada tarea como mínimo?',o:[['resp','Un responsable y una fecha de vencimiento'],['col','Un color distinto por tarea'],['todos','Asignarla a todo el equipo para que nadie se olvide']],a:'resp',why:'Responsable y fecha hacen visible quién hace qué y cuándo. Una tarea asignada a todos termina siendo de nadie.'}}},
+ ()=>{const p=pick(PROV);return {who:'✉️',txt:`María acordó con ${p} un cambio en el día de entrega y quiere dejarlo confirmado por escrito, con copia a la encargada administrativa.`,
+  tool:'outlook',dis:['teams','word','todo','forms'],why:'El correo de Outlook es el canal formal: deja registro de lo acordado con proveedores y clientes, con fecha y copia a quienes corresponda.',
+  q:{t:'¿Desde qué cuenta lo envía?',o:[['neg','Desde la cuenta de correo del negocio'],['per','Desde su correo personal, que revisa más seguido'],['wsp','Por WhatsApp, porque es más rápido']],a:'neg',why:'Desde la cuenta del negocio el acuerdo queda en la información de la empresa y sigue disponible aunque alguien falte. Un correo personal o un chat no dejan ese respaldo.'}}},
+ ()=>{const c=pick(CAFE);return {who:'📅',txt:`Desde el próximo mes hay entregas fijas los martes y viernes a ${c}. Las fechas se anotan en un cuaderno y ya se cruzaron dos entregas.`,
+  tool:'outlook',dis:['planner','excel','teams','todo'],why:'El calendario de Outlook hace visibles las entregas y reuniones para el equipo; un evento periódico evita anotarlas a mano cada semana.',
+  q:{t:'¿Cómo deja María las entregas en el calendario?',o:[['rec','Como evento periódico, invitando al repartidor responsable y con recordatorio'],['cuad','Sigue en el cuaderno, pero con letra más clara'],['priv','En su calendario privado sin invitar a nadie']],a:'rec',why:'Un evento que se repite, con responsable invitado y recordatorio, hace visible quién entrega y cuándo. Un calendario privado no le sirve al resto del equipo.'}}},
+ ()=>{const a=pick(NOMBRES);return {who:'💬',txt:`Durante el día cambian pedidos, faltan insumos o alguien pide cubrir un turno. ${a} pregunta dónde avisarlo para que lo vea todo el equipo.`,
+  tool:'teams',dis:['outlook','sharepoint','todo','forms'],why:'El chat y los canales de Teams son para la coordinación rápida del día a día; los avisos quedan visibles para el equipo y no se pierden en chats personales.',
+  q:{t:'¿Dónde publica el aviso?',o:[['canal','En el canal del equipo (por ejemplo, “Pedidos del día”)'],['priv','En un chat privado con quien esté de turno'],['mail','En un correo formal a cada persona']],a:'canal',why:'El canal del equipo deja el aviso a la vista de todos los involucrados. El correo formal es lento para algo del día a día y un chat privado deja fuera al resto.'}}},
+ ()=>{const a=pick(NOMBRES);return {who:'📘',txt:`Llegan dos ayudantes nuevos. María quiere dejar por escrito el procedimiento de higiene y armado de empanadas, y que ${a} sugiera mejoras.`,
+  tool:'word',dis:['ppt','excel','forms','planner'],why:'Word sirve para redactar procedimientos y documentos del negocio. Guardado en la nube, el equipo lo consulta y puede comentarlo.',
+  q:{t:`¿Cómo hace ${a} sus sugerencias?`,o:[['com','Con comentarios y @menciones, sin cambiar el texto original'],['copia','Descargando una copia y mandándola corregida'],['borra','Borrando lo que no le gusta y escribiendo encima']],a:'com',why:'Los comentarios con @mención avisan a una persona específica y proponen cambios sin modificar el original; María decide qué aceptar.'}}},
+ ()=>({who:'🏢',txt:'María quiere un espacio común del equipo con el manual de higiene, los protocolos y los turnos vigentes, que todos los trabajadores puedan consultar aunque ella o la administradora cambien de cargo.',
+  tool:'sharepoint',dis:['onedrive','teams','word','todo'],why:'SharePoint guarda los documentos del equipo en un sitio y biblioteca comunes que no dependen de la cuenta de una persona. OneDrive está pensado para los archivos de trabajo de cada usuario. (Los archivos de un equipo de Teams también se guardan en SharePoint.)',
+  q:{t:'¿Qué permisos conviene?',o:[['lec','Lectura para todo el equipo y edición solo para quienes mantienen los documentos'],['todos','Edición para todos, así cualquiera actualiza'],['abierto','Un enlace público para que no tengan que iniciar sesión']],a:'lec',why:'El permiso justo protege los documentos vigentes: todos los leen y solo responsables definidos los cambian. Un enlace público expone información interna.'}}),
+ ()=>({who:'📌',txt:'María anota pendientes propios en papelitos: renovar el permiso municipal, llamar al técnico del horno y pagar la patente. Nadie más necesita verlos.',
+  tool:'todo',dis:['planner','outlook','excel','teams'],why:'To Do es una lista de tareas personal, con fechas y recordatorios, en el computador y el celular. Planner es para tareas compartidas con el equipo; aquí no hace falta.',q:null}),
+ ()=>({who:'🧮',txt:'María quiere saber cuánto le cuesta producir una empanada de pino (masa, relleno, gas y envase) y cuánto le queda al venderla a distintos precios.',
+  tool:'excel',dis:['word','ppt','forms','planner'],why:'Excel calcula costos y márgenes con fórmulas; al cambiar un precio o un insumo, el resultado se actualiza solo.',
+  q:{t:'¿Cómo arma la planilla?',o:[['form','Con los costos en celdas y fórmulas que calculen el total y el margen'],['calc','Calculando con la calculadora del celular y escribiendo solo los resultados'],['texto','Escribiendo los costos en un párrafo dentro de la planilla']],a:'form',why:'Con fórmulas, si sube la harina basta cambiar una celda y todo se recalcula. Los resultados escritos a mano quedan desactualizados.'}}),
+ ()=>({who:'💾',txt:'El computador de la caja guarda en el Escritorio las listas de precios y los reportes. María teme perderlo todo si el equipo se descompone.',
+  tool:'onedrive',dis:['sharepoint','outlook','teams','excel'],why:'OneDrive puede respaldar automáticamente carpetas importantes del computador, como Escritorio y Documentos. Si el equipo falla, los archivos siguen en la nube.',q:null}),
+ ()=>{const c=pick(COLE);return {who:'🗓️',txt:`Los apoderados de ${c} quieren reservar un horario para retirar pedidos grandes y María recibe decenas de mensajes preguntando “¿a qué hora puedo pasar?”.`,
+  tool:'bookings',dis:['forms','outlook','teams','planner'],why:'Bookings publica una página de reservas: cada persona elige un horario disponible, recibe confirmación y la reserva aparece en el calendario. Está disponible en los planes Business, aunque el administrador puede tener que activarlo.',
+  q:{t:'¿Qué configura primero en la página de reservas?',o:[['hor','Los horarios disponibles y la duración de cada retiro'],['todo','Todos los días de 0 a 24 h, para no perder clientes'],['sin','Nada: que escriban por WhatsApp y ella confirma']],a:'hor',why:'Definir horarios reales y la duración evita que se acumulen retiros a la misma hora. Abrir todo el día genera reservas imposibles de cumplir.'}}}
+];
+let last=-1;
+function gen(){let k;do{k=Math.floor(Math.random()*BANK.length)}while(k===last);last=k;const c=BANK[k]();
+ const extra=Object.keys(T).filter(x=>x!==c.tool&&!c.dis.includes(x));
+ c.opts=shuf([c.tool,...shuf(c.dis).slice(0,3),...shuf(extra).slice(0,2)]);
+ if(c.q)c.q.o=shuf(c.q.o);return c}
+function render(c,el){
+ el.innerHTML=`<span class="eyebrow">Necesidad del negocio</span><h2>¿Qué usa María?</h2>
+ <div class="need"><span class="who" aria-hidden="true">${c.who}</span><div>${esc(c.txt)}<small>Empanadas Doña María · cuenta Microsoft 365 del negocio</small></div></div>
+ <p class="qlab">1. Herramienta principal</p>
+ <div class="tools" role="radiogroup" aria-label="Herramienta principal">${c.opts.map(k=>`<label class="opt"><input type="radio" name="simTool" value="${k}"><span class="ic" aria-hidden="true">${T[k].i}</span><span><b>${T[k].n}</b><small>${T[k].d}</small></span></label>`).join('')}</div>
+ ${c.q?`<label class="q2"><span class="qlab" style="margin:6px 0 0">2. ${esc(c.q.t)}</span><select id="simSec"><option value="">Elige…</option>${c.q.o.map(([v,t])=>`<option value="${v}">${esc(t)}</option>`).join('')}</select></label>`:'<p class="muted">En este caso basta con elegir la herramienta.</p>'}`;
+ el.querySelectorAll('.tools input').forEach(i=>i.addEventListener('change',()=>el.querySelectorAll('.tools .opt').forEach(o=>o.classList.toggle('sel',o.querySelector('input').checked))))}
+function check(c,el){const s=el.querySelector('.tools input:checked'),sec=el.querySelector('#simSec');
+ if(!s||(sec&&!sec.value))return null;
+ const okT=s.value===c.tool,okQ=!c.q||sec.value===c.q.a;
+ el.querySelectorAll('.tools .opt').forEach(o=>{const v=o.querySelector('input').value;if(v===c.tool)o.classList.add('ok');else if(o.querySelector('input').checked)o.classList.add('ko')});
+ const ch=T[s.value],qa=c.q?c.q.o.find(o=>o[0]===c.q.a)[1]:'';
+ return {ok:okT&&okQ,sol:`<ol>
+  <li><b>Herramienta: ${T[c.tool].i} ${T[c.tool].n}</b> ${okT?'✔':`(elegiste ${ch.n} ✘)`}. ${c.why}</li>
+  ${c.q?`<li><b>${esc(c.q.t)}</b> ${okQ?'✔':'✘'} Lo adecuado: <b>${esc(qa)}</b>. ${c.q.why}</li>`:''}
+  <li>Recuerda: primero la necesidad, después la herramienta. Revisa en la pestaña <b>Mapa de herramientas</b> si tu plan incluye esta aplicación.</li></ol>`}}
+function solve(c,el){const i=el.querySelector(`.tools input[value="${c.tool}"]`);i.checked=true;i.dispatchEvent(new Event('change'));const sec=el.querySelector('#simSec');if(sec)sec.value=c.q.a}
+/* Mapa de referencia */
+const MAP=[
+ ['Correo formal con clientes y proveedores','outlook','Confirmar por escrito un cambio de entrega con un proveedor','Todos los planes Business (web y móvil en Basic; escritorio desde Standard)'],
+ ['Agenda común de entregas y reuniones','outlook','Entregas fijas a cafeterías como evento periódico con responsable','Todos los planes Business'],
+ ['Coordinación rápida del equipo (chat y canales)','teams','Avisar en el canal “Pedidos del día” que falta queso','Incluido en planes Business con Teams; en algunos países se vende aparte'],
+ ['Reunión en línea y compartir pantalla','teams','Revisar precios con un proveedor de otra ciudad','Incluido en planes Business con Teams; en algunos países se vende aparte'],
+ ['Planilla compartida, registros y cálculos','excel','Pedidos de colegios editados por dos personas a la vez; costo por empanada','Web y móvil en Basic; escritorio desde Standard'],
+ ['Redactar documentos y procedimientos','word','Procedimiento de higiene comentado por el equipo','Web y móvil en Basic; escritorio desde Standard'],
+ ['Presentar una propuesta','ppt','Propuesta de empanadas de cóctel para una cafetería','Web y móvil en Basic; escritorio desde Standard'],
+ ['Guardar, respaldar y compartir archivos con permisos','onedrive','Carpeta de facturas para la contadora con Puede ver; respaldo del Escritorio','Todos los planes Business'],
+ ['Espacio común de documentos del equipo','sharepoint','Manual, protocolos y turnos vigentes en un sitio del equipo','Todos los planes Business'],
+ ['Encuestas y formularios','forms','Encuesta de satisfacción con código QR en el mostrador','Suele venir en los planes Business; el administrador puede desactivarlo'],
+ ['Tareas del equipo con responsable y fecha','planner','Tablero de preparación para Fiestas Patrias','Suele venir en los planes Business (funciones avanzadas requieren licencias adicionales)'],
+ ['Lista de pendientes personal','todo','Recordar renovar el permiso municipal','Suele venir en los planes Business'],
+ ['Reservas de horario por clientes','bookings','Horarios de retiro de pedidos grandes','Suele venir en los planes Business; el administrador puede tener que activarlo']];
+window.SIM={min:3,gen,render,check,solve,
+ calc(){const tb=document.querySelector('#mapT tbody'),q=document.getElementById('mapQ'),n=document.getElementById('mapN');
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const draw=()=>{const v=norm(q.value.trim());const rows=MAP.filter(r=>!v||norm(r[0]+' '+T[r[1]].n+' '+r[2]).includes(v));
+   tb.innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${T[r[1]].i} ${T[r[1]].n}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')||'<tr><td colspan="4">Sin resultados. Prueba con otra palabra.</td></tr>';
+   n.textContent=`${rows.length} de ${MAP.length} necesidades`};
+  q.addEventListener('input',draw);draw()}};
+})();
+</script><script>window.ACT={"id": "PYMES_M1_S2", "tipo": "simulador", "pass": 80, "eval": false};</script>
+<script>/* Motor de actividades prácticas y simuladores · SCORM 1.2
+   ACT (window.ACT): {id, tipo:'actividad'|'simulador', pass:80}
+   Actividad: secciones .etask[data-id][data-pts][data-title][data-lesson][data-auto=mc|multi|match|order|num|hot]
+   Simulador: window.SIM={min:3, gen(), render(caso, el), check(caso, el) -> {ok, sol}} */
+(function(){
+const A=window.ACT||{},$=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const PASS=A.pass||80;
+/* ---------- SCORM 1.2 ---------- */
+function findAPI(w){let n=0;while(w&&n<12){if(w.API)return w.API;if(w.parent===w)break;w=w.parent;n++}return null}
+let api=findAPI(window);if(!api&&window.opener)api=findAPI(window.opener);
+const SC={ok:false,t0:Date.now(),get(k){try{return this.ok?String(api.LMSGetValue(k)):''}catch(e){return ''}},set(k,v){try{if(this.ok)api.LMSSetValue(k,String(v))}catch(e){}},commit(){try{if(this.ok)api.LMSCommit('')}catch(e){}}};
+if(api){try{SC.ok=String(api.LMSInitialize(''))==='true'}catch(e){}}
+const store={get(){try{return JSON.parse(SC.ok?SC.get('cmi.suspend_data')||'{}':localStorage.getItem('act_'+A.id)||'{}')}catch(e){return {}}},
+ set(d){const s=JSON.stringify(d);if(SC.ok)SC.set('cmi.suspend_data',s);else try{localStorage.setItem('act_'+A.id,s)}catch(e){}}};
+let D=store.get();D.v=1;D.best=D.best||0;D.tries=D.tries||0;
+if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(!st||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');SC.commit()}
+function report(score,status,keep=true){D.best=keep?Math.max(D.best,score):score;store.set(D);
+ SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',D.best);if(status)SC.set('cmi.core.lesson_status',status);SC.commit()}
+let fin=false;function finish(){if(fin||!SC.ok)return;fin=true;const s=Math.round((Date.now()-SC.t0)/1000),p=n=>String(n).padStart(2,'0');
+ SC.set('cmi.core.session_time',`${String(Math.floor(s/3600)).padStart(4,'0')}:${p(Math.floor(s/60)%60)}:${p(s%60)}.00`);SC.set('cmi.core.exit','suspend');SC.commit();try{api.LMSFinish('')}catch(e){}}
+addEventListener('pagehide',finish);addEventListener('beforeunload',finish);
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const prog=v=>{const b=$('.prog i');if(b)b.style.width=v+'%'};
+
+/* ---------- Actividad evaluada ---------- */
+if(A.tipo!=='simulador'){
+ const T=$$('.etask'),R={};let cur=-1;
+ const total=T.reduce((s,t)=>s+(+t.dataset.pts),0),EV=!!A.eval;if(EV)document.body.classList.add('evalmode');
+ T.forEach((t,i)=>{const h=t.querySelector('h2');
+  const head=document.createElement('div');head.className='thead';head.innerHTML=`<span class="eyebrow">${EV?'Pregunta':'Tarea'} ${i+1} de ${T.length}</span><span class="pts">${t.dataset.pts} pts</span>`;t.prepend(head);
+  if(t.dataset.auto==='mc'||t.dataset.auto==='multi'){const o=t.querySelector('.opts');if(o&&!o.hasAttribute('data-fixed'))shuffle([...o.children]).forEach(c=>o.appendChild(c));
+   $$('.opt',t).forEach(op=>{const inp=op.querySelector('input');inp.addEventListener('change',()=>{$$('.opt',t).forEach(x=>x.classList.toggle('sel',x.querySelector('input').checked))})})}
+  if(t.dataset.auto==='order'){const ol=t.querySelector('.ord');shuffle([...ol.children]).forEach(c=>ol.appendChild(c));
+   [...ol.children].forEach(li=>{li.innerHTML=`<span class="n"></span><span class="t">${li.innerHTML}</span><button type="button" aria-label="Subir">↑</button><button type="button" aria-label="Bajar">↓</button>`;
+    const [up,dn]=li.querySelectorAll('button');up.onclick=()=>{if(li.previousElementSibling)ol.insertBefore(li,li.previousElementSibling);num(ol)};dn.onclick=()=>{if(li.nextElementSibling)ol.insertBefore(li.nextElementSibling,li);num(ol)}});num(ol)}
+  if(t.dataset.auto==='match')$$('select',t).forEach(s=>{if(!s.querySelector('option[value=""]'))s.insertAdjacentHTML('afterbegin','<option value="" selected>Elige…</option>');s.value=''});
+  if(t.dataset.auto==='hot')$$('.hs',t).forEach(b=>{b.type='button';b.onclick=()=>{if(!t.dataset.answered){b.classList.toggle('sel');b.setAttribute('aria-pressed',b.classList.contains('sel'))}}});
+  const bar=document.createElement('div');bar.className='row-btns';bar.innerHTML=`<button class="btn" data-respond>Responder</button><button class="btn ghost" data-next hidden>${i===T.length-1?'Ver resultado':(A.eval?'Siguiente pregunta →':'Siguiente tarea →')}</button><span class="muted" data-msg></span>`;
+  const why=t.querySelector('.why');t.insertBefore(bar,why);
+  bar.querySelector("[data-respond]").onclick=()=>answer(t,i);bar.querySelector('[data-next]').onclick=()=>show(i+1)});
+ function num(ol){[...ol.children].forEach((li,k)=>li.querySelector('.n').textContent=k+1)}
+ function show(i){cur=i;$('#intro').hidden=true;T.forEach((t,k)=>t.classList.toggle('on',k===i));$('#result').hidden=i<T.length;if(i>=T.length)result();prog(Math.round(Math.min(i,T.length)/T.length*100));scrollTo({top:0,behavior:'smooth'})}
+ function answer(t,i){const tp=t.dataset.auto,pts=+t.dataset.pts,msg=t.querySelector('[data-msg]');let frac=0;
+  if(tp==='mc'){const s=t.querySelector('.opt input:checked');if(!s){msg.textContent='Elige una alternativa.';return}
+   $$('.opt',t).forEach(o=>{const ok=o.hasAttribute('data-ok');if(ok)o.classList.add('ok');else if(o.querySelector('input').checked)o.classList.add('ko')});frac=s.closest('.opt').hasAttribute('data-ok')?1:0}
+  else if(tp==='multi'||tp==='hot'){const items=tp==='multi'?$$('.opt',t):$$('.hs',t),sel=x=>tp==='multi'?x.querySelector('input').checked:x.classList.contains('sel');
+   if(!items.some(sel)){msg.textContent='Selecciona al menos una opción.';return}
+   const good=items.filter(x=>x.hasAttribute('data-ok'));let hit=0,bad=0;
+   items.forEach(x=>{const ok=x.hasAttribute('data-ok'),s=sel(x);if(ok&&s){hit++;x.classList.add('ok')}else if(!ok&&s){bad++;x.classList.add('ko')}else if(ok&&!s)x.classList.add(tp==='hot'?'miss':'ok')});
+   frac=Math.max(0,(hit-bad)/good.length)}
+  else if(tp==='match'){const ss=$$('select',t);if(ss.some(s=>!s.value)){msg.textContent='Completa todas las filas.';return}
+   let ok=0;ss.forEach(s=>{const r=s.value===s.dataset.ans,mk=s.closest('.mrow').querySelector('.mk');if(r)ok++;if(mk){mk.textContent=r?'✔':'✘';mk.className='mk '+(r?'ok':'ko')}
+    if(!r){const o=[...s.options].find(o=>o.value===s.dataset.ans);(mk||s).insertAdjacentHTML('afterend',`<small class="muted">Correcto: ${o?o.textContent:''}</small>`)}});frac=ok/ss.length}
+  else if(tp==='order'){const li=[...t.querySelectorAll('.ord li')];let ok=0;li.forEach((l,k)=>{const r=+l.dataset.pos===k+1;if(r)ok++;l.classList.add(r?'ok':'ko');if(!r)l.querySelector('.t').insertAdjacentHTML('beforeend',` <small class="mk ko">→ va en la posición ${l.dataset.pos}</small>`)});frac=ok/li.length}
+  else if(tp==='num'){const ins=$$('input[data-ans]',t);if(ins.some(x=>x.value.trim()==='')){msg.textContent='Completa todos los campos.';return}
+   let ok=0;ins.forEach(x=>{const raw=x.value.trim().replace(/[$\s]/g,''),v=parseFloat(raw.includes(',')||/^\d{1,3}(\.\d{3})+$/.test(raw)?raw.replace(/\./g,'').replace(',','.'):raw),a=+x.dataset.ans,tol=+(x.dataset.tol||0);const r=Math.abs(v-a)<=tol+1e-9;if(r)ok++;
+    x.style.borderColor=r?'var(--good-line)':'var(--bad-line)';x.insertAdjacentHTML('afterend',`<small class="${r?'mk ok':'mk ko'}">${r?'✔ Correcto':'✘ Correcto: '+(x.dataset.show||a)}</small>`)});frac=ok/ins.length}
+  const got=Math.round(pts*frac*10)/10;R[t.dataset.id]=got;t.dataset.answered=1;
+  $$('input,select,.ord button',t).forEach(x=>x.disabled=true);
+  t.querySelector("[data-respond]").hidden=true;t.querySelector('[data-next]').hidden=false;
+  msg.innerHTML=EV?'<b>✔ Respuesta registrada</b>':`<b>${got} de ${pts} pts</b>`;t.dataset.got=got;if(!EV)t.querySelector('.why').classList.add('show')}
+ function result(){const pts=Math.round(Object.values(R).reduce((a,b)=>a+b,0)*10)/10,sc=Math.round(pts/total*100),ok=sc>=PASS;D.tries++;
+  report(sc,ok?'passed':(D.best>=PASS?'passed':'failed'));if(EV){D.evalDone={sc,pts};store.set(D)}
+  const fmt=n=>String(n).replace('.',',');
+  $('#result').innerHTML=`<div class="card result"><span class="eyebrow">Resultado</span><div class="score">${total===100?sc+'<small style="font-size:1.2rem">/100</small>':fmt(pts)+'<small style="font-size:1.2rem"> de '+total+' pts</small>'}</div>
+   ${total===100?'':`<p class="muted" style="margin:6px 0 0">Logro: <b>${sc}%</b></p>`}
+   <span class="badge ${ok?'ok':'ko'}">${ok?`Aprobada · lograste el ${PASS}% o más`:`Aún no apruebas · necesitas el ${PASS}%`}</span>
+   <p class="muted">${EV?'Evaluación enviada a Moodle':'Intento '+D.tries+' · Mejor nota registrada: <b>'+D.best+'</b>/100'}</p>
+   <div class="rlist">${T.map(t=>{const g=R[t.dataset.id]||0,p=+t.dataset.pts,c=g>=p?'full':g>0?'part':'zero';
+    return `<div class="ritem"><div><b>${t.dataset.title}</b>${g<p?`<small>Repasa: ${t.dataset.lesson}</small>`:'<small>Logrado</small>'}</div><b class="${c}">${fmt(g)}/${p}</b></div>`}).join('')}</div>
+   <div class="row-btns" style="justify-content:center">${EV?'<button class="btn" id="revBtn">Revisar mis respuestas y la retroalimentación</button>':'<button class="btn" onclick="location.reload()">Nuevo intento</button>'}</div></div>`;
+  if(EV)$('#revBtn').onclick=()=>{document.body.classList.add('review');T.forEach(t=>{t.classList.add('on');const m=t.querySelector('[data-msg]');m.innerHTML=`<b>${fmt(+t.dataset.got||0)} de ${t.dataset.pts} pts</b>`;t.querySelector('[data-next]').hidden=true;t.querySelector('.why').classList.add('show')});$('#revBtn').hidden=true;T[0].scrollIntoView({behavior:'smooth'})}}
+ if(EV&&D.evalDone){const st=$('[data-start]');st.disabled=true;st.textContent='Evaluación ya respondida';
+  $('#intro .muted.best').innerHTML=`Ya respondiste esta evaluación en este intento: <b>${D.evalDone.sc}%</b> de logro. Si corresponde otro intento, se habilita desde Moodle.`}
+ $('[data-start]').onclick=()=>show(0);
+ if(D.best)$('#intro .muted.best')&&($('#intro .muted.best').textContent=`Mejor nota registrada: ${D.best}/100 (${D.tries} intento${D.tries===1?'':'s'}).`);
+}
+
+/* ---------- Simulador ---------- */
+else{
+ const S=window.SIM,MIN=S.min||3;D.n=D.n||0;D.ok=D.ok||0;
+ $$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('on',x===b));$$('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.pane))});
+ let caso=null,checked=false;
+ const box=$('#simCase'),cnt=()=>{$('#simCount').innerHTML=`Casos resueltos: <b>${D.n}</b> · Correctos: <b>${D.ok}</b>${D.n?` · Nota: <b>${Math.round(D.ok/D.n*100)}</b>/100`:''}${D.n<MIN?` · Te faltan <b>${MIN-D.n}</b> para completar`:' · ✔ Simulador completado'}`;prog(Math.min(100,Math.round(D.n/MIN*100)))};
+ function nuevo(){caso=S.gen();window.__caso=caso;checked=false;box.innerHTML='';S.render(caso,box);$('#simCheck').hidden=false;$('#simNext').hidden=true;$('#simMsg').textContent=''}
+ $('#simCheck').onclick=()=>{if(checked)return;const r=S.check(caso,box);if(r===null){$('#simMsg').textContent='Completa tu respuesta antes de revisar.';return}
+  checked=true;D.n++;if(r.ok)D.ok++;const sc=Math.round(D.ok/D.n*100);
+  box.insertAdjacentHTML('beforeend',`<div class="why show" style="${r.ok?'':'background:var(--bad-soft);border-color:var(--bad-line)'}"><h4>${r.ok?'✔ ¡Bien resuelto!':'✘ Revisa la solución'}</h4>${r.sol}</div>`);
+  $$('input,select,button.hs',box).forEach(x=>x.disabled=true);
+  report(sc,D.n>=MIN?'completed':null,false);
+  $('#simCheck').hidden=true;$('#simNext').hidden=false;cnt()};
+ $('#simNext').onclick=nuevo;
+ $('[data-start]').onclick=()=>{$('#intro').hidden=true;$('#sim').hidden=false;nuevo();cnt()};
+ if(S.calc)S.calc();cnt();
+}
+})();
+</script></body></html>

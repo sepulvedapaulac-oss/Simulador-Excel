@@ -1,0 +1,124 @@
+{
+"audio": {
+"p01": "Bienvenida a la lección cuatro punto uno: De contactos dispersos a clientes que vuelven. Casa Nativa tiene clientes, pero la información está en todas partes. Revisa las tres notas sobre cómo guarda Marcela sus contactos y luego responde cuál es el principal problema.",
+"p03": "Un CRM es una herramienta para gestionar la relación con tus clientes. Toca cada tarjeta para voltearla y descubre qué aporta: centraliza, da contexto, facilita la acción y una idea clave.",
+"p04": "No todo dato merece ser guardado. Clasifica cada campo: ¿es información útil para la relación comercial, o es mejor no registrarla? Selecciona una tarjeta y luego la columna que corresponde.",
+"p05": "Así se ve un registro ordenado. Revisa las cuatro pestañas: la ficha de un cliente, los segmentos, las próximas acciones y una alternativa simple para empezar con una planilla.",
+"p06": "No todos los clientes necesitan el mismo mensaje. Une cada segmento con la acción más pertinente. Selecciona un segmento a la izquierda y luego su acción a la derecha.",
+"p07": "Fidelizar no es bombardear con promociones. Usa las flechas para ordenar los cinco pasos del ciclo de fidelización, de primero a último, y luego presiona comprobar.",
+"p08": "Volvamos con Marcela. Quiere fidelizar a una clienta que ya compró tres veces. Ayúdala a decidir qué mensaje enviar y qué registrar después.",
+"p11": "¡Felicitaciones! Completaste la lección cuatro punto uno. Ya puedes definir qué información registrar, segmentar a tus clientes y planificar acciones de seguimiento que aporten valor. En la siguiente lección aprenderás a usar tus datos para decidir."
+},
+"video": [
+{
+"t": "Información dispersa",
+"img": "m11_hero",
+"lines": [
+"Muchos negocios tienen clientes, pero su información está repartida entre el celular, los chats, una libreta y alguna planilla.",
+"Así es difícil saber quién compró, qué compró y cuándo conviene volver a contactarlo."
+],
+"keys": [
+[
+"Datos repartidos en muchos lugares",
+0
+],
+[
+"Sin historial claro",
+1
+],
+[
+"Oportunidades que se pierden",
+1
+]
+]
+},
+{
+"t": "Qué es un CRM",
+"img": "crm_ficha",
+"lines": [
+"Un CRM es una herramienta para gestionar la relación con los clientes.",
+"Centraliza sus datos, muestra el historial de compras y consultas, y ayuda a definir el próximo paso con cada persona."
+],
+"keys": [
+[
+"Centraliza",
+0
+],
+[
+"Da contexto",
+1
+],
+[
+"Facilita la acción",
+1
+]
+]
+},
+{
+"t": "Qué registrar",
+"img": "crm_planilla",
+"lines": [
+"Registra solo lo útil: datos de contacto, canal preferido, historial, intereses y la próxima acción.",
+"Puedes empezar con una planilla compartida o con la versión gratuita de un CRM. Lo importante es mantenerla actualizada."
+],
+"keys": [
+[
+"Datos básicos e historial",
+0
+],
+[
+"Intereses y próxima acción",
+1
+],
+[
+"Planilla o CRM gratuito",
+1
+]
+]
+},
+{
+"t": "Segmentar",
+"img": "crm_lista",
+"lines": [
+"Con los datos ordenados puedes segmentar: clientes nuevos, recurrentes, inactivos e interesados que aún no compran.",
+"Cada grupo necesita un mensaje distinto."
+],
+"keys": [
+[
+"Nuevos y recurrentes",
+0
+],
+[
+"Inactivos e interesados",
+1
+],
+[
+"Un mensaje por segmento",
+1
+]
+]
+},
+{
+"t": "Fidelizar con valor",
+"img": "m11_clienta",
+"lines": [
+"Fidelizar es aportar valor en el momento adecuado, no enviar promociones a todos.",
+"Y cuida los datos: pide consentimiento, guarda solo lo necesario y respeta si alguien pide no ser contactado."
+],
+"keys": [
+[
+"Contacto pertinente",
+0
+],
+[
+"Consentimiento",
+1
+],
+[
+"Registrar el resultado",
+1
+]
+]
+}
+]
+}
