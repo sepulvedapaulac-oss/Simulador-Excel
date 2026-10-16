@@ -43,7 +43,7 @@ Tendrás aproximadamente **60 a 70 minutos** para recorrer **19 etapas**. En ell
 - **Resolver tareas de aplicación:** calcular horas extraordinarias y pagos del término, clasificar conductas, ordenar los pasos de un procedimiento y seleccionar la documentación correcta.
 - **Responder 3 preguntas de desarrollo** (explicar, describir y analizar), con un mínimo de 50 a 60 palabras cada una. No tienen nota automática: al enviarlas verás una respuesta modelo y criterios para revisar la tuya, y tu respuesta queda registrada en el informe.
 
-Usa el **expediente** del caso (a la derecha en computador y abajo en el celular): ahí están la ficha de Javier, correos, el registro de asistencia, la solicitud, el relato de la denuncia, la guía de cálculo y la citación de la Inspección. Cada decisión se responde una sola vez y verás de inmediato su consecuencia y la explicación. Si sales antes de terminar, tu avance queda guardado.
+Usa el **expediente** del caso (a la derecha en computador y abajo en el celular): ahí están la ficha de Javier, correos, el registro de asistencia, la solicitud, el relato de la denuncia, la guía de cálculo y la citación de la Inspección. Cada decisión se responde una sola vez y verás de inmediato su consecuencia y la explicación. Te recomendamos realizarlo de una sola vez: si cierras la ventana antes de terminar, tendrás que comenzar de nuevo.
 
 Al finalizar verás tu puntaje, una retroalimentación por módulo con tus fortalezas y aspectos a mejorar, y podrás **descargar tu informe** con todas tus respuestas.
 
