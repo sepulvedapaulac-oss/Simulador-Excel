@@ -1,4 +1,4 @@
-# Instrucciones para participantes — Evaluaciones Parte 1 (cuestionario Moodle)
+# Instrucciones para participantes — Evaluaciones (Moodle)
 
 Texto para pegar en la **Descripción** de cada cuestionario en Moodle. Escala con 60 % de exigencia (nota 4,0 con el 60 % del puntaje).
 
@@ -26,6 +26,46 @@ Al responder esta evaluación demuestro que:
 - **Módulo 5:** Analizo los procedimientos de término del contrato de trabajo según el Código del Trabajo.
 
 El puntaje total es de **40 puntos**. La nota máxima es **7,0 con 40 puntos** y la nota mínima aprobatoria es **4,0 con 24 puntos**.
+
+---
+
+## Evaluación final · Parte 2 (caso integrador)
+
+Texto para pegar en la **Descripción** del paquete SCORM «Evaluación final · Parte 2».
+
+Esta segunda parte de la evaluación final tiene como propósito que demuestres cómo aplicas lo aprendido en los cinco módulos del curso **Legislación Laboral** a un caso completo, tal como ocurriría en una organización real.
+
+El caso se llama **«El caso de Javier en Soporte»**. Javier, técnico de Horizonte Servicios, llega al Equipo de Personas reclamando horas extraordinarias impagas. En las semanas siguientes el caso crece: pide un ajuste de horario para llevar a su hija al colegio, denuncia a su supervisor, la empresa debe decidir el término de un contrato y, al final, la Inspección del Trabajo cita a la empresa para revisar la documentación. Acompañarás a Camila, del Equipo de Personas, de principio a fin.
+
+Tendrás aproximadamente **60 a 70 minutos** para recorrer **19 etapas**. En ellas deberás:
+
+- **Tomar decisiones:** elegir qué norma aplica, a qué organismo recurrir o qué medida adoptar. Algunas decisiones cambian el rumbo del caso; si eliges mal, aparecerá una escena en la que tendrás que corregir el rumbo.
+- **Resolver tareas de aplicación:** calcular horas extraordinarias y pagos del término, clasificar conductas, ordenar los pasos de un procedimiento y seleccionar la documentación correcta.
+- **Responder 3 preguntas de desarrollo** (explicar, describir y analizar), con un mínimo de 50 a 60 palabras cada una. No tienen nota automática: al enviarlas verás una respuesta modelo y criterios para revisar la tuya, y tu respuesta queda registrada en el informe.
+
+Usa el **expediente** del caso (a la derecha en computador y abajo en el celular): ahí están la ficha de Javier, correos, el registro de asistencia, la solicitud, el relato de la denuncia, la guía de cálculo y la citación de la Inspección. Cada decisión se responde una sola vez y verás de inmediato su consecuencia y la explicación. Si sales antes de terminar, tu avance queda guardado.
+
+Al finalizar verás tu puntaje, una retroalimentación por módulo con tus fortalezas y aspectos a mejorar, y podrás **descargar tu informe** con todas tus respuestas.
+
+**Criterios de evaluación**
+
+Al resolver este caso demuestro que:
+
+- **Módulo 1:** Identifico los principios del Derecho Laboral según el Código del Trabajo.
+- **Módulo 2:** Describo las condiciones del contrato individual de trabajo según el Código del Trabajo.
+- **Módulo 3:** Explico los derechos laborales según el Código del Trabajo.
+- **Módulo 4:** Distingo las conductas de acoso según la Ley N° 21.643.
+- **Módulo 5:** Analizo los procedimientos de término del contrato de trabajo según el Código del Trabajo.
+
+El puntaje total es de **37 puntos**. La nota máxima es **7,0 con 37 puntos** y la nota mínima aprobatoria es **4,0 con 22 puntos**.
+
+**Tabla de conversión (37 puntos, 60 % de exigencia)**
+
+| Puntos | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | 21 | **22** | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Nota | 1,0 | 1,3 | 1,5 | 1,8 | 2,1 | 2,4 | 2,6 | 2,9 | 3,2 | 3,4 | 3,7 | 3,8 | **4,0** | 4,2 | 4,4 | 4,6 | 4,8 | 5,0 | 5,2 | 5,4 | 5,6 | 5,8 | 6,0 | 6,2 | 6,4 | 6,6 | 6,8 | 7,0 |
+
+Nota para la autora: el paquete envía a Moodle el **porcentaje** (0 a 100). 60 % equivale a 22 de 37 puntos.
 
 ---
 
