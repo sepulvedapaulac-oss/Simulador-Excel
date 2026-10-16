@@ -20,12 +20,12 @@ Cada pregunta (XML y SCORM) trae retroalimentación de respuesta correcta / inco
 ## Cómo cargarlo en Moodle
 
 **Preguntas (XML)**
-1. Curso → *Más* → *Banco de preguntas* → *Importar* → formato **Moodle XML** → subir cada archivo de `4_Evaluaciones_XML/`. Cada archivo crea su propia categoría (por ejemplo, *Herramientas Digitales PYMES / Módulo 2 / Evaluación Parte 1*) y cada pregunta queda con nombre e ID (M2.P1…).
+1. Curso → *Más* → *Banco de preguntas* → *Importar* → formato **Moodle XML** → subir cada archivo de `4_Evaluaciones_Parte1_XML/`. Cada archivo crea su propia categoría (por ejemplo, *Herramientas Digitales PYMES / Módulo 2 / Evaluación Parte 1*) y cada pregunta queda con nombre e ID (M2.P1…).
 2. En el módulo, *Añadir una actividad* → **Cuestionario** (por ejemplo, “Evaluación Módulo 2 – Parte 1”) → *Preguntas* → *Agregar desde el banco de preguntas* → seleccionar la categoría → agregar las 10. La nota de cada pregunta ya viene en 2 (calificación máxima 20).
 3. Recomendado en *Opciones de revisión*: mostrar “Retroalimentación específica” y “Retroalimentación general” después de enviar. Las alternativas se barajan solas.
 
 **Actividades prácticas, evaluaciones Parte 2 y diagnóstico (SCORM)**
-*Añadir una actividad* → **Paquete SCORM** → subir el `.zip`. Sugerido: *Método de calificación* = “Calificación más alta”; *Intentos* = ilimitados.
+*Añadir una actividad* → **Paquete SCORM** → subir el `.zip` (carpetas `1_`, `3_` y `5_Evaluaciones_Parte2_SCORM/`). Sugerido: *Método de calificación* = “Calificación más alta”; *Intentos* = ilimitados.
 - Actividades (laboratorios): nota sobre 100, aprueban con 80 (el paquete informa “passed/failed”).
 - Simuladores: se completan al resolver 3 casos; la nota es el % de casos correctos (pueden seguir practicando).
 - Evaluaciones Parte 2 (módulos 2–4 y caso integrador final): 10 preguntas de 2 puntos; *Calificación máxima* = 20; aprueban con 60%; *Intentos* según la política del curso.

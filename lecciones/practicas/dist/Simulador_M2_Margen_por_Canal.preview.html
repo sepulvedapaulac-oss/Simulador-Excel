@@ -211,7 +211,7 @@ if(A.tipo!=='simulador'){
     const [up,dn]=li.querySelectorAll('button');up.onclick=()=>{if(li.previousElementSibling)ol.insertBefore(li,li.previousElementSibling);num(ol)};dn.onclick=()=>{if(li.nextElementSibling)ol.insertBefore(li.nextElementSibling,li);num(ol)}});num(ol)}
   if(t.dataset.auto==='match')$$('select',t).forEach(s=>{if(!s.querySelector('option[value=""]'))s.insertAdjacentHTML('afterbegin','<option value="" selected>Elige…</option>');s.value=''});
   if(t.dataset.auto==='hot')$$('.hs',t).forEach(b=>{b.type='button';b.onclick=()=>{if(!t.dataset.answered){b.classList.toggle('sel');b.setAttribute('aria-pressed',b.classList.contains('sel'))}}});
-  const bar=document.createElement('div');bar.className='row-btns';bar.innerHTML=`<button class="btn" data-respond>Responder</button><button class="btn ghost" data-next hidden>${i===T.length-1?'Ver resultado':'Siguiente tarea →'}</button><span class="muted" data-msg></span>`;
+  const bar=document.createElement('div');bar.className='row-btns';bar.innerHTML=`<button class="btn" data-respond>Responder</button><button class="btn ghost" data-next hidden>${i===T.length-1?'Ver resultado':(A.eval?'Siguiente pregunta →':'Siguiente tarea →')}</button><span class="muted" data-msg></span>`;
   const why=t.querySelector('.why');t.insertBefore(bar,why);
   bar.querySelector("[data-respond]").onclick=()=>answer(t,i);bar.querySelector('[data-next]').onclick=()=>show(i+1)});
  function num(ol){[...ol.children].forEach((li,k)=>li.querySelector('.n').textContent=k+1)}
@@ -226,8 +226,8 @@ if(A.tipo!=='simulador'){
    frac=Math.max(0,(hit-bad)/good.length)}
   else if(tp==='match'){const ss=$$('select',t);if(ss.some(s=>!s.value)){msg.textContent='Completa todas las filas.';return}
    let ok=0;ss.forEach(s=>{const r=s.value===s.dataset.ans,mk=s.closest('.mrow').querySelector('.mk');if(r)ok++;if(mk){mk.textContent=r?'✔':'✘';mk.className='mk '+(r?'ok':'ko')}
-    if(!r){const o=[...s.options].find(o=>o.value===s.dataset.ans);s.insertAdjacentHTML('afterend',`<small class="muted">Correcto: ${o?o.textContent:''}</small>`)}});frac=ok/ss.length}
-  else if(tp==='order'){const li=[...t.querySelectorAll('.ord li')];let ok=0;li.forEach((l,k)=>{const r=+l.dataset.pos===k+1;if(r)ok++;l.classList.add(r?'ok':'ko')});frac=ok/li.length}
+    if(!r){const o=[...s.options].find(o=>o.value===s.dataset.ans);(mk||s).insertAdjacentHTML('afterend',`<small class="muted">Correcto: ${o?o.textContent:''}</small>`)}});frac=ok/ss.length}
+  else if(tp==='order'){const li=[...t.querySelectorAll('.ord li')];let ok=0;li.forEach((l,k)=>{const r=+l.dataset.pos===k+1;if(r)ok++;l.classList.add(r?'ok':'ko');if(!r)l.querySelector('.t').insertAdjacentHTML('beforeend',` <small class="mk ko">→ va en la posición ${l.dataset.pos}</small>`)});frac=ok/li.length}
   else if(tp==='num'){const ins=$$('input[data-ans]',t);if(ins.some(x=>x.value.trim()==='')){msg.textContent='Completa todos los campos.';return}
    let ok=0;ins.forEach(x=>{const raw=x.value.trim().replace(/[$\s]/g,''),v=parseFloat(raw.includes(',')||/^\d{1,3}(\.\d{3})+$/.test(raw)?raw.replace(/\./g,'').replace(',','.'):raw),a=+x.dataset.ans,tol=+(x.dataset.tol||0);const r=Math.abs(v-a)<=tol+1e-9;if(r)ok++;
     x.style.borderColor=r?'var(--good-line)':'var(--bad-line)';x.insertAdjacentHTML('afterend',`<small class="${r?'mk ok':'mk ko'}">${r?'✔ Correcto':'✘ Correcto: '+(x.dataset.show||a)}</small>`)});frac=ok/ins.length}
