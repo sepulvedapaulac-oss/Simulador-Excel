@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="PYMES_M3_EV2" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+<metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+<organizations default="ORG-PYMES_M3_EV2"><organization identifier="ORG-PYMES_M3_EV2"><title>Evaluación Módulo 3 · Parte 2: análisis de casos</title>
+<item identifier="ITEM-PYMES_M3_EV2" identifierref="RES-PYMES_M3_EV2" isvisible="true"><title>Evaluación Módulo 3 · Parte 2: análisis de casos</title><adlcp:masteryscore>60</adlcp:masteryscore></item></organization></organizations>
+<resources><resource identifier="RES-PYMES_M3_EV2" type="webcontent" adlcp:scormtype="sco" href="index.html">
+<file href="index.html"/><file href="img/marcela_avatar.jpg"/>
+</resource></resources></manifest>
