@@ -40,8 +40,8 @@ Cada XML tiene al lado un archivo `_vista_previa.html` que puedes abrir en el na
 
 | Sección | Opción | Valor sugerido |
 |---|---|---|
-| Temporalización | Abrir / cerrar / límite de tiempo | Según tu calendario (sugerencia: 30 min en los módulos, 50 min en la final) |
-| Calificación | Calificación para aprobar | 16 de 20 en los módulos y 32 de 40 en la final (80 %, igual que los laboratorios). Ajústalo si tu institución usa otra exigencia. |
+| Temporalización | Abrir / cerrar / límite de tiempo | 30 min en los módulos y 60 min en la final (según `INSTRUCCIONES_PARA_PARTICIPANTES.md`) |
+| Calificación | Calificación para aprobar | 12 de 20 en los módulos y 24 de 40 en la final (60 % de exigencia = nota 4,0) |
 | Calificación | Intentos permitidos | 2 |
 | Calificación | Método de calificación | Calificación más alta |
 | Esquema | Página nueva | Cada pregunta |
@@ -50,7 +50,8 @@ Cada XML tiene al lado un archivo `_vista_previa.html` que puedes abrir en el na
 | Opciones de revisión | Inmediatamente después de cada intento | Marcar: El intento, Si es correcta, Puntos, Retroalimentación específica, Retroalimentación general y Retroalimentación global |
 | Opciones de revisión | Después de cerrar el cuestionario | Lo mismo, y además **La respuesta correcta** |
 
-4. Presiona **Guardar cambios y mostrar**.
+4. En **Descripción**, pega el texto para participantes de `INSTRUCCIONES_PARA_PARTICIPANTES.md`.
+5. Presiona **Guardar cambios y mostrar**.
 
 ## Paso 3 · Agregar las preguntas al cuestionario
 
