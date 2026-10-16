@@ -6,7 +6,7 @@ Texto para pegar en la **Descripción** de cada cuestionario en Moodle. Escala c
 
 ## Evaluación final · Parte 1
 
-Esta evaluación final tiene como propósito que demuestres cómo aplicas lo aprendido en el curso **Legislación Laboral** para analizar situaciones reales de una relación de trabajo, desde la jornada y las remuneraciones hasta el término del contrato. Corresponde a la **Parte 1** de la evaluación final; la **Parte 2** es el laboratorio con el caso integrador.
+Esta evaluación final tiene como propósito que demuestres cómo aplicas lo aprendido en el curso **Legislación Laboral** para analizar situaciones reales de una relación de trabajo, desde la jornada y las remuneraciones hasta el término del contrato.
 
 Tendrás **1 (una) hora cronológica** para responder **20 preguntas de selección múltiple**, 4 por cada módulo del curso:
 
@@ -33,7 +33,7 @@ El puntaje total es de **40 puntos**. La nota máxima es **7,0 con 40 puntos** y
 
 Reemplaza N, la descripción y el criterio según el módulo.
 
-Esta evaluación tiene como propósito que demuestres lo aprendido en el **Módulo N** del curso **Legislación Laboral**. Corresponde a la **Parte 1** de la evaluación del módulo; la **Parte 2** es el laboratorio de trabajo.
+Esta evaluación tiene como propósito que demuestres lo aprendido en el **Módulo N** del curso **Legislación Laboral**.
 
 Tendrás **30 (treinta) minutos cronológicos** para responder **10 preguntas de selección múltiple**: la mayoría presenta un caso práctico de Horizonte Servicios en el que debes decidir qué corresponde hacer, y el resto revisa conceptos clave del módulo. Lee con atención cada situación antes de responder. Cada pregunta tiene una sola respuesta correcta y vale **2 puntos**. Al enviar el cuestionario verás tu puntaje y la retroalimentación de cada pregunta.
 
