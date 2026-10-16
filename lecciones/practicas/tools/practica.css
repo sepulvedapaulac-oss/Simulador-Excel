@@ -91,3 +91,12 @@ table.data td.n,table.data th.n{text-align:right;font-variant-numeric:tabular-nu
 .mrow>span:first-child,.opt,.hs,.ord li .t{overflow-wrap:anywhere;min-width:0}
 .opt>*{min-width:0}
 .hs.ok,.hs.ko{border-style:solid}
+
+/* modo evaluación: la corrección se oculta hasta la revisión final */
+body.evalmode:not(.review) .etask :is(.opt,.hs,.ord li):is(.ok,.ko,.miss){border-color:var(--line);background:var(--surface2);border-style:solid}
+body.evalmode:not(.review) .etask .opt.sel:is(.ok,.ko){border-color:var(--teal);background:var(--surface2)}
+body.evalmode:not(.review) .etask .hs.sel:is(.ok,.ko){border-color:var(--amber);background:var(--amber-soft)}
+body.evalmode:not(.review) .etask .hs:not(.sel):is(.ok,.miss){border-color:transparent;background:transparent}
+body.evalmode:not(.review) .etask :is(.mk,small.mk,.mrow small){display:none}
+body.evalmode:not(.review) .etask input[data-ans]{border-color:var(--line)!important}
+body.review .etask{margin-top:16px}

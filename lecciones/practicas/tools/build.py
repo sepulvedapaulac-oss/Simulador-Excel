@@ -12,20 +12,24 @@ a = p.parse_args()
 body = open(a.src, encoding='utf-8').read()
 css = open(os.path.join(T, 'practica.css'), encoding='utf-8').read()
 js = open(os.path.join(T, 'practica.js'), encoding='utf-8').read()
-MOD = {'1': 'Fundamentos de la Digitalización y Productividad en la Nube', '2': 'Presencia Digital y Canales de Venta',
+MOD = {'F': 'Evaluación final del curso', '1': 'Fundamentos de la Digitalización y Productividad en la Nube', '2': 'Presencia Digital y Canales de Venta',
        '3': 'Marketing Digital y Redes Sociales', '4': 'Gestión de Clientes (CRM) y Análisis de Datos'}
-if a.tipo == 'simulador':
+EVAL = a.tipo == 'evaluacion'
+if EVAL:
+    n = len(re.findall(r'class="etask', body)); tp = sum(int(x) for x in re.findall(r'data-pts="(\d+)"', body))
+    chips = ['📝 Evaluación', f'{n} preguntas · {tp} pts', f'Apruebas con {a.pss}%']
+elif a.tipo == 'simulador':
     chips = ['🧪 Simulador de práctica', f'Completa {3} casos', 'Nota = % de aciertos']
 else:
     chips = ['🛠️ Actividad práctica', 'Nota sobre 100', f'Apruebas con {a.pss}%']
 page = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{html.escape(a.title)}</title><style>{css}</style></head><body><main class="app">
-<header class="top"><div class="course">Herramientas Digitales para el Crecimiento de PYMES · Módulo {a.module}: {MOD[a.module]}</div>
+<header class="top"><div class="course">Herramientas Digitales para el Crecimiento de PYMES · {('Módulo ' + a.module + ': ') if a.module != 'F' else ''}{MOD[a.module]}</div>
 <h1>{html.escape(a.title)}</h1><div class="chips">{''.join(f'<span class="chip">{c}</span>' for c in chips)}</div><div class="prog"><i></i></div></header>
 {body}
 <div id="result" hidden></div>
 <p class="foot">Casos y empresas ficticios con fines educativos · Las pantallas de plataformas son recreaciones simplificadas.</p>
-</main><script>window.ACT={json.dumps({'id': a.id, 'tipo': a.tipo, 'pass': a.pss})};</script>
+</main><script>window.ACT={json.dumps({'id': a.id, 'tipo': 'actividad' if EVAL else a.tipo, 'pass': a.pss, 'eval': EVAL})};</script>
 <script>{js}</script></body></html>"""
 # el script del simulador debe ir antes del motor
 m = re.search(r'<script data-sim>(.*?)</script>', page, re.S)

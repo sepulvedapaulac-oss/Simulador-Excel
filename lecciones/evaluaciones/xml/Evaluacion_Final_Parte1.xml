@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
-<question type="category"><category><text>$course$/top/Herramientas Digitales PYMES/Evaluación final</text></category><info format="html"><text></text></info></question>
+<question type="category"><category><text>$course$/top/Herramientas Digitales PYMES/Evaluación final/Parte 1</text></category><info format="html"><text></text></info></question>
 <question type="multichoice">
 <name><text>EF.P1</text></name>
 <questiontext format="html"><text><![CDATA[<p>En Empanadas Doña María se perdían pedidos que llegaban por WhatsApp. María creó una planilla compartida donde se registran todos. ¿Cómo sabrá si la mejora funcionó?</p>]]></text></questiontext>

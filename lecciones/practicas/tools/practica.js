@@ -25,9 +25,9 @@ const prog=v=>{const b=$('.prog i');if(b)b.style.width=v+'%'};
 /* ---------- Actividad evaluada ---------- */
 if(A.tipo!=='simulador'){
  const T=$$('.etask'),R={};let cur=-1;
- const total=T.reduce((s,t)=>s+(+t.dataset.pts),0);
+ const total=T.reduce((s,t)=>s+(+t.dataset.pts),0),EV=!!A.eval;if(EV)document.body.classList.add('evalmode');
  T.forEach((t,i)=>{const h=t.querySelector('h2');
-  const head=document.createElement('div');head.className='thead';head.innerHTML=`<span class="eyebrow">Tarea ${i+1} de ${T.length}</span><span class="pts">${t.dataset.pts} pts</span>`;t.prepend(head);
+  const head=document.createElement('div');head.className='thead';head.innerHTML=`<span class="eyebrow">${EV?'Pregunta':'Tarea'} ${i+1} de ${T.length}</span><span class="pts">${t.dataset.pts} pts</span>`;t.prepend(head);
   if(t.dataset.auto==='mc'||t.dataset.auto==='multi'){const o=t.querySelector('.opts');if(o&&!o.hasAttribute('data-fixed'))shuffle([...o.children]).forEach(c=>o.appendChild(c));
    $$('.opt',t).forEach(op=>{const inp=op.querySelector('input');inp.addEventListener('change',()=>{$$('.opt',t).forEach(x=>x.classList.toggle('sel',x.querySelector('input').checked))})})}
   if(t.dataset.auto==='order'){const ol=t.querySelector('.ord');shuffle([...ol.children]).forEach(c=>ol.appendChild(c));
@@ -58,15 +58,20 @@ if(A.tipo!=='simulador'){
   const got=Math.round(pts*frac*10)/10;R[t.dataset.id]=got;t.dataset.answered=1;
   $$('input,select,.ord button',t).forEach(x=>x.disabled=true);
   t.querySelector("[data-respond]").hidden=true;t.querySelector('[data-next]').hidden=false;
-  msg.innerHTML=`<b>${got} de ${pts} pts</b>`;t.querySelector('.why').classList.add('show')}
- function result(){const sc=Math.round(Object.values(R).reduce((a,b)=>a+b,0)/total*100),ok=sc>=PASS;D.tries++;
-  report(sc,ok?'passed':(D.best>=PASS?'passed':'failed'));
-  $('#result').innerHTML=`<div class="card result"><span class="eyebrow">Resultado</span><div class="score">${sc}<small style="font-size:1.2rem">/100</small></div>
-   <span class="badge ${ok?'ok':'ko'}">${ok?'Aprobada · lograste el 80% o más':'Aún no apruebas · necesitas 80 puntos'}</span>
-   <p class="muted">Intento ${D.tries} · Mejor nota registrada: <b>${D.best}</b>/100</p>
+  msg.innerHTML=EV?'<b>✔ Respuesta registrada</b>':`<b>${got} de ${pts} pts</b>`;t.dataset.got=got;if(!EV)t.querySelector('.why').classList.add('show')}
+ function result(){const pts=Math.round(Object.values(R).reduce((a,b)=>a+b,0)*10)/10,sc=Math.round(pts/total*100),ok=sc>=PASS;D.tries++;
+  report(sc,ok?'passed':(D.best>=PASS?'passed':'failed'));if(EV){D.evalDone={sc,pts};store.set(D)}
+  const fmt=n=>String(n).replace('.',',');
+  $('#result').innerHTML=`<div class="card result"><span class="eyebrow">Resultado</span><div class="score">${total===100?sc+'<small style="font-size:1.2rem">/100</small>':fmt(pts)+'<small style="font-size:1.2rem"> de '+total+' pts</small>'}</div>
+   ${total===100?'':`<p class="muted" style="margin:6px 0 0">Logro: <b>${sc}%</b></p>`}
+   <span class="badge ${ok?'ok':'ko'}">${ok?`Aprobada · lograste el ${PASS}% o más`:`Aún no apruebas · necesitas el ${PASS}%`}</span>
+   <p class="muted">${EV?'Evaluación enviada a Moodle':'Intento '+D.tries+' · Mejor nota registrada: <b>'+D.best+'</b>/100'}</p>
    <div class="rlist">${T.map(t=>{const g=R[t.dataset.id]||0,p=+t.dataset.pts,c=g>=p?'full':g>0?'part':'zero';
-    return `<div class="ritem"><div><b>${t.dataset.title}</b>${g<p?`<small>Repasa: ${t.dataset.lesson}</small>`:'<small>Logrado</small>'}</div><b class="${c}">${g}/${p}</b></div>`}).join('')}</div>
-   <div class="row-btns" style="justify-content:center"><button class="btn" onclick="location.reload()">Nuevo intento</button></div></div>`}
+    return `<div class="ritem"><div><b>${t.dataset.title}</b>${g<p?`<small>Repasa: ${t.dataset.lesson}</small>`:'<small>Logrado</small>'}</div><b class="${c}">${fmt(g)}/${p}</b></div>`}).join('')}</div>
+   <div class="row-btns" style="justify-content:center">${EV?'<button class="btn" id="revBtn">Revisar mis respuestas y la retroalimentación</button>':'<button class="btn" onclick="location.reload()">Nuevo intento</button>'}</div></div>`;
+  if(EV)$('#revBtn').onclick=()=>{document.body.classList.add('review');T.forEach(t=>{t.classList.add('on');const m=t.querySelector('[data-msg]');m.innerHTML=`<b>${fmt(+t.dataset.got||0)} de ${t.dataset.pts} pts</b>`;t.querySelector('[data-next]').hidden=true;t.querySelector('.why').classList.add('show')});$('#revBtn').hidden=true;T[0].scrollIntoView({behavior:'smooth'})}}
+ if(EV&&D.evalDone){const st=$('[data-start]');st.disabled=true;st.textContent='Evaluación ya respondida';
+  $('#intro .muted.best').innerHTML=`Ya respondiste esta evaluación en este intento: <b>${D.evalDone.sc}%</b> de logro. Si corresponde otro intento, se habilita desde Moodle.`}
  $('[data-start]').onclick=()=>show(0);
  if(D.best)$('#intro .muted.best')&&($('#intro .muted.best').textContent=`Mejor nota registrada: ${D.best}/100 (${D.tries} intento${D.tries===1?'':'s'}).`);
 }
