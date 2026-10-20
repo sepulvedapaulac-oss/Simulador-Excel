@@ -1,0 +1,407 @@
+<title>Lección 3.6 — Gestionar solicitudes vinculadas a responsabilidades familiares</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.thread .tstamp{justify-self:center;font-size:.74rem;font-weight:850;color:var(--muted);padding:3px 10px;border-radius:999px;background:var(--chip);text-align:center}
+.bubble.fran{background:var(--violet-soft)}
+.bubble .to{font-weight:700;text-transform:none;letter-spacing:0}
+.tg36 .toggle-row{grid-template-columns:minmax(0,1fr) auto}
+.tg36 .toggle-row>span:first-child{min-width:0}
+.tg36 .toggle-row .lbl{display:block;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tg36 .toggle-row .swl{display:flex;gap:8px;align-items:center}
+.tg36 .toggle-row .swl small{font-weight:800;color:var(--muted);text-align:right;max-width:90px;line-height:1.2}
+.tg36 .toggle-row.on .nat{display:none}
+.tg36 .toggle-row.rev .nat{display:block;animation:rise .3s ease both}
+.tg36 .toggle-row.rev.okr .nat{background:var(--good-soft);color:var(--good)}
+.tg36 .toggle-row.rev.bad{background:var(--bad-soft)}
+.tg36 .toggle-row.rev.bad .nat{background:var(--surface);color:var(--bad)}
+.tg36 .toggle-row.on .sw{background:var(--bad-line)}
+.dopts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.dopts .chip2{white-space:normal;text-align:left}
+.dopts .chip2.good{background:var(--good-soft);border-color:var(--good-line);color:var(--good)}
+.dopts .chip2.bad{background:var(--bad-soft);border-color:var(--bad-line);color:var(--bad)}
+.calc .field input[type=date]{max-width:240px}
+.sema{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;margin-top:12px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
+.sema .lights{display:flex;flex-direction:column;gap:6px;padding:8px;border-radius:16px;background:var(--stage)}
+.sema .lights i{width:24px;height:24px;border-radius:50%;background:#33505a;transition:background .3s,box-shadow .3s}
+.sema .lights i.r.on{background:#ff5d7a;box-shadow:0 0 12px #ff5d7a}
+.sema .lights i.a.on{background:#ffc045;box-shadow:0 0 12px #ffc045}
+.sema .lights i.g.on{background:#3ad07a;box-shadow:0 0 12px #3ad07a}
+.sema b{display:block;font-size:1.02rem}
+.sema p{margin:.2rem 0 0;font-size:.92rem}
+.doc-tip{margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--amber-soft);color:var(--amber-ink);font-size:.88rem;font-weight:700}
+.cmp.stack{display:grid;min-height:0}
+.cmp.stack .side{position:relative;inset:auto;grid-area:1/1}
+.cmp .side p{margin:.25rem 0}
+.cmp .mail-h{font-size:.8rem;font-weight:800;color:var(--muted)}
+.cmp mark{background:var(--good-soft);color:var(--good);padding:0 2px;border-radius:5px;font-weight:800}
+.cmp mark.badm{background:var(--bad-soft);color:var(--bad)}
+.cloze36{font-size:1.02rem;line-height:2.3}
+.cloze36 select{max-width:100%;white-space:normal}
+@media(max-width:560px){.cloze36 select{display:block;width:100%;margin:6px 0;font-size:14px;padding:6px 24px 6px 8px;white-space:nowrap}}
+.v-mail{max-width:520px;margin:0 auto;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.08);font-weight:800;display:grid;gap:8px}
+.v-mail span{opacity:.25;transition:opacity .5s}.v-mail span.on,.v-mail span.always{opacity:1}
+@media(max-width:560px){.tg36 .toggle-row{grid-template-columns:1fr;gap:6px}.tg36 .toggle-row .swl{justify-self:end}.tg36 .toggle-row .swl small{max-width:none}.sema{grid-template-columns:1fr}.sema .lights{flex-direction:row;justify-self:start}.cloze36{font-size:.98rem}.cloze36 select{font-size:.8rem;width:100%}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.6</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:25" data-gate="hook" data-gate-msg="Abre la conversación y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.6 · Del requerimiento escrito a una respuesta trazable</span>
+      <h1 class="reveal">Gestionar solicitudes vinculadas a responsabilidades familiares</h1>
+      <p class="lead reveal">Francisca, analista de compras de <strong>Horizonte Servicios</strong> y mamá de Emilia, de 6 años, pidió teletrabajo parcial. Presiona <strong>“Ver conversación”</strong> para leer qué pasó después.</p>
+      <div class="thread reveal" id="thread">
+        <div class="persona"><span class="avatar">FH</span> Francisca · Mauricio (jefatura) · Camila</div>
+        <div id="threadBody" style="display:grid;gap:10px"></div>
+        <button class="small-btn primary" type="button" id="showMsg">Ver conversación</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Francisca, analista de compras, revisa su teléfono en su escritorio con expresión preocupada" src="{{IMG:i36_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería recomendarle Camila a Mauricio?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Apoyarlo: la jefatura decide cuándo responder, y esperar unos meses a ver cómo funciona el equipo es razonable.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Responder por escrito antes de que se cumplan 15 días desde la presentación: aceptar, ofrecer una fórmula alternativa o rechazar con fundamento.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Decirle a Francisca, solo de palabra, que por ahora no, para no dejar registro mientras el equipo se adapta.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: el plazo vence</div><div class="branch-body"><div><p>Pasan los 15 días sin respuesta. Francisca recurre a la Inspección del Trabajo y la empresa no tiene cómo explicar la demora: “esperar a ver cómo funciona el equipo” no es una de las respuestas que permite la ley.</p></div><div><p class="hint">El plazo no depende de la jefatura: corre desde la presentación.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Quedan 3 días. Mauricio aún puede revisar las funciones de Francisca y responder por escrito: aceptar, ofrecer otra combinación de días o rechazar explicando por qué las funciones no lo permiten.</p></div><div><p class="hint">En esta lección verás cada paso, del requerimiento escrito a una respuesta trazable.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un rechazo sin fundamento</div><div class="branch-body"><div><p>Un “no” verbal no cumple: si se rechaza, hay que fundamentar y acreditar que la naturaleza de las funciones no permite el trabajo a distancia. Sin registro, la empresa tampoco puede demostrar que respondió.</p></div><div><p class="hint">La respuesta debe ser fundada y quedar por escrito.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Cómo se gestiona una solicitud de teletrabajo por cuidado?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · EL PROCEDIMIENTO -->
+<section class="slide" data-title="El procedimiento" data-audio="p03" data-dur="0:24" data-gate="order" data-gate-msg="Ordena los seis momentos y presiona Comprobar orden.">
+  <span class="eyebrow">Lección 3.6 · De la solicitud a la respuesta</span>
+  <h2>¿Qué ocurre primero y qué después?</h2>
+  <p>La solicitud de Francisca recorre seis momentos. Usa las flechas <strong>↑ ↓</strong> para ordenarlos de arriba hacia abajo y luego presiona <strong>Comprobar orden</strong>. Los pasos en verde ya están en su lugar.</p>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 152 quáter O bis y 152 quáter O ter, incorporados por la Ley N°21.645.</p>
+</section>
+
+<!-- 4 · ¿LA SOLICITUD ESTÁ COMPLETA? -->
+<section class="slide" data-title="¿Está completa?" data-audio="p04" data-dur="0:23" data-gate="tog" data-gate-msg="Marca las líneas con problemas y presiona Revisar solicitud hasta acertar.">
+  <span class="eyebrow amber">Lección 3.6 · Requisitos de la solicitud</span>
+  <h2>El primer borrador de Francisca</h2>
+  <div class="grid-2">
+    <div><p>Antes de enviar su solicitud, Francisca le pidió a Camila revisar este borrador. Activa el interruptor <strong>“Tiene un problema”</strong> en cada línea que falte, sobre o esté mal planteada. Luego presiona <strong>Revisar solicitud</strong>.</p>
+      <div class="callout"><strong>Pista:</strong> una solicitud completa es escrita, acredita la situación de cuidado y propone una combinación concreta de días presenciales y a distancia, dentro de la jornada.</div></div>
+    <div class="photo-frame wide"><img alt="Francisca redacta su solicitud en un notebook en la mesa de su casa mientras su hija dibuja a su lado" src="{{IMG:i36_solicitud}}"/></div>
+  </div>
+  <div class="slip tg36" id="slip36" style="margin-top:16px">
+    <div class="slip-h"><span>Solicitud de trabajo a distancia parcial · Borrador</span><span>Francisca Herrera</span></div>
+  </div>
+  <button class="small-btn primary" type="button" id="tgCheck" style="margin-top:12px">Revisar solicitud</button>
+  <div class="fb" id="tgFb"></div>
+  <p class="sources">Referencias: Código del Trabajo, art. 152 quáter O ter (Ley N°21.645); criterio de la Dirección del Trabajo (2025) sobre acreditación de la calidad de persona cuidadora.</p>
+</section>
+
+<!-- 5 · ¿HASTA CUÁNDO HAY PLAZO? -->
+<section class="slide" data-title="¿Hasta cuándo hay plazo?" data-audio="p05" data-dur="0:19" data-gate="calc" data-gate-msg="Encuentra el día 15 y resuelve el semáforo del caso de Francisca.">
+  <span class="eyebrow violet">Lección 3.6 · Plazo de respuesta</span>
+  <h2>15 días desde la presentación</h2>
+  <p>Primero, elige una fecha de presentación y encuentra la fecha del día 15. Después, mueve el control hasta el <strong>día 12</strong>, el de Francisca, y decide qué corresponde.</p>
+  <div class="grid-2">
+    <div class="calc" style="margin-top:0">
+      <h3 style="margin-top:0">1 · La fecha de referencia</h3>
+      <label class="field">Fecha de presentación de la solicitud<input type="date" id="cDate" value="2026-09-02" min="2026-01-01" max="2027-12-31"/></label>
+      <p style="margin-bottom:0">Presentación: <b id="cFrom">—</b>. ¿Qué fecha corresponde al <b>día 15</b> desde la presentación?</p>
+      <div class="dopts" id="cOpts"></div>
+      <div class="fb" id="cFb"></div>
+      <div class="doc-tip">La ley fija 15 días desde la presentación. Aquí se cuentan días de calendario como referencia prudente, porque es la fecha más temprana posible: responder antes de ella evita cualquier discusión sobre el cómputo.</div>
+    </div>
+    <div class="calc" id="c2" style="margin-top:0;opacity:.45" aria-disabled="true">
+      <h3 style="margin-top:0">2 · El semáforo del caso</h3>
+      <p style="margin:0">Francisca presentó su solicitud el <b>miércoles 2 de septiembre</b>.</p>
+      <div class="srow" style="grid-template-columns:1fr 90px;margin-top:10px"><label for="cDays">Días transcurridos desde la presentación</label><output id="cDaysO">0 días</output></div>
+      <input id="cDays" type="range" min="0" max="20" step="1" value="0" style="width:100%;accent-color:var(--teal)" disabled/>
+      <div class="sema"><div class="lights" aria-hidden="true"><i class="r"></i><i class="a"></i><i class="g on"></i></div><div><b id="cSt">En plazo</b><p id="cTx">—</p></div></div>
+      <div id="cQ" hidden>
+        <p style="margin:12px 0 0"><b>Hoy es el día 12 y Mauricio aún no responde. ¿Qué corresponde?</b></p>
+        <div class="dopts" id="cQopts">
+          <button class="chip2" type="button" data-v="0">Puede seguir esperando: el plazo aún no vence.</button>
+          <button class="chip2" type="button" data-v="1">Responder por escrito ahora: quedan 3 días para el día 15.</button>
+          <button class="chip2" type="button" data-v="2">El plazo ya venció: solo cabe rechazar.</button>
+        </div>
+        <div class="fb" id="cQfb"></div>
+      </div>
+    </div>
+  </div>
+  <p class="sources">Referencia: Código del Trabajo, art. 152 quáter O ter (Ley N°21.645): el empleador responde dentro de 15 días desde la presentación de la solicitud.</p>
+</section>
+
+<!-- 6 · RESPONDER BIEN -->
+<section class="slide" data-title="Responder bien" data-audio="p06" data-dur="0:20" data-gate="cmp" data-gate-msg="Desliza el comparador completamente hacia la izquierda.">
+  <span class="eyebrow">Lección 3.6 · Una respuesta fundada</span>
+  <h2>Dos respuestas a la misma solicitud</h2>
+  <div class="grid-2">
+    <div><p>Primero ves la respuesta que Mauricio pensaba enviar. <strong>Desliza el control hacia la izquierda</strong> hasta el final para descubrir la que redactó con apoyo de Camila y ver qué cambió.</p></div>
+    <div class="photo-frame wide"><img alt="Mauricio, jefe de abastecimiento, redacta una respuesta en su computador junto a Camila" src="{{IMG:i36_respuesta}}"/></div>
+  </div>
+  <div class="cmp stack" id="cmp" style="--cut:100%">
+    <div class="side before"><div class="in"><span class="eyebrow amber">Antes · mensaje de chat, día 20</span>
+      <p class="mail-h">De: Mauricio Lagos · Para: Francisca Herrera</p>
+      <p>“Francisca, <mark class="badm">por ahora no</mark>. <mark class="badm">Prefiero esperar a ver cómo funciona el equipo</mark> y lo conversamos <mark class="badm">más adelante</mark>.”</p>
+      <p class="hint">Sin fecha de solicitud, sin análisis de funciones, sin alternativa y fuera de plazo.</p></div></div>
+    <div class="side after"><div class="in"><span class="eyebrow">Después · correo, día 13</span>
+      <p class="mail-h">De: Mauricio Lagos · Para: Francisca Herrera · CC: Camila (Personas)</p>
+      <p>“Francisca: respondo tu <mark>solicitud del 2 de septiembre</mark>, que acompañaste con el certificado de nacimiento de Emilia. <mark>Revisamos tus funciones</mark>: cotizaciones y órdenes de compra pueden hacerse a distancia; la recepción técnica con proveedores de los martes exige presencia. Por eso te <mark>ofrecemos una fórmula alternativa</mark>: lunes y miércoles a distancia, y martes, jueves y viernes presencial, con tu misma jornada. Si estás de acuerdo, lo dejaremos en un <mark>anexo a tu contrato</mark>, con los equipos de cargo de la empresa.”</p></div></div>
+    <div class="handle"></div>
+  </div>
+  <input class="cmp-range" id="cmpR" type="range" min="0" max="100" value="100" aria-label="Comparador antes y después"/>
+  <div id="cmpOut" hidden>
+    <h3 style="margin-top:14px">Qué cambió</h3>
+    <div class="checks">
+      <div class="checkrow ok"><span>✓</span><span><b>Dentro de plazo</b><span class="d">Responde el día 13, antes del día 15 desde la presentación.</span></span></div>
+      <div class="checkrow ok"><span>✓</span><span><b>Una de las respuestas que permite la ley</b><span class="d">Ofrece una fórmula alternativa, en vez de postergar la decisión.</span></span></div>
+      <div class="checkrow ok"><span>✓</span><span><b>Fundada en las funciones</b><span class="d">Explica qué tareas pueden hacerse a distancia y cuáles requieren presencia.</span></span></div>
+      <div class="checkrow ok"><span>✓</span><span><b>Trazable</b><span class="d">Queda por escrito, con copia a Personas, y anuncia el anexo al contrato.</span></span></div>
+    </div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 152 quáter O ter, 152 quáter K y 152 quáter L (Ley N°21.645).</p>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:23" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">Lección 3.6 · La propuesta de Francisca</span>
+  <h2>Funciones que se pueden hacer a distancia… solo en parte</h2>
+  <div class="grid-2">
+    <div>
+      <div class="story" style="margin-top:0"><strong>La propuesta:</strong> Francisca pidió trabajar a distancia lunes, martes y miércoles. Pero cada martes recibe en bodega a los proveedores para revisar la mercadería, una tarea que exige presencia.</div>
+      <div class="thread" style="margin-top:12px"><div class="bubble"><span class="who">Mauricio · jefatura</span>Camila, el martes no puede faltar a la recepción. ¿Qué le respondo?</div></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Francisca, Mauricio y Camila conversan en una sala de reuniones con un documento sobre la mesa" src="{{IMG:i36_acuerdo}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué le recomienda Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="A" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Ofrecer por escrito, dentro del plazo, una fórmula alternativa: lunes y miércoles a distancia y presencial los martes, explicando por qué.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Rechazar toda la solicitud, porque una parte de sus funciones es presencial.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Aceptar los tres días y pedirle a otro analista que cubra los martes, sin decírselo a Francisca.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Las funciones de Francisca son <strong>parcialmente</strong> compatibles: la ley permite ofrecer una fórmula alternativa que respete la tarea presencial y mantenga la mayor parte de lo solicitado.</p></div><div><p class="hint">Francisca acepta. Sigue con la segunda decisión.</p></div></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un rechazo difícil de sostener</div><div class="branch-body"><div><p>Para rechazar hay que fundamentar y acreditar que la naturaleza de las funciones <strong>no permite</strong> el trabajo a distancia. Aquí casi todo puede hacerse a distancia: solo el martes exige presencia. Francisca puede recurrir a la Inspección del Trabajo.</p></div><div><p class="hint">Si una parte es compatible, existe una opción intermedia.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un acuerdo que no se cumple</div><div class="branch-body"><div><p>Se acepta algo que la operación no puede sostener y se traslada la carga a otra persona sin transparencia. La respuesta debe basarse en el análisis real de las funciones, no en un arreglo informal.</p></div><div><p class="hint">Lo acordado debe ser viable y quedar por escrito.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Francisca acepta la fórmula alternativa.</strong> Camila debe preparar el documento que formaliza el acuerdo.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué debe contener el anexo al contrato?</h3>
+    <div class="options" data-choice="caso2c" data-correct="C" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Una sola frase: “Francisca trabajará desde su casa cuando lo necesite”, firmada por ambas partes.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Los días acordados y el compromiso de Francisca de costear su computador, internet y su mantención.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>La modalidad y combinación de días, el lugar, el período, el mecanismo de supervisión, los equipos y herramientas que provee la empresa y la desconexión cuando corresponda.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un anexo sin contenido</div><div class="branch-body"><div><p>“Cuando lo necesite” no fija días, lugar ni período, y deja fuera las menciones que la ley exige para el trabajo a distancia. Ante una diferencia, nadie podrá demostrar qué se acordó.</p></div><div><p class="hint">El anexo debe reflejar la fórmula acordada y las menciones legales.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: una cláusula ilegal</div><div class="branch-body"><div><p>Los equipos, herramientas y materiales para el trabajo a distancia son <strong>de cargo del empleador</strong>, igual que los costos de operación, funcionamiento y mantención. No se pueden traspasar a Francisca.</p></div><div><p class="hint">Revisa quién asume los costos.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>El anexo deja constancia de la fórmula acordada y de las menciones legales del trabajo a distancia: modalidad, lugar, período, supervisión, equipos de cargo de la empresa y, si hay teletrabajo con distribución libre, al menos 12 horas continuas de desconexión.</p></div><div><p class="hint">Caso resuelto: la solicitud quedó trazable de principio a fin.</p></div></div></div></template>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 152 quáter J, K, L, O bis y O ter (Ley N°21.645).</p>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:22" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:23" data-gate="cloze pass" data-gate-msg="Completa los seis espacios de la respuesta y presiona Comprobar respuesta.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Redacta una respuesta trazable</h2>
+  <p>Esta plantilla sirve para responder cualquier solicitud de teletrabajo por cuidado. Elige la opción correcta en cada uno de los <strong>seis espacios</strong> y presiona <strong>Comprobar respuesta</strong>. Las opciones en rojo deben corregirse.</p>
+  <div class="cloze cloze36" id="cz">
+    Francisca: respondemos tu solicitud presentada el 2 de septiembre, dentro del plazo de
+    <select id="z1" aria-label="Espacio 1"><option value="">elige…</option><option>30 días</option><option>15 días</option><option>dos meses</option></select> desde su presentación.
+    Revisamos tus funciones y
+    <select id="z2" aria-label="Espacio 2"><option value="">elige…</option><option>lo veremos más adelante</option><option>lo rechazamos sin más</option><option>te ofrecemos otra fórmula</option></select>:
+    lunes y miércoles a distancia, y presencial el resto de la semana, porque
+    <select id="z3" aria-label="Espacio 3"><option value="">elige…</option><option>recibes proveedores en sitio</option><option>el equipo aún se adapta</option><option>preferimos verte aquí</option></select>.
+    Los equipos y herramientas serán de cargo de
+    <select id="z4" aria-label="Espacio 4"><option value="">elige…</option><option>ambas partes, por mitades</option><option>la empresa</option><option>la persona trabajadora</option></select>.
+    Si estás de acuerdo, lo formalizaremos en
+    <select id="z5" aria-label="Espacio 5"><option value="">elige…</option><option>un anexo al contrato</option><option>un acuerdo de palabra</option><option>un mensaje de chat</option></select>.
+    Si no lo estás, puedes
+    <select id="z6" aria-label="Espacio 6"><option value="">elige…</option><option>esperar un nuevo plazo</option><option>retirar tu solicitud</option><option>ir a la Inspección del Trabajo</option></select>.
+  </div>
+  <button class="small-btn primary" type="button" id="zCheck" style="margin-top:12px">Comprobar respuesta</button>
+  <div class="fb" id="zFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 152 quáter K, L, O bis y O ter (Ley N°21.645).</p>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:21" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.6</h2>
+    <p>Ya puedes gestionar una solicitud de trabajo a distancia o teletrabajo por responsabilidades familiares: revisar su documentación y propuesta, responder dentro de 15 días desde la presentación, fundamentar la decisión y dejarla por escrito.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar el procedimiento</button><button class="small-btn primary" type="button" data-goto="4">Repasar el plazo</button></div>
+    <p class="sources">Fuentes: Ley N°21.645 (publicada el 29-12-2023, vigente desde el 29-01-2024); Código del Trabajo, arts. 152 quáter J, K, L, O bis y O ter; Dirección del Trabajo, criterios sobre acreditación de personas cuidadoras (2025). Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l36';
+const FIRST_KEYS=['hook','tog','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Día 12',lines:['Francisca pidió teletrabajo parcial para cuidar a su hija de 6 años.','Doce días después, su jefatura no responde. ¿Qué exige la ley para gestionar esta solicitud?'],
+  html:`<div class="v-icons"><div><span class="i">👩‍💼</span>Francisca</div><div><span class="i">📨</span>Solicitud</div><div><span class="i">⏳</span>Día 12</div></div><div class="note" data-at="1">¿Qué exige la ley?</div>`},
+ {t:'Quién puede pedirlo',lines:['La Ley 21.645 permite pedir trabajo a distancia, total o parcial, a quien cuida personalmente a un menor de 14 años','o, sin pago, a una persona con discapacidad o dependencia.'],
+  html:`<div class="v-big">Ley 21.645</div><div class="v-chk"><span class="on">Cuidado personal de menor de 14</span><span data-at="1">Discapacidad o dependencia</span><span data-at="1">Cuidado no remunerado</span></div>`},
+ {t:'Solicitud escrita',lines:['La solicitud se presenta por escrito, con el antecedente que acredita el cuidado: por ejemplo, el certificado de nacimiento.','Para discapacidad o dependencia, un certificado médico no basta.'],
+  html:`<div class="v-log"><div><span>✍️ Solicitud</span><span>por escrito</span></div><div><span>📎 Antecedente</span><span>certificado de nacimiento</span></div><div class="bad" data-at="1"><span>✕ Certificado médico</span><span>no basta</span></div></div>`},
+ {t:'Propuesta concreta',lines:['Además, debe proponer una fórmula concreta: qué días serán presenciales y cuáles a distancia,','sin exceder los límites de la jornada diaria y semanal.'],
+  html:`<div class="v-cal" style="grid-template-columns:repeat(5,1fr);max-width:360px">${['L','M','M','J','V'].map(d=>`<span>${d}</span>`).join('')}<span class="f">🏠</span><span>🏢</span><span class="f">🏠</span><span>🏢</span><span>🏢</span></div><div class="note" data-at="1">Dentro de la jornada diaria y semanal</div>`},
+ {t:'Plazo de respuesta',lines:['El empleador debe responder dentro de 15 días desde la presentación.','Puede aceptar, ofrecer una fórmula alternativa o rechazar, fundamentando que la naturaleza de las funciones no lo permite.'],
+  html:`<div class="v-big">15 días</div><div class="v-sub">desde la presentación</div><div class="v-chk"><span data-at="1">✓ Aceptar</span><span data-at="1">⇄ Fórmula alternativa</span><span data-at="1">✕ Rechazo fundado</span></div>`},
+ {t:'Anexo al contrato',lines:['Si hay acuerdo, se firma un anexo al contrato: modalidad, lugar, período y supervisión.','También los equipos y herramientas, que son de cargo del empleador, y la desconexión cuando corresponda.'],
+  html:`<div class="v-mail"><span class="always">📄 Anexo al contrato</span><span class="always">Modalidad · lugar · período · supervisión</span><span data-at="1">Equipos y herramientas: cargo del empleador</span><span data-at="1">Desconexión cuando corresponda</span></div>`},
+ {t:'Si no hay respuesta',lines:['Si no hay respuesta en plazo, o el rechazo no está fundado, la persona puede recurrir a la Inspección del Trabajo.','Por eso, cada paso debe quedar por escrito.'],
+  html:`<div class="v-final">Sin respuesta o sin fundamento → Inspección del Trabajo<br/><em data-at="1">Cada paso, por escrito.</em></div>`}
+]};
+const Q=[
+ {q:'Francisca pide teletrabajo parcial por el cuidado de su hija de 6 años. ¿Qué antecedente debe acompañar?',o:['Una carta de su jefatura que apoye la solicitud.','Un certificado médico del control sano de su hija.','El certificado de nacimiento que acredita la filiación con su hija menor de 14 años.'],c:2,f:'El cuidado personal de un niño o niña menor de 14 años se acredita con el certificado de nacimiento o con la resolución judicial que otorga el cuidado personal.'},
+ {q:'¿Qué debe incluir la propuesta de la persona trabajadora?',o:['Una fórmula concreta de tiempos presenciales y a distancia, sin exceder los límites de la jornada diaria y semanal.','Solo la frase “trabajaré a distancia cuando lo necesite”.','Más horas en los días a distancia, para compensar los días que no va a la oficina.'],c:0,f:'La solicitud debe proponer una combinación concreta de trabajo presencial y a distancia que respete los límites de la jornada diaria y semanal.'},
+ {q:'¿Dentro de qué plazo debe responder el empleador?',o:['30 días desde la presentación.','Cuando el equipo se haya adaptado.','No hay un plazo legal.','15 días desde la presentación.'],c:3,f:'El empleador debe responder dentro de 15 días desde la presentación de la solicitud.'},
+ {q:'Si el empleador decide rechazar la solicitud, ¿qué debe hacer?',o:['Basta con decir que no, de palabra.','Fundamentar y acreditar que la naturaleza de las funciones no permite el trabajo a distancia.','Esperar a que la persona vuelva a insistir.'],c:1,f:'El rechazo debe ser fundado: hay que acreditar que la naturaleza de las funciones no lo permite. Si no hay respuesta o el rechazo no está fundado, la persona puede recurrir a la Inspección del Trabajo.'},
+ {q:'Si se acuerda el trabajo a distancia, ¿quién asume los equipos y herramientas?',o:['La persona trabajadora.','Se dividen por mitades.','El empleador, incluidos los costos de operación, funcionamiento y mantención.','Nadie: se usan los equipos personales.'],c:2,f:'Los equipos, herramientas y materiales son de cargo del empleador, igual que los costos de operación, funcionamiento y mantención. Todo queda en el anexo al contrato.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: conversación ---------- */
+const CHAT=[
+ ['ts','Miércoles 2 de septiembre · día 1'],
+ ['fran','Francisca → Mauricio','Mauricio, te envié por correo mi solicitud de teletrabajo parcial por el cuidado de Emilia, con su certificado de nacimiento y mi propuesta de días.'],
+ ['mgr','Mauricio · jefatura','Recibido. Lo reviso.'],
+ ['ts','Lunes 14 de septiembre · han pasado 12 días'],
+ ['fran','Francisca → Camila','Camila, ya van 12 días y no tengo respuesta. ¿Sigo esperando?'],
+ ['mgr','Mauricio → Camila','Prefiero esperar un par de meses a ver cómo funciona el equipo. Después le respondo.'],
+ ['cam','Camila','Déjenme revisar qué exige la ley antes de seguir.']];
+$('#showMsg').addEventListener('click',e=>{e.currentTarget.remove();const tb=$('#threadBody');let i=0;
+  const step=()=>{if(i>=CHAT.length){$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),150);return}
+    const m=CHAT[i++];tb.insertAdjacentHTML('beforeend',m[0]==='ts'?`<div class="tstamp">${m[1]}</div>`:`<div class="bubble ${m[0]==='fran'?'fran':m[0]==='cam'?'camila':''}"><span class="who">${m[1]}</span>${m[2]}</div>`);setTimeout(step,m[0]==='ts'?250:550)};
+  step()});
+
+/* ---------- Ordenar el procedimiento ---------- */
+const ORDER=['Francisca presenta la solicitud por escrito, con el antecedente que acredita el cuidado y una propuesta concreta de días presenciales y a distancia.',
+ 'Personas registra la fecha de recepción: desde ahí se cuentan los 15 días para responder.',
+ 'La jefatura y Personas revisan las funciones: qué tareas pueden hacerse a distancia y cuáles exigen presencia.',
+ 'La empresa responde por escrito dentro del plazo: acepta, ofrece una fórmula alternativa o rechaza fundadamente.',
+ 'Si hay acuerdo, se firma un anexo al contrato y se archivan la solicitud, el análisis y la respuesta.',
+ 'Si no hubo respuesta en plazo o el rechazo no está fundado, Francisca puede recurrir a la Inspección del Trabajo.'];
+let cur=[2,4,0,5,1,3];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Todo parte de una solicitud escrita y completa. La fecha de recepción fija el plazo; el análisis de funciones sostiene la respuesta; el anexo deja constancia del acuerdo. La Inspección del Trabajo es el camino cuando la empresa no responde o no fundamenta.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de ${ORDER.length} pasos están en su lugar (en verde). Pregúntate: ¿qué necesita existir antes de poder contar un plazo? ¿Y qué se analiza antes de responder?`)});
+
+/* ---------- Interruptores: ¿la solicitud está completa? ---------- */
+const TG=[
+ ['Encabezado','Santiago, 2 de septiembre de 2026 · Para: Mauricio Lagos, jefe de Abastecimiento',0,'Correcto: la solicitud queda por escrito, con fecha y destinatario. Esa fecha marca el inicio de los 15 días para responder.'],
+ ['Motivo','Solicito trabajar a distancia de forma parcial, porque tengo el cuidado personal de mi hija Emilia, de 6 años.',0,'Correcto: identifica la situación protegida, el cuidado personal de una niña menor de 14 años.'],
+ ['Antecedente','Adjunto: certificado médico del control sano de Emilia.',1,'Problema: un certificado médico no acredita la filiación. Debe adjuntar el certificado de nacimiento de Emilia o la resolución judicial que otorga el cuidado personal.'],
+ ['Propuesta','Propongo trabajar desde mi casa cuando lo necesite.',1,'Problema: no es una fórmula concreta. Debe indicar qué días serán presenciales y cuáles a distancia; por ejemplo, lunes, martes y miércoles a distancia.'],
+ ['Horario','En los días a distancia trabajaría de 8:00 a 20:00, para compensar.',1,'Problema: la propuesta no puede exceder los límites de la jornada diaria y semanal. El trabajo a distancia no alarga la jornada.'],
+ ['Funciones','Las cotizaciones y las órdenes de compra se gestionan en el sistema, desde cualquier lugar.',0,'Correcto y útil: ayuda a mostrar que la naturaleza de sus funciones permite el trabajo a distancia.'],
+ ['Firma','Francisca Herrera · Analista de compras',0,'Correcto: identifica a quien presenta la solicitud.']];
+$('#slip36').insertAdjacentHTML('beforeend',TG.map((l,i)=>`<div class="toggle-row" data-i="${i}"><span><span class="lbl">${l[0]}</span>${l[1]}</span><span class="swl"><small>Tiene un problema</small><button class="sw" type="button" aria-pressed="false" aria-label="Marcar problema en: ${l[0]}"></button></span><div class="nat">${l[3]}</div></div>`).join(''));
+$$('#slip36 .toggle-row').forEach(r=>$('.sw',r).addEventListener('click',e=>{r.classList.toggle('on');e.currentTarget.setAttribute('aria-pressed',r.classList.contains('on'));r.classList.remove('rev','bad','okr')}));
+$('#tgCheck').addEventListener('click',()=>{let ok=0,miss=0,extra=0;
+  $$('#slip36 .toggle-row').forEach(r=>{const t=TG[+r.dataset.i],on=r.classList.contains('on'),g=on===!!t[2];if(g)ok++;else if(t[2])miss++;else extra++;
+    r.classList.add('rev');r.classList.toggle('okr',g);r.classList.toggle('bad',!g)});
+  if(!('tog' in S.first))S.first.tog=ok===TG.length;
+  if(ok===TG.length){feedback($('#tgFb'),true,'Revisión completa: 3 problemas encontrados.','Faltaba el antecedente correcto (certificado de nacimiento), una propuesta concreta de días y respetar los límites de la jornada. Con esos ajustes, la solicitud está lista para presentarse.');done('tog')}
+  else feedback($('#tgFb'),false,`${ok} de ${TG.length} líneas bien evaluadas.`,`Las líneas en rojo están mal evaluadas${miss?`: ${miss} con problema sin marcar`:''}${extra?`${miss?' y':':'} ${extra} correcta${extra>1?'s':''} marcada${extra>1?'s':''} como problema`:''}. Lee la explicación, cambia el interruptor y vuelve a revisar.`)});
+
+/* ---------- Calculadora de plazo ---------- */
+const DIAS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'],MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const pd=s=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');return m?new Date(+m[1],+m[2]-1,+m[3]):null};
+const add=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);
+const fd=d=>`${DIAS[d.getDay()]} ${d.getDate()} de ${MES[d.getMonth()]} de ${d.getFullYear()}`;
+let c1=false;
+function cDraw(){const d=pd($('#cDate').value)||new Date(2026,8,2);$('#cFrom').textContent=fd(d);$('#cFb').innerHTML='';
+  const opts=[[30,'30'],[15,'15'],[10,'10']];
+  $('#cOpts').innerHTML=opts.map(o=>`<button class="chip2" type="button" data-n="${o[0]}">${fd(add(d,o[0]))}</button>`).join('');
+  $$('#cOpts .chip2').forEach(b=>b.addEventListener('click',()=>{const n=+b.dataset.n;$$('#cOpts .chip2').forEach(x=>x.classList.remove('good','bad'));
+    if(n===15){b.classList.add('good');feedback($('#cFb'),true,`Correcto: ${fd(add(d,15))}.`,'Es la fecha del día 15 contado desde la presentación. La respuesta escrita debe estar lista a más tardar ese día; mejor si sale antes.');
+      if(!c1){c1=true;const c2=$('#c2');c2.style.opacity='1';c2.removeAttribute('aria-disabled');$('#cDays').disabled=false}}
+    else{b.classList.add('bad');feedback($('#cFb'),false,'Esa no es la fecha del día 15.',n===30?'Sumaste 30 días: ese es el plazo de anticipación para pedir el feriado preferente, no el plazo para responder esta solicitud.':'Sumaste solo 10 días. El plazo para responder es de 15 días desde la presentación.')}}))}
+$('#cDate').addEventListener('input',cDraw);$('#cDate').addEventListener('change',cDraw);cDraw();
+function semaf(){const n=+$('#cDays').value,f=new Date(2026,8,2),rest=15-n;$('#cDaysO').textContent=n+(n===1?' día':' días');
+  const st=n>15?'r':n>=10?'a':'g';$$('.sema .lights i').forEach(i=>i.classList.toggle('on',i.classList.contains(st)));
+  $('#cSt').textContent=st==='r'?'Plazo vencido':st==='a'?'Plazo por vencer':'En plazo';
+  $('#cTx').textContent=`Día ${n}: ${fd(add(f,n))}. `+(st==='r'?'Ya pasó el día 15 sin respuesta: Francisca puede recurrir a la Inspección del Trabajo.':n===15?'Es el último día: la respuesta escrita debe enviarse hoy.':st==='a'?`Quedan ${rest} ${rest===1?'día':'días'}. La respuesta escrita debe prepararse ya.`:`Quedan ${rest} días: hay tiempo para analizar las funciones y responder por escrito.`);
+  if(n===12&&$('#cQ').hidden){$('#cQ').hidden=false}}
+$('#cDays').addEventListener('input',semaf);semaf();
+$$('#cQopts .chip2').forEach(b=>b.addEventListener('click',()=>{const v=+b.dataset.v;$$('#cQopts .chip2').forEach(x=>x.classList.remove('good','bad'));
+  if(v===1){b.classList.add('good');feedback($('#cQfb'),true,'Correcto.','En el día 12 quedan 3 días. Mauricio todavía puede cumplir: analizar las funciones y responder por escrito antes del día 15 (jueves 17 de septiembre). Esperar “un par de meses” lo dejaría fuera de plazo.');if(c1)done('calc')}
+  else{b.classList.add('bad');feedback($('#cQfb'),false,'Revisa el semáforo.',v===0?'El plazo aún no vence, pero quedan solo 3 días: seguir esperando hará que se cumpla sin respuesta.':'El plazo no ha vencido, y aun dentro de él el rechazo no es la única opción: también puede aceptar u ofrecer una alternativa.')}}));
+
+/* ---------- Comparador ---------- */
+$('#cmpR').addEventListener('input',e=>{const v=+e.target.value;$('#cmp').style.setProperty('--cut',v+'%');if(v<=15){e.target.value=0;$('#cmp').style.setProperty('--cut','0%');if(!S.done.has('cmp')){done('cmp');$('#cmpOut').hidden=false}}});
+
+/* ---------- Plantilla de respuesta ---------- */
+$('#zCheck').addEventListener('click',()=>{const ans={z1:'15 días',z2:'te ofrecemos otra fórmula',z3:'recibes proveedores en sitio',z4:'la empresa',z5:'un anexo al contrato',z6:'ir a la Inspección del Trabajo'};let ok=0;
+  Object.entries(ans).forEach(([id,v])=>{const s=$('#'+id);const g=s.value===v;s.classList.toggle('good',g);s.classList.toggle('bad',!g);if(g)ok++});
+  if(ok===6){feedback($('#zFb'),true,'Respuesta completa y trazable.','Indica la fecha de la solicitud y responde dentro de 15 días desde la presentación, ofrece una fórmula alternativa fundada en las funciones, deja los equipos de cargo de la empresa, anuncia el anexo e informa el camino si no hay acuerdo.');done('cloze')}
+  else feedback($('#zFb'),false,`${ok} de 6 espacios correctos.`,'Corrige los espacios en rojo. Recuerda: plazo legal, una de las respuestas que permite la ley, fundamento en las funciones, costos del empleador, constancia escrita y derecho a recurrir.')});
+/*{{TAIL}}*/
+})();
+</script>

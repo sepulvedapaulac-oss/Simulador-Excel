@@ -1,0 +1,132 @@
+<title>Actividad práctica 1 — Jornada y horas extra</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev">
+<div class="topbar"><div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · ACTIVIDAD PRÁCTICA 1</span><span id="taskN">Lecciones 2.4 a 2.7</span></div></div>
+
+<section class="slide active" id="intro">
+  <div class="ev-hero">
+    <div>
+      <span class="eyebrow">Actividad práctica 1 · Evaluación</span>
+      <h1>Auditoría de jornada en el equipo de Bodega</h1>
+      <p class="lead">Camila debe auditar la jornada del equipo de Bodega de Horizonte Servicios antes del cierre de octubre de 2026. Vas a ayudarla a resolver cinco tareas con lo aprendido en las lecciones <strong>2.4 a 2.7</strong>.</p>
+      <ul class="ev-list">
+        <li><span>1</span>Revisar tres horarios propuestos<small>3 pts</small></li>
+        <li><span>2</span>Aplicar la rebaja sin acuerdo<small>2 pts</small></li>
+        <li><span>3</span>Calcular las horas extra de una semana<small>3 pts</small></li>
+        <li><span>4</span>Validar un pacto de horas extra<small>1 pt</small></li>
+        <li><span>5</span>Resolver una discrepancia de registro<small>1 pt</small></li>
+      </ul>
+      <div class="callout"><strong>Cómo se evalúa:</strong> cada tarea se responde una sola vez y verás la corrección al enviarla. Necesitas <strong>80% (8 de <span id="totPts">10</span> puntos)</strong> para aprobar. Ten a mano una calculadora.</div>
+      <button class="small-btn primary" type="button" id="startBtn" style="margin-top:14px">Comenzar la actividad →</button>
+    </div>
+    <div class="ev-badge"><span>Tiempo estimado</span><b>25–30 min</b><span>5 tareas · 10 puntos</span><span>Aprobación: 80%</span></div>
+  </div>
+</section>
+
+<section class="slide active" id="work" hidden>
+  <div class="ev-steps" id="steps"></div>
+
+  <!-- T1 -->
+  <div class="etask" id="t1" data-pts="3" data-title="1. Revisar horarios propuestos" data-lesson="Lecciones 2.4 y 2.5">
+    <h2>Tarea 1 · ¿Estos horarios cumplen la ley?</h2>
+    <p>En 2026 el límite general es de <strong>42 horas semanales</strong>, distribuidas en 5 o 6 días, con un máximo de <strong>10 horas ordinarias diarias</strong>. Ninguno de estos equipos tiene acuerdo de reducción anticipada a 40 horas. Para cada horario, marca <strong>todas</strong> las afirmaciones que correspondan.</p>
+    <div id="schedWrap"></div>
+    <button class="small-btn primary submit" type="button" id="t1s">Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T2 -->
+  <div class="etask" id="t2" data-pts="2" data-auto="mc" data-title="2. Rebaja sin acuerdo" data-lesson="Lección 2.5">
+    <h2>Tarea 2 · La rebaja de 44 a 42 horas sin acuerdo</h2>
+    <div class="case-box"><b>Equipo A:</b> 44 horas de lunes a viernes. No hubo acuerdo para implementar la reducción.</div>
+    <div class="options" data-mc="a" data-correct="C" data-fb-ok="Equipo A: correcto, una hora menos al término de la jornada en dos días distintos." data-fb-ko="Equipo A: la rebaja sin acuerdo en 5 días es de una hora al término de la jornada en dos días distintos.">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>24 minutos menos cada día.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Dos horas menos el viernes.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Una hora menos al término de la jornada en dos días distintos.</span></button>
+    </div>
+    <div class="case-box"><b>Equipo B:</b> 44 horas de lunes a sábado. Tampoco hubo acuerdo.</div>
+    <div class="options" data-mc="b" data-correct="A" data-fb-ok="Equipo B: correcto, 50 + 50 + 20 minutos." data-fb-ko="Equipo B: en 6 días sin acuerdo corresponde 50 minutos en dos días distintos y 20 minutos en un tercer día.">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>50 minutos en dos días distintos y 20 minutos en un tercer día.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>20 minutos menos cada día.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Eliminar la jornada del sábado.</span></button>
+    </div>
+    <button class="small-btn primary submit" type="button" disabled>Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T3 -->
+  <div class="etask" id="t3" data-pts="3" data-title="3. Calcular horas extra" data-lesson="Lecciones 2.6 y 2.7">
+    <h2>Tarea 3 · Las horas extra de Tomás</h2>
+    <div class="case-box">Tomás tiene contrato de <strong>42 horas semanales</strong>, de lunes a viernes de <strong>08:30 a 17:39</strong> con 45 minutos de colación (8 h 24 min diarios). Su sueldo base es de <strong>$840.000</strong>. Existe un pacto escrito de horas extra vigente y todas las salidas posteriores fueron solicitadas por su jefatura. El recargo es el legal (50%).</div>
+    <table class="sched"><tr><th>Día</th><th>Entrada</th><th>Salida registrada</th></tr>
+      <tr><td>Lunes</td><td>08:30</td><td>18:39</td></tr><tr><td>Martes</td><td>08:30</td><td>17:39</td></tr><tr><td>Miércoles</td><td>08:30</td><td>19:39</td></tr><tr><td>Jueves</td><td>08:30</td><td>19:09</td></tr><tr><td>Viernes</td><td>08:30</td><td>17:39</td></tr></table>
+    <div class="inrow"><label for="t3a">a) Total de horas extraordinarias de la semana (en horas, ej: 2,5)</label><input id="t3a" inputmode="decimal"/></div>
+    <div class="inrow"><label for="t3b">b) Valor de una hora extraordinaria ($)</label><input id="t3b" inputmode="numeric"/></div>
+    <div class="inrow"><label for="t3c">c) Monto a pagar por las horas extra de la semana ($)</label><input id="t3c" inputmode="numeric"/></div>
+    <p class="hint">Fórmula para sueldo mensual: (sueldo ÷ 30 × 28) ÷ (horas semanales × 4) × 1,5.</p>
+    <button class="small-btn primary submit" type="button" id="t3s">Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T4 -->
+  <div class="etask" id="t4" data-pts="1" data-auto="mc" data-title="4. Validar un pacto" data-lesson="Lección 2.6">
+    <h2>Tarea 4 · ¿Cuál pacto de horas extra es válido?</h2>
+    <p>Para un cierre de inventario de fin de año, la jefatura presenta tres propuestas. ¿Cuál cumple la ley?</p>
+    <div class="options" data-mc="p" data-correct="B" data-fb-ok="Correcto: escrito, temporal, máximo 2 horas diarias y vigencia de hasta 3 meses." data-fb-ko="El pacto válido debe ser escrito, responder a una necesidad temporal, no superar 2 horas diarias y durar hasta 3 meses.">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Pacto escrito por 2 meses, con hasta 3 horas extra diarias.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pacto escrito por 3 meses, para el cierre de inventario, con hasta 2 horas extra diarias.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Acuerdo verbal por 6 meses, con hasta 2 horas extra diarias.</span></button>
+    </div>
+    <button class="small-btn primary submit" type="button" disabled>Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T5 -->
+  <div class="etask" id="t5" data-pts="1" data-auto="mc" data-title="5. Discrepancia de registro" data-lesson="Lección 2.7">
+    <h2>Tarea 5 · Una marcación que no calza</h2>
+    <div class="case-box">El jueves, el sistema electrónico registró la salida de Valeria a las <strong>20:05</strong>. Su horario termina a las 17:39 y su jefatura dice que “nunca le pidió quedarse”. Sin embargo, hay un correo de la jefatura enviado a las 18:10 con una tarea urgente.</div>
+    <div class="options" data-mc="r" data-correct="C" data-fb-ok="Correcto: se investiga con todos los antecedentes y nunca se borra la marcación original." data-fb-ko="Las discrepancias se investigan antes de cerrar remuneraciones, con todos los antecedentes y conservando la marcación original.">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Corregir la marcación a las 17:39, porque así lo indica la jefatura.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pagar solo hasta las 18:10, que es la hora del correo.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Conservar la marcación, revisar el correo y demás antecedentes, y determinar si hubo trabajo extraordinario antes del cierre.</span></button>
+    </div>
+    <button class="small-btn primary submit" type="button" disabled>Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <div class="ev-nav"><button class="small-btn" type="button" id="evPrev">← Anterior</button><button class="small-btn primary" type="button" id="evNext" disabled>Siguiente tarea →</button></div>
+</section>
+
+<section class="slide active" id="result" hidden>
+  <div class="score"><div class="ring" id="rRing"><span style="background:var(--surface);width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem" id="rPct"></span></div>
+    <div><span class="eyebrow">Resultado · Actividad práctica 1</span><h2 id="rTitle"></h2><p><b>Puntaje: <span id="rScore"></span></b></p><p id="rMsg"></p></div></div>
+  <table class="res-table" id="rTable"></table>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" id="review">Revisar mis respuestas</button><button class="small-btn primary" type="button" id="retry">Nuevo intento</button></div>
+</section>
+</main>
+<script>
+(function(){
+const PASS_PCT=80;
+/*{{ENGINE}}*/
+/* Tarea 1: horarios */
+const OPTS=['Supera las 42 horas semanales','Algún día supera 10 horas ordinarias','Se distribuye en menos de 5 días','Cumple todos los límites'];
+const SCH=[{n:'Horario A · Despacho',d:['10:30','10:30','10:30','10:30','—','—'],ans:[1,2],why:'42 horas en 4 días: cada día supera las 10 horas ordinarias y la distribución en 4 días no opera como regla general en 2026.'},
+ {n:'Horario B · Inventario',d:['8:24','8:24','8:24','8:24','8:24','—'],ans:[3],why:'42 horas en 5 días de 8 h 24 min: cumple todos los límites.'},
+ {n:'Horario C · Recepción',d:['7:30','7:30','7:30','7:30','7:30','7:30'],ans:[0],why:'6 días de 7 h 30 min suman 45 horas: supera el límite de 42.'}];
+$('#schedWrap').innerHTML=SCH.map((s,i)=>`<div class="subcase"><h3 style="margin:0 0 8px">${s.n}</h3><div style="overflow-x:auto"><table class="sched"><tr><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th></tr><tr>${s.d.map(x=>`<td>${x}</td>`).join('')}</tr></table></div>
+  <div class="chkgrid" data-s="${i}">${OPTS.map((o,k)=>`<label><input type="checkbox" value="${k}"/> ${o}</label>`).join('')}</div></div>`).join('');
+$('#t1s').addEventListener('click',()=>{let e=0,m=[];
+  SCH.forEach((s,i)=>{const box=$(`.chkgrid[data-s="${i}"]`);const sel=$$('input',box).filter(x=>x.checked).map(x=>+x.value);
+    const ok=sel.length===s.ans.length&&s.ans.every(a=>sel.includes(a));if(ok)e++;
+    $$('label',box).forEach(l=>{const v=+$('input',l).value,c=$('input',l).checked,should=s.ans.includes(v);l.classList.add(c&&should?'good':c&&!should?'bad':!c&&should?'miss':'x')});
+    m.push(`<b>${s.n.split('·')[0]}:</b> ${s.why}`)});
+  grade('t1',e,3,m.join('<br/>'))});
+/* Tarea 3: horas extra */
+$('#t3s').addEventListener('click',()=>{const a=num($('#t3a').value),b=num($('#t3b').value),c=num($('#t3c').value);let e=0;
+  const okA=near(a,4.5,0.01),okB=near(b,7000,2),okC=near(c,31500,5);[['#t3a',okA],['#t3b',okB],['#t3c',okC]].forEach(([s,o])=>{$(s).classList.add(o?'good':'bad');if(o)e++});
+  grade('t3',e,3,'Horas extra: lunes 1 h + miércoles 2 h + jueves 1,5 h = <b>4,5 h</b>. Valor hora: ($840.000 ÷ 30 × 28) ÷ (42 × 4) = $4.666,67; con 50% de recargo = <b>$7.000</b>. Pago: 4,5 × $7.000 = <b>$31.500</b>.')});
+})();
+</script>

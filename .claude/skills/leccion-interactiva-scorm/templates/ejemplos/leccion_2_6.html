@@ -1,0 +1,324 @@
+<title>Lección 2.6 — Cuando la jornada se extiende</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · LECCIÓN 2.6</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:24" data-gate="hook" data-gate-msg="Lee el mensaje y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.6 · Cuando la jornada se extiende</span>
+      <h1 class="reveal">Quedarse más tiempo no siempre significa lo mismo</h1>
+      <p class="lead reveal">Son las 18:00 en <strong>Horizonte Servicios</strong>. Camila, del Equipo de Personas, recibe un mensaje urgente de una jefatura. Presiona <strong>“Ver mensaje”</strong> para leerlo.</p>
+      <div class="thread reveal" id="thread">
+        <div class="persona"><span class="avatar mgr">JP</span> Jefatura de Proyectos · ahora</div>
+        <div id="threadBody"></div>
+        <button class="small-btn primary" type="button" id="showMsg">Ver mensaje</button>
+      </div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila mira el reloj de la oficina al atardecer mientras dos colegas siguen trabajando" src="{{IMG:i26_hero}}"/></div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Puede Camila autorizarlo solo porque hay una necesidad operativa?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sí. Si el trabajo lo requiere, la empresa decide cuántas horas extra se hacen.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No. Las horas extraordinarias están prohibidas.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Depende. Debe revisar si la necesidad es temporal, si existe pacto escrito y si se respetan los límites diarios y los descansos.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>No es tan simple.</strong> <span class="fb-body">La necesidad operativa no basta: las horas extraordinarias tienen límites legales (máximo diario, temporalidad, pacto escrito) que la empresa no puede saltarse.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback bad"><strong>No están prohibidas.</strong> <span class="fb-body">La ley permite pactar horas extraordinarias, pero solo dentro de ciertos límites y para necesidades temporales.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">Antes de extender una jornada, Camila debe revisar temporalidad, pacto, límites, descansos, registro y pago. En esta lección verás cada uno.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 30 s</span>
+  <h2>¿Qué es la jornada extraordinaria y qué reglas tiene?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ¿CUÁNDO ES EXTRAORDINARIA? -->
+<section class="slide" data-title="¿Cuándo es extraordinaria?" data-audio="p03" data-dur="0:19" data-gate="day" data-gate-msg="Revisa los cuatro tramos de la jornada.">
+  <span class="eyebrow">Concepto</span>
+  <h2>Un día de trabajo, tramo por tramo</h2>
+  <p>Esta es la jornada de Andrés, con contrato de <strong>42 horas semanales</strong> distribuidas de lunes a viernes (8 horas y 24 minutos diarios). Haz clic en cada tramo.</p>
+  <div class="task" id="dayTask">Tramos revisados <span class="tick" id="dayTick">0 / 4</span></div>
+  <div class="dayline" id="dayline">
+    <button class="dseg ord" type="button" style="flex:5" data-k="0">Jornada ordinaria<small>08:30–13:30</small></button>
+    <button class="dseg col" type="button" style="flex:.9" data-k="1">Colación<small>45 min</small></button>
+    <button class="dseg ord" type="button" style="flex:3.4" data-k="2">Jornada ordinaria<small>14:15–17:39</small></button>
+    <button class="dseg ext" type="button" style="flex:2" data-k="3">Tiempo extra<small>17:39–19:39</small></button>
+  </div>
+  <div class="dayaxis"><span>08:30</span><span>13:30</span><span>17:39</span><span>19:39</span></div>
+  <div class="dpanel" id="dpanel"><p class="hint">Selecciona un tramo para ver la explicación.</p></div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 30, 32 y 34.</div>
+</section>
+
+<!-- 4 · LÍMITES -->
+<section class="slide" data-title="Límites" data-audio="p04" data-dur="0:19" data-gate="sim" data-gate-msg="Ajusta la propuesta hasta que cumpla todos los requisitos.">
+  <span class="eyebrow amber">Límites legales</span>
+  <h2>Las horas extra son temporales, no una jornada paralela</h2>
+  <p>La jefatura propone el pacto de la izquierda. Tu tarea: <strong>ajusta la propuesta hasta que cumpla la ley</strong>. A la derecha verás qué requisito se cumple y cuál no.</p>
+  <div class="sim">
+    <div class="sim-box">
+      <div class="srow" style="grid-template-columns:1fr 70px"><label for="simH">Horas extra por día</label><output id="simHo">3 h</output></div>
+      <input id="simH" type="range" min="0.5" max="4" step="0.5" value="3" style="width:100%;accent-color:var(--teal)"/>
+      <div class="srow" style="grid-template-columns:1fr 90px;margin-top:10px"><label for="simM">Duración del pacto</label><output id="simMo">6 meses</output></div>
+      <input id="simM" type="range" min="1" max="6" step="1" value="6" style="width:100%;accent-color:var(--teal)"/>
+      <label class="switch">El pacto consta por escrito <input type="checkbox" id="simW"/></label>
+      <label class="switch">Responde a una necesidad temporal (cierre de proyecto) <input type="checkbox" id="simT"/></label>
+      <label class="switch">La labor no perjudica la salud de las personas <input type="checkbox" id="simS" checked/></label>
+    </div>
+    <div class="sim-box"><div class="verdict ko" id="simV">La propuesta no cumple</div><div class="checks" id="simChecks"></div></div>
+  </div>
+  <div class="story"><strong>Señal de riesgo:</strong> si el sobretiempo se vuelve permanente, ya no responde a una necesidad temporal. En ese caso hay que revisar la organización del trabajo (dotación, turnos, cargas), no renovar pactos indefinidamente.</div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 31 y 32, modificados por la Ley N°21.561.</div>
+</section>
+
+<!-- 5 · PAGO -->
+<section class="slide" data-title="Pago" data-audio="p05" data-dur="0:16" data-gate="cards calc" data-gate-msg="Voltea las tres tarjetas y resuelve el cálculo de Pedro.">
+  <span class="eyebrow violet">Remuneración</span>
+  <h2>¿Cómo se pagan las horas extraordinarias?</h2>
+  <p>Voltea cada tarjeta para conocer la regla. Luego resuelve el caso de Pedro.</p>
+  <div class="task" id="fcTask">Reglas revisadas <span class="tick" id="fcTick">0 / 3</span></div>
+  <div class="flipdeck">
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">+50%</div><strong>¿Cuál es el recargo?</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Recargo legal mínimo</strong><span>Se paga con un recargo de al menos <b>50%</b> sobre el sueldo convenido para la jornada ordinaria. Las partes pueden pactar un porcentaje mayor.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">📅</div><strong>¿Cuándo se pagan?</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>En el mismo período</strong><span>Se liquidan y pagan junto con las remuneraciones ordinarias del período en que se trabajaron. No se acumulan para más adelante.</span></div></div></button>
+    <button class="flip" type="button"><div class="flip-inner"><div class="face"><div class="big">🌴</div><strong>¿Hay otra alternativa?</strong><span class="turn">↻ Toca para voltear</span></div><div class="face back"><strong>Compensar con feriado</strong><span>Desde la Ley N°21.561, las partes pueden acordar <b>por escrito</b> compensarlas con días adicionales de feriado, con un máximo de <b>5 días hábiles al año</b>.</span></div></div></button>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="calc">
+      <h3 style="margin-top:0">El caso de Pedro</h3>
+      <p>Pedro gana un sueldo base de <strong>$900.000</strong> mensuales, con jornada de <strong>42 horas semanales</strong>. Este mes trabajó <strong>6 horas extraordinarias</strong> pactadas por escrito. ¿Cuánto le corresponde por esas horas?</p>
+      <div class="answer"><label for="calcAns" class="hint">Tu respuesta ($)</label><input id="calcAns" inputmode="numeric" placeholder="Ej: 45000"/><button class="small-btn primary" type="button" id="calcCheck">Comprobar</button><button class="small-btn" type="button" id="calcStep">Ver desarrollo paso a paso</button></div>
+      <div class="fb" id="calcFb"></div>
+      <div class="steps" id="calcSteps"></div>
+    </div>
+    <div>
+      <div class="photo-frame wide"><img alt="Analista revisa una liquidación de sueldo con una calculadora" src="{{IMG:i26_pago}}"/></div>
+      <details class="transcript"><summary>Prueba la fórmula con otros valores</summary>
+        <div class="calc-grid"><label class="field">Sueldo base<input id="fS" inputmode="numeric" value="900000"/></label><label class="field">Horas semanales<input id="fJ" inputmode="numeric" value="42"/></label><label class="field">Horas extra<input id="fH" inputmode="numeric" value="6"/></label></div>
+        <p id="fOut" class="hint"></p>
+      </details>
+    </div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículo 32. El cálculo usa la fórmula habitual de la Dirección del Trabajo para sueldos mensuales.</div>
+</section>
+
+<!-- 6 · DESCANSOS -->
+<section class="slide" data-title="Descansos" data-audio="p06" data-dur="0:12" data-gate="hs" data-gate-msg="Explora los tres puntos de la imagen.">
+  <span class="eyebrow">Descansos</span>
+  <h2>Extender la jornada no elimina los descansos</h2>
+  <p>Haz clic en cada número de la imagen.</p>
+  <div class="task" id="hsTask">Puntos explorados <span class="tick" id="hsTick">0 / 3</span></div>
+  <div class="hs-wrap">
+    <div class="hs-stage"><img alt="Comedor de una empresa con personas almorzando, un calendario en la pared y una sala de control al fondo" src="{{IMG:i26_descanso}}"/>
+      <button class="hs" type="button" style="left:20%;top:62%" data-hs="0">1</button>
+      <button class="hs" type="button" style="left:60%;top:24%" data-hs="1">2</button>
+      <button class="hs" type="button" style="left:88%;top:30%" data-hs="2">3</button>
+    </div>
+    <div class="hs-panel" id="hsPanel"><p class="hint">Selecciona un número para ver la explicación.</p></div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículos 34, 35 y 38.</div>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:16" data-gate="caso" data-gate-msg="Resuelve las dos decisiones del caso.">
+  <span class="eyebrow amber">El caso de Camila</span>
+  <h2>“Tres horas extra por día durante dos semanas”</h2>
+  <div class="grid-2">
+    <div class="chat">
+      <div class="persona"><span class="avatar mgr">JP</span> Jefatura de Proyectos</div>
+      <div class="bubble"><span class="who">Jefatura</span>El proyecto está atrasado. Necesito que el equipo se quede tres horas más cada día durante dos semanas. ¿Me lo autorizas hoy?</div>
+    </div>
+    <div class="photo-frame wide"><img alt="Jefatura muestra un tablero de proyecto atrasado a Camila" src="{{IMG:i26_caso}}"/></div>
+  </div>
+  <h3 style="margin-top:16px">Decisión 1 · ¿Qué responde Camila?</h3>
+  <div class="options" data-choice="caso1" data-correct="C" data-then="caso2">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Autoriza las tres horas diarias porque la necesidad es urgente.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Pide que el equipo trabaje las horas adicionales sin marcarlas.</span></button>
+    <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Propone un pacto escrito y temporal de hasta 2 horas diarias, y revisa si conviene reforzar el equipo.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="caso1-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se excede el máximo legal</div><div class="branch-body"><div><p>Tres horas diarias superan el máximo de <strong>2 horas extraordinarias por día</strong>. La urgencia no autoriza a pasar ese límite y la empresa queda expuesta a una infracción.</p></div><div><p class="hint">Revisa el límite diario.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se oculta trabajo real</div><div class="branch-body"><div><p>Pedir que no se marque el sobretiempo deja un registro falso. Las horas trabajadas con conocimiento del empleador <strong>igual son extraordinarias y deben pagarse</strong>, y ocultarlas agrava el incumplimiento.</p></div><div><p class="hint">El registro debe reflejar lo que realmente ocurre.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  <template data-for="caso1-C"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>El pacto escrito, temporal y dentro del máximo de 2 horas diarias cumple la ley. Revisar la dotación ayuda a que el sobretiempo no se vuelva permanente.</p></div><div><p class="hint">Sigue con la segunda decisión.</p></div></div></div></template>
+  <div class="phase" id="caso2" hidden>
+    <div class="story" style="margin-top:18px"><strong>Una semana después:</strong> Paula trabajó una hora extra un día en que no estaba incluida en el pacto. Su jefatura lo sabía y se lo pidió por correo.</div>
+    <h3 style="margin-top:14px">Decisión 2 · ¿Qué hace Camila con esa hora?</h3>
+    <div class="options" data-choice="caso2c" data-correct="B" data-gate="caso">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>No la paga, porque Paula no estaba en el pacto escrito.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>La considera extraordinaria y la paga con recargo en la liquidación del mes.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Le pide que salga una hora antes otro día, sin dejar registro.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="caso2c-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: horas impagas</div><div class="branch-body"><div><p>Aunque falte el pacto escrito, el exceso trabajado <strong>con conocimiento del empleador</strong> se considera extraordinario y debe pagarse.</p></div><div><p class="hint">El correo de la jefatura prueba que lo sabía.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: compensación informal</div><div class="branch-body"><div><p>Cambiar la hora extra por salir antes otro día, sin acuerdo escrito ni registro, no es una forma válida de pago. La única compensación alternativa prevista es el <strong>feriado adicional pactado por escrito</strong>.</p></div><div><p class="hint">Las horas extra se pagan con recargo.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="caso2c-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La hora se trabajó con conocimiento de la jefatura: es extraordinaria y se paga con recargo de al menos 50% en la liquidación del mismo período.</p></div><div><p class="hint">Caso resuelto.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:12" data-gate="order pass" data-gate-msg="Ordena los cinco pasos correctamente.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿En qué orden revisarías una solicitud de horas extra?</h2>
+  <p>Usa las flechas para mover cada paso hasta formar la secuencia correcta, de arriba hacia abajo. Luego presiona <strong>Comprobar orden</strong>.</p>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:21" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.6</h2>
+    <p>Ya puedes distinguir cuándo existe jornada extraordinaria, reconocer sus límites, calcular su pago y revisar los descansos antes de extender una jornada.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="4">Repasar el cálculo de pago</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, arts. 30 a 35 y 38; Ley N°21.561; doctrina de la Dirección del Trabajo. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l26';
+const FIRST_KEYS=['hook','caso1','caso2c'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'¿Qué es?',lines:['Cuando una persona se queda más tiempo en el trabajo, no siempre hablamos de lo mismo.','La jornada extraordinaria es el tiempo que excede el máximo legal, o la jornada pactada en el contrato, si esta es menor.'],
+  html:`<div class="v-day"><div class="s o" style="flex:8.4">Jornada pactada</div><div class="s x" data-at="1" style="flex:2">+ extra</div></div><div class="v-sub" style="margin-top:14px">Lo que excede el máximo legal o lo pactado (si es menor)</div>`},
+ {t:'Sin pacto escrito',lines:['Aunque no exista un pacto escrito, si se trabajó en exceso de la jornada pactada con conocimiento del empleador, esas horas se consideran extraordinarias y deben pagarse.'],
+  html:`<div class="v-icons"><div><span class="i">📄</span>Sin pacto escrito</div><div><span class="i">＋</span></div><div><span class="i">👁️</span>Con conocimiento del empleador</div><div><span class="i">＝</span></div><div><span class="i">💵</span>Se pagan como extraordinarias</div></div>`},
+ {t:'Límites',lines:['Las horas extraordinarias solo pueden pactarse para atender necesidades o situaciones temporales de la empresa.','El máximo es de dos horas por día, y el pacto debe constar por escrito, con una vigencia de hasta tres meses, renovable por acuerdo de las partes.'],
+  html:`<div class="v-chk" style="margin-top:0"><span class="on">Necesidad temporal</span><span data-at="1">Máx. 2 h por día</span><span data-at="1">Pacto por escrito</span><span data-at="1">Hasta 3 meses, renovable</span></div>`},
+ {t:'Pago',lines:['Se pagan con un recargo de al menos cincuenta por ciento sobre el sueldo convenido para la jornada ordinaria, y se liquidan junto con las remuneraciones del mismo período.'],
+  html:`<div class="v-big">+50%</div><div class="v-sub">sobre el sueldo convenido · se paga en el mismo período</div>`},
+ {t:'Compensar con feriado',lines:['Con la Ley 21.561, las partes también pueden acordar por escrito compensar horas extraordinarias con días adicionales de feriado, hasta cinco días hábiles por año.'],
+  html:`<div class="v-sub" style="color:var(--stage-ink);font-size:1.1rem">Hasta 5 días hábiles de feriado adicional al año</div><div class="v-cal">${['L','M','M','J','V','S','D'].map(d=>`<span>${d}</span>`).join('')}${Array.from({length:14},(_,i)=>`<span class="${[0,1,2,3,4].includes(i)?'f':''}">${i+1}</span>`).join('')}</div>`},
+ {t:'Descansos',lines:['Y extender la jornada no elimina los descansos: la colación de al menos media hora y el descanso semanal se mantienen.'],
+  html:`<div class="v-icons"><div><span class="i">🍽️</span>Colación de al menos 30 min</div><div><span class="i">📆</span>Descanso semanal</div></div>`},
+ {t:'Antes de autorizar',lines:['Antes de autorizar horas extra, revisa cinco preguntas.','¿La necesidad es temporal?','¿Hay pacto escrito?','¿Se respetan las dos horas diarias?','¿Se mantienen los descansos?','¿Y quedará registro para pagarlas correctamente?'],
+  html:`<div class="v-steps"><div data-at="1">¿La necesidad es temporal?</div><div data-at="2">¿Hay pacto escrito?</div><div data-at="3">¿Máximo 2 horas diarias?</div><div data-at="4">¿Se mantienen los descansos?</div><div data-at="5">¿Quedará registro y pago correcto?</div></div>`}
+]};
+const Q=[
+ {q:'¿Cuándo una hora de trabajo es extraordinaria?',o:['Siempre que la persona se quede después de las 18:00.','Cuando excede la jornada máxima legal o la pactada en el contrato, si esta es menor.','Solo cuando existe un pacto escrito de horas extra.'],c:1,f:'Es extraordinario el tiempo que excede el máximo legal o la jornada pactada, si es menor. El pacto escrito no es requisito para que se paguen.'},
+ {q:'¿Cuántas horas extraordinarias se pueden trabajar como máximo por día?',o:['1 hora','3 horas','4 horas','2 horas'],c:3,f:'El máximo es de 2 horas extraordinarias por día, en labores que no perjudiquen la salud.'},
+ {q:'¿Cuál es la vigencia máxima del pacto de horas extraordinarias?',o:['Hasta tres meses, renovable por acuerdo de las partes.','Un año.','Indefinida mientras dure la necesidad.'],c:0,f:'El pacto debe constar por escrito y su vigencia transitoria no puede superar tres meses, aunque puede renovarse por acuerdo.'},
+ {q:'¿Cuál es el recargo legal mínimo de las horas extraordinarias?',o:['25%','100%','50%'],c:2,f:'Se pagan con un recargo de al menos 50% sobre el sueldo convenido para la jornada ordinaria.'},
+ {q:'¿El tiempo de colación se considera trabajado para computar la jornada diaria?',o:['Sí, siempre.','No. La jornada se divide dejando al menos media hora de colación, que no se considera trabajada.','Solo si dura más de una hora.'],c:1,f:'La colación de al menos media hora no se considera trabajada para computar la jornada diaria (salvo procesos continuos y casos especiales).'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: mensaje ---------- */
+$('#showMsg').addEventListener('click',e=>{e.currentTarget.remove();const tb=$('#threadBody');
+  tb.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
+  setTimeout(()=>{tb.innerHTML='<div class="bubble"><span class="who">Jefatura</span>Camila, necesitamos tres horas extra hoy para el cierre del proyecto… y probablemente toda la semana. ¿Lo autorizamos?</div>';
+    setTimeout(()=>{tb.insertAdjacentHTML('beforeend','<div class="bubble camila"><span class="who">Camila</span>Déjame revisar algunas cosas antes de responder.</div>');$('#hookQ').hidden=false},900)},1100)});
+
+/* ---------- Línea del día ---------- */
+const DAY=[
+ ['Jornada ordinaria (mañana)','Es tiempo de trabajo efectivo dentro de lo pactado en el contrato. Cuenta para las 42 horas semanales.'],
+ ['Colación','La jornada se divide en dos partes, con al menos <b>media hora</b> de colación entre ellas. Ese tiempo <b>no se considera trabajado</b> para computar la jornada diaria.'],
+ ['Jornada ordinaria (tarde)','Con este tramo Andrés completa sus 8 horas y 24 minutos diarios. Hasta aquí todo es jornada ordinaria.'],
+ ['Tiempo extra: jornada extraordinaria','Todo lo que <b>excede la jornada pactada</b> (o el máximo legal, si lo pactado es mayor) es jornada extraordinaria. Si Andrés trabajó estas 2 horas <b>con conocimiento de su jefatura</b>, son extraordinarias y deben pagarse <b>aunque no exista pacto escrito</b>. Al término de la semana, el registro de asistencia permite verificar ese exceso.']];
+const tDay=tracker('day',4,'#dayTick','#dayTask');
+$$('#dayline .dseg').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#dayline .dseg').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#dpanel').innerHTML=`<h3 style="margin-top:0">${DAY[k][0]}</h3><p>${DAY[k][1]}</p>`;tDay(k)}));
+
+/* ---------- Simulador del pacto ---------- */
+function simEval(){const h=+$('#simH').value,m=+$('#simM').value,w=$('#simW').checked,t=$('#simT').checked,s=$('#simS').checked;
+  $('#simHo').textContent=String(h).replace('.',',')+' h';$('#simMo').textContent=m+(m===1?' mes':' meses');
+  const rows=[[h<=2,`Máximo diario: ${String(h).replace('.',',')} h`,h<=2?'Dentro del máximo de 2 horas extraordinarias por día.':'Supera el máximo de 2 horas extraordinarias por día.'],
+    [m<=3,`Vigencia: ${m} ${m===1?'mes':'meses'}`,m<=3?'La vigencia transitoria no supera tres meses (puede renovarse por acuerdo).':'La vigencia del pacto no puede superar tres meses.'],
+    [w,'Pacto por escrito',w?'El pacto consta por escrito.':'El pacto de horas extraordinarias debe constar por escrito.'],
+    [t,'Necesidad temporal',t?'Responde a una situación temporal de la empresa.':'Solo pueden pactarse para necesidades o situaciones temporales.'],
+    [s,'Salud de las personas',s?'La labor no perjudica la salud.':'No pueden pactarse en faenas que perjudiquen la salud.']];
+  $('#simChecks').innerHTML=rows.map(r=>`<div class="checkrow ${r[0]?'ok':'ko'}"><span>${r[0]?'✓':'✕'}</span><span><b>${r[1]}</b><span class="d">${r[2]}</span></span></div>`).join('');
+  const ok=rows.every(r=>r[0]);const v=$('#simV');v.className='verdict '+(ok?'ok':'ko');v.textContent=ok?'✓ La propuesta cumple la ley':'La propuesta no cumple';if(ok)done('sim')}
+['#simH','#simM','#simW','#simT','#simS'].forEach(s=>$(s).addEventListener('input',simEval));simEval();
+
+/* ---------- Pago ---------- */
+const tFc=tracker('cards',3,'#fcTick','#fcTask');
+$$('.flip').forEach((c,k)=>c.addEventListener('click',()=>{c.classList.toggle('flipped');tFc('f'+k)}));
+const STEPS=[['Valor de un día','$900.000 ÷ 30','$30.000'],['Valor de la hora ordinaria','($30.000 × 28) ÷ (42 × 4)','$5.000'],['Valor de la hora extra (+50%)','$5.000 × 1,5','$7.500'],['Total por 6 horas extra','$7.500 × 6','$45.000']];
+let stepN=0;
+$('#calcStep').addEventListener('click',()=>{if(stepN<STEPS.length){const s=STEPS[stepN];$('#calcSteps').insertAdjacentHTML('beforeend',`<div class="step"><span class="n">${stepN+1}</span><span>${s[0]}<br/><small>${s[1]}</small></span><b>${s[2]}</b></div>`);stepN++}
+  $('#calcStep').textContent=stepN<STEPS.length?'Ver siguiente paso':'Desarrollo completo';if(stepN>=STEPS.length)$('#calcStep').disabled=true});
+$('#calcCheck').addEventListener('click',()=>{const v=+($('#calcAns').value||'').replace(/[^\d]/g,'');const fb=$('#calcFb');
+  if(v===45000){feedback(fb,true,'Correcto: $45.000.','El valor de la hora ordinaria es $5.000; con el recargo de 50% la hora extra vale $7.500, y 6 horas suman $45.000.');done('calc')}
+  else feedback(fb,false,'Revisa el cálculo.',v===30000?'Calculaste las horas sin recargo. Recuerda sumar el 50%.':'Usa “Ver desarrollo paso a paso” si necesitas una pista.')});
+function free(){const s=+$('#fS').value.replace(/[^\d]/g,''),j=+$('#fJ').value,h=+$('#fH').value;if(!s||!j){$('#fOut').textContent='';return}
+  const hora=s/30*28/(j*4),ex=hora*1.5;$('#fOut').innerHTML=`Hora ordinaria: <b>${clp(hora)}</b> · Hora extra: <b>${clp(ex)}</b> · Total por ${h||0} h: <b>${clp(ex*(h||0))}</b>`}
+['#fS','#fJ','#fH'].forEach(s=>$(s).addEventListener('input',free));free();
+
+/* ---------- Descansos ---------- */
+const HS=[['Colación','La jornada diaria se divide en dos partes, dejando entre ellas <b>al menos media hora</b> para colación. Ese tiempo no se considera trabajado. Si se extiende la jornada, la colación se mantiene.'],
+ ['Descanso semanal','Los domingos y festivos son, por regla general, días de descanso. Las actividades exceptuadas por ley (por ejemplo, comercio o servicios continuos) deben otorgar un <b>día de descanso compensatorio</b> por los domingos y festivos trabajados.'],
+ ['Trabajo de proceso continuo','En labores que por su naturaleza no pueden interrumpirse, la regla de dividir la jornada para colación no se aplica de la misma forma. Igual debe existir un tiempo para comer, y la calificación depende de la naturaleza real de la labor.']];
+const tHs=tracker('hs',3,'#hsTick','#hsTask');
+$$('.hs').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.hs;$$('.hs').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#hsPanel').innerHTML=`<h3 style="margin-top:0">${k+1}. ${HS[k][0]}</h3><p>${HS[k][1]}</p>`;tHs(k)}));
+
+/* ---------- Ordenar pasos ---------- */
+const ORDER=['¿La necesidad es realmente temporal?','¿Existe pacto escrito (y vigente por máximo 3 meses)?','¿Se respeta el máximo de 2 horas extra por día?','¿Se mantienen la colación y el descanso semanal?','¿Quedará registro de asistencia y se pagará con recargo?'];
+let cur=[2,4,0,3,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se valida la necesidad temporal y el pacto; luego los límites y descansos; al final, registro y pago.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de 5 pasos están en su lugar (en verde). Ajusta los demás y vuelve a comprobar.`)});
+/*{{TAIL}}*/
+})();
+</script>

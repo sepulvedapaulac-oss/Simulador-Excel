@@ -1,0 +1,18 @@
+{
+ "p01": "Te damos la bienvenida. Camila recibió la planilla de ausencias del mes con una nota de la jefatura pegada encima. Haz clic en la nota para despegarla y mira qué ausencias hay debajo. Luego decide qué debe hacer Camila. Tu respuesta tendrá consecuencias, y podrás volver a intentarlo.",
+ "p03": "Estos seis conceptos son la base de la lección. Haz clic en cada tarjeta para voltearla y leer la regla que hay detrás. Fíjate en qué se descuenta del feriado y qué no, porque esa diferencia es la que Camila tendrá que explicar a la jefatura.",
+ "p04": "Aquí calculas el feriado como lo hace un equipo de personas. Elige la fecha de inicio y los días hábiles, y observa cómo el sábado y el domingo no se cuentan. Luego revisa el feriado progresivo y resuelve los dos desafíos para continuar.",
+ "p05": "Los permisos legales no son vacaciones: son pagados y responden a hechos concretos de la vida. Haz clic en cada ficha para descubrir cuántos días corresponden y desde cuándo se cuentan. Pon atención a si son días corridos o días hábiles.",
+ "p06": "Ahora te toca clasificar. Selecciona cada situación y llévala a la columna que corresponde: feriado anual, permiso legal o licencia médica. Antes de decidir, pregúntate qué hecho origina la ausencia. Si te equivocas, verás una pista para corregir.",
+ "p07": "Esta es la planilla que propone la jefatura. Revisa cada línea y decide si el descuento del feriado procede o no procede. No basta con mirar el nombre de la ausencia: piensa en la regla que se aplica y en cómo se cuentan los días.",
+ "quiz": "Llegó el momento de comprobar lo aprendido. Responde las cinco preguntas. Necesitas al menos cuatro correctas, es decir, un ochenta por ciento, para finalizar la lección. Si no lo logras, puedes repasar y volver a intentarlo.",
+ "p09": "Lleva lo aprendido a tu propia empresa. En esta ronda rápida verás situaciones comunes de ausencia. Decide en cada una si corresponde descontarla del feriado o no. Intenta lograr la mejor racha; recuerda que también necesitas haber aprobado la comprobación.",
+ "p10": "¡Felicitaciones! Terminaste la lección tres punto siete. Ahora sabes distinguir el feriado anual, los permisos legales y las licencias médicas, y por qué no se tratan igual. Revisa tu resultado y, si quieres, usa los botones para repasar cualquier tema.",
+ "video_1": "Una jefatura pide a Camila descontar como vacaciones tres ausencias distintas. Pero el feriado anual, un permiso legal y una licencia médica tienen reglas propias.",
+ "video_2": "Con más de un año de servicio, el feriado anual es de quince días hábiles con remuneración íntegra. En Magallanes, Aysén y Palena son veinte días hábiles.",
+ "video_3": "Para contar el feriado, el sábado se considera siempre inhábil. Así, quince días hábiles que parten un lunes, sin festivos, terminan el viernes de la tercera semana.",
+ "video_4": "Con diez años de trabajo, se suma un día por cada tres nuevos años con el empleador actual. El feriado es continuo, pero el exceso sobre diez días hábiles puede fraccionarse de común acuerdo.",
+ "video_5": "Los permisos legales responden a hechos concretos: un nacimiento, un fallecimiento o un matrimonio. Son pagados y nunca se descuentan del feriado.",
+ "video_6": "La licencia médica suspende la prestación de servicios, y la remuneración se reemplaza por un subsidio. Si ocurre durante el feriado, este se suspende y se retoma después.",
+ "video_7": "Ante cada ausencia que llegue a tu escritorio, pregúntate: ¿qué hecho la origina?, ¿qué regla la regula?, y ¿se descuenta o no del feriado?"
+}

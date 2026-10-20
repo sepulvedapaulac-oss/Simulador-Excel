@@ -1,0 +1,153 @@
+<title>Simulador de remuneraciones 2026</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.simgrid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:start}
+.fs{border:1px solid var(--line);border-radius:18px;padding:14px 16px;background:var(--surface3);margin-bottom:12px}
+.fs h3{margin:0 0 8px;font-size:1rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fld{display:grid;gap:4px;font-size:.8rem;font-weight:800;color:var(--muted)}
+.fld input,.fld select{font:inherit;font-weight:800;font-size:.98rem;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;font-variant-numeric:tabular-nums}
+.fld small{font-weight:600}
+.alerts{display:grid;gap:8px;margin-top:12px}
+.steps2{display:grid;gap:6px;margin:10px 0}
+.steps2 div{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line2);font-size:.9rem;font-variant-numeric:tabular-nums}
+.slip-row.sub{padding-left:28px;font-size:.92rem;color:var(--ink2)}
+.slip-row.neg .amt{color:var(--bad)}
+.liq{display:grid;grid-template-columns:1fr auto;padding:14px 16px;background:var(--navy);color:var(--surface);font-weight:900;font-size:1.15rem}
+.pcase{border:1px solid var(--line);border-radius:18px;padding:16px;background:var(--surface3)}
+.pcase dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
+.pcase dt{font-weight:800;color:var(--muted)}.pcase dd{margin:0;font-weight:800;font-variant-numeric:tabular-nums}
+.stats{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:860px){.simgrid{grid-template-columns:1fr}.f2{grid-template-columns:1fr}}
+</style>
+<main class="app ev" style="max-width:1180px">
+<div class="topbar"><div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · SIMULADOR</span><span>Reglas vigentes en octubre de 2026</span></div></div>
+
+<section class="slide active">
+  <span class="eyebrow">Simulador de remuneraciones</span>
+  <h1 style="margin-bottom:.4rem">Calcula y practica una liquidación de sueldo</h1>
+  <p>Usa la <strong>calculadora</strong> para ver paso a paso cómo se arma una liquidación, o entra a <strong>practicar</strong> para resolver casos nuevos y recibir corrección inmediata.</p>
+  <div class="tabs" id="modeTabs"><button class="tab active" type="button" data-m="calc">🧮 Calculadora</button><button class="tab" type="button" data-m="prac">🎯 Practicar con casos</button></div>
+
+  <!-- CALCULADORA -->
+  <div id="calc">
+    <div class="simgrid">
+      <div>
+        <div class="fs"><h3>Jornada y sueldo</h3><div class="f2">
+          <label class="fld">Sueldo base mensual ($)<input id="iS" inputmode="numeric" value="900.000"/></label>
+          <label class="fld">Jornada semanal pactada (horas)<input id="iJ" type="number" min="1" max="45" step="1" value="42"/><small>Límite general 2026: 42 h</small></label>
+          <label class="fld">Horas extra del mes<input id="iH" type="number" min="0" step="0.5" value="6"/></label>
+          <label class="fld">Recargo horas extra (%)<input id="iR" type="number" min="0" step="5" value="50"/><small>Mínimo legal: 50%</small></label>
+        </div></div>
+        <div class="fs"><h3>Otros haberes</h3><div class="f2">
+          <label class="fld">Comisiones ($)<input id="iC" inputmode="numeric" value="0"/></label>
+          <label class="fld">Bonos que retribuyen el trabajo ($)<input id="iB" inputmode="numeric" value="0"/></label>
+          <label class="fld">Colación ($) <small>no imponible</small><input id="iCol" inputmode="numeric" value="60.000"/></label>
+          <label class="fld">Movilización ($) <small>no imponible</small><input id="iMov" inputmode="numeric" value="40.000"/></label>
+          <label class="fld">Viáticos u otros reembolsos ($) <small>no imponible</small><input id="iVi" inputmode="numeric" value="0"/></label>
+        </div></div>
+        <div class="fs"><h3>Previsión y contrato</h3><div class="f2">
+          <label class="fld">Tipo de contrato<select id="iT"><option value="ind">Indefinido</option><option value="fij">Plazo fijo / obra o faena</option></select></label>
+          <label class="fld">Comisión de la AFP (%)<input id="iA" type="number" min="0" max="3" step="0.01" value="1.20"/><small>Revisa la comisión vigente de cada AFP</small></label>
+          <label class="fld">Salud<select id="iSal"><option value="f">Fonasa (7%)</option><option value="i">Isapre (plan pactado)</option></select></label>
+          <label class="fld" id="isaWrap" hidden>Valor del plan Isapre ($)<input id="iIsa" inputmode="numeric" value="0"/><small>Se descuenta el mayor entre el plan y el 7%</small></label>
+          <label class="fld">Impuesto único ($) <small>opcional, ingrésalo manualmente</small><input id="iImp" inputmode="numeric" value="0"/></label>
+        </div></div>
+        <div class="fs"><h3>Descuentos convencionales (requieren acuerdo escrito)</h3><div class="f2">
+          <label class="fld">Crédito sin interés de la empresa para vivienda o educación ($)<input id="iDV" inputmode="numeric" value="0"/></label>
+          <label class="fld">Otros pagos autorizados por escrito ($)<input id="iDO" inputmode="numeric" value="0"/></label>
+        </div><label class="switch">Existe autorización escrita de la persona trabajadora <input type="checkbox" id="iAut" checked/></label></div>
+      </div>
+      <div>
+        <div class="slip" id="out"></div>
+        <details class="transcript" open><summary>Cálculo paso a paso</summary><div class="steps2" id="steps2"></div></details>
+        <div class="box-e" style="margin-top:12px"><h3 style="margin:4px 0 8px">Aportes de cargo del empleador</h3><table class="mini-t" id="emp"></table><p class="hint" style="margin:.5rem 0 0">No se descuentan del sueldo: son costo de la empresa.</p></div>
+        <div class="alerts" id="alerts"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÁCTICA -->
+  <div id="prac" hidden>
+    <div class="stats"><span class="pill info" id="stCases">Casos resueltos: 0</span><span class="pill good" id="stOk">Respuestas correctas: 0 de 0</span><span class="pill warn" id="stPerfect">Casos perfectos: 0</span></div>
+    <div class="simgrid" style="margin-top:12px">
+      <div class="pcase"><h3 style="margin-top:0" id="pTitle">Caso</h3><dl id="pData"></dl><p class="hint" style="margin-bottom:0">Salud: Fonasa 7%. Recargo de horas extra: 50%. Sin impuesto único, tope imponible ni otros descuentos. Redondea cada monto al peso.</p></div>
+      <div>
+        <div id="pFields"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="small-btn primary" type="button" id="pCheck">Comprobar</button><button class="small-btn" type="button" id="pShow">Ver solución</button><button class="small-btn" type="button" id="pNew">Nuevo caso →</button></div>
+        <div class="fb" id="pFb"></div>
+      </div>
+    </div>
+  </div>
+  <div class="sources">Base: Código del Trabajo (arts. 32, 41 y 58), Ley N°21.561, Ley N°21.735, Superintendencia de Pensiones, AFC Chile. Herramienta de práctica: no incluye gratificación legal, tope imponible en UF ni cálculo automático del impuesto único. Para una liquidación real, verifica los valores vigentes del mes.</div>
+</section>
+</main>
+<script>
+(function(){
+/*{{ENGINE}}*/
+const money=s=>{const v=num($(s).value);return isNaN(v)?0:v};
+const r=Math.round;
+function compute(d){
+  const hora=d.S/30*28/(d.J*4),hx=hora*(1+d.R/100),mHE=r(hx*d.H);
+  const imp=r(d.S)+mHE+r(d.C)+r(d.B),noimp=r(d.Col)+r(d.Mov)+r(d.Vi);
+  const afp=r(imp*(10+d.A)/100),sal=d.Sal==='i'?Math.max(r(imp*0.07),r(d.Isa)):r(imp*0.07),ces=d.T==='ind'?r(imp*0.006):0;
+  const leg=afp+sal+ces,conv=r(d.DV)+r(d.DO),des=leg+r(d.Imp)+conv,liq=imp+noimp-des;
+  const eA=r(imp*0.035),eC=r(imp*(d.T==='ind'?0.024:0.03));
+  return {hora,hx,mHE,imp,noimp,afp,sal,ces,leg,conv,des,liq,eA,eC}}
+/* ---------- Calculadora ---------- */
+function readForm(){return {S:money('#iS'),J:+$('#iJ').value||42,H:+$('#iH').value||0,R:+$('#iR').value||0,C:money('#iC'),B:money('#iB'),Col:money('#iCol'),Mov:money('#iMov'),Vi:money('#iVi'),T:$('#iT').value,A:+$('#iA').value||0,Sal:$('#iSal').value,Isa:money('#iIsa'),Imp:money('#iImp'),DV:money('#iDV'),DO:money('#iDO'),Aut:$('#iAut').checked}}
+function render(){const d=readForm();$('#isaWrap').hidden=d.Sal!=='i';const c=compute(d);
+  const row=(l,v,cls='')=>`<div class="slip-row ${cls}"><span>${l}</span><span class="amt">${clp(v)}</span></div>`;
+  $('#out').innerHTML=`<div class="slip-h"><span>Liquidación simulada</span><span>Contrato ${d.T==='ind'?'indefinido':'plazo fijo'} · ${d.J} h</span></div>
+   <div class="slip-sec">Haberes imponibles</div>${row('Sueldo base',d.S)}${d.H?row(`Horas extra (${String(d.H).replace('.',',')} h × ${clp(c.hx)})`,c.mHE):''}${d.C?row('Comisiones',d.C):''}${d.B?row('Bonos',d.B):''}<div class="slip-tot"><span>Total imponible</span><span>${clp(c.imp)}</span></div>
+   <div class="slip-sec">Haberes no imponibles</div>${row('Colación',d.Col)}${row('Movilización',d.Mov)}${d.Vi?row('Viáticos / reembolsos',d.Vi):''}<div class="slip-tot"><span>Total no imponible</span><span>${clp(c.noimp)}</span></div>
+   <div class="slip-sec">Descuentos legales</div>${row(`AFP (10% + ${String(d.A).replace('.',',')}%)`,c.afp,'neg')}${row(d.Sal==='i'?'Salud (Isapre)':'Salud Fonasa 7%',c.sal,'neg')}${row(`Seguro de Cesantía ${d.T==='ind'?'0,6%':'0%'}`,c.ces,'neg')}${d.Imp?row('Impuesto único',d.Imp,'neg'):''}
+   ${c.conv?`<div class="slip-sec">Descuentos convencionales</div>${d.DV?row('Crédito vivienda / educación',d.DV,'neg'):''}${d.DO?row('Otros pagos autorizados',d.DO,'neg'):''}`:''}
+   <div class="slip-tot"><span>Total descuentos</span><span>${clp(c.des)}</span></div><div class="liq"><span>Líquido a pagar</span><span>${clp(c.liq)}</span></div>`;
+  $('#steps2').innerHTML=[[`1. Valor día: ${clp(d.S)} ÷ 30`,clp(d.S/30)],[`2. Hora ordinaria: (valor día × 28) ÷ (${d.J} × 4)`,clp(c.hora)],[`3. Hora extra: hora ordinaria × ${(1+d.R/100).toFixed(2).replace('.',',')}`,clp(c.hx)],[`4. Horas extra: ${String(d.H).replace('.',',')} h × ${clp(c.hx)}`,clp(c.mHE)],['5. Total imponible',clp(c.imp)],[`6. Descuentos legales (AFP + salud + cesantía)`,clp(c.leg)],['7. Líquido = imponible + no imponible − descuentos',clp(c.liq)]].map(s=>`<div><span>${s[0]}</span><b>${s[1]}</b></div>`).join('');
+  $('#emp').innerHTML=`<tr><td>Aporte previsional 3,5%</td><td>${clp(c.eA)}</td></tr><tr><td>Seguro de Cesantía ${d.T==='ind'?'2,4%':'3,0%'}</td><td>${clp(c.eC)}</td></tr><tr><td><b>Costo total empresa</b> (imponible + no imponible + aportes)</td><td>${clp(c.imp+c.noimp+c.eA+c.eC)}</td></tr>`;
+  const al=[];const T=c.imp;
+  if(d.J>42)al.push(['ko',`Jornada de ${d.J} h: supera el límite general de 42 horas semanales vigente en 2026.`]);
+  if(d.R<50)al.push(['ko','El recargo de las horas extra no puede ser inferior a 50%.']);
+  if(d.H>0)al.push(['wa','Recuerda: máximo 2 horas extra por día, con pacto escrito y temporal (hasta 3 meses).']);
+  if(c.conv&&!d.Aut)al.push(['ko','Los descuentos convencionales requieren autorización escrita de la persona trabajadora.']);
+  if(T&&d.DV/T>0.30)al.push(['ko',`El crédito de vivienda/educación equivale al ${(d.DV/T*100).toFixed(1).replace('.',',')}%: supera el tope de 30%.`]);
+  if(T&&d.DO/T>0.15)al.push(['ko',`Otros pagos autorizados equivalen al ${(d.DO/T*100).toFixed(1).replace('.',',')}%: superan el tope de 15%.`]);
+  if(T&&c.conv/T>0.45)al.push(['ko','Los descuentos convencionales superan en conjunto el 45% de la remuneración total.']);
+  if(d.Vi||d.Col||d.Mov)al.push(['wa','Colación, movilización y viáticos son no imponibles solo si cumplen su finalidad y su monto es razonable.']);
+  if(c.liq<0)al.push(['ko','El líquido resulta negativo: revisa los descuentos ingresados.']);
+  $('#alerts').innerHTML=al.map(a=>`<div class="checkrow ${a[0]}"><span>${a[0]==='ko'?'✕':'!'}</span><span>${a[1]}</span></div>`).join('')}
+$$('#calc input,#calc select').forEach(e=>e.addEventListener('input',render));
+$$('#calc input[inputmode="numeric"]').forEach(e=>e.addEventListener('change',()=>{const v=num(e.value);if(!isNaN(v))e.value=Math.round(v).toLocaleString('es-CL')}));
+render();
+/* ---------- Pestañas ---------- */
+$$('#modeTabs .tab').forEach(t=>t.addEventListener('click',()=>{$$('#modeTabs .tab').forEach(x=>x.classList.toggle('active',x===t));$('#calc').hidden=t.dataset.m!=='calc';$('#prac').hidden=t.dataset.m!=='prac'}));
+/* ---------- Práctica ---------- */
+const NAMES=['Daniela','Matías','Camila R.','Felipe','Constanza','Ignacio','Javiera','Sebastián','Fernanda','Joaquín'];
+const pick=a=>a[Math.floor(Math.random()*a.length)],rint=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const FIELDS=[['hx','Valor de una hora extra'],['mHE','Monto total de horas extra'],['imp','Total de haberes imponibles'],['afp','Descuento AFP'],['sal','Descuento salud (7%)'],['ces','Descuento Seguro de Cesantía'],['liq','Líquido a pagar']];
+let P=null,C=null,checked=false,stats={cases:0,ok:0,tot:0,perfect:0};
+function newCase(){const S=36000*rint(17,42),H=pick([0,2,3,4,5,6,8,10,1.5,4.5]);
+  P={name:pick(NAMES),S,J:42,H,R:50,C:pick([0,0,50000,80000,120000,150000,200000]),B:pick([0,0,30000,50000,75000]),Col:pick([40000,50000,60000,70000]),Mov:pick([30000,40000,50000]),Vi:0,T:pick(['ind','ind','fij']),A:pick([0.5,0.8,1.0,1.2,1.4]),Sal:'f',Isa:0,Imp:0,DV:0,DO:0};
+  C=compute(P);checked=false;
+  $('#pTitle').textContent=`Caso: ${P.name}`;
+  $('#pData').innerHTML=[['Sueldo base',clp(P.S)],['Jornada','42 horas semanales'],['Horas extra del mes',String(P.H).replace('.',',')+' h'],['Comisiones',clp(P.C)],['Bono por metas',clp(P.B)],['Colación',clp(P.Col)],['Movilización',clp(P.Mov)],['Contrato',P.T==='ind'?'Indefinido':'Plazo fijo'],['Comisión AFP',String(P.A).replace('.',',')+'%']].map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join('');
+  $('#pFields').innerHTML=FIELDS.map(f=>`<div class="inrow"><label for="p_${f[0]}">${f[1]} ($)</label><input id="p_${f[0]}" inputmode="numeric"/></div>`).join('');
+  $('#pFb').innerHTML=''}
+$('#pCheck').addEventListener('click',()=>{let ok=0;FIELDS.forEach(f=>{const el=$('#p_'+f[0]),v=num(el.value),good=!isNaN(v)&&near(v,C[f[0]],f[0]==='liq'?5:2);
+  el.classList.remove('good','bad');el.classList.add(good?'good':'bad');if(good)ok++});
+  if(!checked){checked=true;stats.cases++;stats.ok+=ok;stats.tot+=FIELDS.length;if(ok===FIELDS.length)stats.perfect++;
+    $('#stCases').textContent=`Casos resueltos: ${stats.cases}`;$('#stOk').textContent=`Respuestas correctas: ${stats.ok} de ${stats.tot}`;$('#stPerfect').textContent=`Casos perfectos: ${stats.perfect}`;
+    SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(stats.ok/stats.tot*100));
+    if(stats.cases>=3)SC.set('cmi.core.lesson_status','completed');SC.commit()}
+  feedbackP(ok===FIELDS.length?'good':'bad',ok===FIELDS.length?'¡Caso perfecto!':`${ok} de ${FIELDS.length} correctas.`,ok===FIELDS.length?'Presiona “Nuevo caso” para seguir practicando.':'Revisa los campos en rojo o usa “Ver solución”.')});
+function feedbackP(cls,t,b){$('#pFb').innerHTML=`<div class="feedback ${cls}"><strong>${t}</strong> <span class="fb-body">${b}</span></div>`}
+$('#pShow').addEventListener('click',()=>{feedbackP('warn','Solución paso a paso',`<div class="steps2">${[
+  [`Hora ordinaria: (${clp(P.S)} ÷ 30 × 28) ÷ (42 × 4)`,clp(C.hora)],['Hora extra (× 1,5)',clp(C.hx)],[`Horas extra: ${String(P.H).replace('.',',')} × ${clp(C.hx)}`,clp(C.mHE)],
+  [`Imponible: sueldo + horas extra + comisiones + bono`,clp(C.imp)],[`AFP ${(10+P.A).toFixed(1).replace('.',',')}%`,clp(C.afp)],['Salud 7%',clp(C.sal)],[`Cesantía ${P.T==='ind'?'0,6%':'0% (plazo fijo)'}`,clp(C.ces)],
+  [`Líquido: imponible − descuentos + no imponibles (${clp(C.noimp)})`,clp(C.liq)]].map(s=>`<div><span>${s[0]}</span><b>${s[1]}</b></div>`).join('')}</div>`)});
+$('#pNew').addEventListener('click',newCase);
+newCase();
+})();
+</script>

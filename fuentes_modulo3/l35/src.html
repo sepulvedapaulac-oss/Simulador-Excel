@@ -1,0 +1,355 @@
+<title>Lección 3.5 — Personas que ejercen labores de cuidado</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+.bins.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bins.three .bin{min-width:0}
+.bin.warn-bin h3{color:var(--amber-ink)}
+.bin .cardx{width:100%}
+.seg.wrap{display:flex;flex-wrap:wrap;width:100%}
+.seg.wrap button{flex:1 1 auto;min-width:0;white-space:normal;text-align:center}
+.sim-lbl{display:block;font-size:.85rem;font-weight:800;margin:12px 0 6px}
+.retos{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.retos li{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:start;padding:8px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:.88rem;font-weight:700}
+.retos li::before{content:"○";font-weight:900;color:var(--muted)}
+.retos li.ok{background:var(--good-soft);border-color:var(--good-line);color:var(--good)}
+.retos li.ok::before{content:"✓";color:var(--good)}
+.mailbox{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:14px 16px}
+.mailbox .mhead{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--muted);font-weight:800;margin-bottom:8px}
+.mailbox .mhead b{color:var(--ink)}
+.mailbox p{margin:.3rem 0}
+.mailbox .att{display:inline-flex;gap:6px;align-items:center;margin-top:8px;padding:5px 10px;border-radius:999px;background:var(--chip);font-size:.8rem;font-weight:800}
+.doc-tip{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--amber-soft);color:var(--amber-ink);font-size:.88rem;font-weight:700}
+.v-log .later,.v-final em[data-at]{opacity:.2;transition:opacity .5s}.v-log .later.on,.v-final em[data-at].on{opacity:1}
+@media(max-width:760px){.bins.three{grid-template-columns:1fr}}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.5</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:34" data-gate="sol hook" data-gate-msg="Abre las tres solicitudes y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.5 · Personas que ejercen labores de cuidado</span>
+      <h1 class="reveal">Reconocer quiénes pueden acceder a medidas de conciliación</h1>
+      <p class="lead reveal">Lunes, 09:00 en <strong>Horizonte Servicios</strong>. Camila, del Equipo de Personas, encuentra tres solicitudes en su bandeja. Todas mencionan “cuidado”, pero ¿son iguales? <strong>Haz clic en cada solicitud para leerla.</strong></p>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa en su computador tres solicitudes de conciliación en una oficina con luz natural" src="{{IMG:i35_hero}}"/></div>
+  </div>
+  <div class="task" id="solTask">Solicitudes leídas <span class="tick" id="solTick">0 / 3</span></div>
+  <div class="evline" id="solLine">
+    <button class="evnode" type="button" data-k="0"><span class="t">📩 1</span><small>Paola · hijo de 11 años</small></button>
+    <button class="evnode" type="button" data-k="1"><span class="t">📩 2</span><small>Jorge · su padre</small></button>
+    <button class="evnode" type="button" data-k="2"><span class="t">📩 3</span><small>Fernanda · un vecino</small></button>
+  </div>
+  <div class="dpanel" id="solPanel"><p class="hint">Selecciona una solicitud para leerla.</p></div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Debe Camila aplicar las mismas reglas a las tres solicitudes?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Sí. Las tres personas cuidan a alguien, así que las tres deben recibir las mismas medidas.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>No. Paola y Jorge pueden calificar si acreditan su situación; el cuidado ocasional de un vecino sin dependencia acreditada no califica.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Solo Paola, porque la ley protege únicamente el cuidado de hijos e hijas.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: medidas sin respaldo</div><div class="branch-body"><div><p>Camila aprueba las tres solicitudes. Al revisar, la empresa no puede explicar por qué Fernanda accedió a una medida pensada para personas cuidadoras: el cuidado ocasional de un vecino, sin discapacidad ni dependencia acreditada, no está en los grupos protegidos.</p></div><div><p class="hint">Cuidar a alguien no basta: la ley define quiénes califican.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Buena decisión</div><div class="branch-body"><div><p>Paola tiene el cuidado personal de un niño menor de 14 años. Jorge cuida <strong>sin remuneración</strong> a su padre con dependencia moderada, y la edad del padre no importa. Ambos deben acreditarlo. El cuidado ocasional de un vecino no está en los grupos protegidos.</p></div><div><p class="hint">En esta lección verás quién califica, cómo se acredita y qué medidas aplican.</p></div></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un derecho rechazado</div><div class="branch-body"><div><p>Camila rechaza la solicitud de Jorge. Él recurre a la Inspección del Trabajo: la ley también protege a quien cuida sin remuneración a una persona con discapacidad o dependencia severa o moderada, <strong>sin importar su edad</strong>.</p></div><div><p class="hint">La protección no se limita a hijos menores.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 2 min</span>
+  <h2>¿Quién es una persona trabajadora con responsabilidades de cuidado?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · ¿QUIÉN CALIFICA? -->
+<section class="slide" data-title="¿Quién califica?" data-audio="p03" data-dur="0:30" data-gate="tree" data-gate-msg="Recorre el árbol con los tres ejemplos.">
+  <span class="eyebrow">Lección 3.5 · Grupos protegidos</span>
+  <h2>Tres preguntas para saber si alguien califica</h2>
+  <p>Elige un ejemplo y responde las preguntas del árbol <strong>una a la vez</strong> con “Sí” o “No”. Si te equivocas, verás una pista. Resuelve los tres ejemplos.</p>
+  <div class="task" id="trTask">Ejemplos resueltos <span class="tick" id="trTick">0 / 3</span></div>
+  <div class="ex-tabs" id="exTabs"></div>
+  <div class="tree" id="tree"></div>
+  <div class="fb" id="trFb"></div>
+  <p class="sources">Referencias: Ley N°21.645; Código del Trabajo, art. 152 quáter O bis.</p>
+</section>
+
+<!-- 4 · CÓMO SE ACREDITA -->
+<section class="slide" data-title="Cómo se acredita" data-audio="p04" data-dur="0:32" data-gate="tabs" data-gate-msg="Revisa los tres antecedentes de acreditación.">
+  <span class="eyebrow amber">Lección 3.5 · Antecedentes que acreditan</span>
+  <h2>Cada situación protegida tiene su documento</h2>
+  <p>Selecciona cada pestaña para ver con qué antecedente se acredita la situación de cuidado y qué error conviene evitar.</p>
+  <div class="task" id="tabTask">Antecedentes revisados <span class="tick" id="tabTick">1 / 3</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">👧 Niño o niña menor de 14</button><button class="tab" type="button" data-t="1">♿ Discapacidad</button><button class="tab" type="button" data-t="2">🤝 Dependencia severa o moderada</button></div>
+  <div class="tabpane active"><div class="photo-frame wide"><img alt="Una madre entrega un certificado a una profesional de recursos humanos en una oficina" src="{{IMG:i35_menor}}"/></div><div><h3 style="margin-top:0">Cuidado personal de un niño o niña menor de 14 años</h3><p>Se acredita con:</p><ul><li><b>Certificado de nacimiento</b> que acredite la filiación (madre o padre), o</li><li><b>Resolución judicial</b> que otorgue el cuidado personal (por ejemplo, a una abuela o a un tío).</li></ul><p>La edad del niño o niña se verifica con el mismo documento.</p><div class="doc-tip">Error frecuente: pedir antecedentes que la ley no exige, como una carta del colegio o una declaración de la jefatura.</div></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="Un trabajador conversa con su hermano en silla de ruedas en un espacio luminoso" src="{{IMG:i35_disc}}"/></div><div><h3 style="margin-top:0">Cuidado de una persona con discapacidad</h3><p>Se acredita con el <b>certificado de inscripción en el Registro Nacional de la Discapacidad</b> de la persona que recibe el cuidado.</p><ul><li>No importa la edad de la persona cuidada.</li><li>El cuidado debe ser <b>no remunerado</b>.</li></ul><div class="doc-tip">Error frecuente: rechazar la solicitud porque la persona cuidada es adulta. La edad solo importa para el feriado preferente.</div></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="Un hombre adulto acompaña a su padre mayor en la mesa del comedor" src="{{IMG:i35_dep}}"/></div><div><h3 style="margin-top:0">Cuidado de una persona con dependencia severa o moderada</h3><p>Se acredita con la <b>credencial o certificado de persona cuidadora que emite el Ministerio de Desarrollo Social y Familia</b>, que se tramita a través del Registro Social de Hogares. Según la Dirección del Trabajo, un certificado médico no basta.</p><ul><li>Debe tratarse de dependencia <b>severa o moderada</b>.</li><li>No importa la edad, pero el cuidado debe ser <b>no remunerado</b>.</li></ul><div class="doc-tip">Error frecuente: aceptar solo la palabra de la persona sin la calificación registrada.</div></div></div>
+  <p class="sources">Referencias: Ley N°21.645; Código del Trabajo, arts. 67, 76 bis y 152 quáter O bis.</p>
+</section>
+
+<!-- 5 · QUÉ DERECHO APLICA -->
+<section class="slide" data-title="Qué derecho aplica" data-audio="p05" data-dur="0:31" data-gate="sim" data-gate-msg="Cumple los tres desafíos del simulador.">
+  <span class="eyebrow violet">Lección 3.5 · Medidas de conciliación</span>
+  <h2>Califica… ¿y qué medida le corresponde?</h2>
+  <p>Ajusta los controles de la izquierda. Supón que la persona trabajadora tiene el cuidado personal o está a cargo de quien cuida. A la derecha verás qué medidas aplican y por qué. <strong>Cumple los tres desafíos.</strong></p>
+  <div class="task" id="simTask">Desafíos cumplidos <span class="tick" id="simTick">0 / 3</span></div>
+  <div class="sim">
+    <div class="sim-box">
+      <div class="srow" style="grid-template-columns:1fr 80px"><label for="sAge">Edad de la persona cuidada</label><output id="sAgeO">11 años</output></div>
+      <input id="sAge" type="range" min="0" max="90" step="1" value="11" style="width:100%;accent-color:var(--teal)"/>
+      <span class="sim-lbl">Condición de la persona cuidada</span>
+      <div class="seg wrap" id="sCond" role="group" aria-label="Condición de la persona cuidada"><button type="button" class="on" data-v="none">Sin discapacidad ni dependencia</button><button type="button" data-v="disc">Discapacidad</button><button type="button" data-v="dep">Dependencia severa o moderada</button></div>
+      <label class="switch">Recibe remuneración por ese cuidado <input type="checkbox" id="sRem"/></label>
+      <div class="srow" style="grid-template-columns:1fr 80px;margin-top:6px"><label for="sDays">Anticipación de la solicitud</label><output id="sDaysO">15 días</output></div>
+      <input id="sDays" type="range" min="0" max="60" step="5" value="15" style="width:100%;accent-color:var(--teal)"/>
+      <label class="switch">Las funciones permiten trabajar a distancia o ajustar turnos <input type="checkbox" id="sComp" checked/></label>
+      <ul class="retos" id="retos">
+        <li data-r="0">Logra que apliquen las tres medidas.</li>
+        <li data-r="1">Encuentra un caso en que aplique el teletrabajo, pero no el feriado preferente por la edad de la persona cuidada.</li>
+        <li data-r="2">Muestra que, aunque exista dependencia o discapacidad, el cuidado remunerado no califica.</li>
+      </ul>
+    </div>
+    <div class="sim-box"><div class="verdict ko" id="simV">—</div><p class="hint" id="simWhy" style="margin:0 0 10px"></p><div class="checks" id="simChecks"></div></div>
+  </div>
+  <p class="sources">Referencias: Código del Trabajo, art. 67 (feriado preferente), art. 76 bis (turnos en vacaciones escolares) y art. 152 quáter O bis (teletrabajo), incorporados por la Ley N°21.645.</p>
+</section>
+
+<!-- 6 · MITOS FRECUENTES -->
+<section class="slide" data-title="Mitos frecuentes" data-audio="p06" data-dur="0:23" data-gate="tf" data-gate-msg="Responde las cinco afirmaciones.">
+  <span class="eyebrow amber">Lección 3.5 · Ideas equivocadas sobre el cuidado</span>
+  <h2>“Eso es solo para las mamás”</h2>
+  <p>En los pasillos de Horizonte Servicios circulan varias frases. Decide si cada afirmación es <strong>verdadera o falsa</strong> y lee la explicación.</p>
+  <div class="tf" id="tf"></div>
+  <p class="sources">Referencias: Ley N°21.645; Código del Trabajo, arts. 67 y 152 quáter O bis.</p>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:27" data-gate="bins" data-gate-msg="Clasifica las ocho solicitudes en su columna.">
+  <span class="eyebrow">Lección 3.5 · La bandeja de Camila</span>
+  <h2>Ocho solicitudes, tres respuestas posibles</h2>
+  <p>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna que corresponde. Pregúntate: ¿está en un grupo protegido? y ¿ya presentó el antecedente que lo acredita?</p>
+  <div class="task" id="binTask">Solicitudes clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins three">
+    <div class="bin good-bin" data-b="c" role="button" tabindex="0"><h3>✓ Califica</h3></div>
+    <div class="bin warn-bin" data-b="f" role="button" tabindex="0"><h3>⏳ Falta acreditar</h3></div>
+    <div class="bin bad-bin" data-b="n" role="button" tabindex="0"><h3>✕ No califica</h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <p class="sources">Referencias: Ley N°21.645; Código del Trabajo, arts. 67, 76 bis y 152 quáter O bis.</p>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:23" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:24" data-gate="order pass" data-gate-msg="Ordena los seis pasos correctamente.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿En qué orden tramitarías una solicitud de cuidado?</h2>
+  <p>Usa las flechas para mover cada paso hasta formar la secuencia correcta, de arriba hacia abajo. Luego presiona <strong>Comprobar orden</strong>.</p>
+  <ol class="order" id="order"></ol>
+  <button class="small-btn primary" type="button" id="orderCheck">Comprobar orden</button>
+  <div class="fb" id="orderFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+  <p class="sources">Referencias: Código del Trabajo, arts. 67, 76 bis y 152 quáter O bis (Ley N°21.645).</p>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:30" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.5</h2>
+    <p>Ya puedes identificar quiénes califican como personas trabajadoras con responsabilidades de cuidado, qué antecedentes lo acreditan y qué medidas de conciliación pueden solicitar.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="2">Repasar quién califica</button><button class="small-btn primary" type="button" data-goto="3">Repasar la acreditación</button></div>
+    <p class="sources">Fuentes: Ley N°21.645 (publicada el 29-12-2023, vigente desde el 29-01-2024); Código del Trabajo, arts. 67, 76 bis y 152 quáter O bis. Narración generada con ElevenLabs (voz Ninoska).</p>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l35';
+const FIRST_KEYS=['hook','tf','bins'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Tres solicitudes',lines:['Camila recibió tres solicitudes de conciliación.','Antes de responderlas, necesita contestar una pregunta: ¿quién es, para la ley, una persona trabajadora con responsabilidades de cuidado?'],
+  html:`<div class="v-icons"><div><span class="i">👩‍👦</span>Paola</div><div><span class="i">👨‍🦳</span>Jorge</div><div><span class="i">🏘️</span>Fernanda</div></div><div class="note" data-at="1">¿Quién califica como persona cuidadora?</div>`},
+ {t:'Ley 21.645',lines:['La Ley 21.645, vigente desde el 29 de enero de 2024, modificó el Código del Trabajo para proteger la maternidad, la paternidad y la vida familiar.','Con ella, conciliar el trabajo y el cuidado pasó a ser un derecho, no un favor.'],
+  html:`<div class="v-big">Ley 21.645</div><div class="v-chk"><span class="on">Vigente desde 29-01-2024</span><span class="on">Maternidad · paternidad · vida familiar</span><span data-at="1">Un derecho, no un favor</span></div>`},
+ {t:'Menores de 14',lines:['El primer grupo son quienes tienen el cuidado personal de un niño o niña menor de 14 años.','Se acredita con el certificado de nacimiento que muestra la filiación, o con la resolución judicial que otorga el cuidado personal.'],
+  html:`<div class="v-icons"><div><span class="i">👧</span>Cuidado personal</div><div><span class="i">＜</span></div><div><span class="v-big" style="font-size:2.6rem">14</span>años</div></div><div class="v-chk"><span data-at="1">Certificado de nacimiento</span><span data-at="1">Resolución judicial</span></div>`},
+ {t:'Discapacidad o dependencia',lines:['El segundo grupo son quienes tienen a su cargo el cuidado de una persona con discapacidad o en situación de dependencia severa o moderada, sin importar la edad de quien recibe el cuidado.','La condición clave: no recibir remuneración por ese cuidado.'],
+  html:`<div class="v-icons"><div><span class="i">♿</span>Discapacidad</div><div><span class="i">🤝</span>Dependencia severa o moderada</div><div><span class="i">🎂</span>Cualquier edad</div></div><div class="note" data-at="1">Cuidado NO remunerado</div>`},
+ {t:'Acreditación',lines:['La discapacidad se acredita con el certificado de inscripción en el Registro Nacional de la Discapacidad.','La dependencia severa o moderada, con la credencial de persona cuidadora del Ministerio de Desarrollo Social.'],
+  html:`<div class="v-log"><div><span>Discapacidad</span><span>Registro Nacional de la Discapacidad</span></div><div class="later" data-at="1"><span>Dependencia</span><span>Credencial del Ministerio de Desarrollo Social</span></div></div>`},
+ {t:'Medidas',lines:['Quienes califican pueden pedir teletrabajo total o parcial cuando sus funciones lo permitan, y el empleador debe responder dentro de 15 días.','Si cuidan a un niño o niña menor de 14 años, o a un adolescente menor de 18 con discapacidad o dependencia, pueden pedir con 30 días de anticipación su feriado preferente en vacaciones escolares.','También pueden proponer, con 30 días de anticipación, un ajuste transitorio de turnos en ese período, si las funciones lo permiten.'],
+  html:`<div class="v-icons"><div><span class="i">💻</span>Teletrabajo<br/>respuesta en 15 días</div><div class="dim" data-at="1"><span class="i">🏖️</span>Feriado preferente<br/>30 días antes</div><div class="dim" data-at="2"><span class="i">🔄</span>Ajuste de turnos<br/>30 días antes</div></div>`},
+ {t:'Dos preguntas',lines:['Ante cada solicitud, separa siempre dos preguntas: ¿la persona acredita una situación protegida?','Y, ¿la medida es compatible con sus funciones?'],
+  html:`<div class="v-final">1. ¿Acredita una situación protegida?<br/><em data-at="1">2. ¿La medida es compatible con sus funciones?</em></div>`}
+]};
+const Q=[
+ {q:'¿Quién integra el primer grupo de personas cuidadoras de la Ley 21.645?',o:['Cualquier persona que cuide ocasionalmente a un niño.','Quien tiene el cuidado personal de un niño o niña menor de 14 años.','Quien tiene hijos o hijas de cualquier edad.'],c:1,f:'El primer grupo es quien tiene el cuidado personal de un niño o niña menor de 14 años, acreditado con certificado de nacimiento o resolución judicial.'},
+ {q:'Jorge cuida sin remuneración a su padre de 72 años, que tiene dependencia moderada. ¿Califica como persona cuidadora?',o:['No, porque su padre es adulto.','No, porque la ley solo protege el cuidado de hijos.','Sí, si acredita la dependencia, porque no importa la edad de quien recibe el cuidado.'],c:2,f:'El segundo grupo incluye el cuidado no remunerado de personas con discapacidad o dependencia severa o moderada, sin importar su edad.'},
+ {q:'¿Con qué antecedente se acredita el cuidado de una persona con discapacidad?',o:['Certificado de inscripción en el Registro Nacional de la Discapacidad.','Una declaración simple de la persona trabajadora.','El certificado de nacimiento de la persona trabajadora.','Una carta de la jefatura directa.'],c:0,f:'La discapacidad se acredita con el certificado de inscripción en el Registro Nacional de la Discapacidad.'},
+ {q:'¿Con cuánta anticipación debe pedirse el feriado preferente en vacaciones escolares?',o:['15 días.','10 días.','No requiere anticipación.','Al menos 30 días.'],c:3,f:'El feriado preferente en vacaciones escolares debe solicitarse con al menos 30 días de anticipación.'},
+ {q:'Una persona cuidadora pide teletrabajo. ¿Qué debe hacer el empleador?',o:['Responder cuando tenga tiempo, sin plazo.','Responder dentro de 15 días: aceptar, ofrecer una alternativa o rechazar fundamentando que las funciones no lo permiten.','Rechazar si la persona cuidada es mayor de edad.'],c:1,f:'El empleador debe responder dentro de 15 días. Si rechaza, debe fundamentar que la naturaleza de las funciones no lo permite; la persona puede recurrir a la Inspección del Trabajo.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: bandeja de solicitudes ---------- */
+const SOL=[
+ ['Paola Rivas · Ejecutiva de cuentas','Solicitud de teletrabajo parcial','“Hola, Camila: tengo el cuidado personal de mi hijo Tomás, de 11 años. Quisiera trabajar a distancia dos días a la semana para acompañarlo después del colegio.”','Certificado de nacimiento de Tomás.pdf'],
+ ['Jorge Muñoz · Analista contable','Solicitud de teletrabajo y feriado','“Cuido a mi padre, de 72 años, que tiene dependencia moderada. No recibo pago por cuidarlo. Necesito trabajar desde la casa algunos días.”','Antecedente de dependencia (por revisar)'],
+ ['Fernanda Soto · Asistente de operaciones','Solicitud de cambio de turno','“A veces ayudo a un vecino mayor con sus compras y trámites. ¿Podría tener las mismas medidas que las personas cuidadoras?”','Sin documentos adjuntos']];
+const tSol=tracker('sol',3,'#solTick','#solTask');
+$$('#solLine .evnode').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k,s=SOL[k];$$('#solLine .evnode').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#solPanel').innerHTML=`<div class="mailbox"><div class="mhead"><span>De: <b>${s[0]}</b></span><span>Asunto: <b>${s[1]}</b></span></div><p>${s[2]}</p><span class="att">📎 ${s[3]}</span></div>`;tSol(k);
+  if(S.done.has('sol')&&$('#hookQ').hidden){$('#hookQ').hidden=false;setTimeout(()=>$('#hookQ').scrollIntoView({behavior:'smooth',block:'start'}),200)}}));
+
+/* ---------- Árbol: ¿quién califica? ---------- */
+const NODES=['¿Tiene el cuidado personal de un niño o niña menor de 14 años?','¿Cuida a una persona con discapacidad o dependencia severa o moderada?','¿Recibe remuneración por ese cuidado?'];
+const EXS=[{n:'Paola tiene el cuidado personal de su hijo Tomás, de 11 años.',path:[1],res:'a'},
+ {n:'Jorge cuida sin recibir pago a su padre de 72 años, que tiene dependencia moderada.',path:[0,1,0],res:'b'},
+ {n:'Marta trabaja los fines de semana: una familia le paga por cuidar a una señora con dependencia severa.',path:[0,1,1],res:'r'}];
+const RES={a:['good','Califica · primer grupo','Tiene el cuidado personal de un niño menor de 14 años. Deberá acreditarlo con el certificado de nacimiento o la resolución judicial.'],
+ b:['good','Califica · segundo grupo','Cuida sin remuneración a una persona con dependencia moderada. La edad del padre no importa. Deberá acreditarlo con la credencial de persona cuidadora del Ministerio de Desarrollo Social.'],
+ r:['bad','No califica','El cuidado que realiza es remunerado: para Marta es un trabajo. Las medidas de conciliación protegen el cuidado no remunerado.']};
+const HINT=[['Fíjate: tiene el cuidado personal y el niño tiene menos de 14 años.','La persona cuidada no es un niño o niña menor de 14 años.'],['Revisa: la persona cuidada tiene dependencia severa o moderada.','Revisa: no se menciona discapacidad ni dependencia.'],['Revisa: ¿alguien le paga por cuidar?','Revisa el caso: dice que no recibe pago.']];
+let ex=0,step=0;const solved=new Set();
+function treeDraw(){$('#exTabs').innerHTML=EXS.map((e,i)=>`<button class="ex-tab ${i===ex?'active':''} ${solved.has(i)?'ok':''}" type="button" data-i="${i}">Ejemplo ${i+1}</button>`).join('');
+  $$('#exTabs .ex-tab').forEach(b=>b.addEventListener('click',()=>{ex=+b.dataset.i;step=0;$('#trFb').innerHTML='';treeDraw()}));
+  const e=EXS[ex];let h=`<div class="story" style="margin:0"><b>Caso:</b> ${e.n}</div>`;
+  const shown=solved.has(ex)?e.path.length:step+1;
+  for(let k=0;k<Math.min(shown,e.path.length);k++){const cls=k<step||solved.has(ex)?'past':'cur';
+    h+=`<div class="tnode ${cls}"><span><b>${k+1}.</b> ${NODES[k]}</span>${cls==='cur'?'<span class="yn"><button type="button" data-a="1">Sí</button><button type="button" data-a="0">No</button></span>':`<span>${e.path[k]?'Sí':'No'} ✓</span>`}</div>`}
+  if(solved.has(ex)){const r=RES[e.res];h+=`<div class="tres feedback ${r[0]}">→ ${r[1]}<br/><span class="fb-body" style="font-weight:600">${r[2]}</span></div>`}
+  $('#tree').innerHTML=h;
+  $$('#tree .yn button').forEach(b=>b.addEventListener('click',()=>{const a=+b.dataset.a;if(a===e.path[step]){step++;$('#trFb').innerHTML='';if(step>=e.path.length){solved.add(ex);$('#trTick').textContent=`${solved.size} / 3`;if(solved.size===3){$('#trTask').classList.add('ok');done('tree')}}treeDraw()}
+    else feedback($('#trFb'),false,'Revisa.',HINT[step][e.path[step]?0:1])}))}
+treeDraw();
+
+/* ---------- Pestañas: acreditación ---------- */
+const tTab=tracker('tabs',3,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tabpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Simulador: qué medida aplica ---------- */
+let cond='none';const tSim=tracker('sim',3,'#simTick','#simTask');
+$$('#sCond button').forEach(b=>b.addEventListener('click',()=>{cond=b.dataset.v;$$('#sCond button').forEach(x=>x.classList.toggle('on',x===b));simEval()}));
+function simEval(){const age=+$('#sAge').value,rem=$('#sRem').checked,days=+$('#sDays').value,comp=$('#sComp').checked,dd=cond!=='none';
+  $('#sAgeO').textContent=age+(age===1?' año':' años');$('#sDaysO').textContent=days+(days===1?' día':' días');
+  const g1=age<14&&!rem,g2=dd&&!rem,calif=g1||g2,fer=!rem&&(age<14||(age<18&&dd)),cn=cond==='disc'?'discapacidad':'dependencia severa o moderada';
+  const why=rem?'Recibe remuneración por cuidar: para la ley es un trabajo, no una responsabilidad de cuidado protegida.'
+    :g1?`Tiene el cuidado personal de un niño o niña menor de 14 años (${age} ${age===1?'año':'años'}).`
+    :g2?`Cuida sin remuneración a una persona con ${cn}. No importa su edad (${age} años).`
+    :`La persona cuidada tiene ${age} años y no tiene discapacidad ni dependencia severa o moderada.`;
+  const v=$('#simV');v.className='verdict '+(calif?'ok':'ko');v.textContent=calif?'✓ Califica como persona cuidadora':'✕ No califica como persona cuidadora';$('#simWhy').textContent=why;
+  const tele=!calif?['ko','No aplica: primero debe calificar como persona cuidadora.']:comp?['ok','El empleador debe ofrecerlo, total o parcialmente. Si se solicita, debe responder dentro de 15 días.']:['wa','Califica, pero si las funciones no lo permiten el empleador puede ofrecer una alternativa o rechazar fundadamente. La persona puede recurrir a la Inspección del Trabajo.'];
+  const ferR=!fer?['ko',rem?'No aplica al cuidado remunerado.':dd&&age>=18?`Solo alcanza a menores de 14 años o adolescentes menores de 18 con discapacidad o dependencia. Esta persona tiene ${age} años.`:'No aplica: no hay cuidado personal de un menor de 14 ni de un adolescente menor de 18 con discapacidad o dependencia.']
+    :days>=30?['ok','Tiene derecho preferente a usar su feriado en las vacaciones escolares. La solicitud cumple los 30 días de anticipación.']:['wa',`Le corresponde, pero debe pedirlo con al menos 30 días de anticipación (hoy: ${days}).`];
+  const tur=!calif?['ko','No aplica: primero debe calificar como persona cuidadora.']:!comp?['wa','Solo procede si la naturaleza de las funciones lo permite y la empresa funciona en un horario compatible.']:days<30?['wa',`Debe proponerse con al menos 30 días de anticipación, junto al documento que acredita la calidad de cuidador (hoy: ${days}).`]:['ok','Puede proponer un ajuste transitorio de turnos en vacaciones escolares. Se deja constancia en un anexo, sin cambiar la jornada semanal ni la remuneración.'];
+  const rows=[[tele,'Teletrabajo o trabajo a distancia'],[ferR,'Feriado preferente en vacaciones escolares'],[tur,'Ajuste transitorio de turnos en vacaciones escolares']];
+  $('#simChecks').innerHTML=rows.map(r=>`<div class="checkrow ${r[0][0]}"><span>${r[0][0]==='ok'?'✓':r[0][0]==='wa'?'!':'✕'}</span><span><b>${r[1]}</b><span class="d">${r[0][1]}</span></span></div>`).join('');
+  const hit=[tele[0]==='ok'&&ferR[0]==='ok'&&tur[0]==='ok',tele[0]==='ok'&&!fer&&dd&&age>=18,rem&&dd];
+  hit.forEach((h,i)=>{if(h){$(`#retos li[data-r="${i}"]`).classList.add('ok');tSim(i)}})}
+['#sAge','#sRem','#sDays','#sComp'].forEach(s=>$(s).addEventListener('input',simEval));simEval();
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Solo las madres pueden acceder a las medidas de conciliación por cuidado.',false,'La ley habla de personas trabajadoras: un padre, un tío con resolución judicial o un hijo que cuida a su madre también pueden calificar.'],
+ ['Si la persona cuidada es adulta, nunca hay derecho a medidas de conciliación.',false,'Quien cuida sin remuneración a una persona con discapacidad o dependencia severa o moderada califica sin importar la edad de quien recibe el cuidado.'],
+ ['Una cuidadora contratada por una familia califica como persona cuidadora para pedir estas medidas en su otro empleo.',false,'El cuidado debe ser no remunerado. Si se recibe un pago por cuidar, es un trabajo y no da acceso a estas medidas.'],
+ ['Calificar como persona cuidadora no garantiza automáticamente el teletrabajo: también hay que revisar si las funciones lo permiten.',true,'Son dos preguntas distintas. Si las funciones no lo permiten, el empleador puede ofrecer una alternativa o rechazar fundadamente.'],
+ ['La situación de cuidado debe acreditarse con los antecedentes que reconoce la normativa.',true,'Certificado de nacimiento o resolución judicial, inscripción en el Registro Nacional de la Discapacidad o credencial de persona cuidadora del Ministerio de Desarrollo Social (dependencia).']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===TF.length?'good':'bad'}"><strong>${n} de ${TF.length} correctas.</strong> <span class="fb-body">Califica quien tiene el cuidado personal de un menor de 14 años o cuida sin pago a una persona con discapacidad o dependencia severa o moderada, y lo acredita. Luego se revisa si la medida es compatible con las funciones.</span></div>`;
+    S.first.tf=n===TF.length;done('tf');return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Clasificar solicitudes ---------- */
+const CARDS=[
+ ['Paola: cuidado personal de su hijo de 11 años; adjunta el certificado de nacimiento.','c','Está en el primer grupo y presentó el antecedente que lo acredita.'],
+ ['Jorge: cuida sin pago a su padre con dependencia moderada; aún no presenta la credencial de persona cuidadora del Ministerio de Desarrollo Social.','f','Está en un grupo protegido, pero debe acreditar la dependencia antes de resolver.'],
+ ['Fernanda: ayuda de vez en cuando a un vecino que no tiene discapacidad ni dependencia.','n','El cuidado ocasional e informal, sin discapacidad ni dependencia, no está en los grupos protegidos.'],
+ ['Luis: tiene el cuidado personal de su sobrina de 9 años por resolución judicial, que adjunta.','c','La resolución judicial que otorga el cuidado personal acredita el primer grupo.'],
+ ['Patricio: su hermana le paga cada mes por cuidar a su madre con dependencia severa.','n','Recibe remuneración por ese cuidado: no califica como persona cuidadora para estas medidas.'],
+ ['Andrea: cuida sin pago a su hermano adulto con discapacidad; adjunta su inscripción en el Registro Nacional de la Discapacidad.','c','Cuidado no remunerado de una persona con discapacidad, acreditado. La edad no importa.'],
+ ['Ricardo: pide teletrabajo para acompañar a su hijo de 15 años, sin discapacidad ni dependencia.','n','Su hijo tiene 14 años o más y no tiene discapacidad ni dependencia: no está en los grupos protegidos.'],
+ ['Sofía: madre de una niña de 6 años; dice que enviará el certificado de nacimiento la próxima semana.','f','Está en el primer grupo, pero aún falta el documento que lo acredita.']];
+const BN={c:'Califica',f:'Falta acreditar',n:'No califica'};
+const order=[2,0,6,1,4,3,7,5];let selC=null,placedN=0,binErr=0;
+$('#pool').innerHTML=order.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,`Correcto: ${BN[b]}.`,CARDS[c][2]);
+    if(placedN===8){$('#binTask').classList.add('ok');S.first.bins=binErr===0;done('bins')}}
+  else{binErr++;bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');
+    feedback($('#binFb'),false,`No corresponde a “${BN[b]}”.`,b==='c'?'Revisa: ¿está en un grupo protegido y ya presentó el antecedente?':b==='f'?'Revisa: ¿está realmente en un grupo protegido? ¿O ya acreditó su situación?':'Revisa: ¿hay cuidado personal de un menor de 14 o cuidado no remunerado de una persona con discapacidad o dependencia?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+
+/* ---------- Ordenar pasos ---------- */
+const ORDER=['Recibir la solicitud por escrito e identificar la medida pedida (teletrabajo, feriado preferente o ajuste de turnos).','Verificar si la persona está en un grupo protegido: cuidado personal de un menor de 14, o cuidado no remunerado de una persona con discapacidad o dependencia severa o moderada.','Revisar el antecedente que lo acredita: certificado de nacimiento, resolución judicial, Registro Nacional de la Discapacidad o credencial del Ministerio de Desarrollo Social.','Revisar los requisitos de la medida: compatibilidad con las funciones y, si corresponde, los 30 días de anticipación.','Responder dentro de plazo (15 días en teletrabajo): aceptar, ofrecer una alternativa o fundamentar el rechazo.','Dejar constancia de lo acordado (por ejemplo, en un anexo) y conservar los antecedentes.'];
+let cur=[3,0,5,2,4,1];
+function drawOrder(state){$('#order').innerHTML=cur.map((k,i)=>`<li class="${state?(k===i?'good':'bad'):''}"><span class="pos">${i+1}</span><span>${ORDER[k]}</span><span class="mv"><button type="button" data-u="${i}" aria-label="Subir">↑</button><button type="button" data-d="${i}" aria-label="Bajar">↓</button></span></li>`).join('');
+  $$('#order [data-u]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.u;if(i>0){[cur[i-1],cur[i]]=[cur[i],cur[i-1]];drawOrder()}}));
+  $$('#order [data-d]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.d;if(i<cur.length-1){[cur[i+1],cur[i]]=[cur[i],cur[i+1]];drawOrder()}}))}
+drawOrder();
+$('#orderCheck').addEventListener('click',()=>{const ok=cur.every((k,i)=>k===i);drawOrder(true);
+  if(ok){feedback($('#orderFb'),true,'Secuencia correcta.','Primero se identifica qué se pide y si la persona está en un grupo protegido; luego se revisa la acreditación y la compatibilidad de la medida; al final se responde dentro de plazo y se deja constancia.');done('order')}
+  else feedback($('#orderFb'),false,'Aún no.',`${cur.filter((k,i)=>k===i).length} de ${ORDER.length} pasos están en su lugar (en verde). Recuerda: antes de evaluar la medida, confirma quién califica y con qué antecedente.`)});
+/*{{TAIL}}*/
+})();
+</script>

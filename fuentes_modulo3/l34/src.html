@@ -1,0 +1,390 @@
+<title>Lección 3.4 — Conciliar trabajo y vida personal</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+/* ---- Ajustes propios de la Lección 3.4 ---- */
+.meta-box{margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);font-size:.92rem;color:var(--ink2)}
+.phone .notif{background:#fff;border:1px solid #c9d6dc;border-left:5px solid #0f7a82;border-radius:14px;padding:10px 12px;font-size:.84rem;animation:rise .35s ease both}
+.phone .notif b{display:block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:#5f7180}
+.phone .req{font-size:.82rem;line-height:1.45}
+.phone .req dt{font-weight:900;color:#5f7180;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
+.phone .req dd{margin:0}
+.phone .pbub{background:#fff2dc;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:.88rem;font-weight:700;animation:rise .35s ease both}
+.phone .pbub small{display:block;font-size:.68rem;font-weight:900;color:#9a5e04;text-transform:uppercase;letter-spacing:.04em}
+.phone .stamp{align-self:flex-start;font-size:.72rem;font-weight:900;padding:4px 10px;border-radius:999px;background:#fff0f4;color:#9e1c40;border:1px solid #e6a1b2}
+.tiles.tools{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tiles.tools .tile{font-size:1rem;line-height:1.25;text-align:center}
+.tiles.tools .tile .q{display:block;font-size:1.6rem}
+.tiles.tools .tile.open{background:var(--mint);color:var(--teal-ink);border-color:var(--mint-line);font-size:.92rem}
+.flow .node.locked .num{opacity:.45;cursor:not-allowed}
+.flow .node.locked .q{color:var(--muted);cursor:not-allowed}
+.flow .node.ok .num{background:var(--good-soft);color:var(--good)}
+.flow .node.ok.open .num{background:var(--teal);color:var(--surface)}
+.fq{margin-top:10px;padding:12px;border-radius:14px;background:var(--surface2);border:1px solid var(--line2)}
+.fq p{margin:0 0 8px;font-weight:800;color:var(--ink)}
+.fq .fopts{display:grid;gap:8px}
+.fq .fopts button{border:2px solid var(--line2);background:var(--surface);border-radius:12px;padding:9px 12px;text-align:left;font-weight:750;cursor:pointer}
+.fq .fopts button.good{border-color:var(--good-line);background:var(--good-soft);color:var(--good)}
+.fq .fopts button.bad{border-color:var(--bad-line);background:var(--bad-soft);color:var(--bad)}
+.fq .fopts button:disabled{cursor:default}
+.branch3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.branch3>div{border-radius:12px;padding:8px 10px;font-size:.85rem;font-weight:750;border:1px solid var(--line2);background:var(--surface)}
+.branch3 .b1{border-color:var(--good-line);background:var(--good-soft)}
+.branch3 .b2{border-color:var(--mint-line);background:var(--mint)}
+.branch3 .b3{border-color:var(--story-line);background:var(--story-bg)}
+.mail .toggle-row.marked{background:var(--amber-soft)}
+.mail .toggle-row .nat{display:none}
+.mail .toggle-row.rgood .nat,.mail .toggle-row.rbad .nat{display:block}
+.mail .toggle-row.rgood .nat{background:var(--good-soft);color:var(--good)}
+.mail .toggle-row.rbad .nat{background:var(--bad-soft);color:var(--bad)}
+.mail .toggle-row .swl{font-size:.78rem;font-weight:800;color:var(--muted)}
+.mail .toggle-row.marked .swl{color:var(--amber-ink)}
+.mail .toggle-row.on .sw{background:var(--amber)}
+.seltable .who{display:block;font-size:.82rem;color:var(--muted);font-weight:700}
+.versions.ans .version{cursor:default}
+.versions.ans .version .say{display:block;font-size:.95rem;font-weight:600}
+.versions.ans .vtag{font-weight:900;color:var(--teal-ink)}
+.docs.just .doc{font-size:.88rem}
+@media(max-width:860px){
+  .tiles.tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .branch3{grid-template-columns:1fr}
+  .mail .toggle-row{grid-template-columns:1fr;gap:6px}
+  .seltable,.seltable tbody,.seltable tr,.seltable td{display:block;width:100%!important}
+  .seltable td{border-bottom:none}.seltable tr{border-bottom:1px solid var(--line2);padding-bottom:6px}
+}
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 3 · LECCIÓN 3.4</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:35" data-gate="hook" data-gate-msg="Completa los tres pasos del celular y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 3.4 · Conciliar trabajo y vida personal</span>
+      <h1 class="reveal">“Aquí todos vienen”: ¿una respuesta válida?</h1>
+      <p class="lead reveal"><strong>Organizar el trabajo considerando responsabilidades familiares.</strong> Valeria, analista de facturación en Horizonte Servicios, tiene un hijo de 9 años y envió una solicitud por la aplicación de Personas. Camila, del Equipo de Personas, revisa lo que pasó.</p>
+      <div class="meta-box reveal"><b>Meta de aprendizaje:</b> aplicar criterios de conciliación de la vida personal, familiar y laboral, reconociendo los derechos incorporados por la Ley N°21.645 y su relación con la organización del trabajo.</div>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Camila revisa en su celular una solicitud de trabajo a distancia en una oficina luminosa" src="{{IMG:i34_hero}}"/></div>
+  </div>
+  <p style="margin-top:16px"><strong>Haz clic en los botones del celular</strong> y sigue los pasos de la derecha.</p>
+  <div class="phone-wrap">
+    <div class="phone" id="phone"></div>
+    <div class="steps-side">
+      <div class="sstep on" id="ps0"><b>1 · Abrir la notificación</b><br/>Presiona “Ver solicitud” en la aplicación.</div>
+      <div class="sstep" id="ps1"><b>2 · Leer la solicitud de Valeria</b><br/>Revisa qué pide, por qué y qué adjunta.</div>
+      <div class="sstep" id="ps2"><b>3 · Ver la respuesta de la jefatura</b><br/>Lee qué contestó Rodrigo, jefe de Operaciones.</div>
+      <div class="fb" id="phoneFb"></div>
+    </div>
+  </div>
+  <div id="hookQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería hacer Camila con esta respuesta?</h3>
+    <div class="options" data-choice="hook" data-correct="B">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Mantenerla: cada jefatura decide la modalidad de su equipo y la costumbre es presencial.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Revisar si Valeria acredita el cuidado de un menor de 14 años y si sus funciones permiten combinar días presenciales y a distancia, y responder con fundamentos dentro de 15 días.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Aprobar de inmediato cualquier modalidad que pida, sin revisar sus funciones.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="branch bad"><div class="branch-head">✕ Consecuencia: un rechazo sin fundamento</div><div class="branch-body"><div><p>Una costumbre del equipo no es un motivo legal. Si se rechaza, la ley exige fundamentar que <strong>la naturaleza de las funciones no lo permite</strong>. Valeria podría recurrir a la Inspección del Trabajo.</p></div><div><p class="hint">“Todos igual” no responde la solicitud.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se decide sin analizar</div><div class="branch-body"><div><p>El derecho existe <strong>cuando la naturaleza de las funciones lo permite</strong>. Aprobar sin revisar puede generar problemas operativos y no deja registro de por qué se decidió.</p></div><div><p class="hint">Conciliar es un derecho, con criterios.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="hook-B"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>Camila debe separar dos preguntas: ¿Valeria acredita la situación de cuidado? y ¿sus funciones permiten la modalidad pedida? Con eso puede aceptar, ofrecer una fórmula alternativa o rechazar con fundamentos, dentro de 15 días.</p></div><div><p class="hint">En esta lección verás cómo hacerlo.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 2 min</span>
+  <h2>¿Qué cambió con la Ley N°21.645?</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+  <div class="sources">Referencias: Ley N°21.645 (publicada el 29-12-2023, vigente desde el 29-01-2024); Código del Trabajo, arts. 67, 76 bis, 152 quáter J y 152 quáter O bis; Ley N°21.561.</div>
+</section>
+
+<!-- 3 · PRINCIPIOS -->
+<section class="slide" data-title="Principios" data-audio="p03" data-dur="0:27" data-gate="acc" data-gate-msg="Abre los cuatro principios de la Ley 21.645.">
+  <span class="eyebrow">Lección 3.4 · Principios de la Ley 21.645</span>
+  <h2>Cuatro ideas que cambian la forma de responder</h2>
+  <div class="grid-2">
+    <div>
+      <p>La Ley N°21.645 modificó el Título II del Libro II del Código del Trabajo, que pasó a llamarse <strong>“De la protección a la maternidad, paternidad y vida familiar”</strong>. <strong>Haz clic en cada principio</strong> para leer qué significa y un ejemplo.</p>
+      <div class="task" id="accTask">Principios revisados <span class="tick" id="accTick">0 / 4</span></div>
+    </div>
+    <div class="photo-frame wide"><img alt="Un padre trabaja en su notebook en casa mientras su hijo hace tareas a su lado" src="{{IMG:i34_familia}}"/></div>
+  </div>
+  <div class="acc" id="acc">
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">🤝</span><span>Corresponsabilidad social<span class="sub">¿De quién es la tarea de cuidar?</span></span><span class="tg">＋</span></button><div class="acc-body">El cuidado de hijos e hijas y de personas dependientes no es un asunto privado de una sola persona: es una responsabilidad compartida entre madres, padres, familias, empleadores y la sociedad.<div class="example"><b>Ejemplo:</b> un padre de Horizonte Servicios también puede pedir trabajo a distancia por el cuidado de su hijo; la medida no es “solo para mamás”.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">👨‍👧</span><span>Parentalidad positiva<span class="sub">Tiempo y presencia para criar</span></span><span class="tg">＋</span></button><div class="acc-body">La organización del trabajo debe permitir que madres y padres ejerzan su rol de crianza con tiempo, presencia y cuidado, sin tener que elegir entre su empleo y su familia.<div class="example"><b>Ejemplo:</b> combinar días presenciales y a distancia le permite a Valeria acompañar a su hijo a la salida del colegio sin dejar de cumplir sus tareas.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">🛡️</span><span>Protección a la maternidad y paternidad<span class="sub">Un título del Código con nuevo alcance</span></span><span class="tg">＋</span></button><div class="acc-body">La protección ya no se limita al embarazo y al nacimiento: se extiende a la <strong>vida familiar</strong>, incluyendo a quienes cuidan a un niño o niña menor de 14 años o a una persona con discapacidad o dependencia severa o moderada.<div class="example"><b>Ejemplo:</b> Paula, que cuida sin remuneración a su madre con dependencia severa, también puede solicitar las medidas de la ley.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">⚖️</span><span>La conciliación es un derecho<span class="sub">No un favor ni una excepción</span></span><span class="tg">＋</span></button><div class="acc-body">Conciliar no depende de la buena voluntad de una jefatura. Si la persona cumple los requisitos, la empresa debe analizar su solicitud y <strong>responder con fundamentos</strong>; una política informal del equipo no basta para negarla.<div class="example"><b>Ejemplo:</b> “En este equipo no hacemos excepciones” trata un derecho como si fuera un privilegio. Por eso esa respuesta no es válida.</div></div></div>
+  </div>
+  <div class="sources">Referencia: Ley N°21.645, que modifica el Título II del Libro II del Código del Trabajo.</div>
+</section>
+
+<!-- 4 · HERRAMIENTAS -->
+<section class="slide" data-title="Herramientas" data-audio="p04" data-dur="0:28" data-gate="tiles" data-gate-msg="Descubre las seis herramientas de conciliación.">
+  <span class="eyebrow amber">Lección 3.4 · Herramientas de conciliación</span>
+  <h2>Seis herramientas que la ley pone a disposición</h2>
+  <p>Cada herramienta tiene sus propios requisitos. <strong>Toca cada ficha</strong> para descubrir quién puede usarla, qué permite y desde qué norma.</p>
+  <div class="task" id="tlTask">Herramientas descubiertas <span class="tick" id="tlTick">0 / 6</span></div>
+  <div class="tiles tools" id="tiles"></div>
+  <div class="dpanel" id="tlPanel"><p class="hint">Toca una ficha para ver el detalle.</p></div>
+  <div class="sources">Referencias: Código del Trabajo, arts. 67, 76 bis, 152 quáter J y 152 quáter O bis (texto según Ley N°21.645); Ley N°21.561 (40 horas).</div>
+</section>
+
+<!-- 5 · CÓMO RESPONDER -->
+<section class="slide" data-title="Cómo responder" data-audio="p05" data-dur="0:27" data-gate="flujo" data-gate-msg="Recorre las cinco etapas respondiendo la pregunta de cada una.">
+  <span class="eyebrow violet">Lección 3.4 · Responder una solicitud</span>
+  <h2>De la solicitud a la respuesta: el recorrido completo</h2>
+  <p>Abre la primera etapa y responde su pregunta para desbloquear la siguiente. Si te equivocas, lee la explicación y vuelve a intentarlo.</p>
+  <div class="task" id="flTask">Etapas completadas <span class="tick" id="flTick">0 / 5</span></div>
+  <div class="flow" id="flow"></div>
+  <div class="fb" id="flFb"></div>
+  <div class="sources">Referencia: Código del Trabajo, art. 152 quáter O bis (incorporado por la Ley N°21.645).</div>
+</section>
+
+<!-- 6 · REVISAR EL CORREO -->
+<section class="slide" data-title="Revisar la respuesta" data-audio="p06" data-dur="0:26" data-gate="tog" data-gate-msg="Marca las frases incorrectas del borrador y presiona “Revisar correo” hasta acertar todas.">
+  <span class="eyebrow">Lección 3.4 · Una respuesta con fundamentos</span>
+  <h2>El borrador de Rodrigo: ¿qué frases no se ajustan a la ley?</h2>
+  <p>Activa el interruptor de cada frase que consideres <strong>incorrecta</strong>. Deja apagadas las frases correctas. Luego presiona <strong>Revisar correo</strong>.</p>
+  <div class="slip mail" id="mail">
+    <div class="slip-h"><span>Para: Valeria Soto · Asunto: Respuesta a tu solicitud de trabajo a distancia</span><span>Borrador de Rodrigo Pérez, jefe de Operaciones</span></div>
+  </div>
+  <button class="small-btn primary" type="button" id="mailCheck" style="margin-top:12px">Revisar correo</button>
+  <div class="fb" id="mailFb"></div>
+  <div class="sources">Referencias: Código del Trabajo, arts. 152 quáter O bis y 152 quáter J.</div>
+</section>
+
+<!-- 7 · CASO APLICADO -->
+<section class="slide" data-title="Caso aplicado" data-audio="p07" data-dur="0:26" data-gate="tbl" data-gate-msg="Clasifica correctamente las cinco solicitudes.">
+  <span class="eyebrow amber">Lección 3.4 · Solicitudes del equipo</span>
+  <h2>Cinco solicitudes, tres respuestas posibles</h2>
+  <div class="grid-2">
+    <div><p>Todas las personas acreditaron su situación de cuidado con el documento correspondiente. Ahora la pregunta es: <strong>¿sus funciones permiten la modalidad que piden?</strong> Elige una respuesta para cada solicitud y presiona <strong>Comprobar</strong>. Las filas incorrectas se marcan en rojo.</p></div>
+    <div class="photo-frame wide"><img alt="Camila revisa solicitudes junto a una jefatura en una sala de reuniones" src="{{IMG:i34_equipo}}"/></div>
+  </div>
+  <div style="overflow-x:auto"><table class="seltable" id="seltable"></table></div>
+  <button class="small-btn primary" type="button" id="tblCheck" style="margin-top:12px">Comprobar</button>
+  <div class="fb" id="tblFb"></div>
+  <div class="sources">Referencias: Código del Trabajo, art. 152 quáter O bis; acreditación según la normativa (certificado de nacimiento, Registro Nacional de la Discapacidad o credencial de persona cuidadora del Ministerio de Desarrollo Social).</div>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:25" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:27" data-gate="trans pass" data-gate-msg="Elige la mejor versión y justifica tu elección.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>Dos respuestas para Valeria: ¿cuál enviarías?</h2>
+  <div class="grid-2">
+    <div><p>Camila redactó dos versiones de respuesta. Léelas y <strong>elige la que mejor aplica la ley</strong>. Después, justifica tu elección marcando los criterios que la hacen correcta.</p></div>
+    <div class="photo-frame wide"><img alt="Camila conversa con una trabajadora en un escritorio mientras revisan un documento" src="{{IMG:i34_respuesta}}"/></div>
+  </div>
+  <div class="versions ans">
+    <div class="version"><span class="vtag">Versión A</span><span class="say">“Hola Valeria: entendemos tu situación y tu solicitud es razonable. Sin embargo, por ahora preferimos que todo el equipo siga presencial para cuidar la cultura de trabajo. Lo volvemos a conversar en marzo, cuando baje la carga.”</span></div>
+    <div class="version"><span class="vtag">Versión B</span><span class="say">“Hola Valeria: recibimos tu solicitud el 2 de octubre y te respondemos hoy, 9 de octubre, dentro del plazo de 15 días. Revisamos tus funciones: la facturación y la atención por correo pueden hacerse a distancia, y las reuniones de cierre son los lunes. Aceptamos tu propuesta: lunes y jueves presencial; martes, miércoles y viernes a distancia. Lo dejaremos por escrito en un anexo y respetaremos tu desconexión de al menos 12 horas continuas.”</span></div>
+  </div>
+  <div class="options" data-choice="trans" data-correct="B" data-then="justBox">
+    <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Enviaría la versión A.</span></button>
+    <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Enviaría la versión B.</span></button>
+  </div>
+  <div class="fb"></div>
+  <template data-for="trans-A"><div class="feedback bad"><strong>Revisa.</strong> <span class="fb-body">La versión A es amable, pero en la práctica es un rechazo sin fundamento: usa la “cultura del equipo” y posterga la decisión hasta marzo, fuera del plazo de 15 días. No analiza las funciones de Valeria.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+  <template data-for="trans-B"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">La versión B responde dentro de plazo, analiza funciones concretas y formaliza el acuerdo. Ahora justifica tu elección.</span></div></template>
+  <div id="justBox" hidden>
+    <h3 style="margin-top:16px">¿Por qué la versión B es mejor? Marca <u>todos</u> los criterios correctos.</h3>
+    <div class="docs just" id="just"></div>
+    <label class="hint" for="ownWords" style="display:block;margin-top:12px">Opcional: escribe cómo responderías tú una solicitud similar en tu organización.</label>
+    <textarea id="ownWords" placeholder="Por ejemplo: revisaría primero el documento que acredita el cuidado y luego…"></textarea>
+    <button class="small-btn primary" type="button" id="justCheck" style="margin-top:10px">Comprobar justificación</button>
+    <div class="fb" id="justFb"></div>
+    <div id="model" hidden class="callout"><strong>Respuesta modelo:</strong> una buena respuesta (1) confirma la fecha de la solicitud y responde dentro de <b>15 días</b>; (2) analiza las <b>funciones concretas</b> del cargo, no la costumbre del equipo; (3) <b>acepta</b>, ofrece una <b>fórmula alternativa</b> o <b>rechaza fundadamente</b>; (4) deja el acuerdo <b>por escrito</b>; y (5) recuerda los resguardos del teletrabajo, como la desconexión de al menos 12 horas continuas. Si se rechaza, la persona puede recurrir a la Inspección del Trabajo.</div>
+  </div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:27" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 3.4</h2>
+    <p>Ya puedes reconocer los principios de la Ley N°21.645, identificar las herramientas de conciliación y responder una solicitud de una persona cuidadora con fundamentos, dentro de plazo y dejando registro.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn" type="button" data-goto="3">Repasar las herramientas</button><button class="small-btn primary" type="button" data-goto="4">Repasar cómo responder</button></div>
+    <div class="sources">Fuentes: Ley N°21.645; Código del Trabajo, arts. 67, 76 bis, 152 quáter J y 152 quáter O bis; Ley N°21.561. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l34';
+const FIRST_KEYS=['hook','flujo','tog','tbl','trans'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Un derecho, no un favor',lines:['Conciliar el trabajo con la familia ya no depende de la buena voluntad de una jefatura.','Desde el 29 de enero de 2024 rige la Ley 21.645, que lo reconoce como un derecho.'],
+  html:`<div class="v-icons"><div><span class="i">💼</span>Trabajo</div><div><span class="i">⚖️</span></div><div><span class="i">🏡</span>Familia</div></div><div class="v-big fadein" data-at="1" style="font-size:clamp(2rem,7vw,3.6rem);margin-top:10px">Ley 21.645</div><div class="v-sub" data-at="1">Vigente desde el 29-01-2024</div>`},
+ {t:'Principios',lines:['La ley modifica el título del Código del Trabajo sobre protección a la maternidad, paternidad y vida familiar.','Y agrega principios: corresponsabilidad social, parentalidad positiva y protección a la maternidad y la paternidad.'],
+  html:`<div class="v-final">Protección a la maternidad, paternidad<br/><em>y vida familiar</em></div><div class="v-chk"><span data-at="1">Corresponsabilidad social</span><span data-at="1">Parentalidad positiva</span><span data-at="1">Protección a la maternidad y paternidad</span></div>`},
+ {t:'Teletrabajo para cuidadores',lines:['Quien tiene el cuidado personal de un niño o niña menor de 14 años, o cuida sin remuneración a una persona con discapacidad o dependencia severa o moderada, puede pedir trabajar a distancia, total o parcialmente.','El límite es uno: que la naturaleza de las funciones lo permita.'],
+  html:`<div class="v-icons"><div><span class="i">🧒</span>Menor de 14 años</div><div><span class="i">🧑‍🦽</span>Discapacidad o dependencia</div><div><span class="i">🏠</span>A distancia total o parcial</div></div><div class="note" data-at="1">Si la naturaleza de las funciones lo permite</div>`},
+ {t:'Plazo y respuesta',lines:['El empleador debe responder dentro de 15 días.','Puede aceptar, ofrecer una fórmula alternativa o rechazar.','Si rechaza, debe fundamentar que las funciones no lo permiten, y la persona puede recurrir a la Inspección del Trabajo.'],
+  html:`<div class="v-big">15 días</div><div class="v-chk"><span data-at="1">Aceptar</span><span data-at="1">Fórmula alternativa</span><span data-at="2">Rechazo fundado</span></div><div class="note" data-at="2">Reclamo posible ante la Inspección del Trabajo</div>`},
+ {t:'Vacaciones escolares',lines:['Quien cuida a un niño o niña menor de 14 años tiene derecho preferente a usar su feriado en las vacaciones escolares, pidiéndolo con 30 días de anticipación.','También puede proponer cambiar transitoriamente su turno o la distribución de su jornada en ese período, y se deja constancia en un anexo.'],
+  html:`<div class="v-cal"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span><span class="f">🎒</span><span class="f">🎒</span><span class="f">🎒</span><span class="f">🎒</span><span class="f">🎒</span><span></span><span></span></div><div class="v-sub">Aviso con 30 días de anticipación</div><div class="note" data-at="1">Turno transitorio · constancia en anexo</div>`},
+ {t:'Otras herramientas',lines:['La Ley de 40 horas suma una banda de hasta 2 horas para anticipar o retrasar hasta una hora el inicio de la jornada, para quien cuida a niños o niñas menores de 12 años.','Y en el teletrabajo rige la desconexión: al menos 12 horas continuas sin obligación de responder.'],
+  html:`<div class="v-icons"><div><span class="i">⏰</span>Banda de hasta 2 horas<br/>(menores de 12 años)</div><div class="dim" data-at="1"><span class="i">📵</span>Desconexión de al menos 12 horas</div></div>`},
+ {t:'Dos preguntas',lines:['Ante cada solicitud, separa dos preguntas:','¿acredita la situación de cuidado?,','y ¿la medida es compatible con sus funciones?','Una frase como “aquí todos vienen” no responde ninguna de las dos.'],
+  html:`<div class="v-steps"><div data-at="1">¿Acredita la situación de cuidado?</div><div data-at="2">¿La medida es compatible con sus funciones?</div></div><div class="note" data-at="3">“Aquí todos vienen” no es un fundamento</div>`}
+]};
+const Q=[
+ {q:'Según el art. 152 quáter O bis, ¿a quién debe ofrecer el empleador la posibilidad de trabajar a distancia o en teletrabajo?',o:['A cualquier persona con hijos, sin importar su edad.','A quien tenga el cuidado personal de un niño o niña menor de 14 años, o cuide sin remuneración a una persona con discapacidad o dependencia severa o moderada.','Solo a madres de hijos menores de 2 años.'],c:1,f:'La ley protege a quien tiene el cuidado personal de un menor de 14 años y a quien cuida, sin recibir pago, a una persona con discapacidad o dependencia severa o moderada, cuando las funciones lo permiten.'},
+ {q:'¿En qué plazo debe responder el empleador una solicitud de teletrabajo de una persona cuidadora?',o:['30 días.','Cuando la jefatura lo estime conveniente.','15 días.'],c:2,f:'El empleador debe responder dentro de 15 días: aceptando, ofreciendo una fórmula alternativa o rechazando fundadamente.'},
+ {q:'Si el empleador rechaza la solicitud, ¿qué debe hacer?',o:['Fundamentar que la naturaleza de las funciones no permite trabajar a distancia.','Basta con indicar que el equipo trabaja de forma presencial.','No necesita dar razones.','Pedir la aprobación del resto del equipo.'],c:0,f:'El rechazo debe fundarse en que la naturaleza de las funciones no lo permite. Una política informal no es fundamento, y la persona puede recurrir a la Inspección del Trabajo.'},
+ {q:'Una trabajadora con un hijo de 8 años quiere usar su feriado en las vacaciones escolares de verano. ¿Con cuánta anticipación debe solicitarlo para ejercer su derecho preferente?',o:['7 días.','15 días.','60 días.','Al menos 30 días.'],c:3,f:'El derecho preferente a usar el feriado en las vacaciones escolares debe solicitarse con al menos 30 días de anticipación.'},
+ {q:'Valeria acuerda trabajar a distancia tres días a la semana. ¿Qué derecho de desconexión tiene en teletrabajo?',o:['Ninguno: debe responder siempre que esté conectada.','Al menos 12 horas continuas en cada período de 24 horas sin obligación de responder comunicaciones.','Solo los fines de semana.'],c:1,f:'El art. 152 quáter J garantiza al menos 12 horas continuas en 24 horas sin obligación de responder comunicaciones.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: simulador de celular ---------- */
+let ph=0;const phone=$('#phone');
+function phTop(){return `<div class="bar"><span>09:14</span><span>📶 🔋</span></div><div class="appt">Personas · Horizonte Servicios</div>`}
+function phDraw(){
+  if(ph===0)phone.innerHTML=phTop()+`<div class="notif"><b>Nueva solicitud · hace 5 min</b>Valeria Soto envió una solicitud de modalidad de trabajo.</div><div class="card">Bandeja de Camila<br/><span style="color:#5f7180">1 solicitud pendiente</span></div><button class="pbtn" id="pOpen" type="button">Ver solicitud</button>`;
+  if(ph===1)phone.innerHTML=phTop()+`<div class="card req"><dl style="margin:0"><dt>Solicitante</dt><dd>Valeria Soto · Analista de facturación</dd><dt>Solicitud</dt><dd>Trabajo a distancia parcial (Ley N°21.645)</dd><dt>Motivo</dt><dd>Cuidado personal de mi hijo Tomás, de 9 años.</dd><dt>Propuesta</dt><dd>Lunes y jueves presencial; martes, miércoles y viernes a distancia.</dd><dt>Adjunto</dt><dd>📎 Certificado de nacimiento</dd></dl></div><button class="pbtn" id="pResp" type="button">Ver respuesta de la jefatura</button>`;
+  if(ph===2)phone.innerHTML=phTop()+`<div class="pbub"><small>Rodrigo Pérez · Jefe de Operaciones</small>En este equipo todos vienen presencialmente, así que no hacemos excepciones.</div><span class="stamp">Estado: rechazada · sin análisis de funciones</span><div class="card">Fecha de la solicitud: 2 de octubre<br/>Plazo legal de respuesta: 15 días</div>`;
+  const o=$('#pOpen');if(o)o.addEventListener('click',()=>{ph=1;$('#ps0').className='sstep ok';$('#ps1').className='sstep on';phDraw();feedback($('#phoneFb'),true,'Solicitud abierta.','Valeria indica la edad de su hijo, propone una modalidad concreta y adjunta el documento que acredita el cuidado.')});
+  const r=$('#pResp');if(r)r.addEventListener('click',()=>{ph=2;$('#ps1').className='sstep ok';$('#ps2').className='sstep ok';phDraw();feedback($('#phoneFb'),false,'Fíjate en la respuesta.','No menciona las funciones de Valeria ni ofrece alternativas: solo invoca una costumbre del equipo.');
+    const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),250)}});
+}
+phDraw();
+
+/* ---------- Principios (acordeón) ---------- */
+const tAcc=tracker('acc',4,'#accTick','#accTask');
+$$('#acc .acc-item').forEach((it,k)=>it.querySelector('.acc-head').addEventListener('click',()=>{it.classList.toggle('open');it.classList.add('seen');tAcc(k)}));
+
+/* ---------- Herramientas (fichas por descubrir) ---------- */
+const TILES=[
+ ['🏠','Teletrabajo para personas cuidadoras','<b>Quién:</b> quien tenga el cuidado personal de un niño o niña menor de 14 años, o cuide sin remuneración a una persona con discapacidad o dependencia severa o moderada.<br/><b>Qué:</b> trabajar a distancia o en teletrabajo, total o parcialmente, si la naturaleza de las funciones lo permite. Respuesta en 15 días.<br/><span class="hint">Art. 152 quáter O bis</span>'],
+ ['🏖️','Feriado preferente','<b>Quién:</b> quien tenga el cuidado personal de un niño o niña menor de 14 años, o de un adolescente menor de 18 años con discapacidad o dependencia severa o moderada.<br/><b>Qué:</b> derecho preferente a usar su feriado en las vacaciones escolares definidas por el Ministerio de Educación. Se pide con al menos <b>30 días</b> de anticipación.<br/><span class="hint">Art. 67</span>'],
+ ['🔄','Turnos en vacaciones escolares','<b>Qué:</b> proponer una modificación <b>transitoria</b> del turno o de la distribución de la jornada durante las vacaciones escolares, con al menos 30 días de anticipación y el documento que acredita la calidad de cuidador.<br/><b>Condiciones:</b> que las funciones lo permitan y la empresa funcione en un horario compatible. Se deja constancia en un anexo; no cambia la jornada semanal, las funciones ni la remuneración, ni obliga a disponer reemplazos.<br/><span class="hint">Art. 76 bis</span>'],
+ ['⏰','Banda horaria (Ley 40 horas)','<b>Quién:</b> quien tenga el cuidado personal de niños o niñas menores de 12 años.<br/><b>Qué:</b> una banda de hasta 2 horas para anticipar o retrasar hasta 1 hora el inicio de la jornada (y su término en igual medida), en las condiciones legales.<br/><span class="hint">Ley N°21.561</span>'],
+ ['📵','Desconexión digital','<b>Quién:</b> personas en teletrabajo.<br/><b>Qué:</b> al menos <b>12 horas continuas</b> en un período de 24 horas sin obligación de responder comunicaciones, órdenes u otros requerimientos.<br/><span class="hint">Art. 152 quáter J</span>'],
+ ['📅','Feriado legal','<b>Quién:</b> toda persona trabajadora con más de un año de servicio.<br/><b>Qué:</b> <b>15 días hábiles</b> de feriado anual con remuneración íntegra. Es la base sobre la que opera el feriado preferente.<br/><span class="hint">Art. 67</span>']];
+$('#tiles').innerHTML=TILES.map((t,i)=>`<button class="tile" type="button" data-i="${i}" aria-label="Descubrir herramienta ${i+1}"><span class="q">?</span>Herramienta ${i+1}</button>`).join('');
+const tTl=tracker('tiles',6,'#tlTick','#tlTask');
+$$('#tiles .tile').forEach(b=>b.addEventListener('click',()=>{const t=TILES[+b.dataset.i];b.classList.add('open');b.innerHTML=`<span class="q">${t[0]}</span>${t[1]}`;$('#tlPanel').innerHTML=`<h3 style="margin-top:0">${t[0]} ${t[1]}</h3><p style="margin-bottom:0">${t[2]}</p>`;tTl(b.dataset.i)}));
+
+/* ---------- Cómo responder (flujo paso a paso) ---------- */
+const FLOW=[
+ {t:'Solicitud por escrito',d:'Valeria envía su solicitud indicando la modalidad que propone y adjunta el documento que acredita su situación de cuidado.',
+  q:'¿Qué documento acredita que Valeria tiene el cuidado personal de su hijo de 9 años?',o:['Una carta firmada por su jefatura.','El certificado de nacimiento que acredita la filiación (o una resolución judicial que otorgue el cuidado personal).','Una declaración verbal en una reunión.'],c:1,
+  f:['La jefatura no puede acreditar la situación de cuidado.','','Una declaración verbal no deja respaldo verificable.'],ok:'El certificado de nacimiento acredita la filiación; si el cuidado fue otorgado judicialmente, sirve la resolución.'},
+ {t:'Revisar requisitos y funciones',d:'Camila separa dos preguntas: ¿acredita la situación protegida? y ¿la naturaleza de las funciones permite la modalidad pedida? Revisa tarea por tarea, no la costumbre del equipo.',
+  q:'¿Qué debe revisar Camila para decidir si las funciones son compatibles?',o:['Si el resto del equipo está de acuerdo.','Si la jefatura prefiere tener a todos en la oficina.','Qué tareas concretas realiza Valeria y cuáles requieren presencia física.'],c:2,
+  f:['La opinión del equipo no es un criterio legal.','Una preferencia de la jefatura no es un análisis de funciones.',''],ok:'El análisis se hace sobre las tareas reales del cargo: qué puede hacerse a distancia y qué exige presencia.'},
+ {t:'Responder dentro de 15 días',d:'La empresa tiene tres caminos posibles:<div class="branch3"><div class="b1">✓ Aceptar la solicitud</div><div class="b2">↔ Ofrecer una fórmula alternativa</div><div class="b3">✕ Rechazar fundadamente: las funciones no lo permiten</div></div>',
+  q:'¿Cuál de estas respuestas NO cumple la ley?',o:['Ofrecer dos días a distancia en vez de tres, explicando qué tareas exigen presencia.','Aceptar la propuesta tal como fue planteada.','Rechazar indicando que “en este equipo no hacemos excepciones”.','Rechazar explicando que la función consiste en atención presencial de público.'],c:2,
+  f:['Es una fórmula alternativa válida: está fundada en las tareas.','Aceptar es una respuesta válida.','','Es un rechazo fundado en la naturaleza de las funciones.'],ok:'Un rechazo debe basarse en la naturaleza de las funciones. Una regla informal del equipo no es fundamento.'},
+ {t:'Dejar registro',d:'La respuesta queda por escrito, con su fecha y fundamentos. Si se acuerda un cambio de modalidad, se formaliza por escrito (por ejemplo, en un anexo del contrato).',
+  q:'¿Para qué sirve dejar la respuesta y el acuerdo por escrito?',o:['Para demostrar qué se pidió, qué se respondió, cuándo y con qué fundamentos.','Solo para archivar; no tiene otra utilidad.','Para poder cambiar el acuerdo sin avisar.'],c:0,
+  f:['','El registro es la evidencia de que se cumplió el plazo y se fundamentó la decisión.','Un acuerdo escrito da certeza a ambas partes; no sirve para cambiarlo sin aviso.'],ok:'El registro permite demostrar el cumplimiento del plazo y los fundamentos ante cualquier revisión.'},
+ {t:'Posibilidad de reclamo',d:'Si la persona no está de acuerdo con el rechazo, puede recurrir a la Inspección del Trabajo.',
+  q:'Si Valeria recibe un rechazo sin fundamento, ¿qué puede hacer?',o:['Nada: la decisión de la jefatura es definitiva.','Debe renunciar si necesita trabajar a distancia.','Recurrir a la Inspección del Trabajo.'],c:2,
+  f:['La ley le permite recurrir a la Inspección del Trabajo.','No es necesario: existe una vía de reclamo.',''],ok:'La persona puede recurrir a la Inspección del Trabajo. Por eso el fundamento escrito es tan importante.'}];
+let flOpen=0,flDone=0,flFirst=true;
+function flDraw(){
+  $('#flow').innerHTML=FLOW.map((s,i)=>{const st=i<flDone?'ok':(i===flDone?'':'locked');const open=i===flOpen?'open':'';
+    return `<div class="node ${st} ${open}" data-i="${i}"><button class="num" type="button" aria-label="Etapa ${i+1}" ${st==='locked'?'disabled':''}>${i<flDone?'✓':i+1}</button><div class="card"><button class="q" type="button" ${st==='locked'?'disabled':''}><span>${s.t}</span><span>${st==='locked'?'🔒':(open?'−':'＋')}</span></button><div class="a"><div>${s.d}</div>${i<flDone?`<div class="feedback good" style="margin-top:10px"><strong>✓</strong> <span class="fb-body">${s.ok}</span></div>`:`<div class="fq"><p>${s.q}</p><div class="fopts">${s.o.map((o,k)=>`<button type="button" data-k="${k}">${'ABCD'[k]}. ${o}</button>`).join('')}</div></div>`}</div></div></div>`}).join('');
+  $$('#flow .node').forEach(n=>{const i=+n.dataset.i;const tog=()=>{if(n.classList.contains('locked'))return;flOpen=flOpen===i?-1:i;flDraw()};
+    $('.num',n).addEventListener('click',tog);$('.q',n).addEventListener('click',tog);
+    $$('.fopts button',n).forEach(b=>b.addEventListener('click',()=>{const s=FLOW[i],k=+b.dataset.k;
+      if(k===s.c){flDone=i+1;$('#flTick').textContent=`${flDone} / 5`;feedback($('#flFb'),true,`Etapa ${i+1} completada.`,s.ok);
+        if(flDone===5){S.first.flujo=flFirst;$('#flTask').classList.add('ok');flOpen=-1;flDraw();done('flujo')}else{flOpen=i+1;flDraw()}}
+      else{flFirst=false;b.classList.add('bad');b.disabled=true;feedback($('#flFb'),false,'Revisa esa opción.',s.f[k]+' Elige otra alternativa.')}}))});
+}
+flDraw();
+
+/* ---------- Revisar la respuesta (interruptores por línea) ---------- */
+const MAIL=[
+ ['Hola Valeria: recibí tu solicitud del 2 de octubre para combinar días presenciales y a distancia.',0,'Correcta: confirma la fecha de la solicitud, desde la cual corre el plazo.'],
+ ['Te respondo dentro del plazo legal de 15 días.',0,'Correcta: el empleador debe responder dentro de 15 días.'],
+ ['En este equipo todos vienen presencialmente, así que no hacemos excepciones.',1,'Incorrecta: una costumbre del equipo no es fundamento. Solo puede rechazarse si la naturaleza de las funciones no lo permite.'],
+ ['La conciliación es un beneficio que la empresa entrega solo cuando le conviene.',1,'Incorrecta: la Ley 21.645 la reconoce como un derecho, no como un favor.'],
+ ['Revisé tus funciones: la facturación y la atención por correo pueden hacerse a distancia; las reuniones de cierre de los lunes requieren presencia.',0,'Correcta: analiza tareas concretas del cargo.'],
+ ['Te propongo lunes y jueves presencial y el resto de la semana a distancia, y lo dejamos por escrito.',0,'Correcta: acepta con una modalidad concreta y deja registro.'],
+ ['Si no estás de acuerdo, no hay nada más que hacer: esta decisión es definitiva.',1,'Incorrecta: la persona puede recurrir a la Inspección del Trabajo.'],
+ ['Cuando trabajes a distancia, espero que respondas mis mensajes a cualquier hora.',1,'Incorrecta: en teletrabajo rige el derecho a desconexión de al menos 12 horas continuas en 24 horas.']];
+$('#mail').insertAdjacentHTML('beforeend',MAIL.map((l,i)=>`<div class="toggle-row" data-i="${i}"><span>${l[0]}</span><span style="display:flex;gap:8px;align-items:center"><small class="swl">Correcta</small><button class="sw" type="button" aria-pressed="false" aria-label="Marcar como incorrecta la frase ${i+1}"></button></span><div class="nat"></div></div>`).join(''));
+let mailFirst=true,mailTried=false;
+$$('#mail .toggle-row').forEach(r=>$('.sw',r).addEventListener('click',()=>{if(S.done.has('tog'))return;const on=r.classList.toggle('on');r.classList.toggle('marked',on);$('.sw',r).setAttribute('aria-pressed',on);$('.swl',r).textContent=on?'Incorrecta':'Correcta';
+  if(mailTried){r.classList.remove('rgood','rbad')}}));
+$('#mailCheck').addEventListener('click',()=>{let ok=0;mailTried=true;
+  $$('#mail .toggle-row').forEach(r=>{const l=MAIL[+r.dataset.i],m=r.classList.contains('on')?1:0,g=m===l[1];if(g)ok++;
+    r.classList.remove('rgood','rbad');r.classList.add(g?'rgood':'rbad');$('.nat',r).innerHTML=(g?'✓ ':'✕ Revisa. ')+(g?l[2]:'');});
+  if(ok===MAIL.length){S.first.tog=mailFirst;feedback($('#mailFb'),true,'¡Correo revisado!','Encontraste las cuatro frases incorrectas. Una buena respuesta confirma la fecha, analiza funciones, propone una modalidad concreta, deja registro y respeta la desconexión.');done('tog');$('#mailCheck').disabled=true}
+  else{mailFirst=false;feedback($('#mailFb'),false,`${ok} de ${MAIL.length} frases bien evaluadas.`,'Las frases en rojo están mal evaluadas: cambia su interruptor y vuelve a revisar.')}});
+
+/* ---------- Caso aplicado (tabla con selectores) ---------- */
+const CAT=['Procede','Fórmula alternativa','Rechazo fundado'];
+const ROWS=[
+ ['Valeria · Analista de facturación','Hijo de 9 años. Sus tareas son digitales, salvo la reunión de cierre de los lunes. Pide lunes y jueves presencial y el resto a distancia.',0,'Procede: la propuesta ya considera el día que exige presencia. Sus funciones lo permiten.'],
+ ['Marcos · Recepcionista de la sede','Hija de 6 años. Atiende presencialmente al público y recibe correspondencia toda la jornada. Pide teletrabajo total.',2,'Rechazo fundado: la atención presencial de público no puede hacerse a distancia. Debe explicarse por escrito; puede evaluar otras herramientas, como la banda horaria (su hija es menor de 12).'],
+ ['Paula · Analista de remuneraciones','Cuida sin remuneración a su madre con dependencia severa y presentó su credencial de persona cuidadora del Ministerio de Desarrollo Social. Todas sus tareas se hacen en sistemas en línea. Pide 4 días a distancia.',0,'Procede: acredita la dependencia severa y sus funciones son compatibles con el trabajo a distancia.'],
+ ['Javiera · Coordinadora de capacitación','Hijo de 11 años. Dicta talleres presenciales martes y jueves; el resto de la semana planifica y coordina en línea. Pide teletrabajo total.',1,'Fórmula alternativa: los talleres exigen presencia. Se puede ofrecer lunes, miércoles y viernes a distancia.'],
+ ['Andrés · Analista de compras','Hijo de 13 años. Trabaja con proveedores por correo y sistemas, pero cada miércoles hay una revisión presencial de muestras. Pide teletrabajo total.',1,'Fórmula alternativa: puede trabajar a distancia cuatro días y asistir el miércoles a la revisión presencial.']];
+$('#seltable').innerHTML=ROWS.map((r,i)=>`<tr data-i="${i}"><td><b>${r[0]}</b><span class="who">${r[1]}</span><span class="why" hidden></span></td><td style="width:240px"><select aria-label="Respuesta para ${r[0]}"><option value="">Elige…</option>${CAT.map((c,k)=>`<option value="${k}">${c}</option>`).join('')}</select></td></tr>`).join('');
+let tblFirst=true;
+$('#tblCheck').addEventListener('click',()=>{let ok=0;$$('#seltable tr').forEach(tr=>{const r=ROWS[+tr.dataset.i],v=$('select',tr).value,g=v!==''&&+v===r[2];
+  tr.className=v===''?'':(g?'good':'bad');const w=$('.why',tr);w.hidden=!g;w.textContent=r[3];if(g)ok++});
+  if(ok===5){if(!('tbl' in S.first))S.first.tbl=tblFirst;feedback($('#tblFb'),true,'¡Todo correcto!','Cinco de cinco solicitudes bien resueltas. Siempre separas: ¿acredita el cuidado? y ¿las funciones lo permiten?');done('tbl')}
+  else{tblFirst=false;feedback($('#tblFb'),false,`${ok} de 5 correctas.`,'Corrige las filas en rojo (o sin respuesta). Pista: piensa qué tareas exigen presencia física y si existe un punto intermedio.')}});
+
+/* ---------- Transferencia: justificar la elección ---------- */
+const JUST=[['Responde dentro del plazo de 15 días e indica las fechas.',1],['Usa la cultura del equipo como motivo para postergar la decisión.',0],['Analiza las funciones concretas del cargo.',1],['Formaliza el acuerdo por escrito en un anexo.',1],['Condiciona la respuesta a que el resto del equipo esté de acuerdo.',0],['Resguarda el derecho a desconexión en teletrabajo.',1]];
+$('#just').innerHTML=JUST.map((j,i)=>`<button class="doc" type="button" data-i="${i}"><span class="box"></span><span>${j[0]}</span></button>`).join('');
+$$('#just .doc').forEach(b=>b.addEventListener('click',()=>{if(S.done.has('trans'))return;b.classList.toggle('on');b.classList.remove('good','bad');$('.box',b).textContent=b.classList.contains('on')?'✓':''}));
+$('#justCheck').addEventListener('click',()=>{let ok=0;$$('#just .doc').forEach(b=>{const j=JUST[+b.dataset.i],on=b.classList.contains('on'),g=on===!!j[1];if(g)ok++;b.classList.remove('good','bad');if(on||!g)b.classList.add(g?'good':'bad')});
+  if(ok===JUST.length){if(S.first.trans!==false)S.first.trans=true;feedback($('#justFb'),true,'Justificación completa.','Identificaste los cuatro criterios que hacen válida la versión B. Compárala con la respuesta modelo.');$('#model').hidden=false;done('trans');$('#justCheck').disabled=true}
+  else{S.first.trans=false;feedback($('#justFb'),false,`${ok} de ${JUST.length} criterios bien evaluados.`,'Los marcados en rojo están mal: desmarca los que no corresponden y marca los que faltan.')}});
+/*{{TAIL}}*/
+})();
+</script>

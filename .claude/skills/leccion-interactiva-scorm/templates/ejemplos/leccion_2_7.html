@@ -1,0 +1,295 @@
+<title>Lección 2.7 — Registrar para demostrar</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+
+<main class="app">
+<div class="topbar">
+  <div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · LECCIÓN 2.7</span><span style="display:inline-flex;gap:14px;align-items:center;flex-wrap:wrap"><label class="autonarr"><input type="checkbox" id="autoNarr" checked/> Narración automática</label><span id="counter">Pantalla 1 de 10</span></span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+</div>
+<button class="route-btn" id="routeBtn" type="button" aria-expanded="false" aria-controls="topicPanel">☰ Ruta de la lección · <span id="routeNow">Inicio</span></button>
+<aside aria-label="Ruta de la lección" class="topic-panel" id="topicPanel">
+  <h3>Ruta de la lección</h3>
+  <p class="mode" id="navMode">Avanza completando cada actividad</p>
+  <div class="topic-list" id="topicList"></div>
+</aside>
+
+<!-- 1 · INICIO -->
+<section class="slide active" data-title="Inicio" data-audio="p01" data-dur="0:22" data-gate="hook" data-gate-msg="Abre las dos versiones y responde la pregunta inicial.">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Lección 2.7 · Registrar para demostrar</span>
+      <h1 class="reveal">Cuando hay dos versiones, el registro importa</h1>
+      <p class="lead reveal">Faltan dos días para el cierre de remuneraciones. Camila recibe un reclamo: un trabajador y su jefatura no coinciden en la hora de salida del martes. <strong>Haz clic en cada versión.</strong></p>
+    </div>
+    <div class="photo-frame wide reveal"><img alt="Un trabajador y su supervisora discuten sus versiones frente a Camila" src="{{IMG:i27_hero}}"/></div>
+  </div>
+  <div class="versions" id="versions">
+    <button class="version" type="button"><span class="who"><span class="avatar">MT</span> Matías, analista</span><span class="hint2">Toca para escuchar su versión</span><span class="say">“El martes salí a las <span class="bigtime">20:10</span>. Me quedé terminando el informe que me pidieron.”</span></button>
+    <button class="version" type="button"><span class="who"><span class="avatar mgr">RJ</span> Rocío, jefatura</span><span class="hint2">Toca para escuchar su versión</span><span class="say">“Su horario termina a las <span class="bigtime">18:00</span>. No autoricé horas extra ese día.”</span></button>
+  </div>
+  <div id="hookQ" hidden>
+    <h3>¿Qué evidencia debería revisar Camila primero para determinar las horas efectivamente trabajadas?</h3>
+    <div class="options" data-choice="hook" data-correct="C">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>La palabra de la jefatura, porque es quien supervisa.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>El horario que figura en el contrato.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>El registro de asistencia del día, junto con los antecedentes que lo complementen.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="hook-A"><div class="feedback bad"><strong>No basta.</strong> <span class="fb-body">Una declaración, aunque venga de la jefatura, no reemplaza la evidencia. El punto de partida es el registro de asistencia.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-B"><div class="feedback bad"><strong>No basta.</strong> <span class="fb-body">El contrato muestra lo planificado, no lo que efectivamente ocurrió ese día.</span><div style="margin-top:10px"><button class="small-btn retry" type="button">Intentar de nuevo</button></div></div></template>
+    <template data-for="hook-C"><div class="feedback good"><strong>Correcto.</strong> <span class="fb-body">El registro de asistencia es la evidencia central para determinar las horas trabajadas. En esta lección verás por qué, qué sistemas existen y cómo auditarlo.</span></div></template>
+  </div>
+</section>
+
+<!-- 2 · EXPLICACIÓN -->
+<section class="slide" data-title="Explicación" data-gate="video" data-gate-msg="Reproduce la explicación hasta el final o recorre todos los capítulos.">
+  <span class="eyebrow violet">Explicación · 1 min 20 s</span>
+  <h2>El registro de asistencia como evidencia</h2>
+  <p>Presiona reproducir. Los subtítulos (CC) siguen la voz y puedes saltar entre capítulos.</p>
+  <div class="player" id="player">
+    <div class="stage" id="stage"><span class="tag" id="stageTag">Capítulo 1</span><div class="scene" id="scene"></div>
+      <button class="bigplay" id="bigPlay" type="button"><span><span class="circle">▶</span>Reproducir</span></button></div>
+    <div class="caption" id="caption"></div>
+    <div class="controls">
+      <button class="ctrl" id="vPlay" type="button">▶ Reproducir</button>
+      <button class="ctrl" id="vPrev" type="button" aria-label="Capítulo anterior">⏮</button>
+      <button class="ctrl" id="vNext" type="button" aria-label="Capítulo siguiente">⏭</button>
+      <div class="vtrack"><span id="vBar"></span></div><span class="vtime" id="vTime">0:00</span>
+      <button class="ctrl on" id="vCC" type="button">CC</button><button class="ctrl on" id="vMute" type="button">🔊 Sonido</button>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+  <details class="transcript"><summary>Ver transcripción completa</summary><div id="transcript"></div></details>
+</section>
+
+<!-- 3 · PROPÓSITO -->
+<section class="slide" data-title="Propósito" data-audio="p03" data-dur="0:12" data-gate="acc" data-gate-msg="Abre los tres propósitos del registro.">
+  <span class="eyebrow">Propósito</span>
+  <h2>¿Para qué existe el registro de asistencia?</h2>
+  <p>El artículo 33 del Código del Trabajo obliga al empleador a llevar un registro para <strong>determinar las horas de trabajo, ordinarias y extraordinarias</strong>. Abre cada propósito.</p>
+  <div class="task" id="accTask">Propósitos revisados <span class="tick" id="accTick">0 / 3</span></div>
+  <div class="acc" id="acc">
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">A</span><span>Acreditar la asistencia<span class="sub">¿La persona estuvo en su puesto?</span></span><span class="tg">＋</span></button><div class="acc-body">El registro deja constancia de las marcaciones de entrada y salida de cada día. Permite saber quién asistió y en qué horario.<div class="example"><b>Ejemplo:</b> si Matías marcó entrada a las 08:31, hay evidencia de que inició su jornada ese día.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">O</span><span>Determinar las horas ordinarias<span class="sub">¿Se cumplió la jornada pactada?</span></span><span class="tg">＋</span></button><div class="acc-body">Comparando las marcaciones con la jornada pactada se sabe si la persona trabajó su jornada completa, si hubo atrasos o si hubo salidas anticipadas.<div class="example"><b>Ejemplo:</b> 5 días con 8 h 24 min registradas suman las 42 horas semanales pactadas.</div></div></div>
+    <div class="acc-item"><button class="acc-head" type="button"><span class="ico">E</span><span>Detectar horas extraordinarias<span class="sub">¿Hubo exceso sobre lo pactado?</span></span><span class="tg">＋</span></button><div class="acc-body">El registro permite identificar el tiempo trabajado por sobre la jornada pactada, que debe pagarse como extraordinario si se trabajó con conocimiento del empleador.<div class="example"><b>Ejemplo:</b> una salida marcada a las 19:42, cuando el horario termina a las 18:00, es una señal que debe analizarse.</div></div></div>
+  </div>
+  <div class="sources">Referencia: Código del Trabajo, artículo 33.</div>
+</section>
+
+<!-- 4 · SISTEMAS -->
+<section class="slide" data-title="Sistemas" data-audio="p04" data-dur="0:14" data-gate="tabs" data-gate-msg="Revisa los tres sistemas de registro.">
+  <span class="eyebrow amber">Sistemas de registro</span>
+  <h2>Papel, reloj o electrónico: cada sistema tiene sus reglas</h2>
+  <p>Selecciona cada sistema para conocerlo.</p>
+  <div class="task" id="tabTask">Sistemas revisados <span class="tick" id="tabTick">1 / 3</span></div>
+  <div class="tabs" id="tabs"><button class="tab active seen" type="button" data-t="0">📘 Libro de asistencia</button><button class="tab" type="button" data-t="1">⏱ Reloj control</button><button class="tab" type="button" data-t="2">📱 Sistema electrónico</button></div>
+  <div class="tabpane active"><div class="photo-frame wide"><img alt="Trabajador firma un libro de asistencia" src="{{IMG:i27_libro}}"/></div><div><h3 style="margin-top:0">Libro de asistencia</h3><p>Es una de las formas tradicionales previstas en el artículo 33. Cada persona anota y firma su hora de entrada y de salida.</p><ul><li>Debe permitir reconstruir la jornada de cada día.</li><li>Las anotaciones deben hacerse al momento de entrar y salir, no después.</li><li>Una enmendadura sin explicación debilita la evidencia.</li></ul></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="Trabajador marca su tarjeta en un reloj control" src="{{IMG:i27_reloj}}"/></div><div><h3 style="margin-top:0">Reloj control con tarjetas</h3><p>También previsto en el artículo 33. El reloj imprime la hora en una tarjeta individual de cada persona.</p><ul><li>Cada tarjeta corresponde a una persona y a un período.</li><li>Las marcaciones las imprime el reloj, no se escriben a mano.</li><li>Las tarjetas deben conservarse como respaldo.</li></ul></div></div>
+  <div class="tabpane"><div class="photo-frame wide"><img alt="Trabajadora muestra una aplicación de asistencia en su celular" src="{{IMG:i27_app}}"/></div><div><h3 style="margin-top:0">Sistema electrónico</h3><p>Puede usarse siempre que el sistema cumpla las exigencias de la <strong>Resolución Exenta N°38 de 2024</strong> de la Dirección del Trabajo.</p><ul><li>Debe dejar constancia de cada marcación y permitir que la persona obtenga su comprobante.</li><li>Las correcciones deben quedar registradas y la marcación original debe conservarse.</li><li>Debe permitir el acceso de la fiscalización a la información.</li><li>Antes de contratar uno, revisa la información que publica la DT sobre sistemas que cumplen la resolución.</li></ul></div></div>
+  <div class="sources">Referencias: Código del Trabajo, art. 33; Resolución Exenta N°38 de 26.04.2024, Dirección del Trabajo.</div>
+</section>
+
+<!-- 5 · MEDIOS TECNOLÓGICOS -->
+<section class="slide" data-title="Medios tecnológicos" data-audio="p05" data-dur="0:13" data-gate="tf" data-gate-msg="Responde las cuatro afirmaciones.">
+  <span class="eyebrow violet">Medios tecnológicos</span>
+  <h2>“Marquemos por WhatsApp y listo”</h2>
+  <p>Una jefatura propone usar un chat como registro de asistencia. Decide si cada afirmación es <strong>verdadera o falsa</strong>.</p>
+  <div class="tf" id="tf"></div>
+</section>
+
+<!-- 6 · MARCACIÓN Y UBICACIÓN -->
+<section class="slide" data-title="Marcación y ubicación" data-audio="p06" data-dur="0:14" data-gate="phone" data-gate-msg="Completa los tres pasos del simulador de marcación.">
+  <span class="eyebrow">Marcación y ubicación</span>
+  <h2>Registrar la ubicación no significa bloquear una marcación</h2>
+  <p>Simula la marcación de salida de Matías desde la aplicación. Sigue los pasos de la derecha.</p>
+  <div class="phone-wrap">
+    <div class="phone" id="phone"></div>
+    <div class="steps-side">
+      <div class="sstep on" id="ps0"><b>Paso 1 · Marcar la salida</b><br/>Presiona “Marcar salida” en la aplicación.</div>
+      <div class="sstep" id="ps1"><b>Paso 2 · Fuera de la zona habitual</b><br/>Decide cómo debería responder el sistema.</div>
+      <div class="sstep" id="ps2"><b>Paso 3 · Una corrección</b><br/>La jefatura pide corregir la hora. Mira qué debe quedar registrado.</div>
+      <div class="fb" id="phoneFb"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · AUDITAR -->
+<section class="slide" data-title="Auditar" data-audio="p07" data-dur="0:12" data-gate="ev aud" data-gate-msg="Revisa las tres evidencias y toma la decisión.">
+  <span class="eyebrow amber">Auditar</span>
+  <h2>Un martes, tres evidencias</h2>
+  <div class="grid-2">
+    <div><p>Camila reúne los antecedentes del martes de Matías. Haz clic en cada hito.</p><div class="task" id="evTask">Evidencias revisadas <span class="tick" id="evTick">0 / 3</span></div></div>
+    <div class="photo-frame wide"><img alt="Camila compara reportes de asistencia y correos en dos pantallas" src="{{IMG:i27_audit}}"/></div>
+  </div>
+  <div class="evline" id="evline">
+    <button class="evnode" type="button" data-k="0"><span class="t">18:00</span><small>Contrato</small></button>
+    <button class="evnode" type="button" data-k="1"><span class="t">19:35</span><small>Correo de la jefatura</small></button>
+    <button class="evnode" type="button" data-k="2"><span class="t">19:42</span><small>Marcación de salida</small></button>
+  </div>
+  <div class="dpanel" id="evPanel"><p class="hint">Selecciona un hito para ver qué demuestra.</p></div>
+  <div class="phase" id="audQ" hidden>
+    <h3 style="margin-top:18px">¿Qué debería hacer Camila?</h3>
+    <div class="options" data-choice="aud" data-correct="A">
+      <button class="opt" type="button" data-opt="A"><span class="letter">A</span><span>Revisar la discrepancia, conservar todos los antecedentes y determinar si existió trabajo extraordinario.</span></button>
+      <button class="opt" type="button" data-opt="B"><span class="letter">B</span><span>Usar solo el horario del contrato y descartar las demás evidencias.</span></button>
+      <button class="opt" type="button" data-opt="C"><span class="letter">C</span><span>Modificar la marcación para que coincida con el horario planificado.</span></button>
+    </div>
+    <div class="fb"></div>
+    <template data-for="aud-B"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se ignora la evidencia</div><div class="branch-body"><div><p>El contrato muestra lo planificado, no lo ocurrido. Descartar la marcación y el correo deja sin pagar un posible tiempo extraordinario.</p></div><div><p class="hint">La evidencia del día pesa más que el horario teórico.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-C"><div class="branch bad"><div class="branch-head">✕ Consecuencia: se altera un registro</div><div class="branch-body"><div><p>Modificar una marcación para que calce con el horario planificado destruye la evidencia y puede constituir una infracción grave. Las correcciones deben estar justificadas y dejar trazabilidad.</p></div><div><p class="hint">Nunca ajustes el registro al plan.</p></div></div><div class="branch-actions"><button class="small-btn primary retry" type="button">Volver a decidir</button></div></div></template>
+    <template data-for="aud-A"><div class="branch good"><div class="branch-head">✓ Correcto</div><div class="branch-body"><div><p>La marcación y el correo indican que Matías trabajó hasta las 19:42 por solicitud de su jefatura. Camila debe conservar los antecedentes y, si se confirma, pagar 1 h 42 min como tiempo extraordinario.</p></div><div><p class="hint">Evidencia revisada antes del cierre.</p></div></div></div></template>
+  </div>
+</section>
+
+<!-- 8 · COMPROBACIÓN -->
+<section class="slide" data-title="Comprobación" data-audio="quiz" data-dur="0:15" data-gate="quiz" data-gate-msg="Responde las cinco preguntas.">
+  <span class="eyebrow violet">Comprobación</span>
+  <div class="qhead"><h2 style="margin-bottom:0">¿Qué tan claro quedó?</h2><div class="qdots" id="qdots"></div></div>
+  <p class="hint">Cinco preguntas. Necesitas al menos <strong>80% (4 de 5)</strong> para finalizar la lección. Si no lo logras, puedes reintentar.</p>
+  <div class="qcard" id="qcard"></div>
+</section>
+
+<!-- 9 · TRANSFERENCIA -->
+<section class="slide" data-title="Transferencia" data-audio="p09" data-dur="0:11" data-gate="bins pass" data-gate-msg="Clasifica las ocho prácticas en su columna.">
+  <span class="eyebrow violet">Aplicación en tu organización</span>
+  <h2>¿Esta práctica fortalece o debilita la evidencia?</h2>
+  <p>Selecciona una tarjeta (o arrástrala) y luego haz clic en la columna que corresponde.</p>
+  <div class="task" id="binTask">Prácticas clasificadas <span class="tick" id="binTick">0 / 8</span></div>
+  <div class="pool" id="pool"></div>
+  <div class="bins">
+    <div class="bin good-bin" data-b="1" role="button" tabindex="0"><h3>✓ Fortalece la evidencia</h3></div>
+    <div class="bin bad-bin" data-b="0" role="button" tabindex="0"><h3>✕ Debilita la evidencia</h3></div>
+  </div>
+  <div class="fb" id="binFb"></div>
+  <div id="passBox" style="margin-top:12px"></div>
+</section>
+
+<!-- 10 · FINALIZACIÓN -->
+<section class="slide" data-title="Finalización" data-audio="p10" data-dur="0:21" data-report>
+  <div class="completion">
+    <div class="icon">✓</div>
+    <span class="eyebrow">Lección completada</span>
+    <h2>¡Felicitaciones! Finalizaste la Lección 2.7</h2>
+    <p>Ya puedes explicar por qué el registro de asistencia es la evidencia central para determinar las horas ordinarias y extraordinarias, reconocer los sistemas permitidos y auditar una discrepancia.</p>
+    <div class="report" style="text-align:left">
+      <div class="metric"><div class="big" id="fPct">—</div><small>Respuestas correctas en la Comprobación</small></div>
+      <div class="metric"><div class="big" id="fEsc">—</div><small>Decisiones acertadas al primer intento</small></div>
+      <div class="metric"><div class="big" style="color:var(--good)">Pass</div><small>Estado de la lección</small></div>
+    </div>
+    <div class="callout" style="text-align:left"><strong>Navegación libre:</strong> desde ahora puedes elegir cualquier tema del panel para repasar.</div>
+    <div class="completion-actions"><button class="small-btn" type="button" data-goto="0">Volver al inicio</button><button class="small-btn primary" type="button" data-goto="6">Repasar la auditoría</button></div>
+    <div class="sources">Fuentes: Código del Trabajo, art. 33; Resolución Exenta N°38 de 26.04.2024, Dirección del Trabajo. Narración generada con ElevenLabs (voz Ninoska).</div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="Navegación" class="bottom-nav"><div class="inner">
+  <button class="nav-btn prev" id="prevBtn" type="button">← Anterior</button><span class="gate-msg" id="gateMsg"></span><button class="nav-btn next" id="nextBtn" type="button">Siguiente →</button>
+</div></nav>
+
+<script>
+(function(){
+const AUD={{AUDIO_JSON}};
+const LESSON_ID='l27';
+const FIRST_KEYS=['hook','aud','tf'];
+const VIDEO={durs:{{VDURS}},scenes:[
+ {t:'Dos versiones',lines:['Cuando hay dos versiones sobre cuánto se trabajó, la discusión no se resuelve con la memoria de nadie.','Se resuelve con evidencia.'],
+  html:`<div class="v-icons"><div><span class="i">🗣️</span><span class="v-big" style="font-size:2.4rem">20:10</span></div><div><span class="i">⚖️</span></div><div><span class="i">🗣️</span><span class="v-big" style="font-size:2.4rem">18:00</span></div></div><div class="note" data-at="1">Se resuelve con evidencia</div>`},
+ {t:'Artículo 33',lines:['El artículo 33 del Código del Trabajo obliga al empleador a llevar un registro de asistencia, para determinar las horas de trabajo, ordinarias y extraordinarias.'],
+  html:`<div class="v-big">Art. 33</div><div class="v-chk"><span class="on">Asistencia</span><span class="on">Horas ordinarias</span><span class="on">Horas extraordinarias</span></div>`},
+ {t:'Sistemas',lines:['Ese registro puede llevarse en un libro de asistencia, con un reloj control con tarjetas, o con un sistema electrónico.','Los sistemas electrónicos deben cumplir las exigencias de la Resolución Exenta número 38, de 2024, de la Dirección del Trabajo.'],
+  html:`<div class="v-icons"><div><span class="i">📘</span>Libro</div><div><span class="i">⏱️</span>Reloj control</div><div><span class="i">📱</span>Electrónico</div></div><div class="v-chk"><span data-at="1">Res. Ex. N°38 / 2024 · DT</span></div>`},
+ {t:'Trazabilidad',lines:['Un buen registro permite reconstruir la entrada, la salida y los eventuales excesos.','Y si una marcación se corrige, el cambio debe quedar registrado y la marcación original debe conservarse.'],
+  html:`<div class="v-log"><div><span>Entrada</span><span>08:31</span></div><div><span>Salida</span><span>19:42</span></div><div class="bad" data-at="1"><span>Corrección 19:42 → 18:00</span><span>original conservada ✓</span></div></div>`},
+ {t:'Ubicación',lines:['La ubicación puede aportar información sobre dónde se marcó, pero no debería usarse para impedir una marcación que después deba revisarse.'],
+  html:`<div class="v-icons"><div><span class="i">📍</span>Informa dónde se marcó</div><div><span class="i">≠</span></div><div><span class="i">⛔</span>No bloquea la marcación</div></div>`},
+ {t:'Registro y pago',lines:['Lo registrado debe coincidir con lo que se paga.','Si una marcación muestra un exceso, hay que analizarlo antes de cerrar remuneraciones, nunca modificarlo para que calce con el horario planificado.'],
+  html:`<div class="v-icons"><div><span class="i">🕒</span>Marcaciones</div><div><span class="i">＝</span></div><div><span class="i">🧾</span>Liquidación</div></div><div class="note" data-at="1">Exceso detectado → analizar antes del cierre</div>`},
+ {t:'Cierre',lines:['Registrar no es un trámite. Es la forma de demostrar lo que realmente ocurrió.'],
+  html:`<div class="v-final">Registrar no es un trámite.<br/><em>Es la forma de demostrar lo que ocurrió.</em></div>`}
+]};
+const Q=[
+ {q:'¿Qué artículo del Código del Trabajo regula el registro de asistencia?',o:['Artículo 22','Artículo 33','Artículo 45'],c:1,f:'El artículo 33 obliga a llevar un registro de asistencia para determinar las horas ordinarias y extraordinarias.'},
+ {q:'¿Para qué sirve principalmente el registro de asistencia?',o:['Solo para controlar los atrasos.','Para calcular las vacaciones.','Para determinar las horas de trabajo ordinarias y extraordinarias.'],c:2,f:'Su finalidad legal es determinar las horas trabajadas, ordinarias y extraordinarias.'},
+ {q:'¿Qué norma deben cumplir los sistemas electrónicos de registro de asistencia?',o:['La Resolución Exenta N°38 de 2024 de la Dirección del Trabajo.','Ninguna: cualquier aplicación sirve.','Solo el reglamento interno de la empresa.'],c:0,f:'Los sistemas electrónicos deben ajustarse a la Resolución Exenta N°38 de 2024 de la DT.'},
+ {q:'¿Qué función cumple la geolocalización en un sistema de asistencia?',o:['Bloquear las marcaciones hechas fuera de la oficina.','Reemplazar el registro de entrada y salida.','Solo se usa en teletrabajo.','Aportar información sobre dónde se marcó, sin impedir la marcación.'],c:3,f:'La ubicación aporta información para revisar la marcación; no debería usarse para impedirla.'},
+ {q:'La marcación de salida dice 19:42 y el horario termina a las 18:00. ¿Qué corresponde?',o:['Modificar la marcación a las 18:00.','Revisar la discrepancia con los antecedentes y determinar si hubo trabajo extraordinario.','Ignorarla porque nadie autorizó horas extra.'],c:1,f:'Las discrepancias se investigan antes de cerrar remuneraciones, conservando los antecedentes. Nunca se ajusta el registro al plan.'}
+];
+/*{{ENGINE}}*/
+
+/* ---------- Inicio: dos versiones ---------- */
+const vers=$$('#versions .version');
+vers.forEach(v=>v.addEventListener('click',()=>{v.classList.add('open');if(vers.every(x=>x.classList.contains('open'))){const q=$('#hookQ');if(q.hidden){q.hidden=false;setTimeout(()=>q.scrollIntoView({behavior:'smooth',block:'start'}),200)}}}));
+
+/* ---------- Acordeón ---------- */
+const tAcc=tracker('acc',3,'#accTick','#accTask');
+$$('#acc .acc-item').forEach((it,k)=>it.querySelector('.acc-head').addEventListener('click',()=>{it.classList.toggle('open');it.classList.add('seen');tAcc(k)}));
+
+/* ---------- Pestañas ---------- */
+const tTab=tracker('tabs',3,'#tabTick','#tabTask');tTab(0);
+const tabs=$$('#tabs .tab'),panes=$$('.tabpane');
+tabs.forEach(t=>t.addEventListener('click',()=>{const k=+t.dataset.t;t.classList.add('seen');tabs.forEach(x=>x.classList.toggle('active',x===t));panes.forEach((p,i)=>p.classList.toggle('active',i===k));tTab(k)}));
+
+/* ---------- Verdadero o falso ---------- */
+const TF=[
+ ['Un chat como WhatsApp sirve como registro de asistencia si los mensajes quedan guardados.',false,'Un chat no es un sistema de registro de asistencia: no garantiza inalterabilidad, comprobantes ni acceso a la fiscalización.'],
+ ['Un sistema electrónico debe cumplir la Resolución Exenta N°38 de 2024 de la Dirección del Trabajo para usarse como registro de asistencia.',true,'Los sistemas electrónicos deben ajustarse a esa resolución.'],
+ ['La persona trabajadora debe poder obtener un comprobante de sus marcaciones.',true,'El comprobante le permite verificar lo registrado y es parte de la trazabilidad del sistema.'],
+ ['Si el sistema falla, la empresa puede reconstruir las horas “de memoria” a fin de mes.',false,'Una reconstrucción sin respaldo no es evidencia confiable. Las fallas deben documentarse y resolverse con antecedentes verificables.']];
+let tfi=0;const tfAns=[];
+function tfRender(){const box=$('#tf');const prog=`<div class="tf-prog">${TF.map((_,i)=>`<span class="${tfAns[i]==null?(i===tfi?'cur':''):(tfAns[i]?'g':'b')}"></span>`).join('')}</div>`;
+  if(tfi>=TF.length){const n=tfAns.filter(Boolean).length;box.innerHTML=prog+`<div class="feedback ${n===4?'good':'bad'}"><strong>${n} de 4 correctas.</strong> <span class="fb-body">Un medio tecnológico solo sirve como registro de asistencia si es un sistema que cumple la regulación vigente. Un chat no lo es.</span></div>`;
+    S.first.tf=n===4;done('tf');return}
+  const c=TF[tfi];box.innerHTML=prog+`<p class="hint">Afirmación ${tfi+1} de ${TF.length}</p><div class="tf-claim">“${c[0]}”</div><div class="tf-btns"><button type="button" data-v="1">Verdadero</button><button type="button" data-v="0">Falso</button></div><div class="fb"></div>`;
+  $$('.tf-btns button',box).forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.v==='1',ok=v===c[1];tfAns[tfi]=ok;
+    $$('.tf-btns button',box).forEach(x=>{x.disabled=true;if((x.dataset.v==='1')===c[1])x.classList.add('good');else if(x===b)x.classList.add('bad')});
+    $('.fb',box).innerHTML=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Correcto.':'Incorrecto.'} Es ${c[1]?'verdadera':'falsa'}.</strong> <span class="fb-body">${c[2]}</span><div style="margin-top:10px"><button class="small-btn primary" type="button" id="tfNext">${tfi<TF.length-1?'Siguiente afirmación →':'Ver resultado'}</button></div></div>`;
+    $('#tfNext').addEventListener('click',()=>{tfi++;tfRender()})}))}
+tfRender();
+
+/* ---------- Simulador de celular ---------- */
+let ph=0;const phone=$('#phone');
+function phTop(){return `<div class="bar"><span>19:42</span><span>📶 🔋</span></div><div class="appt">Asistencia · Matías Torres</div>`}
+function phDraw(){
+  if(ph===0)phone.innerHTML=phTop()+`<div class="card">Entrada registrada hoy: <b>08:31</b></div><div class="map">📍</div><button class="pbtn" id="pMark" type="button">Marcar salida</button>`;
+  if(ph===1)phone.innerHTML=phTop()+`<div class="card">⚠️ Estás a 2,3 km de tu lugar habitual de trabajo (reunión con cliente).</div><div class="map">📍</div><p style="font-size:.85rem;font-weight:800;margin:0">¿Qué debería hacer el sistema?</p><button class="pbtn alt" id="pBlock" type="button">Bloquear la marcación</button><button class="pbtn" id="pAllow" type="button">Registrar la marcación con su ubicación</button>`;
+  if(ph===2)phone.innerHTML=phTop()+`<div class="card">✅ <b>Comprobante de marcación</b><br/>Salida: 19:42 · 05/10<br/>Ubicación: Av. Apoquindo (registrada)<br/>N° 004812</div><button class="pbtn alt" id="pFix" type="button">Ver solicitud de corrección de la jefatura</button>`;
+  if(ph===3)phone.innerHTML=phTop()+`<div class="card log"><b>Historial de la marcación</b><br/>19:42 salida (original) ✔ conservada<br/>Solicitud: cambiar a 18:00<br/>Motivo: “horario planificado”<br/>Estado: pendiente de validación de Matías</div><div class="card">La corrección queda registrada junto a la original. Ninguna marcación se borra.</div>`;
+  const s=$('#pMark');if(s)s.addEventListener('click',()=>{ph=1;$('#ps0').className='sstep ok';$('#ps1').className='sstep on';phDraw();phInfo('La marcación queda con hora exacta. Ahora el sistema detecta que Matías no está en su lugar habitual.',true)});
+  const bl=$('#pBlock');if(bl)bl.addEventListener('click',()=>phInfo('Bloquear impediría registrar una salida real que luego debe analizarse. La ubicación debería aportar información, no impedir la marcación.',false));
+  const al=$('#pAllow');if(al)al.addEventListener('click',()=>{ph=2;$('#ps1').className='sstep ok';$('#ps2').className='sstep on';phDraw();phInfo('Correcto. La marcación se registra y la ubicación queda como antecedente para revisar. Matías recibe su comprobante.',true)});
+  const fx=$('#pFix');if(fx)fx.addEventListener('click',()=>{ph=3;$('#ps2').className='sstep ok';phDraw();phInfo('Una corrección debe quedar registrada, justificada y validada, conservando la marcación original. Nunca se ajusta el registro al horario planificado.',true);done('phone')});
+}
+function phInfo(t,ok){feedback($('#phoneFb'),ok,ok?'✓':'Revisa esta opción.',t)}
+phDraw();
+
+/* ---------- Evidencias ---------- */
+const EV=[['18:00 · Contrato','Muestra el <b>horario planificado</b>: la jornada termina a las 18:00. No demuestra a qué hora salió Matías ese martes.'],
+ ['19:35 · Correo de la jefatura','Rocío le escribió: “¿Puedes cerrar el informe antes de irte?”. Demuestra que la jefatura <b>sabía y solicitó</b> el trabajo después del horario.'],
+ ['19:42 · Marcación de salida','El sistema registró la salida a las 19:42. Es la <b>evidencia del tiempo efectivamente trabajado</b>. La versión de Matías (20:10) no coincide exactamente: también hay que considerarlo.']];
+const tEv=tracker('ev',3,'#evTick','#evTask');
+$$('#evline .evnode').forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.k;$$('#evline .evnode').forEach(x=>x.classList.toggle('active',x===b));b.classList.add('seen');
+  $('#evPanel').innerHTML=`<h3 style="margin-top:0">${EV[k][0]}</h3><p>${EV[k][1]}</p>`;tEv(k);
+  if(S.done.has('ev')&&$('#audQ').hidden){$('#audQ').hidden=false}}));
+
+/* ---------- Clasificar prácticas ---------- */
+const CARDS=[['Conservar la marcación original al corregir',1],['Ajustar las marcaciones al horario planificado',0],['Investigar las discrepancias antes del cierre',1],['Pedir que no se marque el sobretiempo',0],['Verificar que el sistema cumpla la normativa vigente',1],['Usar un chat como registro de asistencia',0],['Cruzar marcaciones con la liquidación de sueldo',1],['Borrar marcaciones duplicadas sin dejar rastro',0]];
+const order=[3,0,5,2,7,4,1,6];let selC=null,placedN=0;
+$('#pool').innerHTML=order.map(i=>`<button class="cardx" type="button" draggable="true" data-c="${i}">${CARDS[i][0]}</button>`).join('');
+function place(c,b){const card=$(`.cardx[data-c="${c}"]`),bin=$(`.bin[data-b="${b}"]`);if(!card||card.classList.contains('placed'))return;
+  if(CARDS[c][1]===+b){bin.appendChild(card);card.classList.add('placed');card.classList.remove('sel');card.draggable=false;placedN++;selC=null;
+    $('#binTick').textContent=`${placedN} / 8`;feedback($('#binFb'),true,'Correcto.',CARDS[c][1]?'Esta práctica hace más confiable el registro.':'Esta práctica debilita o destruye la evidencia.');
+    if(placedN===8){$('#binTask').classList.add('ok');done('bins')}}
+  else{bin.classList.remove('shake');void bin.offsetWidth;bin.classList.add('shake');feedback($('#binFb'),false,'No corresponde.',CARDS[c][1]?'Piensa: ¿esta práctica ayuda a demostrar lo que ocurrió?':'Piensa: ¿esta práctica permite reconstruir lo que realmente ocurrió?')}
+  $$('.bin').forEach(x=>x.classList.toggle('target',selC!=null))}
+$$('.cardx').forEach(c=>{c.addEventListener('click',()=>{if(c.classList.contains('placed'))return;selC=c.dataset.c;$$('.cardx').forEach(x=>x.classList.toggle('sel',x===c));$$('.bin').forEach(x=>x.classList.add('target'))});
+  c.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',c.dataset.c))});
+$$('.bin').forEach(b=>{const act=()=>{if(selC!=null)place(selC,b.dataset.b);else feedback($('#binFb'),false,'Primero selecciona una tarjeta.','Luego haz clic en la columna.')};
+  b.addEventListener('click',e=>{if(e.target.closest('.cardx:not(.placed)'))return;act()});b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+  b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),b.dataset.b)})});
+/*{{TAIL}}*/
+})();
+</script>

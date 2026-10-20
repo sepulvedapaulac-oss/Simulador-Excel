@@ -1,0 +1,115 @@
+<title>Actividad práctica 2 — Remuneraciones y descuentos</title>
+<style>
+/*{{BASECSS}}*/
+/*{{COMPCSS}}*/
+</style>
+<main class="app ev">
+<div class="topbar"><div class="topbar-row"><span class="course">LEGISLACIÓN LABORAL · MÓDULO 2 · ACTIVIDAD PRÁCTICA 2</span><span id="taskN">Lecciones 2.8 y 2.9</span></div></div>
+
+<section class="slide active" id="intro">
+  <div class="ev-hero">
+    <div>
+      <span class="eyebrow">Actividad práctica 2 · Evaluación</span>
+      <h1>La liquidación de Andrea</h1>
+      <p class="lead">Camila debe revisar la liquidación de octubre de 2026 de Andrea, ejecutiva comercial con <strong>contrato indefinido</strong>. Vas a resolver cuatro tareas con lo aprendido en las lecciones <strong>2.8 y 2.9</strong>.</p>
+      <ul class="ev-list">
+        <li><span>1</span>Clasificar los haberes<small>3 pts</small></li>
+        <li><span>2</span>Calcular la liquidación<small>3 pts</small></li>
+        <li><span>3</span>Calcular los aportes del empleador<small>2 pts</small></li>
+        <li><span>4</span>Revisar los descuentos convencionales<small>2 pts</small></li>
+      </ul>
+      <div class="callout"><strong>Cómo se evalúa:</strong> cada tarea se responde una sola vez y verás la corrección al enviarla. Necesitas <strong>80% (8 de <span id="totPts">10</span> puntos)</strong> para aprobar. Ten a mano una calculadora.</div>
+      <button class="small-btn primary" type="button" id="startBtn" style="margin-top:14px">Comenzar la actividad →</button>
+    </div>
+    <div class="slip"><div class="slip-h"><span>Haberes · Octubre 2026</span><span>Andrea Soto</span></div>
+      <div class="slip-row"><span>Sueldo base</span><span class="amt">$780.000</span></div>
+      <div class="slip-row"><span>Comisión por ventas</span><span class="amt">$160.000</span></div>
+      <div class="slip-row"><span>Bono por cumplimiento de metas</span><span class="amt">$60.000</span></div>
+      <div class="slip-row"><span>Asignación de colación</span><span class="amt">$60.000</span></div>
+      <div class="slip-row"><span>Asignación de movilización</span><span class="amt">$50.000</span></div>
+      <div class="slip-row"><span>Viático por viaje a Rancagua (con boletas)</span><span class="amt">$40.000</span></div>
+      <div class="slip-tot"><span>Total haberes</span><span>$1.150.000</span></div></div>
+  </div>
+</section>
+
+<section class="slide active" id="work" hidden>
+  <div class="ev-steps" id="steps"></div>
+
+  <!-- T1 -->
+  <div class="etask" id="t1" data-pts="3" data-title="1. Clasificar los haberes" data-lesson="Lección 2.8">
+    <h2>Tarea 1 · ¿Imponible o no imponible?</h2>
+    <p>Clasifica cada haber de Andrea según su naturaleza real. Considera que la colación y la movilización tienen montos razonables para su finalidad. Cada acierto vale 0,5 puntos.</p>
+    <div id="clsRows"></div>
+    <button class="small-btn primary submit" type="button" id="t1s">Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T2 -->
+  <div class="etask" id="t2" data-pts="3" data-title="2. Calcular la liquidación" data-lesson="Lección 2.8">
+    <h2>Tarea 2 · De imponible a líquido</h2>
+    <div class="case-box">Datos: AFP de Andrea = <strong>10% + 1,2% de comisión (11,2%)</strong>. Salud: <strong>Fonasa 7%</strong>. Contrato <strong>indefinido</strong>. Para este ejercicio no consideres impuesto único, tope imponible ni otros descuentos.</div>
+    <div class="inrow"><label for="t2a">a) Total de haberes imponibles ($)</label><input id="t2a" inputmode="numeric"/></div>
+    <div class="inrow"><label for="t2b">b) Total de descuentos legales de cargo de Andrea (AFP + salud + Seguro de Cesantía) ($)</label><input id="t2b" inputmode="numeric"/></div>
+    <div class="inrow"><label for="t2c">c) Líquido a pagar: imponible − descuentos legales + haberes no imponibles ($)</label><input id="t2c" inputmode="numeric"/></div>
+    <button class="small-btn primary submit" type="button" id="t2s">Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T3 -->
+  <div class="etask" id="t3" data-pts="2" data-title="3. Aportes del empleador" data-lesson="Lección 2.8">
+    <h2>Tarea 3 · Lo que paga la empresa</h2>
+    <p>Calcula los aportes de cargo del empleador sobre la remuneración imponible de Andrea (contrato indefinido, octubre de 2026).</p>
+    <div class="inrow"><label for="t3a">a) Aporte previsional del empleador (3,5%) ($)</label><input id="t3a" inputmode="numeric"/></div>
+    <div class="inrow"><label for="t3b">b) Aporte del empleador al Seguro de Cesantía ($)</label><input id="t3b" inputmode="numeric"/></div>
+    <button class="small-btn primary submit" type="button" id="t3s">Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <!-- T4 -->
+  <div class="etask" id="t4" data-pts="2" data-title="4. Descuentos convencionales" data-lesson="Lección 2.9">
+    <h2>Tarea 4 · ¿Proceden estos descuentos?</h2>
+    <p>Además de los descuentos legales, la jefatura pide aplicar estos descuentos a Andrea. Considera una <strong>remuneración total de $1.000.000</strong>. Cada acierto vale 0,5 puntos.</p>
+    <div id="dRows"></div>
+    <button class="small-btn primary submit" type="button" id="t4s">Enviar respuesta</button>
+    <div class="efb"></div>
+  </div>
+
+  <div class="ev-nav"><button class="small-btn" type="button" id="evPrev">← Anterior</button><button class="small-btn primary" type="button" id="evNext" disabled>Siguiente tarea →</button></div>
+</section>
+
+<section class="slide active" id="result" hidden>
+  <div class="score"><div class="ring" id="rRing"><span style="background:var(--surface);width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem" id="rPct"></span></div>
+    <div><span class="eyebrow">Resultado · Actividad práctica 2</span><h2 id="rTitle"></h2><p><b>Puntaje: <span id="rScore"></span></b></p><p id="rMsg"></p></div></div>
+  <table class="res-table" id="rTable"></table>
+  <div class="completion-actions" style="justify-content:flex-start"><button class="small-btn" type="button" id="review">Revisar mis respuestas</button><button class="small-btn primary" type="button" id="retry">Nuevo intento</button></div>
+</section>
+</main>
+<script>
+(function(){
+const PASS_PCT=80;
+/*{{ENGINE}}*/
+/* Tarea 1 */
+const CL=[['Sueldo base','$780.000','I','Remunera directamente el trabajo.'],['Comisión por ventas','$160.000','I','Retribuye operaciones del trabajo.'],['Bono por cumplimiento de metas','$60.000','I','Premia resultados: es remuneración.'],['Asignación de colación','$60.000','N','Compensa alimentación con monto razonable.'],['Asignación de movilización','$50.000','N','Compensa traslado con monto razonable.'],['Viático por viaje (con boletas)','$40.000','N','Compensa gastos de un viaje de trabajo.']];
+$('#clsRows').innerHTML=CL.map((c,i)=>`<div class="inrow"><label for="c${i}"><b>${c[0]}</b> · ${c[1]}</label><select id="c${i}"><option value="">Elige…</option><option value="I">Imponible (remuneración)</option><option value="N">No imponible (compensatorio)</option></select></div>`).join('');
+$('#t1s').addEventListener('click',()=>{let e=0;CL.forEach((c,i)=>{const s=$('#c'+i),ok=s.value===c[2];s.classList.add(ok?'good':'bad');if(ok)e+=.5;
+  s.closest('.inrow').insertAdjacentHTML('beforeend',`<span class="sol">${ok?'✓':'✕ Correcto: '+(c[2]==='I'?'imponible':'no imponible')+'.'} ${c[3]}</span>`)});
+  grade('t1',e,3,'Imponibles: sueldo, comisión y bono ($1.000.000). No imponibles: colación, movilización y viático ($150.000).')});
+/* Tarea 2 */
+$('#t2s').addEventListener('click',()=>{const v=['#t2a','#t2b','#t2c'].map(s=>num($(s).value)),ok=[near(v[0],1000000,1),near(v[1],188000,3),near(v[2],962000,3)];let e=0;
+  ['#t2a','#t2b','#t2c'].forEach((s,i)=>{$(s).classList.add(ok[i]?'good':'bad');if(ok[i])e++});
+  grade('t2',e,3,'Imponible: $780.000 + $160.000 + $60.000 = <b>$1.000.000</b>. Descuentos: AFP 11,2% $112.000 + salud 7% $70.000 + Seguro de Cesantía 0,6% $6.000 = <b>$188.000</b>. Líquido: $1.000.000 − $188.000 + $150.000 = <b>$962.000</b>.')});
+/* Tarea 3 */
+$('#t3s').addEventListener('click',()=>{const a=num($('#t3a').value),b=num($('#t3b').value),oa=near(a,35000,1),ob=near(b,24000,1);let e=0;
+  $('#t3a').classList.add(oa?'good':'bad');$('#t3b').classList.add(ob?'good':'bad');e=(oa?1:0)+(ob?1:0);
+  grade('t3',e,2,'Aporte previsional: 3,5% de $1.000.000 = <b>$35.000</b>. Seguro de Cesantía del empleador (indefinido): 2,4% = <b>$24.000</b>. Ninguno se descuenta del sueldo de Andrea.')});
+/* Tarea 4 */
+const DS=[['Cuota de crédito sin interés para vivienda otorgado por la empresa, con acuerdo escrito','$250.000',1,'Procede: equivale al 25%, bajo el tope de 30% para estos créditos.'],
+ ['Convenio con óptica, autorizado por escrito por Andrea','$120.000',1,'Procede: 12%, bajo el tope de 15% para pagos de cualquier naturaleza.'],
+ ['Cobro por el uso del computador y herramientas de trabajo','$15.000',0,'No procede: el artículo 58 prohíbe descontar por uso de herramientas.'],
+ ['Multa por atraso que no está en el reglamento interno','$10.000',0,'No procede: solo se aplican multas previstas en el reglamento interno.']];
+$('#dRows').innerHTML=DS.map((d,i)=>`<div class="inrow"><label for="d${i}"><b>${d[0]}</b> · ${d[1]}</label><select id="d${i}"><option value="">Elige…</option><option value="1">Procede</option><option value="0">No procede</option></select></div>`).join('');
+$('#t4s').addEventListener('click',()=>{let e=0;DS.forEach((d,i)=>{const s=$('#d'+i),ok=s.value!==''&&+s.value===d[2];s.classList.add(ok?'good':'bad');if(ok)e+=.5;
+  s.closest('.inrow').insertAdjacentHTML('beforeend',`<span class="sol">${ok?'✓':'✕'} ${d[3]}</span>`)});
+  grade('t4',e,2,'Los dos descuentos que proceden suman 37%, bajo el tope conjunto de 45%.')});
+})();
+</script>
