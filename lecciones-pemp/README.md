@@ -59,6 +59,15 @@ Mismo proceso que las del Módulo 1. Ajustes aplicados: navegación fija al pie,
 
 Los originales no traían registro SCORM; se les agregó (estado, nota sobre 100 y cierre de sesión). Otros ajustes: botón de avance siempre visible, diseño corregido en celular (en el desafío la parte superior de las pantallas largas quedaba cortada), nota calculada con la primera respuesta, fotos correctas al reiniciar el desafío, y en el laboratorio: avance solo al resolver cada pantalla, clasificación con botones en vez de la ventana de texto (`prompt`), selecciones de más que ahora restan y reinicio que no retrocede un estado completado.
 
+## Actividades prácticas del Módulo 4
+
+| Actividad | HTML | Paquete para Moodle |
+|---|---|---|
+| Desafío TLS: Llegar no significa que sea seguro | `Actividad_M4_Desafio_Llegar_no_significa_que_sea_seguro.html` | `…_SCORM12.zip` |
+| Laboratorio TLS: Dentro de la envolvente | `Actividad_M4_Laboratorio_Dentro_de_la_envolvente.html` | `…_SCORM12.zip` |
+
+Tampoco traían registro SCORM; se les agregó. En el desafío se corrigió un error del original que dejaba bloqueado al estudiante que respondía correctamente «NO» en la primera decisión, y ahora la respuesta elegida se conserva al volver atrás. En el laboratorio, el reinicio ya no recarga la página (eso cortaba la sesión en Moodle), la verificación de factores incluye dos distractores y se corrige una sola vez, y la nota considera la primera respuesta en factores, envolvente, atrapamiento y giro.
+
 ## Estructura común (11 pantallas)
 
 1. **Inicio**: caso con Camila (personaje recurrente) y decisión con consecuencias.

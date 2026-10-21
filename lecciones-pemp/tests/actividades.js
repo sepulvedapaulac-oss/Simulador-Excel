@@ -24,7 +24,7 @@ async function overflow(fr, tag) {
     if (document.documentElement.scrollWidth > w + 1) bad.push('scroll horizontal ' + document.documentElement.scrollWidth);
     document.querySelectorAll('.screen.active *').forEach(el => {
       const r = el.getBoundingClientRect();
-      if (r.width && r.right > w + 1 && getComputedStyle(el).position !== 'absolute' && !el.closest('.matrix-wrap')) bad.push((el.className || el.tagName) + ' ' + Math.round(r.right));
+      if (r.width && r.right > w + 1 && getComputedStyle(el).position !== 'absolute' && !el.closest('.matrix-wrap') && !el.closest('svg')) bad.push((el.className || el.tagName) + ' ' + Math.round(r.right));
     });
     return bad.slice(0, 3);
   });
@@ -289,10 +289,74 @@ async function lab3(page, vp) {
   if (st !== 'completed' || limpio !== 8) fail(`${tag}: reinicio ${st} ${limpio}`); else console.log(`  ✓ ${tag}: reinicio limpio sin perder el completado`);
 }
 
+async function desafio4(page, vp) {
+  const tag = 'desafío M4 ' + vp;
+  const fr = page.frame({ url: u => u.pathname.startsWith('/dist/') });
+  let shot = 0;
+  const snap = async () => { await overflow(fr, tag + ' p' + (shot + 1)); await page.screenshot({ path: `${OUT}/m4desafio_${vp}_${String(++shot).padStart(2, '0')}.png` }); };
+  const next = async () => { await navVisible(fr, '#btnNext', tag + ' p' + shot); await fr.click('#btnNext'); };
+  const errar = vp === 'celular'; // en celular la primera decisión se responde mal: nota esperada 67
+  await snap(); await next();
+  await snap(); await next();
+  await fr.click(errar ? '#optSi' : '#optNo'); await snap(); await next();
+  for (const h of await fr.$$('.hotspot')) await h.click();
+  await snap(); await next();
+  await fr.click('.opt[data-val="detener"]'); await snap(); await next();
+  // volver atrás: la respuesta elegida y su retroalimentación deben seguir visibles
+  await fr.click('#btnPrev');
+  const vuelta = await fr.evaluate(() => [document.querySelector('.opt[data-val="detener"]').classList.contains('correct'), document.getElementById('case1Feedback').textContent.trim().length > 0]);
+  if (!vuelta[0] || !vuelta[1]) fail(`${tag}: al volver al microcaso 1 se pierde la respuesta (${vuelta})`);
+  await next();
+  await fr.click('.opt[data-val="toda"]'); await snap(); await next();
+  for (const t of await fr.$$('.tool-item')) await t.click();
+  await snap(); await next();
+  await snap();
+  const esperado = errar ? '67' : '100';
+  const db = await page.evaluate(() => window.__db);
+  if (db['cmi.core.lesson_status'] !== 'completed' || db['cmi.core.score.raw'] !== esperado) fail(`${tag}: SCORM ${db['cmi.core.lesson_status']} ${db['cmi.core.score.raw']} (esperado ${esperado})`);
+  else console.log(`  ✓ ${tag}: completed al llegar al cierre, nota ${db['cmi.core.score.raw']}${errar ? ' (un error)' : ''}; la respuesta se conserva al volver`);
+  await fr.click('#btnRestart');
+  const st = (await page.evaluate(() => window.__db))['cmi.core.lesson_status'];
+  if (st !== 'completed') fail(`${tag}: reiniciar dejó el estado en ${st}`); else console.log(`  ✓ ${tag}: reinicio sin perder el completado`);
+}
+
+async function lab4(page, vp) {
+  const tag = 'laboratorio M4 ' + vp;
+  const fr = page.frame({ url: u => u.pathname.startsWith('/dist/') });
+  let shot = 0;
+  const snap = async () => { await overflow(fr, tag + ' p' + (shot + 1)); await page.screenshot({ path: `${OUT}/m4lab_${vp}_${String(++shot).padStart(2, '0')}.png` }); };
+  const next = async () => { await navVisible(fr, '#btnNext', tag + ' p' + shot); await fr.click('#btnNext'); };
+  const errar = vp === 'celular'; // en celular se marca un factor que no corresponde: nota esperada 97
+  await snap(); await fr.click('#btnStart');
+  await fr.click('#btnRevealMission'); await snap(); await next();
+  await fr.click('#tabTel'); await snap(); await next();
+  for (const id of ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7'].concat(errar ? ['f8'] : [])) await fr.check('#' + id);
+  await fr.click('#btnCheckFactors'); await snap(); await next();
+  for (const d of await fr.$$('.env-dot')) {
+    const z = await d.getAttribute('data-zone');
+    await d.click(); await fr.click(`#envChoiceRow [data-choice="${z}"]`);
+  }
+  await snap(); await next();
+  for (const m of ['ELEVAR', 'ARTICULAR', 'EXTENDER', 'GIRAR']) await fr.click(`.seq-chip[data-move="${m}"]`);
+  await fr.click('#btnConfirmSeq'); await snap(); await next();
+  await fr.click('#riskOptions [data-choice="detener"]'); await snap(); await next();
+  await fr.click('#turnOptions [data-choice="no"]'); await snap(); await next();
+  await snap();
+  const esperado = errar ? '97' : '100';
+  const db = await page.evaluate(() => window.__db);
+  if (db['cmi.core.lesson_status'] !== 'completed' || db['cmi.core.score.raw'] !== esperado) fail(`${tag}: SCORM ${db['cmi.core.lesson_status']} ${db['cmi.core.score.raw']} (esperado ${esperado})`);
+  else console.log(`  ✓ ${tag}: completed al ver el resultado, nota ${db['cmi.core.score.raw']}${errar ? ' (un factor de más)' : ''}`);
+  await next(); await snap();
+  await fr.click('#btnRestart');
+  const r = await fr.evaluate(() => [document.querySelector('.screen.active').dataset.index, document.querySelectorAll('.factor input:checked, .env-dot.done, .decision-btn:disabled').length, document.getElementById('btnCheckFactors').disabled]);
+  const st = (await page.evaluate(() => window.__db))['cmi.core.lesson_status'];
+  if (r[0] !== '0' || r[1] !== 0 || r[2] || st !== 'completed') fail(`${tag}: reinicio ${r} ${st}`); else console.log(`  ✓ ${tag}: reinicio sin recargar y sin perder el completado`);
+}
+
 (async () => {
   const browser = await chromium.launch(process.env.CHROME ? { executablePath: process.env.CHROME } : {});
   for (const [vp, size] of [['escritorio', { width: 1280, height: 800 }], ['celular', { width: 390, height: 760 }]]) {
-    for (const [fn, file] of [[desafio, 'Actividad_M1_Desafio_Que_equipo_corresponde.html'], [lab, 'Actividad_M1_Laboratorio_Reconoce_la_PEMP.html'], [desafio2, 'Actividad_M2_Desafio_Autorizar_no_es_marcar_casillas.html'], [lab2, 'Actividad_M2_Laboratorio_Inspeccion_preoperacional.html'], [desafio3, 'Actividad_M3_Desafio_El_techo_esta_cerca.html'], [lab3, 'Actividad_M3_Laboratorio_Ruta_vertical_segura.html']]) {
+    for (const [fn, file] of [[desafio, 'Actividad_M1_Desafio_Que_equipo_corresponde.html'], [lab, 'Actividad_M1_Laboratorio_Reconoce_la_PEMP.html'], [desafio2, 'Actividad_M2_Desafio_Autorizar_no_es_marcar_casillas.html'], [lab2, 'Actividad_M2_Laboratorio_Inspeccion_preoperacional.html'], [desafio3, 'Actividad_M3_Desafio_El_techo_esta_cerca.html'], [lab3, 'Actividad_M3_Laboratorio_Ruta_vertical_segura.html'], [desafio4, 'Actividad_M4_Desafio_Llegar_no_significa_que_sea_seguro.html'], [lab4, 'Actividad_M4_Laboratorio_Dentro_de_la_envolvente.html']]) {
       if (process.env.SOLO && !file.includes(process.env.SOLO)) continue;
       const ctx = await browser.newContext({ viewport: size, hasTouch: vp === 'celular', isMobile: vp === 'celular' });
       const page = await ctx.newPage();

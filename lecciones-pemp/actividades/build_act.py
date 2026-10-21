@@ -655,6 +655,172 @@ M3_LAB = [
     ('</style>\n</head>', '</style>\n' + SCORM_JS),
 ]
 
+# ───────────────────────── Módulo 4 · Desafío: Llegar no significa que sea seguro ─────────────────────────
+M4_DESAFIO = [
+    ('''  @media (max-width:560px){
+    button.opt{ flex:1 1 100%; }
+    .nav-row{ flex-direction:column; gap:12px; }
+    .nav-row .btn-secondary{ order:2; }
+  }''', '''  /* Ajustes TLS: navegación siempre visible, resultado y diseño en celular */
+  .nav-row{position:sticky;bottom:0;z-index:5;background:#fff;padding:12px 0 calc(12px + env(safe-area-inset-bottom));border-top:1px solid #eef0f6;gap:12px;}
+  .resultado-nota{background:var(--grey-bg);border-radius:12px;padding:14px 18px;text-align:center;font-size:16px;color:var(--tls-dark);}
+  .resultado-nota strong{font-size:22px;}
+  .resultado-nota small{display:block;margin-top:4px;color:var(--ink-soft);font-size:13px;}
+  img{max-width:100%;}
+  button.opt,.hotspot,.tool-item{-webkit-tap-highlight-color:transparent;}
+  @media (max-width:560px){
+    #app{padding:12px 10px 24px;}
+    button.opt{ flex:1 1 100%; }
+    .nav-row .btn-primary,.nav-row .btn-secondary{padding:12px 18px;}
+    .map-wrap{grid-template-columns:1fr 1fr;gap:10px;}
+    .hotspot{min-height:0;padding:12px;}
+  }'''),
+    ('''function updateHeader(){''', '''// Puntaje: primera respuesta de las tres decisiones (pantallas 3, 5 y 6)
+function notaDesafio(){
+  const ok = (state.decisionCorrect ? 1 : 0) + (state.case1Val === 'detener' ? 1 : 0) + (state.case2Val === 'toda' ? 1 : 0);
+  return Math.round(ok / 3 * 100);
+}
+
+// Al volver a una pantalla ya respondida, se muestra de nuevo la respuesta elegida y su retroalimentación
+function marcarRespondidas(){
+  const mapa = {2:['decisionAnswered','decisionVal'], 4:['case1Answered','case1Val'], 5:['case2Answered','case2Val']};
+  const m = mapa[state.screen];
+  if(!m || !state[m[1]]) return;
+  document.querySelectorAll('.opt').forEach(o=>o.disabled=false);
+  state[m[0]] = false;
+  const b = document.querySelector('.opt[data-val="'+state[m[1]]+'"]');
+  if(b) b.click();
+}
+
+function updateHeader(){'''),
+    ('''  root.innerHTML = screens[state.screen]();
+  bindScreenEvents();''', '''  root.innerHTML = screens[state.screen]();
+  bindScreenEvents();
+  marcarRespondidas();
+  if(state.screen === state.totalScreens-1 && window.TLS_SCORM) window.TLS_SCORM.completar(notaDesafio());'''),
+    ('''      <div class="sub">M4 · Operar brazos articulados y telescópicos</div>
+    </div>''', '''      <div class="sub">M4 · Operar brazos articulados y telescópicos</div>
+    </div>
+    <div class="resultado-nota">Tu puntaje: <strong>${notaDesafio()}</strong> / 100<small>Se considera tu primera respuesta en cada una de las tres decisiones.</small></div>'''),
+    ('''        state.decisionCorrect = (id==='optNo');''', '''        state.decisionCorrect = (id==='optNo');
+        state.decisionVal = document.getElementById(id).getAttribute('data-val');'''),
+    ('''        state.case1Answered = true;
+        const val = b.getAttribute('data-val');''', '''        state.case1Answered = true;
+        const val = b.getAttribute('data-val');
+        state.case1Val = val;'''),
+    ('''        state.case2Answered = true;
+        const val = b.getAttribute('data-val');''', '''        state.case2Answered = true;
+        const val = b.getAttribute('data-val');
+        state.case2Val = val;'''),
+    ('''      state.toolOpened=new Set();
+      goTo(0);''', '''      state.toolOpened=new Set();
+      state.decisionVal=null; state.case1Val=null; state.case2Val=null;
+      goTo(0);'''),
+    # El original lanzaba un error al elegir «NO» (classList.add con texto vacío) y no habilitaba Continuar
+    ("""        document.getElementById('optSi').classList.add(id==='optSi' ? (id==='optNo'?'':'incorrect') : '');
+""", ''),
+    ('</style>\n</head>', '</style>\n' + SCORM_JS),
+]
+
+
+# ───────────────────────── Módulo 4 · Laboratorio: Dentro de la envolvente ─────────────────────────
+M4_LAB = [
+    ('initial-scale=1.0, maximum-scale=1">', 'initial-scale=1.0">'),
+    ('''@media (max-width:520px){
+  .result-grid''', '''/* Ajustes TLS: corrección de factores, puntaje y diseño en celular */
+.factor.faltante{border-color:var(--yellow);background:#FFF7DD;}
+.factor.sobrante{border-color:var(--red);background:#FCEBEE;}
+.factor input:disabled + label{cursor:default;}
+.nota-lab{margin-top:14px;text-align:center;font-size:14px;color:var(--navy-soft);}
+.nota-lab strong{font-size:20px;color:var(--navy-deep);}
+img{max-width:100%;}
+.navbar{padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.env-dot{width:32px;height:32px;}
+@media (max-width:520px){
+  .screen{padding:22px 16px 32px;}
+  .hero{margin:-22px -16px -32px;}
+  .tab-btn{font-size:12px;padding:12px 6px;}
+  .navbar{padding:10px 12px calc(10px + env(safe-area-inset-bottom));}
+  .navbar .btn{padding:12px 16px;}
+  .result-grid'''),
+    ('''        <div class="factor"><input type="checkbox" id="f4" value="obstaculos">''', '''        <div class="factor"><input type="checkbox" id="f8" value="color" data-ok="0"><label for="f8">Color de la plataforma</label></div>
+        <div class="factor"><input type="checkbox" id="f4" value="obstaculos">'''),
+    ('''<label for="f7">Espacio disponible</label></div>''', '''<label for="f7">Espacio disponible</label></div>
+        <div class="factor"><input type="checkbox" id="f9" value="marca" data-ok="0"><label for="f9">Marca del fabricante</label></div>'''),
+    ('''  document.getElementById("btnCheckFactors").addEventListener("click", function(){
+    var checkedCount = factorInputs.filter(function(i){return i.checked;}).length;
+    var box = document.getElementById("factorFeedback");
+    box.classList.add("show");
+    if(checkedCount === factorInputs.length){
+      box.className = "feedback-box ok show";
+      box.textContent = "Correcto. Todos estos factores determinan si el posicionamiento del equipo es seguro: superficie, orientación, giro, obstáculos, tránsito, estructuras superiores y espacio disponible.";
+      results.posicionamiento = true;
+      checkEnvelopeAndPositioning();
+    } else {
+      box.className = "feedback-box bad show";
+      box.textContent = "Aún faltan factores por considerar (" + checkedCount + " de " + factorInputs.length + " seleccionados). Un posicionamiento seguro exige revisar todas las condiciones, no solo algunas.";
+    }
+  });''', '''  // Se corrige una sola vez: cuenta la primera verificación
+  var factorVerificado = false, factorNota = 0;
+  document.getElementById("btnCheckFactors").addEventListener("click", function(){
+    if(factorVerificado) return;
+    factorVerificado = true;
+    var aciertos = 0, faltan = 0, sobran = 0;
+    factorInputs.forEach(function(i){
+      var debe = i.dataset.ok !== "0";
+      var f = i.closest(".factor");
+      i.disabled = true;
+      if(debe === i.checked) aciertos++;
+      if(debe && !i.checked){ faltan++; f.classList.add("faltante"); }
+      if(!debe && i.checked){ sobran++; f.classList.add("sobrante"); }
+    });
+    factorNota = aciertos / factorInputs.length;
+    this.disabled = true;
+    var box = document.getElementById("factorFeedback");
+    if(faltan === 0 && sobran === 0){
+      box.className = "feedback-box ok show";
+      box.textContent = "Correcto. Todos estos factores determinan si el posicionamiento del equipo es seguro: superficie, orientación, giro, obstáculos, tránsito, estructuras superiores y espacio disponible. El color y la marca del equipo no forman parte de esta verificación.";
+      results.posicionamiento = true;
+    } else {
+      box.className = "feedback-box bad show";
+      box.textContent = "Revisa tu selección" + (faltan ? ": " + faltan + " factor(es) que debías verificar quedaron sin marcar (en amarillo)" : "") + (sobran ? (faltan ? " y " : ": ") + "marcaste " + sobran + " que no corresponde(n) (en rojo)" : "") + ". Un posicionamiento seguro exige revisar superficie, orientación, giro, obstáculos, tránsito, estructuras superiores y espacio disponible.";
+      results.posicionamiento = false;
+    }
+    unlockGate(3);
+  });'''),
+    ('''        <p id="verdictText">—</p>
+      </div>''', '''        <p id="verdictText">—</p>
+      </div>
+      <p class="nota-lab">Puntaje registrado: <strong id="notaLab">—</strong> / 100<br><span style="font-size:12.5px;color:var(--gray);">Considera tu primera respuesta en factores, envolvente, atrapamiento y giro.</span></p>'''),
+    ('''    var verdictBox = document.getElementById("verdictBox");''', '''    var nota = Math.round((factorNota + envCorrectCount / envDots.length + (results.detencion ? 1 : 0) + (results.entorno ? 1 : 0)) / 4 * 100);
+    document.getElementById("notaLab").textContent = nota;
+    if(window.TLS_SCORM) window.TLS_SCORM.completar(nota);
+    var verdictBox = document.getElementById("verdictBox");'''),
+    ('''    location.reload();''', '''    // Reinicio sin recargar la página (recargar cerraría la sesión SCORM dentro de Moodle)
+    Object.keys(results).forEach(function(k){ results[k] = false; });
+    gate = [true, true, false, false, false, false, false, false, true, true];
+    maxUnlocked = 0;
+    document.getElementById("missionAnswer").classList.remove("show");
+    var br = document.getElementById("btnRevealMission"); br.disabled = false; br.textContent = "VER RESPUESTA";
+    viewedTel = false; tabArt.click();
+    document.getElementById("compareNote").textContent = "Revisa ambas pestañas para completar la comparación.";
+    factorVerificado = false; factorNota = 0;
+    factorInputs.forEach(function(i){ i.checked = false; i.disabled = false; i.closest(".factor").className = "factor"; });
+    document.getElementById("btnCheckFactors").disabled = false;
+    document.getElementById("factorFeedback").className = "feedback-box";
+    envDots.forEach(function(d){ d.classList.remove("done","correct","incorrect"); });
+    envDone = 0; envCorrectCount = 0; activeDot = null;
+    envFeedback.textContent = ""; envProgress.textContent = "0 de " + envDots.length + " puntos clasificados";
+    envChoiceRow.classList.remove("show");
+    btnResetSeq.click();
+    [riskOptions, turnOptions].forEach(function(g){
+      g.querySelectorAll(".decision-btn").forEach(function(b){ b.disabled = false; b.className = "decision-btn"; });
+    });
+    [riskFeedback, turnFeedback].forEach(function(f){ f.className = "feedback-box"; f.textContent = ""; });
+    goTo(0);'''),
+    ('</style>\n</head>', '</style>\n' + SCORM_JS),
+]
+
 ACTIVIDADES = [
     dict(src='M1_DESAFIO_que_equipo_corresponde.html', patches=DESAFIO,
          name='Actividad_M1_Desafio_Que_equipo_corresponde', ident='TLS_PEMP_M1_DESAFIO_V2', code='M1_DESAFIO',
@@ -674,6 +840,12 @@ ACTIVIDADES = [
     dict(src='M3_LAB_ruta_vertical_segura.html', patches=M3_LAB,
          name='Actividad_M3_Laboratorio_Ruta_vertical_segura', ident='TLS_PEMP_M3_LAB_V2', code='M3_LAB',
          title='Laboratorio TLS — Ruta vertical segura (Módulo 3)'),
+    dict(src='M4_DESAFIO_llegar_no_significa_que_sea_seguro.html', patches=M4_DESAFIO,
+         name='Actividad_M4_Desafio_Llegar_no_significa_que_sea_seguro', ident='TLS_PEMP_M4_DESAFIO_V2', code='M4_DESAFIO',
+         title='Desafío TLS — Llegar no significa que sea seguro (Módulo 4)'),
+    dict(src='M4_LAB_dentro_de_la_envolvente.html', patches=M4_LAB,
+         name='Actividad_M4_Laboratorio_Dentro_de_la_envolvente', ident='TLS_PEMP_M4_LAB_V2', code='M4_LAB',
+         title='Laboratorio TLS — Dentro de la envolvente (Módulo 4)'),
 ]
 
 if __name__ == '__main__':
