@@ -50,6 +50,15 @@ Se generan con `python3 actividades/build_act.py` a partir de los originales en 
 
 Mismo proceso que las del Módulo 1. Ajustes aplicados: navegación fija al pie, barra superior adaptada al celular, puntos de inspección numerados con lista tocable bajo la imagen, nota del laboratorio calculada con el primer intento de cada decisión (antes siempre daba 100), retoma del avance al volver a entrar (antes no se restauraba), sin datos guardados de otro intento dentro de Moodle, estado completado al ver el resultado o el informe y reintentos que no retroceden un estado completado.
 
+## Actividades prácticas del Módulo 3
+
+| Actividad | HTML | Paquete para Moodle |
+|---|---|---|
+| Desafío TLS: El techo está cerca | `Actividad_M3_Desafio_El_techo_esta_cerca.html` | `…_SCORM12.zip` |
+| Laboratorio TLS: Ruta vertical segura | `Actividad_M3_Laboratorio_Ruta_vertical_segura.html` | `…_SCORM12.zip` |
+
+Los originales no traían registro SCORM; se les agregó (estado, nota sobre 100 y cierre de sesión). Otros ajustes: botón de avance siempre visible, diseño corregido en celular (en el desafío la parte superior de las pantallas largas quedaba cortada), nota calculada con la primera respuesta, fotos correctas al reiniciar el desafío, y en el laboratorio: avance solo al resolver cada pantalla, clasificación con botones en vez de la ventana de texto (`prompt`), selecciones de más que ahora restan y reinicio que no retrocede un estado completado.
+
 ## Estructura común (11 pantallas)
 
 1. **Inicio**: caso con Camila (personaje recurrente) y decisión con consecuencias.

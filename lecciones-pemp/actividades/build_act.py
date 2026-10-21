@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera las actividades prácticas del Módulo 1 en SCORM 1.2 a partir de los HTML originales.
+"""Genera las actividades prácticas de los módulos en SCORM 1.2 a partir de los HTML originales.
 
 Aplica correcciones puntuales (diseño responsivo, botones siempre visibles, puntaje,
 reintento y registro SCORM) sin cambiar los colores ni el contenido de cada actividad.
@@ -427,6 +427,234 @@ function registrarPrimerIntento(clave, correcto){
 window.addEventListener('pagehide', function(){ guardarProgreso(); scormFinish(); });'''),
 ]
 
+# ───────────────────────── Registro SCORM 1.2 común (para recursos que no lo traían) ─────────────────────────
+SCORM_JS = """<script>
+/* Registro SCORM 1.2 para Moodle: estado, nota y cierre de la sesión */
+(function(){
+  function buscar(w){var n=0;while(w&&!w.API&&w.parent&&w.parent!==w&&n<10){w=w.parent;n++;}return w&&w.API?w.API:null;}
+  var api=buscar(window)||(window.opener?buscar(window.opener):null), activo=false, cerrado=false;
+  function leer(k){try{return api?String(api.LMSGetValue(k)):'';}catch(e){return '';}}
+  function escribir(k,v){try{if(activo)api.LMSSetValue(k,String(v));}catch(e){}}
+  function guardar(){try{if(activo)api.LMSCommit('');}catch(e){}}
+  if(api){try{activo=String(api.LMSInitialize(''))==='true';}catch(e){}}
+  if(activo){var st=leer('cmi.core.lesson_status');if(st===''||st==='not attempted'){escribir('cmi.core.lesson_status','incomplete');guardar();}}
+  window.TLS_SCORM={
+    completar:function(nota){
+      if(!activo)return;
+      escribir('cmi.core.score.min','0');escribir('cmi.core.score.max','100');
+      escribir('cmi.core.score.raw',Math.max(0,Math.min(100,Math.round(nota))));
+      escribir('cmi.core.lesson_status','completed');guardar();
+    },
+    finalizar:function(){if(!activo||cerrado)return;cerrado=true;guardar();try{api.LMSFinish('');}catch(e){}}
+  };
+  window.addEventListener('pagehide',function(){window.TLS_SCORM.finalizar();});
+})();
+</script>
+</head>"""
+
+
+# ───────────────────────── Módulo 3 · Desafío: El techo está cerca ─────────────────────────
+M3_DESAFIO = [
+    ('html,body{height:100%;}', 'html,body{min-height:100%;}'),
+    ('''  .app{
+    width:100%;
+    max-width:760px;
+  }''', '''  .app{
+    width:100%;
+    max-width:760px;
+    margin:auto;
+  }'''),
+    ('''    overflow:hidden;
+    animation:fadeIn''', '''    overflow:clip;
+    animation:fadeIn'''),
+    ('  @media (max-width:520px){', '''  /* Ajustes TLS: botón de avance siempre visible, resultado y diseño en celular */
+  .btn.sticky-next{position:sticky;bottom:12px;z-index:5;}
+  .btn.sticky-next:disabled{background:#b9bcd8;}
+  .resultado-nota{background:var(--gris-claro);border-radius:12px;padding:14px 18px;margin:6px 0 4px;text-align:center;font-size:16px;color:var(--azul-marino);}
+  .resultado-nota strong{font-size:22px;color:var(--azul-profundo);}
+  .resultado-nota small{display:block;margin-top:4px;color:var(--gris);font-size:13px;}
+  .option,.check-item,.tf-btn,.step-card,.btn{-webkit-tap-highlight-color:transparent;}
+  img{max-width:100%;}
+  @media (max-width:520px){
+    body{padding:10px;}
+    .statement-box{font-size:20px;padding:26px 16px;}
+    .tf-btn{padding:16px;}
+    .btn.sticky-next{bottom:8px;}'''),
+    ('var photoIndex = 0;', '''var photoIndex = 0;
+
+  // Puntaje: se considera la primera respuesta de cada decisión (pantallas 3 a 6)
+  function notaDesafio(){
+    var total = (state.ok3 ? 1 : 0) + (state.ok4 || 0) + (state.ok5 ? 1 : 0) + (state.ok6 ? 1 : 0);
+    return Math.round(total / 4 * 100);
+  }'''),
+    ('''  function render(){
+    setProgress();''', '''  function render(){
+    setProgress();
+    photoIndex = state.screen === 2 ? 1 : 0;'''),
+    ('''    }
+  }
+
+  // ---------- PANTALLA 1 ----------''', '''    }
+    var principal = content.querySelector('#btnCheck4') || content.querySelector('[id^="btnNext"]');
+    if(principal) principal.classList.add('sticky-next');
+    var siguiente = content.querySelector('#btnNext4');
+    if(siguiente) siguiente.classList.add('sticky-next');
+  }
+
+  // ---------- PANTALLA 1 ----------'''),
+    ('''        if(state.q3Answered) return;
+        state.q3Answered = true;''', '''        if(state.q3Answered) return;
+        state.q3Answered = true;
+        state.ok3 = opt.correct;'''),
+    ('''        if(state.q5Answered) return;
+        state.q5Answered = true;''', '''        if(state.q5Answered) return;
+        state.q5Answered = true;
+        state.ok5 = opt.correct;'''),
+    ('''      state.q6Answered = true;''', '''      state.q6Answered = true;
+      state.ok6 = !isTrue;'''),
+    ('''      var fb = document.getElementById('fb4');''', '''      state.ok4 = (items.length - missed.length - extra.length) / items.length;
+      var fb = document.getElementById('fb4');'''),
+    ('''      this.disabled = true;
+      document.getElementById('btnNext4').style.display = 'block';''', '''      this.disabled = true;
+      this.style.display = 'none';
+      document.getElementById('btnNext4').style.display = 'block';'''),
+    ('''  function renderScreen8(){
+    content.innerHTML =''', '''  function renderScreen8(){
+    var nota = notaDesafio();
+    if(window.TLS_SCORM) window.TLS_SCORM.completar(nota);
+    content.innerHTML ='''),
+    ("""'<div class="idea-fuerza">"Cuando""", """'<div class="resultado-nota">Tu puntaje: <strong>' + nota + '</strong> / 100<small>Se considera tu primera respuesta en cada una de las cuatro decisiones.</small></div>' +
+      '<div class="idea-fuerza">"Cuando"""),
+    ('</style>\n</head>', '</style>\n' + SCORM_JS),
+]
+
+
+# ───────────────────────── Módulo 3 · Laboratorio: Ruta vertical segura ─────────────────────────
+M3_LAB = [
+    ('''    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-height: 640px;''', '''    overflow:clip;
+    display:flex;
+    flex-direction:column;
+    min-height: 640px;'''),
+    ('''  @media (max-width: 640px){''', '''  /* Ajustes TLS: navegación fija, clasificación con botones y diseño en celular */
+  footer.navbar{position:sticky;bottom:0;z-index:10;}
+  .nav-btn.next:disabled{opacity:.45;}
+  img{max-width:100%;}
+  .item-clasificable .destinos{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .item-clasificable .destinos button{flex:1;min-width:120px;padding:8px 6px;border-radius:8px;border:2px solid var(--gris-medio);
+    background:var(--gris-claro);font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;font-weight:700;color:var(--azul-principal);cursor:pointer;}
+  .item-clasificable .destinos button:hover{border-color:var(--turquesa);}
+  .item-clasificable .exp{font-size:12.5px;line-height:1.45;margin-top:6px;color:var(--gris-texto);}
+  .item-clasificable.correcto,.item-clasificable.incorrecto{cursor:default;}
+  .orden-lista li > span:nth-child(2){flex:1;min-width:0;}
+  .orden-lista li button{min-width:38px;min-height:34px;font-size:13px;}
+  .info-card.visto h4::after{content:" ✓";color:var(--turquesa);}
+  .opcion-btn,.info-card,.check-item,.seguro-botones button{-webkit-tap-highlight-color:transparent;}
+  @media (max-width: 640px){
+    body{padding:0;}
+    #app{border-radius:0;min-height:100vh;}
+    .nav-btn{padding:10px 16px;}
+    h3.titulo-pantalla{font-size:22px;}
+    .hook{font-size:17px;}
+    .orden-lista li{padding:10px;gap:8px;font-size:13.5px;}'''),
+    ('arrastrándola (o tocándola y eligiendo un destino) hacia la zona correspondiente.',
+     'arrastrándola o usando los botones de cada tarjeta. Tu primera clasificación es la que cuenta.'),
+    ('''    if(n===9){ calcularResultado(); }''', '''    if(n===9){ calcularResultado(); }
+    actualizarNav();'''),
+    ('''  function cambiarPantalla(delta){''', '''  // Avance habilitado solo cuando la actividad de la pantalla está resuelta
+  function pantallaLista(n){
+    switch(n){
+      case 2: return document.querySelectorAll("#escenarioCards .info-card.visto").length >= 4;
+      case 3: return estado.p3.verificado;
+      case 4: return estado.p4.clasificado >= p4Items.length;
+      case 5: return estado.p5.verificado;
+      case 6: return estado.p6.respondido;
+      case 7: return estado.p7.respondidos >= p7Items.length;
+      case 8: return estado.p8.verificado;
+    }
+    return true;
+  }
+  function actualizarNav(){
+    document.getElementById("btnSiguiente").disabled = !pantallaLista(actual);
+  }
+  document.getElementById("main").addEventListener("click", function(){ setTimeout(actualizarNav, 0); });
+  document.getElementById("main").addEventListener("drop", function(){ setTimeout(actualizarNav, 0); });
+
+  function cambiarPantalla(delta){
+    if(delta===1 && !pantallaLista(actual)) return;'''),
+    ('''    initP3(); initP4(); initP5(); initP6(); initP7(); initP8();
+    goTo(1);''', '''    initP3(); initP4(); initP5(); initP6(); initP7(); initP8();
+    document.querySelectorAll("#escenarioCards .info-card").forEach(function(c){ c.classList.remove("revealed","visto"); });
+    goTo(1);'''),
+    ('''    el.classList.toggle("revealed");''', '''    el.classList.toggle("revealed");
+    el.classList.add("visto");'''),
+    ('''    estado.p3.correctas = seleccionCorrecta;''', '''    var extras = document.querySelectorAll("#p3-opciones .opcion-btn.selected.incorrecta").length;
+    estado.p3.correctas = Math.max(0, seleccionCorrecta - extras);'''),
+    ('''    if(seleccionCorrecta === total){
+      fb.className = "feedback-box show ok";''', '''    if(seleccionCorrecta === total && extras === 0){
+      fb.className = "feedback-box show ok";'''),
+    ('''      div.textContent = item.t;
+      div.setAttribute("data-zona", item.zona);''', '''      div.setAttribute("data-t", item.t);
+      var txt = document.createElement("div");
+      txt.textContent = item.t;
+      div.appendChild(txt);
+      var destinos = document.createElement("div");
+      destinos.className = "destinos";
+      [["controlada","Condición controlada"],["correccion","Requiere corrección"]].forEach(function(d){
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = d[1];
+        b.addEventListener("click", function(){ moverItem(div, d[0]); });
+        destinos.appendChild(b);
+      });
+      div.appendChild(destinos);
+      div.setAttribute("data-zona", item.zona);'''),
+    ('''      div.addEventListener("click", function(){
+        // alternativa táctil: click alterna destino tentativo
+        var destino = prompt('Escribe "1" para Condición controlada o "2" para Requiere corrección:\\n\\n' + item.t);
+        if(destino === "1") moverItem(div,"controlada");
+        else if(destino === "2") moverItem(div,"correccion");
+      });
+''', ''),
+    ('''    var yaClasificado = div.getAttribute("data-clasificado")==="1";''', '''    var yaClasificado = div.getAttribute("data-clasificado")==="1";
+    if(yaClasificado) return; // cuenta la primera clasificación
+    div.draggable = false;
+    var dest = div.querySelector(".destinos");
+    if(dest) dest.remove();
+    var exp = document.createElement("div");
+    exp.className = "exp";
+    exp.textContent = p4Explicaciones[div.getAttribute("data-t")] || "";
+    div.appendChild(exp);'''),
+    ('''      return el.textContent === texto;''', '''      return el.getAttribute("data-t") === texto;'''),
+    ('''    var fb = document.getElementById("p5-feedback");
+    fb.classList.add("show");
+    estado.p5.verificado = true;''', '''    var fb = document.getElementById("p5-feedback");
+    fb.classList.add("show");
+    if(estado.p5.primer == null) estado.p5.primer = correctos / p5Correcto.length; // cuenta la primera verificación
+    estado.p5.verificado = true;'''),
+    ('''(estado.p5.correcto?1:0)''', '''(estado.p5.primer||0)'''),
+    ('''  function verificarP8(){
+    var rows''', '''  function verificarP8(){
+    if(estado.p8.verificado) return;
+    var rows'''),
+    ('''    estado.p8.correcto = correctos;''', '''    var extras8 = p8Items.filter(function(it, i){ return !it.correct && estado.p8.marcados[i]; }).length;
+    estado.p8.correcto = Math.max(0, correctos - extras8);'''),
+    ('''    if(correctos === totalCorrectas){
+      fb.className = "feedback-box show ok";
+      fb.textContent = "Cierre correcto.''', '''    if(correctos === totalCorrectas && extras8 === 0){
+      fb.className = "feedback-box show ok";
+      fb.textContent = "Cierre correcto.'''),
+    ('''    var promedio = Math.round((posicionamiento+preparacion+operacion+cierre)/4);''', '''    var promedio = Math.round((posicionamiento+preparacion+operacion+cierre)/4);
+    if(window.TLS_SCORM) window.TLS_SCORM.completar(promedio);'''),
+    ('''      <div class="resultado-final" id="p9-resultado"></div>''', '''      <div class="resultado-final" id="p9-resultado"></div>
+      <p class="sans" style="text-align:center;font-size:13.5px;margin:-8px 0 18px;">Puntaje registrado: <strong id="p9-nota"></strong> / 100 · se considera tu primera respuesta en cada actividad.</p>'''),
+    ('''    var resDiv = document.getElementById("p9-resultado");''', '''    document.getElementById("p9-nota").textContent = promedio;
+    var resDiv = document.getElementById("p9-resultado");'''),
+    ('</style>\n</head>', '</style>\n' + SCORM_JS),
+]
+
 ACTIVIDADES = [
     dict(src='M1_DESAFIO_que_equipo_corresponde.html', patches=DESAFIO,
          name='Actividad_M1_Desafio_Que_equipo_corresponde', ident='TLS_PEMP_M1_DESAFIO_V2', code='M1_DESAFIO',
@@ -440,6 +668,12 @@ ACTIVIDADES = [
     dict(src='M2_LAB_inspeccion_preoperacional_virtual.html', patches=M2_LAB,
          name='Actividad_M2_Laboratorio_Inspeccion_preoperacional', ident='TLS_PEMP_M2_LAB_V2', code='M2_LAB',
          title='Laboratorio TLS — Inspección preoperacional virtual (Módulo 2)'),
+    dict(src='M3_DESAFIO_el_techo_esta_cerca.html', patches=M3_DESAFIO,
+         name='Actividad_M3_Desafio_El_techo_esta_cerca', ident='TLS_PEMP_M3_DESAFIO_V2', code='M3_DESAFIO',
+         title='Desafío TLS — El techo está cerca (Módulo 3)'),
+    dict(src='M3_LAB_ruta_vertical_segura.html', patches=M3_LAB,
+         name='Actividad_M3_Laboratorio_Ruta_vertical_segura', ident='TLS_PEMP_M3_LAB_V2', code='M3_LAB',
+         title='Laboratorio TLS — Ruta vertical segura (Módulo 3)'),
 ]
 
 if __name__ == '__main__':
