@@ -127,14 +127,90 @@ async function lab(page, vp) {
   else console.log(`  ✓ ${tag}: reintento limpio`);
 }
 
+async function desafio2(page, vp) {
+  const tag = 'desafío M2 ' + vp;
+  const fr = page.frame({ url: u => u.pathname.startsWith('/dist/') });
+  let shot = 0;
+  const snap = async () => { await overflow(fr, tag + ' p' + (shot + 1)); await page.screenshot({ path: `${OUT}/m2desafio_${vp}_${String(++shot).padStart(2, '0')}.png` }); };
+  const next = async () => { await navVisible(fr, '.screen.active [data-next]', tag + ' p' + (shot)); await fr.click('.screen.active [data-next]'); };
+  await snap(); await fr.click('#btnStart');
+  await snap(); await next();
+  for (let i = 0; i < 5; i++) {
+    for (const q of ['verdict', 'evidence', 'next']) await fr.click(`.screen.active [data-q="${q}"] [data-correct="1"]`);
+    await snap(); await next();
+  }
+  await fr.click('#intOptions [data-correct="1"]');
+  await snap(); await next();
+  await snap();
+  const db = await page.evaluate(() => window.__db);
+  if (db['cmi.core.lesson_status'] !== 'completed' || db['cmi.core.score.raw'] !== '100') fail(`${tag}: SCORM ${db['cmi.core.lesson_status']} ${db['cmi.core.score.raw']}`);
+  else console.log(`  ✓ ${tag}: completed al ver el resultado, nota ${db['cmi.core.score.raw']}`);
+  await fr.click('.screen.active [data-next]'); await fr.click('#btnFinish');
+}
+
+async function lab2(page, vp) {
+  const tag = 'laboratorio M2 ' + vp;
+  let fr = page.frame({ url: u => u.pathname.startsWith('/dist/') });
+  let shot = 0;
+  const snap = async () => { await overflow(fr, tag + ' p' + (shot + 1)); await page.screenshot({ path: `${OUT}/m2lab_${vp}_${String(++shot).padStart(2, '0')}.png` }); };
+  const cont = async () => { await navVisible(fr, '#btnContinuar', tag + ' p' + shot); await fr.click('#btnContinuar'); };
+  const EQ = { barandas: 'critico', ruedas: 'corregir' }, EN = { transito: 'controlable', electrica: 'critico' };
+  const errar = vp === 'celular'; // en celular, el primer punto se responde mal para comprobar el puntaje al primer intento
+  await snap(); await fr.click('#btnComenzar');
+  await snap(); await fr.click('.opcion-ruta[data-ruta="A"]');
+  for (const d of await fr.$$('.doc-card')) { await fr.click(`.doc-card[data-doc="${await d.getAttribute('data-doc')}"]`); }
+  await snap(); await cont();
+  const puntos = async (map, def) => {
+    const ids = await fr.$$eval('.hs-item', l => l.map(x => x.dataset.hs));
+    for (const id of ids) {
+      await fr.click(`.hs-item[data-hs="${id}"]`);
+      if (errar && id === 'general') await fr.click('[data-hsop="corregir"]');
+      await fr.click(`[data-hsop="${map[id] || def}"]`);
+      await fr.click('#btnCerrarModal');
+    }
+  };
+  await puntos(EQ, 'ok'); await snap(); await cont();
+  // reanudación: recargar el LMS y comprobar que vuelve a la misma pantalla
+  if (vp === 'escritorio') {
+    await page.reload(); await page.waitForTimeout(800);
+    fr = page.frame({ url: u => u.pathname.startsWith('/dist/') });
+    const t = await fr.textContent('h2.pantalla-titulo');
+    if (!/Hallazgos visibles/.test(t)) fail(`${tag}: al reanudar muestra «${t}»`); else console.log(`  ✓ ${tag}: reanuda en la pantalla 5`);
+  }
+  for (const [id, v] of [['img1', 'corregir'], ['img2', 'detener'], ['img3', 'detener'], ['img4', 'continuar']]) await fr.click(`[data-img="${id}"][data-op="${v}"]`);
+  await snap(); await cont();
+  const orden = ['Confirmar área controlada', 'Reconocer los controles del modelo', 'Ejecutar la comprobación prevista', 'Observar respuesta, alarmas e indicadores', 'Detener ante una respuesta anormal o desconocida', 'Registrar el resultado'];
+  for (let i = 0; i < orden.length; i++) {
+    let cur = await fr.$$eval('.secuencia-item .txt', l => l.map(x => x.textContent));
+    let j = cur.indexOf(orden[i]);
+    while (j > i) { await fr.click(`[data-mover="up"][data-idx="${j}"]`); j--; }
+  }
+  await fr.click('#btnVerificarOrden');
+  await fr.click('[data-decision="detener"]');
+  await snap(); await cont();
+  await puntos(EN, 'apta'); await snap(); await cont();
+  const coord = await fr.$$eval('[data-coord][data-val="confirmado"]', l => l.map(x => x.dataset.coord));
+  for (const c of coord) await fr.click(`[data-coord="${c}"][data-val="${c === 'emergencia' ? 'pendiente' : 'confirmado'}"]`);
+  await snap(); await cont();
+  await fr.click('[data-veredicto="detener"]');
+  await snap(); await cont();
+  await snap();
+  const db = await page.evaluate(() => window.__db);
+  const esperado = errar ? '98' : '100';
+  if (db['cmi.core.lesson_status'] !== 'completed' || db['cmi.core.score.raw'] !== esperado) fail(`${tag}: SCORM ${db['cmi.core.lesson_status']} ${db['cmi.core.score.raw']} (esperado ${esperado})`);
+  else console.log(`  ✓ ${tag}: completed al llegar al informe, nota ${db['cmi.core.score.raw']}${errar ? ' (un error al primer intento)' : ''}`);
+  await cont(); await fr.click('#btnFinalizarLab');
+}
+
 (async () => {
   const browser = await chromium.launch(process.env.CHROME ? { executablePath: process.env.CHROME } : {});
   for (const [vp, size] of [['escritorio', { width: 1280, height: 800 }], ['celular', { width: 390, height: 760 }]]) {
-    for (const [fn, file] of [[desafio, 'Actividad_M1_Desafio_Que_equipo_corresponde.html'], [lab, 'Actividad_M1_Laboratorio_Reconoce_la_PEMP.html']]) {
+    for (const [fn, file] of [[desafio, 'Actividad_M1_Desafio_Que_equipo_corresponde.html'], [lab, 'Actividad_M1_Laboratorio_Reconoce_la_PEMP.html'], [desafio2, 'Actividad_M2_Desafio_Autorizar_no_es_marcar_casillas.html'], [lab2, 'Actividad_M2_Laboratorio_Inspeccion_preoperacional.html']]) {
       const ctx = await browser.newContext({ viewport: size, hasTouch: vp === 'celular', isMobile: vp === 'celular' });
       const page = await ctx.newPage();
       page.on('pageerror', e => fail(`${file} ${vp}: error JS ${e.message}`));
       await page.goto(`http://localhost:${PORT}/tests/lms_mock.html?src=/dist/${file}&clear=1`);
+      await page.goto(`http://localhost:${PORT}/tests/lms_mock.html?src=/dist/${file}`);
       await page.waitForTimeout(800);
       try { await fn(page, vp); } catch (e) { fail(`${file} ${vp}: ${e.message.split('\n')[0]}`); }
       await ctx.close();

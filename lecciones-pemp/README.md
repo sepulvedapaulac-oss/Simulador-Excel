@@ -41,6 +41,15 @@ Lecciones 1.1 a 1.5, 2.1 a 2.5, 3.1 a 3.5, 4.1 a 4.5 y 5.1 a 5.5 del curso **Ope
 
 Se generan con `python3 actividades/build_act.py` a partir de los originales en `actividades/orig/`, conservando su diseño y colores, y se prueban con `node tests/actividades.js <carpeta_capturas>`. Ajustes aplicados: navegación siempre visible, diseño responsivo en celular, lista de puntos bajo las imágenes del laboratorio, la familia del desafío se corrige solo al verificar (antes se podía cambiar hasta acertar), reintento del laboratorio sin recargar la página y registro SCORM que no retrocede un estado completado.
 
+## Actividades prácticas del Módulo 2
+
+| Actividad | HTML | Paquete para Moodle |
+|---|---|---|
+| Desafío TLS: Autorizar no es marcar casillas | `Actividad_M2_Desafio_Autorizar_no_es_marcar_casillas.html` | `…_SCORM12.zip` |
+| Laboratorio TLS: Inspección preoperacional virtual | `Actividad_M2_Laboratorio_Inspeccion_preoperacional.html` | `…_SCORM12.zip` |
+
+Mismo proceso que las del Módulo 1. Ajustes aplicados: navegación fija al pie, barra superior adaptada al celular, puntos de inspección numerados con lista tocable bajo la imagen, nota del laboratorio calculada con el primer intento de cada decisión (antes siempre daba 100), retoma del avance al volver a entrar (antes no se restauraba), sin datos guardados de otro intento dentro de Moodle, estado completado al ver el resultado o el informe y reintentos que no retroceden un estado completado.
+
 ## Estructura común (11 pantallas)
 
 1. **Inicio**: caso con Camila (personaje recurrente) y decisión con consecuencias.
