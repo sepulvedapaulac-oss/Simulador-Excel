@@ -32,6 +32,15 @@ Lecciones 1.1 a 1.5, 2.1 a 2.5, 3.1 a 3.5, 4.1 a 4.5 y 5.1 a 5.5 del curso **Ope
 | 5.4 Después del evento, el equipo no vuelve solo | `Leccion_5_4_Despues_del_evento_el_equipo_no_vuelve_solo.html` | `…_SCORM12.zip` |
 | 5.5 Una operación segura se demuestra con decisiones | `Leccion_5_5_Una_operacion_segura_se_demuestra_con_decisiones.html` | `…_SCORM12.zip` |
 
+## Actividades prácticas del Módulo 1
+
+| Actividad | HTML | Paquete para Moodle |
+|---|---|---|
+| Desafío TLS: ¿Qué equipo corresponde? | `Actividad_M1_Desafio_Que_equipo_corresponde.html` | `…_SCORM12.zip` |
+| Laboratorio TLS: Reconoce la PEMP y sus riesgos | `Actividad_M1_Laboratorio_Reconoce_la_PEMP.html` | `…_SCORM12.zip` |
+
+Se generan con `python3 actividades/build_act.py` a partir de los originales en `actividades/orig/`, conservando su diseño y colores, y se prueban con `node tests/actividades.js <carpeta_capturas>`. Ajustes aplicados: navegación siempre visible, diseño responsivo en celular, lista de puntos bajo las imágenes del laboratorio, la familia del desafío se corrige solo al verificar (antes se podía cambiar hasta acertar), reintento del laboratorio sin recargar la página y registro SCORM que no retrocede un estado completado.
+
 ## Estructura común (11 pantallas)
 
 1. **Inicio**: caso con Camila (personaje recurrente) y decisión con consecuencias.
