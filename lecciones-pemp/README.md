@@ -77,6 +77,24 @@ Tampoco traían registro SCORM; se les agregó. En el desafío se corrigió un e
 
 Se agregó el registro SCORM que no traían. En el desafío, las notas de los casos B y C ahora aparecen después de responder (antes delataban la respuesta), la parte superior de las pantallas largas ya no queda cortada en celular y la nota considera la primera respuesta de los cuatro casos. En el laboratorio, el avance se habilita solo al resolver cada escenario, las selecciones de más restan puntaje (antes marcar todo daba 100%) y la planificación se califica con la primera verificación.
 
+## Evaluaciones de módulo · Parte 2 (caso aplicado con rúbrica)
+
+| Evaluación | Caso | Paquete para Moodle |
+|---|---|---|
+| Módulo 2 · Preparación preoperacional | La tijera del pasillo C | `Evaluacion_M2_Parte2_Caso_aplicado_SCORM12.zip` |
+| Módulo 3 · Operación con plataforma de tijera | El sensor sobre el andén 4 | `Evaluacion_M3_Parte2_Caso_aplicado_SCORM12.zip` |
+| Módulo 4 · Plataformas de brazo y respuesta ante eventos | La cámara sobre la marquesina | `Evaluacion_M4_Parte2_Caso_aplicado_SCORM12.zip` |
+| Módulo 5 · Integrar decisiones en la operación | La canaleta del patio norte | `Evaluacion_M5_Parte2_Caso_aplicado_SCORM12.zip` |
+
+Cada evaluación presenta un caso con documentos (orden de trabajo, placa, croquis, bitácora) y cinco tareas, una por criterio de la rúbrica. No hay preguntas de selección múltiple: se completan registros, se marcan evidencias en un documento, se clasifican situaciones, se ordenan secuencias, se evalúan alternativas en una matriz y se emite un veredicto respaldado con evidencia. Cada tarea se entrega una sola vez.
+
+- **Rúbrica:** 5 criterios × 20 puntos. Nivel según el acierto de la tarea: Logrado (≥ 85 %, 20 pts), Suficiente (≥ 60 %, 14 pts), En desarrollo (≥ 35 %, 8 pts), No logrado (0 pts). En las tareas de marcar evidencias, las marcas incorrectas restan; en las de ordenar se usa la concordancia por pares.
+- **Aprobación:** 70 puntos (valor `pass` en el bloque CFG de cada fuente).
+- **Respuestas escritas:** obligatorias y no calificadas automáticamente; se registran en Moodle (`cmi.interactions`, hasta 250 caracteres) y en el informe que el estudiante puede descargar o imprimir.
+- **SCORM 1.2:** estado `passed` o `failed`, nota con el mejor intento, reanudación con `suspend_data`, una interacción por criterio y por respuesta escrita. El estado aprobado no retrocede con un nuevo intento.
+
+Se construyen con `python3 evaluaciones/build_eval.py` (motor en `evaluaciones/engine/`, fuentes en `evaluaciones/src/`, imágenes tomadas de las lecciones) y se prueban con `node tests/evaluaciones.js <carpeta_capturas>`.
+
 ## Estructura común (11 pantallas)
 
 1. **Inicio**: caso con Camila (personaje recurrente) y decisión con consecuencias.

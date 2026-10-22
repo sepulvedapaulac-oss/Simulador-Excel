@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>{{TITLE}}</title>
+<style>/*{{CSS}}*/</style>
+</head>
+<body class="eval">
+<header class="topbar">
+  <button id="menu-btn" class="menu-btn" type="button" aria-label="Abrir la ruta de la evaluación">☰</button>
+  <div class="titles"><div class="course">{{COURSE}}</div><div class="meta">{{META}}</div></div>
+  <span class="pct" id="pct" aria-label="Avance de la evaluación">0%</span>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+<aside class="route" aria-label="Ruta de la evaluación">
+  <h2>Ruta de la evaluación</h2>
+  <ol id="route-list"></ol>
+  <div class="route-foot" id="route-foot"></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main id="main">
+{{SCREENS}}
+</main>
+<script>/*{{DATA}}*/</script>
+<script>/*{{JS}}*/</script>
+</body>
+</html>
