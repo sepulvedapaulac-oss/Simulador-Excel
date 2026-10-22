@@ -821,6 +821,151 @@ img{max-width:100%;}
     ('</style>\n</head>', '</style>\n' + SCORM_JS),
 ]
 
+# ───────────────────────── Módulo 5 · Desafío: Continuar, corregir o detener ─────────────────────────
+M5_DESAFIO = [
+    ('html,body{height:100%;}', 'html,body{min-height:100%;}'),
+    ('.app{width:100%;max-width:780px;}', '.app{width:100%;max-width:780px;margin:auto;}'),
+    ('''    position:relative;
+    overflow:hidden;
+    animation:fadeIn .5s ease;''', '''    position:relative;
+    overflow:clip;
+    animation:fadeIn .5s ease;'''),
+    ('  @media (max-width:560px){', '''  /* Ajustes TLS: botón de avance siempre visible, resultado y diseño en celular */
+  .btn.sticky-next{position:sticky;bottom:12px;z-index:5;}
+  .btn.sticky-next:disabled{background:#b9bcd8;}
+  .resultado-nota{background:var(--gris-claro);border-radius:12px;padding:14px 18px;margin:6px 0 4px;text-align:center;font-size:16px;color:var(--azul-marino);}
+  .resultado-nota strong{font-size:22px;color:var(--azul-profundo);}
+  .resultado-nota small{display:block;margin-top:4px;color:var(--gris);font-size:13px;}
+  .decision-btn,.concept-card,.tree-choice,.btn{-webkit-tap-highlight-color:transparent;}
+  img{max-width:100%;}
+  @media (max-width:560px){
+    body{padding:10px;}
+    .decision-row{gap:10px;}
+    .decision-btn{padding:15px 14px;}
+    .btn.sticky-next{bottom:8px;}'''),
+    ("""  var progressFill = document.getElementById('progressFill');""", """  var progressFill = document.getElementById('progressFill');
+
+  // Puntaje: primera respuesta de los cuatro casos (pantallas 3 a 6)
+  function notaDesafio(){
+    var ok = (state.okA ? 1 : 0) + (state.okB ? 1 : 0) + (state.okC ? 1 : 0) + (state.okD ? 1 : 0);
+    return Math.round(ok / 4 * 100);
+  }"""),
+    ('''      case 8: renderScreen8(); break;
+    }
+  }''', '''      case 8: renderScreen8(); break;
+    }
+    var principal = content.querySelector('[id^="btnNext"]');
+    if(principal) principal.classList.add('sticky-next');
+  }'''),
+    ("""      (opts.nota ? '<div class="feedback note show">' + opts.nota + '</div>' : '') +""",
+     """      (opts.nota ? '<div class="feedback note" id="fbNota">' + opts.nota + '</div>' : '') +"""),
+    ("""        fb.className = 'feedback show ' + (tipo === opts.correcta ? 'ok' : 'err');""", """        fb.className = 'feedback show ' + (tipo === opts.correcta ? 'ok' : 'err');
+        // La nota complementaria se muestra después de responder (antes delataba la respuesta)
+        var nota = document.getElementById('fbNota');
+        if(nota) nota.classList.add('show');"""),
+    ('        opts.onAnswered();', '        opts.onAnswered(tipo === opts.correcta);'),
+    ('onAnswered:function(){ state.caseAAnswered = true; }', 'onAnswered:function(ok){ state.caseAAnswered = true; state.okA = ok; }'),
+    ('onAnswered:function(){ state.caseBAnswered = true; }', 'onAnswered:function(ok){ state.caseBAnswered = true; state.okB = ok; }'),
+    ('onAnswered:function(){ state.caseCAnswered = true; }', 'onAnswered:function(ok){ state.caseCAnswered = true; state.okC = ok; }'),
+    ('onAnswered:function(){ state.caseDAnswered = true; }', 'onAnswered:function(ok){ state.caseDAnswered = true; state.okD = ok; }'),
+    ('''  function renderScreen8(){
+    content.innerHTML =''', '''  function renderScreen8(){
+    var nota = notaDesafio();
+    if(window.TLS_SCORM) window.TLS_SCORM.completar(nota);
+    content.innerHTML ='''),
+    ("""      '<div class="idea-fuerza">"Detener""", """      '<div class="resultado-nota">Tu puntaje: <strong>' + nota + '</strong> / 100<small>Se considera tu primera respuesta en cada uno de los cuatro casos.</small></div>' +
+      '<div class="idea-fuerza">"Detener"""),
+    ('</style>\n</head>', '</style>\n' + SCORM_JS),
+]
+
+
+# ───────────────────────── Módulo 5 · Laboratorio: Sala de decisiones ─────────────────────────
+M5_LAB = [
+    ('''    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-height: 660px;''', '''    overflow:clip;
+    display:flex;
+    flex-direction:column;
+    min-height: 660px;'''),
+    ('''  @media (max-width: 640px){''', '''  /* Ajustes TLS: navegación fija, avance controlado y diseño en celular */
+  footer.navbar{position:sticky;bottom:0;z-index:10;padding-bottom:calc(18px + env(safe-area-inset-bottom));}
+  .nav-btn.next:disabled{opacity:.45;}
+  .nota-lab{font-family:"Helvetica Neue",Arial,sans-serif;text-align:center;font-size:13.5px;margin:-6px 0 18px;}
+  img{max-width:100%;}
+  .opcion-btn,.decision-btn,.info-card,.check-item{-webkit-tap-highlight-color:transparent;}
+  @media (max-width: 640px){
+    body{padding:0;}
+    #app{border-radius:0;min-height:100vh;}
+    header.topbar{gap:10px;}
+    header.topbar .tag{font-size:11px;letter-spacing:1px;}
+    header.topbar .counter{white-space:nowrap;}
+    .nav-btn{padding:10px 16px;}
+    h3.titulo-pantalla{font-size:22px;}
+    .hook{font-size:17px;}'''),
+    ('''    if(n===9){ calcularResultado(); }''', '''    if(n===9){ calcularResultado(); }
+    actualizarNav();'''),
+    ('''  function cambiarPantalla(delta){''', '''  // Avance habilitado solo cuando la actividad de la pantalla está resuelta
+  function pantallaLista(n){
+    switch(n){
+      case 2: return estado.p2.primer != null;
+      case 3: return estado.p3.respondido;
+      case 4: return estado.p4.respondido;
+      case 5: return estado.p5.respondido;
+      case 6: return estado.p6.verificado;
+      case 7: return estado.p7.verificado;
+      case 8: return estado.p8.verificado;
+    }
+    return true;
+  }
+  function actualizarNav(){
+    document.getElementById("btnSiguiente").disabled = !pantallaLista(actual);
+  }
+  document.getElementById("main").addEventListener("click", function(){ setTimeout(actualizarNav, 0); });
+
+  function cambiarPantalla(delta){
+    if(delta===1 && !pantallaLista(actual)) return;'''),
+    ('''    estado.p2.correctas = correctas;''', '''    estado.p2.correctas = correctas;
+    if(estado.p2.primer == null){ // para el puntaje cuenta la primera verificación
+      var aciertos = 0;
+      cards.forEach(function(card){
+        var it = p2Items[parseInt(card.getAttribute("data-idx"),10)];
+        if(it.correct === card.classList.contains("selected")) aciertos++;
+      });
+      estado.p2.primer = aciertos / p2Items.length;
+    }'''),
+    ('Puedes corregir y verificar nuevamente.";', 'Puedes corregir y verificar nuevamente; para el puntaje cuenta tu primera verificación.";'),
+    ('''    var planificacion = estado.p2.verificado ? Math.round(estado.p2.correctas / estado.p2.total * 100) : 0;''',
+     '''    var planificacion = Math.round((estado.p2.primer || 0) * 100);'''),
+    ('''  function verificarP6(){
+    var botones''', '''  function verificarP6(){
+    if(estado.p6.verificado) return;
+    var botones'''),
+    ('''    estado.p6.correctas = correctas;''', '''    var extras6 = document.querySelectorAll("#p6-opciones .opcion-btn.selected.incorrecta").length;
+    estado.p6.correctas = Math.max(0, correctas - extras6);'''),
+    ('''    if(correctas === estado.p6.total){''', '''    if(correctas === estado.p6.total && extras6 === 0){'''),
+    ('''  function verificarP7(){
+    var botones''', '''  function verificarP7(){
+    if(estado.p7.verificado) return;
+    var botones'''),
+    ('''    estado.p7.correctas = correctas;''', '''    var extras7 = document.querySelectorAll("#p7-opciones .opcion-btn.selected.incorrecta").length;
+    estado.p7.correctas = Math.max(0, correctas - extras7);'''),
+    ('''    if(correctas === estado.p7.total){''', '''    if(correctas === estado.p7.total && extras7 === 0){'''),
+    ('''  function verificarP8(){
+    var rows''', '''  function verificarP8(){
+    if(estado.p8.verificado) return;
+    var rows'''),
+    ('''    estado.p8.correcto = correctos;''', '''    var extras8 = p8Items.filter(function(it, i){ return !it.correct && estado.p8.marcados && estado.p8.marcados[i]; }).length;
+    estado.p8.correcto = Math.max(0, correctos - extras8);'''),
+    ('''    if(correctos === estado.p8.total){''', '''    if(correctos === estado.p8.total && extras8 === 0){'''),
+    ('''      <div class="resultado-final" id="p9-resultado"></div>''', '''      <div class="resultado-final" id="p9-resultado"></div>
+      <p class="nota-lab">Puntaje registrado: <strong id="p9-nota"></strong> / 100 · se considera tu primera respuesta en cada escenario.</p>'''),
+    ('''    var promedio = Math.round((planificacion+controlCambio+detencion+comunicacion+reporte)/5);''', '''    var promedio = Math.round((planificacion+controlCambio+detencion+comunicacion+reporte)/5);
+    document.getElementById("p9-nota").textContent = promedio;
+    if(window.TLS_SCORM) window.TLS_SCORM.completar(promedio);'''),
+    ('</style>\n</head>', '</style>\n' + SCORM_JS),
+]
+
 ACTIVIDADES = [
     dict(src='M1_DESAFIO_que_equipo_corresponde.html', patches=DESAFIO,
          name='Actividad_M1_Desafio_Que_equipo_corresponde', ident='TLS_PEMP_M1_DESAFIO_V2', code='M1_DESAFIO',
@@ -846,6 +991,12 @@ ACTIVIDADES = [
     dict(src='M4_LAB_dentro_de_la_envolvente.html', patches=M4_LAB,
          name='Actividad_M4_Laboratorio_Dentro_de_la_envolvente', ident='TLS_PEMP_M4_LAB_V2', code='M4_LAB',
          title='Laboratorio TLS — Dentro de la envolvente (Módulo 4)'),
+    dict(src='M5_DESAFIO_continuar_corregir_o_detener.html', patches=M5_DESAFIO,
+         name='Actividad_M5_Desafio_Continuar_corregir_o_detener', ident='TLS_PEMP_M5_DESAFIO_V2', code='M5_DESAFIO',
+         title='Desafío TLS — Continuar, corregir o detener (Módulo 5)'),
+    dict(src='M5_LAB_sala_de_decisiones.html', patches=M5_LAB,
+         name='Actividad_M5_Laboratorio_Sala_de_decisiones', ident='TLS_PEMP_M5_LAB_V2', code='M5_LAB',
+         title='Laboratorio TLS — Sala de decisiones (Módulo 5)'),
 ]
 
 if __name__ == '__main__':

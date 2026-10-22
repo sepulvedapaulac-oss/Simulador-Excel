@@ -68,6 +68,15 @@ Los originales no traían registro SCORM; se les agregó (estado, nota sobre 100
 
 Tampoco traían registro SCORM; se les agregó. En el desafío se corrigió un error del original que dejaba bloqueado al estudiante que respondía correctamente «NO» en la primera decisión, y ahora la respuesta elegida se conserva al volver atrás. En el laboratorio, el reinicio ya no recarga la página (eso cortaba la sesión en Moodle), la verificación de factores incluye dos distractores y se corrige una sola vez, y la nota considera la primera respuesta en factores, envolvente, atrapamiento y giro.
 
+## Actividades prácticas del Módulo 5
+
+| Actividad | HTML | Paquete para Moodle |
+|---|---|---|
+| Desafío TLS: Continuar, corregir o detener | `Actividad_M5_Desafio_Continuar_corregir_o_detener.html` | `…_SCORM12.zip` |
+| Laboratorio TLS: Sala de decisiones | `Actividad_M5_Laboratorio_Sala_de_decisiones.html` | `…_SCORM12.zip` |
+
+Se agregó el registro SCORM que no traían. En el desafío, las notas de los casos B y C ahora aparecen después de responder (antes delataban la respuesta), la parte superior de las pantallas largas ya no queda cortada en celular y la nota considera la primera respuesta de los cuatro casos. En el laboratorio, el avance se habilita solo al resolver cada escenario, las selecciones de más restan puntaje (antes marcar todo daba 100%) y la planificación se califica con la primera verificación.
+
 ## Estructura común (11 pantallas)
 
 1. **Inicio**: caso con Camila (personaje recurrente) y decisión con consecuencias.
