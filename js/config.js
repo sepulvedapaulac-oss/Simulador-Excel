@@ -8,7 +8,7 @@ window.SIM_CONFIG = {
   // Dónde se guardan los resultados de los alumnos: 'microsoft' o 'google'.
   // Mientras no se complete la URL correspondiente, el simulador funciona en
   // modo demostración (los resultados quedan solo en el navegador).
-  BACKEND: 'microsoft',
+  BACKEND: 'google',
 
   // --- Opción Microsoft: Excel en OneDrive/SharePoint + Power Automate (backend/MICROSOFT.md)
   // URL del flujo "Guardar resultado" (disparador "Cuando se recibe una solicitud HTTP").
