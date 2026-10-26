@@ -26,6 +26,7 @@
   }
 
   async function load() {
+    try { await Store.flush(); } catch (e) { /* sin conexión */ }
     $('#login-err').textContent = '';
     try {
       const r = await Store.list(key);

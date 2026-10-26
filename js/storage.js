@@ -8,6 +8,7 @@
   'use strict';
   const LOCAL_KEY = 'simxl_results_v1';
   const QUEUE_KEY = 'simxl_queue_v1';
+  const SENT_KEY = 'simxl_sent_v1';
   const cfg = () => global.SIM_CONFIG || {};
 
   /** Columnas de la tabla de resultados (mismo orden y nombres en Excel y Google Sheets) */
@@ -30,6 +31,15 @@
   }
   function writeQueue(q) {
     try { localStorage.setItem(QUEUE_KEY, JSON.stringify(q)); } catch (e) { /* sin almacenamiento */ }
+  }
+
+  function readSent() {
+    try { return JSON.parse(localStorage.getItem(SENT_KEY)) || {}; } catch (e) { return {}; }
+  }
+  function markSent(record) {
+    const m = readSent();
+    m[record.id] = (record.fechaTermino || '') + '|' + (record.estado || '');
+    try { localStorage.setItem(SENT_KEY, JSON.stringify(m)); } catch (e) { /* sin almacenamiento */ }
   }
 
   function backend() {
@@ -101,6 +111,7 @@
       if (!this.remote) return { ok: true, remote: false };
       try {
         await post(record);
+        markSent(record);
         writeQueue(readQueue().filter((r) => r.id !== record.id));
         return { ok: true, remote: true };
       } catch (e) {
@@ -111,14 +122,20 @@
       }
     },
 
-    /** Reintenta envíos pendientes */
+    /** Reintenta envíos pendientes y recupera resultados guardados antes de conectar la planilla */
     async flush() {
       if (!this.remote) return;
       const rest = [];
       for (const r of readQueue()) {
-        try { await post(r); } catch (e) { rest.push(r); }
+        try { await post(r); markSent(r); } catch (e) { rest.push(r); }
       }
       writeQueue(rest);
+      const sent = readSent();
+      for (const r of Object.values(readLocal())) {
+        if (!r || !r.id) continue;
+        if (sent[r.id] === (r.fechaTermino || '') + '|' + (r.estado || '')) continue;
+        try { await post(r); markSent(r); } catch (e) { /* se reintentará en la próxima visita */ }
+      }
     },
 
     /** ¿El panel puede leer los resultados desde el servidor? */
