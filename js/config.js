@@ -19,7 +19,7 @@ window.SIM_CONFIG = {
   EXCEL_RESULTS_URL: '',
 
   // --- Opción Google: Google Sheets + Apps Script (backend/Code.gs)
-  APPS_SCRIPT_URL: '',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbx6FsaF3jSGOx6JSDYEjJSjlzrIO4W4nxh7Te4U26v3CIKdy7T29B1f6RaxXTmHCWUm/exec',
 
   // Uso interno para recomendar el curso (no se muestra al alumno como nota):
   // se considera que el alumno "domina" un nivel si logra este % de sus actividades.
