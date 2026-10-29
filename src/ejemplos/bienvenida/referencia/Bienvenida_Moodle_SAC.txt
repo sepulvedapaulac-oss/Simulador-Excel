@@ -1,0 +1,59 @@
+<div style="font-family:Arial,Helvetica,sans-serif;color:#11131a;max-width:980px;margin:0 auto;line-height:1.5">
+
+<div style="background:#101044;border-bottom:6px solid #FFD65C;border-radius:22px;padding:22px 24px;color:#ffffff">
+<p style="margin:0 0 6px;color:#FFD65C;font-size:12px;font-weight:bold;letter-spacing:2px">TREMEN PARTNER · TLS® · SERVICIO Y ATENCIÓN AL CLIENTE</p>
+<h2 style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.15;color:#ffffff">Te damos la bienvenida</h2>
+<p style="margin:0 0 14px;color:#e6e8ff;font-size:16px">Herramientas de Servicio y Atención al Cliente. Desde hoy cada interacción es una oportunidad: <strong style="color:#ffffff">escuchar, comprender, comunicar, resolver y fidelizar</strong>.</p>
+<p style="margin:0">
+<span style="display:inline-block;margin:0 6px 6px 0;padding:5px 13px;border:1px solid #a9b0e6;border-radius:999px;font-size:14px;font-weight:bold;color:#ffffff">60 horas</span>
+<span style="display:inline-block;margin:0 6px 6px 0;padding:5px 13px;border:1px solid #a9b0e6;border-radius:999px;font-size:14px;font-weight:bold;color:#ffffff">4 módulos</span>
+<span style="display:inline-block;margin:0 6px 6px 0;padding:5px 13px;border:1px solid #a9b0e6;border-radius:999px;font-size:14px;font-weight:bold;color:#ffffff">11 lecciones</span>
+<span style="display:inline-block;margin:0 6px 6px 0;padding:5px 13px;border:1px solid #a9b0e6;border-radius:999px;font-size:14px;font-weight:bold;color:#ffffff">A tu ritmo</span>
+</p>
+</div>
+
+<div style="margin:20px 0 6px;padding:16px 20px;border:1px solid #d9dee8;border-left:6px solid #171697;border-radius:16px;background:#ffffff">
+<p style="margin:0 0 4px;color:#00757a;font-size:12px;font-weight:bold;letter-spacing:2px">COMPETENCIA A DESARROLLAR</p>
+<p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:19px;color:#101044">Analizar herramientas de servicio y atención al cliente en contextos organizacionales, de acuerdo con estándares de experiencia del cliente.</p>
+</div>
+
+<h3 style="margin:22px 0 2px;font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#101044">Aprendizajes esperados por módulo</h3>
+<p style="margin:0 0 12px;color:#4b5563;font-size:15px">Toca cada tarjeta para ver qué lograrás en ese módulo.</p>
+
+<table style="width:100%;table-layout:fixed;border-collapse:collapse;border:0;margin:0 -6px">
+<tr><td style="width:50%;vertical-align:top;padding:0 6px 12px 6px;border:0"><details style="border:1px solid #d9dee8;border-left:6px solid #00A5AB;border-radius:16px;background:#ffffff;padding:14px 16px">
+<summary style="cursor:pointer;font-weight:bold;font-size:16px;color:#101044"><span style="display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:#171697;color:#ffffff;font-size:14px;margin-right:6px">1</span>Fundamentos del Servicio al Cliente <span style="color:#00757a;font-size:13px">· 12 h</span></summary>
+<p style="margin:10px 0 2px;color:#00757a;font-size:12px;font-weight:bold;letter-spacing:1px">APRENDIZAJE ESPERADO 1</p>
+<p style="margin:0;font-size:15px">Identificar fundamentos del servicio al cliente en contextos organizacionales, de acuerdo con la evolución del perfil digital del cliente.</p>
+</details></td><td style="width:50%;vertical-align:top;padding:0 6px 12px 6px;border:0"><details style="border:1px solid #d9dee8;border-left:6px solid #00A5AB;border-radius:16px;background:#ffffff;padding:14px 16px">
+<summary style="cursor:pointer;font-weight:bold;font-size:16px;color:#101044"><span style="display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:#171697;color:#ffffff;font-size:14px;margin-right:6px">2</span>Comunicación Efectiva y Empática <span style="color:#00757a;font-size:13px">· 14 h</span></summary>
+<p style="margin:10px 0 2px;color:#00757a;font-size:12px;font-weight:bold;letter-spacing:1px">APRENDIZAJE ESPERADO 2</p>
+<p style="margin:0;font-size:15px">Reconocer estrategias de comunicación efectiva en procesos de atención al cliente, de acuerdo con principios de inteligencia emocional.</p>
+</details></td></tr>
+<tr><td style="width:50%;vertical-align:top;padding:0 6px 12px 6px;border:0"><details style="border:1px solid #d9dee8;border-left:6px solid #00A5AB;border-radius:16px;background:#ffffff;padding:14px 16px">
+<summary style="cursor:pointer;font-weight:bold;font-size:16px;color:#101044"><span style="display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:#171697;color:#ffffff;font-size:14px;margin-right:6px">3</span>Manejo de Quejas, Conflictos y Clientes Difíciles <span style="color:#00757a;font-size:13px">· 16 h</span></summary>
+<p style="margin:10px 0 2px;color:#00757a;font-size:12px;font-weight:bold;letter-spacing:1px">APRENDIZAJE ESPERADO 3</p>
+<p style="margin:0;font-size:15px">Evaluar herramientas de manejo de quejas conflictos en situaciones de atención al cliente, de acuerdo con protocolos organizacionales.</p>
+</details></td><td style="width:50%;vertical-align:top;padding:0 6px 12px 6px;border:0"><details style="border:1px solid #d9dee8;border-left:6px solid #00A5AB;border-radius:16px;background:#ffffff;padding:14px 16px">
+<summary style="cursor:pointer;font-weight:bold;font-size:16px;color:#101044"><span style="display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:#171697;color:#ffffff;font-size:14px;margin-right:6px">4</span>Excelencia en el Servicio y Fidelización <span style="color:#00757a;font-size:13px">· 18 h</span></summary>
+<p style="margin:10px 0 2px;color:#00757a;font-size:12px;font-weight:bold;letter-spacing:1px">APRENDIZAJE ESPERADO 4</p>
+<p style="margin:0;font-size:15px">Analizar indicadores de excelencia en el servicio al cliente en contextos organizacionales, de acuerdo con métricas de desempeño.</p>
+</details></td></tr>
+</table>
+
+<h3 style="margin:14px 0 2px;font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#101044">Una forma de atender</h3>
+<p style="margin:0 0 10px;color:#4b5563;font-size:15px">Practicarás este ciclo en laboratorios, casos y tareas con clientes de Conecta Sur, una empresa ficticia:</p>
+<p style="margin:0 0 18px">
+<span style="display:inline-block;margin:0 2px 6px 0;padding:5px 13px;border-radius:999px;background:#f1f0ff;color:#171697;font-size:13px;font-weight:bold;letter-spacing:1px">ESCUCHAR</span> <span style="color:#00A5AB;font-weight:bold">→</span>
+<span style="display:inline-block;margin:0 2px 6px 0;padding:5px 13px;border-radius:999px;background:#f1f0ff;color:#171697;font-size:13px;font-weight:bold;letter-spacing:1px">COMPRENDER</span> <span style="color:#00A5AB;font-weight:bold">→</span>
+<span style="display:inline-block;margin:0 2px 6px 0;padding:5px 13px;border-radius:999px;background:#f1f0ff;color:#171697;font-size:13px;font-weight:bold;letter-spacing:1px">COMUNICAR</span> <span style="color:#00A5AB;font-weight:bold">→</span>
+<span style="display:inline-block;margin:0 2px 6px 0;padding:5px 13px;border-radius:999px;background:#f1f0ff;color:#171697;font-size:13px;font-weight:bold;letter-spacing:1px">RESOLVER</span> <span style="color:#00A5AB;font-weight:bold">→</span>
+<span style="display:inline-block;margin:0 2px 6px 0;padding:5px 13px;border-radius:999px;background:#f1f0ff;color:#171697;font-size:13px;font-weight:bold;letter-spacing:1px">FIDELIZAR</span>
+</p>
+
+<div style="background:#101044;border-radius:18px;padding:16px 22px;color:#ffffff">
+<p style="margin:0;font-weight:bold;font-size:16px">Cada interacción cuenta. Cada cliente merece ser escuchado.</p>
+<p style="margin:4px 0 0;color:#e6e8ff;font-size:15px">Comienza por la evaluación diagnóstica: no tiene nota y te muestra por dónde partir.</p>
+</div>
+
+</div>

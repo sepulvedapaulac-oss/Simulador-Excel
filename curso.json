@@ -1,0 +1,66 @@
+{
+ "nombre": "Inteligencia Artificial aplicada a la Gestión de Remuneraciones",
+ "nombre_corto": "IA EN REMUNERACIONES",
+ "publico": "Analistas de remuneraciones, analistas de compensaciones y analistas de recursos humanos que calculan, revisan y reportan remuneraciones, elaboran informes de variaciones mensuales y controlan el cierre.",
+ "idioma": "es-419",
+ "otec": "Tremen Partner",
+ "marca": "",
+ "plataforma": {
+  "nombre": "Aula virtual Tremen Partner (Moodle)",
+  "url": ""
+ },
+ "modalidad": "E-learning asincrónico",
+ "participacion_minima": 40,
+ "evaluacion": {
+  "actividades": 30,
+  "final_parte1": 35,
+  "final_parte2": 35,
+  "exigencia": 60,
+  "aprobacion": "Ver CLAUDE.md (ponderación vigente decidida por la autora)",
+  "aprobado_scorm": 70,
+  "parte2_modulo": "tarea"
+ },
+ "relator": "relator o tutor",
+ "sence": {
+  "solicitud": "",
+  "competencia": "Analizar procedimientos de gestión de remuneraciones con inteligencia artificial según criterios de protección de información salarial.",
+  "ae": [
+   "Identificar herramientas de inteligencia artificial en la gestión de remuneraciones según criterios de uso responsable de información salarial.",
+   "Describir procedimientos de revisión de remuneraciones con inteligencia artificial según protocolos de validación de resultados.",
+   "Interpretar variaciones mensuales de remuneraciones en reportes con inteligencia artificial según indicadores de gestión.",
+   "Analizar flujos de trabajo de remuneraciones con inteligencia artificial según criterios de control de calidad."
+  ],
+  "criterios": [
+   "Identifica herramientas de inteligencia artificial en la gestión de remuneraciones según criterios de uso responsable de información salarial.",
+   "Describe procedimientos de revisión de remuneraciones con inteligencia artificial según protocolos de validación de resultados.",
+   "Interpreta variaciones mensuales de remuneraciones en reportes con inteligencia artificial según indicadores de gestión.",
+   "Analiza flujos de trabajo de remuneraciones con inteligencia artificial según criterios de control de calidad."
+  ],
+  "horas": [
+   12,
+   14,
+   16,
+   18
+  ],
+  "fuente": "src/curso/datos.py (planilla SENCE)"
+ },
+ "colores": {},
+ "modulos": {
+  "1": {
+   "titulo": "Módulo 1 · Fundamentos de IA",
+   "mindsmith": ""
+  },
+  "2": {
+   "titulo": "Módulo 2 · IA para revisión y validación de remuneraciones",
+   "mindsmith": ""
+  },
+  "3": {
+   "titulo": "Módulo 3 · Análisis de datos y reportes de remuneraciones con IA",
+   "mindsmith": ""
+  },
+  "4": {
+   "titulo": "Módulo 4 · Automatización y productividad",
+   "mindsmith": ""
+  }
+ }
+}

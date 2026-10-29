@@ -1,0 +1,141 @@
+                          Niveles de la taxonomía de Bloom
+
+
+
+
+                                                                                                 EVALUACIÓN
+                                                                             SÍNTESIS          Evaluar/Valorar/Crear
+
+                                                          ANÁLISIS       Sintetizar/Integrar        Actualizar
+
+                                           APLICACIÓN       Analizar          Arreglar               Apreciar
+
+                      COMPRENSIÓN            Aplicar        Analizar          Arreglar               Calificar
+
+CONOCIMIENTO         Entender/Comprender      Aplicar       Calcular          Cambiar               Combinar
+Recordar/Memorizar        Completar          Clasificar    Catalogar        Coleccionar             Componer
+     Apuntar                Definir         Completar     Categorizar        Componer                Construir
+      Definir             Describir         Construir      Comparar           Concluir                 Crear
+     Describir            Descubrir         Demostrar      Contrastar        Construir               Diseñar
+    Encontrar            Ejemplificar        Dibujar        Criticar           Crear                 Elaborar
+     Enlistar           Esquematizar         Ejecutar      Cuestionar         Criticar               Escoger
+    Identificar            Explicar          Emplear        Debatir           Debatir                 Escribir
+      Marcar               Expresar          Esbozar       Diagramar           Decidir                Estimar
+    Memorizar             Identificar       Examinar       Diferenciar      Diferenciar               Evaluar
+     Nombrar              Informar         Experimentar   Discriminar          Dirigir               Inventar
+     Numerar             Interpretar         Ilustrar       Discutir          Diseñar                 Juzgar
+    Reconocer               Listar          Interpretar    Distinguir          Elegir                 Lograr
+     Recordar              Localizar         Mostar        Examinar          Ensamblar                Medir
+     Registrar              Narrar            Operar      Experimentar       Establecer               Planear
+      Relatar             Nombrar            Planear        Explicar         Formular                Planificar
+     Repetir              Organizar          Practicar     Identificar       Influenciar             Producir
+     Subrayar              Predecir         Programar     Inspeccionar        Justificar            Reconstruir
+                          Preparar            Trazar       Investigar         Moderar                Resolver
+                          Reafirmar            Usar          Lograr          Organizar                Revisar
+                          Reconocer           Utilizar     Organizar          Planear               Seleccionar
+                          Relacionar                         Probar           Preparar                Valorar
+                           Resumir                          Relatar           Priorizar               Valuar
+                           Revisar                          Resolver         Proponer
+                          Secuenciar                                        Recomendar
+                           Traducir                                            Reunir
+                          Transcribir                                          Validar
+                            Ubicar
+Descripción de los niveles de la Taxonomía de Bloom
+A continuación, se definen los niveles cognitivos principales asociados a la taxonomía de Bloom,
+tomado de:
+http://sitios.itesm.mx/va/calidadacademica/files/taxonomia.pdf
+
+
+Conocimiento
+
+Se refiere a la capacidad de recordar hechos específicos y universales, métodos y procesos,
+esquemas, estructuras o marcos de referencia sin elaboración de ninguna especie, puesto que
+cualquier cambio ya implica un proceso de nivel superior.
+
+Requiere que el alumno repita algún dato, teoría o principio en su forma original, como son:
+
+       terminología (palabras, términos técnicos, etc.)
+       hechos específicos (fechas, partes de algo, acontecimientos, etc.)
+       convencionalismos (formas de tratar ideas dentro de un campo de estudio, acuerdos
+        generales, fórmulas)
+       corrientes y sucesiones (tendencias y secuencias)
+       clasificaciones y categorías (clases, grupos, divisiones, etc.)
+       criterios (para juzgar o comprobar hechos, principios, opiniones y tipos de conducta)
+       metodología (métodos de investigación, técnicas y procedimientos)
+       principios y generalizaciones (abstracciones particulares para explicar, describir, predecir o
+        determinar acciones)
+       teorías y estructuras (evocación de teorías, interrelaciones de los principios y
+        generalizaciones)
+
+Comprensión
+
+Se refiere a la capacidad de comprender; en donde el estudiante sabe qué se le está comunicando
+y hace uso de los materiales o ideas que se le presentan, sin tener que relacionarlos con otros
+materiales o percibir la totalidad de sus implicaciones. El material requiere de un proceso de
+transferencia y generalización, lo que demanda una mayor capacidad de pensamiento abstracto.
+
+Requiere que el alumno explique las relaciones entre los datos o los principios que rigen las
+clasificaciones, dimensiones o arreglos en una determinada materia, conocimiento de los criterios
+fundamentales que rigen la evaluación de hechos o principios, y conocimientos de la metodología,
+principios y generalizaciones.
+
+       traducción (parafrasear; habilidad para comprender afirmaciones no literales como
+        simbolismos, metáforas, etc.; traducir material matemático, simbólico, etc.)
+       interpretación (explicación o resumen; implica reordenamiento o nuevos arreglos de
+        puntos de vista)
+       extrapolación (implicaciones, consecuencias, corolarios, efectos, predicción, etc.)
+Aplicación
+
+Implica la cantidad de elementos novedosos que habrán de reunirse en la tarea por realizar.
+Requiere el uso de abstracciones en situaciones particulares y concretas.
+
+Puede presentarse en forma de ideas generales, reglas de procedimiento o métodos generalizados
+y puede también relacionarse con los principios, ideas y teorías que deben recordarse de memoria
+y aplicarse.
+
+Se da a través de la solución de problemas en situaciones particulares y concretas.
+
+Análisis
+
+Consiste en descomponer un problema dado en sus partes y descubrir las relaciones existentes
+entre ellas. En general, la eventual solución se desprende de las relaciones que se descubren entre
+los elementos constituyentes. Implica el fraccionamiento de una comunicación en sus elementos
+constitutivos de tal modo, que aparezca claramente la jerarquía relativa de las ideas y se exprese
+explícitamente la relación existente entre éstas.
+
+          análisis de elementos (reconocer supuestos no expresados, distinguir entre hechos e
+           hipótesis)
+          identificación de relaciones entre los elementos (conexiones e interacciones entre
+           elementos, comprobación de la consistencia de las hipótesis con informaciones y
+           suposiciones dadas)
+           reconocimiento de los principios de organización de la situación problemática (estructura
+           explícita e implícita; reconocimiento de formas y modelos, técnicas generales utilizadas,
+           etc.)
+           identificación de conclusiones y fundamentación de enunciados.
+
+Síntesis
+
+Es el proceso de trabajar con fragmentos, partes, elementos, organizarlos, ordenarlos y
+combinarlos para formar un todo, un esquema o estructura que antes no estaba presente de
+manera clara.
+
+Requiere la reunión de los elementos y las partes para formar un todo.
+
+          elaboración de un plan o conjunto de actos planeados (habilidad para proponer formas de
+           comprobar las hipótesis)
+          desarrollo de conjuntos de relaciones para clasificar o explicar datos
+          deducción de proposiciones y relaciones (de un grupo de proposiciones básicas o de
+           representaciones simbólicas)
+          construcción de un modelo o estructura
+          reordenación de las partes en una secuencia lógica
+
+Evaluación
+Se refiere a la capacidad para evaluar; se mide a través de los procesos de análisis y síntesis.
+Requiere formular juicios sobre el valor de materiales y métodos, de acuerdo con determinados
+propósitos. Incluye los juicios cuantitativos y cualitativos de acuerdo a los criterios que se sugieran
+(los cuales son asignados).
+
+       juicios en función de evidencia interna (de exactitud lógica, consistencia o criterio interno)
+       juicios en función de criterios externos (criterios seleccionados; comparación de teorías,
+        comparación de un trabajo con respeto a normas, etc.)
+
