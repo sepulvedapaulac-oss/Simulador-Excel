@@ -206,10 +206,10 @@ function resetLab(){st.s1=null;st.s3=null;st.nt=0;st.note='';save();
 Object.assign(window.LESSON,{
   score(){return Math.round((st.s1||0)+s2pts()+(st.s3||0)+st.nt)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);
-    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)';$('#labTries').textContent=tries;
+    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)';$('#labTries').textContent=tries;
     const rows=[[st.s1||0,35,'Etapa 1 · Informe de la IA (primera revisión)',28],[s2pts(),30,'Etapa 2 · Columnas de control en Excel',30],[st.s3||0,30,'Etapa 3 · Acciones por registro (primera revisión)',24],[st.nt,5,'Etapa 3 · Nota de hallazgos (mejor versión)',4]];
     $('#labDetail').innerHTML=`<div class="checks2">${rows.map(r=>`<div class="${r[0]>=r[3]?'ok':'no'}">${r[2]}: <b>${fmt(r[0])} / ${r[1]}</b>${r[0]<r[3]?' · repasa esta etapa':''}</div>`).join('')}</div>`+
-      (sc<70?'<div class="alert-row">Aún no alcanzas el 70%. Presiona “Reintentar el laboratorio”: tus fórmulas de la etapa 2 se conservan y vuelves a clasificar las alertas y a decidir las acciones.</div>':'');
+      (sc<70?'<div class="alert-row">Te conviene practicar otra vez: presiona “Reintentar el laboratorio”: tus fórmulas de la etapa 2 se conservan y vuelves a clasificar las alertas y a decidir las acciones.</div>':'');
     $('#labNote').innerHTML=st.note?`<div class="promptbox">${esc(st.note)}</div><div style="margin-top:8px"><button class="small-btn" type="button" id="copyNote2">Copiar nota</button></div>`:'<p class="hint">Aún no generas tu nota.</p>';
     const c2=$('#copyNote2');if(c2)c2.addEventListener('click',copyNote)},
   init(a){api=a;S=a.S;

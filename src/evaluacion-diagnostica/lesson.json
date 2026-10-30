@@ -7,6 +7,7 @@
  "badge": "🧭 Diagnóstico sin nota",
  "voice": false,
  "pass": 0,
+ "practice": true,
  "lab": true,
  "dg": {
   "P": [
@@ -428,7 +429,7 @@
     "ae": "AE1",
     "mod": "Módulo 1 · Fundamentos de IA",
     "corto": "Fundamentos de IA",
-    "txt": "Identificar herramientas de inteligencia artificial en la gestión de remuneraciones según criterios de uso responsable de información salarial.",
+    "txt": "Identificar herramientas de inteligencia artificial en la gestión de remuneraciones, de acuerdo a criterios de uso responsable de información salarial.",
     "lecc": {
      "1.1": "1.1 ¿Qué puede hacer la IA por un analista de remuneraciones?",
      "1.2": "1.2 Herramientas de IA para el trabajo cotidiano",
@@ -440,7 +441,7 @@
     "ae": "AE2",
     "mod": "Módulo 2 · IA para revisión y validación de remuneraciones",
     "corto": "IA para revisión y validación de remuneraciones",
-    "txt": "Describir procedimientos de revisión de remuneraciones con inteligencia artificial según protocolos de validación de resultados.",
+    "txt": "Describir procedimientos de revisión de remuneraciones con inteligencia artificial en el cálculo mensual, de acuerdo a protocolos de validación de resultados.",
     "lecc": {
      "2.1": "2.1 La información que debe revisar la IA",
      "2.2": "2.2 IA como asistente para fórmulas de Excel",
@@ -452,7 +453,7 @@
     "ae": "AE3",
     "mod": "Módulo 3 · Análisis de datos y reportes de remuneraciones con IA",
     "corto": "Análisis de datos y reportes de remuneraciones con IA",
-    "txt": "Interpretar variaciones mensuales de remuneraciones en reportes con inteligencia artificial según indicadores de gestión.",
+    "txt": "Interpretar variaciones mensuales de remuneraciones en reportes con inteligencia artificial, de acuerdo a indicadores de gestión.",
     "lecc": {
      "3.1": "3.1 Preparación de datos para análisis",
      "3.2": "3.2 Variaciones mensuales",
@@ -464,7 +465,7 @@
     "ae": "AE4",
     "mod": "Módulo 4 · Automatización y productividad",
     "corto": "Automatización y productividad",
-    "txt": "Analizar flujos de trabajo de remuneraciones con inteligencia artificial según criterios de control de calidad.",
+    "txt": "Analizar flujos de trabajo de remuneraciones con inteligencia artificial en el cierre mensual, de acuerdo a criterios de control de calidad.",
     "lecc": {
      "4.1": "4.1 Oportunidades de automatización",
      "4.2": "4.2 Asistentes de IA para tareas administrativas",
@@ -473,7 +474,7 @@
     }
    }
   ],
-  "COMP": "Analizar procedimientos de gestión de remuneraciones con inteligencia artificial según criterios de protección de información salarial.",
+  "COMP": "Analizar procedimientos de gestión de remuneraciones con inteligencia artificial en el cierre mensual, de acuerdo a criterios de protección de información salarial.",
   "CURSO": "Inteligencia Artificial aplicada a la Gestión de Remuneraciones",
   "HORAS": 60
  }

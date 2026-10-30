@@ -6,6 +6,7 @@
  "course_label": "IA EN REMUNERACIONES · MÓDULO 3 · LABORATORIO 3B",
  "voice": false,
  "pass": 0.7,
+ "practice": true,
  "lab": true,
  "hoja": true
 }

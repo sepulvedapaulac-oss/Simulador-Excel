@@ -868,7 +868,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="grid-2">
     <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
       <ul class="elem-list" style="margin-top:8px"><li><b>1. Construir:</b> fórmulas que calculen la diferencia de cada control, su estado y si el cierre está listo para aprobar.</li><li><b>2. Decidir:</b> qué hacer con los controles que quedan en “REVISAR”.</li></ul>
-      <p style="margin:8px 0 0">Puntaje: fórmulas (70 %) + decisiones (30 %). Apruebas con <b>70%</b>.</p></div>
+      <p style="margin:8px 0 0">Logro: fórmulas (70 %) + decisiones (30 %). Es una <b>práctica sin nota</b>: no pondera en tu nota final y cuenta para tu avance.</p></div>
     <div class="story" style="margin-top:0"><strong>Recuerda:</strong> un control automático compara dos fuentes que deberían coincidir. Si la diferencia supera la tolerancia, el control queda en “REVISAR” y una persona decide qué hacer.</div>
   </div>
   <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
@@ -941,7 +941,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="report" style="text-align:left">
     <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
     <div class="metric"><div class="big" id="labCalc">—</div><small>Controles de fórmulas en verde (mejor intento)</small></div>
-    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado de tu práctica</small></div>
   </div>
   <div class="callout"><strong>Instrucción reutilizable para pedir ayuda a la IA con tu hoja de controles:</strong>
     <div class="promptbox">Actúa como analista de remuneraciones. Tengo una hoja de controles de cierre en Excel en español con estas columnas: control, valor del sistema, valor de control, tolerancia, diferencia y estado. Propón las fórmulas para la diferencia sin signo, el estado (“OK” o “REVISAR” según la tolerancia), el conteo de pendientes y un indicador final de “LISTO” o “PENDIENTE”. Usa punto y coma como separador. No inventes controles ni valores: trabaja solo con las columnas que te indico y explica cada fórmula en una línea.</div></div>
@@ -1103,7 +1103,7 @@ window.Hoja=Hoja;
 
 </script>
 <script>
-window.LESSON={"id": "ia_rem_lab4a", "voice": false, "pass": 0.7, "lab": true, "hoja": true, "audio": {}, "music": null};
+window.LESSON={"id": "ia_rem_lab4a", "voice": false, "pass": 0.7, "practice": true, "lab": true, "hoja": true, "audio": {}, "music": null};
 </script>
 <script>
 /* Laboratorio 4A · Hoja de controles de cierre con fórmulas (diferencia, estado, pendientes y listo para aprobar) */
@@ -1140,7 +1140,7 @@ const bestCalc=()=>Math.max(best,(S&&S.first.l4a_best)||0);
 Object.assign(window.LESSON,{
   score(){const d=['v1','v2','v3'].filter(k=>S.first[k]===true).length;return Math.round(bestCalc()/NCHK*70+d/3*30)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);$('#labPct').textContent=sc+'%';$('#labCalc').textContent=`${bestCalc()} / ${NCHK}`;
-    $('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(api){S=api.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     build();
@@ -1462,7 +1462,7 @@ function scSave(){if(!SC.ok)return;
   const d={v:1,cur:S.cur,max:S.max,done:[...S.done],first:S.first,qa:S.quiz.answers.length===Q.length?S.quiz.answers:[],c:S.completed};
   SC.set('cmi.suspend_data',JSON.stringify(d));SC.set('cmi.core.lesson_location',String(S.cur));
   if(typeof L.score==='function'){const sc=L.score();SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',sc);
-    if(S.completed)SC.set('cmi.core.lesson_status',sc>=(L.pass||0.7)*100?'passed':'failed')}
+    if(S.completed)SC.set('cmi.core.lesson_status',L.practice?'completed':sc>=(L.pass||0.7)*100?'passed':'failed')}
   else{if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
   if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed')}SC.commit()}
 if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(st===''||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');

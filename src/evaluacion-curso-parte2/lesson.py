@@ -7,7 +7,7 @@ base = here.parent / "evaluacion-curso"
 L = {"id": "ia_rem_eval_curso_p2", "ident": "IAREM_EVAL_CURSO_P2", "zip_name": "Evaluacion_final_Parte2_caso_practico",
      "title": "Evaluación final · Parte 2: Caso práctico integrador — IA aplicada a la Gestión de Remuneraciones",
      "course_label": "IA EN REMUNERACIONES · EVALUACIÓN FINAL · PARTE 2",
-     "voice": False, "pass": 0.7, "lab": True, "hoja": True, "p1": [], "soloP2": True}
+     "voice": False, "pass": 0.6, "lab": True, "hoja": True, "p1": [], "soloP2": True}
 here.joinpath("lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
 (here / "lesson.js").write_text((base / "lesson.js").read_text(encoding="utf-8"), encoding="utf-8")
 c = (base / "content.html").read_text(encoding="utf-8")
@@ -19,7 +19,7 @@ rep = [
  ('<div class="fe-part"><b>Parte 1 · 20 preguntas</b>Cinco preguntas de selección múltiple por módulo, identificadas como M1.P1, M1.P2… hasta M4.P5. Al responder cada una verás si es correcta o incorrecta, con su explicación. Cada pregunta se responde una sola vez.</div>',
   '<div class="fe-part"><b>Lo que harás</b>Actuarás como Camila en el cierre de noviembre de AndesCorp. Cada tarea corresponde a un aprendizaje esperado del curso (AE1 a AE4) y recibes retroalimentación al confirmarla.</div>'),
  ('<b>Parte 2 · Laboratorio de análisis</b>', '<b>Cuatro tareas</b>'),
- ('Parte 1 (50 %) + Parte 2 (50 %). Apruebas con <b>70 %</b>.', 'Promedio de las cuatro tareas. Apruebas con <b>70 %</b>. Esta parte equivale al 35 % de la nota final del curso y debes aprobarla.'),
+ ('Parte 1 (50 %) + Parte 2 (50 %). Apruebas con <b>60 %</b>.', 'Promedio de las cuatro tareas (25 puntos cada una, 100 en total). Apruebas con <b>60 %</b> (60 puntos, nota 4,0). Esta parte equivale al 40 % de la nota final del curso y debes aprobarla.'),
  ('<span class="lab-badge">Parte 2 de 2 · Laboratorio de análisis</span>', '<span class="lab-badge">Parte 2 · Caso práctico integrador</span>'),
 ]
 for a, b in rep:

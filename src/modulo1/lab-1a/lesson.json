@@ -6,5 +6,6 @@
  "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LABORATORIO 1A",
  "voice": false,
  "pass": 0.7,
+ "practice": true,
  "lab": true
 }

@@ -6,7 +6,7 @@
   <div class="grid-2">
     <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
       <ul class="elem-list" style="margin-top:8px"><li><b>1. Construir:</b> fórmulas que calculen la diferencia de cada control, su estado y si el cierre está listo para aprobar.</li><li><b>2. Decidir:</b> qué hacer con los controles que quedan en “REVISAR”.</li></ul>
-      <p style="margin:8px 0 0">Puntaje: fórmulas (70 %) + decisiones (30 %). Apruebas con <b>70%</b>.</p></div>
+      <p style="margin:8px 0 0">Logro: fórmulas (70 %) + decisiones (30 %). Es una <b>práctica sin nota</b>: no pondera en tu nota final y cuenta para tu avance.</p></div>
     <div class="story" style="margin-top:0"><strong>Recuerda:</strong> un control automático compara dos fuentes que deberían coincidir. Si la diferencia supera la tolerancia, el control queda en “REVISAR” y una persona decide qué hacer.</div>
   </div>
   <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
@@ -79,7 +79,7 @@
   <div class="report" style="text-align:left">
     <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
     <div class="metric"><div class="big" id="labCalc">—</div><small>Controles de fórmulas en verde (mejor intento)</small></div>
-    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado de tu práctica</small></div>
   </div>
   <div class="callout"><strong>Instrucción reutilizable para pedir ayuda a la IA con tu hoja de controles:</strong>
     <div class="promptbox">Actúa como analista de remuneraciones. Tengo una hoja de controles de cierre en Excel en español con estas columnas: control, valor del sistema, valor de control, tolerancia, diferencia y estado. Propón las fórmulas para la diferencia sin signo, el estado (“OK” o “REVISAR” según la tolerancia), el conteo de pendientes y un indicador final de “LISTO” o “PENDIENTE”. Usa punto y coma como separador. No inventes controles ni valores: trabaja solo con las columnas que te indico y explica cada fórmula en una línea.</div></div>

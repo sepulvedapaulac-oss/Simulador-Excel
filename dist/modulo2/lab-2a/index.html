@@ -900,7 +900,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
         <li><b>3. COINCIDIR</b>: detectar códigos que no existen en el maestro (25 puntos).</li>
         <li><b>4. Casos de prueba</b>: anotar el resultado esperado y comprobar que la fórmula lo reproduce (20 puntos).</li>
       </ul>
-      <p style="margin:8px 0 0">Puedes revisar y corregir las veces que quieras: se guarda tu mejor resultado en cada desafío. Apruebas con <b>70%</b>.</p></div>
+      <p style="margin:8px 0 0">Puedes revisar y corregir las veces que quieras: se guarda tu mejor resultado en cada desafío. Es una <b>práctica sin nota</b>: no pondera en tu nota final y cuenta para tu avance.</p></div>
     <div class="story" style="margin-top:0"><strong>Cómo funciona el simulador:</strong> se escribe como en Excel en español, con <b>punto y coma</b> entre argumentos (<code>=SUMA(D2:D13)</code>). Usa <b>$</b> para fijar un rango (<code>$H$2:$H$13</code>) y el botón <b>“Rellenar hacia abajo”</b> para copiar la fórmula de la fila 2 al resto de la columna. Todos los datos son ficticios y los montos, ilustrativos.</div>
   </div>
   <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
@@ -1013,7 +1013,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <h2>Tu desempeño en el laboratorio</h2>
   <div class="report" style="text-align:left">
     <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
-    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado de tu práctica</small></div>
     <div class="metric"><div class="big" id="labTries">—</div><small>Revisiones realizadas</small></div>
   </div>
   <div id="labDetail"></div>
@@ -1179,7 +1179,7 @@ window.Hoja=Hoja;
 
 </script>
 <script>
-window.LESSON={"id": "ia_rem_lab2a", "voice": false, "pass": 0.7, "lab": true, "hoja": true, "audio": {}, "music": null};
+window.LESSON={"id": "ia_rem_lab2a", "voice": false, "pass": 0.7, "practice": true, "lab": true, "hoja": true, "audio": {}, "music": null};
 </script>
 <script>
 /* Laboratorio 2A · Fórmulas de control: probar y corregir fórmulas propuestas por una IA en el simulador de Excel */
@@ -1328,7 +1328,7 @@ function bestOf(n){return Math.max(best[n],(S&&S.first&&+S.first['lab2a_b'+n])||
 Object.assign(window.LESSON,{
   score(){return [1,2,3,4].reduce((a,n)=>a+bestOf(n),0)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);
-    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)';$('#labTries').textContent=tries;
+    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)';$('#labTries').textContent=tries;
     $('#labDetail').innerHTML=`<div class="checks2">${[1,2,3,4].map(n=>{const b=bestOf(n);return `<div class="${b===MAX[n]?'ok':'no'}">Desafío ${n} · ${NAMES[n]}: <b>${b} / ${MAX[n]}</b>${b<MAX[n]?' · puedes mejorarlo':''}</div>`}).join('')}</div>`;
     const g=(n,k)=>H[n]?H[n].h.get(k):'';
     $('#labLib').innerHTML=[['Desafío 1 · D2',g(1,'D2')],['Desafío 2 · E2',g(2,'E2')],['Desafío 3 · C2',g(3,'C2')],['Desafío 3 · C15',g(3,'C15')],['Desafío 4 · F2',g(4,'F2')]]
@@ -1657,7 +1657,7 @@ function scSave(){if(!SC.ok)return;
   const d={v:1,cur:S.cur,max:S.max,done:[...S.done],first:S.first,qa:S.quiz.answers.length===Q.length?S.quiz.answers:[],c:S.completed};
   SC.set('cmi.suspend_data',JSON.stringify(d));SC.set('cmi.core.lesson_location',String(S.cur));
   if(typeof L.score==='function'){const sc=L.score();SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',sc);
-    if(S.completed)SC.set('cmi.core.lesson_status',sc>=(L.pass||0.7)*100?'passed':'failed')}
+    if(S.completed)SC.set('cmi.core.lesson_status',L.practice?'completed':sc>=(L.pass||0.7)*100?'passed':'failed')}
   else{if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
   if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed')}SC.commit()}
 if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(st===''||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');

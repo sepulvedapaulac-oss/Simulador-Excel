@@ -888,7 +888,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="grid-2">
     <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
       <ul class="elem-list" style="margin-top:8px"><li><b>1. Diseñar y simular:</b> asigna a cada etapa la IA, el sistema o una persona, y simula el mes hasta que ningún incidente llegue al pago.</li><li><b>2. Reflexionar:</b> dos decisiones sobre tu diseño.</li></ul>
-      <p style="margin:8px 0 0">Puntaje: diseño (40 %) + incidentes controlados (40 %) + reflexión (20 %). Apruebas con <b>70%</b>.</p></div>
+      <p style="margin:8px 0 0">Logro: diseño (40 %) + incidentes controlados (40 %) + reflexión (20 %). Es una <b>práctica sin nota</b>: no pondera en tu nota final y cuenta para tu avance.</p></div>
     <div class="story" style="margin-top:0"><strong>Ojo con el tiempo:</strong> el equipo dispone de <b>20 horas</b> para el cierre. Si todo lo hace una persona, no alcanza; si nada lo revisa una persona, los errores llegan al pago.</div>
   </div>
   <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
@@ -940,7 +940,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="report" style="text-align:left">
     <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
     <div class="metric"><div class="big" id="labDet">—</div><small>Etapas bien asignadas · incidentes controlados (mejor simulación)</small></div>
-    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado de tu práctica</small></div>
   </div>
   <div class="callout"><strong>Regla para diseñar cualquier flujo asistido:</strong>
     <div class="promptbox">La IA ordena, clasifica, señala y redacta. El sistema de remuneraciones calcula lo oficial. Una persona valida lo dudoso, decide sobre cada alerta y aprueba antes de pagar, con un segundo revisor. Cada decisión queda registrada con responsable, evidencia y fecha.</div></div>
@@ -958,7 +958,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
 
 </script>
 <script>
-window.LESSON={"id": "ia_rem_lab4b", "voice": false, "pass": 0.7, "lab": true, "audio": {}, "music": null};
+window.LESSON={"id": "ia_rem_lab4b", "voice": false, "pass": 0.7, "practice": true, "lab": true, "audio": {}, "music": null};
 </script>
 <script>
 /* Laboratorio 4B · Simulador de flujo: asignar actores a cada etapa y simular cinco incidentes */
@@ -1004,7 +1004,7 @@ function run(){const a=sel(),out=document.getElementById('simOut');
 Object.assign(window.LESSON,{
   score(){const v=['v1','v2'].filter(k=>S.first[k]===true).length;const a=Math.max(bestA,S.first.l4b_a||0),i=Math.max(bestI,S.first.l4b_i||0);return Math.round(a/6*40+i/5*40+v/2*20)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);$('#labPct').textContent=sc+'%';$('#labDet').textContent=`${Math.max(bestA,S.first.l4b_a||0)}/6 · ${Math.max(bestI,S.first.l4b_i||0)}/5`;
-    $('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(a){api=a;S=a.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     const fl=document.querySelector('#simRoot .fl');
@@ -1327,7 +1327,7 @@ function scSave(){if(!SC.ok)return;
   const d={v:1,cur:S.cur,max:S.max,done:[...S.done],first:S.first,qa:S.quiz.answers.length===Q.length?S.quiz.answers:[],c:S.completed};
   SC.set('cmi.suspend_data',JSON.stringify(d));SC.set('cmi.core.lesson_location',String(S.cur));
   if(typeof L.score==='function'){const sc=L.score();SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',sc);
-    if(S.completed)SC.set('cmi.core.lesson_status',sc>=(L.pass||0.7)*100?'passed':'failed')}
+    if(S.completed)SC.set('cmi.core.lesson_status',L.practice?'completed':sc>=(L.pass||0.7)*100?'passed':'failed')}
   else{if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
   if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed')}SC.commit()}
 if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(st===''||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');

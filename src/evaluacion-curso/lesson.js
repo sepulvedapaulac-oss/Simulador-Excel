@@ -2,9 +2,9 @@
    Parte 1: 20 preguntas (5 por módulo, M1.P1…M4.P5) con feedback inmediato.
    Parte 2: laboratorio de análisis integrador (cuatro tareas, una por módulo).
    Al terminar se descarga un PDF con los resultados (generado en el navegador, sin conexión).
-   Nota = 50 % Parte 1 + 50 % Parte 2. Aprobación: 70 %. */
+   Nota = 50 % Parte 1 + 50 % Parte 2. Aprobación: L.pass (60 % por defecto, exigencia del curso). */
 (function(){
-const L0=window.LESSON,P=L0.p1,SOLO=!!L0.soloP2; /* SOLO: versión con solo la Parte 2 (la Parte 1 va como cuestionario Moodle XML) */
+const L0=window.LESSON,P=L0.p1,SOLO=!!L0.soloP2,PASS=Math.round((L0.pass||0.6)*100); /* SOLO: versión con solo la Parte 2 (la Parte 1 va como cuestionario Moodle XML) */
 let api=null,S=null,hoja=null;
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -128,10 +128,10 @@ function comps(st){const t=taskScores(st);if(SOLO)return t;return [0,1,2,3].map(
 function studentName(){try{let w=window,n=0;while(w&&!w.API&&w.parent&&w.parent!==w&&n<10){w=w.parent;n++}if(w&&w.API){const v=String(w.API.LMSGetValue('cmi.core.student_name')||'');if(v){const p=v.split(',');return p.length===2?(p[1].trim()+' '+p[0].trim()):v}}}catch(e){}return ''}
 function p1Block(st){return `<div><h3>Parte 1 por módulo</h3>${MOD.map((m,k)=>`<div class="fe-mrow"><span>${m}</span><span class="fe-bar"><span style="width:${p1Mod(st,k)/5*100}%"></span></span><b>${p1Mod(st,k)}/5</b></div>`).join('')}</div>
    `}
-function report(){const st=ST(),el=$('#feReport');if(!el)return;const T=totals(st),pass=T.fin>=70,C=comps(st),col=pass?'var(--good)':'var(--bad)';
+function report(){const st=ST(),el=$('#feReport');if(!el)return;const T=totals(st),pass=T.fin>=PASS,C=comps(st),col=pass?'var(--good)':'var(--bad)';
   if(!st.n)st.n=studentName();
   el.innerHTML=`<div class="ev-outcome ${pass?'clean':'inc'}"><div class="ev-ring" style="background:conic-gradient(${col} ${T.fin*3.6}deg,var(--track) 0)"><span>${T.fin}%</span></div>
-    <div><h3>${pass?'Aprobado':'No aprobado'} · ${SOLO?'Parte 2':'Nota final'} ${T.fin} %</h3><p>${SOLO?`Caso práctico integrador: cuatro tareas, una por módulo. Se aprueba con 70 %.`:`Parte 1 (preguntas): <b>${T.p1} %</b> · Parte 2 (laboratorio de análisis): <b>${T.p2} %</b>. La nota final pondera ambas partes en 50 % y se aprueba con 70 %.`}</p></div></div>
+    <div><h3>${pass?'Aprobado':'No aprobado'} · ${SOLO?'Parte 2':'Nota final'} ${T.fin} %</h3><p>${SOLO?`Caso práctico integrador: cuatro tareas, una por módulo. Se aprueba con ${PASS} %.`:`Parte 1 (preguntas): <b>${T.p1} %</b> · Parte 2 (laboratorio de análisis): <b>${T.p2} %</b>. La nota final pondera ambas partes en 50 % y se aprueba con ${PASS} %.`}</p></div></div>
    <div class="grid-2" style="margin-top:14px">${SOLO?'':p1Block(st)}<div><h3>Parte 2 por tarea</h3>${TASKN.map((n,k)=>`<div class="fe-mrow"><span>${n}</span><span class="fe-bar"><span style="width:${T.t[k]}%"></span></span><b>${T.t[k]}%</b></div>`).join('')}</div></div>
    <h3 style="margin-top:16px">Retroalimentación por competencia</h3>
    ${C.map((p,k)=>{const l=LV(p);return `<div class="ev-comp"><div class="top"><b>${MOD[k]}</b><span class="pill ${l[1]}">${l[0]} · ${p}%</span></div><p>${p>=85?COMPTXT[k][0]:COMPTXT[k][1]}</p></div>`}).join('')}
@@ -180,7 +180,7 @@ function buildPDF(draw){const W=595,H=842,M=48;const pages=[];let ops=[],y=0;
   let out='%PDF-1.4\n%\xe2\xe3\xcf\xd3\n';const off=[];objs.forEach((o,i)=>{off.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`});
   const xref=out.length;out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`+off.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
   const bytes=new Uint8Array(out.length);for(let i=0;i<out.length;i++)bytes[i]=out.charCodeAt(i)&255;return bytes}
-function downloadPDF(st){const T=totals(st),C=comps(st),pass=T.fin>=70,d=new Date(),fecha=d.toLocaleDateString('es-CL',{day:'2-digit',month:'long',year:'numeric'})+' · '+d.toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'});
+function downloadPDF(st){const T=totals(st),C=comps(st),pass=T.fin>=PASS,d=new Date(),fecha=d.toLocaleDateString('es-CL',{day:'2-digit',month:'long',year:'numeric'})+' · '+d.toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'});
   const bytes=buildPDF(doc=>{const M=doc.M,W=doc.W;
     doc.rect(0,842-118,W,118,'#123b4a');doc.rect(0,842-122,W,4,'#159aa3');
     doc.text(M,842-44,'IA APLICADA A LA GESTIÓN DE REMUNERACIONES',9,true,'#7fd8d0');
@@ -191,7 +191,7 @@ function downloadPDF(st){const T=totals(st),C=comps(st),pass=T.fin>=70,d=new Dat
     doc.text(M,doc.y,'Fecha:',10,true);doc.text(M+80,doc.y,fecha,10);doc.gap(26);
     const bx=doc.y-62;doc.rect(M,bx,W-2*M,70,pass?'#e6f5ec':'#fdecee');
     doc.text(M+16,bx+42,(pass?'APROBADO':'NO APROBADO')+(SOLO?' · Parte 2: ':' · Nota final ')+T.fin+' %',16,true,pass?'#1d7a46':'#b3263e');
-    doc.text(M+16,bx+20,SOLO?'Caso práctico integrador  ·  Aprobación con 70 %':'Parte 1: '+T.p1+' %  ·  Parte 2: '+T.p2+' %  ·  Ponderación 50 % / 50 %  ·  Aprobación con 70 %',10,false,'#172431');
+    doc.text(M+16,bx+20,SOLO?'Caso práctico integrador  ·  Aprobación con '+PASS+' %':'Parte 1: '+T.p1+' %  ·  Parte 2: '+T.p2+' %  ·  Ponderación 50 % / 50 %  ·  Aprobación con '+PASS+' %',10,false,'#172431');
     doc.y=bx-24;
     doc.text(M,doc.y,'Resumen por módulo',13,true,'#123b4a');doc.gap(10);
     if(SOLO){doc.table([{t:'Módulo',w:220},{t:'Tarea de la Parte 2',w:170},{t:'Competencia',w:109}],
@@ -223,7 +223,7 @@ function downloadPDF(st){const T=totals(st),C=comps(st),pass=T.fin>=70,d=new Dat
 
 /* ---------- Integración con el motor ---------- */
 Object.assign(window.LESSON,{
-  pass:0.7,
+  pass:PASS/100,
   score(){return S&&S.first.fe?totals(ST()).fin:0},
   report,
   init(a){api=a;S=a.S;

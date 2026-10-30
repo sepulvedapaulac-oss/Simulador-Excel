@@ -868,7 +868,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="grid-2">
     <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
       <ul class="elem-list" style="margin-top:8px"><li><b>1. Semáforo:</b> decide qué hacer con cada columna (usar, transformar o eliminar).</li><li><b>2. Tabla segura:</b> constrúyela en el simulador de Excel con fórmulas y comprueba con controles de cuadratura que no perdiste información.</li></ul>
-      <p style="margin:8px 0 0">Puntaje: semáforo (40 %) + tabla segura (60 %). Apruebas con <b>70%</b>.</p></div>
+      <p style="margin:8px 0 0">Logro: semáforo (40 %) + tabla segura (60 %). Es una <b>práctica sin nota</b>: no pondera en tu nota final y cuenta para tu avance.</p></div>
     <div class="story" style="margin-top:0"><strong>Recuerda:</strong> las fórmulas en este simulador se escriben como en Excel en español, con punto y coma entre argumentos. Ejemplo: <code>=SUMA(D2:D11)</code>.</div>
   </div>
   <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
@@ -913,7 +913,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="report" style="text-align:left">
     <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
     <div class="metric"><div class="big" id="labSem">—</div><small>Semáforo correcto al primer intento</small></div>
-    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado de tu práctica</small></div>
   </div>
   <div class="callout"><strong>Tu tabla segura está lista para la IA.</strong> Ahora puedes usarla en la herramienta corporativa con una instrucción como esta:
     <div class="promptbox">Actúa como analista de remuneraciones. Te entrego una tabla anonimizada con código, área, sueldo base y horas extra de 10 colaboradores (octubre). Identifica qué áreas concentran más horas extra y si hay casos que superen 12 horas en el mes. No intentes identificar a las personas ni inventes datos. Entrega una tabla por área y una lista de casos a revisar.</div></div>
@@ -932,7 +932,9 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
    - Celdas A1…, barra de fórmulas, selección, edición con Enter/Tab/flechas.
    - Fórmulas: números (coma decimal), referencias, rangos, + - * / ^ &, comparaciones,
      funciones SUMA, PROMEDIO, CONTAR, CONTARA, MAX, MIN, SI, Y, O, NO, REDONDEAR, ABS,
-     BUSCARV, CONTAR.SI, SUMAR.SI, TEXTO, CONCATENAR, SI.ERROR, ESBLANCO.
+     BUSCARV, CONTAR.SI, SUMAR.SI, TEXTO, CONCATENAR, SI.ERROR, ESBLANCO,
+     BUSCARX, COINCIDIR, INDICE, SUMAR.SI.CONJUNTO, CONTAR.SI.CONJUNTO, PROMEDIO.SI, SUMAPRODUCTO,
+     ENTERO, TRUNCAR, ESNUMERO, ESERROR, IZQUIERDA, DERECHA, LARGO, MAYUSC, ESPACIOS.
    - Separador de argumentos: punto y coma (;), como en Excel en español.
    Uso: const h = Hoja(contenedor, {cols, rows, data:{A1:'Nombre',...}, locked:['A1',...], onChange}) */
 (function(){
@@ -1021,6 +1023,24 @@ function Hoja(root,opts){
           if(!row)throw new FErr('#N/A');if(col<1||col>row.length)throw new FErr('#¡REF!');return row[col-1]}
         case 'CONTAR.SI':{const vals=flat([ev(0)]),crit=ev(1);return vals.filter(v=>matchCrit(v,crit)).length}
         case 'SUMAR.SI':{const vals=flat([ev(0)]),crit=ev(1),sum=args[2]?flat([ev(2)]):vals;return vals.reduce((a,v,i)=>a+(matchCrit(v,crit)&&typeof sum[i]==='number'?sum[i]:0),0)}
+        case 'BUSCARX':{const key=ev(0),look=flat([ev(1)]),ret=ev(2);if(!ret||!ret.range)throw new FErr('#¡VALOR!');const rv=ret.range.length===1?ret.range[0]:ret.range.map(r=>r[0]);
+          const k=typeof key==='string'?key.toLowerCase():key;const i=look.findIndex(v=>(typeof v==='string'?v.toLowerCase():v)==k);if(i<0){if(args[3])return ev(3);throw new FErr('#N/A')}return rv[i]}
+        case 'COINCIDIR':{const key=ev(0),look=flat([ev(1)]);const k=typeof key==='string'?key.toLowerCase():key;const i=look.findIndex(v=>(typeof v==='string'?v.toLowerCase():v)==k);if(i<0)throw new FErr('#N/A');return i+1}
+        case 'INDICE':{const r=ev(0);if(!r||!r.range)throw new FErr('#¡VALOR!');const rows=r.range;let ri=num(ev(1)),ci=args[2]?num(ev(2)):1;if(rows.length===1&&!args[2]){ci=ri;ri=1}
+          if(ri<1||ri>rows.length||ci<1||ci>rows[0].length)throw new FErr('#¡REF!');return rows[ri-1][ci-1]}
+        case 'SUMAR.SI.CONJUNTO':{const sum=flat([ev(0)]);const cr=[];for(let j=1;j<args.length;j+=2)cr.push([flat([ev(j)]),ev(j+1)]);return sum.reduce((a,v,i)=>a+(cr.every(([r,c])=>matchCrit(r[i],c))&&typeof v==='number'?v:0),0)}
+        case 'CONTAR.SI.CONJUNTO':{const cr=[];for(let j=0;j<args.length;j+=2)cr.push([flat([ev(j)]),ev(j+1)]);const n=cr[0][0].length;let c=0;for(let i=0;i<n;i++)if(cr.every(([r,cc])=>matchCrit(r[i],cc)))c++;return c}
+        case 'PROMEDIO.SI':{const vals=flat([ev(0)]),crit=ev(1),av=args[2]?flat([ev(2)]):vals;const v=vals.map((x,i)=>matchCrit(x,crit)?av[i]:null).filter(x=>typeof x==='number');if(!v.length)throw new FErr('#¡DIV/0!');return v.reduce((a,b)=>a+b,0)/v.length}
+        case 'SUMAPRODUCTO':{const arrs=args.map(a=>flat([a()]));return arrs[0].reduce((a,_,i)=>a+arrs.reduce((m,arr)=>m*(typeof arr[i]==='number'?arr[i]:0),1),0)}
+        case 'ENTERO':return Math.floor(num(ev(0)));
+        case 'TRUNCAR':{const n=num(ev(0)),f=Math.pow(10,num(ev(1)||0));return Math.trunc(n*f)/f}
+        case 'ESNUMERO':return typeof ev(0)==='number';
+        case 'ESERROR':try{ev(0);return false}catch(e){return true}
+        case 'IZQUIERDA':return fmtPlain(ev(0)).slice(0,args[1]?num(ev(1)):1);
+        case 'DERECHA':{const x=fmtPlain(ev(0)),n=args[1]?num(ev(1)):1;return x.slice(Math.max(0,x.length-n))}
+        case 'LARGO':return fmtPlain(ev(0)).length;
+        case 'MAYUSC':return fmtPlain(ev(0)).toUpperCase();
+        case 'ESPACIOS':return fmtPlain(ev(0)).trim().replace(/\s+/g,' ');
         default:throw new FErr('#¿NOMBRE?')}}
     function matchCrit(v,c){if(typeof c==='number')return v===c;const m=/^(<=|>=|<>|<|>|=)?(.*)$/.exec(String(c));const o=m[1]||'=',x=m[2];const n=parseFloat(x.replace(',','.'));
       const a=isNaN(n)?String(v).toLowerCase():v,b=isNaN(n)?x.toLowerCase():n;
@@ -1055,7 +1075,7 @@ window.Hoja=Hoja;
 
 </script>
 <script>
-window.LESSON={"id": "ia_rem_lab1b", "voice": false, "pass": 0.7, "lab": true, "hoja": true, "seltables": {"semaforo": {"options": ["🟢 Usar tal cual", "🟡 Transformar", "🔴 Eliminar"], "rows": [{"label": "Nombre", "c": 1, "why": "Se reemplaza por un código interno: así puedes volver a la persona solo con la tabla de códigos, que queda en tu equipo.", "hint": "La IA no necesita saber quién es, pero tú sí necesitas poder volver a cada caso."}, {"label": "RUT", "c": 2, "why": "Identificador directo que el análisis no necesita: se elimina.", "hint": "¿Aporta algo el RUT a un análisis de horas extra por área?"}, {"label": "Área", "c": 0, "why": "Es la variable del análisis y, en áreas con varias personas, no identifica a nadie.", "hint": "Es justamente el criterio por el que se pide el análisis."}, {"label": "Sueldo base", "c": 0, "why": "Asociado a un código y no a un nombre, sirve para dimensionar el costo de las horas extra.", "hint": "Sin nombre ni RUT, ¿sigue siendo útil para el análisis?"}, {"label": "Horas extra del mes", "c": 0, "why": "Es el dato central del análisis.", "hint": "Es el dato que la gerencia quiere analizar."}, {"label": "Cuenta bancaria", "c": 2, "why": "Dato financiero personal sin ninguna utilidad para este análisis.", "hint": "¿Para qué necesitaría la IA una cuenta bancaria?"}, {"label": "AFP", "c": 2, "why": "No se necesita para analizar horas extra: se elimina (minimización).", "hint": "Piensa en la minimización: ¿lo necesita la tarea?"}, {"label": "Diagnóstico de licencia médica", "c": 2, "why": "Dato sensible de salud, irrelevante para este análisis.", "hint": "Es un dato sensible y no forma parte de la pregunta."}]}}, "audio": {}, "music": null};
+window.LESSON={"id": "ia_rem_lab1b", "voice": false, "pass": 0.7, "practice": true, "lab": true, "hoja": true, "seltables": {"semaforo": {"options": ["🟢 Usar tal cual", "🟡 Transformar", "🔴 Eliminar"], "rows": [{"label": "Nombre", "c": 1, "why": "Se reemplaza por un código interno: así puedes volver a la persona solo con la tabla de códigos, que queda en tu equipo.", "hint": "La IA no necesita saber quién es, pero tú sí necesitas poder volver a cada caso."}, {"label": "RUT", "c": 2, "why": "Identificador directo que el análisis no necesita: se elimina.", "hint": "¿Aporta algo el RUT a un análisis de horas extra por área?"}, {"label": "Área", "c": 0, "why": "Es la variable del análisis y, en áreas con varias personas, no identifica a nadie.", "hint": "Es justamente el criterio por el que se pide el análisis."}, {"label": "Sueldo base", "c": 0, "why": "Asociado a un código y no a un nombre, sirve para dimensionar el costo de las horas extra.", "hint": "Sin nombre ni RUT, ¿sigue siendo útil para el análisis?"}, {"label": "Horas extra del mes", "c": 0, "why": "Es el dato central del análisis.", "hint": "Es el dato que la gerencia quiere analizar."}, {"label": "Cuenta bancaria", "c": 2, "why": "Dato financiero personal sin ninguna utilidad para este análisis.", "hint": "¿Para qué necesitaría la IA una cuenta bancaria?"}, {"label": "AFP", "c": 2, "why": "No se necesita para analizar horas extra: se elimina (minimización).", "hint": "Piensa en la minimización: ¿lo necesita la tarea?"}, {"label": "Diagnóstico de licencia médica", "c": 2, "why": "Dato sensible de salud, irrelevante para este análisis.", "hint": "Es un dato sensible y no forma parte de la pregunta."}]}}, "audio": {}, "music": null};
 </script>
 <script>
 /* Laboratorio 1B · Tabla segura en el simulador de Excel */
@@ -1098,7 +1118,7 @@ function check(){const out=[];let ok=0;const v=k=>hoja.value(k);
 Object.assign(window.LESSON,{
   score(){const keys=Object.keys(S.first).filter(k=>k.startsWith('stsemaforo'));const sem=keys.length?keys.filter(k=>S.first[k]).length/8:0;return Math.round(sem*40+bestTable/5*60)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);const keys=Object.keys(S.first).filter(k=>k.startsWith('stsemaforo'));
-    $('#labPct').textContent=sc+'%';$('#labSem').textContent=`${keys.filter(k=>S.first[k]).length} / 8`;$('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labPct').textContent=sc+'%';$('#labSem').textContent=`${keys.filter(k=>S.first[k]).length} / 8`;$('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(api){S=api.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     build();
@@ -1420,7 +1440,7 @@ function scSave(){if(!SC.ok)return;
   const d={v:1,cur:S.cur,max:S.max,done:[...S.done],first:S.first,qa:S.quiz.answers.length===Q.length?S.quiz.answers:[],c:S.completed};
   SC.set('cmi.suspend_data',JSON.stringify(d));SC.set('cmi.core.lesson_location',String(S.cur));
   if(typeof L.score==='function'){const sc=L.score();SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',sc);
-    if(S.completed)SC.set('cmi.core.lesson_status',sc>=(L.pass||0.7)*100?'passed':'failed')}
+    if(S.completed)SC.set('cmi.core.lesson_status',L.practice?'completed':sc>=(L.pass||0.7)*100?'passed':'failed')}
   else{if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
   if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed')}SC.commit()}
 if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(st===''||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');

@@ -879,7 +879,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="grid-2">
     <div class="callout"><strong>Tu misión tiene dos etapas:</strong>
       <ul class="elem-list" style="margin-top:8px"><li><b>1. Indicadores:</b> calcúlalos con fórmulas en el simulador de Excel.</li><li><b>2. Gráfico:</b> diseña el gráfico principal del tablero sin trampas: tipo, eje, título y fuente.</li></ul>
-      <p style="margin:8px 0 0">Puntaje: indicadores (60 %) + gráfico (40 %). Apruebas con <b>70%</b>.</p></div>
+      <p style="margin:8px 0 0">Logro: indicadores (60 %) + gráfico (40 %). Es una <b>práctica sin nota</b>: no pondera en tu nota final y cuenta para tu avance.</p></div>
     <div class="story" style="margin-top:0"><strong>Recuerda:</strong> cada indicador tiene una fórmula. Costo promedio = costo / dotación. Peso de horas extra = horas extra / costo × 100. Peso de bonos = bonos / costo × 100.</div>
   </div>
   <button class="small-btn primary" type="button" id="startLab" style="margin-top:14px">Comenzar laboratorio →</button>
@@ -926,7 +926,7 @@ button.slip-row{cursor:pointer}button.slip-row:hover{background:var(--mint)}
   <div class="report" style="text-align:left">
     <div class="metric"><div class="big" id="labPct">—</div><small>Puntaje total del laboratorio</small></div>
     <div class="metric"><div class="big" id="labDet">—</div><small>Indicadores · controles del gráfico (mejor intento)</small></div>
-    <div class="metric"><div class="big" id="labState">—</div><small>Estado (aprobación con 70%)</small></div>
+    <div class="metric"><div class="big" id="labState">—</div><small>Estado de tu práctica</small></div>
   </div>
   <div class="callout"><strong>Instrucción reutilizable para pedir un gráfico a la IA:</strong>
     <div class="promptbox">Con esta tabla de indicadores por área (datos cuadrados, octubre 2026), propón un gráfico de barras planas para comparar el peso de las horas extra. Eje vertical desde cero, un solo color con el área principal destacada, título con la conclusión y fuente con el período. Sin efectos 3D ni colores decorativos.</div></div>
@@ -1088,7 +1088,7 @@ window.Hoja=Hoja;
 
 </script>
 <script>
-window.LESSON={"id": "ia_rem_lab3b", "voice": false, "pass": 0.7, "lab": true, "hoja": true, "audio": {}, "music": null};
+window.LESSON={"id": "ia_rem_lab3b", "voice": false, "pass": 0.7, "practice": true, "lab": true, "hoja": true, "audio": {}, "music": null};
 </script>
 <script>
 /* Laboratorio 3B · Indicadores por área en el simulador y diseño de un gráfico honesto */
@@ -1138,7 +1138,7 @@ const bT=()=>Math.max(bestT,(S&&S.first.l3b_t)||0),bG=()=>Math.max(bestG,(S&&S.f
 Object.assign(window.LESSON,{
   score(){return Math.round(bT()/3*60+bG()/5*40)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);$('#labPct').textContent=sc+'%';$('#labDet').textContent=`${bT()}/3 · ${bG()}/5`;
-    $('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(api){S=api.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     build();
@@ -1462,7 +1462,7 @@ function scSave(){if(!SC.ok)return;
   const d={v:1,cur:S.cur,max:S.max,done:[...S.done],first:S.first,qa:S.quiz.answers.length===Q.length?S.quiz.answers:[],c:S.completed};
   SC.set('cmi.suspend_data',JSON.stringify(d));SC.set('cmi.core.lesson_location',String(S.cur));
   if(typeof L.score==='function'){const sc=L.score();SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',sc);
-    if(S.completed)SC.set('cmi.core.lesson_status',sc>=(L.pass||0.7)*100?'passed':'failed')}
+    if(S.completed)SC.set('cmi.core.lesson_status',L.practice?'completed':sc>=(L.pass||0.7)*100?'passed':'failed')}
   else{if(S.quiz.taken){SC.set('cmi.core.score.min',0);SC.set('cmi.core.score.max',100);SC.set('cmi.core.score.raw',Math.round(S.quiz.score/Q.length*100))}
   if(S.completed&&passScore())SC.set('cmi.core.lesson_status','passed')}SC.commit()}
 if(SC.ok){const st=SC.get('cmi.core.lesson_status');if(st===''||st==='not attempted')SC.set('cmi.core.lesson_status','incomplete');

@@ -38,7 +38,7 @@ function check(){const out=[];let ok=0;const v=k=>hoja.value(k);
 Object.assign(window.LESSON,{
   score(){const keys=Object.keys(S.first).filter(k=>k.startsWith('stsemaforo'));const sem=keys.length?keys.filter(k=>S.first[k]).length/8:0;return Math.round(sem*40+bestTable/5*60)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);const keys=Object.keys(S.first).filter(k=>k.startsWith('stsemaforo'));
-    $('#labPct').textContent=sc+'%';$('#labSem').textContent=`${keys.filter(k=>S.first[k]).length} / 8`;$('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labPct').textContent=sc+'%';$('#labSem').textContent=`${keys.filter(k=>S.first[k]).length} / 8`;$('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(api){S=api.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     build();

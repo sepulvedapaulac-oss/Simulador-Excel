@@ -11,7 +11,7 @@ L = {"id": "ia_rem_diagnostico", "ident": "IAREM_DIAGNOSTICO", "zip_name": "Eval
      "title": "Evaluación diagnóstica integral — IA aplicada a la Gestión de Remuneraciones",
      "course_label": "IA EN REMUNERACIONES · EVALUACIÓN DIAGNÓSTICA",
      "badge": "🧭 Diagnóstico sin nota",
-     "voice": False, "pass": 0, "lab": True,
+     "voice": False, "pass": 0, "practice": True, "lab": True,
      "dg": {"P": P, "AUTO": AUTO, "NIV": NIVELES_AUTO, "AE": AE, "COMP": COMPETENCIA, "CURSO": CURSO, "HORAS": HORAS}}
 here.joinpath("lesson.json").write_text(json.dumps(L, ensure_ascii=False, indent=1), encoding="utf-8")
 print("lesson.json OK")

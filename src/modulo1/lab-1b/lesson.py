@@ -2,7 +2,7 @@ import json, pathlib
 OPTS = ["🟢 Usar tal cual", "🟡 Transformar", "🔴 Eliminar"]
 L = {"id": "ia_rem_lab1b", "ident": "IAREM_M1_LAB1B", "zip_name": "Laboratorio_1B_Semaforo_de_datos",
  "title": "Laboratorio 1B — Semáforo de datos", "course_label": "IA EN REMUNERACIONES · MÓDULO 1 · LABORATORIO 1B",
- "voice": False, "pass": 0.7, "lab": True, "hoja": True,
+ "voice": False, "pass": 0.7, "practice": True, "lab": True, "hoja": True,
  "seltables": {"semaforo": {"options": OPTS, "rows": [
   {"label": "Nombre", "c": 1, "why": "Se reemplaza por un código interno: así puedes volver a la persona solo con la tabla de códigos, que queda en tu equipo.", "hint": "La IA no necesita saber quién es, pero tú sí necesitas poder volver a cada caso."},
   {"label": "RUT", "c": 2, "why": "Identificador directo que el análisis no necesita: se elimina.", "hint": "¿Aporta algo el RUT a un análisis de horas extra por área?"},

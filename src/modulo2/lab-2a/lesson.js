@@ -144,7 +144,7 @@ function bestOf(n){return Math.max(best[n],(S&&S.first&&+S.first['lab2a_b'+n])||
 Object.assign(window.LESSON,{
   score(){return [1,2,3,4].reduce((a,n)=>a+bestOf(n),0)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);
-    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)';$('#labTries').textContent=tries;
+    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)';$('#labTries').textContent=tries;
     $('#labDetail').innerHTML=`<div class="checks2">${[1,2,3,4].map(n=>{const b=bestOf(n);return `<div class="${b===MAX[n]?'ok':'no'}">Desafío ${n} · ${NAMES[n]}: <b>${b} / ${MAX[n]}</b>${b<MAX[n]?' · puedes mejorarlo':''}</div>`}).join('')}</div>`;
     const g=(n,k)=>H[n]?H[n].h.get(k):'';
     $('#labLib').innerHTML=[['Desafío 1 · D2',g(1,'D2')],['Desafío 2 · E2',g(2,'E2')],['Desafío 3 · C2',g(3,'C2')],['Desafío 3 · C15',g(3,'C15')],['Desafío 4 · F2',g(4,'F2')]]

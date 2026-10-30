@@ -32,7 +32,7 @@ const bestCalc=()=>Math.max(best,(S&&S.first.l4a_best)||0);
 Object.assign(window.LESSON,{
   score(){const d=['v1','v2','v3'].filter(k=>S.first[k]===true).length;return Math.round(bestCalc()/NCHK*70+d/3*30)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);$('#labPct').textContent=sc+'%';$('#labCalc').textContent=`${bestCalc()} / ${NCHK}`;
-    $('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(api){S=api.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     build();

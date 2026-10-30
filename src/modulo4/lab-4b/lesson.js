@@ -41,7 +41,7 @@ function run(){const a=sel(),out=document.getElementById('simOut');
 Object.assign(window.LESSON,{
   score(){const v=['v1','v2'].filter(k=>S.first[k]===true).length;const a=Math.max(bestA,S.first.l4b_a||0),i=Math.max(bestI,S.first.l4b_i||0);return Math.round(a/6*40+i/5*40+v/2*20)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);$('#labPct').textContent=sc+'%';$('#labDet').textContent=`${Math.max(bestA,S.first.l4b_a||0)}/6 · ${Math.max(bestI,S.first.l4b_i||0)}/5`;
-    $('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(a){api=a;S=a.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     const fl=document.querySelector('#simRoot .fl');

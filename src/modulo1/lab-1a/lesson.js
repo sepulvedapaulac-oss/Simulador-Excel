@@ -50,7 +50,7 @@ Object.assign(window.LESSON,{
   pass:0.7,
   score(){return Math.round(best.reduce((a,b)=>a+b,0)/15*100)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);
-    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)';$('#labTries').textContent=tries;
+    $('#labPct').textContent=sc+'%';$('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)';$('#labTries').textContent=tries;
     $('#labDetail').innerHTML=`<div class="checks2">${['Explicar una fórmula','Detectar inconsistencias','Responder una consulta'].map((t,i)=>`<div class="${best[i]>=4?'ok':'no'}">Desafío ${i+1} · ${t}: <b>${best[i]} / 5</b>${best[i]<4?' · puedes mejorarlo':''}</div>`).join('')}</div>`;
     $('#labLib').innerHTML=bestText.map((t,i)=>`<div class="promptbox"><b>Desafío ${i+1}:</b> ${t?esc(t):'(sin instrucción)'}</div>`).join('')},
   init(api){

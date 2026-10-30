@@ -103,7 +103,7 @@ Todas las lecciones incluyen, además: video integrado, comprobación breve, tra
 
 ## 6. Recursos complementarios por módulo
 
-| Módulo | PDF 1 | PDF 2 | Laboratorio A | Laboratorio B | Evaluación final ramificada | Caso Mindsmith |
+| Módulo | PDF 1 | PDF 2 | Laboratorio A | Laboratorio B | Evaluación ramificada (fuera de la planilla; no se publica) | Caso Mindsmith (fuera de la planilla; oculto) |
 |---|---|---|---|---|---|---|
 | **1** Fundamentos | Guía: IA generativa en remuneraciones, usos y límites | Checklist de uso responsable y protección de datos | Laboratorio de prompts (respuestas IA simuladas) | Semáforo de datos: anonimizar una planilla en el simulador Excel | — (se evalúa con el cuestionario XML) | Camila y la propuesta de usar IA con datos salariales |
 | **2** Revisión | Guía de fórmulas de control en Excel | Protocolo de validación de resultados de IA | Fórmulas de control (BUSCARX/SI/COINCIDIR con casos de prueba) | Auditoría del cierre: 12 registros con errores | "Cierre de remuneraciones bajo revisión" | El cierre con diferencias en horas extraordinarias |
@@ -112,16 +112,18 @@ Todas las lecciones incluyen, además: video integrado, comprobación breve, tra
 
 Cada módulo incluye además: **1 video Moodle en MP4** (1080p, presentación y síntesis del módulo, con la voz del curso, sin música y con subtítulos `.vtt`), **resumen carrusel** y **glosario carrusel**.
 
-## 7. Evaluación (ponderación definida por la autora, octubre 2026)
+## 7. Evaluación (planilla SENCE 1961128, presentada; fuente de verdad)
 
 | Componente | Peso |
 |---|---:|
-| Laboratorios A y B (2,5 % por módulo; 1,25 % cada laboratorio) | 10 % |
-| Evaluación de cada módulo (5 % c/u): M1 = cuestionario; M2–M4 = cuestionario 2,5 % + evaluación ramificada 2,5 % | 20 % |
-| Evaluación final · Parte 1 (cuestionario XML de 20 preguntas) | 35 % |
-| Evaluación final · Parte 2 (SCORM caso práctico integrador) | 35 % |
+| Evaluación del Módulo 1: cuestionario de 10 preguntas (30 min) | 10 % |
+| Evaluación de los módulos 2, 3 y 4 (10 % c/u): cuestionario 40 % del módulo (4 % del curso) + tarea de caso práctico con plantilla, corregida por la tutora con rúbrica de 100 puntos, 60 % del módulo (6 % del curso) | 30 % |
+| Evaluación final · Parte 1 (cuestionario de 20 preguntas, 5 por AE, 1 h) | 20 % |
+| Evaluación final · Parte 2 (SCORM caso práctico integrador, 4 tareas, PDF de resultados, 1 h) | 40 % |
 
-Aprobación: aprobar la evaluación de cada módulo y las dos partes de la evaluación final (70 % cada una), y nota final ponderada ≥ 4,0 (escala 1,0–7,0). El caso Mindsmith es práctica sin nota. Nota: la planilla SENCE original declaraba 4 × 10 % + 60 % con evaluaciones de módulo formativas; hay que actualizarla.
+Tareas Parte 2: M2 «Revisión asistida del cierre de octubre», M3 «Informe de variación de noviembre para la gerencia», M4 «Rediseño asistido de la carga de novedades» (plantillas Word en `dist/moduloN/Evaluacion_MN_Parte2_*.docx`, rúbrica al final de cada plantilla y configurada en Moodle).
+
+Norma: escala de 1,0 a 7,0 con **60 % de exigencia** (60 % = 4,0). Se debe aprobar cada evaluación de módulo y las dos partes de la evaluación final, y obtener 4,0 en la nota final ponderada. **Formativos sin nota (peso 0):** evaluación diagnóstica, comprobaciones de las lecciones y los 8 laboratorios (SCORM en modo práctica: informan «completado», no aprobado/reprobado). Las evaluaciones ramificadas SCORM de los módulos 2 a 4 y los casos Mindsmith no están en la planilla: no se publican en Moodle (quedan ocultos). Configuración aplicada en Moodle: `docs/moodle-bitacora-113.md`.
 
 ## 8. Pendientes técnicos
 

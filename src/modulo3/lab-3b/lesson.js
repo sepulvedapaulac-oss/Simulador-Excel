@@ -45,7 +45,7 @@ const bT=()=>Math.max(bestT,(S&&S.first.l3b_t)||0),bG=()=>Math.max(bestG,(S&&S.f
 Object.assign(window.LESSON,{
   score(){return Math.round(bT()/3*60+bG()/5*40)},
   report(){const sc=this.score(),$=s=>document.querySelector(s);$('#labPct').textContent=sc+'%';$('#labDet').textContent=`${bT()}/3 · ${bG()}/5`;
-    $('#labState').textContent=sc>=70?'Aprobado':'Pendiente';$('#labState').style.color=sc>=70?'var(--good)':'var(--bad)'},
+    $('#labState').textContent=sc>=70?'Buen dominio':'Sigue practicando';$('#labState').style.color=sc>=70?'var(--good)':'var(--teal-ink)'},
   init(api){S=api.S;
     document.getElementById('startLab').addEventListener('click',()=>{api.done('start');document.getElementById('nextBtn').click()});
     build();

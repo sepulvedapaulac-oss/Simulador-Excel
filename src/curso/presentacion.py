@@ -18,14 +18,15 @@ def hb(rows):
 def modulo(m):
     p, a, e = m["dist"]
     lecc = "".join(f"<li>Lección {l}</li>" for l in m["lecciones"])
-    extra = f'<li><b>Evaluación ramificada:</b> «{m["ramificada"]}» (2,5 % de la nota)</li>' if m["ramificada"] else ""
+    extra = (f'<li><b>Evaluación del módulo (10 % de la nota):</b> cuestionario (4 %) y tarea de caso práctico «{m["tarea"]}» con plantilla, corregida por la tutora con rúbrica (6 %)</li>'
+             if m["tarea"] else '<li><b>Evaluación del módulo (10 % de la nota):</b> cuestionario de 10 preguntas</li>')
     return {"kicker": f"Módulo {m['n']} · {m['horas']} horas", "title": m["titulo"],
             "body": f'<div class="ae"><small>Aprendizaje esperado {m["ae"]}</small>{m["aprendizaje"]}</div>'
                     f'<p><b>Cómo lo lograrás:</b> {m["como"]}</p><ul class="points">{lecc}</ul>'
-                    f'<table class="mini"><tbody><tr><td>🧪 Laboratorios</td><td>{m["labs"][0].split(" · ")[1]} · {m["labs"][1].split(" · ")[1]}</td></tr>'
+                    f'<table class="mini"><tbody><tr><td>🧪 Laboratorios (práctica sin nota)</td><td>{m["labs"][0].split(" · ")[1]} · {m["labs"][1].split(" · ")[1]}</td></tr>'
                     f'<tr><td>📄 PDF</td><td>{m["pdf"][0]} · {m["pdf"][1]}</td></tr>'
-                    f'<tr><td>⏱ Horas</td><td>{p} h plataforma · {a} h trabajo autónomo · {e} h evaluación</td></tr></tbody></table>'
-                    f'<ul class="points"><li><b>Además:</b> video de bienvenida, resumen y glosario interactivos, caso de análisis (práctica) y cuestionario de 10 preguntas (evaluación del módulo)</li>{extra}</ul>',
+                    f'<tr><td>⏱ Horas</td><td>{fh(p)} h plataforma · {fh(a)} h trabajo autónomo · {fh(e)} h evaluación</td></tr></tbody></table>'
+                    f'<ul class="points"><li><b>Además:</b> video de bienvenida y resumen y glosario interactivos</li>{extra}</ul>',
             "img": m["img"], "alt": m["alt"],
             "key": f"Criterio de evaluación: {m['criterio']}"}
 
@@ -55,32 +56,32 @@ PRESENTACION = [
   "key": "Aprendes haciendo: cada concepto se aplica de inmediato en una decisión o un ejercicio."},
  {"kicker": "Metodología", "title": "¿Qué harás, cómo y con qué?",
   "body": '<div class="tri"><div><b>¿Qué harás?</b>Recorrerás 4 módulos con video, narración y actividades interactivas: identificarás herramientas, describirás la revisión asistida, interpretarás variaciones e indicadores y analizarás un flujo de trabajo asistido por IA.</div>'
-          '<div><b>¿Cómo lo harás?</b>Con unidades interactivas, escenarios narrados, 8 laboratorios y un caso práctico integrador, a tu propio ritmo.</div>'
-          '<div><b>¿Con qué y dónde?</b>En el aula virtual Moodle: 16 lecciones SCORM, 4 videos de bienvenida, 8 laboratorios, guías y plantillas PDF, resumen y glosario por módulo. Consultas por mensajería interna.</div></div>',
+          '<div><b>¿Cómo lo harás?</b>Con unidades interactivas, escenarios narrados y 8 laboratorios de práctica, a tu propio ritmo. Evidencias tu aprendizaje con cuestionarios, tareas de caso práctico en los módulos 2 a 4 que corrige la tutora con rúbrica y un caso práctico integrador final.</div>'
+          '<div><b>¿Con qué y dónde?</b>En el aula virtual Moodle: 16 lecciones SCORM, 4 videos de bienvenida, 8 laboratorios, 8 guías y plantillas PDF, resumen y glosario por módulo, plantillas de los casos y mensajería con la tutora.</div></div>',
   "key": "Las consultas se realizan por la mensajería interna de la plataforma."},
  {"kicker": "Distribución horaria", "title": f"Tus {HORAS} horas de dedicación",
-  "body": hb([(n, h, f"{h} h · {pc} %") for n, h, pc in DIST]) +
+  "body": hb([(n, h, f"{fh(h)} h · {pc} %") for n, h, pc in DIST]) +
           '<div class="tw"><table class="mini"><thead><tr><th>Módulo</th><th>Plataf.</th><th>Autón.</th><th>Eval.</th><th>Total</th></tr></thead><tbody>' +
-          "".join(f'<tr><td><b>M{m["n"]}</b> {m["titulo"]}</td><td class="n">{m["dist"][0]} h</td><td class="n">{m["dist"][1]} h</td><td class="n">{m["dist"][2]} h</td><td class="n">{m["horas"]} h</td></tr>' for m in MODULOS) +
-          f'<tr class="tot"><td>Total</td><td class="n">36 h</td><td class="n">18 h</td><td class="n">6 h</td><td class="n">{HORAS} h</td></tr></tbody></table></div><p style="font-size:.85rem;color:var(--muted)">Plataf.: horas en plataforma · Autón.: trabajo autónomo · Eval.: evaluación.</p>',
+          "".join(f'<tr><td><b>M{m["n"]}</b> {m["titulo"]}</td><td class="n">{fh(m["dist"][0])} h</td><td class="n">{fh(m["dist"][1])} h</td><td class="n">{fh(m["dist"][2])} h</td><td class="n">{m["horas"]} h</td></tr>' for m in MODULOS) +
+          f'<tr class="tot"><td>Total</td><td class="n">{fh(DIST[0][1])} h</td><td class="n">{fh(DIST[1][1])} h</td><td class="n">{fh(DIST[2][1])} h</td><td class="n">{HORAS} h</td></tr></tbody></table></div><p style="font-size:.85rem;color:var(--muted)">Plataf.: horas en plataforma · Autón.: trabajo autónomo · Eval.: evaluación.</p>',
   "key": "Organiza tu semana: avanzar un poco cada día rinde más que una sola sesión larga."},
  *[modulo(m) for m in MODULOS],
  {"kicker": "Recorrido de cada módulo", "title": "El orden sugerido dentro de un módulo",
   "body": '<ol class="steps"><li><b>Video de bienvenida</b> del módulo</li><li><b>Lecciones x.1 y x.2</b> y el primer PDF de apoyo</li><li><b>Laboratorio A</b>: practicas lo aprendido</li>'
           '<li><b>Lecciones x.3 y x.4</b> y el segundo PDF</li><li><b>Laboratorio B</b>: aplicas en un caso más completo</li><li><b>Resumen y glosario</b> interactivos para repasar</li>'
-          '<li><b>Caso de análisis</b> para practicar</li><li><b>Evaluación del módulo</b>: cuestionario y, en los módulos 2 a 4, evaluación ramificada. Debes aprobarla para avanzar.</li></ol>',
-  "key": "Debes aprobar la evaluación de cada módulo y completar el 100 % de los módulos."},
+          '<li><b>Evaluación del módulo</b>: cuestionario y, en los módulos 2 a 4, tarea de caso práctico con plantilla que corrige la tutora con rúbrica. Debes aprobarla.</li></ol>',
+  "key": "Debes aprobar la evaluación de cada módulo. Los laboratorios son práctica sin nota, pero cuentan para tu avance."},
  {"kicker": "Formato de evaluación", "title": "Cómo se calcula tu nota final",
   "body": '<table class="mini"><thead><tr><th>Componente</th><th>Peso</th></tr></thead><tbody>' +
           "".join(f'<tr><td>{n}</td><td class="n">{p} %</td></tr>' for n, p in PONDERACION) +
           '<tr class="tot"><td>Total</td><td class="n">100 %</td></tr></tbody></table>',
-  "points": [ESCALA, APROBACION, "En los módulos 2, 3 y 4, la evaluación del módulo combina el cuestionario y la evaluación ramificada en partes iguales."],
+  "points": [ESCALA, APROBACION, "En los módulos 2, 3 y 4, la evaluación del módulo combina el cuestionario (40 % del módulo) y una tarea de caso práctico (60 % del módulo) que la tutora corrige con rúbrica de 100 puntos y retroalimentación por criterio en un plazo máximo de 48 horas hábiles.", FORMATIVOS],
   "key": f"Requisito administrativo: {ADMIN[0].lower() + ADMIN[1:]}"},
  {"kicker": "Instrumentos de evaluación", "title": "Qué se evalúa en cada etapa",
   "body": '<table class="mini"><thead><tr><th>Etapa</th><th>Instrumento</th></tr></thead><tbody>' +
-          "".join(f'<tr><td>Módulo {m["n"]} ({m["ae"]})</td><td>Laboratorios: {m["labs"][0].split(" · ")[1].lower()} y {m["labs"][1].split(" · ")[1].lower()}. Evaluación: cuestionario de 10 preguntas{" y evaluación ramificada «" + m["ramificada"] + "»" if m["ramificada"] else ""}.</td></tr>' for m in MODULOS) +
-          '<tr><td>Evaluación final · Parte 1</td><td>Cuestionario de 20 preguntas de selección múltiple (M1.P1 a M4.P5), con calificación automática.</td></tr>'
-          '<tr><td>Evaluación final · Parte 2</td><td>Caso práctico integrador con una tarea por aprendizaje esperado, evaluado con rúbrica de caso práctico.</td></tr></tbody></table>',
+          "".join(f'<tr><td>Módulo {m["n"]} ({m["ae"]})</td><td>Laboratorios (práctica sin nota): {m["labs"][0].split(" · ")[1].lower()} y {m["labs"][1].split(" · ")[1].lower()}. Evaluación: cuestionario de 10 preguntas{" (4 %) y tarea «" + m["tarea"] + "» con plantilla, corregida por la tutora con rúbrica de 100 puntos (6 %)" if m["tarea"] else " (10 %)"}.</td></tr>' for m in MODULOS) +
+          '<tr><td>Evaluación final · Parte 1 (20 %)</td><td>Cuestionario de 20 preguntas de selección múltiple (5 por AE, M1.P1 a M4.P5), con corrección automática, 1 hora.</td></tr>'
+          '<tr><td>Evaluación final · Parte 2 (40 %)</td><td>Caso práctico integrador con 4 tareas, una por aprendizaje esperado, con puntaje por tarea, corrección automática y PDF de resultados, 1 hora.</td></tr></tbody></table>',
   "key": "Al terminar la evaluación final descargas un PDF con tus resultados."},
  {"kicker": "Antes de empezar", "title": "Evaluación diagnóstica y mapa de competencias",
   "body": "Antes del Módulo 1 responderás una <b>evaluación diagnóstica</b> breve, sin nota. Primero te autoevalúas en cada aprendizaje esperado y luego respondes 20 preguntas de situaciones reales, cinco por módulo.",
