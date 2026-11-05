@@ -1,5 +1,2 @@
-Tareas de los módulos 2 a 5: usan rúbrica avanzada (100 puntos, aprobación 60) y tienen activados los comentarios de retroalimentación. Verificar que la rúbrica de Moodle sea idéntica a la del enunciado y que el nivel más bajo de cada criterio valga 0 puntos.
 Resumen y glosario: en Moodle existen solo los de los módulos 1, 2 y 5; la planilla declara esos 3. Si se agregan los de los módulos 3 y 4, actualizar la cantidad.
-La guía del participante y la presentación del curso publicadas en Moodle declaran otra ponderación y otros tiempos: actualizarlas para que coincidan con esta planilla.
 Al pegar los contenidos en SoliCurso, un contenido por línea y sin viñetas (en la solicitud 1960022 las viñetas se vieron como «¿»).
-El texto interno del caso integrador (Parte 2, dentro del SCORM) indica una duración de 60 a 70 minutos; la planilla y la descripción en Moodle dicen 1 hora.
