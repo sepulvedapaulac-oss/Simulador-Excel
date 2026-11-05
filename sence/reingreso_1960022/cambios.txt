@@ -1,0 +1,6 @@
+Requisitos Administrativos: 40% de conexión y nuevo texto que describe la promoción del curso según la Ley N.º 19.518 y el D.S. N.º 98.
+Requisitos Técnicos: texto completo de 1.835 caracteres (el anterior se cortó en «Nota mínima»), con criterios por AE, instrumentos reales del aula virtual (cuestionarios y tareas con rúbrica de los módulos, final en dos partes), ponderación 40% + 20% + 40% y norma completa.
+Técnicas Metodológicas: horas recalculadas con los recursos y tiempos que existen en Moodle (actividades prácticas, prácticas formativas, simulador, resúmenes), instancia obligatoria de retroalimentación de la tutora en las tareas y 10 h 40 min de evaluación que coinciden con la suma de instrumentos.
+Material Didáctico: ajustado a las actividades publicadas en Moodle (se quitaron los 3 casos aplicados de los módulos 2 a 4 que no existen).
+Características de los participantes: se agregó la finalidad laboral del curso. Requisitos de ingreso: se quitó «Manejo de herramientas digitales a nivel usuario».
+Facilitadores: se describe la función formativa de cada una en lugar de funciones de soporte.
