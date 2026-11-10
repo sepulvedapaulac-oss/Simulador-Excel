@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Brochure · IA aplicada a la Gestión de Remuneraciones</title>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:"Liberation Sans",Arial,"Noto Color Emoji",sans-serif;color:#111}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#00A5AB;page-break-after:always;padding:16mm 15mm 0}
+.page:last-child{page-break-after:auto}
+.logo{position:absolute;top:5mm;right:7mm;width:19mm;height:19mm}
+.foot{position:absolute;left:0;bottom:0;width:210mm}
+.tag{display:inline-flex;gap:1.5mm;align-items:center;background:#FFED00;border-radius:1.2mm;padding:1.6mm 3mm;font-size:9pt;font-weight:700;text-transform:uppercase;margin-top:4mm}
+h1{font-size:25pt;margin:7mm 0 4mm;line-height:1.15}
+h1.c{text-align:center}
+.ae{font-size:10.5pt;line-height:1.45;text-align:justify;margin:0 0 6mm}
+.ae b{font-weight:700}
+.card{background:#fff;border-radius:1.6mm;padding:5mm 5mm;margin:0 0 4.6mm;box-shadow:0 .6mm 1.4mm rgba(0,0,0,.12)}
+.card.lite{background:#DFF8FA}
+.card h3{margin:0 0 2.4mm;font-size:14.5pt}
+.card p{margin:0;font-size:10.8pt;line-height:1.5}
+.num{margin:0 0 4.6mm}
+.num .n{font-size:9pt}
+.num .ln{height:1mm;background:#FFED00;border-radius:1mm;margin:.6mm 0 2.4mm}
+.num h3{margin:0 0 2mm;font-size:13.5pt}
+.num p{margin:0;font-size:11.5pt;line-height:1.5;text-align:justify}
+/* portada */
+.cover{padding:0}
+.cover .photo{position:absolute;inset:0;background:url(i11_hero.jpg) center/cover}
+.cover .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.25) 100%)}
+.cover .ttl{position:absolute;left:12mm;right:14mm;top:158mm}
+.cover .b1{display:inline;background:#111;color:#fff;font-size:24pt;font-weight:700;line-height:1.5;padding:.6mm 2.2mm;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:1.2mm}
+.cover .b2{display:inline-block;margin-top:5mm;background:#111;color:#fff;font-size:12.5pt;line-height:1.45;padding:1mm 2.2mm;border-radius:1.2mm}
+.cover .logo{background:#fff;border-radius:50%}
+/* metodología */
+.lead{font-size:13pt;line-height:1.55;text-align:justify;margin:0 0 10mm}
+.met{display:grid;grid-template-columns:20mm 1fr;gap:3mm 5mm;align-items:start;margin:0 0 11mm}
+.met .ic{font-size:38pt;line-height:1;text-align:center}
+.met h3{margin:0 0 2mm;font-size:14pt}
+.met p{margin:0;font-size:12pt;line-height:1.45;text-align:justify}
+/* recorrido */
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin:10mm 0 10mm}
+.step{background:#fff;border:1.2mm solid var(--c);border-radius:3mm;padding:10mm 2mm 5mm;text-align:center;position:relative;font-size:10pt;line-height:1.3;font-weight:700}
+.step .ic{position:absolute;top:-8mm;left:50%;transform:translateX(-50%);width:14mm;height:14mm;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:17pt;border:1mm solid #fff}
+.step .pill{display:inline-block;background:var(--c);color:#fff;border-radius:1.2mm;padding:.8mm 3mm;margin-bottom:2mm;font-size:8.4pt}
+.step::after{content:"➜";position:absolute;right:-4.4mm;top:45%;color:#FFED00;font-size:12pt}
+.step:last-child::after{content:none}
+.center{text-align:center;font-size:12.5pt;line-height:1.55;max-width:160mm;margin:0 auto}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:9mm 0 0}
+.stats div{background:#fff;border-radius:2mm;text-align:center;padding:5mm 2mm;font-size:10pt;font-weight:700}
+.stats b{display:block;font-size:20pt;color:#00848A;margin-bottom:1mm}
+/* beneficios */
+.ben{position:absolute;inset:0;background:linear-gradient(rgba(0,165,171,.86),rgba(0,165,171,.86)),url(i44_hero.jpg) center/cover}
+.btitle{display:inline-block;background:#FFED00;font-size:16pt;font-weight:700;padding:1.5mm 3mm;border-radius:1.6mm;position:relative}
+.bgrid{position:relative;display:grid;grid-template-columns:1fr 70mm;gap:8mm;margin-top:12mm}
+.bgrid ul{margin:6mm 0 0;padding-left:5mm;font-size:12.5pt;line-height:1.55}
+.bgrid li{margin-bottom:2mm}
+.contact{background:#5CE1E6;border-radius:1mm;padding:6mm;text-align:center;font-size:11.5pt;line-height:1.5;box-shadow:0 1mm 2mm rgba(0,0,0,.15)}
+.contact img{width:52mm;margin-top:3mm;background:#fff}
+.grad{position:relative;font-size:70pt;margin:8mm 0 0 18mm}
+</style></head><body>
+
+<!-- 1 PORTADA -->
+<section class="page cover">
+  <div class="photo"></div>
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <div class="ttl">
+    <span class="b1">🎯 Inteligencia Artificial aplicada a la Gestión de Remuneraciones</span><br>
+    <span class="b2">Curso 100% asincrónico · 60 horas · Aprende a tu ritmo · Experiencia práctica</span>
+  </div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 2 METODOLOGÍA -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <span class="tag">▷ Metodología del curso</span>
+  <h1>Aprende sin límites de horario</h1>
+  <p class="lead">Este curso es <b>100% asincrónico</b>: accedes al contenido cuando quieras, desde donde quieras, a tu propio ritmo. Acompañarás a Camila, analista de remuneraciones, en situaciones reales del cierre mensual, con una metodología interactiva que combina: ⏰</p>
+  <div class="met"><div class="ic">🎬</div><div><h3>Lecciones interactivas con video</h3><p>16 lecciones con storytelling, video, narración y decisiones con retroalimentación inmediata, aplicadas al trabajo diario en remuneraciones.</p></div></div>
+  <div class="met"><div class="ic">🧮</div><div><h3>Laboratorios con simulador de Excel</h3><p>8 laboratorios prácticos donde construyes fórmulas de control, revisas un cierre y analizas variaciones con datos ficticios, sin riesgo.</p></div></div>
+  <div class="met"><div class="ic">📋</div><div><h3>Evaluaciones y acompañamiento</h3><p>Cuestionarios con retroalimentación, casos prácticos corregidos por una tutora experta en remuneraciones y guías descargables para llevar a tu trabajo.</p></div></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 3 MÓDULO 1 -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <span class="tag">📖 Módulo 1</span>
+  <h1 class="c">Fundamentos de IA</h1>
+  <p class="ae"><b>Aprendizaje esperado:</b> Identificar herramientas de inteligencia artificial en la gestión de remuneraciones, de acuerdo a criterios de uso responsable de información salarial.</p>
+  <div class="card"><h3>¿Qué puede hacer la IA por un analista?</h3><p>Usos, límites y dónde aporta valor en el ciclo mensual de remuneraciones.</p></div>
+  <div class="card"><h3>Herramientas de IA para el trabajo cotidiano</h3><p>Asistentes conversacionales, IA integrada y cómo elegir según el tratamiento de los datos.</p></div>
+  <div class="card"><h3>Cómo elaborar prompts efectivos</h3><p>Los cinco componentes de una instrucción que entrega respuestas útiles y verificables.</p></div>
+  <div class="card"><h3>Uso responsable y protección de información salarial</h3><p>Minimización y seudonimización de datos de acuerdo a la Ley 21.719.</p></div>
+  <div class="card"><h3>Laboratorios prácticos</h3><p>Laboratorio de prompts y semáforo de datos para anonimizar una planilla.</p></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 4 MÓDULO 2 -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <span class="tag">📖 Módulo 2</span>
+  <h1 class="c">IA para revisión y validación de remuneraciones</h1>
+  <p class="ae"><b>Aprendizaje esperado:</b> Describir procedimientos de revisión de remuneraciones con inteligencia artificial en el cálculo mensual, de acuerdo a protocolos de validación de resultados.</p>
+  <div class="num"><div class="n">01</div><div class="ln"></div><h3>La información que debe revisar la IA</h3><p>Qué datos y reglas necesita la IA para revisar una liquidación, y cuáles nunca debe recibir.</p></div>
+  <div class="num"><div class="n">02</div><div class="ln"></div><h3>IA como asistente para fórmulas de Excel</h3><p>Fórmulas de control con BUSCARX y SI, construidas con apoyo de la IA y probadas con casos conocidos.</p></div>
+  <div class="num"><div class="n">03</div><div class="ln"></div><h3>Detección asistida de inconsistencias</h3><p>Alertas que se corrigen, se investigan o se descartan, siempre con evidencia.</p></div>
+  <div class="num"><div class="n">04</div><div class="ln"></div><h3>Validación y control de calidad</h3><p>Un protocolo para verificar los resultados de la IA antes de decidir y aprobar el cierre.</p></div>
+  <div class="num"><div class="n">05</div><div class="ln"></div><h3>Laboratorios prácticos</h3><p>Fórmulas de control y auditoría del cierre en un simulador de Excel.</p></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 5 MÓDULO 3 -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <span class="tag">📖 Módulo 3</span>
+  <h1>Análisis de datos y reportes de remuneraciones con IA</h1>
+  <p class="ae"><b>Aprendizaje esperado:</b> Interpretar variaciones mensuales de remuneraciones en reportes con inteligencia artificial, de acuerdo a indicadores de gestión.</p>
+  <div class="card lite"><h3>🧹 Preparación de datos para análisis</h3><p>Datos limpios, cuadrados y protegidos antes de pedir un análisis a la IA.</p></div>
+  <div class="card lite"><h3>📈 Variaciones mensuales</h3><p>Variación absoluta y porcentual por área, explicada con hechos y no con supuestos.</p></div>
+  <div class="card lite"><h3>📊 Indicadores y visualización</h3><p>Indicadores de gestión y gráficos honestos que la gerencia entiende de inmediato.</p></div>
+  <div class="card"><h3>Informes ejecutivos con IA</h3><p>Cómo redactar un informe claro que separa los hechos de las hipótesis.</p></div>
+  <div class="card"><h3>Laboratorios prácticos</h3><p>Variaciones mensuales por área y tablero de indicadores en el simulador.</p></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 6 MÓDULO 4 -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <span class="tag">📖 Módulo 4</span>
+  <h1 class="c">Automatización y productividad</h1>
+  <p class="ae"><b>Aprendizaje esperado:</b> Analizar flujos de trabajo de remuneraciones con inteligencia artificial en el cierre mensual, de acuerdo a criterios de control de calidad.</p>
+  <div class="num"><div class="n">01</div><div class="ln"></div><h3>Oportunidades de automatización</h3><p>Cómo priorizar mejoras del cierre con una matriz de impacto y esfuerzo.</p></div>
+  <div class="num"><div class="n">02</div><div class="ln"></div><h3>Asistentes de IA para tareas administrativas</h3><p>Configura un asistente con alcance, fuentes aprobadas y límites claros.</p></div>
+  <div class="num"><div class="n">03</div><div class="ln"></div><h3>Diseño del flujo asistido de remuneraciones</h3><p>Un flujo de cierre donde la IA apoya y las personas controlan antes de cargar y de pagar.</p></div>
+  <div class="num"><div class="n">04</div><div class="ln"></div><h3>Proyecto integrador</h3><p>Tu propuesta de mejora con IA, medida con indicadores y línea base.</p></div>
+  <div class="num"><div class="n">05</div><div class="ln"></div><h3>Laboratorios prácticos</h3><p>Checklist de cierre con controles automáticos y simulador de flujo con puntos de control.</p></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 7 RECORRIDO -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <h1 class="c" style="margin-top:10mm">Recorrido completo del curso</h1>
+  <div class="path">
+    <div class="step" style="--c:#F5A800"><span class="ic">🤖</span><span class="pill">Módulo 1</span><br>Fundamentos de IA</div>
+    <div class="step" style="--c:#1A73E8"><span class="ic">🔍</span><span class="pill">Módulo 2</span><br>Revisión y validación</div>
+    <div class="step" style="--c:#12A150"><span class="ic">📊</span><span class="pill">Módulo 3</span><br>Análisis y reportes</div>
+    <div class="step" style="--c:#7B2FE0"><span class="ic">⚙️</span><span class="pill">Módulo 4</span><br>Automatización y productividad</div>
+  </div>
+  <p class="center">Cuatro módulos diseñados en una secuencia pedagógica lógica y progresiva: desde las herramientas de IA hasta el análisis del flujo completo del cierre mensual. Cada módulo incluye lecciones interactivas, laboratorios con simulador, guías descargables y evaluación.</p>
+  <div class="stats"><div><b>60</b>horas</div><div><b>16</b>lecciones interactivas</div><div><b>8</b>laboratorios prácticos</div><div><b>100%</b>asincrónico</div></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 8 CIERRE -->
+<section class="page">
+  <img class="logo" src="logo.png" alt="Tremen Partner">
+  <h1 class="c" style="margin-top:10mm">¡Tu equipo merece este salto de calidad! 🚀</h1>
+  <p class="lead" style="margin-top:10mm">Inscríbete ahora en el curso <b>Inteligencia Artificial aplicada a la Gestión de Remuneraciones</b> y transforma el cierre mensual en un proceso más rápido, preciso y seguro, protegiendo la información salarial de las personas.</p>
+  <div class="card"><h3>✅ 4 módulos completos</h3><p>Lecciones con video, laboratorios con simulador de Excel y casos prácticos del cierre mensual.</p></div>
+  <div class="card"><h3>⏱️ A tu ritmo</h3><p>100% asincrónico, 60 horas: accede cuando y donde quieras.</p></div>
+  <div class="card"><h3>📊 Competencias verificables</h3><p>Evaluación diagnóstica con mapa de competencias al inicio y evaluación final con informe de resultados.</p></div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+
+<!-- 9 BENEFICIOS -->
+<section class="page">
+  <div class="ben"></div>
+  <img class="logo" src="logo.png" alt="Tremen Partner" style="z-index:2">
+  <span class="btitle">Beneficios del curso</span>
+  <div class="bgrid">
+    <div>
+      <ul>
+        <li>Aprende a usar la IA en el cierre mensual sin arriesgar la información salarial.</li>
+        <li>Revisa, analiza y reporta remuneraciones con mayor rapidez y precisión.</li>
+        <li>Practica en simuladores de Excel y casos basados en situaciones reales.</li>
+      </ul>
+      <div class="grad">🎓</div>
+    </div>
+    <div class="contact"><b>Contáctanos</b><br><br>Escríbenos al número<br>+56 9 73769396 o escanea el código QR<br><img src="qr.png" alt="Código QR de contacto por WhatsApp"></div>
+  </div>
+  <img class="foot" src="footer_t.png" alt="">
+</section>
+</body></html>
