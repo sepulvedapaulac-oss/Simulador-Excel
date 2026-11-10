@@ -95,12 +95,8 @@ EVALUACION = (
 'Total: 8% + 32% + 20% + 40% = 100%. La evaluación diagnóstica, las lecciones y las actividades prácticas son formativas, sin ponderación. '
 'Tiempo total de evaluación: diagnóstico 1 h + 5 cuestionarios de módulo x 1 h + 4 casos x 45 min + final parte 1 1 h + final parte 2 1 h 45 min = 11 h 45 min.')
 
-NORMA = (
-'Escala de calificación: de 1,0 a 7,0, con 60% de exigencia. Nota mínima de aprobación del curso: 4,0. '
-'Conversión a escala común: el puntaje de cada instrumento se expresa como porcentaje de logro (puntaje obtenido / puntaje máximo x 100) y se convierte a nota así: con 60% o más, nota = 4,0 + 3 x (porcentaje de logro - 60) / 40; con menos de 60%, nota = 1,0 + 3 x porcentaje de logro / 60. Ejemplos: 0% = 1,0; 60% = 4,0; 80% = 5,5; 100% = 7,0. '
-'Equivalencias: cuestionarios de módulo, 12 de 20 puntos = 4,0; evaluación final parte 1, 24 de 40 puntos = 4,0; casos aplicados y evaluación final parte 2, 60 de 100 puntos = 4,0. '
-'Calificación final ponderada: suma de la nota de cada instrumento multiplicada por su ponderación (8% + 32% + 20% + 40% = 100%), redondeada a un decimal. '
-'Aprobación: nota final ponderada igual o superior a 4,0. No se exige aprobar ninguna evaluación por separado.')
+NORMA = ('Escala de 1,0 a 7,0 con 60% de exigencia; nota mínima de aprobación 4,0. Cada puntaje se convierte a porcentaje de logro (obtenido / máximo x 100) y luego a nota: con 60% o más, 4,0 + 3 x (% - 60) / 40; bajo 60%, 1,0 + 3 x % / 60 (12 de 20, 24 de 40 y 60 de 100 puntos = 4,0). '
+ 'Nota final: suma de cada nota por su ponderación (módulo 1 8%, módulos 2 a 5 32%, final parte 1 20%, final parte 2 40% = 100%), con un decimal. Aprueba con nota final 4,0 o más; no se exige aprobar evaluaciones por separado.')
 
 INFRA = ('Se utilizará plataforma LMS/Aula virtual. Servidor: para asegurar la continuidad operativa del servicio que tiene por objetivo reinicio de plataforma en no menos de 24 horas, '
  'respaldo automático de la base de datos de los cursos, up time de 95% y conectividad que permite concurrencia de participantes.')
