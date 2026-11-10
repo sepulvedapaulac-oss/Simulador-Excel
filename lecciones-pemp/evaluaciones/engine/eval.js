@@ -8,7 +8,9 @@
 'use strict';
 const CFG = window.EVAL || {};
 const IMGS = window.IMGS || {};
-const PASS = CFG.pass || 70;
+const PASS = CFG.pass || 60;
+// Escala del curso: 1,0 a 7,0 con 60% de exigencia (nota 4,0 con 60 puntos)
+const nota = p => (1 + Math.min(p, 60) * 3 / 60 + Math.max(p - 60, 0) * 3 / 40).toFixed(1).replace('.', ',');
 const LS_KEY = 'tls_ev_' + (CFG.id || 'eval');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -538,7 +540,7 @@ function finalize() {
 }
 function report() {
   const t = total();
-  const lines = [CFG.title, CFG.course, '', `Intento ${state.att} · Puntaje: ${t} / 100 · ${t >= PASS ? 'Aprobada' : 'No aprobada'} (mínimo ${PASS})`, ''];
+  const lines = [CFG.title, CFG.course, '', `Intento ${state.att} · Puntaje: ${t} / 100 · Nota ${nota(t)} · ${t >= PASS ? 'Aprobada' : 'No aprobada'} (mínimo ${PASS} puntos, nota 4,0)`, ''];
   RUB.forEach(c => {
     const acc = state.acc[c.id] || 0;
     lines.push(`${c.name}: ${LEVELS[levelOf(acc)].n} · ${ptsOf(c, acc)} de ${c.pts} puntos`);
@@ -564,7 +566,8 @@ function renderResults() {
       <div class="score-ring" style="--p:${t};--c:${ok ? 'var(--green)' : 'var(--red)'}"><b>${t}</b></div>
       <div>
         <div class="eyebrow">${ok ? 'Evaluación aprobada' : 'Evaluación no aprobada'}</div>
-        <h3 style="font-size:1.4rem;margin:.1em 0 .3em">${t} de 100 puntos · mínimo para aprobar: ${PASS}</h3>
+        <h3 style="font-size:1.4rem;margin:.1em 0 .3em">${t} de 100 puntos · nota ${nota(t)}</h3>
+        <p style="margin:0 0 .4em;font-size:.9rem;color:var(--muted)">Escala 1,0 a 7,0 con 60% de exigencia: 60 puntos equivalen a nota 4,0, la mínima para aprobar.</p>
         <p style="margin:0">${ok ? 'Tus decisiones en el caso cumplen el estándar de la rúbrica.' : 'Revisa la corrección de los criterios con nivel más bajo y vuelve a intentarlo.'}
         ${state.best != null && state.best !== t ? `<br><strong>Mejor puntaje registrado: ${state.best}.</strong>` : ''}</p>
       </div>

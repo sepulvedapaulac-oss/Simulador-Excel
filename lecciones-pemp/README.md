@@ -89,7 +89,7 @@ Se agregó el registro SCORM que no traían. En el desafío, las notas de los ca
 Cada evaluación presenta un caso con documentos (orden de trabajo, placa, croquis, bitácora) y cinco tareas, una por criterio de la rúbrica. No hay preguntas de selección múltiple: se completan registros, se marcan evidencias en un documento, se clasifican situaciones, se ordenan secuencias, se evalúan alternativas en una matriz y se emite un veredicto respaldado con evidencia. Cada tarea se entrega una sola vez.
 
 - **Rúbrica:** 5 criterios × 20 puntos. Nivel según el acierto de la tarea: Logrado (≥ 85 %, 20 pts), Suficiente (≥ 60 %, 14 pts), En desarrollo (≥ 35 %, 8 pts), No logrado (0 pts). En las tareas de marcar evidencias, las marcas incorrectas restan; en las de ordenar se usa la concordancia por pares.
-- **Aprobación:** 70 puntos (valor `pass` en el bloque CFG de cada fuente).
+- **Aprobación:** 60 puntos, equivalentes a nota 4,0 en la escala del curso (1,0 a 7,0 con 60 % de exigencia; valor `pass` en el bloque CFG de cada fuente).
 - **Respuestas escritas:** obligatorias y no calificadas automáticamente; se registran en Moodle (`cmi.interactions`, hasta 250 caracteres) y en el informe que el estudiante puede descargar o imprimir.
 - **SCORM 1.2:** estado `passed` o `failed`, nota con el mejor intento, reanudación con `suspend_data`, una interacción por criterio y por respuesta escrita. El estado aprobado no retrocede con un nuevo intento.
 

@@ -135,7 +135,7 @@ async function run(page, file, vp) {
   }
   await snap();
   const db = await page.evaluate(() => window.__db);
-  const status = expected >= 70 ? 'passed' : 'failed';
+  const status = expected >= 60 ? 'passed' : 'failed';
   const nInt = Object.keys(db).filter(k => /^cmi\.interactions\.\d+\.id$/.test(k)).length;
   if (db['cmi.core.score.raw'] !== String(expected) || db['cmi.core.lesson_status'] !== status) fail(`${tag}: SCORM ${db['cmi.core.lesson_status']} ${db['cmi.core.score.raw']} (esperado ${status} ${expected})`);
   else console.log(`  ✓ ${tag}: ${status}, nota ${expected}${error ? ' (un error en el criterio 1)' : ''} · ${nInt} interacciones registradas`);
