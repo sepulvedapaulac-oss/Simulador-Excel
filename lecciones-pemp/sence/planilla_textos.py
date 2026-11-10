@@ -96,7 +96,7 @@ EVALUACION = (
 'Tiempo total de evaluación: diagnóstico 1 h + 5 cuestionarios de módulo x 1 h + 4 casos x 45 min + final parte 1 1 h + final parte 2 1 h 45 min = 11 h 45 min.')
 
 NORMA = ('Escala de 1,0 a 7,0 con 60% de exigencia; nota mínima de aprobación 4,0. Cada puntaje se convierte a porcentaje de logro (obtenido / máximo x 100) y luego a nota: con 60% o más, 4,0 + 3 x (% - 60) / 40; bajo 60%, 1,0 + 3 x % / 60 (12 de 20, 24 de 40 y 60 de 100 puntos = 4,0). '
- 'Nota final: suma de cada nota por su ponderación (módulo 1 8%, módulos 2 a 5 32%, final parte 1 20%, final parte 2 40% = 100%), con un decimal. Aprueba con nota final 4,0 o más; no se exige aprobar evaluaciones por separado.')
+ 'Nota final: suma de cada nota por su ponderación (módulo 1 8%, módulos 2 a 5 32%, final parte 1 20%, final parte 2 40% = 100%), con un decimal. Aprueba con nota final 4,0 o más, aunque alguna evaluación tenga nota inferior a 4,0.')
 
 INFRA = ('Se utilizará plataforma LMS/Aula virtual. Servidor: para asegurar la continuidad operativa del servicio que tiene por objetivo reinicio de plataforma en no menos de 24 horas, '
  'respaldo automático de la base de datos de los cursos, up time de 95% y conectividad que permite concurrencia de participantes.')
